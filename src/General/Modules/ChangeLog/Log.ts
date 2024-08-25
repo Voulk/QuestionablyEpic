@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 3,
+    date: "August 25",
+    changes: [ 
+      "The War Within: Added Trinket / Embellishment charts.",
+      "The War Within: Revamped Trinket Deep Dive.",
+      "Cataclysm: Added Goblin as a possible race option for Priests."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 2,
     date: "July 25",
     changes: [ 

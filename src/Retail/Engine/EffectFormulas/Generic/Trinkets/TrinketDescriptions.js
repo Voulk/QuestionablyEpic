@@ -1,6 +1,7 @@
 import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/EmbellishmentData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
 import { correctCasing } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
@@ -17,6 +18,41 @@ const trinketCategories = {
 
 
 }
+
+
+export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerSettings) => {
+    const trinketDescription = [trinketName + " (" + itemLevel + ")"];
+    
+
+    const trinketData = getTrinketData(trinketName);
+    if (trinketData === undefined) return [];
+    const trinketEffects = trinketData.effects;
+
+    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
+    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
+    if (trinketData.description) trinketDescription.push(trinketData.description);
+    trinketDescription.push("")
+
+    trinketDescription.push("Effect Breakdown")
+    if (trinketEffects[0].ppm && trinketEffects[0].stat) {
+        // We're dealing with a stat proc trinket.
+        trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
+    }
+
+    Object.keys(trinketStats).forEach((statName) => {    
+        trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
+    });
+
+    if (trinketData.setting) {
+        trinketDescription.push("")
+
+        trinketDescription.push("Setting Available")
+    }
+
+    return trinketDescription;
+
+}
+
 
 export const getTrinketDescription = (trinketName, player, additionalData) => {
     const trinketData = getTrinketData(trinketName);
@@ -87,11 +123,19 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
 }
 
 const getTrinketData = (trinketName) => {
-    const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData/*, timewalkTrinketData*/)
+    const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, embellishmentData/*, timewalkTrinketData*/)
     let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
     return activeTrinket;
 }
+
+/*
+const getEmbellishmentData = (effectName) => {
+    const data = embellishmentData.find((effect) => effect.name === effectName);
+    let activeTrinket = 
+
+    return activeTrinket;
+} */
 
 
 

@@ -7764,12 +7764,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "582": {
     "id": 582,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "583": {
     "id": 583,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "584": {
@@ -8054,13 +8054,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "649": {
     "id": 649,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 5
   },
   "650": {
     "id": 650,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 5
   },
@@ -10340,18 +10340,18 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "1723": {
     "id": 1723,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 1746
   },
   "1724": {
     "id": 1724,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 1748,
     "quality": 3
   },
   "1725": {
     "id": 1725,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
@@ -11248,7 +11248,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "1795": {
     "id": 1795,
     "quality": 3,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "1796": {
@@ -14376,7 +14376,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3458": {
     "id": 3458,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968
   },
   "3460": {
@@ -14734,7 +14734,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3530": {
     "id": 3530,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972
   },
   "3531": {
@@ -14816,7 +14816,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3570": {
     "id": 3570,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976
   },
   "3571": {
@@ -14925,7 +14925,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3592": {
     "id": 3592,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "3593": {
@@ -15029,17 +15029,17 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3615": {
     "id": 3615,
-    "ilevel": "15 @plvl 1 - 330 @plvl 330",
+    "ilevel": "2 @plvl 1 - 343 @plvl 343",
     "curveId": 959
   },
   "3616": {
     "id": 3616,
-    "ilevel": "17 @plvl 1 - 332 @plvl 332",
+    "ilevel": "4 @plvl 1 - 345 @plvl 345",
     "curveId": 961
   },
   "3617": {
     "id": 3617,
-    "ilevel": "16 @plvl 1 - 331 @plvl 331",
+    "ilevel": "3 @plvl 1 - 344 @plvl 344",
     "curveId": 960
   },
   "3618": {
@@ -15132,7 +15132,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3630": {
     "id": 3630,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980
   },
   "3631": {
@@ -16888,739 +16888,739 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3998": {
     "id": 3998,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "3999": {
     "id": 3999,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4000": {
     "id": 4000,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4001": {
     "id": 4001,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4002": {
     "id": 4002,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4003": {
     "id": 4003,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4004": {
     "id": 4004,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4005": {
     "id": 4005,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4006": {
     "id": 4006,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4007": {
     "id": 4007,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4008": {
     "id": 4008,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4009": {
     "id": 4009,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4010": {
     "id": 4010,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4011": {
     "id": 4011,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4012": {
     "id": 4012,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4013": {
     "id": 4013,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4014": {
     "id": 4014,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4015": {
     "id": 4015,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4016": {
     "id": 4016,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4017": {
     "id": 4017,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4018": {
     "id": 4018,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4019": {
     "id": 4019,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4020": {
     "id": 4020,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4021": {
     "id": 4021,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4022": {
     "id": 4022,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4023": {
     "id": 4023,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4024": {
     "id": 4024,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4025": {
     "id": 4025,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4026": {
     "id": 4026,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4027": {
     "id": 4027,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4028": {
     "id": 4028,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4029": {
     "id": 4029,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4030": {
     "id": 4030,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4031": {
     "id": 4031,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4032": {
     "id": 4032,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4033": {
     "id": 4033,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4034": {
     "id": 4034,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4035": {
     "id": 4035,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4036": {
     "id": 4036,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4037": {
     "id": 4037,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4038": {
     "id": 4038,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4039": {
     "id": 4039,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4040": {
     "id": 4040,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4041": {
     "id": 4041,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4042": {
     "id": 4042,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4043": {
     "id": 4043,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4044": {
     "id": 4044,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4045": {
     "id": 4045,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4046": {
     "id": 4046,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4047": {
     "id": 4047,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4048": {
     "id": 4048,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4049": {
     "id": 4049,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4050": {
     "id": 4050,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4051": {
     "id": 4051,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4052": {
     "id": 4052,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4053": {
     "id": 4053,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4054": {
     "id": 4054,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4055": {
     "id": 4055,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4056": {
     "id": 4056,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4057": {
     "id": 4057,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4058": {
     "id": 4058,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4059": {
     "id": 4059,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4060": {
     "id": 4060,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4061": {
     "id": 4061,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4062": {
     "id": 4062,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4063": {
     "id": 4063,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4064": {
     "id": 4064,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4065": {
     "id": 4065,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4066": {
     "id": 4066,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4067": {
     "id": 4067,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4068": {
     "id": 4068,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4069": {
     "id": 4069,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4070": {
     "id": 4070,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4071": {
     "id": 4071,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4072": {
     "id": 4072,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
   "4074": {
     "id": 4074,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4075": {
     "id": 4075,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4076": {
     "id": 4076,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4077": {
     "id": 4077,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4079": {
     "id": 4079,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4080": {
     "id": 4080,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4082": {
     "id": 4082,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4083": {
     "id": 4083,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4085": {
     "id": 4085,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4086": {
     "id": 4086,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4088": {
     "id": 4088,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4089": {
     "id": 4089,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4090": {
     "id": 4090,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4091": {
     "id": 4091,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4092": {
     "id": 4092,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4093": {
     "id": 4093,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4094": {
     "id": 4094,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4095": {
     "id": 4095,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4096": {
     "id": 4096,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4097": {
     "id": 4097,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4098": {
     "id": 4098,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4099": {
     "id": 4099,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4100": {
     "id": 4100,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4101": {
     "id": 4101,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4102": {
     "id": 4102,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4103": {
     "id": 4103,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4104": {
     "id": 4104,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4105": {
     "id": 4105,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4106": {
     "id": 4106,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4107": {
     "id": 4107,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4108": {
     "id": 4108,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4109": {
     "id": 4109,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4110": {
     "id": 4110,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4111": {
     "id": 4111,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4112": {
     "id": 4112,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4113": {
     "id": 4113,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4114": {
     "id": 4114,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4115": {
     "id": 4115,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4116": {
     "id": 4116,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4117": {
     "id": 4117,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4118": {
     "id": 4118,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4119": {
     "id": 4119,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4120": {
     "id": 4120,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4121": {
     "id": 4121,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4122": {
     "id": 4122,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4123": {
     "id": 4123,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4124": {
     "id": 4124,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4125": {
     "id": 4125,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4126": {
     "id": 4126,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4127": {
     "id": 4127,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4128": {
     "id": 4128,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4129": {
     "id": 4129,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4130": {
     "id": 4130,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4131": {
     "id": 4131,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4132": {
     "id": 4132,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4133": {
     "id": 4133,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4134": {
     "id": 4134,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4135": {
     "id": 4135,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4136": {
     "id": 4136,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4137": {
     "id": 4137,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4138": {
     "id": 4138,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4139": {
     "id": 4139,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4140": {
     "id": 4140,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4141": {
     "id": 4141,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4142": {
     "id": 4142,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4143": {
     "id": 4143,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4144": {
@@ -17635,22 +17635,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4146": {
     "id": 4146,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4147": {
     "id": 4147,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4148": {
     "id": 4148,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4149": {
     "id": 4149,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4150": {
@@ -17665,42 +17665,42 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4152": {
     "id": 4152,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4153": {
     "id": 4153,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4154": {
     "id": 4154,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4155": {
     "id": 4155,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4156": {
     "id": 4156,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4157": {
     "id": 4157,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4158": {
     "id": 4158,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4159": {
     "id": 4159,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4160": {
@@ -17715,169 +17715,169 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4162": {
     "id": 4162,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4163": {
     "id": 4163,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4164": {
     "id": 4164,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4165": {
     "id": 4165,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4166": {
     "id": 4166,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4167": {
     "id": 4167,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4168": {
     "id": 4168,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4169": {
     "id": 4169,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4170": {
     "id": 4170,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4171": {
     "id": 4171,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4172": {
     "id": 4172,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4173": {
     "id": 4173,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4174": {
     "id": 4174,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4175": {
     "id": 4175,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4176": {
     "id": 4176,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4177": {
     "id": 4177,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4178": {
     "id": 4178,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4179": {
     "id": 4179,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4180": {
     "id": 4180,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4181": {
     "id": 4181,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4182": {
     "id": 4182,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4183": {
     "id": 4183,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4184": {
     "id": 4184,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4185": {
     "id": 4185,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4186": {
     "id": 4186,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4187": {
     "id": 4187,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4188": {
     "id": 4188,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4189": {
     "id": 4189,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4190": {
     "id": 4190,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4191": {
     "id": 4191,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4192": {
     "id": 4192,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448
   },
   "4193": {
     "id": 4193,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
@@ -17895,7 +17895,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4196": {
     "id": 4196,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4,
     "tag": "Heroic"
@@ -17978,7 +17978,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4213": {
     "id": 4213,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980,
     "quality": 5
   },
@@ -18105,13 +18105,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4238": {
     "id": 4238,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
   "4239": {
     "id": 4239,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4240": {
@@ -18121,22 +18121,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4241": {
     "id": 4241,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4242": {
     "id": 4242,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4243": {
     "id": 4243,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4244": {
     "id": 4244,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4246": {
@@ -18668,56 +18668,56 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4742": {
     "id": 4742,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4743": {
     "id": 4743,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4744": {
     "id": 4744,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4745": {
     "id": 4745,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4746": {
     "id": 4746,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4747": {
     "id": 4747,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4748": {
     "id": 4748,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
   },
   "4749": {
     "id": 4749,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4,
     "tag": "Warforged"
@@ -18857,7 +18857,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "4776": {
     "id": 4776,
     "quality": 3,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "4778": {
@@ -18919,36 +18919,36 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4790": {
     "id": 4790,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "4791": {
     "id": 4791,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 6242,
     "quality": 3
   },
   "4792": {
     "id": 4792,
-    "ilevel": "27 @plvl 1 - 200 @plvl 200",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244,
     "quality": 4
   },
   "4793": {
     "id": 4793,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
-    "curveId": 6247
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "4794": {
     "id": 4794,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
-    "curveId": 6245,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "4795": {
     "id": 4795,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
-    "curveId": 6246,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "4796": {
@@ -19013,19 +19013,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4811": {
     "id": 4811,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 6242,
     "quality": 3
   },
   "4812": {
     "id": 4812,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 6242
   },
   "4813": {
     "id": 4813,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
-    "curveId": 6245,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "4814": {
@@ -19036,14 +19036,14 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4815": {
     "id": 4815,
-    "ilevel": "27 @plvl 1 - 200 @plvl 200",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244,
     "quality": 4
   },
   "4816": {
     "id": 4816,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
-    "curveId": 6246,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "4818": {
@@ -19211,7 +19211,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "4990": {
     "id": 4990,
     "quality": 3,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 1748
   },
   "4991": {
@@ -19413,7 +19413,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "5036": {
     "id": 5036,
     "quality": 3,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 1748
   },
   "5037": {
@@ -22856,22 +22856,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5805": {
     "id": 5805,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "5806": {
     "id": 5806,
-    "ilevel": "16 @plvl 1 - 331 @plvl 331",
+    "ilevel": "3 @plvl 1 - 344 @plvl 344",
     "curveId": 960
   },
   "5807": {
     "id": 5807,
-    "ilevel": "15 @plvl 1 - 330 @plvl 330",
+    "ilevel": "2 @plvl 1 - 343 @plvl 343",
     "curveId": 959
   },
   "5808": {
     "id": 5808,
-    "ilevel": "17 @plvl 1 - 332 @plvl 332",
+    "ilevel": "4 @plvl 1 - 345 @plvl 345",
     "curveId": 961
   },
   "5814": {
@@ -25604,7 +25604,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6416": {
     "id": 6416,
-    "ilevel": "1 @plvl 1 - 327 @plvl 327",
+    "ilevel": "5 @plvl 1 - 551 @plvl 551",
     "curveId": 14096
   },
   "6417": {
@@ -26395,13 +26395,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6499": {
     "id": 6499,
-    "ilevel": "1 @plvl 1 - 168 @plvl 168",
+    "ilevel": "1 @plvl 1 - 332 @plvl 332",
     "curveId": 16570
   },
   "6500": {
     "id": 6500,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
-    "curveId": 5063
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "6501": {
     "id": 6501,
@@ -28015,42 +28015,42 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6654": {
     "id": 6654,
-    "ilevel": "16 @plvl 1 - 170 @plvl 170",
+    "ilevel": "5 @plvl 1 - 357 @plvl 357",
     "curveId": 16520
   },
   "6655": {
     "id": 6655,
-    "ilevel": "16 @plvl 1 - 170 @plvl 170",
+    "ilevel": "5 @plvl 1 - 357 @plvl 357",
     "curveId": 16522
   },
   "6656": {
     "id": 6656,
-    "ilevel": "1 @plvl 1 - 160 @plvl 160",
+    "ilevel": "1 @plvl 1 - 322 @plvl 322",
     "curveId": 16525
   },
   "6657": {
     "id": 6657,
-    "ilevel": "1 @plvl 1 - 160 @plvl 160",
+    "ilevel": "1 @plvl 1 - 322 @plvl 322",
     "curveId": 16526
   },
   "6658": {
     "id": 6658,
-    "ilevel": "14 @plvl 1 - 183 @plvl 183",
+    "ilevel": "10 @plvl 1 - 362 @plvl 362",
     "curveId": 16527
   },
   "6659": {
     "id": 6659,
-    "ilevel": "14 @plvl 1 - 183 @plvl 183",
+    "ilevel": "10 @plvl 1 - 362 @plvl 362",
     "curveId": 16528
   },
   "6660": {
     "id": 6660,
-    "ilevel": "27 @plvl 1 - 196 @plvl 196",
+    "ilevel": "15 @plvl 1 - 367 @plvl 367",
     "curveId": 16529
   },
   "6661": {
     "id": 6661,
-    "ilevel": "27 @plvl 1 - 196 @plvl 196",
+    "ilevel": "15 @plvl 1 - 367 @plvl 367",
     "curveId": 16530
   },
   "6662": {
@@ -28060,12 +28060,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6663": {
     "id": 6663,
-    "ilevel": "1 @plvl 1 - 168 @plvl 168",
+    "ilevel": "1 @plvl 1 - 332 @plvl 332",
     "curveId": 16569
   },
   "6664": {
     "id": 6664,
-    "ilevel": "1 @plvl 1 - 168 @plvl 168",
+    "ilevel": "1 @plvl 1 - 332 @plvl 332",
     "curveId": 16570
   },
   "6665": {
@@ -28184,13 +28184,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6682": {
     "id": 6682,
-    "ilevel": "7 @plvl 1 - 180 @plvl 180",
-    "curveId": 5064
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242
   },
   "6683": {
     "id": 6683,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
-    "curveId": 5086
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244
   },
   "6684": {
     "id": 6684,
@@ -28229,40 +28229,40 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6691": {
     "id": 6691,
-    "ilevel": "7 @plvl 1 - 180 @plvl 180",
-    "curveId": 5064
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242
   },
   "6694": {
     "id": 6694,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
-    "curveId": 5086
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244
   },
   "6695": {
     "id": 6695,
-    "ilevel": "27 @plvl 1 - 200 @plvl 200",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244
   },
   "6696": {
     "id": 6696,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
-    "curveId": 6246
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244
   },
   "6697": {
     "id": 6697,
-    "ilevel": "7 @plvl 1 - 180 @plvl 180",
-    "curveId": 5064,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "6700": {
     "id": 6700,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
-    "curveId": 5086,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "6703": {
     "id": 6703,
-    "ilevel": "17 @plvl 1 - 190 @plvl 190",
-    "curveId": 5086,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "6706": {
@@ -28282,13 +28282,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6709": {
     "id": 6709,
-    "ilevel": "5 @plvl 1 - 178 @plvl 178",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451,
     "quality": 2
   },
   "6710": {
     "id": 6710,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
@@ -28299,7 +28299,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6712": {
     "id": 6712,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4
   },
@@ -28466,49 +28466,49 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6751": {
     "id": 6751,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6752": {
     "id": 6752,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6753": {
     "id": 6753,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6754": {
     "id": 6754,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6755": {
     "id": 6755,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6756": {
     "id": 6756,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 6243
   },
   "6757": {
     "id": 6757,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4
   },
   "6759": {
     "id": 6759,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4
   },
   "6760": {
     "id": 6760,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449,
     "quality": 3
   },
@@ -28598,8 +28598,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6813": {
     "id": 6813,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
-    "curveId": 5063
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "6815": {
     "id": 6815,
@@ -28638,7 +28638,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6822": {
     "id": 6822,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "6823": {
@@ -28659,7 +28659,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6825": {
     "id": 6825,
-    "ilevel": "16 @plvl 1 - 170 @plvl 170",
+    "ilevel": "5 @plvl 1 - 357 @plvl 357",
     "curveId": 16520
   },
   "6826": {
@@ -32739,9 +32739,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7195": {
     "id": 7195,
     "upgrade": {
+      "group": 163,
       "level": 1,
       "max": 7,
-      "group": 163,
       "bonusId": 7195,
       "itemLevel": 155
     }
@@ -32749,9 +32749,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7196": {
     "id": 7196,
     "upgrade": {
+      "group": 163,
       "level": 2,
       "max": 7,
-      "group": 163,
       "bonusId": 7196,
       "itemLevel": 164,
       "currency": {
@@ -32765,9 +32765,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7197": {
     "id": 7197,
     "upgrade": {
+      "group": 163,
       "level": 3,
       "max": 7,
-      "group": 163,
       "bonusId": 7197,
       "itemLevel": 171,
       "currency": {
@@ -32781,9 +32781,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7198": {
     "id": 7198,
     "upgrade": {
+      "group": 163,
       "level": 4,
       "max": 7,
-      "group": 163,
       "bonusId": 7198,
       "itemLevel": 177,
       "currency": {
@@ -32797,9 +32797,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7199": {
     "id": 7199,
     "upgrade": {
+      "group": 163,
       "level": 5,
       "max": 7,
-      "group": 163,
       "bonusId": 7199,
       "itemLevel": 184,
       "currency": {
@@ -32813,9 +32813,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7200": {
     "id": 7200,
     "upgrade": {
+      "group": 163,
       "level": 6,
       "max": 7,
-      "group": 163,
       "bonusId": 7200,
       "itemLevel": 190,
       "currency": {
@@ -32829,9 +32829,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7201": {
     "id": 7201,
     "upgrade": {
+      "group": 163,
       "level": 7,
       "max": 7,
-      "group": 163,
       "bonusId": 7201,
       "itemLevel": 197,
       "currency": {
@@ -32844,7 +32844,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7202": {
     "id": 7202,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4,
     "tag": "Heroic"
@@ -32950,8 +32950,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7220": {
     "id": 7220,
-    "ilevel": "1 @plvl 1 - 170 @plvl 170",
-    "curveId": 5063
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "7222": {
     "id": 7222,
@@ -33267,9 +33267,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7462": {
     "id": 7462,
     "upgrade": {
+      "group": 197,
       "level": 1,
       "max": 3,
-      "group": 197,
       "bonusId": 7462,
       "itemLevel": 150
     }
@@ -33277,9 +33277,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7463": {
     "id": 7463,
     "upgrade": {
+      "group": 197,
       "level": 2,
       "max": 3,
-      "group": 197,
       "bonusId": 7463,
       "itemLevel": 213
     }
@@ -33542,9 +33542,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7479": {
     "id": 7479,
     "upgrade": {
+      "group": 198,
       "level": 1,
       "max": 7,
-      "group": 198,
       "bonusId": 7479,
       "itemLevel": 203
     }
@@ -33552,9 +33552,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7480": {
     "id": 7480,
     "upgrade": {
+      "group": 198,
       "level": 2,
       "max": 7,
-      "group": 198,
       "bonusId": 7480,
       "itemLevel": 210,
       "currency": {
@@ -33568,9 +33568,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7481": {
     "id": 7481,
     "upgrade": {
+      "group": 198,
       "level": 3,
       "max": 7,
-      "group": 198,
       "bonusId": 7481,
       "itemLevel": 216,
       "currency": {
@@ -33584,9 +33584,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7482": {
     "id": 7482,
     "upgrade": {
+      "group": 198,
       "level": 4,
       "max": 7,
-      "group": 198,
       "bonusId": 7482,
       "itemLevel": 223,
       "currency": {
@@ -33600,9 +33600,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7483": {
     "id": 7483,
     "upgrade": {
+      "group": 198,
       "level": 5,
       "max": 7,
-      "group": 198,
       "bonusId": 7483,
       "itemLevel": 229,
       "currency": {
@@ -33616,9 +33616,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7484": {
     "id": 7484,
     "upgrade": {
+      "group": 198,
       "level": 6,
       "max": 7,
-      "group": 198,
       "bonusId": 7484,
       "itemLevel": 236,
       "currency": {
@@ -33632,9 +33632,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7485": {
     "id": 7485,
     "upgrade": {
+      "group": 198,
       "level": 7,
       "max": 7,
-      "group": 198,
       "bonusId": 7485,
       "itemLevel": 242,
       "currency": {
@@ -33648,9 +33648,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7486": {
     "id": 7486,
     "upgrade": {
+      "group": 199,
       "level": 1,
       "max": 7,
-      "group": 199,
       "bonusId": 7486,
       "itemLevel": 203
     }
@@ -33658,9 +33658,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7487": {
     "id": 7487,
     "upgrade": {
+      "group": 199,
       "level": 2,
       "max": 7,
-      "group": 199,
       "bonusId": 7487,
       "itemLevel": 210,
       "currency": {
@@ -33674,9 +33674,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7488": {
     "id": 7488,
     "upgrade": {
+      "group": 199,
       "level": 3,
       "max": 7,
-      "group": 199,
       "bonusId": 7488,
       "itemLevel": 216,
       "currency": {
@@ -33690,9 +33690,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7489": {
     "id": 7489,
     "upgrade": {
+      "group": 199,
       "level": 4,
       "max": 7,
-      "group": 199,
       "bonusId": 7489,
       "itemLevel": 223,
       "currency": {
@@ -33706,9 +33706,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7490": {
     "id": 7490,
     "upgrade": {
+      "group": 199,
       "level": 5,
       "max": 7,
-      "group": 199,
       "bonusId": 7490,
       "itemLevel": 229,
       "currency": {
@@ -33722,9 +33722,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7491": {
     "id": 7491,
     "upgrade": {
+      "group": 199,
       "level": 6,
       "max": 7,
-      "group": 199,
       "bonusId": 7491,
       "itemLevel": 236,
       "currency": {
@@ -33738,9 +33738,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7492": {
     "id": 7492,
     "upgrade": {
+      "group": 199,
       "level": 7,
       "max": 7,
-      "group": 199,
       "bonusId": 7492,
       "itemLevel": 242,
       "currency": {
@@ -33754,9 +33754,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7493": {
     "id": 7493,
     "upgrade": {
+      "group": 200,
       "level": 1,
       "max": 7,
-      "group": 200,
       "bonusId": 7493,
       "itemLevel": 203
     }
@@ -33764,9 +33764,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7494": {
     "id": 7494,
     "upgrade": {
+      "group": 200,
       "level": 2,
       "max": 7,
-      "group": 200,
       "bonusId": 7494,
       "itemLevel": 210,
       "currency": {
@@ -33780,9 +33780,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7495": {
     "id": 7495,
     "upgrade": {
+      "group": 200,
       "level": 3,
       "max": 7,
-      "group": 200,
       "bonusId": 7495,
       "itemLevel": 216,
       "currency": {
@@ -33796,9 +33796,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7496": {
     "id": 7496,
     "upgrade": {
+      "group": 200,
       "level": 4,
       "max": 7,
-      "group": 200,
       "bonusId": 7496,
       "itemLevel": 223,
       "currency": {
@@ -33812,9 +33812,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7497": {
     "id": 7497,
     "upgrade": {
+      "group": 200,
       "level": 5,
       "max": 7,
-      "group": 200,
       "bonusId": 7497,
       "itemLevel": 229,
       "currency": {
@@ -33828,9 +33828,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7498": {
     "id": 7498,
     "upgrade": {
+      "group": 200,
       "level": 6,
       "max": 7,
-      "group": 200,
       "bonusId": 7498,
       "itemLevel": 236,
       "currency": {
@@ -33844,9 +33844,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7499": {
     "id": 7499,
     "upgrade": {
+      "group": 200,
       "level": 7,
       "max": 7,
-      "group": 200,
       "bonusId": 7499,
       "itemLevel": 242,
       "currency": {
@@ -33860,9 +33860,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7500": {
     "id": 7500,
     "upgrade": {
+      "group": 201,
       "level": 1,
       "max": 7,
-      "group": 201,
       "bonusId": 7500,
       "itemLevel": 203
     }
@@ -33870,9 +33870,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7501": {
     "id": 7501,
     "upgrade": {
+      "group": 201,
       "level": 2,
       "max": 7,
-      "group": 201,
       "bonusId": 7501,
       "itemLevel": 210,
       "currency": {
@@ -33886,9 +33886,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7502": {
     "id": 7502,
     "upgrade": {
+      "group": 201,
       "level": 3,
       "max": 7,
-      "group": 201,
       "bonusId": 7502,
       "itemLevel": 216,
       "currency": {
@@ -33902,9 +33902,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7503": {
     "id": 7503,
     "upgrade": {
+      "group": 201,
       "level": 4,
       "max": 7,
-      "group": 201,
       "bonusId": 7503,
       "itemLevel": 223,
       "currency": {
@@ -33918,9 +33918,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7504": {
     "id": 7504,
     "upgrade": {
+      "group": 201,
       "level": 5,
       "max": 7,
-      "group": 201,
       "bonusId": 7504,
       "itemLevel": 229,
       "currency": {
@@ -33934,9 +33934,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7505": {
     "id": 7505,
     "upgrade": {
+      "group": 201,
       "level": 6,
       "max": 7,
-      "group": 201,
       "bonusId": 7505,
       "itemLevel": 236,
       "currency": {
@@ -33950,9 +33950,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7506": {
     "id": 7506,
     "upgrade": {
+      "group": 201,
       "level": 7,
       "max": 7,
-      "group": 201,
       "bonusId": 7506,
       "itemLevel": 242,
       "currency": {
@@ -33966,9 +33966,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7507": {
     "id": 7507,
     "upgrade": {
+      "group": 203,
       "level": 1,
       "max": 7,
-      "group": 203,
       "bonusId": 7507,
       "itemLevel": 203
     }
@@ -33976,9 +33976,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7508": {
     "id": 7508,
     "upgrade": {
+      "group": 203,
       "level": 2,
       "max": 7,
-      "group": 203,
       "bonusId": 7508,
       "itemLevel": 210,
       "currency": {
@@ -33992,9 +33992,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7509": {
     "id": 7509,
     "upgrade": {
+      "group": 203,
       "level": 3,
       "max": 7,
-      "group": 203,
       "bonusId": 7509,
       "itemLevel": 216,
       "currency": {
@@ -34008,9 +34008,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7510": {
     "id": 7510,
     "upgrade": {
+      "group": 203,
       "level": 4,
       "max": 7,
-      "group": 203,
       "bonusId": 7510,
       "itemLevel": 223,
       "currency": {
@@ -34024,9 +34024,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7511": {
     "id": 7511,
     "upgrade": {
+      "group": 203,
       "level": 5,
       "max": 7,
-      "group": 203,
       "bonusId": 7511,
       "itemLevel": 229,
       "currency": {
@@ -34040,9 +34040,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7512": {
     "id": 7512,
     "upgrade": {
+      "group": 203,
       "level": 6,
       "max": 7,
-      "group": 203,
       "bonusId": 7512,
       "itemLevel": 236,
       "currency": {
@@ -34056,9 +34056,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7513": {
     "id": 7513,
     "upgrade": {
+      "group": 203,
       "level": 7,
       "max": 7,
-      "group": 203,
       "bonusId": 7513,
       "itemLevel": 242,
       "currency": {
@@ -34072,9 +34072,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7514": {
     "id": 7514,
     "upgrade": {
+      "group": 204,
       "level": 1,
       "max": 7,
-      "group": 204,
       "bonusId": 7514,
       "itemLevel": 203
     }
@@ -34082,9 +34082,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7515": {
     "id": 7515,
     "upgrade": {
+      "group": 204,
       "level": 2,
       "max": 7,
-      "group": 204,
       "bonusId": 7515,
       "itemLevel": 210,
       "currency": {
@@ -34098,9 +34098,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7516": {
     "id": 7516,
     "upgrade": {
+      "group": 204,
       "level": 3,
       "max": 7,
-      "group": 204,
       "bonusId": 7516,
       "itemLevel": 216,
       "currency": {
@@ -34114,9 +34114,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7517": {
     "id": 7517,
     "upgrade": {
+      "group": 204,
       "level": 4,
       "max": 7,
-      "group": 204,
       "bonusId": 7517,
       "itemLevel": 223,
       "currency": {
@@ -34130,9 +34130,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7518": {
     "id": 7518,
     "upgrade": {
+      "group": 204,
       "level": 5,
       "max": 7,
-      "group": 204,
       "bonusId": 7518,
       "itemLevel": 229,
       "currency": {
@@ -34146,9 +34146,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7519": {
     "id": 7519,
     "upgrade": {
+      "group": 204,
       "level": 6,
       "max": 7,
-      "group": 204,
       "bonusId": 7519,
       "itemLevel": 236,
       "currency": {
@@ -34162,9 +34162,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7520": {
     "id": 7520,
     "upgrade": {
+      "group": 204,
       "level": 7,
       "max": 7,
-      "group": 204,
       "bonusId": 7520,
       "itemLevel": 242,
       "currency": {
@@ -34178,9 +34178,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7521": {
     "id": 7521,
     "upgrade": {
+      "group": 202,
       "level": 1,
       "max": 7,
-      "group": 202,
       "bonusId": 7521,
       "itemLevel": 203
     }
@@ -34188,9 +34188,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7522": {
     "id": 7522,
     "upgrade": {
+      "group": 202,
       "level": 2,
       "max": 7,
-      "group": 202,
       "bonusId": 7522,
       "itemLevel": 210,
       "currency": {
@@ -34204,9 +34204,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7523": {
     "id": 7523,
     "upgrade": {
+      "group": 202,
       "level": 3,
       "max": 7,
-      "group": 202,
       "bonusId": 7523,
       "itemLevel": 216,
       "currency": {
@@ -34220,9 +34220,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7524": {
     "id": 7524,
     "upgrade": {
+      "group": 202,
       "level": 4,
       "max": 7,
-      "group": 202,
       "bonusId": 7524,
       "itemLevel": 223,
       "currency": {
@@ -34236,9 +34236,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7525": {
     "id": 7525,
     "upgrade": {
+      "group": 202,
       "level": 5,
       "max": 7,
-      "group": 202,
       "bonusId": 7525,
       "itemLevel": 229,
       "currency": {
@@ -34252,9 +34252,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7526": {
     "id": 7526,
     "upgrade": {
+      "group": 202,
       "level": 6,
       "max": 7,
-      "group": 202,
       "bonusId": 7526,
       "itemLevel": 236,
       "currency": {
@@ -34268,9 +34268,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7527": {
     "id": 7527,
     "upgrade": {
+      "group": 202,
       "level": 7,
       "max": 7,
-      "group": 202,
       "bonusId": 7527,
       "itemLevel": 242,
       "currency": {
@@ -34285,9 +34285,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7528,
     "tag": "Unranked",
     "upgrade": {
+      "group": 205,
       "level": 1,
       "max": 9,
-      "group": 205,
       "bonusId": 7528,
       "itemLevel": 249
     }
@@ -34296,9 +34296,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7529,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 205,
       "level": 3,
       "max": 9,
-      "group": 205,
       "bonusId": 7529,
       "itemLevel": 255,
       "currency": {
@@ -34313,9 +34313,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7530,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 205,
       "level": 5,
       "max": 9,
-      "group": 205,
       "bonusId": 7530,
       "itemLevel": 262,
       "currency": {
@@ -34330,9 +34330,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7531,
     "tag": "Rival II",
     "upgrade": {
+      "group": 205,
       "level": 7,
       "max": 9,
-      "group": 205,
       "bonusId": 7531,
       "itemLevel": 268,
       "currency": {
@@ -34347,9 +34347,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7532,
     "tag": "Elite",
     "upgrade": {
+      "group": 205,
       "level": 9,
       "max": 9,
-      "group": 205,
       "bonusId": 7532,
       "itemLevel": 275,
       "currency": {
@@ -34364,9 +34364,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7533,
     "tag": "Duelist",
     "upgrade": {
+      "group": 205,
       "level": 8,
       "max": 9,
-      "group": 205,
       "bonusId": 7533,
       "itemLevel": 272,
       "currency": {
@@ -34381,9 +34381,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7534,
     "tag": "Unranked",
     "upgrade": {
+      "group": 206,
       "level": 1,
       "max": 9,
-      "group": 206,
       "bonusId": 7534,
       "itemLevel": 249
     }
@@ -34392,9 +34392,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7535,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 206,
       "level": 3,
       "max": 9,
-      "group": 206,
       "bonusId": 7535,
       "itemLevel": 255,
       "currency": {
@@ -34409,9 +34409,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7536,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 206,
       "level": 5,
       "max": 9,
-      "group": 206,
       "bonusId": 7536,
       "itemLevel": 262,
       "currency": {
@@ -34426,9 +34426,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7537,
     "tag": "Rival II",
     "upgrade": {
+      "group": 206,
       "level": 7,
       "max": 9,
-      "group": 206,
       "bonusId": 7537,
       "itemLevel": 268,
       "currency": {
@@ -34443,9 +34443,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7538,
     "tag": "Elite",
     "upgrade": {
+      "group": 206,
       "level": 9,
       "max": 9,
-      "group": 206,
       "bonusId": 7538,
       "itemLevel": 275,
       "currency": {
@@ -34460,9 +34460,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7539,
     "tag": "Duelist",
     "upgrade": {
+      "group": 206,
       "level": 8,
       "max": 9,
-      "group": 206,
       "bonusId": 7539,
       "itemLevel": 272,
       "currency": {
@@ -34477,9 +34477,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7540,
     "tag": "Unranked",
     "upgrade": {
+      "group": 207,
       "level": 1,
       "max": 9,
-      "group": 207,
       "bonusId": 7540,
       "itemLevel": 249
     }
@@ -34488,9 +34488,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7541,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 207,
       "level": 3,
       "max": 9,
-      "group": 207,
       "bonusId": 7541,
       "itemLevel": 255,
       "currency": {
@@ -34505,9 +34505,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7542,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 207,
       "level": 5,
       "max": 9,
-      "group": 207,
       "bonusId": 7542,
       "itemLevel": 262,
       "currency": {
@@ -34522,9 +34522,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7543,
     "tag": "Rival II",
     "upgrade": {
+      "group": 207,
       "level": 7,
       "max": 9,
-      "group": 207,
       "bonusId": 7543,
       "itemLevel": 268,
       "currency": {
@@ -34539,9 +34539,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7544,
     "tag": "Elite",
     "upgrade": {
+      "group": 207,
       "level": 9,
       "max": 9,
-      "group": 207,
       "bonusId": 7544,
       "itemLevel": 275,
       "currency": {
@@ -34556,9 +34556,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7545,
     "tag": "Duelist",
     "upgrade": {
+      "group": 207,
       "level": 8,
       "max": 9,
-      "group": 207,
       "bonusId": 7545,
       "itemLevel": 272,
       "currency": {
@@ -34573,9 +34573,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7546,
     "tag": "Unranked",
     "upgrade": {
+      "group": 208,
       "level": 1,
       "max": 9,
-      "group": 208,
       "bonusId": 7546,
       "itemLevel": 249
     }
@@ -34584,9 +34584,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7547,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 208,
       "level": 3,
       "max": 9,
-      "group": 208,
       "bonusId": 7547,
       "itemLevel": 255,
       "currency": {
@@ -34601,9 +34601,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7548,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 208,
       "level": 5,
       "max": 9,
-      "group": 208,
       "bonusId": 7548,
       "itemLevel": 262,
       "currency": {
@@ -34618,9 +34618,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7549,
     "tag": "Rival II",
     "upgrade": {
+      "group": 208,
       "level": 7,
       "max": 9,
-      "group": 208,
       "bonusId": 7549,
       "itemLevel": 268,
       "currency": {
@@ -34635,9 +34635,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7550,
     "tag": "Elite",
     "upgrade": {
+      "group": 208,
       "level": 9,
       "max": 9,
-      "group": 208,
       "bonusId": 7550,
       "itemLevel": 275,
       "currency": {
@@ -34652,9 +34652,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7551,
     "tag": "Duelist",
     "upgrade": {
+      "group": 208,
       "level": 8,
       "max": 9,
-      "group": 208,
       "bonusId": 7551,
       "itemLevel": 272,
       "currency": {
@@ -34669,9 +34669,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7552,
     "tag": "Unranked",
     "upgrade": {
+      "group": 210,
       "level": 1,
       "max": 9,
-      "group": 210,
       "bonusId": 7552,
       "itemLevel": 249
     }
@@ -34680,9 +34680,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7553,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 210,
       "level": 3,
       "max": 9,
-      "group": 210,
       "bonusId": 7553,
       "itemLevel": 255,
       "currency": {
@@ -34697,9 +34697,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7554,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 210,
       "level": 5,
       "max": 9,
-      "group": 210,
       "bonusId": 7554,
       "itemLevel": 262,
       "currency": {
@@ -34714,9 +34714,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7555,
     "tag": "Rival II",
     "upgrade": {
+      "group": 210,
       "level": 7,
       "max": 9,
-      "group": 210,
       "bonusId": 7555,
       "itemLevel": 268,
       "currency": {
@@ -34731,9 +34731,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7556,
     "tag": "Elite",
     "upgrade": {
+      "group": 210,
       "level": 9,
       "max": 9,
-      "group": 210,
       "bonusId": 7556,
       "itemLevel": 275,
       "currency": {
@@ -34748,9 +34748,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7557,
     "tag": "Duelist",
     "upgrade": {
+      "group": 210,
       "level": 8,
       "max": 9,
-      "group": 210,
       "bonusId": 7557,
       "itemLevel": 272,
       "currency": {
@@ -34765,9 +34765,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7558,
     "tag": "Unranked",
     "upgrade": {
+      "group": 211,
       "level": 1,
       "max": 9,
-      "group": 211,
       "bonusId": 7558,
       "itemLevel": 249
     }
@@ -34776,9 +34776,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7559,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 211,
       "level": 3,
       "max": 9,
-      "group": 211,
       "bonusId": 7559,
       "itemLevel": 255,
       "currency": {
@@ -34793,9 +34793,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7560,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 211,
       "level": 5,
       "max": 9,
-      "group": 211,
       "bonusId": 7560,
       "itemLevel": 262,
       "currency": {
@@ -34810,9 +34810,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7561,
     "tag": "Rival II",
     "upgrade": {
+      "group": 211,
       "level": 7,
       "max": 9,
-      "group": 211,
       "bonusId": 7561,
       "itemLevel": 268,
       "currency": {
@@ -34827,9 +34827,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7562,
     "tag": "Elite",
     "upgrade": {
+      "group": 211,
       "level": 9,
       "max": 9,
-      "group": 211,
       "bonusId": 7562,
       "itemLevel": 275,
       "currency": {
@@ -34844,9 +34844,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7563,
     "tag": "Duelist",
     "upgrade": {
+      "group": 211,
       "level": 8,
       "max": 9,
-      "group": 211,
       "bonusId": 7563,
       "itemLevel": 272,
       "currency": {
@@ -34861,9 +34861,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7564,
     "tag": "Unranked",
     "upgrade": {
+      "group": 209,
       "level": 1,
       "max": 9,
-      "group": 209,
       "bonusId": 7564,
       "itemLevel": 249
     }
@@ -34872,9 +34872,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7565,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 209,
       "level": 3,
       "max": 9,
-      "group": 209,
       "bonusId": 7565,
       "itemLevel": 255,
       "currency": {
@@ -34889,9 +34889,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7566,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 209,
       "level": 5,
       "max": 9,
-      "group": 209,
       "bonusId": 7566,
       "itemLevel": 262,
       "currency": {
@@ -34906,9 +34906,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7567,
     "tag": "Rival II",
     "upgrade": {
+      "group": 209,
       "level": 7,
       "max": 9,
-      "group": 209,
       "bonusId": 7567,
       "itemLevel": 268,
       "currency": {
@@ -34923,9 +34923,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7568,
     "tag": "Elite",
     "upgrade": {
+      "group": 209,
       "level": 9,
       "max": 9,
-      "group": 209,
       "bonusId": 7568,
       "itemLevel": 275,
       "currency": {
@@ -34940,9 +34940,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7569,
     "tag": "Duelist",
     "upgrade": {
+      "group": 209,
       "level": 8,
       "max": 9,
-      "group": 209,
       "bonusId": 7569,
       "itemLevel": 272,
       "currency": {
@@ -35113,9 +35113,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7692": {
     "id": 7692,
     "upgrade": {
+      "group": 219,
       "level": 1,
       "max": 6,
-      "group": 219,
       "bonusId": 7692,
       "itemLevel": 200
     }
@@ -35123,9 +35123,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7693": {
     "id": 7693,
     "upgrade": {
+      "group": 219,
       "level": 2,
       "max": 6,
-      "group": 219,
       "bonusId": 7693,
       "itemLevel": 207,
       "currency": {
@@ -35139,9 +35139,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7694": {
     "id": 7694,
     "upgrade": {
+      "group": 219,
       "level": 3,
       "max": 6,
-      "group": 219,
       "bonusId": 7694,
       "itemLevel": 213,
       "currency": {
@@ -35155,9 +35155,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7695": {
     "id": 7695,
     "upgrade": {
+      "group": 219,
       "level": 4,
       "max": 6,
-      "group": 219,
       "bonusId": 7695,
       "itemLevel": 220,
       "currency": {
@@ -35171,9 +35171,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7696": {
     "id": 7696,
     "upgrade": {
+      "group": 219,
       "level": 5,
       "max": 6,
-      "group": 219,
       "bonusId": 7696,
       "itemLevel": 226,
       "currency": {
@@ -35187,9 +35187,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7697": {
     "id": 7697,
     "upgrade": {
+      "group": 219,
       "level": 6,
       "max": 6,
-      "group": 219,
       "bonusId": 7697,
       "itemLevel": 233,
       "currency": {
@@ -35985,9 +35985,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7759": {
     "id": 7759,
     "upgrade": {
+      "group": 227,
       "level": 1,
       "max": 12,
-      "group": 227,
       "bonusId": 7759,
       "itemLevel": 236,
       "currency": {
@@ -36001,9 +36001,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7760": {
     "id": 7760,
     "upgrade": {
+      "group": 227,
       "level": 2,
       "max": 12,
-      "group": 227,
       "bonusId": 7760,
       "itemLevel": 239,
       "currency": {
@@ -36017,9 +36017,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7761": {
     "id": 7761,
     "upgrade": {
+      "group": 227,
       "level": 3,
       "max": 12,
-      "group": 227,
       "bonusId": 7761,
       "itemLevel": 242,
       "currency": {
@@ -36033,9 +36033,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7762": {
     "id": 7762,
     "upgrade": {
+      "group": 227,
       "level": 4,
       "max": 12,
-      "group": 227,
       "bonusId": 7762,
       "itemLevel": 246,
       "currency": {
@@ -36049,9 +36049,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7763": {
     "id": 7763,
     "upgrade": {
+      "group": 227,
       "level": 5,
       "max": 12,
-      "group": 227,
       "bonusId": 7763,
       "itemLevel": 249,
       "currency": {
@@ -36065,9 +36065,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7764": {
     "id": 7764,
     "upgrade": {
+      "group": 227,
       "level": 6,
       "max": 12,
-      "group": 227,
       "bonusId": 7764,
       "itemLevel": 252,
       "currency": {
@@ -36081,9 +36081,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7765": {
     "id": 7765,
     "upgrade": {
+      "group": 227,
       "level": 7,
       "max": 12,
-      "group": 227,
       "bonusId": 7765,
       "itemLevel": 255,
       "currency": {
@@ -36097,9 +36097,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7766": {
     "id": 7766,
     "upgrade": {
+      "group": 227,
       "level": 8,
       "max": 12,
-      "group": 227,
       "bonusId": 7766,
       "itemLevel": 259,
       "currency": {
@@ -36113,9 +36113,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7767": {
     "id": 7767,
     "upgrade": {
+      "group": 227,
       "level": 9,
       "max": 12,
-      "group": 227,
       "bonusId": 7767,
       "itemLevel": 262,
       "currency": {
@@ -36129,9 +36129,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7768": {
     "id": 7768,
     "upgrade": {
+      "group": 227,
       "level": 10,
       "max": 12,
-      "group": 227,
       "bonusId": 7768,
       "itemLevel": 265,
       "currency": {
@@ -36145,9 +36145,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7769": {
     "id": 7769,
     "upgrade": {
+      "group": 227,
       "level": 11,
       "max": 12,
-      "group": 227,
       "bonusId": 7769,
       "itemLevel": 268,
       "currency": {
@@ -36161,9 +36161,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7770": {
     "id": 7770,
     "upgrade": {
+      "group": 227,
       "level": 12,
       "max": 12,
-      "group": 227,
       "bonusId": 7770,
       "itemLevel": 272,
       "currency": {
@@ -36177,9 +36177,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7773": {
     "id": 7773,
     "upgrade": {
+      "group": 228,
       "level": 1,
       "max": 12,
-      "group": 228,
       "bonusId": 7773,
       "itemLevel": 236,
       "currency": {
@@ -36193,9 +36193,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7774": {
     "id": 7774,
     "upgrade": {
+      "group": 228,
       "level": 2,
       "max": 12,
-      "group": 228,
       "bonusId": 7774,
       "itemLevel": 239,
       "currency": {
@@ -36209,9 +36209,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7775": {
     "id": 7775,
     "upgrade": {
+      "group": 228,
       "level": 3,
       "max": 12,
-      "group": 228,
       "bonusId": 7775,
       "itemLevel": 242,
       "currency": {
@@ -36225,9 +36225,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7776": {
     "id": 7776,
     "upgrade": {
+      "group": 228,
       "level": 4,
       "max": 12,
-      "group": 228,
       "bonusId": 7776,
       "itemLevel": 246,
       "currency": {
@@ -36241,9 +36241,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7777": {
     "id": 7777,
     "upgrade": {
+      "group": 228,
       "level": 5,
       "max": 12,
-      "group": 228,
       "bonusId": 7777,
       "itemLevel": 249,
       "currency": {
@@ -36257,9 +36257,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7778": {
     "id": 7778,
     "upgrade": {
+      "group": 228,
       "level": 6,
       "max": 12,
-      "group": 228,
       "bonusId": 7778,
       "itemLevel": 252,
       "currency": {
@@ -36273,9 +36273,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7779": {
     "id": 7779,
     "upgrade": {
+      "group": 228,
       "level": 7,
       "max": 12,
-      "group": 228,
       "bonusId": 7779,
       "itemLevel": 255,
       "currency": {
@@ -36289,9 +36289,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7780": {
     "id": 7780,
     "upgrade": {
+      "group": 228,
       "level": 8,
       "max": 12,
-      "group": 228,
       "bonusId": 7780,
       "itemLevel": 259,
       "currency": {
@@ -36305,9 +36305,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7781": {
     "id": 7781,
     "upgrade": {
+      "group": 228,
       "level": 9,
       "max": 12,
-      "group": 228,
       "bonusId": 7781,
       "itemLevel": 262,
       "currency": {
@@ -36321,9 +36321,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7782": {
     "id": 7782,
     "upgrade": {
+      "group": 228,
       "level": 10,
       "max": 12,
-      "group": 228,
       "bonusId": 7782,
       "itemLevel": 265,
       "currency": {
@@ -36337,9 +36337,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7783": {
     "id": 7783,
     "upgrade": {
+      "group": 228,
       "level": 11,
       "max": 12,
-      "group": 228,
       "bonusId": 7783,
       "itemLevel": 268,
       "currency": {
@@ -36353,9 +36353,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7784": {
     "id": 7784,
     "upgrade": {
+      "group": 228,
       "level": 12,
       "max": 12,
-      "group": 228,
       "bonusId": 7784,
       "itemLevel": 272,
       "currency": {
@@ -36369,9 +36369,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7787": {
     "id": 7787,
     "upgrade": {
+      "group": 229,
       "level": 1,
       "max": 12,
-      "group": 229,
       "bonusId": 7787,
       "itemLevel": 236,
       "currency": {
@@ -36385,9 +36385,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7788": {
     "id": 7788,
     "upgrade": {
+      "group": 229,
       "level": 2,
       "max": 12,
-      "group": 229,
       "bonusId": 7788,
       "itemLevel": 239,
       "currency": {
@@ -36401,9 +36401,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7789": {
     "id": 7789,
     "upgrade": {
+      "group": 229,
       "level": 3,
       "max": 12,
-      "group": 229,
       "bonusId": 7789,
       "itemLevel": 242,
       "currency": {
@@ -36417,9 +36417,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7790": {
     "id": 7790,
     "upgrade": {
+      "group": 229,
       "level": 4,
       "max": 12,
-      "group": 229,
       "bonusId": 7790,
       "itemLevel": 246,
       "currency": {
@@ -36433,9 +36433,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7791": {
     "id": 7791,
     "upgrade": {
+      "group": 229,
       "level": 5,
       "max": 12,
-      "group": 229,
       "bonusId": 7791,
       "itemLevel": 249,
       "currency": {
@@ -36449,9 +36449,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7792": {
     "id": 7792,
     "upgrade": {
+      "group": 229,
       "level": 6,
       "max": 12,
-      "group": 229,
       "bonusId": 7792,
       "itemLevel": 252,
       "currency": {
@@ -36465,9 +36465,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7793": {
     "id": 7793,
     "upgrade": {
+      "group": 229,
       "level": 7,
       "max": 12,
-      "group": 229,
       "bonusId": 7793,
       "itemLevel": 255,
       "currency": {
@@ -36481,9 +36481,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7794": {
     "id": 7794,
     "upgrade": {
+      "group": 229,
       "level": 8,
       "max": 12,
-      "group": 229,
       "bonusId": 7794,
       "itemLevel": 259,
       "currency": {
@@ -36497,9 +36497,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7795": {
     "id": 7795,
     "upgrade": {
+      "group": 229,
       "level": 9,
       "max": 12,
-      "group": 229,
       "bonusId": 7795,
       "itemLevel": 262,
       "currency": {
@@ -36513,9 +36513,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7796": {
     "id": 7796,
     "upgrade": {
+      "group": 229,
       "level": 10,
       "max": 12,
-      "group": 229,
       "bonusId": 7796,
       "itemLevel": 265,
       "currency": {
@@ -36529,9 +36529,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7797": {
     "id": 7797,
     "upgrade": {
+      "group": 229,
       "level": 11,
       "max": 12,
-      "group": 229,
       "bonusId": 7797,
       "itemLevel": 268,
       "currency": {
@@ -36545,9 +36545,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7798": {
     "id": 7798,
     "upgrade": {
+      "group": 229,
       "level": 12,
       "max": 12,
-      "group": 229,
       "bonusId": 7798,
       "itemLevel": 272,
       "currency": {
@@ -36561,9 +36561,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7801": {
     "id": 7801,
     "upgrade": {
+      "group": 224,
       "level": 1,
       "max": 12,
-      "group": 224,
       "bonusId": 7801,
       "itemLevel": 236,
       "currency": {
@@ -36577,9 +36577,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7802": {
     "id": 7802,
     "upgrade": {
+      "group": 224,
       "level": 2,
       "max": 12,
-      "group": 224,
       "bonusId": 7802,
       "itemLevel": 239,
       "currency": {
@@ -36593,9 +36593,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7803": {
     "id": 7803,
     "upgrade": {
+      "group": 224,
       "level": 3,
       "max": 12,
-      "group": 224,
       "bonusId": 7803,
       "itemLevel": 242,
       "currency": {
@@ -36609,9 +36609,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7804": {
     "id": 7804,
     "upgrade": {
+      "group": 224,
       "level": 4,
       "max": 12,
-      "group": 224,
       "bonusId": 7804,
       "itemLevel": 246,
       "currency": {
@@ -36625,9 +36625,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7805": {
     "id": 7805,
     "upgrade": {
+      "group": 224,
       "level": 5,
       "max": 12,
-      "group": 224,
       "bonusId": 7805,
       "itemLevel": 249,
       "currency": {
@@ -36641,9 +36641,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7806": {
     "id": 7806,
     "upgrade": {
+      "group": 224,
       "level": 6,
       "max": 12,
-      "group": 224,
       "bonusId": 7806,
       "itemLevel": 252,
       "currency": {
@@ -36657,9 +36657,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7807": {
     "id": 7807,
     "upgrade": {
+      "group": 224,
       "level": 7,
       "max": 12,
-      "group": 224,
       "bonusId": 7807,
       "itemLevel": 255,
       "currency": {
@@ -36673,9 +36673,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7808": {
     "id": 7808,
     "upgrade": {
+      "group": 224,
       "level": 8,
       "max": 12,
-      "group": 224,
       "bonusId": 7808,
       "itemLevel": 259,
       "currency": {
@@ -36689,9 +36689,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7809": {
     "id": 7809,
     "upgrade": {
+      "group": 224,
       "level": 9,
       "max": 12,
-      "group": 224,
       "bonusId": 7809,
       "itemLevel": 262,
       "currency": {
@@ -36705,9 +36705,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7810": {
     "id": 7810,
     "upgrade": {
+      "group": 224,
       "level": 10,
       "max": 12,
-      "group": 224,
       "bonusId": 7810,
       "itemLevel": 265,
       "currency": {
@@ -36721,9 +36721,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7811": {
     "id": 7811,
     "upgrade": {
+      "group": 224,
       "level": 11,
       "max": 12,
-      "group": 224,
       "bonusId": 7811,
       "itemLevel": 268,
       "currency": {
@@ -36737,9 +36737,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7812": {
     "id": 7812,
     "upgrade": {
+      "group": 224,
       "level": 12,
       "max": 12,
-      "group": 224,
       "bonusId": 7812,
       "itemLevel": 272,
       "currency": {
@@ -36753,9 +36753,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7815": {
     "id": 7815,
     "upgrade": {
+      "group": 223,
       "level": 1,
       "max": 12,
-      "group": 223,
       "bonusId": 7815,
       "itemLevel": 236,
       "currency": {
@@ -36769,9 +36769,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7816": {
     "id": 7816,
     "upgrade": {
+      "group": 223,
       "level": 2,
       "max": 12,
-      "group": 223,
       "bonusId": 7816,
       "itemLevel": 239,
       "currency": {
@@ -36785,9 +36785,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7817": {
     "id": 7817,
     "upgrade": {
+      "group": 223,
       "level": 3,
       "max": 12,
-      "group": 223,
       "bonusId": 7817,
       "itemLevel": 242,
       "currency": {
@@ -36801,9 +36801,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7818": {
     "id": 7818,
     "upgrade": {
+      "group": 223,
       "level": 4,
       "max": 12,
-      "group": 223,
       "bonusId": 7818,
       "itemLevel": 246,
       "currency": {
@@ -36817,9 +36817,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7819": {
     "id": 7819,
     "upgrade": {
+      "group": 223,
       "level": 5,
       "max": 12,
-      "group": 223,
       "bonusId": 7819,
       "itemLevel": 249,
       "currency": {
@@ -36833,9 +36833,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7820": {
     "id": 7820,
     "upgrade": {
+      "group": 223,
       "level": 6,
       "max": 12,
-      "group": 223,
       "bonusId": 7820,
       "itemLevel": 252,
       "currency": {
@@ -36849,9 +36849,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7821": {
     "id": 7821,
     "upgrade": {
+      "group": 223,
       "level": 7,
       "max": 12,
-      "group": 223,
       "bonusId": 7821,
       "itemLevel": 255,
       "currency": {
@@ -36865,9 +36865,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7822": {
     "id": 7822,
     "upgrade": {
+      "group": 223,
       "level": 8,
       "max": 12,
-      "group": 223,
       "bonusId": 7822,
       "itemLevel": 259,
       "currency": {
@@ -36881,9 +36881,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7823": {
     "id": 7823,
     "upgrade": {
+      "group": 223,
       "level": 9,
       "max": 12,
-      "group": 223,
       "bonusId": 7823,
       "itemLevel": 262,
       "currency": {
@@ -36897,9 +36897,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7824": {
     "id": 7824,
     "upgrade": {
+      "group": 223,
       "level": 10,
       "max": 12,
-      "group": 223,
       "bonusId": 7824,
       "itemLevel": 265,
       "currency": {
@@ -36913,9 +36913,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7825": {
     "id": 7825,
     "upgrade": {
+      "group": 223,
       "level": 11,
       "max": 12,
-      "group": 223,
       "bonusId": 7825,
       "itemLevel": 268,
       "currency": {
@@ -36929,9 +36929,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7826": {
     "id": 7826,
     "upgrade": {
+      "group": 223,
       "level": 12,
       "max": 12,
-      "group": 223,
       "bonusId": 7826,
       "itemLevel": 272,
       "currency": {
@@ -36945,9 +36945,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7829": {
     "id": 7829,
     "upgrade": {
+      "group": 226,
       "level": 1,
       "max": 12,
-      "group": 226,
       "bonusId": 7829,
       "itemLevel": 236,
       "currency": {
@@ -36961,9 +36961,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7830": {
     "id": 7830,
     "upgrade": {
+      "group": 226,
       "level": 2,
       "max": 12,
-      "group": 226,
       "bonusId": 7830,
       "itemLevel": 239,
       "currency": {
@@ -36977,9 +36977,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7831": {
     "id": 7831,
     "upgrade": {
+      "group": 226,
       "level": 3,
       "max": 12,
-      "group": 226,
       "bonusId": 7831,
       "itemLevel": 242,
       "currency": {
@@ -36993,9 +36993,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7832": {
     "id": 7832,
     "upgrade": {
+      "group": 226,
       "level": 4,
       "max": 12,
-      "group": 226,
       "bonusId": 7832,
       "itemLevel": 246,
       "currency": {
@@ -37009,9 +37009,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7833": {
     "id": 7833,
     "upgrade": {
+      "group": 226,
       "level": 5,
       "max": 12,
-      "group": 226,
       "bonusId": 7833,
       "itemLevel": 249,
       "currency": {
@@ -37025,9 +37025,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7834": {
     "id": 7834,
     "upgrade": {
+      "group": 226,
       "level": 6,
       "max": 12,
-      "group": 226,
       "bonusId": 7834,
       "itemLevel": 252,
       "currency": {
@@ -37041,9 +37041,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7835": {
     "id": 7835,
     "upgrade": {
+      "group": 226,
       "level": 7,
       "max": 12,
-      "group": 226,
       "bonusId": 7835,
       "itemLevel": 255,
       "currency": {
@@ -37057,9 +37057,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7836": {
     "id": 7836,
     "upgrade": {
+      "group": 226,
       "level": 8,
       "max": 12,
-      "group": 226,
       "bonusId": 7836,
       "itemLevel": 259,
       "currency": {
@@ -37073,9 +37073,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7837": {
     "id": 7837,
     "upgrade": {
+      "group": 226,
       "level": 9,
       "max": 12,
-      "group": 226,
       "bonusId": 7837,
       "itemLevel": 262,
       "currency": {
@@ -37089,9 +37089,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7838": {
     "id": 7838,
     "upgrade": {
+      "group": 226,
       "level": 10,
       "max": 12,
-      "group": 226,
       "bonusId": 7838,
       "itemLevel": 265,
       "currency": {
@@ -37105,9 +37105,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7839": {
     "id": 7839,
     "upgrade": {
+      "group": 226,
       "level": 11,
       "max": 12,
-      "group": 226,
       "bonusId": 7839,
       "itemLevel": 268,
       "currency": {
@@ -37121,9 +37121,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7840": {
     "id": 7840,
     "upgrade": {
+      "group": 226,
       "level": 12,
       "max": 12,
-      "group": 226,
       "bonusId": 7840,
       "itemLevel": 272,
       "currency": {
@@ -37137,9 +37137,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7843": {
     "id": 7843,
     "upgrade": {
+      "group": 225,
       "level": 1,
       "max": 12,
-      "group": 225,
       "bonusId": 7843,
       "itemLevel": 236,
       "currency": {
@@ -37153,9 +37153,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7844": {
     "id": 7844,
     "upgrade": {
+      "group": 225,
       "level": 2,
       "max": 12,
-      "group": 225,
       "bonusId": 7844,
       "itemLevel": 239,
       "currency": {
@@ -37169,9 +37169,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7845": {
     "id": 7845,
     "upgrade": {
+      "group": 225,
       "level": 3,
       "max": 12,
-      "group": 225,
       "bonusId": 7845,
       "itemLevel": 242,
       "currency": {
@@ -37185,9 +37185,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7846": {
     "id": 7846,
     "upgrade": {
+      "group": 225,
       "level": 4,
       "max": 12,
-      "group": 225,
       "bonusId": 7846,
       "itemLevel": 246,
       "currency": {
@@ -37201,9 +37201,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7847": {
     "id": 7847,
     "upgrade": {
+      "group": 225,
       "level": 5,
       "max": 12,
-      "group": 225,
       "bonusId": 7847,
       "itemLevel": 249,
       "currency": {
@@ -37217,9 +37217,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7848": {
     "id": 7848,
     "upgrade": {
+      "group": 225,
       "level": 6,
       "max": 12,
-      "group": 225,
       "bonusId": 7848,
       "itemLevel": 252,
       "currency": {
@@ -37233,9 +37233,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7849": {
     "id": 7849,
     "upgrade": {
+      "group": 225,
       "level": 7,
       "max": 12,
-      "group": 225,
       "bonusId": 7849,
       "itemLevel": 255,
       "currency": {
@@ -37249,9 +37249,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7850": {
     "id": 7850,
     "upgrade": {
+      "group": 225,
       "level": 8,
       "max": 12,
-      "group": 225,
       "bonusId": 7850,
       "itemLevel": 259,
       "currency": {
@@ -37265,9 +37265,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7851": {
     "id": 7851,
     "upgrade": {
+      "group": 225,
       "level": 9,
       "max": 12,
-      "group": 225,
       "bonusId": 7851,
       "itemLevel": 262,
       "currency": {
@@ -37281,9 +37281,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7852": {
     "id": 7852,
     "upgrade": {
+      "group": 225,
       "level": 10,
       "max": 12,
-      "group": 225,
       "bonusId": 7852,
       "itemLevel": 265,
       "currency": {
@@ -37297,9 +37297,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7853": {
     "id": 7853,
     "upgrade": {
+      "group": 225,
       "level": 11,
       "max": 12,
-      "group": 225,
       "bonusId": 7853,
       "itemLevel": 268,
       "currency": {
@@ -37313,9 +37313,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7854": {
     "id": 7854,
     "upgrade": {
+      "group": 225,
       "level": 12,
       "max": 12,
-      "group": 225,
       "bonusId": 7854,
       "itemLevel": 272,
       "currency": {
@@ -37510,9 +37510,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7893,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 205,
       "level": 2,
       "max": 9,
-      "group": 205,
       "bonusId": 7893,
       "itemLevel": 252,
       "currency": {
@@ -37527,9 +37527,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7894,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 205,
       "level": 4,
       "max": 9,
-      "group": 205,
       "bonusId": 7894,
       "itemLevel": 259,
       "currency": {
@@ -37544,9 +37544,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7895,
     "tag": "Rival I",
     "upgrade": {
+      "group": 205,
       "level": 6,
       "max": 9,
-      "group": 205,
       "bonusId": 7895,
       "itemLevel": 265,
       "currency": {
@@ -37561,9 +37561,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7896,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 206,
       "level": 2,
       "max": 9,
-      "group": 206,
       "bonusId": 7896,
       "itemLevel": 252,
       "currency": {
@@ -37578,9 +37578,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7897,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 206,
       "level": 4,
       "max": 9,
-      "group": 206,
       "bonusId": 7897,
       "itemLevel": 259,
       "currency": {
@@ -37595,9 +37595,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7898,
     "tag": "Rival I",
     "upgrade": {
+      "group": 206,
       "level": 6,
       "max": 9,
-      "group": 206,
       "bonusId": 7898,
       "itemLevel": 265,
       "currency": {
@@ -37612,9 +37612,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7899,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 207,
       "level": 2,
       "max": 9,
-      "group": 207,
       "bonusId": 7899,
       "itemLevel": 252,
       "currency": {
@@ -37629,9 +37629,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7900,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 207,
       "level": 4,
       "max": 9,
-      "group": 207,
       "bonusId": 7900,
       "itemLevel": 259,
       "currency": {
@@ -37646,9 +37646,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7901,
     "tag": "Rival I",
     "upgrade": {
+      "group": 207,
       "level": 6,
       "max": 9,
-      "group": 207,
       "bonusId": 7901,
       "itemLevel": 265,
       "currency": {
@@ -37663,9 +37663,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7902,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 208,
       "level": 2,
       "max": 9,
-      "group": 208,
       "bonusId": 7902,
       "itemLevel": 252,
       "currency": {
@@ -37680,9 +37680,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7903,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 208,
       "level": 4,
       "max": 9,
-      "group": 208,
       "bonusId": 7903,
       "itemLevel": 259,
       "currency": {
@@ -37697,9 +37697,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7904,
     "tag": "Rival I",
     "upgrade": {
+      "group": 208,
       "level": 6,
       "max": 9,
-      "group": 208,
       "bonusId": 7904,
       "itemLevel": 265,
       "currency": {
@@ -37714,9 +37714,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7905,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 210,
       "level": 2,
       "max": 9,
-      "group": 210,
       "bonusId": 7905,
       "itemLevel": 252,
       "currency": {
@@ -37731,9 +37731,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7906,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 210,
       "level": 4,
       "max": 9,
-      "group": 210,
       "bonusId": 7906,
       "itemLevel": 259,
       "currency": {
@@ -37748,9 +37748,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7907,
     "tag": "Rival I",
     "upgrade": {
+      "group": 210,
       "level": 6,
       "max": 9,
-      "group": 210,
       "bonusId": 7907,
       "itemLevel": 265,
       "currency": {
@@ -37765,9 +37765,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7908,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 211,
       "level": 2,
       "max": 9,
-      "group": 211,
       "bonusId": 7908,
       "itemLevel": 252,
       "currency": {
@@ -37782,9 +37782,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7909,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 211,
       "level": 4,
       "max": 9,
-      "group": 211,
       "bonusId": 7909,
       "itemLevel": 259,
       "currency": {
@@ -37799,9 +37799,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7910,
     "tag": "Rival I",
     "upgrade": {
+      "group": 211,
       "level": 6,
       "max": 9,
-      "group": 211,
       "bonusId": 7910,
       "itemLevel": 265,
       "currency": {
@@ -37816,9 +37816,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7911,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 209,
       "level": 2,
       "max": 9,
-      "group": 209,
       "bonusId": 7911,
       "itemLevel": 252,
       "currency": {
@@ -37833,9 +37833,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7912,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 209,
       "level": 4,
       "max": 9,
-      "group": 209,
       "bonusId": 7912,
       "itemLevel": 259,
       "currency": {
@@ -37850,9 +37850,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7913,
     "tag": "Rival I",
     "upgrade": {
+      "group": 209,
       "level": 6,
       "max": 9,
-      "group": 209,
       "bonusId": 7913,
       "itemLevel": 265,
       "currency": {
@@ -37906,22 +37906,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7920": {
     "id": 7920,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "7921": {
     "id": 7921,
-    "ilevel": "15 @plvl 1 - 330 @plvl 330",
+    "ilevel": "2 @plvl 1 - 343 @plvl 343",
     "curveId": 959
   },
   "7922": {
     "id": 7922,
-    "ilevel": "17 @plvl 1 - 332 @plvl 332",
+    "ilevel": "4 @plvl 1 - 345 @plvl 345",
     "curveId": 961
   },
   "7923": {
     "id": 7923,
-    "ilevel": "16 @plvl 1 - 331 @plvl 331",
+    "ilevel": "3 @plvl 1 - 344 @plvl 344",
     "curveId": 960
   },
   "7924": {
@@ -38167,9 +38167,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "7959": {
     "id": 7959,
     "upgrade": {
+      "group": 197,
       "level": 3,
       "max": 3,
-      "group": 197,
       "bonusId": 7959,
       "itemLevel": 239
     }
@@ -38192,67 +38192,67 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7963": {
     "id": 7963,
-    "ilevel": "206 @plvl 45 - 327 @plvl 327",
-    "curveId": 30724
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "7964": {
     "id": 7964,
-    "ilevel": "219 @plvl 45 - 340 @plvl 340",
-    "curveId": 30725,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "7965": {
     "id": 7965,
-    "ilevel": "232 @plvl 45 - 353 @plvl 353",
-    "curveId": 30726,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "7966": {
     "id": 7966,
-    "ilevel": "180 @plvl 50 - 180 @plvl 180",
-    "curveId": 30728
+    "ilevel": "1 @plvl 1 - 322 @plvl 322",
+    "curveId": 16525
   },
   "7967": {
     "id": 7967,
-    "ilevel": "193 @plvl 50 - 193 @plvl 193",
-    "curveId": 30729
+    "ilevel": "1 @plvl 1 - 322 @plvl 322",
+    "curveId": 16526
   },
   "7968": {
     "id": 7968,
-    "ilevel": "202 @plvl 50 - 292 @plvl 292",
-    "curveId": 30730
+    "ilevel": "5 @plvl 1 - 357 @plvl 357",
+    "curveId": 16520
   },
   "7969": {
     "id": 7969,
-    "ilevel": "212 @plvl 50 - 302 @plvl 302",
-    "curveId": 30731
+    "ilevel": "5 @plvl 1 - 357 @plvl 357",
+    "curveId": 16522
   },
   "7970": {
     "id": 7970,
-    "ilevel": "215 @plvl 50 - 305 @plvl 305",
-    "curveId": 30732,
+    "ilevel": "10 @plvl 1 - 362 @plvl 362",
+    "curveId": 16527,
     "quality": 3
   },
   "7971": {
     "id": 7971,
-    "ilevel": "225 @plvl 50 - 315 @plvl 315",
-    "curveId": 30733,
+    "ilevel": "10 @plvl 1 - 362 @plvl 362",
+    "curveId": 16528,
     "quality": 3
   },
   "7972": {
     "id": 7972,
-    "ilevel": "285 @plvl 1 - 285 @plvl 285",
-    "curveId": 30734
+    "ilevel": "15 @plvl 1 - 367 @plvl 367",
+    "curveId": 16529
   },
   "7973": {
     "id": 7973,
-    "ilevel": "285 @plvl 1 - 285 @plvl 285",
-    "curveId": 30735
+    "ilevel": "15 @plvl 1 - 367 @plvl 367",
+    "curveId": 16530
   },
   "7978": {
     "id": 7978,
-    "ilevel": "226 @plvl 45 - 346 @plvl 346",
-    "curveId": 30771
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 5451
   },
   "7980": {
     "id": 7980,
@@ -40633,9 +40633,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8189": {
     "id": 8189,
     "upgrade": {
+      "group": 241,
       "level": 1,
       "max": 12,
-      "group": 241,
       "bonusId": 8189,
       "itemLevel": 262,
       "currency": {
@@ -40649,9 +40649,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8190": {
     "id": 8190,
     "upgrade": {
+      "group": 241,
       "level": 2,
       "max": 12,
-      "group": 241,
       "bonusId": 8190,
       "itemLevel": 265,
       "currency": {
@@ -40665,9 +40665,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8191": {
     "id": 8191,
     "upgrade": {
+      "group": 241,
       "level": 3,
       "max": 12,
-      "group": 241,
       "bonusId": 8191,
       "itemLevel": 268,
       "currency": {
@@ -40681,9 +40681,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8192": {
     "id": 8192,
     "upgrade": {
+      "group": 241,
       "level": 4,
       "max": 12,
-      "group": 241,
       "bonusId": 8192,
       "itemLevel": 272,
       "currency": {
@@ -40697,9 +40697,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8193": {
     "id": 8193,
     "upgrade": {
+      "group": 241,
       "level": 5,
       "max": 12,
-      "group": 241,
       "bonusId": 8193,
       "itemLevel": 275,
       "currency": {
@@ -40713,9 +40713,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8194": {
     "id": 8194,
     "upgrade": {
+      "group": 241,
       "level": 6,
       "max": 12,
-      "group": 241,
       "bonusId": 8194,
       "itemLevel": 278,
       "currency": {
@@ -40729,9 +40729,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8195": {
     "id": 8195,
     "upgrade": {
+      "group": 241,
       "level": 7,
       "max": 12,
-      "group": 241,
       "bonusId": 8195,
       "itemLevel": 282,
       "currency": {
@@ -40745,9 +40745,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8196": {
     "id": 8196,
     "upgrade": {
+      "group": 241,
       "level": 8,
       "max": 12,
-      "group": 241,
       "bonusId": 8196,
       "itemLevel": 285,
       "currency": {
@@ -40761,9 +40761,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8197": {
     "id": 8197,
     "upgrade": {
+      "group": 241,
       "level": 9,
       "max": 12,
-      "group": 241,
       "bonusId": 8197,
       "itemLevel": 288,
       "currency": {
@@ -40777,9 +40777,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8198": {
     "id": 8198,
     "upgrade": {
+      "group": 241,
       "level": 10,
       "max": 12,
-      "group": 241,
       "bonusId": 8198,
       "itemLevel": 291,
       "currency": {
@@ -40793,9 +40793,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8199": {
     "id": 8199,
     "upgrade": {
+      "group": 241,
       "level": 11,
       "max": 12,
-      "group": 241,
       "bonusId": 8199,
       "itemLevel": 294,
       "currency": {
@@ -40809,9 +40809,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8200": {
     "id": 8200,
     "upgrade": {
+      "group": 241,
       "level": 12,
       "max": 12,
-      "group": 241,
       "bonusId": 8200,
       "itemLevel": 298,
       "currency": {
@@ -40825,9 +40825,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8203": {
     "id": 8203,
     "upgrade": {
+      "group": 240,
       "level": 1,
       "max": 12,
-      "group": 240,
       "bonusId": 8203,
       "itemLevel": 262,
       "currency": {
@@ -40841,9 +40841,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8204": {
     "id": 8204,
     "upgrade": {
+      "group": 240,
       "level": 2,
       "max": 12,
-      "group": 240,
       "bonusId": 8204,
       "itemLevel": 265,
       "currency": {
@@ -40857,9 +40857,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8205": {
     "id": 8205,
     "upgrade": {
+      "group": 240,
       "level": 3,
       "max": 12,
-      "group": 240,
       "bonusId": 8205,
       "itemLevel": 268,
       "currency": {
@@ -40873,9 +40873,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8206": {
     "id": 8206,
     "upgrade": {
+      "group": 240,
       "level": 4,
       "max": 12,
-      "group": 240,
       "bonusId": 8206,
       "itemLevel": 272,
       "currency": {
@@ -40889,9 +40889,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8207": {
     "id": 8207,
     "upgrade": {
+      "group": 240,
       "level": 5,
       "max": 12,
-      "group": 240,
       "bonusId": 8207,
       "itemLevel": 275,
       "currency": {
@@ -40905,9 +40905,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8208": {
     "id": 8208,
     "upgrade": {
+      "group": 240,
       "level": 6,
       "max": 12,
-      "group": 240,
       "bonusId": 8208,
       "itemLevel": 278,
       "currency": {
@@ -40921,9 +40921,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8209": {
     "id": 8209,
     "upgrade": {
+      "group": 240,
       "level": 7,
       "max": 12,
-      "group": 240,
       "bonusId": 8209,
       "itemLevel": 282,
       "currency": {
@@ -40937,9 +40937,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8210": {
     "id": 8210,
     "upgrade": {
+      "group": 240,
       "level": 8,
       "max": 12,
-      "group": 240,
       "bonusId": 8210,
       "itemLevel": 285,
       "currency": {
@@ -40953,9 +40953,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8211": {
     "id": 8211,
     "upgrade": {
+      "group": 240,
       "level": 9,
       "max": 12,
-      "group": 240,
       "bonusId": 8211,
       "itemLevel": 288,
       "currency": {
@@ -40969,9 +40969,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8212": {
     "id": 8212,
     "upgrade": {
+      "group": 240,
       "level": 10,
       "max": 12,
-      "group": 240,
       "bonusId": 8212,
       "itemLevel": 291,
       "currency": {
@@ -40985,9 +40985,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8213": {
     "id": 8213,
     "upgrade": {
+      "group": 240,
       "level": 11,
       "max": 12,
-      "group": 240,
       "bonusId": 8213,
       "itemLevel": 294,
       "currency": {
@@ -41001,9 +41001,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8214": {
     "id": 8214,
     "upgrade": {
+      "group": 240,
       "level": 12,
       "max": 12,
-      "group": 240,
       "bonusId": 8214,
       "itemLevel": 298,
       "currency": {
@@ -41017,9 +41017,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8217": {
     "id": 8217,
     "upgrade": {
+      "group": 246,
       "level": 1,
       "max": 12,
-      "group": 246,
       "bonusId": 8217,
       "itemLevel": 262,
       "currency": {
@@ -41033,9 +41033,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8218": {
     "id": 8218,
     "upgrade": {
+      "group": 246,
       "level": 2,
       "max": 12,
-      "group": 246,
       "bonusId": 8218,
       "itemLevel": 265,
       "currency": {
@@ -41049,9 +41049,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8219": {
     "id": 8219,
     "upgrade": {
+      "group": 246,
       "level": 3,
       "max": 12,
-      "group": 246,
       "bonusId": 8219,
       "itemLevel": 268,
       "currency": {
@@ -41065,9 +41065,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8220": {
     "id": 8220,
     "upgrade": {
+      "group": 246,
       "level": 4,
       "max": 12,
-      "group": 246,
       "bonusId": 8220,
       "itemLevel": 272,
       "currency": {
@@ -41081,9 +41081,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8221": {
     "id": 8221,
     "upgrade": {
+      "group": 246,
       "level": 5,
       "max": 12,
-      "group": 246,
       "bonusId": 8221,
       "itemLevel": 275,
       "currency": {
@@ -41097,9 +41097,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8222": {
     "id": 8222,
     "upgrade": {
+      "group": 246,
       "level": 6,
       "max": 12,
-      "group": 246,
       "bonusId": 8222,
       "itemLevel": 278,
       "currency": {
@@ -41113,9 +41113,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8223": {
     "id": 8223,
     "upgrade": {
+      "group": 246,
       "level": 7,
       "max": 12,
-      "group": 246,
       "bonusId": 8223,
       "itemLevel": 282,
       "currency": {
@@ -41129,9 +41129,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8224": {
     "id": 8224,
     "upgrade": {
+      "group": 246,
       "level": 8,
       "max": 12,
-      "group": 246,
       "bonusId": 8224,
       "itemLevel": 285,
       "currency": {
@@ -41145,9 +41145,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8225": {
     "id": 8225,
     "upgrade": {
+      "group": 246,
       "level": 9,
       "max": 12,
-      "group": 246,
       "bonusId": 8225,
       "itemLevel": 288,
       "currency": {
@@ -41161,9 +41161,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8226": {
     "id": 8226,
     "upgrade": {
+      "group": 246,
       "level": 10,
       "max": 12,
-      "group": 246,
       "bonusId": 8226,
       "itemLevel": 291,
       "currency": {
@@ -41177,9 +41177,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8227": {
     "id": 8227,
     "upgrade": {
+      "group": 246,
       "level": 11,
       "max": 12,
-      "group": 246,
       "bonusId": 8227,
       "itemLevel": 294,
       "currency": {
@@ -41193,9 +41193,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8228": {
     "id": 8228,
     "upgrade": {
+      "group": 246,
       "level": 12,
       "max": 12,
-      "group": 246,
       "bonusId": 8228,
       "itemLevel": 298,
       "currency": {
@@ -41209,9 +41209,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8231": {
     "id": 8231,
     "upgrade": {
+      "group": 242,
       "level": 1,
       "max": 12,
-      "group": 242,
       "bonusId": 8231,
       "itemLevel": 262,
       "currency": {
@@ -41225,9 +41225,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8232": {
     "id": 8232,
     "upgrade": {
+      "group": 242,
       "level": 2,
       "max": 12,
-      "group": 242,
       "bonusId": 8232,
       "itemLevel": 265,
       "currency": {
@@ -41241,9 +41241,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8233": {
     "id": 8233,
     "upgrade": {
+      "group": 242,
       "level": 3,
       "max": 12,
-      "group": 242,
       "bonusId": 8233,
       "itemLevel": 268,
       "currency": {
@@ -41257,9 +41257,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8234": {
     "id": 8234,
     "upgrade": {
+      "group": 242,
       "level": 4,
       "max": 12,
-      "group": 242,
       "bonusId": 8234,
       "itemLevel": 272,
       "currency": {
@@ -41273,9 +41273,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8235": {
     "id": 8235,
     "upgrade": {
+      "group": 242,
       "level": 5,
       "max": 12,
-      "group": 242,
       "bonusId": 8235,
       "itemLevel": 275,
       "currency": {
@@ -41289,9 +41289,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8236": {
     "id": 8236,
     "upgrade": {
+      "group": 242,
       "level": 6,
       "max": 12,
-      "group": 242,
       "bonusId": 8236,
       "itemLevel": 278,
       "currency": {
@@ -41305,9 +41305,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8237": {
     "id": 8237,
     "upgrade": {
+      "group": 242,
       "level": 7,
       "max": 12,
-      "group": 242,
       "bonusId": 8237,
       "itemLevel": 282,
       "currency": {
@@ -41321,9 +41321,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8238": {
     "id": 8238,
     "upgrade": {
+      "group": 242,
       "level": 8,
       "max": 12,
-      "group": 242,
       "bonusId": 8238,
       "itemLevel": 285,
       "currency": {
@@ -41337,9 +41337,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8239": {
     "id": 8239,
     "upgrade": {
+      "group": 242,
       "level": 9,
       "max": 12,
-      "group": 242,
       "bonusId": 8239,
       "itemLevel": 288,
       "currency": {
@@ -41353,9 +41353,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8240": {
     "id": 8240,
     "upgrade": {
+      "group": 242,
       "level": 10,
       "max": 12,
-      "group": 242,
       "bonusId": 8240,
       "itemLevel": 291,
       "currency": {
@@ -41369,9 +41369,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8241": {
     "id": 8241,
     "upgrade": {
+      "group": 242,
       "level": 11,
       "max": 12,
-      "group": 242,
       "bonusId": 8241,
       "itemLevel": 294,
       "currency": {
@@ -41385,9 +41385,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8242": {
     "id": 8242,
     "upgrade": {
+      "group": 242,
       "level": 12,
       "max": 12,
-      "group": 242,
       "bonusId": 8242,
       "itemLevel": 298,
       "currency": {
@@ -41401,9 +41401,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8245": {
     "id": 8245,
     "upgrade": {
+      "group": 243,
       "level": 1,
       "max": 12,
-      "group": 243,
       "bonusId": 8245,
       "itemLevel": 262,
       "currency": {
@@ -41417,9 +41417,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8246": {
     "id": 8246,
     "upgrade": {
+      "group": 243,
       "level": 2,
       "max": 12,
-      "group": 243,
       "bonusId": 8246,
       "itemLevel": 265,
       "currency": {
@@ -41433,9 +41433,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8247": {
     "id": 8247,
     "upgrade": {
+      "group": 243,
       "level": 3,
       "max": 12,
-      "group": 243,
       "bonusId": 8247,
       "itemLevel": 268,
       "currency": {
@@ -41449,9 +41449,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8248": {
     "id": 8248,
     "upgrade": {
+      "group": 243,
       "level": 4,
       "max": 12,
-      "group": 243,
       "bonusId": 8248,
       "itemLevel": 272,
       "currency": {
@@ -41465,9 +41465,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8249": {
     "id": 8249,
     "upgrade": {
+      "group": 243,
       "level": 5,
       "max": 12,
-      "group": 243,
       "bonusId": 8249,
       "itemLevel": 275,
       "currency": {
@@ -41481,9 +41481,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8250": {
     "id": 8250,
     "upgrade": {
+      "group": 243,
       "level": 6,
       "max": 12,
-      "group": 243,
       "bonusId": 8250,
       "itemLevel": 278,
       "currency": {
@@ -41497,9 +41497,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8251": {
     "id": 8251,
     "upgrade": {
+      "group": 243,
       "level": 7,
       "max": 12,
-      "group": 243,
       "bonusId": 8251,
       "itemLevel": 282,
       "currency": {
@@ -41513,9 +41513,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8252": {
     "id": 8252,
     "upgrade": {
+      "group": 243,
       "level": 8,
       "max": 12,
-      "group": 243,
       "bonusId": 8252,
       "itemLevel": 285,
       "currency": {
@@ -41529,9 +41529,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8253": {
     "id": 8253,
     "upgrade": {
+      "group": 243,
       "level": 9,
       "max": 12,
-      "group": 243,
       "bonusId": 8253,
       "itemLevel": 288,
       "currency": {
@@ -41545,9 +41545,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8254": {
     "id": 8254,
     "upgrade": {
+      "group": 243,
       "level": 10,
       "max": 12,
-      "group": 243,
       "bonusId": 8254,
       "itemLevel": 291,
       "currency": {
@@ -41561,9 +41561,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8255": {
     "id": 8255,
     "upgrade": {
+      "group": 243,
       "level": 11,
       "max": 12,
-      "group": 243,
       "bonusId": 8255,
       "itemLevel": 294,
       "currency": {
@@ -41577,9 +41577,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8256": {
     "id": 8256,
     "upgrade": {
+      "group": 243,
       "level": 12,
       "max": 12,
-      "group": 243,
       "bonusId": 8256,
       "itemLevel": 298,
       "currency": {
@@ -41593,9 +41593,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8259": {
     "id": 8259,
     "upgrade": {
+      "group": 245,
       "level": 1,
       "max": 12,
-      "group": 245,
       "bonusId": 8259,
       "itemLevel": 262,
       "currency": {
@@ -41609,9 +41609,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8260": {
     "id": 8260,
     "upgrade": {
+      "group": 245,
       "level": 2,
       "max": 12,
-      "group": 245,
       "bonusId": 8260,
       "itemLevel": 265,
       "currency": {
@@ -41625,9 +41625,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8261": {
     "id": 8261,
     "upgrade": {
+      "group": 245,
       "level": 3,
       "max": 12,
-      "group": 245,
       "bonusId": 8261,
       "itemLevel": 268,
       "currency": {
@@ -41641,9 +41641,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8262": {
     "id": 8262,
     "upgrade": {
+      "group": 245,
       "level": 4,
       "max": 12,
-      "group": 245,
       "bonusId": 8262,
       "itemLevel": 272,
       "currency": {
@@ -41657,9 +41657,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8263": {
     "id": 8263,
     "upgrade": {
+      "group": 245,
       "level": 5,
       "max": 12,
-      "group": 245,
       "bonusId": 8263,
       "itemLevel": 275,
       "currency": {
@@ -41673,9 +41673,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8264": {
     "id": 8264,
     "upgrade": {
+      "group": 245,
       "level": 6,
       "max": 12,
-      "group": 245,
       "bonusId": 8264,
       "itemLevel": 278,
       "currency": {
@@ -41689,9 +41689,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8265": {
     "id": 8265,
     "upgrade": {
+      "group": 245,
       "level": 7,
       "max": 12,
-      "group": 245,
       "bonusId": 8265,
       "itemLevel": 282,
       "currency": {
@@ -41705,9 +41705,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8266": {
     "id": 8266,
     "upgrade": {
+      "group": 245,
       "level": 8,
       "max": 12,
-      "group": 245,
       "bonusId": 8266,
       "itemLevel": 285,
       "currency": {
@@ -41721,9 +41721,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8267": {
     "id": 8267,
     "upgrade": {
+      "group": 245,
       "level": 9,
       "max": 12,
-      "group": 245,
       "bonusId": 8267,
       "itemLevel": 288,
       "currency": {
@@ -41737,9 +41737,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8268": {
     "id": 8268,
     "upgrade": {
+      "group": 245,
       "level": 10,
       "max": 12,
-      "group": 245,
       "bonusId": 8268,
       "itemLevel": 291,
       "currency": {
@@ -41753,9 +41753,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8269": {
     "id": 8269,
     "upgrade": {
+      "group": 245,
       "level": 11,
       "max": 12,
-      "group": 245,
       "bonusId": 8269,
       "itemLevel": 294,
       "currency": {
@@ -41769,9 +41769,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8270": {
     "id": 8270,
     "upgrade": {
+      "group": 245,
       "level": 12,
       "max": 12,
-      "group": 245,
       "bonusId": 8270,
       "itemLevel": 298,
       "currency": {
@@ -41785,9 +41785,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8273": {
     "id": 8273,
     "upgrade": {
+      "group": 244,
       "level": 1,
       "max": 12,
-      "group": 244,
       "bonusId": 8273,
       "itemLevel": 262,
       "currency": {
@@ -41801,9 +41801,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8274": {
     "id": 8274,
     "upgrade": {
+      "group": 244,
       "level": 2,
       "max": 12,
-      "group": 244,
       "bonusId": 8274,
       "itemLevel": 265,
       "currency": {
@@ -41817,9 +41817,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8275": {
     "id": 8275,
     "upgrade": {
+      "group": 244,
       "level": 3,
       "max": 12,
-      "group": 244,
       "bonusId": 8275,
       "itemLevel": 268,
       "currency": {
@@ -41833,9 +41833,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8276": {
     "id": 8276,
     "upgrade": {
+      "group": 244,
       "level": 4,
       "max": 12,
-      "group": 244,
       "bonusId": 8276,
       "itemLevel": 272,
       "currency": {
@@ -41849,9 +41849,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8277": {
     "id": 8277,
     "upgrade": {
+      "group": 244,
       "level": 5,
       "max": 12,
-      "group": 244,
       "bonusId": 8277,
       "itemLevel": 275,
       "currency": {
@@ -41865,9 +41865,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8278": {
     "id": 8278,
     "upgrade": {
+      "group": 244,
       "level": 6,
       "max": 12,
-      "group": 244,
       "bonusId": 8278,
       "itemLevel": 278,
       "currency": {
@@ -41881,9 +41881,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8279": {
     "id": 8279,
     "upgrade": {
+      "group": 244,
       "level": 7,
       "max": 12,
-      "group": 244,
       "bonusId": 8279,
       "itemLevel": 282,
       "currency": {
@@ -41897,9 +41897,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8280": {
     "id": 8280,
     "upgrade": {
+      "group": 244,
       "level": 8,
       "max": 12,
-      "group": 244,
       "bonusId": 8280,
       "itemLevel": 285,
       "currency": {
@@ -41913,9 +41913,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8281": {
     "id": 8281,
     "upgrade": {
+      "group": 244,
       "level": 9,
       "max": 12,
-      "group": 244,
       "bonusId": 8281,
       "itemLevel": 288,
       "currency": {
@@ -41929,9 +41929,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8282": {
     "id": 8282,
     "upgrade": {
+      "group": 244,
       "level": 10,
       "max": 12,
-      "group": 244,
       "bonusId": 8282,
       "itemLevel": 291,
       "currency": {
@@ -41945,9 +41945,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8283": {
     "id": 8283,
     "upgrade": {
+      "group": 244,
       "level": 11,
       "max": 12,
-      "group": 244,
       "bonusId": 8283,
       "itemLevel": 294,
       "currency": {
@@ -41961,9 +41961,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8284": {
     "id": 8284,
     "upgrade": {
+      "group": 244,
       "level": 12,
       "max": 12,
-      "group": 244,
       "bonusId": 8284,
       "itemLevel": 298,
       "currency": {
@@ -41981,9 +41981,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8290": {
     "id": 8290,
     "upgrade": {
+      "group": 257,
       "level": 1,
       "max": 7,
-      "group": 257,
       "bonusId": 8290,
       "itemLevel": 229
     }
@@ -41991,9 +41991,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8291": {
     "id": 8291,
     "upgrade": {
+      "group": 257,
       "level": 2,
       "max": 7,
-      "group": 257,
       "bonusId": 8291,
       "itemLevel": 236,
       "currency": {
@@ -42007,9 +42007,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8292": {
     "id": 8292,
     "upgrade": {
+      "group": 257,
       "level": 3,
       "max": 7,
-      "group": 257,
       "bonusId": 8292,
       "itemLevel": 242,
       "currency": {
@@ -42023,9 +42023,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8293": {
     "id": 8293,
     "upgrade": {
+      "group": 257,
       "level": 4,
       "max": 7,
-      "group": 257,
       "bonusId": 8293,
       "itemLevel": 249,
       "currency": {
@@ -42039,9 +42039,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8294": {
     "id": 8294,
     "upgrade": {
+      "group": 257,
       "level": 5,
       "max": 7,
-      "group": 257,
       "bonusId": 8294,
       "itemLevel": 255,
       "currency": {
@@ -42055,9 +42055,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8295": {
     "id": 8295,
     "upgrade": {
+      "group": 257,
       "level": 6,
       "max": 7,
-      "group": 257,
       "bonusId": 8295,
       "itemLevel": 262,
       "currency": {
@@ -42071,9 +42071,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8296": {
     "id": 8296,
     "upgrade": {
+      "group": 257,
       "level": 7,
       "max": 7,
-      "group": 257,
       "bonusId": 8296,
       "itemLevel": 268,
       "currency": {
@@ -42087,9 +42087,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8297": {
     "id": 8297,
     "upgrade": {
+      "group": 258,
       "level": 1,
       "max": 7,
-      "group": 258,
       "bonusId": 8297,
       "itemLevel": 229
     }
@@ -42097,9 +42097,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8298": {
     "id": 8298,
     "upgrade": {
+      "group": 258,
       "level": 2,
       "max": 7,
-      "group": 258,
       "bonusId": 8298,
       "itemLevel": 236,
       "currency": {
@@ -42113,9 +42113,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8299": {
     "id": 8299,
     "upgrade": {
+      "group": 258,
       "level": 3,
       "max": 7,
-      "group": 258,
       "bonusId": 8299,
       "itemLevel": 242,
       "currency": {
@@ -42129,9 +42129,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8300": {
     "id": 8300,
     "upgrade": {
+      "group": 258,
       "level": 4,
       "max": 7,
-      "group": 258,
       "bonusId": 8300,
       "itemLevel": 249,
       "currency": {
@@ -42145,9 +42145,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8301": {
     "id": 8301,
     "upgrade": {
+      "group": 258,
       "level": 5,
       "max": 7,
-      "group": 258,
       "bonusId": 8301,
       "itemLevel": 255,
       "currency": {
@@ -42161,9 +42161,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8302": {
     "id": 8302,
     "upgrade": {
+      "group": 258,
       "level": 6,
       "max": 7,
-      "group": 258,
       "bonusId": 8302,
       "itemLevel": 262,
       "currency": {
@@ -42177,9 +42177,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8303": {
     "id": 8303,
     "upgrade": {
+      "group": 258,
       "level": 7,
       "max": 7,
-      "group": 258,
       "bonusId": 8303,
       "itemLevel": 268,
       "currency": {
@@ -42193,9 +42193,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8304": {
     "id": 8304,
     "upgrade": {
+      "group": 256,
       "level": 1,
       "max": 7,
-      "group": 256,
       "bonusId": 8304,
       "itemLevel": 229
     }
@@ -42203,9 +42203,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8305": {
     "id": 8305,
     "upgrade": {
+      "group": 256,
       "level": 2,
       "max": 7,
-      "group": 256,
       "bonusId": 8305,
       "itemLevel": 236,
       "currency": {
@@ -42219,9 +42219,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8306": {
     "id": 8306,
     "upgrade": {
+      "group": 256,
       "level": 3,
       "max": 7,
-      "group": 256,
       "bonusId": 8306,
       "itemLevel": 242,
       "currency": {
@@ -42235,9 +42235,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8307": {
     "id": 8307,
     "upgrade": {
+      "group": 256,
       "level": 4,
       "max": 7,
-      "group": 256,
       "bonusId": 8307,
       "itemLevel": 249,
       "currency": {
@@ -42251,9 +42251,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8308": {
     "id": 8308,
     "upgrade": {
+      "group": 256,
       "level": 5,
       "max": 7,
-      "group": 256,
       "bonusId": 8308,
       "itemLevel": 255,
       "currency": {
@@ -42267,9 +42267,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8309": {
     "id": 8309,
     "upgrade": {
+      "group": 256,
       "level": 6,
       "max": 7,
-      "group": 256,
       "bonusId": 8309,
       "itemLevel": 262,
       "currency": {
@@ -42283,9 +42283,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8310": {
     "id": 8310,
     "upgrade": {
+      "group": 256,
       "level": 7,
       "max": 7,
-      "group": 256,
       "bonusId": 8310,
       "itemLevel": 268,
       "currency": {
@@ -42299,9 +42299,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8311": {
     "id": 8311,
     "upgrade": {
+      "group": 255,
       "level": 1,
       "max": 7,
-      "group": 255,
       "bonusId": 8311,
       "itemLevel": 229
     }
@@ -42309,9 +42309,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8312": {
     "id": 8312,
     "upgrade": {
+      "group": 255,
       "level": 2,
       "max": 7,
-      "group": 255,
       "bonusId": 8312,
       "itemLevel": 236,
       "currency": {
@@ -42325,9 +42325,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8313": {
     "id": 8313,
     "upgrade": {
+      "group": 255,
       "level": 3,
       "max": 7,
-      "group": 255,
       "bonusId": 8313,
       "itemLevel": 242,
       "currency": {
@@ -42341,9 +42341,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8314": {
     "id": 8314,
     "upgrade": {
+      "group": 255,
       "level": 4,
       "max": 7,
-      "group": 255,
       "bonusId": 8314,
       "itemLevel": 249,
       "currency": {
@@ -42357,9 +42357,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8315": {
     "id": 8315,
     "upgrade": {
+      "group": 255,
       "level": 5,
       "max": 7,
-      "group": 255,
       "bonusId": 8315,
       "itemLevel": 255,
       "currency": {
@@ -42373,9 +42373,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8316": {
     "id": 8316,
     "upgrade": {
+      "group": 255,
       "level": 6,
       "max": 7,
-      "group": 255,
       "bonusId": 8316,
       "itemLevel": 262,
       "currency": {
@@ -42389,9 +42389,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8317": {
     "id": 8317,
     "upgrade": {
+      "group": 255,
       "level": 7,
       "max": 7,
-      "group": 255,
       "bonusId": 8317,
       "itemLevel": 268,
       "currency": {
@@ -42405,9 +42405,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8318": {
     "id": 8318,
     "upgrade": {
+      "group": 260,
       "level": 1,
       "max": 7,
-      "group": 260,
       "bonusId": 8318,
       "itemLevel": 229
     }
@@ -42415,9 +42415,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8319": {
     "id": 8319,
     "upgrade": {
+      "group": 260,
       "level": 2,
       "max": 7,
-      "group": 260,
       "bonusId": 8319,
       "itemLevel": 236,
       "currency": {
@@ -42431,9 +42431,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8320": {
     "id": 8320,
     "upgrade": {
+      "group": 260,
       "level": 3,
       "max": 7,
-      "group": 260,
       "bonusId": 8320,
       "itemLevel": 242,
       "currency": {
@@ -42447,9 +42447,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8321": {
     "id": 8321,
     "upgrade": {
+      "group": 260,
       "level": 4,
       "max": 7,
-      "group": 260,
       "bonusId": 8321,
       "itemLevel": 249,
       "currency": {
@@ -42463,9 +42463,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8322": {
     "id": 8322,
     "upgrade": {
+      "group": 260,
       "level": 5,
       "max": 7,
-      "group": 260,
       "bonusId": 8322,
       "itemLevel": 255,
       "currency": {
@@ -42479,9 +42479,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8323": {
     "id": 8323,
     "upgrade": {
+      "group": 260,
       "level": 6,
       "max": 7,
-      "group": 260,
       "bonusId": 8323,
       "itemLevel": 262,
       "currency": {
@@ -42495,9 +42495,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8324": {
     "id": 8324,
     "upgrade": {
+      "group": 260,
       "level": 7,
       "max": 7,
-      "group": 260,
       "bonusId": 8324,
       "itemLevel": 268,
       "currency": {
@@ -42511,9 +42511,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8325": {
     "id": 8325,
     "upgrade": {
+      "group": 259,
       "level": 1,
       "max": 7,
-      "group": 259,
       "bonusId": 8325,
       "itemLevel": 229
     }
@@ -42521,9 +42521,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8326": {
     "id": 8326,
     "upgrade": {
+      "group": 259,
       "level": 2,
       "max": 7,
-      "group": 259,
       "bonusId": 8326,
       "itemLevel": 236,
       "currency": {
@@ -42537,9 +42537,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8327": {
     "id": 8327,
     "upgrade": {
+      "group": 259,
       "level": 3,
       "max": 7,
-      "group": 259,
       "bonusId": 8327,
       "itemLevel": 242,
       "currency": {
@@ -42553,9 +42553,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8328": {
     "id": 8328,
     "upgrade": {
+      "group": 259,
       "level": 4,
       "max": 7,
-      "group": 259,
       "bonusId": 8328,
       "itemLevel": 249,
       "currency": {
@@ -42569,9 +42569,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8329": {
     "id": 8329,
     "upgrade": {
+      "group": 259,
       "level": 5,
       "max": 7,
-      "group": 259,
       "bonusId": 8329,
       "itemLevel": 255,
       "currency": {
@@ -42585,9 +42585,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8330": {
     "id": 8330,
     "upgrade": {
+      "group": 259,
       "level": 6,
       "max": 7,
-      "group": 259,
       "bonusId": 8330,
       "itemLevel": 262,
       "currency": {
@@ -42601,9 +42601,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8331": {
     "id": 8331,
     "upgrade": {
+      "group": 259,
       "level": 7,
       "max": 7,
-      "group": 259,
       "bonusId": 8331,
       "itemLevel": 268,
       "currency": {
@@ -42617,9 +42617,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8332": {
     "id": 8332,
     "upgrade": {
+      "group": 254,
       "level": 1,
       "max": 7,
-      "group": 254,
       "bonusId": 8332,
       "itemLevel": 229
     }
@@ -42627,9 +42627,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8333": {
     "id": 8333,
     "upgrade": {
+      "group": 254,
       "level": 2,
       "max": 7,
-      "group": 254,
       "bonusId": 8333,
       "itemLevel": 236,
       "currency": {
@@ -42643,9 +42643,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8334": {
     "id": 8334,
     "upgrade": {
+      "group": 254,
       "level": 3,
       "max": 7,
-      "group": 254,
       "bonusId": 8334,
       "itemLevel": 242,
       "currency": {
@@ -42659,9 +42659,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8335": {
     "id": 8335,
     "upgrade": {
+      "group": 254,
       "level": 4,
       "max": 7,
-      "group": 254,
       "bonusId": 8335,
       "itemLevel": 249,
       "currency": {
@@ -42675,9 +42675,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8336": {
     "id": 8336,
     "upgrade": {
+      "group": 254,
       "level": 5,
       "max": 7,
-      "group": 254,
       "bonusId": 8336,
       "itemLevel": 255,
       "currency": {
@@ -42691,9 +42691,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8337": {
     "id": 8337,
     "upgrade": {
+      "group": 254,
       "level": 6,
       "max": 7,
-      "group": 254,
       "bonusId": 8337,
       "itemLevel": 262,
       "currency": {
@@ -42707,9 +42707,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "8338": {
     "id": 8338,
     "upgrade": {
+      "group": 254,
       "level": 7,
       "max": 7,
-      "group": 254,
       "bonusId": 8338,
       "itemLevel": 268,
       "currency": {
@@ -42724,9 +42724,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8339,
     "tag": "Unranked",
     "upgrade": {
+      "group": 250,
       "level": 1,
       "max": 9,
-      "group": 250,
       "bonusId": 8339,
       "itemLevel": 275
     }
@@ -42735,9 +42735,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8340,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 250,
       "level": 3,
       "max": 9,
-      "group": 250,
       "bonusId": 8340,
       "itemLevel": 282,
       "currency": {
@@ -42752,9 +42752,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8341,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 250,
       "level": 5,
       "max": 9,
-      "group": 250,
       "bonusId": 8341,
       "itemLevel": 288,
       "currency": {
@@ -42769,9 +42769,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8342,
     "tag": "Rival II",
     "upgrade": {
+      "group": 250,
       "level": 7,
       "max": 9,
-      "group": 250,
       "bonusId": 8342,
       "itemLevel": 294,
       "currency": {
@@ -42786,9 +42786,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8343,
     "tag": "Elite",
     "upgrade": {
+      "group": 250,
       "level": 9,
       "max": 9,
-      "group": 250,
       "bonusId": 8343,
       "itemLevel": 301,
       "currency": {
@@ -42803,9 +42803,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8344,
     "tag": "Duelist",
     "upgrade": {
+      "group": 250,
       "level": 8,
       "max": 9,
-      "group": 250,
       "bonusId": 8344,
       "itemLevel": 298,
       "currency": {
@@ -42820,9 +42820,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8345,
     "tag": "Unranked",
     "upgrade": {
+      "group": 251,
       "level": 1,
       "max": 9,
-      "group": 251,
       "bonusId": 8345,
       "itemLevel": 275
     }
@@ -42831,9 +42831,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8346,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 251,
       "level": 3,
       "max": 9,
-      "group": 251,
       "bonusId": 8346,
       "itemLevel": 282,
       "currency": {
@@ -42848,9 +42848,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8347,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 251,
       "level": 5,
       "max": 9,
-      "group": 251,
       "bonusId": 8347,
       "itemLevel": 288,
       "currency": {
@@ -42865,9 +42865,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8348,
     "tag": "Rival II",
     "upgrade": {
+      "group": 251,
       "level": 7,
       "max": 9,
-      "group": 251,
       "bonusId": 8348,
       "itemLevel": 294,
       "currency": {
@@ -42882,9 +42882,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8349,
     "tag": "Elite",
     "upgrade": {
+      "group": 251,
       "level": 9,
       "max": 9,
-      "group": 251,
       "bonusId": 8349,
       "itemLevel": 301,
       "currency": {
@@ -42899,9 +42899,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8350,
     "tag": "Duelist",
     "upgrade": {
+      "group": 251,
       "level": 8,
       "max": 9,
-      "group": 251,
       "bonusId": 8350,
       "itemLevel": 298,
       "currency": {
@@ -42916,9 +42916,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8351,
     "tag": "Unranked",
     "upgrade": {
+      "group": 249,
       "level": 1,
       "max": 9,
-      "group": 249,
       "bonusId": 8351,
       "itemLevel": 275
     }
@@ -42927,9 +42927,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8352,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 249,
       "level": 3,
       "max": 9,
-      "group": 249,
       "bonusId": 8352,
       "itemLevel": 282,
       "currency": {
@@ -42944,9 +42944,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8353,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 249,
       "level": 5,
       "max": 9,
-      "group": 249,
       "bonusId": 8353,
       "itemLevel": 288,
       "currency": {
@@ -42961,9 +42961,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8354,
     "tag": "Rival II",
     "upgrade": {
+      "group": 249,
       "level": 7,
       "max": 9,
-      "group": 249,
       "bonusId": 8354,
       "itemLevel": 294,
       "currency": {
@@ -42978,9 +42978,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8355,
     "tag": "Elite",
     "upgrade": {
+      "group": 249,
       "level": 9,
       "max": 9,
-      "group": 249,
       "bonusId": 8355,
       "itemLevel": 301,
       "currency": {
@@ -42995,9 +42995,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8356,
     "tag": "Duelist",
     "upgrade": {
+      "group": 249,
       "level": 8,
       "max": 9,
-      "group": 249,
       "bonusId": 8356,
       "itemLevel": 298,
       "currency": {
@@ -43012,9 +43012,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8357,
     "tag": "Unranked",
     "upgrade": {
+      "group": 248,
       "level": 1,
       "max": 9,
-      "group": 248,
       "bonusId": 8357,
       "itemLevel": 275
     }
@@ -43023,9 +43023,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8358,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 248,
       "level": 3,
       "max": 9,
-      "group": 248,
       "bonusId": 8358,
       "itemLevel": 282,
       "currency": {
@@ -43040,9 +43040,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8359,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 248,
       "level": 5,
       "max": 9,
-      "group": 248,
       "bonusId": 8359,
       "itemLevel": 288,
       "currency": {
@@ -43057,9 +43057,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8360,
     "tag": "Rival II",
     "upgrade": {
+      "group": 248,
       "level": 7,
       "max": 9,
-      "group": 248,
       "bonusId": 8360,
       "itemLevel": 294,
       "currency": {
@@ -43074,9 +43074,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8361,
     "tag": "Elite",
     "upgrade": {
+      "group": 248,
       "level": 9,
       "max": 9,
-      "group": 248,
       "bonusId": 8361,
       "itemLevel": 301,
       "currency": {
@@ -43091,9 +43091,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8362,
     "tag": "Duelist",
     "upgrade": {
+      "group": 248,
       "level": 8,
       "max": 9,
-      "group": 248,
       "bonusId": 8362,
       "itemLevel": 298,
       "currency": {
@@ -43108,9 +43108,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8363,
     "tag": "Unranked",
     "upgrade": {
+      "group": 253,
       "level": 1,
       "max": 9,
-      "group": 253,
       "bonusId": 8363,
       "itemLevel": 275
     }
@@ -43119,9 +43119,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8364,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 253,
       "level": 3,
       "max": 9,
-      "group": 253,
       "bonusId": 8364,
       "itemLevel": 282,
       "currency": {
@@ -43136,9 +43136,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8365,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 253,
       "level": 5,
       "max": 9,
-      "group": 253,
       "bonusId": 8365,
       "itemLevel": 288,
       "currency": {
@@ -43153,9 +43153,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8366,
     "tag": "Rival II",
     "upgrade": {
+      "group": 253,
       "level": 7,
       "max": 9,
-      "group": 253,
       "bonusId": 8366,
       "itemLevel": 294,
       "currency": {
@@ -43170,9 +43170,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8367,
     "tag": "Elite",
     "upgrade": {
+      "group": 253,
       "level": 9,
       "max": 9,
-      "group": 253,
       "bonusId": 8367,
       "itemLevel": 301,
       "currency": {
@@ -43187,9 +43187,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8368,
     "tag": "Duelist",
     "upgrade": {
+      "group": 253,
       "level": 8,
       "max": 9,
-      "group": 253,
       "bonusId": 8368,
       "itemLevel": 298,
       "currency": {
@@ -43204,9 +43204,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8369,
     "tag": "Unranked",
     "upgrade": {
+      "group": 252,
       "level": 1,
       "max": 9,
-      "group": 252,
       "bonusId": 8369,
       "itemLevel": 275
     }
@@ -43215,9 +43215,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8370,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 252,
       "level": 3,
       "max": 9,
-      "group": 252,
       "bonusId": 8370,
       "itemLevel": 282,
       "currency": {
@@ -43232,9 +43232,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8371,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 252,
       "level": 5,
       "max": 9,
-      "group": 252,
       "bonusId": 8371,
       "itemLevel": 288,
       "currency": {
@@ -43249,9 +43249,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8372,
     "tag": "Rival II",
     "upgrade": {
+      "group": 252,
       "level": 7,
       "max": 9,
-      "group": 252,
       "bonusId": 8372,
       "itemLevel": 294,
       "currency": {
@@ -43266,9 +43266,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8373,
     "tag": "Elite",
     "upgrade": {
+      "group": 252,
       "level": 9,
       "max": 9,
-      "group": 252,
       "bonusId": 8373,
       "itemLevel": 301,
       "currency": {
@@ -43283,9 +43283,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8374,
     "tag": "Duelist",
     "upgrade": {
+      "group": 252,
       "level": 8,
       "max": 9,
-      "group": 252,
       "bonusId": 8374,
       "itemLevel": 298,
       "currency": {
@@ -43300,9 +43300,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8375,
     "tag": "Unranked",
     "upgrade": {
+      "group": 247,
       "level": 1,
       "max": 9,
-      "group": 247,
       "bonusId": 8375,
       "itemLevel": 275
     }
@@ -43311,9 +43311,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8376,
     "tag": "Combatant II",
     "upgrade": {
+      "group": 247,
       "level": 3,
       "max": 9,
-      "group": 247,
       "bonusId": 8376,
       "itemLevel": 282,
       "currency": {
@@ -43328,9 +43328,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8377,
     "tag": "Challenger II",
     "upgrade": {
+      "group": 247,
       "level": 5,
       "max": 9,
-      "group": 247,
       "bonusId": 8377,
       "itemLevel": 288,
       "currency": {
@@ -43345,9 +43345,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8378,
     "tag": "Rival II",
     "upgrade": {
+      "group": 247,
       "level": 7,
       "max": 9,
-      "group": 247,
       "bonusId": 8378,
       "itemLevel": 294,
       "currency": {
@@ -43362,9 +43362,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8379,
     "tag": "Elite",
     "upgrade": {
+      "group": 247,
       "level": 9,
       "max": 9,
-      "group": 247,
       "bonusId": 8379,
       "itemLevel": 301,
       "currency": {
@@ -43379,9 +43379,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8380,
     "tag": "Duelist",
     "upgrade": {
+      "group": 247,
       "level": 8,
       "max": 9,
-      "group": 247,
       "bonusId": 8380,
       "itemLevel": 298,
       "currency": {
@@ -43396,9 +43396,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8381,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 250,
       "level": 2,
       "max": 9,
-      "group": 250,
       "bonusId": 8381,
       "itemLevel": 278,
       "currency": {
@@ -43413,9 +43413,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8382,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 250,
       "level": 4,
       "max": 9,
-      "group": 250,
       "bonusId": 8382,
       "itemLevel": 285,
       "currency": {
@@ -43430,9 +43430,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8383,
     "tag": "Rival I",
     "upgrade": {
+      "group": 250,
       "level": 6,
       "max": 9,
-      "group": 250,
       "bonusId": 8383,
       "itemLevel": 291,
       "currency": {
@@ -43447,9 +43447,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8384,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 251,
       "level": 2,
       "max": 9,
-      "group": 251,
       "bonusId": 8384,
       "itemLevel": 278,
       "currency": {
@@ -43464,9 +43464,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8385,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 251,
       "level": 4,
       "max": 9,
-      "group": 251,
       "bonusId": 8385,
       "itemLevel": 285,
       "currency": {
@@ -43481,9 +43481,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8386,
     "tag": "Rival I",
     "upgrade": {
+      "group": 251,
       "level": 6,
       "max": 9,
-      "group": 251,
       "bonusId": 8386,
       "itemLevel": 291,
       "currency": {
@@ -43498,9 +43498,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8387,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 249,
       "level": 2,
       "max": 9,
-      "group": 249,
       "bonusId": 8387,
       "itemLevel": 278,
       "currency": {
@@ -43515,9 +43515,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8388,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 249,
       "level": 4,
       "max": 9,
-      "group": 249,
       "bonusId": 8388,
       "itemLevel": 285,
       "currency": {
@@ -43532,9 +43532,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8389,
     "tag": "Rival I",
     "upgrade": {
+      "group": 249,
       "level": 6,
       "max": 9,
-      "group": 249,
       "bonusId": 8389,
       "itemLevel": 291,
       "currency": {
@@ -43549,9 +43549,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8390,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 248,
       "level": 2,
       "max": 9,
-      "group": 248,
       "bonusId": 8390,
       "itemLevel": 278,
       "currency": {
@@ -43566,9 +43566,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8391,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 248,
       "level": 4,
       "max": 9,
-      "group": 248,
       "bonusId": 8391,
       "itemLevel": 285,
       "currency": {
@@ -43583,9 +43583,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8392,
     "tag": "Rival I",
     "upgrade": {
+      "group": 248,
       "level": 6,
       "max": 9,
-      "group": 248,
       "bonusId": 8392,
       "itemLevel": 291,
       "currency": {
@@ -43600,9 +43600,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8393,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 253,
       "level": 2,
       "max": 9,
-      "group": 253,
       "bonusId": 8393,
       "itemLevel": 278,
       "currency": {
@@ -43617,9 +43617,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8394,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 253,
       "level": 4,
       "max": 9,
-      "group": 253,
       "bonusId": 8394,
       "itemLevel": 285,
       "currency": {
@@ -43634,9 +43634,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8395,
     "tag": "Rival I",
     "upgrade": {
+      "group": 253,
       "level": 6,
       "max": 9,
-      "group": 253,
       "bonusId": 8395,
       "itemLevel": 291,
       "currency": {
@@ -43651,9 +43651,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8396,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 252,
       "level": 2,
       "max": 9,
-      "group": 252,
       "bonusId": 8396,
       "itemLevel": 278,
       "currency": {
@@ -43668,9 +43668,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8397,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 252,
       "level": 4,
       "max": 9,
-      "group": 252,
       "bonusId": 8397,
       "itemLevel": 285,
       "currency": {
@@ -43685,9 +43685,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8398,
     "tag": "Rival I",
     "upgrade": {
+      "group": 252,
       "level": 6,
       "max": 9,
-      "group": 252,
       "bonusId": 8398,
       "itemLevel": 291,
       "currency": {
@@ -43702,9 +43702,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8399,
     "tag": "Combatant I",
     "upgrade": {
+      "group": 247,
       "level": 2,
       "max": 9,
-      "group": 247,
       "bonusId": 8399,
       "itemLevel": 278,
       "currency": {
@@ -43719,9 +43719,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8400,
     "tag": "Challenger I",
     "upgrade": {
+      "group": 247,
       "level": 4,
       "max": 9,
-      "group": 247,
       "bonusId": 8400,
       "itemLevel": 285,
       "currency": {
@@ -43736,9 +43736,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8401,
     "tag": "Rival I",
     "upgrade": {
+      "group": 247,
       "level": 6,
       "max": 9,
-      "group": 247,
       "bonusId": 8401,
       "itemLevel": 291,
       "currency": {
@@ -44816,72 +44816,72 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8768": {
     "id": 8768,
-    "ilevel": "202 @plvl 45 - 323 @plvl 323",
-    "curveId": 34346
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "8769": {
     "id": 8769,
-    "ilevel": "212 @plvl 45 - 333 @plvl 333",
-    "curveId": 34344,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "8770": {
     "id": 8770,
-    "ilevel": "222 @plvl 45 - 343 @plvl 343",
-    "curveId": 34347,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8771": {
     "id": 8771,
-    "ilevel": "210 @plvl 45 - 331 @plvl 331",
-    "curveId": 34343
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "8772": {
     "id": 8772,
-    "ilevel": "226 @plvl 45 - 347 @plvl 347",
-    "curveId": 34345,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "8773": {
     "id": 8773,
-    "ilevel": "242 @plvl 45 - 363 @plvl 363",
-    "curveId": 34348,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8774": {
     "id": 8774,
-    "ilevel": "219 @plvl 45 - 340 @plvl 340",
-    "curveId": 30725,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "8775": {
     "id": 8775,
-    "ilevel": "232 @plvl 45 - 353 @plvl 353",
-    "curveId": 30726,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8776": {
     "id": 8776,
-    "ilevel": "212 @plvl 45 - 333 @plvl 333",
-    "curveId": 34344,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "8777": {
     "id": 8777,
-    "ilevel": "222 @plvl 45 - 343 @plvl 343",
-    "curveId": 34347,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8778": {
     "id": 8778,
-    "ilevel": "226 @plvl 45 - 347 @plvl 347",
-    "curveId": 34345,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242,
     "quality": 3
   },
   "8779": {
     "id": 8779,
-    "ilevel": "242 @plvl 45 - 363 @plvl 363",
-    "curveId": 34348,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8780": {
@@ -45215,7 +45215,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "8862": {
     "id": 8862,
     "craftedStats": [
-      75
+      82
     ]
   },
   "8863": {
@@ -45556,10 +45556,13 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8930,
     "tag": "Dragonflight Season 3",
     "upgrade": {
+      "group": 273,
       "level": 1,
       "max": 2,
-      "group": 273,
       "name": "Adventurer",
+      "fullName": "Adventurer 1/2",
+      "bonusId": 8930,
+      "itemLevel": 262,
       "costs": [
         {
           "mask_inv_type": 8192,
@@ -45586,8 +45589,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 8930,
-      "itemLevel": 262,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -45728,9 +45729,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "8961": {
     "id": 8961,
     "upgrade": {
+      "group": 276,
       "level": 1,
       "max": 13,
-      "group": 276,
+      "bonusId": 8961,
+      "itemLevel": 376,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -45828,17 +45831,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8961,
-      "itemLevel": 376
+      ]
     }
   },
   "8962": {
     "id": 8962,
     "upgrade": {
+      "group": 276,
       "level": 2,
       "max": 13,
-      "group": 276,
+      "bonusId": 8962,
+      "itemLevel": 379,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -45936,17 +45939,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8962,
-      "itemLevel": 379
+      ]
     }
   },
   "8963": {
     "id": 8963,
     "upgrade": {
+      "group": 276,
       "level": 3,
       "max": 13,
-      "group": 276,
+      "bonusId": 8963,
+      "itemLevel": 382,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46044,17 +46047,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8963,
-      "itemLevel": 382
+      ]
     }
   },
   "8964": {
     "id": 8964,
     "upgrade": {
+      "group": 276,
       "level": 4,
       "max": 13,
-      "group": 276,
+      "bonusId": 8964,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46152,17 +46155,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8964,
-      "itemLevel": 385
+      ]
     }
   },
   "8965": {
     "id": 8965,
     "upgrade": {
+      "group": 276,
       "level": 5,
       "max": 13,
-      "group": 276,
+      "bonusId": 8965,
+      "itemLevel": 389,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46260,17 +46263,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8965,
-      "itemLevel": 389
+      ]
     }
   },
   "8966": {
     "id": 8966,
     "upgrade": {
+      "group": 276,
       "level": 6,
       "max": 13,
-      "group": 276,
+      "bonusId": 8966,
+      "itemLevel": 392,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46368,17 +46371,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8966,
-      "itemLevel": 392
+      ]
     }
   },
   "8967": {
     "id": 8967,
     "upgrade": {
+      "group": 276,
       "level": 7,
       "max": 13,
-      "group": 276,
+      "bonusId": 8967,
+      "itemLevel": 395,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46476,17 +46479,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8967,
-      "itemLevel": 395
+      ]
     }
   },
   "8968": {
     "id": 8968,
     "upgrade": {
+      "group": 276,
       "level": 8,
       "max": 13,
-      "group": 276,
+      "bonusId": 8968,
+      "itemLevel": 398,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46584,17 +46587,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8968,
-      "itemLevel": 398
+      ]
     }
   },
   "8969": {
     "id": 8969,
     "upgrade": {
+      "group": 276,
       "level": 9,
       "max": 13,
-      "group": 276,
+      "bonusId": 8969,
+      "itemLevel": 402,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46692,17 +46695,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8969,
-      "itemLevel": 402
+      ]
     }
   },
   "8970": {
     "id": 8970,
     "upgrade": {
+      "group": 276,
       "level": 10,
       "max": 13,
-      "group": 276,
+      "bonusId": 8970,
+      "itemLevel": 405,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46800,17 +46803,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8970,
-      "itemLevel": 405
+      ]
     }
   },
   "8971": {
     "id": 8971,
     "upgrade": {
+      "group": 276,
       "level": 11,
       "max": 13,
-      "group": 276,
+      "bonusId": 8971,
+      "itemLevel": 408,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -46908,17 +46911,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8971,
-      "itemLevel": 408
+      ]
     }
   },
   "8972": {
     "id": 8972,
     "upgrade": {
+      "group": 276,
       "level": 12,
       "max": 13,
-      "group": 276,
+      "bonusId": 8972,
+      "itemLevel": 411,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47016,17 +47019,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8972,
-      "itemLevel": 411
+      ]
     }
   },
   "8973": {
     "id": 8973,
     "upgrade": {
+      "group": 276,
       "level": 13,
       "max": 13,
-      "group": 276,
+      "bonusId": 8973,
+      "itemLevel": 415,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47124,9 +47127,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8973,
-      "itemLevel": 415
+      ]
     }
   },
   "8975": {
@@ -47162,16 +47163,18 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8984": {
     "id": 8984,
-    "ilevel": "222 @plvl 45 - 343 @plvl 343",
-    "curveId": 34347,
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
+    "curveId": 6244,
     "quality": 4
   },
   "8985": {
     "id": 8985,
     "upgrade": {
+      "group": 278,
       "level": 1,
       "max": 5,
-      "group": 278,
+      "bonusId": 8985,
+      "itemLevel": 340,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47281,17 +47284,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8985,
-      "itemLevel": 340
+      ]
     }
   },
   "8986": {
     "id": 8986,
     "upgrade": {
+      "group": 278,
       "level": 2,
       "max": 5,
-      "group": 278,
+      "bonusId": 8986,
+      "itemLevel": 346,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47401,17 +47404,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8986,
-      "itemLevel": 346
+      ]
     }
   },
   "8987": {
     "id": 8987,
     "upgrade": {
+      "group": 278,
       "level": 3,
       "max": 5,
-      "group": 278,
+      "bonusId": 8987,
+      "itemLevel": 353,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47521,17 +47524,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8987,
-      "itemLevel": 353
+      ]
     }
   },
   "8988": {
     "id": 8988,
     "upgrade": {
+      "group": 278,
       "level": 4,
       "max": 5,
-      "group": 278,
+      "bonusId": 8988,
+      "itemLevel": 359,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47641,17 +47644,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8988,
-      "itemLevel": 359
+      ]
     }
   },
   "8989": {
     "id": 8989,
     "upgrade": {
+      "group": 278,
       "level": 5,
       "max": 5,
-      "group": 278,
+      "bonusId": 8989,
+      "itemLevel": 366,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47761,14 +47764,12 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8989,
-      "itemLevel": 366
+      ]
     }
   },
   "8991": {
     "id": 8991,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
   "8994": {
@@ -47785,7 +47786,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8996": {
     "id": 8996,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4
   },
@@ -47797,7 +47798,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8998": {
     "id": 8998,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "tag": "Heroic",
     "quality": 3
@@ -47805,9 +47806,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "8999": {
     "id": 8999,
     "upgrade": {
+      "group": 277,
       "level": 1,
       "max": 9,
-      "group": 277,
+      "bonusId": 8999,
+      "itemLevel": 382,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -47905,18 +47908,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 8999,
-      "itemLevel": 382
+      ]
     },
     "tag": "Unranked"
   },
   "9000": {
     "id": 9000,
     "upgrade": {
+      "group": 277,
       "level": 2,
       "max": 9,
-      "group": 277,
+      "bonusId": 9000,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48014,18 +48017,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9000,
-      "itemLevel": 385
+      ]
     },
     "tag": "Combatant I"
   },
   "9001": {
     "id": 9001,
     "upgrade": {
+      "group": 277,
       "level": 3,
       "max": 9,
-      "group": 277,
+      "bonusId": 9001,
+      "itemLevel": 389,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48123,18 +48126,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9001,
-      "itemLevel": 389
+      ]
     },
     "tag": "Combatant II"
   },
   "9002": {
     "id": 9002,
     "upgrade": {
+      "group": 277,
       "level": 4,
       "max": 9,
-      "group": 277,
+      "bonusId": 9002,
+      "itemLevel": 392,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48232,18 +48235,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9002,
-      "itemLevel": 392
+      ]
     },
     "tag": "Challenger I"
   },
   "9003": {
     "id": 9003,
     "upgrade": {
+      "group": 277,
       "level": 5,
       "max": 9,
-      "group": 277,
+      "bonusId": 9003,
+      "itemLevel": 395,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48341,18 +48344,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9003,
-      "itemLevel": 395
+      ]
     },
     "tag": "Challenger II"
   },
   "9004": {
     "id": 9004,
     "upgrade": {
+      "group": 277,
       "level": 6,
       "max": 9,
-      "group": 277,
+      "bonusId": 9004,
+      "itemLevel": 398,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48450,18 +48453,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9004,
-      "itemLevel": 398
+      ]
     },
     "tag": "Rival I"
   },
   "9005": {
     "id": 9005,
     "upgrade": {
+      "group": 277,
       "level": 7,
       "max": 9,
-      "group": 277,
+      "bonusId": 9005,
+      "itemLevel": 402,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48559,18 +48562,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9005,
-      "itemLevel": 402
+      ]
     },
     "tag": "Rival II"
   },
   "9006": {
     "id": 9006,
     "upgrade": {
+      "group": 277,
       "level": 8,
       "max": 9,
-      "group": 277,
+      "bonusId": 9006,
+      "itemLevel": 405,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48668,9 +48671,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9006,
-      "itemLevel": 405
+      ]
     },
     "tag": "Duelist"
   },
@@ -48683,9 +48684,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "9008": {
     "id": 9008,
     "upgrade": {
+      "group": 277,
       "level": 9,
       "max": 9,
-      "group": 277,
+      "bonusId": 9008,
+      "itemLevel": 408,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -48783,28 +48786,26 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9008,
-      "itemLevel": 408
+      ]
     },
     "tag": "Elite"
   },
   "9010": {
     "id": 9010,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "tag": "Heroic",
     "quality": 3
   },
   "9011": {
     "id": 9011,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4
   },
   "9012": {
     "id": 9012,
-    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "ilevel": "14 @plvl 1 - 375 @plvl 375",
     "curveId": 60488,
     "tag": "Heroic",
     "quality": 4
@@ -48817,35 +48818,35 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9014": {
     "id": 9014,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "tag": "Heroic",
     "quality": 3
   },
   "9015": {
     "id": 9015,
-    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "ilevel": "14 @plvl 1 - 375 @plvl 375",
     "curveId": 60488,
     "tag": "Mythic",
     "quality": 4
   },
   "9016": {
     "id": 9016,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4,
     "tag": "Warforged"
   },
   "9017": {
     "id": 9017,
-    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "ilevel": "14 @plvl 1 - 375 @plvl 375",
     "curveId": 60488,
     "tag": "Warforged",
     "quality": 4
   },
   "9018": {
     "id": 9018,
-    "ilevel": "27 @plvl 1 - 200 @plvl 200",
+    "ilevel": "16 @plvl 1 - 377 @plvl 377",
     "curveId": 60943,
     "tag": "Warforged",
     "quality": 4
@@ -48858,14 +48859,14 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9020": {
     "id": 9020,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "tag": "Heroic",
     "quality": 3
   },
   "9021": {
     "id": 9021,
-    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "ilevel": "14 @plvl 1 - 375 @plvl 375",
     "curveId": 60488,
     "tag": "Mythic",
     "quality": 4
@@ -48878,14 +48879,14 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9023": {
     "id": 9023,
-    "ilevel": "23 @plvl 1 - 196 @plvl 196",
+    "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "tag": "Heroic",
     "quality": 3
   },
   "9024": {
     "id": 9024,
-    "ilevel": "25 @plvl 1 - 198 @plvl 198",
+    "ilevel": "14 @plvl 1 - 375 @plvl 375",
     "curveId": 60488,
     "tag": "Mythic",
     "quality": 4
@@ -48912,609 +48913,609 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9029": {
     "id": 9029,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965
   },
   "9031": {
     "id": 9031,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4
   },
   "9032": {
     "id": 9032,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973
   },
   "9033": {
     "id": 9033,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 4
   },
   "9034": {
     "id": 9034,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4
   },
   "9035": {
     "id": 9035,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4
   },
   "9036": {
     "id": 9036,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4
   },
   "9037": {
     "id": 9037,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 4
   },
   "9038": {
     "id": 9038,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4
   },
   "9039": {
     "id": 9039,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9040": {
     "id": 9040,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4
   },
   "9041": {
     "id": 9041,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9042": {
     "id": 9042,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4
   },
   "9043": {
     "id": 9043,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4
   },
   "9044": {
     "id": 9044,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4
   },
   "9045": {
     "id": 9045,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9046": {
     "id": 9046,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4
   },
   "9047": {
     "id": 9047,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 4
   },
   "9048": {
     "id": 9048,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 4
   },
   "9049": {
     "id": 9049,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60978,
     "quality": 4
   },
   "9050": {
     "id": 9050,
-    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "ilevel": "34 @plvl 1 - 395 @plvl 395",
     "curveId": 60979,
     "quality": 4
   },
   "9051": {
     "id": 9051,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980,
     "quality": 4
   },
   "9052": {
     "id": 9052,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4
   },
   "9053": {
     "id": 9053,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9054": {
     "id": 9054,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4
   },
   "9055": {
     "id": 9055,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9056": {
     "id": 9056,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4
   },
   "9057": {
     "id": 9057,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9058": {
     "id": 9058,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4
   },
   "9059": {
     "id": 9059,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4
   },
   "9060": {
     "id": 9060,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9062": {
     "id": 9062,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4
   },
   "9063": {
     "id": 9063,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4
   },
   "9064": {
     "id": 9064,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968,
     "quality": 4
   },
   "9065": {
     "id": 9065,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4
   },
   "9066": {
     "id": 9066,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9067": {
     "id": 9067,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4
   },
   "9068": {
     "id": 9068,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4
   },
   "9069": {
     "id": 9069,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4
   },
   "9070": {
     "id": 9070,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4
   },
   "9071": {
     "id": 9071,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9072": {
     "id": 9072,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4,
     "tag": "Heroic"
   },
   "9073": {
     "id": 9073,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 4,
     "tag": "Mythic"
   },
   "9074": {
     "id": 9074,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9075": {
     "id": 9075,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9076": {
     "id": 9076,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4,
     "tag": "Heroic"
   },
   "9077": {
     "id": 9077,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968,
     "quality": 4,
     "tag": "Mythic"
   },
   "9078": {
     "id": 9078,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9079": {
     "id": 9079,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9080": {
     "id": 9080,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4,
     "tag": "Heroic"
   },
   "9081": {
     "id": 9081,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4,
     "tag": "Mythic"
   },
   "9082": {
     "id": 9082,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9083": {
     "id": 9083,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9084": {
     "id": 9084,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4,
     "tag": "Heroic"
   },
   "9085": {
     "id": 9085,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968,
     "quality": 4,
     "tag": "Mythic"
   },
   "9086": {
     "id": 9086,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9087": {
     "id": 9087,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9088": {
     "id": 9088,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4,
     "tag": "Heroic"
   },
   "9089": {
     "id": 9089,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4,
     "tag": "Mythic"
   },
   "9090": {
     "id": 9090,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9091": {
     "id": 9091,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9092": {
     "id": 9092,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4,
     "tag": "Heroic"
   },
   "9093": {
     "id": 9093,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 4,
     "tag": "Mythic"
   },
   "9094": {
     "id": 9094,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9095": {
     "id": 9095,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60978,
     "quality": 4
   },
   "9096": {
     "id": 9096,
-    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "ilevel": "34 @plvl 1 - 395 @plvl 395",
     "curveId": 60979,
     "quality": 4,
     "tag": "Heroic"
   },
   "9097": {
     "id": 9097,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980,
     "quality": 4,
     "tag": "Mythic"
   },
   "9098": {
     "id": 9098,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9099": {
     "id": 9099,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9100": {
     "id": 9100,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4,
     "tag": "Heroic"
   },
   "9101": {
     "id": 9101,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968,
     "quality": 4,
     "tag": "Mythic"
   },
   "9102": {
     "id": 9102,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9103": {
     "id": 9103,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9104": {
     "id": 9104,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4,
     "tag": "Heroic"
   },
   "9105": {
     "id": 9105,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4,
     "tag": "Mythic"
   },
   "9106": {
     "id": 9106,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9107": {
     "id": 9107,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9108": {
     "id": 9108,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4,
     "tag": "Heroic"
   },
   "9109": {
     "id": 9109,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 4,
     "tag": "Mythic"
   },
   "9110": {
     "id": 9110,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9111": {
     "id": 9111,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60978,
     "quality": 4
   },
   "9112": {
     "id": 9112,
-    "ilevel": "45 @plvl 1 - 218 @plvl 218",
+    "ilevel": "34 @plvl 1 - 395 @plvl 395",
     "curveId": 60979,
     "quality": 4,
     "tag": "Heroic"
   },
   "9113": {
     "id": 9113,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980,
     "quality": 4,
     "tag": "Mythic"
   },
   "9114": {
     "id": 9114,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9115": {
     "id": 9115,
-    "ilevel": "31 @plvl 1 - 204 @plvl 204",
+    "ilevel": "20 @plvl 1 - 381 @plvl 381",
     "curveId": 60966,
     "quality": 4
   },
   "9116": {
     "id": 9116,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60967,
     "quality": 4,
     "tag": "Heroic"
   },
   "9117": {
     "id": 9117,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60968,
     "quality": 4,
     "tag": "Mythic"
   },
   "9118": {
     "id": 9118,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9119": {
     "id": 9119,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 4
   },
   "9120": {
     "id": 9120,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60971,
     "quality": 4,
     "tag": "Heroic"
   },
   "9121": {
     "id": 9121,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 4,
     "tag": "Mythic"
   },
   "9122": {
     "id": 9122,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 4,
     "tag": "Raid Finder"
   },
   "9123": {
     "id": 9123,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60974,
     "quality": 4
   },
   "9124": {
     "id": 9124,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 4,
     "tag": "Heroic"
   },
   "9125": {
     "id": 9125,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 4,
     "tag": "Mythic"
@@ -49724,8 +49725,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9156": {
     "id": 9156,
-    "ilevel": "206 @plvl 45 - 327 @plvl 327",
-    "curveId": 30724
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242
   },
   "9157": {
     "id": 9157,
@@ -50836,70 +50837,72 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9263": {
     "id": 9263,
-    "ilevel": "29 @plvl 1 - 202 @plvl 202",
+    "ilevel": "18 @plvl 1 - 379 @plvl 379",
     "curveId": 60965,
     "quality": 5
   },
   "9264": {
     "id": 9264,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 5
   },
   "9265": {
     "id": 9265,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 5
   },
   "9266": {
     "id": 9266,
-    "ilevel": "37 @plvl 1 - 210 @plvl 210",
+    "ilevel": "26 @plvl 1 - 387 @plvl 387",
     "curveId": 60973,
     "quality": 5
   },
   "9267": {
     "id": 9267,
-    "ilevel": "39 @plvl 1 - 212 @plvl 212",
+    "ilevel": "28 @plvl 1 - 389 @plvl 389",
     "curveId": 60972,
     "quality": 5
   },
   "9268": {
     "id": 9268,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "36 @plvl 1 - 397 @plvl 397",
     "curveId": 60980,
     "quality": 5
   },
   "9269": {
     "id": 9269,
-    "ilevel": "35 @plvl 1 - 208 @plvl 208",
+    "ilevel": "24 @plvl 1 - 385 @plvl 385",
     "curveId": 60970,
     "quality": 5
   },
   "9270": {
     "id": 9270,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60975,
     "quality": 5
   },
   "9271": {
     "id": 9271,
-    "ilevel": "43 @plvl 1 - 216 @plvl 216",
+    "ilevel": "32 @plvl 1 - 393 @plvl 393",
     "curveId": 60976,
     "quality": 5
   },
   "9272": {
     "id": 9272,
-    "ilevel": "33 @plvl 1 - 206 @plvl 206",
+    "ilevel": "22 @plvl 1 - 383 @plvl 383",
     "curveId": 60969,
     "quality": 5
   },
   "9274": {
     "id": 9274,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9274,
+      "itemLevel": 366,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -50973,17 +50976,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9274,
-      "itemLevel": 366
+      ]
     }
   },
   "9275": {
     "id": 9275,
     "upgrade": {
+      "group": 282,
       "level": 2,
       "max": 2,
-      "group": 282,
+      "bonusId": 9275,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51057,18 +51060,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9275,
-      "itemLevel": 385
+      ]
     },
     "tag": "Primal Infused"
   },
   "9277": {
     "id": 9277,
     "upgrade": {
+      "group": 282,
       "level": 2,
       "max": 2,
-      "group": 282,
+      "bonusId": 9277,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51142,18 +51145,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9277,
-      "itemLevel": 385
+      ]
     },
     "tag": "Primal Infused"
   },
   "9278": {
     "id": 9278,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9278,
+      "itemLevel": 350,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51227,17 +51230,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9278,
-      "itemLevel": 350
+      ]
     }
   },
   "9279": {
     "id": 9279,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9279,
+      "itemLevel": 353,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51311,17 +51314,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9279,
-      "itemLevel": 353
+      ]
     }
   },
   "9280": {
     "id": 9280,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9280,
+      "itemLevel": 356,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51395,17 +51398,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9280,
-      "itemLevel": 356
+      ]
     }
   },
   "9281": {
     "id": 9281,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9281,
+      "itemLevel": 359,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51479,17 +51482,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9281,
-      "itemLevel": 359
+      ]
     }
   },
   "9282": {
     "id": 9282,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9282,
+      "itemLevel": 363,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51563,17 +51566,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9282,
-      "itemLevel": 363
+      ]
     }
   },
   "9283": {
     "id": 9283,
     "upgrade": {
+      "group": 282,
       "level": 1,
       "max": 2,
-      "group": 282,
+      "bonusId": 9283,
+      "itemLevel": 206,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51647,9 +51650,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9283,
-      "itemLevel": 206
+      ]
     }
   },
   "9294": {
@@ -51734,7 +51735,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9310": {
     "id": 9310,
-    "ilevel": "41 @plvl 1 - 214 @plvl 214",
+    "ilevel": "30 @plvl 1 - 391 @plvl 391",
     "curveId": 60977,
     "quality": 5
   },
@@ -51863,9 +51864,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "9340": {
     "id": 9340,
     "upgrade": {
+      "group": 288,
       "level": 1,
       "max": 3,
-      "group": 288,
+      "bonusId": 9340,
+      "itemLevel": 359,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51939,17 +51942,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9340,
-      "itemLevel": 359
+      ]
     }
   },
   "9341": {
     "id": 9341,
     "upgrade": {
+      "group": 288,
       "level": 1,
       "max": 3,
-      "group": 288,
+      "bonusId": 9341,
+      "itemLevel": 372,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52023,17 +52026,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9341,
-      "itemLevel": 372
+      ]
     }
   },
   "9342": {
     "id": 9342,
     "upgrade": {
+      "group": 288,
       "level": 1,
       "max": 3,
-      "group": 288,
+      "bonusId": 9342,
+      "itemLevel": 376,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52107,17 +52110,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9342,
-      "itemLevel": 376
+      ]
     }
   },
   "9343": {
     "id": 9343,
     "upgrade": {
+      "group": 288,
       "level": 2,
       "max": 3,
-      "group": 288,
+      "bonusId": 9343,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52191,18 +52194,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9343,
-      "itemLevel": 385
+      ]
     },
     "tag": "Primal Infused"
   },
   "9344": {
     "id": 9344,
     "upgrade": {
+      "group": 288,
       "level": 3,
       "max": 3,
-      "group": 288,
+      "bonusId": 9344,
+      "itemLevel": 395,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52276,18 +52279,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9344,
-      "itemLevel": 395
+      ]
     },
     "tag": "Primal Empowered"
   },
   "9345": {
     "id": 9345,
     "upgrade": {
+      "group": 288,
       "level": 2,
       "max": 3,
-      "group": 288,
+      "bonusId": 9345,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52361,9 +52364,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9345,
-      "itemLevel": 385
+      ]
     },
     "tag": "Primal Infused"
   },
@@ -52400,36 +52401,36 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9354": {
     "id": 9354,
-    "ilevel": "14 @plvl 1 - 329 @plvl 329",
+    "ilevel": "1 @plvl 1 - 342 @plvl 342",
     "curveId": 956
   },
   "9355": {
     "id": 9355,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
   "9356": {
     "id": 9356,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
   "9357": {
     "id": 9357,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
   "9358": {
     "id": 9358,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
   "9359": {
     "id": 9359,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
@@ -52442,13 +52443,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9362": {
     "id": 9362,
-    "ilevel": "47 @plvl 1 - 220 @plvl 220",
+    "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 1749,
     "quality": 4
   },
   "9363": {
     "id": 9363,
-    "ilevel": "21 @plvl 1 - 194 @plvl 194",
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 1748,
     "quality": 4
   },
@@ -52492,8 +52493,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9370": {
     "id": 9370,
-    "ilevel": "14 @plvl 1 - 187 @plvl 187",
-    "curveId": 63292
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
   },
   "9371": {
     "id": 9371,
@@ -52530,9 +52531,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "9377": {
     "id": 9377,
     "upgrade": {
+      "group": 294,
       "level": 1,
       "max": 2,
-      "group": 294,
       "bonusId": 9377,
       "itemLevel": 389
     }
@@ -52540,9 +52541,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "9378": {
     "id": 9378,
     "upgrade": {
+      "group": 294,
       "level": 2,
       "max": 2,
-      "group": 294,
       "bonusId": 9378,
       "itemLevel": 398
     },
@@ -52689,9 +52690,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "9421": {
     "id": 9421,
     "upgrade": {
+      "group": 299,
       "level": 1,
       "max": 5,
-      "group": 299,
+      "bonusId": 9421,
+      "itemLevel": 366,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52801,17 +52804,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9421,
-      "itemLevel": 366
+      ]
     }
   },
   "9422": {
     "id": 9422,
     "upgrade": {
+      "group": 299,
       "level": 2,
       "max": 5,
-      "group": 299,
+      "bonusId": 9422,
+      "itemLevel": 372,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -52921,17 +52924,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9422,
-      "itemLevel": 372
+      ]
     }
   },
   "9423": {
     "id": 9423,
     "upgrade": {
+      "group": 299,
       "level": 3,
       "max": 5,
-      "group": 299,
+      "bonusId": 9423,
+      "itemLevel": 379,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53041,17 +53044,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9423,
-      "itemLevel": 379
+      ]
     }
   },
   "9424": {
     "id": 9424,
     "upgrade": {
+      "group": 299,
       "level": 4,
       "max": 5,
-      "group": 299,
+      "bonusId": 9424,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53161,17 +53164,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9424,
-      "itemLevel": 385
+      ]
     }
   },
   "9425": {
     "id": 9425,
     "upgrade": {
+      "group": 299,
       "level": 5,
       "max": 5,
-      "group": 299,
+      "bonusId": 9425,
+      "itemLevel": 392,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53281,17 +53284,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9425,
-      "itemLevel": 392
+      ]
     }
   },
   "9426": {
     "id": 9426,
     "upgrade": {
+      "group": 298,
       "level": 1,
       "max": 9,
-      "group": 298,
+      "bonusId": 9426,
+      "itemLevel": 408,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53389,18 +53392,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9426,
-      "itemLevel": 408
+      ]
     },
     "tag": "Unranked"
   },
   "9427": {
     "id": 9427,
     "upgrade": {
+      "group": 298,
       "level": 2,
       "max": 9,
-      "group": 298,
+      "bonusId": 9427,
+      "itemLevel": 411,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53498,18 +53501,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9427,
-      "itemLevel": 411
+      ]
     },
     "tag": "Combatant I"
   },
   "9428": {
     "id": 9428,
     "upgrade": {
+      "group": 298,
       "level": 3,
       "max": 9,
-      "group": 298,
+      "bonusId": 9428,
+      "itemLevel": 415,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53607,18 +53610,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9428,
-      "itemLevel": 415
+      ]
     },
     "tag": "Combatant II"
   },
   "9429": {
     "id": 9429,
     "upgrade": {
+      "group": 298,
       "level": 4,
       "max": 9,
-      "group": 298,
+      "bonusId": 9429,
+      "itemLevel": 418,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53716,18 +53719,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9429,
-      "itemLevel": 418
+      ]
     },
     "tag": "Challenger I"
   },
   "9430": {
     "id": 9430,
     "upgrade": {
+      "group": 298,
       "level": 5,
       "max": 9,
-      "group": 298,
+      "bonusId": 9430,
+      "itemLevel": 421,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53825,18 +53828,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9430,
-      "itemLevel": 421
+      ]
     },
     "tag": "Challenger II"
   },
   "9431": {
     "id": 9431,
     "upgrade": {
+      "group": 298,
       "level": 6,
       "max": 9,
-      "group": 298,
+      "bonusId": 9431,
+      "itemLevel": 424,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -53934,18 +53937,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9431,
-      "itemLevel": 424
+      ]
     },
     "tag": "Rival I"
   },
   "9432": {
     "id": 9432,
     "upgrade": {
+      "group": 298,
       "level": 7,
       "max": 9,
-      "group": 298,
+      "bonusId": 9432,
+      "itemLevel": 428,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54043,18 +54046,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9432,
-      "itemLevel": 428
+      ]
     },
     "tag": "Rival II"
   },
   "9433": {
     "id": 9433,
     "upgrade": {
+      "group": 298,
       "level": 8,
       "max": 9,
-      "group": 298,
+      "bonusId": 9433,
+      "itemLevel": 431,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54152,18 +54155,18 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9433,
-      "itemLevel": 431
+      ]
     },
     "tag": "Duelist"
   },
   "9434": {
     "id": 9434,
     "upgrade": {
+      "group": 298,
       "level": 9,
       "max": 9,
-      "group": 298,
+      "bonusId": 9434,
+      "itemLevel": 434,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -54261,9 +54264,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9434,
-      "itemLevel": 434
+      ]
     },
     "tag": "Elite"
   },
@@ -54297,17 +54298,17 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9443": {
     "id": 9443,
-    "ilevel": "15 @plvl 1 - 330 @plvl 330",
+    "ilevel": "2 @plvl 1 - 343 @plvl 343",
     "curveId": 959
   },
   "9444": {
     "id": 9444,
-    "ilevel": "17 @plvl 1 - 332 @plvl 332",
+    "ilevel": "4 @plvl 1 - 345 @plvl 345",
     "curveId": 961
   },
   "9445": {
     "id": 9445,
-    "ilevel": "16 @plvl 1 - 331 @plvl 331",
+    "ilevel": "3 @plvl 1 - 344 @plvl 344",
     "curveId": 960
   },
   "9447": {
@@ -54413,9 +54414,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "9480": {
     "id": 9480,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9480,
+      "itemLevel": 392,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54489,17 +54492,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9480,
-      "itemLevel": 392
+      ]
     }
   },
   "9481": {
     "id": 9481,
     "upgrade": {
+      "group": 300,
       "level": 2,
       "max": 2,
-      "group": 300,
+      "bonusId": 9481,
+      "itemLevel": 411,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54573,17 +54576,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9481,
-      "itemLevel": 411
+      ]
     }
   },
   "9484": {
     "id": 9484,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9484,
+      "itemLevel": 376,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54657,17 +54660,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9484,
-      "itemLevel": 376
+      ]
     }
   },
   "9485": {
     "id": 9485,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9485,
+      "itemLevel": 379,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54741,17 +54744,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9485,
-      "itemLevel": 379
+      ]
     }
   },
   "9486": {
     "id": 9486,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9486,
+      "itemLevel": 382,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54825,17 +54828,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9486,
-      "itemLevel": 382
+      ]
     }
   },
   "9487": {
     "id": 9487,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9487,
+      "itemLevel": 385,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54909,17 +54912,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9487,
-      "itemLevel": 385
+      ]
     }
   },
   "9488": {
     "id": 9488,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9488,
+      "itemLevel": 389,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54993,17 +54996,17 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9488,
-      "itemLevel": 389
+      ]
     }
   },
   "9489": {
     "id": 9489,
     "upgrade": {
+      "group": 300,
       "level": 1,
       "max": 2,
-      "group": 300,
+      "bonusId": 9489,
+      "itemLevel": 206,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -55077,9 +55080,7 @@ export const bonus_IDs: {[key: string]: any} = {
             }
           ]
         }
-      ],
-      "bonusId": 9489,
-      "itemLevel": 206
+      ]
     }
   },
   "9492": {
@@ -55214,7297 +55215,206 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9536": {
     "id": 9536,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9536,
-      "itemLevel": 428,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9537": {
     "id": 9537,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9537,
-      "itemLevel": 431,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9538": {
     "id": 9538,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9538,
-      "itemLevel": 434,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9539": {
     "id": 9539,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9539,
-      "itemLevel": 437,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9540": {
     "id": 9540,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9540,
-      "itemLevel": 441,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9541": {
     "id": 9541,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9541,
-      "itemLevel": 444,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9542": {
     "id": 9542,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9542,
-      "itemLevel": 447,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9543": {
     "id": 9543,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 306,
-      "name": "Adventurer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9543,
-      "itemLevel": 450,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9544": {
     "id": 9544,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9544,
-      "itemLevel": 415,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 2,
     "tag": "Dragonflight Season 3"
   },
   "9545": {
     "id": 9545,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9545,
-      "itemLevel": 418,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 2,
     "tag": "Dragonflight Season 3"
   },
   "9546": {
     "id": 9546,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9546,
-      "itemLevel": 421,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9547": {
     "id": 9547,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9547,
-      "itemLevel": 424,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9548": {
     "id": 9548,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9548,
-      "itemLevel": 428,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9549": {
     "id": 9549,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9549,
-      "itemLevel": 431,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9550": {
     "id": 9550,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9550,
-      "itemLevel": 434,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9551": {
     "id": 9551,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 305,
-      "name": "Explorer",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9551,
-      "itemLevel": 437,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 3,
     "tag": "Dragonflight Season 3"
   },
   "9552": {
     "id": 9552,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9552,
-      "itemLevel": 441,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9553": {
     "id": 9553,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9553,
-      "itemLevel": 444,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9554": {
     "id": 9554,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9554,
-      "itemLevel": 447,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9555": {
     "id": 9555,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2706,
-              "amount": 15,
-              "name": "Whelpling's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_whelplingsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9555,
-      "itemLevel": 450,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9556": {
     "id": 9556,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9556,
-      "itemLevel": 454,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9557": {
     "id": 9557,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9557,
-      "itemLevel": 457,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9558": {
     "id": 9558,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9558,
-      "itemLevel": 460,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9559": {
     "id": 9559,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 307,
-      "name": "Veteran",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9559,
-      "itemLevel": 463,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9560": {
     "id": 9560,
-    "upgrade": {
-      "level": 1,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9560,
-      "itemLevel": 454,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9561": {
     "id": 9561,
-    "upgrade": {
-      "level": 2,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9561,
-      "itemLevel": 457,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9562": {
     "id": 9562,
-    "upgrade": {
-      "level": 3,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9562,
-      "itemLevel": 460,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9563": {
     "id": 9563,
-    "upgrade": {
-      "level": 4,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2707,
-              "amount": 15,
-              "name": "Drake's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_drakesdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9563,
-      "itemLevel": 463,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9564": {
     "id": 9564,
-    "upgrade": {
-      "level": 5,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9564,
-      "itemLevel": 467,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9565": {
     "id": 9565,
-    "upgrade": {
-      "level": 6,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9565,
-      "itemLevel": 470,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9566": {
     "id": 9566,
-    "upgrade": {
-      "level": 7,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9566,
-      "itemLevel": 473,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9567": {
     "id": 9567,
-    "upgrade": {
-      "level": 8,
-      "max": 8,
-      "group": 308,
-      "name": "Champion",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9567,
-      "itemLevel": 476,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9568": {
     "id": 9568,
-    "upgrade": {
-      "level": 1,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9568,
-      "itemLevel": 467,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9569": {
     "id": 9569,
-    "upgrade": {
-      "level": 2,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9569,
-      "itemLevel": 470,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9570": {
     "id": 9570,
-    "upgrade": {
-      "level": 3,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9570,
-      "itemLevel": 473,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9571": {
     "id": 9571,
-    "upgrade": {
-      "level": 4,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2708,
-              "amount": 15,
-              "name": "Wyrm's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_wyrmsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9571,
-      "itemLevel": 476,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9572": {
     "id": 9572,
-    "upgrade": {
-      "level": 5,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9572,
-      "itemLevel": 480,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9573": {
     "id": 9573,
-    "upgrade": {
-      "level": 1,
-      "max": 4,
-      "group": 310,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9573,
-      "itemLevel": 480,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9574": {
     "id": 9574,
-    "upgrade": {
-      "level": 2,
-      "max": 4,
-      "group": 310,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9574,
-      "itemLevel": 483,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9575": {
     "id": 9575,
-    "upgrade": {
-      "level": 3,
-      "max": 4,
-      "group": 310,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9575,
-      "itemLevel": 486,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
   "9576": {
     "id": 9576,
-    "upgrade": {
-      "level": 4,
-      "max": 4,
-      "group": 310,
-      "name": "Myth",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9576,
-      "itemLevel": 489,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
@@ -62520,193 +55430,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9581": {
     "id": 9581,
-    "upgrade": {
-      "level": 6,
-      "max": 6,
-      "group": 309,
-      "name": "Hero",
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2709,
-              "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
-            }
-          ]
-        }
-      ],
-      "bonusId": 9581,
-      "itemLevel": 483,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2706,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2709,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2708,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2707,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ],
-      "seasonId": 22
-    },
     "quality": 4,
     "tag": "Dragonflight Season 3"
   },
@@ -62724,30 +55447,16 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "13 @plvl 10 - 342 @plvl 342",
     "curveId": 69884
   },
-  "9610": {
-    "id": 9610,
-    "socket": 1
-  },
-  "9611": {
-    "id": 9611,
-    "socket": 2,
-    "quality": 3
-  },
-  "9612": {
-    "id": 9612,
-    "socket": 3,
-    "quality": 4
-  },
   "9613": {
     "id": 9613,
     "rawStats": [
       {
         "stat": 36,
-        "amount": 12000,
+        "amount": 4779,
         "name": "Haste"
       }
     ],
-    "stats": "100% Haste [1.2000]"
+    "stats": "100% Haste [0.4779]"
   },
   "9614": {
     "id": 9614,
@@ -62766,55 +55475,95 @@ export const bonus_IDs: {[key: string]: any} = {
     "rawStats": [
       {
         "stat": 32,
-        "amount": 12000,
+        "amount": 4779,
         "name": "Crit"
       }
     ],
-    "stats": "100% Crit [1.2000]"
+    "stats": "100% Crit [0.4779]"
   },
   "9619": {
     "id": 9619,
     "rawStats": [
       {
         "stat": 49,
-        "amount": 12000,
+        "amount": 9558,
         "name": "Mastery"
       }
     ],
-    "stats": "100% Mastery [1.2000]"
+    "stats": "100% Mastery [0.9558]"
   },
   "9620": {
     "id": 9620,
     "rawStats": [
       {
         "stat": 62,
-        "amount": 24000,
+        "amount": 9558,
         "name": "Leech"
       }
     ],
-    "stats": "100% Leech [2.4000]"
+    "stats": "100% Leech [0.9558]"
   },
   "9621": {
     "id": 9621,
     "rawStats": [
       {
         "stat": 46,
-        "amount": 36000,
+        "amount": 143370,
         "name": "HealthRegen"
       }
     ],
-    "stats": "100% HealthRegen [3.6000]"
+    "stats": "100% HealthRegen [14.3370]"
   },
   "9622": {
     "id": 9622,
     "rawStats": [
       {
         "stat": 61,
-        "amount": 8000,
+        "amount": 2390,
         "name": "RunSpeed"
       }
     ],
-    "stats": "100% RunSpeed [0.8000]"
+    "stats": "100% RunSpeed [0.2390]"
+  },
+  "9623": {
+    "id": 9623,
+    "level": 0
+  },
+  "9624": {
+    "id": 9624,
+    "level": 3
+  },
+  "9625": {
+    "id": 9625,
+    "level": 6
+  },
+  "9626": {
+    "id": 9626,
+    "level": 9
+  },
+  "9627": {
+    "id": 9627,
+    "level": 13
+  },
+  "9628": {
+    "id": 9628,
+    "level": 0
+  },
+  "9629": {
+    "id": 9629,
+    "level": 6
+  },
+  "9630": {
+    "id": 9630,
+    "level": 12
+  },
+  "9631": {
+    "id": 9631,
+    "level": 19
+  },
+  "9632": {
+    "id": 9632,
+    "level": 26
   },
   "9634": {
     "id": 9634,
@@ -62828,1593 +55577,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9636,
     "tag": "Heroic"
   },
-  "9638": {
-    "id": 9638,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 4802,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [0.4802]"
+  "9637": {
+    "id": 9637,
+    "ilevel": "15 @plvl 10 - 548 @plvl 548",
+    "curveId": 70855
   },
   "9639": {
     "id": 9639,
     "tag": "Mythic+"
-  },
-  "9640": {
-    "id": 9640,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 0,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "0% StrAgiInt [0.0000]"
-  },
-  "9641": {
-    "id": 9641,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 9604,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [0.9604]"
-  },
-  "9642": {
-    "id": 9642,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 0,
-        "name": "Sta"
-      }
-    ],
-    "stats": "0% Sta [0.0000]"
-  },
-  "9643": {
-    "id": 9643,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 4802,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [0.4802]"
-  },
-  "9644": {
-    "id": 9644,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 9604,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [0.9604]"
-  },
-  "9645": {
-    "id": 9645,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 0,
-        "name": "Crit"
-      }
-    ],
-    "stats": "0% Crit [0.0000]"
-  },
-  "9646": {
-    "id": 9646,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 4802,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [0.4802]"
-  },
-  "9647": {
-    "id": 9647,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 9604,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [0.9604]"
-  },
-  "9648": {
-    "id": 9648,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 0,
-        "name": "Haste"
-      }
-    ],
-    "stats": "0% Haste [0.0000]"
-  },
-  "9649": {
-    "id": 9649,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 4802,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [0.4802]"
-  },
-  "9650": {
-    "id": 9650,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 9604,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [0.9604]"
-  },
-  "9651": {
-    "id": 9651,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 0,
-        "name": "Leech"
-      }
-    ],
-    "stats": "0% Leech [0.0000]"
-  },
-  "9652": {
-    "id": 9652,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 4802,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [0.4802]"
-  },
-  "9653": {
-    "id": 9653,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 9604,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [0.9604]"
-  },
-  "9654": {
-    "id": 9654,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 0,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "0% Mastery [0.0000]"
-  },
-  "9655": {
-    "id": 9655,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 4802,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [0.4802]"
-  },
-  "9656": {
-    "id": 9656,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 9604,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [0.9604]"
-  },
-  "9657": {
-    "id": 9657,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 0,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "0% HealthRegen [0.0000]"
-  },
-  "9658": {
-    "id": 9658,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 4802,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [0.4802]"
-  },
-  "9659": {
-    "id": 9659,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 9604,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [0.9604]"
-  },
-  "9660": {
-    "id": 9660,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 0,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "0% RunSpeed [0.0000]"
-  },
-  "9661": {
-    "id": 9661,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 4802,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [0.4802]"
-  },
-  "9662": {
-    "id": 9662,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 9604,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [0.9604]"
-  },
-  "9663": {
-    "id": 9663,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 0,
-        "name": "Vers"
-      }
-    ],
-    "stats": "0% Vers [0.0000]"
-  },
-  "9664": {
-    "id": 9664,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 4802,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [0.4802]"
-  },
-  "9665": {
-    "id": 9665,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 9604,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [0.9604]"
-  },
-  "9666": {
-    "id": 9666,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 14406,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [1.4406]"
-  },
-  "9667": {
-    "id": 9667,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 19208,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [1.9208]"
-  },
-  "9668": {
-    "id": 9668,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 24010,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [2.4010]"
-  },
-  "9669": {
-    "id": 9669,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 28812,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [2.8812]"
-  },
-  "9670": {
-    "id": 9670,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 33614,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [3.3614]"
-  },
-  "9671": {
-    "id": 9671,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 38416,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [3.8416]"
-  },
-  "9672": {
-    "id": 9672,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 43218,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [4.3218]"
-  },
-  "9673": {
-    "id": 9673,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 48020,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [4.8020]"
-  },
-  "9674": {
-    "id": 9674,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 52822,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [5.2822]"
-  },
-  "9675": {
-    "id": 9675,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 57624,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [5.7624]"
-  },
-  "9676": {
-    "id": 9676,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 62426,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [6.2426]"
-  },
-  "9677": {
-    "id": 9677,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 67228,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [6.7228]"
-  },
-  "9678": {
-    "id": 9678,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 72030,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [7.2030]"
-  },
-  "9679": {
-    "id": 9679,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 14406,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [1.4406]"
-  },
-  "9680": {
-    "id": 9680,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 19208,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [1.9208]"
-  },
-  "9681": {
-    "id": 9681,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 24010,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [2.4010]"
-  },
-  "9682": {
-    "id": 9682,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 28812,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [2.8812]"
-  },
-  "9683": {
-    "id": 9683,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 33614,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [3.3614]"
-  },
-  "9684": {
-    "id": 9684,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 38416,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [3.8416]"
-  },
-  "9685": {
-    "id": 9685,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 43218,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [4.3218]"
-  },
-  "9686": {
-    "id": 9686,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 48020,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [4.8020]"
-  },
-  "9687": {
-    "id": 9687,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 52822,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [5.2822]"
-  },
-  "9688": {
-    "id": 9688,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 57624,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [5.7624]"
-  },
-  "9689": {
-    "id": 9689,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 62426,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [6.2426]"
-  },
-  "9690": {
-    "id": 9690,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 67228,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [6.7228]"
-  },
-  "9691": {
-    "id": 9691,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 72030,
-        "name": "Crit"
-      }
-    ],
-    "stats": "100% Crit [7.2030]"
-  },
-  "9692": {
-    "id": 9692,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 14406,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [1.4406]"
-  },
-  "9693": {
-    "id": 9693,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 19208,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [1.9208]"
-  },
-  "9694": {
-    "id": 9694,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 24010,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [2.4010]"
-  },
-  "9695": {
-    "id": 9695,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 28812,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [2.8812]"
-  },
-  "9696": {
-    "id": 9696,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 33614,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [3.3614]"
-  },
-  "9697": {
-    "id": 9697,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 38416,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [3.8416]"
-  },
-  "9698": {
-    "id": 9698,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 43218,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [4.3218]"
-  },
-  "9699": {
-    "id": 9699,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 48020,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [4.8020]"
-  },
-  "9700": {
-    "id": 9700,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 52822,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [5.2822]"
-  },
-  "9701": {
-    "id": 9701,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 52822,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [5.2822]"
-  },
-  "9702": {
-    "id": 9702,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 62426,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [6.2426]"
-  },
-  "9703": {
-    "id": 9703,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 67228,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [6.7228]"
-  },
-  "9704": {
-    "id": 9704,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 72030,
-        "name": "Haste"
-      }
-    ],
-    "stats": "100% Haste [7.2030]"
-  },
-  "9705": {
-    "id": 9705,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 14406,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [1.4406]"
-  },
-  "9706": {
-    "id": 9706,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 19208,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [1.9208]"
-  },
-  "9707": {
-    "id": 9707,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 24010,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [2.4010]"
-  },
-  "9708": {
-    "id": 9708,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 28812,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [2.8812]"
-  },
-  "9709": {
-    "id": 9709,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 33614,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [3.3614]"
-  },
-  "9710": {
-    "id": 9710,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 38416,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [3.8416]"
-  },
-  "9711": {
-    "id": 9711,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 43218,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [4.3218]"
-  },
-  "9712": {
-    "id": 9712,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 48020,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [4.8020]"
-  },
-  "9713": {
-    "id": 9713,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 52822,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [5.2822]"
-  },
-  "9714": {
-    "id": 9714,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 57624,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [5.7624]"
-  },
-  "9715": {
-    "id": 9715,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 62426,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [6.2426]"
-  },
-  "9716": {
-    "id": 9716,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 67228,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [6.7228]"
-  },
-  "9717": {
-    "id": 9717,
-    "rawStats": [
-      {
-        "stat": 62,
-        "amount": 72030,
-        "name": "Leech"
-      }
-    ],
-    "stats": "100% Leech [7.2030]"
-  },
-  "9718": {
-    "id": 9718,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 14406,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [1.4406]"
-  },
-  "9719": {
-    "id": 9719,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 19208,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [1.9208]"
-  },
-  "9720": {
-    "id": 9720,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 24010,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [2.4010]"
-  },
-  "9721": {
-    "id": 9721,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 28812,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [2.8812]"
-  },
-  "9722": {
-    "id": 9722,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 33614,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [3.3614]"
-  },
-  "9723": {
-    "id": 9723,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 38416,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [3.8416]"
-  },
-  "9724": {
-    "id": 9724,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 43218,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [4.3218]"
-  },
-  "9725": {
-    "id": 9725,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 48020,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [4.8020]"
-  },
-  "9726": {
-    "id": 9726,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 52822,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [5.2822]"
-  },
-  "9727": {
-    "id": 9727,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 57624,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [5.7624]"
-  },
-  "9728": {
-    "id": 9728,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 62426,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [6.2426]"
-  },
-  "9729": {
-    "id": 9729,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 67228,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [6.7228]"
-  },
-  "9730": {
-    "id": 9730,
-    "rawStats": [
-      {
-        "stat": 49,
-        "amount": 72030,
-        "name": "Mastery"
-      }
-    ],
-    "stats": "100% Mastery [7.2030]"
-  },
-  "9731": {
-    "id": 9731,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 14406,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [1.4406]"
-  },
-  "9732": {
-    "id": 9732,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 19208,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [1.9208]"
-  },
-  "9733": {
-    "id": 9733,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 24010,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [2.4010]"
-  },
-  "9734": {
-    "id": 9734,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 28812,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [2.8812]"
-  },
-  "9735": {
-    "id": 9735,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 33614,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [3.3614]"
-  },
-  "9736": {
-    "id": 9736,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 38416,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [3.8416]"
-  },
-  "9737": {
-    "id": 9737,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 43218,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [4.3218]"
-  },
-  "9738": {
-    "id": 9738,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 48020,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [4.8020]"
-  },
-  "9739": {
-    "id": 9739,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 52822,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [5.2822]"
-  },
-  "9740": {
-    "id": 9740,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 57624,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [5.7624]"
-  },
-  "9741": {
-    "id": 9741,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 62426,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [6.2426]"
-  },
-  "9742": {
-    "id": 9742,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 67228,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [6.7228]"
-  },
-  "9743": {
-    "id": 9743,
-    "rawStats": [
-      {
-        "stat": 46,
-        "amount": 72030,
-        "name": "HealthRegen"
-      }
-    ],
-    "stats": "100% HealthRegen [7.2030]"
-  },
-  "9744": {
-    "id": 9744,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 14406,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [1.4406]"
-  },
-  "9745": {
-    "id": 9745,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 19208,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [1.9208]"
-  },
-  "9746": {
-    "id": 9746,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 24010,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [2.4010]"
-  },
-  "9747": {
-    "id": 9747,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 28812,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [2.8812]"
-  },
-  "9748": {
-    "id": 9748,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 33614,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [3.3614]"
-  },
-  "9749": {
-    "id": 9749,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 38416,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [3.8416]"
-  },
-  "9750": {
-    "id": 9750,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 43218,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [4.3218]"
-  },
-  "9751": {
-    "id": 9751,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 48020,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [4.8020]"
-  },
-  "9752": {
-    "id": 9752,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 52822,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [5.2822]"
-  },
-  "9753": {
-    "id": 9753,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 57624,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [5.7624]"
-  },
-  "9754": {
-    "id": 9754,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 62426,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [6.2426]"
-  },
-  "9755": {
-    "id": 9755,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 67228,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [6.7228]"
-  },
-  "9756": {
-    "id": 9756,
-    "rawStats": [
-      {
-        "stat": 61,
-        "amount": 72030,
-        "name": "RunSpeed"
-      }
-    ],
-    "stats": "100% RunSpeed [7.2030]"
-  },
-  "9757": {
-    "id": 9757,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 14406,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [1.4406]"
-  },
-  "9758": {
-    "id": 9758,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 19208,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [1.9208]"
-  },
-  "9759": {
-    "id": 9759,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 24010,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [2.4010]"
-  },
-  "9760": {
-    "id": 9760,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 28812,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [2.8812]"
-  },
-  "9761": {
-    "id": 9761,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 33614,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [3.3614]"
-  },
-  "9762": {
-    "id": 9762,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 38416,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [3.8416]"
-  },
-  "9763": {
-    "id": 9763,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 43218,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [4.3218]"
-  },
-  "9764": {
-    "id": 9764,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 48020,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [4.8020]"
-  },
-  "9765": {
-    "id": 9765,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 52822,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [5.2822]"
-  },
-  "9766": {
-    "id": 9766,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 57624,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [5.7624]"
-  },
-  "9767": {
-    "id": 9767,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 62426,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [6.2426]"
-  },
-  "9768": {
-    "id": 9768,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 67228,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [6.7228]"
-  },
-  "9769": {
-    "id": 9769,
-    "rawStats": [
-      {
-        "stat": 7,
-        "amount": 72030,
-        "name": "Sta"
-      }
-    ],
-    "stats": "100% Sta [7.2030]"
-  },
-  "9770": {
-    "id": 9770,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 14406,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [1.4406]"
-  },
-  "9771": {
-    "id": 9771,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 19208,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [1.9208]"
-  },
-  "9772": {
-    "id": 9772,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 24010,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [2.4010]"
-  },
-  "9773": {
-    "id": 9773,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 28812,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [2.8812]"
-  },
-  "9774": {
-    "id": 9774,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 33614,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [3.3614]"
-  },
-  "9775": {
-    "id": 9775,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 38416,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [3.8416]"
-  },
-  "9776": {
-    "id": 9776,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 43218,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [4.3218]"
-  },
-  "9777": {
-    "id": 9777,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 48020,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [4.8020]"
-  },
-  "9778": {
-    "id": 9778,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 52822,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [5.2822]"
-  },
-  "9779": {
-    "id": 9779,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 57624,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [5.7624]"
-  },
-  "9780": {
-    "id": 9780,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 62426,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [6.2426]"
-  },
-  "9781": {
-    "id": 9781,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 67228,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [6.7228]"
-  },
-  "9782": {
-    "id": 9782,
-    "rawStats": [
-      {
-        "stat": 40,
-        "amount": 72030,
-        "name": "Vers"
-      }
-    ],
-    "stats": "100% Vers [7.2030]"
   },
   "9834": {
     "id": 9834,
@@ -65940,197 +57110,11 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10217,
     "level": -600
   },
-  "10218": {
-    "id": 10218,
-    "effect": {
-      "id": 181009,
-      "index": 0,
-      "spell": {
-        "id": 427030,
-        "name": "Sprint",
-        "icon": "ability_rogue_sprint"
-      }
-    }
-  },
-  "10219": {
-    "id": 10219,
-    "effect": {
-      "id": 181006,
-      "index": 0,
-      "spell": {
-        "id": 427053,
-        "name": "Blink",
-        "icon": "spell_arcane_blink"
-      }
-    }
-  },
-  "10220": {
-    "id": 10220,
-    "effect": {
-      "id": 181007,
-      "index": 0,
-      "spell": {
-        "id": 427033,
-        "name": "Heroic Leap",
-        "icon": "ability_heroicleap"
-      }
-    }
-  },
-  "10221": {
-    "id": 10221,
-    "effect": {
-      "id": 181008,
-      "index": 0,
-      "spell": {
-        "id": 427026,
-        "name": "Roll",
-        "icon": "ability_monk_roll"
-      }
-    }
-  },
-  "10223": {
-    "id": 10223,
-    "effect": {
-      "id": 181016,
-      "index": 0,
-      "spell": {
-        "id": 428644,
-        "name": "Chill",
-        "icon": "spell_frost_frostshock"
-      }
-    }
-  },
-  "10224": {
-    "id": 10224,
-    "effect": {
-      "id": 181017,
-      "index": 0,
-      "spell": {
-        "id": 428661,
-        "name": "Burn",
-        "icon": "inv_summerfest_firespirit"
-      }
-    }
-  },
-  "10225": {
-    "id": 10225,
-    "effect": {
-      "id": 181018,
-      "index": 0,
-      "spell": {
-        "id": 428685,
-        "name": "Poison",
-        "icon": "spell_nature_nullifypoison"
-      }
-    }
-  },
-  "10226": {
-    "id": 10226,
-    "effect": {
-      "id": 181019,
-      "index": 0,
-      "spell": {
-        "id": 428696,
-        "name": "Sanctify",
-        "icon": "inv_lightforgedmatrixability_lightsjudgment"
-      }
-    }
-  },
-  "10227": {
-    "id": 10227,
-    "effect": {
-      "id": 181020,
-      "index": 0,
-      "spell": {
-        "id": 428697,
-        "name": "Shock",
-        "icon": "spell_nature_lightning"
-      }
-    }
-  },
-  "10229": {
-    "id": 10229,
-    "effect": {
-      "id": 181096,
-      "index": 0,
-      "spell": {
-        "id": 429007,
-        "name": "Brilliance",
-        "icon": "inv_staff_07"
-      }
-    }
-  },
-  "10230": {
-    "id": 10230,
-    "effect": {
-      "id": 181097,
-      "index": 0,
-      "spell": {
-        "id": 428914,
-        "name": "Endurance",
-        "icon": "ability_warrior_bloodsurge"
-      }
-    }
-  },
-  "10231": {
-    "id": 10231,
-    "effect": {
-      "id": 181098,
-      "index": 0,
-      "spell": {
-        "id": 428921,
-        "name": "Unholy Vigor",
-        "icon": "spell_deathknight_unholypresence"
-      }
-    }
-  },
-  "10232": {
-    "id": 10232,
-    "effect": {
-      "id": 181093,
-      "index": 0,
-      "spell": {
-        "id": 429026,
-        "name": "Freedom",
-        "icon": "spell_holy_blessedresillience"
-      }
-    }
-  },
-  "10233": {
-    "id": 10233,
-    "effect": {
-      "id": 181094,
-      "index": 0,
-      "spell": {
-        "id": 428854,
-        "name": "Grounding",
-        "icon": "spell_nature_groundingtotem"
-      }
-    }
-  },
-  "10234": {
-    "id": 10234,
-    "effect": {
-      "id": 181095,
-      "index": 0,
-      "spell": {
-        "id": 429001,
-        "name": "Thorns",
-        "icon": "spell_nature_thorns"
-      }
-    }
-  },
-  "10235": {
-    "id": 10235,
-    "effect": {
-      "id": 181117,
-      "index": 0,
-      "spell": {
-        "id": 429389,
-        "name": "Fervor",
-        "icon": "spell_holy_greaterblessingofkings"
-      }
-    }
+  "10222": {
+    "id": 10222,
+    "base_level": 593,
+    "base_level_priority": 70,
+    "tag": "Omen Crafted"
   },
   "10236": {
     "id": 10236,
@@ -66144,66 +57128,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "10237": {
-    "id": 10237,
-    "effect": {
-      "id": 181119,
-      "index": 0,
-      "spell": {
-        "id": 429410,
-        "name": "Victory Pyre",
-        "icon": "ability_racial_fireresist"
-      }
-    }
-  },
-  "10238": {
-    "id": 10238,
-    "effect": {
-      "id": 181120,
-      "index": 0,
-      "spell": {
-        "id": 429270,
-        "name": "Arcanist's Edge",
-        "icon": "spell_arcane_arcanepotency"
-      }
-    }
-  },
-  "10239": {
-    "id": 10239,
-    "effect": {
-      "id": 181121,
-      "index": 0,
-      "spell": {
-        "id": 429373,
-        "name": "Quick Strike",
-        "icon": "ability_rogue_versatility"
-      }
-    }
-  },
-  "10240": {
-    "id": 10240,
-    "effect": {
-      "id": 181122,
-      "index": 0,
-      "spell": {
-        "id": 429378,
-        "name": "Slay",
-        "icon": "ability_physical_taunt_purple"
-      }
-    }
-  },
-  "10241": {
-    "id": 10241,
-    "effect": {
-      "id": 181123,
-      "index": 0,
-      "spell": {
-        "id": 429241,
-        "name": "Mark of Arrogance",
-        "icon": "ability_warlock_impoweredimp"
-      }
-    }
-  },
   "10242": {
     "id": 10242,
     "effect": {
@@ -66213,30 +57137,6 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 429214,
         "name": "Sunstrider's Flourish",
         "icon": "ability_mage_firestarter"
-      }
-    }
-  },
-  "10243": {
-    "id": 10243,
-    "effect": {
-      "id": 181125,
-      "index": 0,
-      "spell": {
-        "id": 429230,
-        "name": "Tinkmaster's Shield",
-        "icon": "inv_gizmo_electrifiedether"
-      }
-    }
-  },
-  "10246": {
-    "id": 10246,
-    "effect": {
-      "id": 181147,
-      "index": 0,
-      "spell": {
-        "id": 426268,
-        "name": "Chi-ji, the Red Crane",
-        "icon": "inv_pet_cranegod"
       }
     }
   },
@@ -66255,13 +57155,7926 @@ export const bonus_IDs: {[key: string]: any} = {
     "base_level": 438,
     "base_level_priority": 100
   },
+  "10254": {
+    "id": 10254,
+    "quality": 3
+  },
+  "10255": {
+    "id": 10255,
+    "quality": 4
+  },
+  "10256": {
+    "id": 10256,
+    "upgrade": {
+      "group": 333,
+      "level": 6,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 6/6",
+      "bonusId": 10256,
+      "itemLevel": 626,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10257": {
+    "id": 10257,
+    "upgrade": {
+      "group": 334,
+      "level": 4,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 4/6",
+      "bonusId": 10257,
+      "itemLevel": 632,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10258": {
+    "id": 10258,
+    "upgrade": {
+      "group": 334,
+      "level": 3,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 3/6",
+      "bonusId": 10258,
+      "itemLevel": 629,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10259": {
+    "id": 10259,
+    "upgrade": {
+      "group": 334,
+      "level": 2,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 2/6",
+      "bonusId": 10259,
+      "itemLevel": 626,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10260": {
+    "id": 10260,
+    "upgrade": {
+      "group": 334,
+      "level": 1,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 1/6",
+      "bonusId": 10260,
+      "itemLevel": 623,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10261": {
+    "id": 10261,
+    "upgrade": {
+      "group": 333,
+      "level": 5,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 5/6",
+      "bonusId": 10261,
+      "itemLevel": 623,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10262": {
+    "id": 10262,
+    "upgrade": {
+      "group": 333,
+      "level": 4,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 4/6",
+      "bonusId": 10262,
+      "itemLevel": 619,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10263": {
+    "id": 10263,
+    "upgrade": {
+      "group": 333,
+      "level": 3,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 3/6",
+      "bonusId": 10263,
+      "itemLevel": 616,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10264": {
+    "id": 10264,
+    "upgrade": {
+      "group": 333,
+      "level": 2,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 2/6",
+      "bonusId": 10264,
+      "itemLevel": 613,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10265": {
+    "id": 10265,
+    "upgrade": {
+      "group": 333,
+      "level": 1,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 1/6",
+      "bonusId": 10265,
+      "itemLevel": 610,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10266": {
+    "id": 10266,
+    "upgrade": {
+      "group": 332,
+      "level": 8,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 10266,
+      "itemLevel": 619,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10267": {
+    "id": 10267,
+    "upgrade": {
+      "group": 332,
+      "level": 7,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 10267,
+      "itemLevel": 616,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10268": {
+    "id": 10268,
+    "upgrade": {
+      "group": 332,
+      "level": 6,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 6/8",
+      "bonusId": 10268,
+      "itemLevel": 613,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10269": {
+    "id": 10269,
+    "upgrade": {
+      "group": 332,
+      "level": 5,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 5/8",
+      "bonusId": 10269,
+      "itemLevel": 610,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2916,
+              "amount": 15,
+              "name": "Runed Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10270": {
+    "id": 10270,
+    "upgrade": {
+      "group": 332,
+      "level": 4,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 4/8",
+      "bonusId": 10270,
+      "itemLevel": 606,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10271": {
+    "id": 10271,
+    "upgrade": {
+      "group": 332,
+      "level": 3,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 3/8",
+      "bonusId": 10271,
+      "itemLevel": 603,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10272": {
+    "id": 10272,
+    "upgrade": {
+      "group": 332,
+      "level": 2,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 2/8",
+      "bonusId": 10272,
+      "itemLevel": 600,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10273": {
+    "id": 10273,
+    "upgrade": {
+      "group": 332,
+      "level": 1,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 1/8",
+      "bonusId": 10273,
+      "itemLevel": 597,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10274": {
+    "id": 10274,
+    "upgrade": {
+      "group": 331,
+      "level": 8,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 8/8",
+      "bonusId": 10274,
+      "itemLevel": 606,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10275": {
+    "id": 10275,
+    "upgrade": {
+      "group": 331,
+      "level": 7,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 7/8",
+      "bonusId": 10275,
+      "itemLevel": 603,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10276": {
+    "id": 10276,
+    "upgrade": {
+      "group": 331,
+      "level": 6,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 10276,
+      "itemLevel": 600,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10277": {
+    "id": 10277,
+    "upgrade": {
+      "group": 331,
+      "level": 5,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 10277,
+      "itemLevel": 597,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2915,
+              "amount": 15,
+              "name": "Carved Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10278": {
+    "id": 10278,
+    "upgrade": {
+      "group": 331,
+      "level": 4,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 4/8",
+      "bonusId": 10278,
+      "itemLevel": 593,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10279": {
+    "id": 10279,
+    "upgrade": {
+      "group": 331,
+      "level": 3,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 3/8",
+      "bonusId": 10279,
+      "itemLevel": 590,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10280": {
+    "id": 10280,
+    "upgrade": {
+      "group": 331,
+      "level": 2,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 2/8",
+      "bonusId": 10280,
+      "itemLevel": 587,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10281": {
+    "id": 10281,
+    "upgrade": {
+      "group": 331,
+      "level": 1,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 1/8",
+      "bonusId": 10281,
+      "itemLevel": 584,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10282": {
+    "id": 10282,
+    "upgrade": {
+      "group": 329,
+      "level": 8,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 10282,
+      "itemLevel": 580,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10283": {
+    "id": 10283,
+    "upgrade": {
+      "group": 329,
+      "level": 7,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 10283,
+      "itemLevel": 577,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10284": {
+    "id": 10284,
+    "upgrade": {
+      "group": 329,
+      "level": 6,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 10284,
+      "itemLevel": 574,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10285": {
+    "id": 10285,
+    "upgrade": {
+      "group": 329,
+      "level": 5,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 10285,
+      "itemLevel": 571,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10286": {
+    "id": 10286,
+    "upgrade": {
+      "group": 329,
+      "level": 4,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 10286,
+      "itemLevel": 567,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10287": {
+    "id": 10287,
+    "upgrade": {
+      "group": 329,
+      "level": 3,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 10287,
+      "itemLevel": 564,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10288": {
+    "id": 10288,
+    "upgrade": {
+      "group": 329,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 10288,
+      "itemLevel": 561,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "10289": {
+    "id": 10289,
+    "upgrade": {
+      "group": 329,
+      "level": 1,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 10289,
+      "itemLevel": 558,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "10290": {
+    "id": 10290,
+    "upgrade": {
+      "group": 330,
+      "level": 8,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 8/8",
+      "bonusId": 10290,
+      "itemLevel": 593,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10291": {
+    "id": 10291,
+    "upgrade": {
+      "group": 330,
+      "level": 7,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 7/8",
+      "bonusId": 10291,
+      "itemLevel": 590,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10292": {
+    "id": 10292,
+    "upgrade": {
+      "group": 330,
+      "level": 6,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 6/8",
+      "bonusId": 10292,
+      "itemLevel": 587,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10293": {
+    "id": 10293,
+    "upgrade": {
+      "group": 330,
+      "level": 5,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 5/8",
+      "bonusId": 10293,
+      "itemLevel": 584,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2914,
+              "amount": 15,
+              "name": "Weathered Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "10294": {
+    "id": 10294,
+    "upgrade": {
+      "group": 330,
+      "level": 4,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 10294,
+      "itemLevel": 580,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10295": {
+    "id": 10295,
+    "upgrade": {
+      "group": 330,
+      "level": 3,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 10295,
+      "itemLevel": 577,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10296": {
+    "id": 10296,
+    "upgrade": {
+      "group": 330,
+      "level": 2,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 2/8",
+      "bonusId": 10296,
+      "itemLevel": 574,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10297": {
+    "id": 10297,
+    "upgrade": {
+      "group": 330,
+      "level": 1,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 1/8",
+      "bonusId": 10297,
+      "itemLevel": 571,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "10298": {
+    "id": 10298,
+    "quality": 4,
+    "upgrade": {
+      "group": 334,
+      "level": 5,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 5/6",
+      "bonusId": 10298,
+      "itemLevel": 636,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    }
+  },
+  "10299": {
+    "id": 10299,
+    "quality": 4,
+    "upgrade": {
+      "group": 334,
+      "level": 6,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 6/6",
+      "bonusId": 10299,
+      "itemLevel": 639,
+      "seasonId": 24,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 2917,
+              "amount": 15,
+              "name": "Gilded Harbinger Crest",
+              "icon": "inv_crestupgrade_xalatath_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2914,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2915,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2916,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2917,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    }
+  },
+  "10300": {
+    "id": 10300,
+    "ilevel": "0 @plvl 0 - 450 @plvl 450",
+    "curveId": 71196,
+    "tag": "Beginner Crafted",
+    "quality": 7
+  },
+  "10301": {
+    "id": 10301,
+    "ilevel": "0 @plvl 0 - 453 @plvl 453",
+    "curveId": 71350
+  },
+  "10302": {
+    "id": 10302,
+    "ilevel": "0 @plvl 0 - 456 @plvl 456",
+    "curveId": 71351,
+    "quality": 7,
+    "tag": "Beginner Crafted"
+  },
+  "10303": {
+    "id": 10303,
+    "ilevel": "0 @plvl 0 - 459 @plvl 459",
+    "curveId": 71352
+  },
+  "10304": {
+    "id": 10304,
+    "ilevel": "0 @plvl 0 - 463 @plvl 463",
+    "curveId": 71353
+  },
   "10305": {
     "id": 10305,
     "upgrade": {
+      "group": 342,
       "level": 1,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 1/8",
+      "bonusId": 10305,
+      "itemLevel": 467,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -66360,8 +65173,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10305,
-      "itemLevel": 467,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -66393,18 +65204,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10306": {
     "id": 10306,
     "upgrade": {
+      "group": 342,
       "level": 2,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 2/8",
+      "bonusId": 10306,
+      "itemLevel": 470,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -66503,8 +65317,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10306,
-      "itemLevel": 470,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -66536,18 +65348,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10307": {
     "id": 10307,
     "upgrade": {
+      "group": 342,
       "level": 3,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 10307,
+      "itemLevel": 473,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -66646,8 +65461,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10307,
-      "itemLevel": 473,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -66679,18 +65492,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10308": {
     "id": 10308,
     "upgrade": {
+      "group": 342,
       "level": 4,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 10308,
+      "itemLevel": 476,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -66789,8 +65605,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10308,
-      "itemLevel": 476,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -66822,18 +65636,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10309": {
     "id": 10309,
     "upgrade": {
+      "group": 342,
       "level": 5,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 5/8",
+      "bonusId": 10309,
+      "itemLevel": 480,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -66980,8 +65797,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10309,
-      "itemLevel": 480,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67013,18 +65828,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10310": {
     "id": 10310,
     "upgrade": {
+      "group": 342,
       "level": 6,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 6/8",
+      "bonusId": 10310,
+      "itemLevel": 483,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -67171,8 +65989,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10310,
-      "itemLevel": 483,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67204,18 +66020,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10311": {
     "id": 10311,
     "upgrade": {
+      "group": 342,
       "level": 7,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 7/8",
+      "bonusId": 10311,
+      "itemLevel": 486,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -67362,8 +66181,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10311,
-      "itemLevel": 486,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67395,18 +66212,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10312": {
     "id": 10312,
     "upgrade": {
+      "group": 342,
       "level": 8,
       "max": 8,
-      "group": 342,
       "name": "Adventurer",
+      "fullName": "Adventurer 8/8",
+      "bonusId": 10312,
+      "itemLevel": 489,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -67553,8 +66373,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10312,
-      "itemLevel": 489,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67586,18 +66404,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10313": {
     "id": 10313,
     "upgrade": {
+      "group": 356,
       "level": 1,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 1/8",
+      "bonusId": 10313,
+      "itemLevel": 493,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -67744,8 +66565,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10313,
-      "itemLevel": 493,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67777,18 +66596,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10314": {
     "id": 10314,
     "upgrade": {
+      "group": 356,
       "level": 2,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 2/8",
+      "bonusId": 10314,
+      "itemLevel": 496,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -67935,8 +66757,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10314,
-      "itemLevel": 496,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -67968,18 +66788,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10315": {
     "id": 10315,
     "upgrade": {
+      "group": 356,
       "level": 3,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 3/8",
+      "bonusId": 10315,
+      "itemLevel": 499,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -68126,8 +66949,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10315,
-      "itemLevel": 499,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -68159,18 +66980,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10316": {
     "id": 10316,
     "upgrade": {
+      "group": 356,
       "level": 4,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 4/8",
+      "bonusId": 10316,
+      "itemLevel": 502,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -68317,8 +67141,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10316,
-      "itemLevel": 502,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -68350,18 +67172,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10317": {
     "id": 10317,
     "upgrade": {
+      "group": 356,
       "level": 5,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 5/8",
+      "bonusId": 10317,
+      "itemLevel": 506,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -68508,8 +67333,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10317,
-      "itemLevel": 506,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -68541,18 +67364,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10318": {
     "id": 10318,
     "upgrade": {
+      "group": 356,
       "level": 6,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 6/8",
+      "bonusId": 10318,
+      "itemLevel": 509,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -68699,8 +67525,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10318,
-      "itemLevel": 509,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -68732,18 +67556,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10319": {
     "id": 10319,
     "upgrade": {
+      "group": 356,
       "level": 7,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 10319,
+      "itemLevel": 512,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -68890,8 +67717,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10319,
-      "itemLevel": 512,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -68923,18 +67748,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10320": {
     "id": 10320,
     "upgrade": {
+      "group": 356,
       "level": 8,
       "max": 8,
-      "group": 356,
       "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 10320,
+      "itemLevel": 515,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69081,8 +67909,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10320,
-      "itemLevel": 515,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69114,18 +67940,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10321": {
     "id": 10321,
     "upgrade": {
+      "group": 354,
       "level": 1,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 10321,
+      "itemLevel": 454,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69224,8 +68053,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10321,
-      "itemLevel": 454,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69257,18 +68084,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 2
   },
   "10322": {
     "id": 10322,
     "upgrade": {
+      "group": 354,
       "level": 2,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 10322,
+      "itemLevel": 457,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69367,8 +68197,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10322,
-      "itemLevel": 457,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69400,18 +68228,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 2
   },
   "10323": {
     "id": 10323,
     "upgrade": {
+      "group": 354,
       "level": 3,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 10323,
+      "itemLevel": 460,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69510,8 +68341,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10323,
-      "itemLevel": 460,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69543,18 +68372,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10324": {
     "id": 10324,
     "upgrade": {
+      "group": 354,
       "level": 4,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 10324,
+      "itemLevel": 463,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69653,8 +68485,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10324,
-      "itemLevel": 463,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69686,18 +68516,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10325": {
     "id": 10325,
     "upgrade": {
+      "group": 354,
       "level": 5,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 10325,
+      "itemLevel": 467,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69796,8 +68629,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10325,
-      "itemLevel": 467,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69829,18 +68660,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10326": {
     "id": 10326,
     "upgrade": {
+      "group": 354,
       "level": 6,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 10326,
+      "itemLevel": 470,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -69939,8 +68773,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10326,
-      "itemLevel": 470,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -69972,18 +68804,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10327": {
     "id": 10327,
     "upgrade": {
+      "group": 354,
       "level": 7,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 10327,
+      "itemLevel": 473,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70082,8 +68917,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10327,
-      "itemLevel": 473,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -70115,18 +68948,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10328": {
     "id": 10328,
     "upgrade": {
+      "group": 354,
       "level": 8,
       "max": 8,
-      "group": 354,
       "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 10328,
+      "itemLevel": 476,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70225,8 +69061,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10328,
-      "itemLevel": 476,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -70258,18 +69092,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 3
   },
   "10329": {
     "id": 10329,
     "upgrade": {
+      "group": 357,
       "level": 1,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 1/6",
+      "bonusId": 10329,
+      "itemLevel": 506,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70416,8 +69253,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10329,
-      "itemLevel": 506,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -70449,18 +69284,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10330": {
     "id": 10330,
     "upgrade": {
+      "group": 357,
       "level": 2,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 2/6",
+      "bonusId": 10330,
+      "itemLevel": 509,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70607,8 +69445,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10330,
-      "itemLevel": 509,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -70640,18 +69476,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10331": {
     "id": 10331,
     "upgrade": {
+      "group": 357,
       "level": 3,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 3/6",
+      "bonusId": 10331,
+      "itemLevel": 512,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70798,8 +69637,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10331,
-      "itemLevel": 512,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -70831,18 +69668,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10332": {
     "id": 10332,
     "upgrade": {
+      "group": 357,
       "level": 4,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 4/6",
+      "bonusId": 10332,
+      "itemLevel": 515,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -70989,8 +69829,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10332,
-      "itemLevel": 515,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71022,18 +69860,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10333": {
     "id": 10333,
     "upgrade": {
+      "group": 357,
       "level": 5,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 5/6",
+      "bonusId": 10333,
+      "itemLevel": 519,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -71041,15 +69882,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 170,
+              "amount": 190,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71059,15 +69900,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 160,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71077,15 +69918,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71095,15 +69936,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71113,15 +69954,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71131,15 +69972,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 400,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71149,15 +69990,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 300,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71167,21 +70008,19 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 400,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10333,
-      "itemLevel": 519,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71213,18 +70052,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10334": {
     "id": 10334,
     "upgrade": {
+      "group": 357,
       "level": 6,
       "max": 6,
-      "group": 357,
       "name": "Hero",
+      "fullName": "Hero 6/6",
+      "bonusId": 10334,
+      "itemLevel": 522,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -71232,15 +70074,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 170,
+              "amount": 190,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71250,15 +70092,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 160,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71268,15 +70110,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71286,15 +70128,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71304,15 +70146,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71322,15 +70164,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 400,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71340,15 +70182,15 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 300,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71358,21 +70200,19 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 400,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2809,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10334,
-      "itemLevel": 522,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71404,18 +70244,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10335": {
     "id": 10335,
     "upgrade": {
+      "group": 358,
       "level": 1,
       "max": 4,
-      "group": 358,
       "name": "Myth",
+      "fullName": "Myth 1/4",
+      "bonusId": 10335,
+      "itemLevel": 519,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -71428,10 +70271,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71446,10 +70289,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71464,10 +70307,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71482,10 +70325,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71500,10 +70343,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71518,10 +70361,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71536,10 +70379,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71554,16 +70397,14 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10335,
-      "itemLevel": 519,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71595,18 +70436,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10336": {
     "id": 10336,
     "upgrade": {
+      "group": 358,
       "level": 2,
       "max": 4,
-      "group": 358,
       "name": "Myth",
+      "fullName": "Myth 2/4",
+      "bonusId": 10336,
+      "itemLevel": 522,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -71619,10 +70463,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71637,10 +70481,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71655,10 +70499,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71673,10 +70517,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71691,10 +70535,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71709,10 +70553,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71727,10 +70571,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71745,16 +70589,14 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10336,
-      "itemLevel": 522,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71786,18 +70628,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10337": {
     "id": 10337,
     "upgrade": {
+      "group": 358,
       "level": 3,
       "max": 4,
-      "group": 358,
       "name": "Myth",
+      "fullName": "Myth 3/4",
+      "bonusId": 10337,
+      "itemLevel": 525,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -71810,10 +70655,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71828,10 +70673,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71846,10 +70691,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71864,10 +70709,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71882,10 +70727,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71900,10 +70745,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71918,10 +70763,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -71936,16 +70781,14 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10337,
-      "itemLevel": 525,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -71977,18 +70820,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10338": {
     "id": 10338,
     "upgrade": {
+      "group": 358,
       "level": 4,
       "max": 4,
-      "group": 358,
       "name": "Myth",
+      "fullName": "Myth 4/4",
+      "bonusId": 10338,
+      "itemLevel": 528,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -72001,10 +70847,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72019,10 +70865,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72037,10 +70883,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72055,10 +70901,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72073,10 +70919,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72091,10 +70937,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72109,10 +70955,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         },
@@ -72127,16 +70973,14 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "flightstone-dragonflight"
             },
             {
-              "currencyId": 2709,
+              "currencyId": 2812,
               "amount": 15,
-              "name": "Aspect's Dreaming Crest",
-              "icon": "inv_10_gearupgrade_aspectsdreamingcrest"
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
             }
           ]
         }
       ],
-      "bonusId": 10338,
-      "itemLevel": 528,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -72168,8 +71012,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
@@ -72184,10 +71027,14 @@ export const bonus_IDs: {[key: string]: any} = {
   "10341": {
     "id": 10341,
     "upgrade": {
+      "group": 355,
       "level": 1,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 1/8",
+      "bonusId": 10341,
+      "itemLevel": 480,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -72334,8 +71181,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10341,
-      "itemLevel": 480,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -72367,18 +71212,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10342": {
     "id": 10342,
     "upgrade": {
+      "group": 355,
       "level": 2,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 2/8",
+      "bonusId": 10342,
+      "itemLevel": 483,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -72525,8 +71373,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10342,
-      "itemLevel": 483,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -72558,18 +71404,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10343": {
     "id": 10343,
     "upgrade": {
+      "group": 355,
       "level": 3,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 3/8",
+      "bonusId": 10343,
+      "itemLevel": 486,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -72716,8 +71565,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10343,
-      "itemLevel": 486,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -72749,18 +71596,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10344": {
     "id": 10344,
     "upgrade": {
+      "group": 355,
       "level": 4,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 4/8",
+      "bonusId": 10344,
+      "itemLevel": 489,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -72907,8 +71757,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10344,
-      "itemLevel": 489,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -72940,18 +71788,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10345": {
     "id": 10345,
     "upgrade": {
+      "group": 355,
       "level": 5,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 10345,
+      "itemLevel": 493,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73098,8 +71949,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10345,
-      "itemLevel": 493,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -73131,18 +71980,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10346": {
     "id": 10346,
     "upgrade": {
+      "group": 355,
       "level": 6,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 10346,
+      "itemLevel": 496,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73289,8 +72141,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10346,
-      "itemLevel": 496,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -73322,18 +72172,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10347": {
     "id": 10347,
     "upgrade": {
+      "group": 355,
       "level": 7,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 7/8",
+      "bonusId": 10347,
+      "itemLevel": 499,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73480,8 +72333,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10347,
-      "itemLevel": 499,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -73513,18 +72364,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10348": {
     "id": 10348,
     "upgrade": {
+      "group": 355,
       "level": 8,
       "max": 8,
-      "group": 355,
       "name": "Veteran",
+      "fullName": "Veteran 8/8",
+      "bonusId": 10348,
+      "itemLevel": 502,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73671,8 +72525,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10348,
-      "itemLevel": 502,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -73704,10 +72556,32 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
+  },
+  "10349": {
+    "id": 10349,
+    "tag": "Beginner Crafted",
+    "base_level": 564,
+    "base_level_priority": 70
+  },
+  "10350": {
+    "id": 10350,
+    "ilevel": "362 @plvl 50 - 362 @plvl 362",
+    "curveId": 71401
+  },
+  "10353": {
+    "id": 10353,
+    "tag": "Raid Finder"
+  },
+  "10355": {
+    "id": 10355,
+    "tag": "Heroic"
+  },
+  "10356": {
+    "id": 10356,
+    "tag": "Mythic"
   },
   "10357": {
     "id": 10357,
@@ -73725,6 +72599,70 @@ export const bonus_IDs: {[key: string]: any} = {
     "base_level": 512,
     "base_level_priority": 65
   },
+  "10360": {
+    "id": 10360,
+    "ilevel": "362 @plvl 50 - 362 @plvl 362",
+    "curveId": 71401
+  },
+  "10361": {
+    "id": 10361,
+    "ilevel": "362 @plvl 50 - 362 @plvl 362",
+    "curveId": 71420
+  },
+  "10362": {
+    "id": 10362,
+    "ilevel": "434 @plvl 50 - 532 @plvl 532",
+    "curveId": 71418
+  },
+  "10363": {
+    "id": 10363,
+    "ilevel": "434 @plvl 50 - 538 @plvl 538",
+    "curveId": 71419
+  },
+  "10364": {
+    "id": 10364,
+    "ilevel": "441 @plvl 50 - 535 @plvl 535",
+    "curveId": 71416,
+    "quality": 3
+  },
+  "10365": {
+    "id": 10365,
+    "ilevel": "441 @plvl 50 - 541 @plvl 541",
+    "curveId": 71417,
+    "quality": 3
+  },
+  "10366": {
+    "id": 10366,
+    "ilevel": "447 @plvl 50 - 539 @plvl 539",
+    "curveId": 71414,
+    "quality": 4
+  },
+  "10367": {
+    "id": 10367,
+    "ilevel": "447 @plvl 50 - 545 @plvl 545",
+    "curveId": 71415,
+    "quality": 4
+  },
+  "10376": {
+    "id": 10376,
+    "item_conversion": 8
+  },
+  "10377": {
+    "id": 10377,
+    "item_conversion": 8
+  },
+  "10378": {
+    "id": 10378,
+    "item_conversion": 8
+  },
+  "10379": {
+    "id": 10379,
+    "item_conversion": 8
+  },
+  "10380": {
+    "id": 10380,
+    "item_conversion": 8
+  },
   "10381": {
     "id": 10381,
     "effect": {
@@ -73737,6 +72675,28 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     },
     "quality": 1
+  },
+  "10382": {
+    "id": 10382,
+    "ilevel": "356 @plvl 55 - 551 @plvl 551",
+    "curveId": 71408
+  },
+  "10385": {
+    "id": 10385,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409
+  },
+  "10388": {
+    "id": 10388,
+    "tag": "Heroic"
+  },
+  "10389": {
+    "id": 10389,
+    "tag": "Mythic"
+  },
+  "10390": {
+    "id": 10390,
+    "tag": "Mythic+"
   },
   "10391": {
     "id": 10391,
@@ -73751,13 +72711,45 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10397": {
+    "id": 10397,
+    "socket": 1
+  },
+  "10405": {
+    "id": 10405,
+    "effect": {
+      "id": 181705,
+      "index": 0,
+      "spell": {
+        "id": 429389,
+        "name": "Fervor",
+        "icon": "spell_holy_greaterblessingofkings"
+      }
+    }
+  },
+  "10406": {
+    "id": 10406,
+    "effect": {
+      "id": 181706,
+      "index": 0,
+      "spell": {
+        "id": 429270,
+        "name": "Arcanist's Edge",
+        "icon": "spell_arcane_arcanepotency"
+      }
+    }
+  },
   "10407": {
     "id": 10407,
     "upgrade": {
+      "group": 360,
       "level": 1,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 1/12",
+      "bonusId": 10407,
+      "itemLevel": 493,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73783,7 +72775,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73801,7 +72793,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73819,7 +72811,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73837,7 +72829,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73855,7 +72847,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73873,7 +72865,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73891,7 +72883,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73904,8 +72896,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10407,
-      "itemLevel": 493,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -73937,18 +72927,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10408": {
     "id": 10408,
     "upgrade": {
+      "group": 360,
       "level": 2,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 2/12",
+      "bonusId": 10408,
+      "itemLevel": 496,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -73974,7 +72967,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -73992,7 +72985,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74010,7 +73003,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74028,7 +73021,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74046,7 +73039,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74064,7 +73057,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74082,7 +73075,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74095,8 +73088,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10408,
-      "itemLevel": 496,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -74128,18 +73119,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10409": {
     "id": 10409,
     "upgrade": {
+      "group": 360,
       "level": 3,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 3/12",
+      "bonusId": 10409,
+      "itemLevel": 499,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -74165,7 +73159,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74183,7 +73177,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74201,7 +73195,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74219,7 +73213,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74237,7 +73231,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74255,7 +73249,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74273,7 +73267,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74286,8 +73280,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10409,
-      "itemLevel": 499,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -74319,18 +73311,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10410": {
     "id": 10410,
     "upgrade": {
+      "group": 360,
       "level": 4,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 4/12",
+      "bonusId": 10410,
+      "itemLevel": 502,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -74356,7 +73351,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74374,7 +73369,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74392,7 +73387,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74406,6 +73401,24 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
           "flags": 2,
           "amounts": [
             {
@@ -74423,30 +73436,12 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         },
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
           "mask_inv_type": 67117056,
           "flags": 1,
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74464,7 +73459,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74477,8 +73472,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10410,
-      "itemLevel": 502,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -74510,18 +73503,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10411": {
     "id": 10411,
     "upgrade": {
+      "group": 360,
       "level": 5,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 5/12",
+      "bonusId": 10411,
+      "itemLevel": 506,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -74547,7 +73543,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74565,7 +73561,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74583,7 +73579,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74601,7 +73597,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74619,7 +73615,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74637,7 +73633,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74655,7 +73651,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74668,8 +73664,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10411,
-      "itemLevel": 506,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -74701,18 +73695,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10412": {
     "id": 10412,
     "upgrade": {
+      "group": 360,
       "level": 6,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 6/12",
+      "bonusId": 10412,
+      "itemLevel": 509,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -74738,7 +73735,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74756,7 +73753,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74774,7 +73771,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74792,7 +73789,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74810,7 +73807,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74828,7 +73825,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74846,7 +73843,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74859,8 +73856,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10412,
-      "itemLevel": 509,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -74892,18 +73887,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10413": {
     "id": 10413,
     "upgrade": {
+      "group": 360,
       "level": 7,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 7/12",
+      "bonusId": 10413,
+      "itemLevel": 512,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -74929,7 +73927,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74947,7 +73945,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74965,7 +73963,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -74983,7 +73981,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75001,7 +73999,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75019,7 +74017,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75037,7 +74035,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75050,8 +74048,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10413,
-      "itemLevel": 512,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -75083,18 +74079,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10414": {
     "id": 10414,
     "upgrade": {
+      "group": 360,
       "level": 8,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 8/12",
+      "bonusId": 10414,
+      "itemLevel": 515,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -75120,7 +74119,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75138,7 +74137,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75156,7 +74155,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75170,6 +74169,24 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 88,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
           "flags": 2,
           "amounts": [
             {
@@ -75187,30 +74204,12 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         },
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
           "mask_inv_type": 67117056,
           "flags": 1,
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75228,7 +74227,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75241,8 +74240,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10414,
-      "itemLevel": 515,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -75274,18 +74271,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10415": {
     "id": 10415,
     "upgrade": {
+      "group": 360,
       "level": 9,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 9/12",
+      "bonusId": 10415,
+      "itemLevel": 519,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -75311,7 +74311,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75329,7 +74329,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75347,7 +74347,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75365,7 +74365,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75383,7 +74383,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75401,7 +74401,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75419,7 +74419,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75432,8 +74432,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10415,
-      "itemLevel": 519,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -75465,18 +74463,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10416": {
     "id": 10416,
     "upgrade": {
+      "group": 360,
       "level": 10,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 10/12",
+      "bonusId": 10416,
+      "itemLevel": 522,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -75502,7 +74503,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75520,7 +74521,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75538,7 +74539,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75556,7 +74557,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75574,7 +74575,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75592,7 +74593,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75610,7 +74611,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75623,8 +74624,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10416,
-      "itemLevel": 522,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -75656,18 +74655,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10417": {
     "id": 10417,
     "upgrade": {
+      "group": 360,
       "level": 11,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 11/12",
+      "bonusId": 10417,
+      "itemLevel": 525,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -75693,7 +74695,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75711,7 +74713,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75729,7 +74731,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75747,7 +74749,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75765,7 +74767,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75783,7 +74785,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75801,7 +74803,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75814,8 +74816,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10417,
-      "itemLevel": 525,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -75847,18 +74847,21 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
   },
   "10418": {
     "id": 10418,
     "upgrade": {
+      "group": 360,
       "level": 12,
       "max": 12,
-      "group": 360,
       "name": "Awakened",
+      "fullName": "Awakened 12/12",
+      "bonusId": 10418,
+      "itemLevel": 528,
+      "seasonId": 23,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -75884,7 +74887,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75902,7 +74905,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75920,7 +74923,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75938,7 +74941,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75956,7 +74959,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75974,7 +74977,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -75992,7 +74995,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76005,8 +75008,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10418,
-      "itemLevel": 528,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -76038,10 +75039,14 @@ export const bonus_IDs: {[key: string]: any} = {
           "scaling": 0,
           "accountWide": false
         }
-      ],
-      "seasonId": 23
+      ]
     },
     "quality": 4
+  },
+  "10421": {
+    "id": 10421,
+    "base_level": 593,
+    "base_level_priority": 100
   },
   "10426": {
     "id": 10426,
@@ -76496,10 +75501,70 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10463": {
+    "id": 10463,
+    "effect": {
+      "id": 181910,
+      "index": 0,
+      "spell": {
+        "id": 432442,
+        "name": "Enkindle",
+        "icon": "spell_fire_playingwithfire"
+      }
+    }
+  },
+  "10464": {
+    "id": 10464,
+    "effect": {
+      "id": 181945,
+      "index": 0,
+      "spell": {
+        "id": 432333,
+        "name": "Explosive Barrage",
+        "icon": "spell_shadow_rainoffire"
+      }
+    }
+  },
   "10465": {
     "id": 10465,
     "ilevel": "5 @plvl 1 - 454 @plvl 454",
     "curveId": 72045
+  },
+  "10466": {
+    "id": 10466,
+    "effect": {
+      "id": 181957,
+      "index": 0,
+      "spell": {
+        "id": 432445,
+        "name": "Wildfire",
+        "icon": "ability_warlock_inferno"
+      }
+    }
+  },
+  "10467": {
+    "id": 10467,
+    "effect": {
+      "id": 181958,
+      "index": 0,
+      "spell": {
+        "id": 432402,
+        "name": "Meteor Storm",
+        "icon": "spell_fire_meteorstorm"
+      }
+    }
+  },
+  "10468": {
+    "id": 10468,
+    "effect": {
+      "id": 181959,
+      "index": 0,
+      "spell": {
+        "id": 432438,
+        "name": "Incendiary Terror",
+        "icon": "spell_fire_lavaspawn"
+      }
+    }
   },
   "10469": {
     "id": 10469,
@@ -76602,6 +75667,18 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 435025,
         "name": "Earthbreaker",
         "icon": "ability_earthen_pillar"
+      }
+    }
+  },
+  "10477": {
+    "id": 10477,
+    "effect": {
+      "id": 182039,
+      "index": 0,
+      "spell": {
+        "id": 433214,
+        "name": "Frost Armor",
+        "icon": "spell_frost_chillingarmor"
       }
     }
   },
@@ -76764,10 +75841,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10490": {
     "id": 10490,
     "upgrade": {
+      "group": 382,
       "level": 1,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 1/14",
+      "bonusId": 10490,
+      "itemLevel": 493,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -76793,7 +75873,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76811,7 +75891,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76829,7 +75909,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76847,7 +75927,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76865,7 +75945,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76883,7 +75963,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76901,7 +75981,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -76914,8 +75994,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10490,
-      "itemLevel": 493,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -76954,10 +76032,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10491": {
     "id": 10491,
     "upgrade": {
+      "group": 382,
       "level": 2,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 2/14",
+      "bonusId": 10491,
+      "itemLevel": 496,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -76983,7 +76064,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77001,7 +76082,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77019,7 +76100,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77037,7 +76118,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77055,7 +76136,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77073,7 +76154,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77091,7 +76172,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77104,8 +76185,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10491,
-      "itemLevel": 496,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -77144,10 +76223,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10492": {
     "id": 10492,
     "upgrade": {
+      "group": 382,
       "level": 3,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 3/14",
+      "bonusId": 10492,
+      "itemLevel": 499,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77173,7 +76255,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77191,7 +76273,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77209,7 +76291,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77227,7 +76309,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77245,7 +76327,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77263,7 +76345,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77281,7 +76363,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77294,8 +76376,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10492,
-      "itemLevel": 499,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -77334,10 +76414,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10493": {
     "id": 10493,
     "upgrade": {
+      "group": 382,
       "level": 4,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 4/14",
+      "bonusId": 10493,
+      "itemLevel": 502,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77363,7 +76446,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77381,7 +76464,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77399,7 +76482,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77417,7 +76500,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77435,7 +76518,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77453,7 +76536,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77471,7 +76554,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77484,8 +76567,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10493,
-      "itemLevel": 502,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -77524,10 +76605,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10494": {
     "id": 10494,
     "upgrade": {
+      "group": 382,
       "level": 5,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 5/14",
+      "bonusId": 10494,
+      "itemLevel": 506,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77553,7 +76637,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77571,7 +76655,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77589,7 +76673,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77607,7 +76691,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77625,7 +76709,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77643,7 +76727,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77661,7 +76745,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77674,8 +76758,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10494,
-      "itemLevel": 506,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -77714,10 +76796,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10495": {
     "id": 10495,
     "upgrade": {
+      "group": 382,
       "level": 6,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 6/14",
+      "bonusId": 10495,
+      "itemLevel": 509,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77743,7 +76828,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77761,7 +76846,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77779,7 +76864,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77797,7 +76882,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77815,7 +76900,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77833,7 +76918,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77851,7 +76936,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77864,8 +76949,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10495,
-      "itemLevel": 509,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -77904,10 +76987,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10496": {
     "id": 10496,
     "upgrade": {
+      "group": 382,
       "level": 7,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 7/14",
+      "bonusId": 10496,
+      "itemLevel": 512,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77933,7 +77019,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77951,7 +77037,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77969,7 +77055,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -77987,7 +77073,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78005,7 +77091,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78023,7 +77109,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78041,7 +77127,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78054,8 +77140,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10496,
-      "itemLevel": 512,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78094,10 +77178,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10497": {
     "id": 10497,
     "upgrade": {
+      "group": 382,
       "level": 8,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 8/14",
+      "bonusId": 10497,
+      "itemLevel": 515,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78123,7 +77210,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78141,7 +77228,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78159,7 +77246,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78177,7 +77264,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78195,7 +77282,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78213,7 +77300,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78231,7 +77318,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78244,8 +77331,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10497,
-      "itemLevel": 515,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78284,10 +77369,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10498": {
     "id": 10498,
     "upgrade": {
+      "group": 382,
       "level": 9,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 9/14",
+      "bonusId": 10498,
+      "itemLevel": 519,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78313,7 +77401,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78331,7 +77419,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78349,7 +77437,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78367,7 +77455,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78385,7 +77473,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78403,7 +77491,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78421,7 +77509,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78434,8 +77522,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10498,
-      "itemLevel": 519,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78474,10 +77560,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10499": {
     "id": 10499,
     "upgrade": {
+      "group": 382,
       "level": 10,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 10/14",
+      "bonusId": 10499,
+      "itemLevel": 522,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78503,7 +77592,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78521,7 +77610,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78539,7 +77628,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78557,7 +77646,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78575,7 +77664,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78593,7 +77682,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78611,7 +77700,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78624,8 +77713,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10499,
-      "itemLevel": 522,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78664,10 +77751,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10500": {
     "id": 10500,
     "upgrade": {
+      "group": 382,
       "level": 11,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 11/14",
+      "bonusId": 10500,
+      "itemLevel": 525,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78693,7 +77783,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78711,7 +77801,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78729,7 +77819,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78747,7 +77837,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78765,7 +77855,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78783,7 +77873,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78801,7 +77891,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78814,8 +77904,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10500,
-      "itemLevel": 525,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78854,10 +77942,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10501": {
     "id": 10501,
     "upgrade": {
+      "group": 382,
       "level": 12,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 12/14",
+      "bonusId": 10501,
+      "itemLevel": 528,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78883,7 +77974,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78901,7 +77992,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78919,7 +78010,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78937,7 +78028,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78955,7 +78046,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78973,7 +78064,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -78991,7 +78082,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79004,8 +78095,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10501,
-      "itemLevel": 528,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -79044,10 +78133,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10502": {
     "id": 10502,
     "upgrade": {
+      "group": 382,
       "level": 13,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 13/14",
+      "bonusId": 10502,
+      "itemLevel": 532,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -79073,7 +78165,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79091,7 +78183,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79109,7 +78201,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79127,7 +78219,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79145,7 +78237,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79163,7 +78255,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79181,7 +78273,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79194,8 +78286,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10502,
-      "itemLevel": 532,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -79234,10 +78324,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10503": {
     "id": 10503,
     "upgrade": {
+      "group": 382,
       "level": 14,
       "max": 14,
-      "group": 382,
       "name": "Awakened",
+      "fullName": "Awakened 14/14",
+      "bonusId": 10503,
+      "itemLevel": 535,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -79263,7 +78356,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79281,7 +78374,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79299,7 +78392,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79317,7 +78410,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79335,7 +78428,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79353,7 +78446,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79371,7 +78464,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79384,8 +78477,6 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10503,
-      "itemLevel": 535,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -79577,6 +78668,18 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10518": {
+    "id": 10518,
+    "effect": {
+      "id": 182911,
+      "index": 0,
+      "spell": {
+        "id": 435992,
+        "name": "Prismatic Null Stone",
+        "icon": "inv_enchant_prismaticsphere"
+      }
+    }
+  },
   "10519": {
     "id": 10519,
     "quality": 1,
@@ -79587,6 +78690,30 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 436031,
         "name": "Hunter's Chains",
         "icon": "ability_demonhunter_infernalchains"
+      }
+    }
+  },
+  "10520": {
+    "id": 10520,
+    "effect": {
+      "id": 189340,
+      "index": 0,
+      "spell": {
+        "id": 461177,
+        "name": "Elemental Focusing Lens",
+        "icon": "inv_10_jewelcrafting3_rainbowprism_color2"
+      }
+    }
+  },
+  "10521": {
+    "id": 10521,
+    "effect": {
+      "id": 182939,
+      "index": 0,
+      "spell": {
+        "id": 460521,
+        "name": "Captured Starlight",
+        "icon": "spell_priest_divinestar_holy"
       }
     }
   },
@@ -79685,11 +78812,807 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10531,
     "socket": 1
   },
+  "10589": {
+    "id": 10589,
+    "socket": 1
+  },
+  "10591": {
+    "id": 10591,
+    "socket": 1
+  },
+  "10596": {
+    "id": 10596,
+    "socket": 1
+  },
+  "10597": {
+    "id": 10597,
+    "socket": 1
+  },
+  "10601": {
+    "id": 10601,
+    "socket": 2
+  },
+  "10602": {
+    "id": 10602,
+    "socket": 2
+  },
+  "10608": {
+    "id": 10608,
+    "socket": 2
+  },
+  "10609": {
+    "id": 10609,
+    "socket": 2
+  },
+  "10615": {
+    "id": 10615,
+    "socket": 2
+  },
+  "10616": {
+    "id": 10616,
+    "socket": 2
+  },
+  "10622": {
+    "id": 10622,
+    "socket": 2
+  },
+  "10623": {
+    "id": 10623,
+    "socket": 2
+  },
+  "10629": {
+    "id": 10629,
+    "socket": 3
+  },
+  "10630": {
+    "id": 10630,
+    "socket": 3
+  },
+  "10636": {
+    "id": 10636,
+    "socket": 3
+  },
+  "10637": {
+    "id": 10637,
+    "socket": 3
+  },
+  "10643": {
+    "id": 10643,
+    "socket": 3
+  },
+  "10644": {
+    "id": 10644,
+    "socket": 3
+  },
+  "10650": {
+    "id": 10650,
+    "socket": 3
+  },
+  "10651": {
+    "id": 10651,
+    "socket": 3
+  },
+  "10657": {
+    "id": 10657,
+    "socket": 3
+  },
+  "10658": {
+    "id": 10658,
+    "socket": 3
+  },
+  "10659": {
+    "id": 10659,
+    "socket": 3
+  },
+  "10663": {
+    "id": 10663,
+    "socket": 3
+  },
+  "10666": {
+    "id": 10666,
+    "socket": 3
+  },
+  "10670": {
+    "id": 10670,
+    "socket": 3
+  },
+  "10674": {
+    "id": 10674,
+    "socket": 3
+  },
+  "10677": {
+    "id": 10677,
+    "socket": 3
+  },
+  "10681": {
+    "id": 10681,
+    "socket": 3
+  },
+  "10684": {
+    "id": 10684,
+    "socket": 3
+  },
+  "10688": {
+    "id": 10688,
+    "socket": 3
+  },
+  "10691": {
+    "id": 10691,
+    "socket": 3
+  },
+  "10695": {
+    "id": 10695,
+    "socket": 3
+  },
+  "10698": {
+    "id": 10698,
+    "socket": 3
+  },
+  "10702": {
+    "id": 10702,
+    "socket": 3
+  },
+  "10705": {
+    "id": 10705,
+    "socket": 3
+  },
+  "10709": {
+    "id": 10709,
+    "socket": 3
+  },
+  "10712": {
+    "id": 10712,
+    "socket": 3
+  },
+  "10716": {
+    "id": 10716,
+    "socket": 3
+  },
+  "10719": {
+    "id": 10719,
+    "socket": 3
+  },
+  "10733": {
+    "id": 10733,
+    "socket": 3
+  },
+  "10734": {
+    "id": 10734,
+    "socket": 3
+  },
+  "10735": {
+    "id": 10735,
+    "socket": 3
+  },
+  "10736": {
+    "id": 10736,
+    "socket": 3
+  },
+  "10737": {
+    "id": 10737,
+    "socket": 3
+  },
+  "10738": {
+    "id": 10738,
+    "socket": 3
+  },
+  "10739": {
+    "id": 10739,
+    "socket": 3
+  },
+  "10740": {
+    "id": 10740,
+    "socket": 3
+  },
+  "10741": {
+    "id": 10741,
+    "socket": 3
+  },
+  "10742": {
+    "id": 10742,
+    "socket": 3
+  },
+  "10743": {
+    "id": 10743,
+    "socket": 3
+  },
+  "10766": {
+    "id": 10766,
+    "socket": 3
+  },
+  "10767": {
+    "id": 10767,
+    "socket": 3
+  },
+  "10768": {
+    "id": 10768,
+    "socket": 3
+  },
+  "10769": {
+    "id": 10769,
+    "socket": 3
+  },
+  "10770": {
+    "id": 10770,
+    "socket": 3
+  },
+  "10771": {
+    "id": 10771,
+    "socket": 3
+  },
+  "10772": {
+    "id": 10772,
+    "socket": 3
+  },
+  "10773": {
+    "id": 10773,
+    "socket": 3
+  },
+  "10774": {
+    "id": 10774,
+    "socket": 3
+  },
+  "10775": {
+    "id": 10775,
+    "socket": 3
+  },
+  "10776": {
+    "id": 10776,
+    "socket": 3
+  },
+  "10800": {
+    "id": 10800,
+    "effect": {
+      "id": 183028,
+      "index": 0,
+      "spell": {
+        "id": 429241,
+        "name": "Mark of Arrogance",
+        "icon": "ability_warlock_impoweredimp"
+      }
+    }
+  },
+  "10801": {
+    "id": 10801,
+    "effect": {
+      "id": 183029,
+      "index": 0,
+      "spell": {
+        "id": 429373,
+        "name": "Quick Strike",
+        "icon": "ability_rogue_versatility"
+      }
+    }
+  },
+  "10802": {
+    "id": 10802,
+    "effect": {
+      "id": 183030,
+      "index": 0,
+      "spell": {
+        "id": 429378,
+        "name": "Slay",
+        "icon": "ability_physical_taunt_purple"
+      }
+    }
+  },
+  "10803": {
+    "id": 10803,
+    "effect": {
+      "id": 183031,
+      "index": 0,
+      "spell": {
+        "id": 429230,
+        "name": "Tinkmaster's Shield",
+        "icon": "inv_gizmo_electrifiedether"
+      }
+    }
+  },
+  "10804": {
+    "id": 10804,
+    "effect": {
+      "id": 183032,
+      "index": 0,
+      "spell": {
+        "id": 429410,
+        "name": "Victory Fire",
+        "icon": "ability_racial_fireresist"
+      }
+    }
+  },
+  "10805": {
+    "id": 10805,
+    "effect": {
+      "id": 183033,
+      "index": 0,
+      "spell": {
+        "id": 439081,
+        "name": "Blink",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "10806": {
+    "id": 10806,
+    "effect": {
+      "id": 183034,
+      "index": 0,
+      "spell": {
+        "id": 439054,
+        "name": "Heroic Leap",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "10807": {
+    "id": 10807,
+    "effect": {
+      "id": 183035,
+      "index": 0,
+      "spell": {
+        "id": 439082,
+        "name": "Roll",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "10808": {
+    "id": 10808,
+    "effect": {
+      "id": 183036,
+      "index": 0,
+      "spell": {
+        "id": 439083,
+        "name": "Sprint",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "10809": {
+    "id": 10809,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 7168,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.7168]"
+  },
+  "10810": {
+    "id": 10810,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 7168,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.7168]"
+  },
+  "10811": {
+    "id": 10811,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 215040,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [21.5040]"
+  },
+  "10812": {
+    "id": 10812,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 14336,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [1.4336]"
+  },
+  "10813": {
+    "id": 10813,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 14336,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [1.4336]"
+  },
+  "10814": {
+    "id": 10814,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 3584,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.3584]"
+  },
+  "10815": {
+    "id": 10815,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 9556,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.9556]"
+  },
+  "10816": {
+    "id": 10816,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 9556,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.9556]"
+  },
+  "10817": {
+    "id": 10817,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 286680,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [28.6680]"
+  },
+  "10818": {
+    "id": 10818,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 19112,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [1.9112]"
+  },
+  "10819": {
+    "id": 10819,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 19112,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [1.9112]"
+  },
+  "10820": {
+    "id": 10820,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 4778,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.4778]"
+  },
+  "10821": {
+    "id": 10821,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 15000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [1.5000]"
+  },
+  "10822": {
+    "id": 10822,
+    "effect": {
+      "id": 183111,
+      "index": 0,
+      "spell": {
+        "id": 436565,
+        "name": "Hailstorm",
+        "icon": "inv_misc_permafrostshard"
+      }
+    }
+  },
+  "10823": {
+    "id": 10823,
+    "effect": {
+      "id": 183113,
+      "index": 0,
+      "spell": {
+        "id": 436573,
+        "name": "Cold Front",
+        "icon": "spell_frost_glacier"
+      }
+    }
+  },
+  "10824": {
+    "id": 10824,
+    "effect": {
+      "id": 183115,
+      "index": 0,
+      "spell": {
+        "id": 436578,
+        "name": "Brittle",
+        "icon": "ability_mage_coldasice"
+      }
+    }
+  },
+  "10825": {
+    "id": 10825,
+    "effect": {
+      "id": 183118,
+      "index": 0,
+      "spell": {
+        "id": 436583,
+        "name": "Memory of Vengeance",
+        "icon": "ability_evoker_terroroftheskies"
+      }
+    }
+  },
+  "10826": {
+    "id": 10826,
+    "effect": {
+      "id": 183120,
+      "index": 0,
+      "spell": {
+        "id": 436586,
+        "name": "Searing Light",
+        "icon": "spell_holy_pureofheart"
+      }
+    }
+  },
+  "10827": {
+    "id": 10827,
+    "base_level": 538,
+    "base_level_priority": 100
+  },
+  "10828": {
+    "id": 10828,
+    "base_level": 564,
+    "base_level_priority": 100
+  },
+  "10829": {
+    "id": 10829,
+    "base_level": 590,
+    "base_level_priority": 100
+  },
+  "10835": {
+    "id": 10835,
+    "socket": 1
+  },
+  "10836": {
+    "id": 10836,
+    "socket": 2
+  },
+  "10838": {
+    "id": 10838,
+    "socket": 3
+  },
+  "10839": {
+    "id": 10839,
+    "effect": {
+      "id": 183128,
+      "index": 0,
+      "spell": {
+        "id": 435854,
+        "name": "Oblivion Sphere",
+        "icon": "inv_10_worlddroplevelingoptionalreagent_misc_orb_ice"
+      }
+    }
+  },
+  "10840": {
+    "id": 10840,
+    "quality": 2,
+    "base_level": 545,
+    "base_level_priority": 1000
+  },
+  "10841": {
+    "id": 10841,
+    "quality": 3,
+    "base_level": 558,
+    "base_level_priority": 1000
+  },
+  "10842": {
+    "id": 10842,
+    "quality": 4,
+    "base_level": 597,
+    "base_level_priority": 1000
+  },
+  "10843": {
+    "id": 10843,
+    "effect": {
+      "id": 183132,
+      "index": 0,
+      "spell": {
+        "id": 436789,
+        "name": "Thundering Orb",
+        "icon": "ability_thunderking_balllightning"
+      }
+    }
+  },
   "10845": {
     "id": 10845,
     "ilevel": "21 @plvl 1 - 450 @plvl 450",
     "curveId": 73310,
     "tag": "Timewarped"
+  },
+  "10846": {
+    "id": 10846,
+    "effect": {
+      "id": 183141,
+      "index": 0,
+      "spell": {
+        "id": 437014,
+        "name": "Lifestorm",
+        "icon": "achievement_bg_wineos"
+      }
+    }
+  },
+  "10847": {
+    "id": 10847,
+    "effect": {
+      "id": 183153,
+      "index": 0,
+      "spell": {
+        "id": 437072,
+        "name": "Chi-Ji, the Red Crane",
+        "icon": "inv_pet_cranegod"
+      }
+    }
+  },
+  "10848": {
+    "id": 10848,
+    "effect": {
+      "id": 183293,
+      "index": 0,
+      "spell": {
+        "id": 437495,
+        "name": "Morphing Elements",
+        "icon": "spell_arcane_portalstormshield"
+      }
+    }
+  },
+  "10849": {
+    "id": 10849,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 2045,
+        "name": "StrInt"
+      }
+    ],
+    "stats": "100% StrInt [0.2045]"
+  },
+  "10850": {
+    "id": 10850,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 74,
+        "amount": 2045,
+        "name": "StrInt"
+      }
+    ],
+    "stats": "100% StrInt [0.2045]"
+  },
+  "10851": {
+    "id": 10851,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 15000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [1.5000]"
+  },
+  "10852": {
+    "id": 10852,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 15000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [1.5000]"
+  },
+  "10853": {
+    "id": 10853,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 73,
+        "amount": 2045,
+        "name": "AgiInt"
+      }
+    ],
+    "stats": "100% AgiInt [0.2045]"
+  },
+  "10854": {
+    "id": 10854,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 73,
+        "amount": 2045,
+        "name": "AgiInt"
+      }
+    ],
+    "stats": "100% AgiInt [0.2045]"
+  },
+  "10855": {
+    "id": 10855,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 73,
+        "amount": 2045,
+        "name": "AgiInt"
+      }
+    ],
+    "stats": "100% AgiInt [0.2045]"
+  },
+  "10856": {
+    "id": 10856,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 73,
+        "amount": 2045,
+        "name": "AgiInt"
+      }
+    ],
+    "stats": "100% AgiInt [0.2045]"
+  },
+  "10857": {
+    "id": 10857,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 5,
+        "amount": 2045,
+        "name": "Int"
+      }
+    ],
+    "stats": "100% Int [0.2045]"
+  },
+  "10858": {
+    "id": 10858,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 5,
+        "amount": 2045,
+        "name": "Int"
+      }
+    ],
+    "stats": "100% Int [0.2045]"
+  },
+  "10859": {
+    "id": 10859,
+    "effect": {
+      "id": 183297,
+      "index": 0,
+      "spell": {
+        "id": 438570,
+        "name": "Timerunner's Grip",
+        "icon": "ability_warrior_titansgrip"
+      }
+    }
   },
   "10861": {
     "id": 10861,
@@ -79727,6 +79650,30 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10874,
     "item_conversion": 9
   },
+  "10878": {
+    "id": 10878,
+    "socket": 1
+  },
+  "10879": {
+    "id": 10879,
+    "socket": 2
+  },
+  "10880": {
+    "id": 10880,
+    "socket": 3
+  },
+  "10881": {
+    "id": 10881,
+    "effect": {
+      "id": 183316,
+      "index": 0,
+      "spell": {
+        "id": 438884,
+        "name": "[DNT] Socket Gem Tutorial Credit",
+        "icon": "trade_engineering"
+      }
+    }
+  },
   "10882": {
     "id": 10882,
     "ilevel": "5 @plvl 1 - 493 @plvl 493",
@@ -79744,10 +79691,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "10951": {
     "id": 10951,
     "upgrade": {
+      "group": 405,
       "level": 1,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 1/14",
+      "bonusId": 10951,
+      "itemLevel": 493,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -79773,7 +79723,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79791,7 +79741,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79809,7 +79759,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79827,7 +79777,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79845,7 +79795,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79863,7 +79813,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79881,7 +79831,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79894,17 +79844,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10951,
-      "itemLevel": 493
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10952": {
     "id": 10952,
     "upgrade": {
+      "group": 405,
       "level": 2,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 2/14",
+      "bonusId": 10952,
+      "itemLevel": 496,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -79930,7 +79913,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79948,7 +79931,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79966,7 +79949,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -79984,7 +79967,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80002,7 +79985,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80020,7 +80003,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80038,7 +80021,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80051,17 +80034,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10952,
-      "itemLevel": 496
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10953": {
     "id": 10953,
     "upgrade": {
+      "group": 405,
       "level": 3,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 3/14",
+      "bonusId": 10953,
+      "itemLevel": 499,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80087,7 +80103,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80105,7 +80121,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80123,7 +80139,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80141,7 +80157,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 150,
+              "amount": 75,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80159,7 +80175,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80177,7 +80193,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80195,7 +80211,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80208,17 +80224,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10953,
-      "itemLevel": 499
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10954": {
     "id": 10954,
     "upgrade": {
+      "group": 405,
       "level": 4,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 4/14",
+      "bonusId": 10954,
+      "itemLevel": 502,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80244,7 +80293,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 120,
+              "amount": 60,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80262,7 +80311,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80280,7 +80329,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 75,
+              "amount": 38,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80294,6 +80343,24 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 75,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2807,
+              "amount": 15,
+              "name": "Drake's Awakened Crest",
+              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
           "flags": 2,
           "amounts": [
             {
@@ -80311,30 +80378,12 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         },
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
           "mask_inv_type": 67117056,
           "flags": 1,
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 225,
+              "amount": 113,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80352,7 +80401,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80365,17 +80414,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10954,
-      "itemLevel": 502
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10955": {
     "id": 10955,
     "upgrade": {
+      "group": 405,
       "level": 5,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 5/14",
+      "bonusId": 10955,
+      "itemLevel": 506,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80401,7 +80483,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80419,7 +80501,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80437,7 +80519,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80455,7 +80537,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80473,7 +80555,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80491,7 +80573,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80509,7 +80591,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80522,17 +80604,240 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10955,
-      "itemLevel": 506
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    }
+  },
+  "10956": {
+    "id": 10956,
+    "upgrade": {
+      "group": 405,
+      "level": 6,
+      "max": 14,
+      "name": "Awakened",
+      "fullName": "Awakened 6/14",
+      "bonusId": 10956,
+      "itemLevel": 509,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 170,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 70,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 45,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 45,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 88,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 138,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 175,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10957": {
     "id": 10957,
     "upgrade": {
+      "group": 405,
       "level": 7,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 7/14",
+      "bonusId": 10957,
+      "itemLevel": 512,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80558,7 +80863,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80576,7 +80881,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80594,7 +80899,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80612,7 +80917,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 175,
+              "amount": 88,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80630,7 +80935,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80648,7 +80953,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80666,7 +80971,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80679,17 +80984,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10957,
-      "itemLevel": 512
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10958": {
     "id": 10958,
     "upgrade": {
+      "group": 405,
       "level": 8,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 8/14",
+      "bonusId": 10958,
+      "itemLevel": 515,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80715,7 +81053,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 140,
+              "amount": 70,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80733,7 +81071,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80751,7 +81089,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 90,
+              "amount": 45,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80765,6 +81103,24 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 88,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2809,
+              "amount": 15,
+              "name": "Wyrm's Awakened Crest",
+              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
           "flags": 2,
           "amounts": [
             {
@@ -80782,30 +81138,12 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         },
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
           "mask_inv_type": 67117056,
           "flags": 1,
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 275,
+              "amount": 138,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80823,7 +81161,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 350,
+              "amount": 175,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80836,17 +81174,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10958,
-      "itemLevel": 515
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10959": {
     "id": 10959,
     "upgrade": {
+      "group": 405,
       "level": 9,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 9/14",
+      "bonusId": 10959,
+      "itemLevel": 519,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -80872,7 +81243,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80890,7 +81261,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80908,7 +81279,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80926,7 +81297,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80944,7 +81315,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80962,7 +81333,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80980,7 +81351,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -80993,17 +81364,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10959,
-      "itemLevel": 519
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10960": {
     "id": 10960,
     "upgrade": {
+      "group": 405,
       "level": 10,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 10/14",
+      "bonusId": 10960,
+      "itemLevel": 522,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -81029,7 +81433,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81047,7 +81451,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81065,7 +81469,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81083,7 +81487,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81101,7 +81505,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81119,7 +81523,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81137,7 +81541,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81150,17 +81554,240 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10960,
-      "itemLevel": 522
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    }
+  },
+  "10961": {
+    "id": 10961,
+    "upgrade": {
+      "group": 405,
+      "level": 11,
+      "max": 14,
+      "name": "Awakened",
+      "fullName": "Awakened 11/14",
+      "bonusId": 10961,
+      "itemLevel": 525,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10962": {
     "id": 10962,
     "upgrade": {
+      "group": 405,
       "level": 12,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 12/14",
+      "bonusId": 10962,
+      "itemLevel": 528,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -81186,7 +81813,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81204,7 +81831,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81222,7 +81849,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81240,7 +81867,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81258,7 +81885,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81276,7 +81903,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81294,7 +81921,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81307,17 +81934,50 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10962,
-      "itemLevel": 528
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
   },
   "10963": {
     "id": 10963,
     "upgrade": {
+      "group": 405,
       "level": 13,
       "max": 14,
-      "group": 405,
       "name": "Awakened",
+      "fullName": "Awakened 13/14",
+      "bonusId": 10963,
+      "itemLevel": 532,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -81343,7 +82003,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 160,
+              "amount": 80,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81361,7 +82021,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81379,7 +82039,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 100,
+              "amount": 50,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81397,7 +82057,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 200,
+              "amount": 100,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81415,7 +82075,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81433,7 +82093,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 300,
+              "amount": 150,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81451,7 +82111,7 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 2245,
-              "amount": 400,
+              "amount": 200,
               "name": "Flightstones",
               "icon": "flightstone-dragonflight"
             },
@@ -81464,9 +82124,612 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ],
-      "bonusId": 10963,
-      "itemLevel": 532
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     }
+  },
+  "10964": {
+    "id": 10964,
+    "upgrade": {
+      "group": 405,
+      "level": 14,
+      "max": 14,
+      "name": "Awakened",
+      "fullName": "Awakened 14/14",
+      "bonusId": 10964,
+      "itemLevel": 535,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 190,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 80,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 50,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 100,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 150,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 2245,
+              "amount": 200,
+              "name": "Flightstones",
+              "icon": "flightstone-dragonflight"
+            },
+            {
+              "currencyId": 2812,
+              "amount": 15,
+              "name": "Aspect's Awakened Crest",
+              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 2245,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 2807,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2809,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2812,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 2806,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    }
+  },
+  "10965": {
+    "id": 10965,
+    "rawStats": [
+      {
+        "stat": 63,
+        "amount": 11946,
+        "name": "Avoidance"
+      }
+    ],
+    "stats": "100% Avoidance [1.1946]"
+  },
+  "10966": {
+    "id": 10966,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 11946,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [1.1946]"
+  },
+  "10967": {
+    "id": 10967,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 11946,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [1.1946]"
+  },
+  "10968": {
+    "id": 10968,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 358380,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [35.8380]"
+  },
+  "10969": {
+    "id": 10969,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 23892,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [2.3892]"
+  },
+  "10970": {
+    "id": 10970,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 23892,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [2.3892]"
+  },
+  "10971": {
+    "id": 10971,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 5973,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.5973]"
+  },
+  "10972": {
+    "id": 10972,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 11946,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [1.1946]"
+  },
+  "11029": {
+    "id": 11029,
+    "effect": {
+      "id": 183582,
+      "index": 0,
+      "spell": {
+        "id": 441092,
+        "name": "Vindication",
+        "icon": "ability_paladin_sheathoflight"
+      }
+    }
+  },
+  "11030": {
+    "id": 11030,
+    "effect": {
+      "id": 183587,
+      "index": 0,
+      "spell": {
+        "id": 441115,
+        "name": "Warmth",
+        "icon": "spell_paladin_clarityofpurpose"
+      }
+    }
+  },
+  "11031": {
+    "id": 11031,
+    "effect": {
+      "id": 183592,
+      "index": 0,
+      "spell": {
+        "id": 441150,
+        "name": "Savior",
+        "icon": "spell_holy_healingaura"
+      }
+    }
+  },
+  "11032": {
+    "id": 11032,
+    "effect": {
+      "id": 183598,
+      "index": 0,
+      "spell": {
+        "id": 441165,
+        "name": "Deliverance",
+        "icon": "ability_priest_archangel"
+      }
+    }
+  },
+  "11033": {
+    "id": 11033,
+    "effect": {
+      "id": 183600,
+      "index": 0,
+      "spell": {
+        "id": 441198,
+        "name": "Righteous Frenzy",
+        "icon": "spell_holy_revivechampion"
+      }
+    }
+  },
+  "11034": {
+    "id": 11034,
+    "effect": {
+      "id": 183602,
+      "index": 0,
+      "spell": {
+        "id": 441209,
+        "name": "Holy Martyr",
+        "icon": "spell_holy_heroism"
+      }
+    }
+  },
+  "11035": {
+    "id": 11035,
+    "effect": {
+      "id": 183608,
+      "index": 0,
+      "spell": {
+        "id": 441304,
+        "name": "Disengage",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11037": {
+    "id": 11037,
+    "ilevel": "3 @plvl 1 - 450 @plvl 450",
+    "curveId": 73907,
+    "quality": 3
+  },
+  "11038": {
+    "id": 11038,
+    "effect": {
+      "id": 183619,
+      "index": 0,
+      "spell": {
+        "id": 441348,
+        "name": "Trailblazer",
+        "icon": "ability_hunter_aspectmastery"
+      }
+    }
+  },
+  "11039": {
+    "id": 11039,
+    "effect": {
+      "id": 183625,
+      "index": 0,
+      "spell": {
+        "id": 441472,
+        "name": "Leap of Faith",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11040": {
+    "id": 11040,
+    "effect": {
+      "id": 183627,
+      "index": 0,
+      "spell": {
+        "id": 441491,
+        "name": "Vanish",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11041": {
+    "id": 11041,
+    "effect": {
+      "id": 183629,
+      "index": 0,
+      "spell": {
+        "id": 441497,
+        "name": "Stampeding Roar",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11042": {
+    "id": 11042,
+    "effect": {
+      "id": 183641,
+      "index": 0,
+      "spell": {
+        "id": 441560,
+        "name": "Wild Charge",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11043": {
+    "id": 11043,
+    "effect": {
+      "id": 183644,
+      "index": 0,
+      "spell": {
+        "id": 441564,
+        "name": "Pursuit of Justice",
+        "icon": "ability_paladin_veneration"
+      }
+    }
+  },
+  "11044": {
+    "id": 11044,
+    "effect": {
+      "id": 183646,
+      "index": 0,
+      "spell": {
+        "id": 441570,
+        "name": "Door of Shadows",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11045": {
+    "id": 11045,
+    "effect": {
+      "id": 183648,
+      "index": 0,
+      "spell": {
+        "id": 441577,
+        "name": "Spirit Walk",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11046": {
+    "id": 11046,
+    "effect": {
+      "id": 183650,
+      "index": 0,
+      "spell": {
+        "id": 441619,
+        "name": "Spiritwalker's Grace",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11047": {
+    "id": 11047,
+    "effect": {
+      "id": 183660,
+      "index": 0,
+      "spell": {
+        "id": 441744,
+        "name": "Dark Pact",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11048": {
+    "id": 11048,
+    "effect": {
+      "id": 183662,
+      "index": 0,
+      "spell": {
+        "id": 441751,
+        "name": "Death's Advance",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11049": {
+    "id": 11049,
+    "effect": {
+      "id": 183664,
+      "index": 0,
+      "spell": {
+        "id": 441765,
+        "name": "Soulshape",
+        "icon": "inv_misc_gear_01"
+      }
+    }
+  },
+  "11054": {
+    "id": 11054,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11055": {
+    "id": 11055,
+    "ilevel": "369 @plvl 55 - 554 @plvl 554",
+    "curveId": 71410,
+    "quality": 4
+  },
+  "11061": {
+    "id": 11061,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11062": {
+    "id": 11062,
+    "ilevel": "232 @plvl 45 - 353 @plvl 353",
+    "curveId": 30726,
+    "quality": 4
+  },
+  "11065": {
+    "id": 11065,
+    "quality": 2
+  },
+  "11069": {
+    "id": 11069,
+    "ilevel": "21 @plvl 1 - 558 @plvl 558",
+    "curveId": 74086,
+    "quality": 3
+  },
+  "11070": {
+    "id": 11070,
+    "ilevel": "21 @plvl 1 - 558 @plvl 558",
+    "curveId": 74086,
+    "quality": 3
+  },
+  "11071": {
+    "id": 11071,
+    "ilevel": "5 @plvl 1 - 584 @plvl 584",
+    "curveId": 74088
+  },
+  "11072": {
+    "id": 11072,
+    "ilevel": "21 @plvl 1 - 541 @plvl 541",
+    "curveId": 74089,
+    "tag": "Timewarped"
+  },
+  "11073": {
+    "id": 11073,
+    "ilevel": "1 @plvl 1 - 467 @plvl 467",
+    "curveId": 74091
+  },
+  "11074": {
+    "id": 11074,
+    "ilevel": "5 @plvl 1 - 571 @plvl 571",
+    "curveId": 74092
   },
   "11075": {
     "id": 11075,
@@ -81520,6 +82783,16 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "11083": {
+    "id": 11083,
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
+  },
+  "11085": {
+    "id": 11085,
+    "ilevel": "10 @plvl 1 - 371 @plvl 371",
+    "curveId": 6242
+  },
   "11096": {
     "id": 11096,
     "quality": 1,
@@ -81569,6 +82842,4243 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 442862,
         "name": "Storm Archon",
         "icon": "spell_nature_elementalprecision_1"
+      }
+    }
+  },
+  "11100": {
+    "id": 11100,
+    "effect": {
+      "id": 183872,
+      "index": 0,
+      "spell": {
+        "id": 443417,
+        "name": "Locus of Power",
+        "icon": "ability_mage_missilebarrage"
+      }
+    }
+  },
+  "11101": {
+    "id": 11101,
+    "effect": {
+      "id": 183876,
+      "index": 0,
+      "spell": {
+        "id": 443471,
+        "name": "Lightning Rod",
+        "icon": "spell_nature_purge"
+      }
+    }
+  },
+  "11102": {
+    "id": 11102,
+    "effect": {
+      "id": 183909,
+      "index": 0,
+      "spell": {
+        "id": 443663,
+        "name": "Static Charge",
+        "icon": "ability_thunderking_overcharge"
+      }
+    }
+  },
+  "11103": {
+    "id": 11103,
+    "effect": {
+      "id": 183926,
+      "index": 0,
+      "spell": {
+        "id": 443743,
+        "name": "Blessed Weapon Grip",
+        "icon": "spell_holy_weaponmastery"
+      }
+    }
+  },
+  "11104": {
+    "id": 11104,
+    "effect": {
+      "id": 183919,
+      "index": 0,
+      "spell": {
+        "id": 443770,
+        "name": "Windweaver",
+        "icon": "ability_druid_galewinds"
+      }
+    }
+  },
+  "11107": {
+    "id": 11107,
+    "effect": {
+      "id": 183921,
+      "index": 0,
+      "spell": {
+        "id": 443772,
+        "name": "Storm Overload",
+        "icon": "spell_nature_unrelentingstorm"
+      }
+    }
+  },
+  "11108": {
+    "id": 11108,
+    "effect": {
+      "id": 183924,
+      "index": 0,
+      "spell": {
+        "id": 443855,
+        "name": "Vampiric Aura",
+        "icon": "spell_shadow_vampiricaura"
+      }
+    }
+  },
+  "11109": {
+    "id": 11109,
+    "effect": {
+      "id": 183927,
+      "index": 0,
+      "spell": {
+        "id": 443902,
+        "name": "Writhing Armor Banding",
+        "icon": "ability_warlock_everlastingaffliction"
+      }
+    }
+  },
+  "11110": {
+    "id": 11110,
+    "effect": {
+      "id": 183928,
+      "index": 0,
+      "spell": {
+        "id": 428854,
+        "name": "Grounding",
+        "icon": "spell_nature_groundingtotem"
+      }
+    }
+  },
+  "11111": {
+    "id": 11111,
+    "effect": {
+      "id": 183930,
+      "index": 0,
+      "spell": {
+        "id": 427064,
+        "name": "Ankh of Reincarnation",
+        "icon": "inv_jewelry_talisman_06"
+      }
+    }
+  },
+  "11112": {
+    "id": 11112,
+    "effect": {
+      "id": 183937,
+      "index": 0,
+      "spell": {
+        "id": 429026,
+        "name": "Freedom",
+        "icon": "ability_rogue_fleetfooted"
+      }
+    }
+  },
+  "11113": {
+    "id": 11113,
+    "effect": {
+      "id": 183939,
+      "index": 0,
+      "spell": {
+        "id": 429007,
+        "name": "Brilliance",
+        "icon": "inv_staff_07"
+      }
+    }
+  },
+  "11114": {
+    "id": 11114,
+    "effect": {
+      "id": 183966,
+      "index": 0,
+      "spell": {
+        "id": 444136,
+        "name": "Tireless Spirit",
+        "icon": "sanctum_features_animadiversion_ardenweald"
+      }
+    }
+  },
+  "11115": {
+    "id": 11115,
+    "effect": {
+      "id": 184000,
+      "index": 0,
+      "spell": {
+        "id": 444435,
+        "name": "Bloodthirsty Coral",
+        "icon": "inv_misc_food_legion_seashelle1"
+      }
+    }
+  },
+  "11116": {
+    "id": 11116,
+    "effect": {
+      "id": 184083,
+      "index": 0,
+      "spell": {
+        "id": 444666,
+        "name": "Soul Tether",
+        "icon": "spell_necro_deathall"
+      }
+    }
+  },
+  "11117": {
+    "id": 11117,
+    "effect": {
+      "id": 184080,
+      "index": 0,
+      "spell": {
+        "id": 445055,
+        "name": "Ward of Salvation",
+        "icon": "spell_holy_aspiration"
+      }
+    }
+  },
+  "11118": {
+    "id": 11118,
+    "effect": {
+      "id": 184104,
+      "index": 0,
+      "spell": {
+        "id": 444982,
+        "name": "Precipice of Madness",
+        "icon": "inv_cosmicvoid_buff"
+      }
+    }
+  },
+  "11119": {
+    "id": 11119,
+    "rawStats": [
+      {
+        "stat": 50,
+        "amount": 8000,
+        "name": "BonusArmor"
+      }
+    ],
+    "stats": "100% BonusArmor [0.8000]"
+  },
+  "11120": {
+    "id": 11120,
+    "rawStats": [
+      {
+        "stat": 50,
+        "amount": 12000,
+        "name": "BonusArmor"
+      }
+    ],
+    "stats": "100% BonusArmor [1.2000]"
+  },
+  "11121": {
+    "id": 11121,
+    "rawStats": [
+      {
+        "stat": 50,
+        "amount": 16000,
+        "name": "BonusArmor"
+      }
+    ],
+    "stats": "100% BonusArmor [1.6000]"
+  },
+  "11123": {
+    "id": 11123,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 4779,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.4779]"
+  },
+  "11124": {
+    "id": 11124,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 7168,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.7168]"
+  },
+  "11125": {
+    "id": 11125,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 9556,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.9556]"
+  },
+  "11128": {
+    "id": 11128,
+    "ilevel": "356 @plvl 55 - 551 @plvl 551",
+    "curveId": 71408
+  },
+  "11134": {
+    "id": 11134,
+    "effect": {
+      "id": 184689,
+      "index": 0,
+      "spell": {
+        "id": 447565,
+        "name": "Funeral Pyre",
+        "icon": "achievement_firelands_raid_ragnaros"
+      }
+    }
+  },
+  "11135": {
+    "id": 11135,
+    "effect": {
+      "id": 184816,
+      "index": 0,
+      "spell": {
+        "id": 447592,
+        "name": "Bulwark of the Black Ox",
+        "icon": "ability_monk_leeroftheox"
+      }
+    }
+  },
+  "11136": {
+    "id": 11136,
+    "craftedStats": [
+      32
+    ]
+  },
+  "11137": {
+    "id": 11137,
+    "craftedStats": [
+      49
+    ]
+  },
+  "11138": {
+    "id": 11138,
+    "craftedStats": [
+      36
+    ]
+  },
+  "11139": {
+    "id": 11139,
+    "craftedStats": [
+      40
+    ]
+  },
+  "11142": {
+    "id": 11142,
+    "base_level": 577,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "11143": {
+    "id": 11143,
+    "base_level": 606,
+    "base_level_priority": 65
+  },
+  "11144": {
+    "id": 11144,
+    "base_level": 623,
+    "base_level_priority": 65
+  },
+  "11145": {
+    "id": 11145,
+    "socket": 3
+  },
+  "11146": {
+    "id": 11146,
+    "socket": 3
+  },
+  "11147": {
+    "id": 11147,
+    "socket": 3
+  },
+  "11148": {
+    "id": 11148,
+    "socket": 3
+  },
+  "11149": {
+    "id": 11149,
+    "socket": 3
+  },
+  "11150": {
+    "id": 11150,
+    "socket": 3
+  },
+  "11151": {
+    "id": 11151,
+    "socket": 3
+  },
+  "11152": {
+    "id": 11152,
+    "socket": 3
+  },
+  "11153": {
+    "id": 11153,
+    "socket": 3
+  },
+  "11154": {
+    "id": 11154,
+    "socket": 3
+  },
+  "11190": {
+    "id": 11190,
+    "ilevel": "15 @plvl 10 - 551 @plvl 551",
+    "curveId": 75318
+  },
+  "11191": {
+    "id": 11191,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409
+  },
+  "11192": {
+    "id": 11192,
+    "effect": {
+      "id": 186304,
+      "index": 0,
+      "spell": {
+        "id": 452767,
+        "name": "Heartseeking Health Injector",
+        "icon": "inv_trinket_mawraid_02_blue"
+      }
+    }
+  },
+  "11193": {
+    "id": 11193,
+    "effect": {
+      "id": 186319,
+      "index": 0,
+      "spell": {
+        "id": 452883,
+        "name": "Lightning Tether",
+        "icon": "inv_misc_enggizmos_12"
+      }
+    }
+  },
+  "11194": {
+    "id": 11194,
+    "effect": {
+      "id": 186320,
+      "index": 0,
+      "spell": {
+        "id": 385520,
+        "name": "Breath of Neltharion",
+        "icon": "inv_10_engineering_device_flamethrower_flame"
+      }
+    }
+  },
+  "11195": {
+    "id": 11195,
+    "effect": {
+      "id": 186321,
+      "index": 0,
+      "spell": {
+        "id": 452929,
+        "name": "Earthen Delivery Drill",
+        "icon": "inv_misc_enggizmos_15"
+      }
+    }
+  },
+  "11200": {
+    "id": 11200,
+    "rawStats": [
+      {
+        "stat": 63,
+        "amount": 1925,
+        "name": "Avoidance"
+      }
+    ],
+    "stats": "100% Avoidance [0.1925]"
+  },
+  "11201": {
+    "id": 11201,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 1925,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.1925]"
+  },
+  "11202": {
+    "id": 11202,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 1925,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.1925]"
+  },
+  "11203": {
+    "id": 11203,
+    "rawStats": [
+      {
+        "stat": 46,
+        "amount": 77000,
+        "name": "HealthRegen"
+      }
+    ],
+    "stats": "100% HealthRegen [7.7000]"
+  },
+  "11204": {
+    "id": 11204,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 3850,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [0.3850]"
+  },
+  "11205": {
+    "id": 11205,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3850,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.3850]"
+  },
+  "11206": {
+    "id": 11206,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 1925,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.1925]"
+  },
+  "11207": {
+    "id": 11207,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 1925,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.1925]"
+  },
+  "11208": {
+    "id": 11208,
+    "effect": {
+      "id": 186415,
+      "index": 0,
+      "spell": {
+        "id": 453488,
+        "name": "Recalibrated Safety Fuses",
+        "icon": "inv_eng_metalblingronear"
+      }
+    }
+  },
+  "11209": {
+    "id": 11209,
+    "effect": {
+      "id": 186418,
+      "index": 0,
+      "spell": {
+        "id": 453503,
+        "name": "Pouch of Pocket Grenades",
+        "icon": "inv_misc_bomb_08"
+      }
+    }
+  },
+  "11210": {
+    "id": 11210,
+    "effect": {
+      "id": 186441,
+      "index": 0,
+      "spell": {
+        "id": 453813,
+        "name": "Concealed Chaos Component",
+        "icon": "inv_misc_bomb_09"
+      }
+    }
+  },
+  "11216": {
+    "id": 11216,
+    "effect": {
+      "id": 186553,
+      "index": 0,
+      "spell": {
+        "id": 454450,
+        "name": "Blame Redirection Device",
+        "icon": "achievement_bg_returnxflags_def_wsg"
+      }
+    }
+  },
+  "11217": {
+    "id": 11217,
+    "effect": {
+      "id": 186554,
+      "index": 0,
+      "spell": {
+        "id": 454455,
+        "name": "Complicated Fuse Box",
+        "icon": "inv_engineering_sonicenvironmentenhancer"
+      }
+    }
+  },
+  "11219": {
+    "id": 11219,
+    "effect": {
+      "id": 186557,
+      "index": 0
+    }
+  },
+  "11220": {
+    "id": 11220,
+    "effect": {
+      "id": 186596,
+      "index": 0,
+      "spell": {
+        "id": 384098,
+        "name": "Alarm-O-Turret",
+        "icon": "ability_hunter_snipershot"
+      }
+    }
+  },
+  "11221": {
+    "id": 11221,
+    "effect": {
+      "id": 186595,
+      "index": 0,
+      "spell": {
+        "id": 384081,
+        "name": "Plane Displacer",
+        "icon": "inv_10_engineering2_tinkermodules_color6"
+      }
+    }
+  },
+  "11222": {
+    "id": 11222,
+    "effect": {
+      "id": 186597,
+      "index": 0,
+      "spell": {
+        "id": 384044,
+        "name": "Supercollide-O-Tron",
+        "icon": "ability_hunter_snipershot"
+      }
+    }
+  },
+  "11223": {
+    "id": 11223,
+    "effect": {
+      "id": 186598,
+      "index": 0,
+      "spell": {
+        "id": 407949,
+        "name": "Shadowflame Rockets",
+        "icon": "inv_10_engineering2_tinkermodules_color3"
+      }
+    }
+  },
+  "11224": {
+    "id": 11224,
+    "quality": 5
+  },
+  "11225": {
+    "id": 11225,
+    "ilevel": "70 @plvl 70 - 90 @plvl 90",
+    "curveId": 76620
+  },
+  "11226": {
+    "id": 11226,
+    "effect": {
+      "id": 186832,
+      "index": 0,
+      "spell": {
+        "id": 455147,
+        "name": "Energy Redistribution Beacon",
+        "icon": "inv_misc_enggizmos_24"
+      }
+    }
+  },
+  "11227": {
+    "id": 11227,
+    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "curveId": 6243
+  },
+  "11228": {
+    "id": 11228,
+    "effect": {
+      "id": 186986,
+      "index": 0,
+      "spell": {
+        "id": 455799,
+        "name": "Excavation",
+        "icon": "inv_axe_1h_earthenpickaxe_b_01"
+      }
+    }
+  },
+  "11229": {
+    "id": 11229,
+    "ilevel": "70 @plvl 50 - 73 @plvl 76",
+    "curveId": 77026
+  },
+  "11230": {
+    "id": 11230,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187159,
+      "index": 0,
+      "spell": {
+        "id": 456535,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11231": {
+    "id": 11231,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187166,
+      "index": 0,
+      "spell": {
+        "id": 456957,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11232": {
+    "id": 11232,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187167,
+      "index": 0,
+      "spell": {
+        "id": 456979,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11233": {
+    "id": 11233,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187168,
+      "index": 0,
+      "spell": {
+        "id": 456995,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11235": {
+    "id": 11235,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187170,
+      "index": 0,
+      "spell": {
+        "id": 456550,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11236": {
+    "id": 11236,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187171,
+      "index": 0,
+      "spell": {
+        "id": 456958,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11237": {
+    "id": 11237,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187172,
+      "index": 0,
+      "spell": {
+        "id": 456980,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11238": {
+    "id": 11238,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187173,
+      "index": 0,
+      "spell": {
+        "id": 456996,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11240": {
+    "id": 11240,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187176,
+      "index": 0,
+      "spell": {
+        "id": 456551,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11241": {
+    "id": 11241,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187177,
+      "index": 0,
+      "spell": {
+        "id": 456959,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11242": {
+    "id": 11242,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187178,
+      "index": 0,
+      "spell": {
+        "id": 456981,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11243": {
+    "id": 11243,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187179,
+      "index": 0,
+      "spell": {
+        "id": 456997,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11245": {
+    "id": 11245,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187182,
+      "index": 0,
+      "spell": {
+        "id": 456552,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11246": {
+    "id": 11246,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187183,
+      "index": 0,
+      "spell": {
+        "id": 456960,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11247": {
+    "id": 11247,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187184,
+      "index": 0,
+      "spell": {
+        "id": 456982,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11248": {
+    "id": 11248,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187185,
+      "index": 0,
+      "spell": {
+        "id": 456998,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11250": {
+    "id": 11250,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187189,
+      "index": 0,
+      "spell": {
+        "id": 456553,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11251": {
+    "id": 11251,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187190,
+      "index": 0,
+      "spell": {
+        "id": 456962,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11252": {
+    "id": 11252,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187191,
+      "index": 0,
+      "spell": {
+        "id": 456983,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11253": {
+    "id": 11253,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187192,
+      "index": 0,
+      "spell": {
+        "id": 456999,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11255": {
+    "id": 11255,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187194,
+      "index": 0,
+      "spell": {
+        "id": 456554,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11256": {
+    "id": 11256,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187195,
+      "index": 0,
+      "spell": {
+        "id": 456972,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11257": {
+    "id": 11257,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187196,
+      "index": 0,
+      "spell": {
+        "id": 456994,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11258": {
+    "id": 11258,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187197,
+      "index": 0,
+      "spell": {
+        "id": 457008,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11260": {
+    "id": 11260,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187200,
+      "index": 0,
+      "spell": {
+        "id": 456555,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11261": {
+    "id": 11261,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187201,
+      "index": 0,
+      "spell": {
+        "id": 456963,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11262": {
+    "id": 11262,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187202,
+      "index": 0,
+      "spell": {
+        "id": 456984,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11263": {
+    "id": 11263,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187203,
+      "index": 0,
+      "spell": {
+        "id": 457001,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11265": {
+    "id": 11265,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187206,
+      "index": 0,
+      "spell": {
+        "id": 456556,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11266": {
+    "id": 11266,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187207,
+      "index": 0,
+      "spell": {
+        "id": 456965,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11267": {
+    "id": 11267,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187208,
+      "index": 0,
+      "spell": {
+        "id": 456987,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11268": {
+    "id": 11268,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187209,
+      "index": 0,
+      "spell": {
+        "id": 457002,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11270": {
+    "id": 11270,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187212,
+      "index": 0,
+      "spell": {
+        "id": 456557,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11271": {
+    "id": 11271,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187213,
+      "index": 0,
+      "spell": {
+        "id": 456966,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11272": {
+    "id": 11272,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187214,
+      "index": 0,
+      "spell": {
+        "id": 456988,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11273": {
+    "id": 11273,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187215,
+      "index": 0,
+      "spell": {
+        "id": 457003,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11275": {
+    "id": 11275,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187218,
+      "index": 0,
+      "spell": {
+        "id": 456558,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11276": {
+    "id": 11276,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187219,
+      "index": 0,
+      "spell": {
+        "id": 456967,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11277": {
+    "id": 11277,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187220,
+      "index": 0,
+      "spell": {
+        "id": 456989,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11278": {
+    "id": 11278,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187221,
+      "index": 0,
+      "spell": {
+        "id": 457004,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11280": {
+    "id": 11280,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187224,
+      "index": 0,
+      "spell": {
+        "id": 456559,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11281": {
+    "id": 11281,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187225,
+      "index": 0,
+      "spell": {
+        "id": 456969,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11282": {
+    "id": 11282,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187226,
+      "index": 0,
+      "spell": {
+        "id": 456990,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11283": {
+    "id": 11283,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187227,
+      "index": 0,
+      "spell": {
+        "id": 457005,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11285": {
+    "id": 11285,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187230,
+      "index": 0,
+      "spell": {
+        "id": 456560,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11286": {
+    "id": 11286,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187231,
+      "index": 0,
+      "spell": {
+        "id": 456970,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11287": {
+    "id": 11287,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187232,
+      "index": 0,
+      "spell": {
+        "id": 456991,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11288": {
+    "id": 11288,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187233,
+      "index": 0,
+      "spell": {
+        "id": 457006,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11290": {
+    "id": 11290,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 187236,
+      "index": 0,
+      "spell": {
+        "id": 456561,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11291": {
+    "id": 11291,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 187237,
+      "index": 0,
+      "spell": {
+        "id": 456971,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11292": {
+    "id": 11292,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 187238,
+      "index": 0,
+      "spell": {
+        "id": 456993,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11293": {
+    "id": 11293,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 187239,
+      "index": 0,
+      "spell": {
+        "id": 457007,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "11295": {
+    "id": 11295,
+    "base_level": 515,
+    "base_level_priority": 100
+  },
+  "11297": {
+    "id": 11297,
+    "base_level": 545,
+    "base_level_priority": 100
+  },
+  "11299": {
+    "id": 11299,
+    "effect": {
+      "id": 184082,
+      "index": 0,
+      "spell": {
+        "id": 454558,
+        "name": "Radiant Focus",
+        "icon": "inv_inscriptions_darkmoondeckshine_0"
+      }
+    }
+  },
+  "11300": {
+    "id": 11300,
+    "effect": {
+      "id": 187512,
+      "index": 0,
+      "spell": {
+        "id": 458573,
+        "name": "Ascendance",
+        "icon": "inv_inscriptions_darkmoondeckevolution_0"
+      }
+    }
+  },
+  "11301": {
+    "id": 11301,
+    "effect": {
+      "id": 187510,
+      "index": 0,
+      "spell": {
+        "id": 454857,
+        "name": "Vivacity",
+        "icon": "inv_10_inscription3_darkmoondeckbox_black"
+      }
+    }
+  },
+  "11302": {
+    "id": 11302,
+    "effect": {
+      "id": 187511,
+      "index": 0,
+      "spell": {
+        "id": 463610,
+        "name": "Symbiosis",
+        "icon": "inv_inscriptions_darkmoondeckshine_0"
+      }
+    }
+  },
+  "11303": {
+    "id": 11303,
+    "effect": {
+      "id": 187453,
+      "index": 0,
+      "spell": {
+        "id": 457665,
+        "name": "Dawnthread Lining",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "11304": {
+    "id": 11304,
+    "effect": {
+      "id": 187454,
+      "index": 0,
+      "spell": {
+        "id": 457677,
+        "name": "Duskthread Lining",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "11306": {
+    "id": 11306,
+    "ilevel": "15 @plvl 10 - 554 @plvl 554",
+    "curveId": 77472
+  },
+  "11307": {
+    "id": 11307,
+    "socket": 1
+  },
+  "11308": {
+    "id": 11308,
+    "ilevel": "15 @plvl 10 - 551 @plvl 551",
+    "curveId": 75318,
+    "quality": 3
+  },
+  "11309": {
+    "id": 11309,
+    "ilevel": "15 @plvl 10 - 554 @plvl 554",
+    "curveId": 77472,
+    "quality": 4
+  },
+  "11310": {
+    "id": 11310,
+    "ilevel": "15 @plvl 10 - 554 @plvl 554",
+    "curveId": 77472,
+    "quality": 3
+  },
+  "11312": {
+    "id": 11312,
+    "quality": 3
+  },
+  "11313": {
+    "id": 11313,
+    "craftedStats": [
+      82
+    ]
+  },
+  "11314": {
+    "id": 11314,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3333,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.3333]"
+  },
+  "11315": {
+    "id": 11315,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3333,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.3333]"
+  },
+  "11316": {
+    "id": 11316,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3333,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.3333]"
+  },
+  "11317": {
+    "id": 11317,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 3333,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.3333]"
+  },
+  "11318": {
+    "id": 11318,
+    "base_level": 545,
+    "base_level_priority": 3000
+  },
+  "11319": {
+    "id": 11319,
+    "tag": "Tier 1",
+    "effect": {
+      "id": 188908,
+      "index": 0,
+      "spell": {
+        "id": 460285,
+        "name": "Delver's Bounty",
+        "icon": "icon_treasuremap"
+      }
+    }
+  },
+  "11321": {
+    "id": 11321,
+    "tag": "Tier 1"
+  },
+  "11322": {
+    "id": 11322,
+    "tag": "Tier 2"
+  },
+  "11323": {
+    "id": 11323,
+    "tag": "Tier 3"
+  },
+  "11324": {
+    "id": 11324,
+    "tag": "Tier 4"
+  },
+  "11325": {
+    "id": 11325,
+    "tag": "Tier 5"
+  },
+  "11326": {
+    "id": 11326,
+    "tag": "Tier 6"
+  },
+  "11327": {
+    "id": 11327,
+    "tag": "Tier 7"
+  },
+  "11328": {
+    "id": 11328,
+    "tag": "Tier 8"
+  },
+  "11329": {
+    "id": 11329,
+    "ilevel": "10 @plvl 0 - 10 @plvl 10",
+    "curveId": 77990,
+    "quality": 3
+  },
+  "11330": {
+    "id": 11330,
+    "base_level": 545,
+    "base_level_priority": 1
+  },
+  "11331": {
+    "id": 11331,
+    "base_level": 561,
+    "base_level_priority": 1
+  },
+  "11332": {
+    "id": 11332,
+    "ilevel": "350 @plvl 0 - 350 @plvl 350",
+    "curveId": 78115
+  },
+  "11334": {
+    "id": 11334,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11335": {
+    "id": 11335,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11336": {
+    "id": 11336,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11337": {
+    "id": 11337,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
+  },
+  "11338": {
+    "id": 11338,
+    "quality": 3,
+    "base_level": 554,
+    "base_level_priority": 0
+  },
+  "11341": {
+    "id": 11341,
+    "level": 601
+  },
+  "11342": {
+    "id": 11342,
+    "level": 602
+  },
+  "11343": {
+    "id": 11343,
+    "level": 603
+  },
+  "11344": {
+    "id": 11344,
+    "level": 604
+  },
+  "11345": {
+    "id": 11345,
+    "level": 605
+  },
+  "11346": {
+    "id": 11346,
+    "level": 606
+  },
+  "11347": {
+    "id": 11347,
+    "level": 607
+  },
+  "11348": {
+    "id": 11348,
+    "level": 608
+  },
+  "11349": {
+    "id": 11349,
+    "level": 609
+  },
+  "11350": {
+    "id": 11350,
+    "level": 610
+  },
+  "11351": {
+    "id": 11351,
+    "level": 611
+  },
+  "11352": {
+    "id": 11352,
+    "level": 612
+  },
+  "11353": {
+    "id": 11353,
+    "level": 613
+  },
+  "11354": {
+    "id": 11354,
+    "level": 614
+  },
+  "11355": {
+    "id": 11355,
+    "level": 615
+  },
+  "11356": {
+    "id": 11356,
+    "level": 616
+  },
+  "11357": {
+    "id": 11357,
+    "level": 617
+  },
+  "11358": {
+    "id": 11358,
+    "level": 618
+  },
+  "11359": {
+    "id": 11359,
+    "level": 619
+  },
+  "11360": {
+    "id": 11360,
+    "level": 620
+  },
+  "11361": {
+    "id": 11361,
+    "level": 621
+  },
+  "11362": {
+    "id": 11362,
+    "level": 622
+  },
+  "11363": {
+    "id": 11363,
+    "level": 623
+  },
+  "11364": {
+    "id": 11364,
+    "level": 624
+  },
+  "11365": {
+    "id": 11365,
+    "level": 625
+  },
+  "11366": {
+    "id": 11366,
+    "level": 626
+  },
+  "11367": {
+    "id": 11367,
+    "level": 627
+  },
+  "11368": {
+    "id": 11368,
+    "level": 628
+  },
+  "11369": {
+    "id": 11369,
+    "level": 629
+  },
+  "11370": {
+    "id": 11370,
+    "level": 630
+  },
+  "11371": {
+    "id": 11371,
+    "level": 631
+  },
+  "11372": {
+    "id": 11372,
+    "level": 632
+  },
+  "11373": {
+    "id": 11373,
+    "level": 633
+  },
+  "11374": {
+    "id": 11374,
+    "level": 634
+  },
+  "11375": {
+    "id": 11375,
+    "level": 635
+  },
+  "11376": {
+    "id": 11376,
+    "level": 636
+  },
+  "11377": {
+    "id": 11377,
+    "level": 637
+  },
+  "11378": {
+    "id": 11378,
+    "level": 638
+  },
+  "11379": {
+    "id": 11379,
+    "level": 639
+  },
+  "11380": {
+    "id": 11380,
+    "level": 640
+  },
+  "11381": {
+    "id": 11381,
+    "level": 641
+  },
+  "11382": {
+    "id": 11382,
+    "level": 642
+  },
+  "11383": {
+    "id": 11383,
+    "level": 643
+  },
+  "11384": {
+    "id": 11384,
+    "level": 644
+  },
+  "11385": {
+    "id": 11385,
+    "level": 645
+  },
+  "11386": {
+    "id": 11386,
+    "level": 646
+  },
+  "11387": {
+    "id": 11387,
+    "level": 647
+  },
+  "11388": {
+    "id": 11388,
+    "level": 648
+  },
+  "11389": {
+    "id": 11389,
+    "level": 649
+  },
+  "11390": {
+    "id": 11390,
+    "level": 650
+  },
+  "11391": {
+    "id": 11391,
+    "level": 651
+  },
+  "11392": {
+    "id": 11392,
+    "level": 652
+  },
+  "11393": {
+    "id": 11393,
+    "level": 653
+  },
+  "11394": {
+    "id": 11394,
+    "level": 654
+  },
+  "11395": {
+    "id": 11395,
+    "level": 655
+  },
+  "11396": {
+    "id": 11396,
+    "level": 656
+  },
+  "11397": {
+    "id": 11397,
+    "level": 657
+  },
+  "11398": {
+    "id": 11398,
+    "level": 658
+  },
+  "11399": {
+    "id": 11399,
+    "level": 659
+  },
+  "11400": {
+    "id": 11400,
+    "level": 660
+  },
+  "11401": {
+    "id": 11401,
+    "level": 661
+  },
+  "11402": {
+    "id": 11402,
+    "level": 662
+  },
+  "11403": {
+    "id": 11403,
+    "level": 663
+  },
+  "11404": {
+    "id": 11404,
+    "level": 664
+  },
+  "11405": {
+    "id": 11405,
+    "level": 665
+  },
+  "11406": {
+    "id": 11406,
+    "level": 666
+  },
+  "11407": {
+    "id": 11407,
+    "level": 667
+  },
+  "11408": {
+    "id": 11408,
+    "level": 668
+  },
+  "11409": {
+    "id": 11409,
+    "level": 669
+  },
+  "11410": {
+    "id": 11410,
+    "level": 670
+  },
+  "11411": {
+    "id": 11411,
+    "level": 671
+  },
+  "11412": {
+    "id": 11412,
+    "level": 672
+  },
+  "11413": {
+    "id": 11413,
+    "level": 673
+  },
+  "11414": {
+    "id": 11414,
+    "level": 674
+  },
+  "11415": {
+    "id": 11415,
+    "level": 675
+  },
+  "11416": {
+    "id": 11416,
+    "level": 676
+  },
+  "11417": {
+    "id": 11417,
+    "level": 677
+  },
+  "11418": {
+    "id": 11418,
+    "level": 678
+  },
+  "11419": {
+    "id": 11419,
+    "level": 679
+  },
+  "11420": {
+    "id": 11420,
+    "level": 680
+  },
+  "11421": {
+    "id": 11421,
+    "level": 681
+  },
+  "11422": {
+    "id": 11422,
+    "level": 682
+  },
+  "11423": {
+    "id": 11423,
+    "level": 683
+  },
+  "11424": {
+    "id": 11424,
+    "level": 684
+  },
+  "11425": {
+    "id": 11425,
+    "level": 685
+  },
+  "11426": {
+    "id": 11426,
+    "level": 686
+  },
+  "11427": {
+    "id": 11427,
+    "level": 687
+  },
+  "11428": {
+    "id": 11428,
+    "level": 688
+  },
+  "11429": {
+    "id": 11429,
+    "level": 689
+  },
+  "11430": {
+    "id": 11430,
+    "level": 690
+  },
+  "11431": {
+    "id": 11431,
+    "level": 691
+  },
+  "11432": {
+    "id": 11432,
+    "level": 692
+  },
+  "11433": {
+    "id": 11433,
+    "level": 693
+  },
+  "11434": {
+    "id": 11434,
+    "level": 694
+  },
+  "11435": {
+    "id": 11435,
+    "level": 695
+  },
+  "11436": {
+    "id": 11436,
+    "level": 696
+  },
+  "11437": {
+    "id": 11437,
+    "level": 697
+  },
+  "11438": {
+    "id": 11438,
+    "level": 698
+  },
+  "11439": {
+    "id": 11439,
+    "level": 699
+  },
+  "11440": {
+    "id": 11440,
+    "level": 700
+  },
+  "11441": {
+    "id": 11441,
+    "level": 701
+  },
+  "11442": {
+    "id": 11442,
+    "level": 702
+  },
+  "11443": {
+    "id": 11443,
+    "level": 703
+  },
+  "11444": {
+    "id": 11444,
+    "level": 704
+  },
+  "11445": {
+    "id": 11445,
+    "level": 705
+  },
+  "11446": {
+    "id": 11446,
+    "level": 706
+  },
+  "11447": {
+    "id": 11447,
+    "level": 707
+  },
+  "11448": {
+    "id": 11448,
+    "level": 708
+  },
+  "11449": {
+    "id": 11449,
+    "level": 709
+  },
+  "11450": {
+    "id": 11450,
+    "level": 710
+  },
+  "11451": {
+    "id": 11451,
+    "level": 711
+  },
+  "11452": {
+    "id": 11452,
+    "level": 712
+  },
+  "11453": {
+    "id": 11453,
+    "level": 713
+  },
+  "11454": {
+    "id": 11454,
+    "level": 714
+  },
+  "11455": {
+    "id": 11455,
+    "level": 715
+  },
+  "11456": {
+    "id": 11456,
+    "level": 716
+  },
+  "11457": {
+    "id": 11457,
+    "level": 717
+  },
+  "11458": {
+    "id": 11458,
+    "level": 718
+  },
+  "11459": {
+    "id": 11459,
+    "level": 719
+  },
+  "11460": {
+    "id": 11460,
+    "level": 720
+  },
+  "11461": {
+    "id": 11461,
+    "level": 721
+  },
+  "11462": {
+    "id": 11462,
+    "level": 722
+  },
+  "11463": {
+    "id": 11463,
+    "level": 723
+  },
+  "11464": {
+    "id": 11464,
+    "level": 724
+  },
+  "11465": {
+    "id": 11465,
+    "level": 725
+  },
+  "11466": {
+    "id": 11466,
+    "level": 726
+  },
+  "11467": {
+    "id": 11467,
+    "level": 727
+  },
+  "11468": {
+    "id": 11468,
+    "level": 728
+  },
+  "11469": {
+    "id": 11469,
+    "level": 729
+  },
+  "11470": {
+    "id": 11470,
+    "level": 730
+  },
+  "11471": {
+    "id": 11471,
+    "level": 731
+  },
+  "11472": {
+    "id": 11472,
+    "level": 732
+  },
+  "11473": {
+    "id": 11473,
+    "level": 733
+  },
+  "11474": {
+    "id": 11474,
+    "level": 734
+  },
+  "11475": {
+    "id": 11475,
+    "level": 735
+  },
+  "11476": {
+    "id": 11476,
+    "level": 736
+  },
+  "11477": {
+    "id": 11477,
+    "level": 737
+  },
+  "11478": {
+    "id": 11478,
+    "level": 738
+  },
+  "11479": {
+    "id": 11479,
+    "level": 739
+  },
+  "11480": {
+    "id": 11480,
+    "level": 740
+  },
+  "11481": {
+    "id": 11481,
+    "level": 741
+  },
+  "11482": {
+    "id": 11482,
+    "level": 742
+  },
+  "11483": {
+    "id": 11483,
+    "level": 743
+  },
+  "11484": {
+    "id": 11484,
+    "level": 744
+  },
+  "11485": {
+    "id": 11485,
+    "level": 745
+  },
+  "11486": {
+    "id": 11486,
+    "level": 746
+  },
+  "11487": {
+    "id": 11487,
+    "level": 747
+  },
+  "11488": {
+    "id": 11488,
+    "level": 748
+  },
+  "11489": {
+    "id": 11489,
+    "level": 749
+  },
+  "11490": {
+    "id": 11490,
+    "level": 750
+  },
+  "11491": {
+    "id": 11491,
+    "level": 751
+  },
+  "11492": {
+    "id": 11492,
+    "level": 752
+  },
+  "11493": {
+    "id": 11493,
+    "level": 753
+  },
+  "11494": {
+    "id": 11494,
+    "level": 754
+  },
+  "11495": {
+    "id": 11495,
+    "level": 755
+  },
+  "11496": {
+    "id": 11496,
+    "level": 756
+  },
+  "11497": {
+    "id": 11497,
+    "level": 757
+  },
+  "11498": {
+    "id": 11498,
+    "level": 758
+  },
+  "11499": {
+    "id": 11499,
+    "level": 759
+  },
+  "11500": {
+    "id": 11500,
+    "level": 760
+  },
+  "11501": {
+    "id": 11501,
+    "level": 761
+  },
+  "11502": {
+    "id": 11502,
+    "level": 762
+  },
+  "11503": {
+    "id": 11503,
+    "level": 763
+  },
+  "11504": {
+    "id": 11504,
+    "level": 764
+  },
+  "11505": {
+    "id": 11505,
+    "level": 765
+  },
+  "11506": {
+    "id": 11506,
+    "level": 766
+  },
+  "11507": {
+    "id": 11507,
+    "level": 767
+  },
+  "11508": {
+    "id": 11508,
+    "level": 768
+  },
+  "11509": {
+    "id": 11509,
+    "level": 769
+  },
+  "11510": {
+    "id": 11510,
+    "level": 770
+  },
+  "11511": {
+    "id": 11511,
+    "level": 771
+  },
+  "11512": {
+    "id": 11512,
+    "level": 772
+  },
+  "11513": {
+    "id": 11513,
+    "level": 773
+  },
+  "11514": {
+    "id": 11514,
+    "level": 774
+  },
+  "11515": {
+    "id": 11515,
+    "level": 775
+  },
+  "11516": {
+    "id": 11516,
+    "level": 776
+  },
+  "11517": {
+    "id": 11517,
+    "level": 777
+  },
+  "11518": {
+    "id": 11518,
+    "level": 778
+  },
+  "11519": {
+    "id": 11519,
+    "level": 779
+  },
+  "11520": {
+    "id": 11520,
+    "level": 780
+  },
+  "11521": {
+    "id": 11521,
+    "level": 781
+  },
+  "11522": {
+    "id": 11522,
+    "level": 782
+  },
+  "11523": {
+    "id": 11523,
+    "level": 783
+  },
+  "11524": {
+    "id": 11524,
+    "level": 784
+  },
+  "11525": {
+    "id": 11525,
+    "level": 785
+  },
+  "11526": {
+    "id": 11526,
+    "level": 786
+  },
+  "11527": {
+    "id": 11527,
+    "level": 787
+  },
+  "11528": {
+    "id": 11528,
+    "level": 788
+  },
+  "11529": {
+    "id": 11529,
+    "level": 789
+  },
+  "11530": {
+    "id": 11530,
+    "level": 790
+  },
+  "11531": {
+    "id": 11531,
+    "level": 791
+  },
+  "11532": {
+    "id": 11532,
+    "level": 792
+  },
+  "11533": {
+    "id": 11533,
+    "level": 793
+  },
+  "11534": {
+    "id": 11534,
+    "level": 794
+  },
+  "11535": {
+    "id": 11535,
+    "level": 795
+  },
+  "11536": {
+    "id": 11536,
+    "level": 796
+  },
+  "11537": {
+    "id": 11537,
+    "level": 797
+  },
+  "11538": {
+    "id": 11538,
+    "level": 798
+  },
+  "11539": {
+    "id": 11539,
+    "level": 799
+  },
+  "11540": {
+    "id": 11540,
+    "level": 800
+  },
+  "11541": {
+    "id": 11541,
+    "level": 801
+  },
+  "11542": {
+    "id": 11542,
+    "level": 802
+  },
+  "11543": {
+    "id": 11543,
+    "level": 803
+  },
+  "11544": {
+    "id": 11544,
+    "level": 804
+  },
+  "11545": {
+    "id": 11545,
+    "level": 805
+  },
+  "11546": {
+    "id": 11546,
+    "level": 806
+  },
+  "11547": {
+    "id": 11547,
+    "level": 807
+  },
+  "11548": {
+    "id": 11548,
+    "level": 808
+  },
+  "11549": {
+    "id": 11549,
+    "level": 809
+  },
+  "11550": {
+    "id": 11550,
+    "level": 810
+  },
+  "11551": {
+    "id": 11551,
+    "level": 811
+  },
+  "11552": {
+    "id": 11552,
+    "level": 812
+  },
+  "11553": {
+    "id": 11553,
+    "level": 813
+  },
+  "11554": {
+    "id": 11554,
+    "level": 814
+  },
+  "11555": {
+    "id": 11555,
+    "level": 815
+  },
+  "11556": {
+    "id": 11556,
+    "level": 816
+  },
+  "11557": {
+    "id": 11557,
+    "level": 817
+  },
+  "11558": {
+    "id": 11558,
+    "level": 818
+  },
+  "11559": {
+    "id": 11559,
+    "level": 819
+  },
+  "11560": {
+    "id": 11560,
+    "level": 820
+  },
+  "11561": {
+    "id": 11561,
+    "level": 821
+  },
+  "11562": {
+    "id": 11562,
+    "level": 822
+  },
+  "11563": {
+    "id": 11563,
+    "level": 823
+  },
+  "11564": {
+    "id": 11564,
+    "level": 824
+  },
+  "11565": {
+    "id": 11565,
+    "level": 825
+  },
+  "11566": {
+    "id": 11566,
+    "level": 826
+  },
+  "11567": {
+    "id": 11567,
+    "level": 827
+  },
+  "11568": {
+    "id": 11568,
+    "level": 828
+  },
+  "11569": {
+    "id": 11569,
+    "level": 829
+  },
+  "11570": {
+    "id": 11570,
+    "level": 830
+  },
+  "11571": {
+    "id": 11571,
+    "level": 831
+  },
+  "11572": {
+    "id": 11572,
+    "level": 832
+  },
+  "11573": {
+    "id": 11573,
+    "level": 833
+  },
+  "11574": {
+    "id": 11574,
+    "level": 834
+  },
+  "11575": {
+    "id": 11575,
+    "level": 835
+  },
+  "11576": {
+    "id": 11576,
+    "level": 836
+  },
+  "11577": {
+    "id": 11577,
+    "level": 837
+  },
+  "11578": {
+    "id": 11578,
+    "level": 838
+  },
+  "11579": {
+    "id": 11579,
+    "level": 839
+  },
+  "11580": {
+    "id": 11580,
+    "level": 840
+  },
+  "11581": {
+    "id": 11581,
+    "level": 841
+  },
+  "11582": {
+    "id": 11582,
+    "level": 842
+  },
+  "11583": {
+    "id": 11583,
+    "level": 843
+  },
+  "11584": {
+    "id": 11584,
+    "level": 844
+  },
+  "11585": {
+    "id": 11585,
+    "level": 845
+  },
+  "11586": {
+    "id": 11586,
+    "level": 846
+  },
+  "11587": {
+    "id": 11587,
+    "level": 847
+  },
+  "11588": {
+    "id": 11588,
+    "level": 848
+  },
+  "11589": {
+    "id": 11589,
+    "level": 849
+  },
+  "11590": {
+    "id": 11590,
+    "level": 850
+  },
+  "11591": {
+    "id": 11591,
+    "level": 851
+  },
+  "11592": {
+    "id": 11592,
+    "level": 852
+  },
+  "11593": {
+    "id": 11593,
+    "level": 853
+  },
+  "11594": {
+    "id": 11594,
+    "level": 854
+  },
+  "11595": {
+    "id": 11595,
+    "level": 855
+  },
+  "11596": {
+    "id": 11596,
+    "level": 856
+  },
+  "11597": {
+    "id": 11597,
+    "level": 857
+  },
+  "11598": {
+    "id": 11598,
+    "level": 858
+  },
+  "11599": {
+    "id": 11599,
+    "level": 859
+  },
+  "11600": {
+    "id": 11600,
+    "level": 860
+  },
+  "11601": {
+    "id": 11601,
+    "level": 861
+  },
+  "11602": {
+    "id": 11602,
+    "level": 862
+  },
+  "11603": {
+    "id": 11603,
+    "level": 863
+  },
+  "11604": {
+    "id": 11604,
+    "level": 864
+  },
+  "11605": {
+    "id": 11605,
+    "level": 865
+  },
+  "11606": {
+    "id": 11606,
+    "level": 866
+  },
+  "11607": {
+    "id": 11607,
+    "level": 867
+  },
+  "11608": {
+    "id": 11608,
+    "level": 868
+  },
+  "11609": {
+    "id": 11609,
+    "level": 869
+  },
+  "11610": {
+    "id": 11610,
+    "level": 870
+  },
+  "11611": {
+    "id": 11611,
+    "level": 871
+  },
+  "11612": {
+    "id": 11612,
+    "level": 872
+  },
+  "11613": {
+    "id": 11613,
+    "level": 873
+  },
+  "11614": {
+    "id": 11614,
+    "level": 874
+  },
+  "11615": {
+    "id": 11615,
+    "level": 875
+  },
+  "11616": {
+    "id": 11616,
+    "level": 876
+  },
+  "11617": {
+    "id": 11617,
+    "level": 877
+  },
+  "11618": {
+    "id": 11618,
+    "level": 878
+  },
+  "11619": {
+    "id": 11619,
+    "level": 879
+  },
+  "11620": {
+    "id": 11620,
+    "level": 880
+  },
+  "11621": {
+    "id": 11621,
+    "level": 881
+  },
+  "11622": {
+    "id": 11622,
+    "level": 882
+  },
+  "11623": {
+    "id": 11623,
+    "level": 883
+  },
+  "11624": {
+    "id": 11624,
+    "level": 884
+  },
+  "11625": {
+    "id": 11625,
+    "level": 885
+  },
+  "11626": {
+    "id": 11626,
+    "level": 886
+  },
+  "11627": {
+    "id": 11627,
+    "level": 887
+  },
+  "11628": {
+    "id": 11628,
+    "level": 888
+  },
+  "11629": {
+    "id": 11629,
+    "level": 889
+  },
+  "11630": {
+    "id": 11630,
+    "level": 890
+  },
+  "11631": {
+    "id": 11631,
+    "level": 891
+  },
+  "11632": {
+    "id": 11632,
+    "level": 892
+  },
+  "11633": {
+    "id": 11633,
+    "level": 893
+  },
+  "11634": {
+    "id": 11634,
+    "level": 894
+  },
+  "11635": {
+    "id": 11635,
+    "level": 895
+  },
+  "11636": {
+    "id": 11636,
+    "level": 896
+  },
+  "11637": {
+    "id": 11637,
+    "level": 897
+  },
+  "11638": {
+    "id": 11638,
+    "level": 898
+  },
+  "11639": {
+    "id": 11639,
+    "level": 899
+  },
+  "11640": {
+    "id": 11640,
+    "level": 900
+  },
+  "11641": {
+    "id": 11641,
+    "level": -601
+  },
+  "11642": {
+    "id": 11642,
+    "level": -602
+  },
+  "11643": {
+    "id": 11643,
+    "level": -603
+  },
+  "11644": {
+    "id": 11644,
+    "level": -604
+  },
+  "11645": {
+    "id": 11645,
+    "level": -605
+  },
+  "11646": {
+    "id": 11646,
+    "level": -606
+  },
+  "11647": {
+    "id": 11647,
+    "level": -607
+  },
+  "11648": {
+    "id": 11648,
+    "level": -608
+  },
+  "11649": {
+    "id": 11649,
+    "level": -609
+  },
+  "11650": {
+    "id": 11650,
+    "level": -610
+  },
+  "11651": {
+    "id": 11651,
+    "level": -611
+  },
+  "11652": {
+    "id": 11652,
+    "level": -612
+  },
+  "11653": {
+    "id": 11653,
+    "level": -613
+  },
+  "11654": {
+    "id": 11654,
+    "level": -614
+  },
+  "11655": {
+    "id": 11655,
+    "level": -615
+  },
+  "11656": {
+    "id": 11656,
+    "level": -616
+  },
+  "11657": {
+    "id": 11657,
+    "level": -617
+  },
+  "11658": {
+    "id": 11658,
+    "level": -618
+  },
+  "11659": {
+    "id": 11659,
+    "level": -619
+  },
+  "11660": {
+    "id": 11660,
+    "level": -620
+  },
+  "11661": {
+    "id": 11661,
+    "level": -621
+  },
+  "11662": {
+    "id": 11662,
+    "level": -622
+  },
+  "11663": {
+    "id": 11663,
+    "level": -623
+  },
+  "11664": {
+    "id": 11664,
+    "level": -624
+  },
+  "11665": {
+    "id": 11665,
+    "level": -625
+  },
+  "11666": {
+    "id": 11666,
+    "level": -626
+  },
+  "11667": {
+    "id": 11667,
+    "level": -627
+  },
+  "11668": {
+    "id": 11668,
+    "level": -628
+  },
+  "11669": {
+    "id": 11669,
+    "level": -629
+  },
+  "11670": {
+    "id": 11670,
+    "level": -630
+  },
+  "11671": {
+    "id": 11671,
+    "level": -631
+  },
+  "11672": {
+    "id": 11672,
+    "level": -632
+  },
+  "11673": {
+    "id": 11673,
+    "level": -633
+  },
+  "11674": {
+    "id": 11674,
+    "level": -634
+  },
+  "11675": {
+    "id": 11675,
+    "level": -635
+  },
+  "11676": {
+    "id": 11676,
+    "level": -636
+  },
+  "11677": {
+    "id": 11677,
+    "level": -637
+  },
+  "11678": {
+    "id": 11678,
+    "level": -638
+  },
+  "11679": {
+    "id": 11679,
+    "level": -639
+  },
+  "11680": {
+    "id": 11680,
+    "level": -640
+  },
+  "11681": {
+    "id": 11681,
+    "level": -641
+  },
+  "11682": {
+    "id": 11682,
+    "level": -642
+  },
+  "11683": {
+    "id": 11683,
+    "level": -643
+  },
+  "11684": {
+    "id": 11684,
+    "level": -644
+  },
+  "11685": {
+    "id": 11685,
+    "level": -645
+  },
+  "11686": {
+    "id": 11686,
+    "level": -646
+  },
+  "11687": {
+    "id": 11687,
+    "level": -647
+  },
+  "11688": {
+    "id": 11688,
+    "level": -648
+  },
+  "11689": {
+    "id": 11689,
+    "level": -649
+  },
+  "11690": {
+    "id": 11690,
+    "level": -650
+  },
+  "11691": {
+    "id": 11691,
+    "level": -651
+  },
+  "11692": {
+    "id": 11692,
+    "level": -652
+  },
+  "11693": {
+    "id": 11693,
+    "level": -653
+  },
+  "11694": {
+    "id": 11694,
+    "level": -654
+  },
+  "11695": {
+    "id": 11695,
+    "level": -655
+  },
+  "11696": {
+    "id": 11696,
+    "level": -656
+  },
+  "11697": {
+    "id": 11697,
+    "level": -657
+  },
+  "11698": {
+    "id": 11698,
+    "level": -658
+  },
+  "11699": {
+    "id": 11699,
+    "level": -659
+  },
+  "11700": {
+    "id": 11700,
+    "level": -660
+  },
+  "11701": {
+    "id": 11701,
+    "level": -661
+  },
+  "11702": {
+    "id": 11702,
+    "level": -662
+  },
+  "11703": {
+    "id": 11703,
+    "level": -663
+  },
+  "11704": {
+    "id": 11704,
+    "level": -664
+  },
+  "11705": {
+    "id": 11705,
+    "level": -665
+  },
+  "11706": {
+    "id": 11706,
+    "level": -666
+  },
+  "11707": {
+    "id": 11707,
+    "level": -667
+  },
+  "11708": {
+    "id": 11708,
+    "level": -668
+  },
+  "11709": {
+    "id": 11709,
+    "level": -669
+  },
+  "11710": {
+    "id": 11710,
+    "level": -670
+  },
+  "11711": {
+    "id": 11711,
+    "level": -671
+  },
+  "11712": {
+    "id": 11712,
+    "level": -672
+  },
+  "11713": {
+    "id": 11713,
+    "level": -673
+  },
+  "11714": {
+    "id": 11714,
+    "level": -674
+  },
+  "11715": {
+    "id": 11715,
+    "level": -675
+  },
+  "11716": {
+    "id": 11716,
+    "level": -676
+  },
+  "11717": {
+    "id": 11717,
+    "level": -677
+  },
+  "11718": {
+    "id": 11718,
+    "level": -678
+  },
+  "11719": {
+    "id": 11719,
+    "level": -679
+  },
+  "11720": {
+    "id": 11720,
+    "level": -680
+  },
+  "11721": {
+    "id": 11721,
+    "level": -681
+  },
+  "11722": {
+    "id": 11722,
+    "level": -682
+  },
+  "11723": {
+    "id": 11723,
+    "level": -683
+  },
+  "11724": {
+    "id": 11724,
+    "level": -684
+  },
+  "11725": {
+    "id": 11725,
+    "level": -685
+  },
+  "11726": {
+    "id": 11726,
+    "level": -686
+  },
+  "11727": {
+    "id": 11727,
+    "level": -687
+  },
+  "11728": {
+    "id": 11728,
+    "level": -688
+  },
+  "11729": {
+    "id": 11729,
+    "level": -689
+  },
+  "11730": {
+    "id": 11730,
+    "level": -690
+  },
+  "11731": {
+    "id": 11731,
+    "level": -691
+  },
+  "11732": {
+    "id": 11732,
+    "level": -692
+  },
+  "11733": {
+    "id": 11733,
+    "level": -693
+  },
+  "11734": {
+    "id": 11734,
+    "level": -694
+  },
+  "11735": {
+    "id": 11735,
+    "level": -695
+  },
+  "11736": {
+    "id": 11736,
+    "level": -696
+  },
+  "11737": {
+    "id": 11737,
+    "level": -697
+  },
+  "11738": {
+    "id": 11738,
+    "level": -698
+  },
+  "11739": {
+    "id": 11739,
+    "level": -699
+  },
+  "11740": {
+    "id": 11740,
+    "level": -700
+  },
+  "11741": {
+    "id": 11741,
+    "level": -701
+  },
+  "11742": {
+    "id": 11742,
+    "level": -702
+  },
+  "11743": {
+    "id": 11743,
+    "level": -703
+  },
+  "11744": {
+    "id": 11744,
+    "level": -704
+  },
+  "11745": {
+    "id": 11745,
+    "level": -705
+  },
+  "11746": {
+    "id": 11746,
+    "level": -706
+  },
+  "11747": {
+    "id": 11747,
+    "level": -707
+  },
+  "11748": {
+    "id": 11748,
+    "level": -708
+  },
+  "11749": {
+    "id": 11749,
+    "level": -709
+  },
+  "11750": {
+    "id": 11750,
+    "level": -710
+  },
+  "11751": {
+    "id": 11751,
+    "level": -711
+  },
+  "11752": {
+    "id": 11752,
+    "level": -712
+  },
+  "11753": {
+    "id": 11753,
+    "level": -713
+  },
+  "11754": {
+    "id": 11754,
+    "level": -714
+  },
+  "11755": {
+    "id": 11755,
+    "level": -715
+  },
+  "11756": {
+    "id": 11756,
+    "level": -716
+  },
+  "11757": {
+    "id": 11757,
+    "level": -717
+  },
+  "11758": {
+    "id": 11758,
+    "level": -718
+  },
+  "11759": {
+    "id": 11759,
+    "level": -719
+  },
+  "11760": {
+    "id": 11760,
+    "level": -720
+  },
+  "11761": {
+    "id": 11761,
+    "level": -721
+  },
+  "11762": {
+    "id": 11762,
+    "level": -722
+  },
+  "11763": {
+    "id": 11763,
+    "level": -723
+  },
+  "11764": {
+    "id": 11764,
+    "level": -724
+  },
+  "11765": {
+    "id": 11765,
+    "level": -725
+  },
+  "11766": {
+    "id": 11766,
+    "level": -726
+  },
+  "11767": {
+    "id": 11767,
+    "level": -727
+  },
+  "11768": {
+    "id": 11768,
+    "level": -728
+  },
+  "11769": {
+    "id": 11769,
+    "level": -729
+  },
+  "11770": {
+    "id": 11770,
+    "level": -730
+  },
+  "11771": {
+    "id": 11771,
+    "level": -731
+  },
+  "11772": {
+    "id": 11772,
+    "level": -732
+  },
+  "11773": {
+    "id": 11773,
+    "level": -733
+  },
+  "11774": {
+    "id": 11774,
+    "level": -734
+  },
+  "11775": {
+    "id": 11775,
+    "level": -735
+  },
+  "11776": {
+    "id": 11776,
+    "level": -736
+  },
+  "11777": {
+    "id": 11777,
+    "level": -737
+  },
+  "11778": {
+    "id": 11778,
+    "level": -738
+  },
+  "11779": {
+    "id": 11779,
+    "level": -739
+  },
+  "11780": {
+    "id": 11780,
+    "level": -740
+  },
+  "11781": {
+    "id": 11781,
+    "level": -741
+  },
+  "11782": {
+    "id": 11782,
+    "level": -742
+  },
+  "11783": {
+    "id": 11783,
+    "level": -743
+  },
+  "11784": {
+    "id": 11784,
+    "level": -744
+  },
+  "11785": {
+    "id": 11785,
+    "level": -745
+  },
+  "11786": {
+    "id": 11786,
+    "level": -746
+  },
+  "11787": {
+    "id": 11787,
+    "level": -747
+  },
+  "11788": {
+    "id": 11788,
+    "level": -748
+  },
+  "11789": {
+    "id": 11789,
+    "level": -749
+  },
+  "11790": {
+    "id": 11790,
+    "level": -750
+  },
+  "11791": {
+    "id": 11791,
+    "level": -751
+  },
+  "11792": {
+    "id": 11792,
+    "level": -752
+  },
+  "11793": {
+    "id": 11793,
+    "level": -753
+  },
+  "11794": {
+    "id": 11794,
+    "level": -754
+  },
+  "11795": {
+    "id": 11795,
+    "level": -755
+  },
+  "11796": {
+    "id": 11796,
+    "level": -756
+  },
+  "11797": {
+    "id": 11797,
+    "level": -757
+  },
+  "11798": {
+    "id": 11798,
+    "level": -758
+  },
+  "11799": {
+    "id": 11799,
+    "level": -759
+  },
+  "11800": {
+    "id": 11800,
+    "level": -760
+  },
+  "11801": {
+    "id": 11801,
+    "level": -761
+  },
+  "11802": {
+    "id": 11802,
+    "level": -762
+  },
+  "11803": {
+    "id": 11803,
+    "level": -763
+  },
+  "11804": {
+    "id": 11804,
+    "level": -764
+  },
+  "11805": {
+    "id": 11805,
+    "level": -765
+  },
+  "11806": {
+    "id": 11806,
+    "level": -766
+  },
+  "11807": {
+    "id": 11807,
+    "level": -767
+  },
+  "11808": {
+    "id": 11808,
+    "level": -768
+  },
+  "11809": {
+    "id": 11809,
+    "level": -769
+  },
+  "11810": {
+    "id": 11810,
+    "level": -770
+  },
+  "11811": {
+    "id": 11811,
+    "level": -771
+  },
+  "11812": {
+    "id": 11812,
+    "level": -772
+  },
+  "11813": {
+    "id": 11813,
+    "level": -773
+  },
+  "11814": {
+    "id": 11814,
+    "level": -774
+  },
+  "11815": {
+    "id": 11815,
+    "level": -775
+  },
+  "11816": {
+    "id": 11816,
+    "level": -776
+  },
+  "11817": {
+    "id": 11817,
+    "level": -777
+  },
+  "11818": {
+    "id": 11818,
+    "level": -778
+  },
+  "11819": {
+    "id": 11819,
+    "level": -779
+  },
+  "11820": {
+    "id": 11820,
+    "level": -780
+  },
+  "11821": {
+    "id": 11821,
+    "level": -781
+  },
+  "11822": {
+    "id": 11822,
+    "level": -782
+  },
+  "11823": {
+    "id": 11823,
+    "level": -783
+  },
+  "11824": {
+    "id": 11824,
+    "level": -784
+  },
+  "11825": {
+    "id": 11825,
+    "level": -785
+  },
+  "11826": {
+    "id": 11826,
+    "level": -786
+  },
+  "11827": {
+    "id": 11827,
+    "level": -787
+  },
+  "11828": {
+    "id": 11828,
+    "level": -788
+  },
+  "11829": {
+    "id": 11829,
+    "level": -789
+  },
+  "11830": {
+    "id": 11830,
+    "level": -790
+  },
+  "11831": {
+    "id": 11831,
+    "level": -791
+  },
+  "11832": {
+    "id": 11832,
+    "level": -792
+  },
+  "11833": {
+    "id": 11833,
+    "level": -793
+  },
+  "11834": {
+    "id": 11834,
+    "level": -794
+  },
+  "11835": {
+    "id": 11835,
+    "level": -795
+  },
+  "11836": {
+    "id": 11836,
+    "level": -796
+  },
+  "11837": {
+    "id": 11837,
+    "level": -797
+  },
+  "11838": {
+    "id": 11838,
+    "level": -798
+  },
+  "11839": {
+    "id": 11839,
+    "level": -799
+  },
+  "11840": {
+    "id": 11840,
+    "level": -800
+  },
+  "11841": {
+    "id": 11841,
+    "level": -801
+  },
+  "11842": {
+    "id": 11842,
+    "level": -802
+  },
+  "11843": {
+    "id": 11843,
+    "level": -803
+  },
+  "11844": {
+    "id": 11844,
+    "level": -804
+  },
+  "11845": {
+    "id": 11845,
+    "level": -805
+  },
+  "11846": {
+    "id": 11846,
+    "level": -806
+  },
+  "11847": {
+    "id": 11847,
+    "level": -807
+  },
+  "11848": {
+    "id": 11848,
+    "level": -808
+  },
+  "11849": {
+    "id": 11849,
+    "level": -809
+  },
+  "11850": {
+    "id": 11850,
+    "level": -810
+  },
+  "11851": {
+    "id": 11851,
+    "level": -811
+  },
+  "11852": {
+    "id": 11852,
+    "level": -812
+  },
+  "11853": {
+    "id": 11853,
+    "level": -813
+  },
+  "11854": {
+    "id": 11854,
+    "level": -814
+  },
+  "11855": {
+    "id": 11855,
+    "level": -815
+  },
+  "11856": {
+    "id": 11856,
+    "level": -816
+  },
+  "11857": {
+    "id": 11857,
+    "level": -817
+  },
+  "11858": {
+    "id": 11858,
+    "level": -818
+  },
+  "11859": {
+    "id": 11859,
+    "level": -819
+  },
+  "11860": {
+    "id": 11860,
+    "level": -820
+  },
+  "11861": {
+    "id": 11861,
+    "level": -821
+  },
+  "11862": {
+    "id": 11862,
+    "level": -822
+  },
+  "11863": {
+    "id": 11863,
+    "level": -823
+  },
+  "11864": {
+    "id": 11864,
+    "level": -824
+  },
+  "11865": {
+    "id": 11865,
+    "level": -825
+  },
+  "11866": {
+    "id": 11866,
+    "level": -826
+  },
+  "11867": {
+    "id": 11867,
+    "level": -827
+  },
+  "11868": {
+    "id": 11868,
+    "level": -828
+  },
+  "11869": {
+    "id": 11869,
+    "level": -829
+  },
+  "11870": {
+    "id": 11870,
+    "level": -830
+  },
+  "11871": {
+    "id": 11871,
+    "level": -831
+  },
+  "11872": {
+    "id": 11872,
+    "level": -832
+  },
+  "11873": {
+    "id": 11873,
+    "level": -833
+  },
+  "11874": {
+    "id": 11874,
+    "level": -834
+  },
+  "11875": {
+    "id": 11875,
+    "level": -835
+  },
+  "11876": {
+    "id": 11876,
+    "level": -836
+  },
+  "11877": {
+    "id": 11877,
+    "level": -837
+  },
+  "11878": {
+    "id": 11878,
+    "level": -838
+  },
+  "11879": {
+    "id": 11879,
+    "level": -839
+  },
+  "11880": {
+    "id": 11880,
+    "level": -840
+  },
+  "11881": {
+    "id": 11881,
+    "level": -841
+  },
+  "11882": {
+    "id": 11882,
+    "level": -842
+  },
+  "11883": {
+    "id": 11883,
+    "level": -843
+  },
+  "11884": {
+    "id": 11884,
+    "level": -844
+  },
+  "11885": {
+    "id": 11885,
+    "level": -845
+  },
+  "11886": {
+    "id": 11886,
+    "level": -846
+  },
+  "11887": {
+    "id": 11887,
+    "level": -847
+  },
+  "11888": {
+    "id": 11888,
+    "level": -848
+  },
+  "11889": {
+    "id": 11889,
+    "level": -849
+  },
+  "11890": {
+    "id": 11890,
+    "level": -850
+  },
+  "11891": {
+    "id": 11891,
+    "level": -851
+  },
+  "11892": {
+    "id": 11892,
+    "level": -852
+  },
+  "11893": {
+    "id": 11893,
+    "level": -853
+  },
+  "11894": {
+    "id": 11894,
+    "level": -854
+  },
+  "11895": {
+    "id": 11895,
+    "level": -855
+  },
+  "11896": {
+    "id": 11896,
+    "level": -856
+  },
+  "11897": {
+    "id": 11897,
+    "level": -857
+  },
+  "11898": {
+    "id": 11898,
+    "level": -858
+  },
+  "11899": {
+    "id": 11899,
+    "level": -859
+  },
+  "11900": {
+    "id": 11900,
+    "level": -860
+  },
+  "11901": {
+    "id": 11901,
+    "level": -861
+  },
+  "11902": {
+    "id": 11902,
+    "level": -862
+  },
+  "11903": {
+    "id": 11903,
+    "level": -863
+  },
+  "11904": {
+    "id": 11904,
+    "level": -864
+  },
+  "11905": {
+    "id": 11905,
+    "level": -865
+  },
+  "11906": {
+    "id": 11906,
+    "level": -866
+  },
+  "11907": {
+    "id": 11907,
+    "level": -867
+  },
+  "11908": {
+    "id": 11908,
+    "level": -868
+  },
+  "11909": {
+    "id": 11909,
+    "level": -869
+  },
+  "11910": {
+    "id": 11910,
+    "level": -870
+  },
+  "11911": {
+    "id": 11911,
+    "level": -871
+  },
+  "11912": {
+    "id": 11912,
+    "level": -872
+  },
+  "11913": {
+    "id": 11913,
+    "level": -873
+  },
+  "11914": {
+    "id": 11914,
+    "level": -874
+  },
+  "11915": {
+    "id": 11915,
+    "level": -875
+  },
+  "11916": {
+    "id": 11916,
+    "level": -876
+  },
+  "11917": {
+    "id": 11917,
+    "level": -877
+  },
+  "11918": {
+    "id": 11918,
+    "level": -878
+  },
+  "11919": {
+    "id": 11919,
+    "level": -879
+  },
+  "11920": {
+    "id": 11920,
+    "level": -880
+  },
+  "11921": {
+    "id": 11921,
+    "level": -881
+  },
+  "11922": {
+    "id": 11922,
+    "level": -882
+  },
+  "11923": {
+    "id": 11923,
+    "level": -883
+  },
+  "11924": {
+    "id": 11924,
+    "level": -884
+  },
+  "11925": {
+    "id": 11925,
+    "level": -885
+  },
+  "11926": {
+    "id": 11926,
+    "level": -886
+  },
+  "11927": {
+    "id": 11927,
+    "level": -887
+  },
+  "11928": {
+    "id": 11928,
+    "level": -888
+  },
+  "11929": {
+    "id": 11929,
+    "level": -889
+  },
+  "11930": {
+    "id": 11930,
+    "level": -890
+  },
+  "11931": {
+    "id": 11931,
+    "level": -891
+  },
+  "11932": {
+    "id": 11932,
+    "level": -892
+  },
+  "11933": {
+    "id": 11933,
+    "level": -893
+  },
+  "11934": {
+    "id": 11934,
+    "level": -894
+  },
+  "11935": {
+    "id": 11935,
+    "level": -895
+  },
+  "11936": {
+    "id": 11936,
+    "level": -896
+  },
+  "11937": {
+    "id": 11937,
+    "level": -897
+  },
+  "11938": {
+    "id": 11938,
+    "level": -898
+  },
+  "11939": {
+    "id": 11939,
+    "level": -899
+  },
+  "11940": {
+    "id": 11940,
+    "level": -900
+  },
+  "11941": {
+    "id": 11941,
+    "effect": {
+      "id": 190239,
+      "index": 0,
+      "spell": {
+        "id": 463429,
+        "name": "Griftah's All-Purpose Embellishing Powder",
+        "icon": "inv_misc_powder_mithril"
+      }
+    }
+  },
+  "11997": {
+    "id": 11997,
+    "tag": "Mythic+"
+  },
+  "11999": {
+    "id": 11999,
+    "upgrade": {
+      "group": 445,
+      "level": 1,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 11999,
+      "itemLevel": 561
+    },
+    "quality": 4
+  },
+  "12001": {
+    "id": 12001,
+    "upgrade": {
+      "group": 445,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 12001,
+      "itemLevel": 564
+    },
+    "quality": 4
+  },
+  "12002": {
+    "id": 12002,
+    "upgrade": {
+      "group": 445,
+      "level": 3,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 12002,
+      "itemLevel": 571
+    },
+    "quality": 4
+  },
+  "12003": {
+    "id": 12003,
+    "upgrade": {
+      "group": 445,
+      "level": 4,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 12003,
+      "itemLevel": 577
+    },
+    "quality": 4
+  },
+  "12004": {
+    "id": 12004,
+    "upgrade": {
+      "group": 445,
+      "level": 5,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 12004,
+      "itemLevel": 584
+    },
+    "quality": 4
+  },
+  "12005": {
+    "id": 12005,
+    "upgrade": {
+      "group": 445,
+      "level": 6,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 12005,
+      "itemLevel": 590
+    },
+    "quality": 4
+  },
+  "12006": {
+    "id": 12006,
+    "upgrade": {
+      "group": 445,
+      "level": 7,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 12006,
+      "itemLevel": 597
+    },
+    "quality": 4
+  },
+  "12007": {
+    "id": 12007,
+    "upgrade": {
+      "group": 445,
+      "level": 8,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 12007,
+      "itemLevel": 603
+    },
+    "quality": 4
+  },
+  "12008": {
+    "id": 12008,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 190538,
+      "index": 0,
+      "spell": {
+        "id": 464659,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12009": {
+    "id": 12009,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 190544,
+      "index": 0,
+      "spell": {
+        "id": 464725,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12010": {
+    "id": 12010,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 190545,
+      "index": 0,
+      "spell": {
+        "id": 464726,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12011": {
+    "id": 12011,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 190546,
+      "index": 0,
+      "spell": {
+        "id": 464727,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
       }
     }
   }

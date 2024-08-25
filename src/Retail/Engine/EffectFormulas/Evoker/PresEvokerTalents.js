@@ -1,4 +1,6 @@
-import { getHealth } from "../Generic/RampGeneric/RampBase";
+import { getHealth, getHaste, getSqrt } from "../Generic/RampGeneric/RampBase";
+import { addBuff } from "../Generic/RampGeneric/BuffBase";
+import { runHeal } from "./PresEvokerRamps"
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -49,7 +51,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             spellData: {id: 357208, icon: "ability_evoker_firebreath", cat: "damage"},
             type: "heal",
             school: "red",
-            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.4 * EVOKERCONSTANTS.auraDamageBuff),
+            coeff: (evokerSpells['Fire Breath'][0].coeff * talents.lifeGiversFlame * 0.8 * EVOKERCONSTANTS.auraDamageBuff),
             expectedOverheal: 0.15,
             targets: 1,
             secondaries: ['crit', 'vers']
@@ -134,15 +136,20 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         secondaries: ['crit', 'vers', 'mastery']
     });
     // Panacea doesn't scale with Lush Growth.
-    if (talents.panacea) evokerSpells['Emerald Blossom'].push({
-        name: "Panacea",
-        type: "heal",
-        school: "green",
-        coeff: 2.5,
-        targets: 1,
-        expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers', 'mastery']
-    })
+    if (talents.panacea) {
+        const panacea = {
+                name: "Panacea",
+                type: "heal",
+                school: "green",
+                coeff: 1.25,
+                targets: 1,
+                expectedOverheal: 0.3,
+                secondaries: ['crit', 'vers', 'mastery']
+            }
+        evokerSpells['Emerald Blossom'].push(panacea);
+        evokerSpells['Verdant Embrace'].push(panacea);
+    }
+
     if (talents.fieldOfDreams) evokerSpells['Emerald Blossom'].push({
         type: "castSpell",
         storedSpell: "Emerald Blossom",
@@ -174,7 +181,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             buffDuration: 999,
             buffType: 'spellAmp',
             value: 1.4,
-    })
+        })
     }
     if (talents.ancientFlame) {
         const ancientFlame = {
@@ -183,7 +190,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             stacks: 0,
             canStack: false,
             buffDuration: 15,
-            buffType: 'special',
+            buffType: 'spellSpeed',
+            buffSpell: ["Living Flame", "Living Flame D"],
             unique: true,
             value: 0.4,
         }
@@ -213,6 +221,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
+    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
 
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -309,14 +319,31 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     return evokerSpells;
 }
 
-// Apply Chronowarden talents
+// The value of Chronowarden is:
+// - Spiritbloom HoT
+// - Dream Breath extension
+// - Temporal Burst
+// - Golden Opportunity (20% increase to Echo effectiveness)
+// - Afterimage
 export const applyChronowarden = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
-
     // Chronoflame
 
     // Temporal Burst
 
     // Reverberations
+    evokerSpells["Spiritbloom"].push({
+            name: "Spiritbloom (HoT)",
+            type: "buff",
+            buffType: "heal",
+            buffDuration: 8,
+            tickData: {tickRate: 2, canPartialTick: false, hasteScaling: false},
+            tickRate: 2,
+            coeff: evokerSpells["Spiritbloom"][0].coeff * 0.3 / 4, 
+            targets: [1, 2, 3, 4], 
+            expectedOverheal: 0.3,
+            secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
+    })
+
 
     // Primacy
 
@@ -334,6 +361,70 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
     // Afterimage
 }
 
+// The value of Flameshaper is:
+// - Engulf + Consume Flame (including in Stasis and any DB increases).
+// - Expanded Lungs
+// - Conduit of Flame (lol)
+// - Titanic Precision
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
 
+    // Travelling Flame + Consume
+    evokerSpells["Engulf"].push(
+        {
+            type: "function",
+            runFunc: function (state) {
+                const temp = state.activeBuffs.filter(buff => buff.name === "Dream Breath");
+                if (temp.length > 0) {
+                    const expiationDuration = 4;
+                    const consumeBuff = 3; // 300%
+                    const buff = temp[0]; // TODO: Grab the most powerful Dream Breath instead of the first one found.
+ 
+                    const ticks = Math.min(expiationDuration, (buff.expiration - state.t)) / buff.tickRate * getHaste(state.currentStats); // TODO: Add Haste
+                    const attSpell = JSON.parse(JSON.stringify(buff.attSpell));
+                    const consumeHeal = { type: "heal", coeff: attSpell.coeff * consumeBuff * ticks * getSqrt(20, 5), expectedOverheal: 0.45, secondaries: ['crit', 'vers', 'mastery']}
+                    //attSpell.coeff = attSpell.coeff * consumeBuff * ticks// ;
+                    
+                    runHeal(state, consumeHeal, "Consume Flame");
+ 
+                    buff.expiration -= expiationDuration + 8; // Travelling Flame adds 8s.
+
+                    // Travelling Flame
+                    // Add another full duration Dream Breath HoT
+                    addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
+
+
+                    /*if (state.t > buff.expiration) {
+                        removeBuffStack(state.activeBuffs, "Dream Breath");
+                    } */
+                }
+            }
+        });
+
+    // Expanded Lungs
+    // Check if 0 should also be buffed.
+    if (true) {
+        evokerSpells["Dream Breath"][1].coeff[0] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[1] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[2] *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[3] *= 1.2;
+        evokerSpells["Dream Breath"][2].coeff *= 1.2;
+    }
+
+    // Red Hot
+    evokerSpells["Engulf"][0].coeff *= 1.2;
+    evokerSpells["Engulf"][0].charges = 2;
+
+
+    evokerSpells['Engulf'].push({
+        name: "Burning Adrenaline",
+        type: "buff",
+        stacks: 1,
+        canStack: true,
+        maxStacks: 2,
+        buffDuration: 15,
+        buffType: 'spellSpeed',
+        buffSpell: ["All"],
+        unique: true,
+        value: 1.3,
+    });
 }

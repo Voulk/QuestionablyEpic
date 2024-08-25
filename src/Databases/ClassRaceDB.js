@@ -106,11 +106,11 @@ export const classRaceDB = {
 
   /* --------------------------------------- Burning Crusade -------------------------------------- */
   "Holy Priest Classic": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
+    races: ["Races.Goblin", "Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
     gameType: "Classic",
   },
   "Discipline Priest Classic": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
+    races: ["Races.Goblin", "Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
     gameType: "Classic",
   },
 

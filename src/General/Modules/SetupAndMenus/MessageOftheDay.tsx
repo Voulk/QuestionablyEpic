@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "Prepatch support is light and not very optimized. Work is currently focused on War Within (and Cataclysm)."
+    "QE Live TWW is now available in a limited format. Note that changes are being made in-game every single day!"
   ]
 ;
   if (messageOfTheDay.length === 0) return;

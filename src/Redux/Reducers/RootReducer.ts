@@ -28,24 +28,33 @@ const initialState : RootState = {
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     groupBuffValuation: {value: "Half", options: ["Half", "Full"], category: "trinkets", type: "selector", gameType: "Retail"},
-    incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
-    broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry", gameType: "Retail"},
-    idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
-    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Crit Buff", "Haste Buff"], category: "trinkets", type: "selector", gameType: "Retail" }, // "ST Damage", "AoE Damage",
+    //incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
+    //broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry", gameType: "Retail"},
+    //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
+
+    // TWW Trinkets
+    creepingCoagOverheal: { value: 28, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    ovinaxAverageIntStacks: { value: 18, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
+    syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    pheromoneSecreter: { value: "Haste / Versatility", options: [
+      "Haste / Versatility",
+      "Haste / Mastery",
+      "Haste / Crit",
+      "Crit / Mastery",
+      "Crit / Versatility",
+      "Mastery / Versatility"], category: "trinkets", type: "selector", gameType: "Retail" },
     
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector", gameType: "Retail" },
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
-    healingDartsOverheal: { value: 62, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
-    lariatGems: { value: 4, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
-    chromaticEssenceBuff: { value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility", "Quad Buff"], category: "trinkets", type: "selector", gameType: "Retail" },
+    socketedGems: { value: 4, options: [0, 1, 2, 3, 4, 5, 6, 7, 8], category: "embellishments", type: "Entry", gameType: "Retail" },
     
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
-    runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
-    phialChoice: {value: "Automatic", options: ["Automatic", "Corrupting Rage", "Tepid Versatility"], category: "topGear", type: "selector", gameType: "Retail"},
-    chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
+    //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
+    phialChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
 
 
     // Classic Settings

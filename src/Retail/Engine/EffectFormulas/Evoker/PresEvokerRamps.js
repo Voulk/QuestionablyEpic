@@ -72,7 +72,7 @@ const EVOKERCONSTANTS = {
         canStack: true,
         stacks: 1,
         maxStacks: 4,
-        value: 0.05,
+        value: 0.1,
         buffDuration: 999,
         buffType: 'special',
     },
@@ -153,10 +153,10 @@ const getHealingMult = (state, t, spellName, talents) => {
     
     // Grace Period
     if (talents.gracePeriod) {
-        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.075);
+        if (spellName.includes("Reversion")) mult *= (1 + talents.gracePeriod * 0.1);
         else {
             const buffsActive = state.activeBuffs.filter(buff => buff.name.includes("Reversion")).length;
-            mult *= (1 + talents.gracePeriod * 0.075 * buffsActive / 20);
+            mult *= (1 + talents.gracePeriod * 0.1 * buffsActive / 20);
 
         }
     }   
@@ -263,7 +263,7 @@ const setupEchoSpells = (evokerSpells) => {
             }
             if (spellName === "Reversion") {
                 echoSpell[0].name = "Reversion (HoT - Echo)";
-                echoSpell[0].runFunc = spellData[0].runFunc;
+                //echoSpell[0].runFunc = spellData[0].runFunc;
                 if ('name' in echoSpell[echoSpell.length-1] && echoSpell[echoSpell.length-1].name === "Temporal Compression") echoSpell.pop();
                 // TODO: Remove Temporal Compression.
             }
@@ -336,6 +336,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             }
             else if (buffName === "Echo 8") {
                 for (let i = 0; i < 10; i++) addBuff(state, evokerSpells["Echo"][1], "Echo");
+            }
+            else if (buffName === "Dream Breath") {
+                console.log(evokerSpells["Dream Breath"][2])
+                addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
             }
         })
 
@@ -430,10 +434,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
                     // Unfortunately functions are not copied over when we do our deep clone, so we'll have to manually copy them over.
                     // Possibly just use Lodash or something here. 
-                    if (spellName === "Reversion") {
+                    /*if (spellName === "Reversion") {
                         echoSpell[0].onApplication = evokerSpells["Reversion"][0].onApplication;
                         echoSpell[0].runFunc= evokerSpells["Reversion"][0].runFunc;
-                    }
+                    }*/
                     runSpell(echoSpell, state, spellName + "(Echo)", evokerSpells, triggerEssenceBurst, runHeal, runDamage)
 
                 }

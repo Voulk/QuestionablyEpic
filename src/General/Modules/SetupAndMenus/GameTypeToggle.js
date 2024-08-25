@@ -9,7 +9,7 @@ import { Tooltip, Typography } from "@mui/material";
 import makeStyles from '@mui/styles/makeStyles';
 import { toggleContent } from "Redux/Actions";
 
-import RetailLogo from "../../../Images/Logos/Logo_Dragonflight.png";
+import RetailLogo from "../../../Images/Logos/Logo_WarWithin.png";
 import ClassicLogo from "../../../Images/Logos/CataLogoAlpha.png";
 
 const useStyles = makeStyles((theme) => ({

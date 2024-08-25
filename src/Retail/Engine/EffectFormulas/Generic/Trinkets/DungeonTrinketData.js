@@ -1,830 +1,311 @@
-import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../../EffectUtilities";
 
-export const dungeonTrinketData = [
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Amalgam's Seventh Spine                                     */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Amalgam's Seventh Spine",
-    effects: [
-      { // Be cautious using log values for some of these. Resto Druid for example is broken. 
-        coefficient: 0.666804,
-        table: -7,
-        ppm: {"Restoration Druid": 29.8, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
-              "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
+export const dungeonTrinketData = 
+[
+    {
+        name: "Carved Blazikon Wax",
+        description: "",
+        effects: [
+          {
+            coefficient: 1.068708, 
+            table: -7,
+            stat: "versatility",
+            duration: 15,
+            ppm: 2,
+          },
+          {
+            coefficient: 0.112286, 
+            table: -7,
+            stat: "versatility",
+            duration: 15,
+            ppm: 2,
+            uptime: 0.5, // Time spent in candle
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          bonus_stats[data[0].stat] = runGenericPPMTrinket(data[0], itemLevel);
+
+          // Candle bonus
+          bonus_stats["versatility"] += runGenericPPMTrinket(data[1], itemLevel) * data[1].uptime;
+          
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.mana = data[0].ppm[player.spec] * processedValue(data[0], itemLevel) / 60;
-      if (player.spec === "Restoration Druid") bonus_stats.mana *= 0.6; // Druid has a -40% aura on Amalgam's Spine.
-      else if (player.spec === "Preservation Evoker") bonus_stats.mana *= 1.1; // Evoker has a +10% aura.
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                               Leaf of the Ancient Protectors                                   */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Leaf of the Ancient Protectors",
-    effects: [
-      {  // Absorb
-        coefficient: 486.278931,
-        table: -8,
-        secondaries: ["versatility"],
-        cooldown: 60,
-        efficiency: 0.95, // This is a fairly medium sized absorb. You should be able to use it fine in most content.
-      },
-      { // Gifted Versatility
-        coefficient: 0.964816, 
-        table: -7,
-        cooldown: 60,
-        efficiency: 0.95, // If the absorb is not fully consumed, then they don't get the versatility.
-        duration: 15,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player);
-      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].efficiency * data[1].duration / data[1].cooldown;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                  Coagulated Genesaur Blood                                     */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Coagulated Genesaur Blood",
-    effects: [
       {
-        coefficient: 1.830916, //2.883274,
-        table: -7,
-        stat: "crit",
-        duration: 10,
-        ppm: 1.66,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+        name: "Empowering Crystal of Anub'ikkaj",
+        description: "",
+        effects: [
+          {
+            coefficient: 1.151598, 
+            table: -7,
+            stat: "all",
+            duration: 20,
+            ppm: 1.55,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
 
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                          Sea Star                                              */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Sea Star",
-    effects: [
+          return runGenericRandomPPMTrinket(data[0], itemLevel)
+        }
+      },
       {
-        coefficient: 1.415952,
-        table: -1,
-        stat: "intellect",
-        duration: 15,
-        ppm: 1.5,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Lady Waycrests Music Box                                   */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* Damage and healing procs appear to be split. Ring NYI.
-    */
-    name: "Lady Waycrest's Music Box",
-    effects: [
-      { // Healing
-        coefficient: 26.44263,
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 3,
-        efficiency: {Raid: 0.78, Dungeon: 0.76},
-      },
-      { // Damage
-        coefficient: 17.61531,
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 3,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      //bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Revitalizing Voodoo Totem                                  */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* Caps at 13. Everything after that is just full strength.
-    */
-    name: "Revitalizing Voodoo Totem",
-    effects: [
-      { 
-        coefficient: 3.182418,
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ticks: 12, // Haste adds ticks / partial ticks. 
-        cooldown: 90,
-        tickRate: 0.5,
-        maxStacks: 13,
-        efficiency: {Raid: 0.45, Dungeon: 0.45},
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      const timeToMax = (13 * (0.5/player.getStatPerc('haste')))
-      const averageStacks = timeToMax / 6 * 6.5 + (1-(timeToMax / 6)) * 13;
-      
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) * data[0].ticks * averageStacks / data[0].cooldown;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Time-Thief's Gambit                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    //
-    name: "Time-Thief's Gambit",
-    effects: [
-      { // Haste. Stun portion not included.
-        coefficient: 1.680047, 
-        table: -7,
-        duration: 15,
-        cooldown: 60, 
-        penalty: 0.2,
-      },
-      { // 
-
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].penalty;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Time-Thief's Gambit                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    //
-    name: "Balefire Branch",
-    effects: [
-      { 
-        coefficient: 0.03685, 
-        table: -1,
-        duration: 20,
-        cooldown: 90, 
-        effectiveDecayRate: 44, // You start with 100 stacks, and decay down to 0. This includes minor losses to damage taken.
-      },
-      { // 
-
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].effectiveDecayRate;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                            Mirror of Fractured Tomorrows                                       */
-    /* ---------------------------------------------------------------------------------------------- */
-    //
-    name: "Mirror of Fractured Tomorrows",
-    effects: [
-      { // Highest secondary
-        coefficient: 2.521002, 
-        table: -7,
-        duration: 20,
-        cooldown: 180, 
-        expectedWastage: 0.7,
-      },
-      { // Clone portion. The clone will spam healing spells, but if the party is topped off he'll take a break for a while. 
-        coefficient: 34.79113, 
-        table: -9,
-        duration: 20,
-        castTime: 2.5, // Not affected by Haste.
-        efficiency: 0.5,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      const bestStat = getHighestStat(additionalData.setStats);//player.getHighestStatWeight(additionalData.contentType);
-      bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].expectedWastage;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                        Echoing Tyrstone                                        */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Echoing Tyrstone",
-    effects: [
-      {  // Healing effect. No longer splits to pets. Can be pre-charged but we're opting not to include this for now.
-        coefficient: 283.4695, 
-        table: -9,
-        secondaries: ["versatility", "crit"],
-        cooldown: 120,
-        meteorSize: 0.15, // Multiplier is capped at 5 allies, or 4x 0.15 (since first player isn't included)
-        efficiency: 0.48, // Effective Healing x Usage Rate
-      },
-      { // AoE Haste effect - Each target gets full value. No splitting.
-        coefficient: 0.189052, 
-        table: -7,
-        targets: {Raid: 18, Dungeon: 5}, // This can hit all 20 people, but in practice you often miss a few on most late game fights.
-        cooldown: 120,
-        efficiency: 0.75, // No overhealing, but we're still expecting a little wastage here.
-        duration: 15,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType || "Raid") * (1 + 0.15 * 4);
-      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].targets[additionalData.contentType] * data[1].efficiency * data[1].duration / data[1].cooldown;
-      if (player.spec === "Holy Priest") bonus_stats.hps *= ((player.getStatPerc("mastery") - 1) * 0.75 + 1);
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                            Rainsong                                            */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Rainsong",
-    effects: [
-      { 
-        coefficient: 1.200433,
-        table: -7,
-        stat: "haste",
-        duration: 15,
-        ppm: 1,
-      },
-      { // Ally buff
-        coefficient: 0.599751,
-        table: -7,
-        stat: "haste",
-        duration: 10,
-        ppm: 8,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
-
-      // Ally buff portion
-      if (getSetting(additionalData.settings, 'includeGroupBenefits')) {
-        const allyHasteBuff = processedValue(data[1], itemLevel);
-        const allyPPM = data[1].ppm * data[0].duration / 60; // This has a high ppm, but we can only proc it for 15s out of every minute. We can expect 2 procs on average.
-        bonus_stats.allyStats = allyPPM * allyHasteBuff * data[1].duration / 60;
-      }
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Emerald Coach's Whistle                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Emerald Coach's Whistle",
-    effects: [
-      { // Mastery portion
-        coefficient: 0.780421,
-        table: -7,
-        stat: "mastery",
-        duration: 10,
-        ppm: 1,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
-      if (getSetting(additionalData.settings, 'includeGroupBenefits')) bonus_stats.allyStats = bonus_stats.mastery;
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Water's Beating Heart                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* Armor bonus not included (and rarely useful).
-    */
-    name: "Water's Beating Heart",
-    effects: [
-      { // Negative Vers portion - When you have debuff.
-        coefficient: -0.299875, 
-        table: -7,
-        uptime: 8 / 45, // This is the amount of time the debuff stays on you until you refresh it.
-      },
-      { // Positive vers portion
-        coefficient: 1.260259, 
-        table: -7,
-        duration: 15,
-        cooldown: 53,
-      },
-      { 
-        coefficient: 25.77058, // This is the shield portion applied to allies.
-        table: -9,
-        secondaries: ['versatility'],
-        efficiency: 0.92,
-        targets: 1.9, 
-        cooldown: 53,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.versatility = (processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown) - (processedValue(data[0], itemLevel) * data[0].uptime);
-      bonus_stats.hps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType || "Raid") // processedValue(data[2], itemLevel, data[2].efficiency) * data[2].targets / data[2].cooldown;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                  Kyrakka's Searing Embers                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-
-    name: "Kyrakka's Searing Embers",
-    effects: [
-      { // Healing Portion
-        coefficient: 53.31175, // 161.5508, 
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 4,
-        mult: 0.55, // Our expected overhealing.
-      },
-      { // Damage portion
-        // Damage is split, so we don't need any kind of target multiplier in here.
-        coefficient: 20.87553,
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 4,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                        Ruby Whelp Shell                                        */
-    /* ---------------------------------------------------------------------------------------------- */
-
-    name: "Ruby Whelp Shell",
-    effects: [
-      { // Healing Portion - Single Target Heal
-        coefficient: 198.7088,
-        table: -9,
-        secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
-        efficiency: 0.55, // Our expected overhealing.
-      },
-      { // Healing Portion - Mending  Breath (AoE)
-        coefficient: 165.5901,
-        table: -9,
-        secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
-        targets: 3.2,
-        efficiency: 0.35, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
-      },
-      { // Crit Stat Buff (Sleepy Ruby Warmth)
-        coefficient: 2.661627,
-        table: -7,
-        ppm: 1.01,
-        stat: "crit",
-        duration: 12,
-      },
-      { // Haste Stat Buff (Under Ruby Wings)
-        // Like other mega haste buffs, some specs are unable to take advantage of it in a useful way. 
-        // The spec multiplier ensures the rating is more practical, but it's acknowledged that this is somewhat spurious. 
-        coefficient: 2.903762,
-        table: -7,
-        stat: "haste",
-        ppm: 1.01,
-        duration: 12,
-        specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
-      },
-      { // ST Damage Portion
-        coefficient: 41.75107,
-        table: -9,
-        secondaries: ['haste', 'crit', 'versatility'],
-        ppm: 2,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      let procRates = {
-        "STHeal": 0.167,
-        "AoEHeal": 0.167,
-        "STDamage": 0.167,
-        "AoEDamage": 0.167,
-        "CritProc": 0.167,
-        "HasteProc":  0.167,
-      }
-      const bigProc = 0.65; // This is likely to be an underestimation but it's better to be cautious until we have more data.
-      const smallProc = (1 - bigProc) / 5;
-      // We still require more data using fully trained dragons to lock down specific ratios of abilities
-      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
-      if (whelpSetting === "AoE Heal") { procRates["AoEHeal"] = bigProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
-      else if (whelpSetting === "ST Heal") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = bigProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
-      else if (whelpSetting === "Crit Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = bigProc; procRates["HasteProc"] = smallProc; }
-      else if (whelpSetting === "Haste Buff") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = bigProc; }
-      else if (whelpSetting === "ST Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = bigProc; procRates["AoEDamage"] = smallProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
-      else if (whelpSetting === "AoE Damage") { procRates["AoEHeal"] = smallProc; procRates["STHeal"] = smallProc; procRates["STDamage"] = smallProc; procRates["AoEDamage"] = bigProc; procRates["CritProc"] = smallProc; procRates["HasteProc"] = smallProc; }
-      else { procRates["AoEHeal"] = 0.1667; procRates["STHeal"] = 0.1667; procRates["STDamage"] = 0.1667; procRates["AoEDamage"] = 0.1667; procRates["CritProc"] = 0.1667; procRates["HasteProc"] = 0.1667; }
-
-      // ST Heal
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency * procRates["STHeal"]) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      // AoE Heal
-      bonus_stats.hps = processedValue(data[1], itemLevel, data[1].efficiency * procRates["AoEHeal"]) * player.getStatMults(data[1].secondaries) * (Math.sqrt(1 / data[1].targets) * data[1].targets) * data[0].ppm / 60;
-      // Crit Proc
-      bonus_stats.crit = runGenericPPMTrinket(data[2], itemLevel, additionalData.setStats) * procRates["CritProc"];
-      // Haste Proc
-      bonus_stats.haste = runGenericPPMTrinket(data[3], itemLevel, additionalData.setStats) * procRates["HasteProc"] * data[3].specMult[player.spec];
-
-      // ST DPS and AoE DPS TODO
-      //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                   Tome of Unstable Power                                       */
-    /* ---------------------------------------------------------------------------------------------- */
-    // This is technically a party buff but because it comes with downside, that portion isn't currently included.
-    name: "Tome of Unstable Power",
-    effects: [
-      { // +Int Portion
-        coefficient: 1.453919, 
-        table: -1,
-        duration: 15,
-        cooldown: 180,
-        efficiency: 0.25, // The rune is tiny. This functionally is incompatible with most fight designs.
-      },
-      { // -Crit Portion
-        coefficient: 0.907077, 
-        table: -7,
-        duration: 15,
-        cooldown: 180,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
-      bonus_stats.crit = -1 * runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel)* data[0].efficiency;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Time Breaching Talon                                        */
-    /* ---------------------------------------------------------------------------------------------- */
-    // 
-    name: "Time-Breaching Talon",
-    effects: [
-      { // +Int Portion
-        coefficient: 3.477437, 
-        table: -7,
-        duration: 15,
-        cooldown: 150,
-        efficiency: 1,
-      },
-      { // -Int portion
-        coefficient: 1.391347, 
-        table: -7,
-        duration: 15,
-        cooldown: 150,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      
-
-      if (additionalData.player.getSpec() === "Discipline Priest" && false) {
-        // This is a naive implementation and should be updated.
-          const buffValue = processedValue(data[0], itemLevel);
-          bonus_stats.hps = runDiscOnUseTrinket("Time-Breaching Talon", buffValue, additionalData.setStats, additionalData.castModel, additionalData.player);
-          bonus_stats.intellect = -1 * runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
-      }
-      else {
-        bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
-        bonus_stats.intellect -= runGenericOnUseTrinket(data[1], itemLevel, additionalData.castModel);
-      }
-
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                       Irideus Fragment                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    // This is technically a party buff but because it comes with downside, that portion isn't currently included.
-    name: "Irideus Fragment",
-    effects: [
-      { // +Int Portion
-        coefficient: 0.214403, 
-        table: -1,
-        duration: 20,
-        cooldown: 180,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      const averageStacks = 20 / 2;
-
-      bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStacks * 20 / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c" + data[0].cooldown, "cooldownMult") || 1);
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                     Miniature Singing Stone                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-   // Singing Stone hits 1 target, and then bounces to a new target when it expires or when it's consumed.
-   // Each bounce is at full strength and it'll bounce four times total for 5 absorbs.
-    name: "Miniature Singing Stone",
-    effects: [
-      { 
-        coefficient: 101.9246, // 89.95994, 
-        table: -9,
-        secondaries: ['versatility'],
-        cooldown: 120,
-        mult: 5, 
-        efficiency: {Raid: 0.62, Dungeon: 0.45} //
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].mult * data[0].efficiency[additionalData.contentType], "round") * player.getStatMults(data[0].secondaries) / data[0].cooldown;
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                  Flask of the Solemn Night                                     */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Flask of the Solemn Night",
-    effects: [
-      {
-        coefficient: 0.186258,
-        table: -7,
-        duration: 10,
-        efficiency: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.7, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
-        stacks: 15, // You start with 20, lose 1 every second and end with 10 for an average of 15.
-        ppm: 1,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-      // trinketRaw represents a single stack of the buff.
-      const trinketRaw = processedValue(data[0], itemLevel)
-      let trinketSum = 0
-      // Add raw values for stacks 10 through 19.
-      for (var i = 10; i <= 19; i++) {
-        // We're going to adjust each stack individually for diminishing returns. 
-        // The more stacks we have, the harder we'll be hit.
-        let adjVal = getDiminishedValue('Haste', trinketRaw * i, additionalData.setStats.haste)
-        trinketSum += adjVal
-      }
+        name: "Burin of the Candle King",
+        effects: [
+          {  // Heal effect
+            coefficient: 250.157, // 371.7325,
+            table: -9,
+            secondaries: ['versatility'],
+            efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+            cooldown: 90, 
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
     
-      // Take an average of our stacks. Note that the trinket decreases from 19 to 10, NOT to 0.
-      bonus_stats.haste = (trinketSum / 10) * convertPPMToUptime(data[0].ppm, data[0].duration) * data[0].efficiency[player.spec];
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Mote of Sanctification                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Mote of Sanctification",
-    effects: [
-      { 
-        coefficient: 180.9063, 
-        table: -8,
-        secondaries: ['versatility', 'crit'],
-        cooldown: 90,
-        efficiency: {Raid: 0.65, Dungeon: 0.85}, //
-        targets: 5,
+          bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * player.getStatMults(data[0].secondaries) / data[0].cooldown;
+    
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
+      {
+        name: "Unbound Changeling",
+        description: "",
+        effects: [
+          {
+            coefficient: 1.679526, 
+            table: -7,
+            duration: 12,
+            ppm: 1.5,
+            stat: "mixed",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const bestStat = player.getHighestStatWeight(additionalData.contentType)
+          bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
 
-      bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[additionalData.contentType]) * data[0].targets / data[0].cooldown * player.getStatMults(data[0].secondaries);
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                         Horn of Valor                                          */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Horn of Valor",
-    effects: [
-      { 
-        coefficient: 1.334434,
-        table: -1,
-        stat: "intellect",
-        duration: 30,
-        cooldown: 120,
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                 Voidmender's Shadowgem                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Voidmender's Shadowgem",
-    effects: [
-      { 
-        coefficient: 1.92032,
-        table: -7,
-        stat: "crit",
-        duration: 15,
-        cooldown: 120,
+      {
+        name: "Scrapsinger's Symphony",
+        effects: [
+          {  // Heal effect
+            coefficient: 42.7805,
+            table: -9,
+            secondaries: ['versatility', 'haste'],
+            efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
+            ppm: 3,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
       },
-      { // This is the crit bonus effect. It's on a 20ppm.
-        coefficient: 0.240273,
-        table: -7,
-        ppm: 20,
+      {
+        name: "Corrupted Egg Shell",
+        description: "Does NOT have any passive stat on it. Niche at best for one-shot protection in high M+ - useless in ALL other scenarios.",
+        effects: [
+          {  // Heal effect
+            coefficient: 817.645,
+            table: -8,
+            secondaries: ['versatility'],
+            efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
+            cooldown: 120,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-
-
-      const critPerStack = processedValue(data[1], itemLevel)
-      const effectiveCrit = processedValue(data[0], itemLevel) + critPerStack * (data[1].ppm * (data[0].duration / 60)/2)
-
-      if (additionalData.player.getSpec() === "Discipline Priest Ramp") {
-
-        bonus_stats.hps = runDiscOnUseTrinket("Voidmender's Shadowgem", effectiveCrit, additionalData.setStats, additionalData.castModel, additionalData.player)
-      }
-      else {
-        bonus_stats.crit = effectiveCrit * data[0].duration / data[0].cooldown * (additionalData.castModel.getSpecialQuery("c90", "cooldownMult") || 1); 
-      }
-      
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                 Erupting Spear Fragment                                        */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Erupting Spear Fragment",
-    effects: [
-      { 
-        coefficient: 0.540148,
-        table: -7,
-        stat: "crit",
-        duration: 10,
-        cooldown: 90,
+      {
+        // Cirral Concoctory procs on allies and so gives them buffs. It can also proc on yourself but it's just as likely as hitting anyone else. Support trinket.
+        // - Int buff (only meaningful proc)
+        // - All Terts buff
+        // - Secondary Buff (same name - crit / mast seen but likely all four)
+        // - Sundered: High chance for heals to do more healing / Chance to deal damage when hit (tank, not seen) / chance for damage to deal more damage (DPS, not seen)
+        // - Mana (not seen)
+        // Assumption is even distribution with sundered taking 1 slot. Target is chosen first, then buff. 
+        name: "Cirral Concoctory",
+        effects: [
+          {  // Int Proc
+            coefficient: 0.909246,
+            table: -1,
+          },
+          {  // Secondary Proc - Crit or Mastery. Seems random which.
+            coefficient: 0.954766,
+            table: -7,
+          },
+          {  // Tertiary Proc - All three
+            coefficient: 0.477577,
+            table: -7,
+          },
+          {  // Probably damage proc
+            coefficient: 5.9422,
+            table: -9,
+          },
+          {  // Heal proc
+            coefficient: 8.9126,
+            table: -9,
+          },
+          {  // Mana proc?
+            coefficient: 0.5,
+            table: -10,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
       },
-      { // This is the damage bonus effect. TODO.
-        coefficient: 0.240273,
-        table: -7,
-        ppm: 20,
+      { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+        name: "Signet of the Priory",
+        description: "",
+        effects: [
+          {
+            coefficient: 2.280362, 
+            table: -7,
+            duration: 20,
+            cooldown: 120,
+            stat: "mixed",
+          },
+          {
+            coefficient: 0.060125, 
+            table: -7,
+            duration: 20,
+            cooldown: 120,
+            stat: "mixed",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+          const bestStat = player.getHighestStatWeight(additionalData.contentType)
+          bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+
+          // When you wear the trinket, you also give a stat buff to others wearing it. This is a good chance for a setting.
+          //bonus_stats.allyStats = runGenericOnUseTrinket(data[1], itemLevel) * 4;
+
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      const enemyTargets = additionalData.contentType === "Dungeon" ? 5 : 1;
+      { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+        name: "Mereldar's Toll",
+        description: "",
+        effects: [
+          { // Damage Effect.
+            coefficient: 41.6959 * 0.66, 
+            table: -9,
+            cooldown: 90,
+          },
+          { // Vers Buff
+            coefficient: 0.504093, 
+            table: -7,
+            duration: 10,
+            cooldown: 90,
+            targets: 5
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
 
-      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * enemyTargets;
+          bonus_stats.dps = processedValue(data[0], itemLevel) / data[0].cooldown;
+          bonus_stats.allyStats = runGenericOnUseTrinket(data[1], itemLevel, null) * data[1].targets;
 
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                   Spoils of Neltharus                                          */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Spoils of Neltharus",
-    effects: [
-      { 
-        coefficient: 2.521002,
-        table: -7,
-        stat: "N/A",
-        duration: 20,
-        cooldown: 120,
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      const averageStatGain = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel)
-      bonus_stats.haste = averageStatGain / 4;
-      bonus_stats.crit = averageStatGain / 4;
-      bonus_stats.mastery = averageStatGain / 4;
-      bonus_stats.versatility = averageStatGain / 4;
-
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
-    /*                                          Infernal Writ                                         */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Infernal Writ",
-    effects: [
-      { // Mastery portion
-        coefficient: 0.149006,
-        table: -7,
-        duration: 20,
-        ppm: { "Restoration Druid": 0.5, "Preservation Evoker": 0.7, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.4, "Holy Priest": 0.4 }, // Baseline: 0.7
-        averageStacks: 10.5,
+      {
+        name: "Siphoning Phylactery Shard",
+        effects: [
+          {  // Heal effect
+            coefficient: 89.08621 - 44.53448,
+            table: -9,
+            secondaries: ['versatility'],
+            efficiency: {Raid: 0.4, Dungeon: 0.45}, // The efficiency on this is god awful.
+            cooldown: 30,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
       },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.crit = processedValue(data[0], itemLevel) * convertPPMToUptime(data[0].ppm[player.getSpec()], data[0].duration) * data[0].averageStacks;
-      return bonus_stats;
-    }
-  },
+      {
+        name: "Gale of Shadows",
+        effects: [
+          {  // Int
+            coefficient: 0.026496, //0.029,
+            table: -1,
+            stacks: 20,
+            specMod: {"Restoration Druid": 1, "Holy Priest": 1, "Restoration Shaman": 1, "Holy Paladin": 1, "Mistweaver Monk": 1, 
+                      "Preservation Evoker": 1, "Discipline Priest": 1} // Double check Lightsmith
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+    
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].stacks * data[0].specMod[player.spec];
+    
+          return bonus_stats;
+        }
+      },
+      { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
+        name: "Entropic Skardyn Core",
+        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack.",
+        effects: [
+          {
+            coefficient: 1.124436, 
+            table: -1,
+            duration: 15,
+            ppm: 2,
+            stat: "intellect",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
+
+          return bonus_stats;
+        }
+      },
+      { // Gives you a buff that lasts 1 minute and then spawns a spider which is effectively just a DoT. They soft stack in that you can have multiple up at once.
+        // Hypothetically it's a 2.5 stack average but I am not convinced.
+        name: "Ara-Kara Sacbrood",
+        description: "Buff lasts 60s and you can expect to have 2-3 up at almost all times.",
+        effects: [
+          {
+            coefficient: 0.204476, 
+            table: -1,
+            duration: 60, // Yes really
+            ppm: 2.5,
+            stat: "intellect",
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // Check on a log.
+
+          return bonus_stats;
+        }
+      },
 
 
-
-]; // End
-
-/* ------------------------------------------- Unused ------------------------------------------- */
-// export const TAGS = {
-//   It should be noted that this is longer used anywhere, and were part of a different trinket draft.
-//   ON_USE: "on-use",
-//   MULTIPLIER: "multiplier",
-//   DURATION: "duration",
-//   PPM: "ppm",
-//   HASTED_PPM: "hasted-ppm",
-//   DURATION_BASED: "duration-based",
-//   METEOR: "meteor", // The meteor effect increases a trinkets value by X based on targets hit up to Y. X should be represented as 'multiplier' and Y as the 'cap'.
-//   TICKS: "ticks",
-// };
+]; 
