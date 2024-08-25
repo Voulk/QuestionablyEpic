@@ -92,6 +92,7 @@ export const embellishmentDB = [
     id: 443773,
     icon: "spell_nature_stormreach",
     armorType: 2, // 2pc
+    pieces: 2,
     name: {
       en: "Fury of the Stormrook (2pc)",
       de: "",
