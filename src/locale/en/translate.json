@@ -378,7 +378,7 @@
           "tooltip": "The number of intellect stacks you'll average with the Ovi'nax trinket. Secondary stacks auto-calculated."
         },
         "dpsFlag": {
-          "title": "Ovinax Avg Int Stacks",
+          "title": "DPS Flag",
           "tooltip": "Include DPS for specs that don't do it naturally as part of their healing rotation. Does not effect Disc Priest, Pres Evoker. May effect which trinkets you can proc."
         },
         "syringeHealProcs": {
