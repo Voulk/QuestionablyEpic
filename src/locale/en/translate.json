@@ -369,6 +369,32 @@
           "title": "Gem Settings",
           "tooltip": "Simple will use a strong default choice for your spec. Precise will run separate sets for each gem combination."
         },
+        "creepingCoagOverheal": {
+          "title": "Overheal: Creeping Coag",
+          "tooltip": "Select expected overhealing for the Creeping Coagulum trinket."
+        },
+        "ovinaxAverageIntStacks": {
+          "title": "Ovinax Avg Int Stacks",
+          "tooltip": "The number of intellect stacks you'll average with the Ovi'nax trinket. Secondary stacks auto-calculated."
+        },
+        "dpsFlag": {
+          "title": "DPS Flag",
+          "tooltip": "Include DPS for specs that don't do it naturally as part of their healing rotation. Does not effect Disc Priest, Pres Evoker. May effect which trinkets you can proc."
+        },
+        "syringeHealProcs": {
+          "title": "Syringe % Heal Procs",
+          "tooltip": "The percentage of your Gruesome Syringe trinket procs that you expect to heal instead of giving you intellect."
+        },
+        "pheromoneSecreter": {
+          "title": "Pheromone Secreter",
+          "tooltip": "Pick which secondaries you intend to socket in your Pheromone Secreter trinket."
+        },
+        "socketedGems": {
+          "title": "Socketed Gems",
+          "tooltip": "Number of gems you have socketed. Ignored by Top Gear which will just use your actual set."
+        },
+
+        
 
         "manaProfile": {
           "title": "Mana Profile",

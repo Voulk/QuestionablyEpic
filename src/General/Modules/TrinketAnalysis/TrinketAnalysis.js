@@ -167,52 +167,10 @@ export default function TrinketAnalysis(props) {
       1200, // Vault of the Incarnates
       1208, // Aberrus
       1207, // Amirdrassil
+      1273, // Palace
     ];
     const dungeonSources = [
       -1, // General Dungeons
-      1182, // Necrotic Wake,
-      1183, // Plaguefall,
-      1184, // Mists of Tirna Scithe,
-      1185, // Halls of Atonement,
-      1186, // Spires of Ascension,
-      1187, // Theater of Pain,
-      1188, // De Other Side,
-      1189, // Sanguine Depths,
-      1194, // Tazavesh
-
-      1198, // Nokhud Offensive
-      1203, // The Azure Vault
-      1202, // Ruby Life Pools
-      1197, // Uldaman
-      1204, // Halls of Infusion
-      1199, // Neltharus
-      1196, // Brackenhide Hollow
-      1201, // Alge'thar Academy
-      721, // Halls of Valor
-      537, // Shadowmoon Burial Ground
-      313, // Jade Serpent
-      800, // Court of Stars
-
-      767, // Neltharion's Lair
-      68, // Vortex Pinnacle
-      1001, // Freehold
-      1022, // Underrot
-
-      968, // Atal'Dazar
-      556, // Everbloom
-      65, // Throne of the Tides
-      1657, // Darkheart Thicket
-      1021, // Waycrest Manor
-      740, // Blackrook Hold
-
-      1209, // Dawn
-      -56, // Dawn 1
-      -55, // Dawn 2
-
-      // S3 dungeons.
-    ];
-    const legionTimewalking = [
-
     ];
     const otherSources = [
       1192, // World Bosses
