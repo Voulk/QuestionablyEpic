@@ -161,6 +161,7 @@ export const embellishmentDB = [
     id: 222810,
     icon: "inv_10_tailoring_silkrare_color3",
     armorType: 1, // Cloth - Damaging Spells only
+    pieces: 2,
     name: {
       en: "Woven Dusk (2pc)",
       de: "",
@@ -177,6 +178,7 @@ export const embellishmentDB = [
   {
     id: 222807,
     icon: "inv_10_tailoring_silkrare_color2",
+    pieces: 2,
     armorType: 1, // Cloth
     name: {
       en: "Woven Dawn (2pc)",

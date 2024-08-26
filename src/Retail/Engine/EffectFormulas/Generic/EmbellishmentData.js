@@ -30,7 +30,7 @@ export const embellishmentData = [
     name: "Binding of Binding",
     effects: [
       { 
-        coefficient: 0.612175, // Check this. I guess it scales with num gem types they have?
+        coefficient: 0.27231, // Check this. I guess it scales with num gem types they have?
         table: -571,
         duration: 15, 
         ppm: 2,
@@ -143,7 +143,7 @@ export const embellishmentData = [
     name: "Woven Dusk",
     effects: [
       { 
-        coefficient: 0, 
+        coefficient: 0.453908, 
         table: -571,
         ppm: 1.2,
         duration: 30,
@@ -153,7 +153,9 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
+      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag")) {
+        bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+      }
 
       return bonus_stats;
     }
@@ -162,7 +164,7 @@ export const embellishmentData = [
     name: "Woven Dawn",
     effects: [
       { 
-        coefficient: 0, 
+        coefficient: 0.453908, 
         table: -571,
         ppm: 1.2,
         duration: 30,
