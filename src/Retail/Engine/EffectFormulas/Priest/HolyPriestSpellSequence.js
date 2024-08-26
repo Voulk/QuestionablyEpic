@@ -8,26 +8,14 @@ import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, r
 
 const SPECCONSTANTS = {
     
-    masteryMod: 0.5, 
-    masteryEfficiency: 0.80, 
+    masteryMod: 0.95625, 
+    masteryEfficiency: 1.12 * 0.95, 
     baseMana: 2500000, // 2.5m
 
     auraHealingBuff: 1,
     auraDamageBuff: 1,
     enemyTargets: 1, 
-    echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
 
-    yserasGift: {
-        // Regrowth HoT portion
-        name: "Ysera's Gift",
-        buffType: "heal",
-        buffDuration: 9999,
-        coeff: 0, // The coefficient for a single regrowth tick.
-        flatHeal: 0,
-        tickData: {tickRate: 5, canPartialTick: false, tickOnCast: false, hasted: false}, 
-        expectedOverheal: 0.4,
-        secondaries: []
-    }
 }
 
 

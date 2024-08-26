@@ -15,7 +15,7 @@ describe("Test APL", () => {
             haste: 2000 + 100,
             crit: 5400,
             mastery: 6700,
-            versatility: 2000 + 300,
+            versatility: 2300,
             stamina: 29000,
             critMult: 2,
         }
@@ -36,6 +36,35 @@ describe("Test APL", () => {
         //console.log(data);
 
         expect(true).toEqual(true);
+
+        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+
+        const baseline = runHolyPriestCastProfile(playerData);
+        
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            const iterations = 1000;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 2400;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += runHolyPriestCastProfile(newPlayerData);
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(baseline);
+        console.log(results);
+        console.log(weights); 
+        //return weights;
     })
 
 });

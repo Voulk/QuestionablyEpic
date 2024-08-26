@@ -22,7 +22,7 @@ export const HOLYPRIESTSPELLDB = {
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "random"},
         statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'versatility'] 
+        secondaries: ['crit', 'versatility', 'mastery'] 
     }],
     "Heal": [{
         spellData: {id: 2060, icon: "spell_holy_greaterheal", cat: "heal"},
@@ -224,7 +224,7 @@ export const runHolyPriestCastProfile = (playerData) => {
     const castProfile = [
         {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
         {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        {spell: "Prayer of Mending", cpm: 4.5, hastedCPM: true},
+        //{spell: "Prayer of Mending", cpm: 4.5, hastedCPM: true},
         {spell: "Renew", cpm: 0},
         {spell: "Holy Word: Sanctify", cpm: 0},
         //{spell: "Prayer of Mending", cpm: 2},
@@ -232,35 +232,40 @@ export const runHolyPriestCastProfile = (playerData) => {
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
     
+    let currentStats = {...playerData.stats};
+    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     // Our Sanctify CPM is basically equal to 1 (2 w/ Miracle Worker) + fightLength / (60 - avgCDR)
     const averageSancCPM = 1 + getCPM(castProfile, "Prayer of Healing") * 6 / 60 + getCPM(castProfile, "Renew") * 2 / 60;
     castProfile.filter(spell => spell.spell === "Holy Word: Sanctify")[0].cpm = averageSancCPM;
 
-
-
+    const healingBreakdown = {}
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = playerData.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
 
         fullSpell.forEach(spell => {
+            let spellThroughput = 0;
             if (spell.type === "heal" && spellProfile.cpm > 0) {
                 const value = runHeal(state, spell, spellName) * spellProfile.cpm;
-                totalHealing += value;
-                console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
+                spellThroughput += value;
             }
             else if (spell.type === "function") {
                 if (spellName === "Prayer of Mending") {
                     const value = spell.runFunc(state, spell) * spellProfile.cpm;
-                    totalHealing += value;
-                    console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
+                    spellThroughput += value;
                 }
             }
+
+            healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
         });
 
 
     })
-    console.log("HPS: " + totalHealing / 60);
+    //console.log("HPS: " + totalHealing / 60);
+    //console.log(healingBreakdown);
+    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+    return sumValues(healingBreakdown)
 }
