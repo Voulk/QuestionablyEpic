@@ -191,5 +191,57 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
+  { // Stacking stat buff
+    name: "Darkmoon Deck: Ascension",
+    description: "Ilvl locked, but can be attached to an item as an embellishment.",
+    effects: [
+      { // Gives 89 of a random stat
+        coefficient: 0.021938, 
+        table: -571,
+        maxStacks: 10,
+        timer: 8,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      const fightLength = additionalData.castModel.fightInfo.fightLength;
+      // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
+      // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
+      const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
+      console.log(processedValue(data[0], itemLevel));
+      
+      ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
+        bonus_stats[stat] = 145 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
+      })
+
+      return bonus_stats;
+    }
+  },
+  { // Stacking vers buff
+    name: "Darkmoon Deck: Symbiosis",
+    description: "Ilvl locked, but can be attached to an item as an embellishment.",
+    effects: [
+      { 
+        coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
+        table: -571,
+        maxStacks: 5,
+        timer: 10,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      const fightLength = additionalData.castModel.fightInfo.fightLength
+      // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
+      // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
+      const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
+      
+      bonus_stats.versatility = 251 /*processedValue(data[0], itemLevel)*/ * averageStacks;
+
+
+      return bonus_stats;
+    }
+  },
 
 ]

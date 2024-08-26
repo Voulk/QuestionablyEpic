@@ -393,6 +393,10 @@
           "title": "Socketed Gems",
           "tooltip": "Number of gems you have socketed. Ignored by Top Gear which will just use your actual set."
         },
+        "liningUptime": {
+          "title": "Lining Uptime",
+          "tooltip": "Your expected uptime of Dusk / Dawnthread lining during moments where you are actually healing."
+        },
 
         
 
