@@ -71,7 +71,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 443764,
+    id: 219509,
     icon: "inv_misc_food_legion_gooamber_drop",
     pieces: 2,
     armorType: 3, // 2pc set
@@ -89,7 +89,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 443773,
+    id: 219512,
     icon: "spell_nature_stormreach",
     armorType: 2, // 2pc
     pieces: 2,
@@ -225,6 +225,23 @@ export const embellishmentDB = [
       type: "embellishment",
       name: "Dawnthread Lining",
       rank: 0, 
+    },
+  },
+  {
+    id: 213774,
+    icon: "spell_priest_divinestar_holy",
+    armorType: 0, 
+    name: {
+      en: "Captured Starlight",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Captured Starlight",
+      rank: 0, // Requires 2pc
     },
   },
   {

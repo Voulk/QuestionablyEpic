@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 4,
+    date: "August 26",
+    changes: [ 
+      "Embellishments: Added Captured Starlight, Woven Dawn, Woven Dusk. Binding of Binding nerfed in-game.",
+      "Added descriptions to many embellishments.",
+      "Added some missing items."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 3,
     date: "August 25",
     changes: [ 
