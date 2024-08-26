@@ -120,7 +120,6 @@ export const embellishmentData = [
       let bonus_stats = {};
       const bestStat = player.getHighestStatWeight(additionalData.contentType);
 
-      console.log("Bee: " + processedValue(data[0], itemLevel));
       bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
       bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency * data[1].targets;
 
@@ -217,8 +216,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].uptime;
-      console.log("Duskthread" + processedValue(data[0], itemLevel));
+      bonus_stats.versatility = processedValue(data[0], itemLevel) * getSetting(additionalData.settings, "liningUptime") / 100;
+
       return bonus_stats;
     }
   },
@@ -235,8 +234,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].uptime;
-      console.log("Dawnthread" + JSON.stringify(bonus_stats));
+      bonus_stats.crit = processedValue(data[0], itemLevel) * getSetting(additionalData.settings, "liningUptime") / 100;
+
       return bonus_stats;
     }
   },
