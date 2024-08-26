@@ -24,10 +24,34 @@ export const embellishmentData = [
   // ---------- THE WAR WITHIN
   {
     /* -------------------- */
+    /* Captured Starlight                      
+    /* -------------------- */
+
+    name: "Captured Starlight",
+    description: "A useful idea in theory but the shield isn't very big for how ridiculous the cooldown is.",
+    effects: [
+      { 
+        coefficient: 66.05486, // Check this. I guess it scales with num gem types they have?
+        table: -9,
+        ppm: 60 / (240 - 48),
+        efficiency: 0.7
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* -------------------- */
     /* Binding of Binding                      
     /* -------------------- */
 
     name: "Binding of Binding",
+    description: "Nerfed shortly after release. Purely a support item.",
     effects: [
       { 
         coefficient: 0.27231, // Check this. I guess it scales with num gem types they have?
@@ -75,6 +99,7 @@ export const embellishmentData = [
   },
   {
     name: "Embrace of the Cinderbee",
+    description: "An overly convoluted way of getting a minimal amount of stats.",
     effects: [
       { 
         coefficient: 0.181946,
@@ -95,7 +120,6 @@ export const embellishmentData = [
       let bonus_stats = {};
       const bestStat = player.getHighestStatWeight(additionalData.contentType);
 
-      console.log("Bee: " + processedValue(data[0], itemLevel));
       bonus_stats[bestStat] = runGenericPPMTrinket(data[0], itemLevel) * data[0].efficiency;
       bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel) * data[0].efficiency * data[1].targets;
 
@@ -181,6 +205,7 @@ export const embellishmentData = [
   },
   { // Vers while above 80% health. Need to check if heartbeat or cooldown.
     name: "Duskthread Lining",
+    setting: true,
     effects: [
       { 
         coefficient: 0.131628, 
@@ -191,13 +216,14 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.versatility = processedValue(data[0], itemLevel) * data[0].uptime;
-      console.log("Duskthread" + processedValue(data[0], itemLevel));
+      bonus_stats.versatility = processedValue(data[0], itemLevel) * getSetting(additionalData.settings, "liningUptime") / 100;
+
       return bonus_stats;
     }
   },
   { // Crit while above 80% health. Need to check if heartbeat or cooldown.
     name: "Dawnthread Lining",
+    setting: true,
     effects: [
       { 
         coefficient: 0.131628, 
@@ -208,13 +234,14 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].uptime;
-      console.log("Dawnthread" + JSON.stringify(bonus_stats));
+      bonus_stats.crit = processedValue(data[0], itemLevel) * getSetting(additionalData.settings, "liningUptime") / 100;
+
       return bonus_stats;
     }
   },
   { // Stacking stat buff
     name: "Darkmoon Sigil: Ascension",
+    description: "Powerful, but note it can only be put on a weapon (and potentially offhand) slot.",
     effects: [
       { // Gives 89 of a random stat
         coefficient: 0.021938, // 0.025246 appears to be the trinket, // 0.034796 at -9 in the spell data too, 0.007428
@@ -241,6 +268,7 @@ export const embellishmentData = [
   },
   { // Stacking vers buff
     name: "Darkmoon Sigil: Symbiosis",
+    description: "Strong, but note it can only be put on a weapon (and potentially offhand) slot.",
     effects: [
       { 
         coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
