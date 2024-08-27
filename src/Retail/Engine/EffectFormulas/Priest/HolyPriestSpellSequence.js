@@ -28,7 +28,7 @@ const SPECCONSTANTS = {
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (druidSpells, settings, talents, state, stats) => {
+ export const applyLoadoutEffects = (druidSpells, settings, talents, state, stats) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -53,35 +53,14 @@ const SPECCONSTANTS = {
         const fullSpell = value;
         const spellInfo = fullSpell[0];
 
-
-        if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
-            druidSpells[key].push({
-                name: "Temporal Compression",
-                type: "buff",
-                canStack: true,
-                stacks: 1,
-                maxStacks: 4,
-                value: 0.05 * talents.temporalCompression,
-                buffDuration: 999,
-                buffType: 'special',
-            })
-        }
-        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
-            value.forEach(spellSlice => {
-                if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
-                spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
-            });
-        }
-
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
-        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * BASECONSTANTS.baseMana / 100;
+        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * SPECCONSTANTS.baseMana / 100;
        
         if (settings.includeOverheal === "No") {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
-
             })
  
         }

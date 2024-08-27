@@ -38,13 +38,20 @@ describe("Test APL", () => {
         expect(true).toEqual(true);
 
         const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
-
-        const baseline = runHolyPriestCastProfile(playerData);
+        const iterations = 1;
+        let baseline = 0;
         
+        for (let i = 0; i < iterations; i++) {
+            baseline += runHolyPriestCastProfile(playerData);
+        }
+
+        
+        baseline = baseline / iterations
+        
+        /*
         const results = {};
         stats.forEach(stat => {
             let statHealing = 0;
-            const iterations = 1000;
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
             playerStats[stat] = playerStats[stat] + 2400;
             const newPlayerData = {...playerData, stats: playerStats};
@@ -61,9 +68,11 @@ describe("Test APL", () => {
         stats.forEach(stat => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
-        console.log(baseline);
-        console.log(results);
         console.log(weights); 
+        */
+      
+         
+        console.log(baseline / 60);
         //return weights;
     })
 

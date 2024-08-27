@@ -518,6 +518,11 @@ export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0) =
     return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
 }
 
+export const getSpellAttribute = (spell, attribute, index = 0) => {
+    if (attribute === "cooldown") return spell[index].cooldownData.cooldown;
+    else return spell[index][attribute];
+    
+}
 
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.

@@ -1,6 +1,6 @@
 
-import { checkRoll, getTalentPoints, getCurrentStats} from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
-import { runHeal } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
+import { checkRoll, getTalentPoints, getCurrentStats, getHaste, applyTalents, deepCopyFunction, getSpellAttribute} from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
 
 export const HOLYPRIESTSPELLDB = {
     "Smite": [{
@@ -38,7 +38,6 @@ export const HOLYPRIESTSPELLDB = {
     
     "Renew": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
-        type: "heal",
         castTime: 0,
         cost: 8, //
         type: "buff",
@@ -49,6 +48,22 @@ export const HOLYPRIESTSPELLDB = {
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
         secondaries: ['crit', 'versatility', 'mastery'] 
+    }], 
+    "Holy Fire": [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
+        castTime: 1.5,
+        cost: 0.4, //
+        type: "damage",
+        coeff: 2.97907,
+        secondaries: ['crit', 'versatility'] 
+    },
+    {
+        type: "buff",
+        buffType: "damage",
+        tickData: {tickRate: 1, canPartialTick: true, tickOnCast: true}, 
+        buffDuration: 7,
+        coeff: 0.16385,
+        secondaries: ['crit', 'versatility'] 
     }], 
     "Circle of Healing": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
@@ -191,7 +206,7 @@ const specTalents = {
         spellDB["Circle of Healing"].push({...cdReductionBase, targetSpell: "Holy Word: Sanctify"});
         spellDB["Prayer of Mending"].push({...cdReductionBase, targetSpell: "Holy Word: Serenity"});
         spellDB["Holy Fire"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
-        spellDB["Holy Nova"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
+        //spellDB["Holy Nova"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
     }},
 
     epiphany: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
@@ -204,7 +219,7 @@ const specTalents = {
 
         spellDB["Holy Word: Sanctify"].push(cdReductionBase);
         spellDB["Holy Word: Serenity"].push(cdReductionBase);
-        spellDB["Holy Word: Chastise"].push(cdReductionBase);
+        //spellDB["Holy Word: Chastise"].push(cdReductionBase);
     }},
  
 }
@@ -221,43 +236,81 @@ const getCPM = (profile, spellName) => {
 export const runHolyPriestCastProfile = (playerData) => {
     const fightLength = 300;
     let totalHealing = 0;
-    const castProfile = [
-        {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        //{spell: "Prayer of Mending", cpm: 4.5, hastedCPM: true},
-        {spell: "Renew", cpm: 0},
-        {spell: "Holy Word: Sanctify", cpm: 0},
-        //{spell: "Prayer of Mending", cpm: 2},
-      ]
+
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
     
+    // Run Talents
+    const priestSpells = applyLoadoutEffects(deepCopyFunction(playerData.spellDB), state.settings, state.talents, state, state.currentStats);
+    applyTalents(state, priestSpells, state.currentStats)
+
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+    const cooldownWastage = 0.9;
+
+    const castProfile = [
+        {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Prayer of Mending", cpm: 60 / getSpellAttribute(priestSpells["Prayer of Mending"], "cooldown") * cooldownWastage, hastedCPM: true},
+        {spell: "Renew", cpm: 0},
+        {spell: "Heal", cpm: 0},
+        {spell: "Halo", cpm: 60 / getSpellAttribute(priestSpells["Halo"], "cooldown") * cooldownWastage},
+        {spell: "Lightwell", cpm: 60 / getSpellAttribute(priestSpells["Lightwell"], "cooldown") * cooldownWastage},
+        {spell: "Holy Word: Serenity", cpm: 0},
+        {spell: "Holy Word: Sanctify", cpm: 0},
+        {spell: "Circle of Healing", cpm: 60 / getSpellAttribute(priestSpells["Circle of Healing"], "cooldown") * cooldownWastage, hastedCPM: true},
+        //{spell: "Prayer of Mending", cpm: 2},
+      ]
+
+
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     // Our Sanctify CPM is basically equal to 1 (2 w/ Miracle Worker) + fightLength / (60 - avgCDR)
     const averageSancCPM = 1 + getCPM(castProfile, "Prayer of Healing") * 6 / 60 + getCPM(castProfile, "Renew") * 2 / 60;
     castProfile.filter(spell => spell.spell === "Holy Word: Sanctify")[0].cpm = averageSancCPM;
+    // TODO: Voice of Harmony
+    
+
+    // Calculate Renew uptime
+    // Lightwell, Salv, Revit Prayers (low prio), Benediction (low)
+
 
     const healingBreakdown = {}
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = playerData.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
+        const spellCPM = spellProfile.cpm * (spellProfile.hastedCPM ? getHaste(state.currentStats) : 1);
 
         fullSpell.forEach(spell => {
             let spellThroughput = 0;
             if (spell.type === "heal" && spellProfile.cpm > 0) {
-                const value = runHeal(state, spell, spellName) * spellProfile.cpm;
+                const value = runHeal(state, spell, spellName) * spellCPM;
                 spellThroughput += value;
             }
             else if (spell.type === "function") {
                 if (spellName === "Prayer of Mending") {
-                    const value = spell.runFunc(state, spell) * spellProfile.cpm;
+                    const value = spell.runFunc(state, spell) * spellCPM;
                     spellThroughput += value;
                 }
             }
 
+            
+
+
+            // Handle special healing increases. These can be on a spell by spell basis. Most often it's dynamic increases.
+
+            // Pontifex
+            if (spellName === "Holy Word: Sanctify" || spellName === "Holy Word: Serenity") {
+                const avgStacks = getCPM(castProfile, "Prayer of Healing") + getCPM(castProfile, "Circle of Healing") + getCPM(castProfile, "Flash Heal") + getCPM(castProfile, "Heal");
+                const holyWordCPM = getCPM(castProfile, "Holy Word: Sanctify") + getCPM(castProfile, "Holy Word: Serenity");
+                spellThroughput *= 1 + (Math.min(0.3, 0.06 * avgStacks) / holyWordCPM);
+            }
+            // Resonant Words
+
+            // Healing Chorus
+
+
+            // Spell Slice complete
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
         });
