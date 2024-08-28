@@ -306,6 +306,37 @@ export const dungeonTrinketData =
           return bonus_stats;
         }
       },
+      { 
+        name: "Remnant of Darkness",
+        description: "Resets to 0 stacks 15 seconds after you hit 5. Procs about twice a minute.",
+        effects: [
+          {
+            coefficient: 0.222817, 
+            table: -1,
+            ppm: 2,
+            maxStacks: 5,
+            stat: "intellect",
+          },
+          {
+            coefficient: 43.6165, 
+            table: -8,
+            secondaries: ["versatility"], // Check Crit
+            ticks: 5,
+          },
+        ],
+        runFunc: function(data, player, itemLevel, additionalData) {
+          let bonus_stats = {};
+
+          // It takes on average 5 / 2 = 2.5 minutes to stack to full. After it's at 5 it'll sit at 5 stacks for 15 seconds.
+          const averageStacks = (2 * (150) + 5 * 15) / 165;
+          console.log(averageStacks);
+    
+          bonus_stats.intellect = averageStacks * processedValue(data[0], itemLevel) // runGenericPPMTrinket(data[0], itemLevel) * 4;
+          bonus_stats.dps = processedValue(data[1], itemLevel) / 165 * 0.66 * data[1].ticks;
+    
+          return bonus_stats;
+        }
+      },
 
 
 ]; 
