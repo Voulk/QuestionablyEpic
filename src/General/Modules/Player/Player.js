@@ -662,9 +662,9 @@ export class Player {
       this.activeStats = {
         intellect: 60000,
         haste: 1950,
-        crit: 9000,
-        mastery: 7400,
-        versatility: 6700,
+        crit: 8600,
+        mastery: 7600,
+        versatility: 6000,
         stamina: 1900,
       }
     }

@@ -332,7 +332,6 @@ export const dungeonTrinketData =
 
           // It takes on average 5 / 2 = 2.5 minutes to stack to full. After it's at 5 it'll sit at 5 stacks for 15 seconds.
           const averageStacks = (2 * (150) + 5 * 15) / 165;
-          console.log(averageStacks);
     
           bonus_stats.intellect = averageStacks * processedValue(data[0], itemLevel) // runGenericPPMTrinket(data[0], itemLevel) * 4;
           bonus_stats.dps = processedValue(data[1], itemLevel) / 165 * 0.66 * data[1].ticks;

@@ -209,7 +209,6 @@ export const otherTrinketData = [
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
-      console.log(processedValue(data[0], itemLevel));
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
         bonus_stats[stat] = 145 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
