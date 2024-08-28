@@ -237,11 +237,128 @@ export const otherTrinketData = [
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
       
-      bonus_stats.versatility = 251 /*processedValue(data[0], itemLevel)*/ * averageStacks;
+      bonus_stats.versatility = 251 * 2 /*processedValue(data[0], itemLevel)*/ * averageStacks;
 
 
       return bonus_stats;
     }
   },
+  { 
+    name: "Fungarian Mystic's Cluster",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.277491, 
+        table: -7,
+        duration: 10,
+        ppm: 2,
+        stat: "allyStats",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.allyStats = runGenericPPMTrinket(data[0], itemLevel) * 4;
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Shining Arathor Insignia",
+    description: "",
+    effects: [
+      {
+        coefficient: 78.5124, 
+        table: -8,
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = bonus_stats.dps * 0.8;
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Charm of the Underground Beast",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.922179, 
+        table: -7,
+        duration: 12,
+        ppm: 2,
+        stat: "intellect",
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * 4;
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Shadowed Essence",
+    description: "",
+    effects: [
+      { // Int proc when something dies
+        coefficient: 0.358468, 
+        table: -1,
+        duration: 30,
+        ppm: 1,
+        stat: "intellect",
+      },
+      { // Split with allies, lasts 30s
+        coefficient: 0.35836, 
+        table: -7,
+        duration: 28,
+        ppm: 2,
+        stat: "allyStats",
+      },
+      {
+        coefficient: 12.6904, 
+        table: -9,
+        duration: 0,
+        ppm: 0,
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Gladiator's Insignia of Alacrity",
+    description: "",
+    effects: [
+      {
+        coefficient: 1.00266, 
+        table: -1,
+        duration: 20,
+        ppm: 1.5,
+        stat: "intellect",
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  
 
 ]
