@@ -1,4 +1,4 @@
-import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket, runGenericRandomPPMTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
 import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
@@ -356,6 +356,34 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Shadow-Binding Ritual Knife",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.599917, 
+        table: -1,
+        uptime: 1,
+        stat: "intellect",
+      },
+      {
+        coefficient: -1.385658, 
+        table: -7,
+        duration: 10,
+        ppm: 0.5,
+        stat: "random",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = runGenericRandomPPMTrinket(data[1], itemLevel);
+      bonus_stats.intellect = processedValue(data[0], itemLevel);
+
 
       return bonus_stats;
     }
