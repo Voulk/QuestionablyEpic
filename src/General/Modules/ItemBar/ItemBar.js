@@ -493,7 +493,7 @@ export default function ItemBar(props) {
           <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(346, props.player, "Classic")}>{"346 Gear"}</Button>
           <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(353, props.player, "Classic")}>{"353 Gear"}</Button>
           <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(359, props.player, "Classic")}>{"359 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(372, props.player)}>{"372 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(372, props.player, "Classic")}>{"372 Gear"}</Button>
         </Grid>
       </Grid> : 
        <Grid 
@@ -511,7 +511,7 @@ export default function ItemBar(props) {
        <Grid item>
          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(626, props.player, "Retail", "Palace")}>{"Palace Heroic"}</Button>
          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Palace")}>{"Palace Mythic"}</Button>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Dungeons")}>{"S1 Dungeons"}</Button>
+         <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Dungeons")}>{"S1 Dungeons"}</Button>
 
        </Grid>
      </Grid>}
