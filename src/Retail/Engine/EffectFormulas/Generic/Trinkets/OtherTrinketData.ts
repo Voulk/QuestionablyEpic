@@ -84,7 +84,7 @@ export const otherTrinketData = [
       {
         coefficient: 0.525141, 
         table: -7,
-        uptime: 20/30, // Buff for 10-30s, 30s refresh.
+        uptime: 1, // Buff for 10-30s, 30s refresh.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -159,7 +159,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Nerubian Pheromone Secreter",
-    description: "You can pick which two secondaries you'd like the trinket to have. When it procs you'll need to gather the three pheromones to get the full effect.",
+    description: "You can pick which two secondaries you'd like the trinket to have. When it procs you'll need to gather the three pheromones to get the full effect. OFTEN BUGGED ON LIVE SERVERS.",
     setting: true,
     effects: [
       {
@@ -220,7 +220,7 @@ export const otherTrinketData = [
   },
   { // Stacking vers buff
     name: "Darkmoon Deck: Symbiosis",
-    description: "Ilvl locked, but can be attached to an item as an embellishment.",
+    description: "Ilvl locked, but can be attached to an item as an embellishment. Got a random 100% buff so is now very strong as a pre-raid option.",
     effects: [
       { 
         coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
@@ -252,7 +252,7 @@ export const otherTrinketData = [
         table: -7,
         duration: 10,
         ppm: 2,
-        stat: "allyStats",
+        stat: "mastery",
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -265,7 +265,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Shining Arathor Insignia",
-    description: "",
+    description: "Fairly poor as a healing trinket without intellect, but does a decent amount of extra DPS.",
     effects: [
       {
         coefficient: 78.5124, 
@@ -290,22 +290,22 @@ export const otherTrinketData = [
         coefficient: 0.922179, 
         table: -7,
         duration: 12,
-        ppm: 2,
-        stat: "intellect",
+        ppm: 3,
+        stat: "crit",
       },
 
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * 4;
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
 
       return bonus_stats;
     }
   },
   { 
     name: "Shadowed Essence",
-    description: "",
+    description: "No passive stats but you'll get high uptime on a crit buff that's shared between you and your friends. Will proc damage every ~5 seconds. You'll get an intellect buff when things die.",
     effects: [
       { // Int proc when something dies
         coefficient: 0.358468, 
@@ -319,13 +319,13 @@ export const otherTrinketData = [
         table: -7,
         duration: 28,
         ppm: 2,
-        stat: "allyStats",
+        stat: "crit",
       },
       {
         coefficient: 12.6904, 
         table: -9,
-        duration: 0,
-        ppm: 0,
+        ppm: 11, // This is roughly on a heartbeat system so you get a proc about every 5ish seconds.
+        secondaries: ["crit", "versatility"]
       },
 
     ],
@@ -334,12 +334,13 @@ export const otherTrinketData = [
 
       bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
       bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.dps = runGenericFlatProc(data[2], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
     }
   },
   { 
-    name: "Gladiator's Insignia of Alacrity",
+    name: "Forged Gladiator's Insignia of Alacrity",
     description: "",
     effects: [
       {
