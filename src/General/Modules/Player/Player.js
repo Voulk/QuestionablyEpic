@@ -600,10 +600,10 @@ export class Player {
 
       this.activeStats = {
         intellect: 60000,
-        haste: 5200,
-        crit: 2350,
-        mastery: 4650,
-        versatility: 1450,
+        haste: 9000,
+        crit: 5400,
+        mastery: 6500,
+        versatility: 2050,
         stamina: 1900,
       };
       /*
@@ -630,10 +630,10 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
         intellect: 60000,
-        haste: 1915,
-        crit: 5000,
-        mastery: 1950,
-        versatility: 4500,
+        haste: 2250,
+        crit: 9000,
+        mastery: 2300,
+        versatility: 8000,
         stamina: 1900,
       };
       /*
@@ -647,10 +647,10 @@ export class Player {
 
       this.activeStats = {
         intellect: 60000,
-        haste: 6000,
-        crit: 4852,
-        mastery: 1550,
-        versatility: 3000,
+        haste: 9250,
+        crit: 4700,
+        mastery: 6500,
+        versatility: 3100,
         stamina: 1900,
         critMult: 2,
       };
@@ -661,10 +661,10 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
         intellect: 60000,
-        haste: 1910,
-        crit: 5050,
-        mastery: 4700,
-        versatility: 3400,
+        haste: 1950,
+        crit: 9000,
+        mastery: 7400,
+        versatility: 6700,
         stamina: 1900,
       }
     }
@@ -673,10 +673,10 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
         this.activeStats = {
           intellect: 60000,
-          haste: 2000,
-          crit: 4000,
-          mastery: 5800,
-          versatility: 3200,
+          haste: 2600,
+          crit: 7000,
+          mastery: 10000,
+          versatility: 3400,
           stamina: 30000,
         }
       /*
@@ -693,10 +693,10 @@ export class Player {
 
       this.activeStats = {
         intellect: 60000,
-        haste: 5050,
-        crit: 4850,
-        mastery: 1900,
-        versatility: 2420,
+        haste: 9200,
+        crit: 6000,
+        mastery: 3400,
+        versatility: 6020,
         stamina: 1900,
       };
       /*

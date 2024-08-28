@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 5,
+    date: "August 28",
+    changes: [ 
+      "Added a lot more early pre-season trinkets to the chart.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 4,
     date: "August 26",
     changes: [ 
