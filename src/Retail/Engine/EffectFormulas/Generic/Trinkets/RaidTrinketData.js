@@ -24,7 +24,7 @@ export const raidTrinketData = [
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
-          console.log(additionalData.settings);
+
           const percentHealProc = getSetting(additionalData.settings, "syringeHealProcs") / 100;
           
           bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType) * percentHealProc;
@@ -48,7 +48,7 @@ export const raidTrinketData = [
             targets: 5, 
             cooldown: 90,
           },
-          {  // The damage portion. Currently unused.
+          {  // The damage portion.
             coefficient: 3.335683,
             table: -9,
           },
