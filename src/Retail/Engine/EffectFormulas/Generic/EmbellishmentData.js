@@ -134,7 +134,7 @@ export const embellishmentData = [
         table: -571,
         duration: 12, 
         ppm: 2.5,
-        efficiency: 0.85,
+        efficiency: 0.8,
         stat: "haste",
       },
     ],
@@ -281,13 +281,40 @@ export const embellishmentData = [
       let bonus_stats = {};
 
       const fightLength = additionalData.castModel.fightInfo.fightLength
-      console.log("Sym: " + processedValue(data[0], itemLevel));
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
       
       bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
 
+
+      return bonus_stats;
+    }
+  },
+  { // Healing Spells
+    name: "Adrenal Surge Clasp", 
+    description: "It can't yet be confirmed is regular raid or dungeon damage will proc this so hold off on a craft until it can be tested.",
+    effects: [
+      { 
+        coefficient: 0.312343, 
+        table: -1,
+        ppm: 2,
+        duration: 12,
+        stat: "intellect",
+      },
+      { 
+        coefficient: -0.053974, 
+        table: -571,
+        ppm: 2,
+        duration: 12,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel);
 
       return bonus_stats;
     }
