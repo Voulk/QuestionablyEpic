@@ -3,6 +3,32 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestSta
 export const effectData = [
   {
 
+    name: "Voltaic Stormcaller",
+    effects: [
+      {  // DPS
+        coefficient: 43.5994,
+        table: -8,
+        ppm: 1,
+      },
+      {  // Haste
+        coefficient: 0.764501,
+        table: -7,
+        ppm: 1,
+        duration: 10,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+    
+
+      return bonus_stats;
+    }
+  },
+
+  // Dragonflight
+  {
+
     name: "String of Delicacies",
     effects: [
       { 
