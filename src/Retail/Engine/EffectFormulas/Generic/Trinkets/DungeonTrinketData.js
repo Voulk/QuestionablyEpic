@@ -71,7 +71,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Unbound Changeling",
-        description: "",
+        description: "Unbound Changeling can be swapped to a crit, haste or mastery proc. QE Live will automatically use whichever one is best for your spec. There is also a rare tri-proc you can get which is actually worse.",
         effects: [
           {
             coefficient: 1.679526, 
@@ -137,6 +137,7 @@ export const dungeonTrinketData =
         // - Mana (not seen)
         // Assumption is even distribution with sundered taking 1 slot. Target is chosen first, then buff. 
         name: "Cirral Concoctory",
+
         effects: [
           {  // Int Proc
             coefficient: 0.909246,
@@ -173,7 +174,7 @@ export const dungeonTrinketData =
       },
       { // Settings for number of Signetbearers in party? This is party only, not raid wide.
         name: "Signet of the Priory",
-        description: "",
+        description: "Party only. Not raid wide.",
         effects: [
           {
             coefficient: 2.280362, 
@@ -201,7 +202,7 @@ export const dungeonTrinketData =
           return bonus_stats;
         }
       },
-      { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+      { //
         name: "Mereldar's Toll",
         description: "",
         effects: [
@@ -229,6 +230,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Siphoning Phylactery Shard",
+        description: "An unfortunately poor trinket that is hard to get any real value out of.",
         effects: [
           {  // Heal effect
             coefficient: 89.08621 - 44.53448,
@@ -248,6 +250,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Gale of Shadows",
+        description: "An overbudget stat stick with 100% uptime. Good for all specs, but amazing for those who like Haste.",
         effects: [
           {  // Int
             coefficient: 0.026496, //0.029,
@@ -288,7 +291,7 @@ export const dungeonTrinketData =
       { // Gives you a buff that lasts 1 minute and then spawns a spider which is effectively just a DoT. They soft stack in that you can have multiple up at once.
         // Hypothetically it's a 2.5 stack average but I am not convinced.
         name: "Ara-Kara Sacbrood",
-        description: "Buff lasts 60s and you can expect to have 2-3 up at almost all times.",
+        description: "Buff lasts 60s and you can expect to have 2-3 up at almost all times. The Spider DPS is a nice bonus but don't expect too much from it.",
         effects: [
           {
             coefficient: 0.204476, 
@@ -329,7 +332,6 @@ export const dungeonTrinketData =
 
           // It takes on average 5 / 2 = 2.5 minutes to stack to full. After it's at 5 it'll sit at 5 stacks for 15 seconds.
           const averageStacks = (2 * (150) + 5 * 15) / 165;
-          console.log(averageStacks);
     
           bonus_stats.intellect = averageStacks * processedValue(data[0], itemLevel) // runGenericPPMTrinket(data[0], itemLevel) * 4;
           bonus_stats.dps = processedValue(data[1], itemLevel) / 165 * 0.66 * data[1].ticks;

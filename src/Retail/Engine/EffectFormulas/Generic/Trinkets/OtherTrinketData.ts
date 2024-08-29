@@ -167,7 +167,7 @@ export const otherTrinketData = [
         table: -1,
         duration: 20,
         ppm: 1, // ICD of 20s
-        stacks: 2.7,
+        stacks: 2, // 3 is technically possible but not really happening on live servers so far.
         stat: "intellect",
       },
     ],
@@ -209,7 +209,6 @@ export const otherTrinketData = [
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
-      console.log(processedValue(data[0], itemLevel));
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
         bonus_stats[stat] = 145 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
@@ -220,7 +219,7 @@ export const otherTrinketData = [
   },
   { // Stacking vers buff
     name: "Darkmoon Deck: Symbiosis",
-    description: "Ilvl locked, but can be attached to an item as an embellishment. Got a random 100% buff so is now very strong as a pre-raid option.",
+    description: "Ilvl locked, but can be attached to an item as an embellishment. Briefly received a 100% buff but this has been rolled back.",
     effects: [
       { 
         coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
@@ -237,7 +236,7 @@ export const otherTrinketData = [
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
       
-      bonus_stats.versatility = 251 * 2 /*processedValue(data[0], itemLevel)*/ * averageStacks;
+      bonus_stats.versatility = 251 /*processedValue(data[0], itemLevel)*/ * averageStacks;
 
 
       return bonus_stats;
