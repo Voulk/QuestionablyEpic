@@ -290,8 +290,55 @@ export const addBuff = (state, spell, spellName) => {
         else {
             const buff = state.activeBuffs.filter(buff => buff.name === spell.name)[0]
 
-            if (buff.canStack) buff.stacks += 1;
-            buff.expiration = newBuff.expiration;
+            if (spell.name === "Awakening") {
+                if ((buff.stacks + 1) >= buff.maxStacks) {
+                    // At awakening cap. Remove buff, then add new buff.
+                    state.activeBuffs = removeBuff(state.activeBuffs, "Awakening")
+                    const awakeningFinal = {name: "Awakening - Final", expiration: (state.t  + 99), buffType: "special", 
+                        value: 1.3, stacks: 1, canStack: false};
+                    state.activeBuffs.push(awakeningFinal);
+                    addReport(state, `Adding Awakening - Final`)
+                }
+                else {
+                    // Not at awakening cap yet. Increase buff stack by 1.
+                    buff.stacks += 1;
+                }
+            }
+            if (spell.name === "Blessing of Dawn Stacker") {
+                if ((buff.stacks + 1) >= buff.maxStacks) {
+                    // At Blessing of Dawn cap. Remove buff, then add new buff.
+                    state.activeBuffs = removeBuff(state.activeBuffs, "Blessing of Dawn Stacker")
+                    if (checkBuffActive(state.activeBuffs, "Blessing of Dawn")) {
+                        const dawnBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Blessing of Dawn"})[0]
+                        if ((dawnBuff.stacks) < dawnBuff.maxStacks) dawnBuff.stacks += 1;
+                        addReport(state, `Adding Blessing of Dawn Stack`)
+                    }
+                    else {
+                        const dawnFinal = {name: "Blessing of Dawn", expiration: (state.t  + 99), buffType: "special", 
+                            value: 1.2, stacks: 1, maxStacks: 2, canStack: true};
+                        state.activeBuffs.push(dawnFinal);
+                        addReport(state, `Adding Blessing of Dawn`)
+                    }
+                }
+                else {
+                    // Not at Blessing of Dawn cap yet. Increase buff stack by 1.
+                    buff.stacks += 1;
+                }
+            }
+
+            else if (spell.name === "Avenging Crusader") {
+                
+
+                //const buffDuration = buff[0].expiration - state.t;
+                //buff.expiration = Math.max(buffDuration, spell.buffDuration) + state.t;
+                buff.expiration = buff.expiration + spell.buffDuration;
+            }
+            else {
+                if (buff.canStack) buff.stacks += 1;
+                buff.expiration = newBuff.expiration;
+            }
+
+
         }
 
         if (spell.special) newBuff.special = spell.special;
