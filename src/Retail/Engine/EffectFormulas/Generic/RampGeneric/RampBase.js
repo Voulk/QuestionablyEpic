@@ -172,6 +172,19 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             else if (spell.type === "buffExtension") {
                 extendBuff(state.activeBuffs, 0, spell.extensionList, spell.extensionDuration)
             }
+            // The spell reduces the cooldown of another spell. 
+            else if (spell.type === "cooldownReduction") {
+                const targetSpell = evokerSpells[spell.targetSpell];
+                targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+            }
+             // The spell reduces the cooldown of multiple spells. 
+            else if (spell.type === "cooldownReductions") {
+                spell.targetSpells.forEach(target => {
+                    const targetSpell = evokerSpells[target];
+                    targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+                })
+                
+            }
             else {
                 console.error("Spell Type Error: " + spell.type);
             }

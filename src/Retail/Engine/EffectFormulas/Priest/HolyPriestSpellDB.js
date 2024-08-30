@@ -112,6 +112,21 @@ export const HOLYPRIESTSPELLDB = {
         school: "holy",
         secondaries: ['crit', 'vers', 'mastery'],
     }], 
+    "Divine Hymn": [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+        type: "heal",
+        castTime: 8,
+        channel: true,
+        cost: 4.4,
+        coeff: 2.844 * 5,
+        targets: 20,
+        expectedOverheal: 0.3,
+        cooldownData: {cooldown: 180, hasted: true}, 
+        tags: ['sqrt'],
+        sqrtMin: 5,
+        school: "holy",
+        secondaries: ['crit', 'vers', 'mastery'],
+    }], 
     "Prayer of Mending": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
         type: "function",
@@ -175,6 +190,7 @@ export const HOLYPRIESTSPELLDB = {
             type: "function",
             cooldownData: {cooldown: 120, hasted: false}, 
             coeff: 1.845,
+            charges: 15,
             expectedOverheal: 0.2,
             secondaries: ['crit', 'versatility', 'mastery'],
             runFunc: function (state, spell) {
@@ -224,7 +240,7 @@ export const HOLYPRIESTSPELLDB = {
             let totalHealing = 0;
 
             const salvHeal = {
-                name: "Lightwell",
+                name: "Holy Word: Salvation",
                 coeff: spell.coeff, 
                 targets: spell.targets,
                 expectedOverheal: spell.expectedOverheal, 
@@ -298,6 +314,9 @@ const specTalents = {
         // Handled in the PoM spell function.
     }}, 
     divineService: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // Handled in the PoM spell function.
+    }}, 
+    renewedFaith: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // Handled in the PoM spell function.
     }}, 
     crisisManagement: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {

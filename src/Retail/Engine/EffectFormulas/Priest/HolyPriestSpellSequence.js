@@ -5,11 +5,13 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 const SPECCONSTANTS = {
     
     masteryMod: 0.95625, 
-    masteryEfficiency: 1.12 * 0.95, 
+    masteryEfficiency: 0, 
+    masteryExpectedOverheal: 0.8,
     baseMana: 2500000, // 2.5m
 
     auraHealingBuff: 1,
@@ -112,7 +114,12 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
-
+    // Handle Mastery
+    if (spell.secondaries.includes('mastery')) {
+        const masteryPerc = (8 + currentStats.mastery / STATCONVERSION.MASTERY) * 1.12 * SPECCONSTANTS.masteryMod / 100;
+        //console.log(masteryPerc);
+        healingVal += (healingVal / (1 - spell.expectedOverheal)) * masteryPerc * SPECCONSTANTS.masteryExpectedOverheal;
+    }
 
     // Compile healing and add report if necessary.
     state.healingDone[spell.name || spellName] = (state.healingDone[spell.name || spellName] || 0) + healingVal;

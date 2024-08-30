@@ -49,7 +49,7 @@ export const STATCONVERSION = {
     CRIT: 700,
     VERSATILITY: 780,
     MASTERY: 700,
-    VERSATILITY_DR: 410,
+    VERSATILITY_DR: 1560,
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
       "Restoration Druid": 0.5,

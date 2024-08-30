@@ -38,9 +38,9 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 2.8,
-        coeff: 1.535, // 1.395, 
-        cooldownData: {cooldown: 8.5, hasted: true, charges: 1, maxCharges: 2},
+        cost: 2.6,
+        coeff: 2.266,
+        cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2},
         expectedOverheal: 0.22,
         holyPower: 1,
         statMods: {'crit': 0, critEffect: 0},
@@ -61,10 +61,9 @@ export const PALADINSPELLDB = {
         spellData: {id: 20473, icon: "spell_holy_searinglight", cat: "damage"},
         type: "heal",
         castTime: 0,
-        cost: 2.8,
-        coeff: 0.612, 
-        cooldownData: {cooldown: 8.5, hasted: true, charges: 1, maxCharges: 2},
-        expectedOverheal: 0.29,
+        cost: 2.6,
+        coeff: 1.08, 
+        cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2},
         holyPower: 1,
         statMods: {'crit': 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -73,28 +72,18 @@ export const PALADINSPELLDB = {
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5,
-        cost: 3.6,
-        coeff: 3.03 * 1.3, //2.727, // Test this since it's an aura mess.
+        cost: 10,
+        coeff: 3.156, 
         expectedOverheal: 0.14,
-        statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'vers', 'mastery']
-    }],
-    "Light of the Martyr": [{
-        spellData: {id: 183998, icon: "ability_paladin_lightofthemartyr", cat: "heal"},
-        type: "heal",
-        castTime: 0,
-        cost: 1.6,
-        coeff: 2.3, // Not final
-        expectedOverheal: 0.15,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
     }],
     "Holy Light": [{
         spellData: {id: 19750, icon: "spell_holy_surgeoflight", cat: "heal"},
         type: "heal",
-        castTime: 2.5,
-        cost: 2.4,
-        coeff: 3.64 * 1.4, // 2.6 * 1.4,
+        castTime: 2,
+        cost: 6.4,
+        coeff: 3.8, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'vers', 'mastery']
@@ -114,7 +103,7 @@ export const PALADINSPELLDB = {
         type: "damage",
         castTime: 0,
         cost: 0,
-        coeff: 0.5525 * 1.04, // AP -> SP mult. 
+        coeff: 0.425, // AP -> SP mult. 
         holyPower: -3,
         secondaries: ['crit', 'vers']
     },
@@ -140,8 +129,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
         type: "damage",
         castTime: 0,
-        cost: 1,
-        coeff: 1.302, 
+        cost: 0.6,
+        coeff: 1.11067, 
         cooldownData: {cooldown: 7.5, hasted: true},
         holyPower: 1,
         secondaries: ['crit', 'vers']
@@ -150,8 +139,8 @@ export const PALADINSPELLDB = {
         spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 1.2,
-        coeff: 0.8334,
+        cost: 0.6,
+        coeff: 1.2,
         expectedOverheal: 0.26,
         holyPower: -3,
         targets: 5,
@@ -161,12 +150,32 @@ export const PALADINSPELLDB = {
         spellData: {id: 0, icon: "inv_helmet_96", cat: "heal"},
         type: "heal",
         castTime: 0,
-        cost: 1.2,
-        coeff: 3.15 * 1.1, //2.89
+        cost: 10,
+        coeff: 3.465, //2.89
         expectedOverheal: 0.3,
         holyPower: -3,
         secondaries: ['crit', 'vers', 'mastery']
     }],
+    "Eternal Flame": [{
+        spellData: {id: 0, icon: "inv_helmet_96", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 10,
+        coeff: 3.465, //2.89
+        expectedOverheal: 0.3,
+        holyPower: -3,
+        secondaries: ['crit', 'vers', 'mastery']
+    },
+    {
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 16,
+        coeff: 0.114, // The coefficient for a single regrowth tick.
+        tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'versatility', 'mastery']
+    }
+    ],
     "Avenging Wrath": [{
         spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
@@ -186,18 +195,18 @@ export const PALADINSPELLDB = {
         name: "Avenging Crusader",
         castTime: 0,
         offGCD: true,
-        cost: 3.6,
+        cost: 3,
         cooldownData: {cooldown: 60, hasted: false},
         holyPower: -3,
         buffType: 'special',
-        buffDuration: 12,
+        buffDuration: 15,
     }],
     "Divine Toll": [{
         spellData: {id: 375576, icon: "ability_bastion_paladin", cat: "cooldown"},
         type: "function",
         cost: 3,
         castTime: 0,
-        cooldownData: {cooldown: 60, hasted: true},
+        cooldownData: {cooldown: 60, hasted: false},
         count: 5,
         runFunc: function (state, spell, spellDB) {
             // Cast 5 Holy Shocks           
@@ -206,67 +215,35 @@ export const PALADINSPELLDB = {
                 runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, true);
             }
 
-            triggerGlimmerOfLight(state, "Divine Toll");
-
         }
     }],
-    "Daybreak": [{ // Absorb all glimmers, healing for twice the amount.
-        spellData: {id: 414170, icon: "spell_holy_aspiration", cat: "cooldown"},
-        type: "function",
-        cost: 0,
-        castTime: 0,
-        cooldownData: {cooldown: 60, hasted: false},
-        runFunc: function (state, spell, spellDB) {
-            // Activates Glimmer on all targets for 200% value
-            const numGlimmers = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
-            const triggeredGlimmer = {
-                name: "Glimmer of Light (Daybreak)",
-                coeff: 1.6416 * 2, // This version of the spell is not split, activates on every target at 200% base value, but is not increased by number of targets
-                targets: numGlimmers,
-                expectedOverheal: 0.25,
-                secondaries: ["crit", "vers", "mastery"],
-                type: "heal",
-            }
-
-            runHeal(state, triggeredGlimmer, "Glimmer of Light (Daybreak)", true);
-            state.manaSpent -= 3000 * numGlimmers;
-
-        }
-    }],
-    "Light's Hammer": [{
+    "Holy Prism": [{
         // Ticks on cast. Probably need to create a generic case for this.
-        spellData: {id: 114158, icon: "spell_paladin_lightshammer", cat: "cooldown"},
+        spellData: {id: 114165, icon: "spell_paladin_holyprism", cat: "cooldown"},
         castTime: 0,
         type: "heal",
-        cost: 3.6,
-        coeff: 0.4 * 1.6,
-        targets: 6,
+        cost: 2.6,
+        coeff: 3.15,
+        targets: 5,
         secondaries: ['crit', 'vers', 'mastery'],
-        cooldownData: {cooldown: 60, hasted: false},
+        cooldownData: {cooldown: 30, hasted: false},
         expectedOverheal: 0.4,
     },
     {
-        // 
-        type: "buff",
-        name: "Light's Hammer",
-        buffType: "heal",
-        coeff: 0.4 * 1.6,
-        targets: 6,
-        secondaries: ['crit', 'vers', 'mastery'],
-        canPartialTick: false,
-        buffDuration: 14,
-        tickRate: 2,
-        expectedOverheal: 0.45,
-    }],
+        type: "damage",
+        coeff: 2.16,
+        targets: 1,
+        secondaries: ['crit', 'vers'],
+    },],
     "Tyr's Deliverance": [{
         // Ticks on cast. Probably need to create a generic case for this.
         spellData: {id: 200652, icon: "inv_mace_2h_artifactsilverhand_d_01", cat: "cooldown"},
         castTime: 2,
         type: "heal",
-        cost: 2.4,
-        coeff: 0.7375,
+        cost: 2,
+        coeff: 0.351,
         targets: 5,
-        secondaries: ['crit', 'vers', 'mastery'],
+        secondaries: ['crit', 'versatility', 'mastery'],
         cooldownData: {cooldown: 90, hasted: false},
         expectedOverheal: 0.45,
     },
@@ -275,7 +252,7 @@ export const PALADINSPELLDB = {
         type: "buff",
         name: "Tyr's Deliverance",
         buffType: "heal",
-        coeff: 0.7375,
+        coeff: 0.351,
         targets: 1,
         secondaries: ['crit', 'vers', 'mastery'],
         tickData: {tickRate: 1},
@@ -290,10 +267,10 @@ export const PALADINSPELLDB = {
         spellData: {id: 26573, icon: "spell_holy_innerfire", cat: "damage"},
         castTime: 0,
         cost: 0,
-        coeff: 0.05 * 1.04 * 1.05, // AP boost.
+        coeff: 0.05 * 1.04, // AP boost.
         targets: 5,
         secondaries: ['crit', 'vers'],
-        cooldownData: {cooldown: 11, hasted: false}, // Technically 9
+        cooldownData: {cooldown: 9, hasted: false}, // Technically 9
         type: "buff",
         name: "Consecration",
         buffType: "damage",
@@ -309,7 +286,7 @@ export const PALADINSPELLDB = {
         cost: 2.4,
         coeff: 5,
         targets: 1,
-        secondaries: ['crit', 'vers'], // No mastery scaling
+        secondaries: ['crit', 'versatility'], // No mastery scaling
         cooldownData: {cooldown: 30, hasted: false}, // Technically 9
         expectedOverheal: 0.4,
     },
@@ -431,17 +408,6 @@ export const baseTalents = {
 
     }}, 
     */
-    // Glimmer of Light - Holy Shock leaves a glimmer. When you HS all glimmers are healed. Lasts 30s. Maximum 8 at a time.
-    glimmerOfLight: {points: 1, maxPoints: 1, icon: "ability_paladin_toweroflight", id: 325966, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Holy Shock'].push({
-            name: "Glimmer of Light",
-            type: "buff",
-            buffType: 'special',
-            canStack: false,
-            maxStacks: 8,
-            buffDuration: 30,
-        });
-    }},
 
 
     // == Holy Tree ==
@@ -494,7 +460,7 @@ export const baseTalents = {
             coeff: 0.05,
             buffDuration: 12,
             expectedOverheal: 0.5,
-            targets: 6,
+            targets: 6, // You and 5 allies
             tickRate: 1,
             secondaries: ['crit', 'versatility', 'haste']
         })
@@ -577,7 +543,7 @@ export const baseTalents = {
         const buff = {
             type: "buff",
             buffType: "heal",
-            coeff: 0.1 * points * 1.04 * 1.3, // 1.3 = 30% buff. 
+            coeff: 0.1 * points * 1.04, 
             tickRate: 2.6,
             targets: 1,
             buffDuration: 999,
@@ -658,13 +624,11 @@ export const baseTalents = {
     }}, 
 
 
-
-
     // Judgment also adds an absorb to the target.
     greaterJudgment: {points: 1, maxPoints: 1, icon: "spell_holy_righteousfury", id: 231663, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'].push({
             type: "heal",
-            coeff: 2,
+            coeff: 1.84,
             expectedOverheal: 0.04,
             targets: 1,
             secondaries: ['crit', 'versatility']
@@ -675,9 +639,9 @@ export const baseTalents = {
     // Crusader's Might
     crusadersMight: {points: 0, maxPoints: 1, icon: "ability_paladin_swiftretribution", id: 196926, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'].push({
-            type: "cooldownReduction",
-            cooldownReduction: 1.5 * points,
-            targetSpell: "Holy Shock",
+            type: "cooldownReductions",
+            cooldownReduction: 2 * points,
+            targetSpell: ["Holy Shock", "Judgment"],
         });
 
     }}, 
@@ -760,34 +724,6 @@ export const baseTalents = {
 
     }},
 
-    // Untempered Dedication - LotM healing +10% per cast, stacks up to 15s.
-    untemperedDedication: {points: 0, maxPoints: 1, icon: "achievement_admiral_of_the_light", id: 387814, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Light of the Martyr'].push({
-            type: "buff",
-            name: "Untempered Dedication",
-            buffType: 'special',
-            value: 1.1, 
-            buffDuration: 15,
-            canStack: true,
-            stacks: 1,
-            maxStacks: 5,
-        })
-
-    }},
-
-    // Maraads Dying Breath - LoD increases your LotM healing by 10% for each target healed. That LotM can heal through Beacon.
-    maraadsDyingBreath: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Light of Dawn'].push({
-            type: "buff",
-            name: "Maraads Dying Breath",
-            buffType: 'special',
-            value: 1.5, 
-            buffDuration: 10,
-            canStack: false,
-            stacks: 1,
-            maxStacks: 1,
-        })
-    }},
 
     // Might - Gain 20% Crit during wings. Currently just built in.
     avengingCrusader: {points: 0, maxPoints: 1, icon: "ability_paladin_veneration", id: 216331, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
@@ -816,10 +752,10 @@ export const baseTalents = {
 
     // Holy Infusion
     // Crusader strike generates +1 HoPo and deals +25% damage.
-    holyInfusion: {points: 0, maxPoints: 1, icon: "ability_paladin_lightoftheprotector", id: 414214, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    /*holyInfusion: {points: 0, maxPoints: 1, icon: "ability_paladin_lightoftheprotector", id: 414214, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'][0].coeff *= 1.25;
         spellDB['Crusader Strike'][0].holyPower += 1;
-    }},
+    }},*/
 
     // Awestruck
     // Holy Shock, Holy Light, Flash of Light critical healing increased by 20%..
@@ -851,36 +787,15 @@ export const baseTalents = {
 
 
 
-    // Spending Holy Power has a 25% chance to trigger Glimmer of Light.
-    glisteningRadiance: {points: 1, maxPoints: 1, icon: "spell_paladin_divinecircle", id: 414139, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        const glisten = {
-            type: "function",
-            chance: 1, 
-            runFunc: function (state, spell, spellDB) {
-                // You can either model this as a 25% chance of a full Glimmer, or a 100% chance of a 25% Glimmer. The former has more technical accuracy but 
-                // we really like flattening RNG where possible. 
-                triggerGlimmerOfLight(state, "Glistening Radiance", 0.25);
-            }
-        }
-
-        spellDB['Word of Glory'].push(glisten);
-        spellDB['Light of Dawn'].push(glisten);
-        spellDB['Shield of the Righteous'].push(glisten);
-        spellDB['Avenging Crusader'].push(glisten);
-
-
-    }},
-
     // Holy Shock has a 10 + 1.5% chance per glimmer to refund a charge when cast. Glimmer of Lights damage and healing is increased by 10%.
     gloriousDawn: {points: 1, maxPoints: 1, icon: "ability_paladin_holyavenger", id: 414065, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const resetSlice = {
             type: "function",
             runFunc: function (state, spell, spellDB) {
                 const holyShock = spellDB["Holy Shock"];
-                const glimmerBuffs = state.activeBuffs.filter(buff => buff.name === "Glimmer of Light").length;
 
                 const roll = Math.random();
-                const canProceed = roll < (0.1 + (0.015 * glimmerBuffs));
+                const canProceed = roll < 0.12;
 
                 // Previous logic, with charges bandaid fix would have been giving 2 charges
                 //if (canProceed) holyShock[0].activeCooldown = 0;
@@ -890,7 +805,7 @@ export const baseTalents = {
         }
 
         spellDB['Holy Shock'].push(resetSlice);
-
+        spellDB['Holy Shock'].coeff *= 1.1;
     }},
 
     // Daybreak
@@ -912,14 +827,18 @@ export const baseTalents = {
 
     // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
     risingSunlight: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 414203, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
-        spellDB['Daybreak'].push({
+        const risingSunlight = {
             name: "Rising Sunlight",
             type: "buff",
             buffType: 'special',
             canStack: true,
-            stacks: 3,
+            stacks: 2,
             buffDuration: 20,
-        });
+        }
+        
+        spellDB['Avenging Wrath'].push(risingSunlight);
+        spellDB['Avenging Crusader'].push(risingSunlight);
+        spellDB['Divine Toll'].push(risingSunlight);
     }},
 
     tyrsDeliverance: {points: 1, maxPoints: 1, icon: "inv_mace_2h_artifactsilverhand_d_01", id: 200652, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
@@ -978,7 +897,7 @@ export const baseTalents = {
         const buff = {
             type: "buff",
             buffType: "heal",
-            coeff: 0.21 * (1 - .143), 
+            coeff: 0.1552, 
             tickRate: 2 * getHaste(state.currentStats), // Not Hasted
             targets: 3,
             buffDuration: 999,

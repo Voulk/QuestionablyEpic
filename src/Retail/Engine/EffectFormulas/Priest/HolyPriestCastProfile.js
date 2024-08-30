@@ -1,5 +1,5 @@
 
-import { getCurrentStats, getHaste, applyTalents, deepCopyFunction, getSpellAttribute} from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { getCurrentStats, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
 
 const getCPM = (profile, spellName) => {
@@ -21,15 +21,17 @@ export const runHolyPriestCastProfile = (playerData) => {
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const cooldownWastage = 0.9;
+    let genericHealingIncrease = 1;
 
     const castProfile = [
-        {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Flash Heal", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
         {spell: "Heal", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+        {spell: "Prayer of Healing", cpm: 3, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
         {spell: "Prayer of Mending", cpm: 60 / getSpellAttribute(priestSpells["Prayer of Mending"], "cooldown") * cooldownWastage, hastedCPM: true},
         {spell: "Renew", cpm: 0},
         {spell: "Heal", cpm: 0},
         {spell: "Halo", cpm: 60 / getSpellAttribute(priestSpells["Halo"], "cooldown") * cooldownWastage},
+        {spell: "Divine Hymn", cpm: 60 / getSpellAttribute(priestSpells["Divine Hymn"], "cooldown") * cooldownWastage},
         {spell: "Lightwell", cpm: 60 / getSpellAttribute(priestSpells["Lightwell"], "cooldown") * cooldownWastage},
         {spell: "Holy Word: Serenity", cpm: 0},
         {spell: "Holy Word: Sanctify", cpm: 0},
@@ -54,6 +56,16 @@ export const runHolyPriestCastProfile = (playerData) => {
     // Surge of Light
 
     // Calculate Renew uptime
+    // Sources: Hard casts, Salvation, Benediction (PoM), Lightwell
+    if (getTalentPoints(state.talents, "renewedFaith")) {
+        const totalRenewDuration = getCPM(castProfile, "Renew") * 15 + 
+                                    getCPM(castProfile, "Holy Word: Salvation") * 15 * playerData.spellDB["Holy Word: Salvation"][0].targets + 
+                                    getCPM(castProfile, "Lightwell") * 6 * playerData.spellDB["Lightwell"][0].charges;
+
+        genericHealingIncrease *= (1 + totalRenewDuration / 60 / 20 * 0.06);
+    }
+
+
     // Lightwell, Salv, Revit Prayers (low prio), Benediction (low)
 
 
@@ -80,8 +92,6 @@ export const runHolyPriestCastProfile = (playerData) => {
             }
 
             
-
-
             // Handle special healing increases. These can be on a spell by spell basis. Most often it's dynamic increases.
 
             // Pontifex
@@ -96,6 +106,7 @@ export const runHolyPriestCastProfile = (playerData) => {
 
 
             // Spell Slice complete
+            spellThroughput *= genericHealingIncrease;
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
         });
@@ -103,7 +114,7 @@ export const runHolyPriestCastProfile = (playerData) => {
 
     })
     //console.log("HPS: " + totalHealing / 60);
-    console.log(healingBreakdown);
+    //console.log(healingBreakdown);
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     return sumValues(healingBreakdown)
 }

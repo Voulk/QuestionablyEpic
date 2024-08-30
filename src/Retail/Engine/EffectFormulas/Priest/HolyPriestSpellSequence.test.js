@@ -14,9 +14,9 @@ describe("Test APL", () => {
         const activeStats = {
             intellect: 60000,
             haste: 2400,
-            crit: 8000,
-            mastery: 6700,
-            versatility: 4500,
+            crit: 7000,
+            mastery: 7000 + ( 2 * 700), // Shaman buff
+            versatility: 7000 + (3 * 780) + 1000, // MotW, Vantus Rune
             stamina: 29000,
             critMult: 2,
         }
@@ -39,7 +39,7 @@ describe("Test APL", () => {
         expect(true).toEqual(true);
 
         const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
-        const iterations = 1;
+        const iterations = 1000;
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
@@ -49,7 +49,7 @@ describe("Test APL", () => {
         
         baseline = baseline / iterations
         
-        /*
+
         const results = {};
         stats.forEach(stat => {
             let statHealing = 0;
@@ -70,7 +70,6 @@ describe("Test APL", () => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
         console.log(weights); 
-        */
       
          
         console.log(baseline / 60);
