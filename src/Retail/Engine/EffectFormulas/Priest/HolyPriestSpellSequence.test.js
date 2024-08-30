@@ -1,5 +1,6 @@
 import { getSpellRaw, runCastSequence } from "./HolyPriestSpellSequence";
-import { HOLYPRIESTSPELLDB, baseTalents, runHolyPriestCastProfile} from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB, baseTalents, } from "./HolyPriestSpellDB";
+import { runHolyPriestCastProfile } from "./HolyPriestCastProfile";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite,  } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -12,10 +13,10 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 60000,
-            haste: 2000 + 100,
-            crit: 5400,
+            haste: 2400,
+            crit: 8000,
             mastery: 6700,
-            versatility: 2300,
+            versatility: 4500,
             stamina: 29000,
             critMult: 2,
         }
@@ -26,7 +27,7 @@ describe("Test APL", () => {
 
         const playerData = { spec: "Holy Priest", spellDB: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
 
-        runHolyPriestCastProfile(playerData);
+        //runHolyPriestCastProfile(playerData);
         //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
         //console.log(data);
 
