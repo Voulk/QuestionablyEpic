@@ -1,10 +1,11 @@
 import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
 import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
 import { paladinMeleeProfile } from "./PaladinDefaultAPL";
+import { runHolyPaladinCastProfile } from "./HolyPaladinCastProfile";
 import { genStatWeights } from './HolyPaladinUtilities';
 import { buildRamp } from "./HolyPaladinRampGen";
 import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDB";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -22,7 +23,8 @@ describe("Evang Cast Sequence", () => {
         const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: profile.defaultStats }
         
 
-        const data = runAPLSuites(playerData, profile, runCastSequence);
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        const data = runCastProfileSuites(playerData, runHolyPaladinCastProfile)
         //const data = runStatSuites(playerData, profile, runCastSequence);
         console.log(data);
 

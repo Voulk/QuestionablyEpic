@@ -18,6 +18,14 @@ export function runAPLSuites(playerData, aplProfile, runCastSequence) {
 
 }
 
+// Run APL
+export function runCastProfileSuites(playerData, runCastProfile) {
+    const simData = runSuite(playerData, {talents: []}, runCastProfile, "CastProfile");  
+
+    return simData;
+
+}
+
 export function runStatSuites(playerData, aplList, runCastSequence) {
         // Weights
         const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
@@ -179,6 +187,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         let result = null;
         if (type === "APL") result = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents, profile.apl);
         else if (type === "Sequence") result = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents);
+        else if (type === "CastProfile") result = runCastSequence(playerData);
         else console.error("Invalid type passed to runSuite()");
         //console.log(result);
         hps.push(result.hps);
@@ -194,7 +203,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     const adjSettings = {...playerData.settings, reporting: true, advancedReporting: true};
     if (type === "APL") singleReport = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents, profile.apl);
     else if (type === "Sequence") singleReport = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), adjSettings, playerData.talents);
-
+   // else if (type === "CastProfile") singleReport = runCastSequence(playerData);
     
     simData.minHPS = Math.min(...hps)
     simData.maxHPS = Math.max(...hps)
@@ -203,7 +212,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
     simData.elapsedTime = Math.round(1000*elapsedTime.reduce((acc, current) => acc + current, 0) / iterations)/1000;
     simData.maxTime = Math.round(1000*Math.max(...elapsedTime))/1000;
 
-    if (singleReport.advancedReport) simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
+    if (singleReport && singleReport.advancedReport) simData.buffUptimes = calculateBuffUptime(singleReport.advancedReport);
     simData.sampleReport = singleReport;
     return simData;
 }

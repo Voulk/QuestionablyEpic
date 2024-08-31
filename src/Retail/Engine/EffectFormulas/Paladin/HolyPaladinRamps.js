@@ -69,7 +69,7 @@ const apl2 = [
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (paladinSpells, settings, talents, state, stats) => {
+ export const applyLoadoutEffects = (paladinSpells, settings, talents, state, stats) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout

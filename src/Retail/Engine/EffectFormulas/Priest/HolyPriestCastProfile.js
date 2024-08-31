@@ -11,7 +11,7 @@ export const runHolyPriestCastProfile = (playerData) => {
     let totalHealing = 0;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+                    talents: playerData.talents, reporting: true, heroTree: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
     
     // Run Talents
     const priestSpells = applyLoadoutEffects(deepCopyFunction(playerData.spellDB), state.settings, state.talents, state, state.currentStats);
