@@ -1,6 +1,6 @@
-import { getHaste, getHealth } from "../Generic/RampGeneric/RampBase";
+import { getHaste, getHealth, runSpell } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, getBuffStacks, addBuff, removeBuff } from "../Generic/RampGeneric/BuffBase";
-import { runHeal, triggerGlimmerOfLight, runSpell } from "./HolyPaladinRamps";
+import { runHeal  } from "./HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT"
 
 // This is the Disc spell database. 
@@ -255,7 +255,8 @@ export const PALADINSPELLDB = {
         coeff: 0.351,
         targets: 1,
         secondaries: ['crit', 'vers', 'mastery'],
-        tickData: {tickRate: 1},
+        
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         canPartialTick: false,
         buffDuration: 20,
         buffCap: 60,
@@ -274,9 +275,8 @@ export const PALADINSPELLDB = {
         type: "buff",
         name: "Consecration",
         buffType: "damage",
-        canPartialTick: false,
         buffDuration: 12,
-        tickRate: 1,
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
     }],
     "Barrier of Faith": [{
         // Absorb on cast, then buff.
@@ -461,7 +461,7 @@ export const baseTalents = {
             buffDuration: 12,
             expectedOverheal: 0.5,
             targets: 6, // You and 5 allies
-            tickRate: 1,
+            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
             secondaries: ['crit', 'versatility', 'haste']
         })
     }},
@@ -544,7 +544,7 @@ export const baseTalents = {
             type: "buff",
             buffType: "heal",
             coeff: 0.1 * points * 1.04, 
-            tickRate: 2.6,
+            tickData: {tickRate: 2.6, canPartialTick: false, tickOnCast: false}, 
             targets: 1,
             buffDuration: 999,
             expectedOverheal: 0.5,
@@ -871,7 +871,7 @@ export const baseTalents = {
             buffDuration: 12,
             expectedOverheal: 0.50,
             targets: 6,
-            tickRate: 1,
+            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
             secondaries: ['crit', 'versatility', 'haste']
         })
 
@@ -882,7 +882,7 @@ export const baseTalents = {
             coeff: 0.05 / 2 * 1.05,
             buffDuration: 12,
             targets: 5,
-            tickRate: 1,
+            tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
             secondaries: ['crit', 'versatility', 'haste']
         })
     }},
@@ -898,7 +898,7 @@ export const baseTalents = {
             type: "buff",
             buffType: "heal",
             coeff: 0.1552, 
-            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
             targets: 3,
             buffDuration: 999,
             expectedOverheal: 0.5,
@@ -915,7 +915,7 @@ export const baseTalents = {
             buffDuration: 8,
             expectedOverheal: 0.30,
             targets: 20,
-            tickRate: 2 * getHaste(state.currentStats), // Not Hasted
+            tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
             secondaries: ['crit', 'versatility']
         })
     }},

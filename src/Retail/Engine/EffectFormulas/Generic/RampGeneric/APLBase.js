@@ -39,15 +39,15 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
         
     })
 
-    
     if (conditions) {
         conditions.forEach(condition => {
 
             // Talent related conditions
+            console.log(condition);
             if (condition.type === "talent" && state.talents[conditions.talentName].points === 0) aplReq = false;
             else if (condition.type === "talentMissing") {
-                if (typeof state.talents[condition.talentNot] == "undefined") aplReq = false;
-                else if (state.talents[condition.talentNot].points > 0) aplReq = false;
+                if (typeof state.talents[condition.talentName] === "undefined") aplReq = false;
+                else if (state.talents[condition.talentName].points > 0) aplReq = false;
             }
 
             // Resource related conditions
@@ -81,6 +81,9 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             else if (condition.type === "beforeTime") aplReq = state.t <= condition.timer;
             else if (condition.type === "betweenTime") aplReq = state.t >= condition.after && state.t <= condition.before;
             else if (condition.type === "EveryX") aplReq = Math.floor(state.t * 100) % condition.timer === 0;
+
+            // Hero Talent conditions
+            else if (condition.type === "heroTree") aplReq = state.heroTree === condition.heroTree;
         })
     } 
 
@@ -88,7 +91,6 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
 }
 
 export const genSpell = (state, spells, apl) => {
-
     //const usableSpells = [...apl].filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));  
     const usableSpells = JSON.parse(JSON.stringify(apl)).filter(spell => canCastSpell(state, spells, spell.s, spell.conditions || ""));
     /*
@@ -112,7 +114,7 @@ export const genSpell = (state, spells, apl) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-
+    console.log(usableSpells);
     if (usableSpells.length > 0) { // This appears to be modifying APL. Work through that.
         if (typeof usableSpells[0].s === "string") return [usableSpells[0].s];
         else return usableSpells[0].s;

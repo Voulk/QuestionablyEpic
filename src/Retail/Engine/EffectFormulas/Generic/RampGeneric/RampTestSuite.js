@@ -155,7 +155,7 @@ function runComparisonSuites(playerData, profiles, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1000; //2600;
+    const iterations = 1; //2600;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -168,7 +168,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         elapsedTime: 0,
         sampleReport: {},
     }
-
+    console.log(profile);
     // Handle profile talents.
     if (profile.talents.length > 0) {
         profile.talents.forEach(talent => {
@@ -181,6 +181,7 @@ function runSuite(playerData, profile, runCastSequence, type) {
         if (type === "APL") result = runCastSequence(["Rest"], JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents, profile.apl);
         else if (type === "Sequence") result = runCastSequence(profile.seq, JSON.parse(JSON.stringify(playerData.stats)), playerData.settings, playerData.talents);
         else console.error("Invalid type passed to runSuite()");
+        console.log(result);
         hps.push(result.hps);
         hpm.push(result.hpm);
         elapsedTime.push(result.elapsedTime);

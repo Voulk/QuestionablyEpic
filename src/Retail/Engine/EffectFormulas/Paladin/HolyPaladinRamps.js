@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell, deepCopyFunction,
+import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell, deepCopyFunction, spendSpellCost, runRampTidyUp,
             getStatMult, GLOBALCONST, getHealth, getCrit, runSpell, getSpellCastTime, getTalentPoints, getTalentData } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/RampGeneric/BuffBase";
 import { genSpell } from "../Generic/RampGeneric/APLBase";
@@ -35,7 +35,6 @@ const PALADINCONSTANTS = {
     fadingLight: {effect: 0.1, efficiency: 0.9 }
 }
 
-// Conditions
 
 
 //const apl = ["Avenging Wrath", "Divine Toll", "Light's Hammer", "Light of Dawn", "Holy Shock", "Hammer of Wrath", "Crusader Strike", "Judgment", "Rest"]
@@ -61,43 +60,6 @@ const apl2 = [
         {s: "Consecration"}, 
         {s: "Holy Light"},
         {s: "Rest"}] 
-
-
-// Avenging Wrath / Might
-const apl = [
-    //{s: "Beacon of Virtue"},
-    {s: "Blessing of Seasons", c: {talent: "blessingOfSeasons"}},
-    {s: "Aura Mastery", c: {talent: "mercifulAuras"}},
-    {s: "Avenging Wrath"},
-    {s: "Light's Hammer"}, 
-    {s: "Judgment", c: {type: "buff", buffName: "Awakening - Final"}}, 
-    {s: "Tyr's Deliverance", c: {talent: "tyrsDeliverance"}}, 
-    //{s: "Daybreak", c: {type: "buff", buffName: "Beacon of Virtue", talent: "daybreak"}}, 
-    {s: "Daybreak", c: {talent: "daybreak"}}, 
-    {s: "Divine Toll", c: {talentNot: "Rising Sunlight"}}, 
-    {s: "Divine Toll", c: {type: "buff", buffName: "Rising Sunlight"}}, 
-    {s: "Barrier of Faith", c: {talent: "barrierOfFaith"}},
-    //{s: "Light of Dawn", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 4}}, 
-    {s: "Light of Dawn", c: {type:"buff", buffName: "Blessing of Dawn", stacks: 2}},
-    {s: "Light of the Martyr", c: {type: "buff", buffName: "Maraads Dying Breath"}}, 
-    {s: "Light of Dawn", c: {holyPower: 4, talent:"awakening"}}, // Don't overcap hopo with Awakening
-    {s: "Light of Dawn", c: {holyPower: 5, talent:"awakening"}}, // Don't overcap hopo with Awakening
-    {s: "Light of Dawn"}, // Testing using LoD first
-    {s: "Holy Light", c: {type: "buff", buffName: "Infusion of Light", talent: "awakening"}}, // Use Holy Light for Awakening uptime
-    {s: "Judgment", c: {type: "buff", buffName: "Infusion of Light", talent:"judgementInfusionUseIfUp"}},
-    {s: "Flash of Light", c: {type: "buff", buffName: "Infusion of Light"}}, 
-    {s: "Holy Shock"}, 
-    //{s: "Holy Shock", c: {type: "CooldownDown", cooldownName: "Beacon of Virtue", timer: 5}}, // Some kind of hold for Virtue
-    {s: "Holy Light", c: {type: "buff", buffName: "Beacon of Virtue"}}, // Not sure if we can do "buff duration" as a condition element?
-    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Veneration"}},
-    {s: "Light of Dawn"}, 
-    {s: "Crusader Strike", c: {talent: "holyInfusion"}},
-    {s: "Hammer of Wrath", c: {type: "buff", buffName: "Avenging Wrath"}},
-    {s: "Judgment", c: {talentNot: "judgementInfusionHold"}}, 
-    {s: "Consecration"}, 
-    {s: "Holy Light"},
-    {s: "Crusader Strike"},
-    {s: "Rest"}]
 
 
 /**
@@ -395,20 +357,25 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         //talents[key] = value.points;
         talents[key] = value;
     }
-
+    console.log("RUNNING SEQUENCE");
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
 
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith"};
+    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, 
+                    talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith", spec: "Holy Paladin"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 
     const sequenceLength = 240; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
-    const seqType = "Manual" // Auto / Manual.
+    const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
+    console.log(apl);
 
-    let nextSpell = 0; // The time when the next spell cast can begin.
-    let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
-    let queuedSpell = "";
+
+    let castState = {
+        nextSpell: 0, // The time when the next spell cast can begin.
+        spellFinish: 0, // The time when the cast will finish. HoTs / DoTs can continue while this charges.
+        queuedSpell: "",
+    }
     const startTime = performance.now();
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
@@ -456,7 +423,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
         runBuffs(state, stats, paladinSpells, runHeal, runDamage);
 
-        if (seq.length > 0 && (state.t > nextSpell)) {
+        if (state.t > castState.nextSpell) {
             // We don't have a spell queued. Queue one.
 
             // Update current stats for this combat tick.
@@ -470,7 +437,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
 
         }
-        if (queuedSpell !== "" && state.t >= spellFinish) {
+        if (castState.queuedSpell !== "" && state.t >= castState.spellFinish) {
             // We have a queued spell, check if it's finished.
             // Instant spells should proc this immediately.
 
@@ -480,27 +447,75 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             let currentStats = {...stats};
             state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
-            const spellName = queuedSpell;
-            const fullSpell = paladinSpells[queuedSpell];
+            const spellName = castState.queuedSpell;
+            const fullSpell = paladinSpells[castState.queuedSpell];
             addReport(state, `Casting ${spellName}`);
             spendSpellCost(fullSpell, state, spellName);
 
 
             // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
-            if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
+            /*if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
                 addReport(state, "Casting Multiple Holy Shocks due to Rising Sunlight")
                 runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
                 runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
                 removeBuffStack(state.activeBuffs, "Rising Sunlight");
-            }
-            runSpell(fullSpell, state, spellName, paladinSpells);
+            }*/
+
+            runSpell(fullSpell, state, spellName, paladinSpells, null, runHeal, runDamage);
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
 
-            queuedSpell = "";
-            spellFinish = 0;
+
+            // Post Spell
+            if (["Flash of Light", "Holy Light", "Judgment"].includes(spellName) && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
+                if (spellName === "Holy Light") {
+                    if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "manaReturn");
+                    state.holyPower = Math.min(state.holyPower + PALADINCONSTANTS.infusion.holyLightHoPo, 5);
+                }
+        
+                if (spellName === "Judgment") {
+                    if (getTalentPoints(state, "divineRevelations")) state.manaSpent -= getTalentData(state, "divineRevelations", "manaReturn");
+                }
+        
+                // Apply Imbued Infusions
+                if (getTalentPoints(state, "imbuedInfusions")) {
+                    const targetSpell = paladinSpells["Holy Shock"];
+                    targetSpell[0].cooldowndata.cooldownData.activeCooldown -= 2;
+                }
+        
+                // Remove a stack of IoL.
+                state.activeBuffs = removeBuffStack(state.activeBuffs, "Infusion of Light");
+            }
+            else if (spellName === "Hammer of Wrath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Veneration");
+            if (spellName === "Judgment" && checkBuffActive(state.activeBuffs, "Awakening - Final")) {
+                // Add wings
+                const buffExists = state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"}).length;
+                if (buffExists) {
+                    const buff = state.activeBuffs.filter(function (buff) {return buff.name === "Avenging Wrath"})[0];
+                    buff.expiration = buff.expiration + 12;
+                    addReport(state, "Awakening: Extending Wings Buff");
+                }
+                else {
+                    const wings = {name: "Avenging Wrath", expiration: (state.t + 12), buffType: "statsMult", stat: "crit", value: (state.talents.might.points * 15 * 170)};
+                    state.activeBuffs.push(wings);
+                    addReport(state, "Awakening Proc! Wings for 12s!");
+                }
+        
+                // Remove 
+                state.activeBuffs = removeBuff(state.activeBuffs, "Awakening - Final");
+            }
+            else if ((spellName === "Light of Dawn" || spellName === "Word of Glory") && checkBuffActive(state.activeBuffs, "Divine Purpose")) {
+                // Refund HoPo
+                state.holyPower += 3;
+                state.manaSpent -= paladinSpells[spellName][0].cost;
+                state.activeBuffs = removeBuff(state.activeBuffs, "Divine Purpose");
+        
+            }
+
+            castState.queuedSpell = "";
+            castState.spellFinish = 0;
         }
 
-        if (seq.length === 0 && queuedSpell === "" && healBuffs.length === 0) {
+        if (seq.length === 0 && castState.queuedSpell === "") {
             // We have no spells queued, no DoTs / HoTs and no spells to queue. We're done.
             //state.t = 999;
         }
@@ -537,18 +552,9 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
 
-    // Add up our healing values (including atonement) and return it.
-    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
-    //state.activeBuffs = [];
-    state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
-    state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
-    state.talents = {};
-    state.hps = (state.totalHealing / sequenceLength);
-    state.dps = (state.totalDamage / sequenceLength);
-    state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
-    const endTime = performance.now();
-    //console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+    runRampTidyUp(state, settings, sequenceLength, startTime)
+
     return state;
 
 }
