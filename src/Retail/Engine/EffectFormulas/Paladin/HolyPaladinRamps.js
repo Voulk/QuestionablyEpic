@@ -358,12 +358,11 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         //talents[key] = value.points;
         talents[key] = value;
     }
-    console.log("RUNNING SEQUENCE");
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, casts: {}, damageDone: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith", spec: "Holy Paladin"};
+                    talents: talents, reporting: true, holyPower: 5, beacon: "Beacon of Faith", spec: "Holy Paladin", heroTree: "heraldOfTheSun"};
 
     let currentStats = JSON.parse(JSON.stringify(stats));
 

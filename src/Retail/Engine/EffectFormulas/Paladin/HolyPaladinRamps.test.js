@@ -20,7 +20,11 @@ describe("Evang Cast Sequence", () => {
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
 
         const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: profile.defaultStats }
-        const data = runAPLSuites(playerData, profile, runCastSequence);
+        
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        //console.log(data);
+
+        const data = runStatSuites(playerData, profile, runCastSequence);
         console.log(data);
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
