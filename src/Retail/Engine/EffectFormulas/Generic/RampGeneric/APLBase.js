@@ -37,8 +37,12 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             cooldownReq = (state.t >= spell.cooldownData.activeCooldown)// || !spell.cooldownData.cooldown;
 
         }
-        
+        /*if (spellName === "Holy Shock") {
+            console.log("HS: ", state.t, aplReq, miscReq, cooldownReq, secondaryResourceReq)    
+            console.log(spell.cooldownData)
+        }*/
     })
+    
     //if (spellNames.includes("Holy Shock")) console.log("HS: ", aplReq, miscReq, cooldownReq, secondaryResourceReq);
     if (conditions) {
         conditions.forEach(condition => {
@@ -72,6 +76,7 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
             else if (condition.type === "cooldownAvailable") aplReq = isSpellAvailable(state, spellDB, condition.spellName);
             else if (condition.type === "cooldownClose") aplReq = getSpellCooldown(state, spellDB, condition.spellName) <= condition.nearTime;
             else if (condition.type === "cooldownFar") aplReq = getSpellCooldown(state, spellDB, condition.spellName) >= condition.farTime;
+            else if (condition.type === "cooldownNotAvailable") aplReq = !isSpellAvailable(state, spellDB, condition.spellName);
 
             // Time related conditions
             // type: afterTime. Returns yes if a certain amount of time has elapsed. 

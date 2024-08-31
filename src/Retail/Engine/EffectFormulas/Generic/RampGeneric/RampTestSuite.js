@@ -28,7 +28,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
         stats.forEach(stat => {
 
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 600;
+            playerStats[stat] = playerStats[stat] + 2400;
             const newPlayerData = {...playerData, stats: playerStats};
             const result = runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS;
             results[stat] = result;
@@ -155,7 +155,7 @@ function runComparisonSuites(playerData, profiles, runCastSequence) {
 }
 
 function runSuite(playerData, profile, runCastSequence, type) {
-    const iterations = 1000; //2600;
+    const iterations = 1; //2600;
     let hps = []; 
     let hpm = [];
     let elapsedTime = [];
@@ -168,7 +168,6 @@ function runSuite(playerData, profile, runCastSequence, type) {
         elapsedTime: 0,
         sampleReport: {},
     }
-    console.log(profile);
     // Handle profile talents.
     if (profile.talents.length > 0) {
         profile.talents.forEach(talent => {

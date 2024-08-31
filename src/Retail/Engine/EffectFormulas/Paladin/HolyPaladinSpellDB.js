@@ -40,11 +40,11 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 2.6,
         coeff: 2.266,
-        cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2},
+        cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2, activeCooldown: 0},
         expectedOverheal: 0.22,
         holyPower: 1,
         statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility', 'mastery']
     },
     { // Infusion of Light
         type: "buff",
@@ -66,7 +66,7 @@ export const PALADINSPELLDB = {
         cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2},
         holyPower: 1,
         statMods: {'crit': 0},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility', 'mastery']
     }],
     "Flash of Light": [{
         spellData: {id: 19750, icon: "spell_holy_flashheal", cat: "heal"},
@@ -76,7 +76,7 @@ export const PALADINSPELLDB = {
         coeff: 3.156, 
         expectedOverheal: 0.14,
         statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility', 'mastery']
     }],
     "Holy Light": [{
         spellData: {id: 19750, icon: "spell_holy_surgeoflight", cat: "heal"},
@@ -86,7 +86,7 @@ export const PALADINSPELLDB = {
         coeff: 3.8, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'vers', 'mastery']
+        secondaries: ['crit', 'versatility', 'mastery']
     }],
     "Crusader Strike": [{
         spellData: {id: 35395, icon: "spell_holy_crusaderstrike", cat: "damage"},
@@ -96,7 +96,7 @@ export const PALADINSPELLDB = {
         coeff: 1.071, 
         cooldownData: {cooldown: 6, hasted: true},
         holyPower: 1,
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'versatility']
     }],
     "Shield of the Righteous": [{
         spellData: {id: 53600, icon: "ability_paladin_shieldofvengeance", cat: "damage"},
@@ -105,7 +105,7 @@ export const PALADINSPELLDB = {
         cost: 0,
         coeff: 0.425, // AP -> SP mult. 
         holyPower: -3,
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'versatility']
     },
     {
         type: "cooldownReduction",
@@ -123,7 +123,7 @@ export const PALADINSPELLDB = {
         cooldownData: {cooldown: 12, hasted: false},
         holyPower: 1,
         statMods: {'crit': 0},
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'versatility']
     }],
     "Hammer of Wrath": [{
         spellData: {id: 24275, icon: "spell_paladin_hammerofwrath", cat: "damage"},
@@ -133,7 +133,7 @@ export const PALADINSPELLDB = {
         coeff: 1.11067, 
         cooldownData: {cooldown: 7.5, hasted: true},
         holyPower: 1,
-        secondaries: ['crit', 'vers']
+        secondaries: ['crit', 'versatility']
     }],
     "Light of Dawn": [{
         spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
@@ -144,7 +144,8 @@ export const PALADINSPELLDB = {
         expectedOverheal: 0.26,
         holyPower: -3,
         targets: 5,
-        secondaries: ['crit', 'vers', 'mastery']
+        statMods: {'crit': 0, critEffect: 0},
+        secondaries: ['crit', 'versatility', 'mastery']
     }],
     "Word of Glory": [{
         spellData: {id: 0, icon: "inv_helmet_96", cat: "heal"},
@@ -154,7 +155,8 @@ export const PALADINSPELLDB = {
         coeff: 3.465, //2.89
         expectedOverheal: 0.3,
         holyPower: -3,
-        secondaries: ['crit', 'vers', 'mastery']
+        statMods: {'crit': 0, critEffect: 0},
+        secondaries: ['crit', 'versatility', 'mastery']
     }],
     "Eternal Flame": [{
         spellData: {id: 0, icon: "inv_helmet_96", cat: "heal"},
@@ -164,7 +166,8 @@ export const PALADINSPELLDB = {
         coeff: 3.465, //2.89
         expectedOverheal: 0.3,
         holyPower: -3,
-        secondaries: ['crit', 'vers', 'mastery']
+        statMods: {'crit': 0, critEffect: 0},
+        secondaries: ['crit', 'versatility', 'mastery']
     },
     {
         type: "buff",
@@ -212,7 +215,8 @@ export const PALADINSPELLDB = {
             // Cast 5 Holy Shocks           
             for (let i = 0; i < spell.count; i++) {
                 state.holyPower = Math.max(5, state.holyPower + 1);
-                runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, true);
+                //runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, true);
+                runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, null, runHeal, null, {bonus: true})
             }
 
         }
@@ -225,7 +229,7 @@ export const PALADINSPELLDB = {
         cost: 2.6,
         coeff: 3.15,
         targets: 5,
-        secondaries: ['crit', 'vers', 'mastery'],
+        secondaries: ['crit', 'versatility', 'mastery'],
         cooldownData: {cooldown: 30, hasted: false},
         expectedOverheal: 0.4,
     },
@@ -233,7 +237,7 @@ export const PALADINSPELLDB = {
         type: "damage",
         coeff: 2.16,
         targets: 1,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit', 'versatility'],
     },],
     "Tyr's Deliverance": [{
         // Ticks on cast. Probably need to create a generic case for this.
@@ -254,7 +258,7 @@ export const PALADINSPELLDB = {
         buffType: "heal",
         coeff: 0.351,
         targets: 1,
-        secondaries: ['crit', 'vers', 'mastery'],
+        secondaries: ['crit', 'versatility', 'mastery'],
         
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         canPartialTick: false,
@@ -270,7 +274,7 @@ export const PALADINSPELLDB = {
         cost: 0,
         coeff: 0.05 * 1.04, // AP boost.
         targets: 5,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit', 'versatility'],
         cooldownData: {cooldown: 9, hasted: false}, // Technically 9
         type: "buff",
         name: "Consecration",
@@ -462,7 +466,7 @@ export const baseTalents = {
             expectedOverheal: 0.5,
             targets: 6, // You and 5 allies
             tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
-            secondaries: ['crit', 'versatility', 'haste']
+            secondaries: ['crit', 'versatility', 'haste', 'mastery']
         })
     }},
 
@@ -479,7 +483,7 @@ export const baseTalents = {
             coeff: 0.175,
             expectedOverheal: 0.28,
             targets: 5,
-            secondaries: ['crit', 'vers', 'mastery']
+            secondaries: ['crit', 'versatility', 'mastery']
         });
 
     }}, 
@@ -548,7 +552,7 @@ export const baseTalents = {
             targets: 1,
             buffDuration: 999,
             expectedOverheal: 0.5,
-            secondaries: ['crit', 'vers'], // + Haste
+            secondaries: ['crit', 'versatility'], // + Haste
         };
         addBuff(state, buff, "Seal of the Crusader")
     }},
@@ -637,11 +641,11 @@ export const baseTalents = {
 
     // === Spec Tree ===
     // Crusader's Might
-    crusadersMight: {points: 0, maxPoints: 1, icon: "ability_paladin_swiftretribution", id: 196926, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    crusadersMight: {points: 1, maxPoints: 1, icon: "ability_paladin_swiftretribution", id: 196926, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Crusader Strike'].push({
             type: "cooldownReductions",
             cooldownReduction: 2 * points,
-            targetSpell: ["Holy Shock", "Judgment"],
+            targetSpells: ["Holy Shock", "Judgment"],
         });
 
     }}, 
@@ -687,6 +691,24 @@ export const baseTalents = {
     divineGlimpse: {points: 1, maxPoints: 1, icon: "spell_holy_healingaura", id: 387805, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Holy Shock'][0].statMods.crit += (0.08 * points);
         spellDB['Judgment'][0].statMods.crit += (0.08 * points);
+    }}, 
+
+    extrication: {points: 1, maxPoints: 1, icon: "ability_paladin_righteousvengeance", id: 461278, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Eternal Flame'][0].statMods.crit += (0.1 * points);
+        spellDB['Light of Dawn'][0].statMods.crit += (0.1 * points);
+        spellDB['Word of Glory'][0].statMods.crit += (0.1 * points);
+    }}, 
+
+    truthPrevails: {points: 1, maxPoints: 1, icon: "spell_holy_spiritualguidence", id: 461273, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Judgment'].push({
+            type: "heal",
+            name: "Truth Prevails",
+            coeff: 2.7,
+            expectedOverheal: 0.15, 
+            targets: 1,
+            secondaries: ['crit', 'versatility', 'mastery']
+        })
+        spellDB['Judgment'][0].cost *= 0.7;
     }}, 
 
     // Sanctified Wrath - Holy Shock CD reduced by 40% during wings. +5s Wings duration.
@@ -800,7 +822,7 @@ export const baseTalents = {
                 // Previous logic, with charges bandaid fix would have been giving 2 charges
                 //if (canProceed) holyShock[0].activeCooldown = 0;
                 // New logic, counts as giving one extra charge.
-                if (canProceed) holyShock[0].cooldownData.activeCooldown -= holyShock[0].cooldown / getHaste(state.currentStats)
+                if (canProceed) holyShock[0].cooldownData.activeCooldown = 0 // holyShock[0].cooldownData.cooldown / getHaste(state.currentStats)
             }
         }
 
@@ -825,7 +847,7 @@ export const baseTalents = {
         // Handled in ramp / constants
         }},
 
-    // Rising Sunlight - After casting Daybreak your next 3 Holy Shocks cast 2 additional times.
+    // Rising Sunlight - After casting Daybreak your next 2 Holy Shocks cast 2 additional times.
     risingSunlight: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 414203, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         const risingSunlight = {
             name: "Rising Sunlight",
@@ -862,7 +884,7 @@ export const baseTalents = {
 
 
     // Righteous Judgment 
-    righteousJudgment: {points: 1, maxPoints: 1, icon: "ability_priest_holybolts01", id: 414113, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    righteousJudgment: {points: 0, maxPoints: 1, icon: "ability_priest_holybolts01", id: 414113, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Judgment'].push({
             type: "buff",
             name: "Righteous Judgment (Golden Path)",
@@ -902,7 +924,7 @@ export const baseTalents = {
             targets: 3,
             buffDuration: 999,
             expectedOverheal: 0.5,
-            secondaries: ['crit', 'vers'], // Not Hasted
+            secondaries: ['crit', 'versatility', 'mastery'], // Not Hasted
         };
 
         addBuff(state, buff, "Merciful Auras (Passive)")
@@ -916,15 +938,23 @@ export const baseTalents = {
             expectedOverheal: 0.30,
             targets: 20,
             tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
-            secondaries: ['crit', 'versatility']
+            secondaries: ['crit', 'versatility', 'mastery']
         })
     }},
+
+
+    // Herald of the Sun
+    luminosity: {points: 1, maxPoints: 1, icon: "inv_qirajidol_sun", id: 431402, heroTree: "heraldOfTheSun", select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Holy Shock'][0].statMods.crit += (0.05 * points);
+        spellDB['Light of Dawn'][0].statMods.crit += (0.05 * points);
+    }}, 
+
 
     // Meta
     judgementInfusionUseIfUp: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4, runFunc: function (state, spellDB, points) { 
         // Meta talent, doesn't do anything except impact APL
     }},
-
+ 
     judgementInfusionHold: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4, runFunc: function (state, spellDB, points) { 
         // Meta talent, doesn't do anything except impact APL
     }},

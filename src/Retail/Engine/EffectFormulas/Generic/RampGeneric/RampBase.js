@@ -31,7 +31,7 @@ export const getTalentData = (state, talentName, attribute) => {
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
         const talent = state.talents[talentName];
-        if (talent.points > 0) {
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
             talent.runFunc(state, spellDB, talent.points, stats)
         }
     });
@@ -197,7 +197,9 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             else if (spell.type === "cooldownReductions") {
                 spell.targetSpells.forEach(target => {
                     const targetSpell = evokerSpells[target];
-                    targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+                    if (targetSpell[0].cooldownData.activeCooldown) targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+                    //(target + ": " + targetSpell[0].cooldownData.activeCooldown + " - " + (targetSpell[0].cooldownData.activeCooldown - spell.cooldownReduction));
+                    
                 })
                 
             }
@@ -206,7 +208,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
-            if (state.spec.includes("Holy Paladin") && 'cooldownData' in spell && spell.cooldownData.cooldown /*&& !bonusSpell*/) {
+            if (state.spec.includes("Holy Paladin") && 'cooldownData' in spell && spell.cooldownData.cooldown && !flags.bonus/*&& !bonusSpell*/) {
                 // Handle charges by changing the base cooldown value
                 const newCooldownBase = ((spell.cooldownData.charges > 1 && spell.cooldownData.activeCooldown > state.t) ? spell.cooldownData.activeCooldown : state.t)
                 //const newCooldownBase = state.t;

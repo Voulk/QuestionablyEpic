@@ -10,19 +10,17 @@ import { genSpell } from "../Generic/RampGeneric/APLBase";
 const PALADINCONSTANTS = {
     
     masteryMod: 1.5, 
-    masteryEfficiency: 0.84, 
+    masteryEfficiency: 0.85, 
     baseMana: 250000,
 
-    auraHealingBuff: 0.82,
-    auraDamageBuff: 0.92 * 1.1,
-    goldenHourHealing: 18000,
+    auraHealingBuff: 1,
+    auraDamageBuff: 1,
     enemyTargets: 1,
-    enemyGlimmers: 0, 
 
     // Beacon Section
     beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"], // Glimmer is handled manually to catch other sources of glimmer
     beaconExclusionList: ["Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", "Judgment", "Shield of the Righteous", "Barrier of Faith"],
-    beaconOverhealing: 0.4,
+    beaconOverhealing: 0.3,
 
     // Talents
     tyrsHitRate: 0.8,
@@ -271,7 +269,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
-    if (spellName === "Merciful Auras (Passive)" && checkBuffActive(state.activeBuffs, "Aura Mastery")) healingVal = 0;
+    //if (spellName === "Merciful Auras (Passive)" && checkBuffActive(state.activeBuffs, "Aura Mastery")) healingVal = 0;
 
     // Beacon
     let beaconHealing = 0;
@@ -368,8 +366,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
     const sequenceLength = 240; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    console.log(apl);
-
 
     let castState = {
         nextSpell: 0, // The time when the next spell cast can begin.
@@ -454,12 +450,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
 
 
             // Rising Sunlight - If has buff, cast Holy Shock three times instead of twice.
-            /*if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
+            if (checkBuffActive(state.activeBuffs, "Rising Sunlight") && spellName === "Holy Shock") {
                 addReport(state, "Casting Multiple Holy Shocks due to Rising Sunlight")
-                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
-                runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
+                runSpell(paladinSpells["Holy Shock"], state, "Holy Shock (Rising Sunlight)", paladinSpells, null, runHeal, null, {bonus: true})
+                runSpell(paladinSpells["Holy Shock"], state, "Holy Shock (Rising Sunlight)", paladinSpells, null, runHeal, null, {bonus: true})
+
+                //runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
+                //runSpell(fullSpell, state, "Holy Shock (Rising Sunlight)", paladinSpells, true);
                 removeBuffStack(state.activeBuffs, "Rising Sunlight");
-            }*/
+            }
 
             runSpell(fullSpell, state, spellName, paladinSpells, null, runHeal, runDamage);
             state.casts[spellName] = (state.casts[spellName] || 0) + 1;
@@ -479,7 +478,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 // Apply Imbued Infusions
                 if (getTalentPoints(state, "imbuedInfusions")) {
                     const targetSpell = paladinSpells["Holy Shock"];
-                    targetSpell[0].cooldowndata.activeCooldown -= 2;
+                    targetSpell[0].cooldownData.activeCooldown -= 1;
                 }
         
                 // Remove a stack of IoL.
