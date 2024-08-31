@@ -83,6 +83,7 @@ const apl2 = [
         settings['T30_2'] = true;
     }
 
+    /*
     if (settings['T30_2']) {
         paladinSpells["Holy Shock"][0].statMods.critEffect = 0.6;
         paladinSpells["Holy Shock"].push({
@@ -114,7 +115,7 @@ const apl2 = [
                 state.holyPower = Math.min(state.holyPower + 1, 5);
             }
         })
-    }
+    }*/
 
     if (getTalentPoints(state, "inflorescenceOfTheSunwell")) {
         PALADINCONSTANTS.infusion.flashOfLightReduction = 0.7 + 0.3;
@@ -479,7 +480,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                 // Apply Imbued Infusions
                 if (getTalentPoints(state, "imbuedInfusions")) {
                     const targetSpell = paladinSpells["Holy Shock"];
-                    targetSpell[0].cooldowndata.cooldownData.activeCooldown -= 2;
+                    targetSpell[0].cooldowndata.activeCooldown -= 2;
                 }
         
                 // Remove a stack of IoL.
@@ -521,7 +522,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         }
 
         // Autumn, only checks every second and reduces to save processing
-        const checkInterval = 1;
+        
+        const checkInterval = 1; /*
         if (t % checkInterval === 0) {
             if (getTalentPoints(state, "blessingOfSeasons")) {
                 if (checkBuffActive(state.activeBuffs, "Blessing of Autumn")) // This takes a bit of processing time :(
@@ -532,7 +534,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                     spellList.forEach(checkCooldownSpells => {
                     if (paladinSpells[checkCooldownSpells][0].cooldownData.activeCooldown - (0.3 * checkInterval) > t) {
                         paladinSpells[checkCooldownSpells][0].cooldownData.activeCooldown -= 0.3 * checkInterval;
-                    }})*/
+                    }})
 
                     paladinSpells.foreach(spellCD => {
                         if (spellCD[0].cooldowndata.cooldown) {
@@ -548,13 +550,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
                     })
                 }
             }
-        }
+        } */
     }
 
 
 
     runRampTidyUp(state, settings, sequenceLength, startTime)
-
     return state;
 
 }

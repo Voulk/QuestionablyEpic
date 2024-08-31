@@ -33,17 +33,17 @@ const canCastSpell = (state, spellDB, spellNames, conditions = {}) => {
         // Added workaround CDR/Stacks pending rework
 
         if (spell.cooldownData && cooldownReq) { // Once a cooldown check fails, the subsequence itself fails.
-            cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
-            
+            //cooldownReq = (state.t >= spell.cooldownData.activeCooldown - ((spell.charges > 1 ? (spell.cooldownData.cooldown / (spell.cooldownData.hasted ? getHaste(state.currentStats) : 1)) * (spell.charges - 1) : 0))) || !spell.cooldownData.cooldown;
+            cooldownReq = (state.t >= spell.cooldownData.activeCooldown)// || !spell.cooldownData.cooldown;
+
         }
         
     })
-
+    //if (spellNames.includes("Holy Shock")) console.log("HS: ", aplReq, miscReq, cooldownReq, secondaryResourceReq);
     if (conditions) {
         conditions.forEach(condition => {
 
             // Talent related conditions
-            console.log(condition);
             if (condition.type === "talent" && state.talents[conditions.talentName].points === 0) aplReq = false;
             else if (condition.type === "talentMissing") {
                 if (typeof state.talents[condition.talentName] === "undefined") aplReq = false;
@@ -114,7 +114,6 @@ export const genSpell = (state, spells, apl) => {
     }
     console.log("Gen: " + spellName + "|");
     */
-    console.log(usableSpells);
     if (usableSpells.length > 0) { // This appears to be modifying APL. Work through that.
         if (typeof usableSpells[0].s === "string") return [usableSpells[0].s];
         else return usableSpells[0].s;

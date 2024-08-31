@@ -201,7 +201,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
                 })
                 
             }
-            else {
+            else if (spellName !== "Rest") {
                 console.error("Spell Type Error: " + spellName);
             }
 
@@ -211,10 +211,15 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
                 const newCooldownBase = ((spell.cooldownData.charges > 1 && spell.cooldownData.activeCooldown > state.t) ? spell.cooldownData.activeCooldown : state.t)
                 //const newCooldownBase = state.t;
 
+                if (spell.cooldownData.hasted) spell.cooldownData.activeCooldown = state.t + spell.cooldownData.cooldown / getHaste(state.currentStats);
+                else spell.cooldownData.activeCooldown = state.t + spell.cooldownData.cooldown;
+
+
+                /*
                 if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.2);
                 else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.3);
                 else if (spell.hastedCooldown) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats));
-                else spell.cooldownData.activeCooldown = newCooldownBase + spell.cooldown;
+                else spell.cooldownData.activeCooldown = newCooldownBase + spell.cooldown; */
             }
             else if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
     
