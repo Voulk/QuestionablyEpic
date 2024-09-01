@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
 import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
 import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
+import { getAllyStatsValue } from "General/Engine/ItemUtilities";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
@@ -104,7 +105,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += ((value * CONSTANTS.allyStatWeight) / player.activeStats.intellect) * player.getHPS(contentType) * 0.25;
+      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.25 / player.getInt() * player.getHPS(contentType);
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -114,7 +115,7 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "crit", "versatility"].includes(key)) {
-      estDPS += (value * 0.4 / player.activeStats.intellect) * player.getDPS(contentType);
+      estDPS += (value * 0.65 / player.activeStats.intellect) * player.getDPS(contentType);
     } else if (key === "intellect") {
       estDPS += (value / player.activeStats.intellect) * player.getDPS(contentType);
     } 
@@ -128,7 +129,7 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += CONSTANTS.allyDPSPerPoint * 0.75 * value;
+      estDPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.75 / player.getInt() * player.getHPS(contentType);
     }
   }
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
@@ -187,7 +188,7 @@ export default function EmbellishmentAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const [metric, setMetric] = React.useState("hps");
+  const [metric, setMetric] = React.useState("both");
   const [theme, setTheme] = React.useState(false);
   const [tabIndex, setTabIndex] = React.useState(0);
 
@@ -256,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="They are still tuning Embellishments every day. Hold off on key crafts until they finish." variant="red" />
+        <InformationBox information="They are still tuning Embellishments every day. DONT USE YOUR SPARK YET." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

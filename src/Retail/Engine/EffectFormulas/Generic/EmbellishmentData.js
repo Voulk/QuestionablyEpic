@@ -134,7 +134,7 @@ export const embellishmentData = [
         table: -571,
         duration: 12, 
         ppm: 2.5,
-        efficiency: 0.85,
+        efficiency: 0.8,
         stat: "haste",
       },
     ],
@@ -268,7 +268,7 @@ export const embellishmentData = [
   },
   { // Stacking vers buff
     name: "Darkmoon Sigil: Symbiosis",
-    description: "Strong, but note it can only be put on a weapon (and potentially offhand) slot.",
+    description: "Strong, but note it can only be put on a weapon (and potentially offhand) slot. It also tends to just lose to the Ascension sigil quite often so you might just use that instead.",
     effects: [
       { 
         coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
@@ -281,13 +281,83 @@ export const embellishmentData = [
       let bonus_stats = {};
 
       const fightLength = additionalData.castModel.fightInfo.fightLength
-      console.log("Sym: " + processedValue(data[0], itemLevel));
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
       
       bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
 
+
+      return bonus_stats;
+    }
+  },
+  { // Healing Spells
+    name: "Adrenal Surge Clasp", 
+    description: "It can't yet be confirmed is regular raid or dungeon damage will proc this so hold off on a craft until it can be tested. Currently set at 85% efficiency.",
+    effects: [
+      { 
+        coefficient: 0.312343, 
+        table: -1,
+        ppm: 2,
+        duration: 12,
+        stat: "intellect",
+      },
+      { 
+        coefficient: -0.053974, 
+        table: -571,
+        ppm: 2,
+        duration: 12,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.85;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.85;
+
+      return bonus_stats;
+    }
+  },
+  { // DPS Spells
+    name: "Blessed Weapon Grip",
+    description: "Procs off DPS spells. Effect starts strong and then fades over its duration",
+    effects: [
+      { 
+        coefficient: 0.032211, 
+        table: -571,
+        ppm: 1,
+        duration: 30,
+        stat: "mixed",
+        maxStacks: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag")) {
+        const bestStat = player.getHighestStatWeight(additionalData.contentType)
+        const effectData = {...data[0], stat: bestStat};
+        bonus_stats[bestStat] = runGenericPPMTrinket(effectData, itemLevel, additionalData.castModel) * data[0].maxStacks / 2;
+      }
+
+      return bonus_stats;
+    }
+  },
+  { // DPS Spells
+    name: "Prismatic Null Stone",
+    description: "Most of the time you will use a movement speed Blasphemite gem which means this is purely a quality of life embellishment. The numbers shown here are for if you are using the crit effect gem. This is basically no advantage at all and you should not craft this.",
+    effects: [
+      { 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      // With four stones equipped our crit mult is 200.6%. With the stone it goes to 200.75%. 
+      const critChance = player.getStatPerc('crit');
+      const nonCritChance = 1 - critChance;
+      bonus_stats.hps = ((nonCritChance + critChance * 2.0075) / (nonCritChance + critChance * 2.006) - 1) * player.getHPS();
 
       return bonus_stats;
     }
