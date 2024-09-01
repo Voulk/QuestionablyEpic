@@ -76,11 +76,51 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 70 && gem.stats[littleStat] === 33);
+                                        && gem.stats[bigStat] === 147 && gem.stats[littleStat] === 49);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
   else return 192945; // Default fallback. Report error.                               
+}
+
+// Return an array of gem IDs based on the spec and content type. 
+function getTWWGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
+  const metaGem = 213746; // Elusive Meta Gem
+  if (spec === "Holy Paladin") {
+    // Crit / haste, crit / mastery
+    return [metaGem, getGemID('haste', 'crit'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+                    getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+  }
+  else if (spec === "Discipline Priest") {
+    // Haste / Crit, Crit / Haste
+    return [getGemID('haste', 'crit')];
+  }
+  else if (spec === "Holy Priest") {
+    // Crit / Mastery, Mastery / Crit
+    return [getGemID('mastery', 'crit'), getGemID('crit', 'mastery')]
+  }
+  else if (spec === "Restoration Druid") {
+    // Haste / Mastery
+    return [getGemID('haste', 'mastery'), getGemID('haste', 'versatility')];
+  }
+  else if (spec === "Preservation Evoker") {
+    // Mastery / Crit, Mastery / Vers
+    return [getGemID('mastery', 'crit'), getGemID('mastery', 'versatility'), getGemID('crit', 'mastery')] //192958, 192964, 192945];
+  }
+  else if (spec === "Mistweaver Monk") {
+    // Haste / Crit
+    return [getGemID('haste', 'crit'), getGemID('haste', 'versatility'), getGemID('crit', 'versatility')];
+  }
+  else if (spec === "Restoration Shaman") {
+    // Crit / Vers
+    return [getGemID('versatility', 'crit'), getGemID('crit', 'versatility')];
+
+  }
+  else {
+    // Error
+    return [getGemID('haste', 'crit')]
+  }
+
 }
 
 function getGemOptions(spec: string, contentType: contentTypes) {
@@ -154,6 +194,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
+  console.log("Creating Sets");
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
@@ -185,7 +226,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
   resultSets = pruneSets(resultSets, userSettings);
-
+  
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
   // and so on if they are already close in strength.
@@ -195,7 +236,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
     differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
   }
-
+  console.log(resultSets);
   // == Return sets ==
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
@@ -319,7 +360,7 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             // Auto-delete sets that have matching ring IDs, unless one of the IDs is Shadowghast Ring in which case we'll allow it.
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
-                                (splitItems.Finger[finger].id === 178926 || splitItems.Finger[finger2].id === 178926))) {
+                                (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130))) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
@@ -642,7 +683,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
-    enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings);
+    console.log(enchants["Gems"]);
+    const gemStats = {};
+    //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
   }
   if (enchants["Gems"].length > 1) {
     // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 

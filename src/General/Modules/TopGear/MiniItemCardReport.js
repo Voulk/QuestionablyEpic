@@ -99,7 +99,7 @@ export default function ItemCardReport(props) {
     socket = gemData.socket;
     gemString = gemData.string;
   } 
-  else if (item.socket) {
+  /*else if (item.socket) {
     let socketCount = item.socket;
 
     if (props.firstSlot) {
@@ -123,7 +123,7 @@ export default function ItemCardReport(props) {
       );
     }
     socket = <div style={{ verticalAlign: "middle" }}>{socket}</div>;
-  }
+  }*/
   else if (item.socketedGems) {
     item.socketedGems.forEach(gem => {
       socket.push(
