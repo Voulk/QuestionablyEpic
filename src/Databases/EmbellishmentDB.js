@@ -1,5 +1,22 @@
 export const embellishmentDB = [
   {
+    id: 215135,
+    icon: "inv_ringwod_d3_4",
+    armorType: 2, // All
+    name: {
+      en: "Ardenal Surge Clasp",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Ardenal Surge Clasp",
+      rank: 0,
+    },
+  },
+  {
     id: 215133,
     icon: "inv_ringwod_d3_4",
     armorType: 0, // All

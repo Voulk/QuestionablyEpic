@@ -1123,7 +1123,8 @@ export const getAllyStatsValue = (contentType: contentTypes, statValue: number, 
   const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
 
-  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "Half") return (dpsValue * 0.75 + healerValue * 0.25) / 2;
+  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "50%") return (dpsValue * 0.75 + healerValue * 0.25) * 0.5;
+  else if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "75%")return (dpsValue * 0.75 + healerValue * 0.25) * 0.75;
   else return dpsValue * 0.75 + healerValue * 0.25;
 }
 
