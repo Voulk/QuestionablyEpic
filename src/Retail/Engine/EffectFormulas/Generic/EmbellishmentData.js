@@ -394,8 +394,8 @@ export const embellishmentData = [
       else if (player.spec === "Restoration Shaman") validStats = ["crit", "versatility"];
       else validStats = [];
 
-      const rawValue = processedValue(effect, itemLevel);
-      const uptime = convertPPMToUptime(effect.ppm, effect.duration);
+      const rawValue = processedValue(data[0], itemLevel);
+      const uptime = convertPPMToUptime(data[0].ppm, data[0].duration);
     
       validStats.forEach((stat) => {
         bonus_stats[stat] = getDiminishedValue(stat, rawValue, setStats[stat] || 0) * uptime / validStats.length;
