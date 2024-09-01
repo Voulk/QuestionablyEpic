@@ -314,7 +314,8 @@ export function getGemProp(id: number, prop: string) {
     if (temp.length > 0) {
       const gem = temp[0];
 
-      if (prop === "name") return gem.name.en || "";
+      if (prop === "name" && gem.name.en) return gem.name.en || "";
+      else if (prop === "name") return gem.name || "";
       else if (gem && prop in gem) return gem[prop as keyof typeof gem];
       else return ""
 

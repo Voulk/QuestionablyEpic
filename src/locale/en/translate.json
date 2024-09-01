@@ -357,9 +357,9 @@
           "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
         },
 
-        "phialChoice": {
-          "title": "Phial",
-          "tooltip": "Pick which phial you want QE Live to use."
+        "flaskChoice": {
+          "title": "Flask",
+          "tooltip": "Pick which flask you want QE Live to use."
         },
         "runeChoice": {
           "title": "Rune",
