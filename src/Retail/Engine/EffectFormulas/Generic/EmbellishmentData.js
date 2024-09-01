@@ -379,13 +379,27 @@ export const embellishmentData = [
         table: -571,
         ppm: 2,
         duration: 15,
-        stat: "versatility"
+        stat: "mixed"
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+      const dpsFlag = getSetting(additionalData.settings, "dpsFlag");
       
-      bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel)
+      let validStats = [];
+      if (player.spec === "Discipline Priest") validStats = ["haste", "mastery", "versatility"];
+      else if (player.spec === "Holy Priest" && dpsFlag) validStats = ["crit", "mastery"];
+      else if (player.spec === "Restoration Druid") validStats = ["crit"]
+      else if (player.spec === "Preservation Evoker") validStats = ["haste", "mastery", "versatility"];
+      else if (player.spec === "Restoration Shaman") validStats = ["crit", "versatility"];
+      else validStats = [];
+
+      const rawValue = processedValue(effect, itemLevel);
+      const uptime = convertPPMToUptime(effect.ppm, effect.duration);
+    
+      validStats.forEach((stat) => {
+        bonus_stats[stat] = getDiminishedValue(stat, rawValue, setStats[stat] || 0) * uptime / validStats.length;
+      });
 
       return bonus_stats;
     }
