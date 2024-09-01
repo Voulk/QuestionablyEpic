@@ -257,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="They are still tuning Embellishments every day. Hold off on key crafts until they finish." variant="red" />
+        <InformationBox information="They are still tuning Embellishments every day. DONT USE YOUR SPARK YET." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
