@@ -186,7 +186,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     // Special cases
     if (checkBuffActive(state.activeBuffs, "Cycle of Life")) triggerCycleOfLife(state, healingVal / (1 - spell.expectedOverheal));
     if ('specialMult' in spell) healingVal *= spell.specialMult;
-    console.log(healingMult, targetMult, healingVal)
+
 
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + Math.round(healingVal);

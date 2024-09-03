@@ -16,6 +16,10 @@ const getSpellEntry = (profile, spellName, index = 0) => {
     return profile.filter(spell => spell.spell === spellName)[index]
 }
 
+const buildCPM = (spells, spell) => {
+    return 60 / getSpellAttribute(spells[spell], "cooldown");
+}
+
 export const runPreservationEvokerCastProfile = (playerData) => {
     const fightLength = 300;
 
@@ -37,17 +41,33 @@ export const runPreservationEvokerCastProfile = (playerData) => {
     const cooldownWastage = 0.9;
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
-    console.log(evokerSpells["Spiritbloom"]);
+
     const castProfile = [
         //{spell: "Echo", cpm: 0},
-        //{spell: "Dream Breath", cpm: 2},       
+        {spell: "Living Flame O", cpm: 0},
+        {spell: "Dream Breath", cpm: 2},       
         {spell: "Spiritbloom", cpm: 2},      
-        //{spell: "Dream Flight", cpm: 0},
-        //{spell: "Temporal Anomaly", cpm: 0},    
+        {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
+        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly"), hastedCPM: true},    
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     
     // Echo Breakdown
+    // Haste our CPMs
+    castProfile.forEach(spellProfile => {
+        if (spellProfile.hastedCPM) spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+        }
+    );
+
+    // Assign echo usage
+    const echoUsage = {
+        "Spiritbloom": 1,
+        "Verdant Embrace": 0,
+        "Dream Breath": 0, 
+        "Reversion": 0,
+    }
+
+    // Essence Bursts generated
 
 
     // Tier Set
