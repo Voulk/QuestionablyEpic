@@ -26,7 +26,7 @@ describe("Evang Cast Sequence", () => {
         //const data = runAPLSuites(playerData, profile, runCastSequence);
         const data = runCastProfileSuites(playerData, runHolyPaladinCastProfile)
         //const data = runStatSuites(playerData, profile, runCastSequence);
-        console.log(data);
+        //console.log(data);
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
         //console.log(data);
@@ -34,6 +34,39 @@ describe("Evang Cast Sequence", () => {
         //console.log(data);
 
         expect(true).toEqual(true);
+
+        
+        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+            baseline += runHolyPaladinCastProfile(playerData).hps;
+        }
+
+        baseline = baseline / iterations
+        
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 2400;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += runHolyPaladinCastProfile(newPlayerData).hps;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+        
     })
 
 

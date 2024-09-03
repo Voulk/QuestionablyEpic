@@ -41,7 +41,7 @@ export const PALADINSPELLDB = {
         cost: 2.6,
         coeff: 2.266,
         cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2, activeCooldown: 0},
-        expectedOverheal: 0.22,
+        expectedOverheal: 0.17,
         holyPower: 1,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'versatility', 'mastery']
@@ -179,6 +179,27 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'versatility', 'mastery']
     }
     ],
+    "Dawnlight": [{ // Fake Spell
+        spellData: {id: 0, icon: "inv_helmet_96", cat: "N/A"},
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 8,
+        coeff: 3.6 / 4 + (3.6 / 4 * 0.08 * 10), // Currently not being sqrt scaled in game.
+        tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'versatility', 'mastery']
+    },],
+    "Sunsear": [{ // Fake Spell
+        spellData: {id: 0, icon: "inv_helmet_96", cat: "N/A"},
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 4,
+        coeff: 0.54 / 4, 
+        tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
+        expectedOverheal: 0.4,
+        secondaries: ['crit', 'versatility', 'mastery']
+
+    }],
     "Avenging Wrath": [{
         spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
@@ -213,6 +234,7 @@ export const PALADINSPELLDB = {
         count: 5,
         runFunc: function (state, spell, spellDB) {
             // Cast 5 Holy Shocks           
+            let totalHealing = 0;
             for (let i = 0; i < spell.count; i++) {
                 state.holyPower = Math.max(5, state.holyPower + 1);
                 //runSpell(spellDB["Holy Shock"], state, "Holy Shock (Divine Toll)", PALADINSPELLDB, true);
@@ -453,6 +475,24 @@ export const baseTalents = {
         // Handled inside.
     }},
 
+    glisteningRadiance: {points: 1, maxPoints: 1, icon: "spell_holy_holyguidance", id: 414127, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+        // Handled inside.
+        const savedByTheLight = {
+            name: "Saved by the Light",
+            type: "heal",
+            coeff: 9 * 0.25 * 0.33,
+            expectedOverheal: 0.05,
+            targets: state.beacon === "Beacon of Virtue" ? 5 * 0.5 : 2,
+            secondaries: ['versatility']
+        }
+
+        spellDB['Eternal Flame'].push(savedByTheLight);
+        spellDB['Light of Dawn'].push(savedByTheLight);
+        spellDB['Word of Glory'].push(savedByTheLight);
+
+
+    }},
+
     // Afterimage - After spending 20 HoPo, next WoG cleaves for +30%.
 
     // Golden Path - Consecration heals 6 allies on tick.
@@ -498,7 +538,7 @@ export const baseTalents = {
             buffDuration: 999,
             buffType: 'statsMult',
             stat: 'crit',
-            value: (0.02 * points + 1)
+            value: (2 * points * STATCONVERSION.CRIT),
         };
         addBuff(state, buff, "Holy Aegis")
 
@@ -528,6 +568,8 @@ export const baseTalents = {
     justification: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'][0].coeff *= 1.1;
     }},
+
+
 
     // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
     lightforgedBlessing: {points: 0, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 406468, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -589,7 +631,7 @@ export const baseTalents = {
     }}, 
 
     // Of Dusk and Dawn - Casting 3 HoPo generating abilities increases healing of next spender by 20%. 
-    ofDuskAndDawn: {points: 1, maxPoints: 1, icon: "spell_paladin_lightofdawn", id: 385125, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    ofDuskAndDawn: {points: 0, maxPoints: 1, icon: "spell_paladin_lightofdawn", id: 385125, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const dawnStacker = {
             name: "Blessing of Dawn Stacker",
             canStack: true,
@@ -610,7 +652,7 @@ export const baseTalents = {
     }},
 
     // Seal of Order - Dawn is 30% instead of 20%. Dusk causes HoPo generators to cool down 10% faster.
-    sealOfOrder: {points: 1, maxPoints: 1, icon: "spell_holy_sealofwisdom", id: 385129, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    sealOfOrder: {points: 0, maxPoints: 1, icon: "spell_holy_sealofwisdom", id: 385129, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const cooldownMultiplier = 0.9; // Dusk uptime is basically 100%.
         spellDB['Holy Shock'][0].cooldownData.cooldown *= cooldownMultiplier;
         spellDB['Judgment'][0].cooldownData.cooldown *= cooldownMultiplier;
@@ -631,6 +673,7 @@ export const baseTalents = {
     // Judgment also adds an absorb to the target.
     greaterJudgment: {points: 1, maxPoints: 1, icon: "spell_holy_righteousfury", id: 231663, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'].push({
+            name: "Greater Judgment",
             type: "heal",
             coeff: 1.84,
             expectedOverheal: 0.04,
@@ -757,7 +800,7 @@ export const baseTalents = {
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
     // Spending Holy Power gives you +1% haste for 12s. Stacks up to 5 times.
-    relentlessInquisitor: {points: 1, maxPoints: 1, icon: "spell_holy_mindvision", id: 383388, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+    relentlessInquisitor: {points: 0, maxPoints: 1, icon: "spell_holy_mindvision", id: 383388, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
         // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
         const buff = {
             name: "Relentless Inquisitor",
@@ -845,7 +888,7 @@ export const baseTalents = {
     // Reclamation - Holy Shock and Judgement refund mana and deal extra damage/healing based on target's health
     reclamation: {points: 0, maxPoints: 1, icon: "ability_paladin_longarmofthelaw", id: 415364, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         // Handled in ramp / constants
-        }},
+    }},
 
     // Rising Sunlight - After casting Daybreak your next 2 Holy Shocks cast 2 additional times.
     risingSunlight: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 414203, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
@@ -948,6 +991,10 @@ export const baseTalents = {
         spellDB['Holy Shock'][0].statMods.crit += (0.05 * points);
         spellDB['Light of Dawn'][0].statMods.crit += (0.05 * points);
     }}, 
+
+    dawnlight: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, heroTree: "heraldOfTheSun", select: true, tier: 4, runFunc: function (state, spellDB, points) {
+
+    }},
 
 
     // Meta

@@ -10,7 +10,7 @@ import { genSpell } from "../Generic/RampGeneric/APLBase";
 const PALADINCONSTANTS = {
     
     masteryMod: 1.5, 
-    masteryEfficiency: 0.85, 
+    masteryEfficiency: 0.82, 
     baseMana: 250000,
 
     auraHealingBuff: 1,
@@ -18,8 +18,9 @@ const PALADINCONSTANTS = {
     enemyTargets: 1,
 
     // Beacon Section
-    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light"], // Glimmer is handled manually to catch other sources of glimmer
-    beaconExclusionList: ["Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", "Judgment", "Shield of the Righteous", "Barrier of Faith"],
+    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light", "Dawnlight (Cleave)"], // Glimmer is handled manually to catch other sources of glimmer
+    beaconExclusionList: ["Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
+                            "Judgment", "Greater Judgment", "Shield of the Righteous", "Barrier of Faith"],
     beaconOverhealing: 0.3,
 
     // Talents
