@@ -11,6 +11,10 @@ const getCPM = (profile, spellName) => {
     return cpm;
 }
 
+const getSpellEntry = (profile, spellName, index = 0) => {
+    return profile.filter(spell => spell.spell === spellName)[index]
+}
+
 export const runHolyPaladinCastProfile = (playerData) => {
     const fightLength = 300;
 
@@ -56,7 +60,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
 
     // Dawnlight
     const dawnlightCPM = getCPM(castProfile, "Avenging Wrath") * 4 + getCPM(castProfile, "Holy Prism") * 2;
-    castProfile.filter(spell => spell.spell === "Dawnlight")[0].cpm = dawnlightCPM;
+    getSpellEntry(castProfile, "Dawnlight").cpm = dawnlightCPM;
 
     // Apply multiplicative haste
     const averageDawnlightStacks = dawnlightCPM * 12 / 60;
@@ -72,20 +76,20 @@ export const runHolyPaladinCastProfile = (playerData) => {
 
 
     // Free Holy shocks from Glorious Dawn
-    castProfile.filter(spell => spell.spell === "Holy Shock")[0].cpm *= 1.1;
-    castProfile.filter(spell => spell.spell === "Holy Shock")[1].cpm *= 1.1;
+    getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.1;
+    getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.1;
 
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
-    castProfile.filter(spell => spell.spell === "Eternal Flame")[0].cpm = averageSpenderCPM * 0.8;
-    castProfile.filter(spell => spell.spell === "Light of Dawn")[0].cpm = averageSpenderCPM * 0.2;
+    getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * 0.8;
+    getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * 0.2;
 
     // Calculate Wings Effects
     // Calculate Wings uptime
     const awakeningProcs = averageSpenderCPM / 15
     const wingsUptime = getCPM(castProfile, "Avenging Wrath") * 20 / 60 +  awakeningProcs * 12 / 60;
-    castProfile.filter(spell => spell.spell === "Dawnlight")[0].cpm += awakeningProcs;
+    getSpellEntry(castProfile, "Dawnlight").cpm += awakeningProcs;
     genericHealingIncrease *= (wingsUptime * 0.2 + 1);
     genericCritIncrease *= (wingsUptime * 0.2 + 1);
     // Infusion Count
@@ -101,11 +105,11 @@ export const runHolyPaladinCastProfile = (playerData) => {
     if (getTalentPoints(state.talents, "crusadersMight")) totalHolyShockCDR += getCPM(castProfile, "Crusader Strike") * 2;
     if (getTalentPoints(state.talents, "imbuedInfusions")) totalHolyShockCDR += totalInfusions * 2;
     const extraHolyShockCPM = totalHolyShockCDR / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown");
-    castProfile.filter(spell => spell.spell === "Holy Shock")[0].cpm += extraHolyShockCPM;
+    getSpellEntry(castProfile, "Holy Shock").cpm += extraHolyShockCPM;
 
     // Sunsear
     const sunsearCPM = getCPM(castProfile, "Holy Shock") * holyShockCritChance + getCPM(castProfile, "Light of Dawn") * (baseCritChance + paladinSpells["Light of Dawn"][0].statMods.crit);
-    castProfile.filter(spell => spell.spell === "Sunsear")[0].cpm = sunsearCPM;
+    getSpellEntry(castProfile, "Sunsear").cpm = sunsearCPM;
 
     //console.log(paladinSpells["Holy Shock"])
 
