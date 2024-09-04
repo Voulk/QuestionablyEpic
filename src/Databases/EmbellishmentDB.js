@@ -1,5 +1,22 @@
 export const embellishmentDB = [
   {
+    id: 215135,
+    icon: "inv_ringwod_d3_4",
+    armorType: 2, // All
+    name: {
+      en: "Ardenal Surge Clasp",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Ardenal Surge Clasp",
+      rank: 0,
+    },
+  },
+  {
     id: 215133,
     icon: "inv_ringwod_d3_4",
     armorType: 0, // All
@@ -71,7 +88,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 443764,
+    id: 219509,
     icon: "inv_misc_food_legion_gooamber_drop",
     pieces: 2,
     armorType: 3, // 2pc set
@@ -89,7 +106,7 @@ export const embellishmentDB = [
     },
   },
   {
-    id: 443773,
+    id: 219512,
     icon: "spell_nature_stormreach",
     armorType: 2, // 2pc
     pieces: 2,
@@ -161,6 +178,7 @@ export const embellishmentDB = [
     id: 222810,
     icon: "inv_10_tailoring_silkrare_color3",
     armorType: 1, // Cloth - Damaging Spells only
+    pieces: 2,
     name: {
       en: "Woven Dusk (2pc)",
       de: "",
@@ -177,6 +195,7 @@ export const embellishmentDB = [
   {
     id: 222807,
     icon: "inv_10_tailoring_silkrare_color2",
+    pieces: 2,
     armorType: 1, // Cloth
     name: {
       en: "Woven Dawn (2pc)",
@@ -223,6 +242,23 @@ export const embellishmentDB = [
       type: "embellishment",
       name: "Dawnthread Lining",
       rank: 0, 
+    },
+  },
+  {
+    id: 213774,
+    icon: "spell_priest_divinestar_holy",
+    armorType: 0, 
+    name: {
+      en: "Captured Starlight",
+      de: "",
+      fr: "",
+      ru: "",
+      ch: "",
+    },
+    effect: {
+      type: "embellishment",
+      name: "Captured Starlight",
+      rank: 0, // Requires 2pc
     },
   },
   {
