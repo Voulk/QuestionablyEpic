@@ -20,6 +20,10 @@ const buildCPM = (spells, spell) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown");
 }
 
+const getEmpowerCPM = (profile) => {
+    return getCPM(profile, "Spiritbloom") + getCPM(profile, "Dream Breath") + getCPM(profile, "Fire Breath");
+}
+
 export const runPreservationEvokerCastProfile = (playerData) => {
     const fightLength = 300;
 
@@ -35,7 +39,7 @@ export const runPreservationEvokerCastProfile = (playerData) => {
     //applyTalents(state, evokerSpells, state.currentStats)
     state.spellDB = evokerSpells;
     state.talents = talents;
-
+    const healingBreakdown = {}
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const cooldownWastage = 0.9;
@@ -45,10 +49,12 @@ export const runPreservationEvokerCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Living Flame O", cpm: 0},
+        {spell: "Living Flame", cpm: 0},
+        {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
         {spell: "Dream Breath", cpm: 2},       
         {spell: "Spiritbloom", cpm: 2},      
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
-        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly"), hastedCPM: true},    
+        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly")},    
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     
@@ -61,18 +67,55 @@ export const runPreservationEvokerCastProfile = (playerData) => {
 
     // Assign echo usage
     const echoUsage = {
-        "Spiritbloom": 1,
-        "Verdant Embrace": 0,
-        "Dream Breath": 0, 
+        "Spiritbloom": 0.4,
+        "Verdant Embrace": 0.4,
+        "Dream Breath": 0.2, 
         "Reversion": 0,
     }
 
+    // Afterimage
+    getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
+
+
     // Essence Bursts generated
+    const essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+
+    // Total Echo CPM
+    const goldenOpportunity = getCPM(castProfile, "Echo") * 0.2;
+    const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5 + goldenOpportunity;
+
+    // Handle Echo'd Spell Healing
+    // Note that we only take care of our ramp healing here. Regular spiritbloom healing is handled further below.
+    // Echo Spiritbloom
+    const spiritbloomHealing = runHeal(state, evokerSpells["Spiritbloom"][0], "Spiritbloom");
+    const spiritbloomHoT = evokerSpells["Spiritbloom"][1];
+    const spiritbloomHoTHealing = runHeal(state, spiritbloomHoT, "Spiritbloom (HoT)") * spiritbloomHoT.buffDuration / (spiritbloomHoT.tickData.tickRate)
+    const totalSpiritbloom = (spiritbloomHealing + spiritbloomHoTHealing) / evokerSpells["Spiritbloom"][0].targets;
+
+    healingBreakdown["Echo - Spiritbloom"] = totalSpiritbloom * echoUsage["Spiritbloom"] * totalEchoPower;
+
+    // Lifebind
+    // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
+    // We'll need to include the 4pc too if we're running tier.
+    const lifebindIncoming = spiritbloomHealing / evokerSpells["Spiritbloom"][0].targets * 2.05 + runHeal(state, evokerSpells["Echo"][0], "Dream Breath");
+    console.log(lifebindIncoming);
+
+    const verdantEmbraceHealing = runHeal(state, evokerSpells["Verdant Embrace"][0], "Verdant Embrace");
+    healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
+    healingBreakdown["Lifebind"] = lifebindIncoming * 0.4 * echoUsage["Verdant Embrace"] * totalEchoPower;
+
+    // TODO Double Time
+    const dreamBreathHealing = runHeal(state, evokerSpells["Dream Breath"][0], "Dream Breath") + runHeal(state, evokerSpells["Dream Breath"][1], "Dream Breath");
+    const dreamHoT = evokerSpells["Dream Breath"][2];
+    const dreamBreathHoTHealing = runHeal(state, dreamHoT, "Dream Breath (HoT)") * dreamHoT.buffDuration / (dreamHoT.tickData.tickRate * getHaste(state.currentStats));
+    const totalDream = (dreamBreathHealing + dreamBreathHoTHealing) / evokerSpells["Dream Breath"][0].targets;
+    healingBreakdown["Echo - Dream Breath"] = totalDream * echoUsage["Dream Breath"] * totalEchoPower;
+    //spellThroughput += oneTickHealing * tickCount * spellCPM;
 
 
     // Tier Set
 
-    const healingBreakdown = {}
+
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = evokerSpells[spellProfile.spell];

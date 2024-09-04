@@ -84297,7 +84297,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "spell": {
         "id": 463610,
         "name": "Symbiosis",
-        "icon": "inv_inscriptions_darkmoondeckshine_0"
+        "icon": "inv_10_inscription_darkmooncards_spore_blank"
       }
     }
   },

@@ -221,7 +221,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
-    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
     //applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
    
     // Setup mana costs & cooldowns.
