@@ -34,7 +34,7 @@ const initialState : RootState = {
 
     // TWW Trinkets
     creepingCoagOverheal: { value: 34, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    ovinaxAverageIntStacks: { value: 18, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     pheromoneSecreter: { value: "Haste / Versatility", options: [

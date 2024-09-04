@@ -10,6 +10,8 @@ export const instanceDB = {
   "1208": "Aberrus, the Shadowed Crucible",
   "1207": "Amirdrassil, The Dream's Hope",
 
+  "1273": "Nerub-ar Palace",
+
   "-4": "Crafted",
 };
 
@@ -1920,6 +1922,26 @@ export const encounterDB = {
     },
   },
   // Amirdrassil
+  1273: {
+    name: {
+      en: "Nerub'ar Palace",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    bossOrder: [2607, 2611, 2599, 2609, 2612, 2601, 2608, 2602, -54],
+    bosses: {
+      2607: "Ulgrax the Devourer",
+      2611: "Bloodbound Horror",
+      2599: "Sikran, Captain of the Sureki",
+      2609: "Rasha'nan",
+      2612: "Broodtwister Ovi'nax",
+      2601: "Nexus-Princess Ky'veza",
+      2608: "The Silken Court",
+      2602: "Queen Ansurek",
+    }
+  },
   1207: {
     name: {
       en: "Amirdrassil, the Dream's Hope",
@@ -1928,7 +1950,6 @@ export const encounterDB = {
       ru: "",
       ch: "",
     },
-    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
     bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, -54],
     bosses: {
       2564: {
@@ -2051,6 +2072,22 @@ export const encounterDB = {
         1204, // Halls of Infusion
         1203, // The Azure Vault
       ],
+
+      // M+
+      1271: "Ara-kara, City of Echoes", 
+      1274: "City of Threads", 
+      1270: "The Dawnbreaker",
+      1269: "The Stonevault",
+      1184: "Mists of Tirna Scithe",
+      1182: "The Necrotic Wake",
+      1023: "Siege of Boralus",
+      71: "Grim Batol",
+
+      // M0
+      1267: "Priory of the Sacred Flame",
+      1272: "Cinderbrew Meadery",
+      1210: "Darkflame Cleft",
+      1268: "The Rookery",
   
       313: {
         name: {

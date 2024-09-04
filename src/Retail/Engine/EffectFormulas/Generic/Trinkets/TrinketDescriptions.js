@@ -3,8 +3,10 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/EmbellishmentData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
-import { correctCasing } from "General/Engine/ItemUtilities";
+import { correctCasing, getItemProp } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
+
+import { encounterDB } from "Databases/InstanceDB"
 
 const trinketCategories = {
     //RAIDDROPS: "Raid Drops",
@@ -19,8 +21,28 @@ const trinketCategories = {
 
 }
 
+const getTrinketDropLoc = (trinketID) => {
+    let dropLoc = "";
+    // Get Trinket
+    const sources = getItemProp(trinketID, "sources", "Retail");
+    if (sources) {
 
-export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerSettings) => {
+        const instanceId = sources[0].instanceId;
+        console.log(sources);
+        if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
+        else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
+        else if (instanceId === -4) dropLoc = " Crafted";
+        //dropLoc = instanceDB[sources[0].instanceId.toString()]
+    }
+
+    // Translate Drop Location to readable text
+    console.log(trinketID);
+    console.log(dropLoc, sources, trinketID);
+    return dropLoc
+}
+
+
+export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerSettings, trinketID) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     
 
@@ -47,6 +69,10 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
         trinketDescription.push("")
 
         trinketDescription.push("Setting Available")
+    }
+
+    if (getTrinketDropLoc(trinketID)) {
+        trinketDescription.push("Drops from: " + getTrinketDropLoc(trinketID));
     }
 
     return trinketDescription;

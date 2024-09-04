@@ -135,8 +135,8 @@ export default class VerticalChart extends PureComponent {
                   return (
                     <span key={key}/* style={{ fontWeight: "bold" }}*/
                     style={{ 
-                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available") ? "bold" : "normal", // Make the first entry bold
-                      color: index === 0 ? "yellow" : "inherit" // Change color of the first entry (red as an example)
+                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Drops from")) ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : key.includes("Drops from") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
                     }}
                     >
                       {key}
