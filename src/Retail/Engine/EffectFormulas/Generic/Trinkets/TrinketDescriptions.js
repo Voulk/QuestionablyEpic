@@ -28,7 +28,6 @@ const getTrinketDropLoc = (trinketID) => {
     if (sources) {
 
         const instanceId = sources[0].instanceId;
-        console.log(sources);
         if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
         else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
         else if (instanceId === -4) dropLoc = " Crafted";
@@ -36,8 +35,6 @@ const getTrinketDropLoc = (trinketID) => {
     }
 
     // Translate Drop Location to readable text
-    console.log(trinketID);
-    console.log(dropLoc, sources, trinketID);
     return dropLoc
 }
 
