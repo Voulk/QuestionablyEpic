@@ -698,7 +698,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
   else {
     enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings);
-    console.log(enchants["Gems"]);
     const gemStats = {};
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
   }

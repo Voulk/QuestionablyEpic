@@ -278,7 +278,6 @@ export default function UpgradeFinderFront(props) {
   });
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
-  console.log(dungeonBC);
 
   const handleContent = (event, content) => {
     if (content !== null) {

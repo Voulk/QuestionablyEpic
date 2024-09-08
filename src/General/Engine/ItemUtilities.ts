@@ -14,6 +14,7 @@ import { CONSTANTS } from "./CONSTANTS";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
+import { getSeasonalDungeons } from "Databases/InstanceDB";
 
 
 
@@ -962,12 +963,12 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
       if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
-      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1; // TODO
+      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
     const slot = getItemProp(item.id, "slot", gameType);
     if (
-        ((slot === 'Trinket' && item.levelRange) || 
+        ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
