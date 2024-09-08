@@ -255,7 +255,7 @@ export default function TrinketAnalysis(props) {
       else {
         trinketAtLevels["normal"] = trinketScore;
         trinketAtLevels["normalilvl"] = trinket.itemLevel;
-        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.itemLevel, playerSettings);
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
         activeTrinkets.push(trinketAtLevels);
       }
 
@@ -264,7 +264,7 @@ export default function TrinketAnalysis(props) {
 
           trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
         }
-        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings);
+        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
         activeTrinkets.push(trinketAtLevels);
     }
   }
