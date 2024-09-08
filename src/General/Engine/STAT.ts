@@ -18,9 +18,12 @@ export const STAT = {
 };
 
 // Mostly unused now.
+/**
+ * @deprecated
+ */
 export const BASESTAT = {
   CRIT: 0.05,
-  MASTERY: {
+  MASTERY: { // This is not really used anymore.
     "Preservation Evoker": 0,
     "Restoration Druid": 0.04,
     "Mistweaver Monk": 0.336,
