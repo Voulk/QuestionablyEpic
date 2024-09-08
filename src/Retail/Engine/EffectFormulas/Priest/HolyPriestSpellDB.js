@@ -1,5 +1,5 @@
 
-import { checkRoll, getTalentPoints, getCurrentStats} from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { checkRoll, getTalentPoints, getHaste, } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { runHeal } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
 
 export const HOLYPRIESTSPELLDB = {
@@ -22,7 +22,7 @@ export const HOLYPRIESTSPELLDB = {
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "random"},
         statMods: {'crit': 0, critEffect: 0},
-        secondaries: ['crit', 'versatility'] 
+        secondaries: ['crit', 'versatility', 'mastery'] 
     }],
     "Heal": [{
         spellData: {id: 2060, icon: "spell_holy_greaterheal", cat: "heal"},
@@ -38,7 +38,6 @@ export const HOLYPRIESTSPELLDB = {
     
     "Renew": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
-        type: "heal",
         castTime: 0,
         cost: 8, //
         type: "buff",
@@ -48,7 +47,23 @@ export const HOLYPRIESTSPELLDB = {
         coeff: 0.32 * 1.06,
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
-        secondaries: ['crit', 'versatility', 'mastery'] 
+        secondaries: ['crit', 'versatility'] 
+    }], 
+    "Holy Fire": [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
+        castTime: 1.5,
+        cost: 0.4, //
+        type: "damage",
+        coeff: 2.97907,
+        secondaries: ['crit', 'versatility'] 
+    },
+    {
+        type: "buff",
+        buffType: "damage",
+        tickData: {tickRate: 1, canPartialTick: true, tickOnCast: true}, 
+        buffDuration: 7,
+        coeff: 0.16385,
+        secondaries: ['crit', 'versatility'] 
     }], 
     "Circle of Healing": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
@@ -94,6 +109,21 @@ export const HOLYPRIESTSPELLDB = {
         coeff: 1.32918,
         targets: 5,
         expectedOverheal: 0.47,
+        school: "holy",
+        secondaries: ['crit', 'vers', 'mastery'],
+    }], 
+    "Divine Hymn": [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+        type: "heal",
+        castTime: 8,
+        channel: true,
+        cost: 4.4,
+        coeff: 2.844 * 5,
+        targets: 20,
+        expectedOverheal: 0.3,
+        cooldownData: {cooldown: 180, hasted: true}, 
+        tags: ['sqrt'],
+        sqrtMin: 5,
         school: "holy",
         secondaries: ['crit', 'vers', 'mastery'],
     }], 
@@ -152,6 +182,116 @@ export const HOLYPRIESTSPELLDB = {
             sqrtMin: 6,
             expectedOverheal: 0.5,
         }],
+    "Lightwell": 
+        [{
+            spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+            castTime: 0,
+            cost: 3.7, //
+            type: "function",
+            cooldownData: {cooldown: 120, hasted: false}, 
+            coeff: 1.845,
+            charges: 15,
+            expectedOverheal: 0.2,
+            secondaries: ['crit', 'versatility', 'mastery'],
+            runFunc: function (state, spell) {
+                // Lightwell can tick 15 times max, and we'll assume that most of those get used (not necessarily at 100% efficiency though).
+                let totalHealing = 0;
+                const charges = 15;
+                const lwHeal = {
+                    name: "Lightwell",
+                    coeff: spell.coeff, 
+                    targets: 1,
+                    expectedOverheal: spell.expectedOverheal, 
+                    secondaries: spell.secondaries,
+                    type: "heal",
+                }
+
+                for (let i = 0; i < charges; i++) {
+                    totalHealing += runHeal(state, lwHeal, "Lightwell", true);
+
+                    if (state.simType === "CastProfile") {
+                        // Handle Renew as a heal.
+                        const renewHealing = castProfileRenew(state, 6);
+
+                        totalHealing += renewHealing
+                    }
+                    
+                }
+                return totalHealing; // Only used in cast profiles.
+
+
+
+            },
+        },
+    ],
+    "Holy Word: Salvation": 
+    [{
+        spellData: {id: 585, icon: "spell_holy_holysmite", cat: "heal"},
+        castTime: 2.5,
+        cost: 6, //
+        type: "function",
+        cooldownData: {cooldown: 720, hasted: false}, 
+        coeff: 1.28535,
+        targets: 20,
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'versatility', 'mastery'],
+        runFunc: function (state, spell) {
+            // Lightwell can tick 15 times max, and we'll assume that most of those get used (not necessarily at 100% efficiency though).
+            let totalHealing = 0;
+
+            const salvHeal = {
+                name: "Holy Word: Salvation",
+                coeff: spell.coeff, 
+                targets: spell.targets,
+                expectedOverheal: spell.expectedOverheal, 
+                secondaries: spell.secondaries,
+                type: "heal",
+            }
+            totalHealing += runHeal(state, salvHeal, "Holy Word: Salvation", true);
+            
+            if (state.simType === "CastProfile") {
+                // Handle Renew and Prayer of Mending
+
+                totalHealing += castProfileRenew(state, 15) * spell.targets;
+                totalHealing += castProfilePrayerOfMending(state, 2) * spell.targets;
+                
+            }
+
+            return totalHealing; // Only used in cast profiles.
+
+        },
+    },
+],
+}
+
+const castProfilePrayerOfMending = (state, stacks) => {
+    let totalHealing = 0;
+    for (let i = stacks; i > 0; i--) {
+        const spell = state.spellDB["Prayer of Mending"][0];
+        const pomHeal = {
+            name: "Prayer of Mending",
+            coeff: spell.coeff, 
+            targets: 1,
+            expectedOverheal: spell.expectedOverheal, 
+            secondaries: spell.secondaries,
+            type: "heal",
+        }
+        if (getTalentPoints(state.talents, "divineService")) pomHeal.coeff *= (1 + (0.04 * spell.bounces - 1));
+        if (getTalentPoints(state.talents, "sayYourPrayers") && checkRoll(0.15)) {
+            // 15% to not consume a stack (that is, i - 1)
+            i += 1;
+        }
+        totalHealing += runHeal(state, pomHeal, "Prayer of Mending", true);
+    }
+    return totalHealing; // Only used in cast profiles.
+}
+
+const castProfileRenew = (state, duration) => {
+    const renew = state.spellDB["Renew"][0];
+    const oneRenewTick = runHeal(state, renew, "Renew", true);
+    const renewHealing = oneRenewTick * (duration / renew.tickData.tickRate * getHaste(state.currentStats));
+
+    return renewHealing;
 }
 
 // Maybe split to a shared file for Disc?
@@ -176,6 +316,9 @@ const specTalents = {
     divineService: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // Handled in the PoM spell function.
     }}, 
+    renewedFaith: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // Handled in the PoM spell function.
+    }}, 
     crisisManagement: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Flash Heal"][0].statMods.crit = (0.075 * points);
         spellDB["Heal"][0].statMods.crit = (0.075 * points)
@@ -191,7 +334,7 @@ const specTalents = {
         spellDB["Circle of Healing"].push({...cdReductionBase, targetSpell: "Holy Word: Sanctify"});
         spellDB["Prayer of Mending"].push({...cdReductionBase, targetSpell: "Holy Word: Serenity"});
         spellDB["Holy Fire"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
-        spellDB["Holy Nova"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
+        //spellDB["Holy Nova"].push({...cdReductionBase, targetSpell: "Holy Word: Chastise"});
     }},
 
     epiphany: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 207383, select: true, tier: 1, runFunc: function (state, spellDB, points) {
@@ -204,7 +347,7 @@ const specTalents = {
 
         spellDB["Holy Word: Sanctify"].push(cdReductionBase);
         spellDB["Holy Word: Serenity"].push(cdReductionBase);
-        spellDB["Holy Word: Chastise"].push(cdReductionBase);
+        //spellDB["Holy Word: Chastise"].push(cdReductionBase);
     }},
  
 }
@@ -214,53 +357,3 @@ export const baseTalents = {
     ...specTalents,
 };
 
-const getCPM = (profile, spellName) => {
-    return profile.filter(spell => spell.spell === spellName)[0].cpm || 0;
-}
-
-export const runHolyPriestCastProfile = (playerData) => {
-    const fightLength = 300;
-    let totalHealing = 0;
-    const castProfile = [
-        {spell: "Flash Heal", cpm: 2, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        {spell: "Prayer of Healing", cpm: 0, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
-        {spell: "Prayer of Mending", cpm: 4.5, hastedCPM: true},
-        {spell: "Renew", cpm: 0},
-        {spell: "Holy Word: Sanctify", cpm: 0},
-        //{spell: "Prayer of Mending", cpm: 2},
-      ]
-    let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroSpec: "Oracle", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
-    
-    // Fill in missing casts like Holy Words. Adjust any others that are impacted.
-    // Our Sanctify CPM is basically equal to 1 (2 w/ Miracle Worker) + fightLength / (60 - avgCDR)
-    const averageSancCPM = 1 + getCPM(castProfile, "Prayer of Healing") * 6 / 60 + getCPM(castProfile, "Renew") * 2 / 60;
-    castProfile.filter(spell => spell.spell === "Holy Word: Sanctify")[0].cpm = averageSancCPM;
-
-
-
-    // Run healing
-    castProfile.forEach(spellProfile => {
-        const fullSpell = playerData.spellDB[spellProfile.spell];
-        const spellName = spellProfile.spell;
-
-        fullSpell.forEach(spell => {
-            if (spell.type === "heal" && spellProfile.cpm > 0) {
-                const value = runHeal(state, spell, spellName) * spellProfile.cpm;
-                totalHealing += value;
-                console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
-            }
-            else if (spell.type === "function") {
-                if (spellName === "Prayer of Mending") {
-                    const value = spell.runFunc(state, spell) * spellProfile.cpm;
-                    totalHealing += value;
-                    console.log(spellName + " " + value + " CPM: " + spellProfile.cpm);
-                }
-            }
-
-        });
-
-
-    })
-    console.log("HPS: " + totalHealing / 60);
-}

@@ -2,6 +2,7 @@ import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { reversionProfile, blossomProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runPreservationEvokerCastProfile } from "./PreservationEvokerCastProfile";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -12,11 +13,11 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 16000 * 1.1,
-            haste: 2000 + 100,
-            crit: 5400,
-            mastery: 6700,
-            versatility: 2000 + 300,
+            intellect: 60000,
+            haste: 7000,
+            crit: 7000,
+            mastery: 7000 + (2 * 700),
+            versatility: 7000,
             stamina: 29000,
             critMult: 2,
         }
@@ -27,16 +28,42 @@ describe("Test APL", () => {
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats }
-        //const data = runAPLSuites(playerData, evokerDefaultAPL, runCastSequence);
-        //console.log(data);
 
-        //const data = runAPLSuites(playerData, profile, runCastSequence);
-        //console.log(data);
-        //const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
-        //console.log(data);
+        //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
 
-        expect(true).toEqual(true);
+        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+            baseline += runPreservationEvokerCastProfile(playerData).hps;
+        }
+
+        baseline = baseline / iterations
+        
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 2400;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += runPreservationEvokerCastProfile(newPlayerData).hps;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+        
     })
+
 
 });
 

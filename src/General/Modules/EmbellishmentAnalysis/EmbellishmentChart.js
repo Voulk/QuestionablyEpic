@@ -119,7 +119,11 @@ export default class EmbelChart extends PureComponent {
               </div>
             }
             style={{ display: "inline-block", lineHeight: "0px" }}>
-              <IconButton sx={{ color: 'goldenrod' }} size="small">
+              <IconButton sx={{ color: 'goldenrod'   ,  
+                                padding: '2px',    // Adjust padding
+                                marginTop: '-14px'  // Move the icon slightly upward 
+                                }} 
+              size="small">
                 <HelpIcon fontSize="inherit" />
               </IconButton>
             </StyledTooltip>

@@ -18,9 +18,12 @@ export const STAT = {
 };
 
 // Mostly unused now.
+/**
+ * @deprecated
+ */
 export const BASESTAT = {
   CRIT: 0.05,
-  MASTERY: {
+  MASTERY: { // This is not really used anymore.
     "Preservation Evoker": 0,
     "Restoration Druid": 0.04,
     "Mistweaver Monk": 0.336,
@@ -32,11 +35,11 @@ export const BASESTAT = {
 };
 
 export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
-  CRIT: [5400, 7200, 9000, 10800, 12600],
-  MASTERY: [5400, 7200, 9000, 10800, 12600],
-  VERSATILITY: [6150, 8200, 10250, 12300, 14350],
-  HASTE: [5100, 6800, 8500, 10200, 11900],
-  LEECH: [1480, 1480, 2220, 2220, 2960, 2960],
+  CRIT: [21000, 28000, 35000, 42000, 49000],
+  MASTERY: [21000, 28000, 35000, 42000, 49000],
+  VERSATILITY: [23400, 31200, 39000, 46800, 54600],
+  HASTE: [19800, 26400, 33000, 39600, 46200],
+  LEECH: [10800, 10800, 21600, 21600, 32400, 32400],
 };
 
 export const getMasteryPercentage = (statQuantity: number, spec: string) => {
@@ -44,12 +47,12 @@ export const getMasteryPercentage = (statQuantity: number, spec: string) => {
 }
 
 export const STATCONVERSION = {
-    LEECH: 510,
+    LEECH: 1080,
     HASTE: 660,
     CRIT: 700,
     VERSATILITY: 780,
     MASTERY: 700,
-    VERSATILITY_DR: 410,
+    VERSATILITY_DR: 1560,
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
       "Restoration Druid": 0.5,

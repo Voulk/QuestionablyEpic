@@ -26,8 +26,8 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has a haste breakpoint at 2005 haste, however this is only a small upgrade over \
                     spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");
     }
-    if (topSet.enchantBreakdown["phial"]) {
-        advice.push("Recommended Phial: " + topSet.enchantBreakdown["phial"] + ".");
+    if (topSet.enchantBreakdown["flask"]) {
+        advice.push("Recommended Flask: " + topSet.enchantBreakdown["flask"] + ".");
     }
     /*if (isNaN(topSet.hardScore)) {
         advice.push("Something might have gone wrong with this set. Sorry about that. Results might be dicey or inaccurate. It's been automatically reported.")
@@ -45,21 +45,13 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         }
     }
 
-    if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 200) {
+    if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 600) {
         advice.push("Your top alternative is very close in value. You could safely wear either here without a noticeable impact on performance.")
     }
 
     // -- Individual Item advice or warnings
     if (checkHasItem(itemList, 203460)) { // Annulet
-        advice.push("You included Onyx Annulet in your selection which tends to be excellent in normal and heroic content and then slowly falls off through Mythic. \
-        If you are raiding Mythic you might want to consider adding a log to QE Live to improve its valuation."); 
-    }
-
-
-    // Rashoks - Evoker only
-    if (checkHasItem(itemList, 202614) && strippedPlayer.spec === "Preservation Evoker") { // Evoker 
-        advice.push("Rashoks is an amazing trinket for all healers. Evoker has to work slightly harder for it since a lot of spells won't proc the HoT. \
-            I advise tracking the buff and using Time Spiral, Zephyr, Emerald Blossom and Dream Breath to proc it.")
+        advice.push("It's time to unequip Onyx Annulet."); 
     }
 
     if (checkHasItem(itemList, 204465)) { // Sark Cloak

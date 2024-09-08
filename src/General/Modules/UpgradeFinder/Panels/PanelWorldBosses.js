@@ -21,8 +21,9 @@ export default function WorldBossGearContainer(props) {
   const currentLanguage = i18n.language;
 
   const contentGenerator = () => {
-    return encounterDB[1205].bossOrder.map((key, i) => (
-      <UFAccordion key={encounterDB[1205][key].name[currentLanguage] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+    const worldBossID = 1278;
+    return encounterDB[worldBossID].bossOrder.map((key, i) => (
+      <UFAccordion key={encounterDB[worldBossID][key] + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
         <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
           <Typography
             variant="h6"
@@ -36,14 +37,14 @@ export default function WorldBossGearContainer(props) {
           >
             {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
             <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-            {encounterDB[1205][key].name[currentLanguage]} -{" "}
-            {getNumUpgrades(itemDifferentials, 1205, key, 0)} Upgrades
+            {encounterDB[worldBossID][key]} -{" "}
+            {getNumUpgrades(itemDifferentials, worldBossID, key, 0)} Upgrades
             {/*[...filterItemListBySource(itemDifferentials, 1205, key, key === 2531 ? 415 : 389)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades */}
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySource(itemDifferentials, 1205, key, key === 2531 ? 415 : 389)].map((item, index) => (
+            {[...filterItemListBySource(itemDifferentials, worldBossID, key, key === 2531 ? 415 : 389)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
             ))}
           </Grid>

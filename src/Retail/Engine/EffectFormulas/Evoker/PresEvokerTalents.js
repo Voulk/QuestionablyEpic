@@ -221,9 +221,9 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
-    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
-    applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
-
+    applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    //applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+   
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
         const fullSpell = value;
@@ -234,9 +234,11 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         if (fullSpell[0].empowered) {
             fullSpell[0].castTime = fullSpell[0].castTime[EVOKERCONSTANTS.defaultEmpower[key]]
             fullSpell.forEach(spell => {
+                
                 const defaultEmpower = EVOKERCONSTANTS.defaultEmpower[key];
                 if (spell.targets && typeof spell.targets === "object") spell.targets = spell.targets[defaultEmpower];
                 if (spell.coeff && typeof spell.coeff === "object") spell.coeff = spell.coeff[defaultEmpower];
+                
                 if (spell.buffDuration && typeof spell.buffDuration === "object") spell.buffDuration = spell.buffDuration[defaultEmpower];
                 //if (key === "Fire Breath") value[1].buffDuration = value[1].buffDuration[EVOKERCONSTANTS.defaultEmpower];
                 //console.log(typeof spell.coeff)
@@ -251,6 +253,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
             value.forEach(spellSlice => {
                 if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
                 spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
+                
             });
         }
 
@@ -315,7 +318,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
 
 
     // ==== Tier Sets ====
-
+    
     return evokerSpells;
 }
 

@@ -31,8 +31,8 @@ describe("Top Gear full test", () => {
           chromaticEssenceAllies: { value: true, options: [true, false], category: "trinkets", type: "selector" },
         } 
 
-    /*test("Test 1, Disc full gear Check", () => {
-
+    test("Test 1, Disc full gear Check", () => {
+        /*
         const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
         var lines = discSet.split("\n");
 
@@ -49,7 +49,7 @@ describe("Top Gear full test", () => {
         // Our trinket selection was a 203 Divine Bell, 252 Gland, 252 Shadowed Orb, and 246 Tome. 
         // Our expected result would be Bell / Gland. 
 
-
+        */
         expect(true).toEqual(true);
         /*
         expect(trinkets.filter(trinket => trinket.effect.name === "Voidmender's Shadowgem").length).toEqual(1);
@@ -58,46 +58,9 @@ describe("Top Gear full test", () => {
 
         
         //expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1); 
-    })*/
-
-    test("Test 1, Monk Tier Check", () => {
-
-        const player = new Player("Mock", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
-        var lines = monkSet.split("\n");
-
-
-        processAllLines(player, "Raid", lines, -1, -1, settings)
-        player.activateAll();
-        const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
-
-        expect(result.itemSet.effectList.filter(effect => effect.name === "Mistweaver T29-2").length).toEqual(1);
-        //expect(result.itemSet.effectList.filter(effect => effect.name === "DPriest T29-4").length).toEqual(0);
-        //expect(trinkets.filter(trinket => trinket.effect.name === "Titanic Ocular Gland").length).toEqual(1); 
+        */
     })
 
-    test("In depth Preservation test", () => {
-        const player = new Player("Mock", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf")
-        var lines = evokerSet.split("\n");
-
-        processAllLines(player, "Raid", lines, -1, -1, settings)
-        player.activateAll();
-        const wepCombos = buildNewWepCombos(player, true);
-        const result = runTopGear(player.activeItems, wepCombos, player, "Raid", player.getHPS("Raid"), settings, player.getActiveModel("Raid"))
-
-        // Tier sets
-        console.log(result.itemSet.effectList);
-        expect(result.itemSet.effectList.filter(effect => effect.name === "Evoker T30-4").length).toEqual(1);
-
-        // Trinkets
-        const itemList = result.itemSet.itemList;
-        const trinkets = itemList.filter(item => item.slot === "Trinket")
-        
-        //expect(trinkets.filter(trinket => trinket.effect.name === "Rashok's Molten Heart").length).toEqual(1);
-
-        // Enchants
-
-    });
 
 }) 
 

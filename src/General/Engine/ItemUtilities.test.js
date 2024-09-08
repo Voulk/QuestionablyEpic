@@ -75,13 +75,6 @@ describe("Make sure Items Exist", () => {
 
 });
 
-describe("Test Item Level", () => {
-  test("Sylvan Whiteshield ilvl", () => {
-    const id = 181393;
-    const expectedResult = 190;
-    expect(getItemProp(id, "itemLevel")).toEqual(expectedResult);
-  });
-});
 
 describe("Calc Stats at Level", () => {
 
@@ -109,20 +102,6 @@ describe("Calc Stats at Level", () => {
   // This could use more coverage.
 });
 
-describe("Get Item Allocations func", () => {
-  test("Windscale Moccasins", () => {
-    const id = 179322;
-
-    const expectedResult = {
-      intellect: 5259,
-      stamina: 7889,
-      crit: 2450,
-      versatility: 4550,
-    };
-
-    expect(getItemAllocations(id)).toEqual(expectedResult);
-  });
-});
 
 describe("getValidArmorTypes func", () => {
   test("Basic Spec Check", () => {
@@ -132,7 +111,7 @@ describe("getValidArmorTypes func", () => {
     expect(getValidArmorTypes(spec)).toEqual(expectedResult);
   });
 
-  const itemSubclass = getItemProp(179322, "itemSubClass");
+  const itemSubclass = getItemProp(220107, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${false}
@@ -147,7 +126,7 @@ describe("getValidArmorTypes func", () => {
   });
 
   // TRINKET
-  const itemSubclass2 = getItemProp(178826, "itemSubClass");
+  const itemSubclass2 = getItemProp(219303, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${true}

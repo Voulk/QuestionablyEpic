@@ -257,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="They are still tuning Embellishments every day. DONT USE YOUR SPARK YET." variant="red" />
+        <InformationBox information="They are still tuning Embellishments every day. DONT USE YOUR SPARK YET. Writhing Armor Banding doubles the value of Nerubian embellishments like Darkmoon Sigil: Ascension at the cost of an additional embellishment slot." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

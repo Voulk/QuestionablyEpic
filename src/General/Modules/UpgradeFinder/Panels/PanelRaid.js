@@ -71,10 +71,11 @@ export default function RaidGearContainer(props) {
   };
 
   const getTranslatedRaidName = (raid) => {
-    const raidName = raidDB.filter((obj) => {
-      return obj.raidID === raid;
-    })[0]["name"][currentLanguage];
 
+    //const raidName = encounterDB.filter((obj) => {
+     // return obj.raidID === raid;
+    //})[0]["name"][currentLanguage];
+    const raidName = encounterDB[raid].name[currentLanguage];
     return raidName;
   };
 
@@ -86,7 +87,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const raidList = [1200, 1208, 1207]; // This is an array because there are sometimes multiple raids at a time (fated etc);
+    const raidList = [1273]; // This is an array because there are sometimes multiple raids at a time (fated etc);
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -115,11 +116,11 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.vaultHeader} label={getTranslatedRaidName(1200)} {...a11yProps(0)} />
-                  {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />
-                  {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />
+                  <Tab className={classes.nerubarPalaceHeader} label={getTranslatedRaidName(1273)} {...a11yProps(0)} />
+                  {/* ------------------------------------------  ------------------------------------------ 
+                  <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />*/}
+                  {/* ------------------------------------------  ------------------------------------------ 
+                  <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />*/}
                 </Tabs>
               </AppBar>
             </Grid>
@@ -133,7 +134,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key].name[currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -147,7 +148,7 @@ export default function RaidGearContainer(props) {
                                 >
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                  {encounterDB[raidID].bosses[key].name[currentLanguage]} -{" "}
+                                  {encounterDB[raidID].bosses[key]} -{" "}
                                   {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
                                       ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)

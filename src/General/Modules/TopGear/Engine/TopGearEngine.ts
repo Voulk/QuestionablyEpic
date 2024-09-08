@@ -76,11 +76,55 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 70 && gem.stats[littleStat] === 33);
+                                        && gem.stats[bigStat] === 147 && gem.stats[littleStat] === 49);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
   else return 192945; // Default fallback. Report error.                               
+}
+
+// Return an array of gem IDs based on the spec and content type. 
+function getTWWGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
+  const metaGem = 213746; // Elusive Meta Gem
+  if (spec === "Holy Paladin") {
+    // Crit / haste, crit / mastery
+    return [metaGem, getGemID('haste', 'crit'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+                    getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+  }
+  else if (spec === "Discipline Priest") {
+    // Haste / Crit, Crit / Haste
+    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+  }
+  else if (spec === "Holy Priest") {
+    // Crit / Mastery, Mastery / Crit
+    return [metaGem, getGemID('crit', 'mastery'), getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
+                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];
+  }
+  else if (spec === "Restoration Druid") {
+    // Haste / Mastery
+    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+  }
+  else if (spec === "Preservation Evoker") {
+    // Mastery / Crit, Mastery / Vers
+    return [metaGem, getGemID('mastery', 'crit'), getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
+      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];
+  }
+  else if (spec === "Mistweaver Monk") {
+    // Haste / Crit
+    return [getGemID('haste', 'crit'), getGemID('haste', 'versatility'), getGemID('crit', 'versatility')];
+  }
+  else if (spec === "Restoration Shaman") {
+    // Crit / Vers
+    return [getGemID('versatility', 'crit'), getGemID('crit', 'versatility')];
+
+  }
+  else {
+    // Error
+    return [getGemID('haste', 'crit')]
+  }
+
 }
 
 function getGemOptions(spec: string, contentType: contentTypes) {
@@ -154,6 +198,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
+  console.log("Creating Sets");
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
@@ -185,7 +230,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
   resultSets = pruneSets(resultSets, userSettings);
-
+  
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
   // and so on if they are already close in strength.
@@ -195,7 +240,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
     differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
   }
-
+  console.log(resultSets);
   // == Return sets ==
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
@@ -319,7 +364,7 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             // Auto-delete sets that have matching ring IDs, unless one of the IDs is Shadowghast Ring in which case we'll allow it.
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
-                                (splitItems.Finger[finger].id === 178926 || splitItems.Finger[finger2].id === 178926))) {
+                                (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130))) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
@@ -460,59 +505,60 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  128; // 64 x 2.
-  enchants["Finger"] = "+82 " + highestWeight;
-
-  // Helm 
-  // This has been available for a couple weeks so we'll include it now. It won't impact results. 
-  enchants["Head"] = "Incandescent Essence";
+  enchants["Finger"] = "+315 " + highestWeight;
 
   // Chest
   // There is a mana option too that we might include later.
-  bonus_stats.intellect = (bonus_stats.intellect || 0) + 150; 
-  enchants["Chest"] = "Waking Stats";
+  bonus_stats.intellect = (bonus_stats.intellect || 0) + 745; 
+  enchants["Chest"] = "Crystalline Radiance";
 
   // Cape
-  bonus_stats.leech = (bonus_stats.leech || 0) + 125; ;
-  enchants["Back"] = "Regenerative Leech";
+  bonus_stats.leech = (bonus_stats.leech || 0) + 1020;
+  enchants["Back"] = "Leeching Fangs";
 
   // Wrists
-  bonus_stats.leech += 200;
-  enchants["Wrist"] = "Devotion of Leech";
+  bonus_stats.leech += 2040;
+  enchants["Wrist"] = "Armored Leech";
 
   // Belt
-  enchants["Waist"] = "Shadowed Belt Clasp";
+  //enchants["Waist"] = "Shadowed Belt Clasp";
 
   // Legs - Also gives 3/4/5% mana.
-  bonus_stats.intellect += 177;
-  enchants["Legs"] = "Temporal Spellthread";
+  bonus_stats.intellect += 747;
+  enchants["Legs"] = "Sunset Spellthread";
 
 
 
   if (contentType === "Raid") {
     const dreamingData =  { // Mastery benefit. This is short and not all that useful.
-      coefficient: 83.09494, 
-      table: -9,
-      ppm: 3,
-      targets: 4,
+      coefficient: 40.32042, 
+      table: -8,
+      ppm: 4,
+      targets: 5,
+      expectedOverheal: 0.3,
     };
-    bonus_stats.hps! = (bonus_stats.hps! || 0) + (processedValue(dreamingData, 342) * dreamingData.ppm * dreamingData.targets / 60);
+    bonus_stats.hps! = (bonus_stats.hps! || 0) + (processedValue(dreamingData, 342) * dreamingData.ppm * dreamingData.targets * (1 - dreamingData.expectedOverheal) / 60);
 
-    enchants["CombinedWeapon"] = "Dreaming Devotion"; 
-    enchants["2H Weapon"] = "Dreaming Devotion"; 
-    enchants["1H Weapon"] = "Dreaming Devotion"; 
+    enchants["CombinedWeapon"] = "Authority of Fiery Resolve"; 
+    enchants["2H Weapon"] = "Authority of Fiery Resolve"; 
+    enchants["1H Weapon"] = "Authority of Fiery Resolve"; 
   }
   else {
     // Weapon - Sophic Devotion
-    let expected_uptime = convertPPMToUptime(1, 15);
-    bonus_stats.intellect += 932 * expected_uptime;
+    let expected_uptime = convertPPMToUptime(2, 12);
+    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 3910 * expected_uptime;
 
-    enchants["CombinedWeapon"] = "Sophic Devotion"; 
-    enchants["2H Weapon"] = "Sophic Devotion"; 
-    enchants["1H Weapon"] = "Sophic Devotion"; 
+    let wepEnchantName = "";
+    if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
+    else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
+    else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
+    else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";
+
+
+    enchants["CombinedWeapon"] = wepEnchantName; 
+    enchants["2H Weapon"] = wepEnchantName; 
+    enchants["1H Weapon"] = wepEnchantName; 
   }
-
-
-
 
 
   return enchants;
@@ -616,25 +662,34 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
 
   // == Flask / Phials ==
-  if (getSetting(userSettings, "phialChoice") === "Corrupting Rage" || (getSetting(userSettings, "phialChoice") === "Automatic" && player.spec === "Holy Paladin")) {
-    bonus_stats.crit = bonus_stats.crit + (1118 * 0.8);
-    enchants.phial = "Iced Phial of Corrupting Rage"
+  let selectedChoice = "";
+  if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+    const bestStat = getHighestWeight(castModel);
+    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 2825;
+    selectedChoice = bestStat;
   }
   else {
-    bonus_stats.versatility = bonus_stats.versatility + 745;
-    enchants.phial = "Phial of Tepid Versatility"
+    selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
+    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 2825;
   }
+
+  if (selectedChoice === "haste") enchants.flask = "Flask of Tempered Swiftness";
+  else if (selectedChoice === "mastery") enchants.flask = "Flask of Tempered Mastery";
+  else if (selectedChoice === "crit") enchants.flask = "Flask of Tempered Aggression";
+  else if (selectedChoice === "versatility") enchants.flask = "Flask of Tempered Versatility";
 
   // == Runes == 
   // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
-  if (getSetting(userSettings, "runeChoice") !== "Automatic") {
+  
+  
+  /*if (getSetting(userSettings, "runeChoice") !== "Automatic") {
     bonus_stats[getSetting(userSettings, "runeChoice")] = (bonus_stats[getSetting(userSettings, "runeChoice")] || 0) + 310;
   }
   else {
     // Defaults to best stat that isn't versatility (as no rune exists for it).
     const highestWeight = getHighestWeight(castModel, "versatility")
     bonus_stats[highestWeight] = (bonus_stats[highestWeight] || 0) + 310;
-  }
+  }*/
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
@@ -642,7 +697,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
-    enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings);
+    console.log(enchants["Gems"]);
+    const gemStats = {};
+    //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
   }
   if (enchants["Gems"].length > 1) {
     // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 

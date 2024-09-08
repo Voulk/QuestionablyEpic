@@ -82,12 +82,12 @@ const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (M
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
 const craftedItemLevels = [
-  { value: 0, label: "496" },
-  { value: 1, label: "502" },
-  { value: 2, label: "509" },
-  { value: 3, label: "515" },
-  { value: 4, label: "522" },
-  { value: 5, label: "525" },
+  { value: 0, label: "590" },
+  { value: 1, label: "606" },
+  { value: 2, label: "616" },
+  { value: 3, label: "622" },
+  { value: 4, label: "626" },
+  { value: 5, label: "636" },
 ]
 
 const craftedOptions = [
@@ -144,17 +144,17 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 493, label: "M0" },
-  { value: 496, label: "+2" },
-  { value: 499, label: "+3/4" },
-  { value: 502, label: "+5/6" },
-  { value: 506, label: "+7/8" },
-  { value: 509, label: "+9/10" },
-  { value: 512, label: "Vault" },
-  { value: 515, label: "" },
-  { value: 519, label: "" },
-  { value: 522, label: "" },
-  { value: 528, label: "" },
+  { value: 593, label: "M0" },
+  { value: 597, label: "+2/3" },
+  { value: 600, label: "+4" },
+  { value: 603, label: "+5" },
+  { value: 606, label: "+6" },
+  { value: 610, label: "+7/8" },
+  { value: 613, label: "+9/10" },
+  { value: 616, label: "Vault" },
+  { value: 619, label: "" },
+  { value: 626, label: "" },
+  { value: 639, label: "" },
 ]
 
 export default function UpgradeFinderFront(props) {
@@ -193,7 +193,7 @@ export default function UpgradeFinderFront(props) {
   }
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 15 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
+    if (difficulty <= 10 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
@@ -439,7 +439,7 @@ export default function UpgradeFinderFront(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={5}
+                  defaultValue={0}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
