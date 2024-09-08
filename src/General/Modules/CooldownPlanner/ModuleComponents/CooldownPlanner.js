@@ -77,9 +77,9 @@ export default function CooldownPlanner(props) {
   const cooldownObject = new Cooldowns();
   const healTeamDialogOpen = props.healTeamDialogOpen;
   const RosterCheck = ls.get("healerInfo") === null ? true : ls.get("healerInfo").length === 0 ? true : false;
-  const expansion = 9; // Dragonflight
-  const [currentRaid, setCurrentRaid] = useState(2549);
-  const [currentBoss, setCurrentBoss] = useState(2820);
+  const expansion = 10; // Dragonflight
+  const [currentRaid, setCurrentRaid] = useState(2657);
+  const [currentBoss, setCurrentBoss] = useState(2902);
   const [currentDifficulty, setDifficulty] = useState("Mythic");
   const [currentPlan, setCurrentPlan] = useState("");
 
