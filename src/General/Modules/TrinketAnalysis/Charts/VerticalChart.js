@@ -147,7 +147,7 @@ export default class VerticalChart extends PureComponent {
               </div>
             }
             style={{ display: "inline-block", lineHeight: "0px" }}>
-              <IconButton sx={{ color: 'goldenrod' }} size="small">
+              <IconButton sx={{ color: 'goldenrod', marginTop: '-5px' }} size="small">
                 <HelpIcon fontSize="inherit" />
               </IconButton>
             </StyledTooltip>
