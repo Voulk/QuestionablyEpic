@@ -28,8 +28,9 @@ const getMenuItems = (item: any): MenuItemType[] => {
   let items: MenuItemType[] = [];
   //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
-  const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
-  const itemLevelCaps: { [key: string]: number } = { Explorer: 476, Adventurer: 489, Veteran: 502, Champion: 515, Hero: 522, Myth: 528, Awakened: 528 };
+  //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
+  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 635, 639];
+  const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
@@ -44,10 +45,10 @@ const getMenuItems = (item: any): MenuItemType[] => {
 const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   const items: MenuItemType[] = [];
 
-  if (CONSTANTS.socketSlots.includes(item.slot) && item.slot !== "Neck" && gameType === "Retail") {
+  if (CONSTANTS.socketSlots.includes(item.slot) && gameType === "Retail") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (!item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
     //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
 
   }

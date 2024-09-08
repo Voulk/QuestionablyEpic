@@ -199,6 +199,16 @@ describe("Test Crafted Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+    
+
+    test("Blue Crafted Belt", () => {
+        const line = "waist=,id=219485,bonus_id=11297/11298/9627/11142/10876,crafted_stats=32/49,crafting_quality=5";
+        const item = processItem(line, player, contentType, type, settings)
+        expect(item.level).toEqual(590);
+        expect(item.stats.mastery).toEqual(591);
+        expect(item.socket).toEqual(0);
+        //expect(item.uniqueEquip).toEqual("crafted");
+    });
 
     test("Quick Oxxein Ring - No Missive IDs", () => {
         const line = "finger1=,id=173133,bonus_id=7461,drop_level=60,crafted_stats=49";

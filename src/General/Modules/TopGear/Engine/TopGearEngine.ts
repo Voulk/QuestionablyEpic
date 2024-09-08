@@ -93,19 +93,23 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    return [getGemID('haste', 'crit')];
+    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    return [getGemID('mastery', 'crit'), getGemID('crit', 'mastery')]
+    return [metaGem, getGemID('crit', 'mastery'), getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
+                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];
   }
   else if (spec === "Restoration Druid") {
     // Haste / Mastery
-    return [getGemID('haste', 'mastery'), getGemID('haste', 'versatility')];
+    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    return [getGemID('mastery', 'crit'), getGemID('mastery', 'versatility'), getGemID('crit', 'mastery')] //192958, 192964, 192945];
+    return [metaGem, getGemID('mastery', 'crit'), getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
+      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
