@@ -4,7 +4,7 @@ export const instanceDB = {
   "-30": "PVP Season 1 (Honor)",
   "-1": "Dungeons",
   "1190": "Castle Nathria",
-  "1205": "World Bosses",
+  "1278": "World Bosses", // 1205: DF World Bosses
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
   "1208": "Aberrus, the Shadowed Crucible",
@@ -1921,7 +1921,7 @@ export const encounterDB = {
       },
     },
   },
-  // Amirdrassil
+  // Nerub'ar Palace
   1273: {
     name: {
       en: "Nerub'ar Palace",
@@ -2063,14 +2063,14 @@ export const encounterDB = {
         1203, // The Azure Vault
       ],
       bossOrderMythicPlus: [
-        1196, // Brackenhide Hollow
-        1197, // Uldaman: Legacy of Tyr
-        1198, // The Nokhud Offensive
-        1199, // Neltharus
-        1201, // Alge'thar Academy
-        1202, // Ruby Life Pools
-        1204, // Halls of Infusion
-        1203, // The Azure Vault
+        1271, // "Ara-kara, City of Echoes", 
+        1274, //"City of Threads", 
+        1270, //"The Dawnbreaker",
+        1269, //"The Stonevault",
+        1184, //"Mists of Tirna Scithe",
+        1182, //"The Necrotic Wake",
+        1023, //"Siege of Boralus",
+        71, //"Grim Batol",
       ],
 
       // M+

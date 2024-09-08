@@ -134,7 +134,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if ([1200, 1208, 1207, -22].includes(instanceID)) {
+  if ([1273].includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -147,7 +147,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   }
   
   // World Bosses
-  else if (instanceID === 1205) {
+  else if (instanceID === 1278) {
     if (bossID === 2531) itemLevel = 415;
     else if (bossID === 2562) itemLevel = 454 // Technically the neck is 460.
     else itemLevel = 389;
@@ -223,7 +223,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
       const encounter = itemSources[0].encounterId;
-      const isRaid = [1200, 1208, 1207, -22].includes(primarySource);
+      const isRaid = [1273].includes(primarySource);
 
       if (isRaid && encounter > 0) {
         // 
@@ -236,9 +236,9 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
           itemPoss.push(item);
         }
-      } else if (primarySource === -1 || primarySource === 1205) {
+      } else if (primarySource === -1) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
-        if ([ 1196, 1197, 1198, 1199, 1201, 1202, 1204, 1203].includes(encounter) || primarySource === 1205) {
+        if ([ 1271, 1274, 1270, 1269, 1184, 1182, 1023, 71].includes(encounter) || primarySource === 1205) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Dungeon";
@@ -246,6 +246,10 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           item.dropDifficultyTxt = "";
           item.quality = 4;
           itemPoss.push(item);
+        }
+        else if ([1267, 1272, 1210, 1268].includes(encounter)) {
+          // M0
+
         }
 
       }

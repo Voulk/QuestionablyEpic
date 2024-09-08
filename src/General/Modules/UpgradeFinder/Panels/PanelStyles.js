@@ -117,6 +117,10 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("../../../../Images/Bosses/Amirdrassil/AmirdrassilRaid.png")})`,
       ...commonStyles,
     },
+    nerubarPalaceHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/NerubarPalace/NerubarPalaceLong.png")})`,
+      ...commonStyles,
+    },
   };
 });
 

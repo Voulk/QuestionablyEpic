@@ -20,3 +20,7 @@ export const CONSTANTS = {
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic"],
 }
+
+export const SEASONALCONSTS = {
+    
+}

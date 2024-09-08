@@ -680,14 +680,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Runes == 
   // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
-  if (getSetting(userSettings, "runeChoice") !== "Automatic") {
+  
+  
+  /*if (getSetting(userSettings, "runeChoice") !== "Automatic") {
     bonus_stats[getSetting(userSettings, "runeChoice")] = (bonus_stats[getSetting(userSettings, "runeChoice")] || 0) + 310;
   }
   else {
     // Defaults to best stat that isn't versatility (as no rune exists for it).
     const highestWeight = getHighestWeight(castModel, "versatility")
     bonus_stats[highestWeight] = (bonus_stats[highestWeight] || 0) + 310;
-  }
+  }*/
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
