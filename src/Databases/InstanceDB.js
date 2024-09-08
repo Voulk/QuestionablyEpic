@@ -1,3 +1,8 @@
+
+export const getSeasonalDungeons = () => {
+  return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
