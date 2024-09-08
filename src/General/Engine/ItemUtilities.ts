@@ -943,6 +943,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
       (gameType === "Classic" || itemLevel > 400) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
@@ -959,21 +960,21 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     let sourceCheck = true;
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
-      console.log(sources);
       // Check the item drops from the expected location.
       if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
-      if (source === "S1 Dungeons"&& sources) sourceCheck = sources.instanceId === -1; // TODO
+      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1; // TODO
       else if (!sources) sourceCheck = false;
     }
     const slot = getItemProp(item.id, "slot", gameType);
     if (
         ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) && 
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
+        (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
         (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))
         && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
-      const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
       console.log("Item Passes: " + item.name);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);

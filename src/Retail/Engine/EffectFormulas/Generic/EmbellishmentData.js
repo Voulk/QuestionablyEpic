@@ -398,7 +398,7 @@ export const embellishmentData = [
       const uptime = convertPPMToUptime(data[0].ppm, data[0].duration);
     
       validStats.forEach((stat) => {
-        bonus_stats[stat] = getDiminishedValue(stat, rawValue, setStats[stat] || 0) * uptime / validStats.length;
+        bonus_stats[stat] = getDiminishedValue(stat, rawValue, additionalData.setStats[stat] || 0) * uptime / validStats.length;
       });
 
       return bonus_stats;

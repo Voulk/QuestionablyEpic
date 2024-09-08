@@ -17,6 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 6,
+    date: "September 8",
+    changes: [ 
+      "Added offspec weapons with a red warning.",
+      "Top Gear: Resto Druid, Holy Paladin, Preservation Evoker.",
+      "Added drop location to Trinket descriptions.",
+      "New buttons to auto add all items from a content type."
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 5,
     date: "August 28",
     changes: [ 
