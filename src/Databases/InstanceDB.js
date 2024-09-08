@@ -1110,6 +1110,14 @@ export const encounterDB = {
   },
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
+  1278: {
+    bossOrder: [2625, 2635, 2636, 2637],
+    2625: "Kordac, the Dormant Protector",
+    2635: "Aggregation of Horrors",
+    2636: "Shurrai, Atrocity of the Undersea",
+    2637: "Orta, the Broken Mountain",
+  },
+
   1205: {
     bossOrder: [2515, 2506, 2517, 2518, 2531, 2562],
     2515: {

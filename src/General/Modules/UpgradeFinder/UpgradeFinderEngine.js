@@ -148,9 +148,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   
   // World Bosses
   else if (instanceID === 1278) {
-    if (bossID === 2531) itemLevel = 415;
-    else if (bossID === 2562) itemLevel = 454 // Technically the neck is 460.
-    else itemLevel = 389;
+    itemLevel = 603;
   }
   
   else if (instanceID === -1) {
@@ -238,7 +236,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         }
       } else if (primarySource === -1) {
         // M+ Dungeons, Dawn of the Infinite & World Bosses
-        if ([ 1271, 1274, 1270, 1269, 1184, 1182, 1023, 71].includes(encounter) || primarySource === 1205) {
+        if ([ 1271, 1274, 1270, 1269, 1184, 1182, 1023, 71].includes(encounter) || primarySource === 1278) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Dungeon";
