@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 7,
+    date: "September 8",
+    changes: [ 
+      "Added a crafted tag to a lot more items.",
+      "The S1 dungeon button will now only add season 1 items."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 6,
     date: "September 8",
     changes: [ 
@@ -24,7 +32,6 @@ export const changeLog: entry[] = [
       "Top Gear: Resto Druid, Holy Paladin, Preservation Evoker.",
       "Added drop location to Trinket descriptions.",
       "New buttons to auto add all items from a content type."
-
     ]},
   {
     version: "11.0.2 / 4.4",
