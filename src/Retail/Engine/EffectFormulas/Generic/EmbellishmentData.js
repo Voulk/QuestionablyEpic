@@ -293,7 +293,7 @@ export const embellishmentData = [
   },
   { // Healing Spells
     name: "Adrenal Surge Clasp", 
-    description: "It can't yet be confirmed is regular raid or dungeon damage will proc this so hold off on a craft until it can be tested. Currently set at 85% efficiency.",
+    description: "!! It can't yet be confirmed if regular raid or dungeon damage will proc this so hold off on a craft until it can be tested. Currently set at 85% efficiency.",
     effects: [
       { 
         coefficient: 0.312343, 
@@ -313,8 +313,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.85;
-      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.85;
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.75;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.75;
 
       return bonus_stats;
     }
@@ -379,13 +379,27 @@ export const embellishmentData = [
         table: -571,
         ppm: 2,
         duration: 15,
-        stat: "versatility"
+        stat: "mixed"
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+      const dpsFlag = getSetting(additionalData.settings, "dpsFlag");
       
-      bonus_stats.versatility = runGenericPPMTrinket(data[0], itemLevel)
+      let validStats = [];
+      if (player.spec === "Discipline Priest") validStats = ["haste", "mastery", "versatility"];
+      else if (player.spec === "Holy Priest" && dpsFlag) validStats = ["crit", "mastery"];
+      else if (player.spec === "Restoration Druid") validStats = ["crit"]
+      else if (player.spec === "Preservation Evoker") validStats = ["haste", "mastery", "versatility"];
+      else if (player.spec === "Restoration Shaman") validStats = ["crit", "versatility"];
+      else validStats = [];
+
+      const rawValue = processedValue(data[0], itemLevel);
+      const uptime = convertPPMToUptime(data[0].ppm, data[0].duration);
+    
+      validStats.forEach((stat) => {
+        bonus_stats[stat] = getDiminishedValue(stat, rawValue, additionalData.setStats[stat] || 0) * uptime / validStats.length;
+      });
 
       return bonus_stats;
     }

@@ -32,9 +32,8 @@ export default function TopSetStatsPanel(props) {
         ];
 
   /* ----------------------- Returns a formatted string for the stat panel. ----------------------- */
-  function printStat(stat, value, spec) {
-    if (value > 2) return t(stat) + ": " + Math.floor(value);
-    else if (["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
+  function printStat(stat, value, gameType) {
+    if (gameType === "Retail" && ["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
     } 
     else return t(stat) + ": " + Math.floor(value);
@@ -74,7 +73,7 @@ export default function TopSetStatsPanel(props) {
             {stats.map((stat, index) => (
               <Grid item xs={6} key={index}>
                 <Typography style={{ marginLeft: "4px" }} variant="subtitle2" align="left">
-                  {printStat(stat[0], stat[1])}
+                  {printStat(stat[0], stat[1], gameType)}
                 </Typography>
               </Grid>
             ))}

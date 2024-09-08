@@ -419,7 +419,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
             }
 
             // Embellishments that require a tag.
-            if (['Potion Absorption Inhibitor', 'Blue Silken Lining', 'Magazine of Healing Darts'].includes(specialEffectName)) {
+            if (['Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
               protoItem.uniqueTag = "embellishment";
             }
 
@@ -513,7 +513,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 476, Adventurer: 489, Veteran: 502, Champion: 515, Hero: 522, Myth: 528 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
 
   }

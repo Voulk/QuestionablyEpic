@@ -76,7 +76,7 @@ export default function MythicPlusGearContainer(props) {
                     <Grid item xs={12}>
                       {encounterDB["-1"][gameType].bossOrderMythicPlus.map((key, i) => (
                         <UFAccordion
-                          key={encounterDB["-1"][gameType][key].name[currentLanguage] + "-accordian" + i}
+                          key={encounterDB["-1"][gameType][key] + "-accordian" + i}
                           elevation={0}
                           style={{
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
@@ -100,9 +100,9 @@ export default function MythicPlusGearContainer(props) {
                                 display: "flex",
                               }}
                             >
-                              <img style={{ height: 36, width: 72, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key].name[currentLanguage]} />
+                              <img style={{ height: 36, width: 72, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key]} />
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB["-1"][gameType][key].name[currentLanguage]} -{" "}
+                              {encounterDB["-1"][gameType][key]} -{" "}
                               {
                                 getNumUpgrades(itemDifferentials, -1, key, difficulty)
                               }{" "}

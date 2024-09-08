@@ -5,7 +5,7 @@ import { createItem } from "./ItemBar.js";
 describe("Top Gear full test", () => {
 
     test("Item Bar: Embellished item", () => {
-        const item = createItem(204704, "Adaptive Dracothyst Armguards", 447, 1, "", "Haste / Versatility");
+        const item = createItem(215133, "Binding of Binding", 590, 1, "", "Haste / Versatility");
 
         expect(item.uniqueEquip).toEqual("embellishment");
         //expect(item.stats.haste).toEqual(246);

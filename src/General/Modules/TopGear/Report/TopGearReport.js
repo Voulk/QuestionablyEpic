@@ -181,11 +181,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     console.log(topSet);
 
     // Setup Slots / Set IDs.
+    let gemCount = 0;
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
       item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
       if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
+
+      if (item.socket) {
+        item.socketedGems = []
+        for (var i = 0; i < item.socket; i++) {
+          item.socketedGems.push(enchants["Gems"].shift());
+        }
+        
+      }
     })
 
 

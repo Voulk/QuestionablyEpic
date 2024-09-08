@@ -21,8 +21,8 @@ export const evokerDefaultSpellData = (contentType) => {
     statWeights.Raid = {
       intellect: 1,
       haste: 0.54, 
-      crit: 0.78, 
-      mastery: 0.92, 
+      crit: 0.72, 
+      mastery: 0.84, 
       versatility: 0.744, 
       leech: 0.52,
       defaults: true,

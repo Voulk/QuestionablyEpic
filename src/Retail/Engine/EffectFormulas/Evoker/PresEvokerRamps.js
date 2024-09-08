@@ -8,7 +8,7 @@ import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, r
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 
-const EVOKERCONSTANTS = {
+export const EVOKERCONSTANTS = {
     
     masteryMod: 1.8, 
     masteryEfficiency: 0.82, 
