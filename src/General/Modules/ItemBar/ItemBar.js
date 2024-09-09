@@ -73,6 +73,7 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     if (missives.includes("Versatility")) bonusString += ":6650";
 
     item.bonusIDS = bonusString;
+    item.missiveStats = missiveStats;
     item.guessItemQuality();
   } else {
     item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "", gameType);

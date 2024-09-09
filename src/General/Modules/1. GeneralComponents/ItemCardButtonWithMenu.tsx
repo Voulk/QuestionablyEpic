@@ -10,6 +10,7 @@ interface MenuItemType {
   id: number;
   ilvlMinimum: number;
   label: string;
+  effectName?: string;
 }
 
 interface ItemCardButtonWithMenuProps {
@@ -20,6 +21,7 @@ interface ItemCardButtonWithMenuProps {
   catalyseItemCard: () => void;
   itemLevel: number;
   upgradeItem: (item: any, ilvlMinimum: number, socketFlag: boolean, vaultFlag: boolean) => void;
+  embellishItem: (item: any, embellishmentName: string) => void;
   item: any;
 }
 
@@ -53,7 +55,10 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 
   }
   if (!item.vaultItem && gameType === "Retail") items.push({id: items.length + 1, ilvlMinimum: 0, label: "Convert to Vault"})
-
+  if (item.effect === "" && [222568, 224405, 222439, 222445, 222450, 222444, 222464, 222570, 224404, ].includes(item.id)) {
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+  }
   // Add embellishment options.
   
   
@@ -61,7 +66,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 
 }
 
-const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item, gameType }) => {
+const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, embellishItem, item, gameType }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
 
@@ -84,6 +89,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   const handleExtraMenuItemClick = (menuItem: MenuItemType) => {
     if (menuItem.label === "Add Socket") upgradeItem(item, 0, true, false);
     else if (menuItem.label === "Convert to Vault") upgradeItem(item, 0, false, true);
+    else if (menuItem.label.includes("Add Embellishment")) embellishItem(item, menuItem.effectName);
     handleClose();
 
   }
@@ -110,7 +116,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #888888",
+            border: "1px solid #DAA520",
             borderRadius: "4px",
           },
         }}
@@ -123,19 +129,19 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         {menuItems
           .filter((filter) => filter.ilvlMinimum > itemLevel)
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem style={{ color: "plum", fontSize: "12px" }} key={item.id} onClick={() => handleMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
+            <MenuItem style={{  fontSize: "12px" }} key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
           ))}
 
         {deleteActive ? (
-          <MenuItem onClick={handledeleteItem} style={{ color: "#ff1744" }}>
+          <MenuItem style={{  fontSize: "12px" }} onClick={handledeleteItem} style={{ color: "#ff1744" }}>
             {t("Delete")}
           </MenuItem>
         ) : null}

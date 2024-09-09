@@ -33,7 +33,7 @@ const initialState : RootState = {
     //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
 
     // TWW Trinkets
-    creepingCoagOverheal: { value: 34, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    creepingCoagOverheal: { value: 36, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
