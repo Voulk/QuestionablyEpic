@@ -747,10 +747,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
   let fireMult = 0;
   // Frostfire Belt, Flaring Cowl, Flame Licked
-  if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
-  else if (builtSet.checkHasItem(193494)) fireMult = 1;
+  //if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
+  //else if (builtSet.checkHasItem(193494)) fireMult = 1;
 
-  setVariables.fireMult = fireMult || 0;
+  //setVariables.fireMult = fireMult || 0;
 
 
   for (var x = 0; x < effectList.length; x++) {
@@ -810,7 +810,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       setStats.intellect = (setStats.intellect || 0) * 1.04;
 
-      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.06;
+      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.04;
       mergedEffectStats.crit = (mergedEffectStats.crit || 0) + STATCONVERSION.CRIT * 4;
       mergedEffectStats.mastery = (mergedEffectStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       mergedEffectStats.intellect = (mergedEffectStats.intellect || 0) * 1.04;
@@ -819,6 +819,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       setStats.haste = (((setStats.haste || 0) / STATCONVERSION.HASTE / 100 + 1) * 1.06 - 1) * STATCONVERSION.HASTE * 100;
       mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.06;
     }
+
+    // Extra raid buffs
+    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
@@ -840,6 +843,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   for (var stat in evalStats) {
     // Handle flat HPS increases like most tier sets, some trinkets, Annulet and more.
     if (stat === "hps" && evalStats.hps) {
+      
       hardScore += (evalStats.hps / baseHPS) * player.activeStats.intellect;
     } 
     // Handle flat DPS increases like DPS trinkets. Note that additional DPS value isn't currently evaluated.
@@ -866,6 +870,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else {
       if (stat in evalStats && stat !== "dps" && stat !== "allyStats") {
         hardScore += (evalStats[stat] * adjusted_weights[stat]) || 0;
+        console.log(stat + " " + evalStats[stat] + " " + adjusted_weights[stat] + " . Score Added: " + (evalStats[stat] * adjusted_weights[stat]));
       }
     }
   }
