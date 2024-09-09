@@ -116,7 +116,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #888888",
+            border: "1px solid #DAA520",
             borderRadius: "4px",
           },
         }}
@@ -129,19 +129,19 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         {menuItems
           .filter((filter) => filter.ilvlMinimum > itemLevel)
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem style={{ color: "plum", fontSize: "12px" }} key={item.id} onClick={() => handleMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
+            <MenuItem style={{  fontSize: "12px" }} key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
           ))}
 
         {deleteActive ? (
-          <MenuItem onClick={handledeleteItem} style={{ color: "#ff1744" }}>
+          <MenuItem style={{  fontSize: "12px" }} onClick={handledeleteItem} style={{ color: "#ff1744" }}>
             {t("Delete")}
           </MenuItem>
         ) : null}

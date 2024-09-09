@@ -207,7 +207,6 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
-  console.log("Creating Sets");
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
@@ -753,6 +752,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
   }
 
+  // Armor Banding
+  /*if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
+    // The set has a Writhing Armor Banding so we'll double our other embellishment slot so long as it's Nerubian.
+    
+  }*/
+
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
   // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
   let fireMult = 0;
@@ -889,7 +894,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else {
       if (stat in evalStats && stat !== "dps" && stat !== "allyStats") {
         hardScore += (evalStats[stat] * adjusted_weights[stat]) || 0;
-        console.log(stat + " " + evalStats[stat] + " " + adjusted_weights[stat] + " . Score Added: " + (evalStats[stat] * adjusted_weights[stat]));
+        //console.log(stat + " " + evalStats[stat] + " " + adjusted_weights[stat] + " . Score Added: " + (evalStats[stat] * adjusted_weights[stat]));
       }
     }
   }

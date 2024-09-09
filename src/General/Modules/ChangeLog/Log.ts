@@ -23,7 +23,7 @@ export const changeLog: entry[] = [
       "Top Gear: Mistweaver, Resto Shaman",
       "You can now add embellishments to crafted weapons from the context menu on each.",
       "Bugfix: The top gear stat panel should no longer be missing 17k intellect.",
-      "Bugfix: Crafted items can now be upgraded in general without losing secondaries"
+      "Bugfix: Crafted items can now be upgraded or socketed without losing secondaries"
     ]},
   {
     version: "11.0.2 / 4.4",
