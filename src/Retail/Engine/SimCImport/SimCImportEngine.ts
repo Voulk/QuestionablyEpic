@@ -530,6 +530,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     item.isEquipped = protoItem.itemEquipped;
     item.itemConversion = protoItem.itemConversion || 0;
     item.active = protoItem.itemEquipped || item.vaultItem;
+    if (protoItem.missiveStats) item.missiveStats = protoItem.missiveStats;
 
     // Add stats to our item based on its item allocations.
     item.stats = calcStatsAtLevel(item.level, protoItem.slot, itemAllocations, protoItem.tertiary);

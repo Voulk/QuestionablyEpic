@@ -17,7 +17,7 @@ export class Item {
   socketedGems: number[] = []; // The gems in the item.
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
-
+  missiveStats?: string[];
 
   effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
@@ -119,6 +119,7 @@ export class Item {
     clonedItem.mainHandUniqueHash = this.mainHandUniqueHash;
     clonedItem.offHandUniqueHash = this.offHandUniqueHash;
     clonedItem.gemString = this.gemString;
+    clonedItem.missiveStats = this.missiveStats;
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
     
@@ -127,9 +128,9 @@ export class Item {
     return clonedItem;
   }
 
-  updateLevel(level: number) {
+  updateLevel(level: number, missiveStats: string[] = []) {
     this.level = level;
-    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id), this.tertiary);
+    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and

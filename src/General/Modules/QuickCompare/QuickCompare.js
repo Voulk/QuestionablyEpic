@@ -203,6 +203,12 @@ export default function QuickCompare(props) {
     setItemList([...player.getActiveItems(activeSlot)]);
   }
 
+  const embellishItem = (item, embellishmentName) => {
+    let player = props.player;
+    player.embellishItem(item, embellishmentName);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Settings Functions                                       */
   /* ---------------------------------------------------------------------------------------------- */
@@ -263,7 +269,7 @@ export default function QuickCompare(props) {
                   <Divider style={{ marginBottom: 10 }} />
                   <Grid container spacing={1}>
                     {[...props.player.getActiveItems(key.activeItem)].map((item, index) => 
-                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} upgradeItem={upgradeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
+                      <ItemCard key={index} item={item} delete={deleteItem} catalyze={catalyzeItem} embellishItem={embellishItem} upgradeItem={upgradeItem} primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)} />
                     )}
                   </Grid>
                 </Grid>
