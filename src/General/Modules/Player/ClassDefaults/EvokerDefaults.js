@@ -14,6 +14,10 @@ export const evokerDefaultSpellData = (contentType) => {
   
     return spellList;
   };
+
+  export const runCastModel = (contentType) => {
+    
+  }
   
   export const evokerDefaultStatWeights = (contentType) => {
     let statWeights = {};
@@ -21,19 +25,19 @@ export const evokerDefaultSpellData = (contentType) => {
     statWeights.Raid = {
       intellect: 1,
       haste: 0.54, 
-      crit: 0.72, 
-      mastery: 0.84, 
-      versatility: 0.744, 
-      leech: 0.52,
+      crit: 0.74, 
+      mastery: 0.83, 
+      versatility: 0.685, 
+      leech: 0.44,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.71,
-      crit: 0.746,
-      mastery: 0.61,
+      haste: 0.695,
+      crit: 0.735,
+      mastery: 0.74,
       versatility: 0.68,
-      leech: 0.45,
+      leech: 0.42,
       defaults: true,
     };
   

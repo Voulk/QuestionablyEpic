@@ -62,11 +62,11 @@ function setupPlayer(player: Player, contentType: contentTypes, castModel: any) 
 function autoSocketItems(itemList: Item[]) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Finger", "Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+    if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
-    else if (item.slot === "Neck") {
-      item.socket = 3;
+    else if (item.slot === "Neck" || item.slot === "Finger") {
+      item.socket = 2;
     }
   }
 
@@ -88,8 +88,15 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
   const metaGem = 213746; // Elusive Meta Gem
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
-    return [metaGem, getGemID('haste', 'crit'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
-                    getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    if (contentType === "Raid") {
+      return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+        getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+    }
+    else {
+      return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+        getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    }
+
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
@@ -113,11 +120,13 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
-    return [getGemID('haste', 'crit'), getGemID('haste', 'versatility'), getGemID('crit', 'versatility')];
+    return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [getGemID('versatility', 'crit'), getGemID('crit', 'versatility')];
+    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'), getGemID('mastery', 'crit'),
+      getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
 
   }
   else {
@@ -638,6 +647,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     allyStats: 0,
   };
 
+
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
   // The more we get of any one stat, the more the others are worth comparatively. Our adjusted weights will let us include that in our set score.
   let adjusted_weights: {[key: string]: number} = {
@@ -783,7 +793,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest" && contentType === "Raid" && useSeq) {
+  if (player.spec === "Discipline Priest" && contentType === "Raid" && castModel.modelType[contentType] === "Sequences") {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
     if (reporting) report.ramp = setRamp;
@@ -793,9 +803,18 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
     evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
   }
+  else if (castModel.modelType[contentType] === "CastModel") {
+    // Prep the set for a cast model.
+    setStats = applyDiminishingReturns(setStats);
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
 
+    setStats.hps = (setStats.hps || 0) + setRamp.totalHealing / 180;
 
-
+    evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
+    evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
+    evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
+  }
   // == Diminishing Returns ==
   // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.

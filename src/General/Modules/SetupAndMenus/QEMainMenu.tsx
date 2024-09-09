@@ -87,7 +87,7 @@ export default function QEMainMenu(props: Props) {
     gameType === "Retail"
       ? [
           // Gearing
-          { route: "/topgear", disabled: !(["Restoration Druid", "Holy Paladin", "Preservation Evoker"].includes(props.player.spec)), tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
+          { route: "/topgear", disabled: !(["Restoration Druid", "Holy Paladin", "Preservation Evoker", "Restoration Shaman"].includes(props.player.spec)), tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
           { route: "/upgradeFinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis", glow: false },
