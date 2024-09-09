@@ -118,9 +118,9 @@ class ItemSet {
         spirit: 173, // Technically changes per race.
         mp5: 0,
       }
-      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 2091;
-      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 2087;
-      else if (this.spec === "Mistweaver Monk") stats.intellect = 2086;
+      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 17647;
+      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 17647;
+      else if (this.spec === "Mistweaver Monk") stats.intellect = 17647;
       return stats
   }
 

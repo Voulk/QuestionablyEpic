@@ -18,6 +18,16 @@ export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
     update: 7,
+    date: "September 9",
+    changes: [ 
+      "Top Gear: Mistweaver, Resto Shaman",
+      "You can now add embellishments to crafted weapons from the context menu on each.",
+      "Bugfix: The top gear stat panel should no longer be missing 17k intellect.",
+      "Bugfix: Crafted items can now be upgraded or socketed without losing secondaries"
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 7,
     date: "September 8",
     changes: [ 
       "Added a crafted tag to a lot more items.",
