@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getItemProp } from "General/Engine/ItemUtilities";
 
 interface MenuItemType {
   id: number;
@@ -58,6 +59,11 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   if (item.effect === "" && [222568, 224405, 222439, 222445, 222450, 222444, 222464, 222570, 224404, ].includes(item.id)) {
     items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
     items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+  }
+  if (item.effect === "" &&  item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && getItemProp(item.id, "crafted")) {
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Dawnthread Lining", effectName: "Dawnthread Lining"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Duskthread Lining", effectName: "Duskthread Lining"})
   }
   // Add embellishment options.
   
@@ -141,7 +147,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
           ))}
 
         {deleteActive ? (
-          <MenuItem style={{  fontSize: "12px" }} onClick={handledeleteItem} style={{ color: "#ff1744" }}>
+          <MenuItem style={{  fontSize: "12px", color: "#ff1744" }} onClick={handledeleteItem}>
             {t("Delete")}
           </MenuItem>
         ) : null}

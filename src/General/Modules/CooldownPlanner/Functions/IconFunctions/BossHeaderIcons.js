@@ -562,5 +562,14 @@ export default function bossHeaders(props, style, QEmodule) {
     source = require("Images/Bosses/Amirdrassil/UI-EJ-BOSS-AurostortheHibernator.png");
   }
 
+  if (props === 2607) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-ulgrax.png");
+  else if (props === 2611) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-the bloodbound horror.png");
+  else if (props === 2599) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-sikran.png");
+  else if (props === 2609) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-rashanan.png");
+  else if (props === 2612) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-broodtwister ovinax.png");
+  else if (props === 2601) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-kyveza.png");
+  else if (props === 2608) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-the silken court.png");
+  else if (props === 2602) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-queen ansurek.png");
+
   return <img style={{ ...style }} src={source} alt={props} />;
 }

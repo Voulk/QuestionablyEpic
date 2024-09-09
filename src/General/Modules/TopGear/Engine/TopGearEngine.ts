@@ -664,6 +664,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     socketElement: "",
     socketList: [],
     fireMult: 0,
+    nerubianArmorPatch: 0,
   };
 
 
@@ -753,10 +754,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   // Armor Banding
-  /*if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
+  if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
     // The set has a Writhing Armor Banding so we'll double our other embellishment slot so long as it's Nerubian.
-    
-  }*/
+    setVariables.nerubianArmorPatch = 1;
+  }
 
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
   // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
