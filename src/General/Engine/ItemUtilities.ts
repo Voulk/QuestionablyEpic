@@ -365,13 +365,10 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
-  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2599 || bossID === 2609) return 3; // Sikran, Rashanan
+  else if (bossID === 2612 || bossID === 2601) return 6; // Broodtwister, Princess
+  else if (bossID === 2608 || bossID === 2602) return 9; // Silken Court, Queen
 
-  else if (bossID === 2557 || bossID === 2555) return 3; // Volcoross, Council: +3
-  else if (bossID === 2553 || bossID === 2556 || bossID === 2563) return 6; // Larodar, Nymue, Smolderon: +6
-  else if (bossID === 2565 || bossID === 2519) return 9; // Tindral, Fyrakk: +9
 
   return 0;
 }
@@ -382,15 +379,13 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [208616, 210214, 207171, 195526, 204201, 204202, 204211, 204465];
+  const boostedItems = [225574, 225577, 225578];
 
   if (boostedItems.includes(itemID)) {
     // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
-    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
-    else if (bossID === 2519 || bossID === 2493 || bossID === 2523 || bossID === 2520) return 7;
-    else if (bossID === 2556) return 0; // ???
-    else if (!isMaxxed(difficulty)) return 6;
+    if (isMaxxed(difficulty)) return 0;
+    else if (bossID === 2609 || bossID === 2599) return 13;
+    else if (bossID === 2602) return 7; // Queen
     else return 0;
   } 
   else return 0;
@@ -414,16 +409,15 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1207) {
+    if ('source' in item && item.source.instanceId === 1273) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       
     }
-    else if (item.source.instanceId === 1205) { // World Bosses
-      if (itemEncounter === 2531) expectedItemLevel = 415
-      else if (itemEncounter === 2562) expectedItemLevel = 454 // Technically the neck is 460.
-      else expectedItemLevel = 389;
+    else if (item.source.instanceId === 1278) { // World Bosses
+      expectedItemLevel = 603;
+
     }
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;

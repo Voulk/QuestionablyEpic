@@ -3,6 +3,38 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestSta
 export const effectData = [
   {
 
+    name: "Sureki Zealot's Insignia",
+    effects: [
+      {  // Versatility
+        coefficient: 0.139572,
+        table: -7,
+        ppm: 4,
+        duration: 10,
+      },
+      {  // Mana
+        value: 6500, // Yeah they just hard coded this one in.
+        ppm: 4,
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      // Review logs but given this procs off healing received but not your own there's a decent chance we do lose a little value.
+      const versAvg = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
+      bonus_stats.versatility = versAvg;
+      bonus_stats.allyStats = versAvg;
+
+
+      // This mana is technically distributed through the raid but it's fairly reasonable to value it as our own with a penalty.
+      bonus_stats.mana = processedValue(data[1], itemLevel) * data[1].ppm / 60 * 0.7;
+    
+
+      return bonus_stats;
+    }
+  },
+  {
+
     name: "Voltaic Stormcaller",
     effects: [
       {  // DPS

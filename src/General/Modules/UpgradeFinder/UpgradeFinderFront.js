@@ -438,7 +438,7 @@ export default function UpgradeFinderFront(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={0}
+                  defaultValue={4}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
