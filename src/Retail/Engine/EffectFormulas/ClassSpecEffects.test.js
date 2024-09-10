@@ -27,18 +27,18 @@ describe("Shaman", () => {
         console.log("Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin S1-4", player, contentType)))
     })
 
-    /*
-    test("Druid", () => {
-        const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("Druid 2pc: " + JSON.stringify(getDruidSpecEffect("Druid T31-2", player, contentType)))
-        console.log("Druid 4pc: " + JSON.stringify(getDruidSpecEffect("Druid T31-4", player, contentType)))
+    
+    test("HPriest", () => {
+        const player = new Player("Voulk", "Holy Priest", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("HPriest 2pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S1-2", player, contentType)))
+        console.log("HPriest 4pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S1-4", player, contentType)))
     })
-
+ 
     test("Mistweaver", () => {
         const player = new Player("Voulk", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("Monk 2pc: " + JSON.stringify(getMonkSpecEffect("Monk T31-2", player, contentType)))
-        console.log("Monk 4pc: " + JSON.stringify(getMonkSpecEffect("Monk T31-4", player, contentType)))
-    })*/
+        console.log("Monk 2pc: " + JSON.stringify(getMonkSpecEffect("Monk S1-2", player, contentType)))
+        console.log("Monk 4pc: " + JSON.stringify(getMonkSpecEffect("Monk S1-4", player, contentType)))
+    })
 
     test("Preservation Evoker", () => {
         const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
