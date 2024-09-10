@@ -46,6 +46,7 @@ describe("Evang Cast Sequence", () => {
 
         baseline = baseline / iterations
         
+        /*
         const results = {};
         stats.forEach(stat => {
             let statHealing = 0;
@@ -66,6 +67,8 @@ describe("Evang Cast Sequence", () => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
         console.log(weights); 
+
+        */
         
     })
 
