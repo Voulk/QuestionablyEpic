@@ -512,8 +512,8 @@ export default function ItemBar(props) {
        <Grid item>
          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(626, props.player, "Retail", "Palace")}>{"Palace Heroic"}</Button>
          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Palace")}>{"Palace Mythic"}</Button>
-         <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "S1 Dungeons")}>{"S1 Dungeons"}</Button>
-
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "S1 Dungeons")}>{"S1 Mythic+"}</Button>
+         <Button variant="contained" sx={{width: 150}} color="primary" onClick={() => autoFillItems(606, props.player, "Retail", "S1 Dungeons")}>{"M0 Dungeons"}</Button>
        </Grid>
      </Grid>}
     </Paper>
