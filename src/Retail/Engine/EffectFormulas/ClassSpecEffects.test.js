@@ -16,7 +16,15 @@ describe("Shaman", () => {
 
     const specs = ["Restoration Druid", "Restoration Shaman", "Mistweaver Monk", "Holy Priest", "Discipline Priest", "Holy Paladin", "Preservation Evoker"]
     test("Null", () => {
-        expect(true).toEqual(true);
+        //const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+        //console.log("Druid 2pc: " + JSON.stringify(getDruidSpecEffect("Druid S1-2", player, contentType)))
+        //console.log("Druid 4pc: " + JSON.stringify(getDruidSpecEffect("Druid S1-4", player, contentType)))
+    })
+
+    test("Paladin", () => {
+        const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Paladin 2pc: " + JSON.stringify(getPaladinSpecEffect("Paladin S1-2", player, contentType)))
+        console.log("Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin S1-4", player, contentType)))
     })
 
     /*
@@ -41,14 +49,6 @@ describe("Shaman", () => {
         //console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
     }) */
  
-    test("Holy Paladin", () => {
-        const player = new Player("Voulk", "Holy Paladin", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("T31 Paladin 2pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-2", player, contentType)))
-        console.log("T31 Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T31-4", player, contentType)))
-
-        console.log("T30 Paladin 2pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T30-2", player, contentType)))
-        console.log("T30 Paladin 4pc: " + JSON.stringify(getPaladinSpecEffect("Paladin T30-4", player, contentType)))
-    })
     /*
     test("Disc Priest", () => {
         const player = new Player("Voulk", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
