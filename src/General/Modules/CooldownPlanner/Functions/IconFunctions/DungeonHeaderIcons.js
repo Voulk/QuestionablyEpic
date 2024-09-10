@@ -70,6 +70,12 @@ import ShadowfangKeep from "Images/Classic/Dungeons/ShadowfangKeep.jpg";
 import GrimBatol from "Images/Classic/Dungeons/GrimBatol.jpg";
 import HallsOfReorigination from "Images/Classic/Dungeons/HallsOfReorigination.jpg";
 
+import AraKara from "Images/MythicPlus/Arakara.png";
+import CityOfThreads from "Images/MythicPlus/CityOfThreads.png";
+import Dawnbreaker from "Images/MythicPlus/Dawnbreaker.png";
+import Stonevault from "Images/MythicPlus/Stonevault.png";
+import SiegeOfBoralus from "Images/MythicPlus/SiegeOfBoralus.png";
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -241,6 +247,13 @@ export default function DungeonHeaderIcons(props) {
   if (props === '-55' || props === '-56') {
     source = DawnOfTheInfinites;
   }
+
+  // The War Within
+  if (props === 1271) source = AraKara;
+  if (props === 1274) source = CityOfThreads;
+  if (props === 1270) source = Dawnbreaker;
+  if (props === 1269) source = Stonevault;
+  if (props === 1023) source = SiegeOfBoralus;
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Legion Timewalking                                       */

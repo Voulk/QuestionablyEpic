@@ -253,6 +253,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
+      const armorPatch = additionalData.setVariables && additionalData.setVariables.nerubianArmorPatch;
+
       const fightLength = additionalData.castModel.fightInfo.fightLength
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
@@ -261,6 +263,7 @@ export const embellishmentData = [
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
         bonus_stats[stat] = 89 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
+        if (armorPatch) bonus_stats[stat] *= 2;
       })
 
       return bonus_stats;
@@ -286,6 +289,10 @@ export const embellishmentData = [
       const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
       
       bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
+
+      if (additionalData.setVariables && additionalData.setVariables.nerubianArmorPatch) {  
+        bonus_stats.versatility *= 2;
+      }
 
 
       return bonus_stats;

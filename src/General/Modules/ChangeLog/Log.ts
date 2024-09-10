@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 8,
+    date: "September 9",
+    changes: [ 
+      "Upgrade Finder",
+      "Added Armor Banding and the Linings to the context menu for crafted items.",
+      "Writhing Armor Banding and Sureki Zealot's Insignia now work in Top Gear.",
+      "New Auto-Add Option: M0 Gear."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 7,
     date: "September 9",
     changes: [ 
