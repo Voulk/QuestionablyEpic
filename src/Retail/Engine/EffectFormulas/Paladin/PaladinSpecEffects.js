@@ -11,8 +11,30 @@ const IDMARTYR = 183998;
 
 export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
+  const holyShockBaseCPM = 60 / 9.5 * player.getStatPerc("Haste") * 1.12 * 1.1;
+  const holyShockCPM = holyShockBaseCPM + (5 + 4 + 2 + 3) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
 
-  if (effectName === "Paladin T31-2") {
+  // These will be replaced by the CastProfile. This is a fairly rough estimate as a result.
+  if (effectName === "Paladin S1-2") {
+    
+    const reclamation = 1.3
+    const oneHolyShock = 2.26 * player.getStatMultiplier("ALL") * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.85 * 1.2 * 1.12 * reclamation * (0.3 * 0.15 + 1) * 1.1;
+
+    // 10% more Holy Shock Healing
+    bonus_stats.hps = oneHolyShock * holyShockCPM * 0.11; // Include additional healing on extra casts
+    
+    // 10% more Holy Shocks
+    bonus_stats.hps += getOneHolyPower(player) * holyShockBaseCPM * 0.1;
+    bonus_stats.hps += oneHolyShock * holyShockBaseCPM * 0.1;
+
+    bonus_stats.hps /= 60 * 1.45;
+
+  }
+  else if (effectName === "Paladin S1-4") {
+    // We're unlikely to cap this, so every holy shock is basically just 8% of a spender.
+    bonus_stats.hps = getOneHolyPower(player) * holyShockCPM * 0.08 * 3 / 60 * 1.4;
+  }
+  else if (effectName === "Paladin T31-2") {
     // 
     const holyShockCPM = 15 + (5 + 4) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
     const oneReverb = 1.08 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]) * 0.65

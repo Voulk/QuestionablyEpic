@@ -50,7 +50,7 @@ export const runHolyPriestCastProfile = (playerData) => {
     const averageSerenityCPM = 1 + getCPM(castProfile, "Flash Heal") * 6 / 60 + getCPM(castProfile, "Heal") * 6 / 60;
     castProfile.filter(spell => spell.spell === "Holy Word: Serenity")[0].cpm = averageSerenityCPM;
 
-    const averageSalvationCPM = 1 + getCPM(castProfile, "Holy Word: Serenity") * 30 / 720 + getCPM(castProfile, "Holy Word: Sanctify") * 30 / 720;
+    const averageSalvationCPM = 1 + getCPM(castProfile, "Holy Word: Serenity") * 15 / 720 + getCPM(castProfile, "Holy Word: Sanctify") * 30 / 720;
     castProfile.filter(spell => spell.spell === "Holy Word: Salvation")[0].cpm = averageSalvationCPM;
       
     // Surge of Light

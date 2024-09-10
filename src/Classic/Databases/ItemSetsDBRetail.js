@@ -17,6 +17,63 @@ export function getItemSet(id, pieces, spec) {
 
 export const itemSets = [
   {
+    // The War within Season 1
+    id: [1694],
+    class: "Restoration Druid",
+    setBonuses: {
+      2: "Druid S1-2", // 
+      4: "Druid S1-4"  // 
+    },
+  },
+  {
+    id: [1688],
+    class: "Holy Priest",
+    setBonuses: {
+      2: "HPriest S1-2", // 
+      4: "HPriest S1-4"  // 
+    },
+  },
+  {
+    id: [1688],
+    class: "Discipline Priest",
+    setBonuses: {
+      2: "DPriest S1-2", // 
+      4: "DPriest S1-4"  // 
+    },
+  },
+  {
+    id: [1686],
+    class: "Restoration Shaman",
+    setBonuses: {
+      2: "Shaman S1-2", // 
+      4: "Shaman S1-4"  // 
+    },
+  },
+  {
+    id: [1690],
+    class: "Mistweaver Monk",
+    setBonuses: {
+      2: "Monk S1-2", // 
+      4: "Monk S1-4"  // 
+    },
+  },
+  {
+    id: [1689],
+    class: "Holy Paladin",
+    setBonuses: {
+      2: "Paladin S1-2", // 
+      4: "Paladin S1-4"  // 
+    },
+  },
+  {
+    id: [1693],
+    class: "Preservation Evoker",
+    setBonuses: {
+      2: "Evoker S1-2", // 
+      4: "Evoker S1-4"  // 
+    },
+  },
+  {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                (Druid T31)                                     */
     /* ---------------------------------------------------------------------------------------------- */

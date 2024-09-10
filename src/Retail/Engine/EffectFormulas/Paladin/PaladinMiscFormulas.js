@@ -8,13 +8,15 @@ const IDWORDOFGLORY = 85673;
 export function getOneHolyPower(player, contentType) {
   const isDP = true;
 
-  const oneLoD = player.getStatMultiplier("ALL") * 1.05 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.6;
+  const oneLoD = player.getStatMultiplier("ALL") * 1.2 * 5 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.8;
   //const oneLoD = Math.round(player.getSingleCast(IDLIGHTOFDAWN, contentType));
 
-  const divinePurposeBonus = oneLoD * 0.15 * 1.2; 
+  const divinePurposeBonus = 1 + 0.15 * 1.15; 
+
+  const beacon = 0.2 * 2 * 0.7 + 1;
 
   //console.log("One LoD: " + oneLoD + ". DP Bonus: " + divinePurposeBonus);
-  return Math.round((oneLoD + (isDP ? divinePurposeBonus : 0)) / 3);
+  return Math.round((oneLoD * beacon * divinePurposeBonus) / 3);
 }
 
 export function getWingsHealingInc(critPerc) {

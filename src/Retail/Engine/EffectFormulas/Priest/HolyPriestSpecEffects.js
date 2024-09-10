@@ -5,7 +5,15 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
 
-  if (effectName === "HPriest T31-2") {
+  if (effectName === "HPriest S1-2") {
+    console.log(player.getHPS())
+    bonus_stats.hps = player.getHPS() * 0.0295;
+
+  }
+  else if (effectName === "HPriest S1-4") {
+    bonus_stats.hps = player.getHPS() * 0.0442;
+  }
+  else if (effectName === "HPriest T31-2") {
     // Placeholder pulled from sheet. Replace very soon.
     const renewData = HOLYPRIESTSPELLDB["Renew"][0];
     const renewHPS = 0;
