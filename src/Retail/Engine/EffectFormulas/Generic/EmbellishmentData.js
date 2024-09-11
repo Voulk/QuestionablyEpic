@@ -320,8 +320,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.75;
-      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.75;
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.7;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.7;
 
       return bonus_stats;
     }
