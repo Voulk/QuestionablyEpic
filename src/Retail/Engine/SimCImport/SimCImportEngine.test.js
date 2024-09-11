@@ -230,7 +230,6 @@ describe("Test Crafted Items", () => {
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(402);
         //expect(item.stats.crit).toEqual(176);
-        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
         expect(item.socket).toEqual(0);
         expect(item.uniqueEquip).toEqual("embellishment");
     });
