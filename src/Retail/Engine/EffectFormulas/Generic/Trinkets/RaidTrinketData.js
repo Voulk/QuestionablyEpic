@@ -147,10 +147,12 @@ export const raidTrinketData = [
             bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 6.4), cooldown: 90}, itemLevel, additionalData.castModel);
           }
-          else if (player.spec === "Mistweaver Monk") {
-            return bonus_stats; // :(
+          else if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") {
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.6);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 7.6)}, itemLevel, additionalData.castModel);
           }
-          else if (getSetting(additionalData.settings, "dpsFlag") || player.spec === "Restoration Druid") {
+
+          else if (getSetting(additionalData.settings, "dpsFlag") || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") {
             bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
           }
