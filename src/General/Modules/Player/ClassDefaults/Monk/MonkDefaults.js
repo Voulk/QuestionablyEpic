@@ -58,12 +58,12 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 5.6,
       cooldownMult: {
-        c60: 1.38,
+        c60: 1.16,
         c90: 1,
         c120: 1.115,
         c180: 1,
 
-        oneMinute: 1.42,
+        oneMinute: 1.16,
         ninetySeconds: 1,
         twoMinutes: 1.15,
         twoMinutesOrb: 1.11,
