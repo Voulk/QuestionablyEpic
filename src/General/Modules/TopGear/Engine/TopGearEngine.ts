@@ -372,7 +372,8 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             // Auto-delete sets that have matching ring IDs, unless one of the IDs is Shadowghast Ring in which case we'll allow it.
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
-                                (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130))) {
+                                (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130) ||
+                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137))) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
