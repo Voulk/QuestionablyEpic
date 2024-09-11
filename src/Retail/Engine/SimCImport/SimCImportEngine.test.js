@@ -125,6 +125,12 @@ describe("Test TWW Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+    test("PVP Item", () => {
+        const line = "finger1=,id=215137,bonus_id=11318/10837/10833/9626/10842/8792,crafted_stats=32/40,crafting_quality=4"
+        const item = processItem(line, player, contentType, type, settings)
+        expect(item.level).toEqual(606);
+    });
+
     test("World Quest Item", () => {
         const line = "shoulder=,id=224687,bonus_id=10297/6652/1701/1643/10254";
         const item = processItem(line, player, contentType, type, settings)

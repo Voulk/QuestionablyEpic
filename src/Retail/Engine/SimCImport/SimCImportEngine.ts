@@ -280,7 +280,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     slot: "",
     upgradeTrack: "",
     upgradeRank: 0,
-    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 999, levelGain: 0, finalLevel: 0},
+    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 9999, levelGain: 0, finalLevel: 0},
     uniqueTag: "",
     itemEquipped: !line.includes("#"),
     sockets: 0,
