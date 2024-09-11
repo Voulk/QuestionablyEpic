@@ -280,7 +280,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     slot: "",
     upgradeTrack: "",
     upgradeRank: 0,
-    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 999, levelGain: 0, finalLevel: 0},
+    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 9999, levelGain: 0, finalLevel: 0},
     uniqueTag: "",
     itemEquipped: !line.includes("#"),
     sockets: 0,
@@ -404,7 +404,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
-          if ("spell" in idPayload["effect"] && bonus_id !== "8174") { // Ignore Flavor Packet.
+          if ("spell" in idPayload["effect"] && bonus_id !== "8174" && bonus_id !== "6917") { // Ignore Flavor Packet.
             const specialEffectName = idPayload["effect"]["spell"]["name"]
             /*itemEffect = {
               type: "embellishment",
@@ -524,7 +524,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
-
+    
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
     item.isEquipped = protoItem.itemEquipped;
