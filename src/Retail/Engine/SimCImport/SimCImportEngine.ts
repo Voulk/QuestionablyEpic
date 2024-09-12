@@ -415,7 +415,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
 
             // Embellishments that require a tag.
-            if (['Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
+            if (['Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
               protoItem.effect = {
                 type: "embellishment",
                 name: specialEffectName,
