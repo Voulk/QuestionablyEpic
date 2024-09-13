@@ -56,7 +56,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 
   }
   if (!item.vaultItem && gameType === "Retail") items.push({id: items.length + 1, ilvlMinimum: 0, label: "Convert to Vault"})
-  if (item.effect === "" && [222568, 224405, 222439, 222445, 222450, 222444, 222464, 222570, 224404, ].includes(item.id)) {
+  if (item.effect === "" && getItemProp(item.id, "crafted") && (item.slot.includes("Weapon") || item.slot === "Offhand")) {
     items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
     items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
   }
