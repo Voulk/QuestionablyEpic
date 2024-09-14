@@ -319,7 +319,7 @@ export const otherTrinketData = [
     description: "Fairly poor as a healing trinket without intellect, but does a decent amount of extra DPS.",
     effects: [
       {
-        coefficient: 78.5124, 
+        coefficient: 78.5124 * 0.9, 
         table: -8,
         ppm: 4,
       },
@@ -416,7 +416,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 0.599917, 
+        coefficient: 0.599917 * 0.95, 
         table: -1,
         uptime: 1,
         stat: "intellect",
