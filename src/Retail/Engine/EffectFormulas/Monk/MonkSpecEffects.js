@@ -12,25 +12,19 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Monk T31-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const expectedPPM = 10 * 0.5;
-    bonus_stats.hps = 14500;
+  if (effectName === "Monk S1-2") {
+    // +10% EnV, ReM
+    const percentEffected = 0.21; 
+    bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
   }
-  else if (effectName === "Monk T31-4") {
-    // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 16000;
-  }
+  else if (effectName === "Monk S1-4") {
+    //const renewingMistTick = 0.19665 * player.getStatMults(["intellect", "haste", "versatility", "crit"]);
+    //const envMistTick = 0.52 * player.getStatMults(["intellect", "haste", "versatility", "crit"]);
+    //const percBuffed = 0.8;
 
-  else if (effectName === "Monk T30-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const expectedPPM = 10 * 0.5;
-    //bonus_stats.hps = expectedPPM * (250000 * 0.03) * player.getSpecialQuery("OneManaHealing", contentType) / 60;
-    bonus_stats.hps = 4000;
-  }
-  else if (effectName === "Monk T30-4") {
-    // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 6750;
+    //const HPSExtension = (renewingMistTick / 2 * 3 * percBuffed) / 60; // 18 seconds of extra HoT uptime per Essence Font cast.
+    
+    bonus_stats.hps = player.getHPS() * 0.0405;
   }
   // Tier Sets
   else if (effectName === "Mistweaver T29-2") {

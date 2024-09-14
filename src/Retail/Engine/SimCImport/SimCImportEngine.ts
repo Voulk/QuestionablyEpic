@@ -280,7 +280,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     slot: "",
     upgradeTrack: "",
     upgradeRank: 0,
-    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 999, levelGain: 0, finalLevel: 0},
+    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 9999, levelGain: 0, finalLevel: 0},
     uniqueTag: "",
     itemEquipped: !line.includes("#"),
     sockets: 0,
@@ -404,7 +404,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
-          if ("spell" in idPayload["effect"] && bonus_id !== "8174") { // Ignore Flavor Packet.
+          if ("spell" in idPayload["effect"] && bonus_id !== "8174" && bonus_id !== "6917") { // Ignore Flavor Packet.
             const specialEffectName = idPayload["effect"]["spell"]["name"]
             /*itemEffect = {
               type: "embellishment",
@@ -412,14 +412,16 @@ export function processItem(line: string, player: Player, contentType: contentTy
               level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
             };*/
 
-            protoItem.effect = {
-              type: "embellishment",
-              name: specialEffectName,
-              level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
-            }
+
 
             // Embellishments that require a tag.
-            if (['Potion Absorption Inhibitor', 'Blue Silken Lining', 'Magazine of Healing Darts'].includes(specialEffectName)) {
+            if (['Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
+              protoItem.effect = {
+                type: "embellishment",
+                name: specialEffectName,
+                level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
+              }
+              
               protoItem.uniqueTag = "embellishment";
             }
 
@@ -513,7 +515,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 476, Adventurer: 489, Veteran: 502, Champion: 515, Hero: 522, Myth: 528 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
 
   }
@@ -524,12 +526,13 @@ export function processItem(line: string, player: Player, contentType: contentTy
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
-
+    
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
     item.isEquipped = protoItem.itemEquipped;
     item.itemConversion = protoItem.itemConversion || 0;
     item.active = protoItem.itemEquipped || item.vaultItem;
+    if (protoItem.missiveStats) item.missiveStats = protoItem.missiveStats;
 
     // Add stats to our item based on its item allocations.
     item.stats = calcStatsAtLevel(item.level, protoItem.slot, itemAllocations, protoItem.tertiary);

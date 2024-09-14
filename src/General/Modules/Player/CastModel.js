@@ -19,6 +19,7 @@ class CastModel {
     this.contentType = contentType;
     this.arrayID = arrID;
     this.setDefaults(spec, contentType, modelID);
+    this.modelType = {"Raid": "", "Dungeon": ""};
   }
 
   spellList = {};
@@ -31,6 +32,7 @@ class CastModel {
   modelName = "";
   arrayID = 0;
   baseStatWeights = {}
+  modelType = "Default";
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -180,6 +182,7 @@ class CastModel {
     else if (spec === SPEC.PRESEVOKER) {
       // TODO
       this.modelName = "Default";
+      //this.modelType = "CastModel";
       spellList = evokerDefaultSpellData(contentType);
       specialQueries = evokerDefaultSpecialQueries(contentType);
       this.baseStatWeights = evokerDefaultStatWeights(contentType);

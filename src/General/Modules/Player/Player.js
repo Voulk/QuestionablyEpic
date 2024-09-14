@@ -284,12 +284,29 @@ export class Player {
 
     const newItem = item.clone();
     newItem.active = true;
-    if (newLevel !== 0) newItem.updateLevel(newLevel);
+    if (newLevel !== 0) newItem.updateLevel(newLevel, item.missiveStats);
     if (socketFlag) newItem.socket = 1;
     if (vaultFlag) {
       newItem.vaultItem = true;
       newItem.uniqueEquip = "vault";
     }
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
+  };
+
+  embellishItem = (item, embellishmentName) => {
+
+    const newItem = item.clone();
+    newItem.active = true;
+
+    newItem.effect = {
+      type: "embellishment",
+      name: embellishmentName,
+      level: item.level,
+    }
+    newItem.uniqueTag = "embellishment";
+    newItem.updateLevel(item.level, item.missiveStats);
+
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -661,7 +678,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
         intellect: 60000,
-        haste: 1950,
+        haste: 2150,
         crit: 8600,
         mastery: 7600,
         versatility: 6000,

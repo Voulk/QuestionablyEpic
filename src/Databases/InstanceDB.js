@@ -1,14 +1,21 @@
+
+export const getSeasonalDungeons = () => {
+  return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
   "-30": "PVP Season 1 (Honor)",
   "-1": "Dungeons",
   "1190": "Castle Nathria",
-  "1205": "World Bosses",
+  "1278": "World Bosses", // 1205: DF World Bosses
   "1193": "Sanctum of Domination",
   "1200": "Vault of the Incarnates",
   "1208": "Aberrus, the Shadowed Crucible",
   "1207": "Amirdrassil, The Dream's Hope",
+
+  "1273": "Nerub-ar Palace",
 
   "-4": "Crafted",
 };
@@ -1108,6 +1115,14 @@ export const encounterDB = {
   },
 
   /* ---------------------------------------- World Bosses ---------------------------------------- */
+  1278: {
+    bossOrder: [2625, 2635, 2636, 2637],
+    2625: "Kordac, the Dormant Protector",
+    2635: "Aggregation of Horrors",
+    2636: "Shurrai, Atrocity of the Undersea",
+    2637: "Orta, the Broken Mountain",
+  },
+
   1205: {
     bossOrder: [2515, 2506, 2517, 2518, 2531, 2562],
     2515: {
@@ -1919,7 +1934,27 @@ export const encounterDB = {
       },
     },
   },
-  // Amirdrassil
+  // Nerub'ar Palace
+  1273: {
+    name: {
+      en: "Nerub'ar Palace",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    bossOrder: [2607, 2611, 2599, 2609, 2612, 2601, 2608, 2602, -54],
+    bosses: {
+      2607: "Ulgrax the Devourer",
+      2611: "Bloodbound Horror",
+      2599: "Sikran, Captain of the Sureki",
+      2609: "Rasha'nan",
+      2612: "Broodtwister Ovi'nax",
+      2601: "Nexus-Princess Ky'veza",
+      2608: "The Silken Court",
+      2602: "Queen Ansurek",
+    }
+  },
   1207: {
     name: {
       en: "Amirdrassil, the Dream's Hope",
@@ -1928,7 +1963,6 @@ export const encounterDB = {
       ru: "",
       ch: "",
     },
-    //bossOrder: [2688, 2687, 2693, 2682, 2680, 2689, 2683, 2684, 2685, 999],
     bossOrder: [2564, 2554, 2557, 2555, 2553, 2556, 2563, 2565, 2519, -54],
     bosses: {
       2564: {
@@ -2042,15 +2076,31 @@ export const encounterDB = {
         1203, // The Azure Vault
       ],
       bossOrderMythicPlus: [
-        1196, // Brackenhide Hollow
-        1197, // Uldaman: Legacy of Tyr
-        1198, // The Nokhud Offensive
-        1199, // Neltharus
-        1201, // Alge'thar Academy
-        1202, // Ruby Life Pools
-        1204, // Halls of Infusion
-        1203, // The Azure Vault
+        1271, // "Ara-kara, City of Echoes", 
+        1274, //"City of Threads", 
+        1270, //"The Dawnbreaker",
+        1269, //"The Stonevault",
+        1184, //"Mists of Tirna Scithe",
+        1182, //"The Necrotic Wake",
+        1023, //"Siege of Boralus",
+        71, //"Grim Batol",
       ],
+
+      // M+
+      1271: "Ara-kara, City of Echoes", 
+      1274: "City of Threads", 
+      1270: "The Dawnbreaker",
+      1269: "The Stonevault",
+      1184: "Mists of Tirna Scithe",
+      1182: "The Necrotic Wake",
+      1023: "Siege of Boralus",
+      71: "Grim Batol",
+
+      // M0
+      1267: "Priory of the Sacred Flame",
+      1272: "Cinderbrew Meadery",
+      1210: "Darkflame Cleft",
+      1268: "The Rookery",
   
       313: {
         name: {

@@ -5,29 +5,19 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
+import { STATCONVERSION } from "General/Engine/STAT"
 
 const SPECCONSTANTS = {
     
-    masteryMod: 0.5, 
-    masteryEfficiency: 0.80, 
+    masteryMod: 0.95625, 
+    masteryEfficiency: 0, 
+    masteryExpectedOverheal: 0.8,
     baseMana: 2500000, // 2.5m
 
     auraHealingBuff: 1,
     auraDamageBuff: 1,
     enemyTargets: 1, 
-    echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
 
-    yserasGift: {
-        // Regrowth HoT portion
-        name: "Ysera's Gift",
-        buffType: "heal",
-        buffDuration: 9999,
-        coeff: 0, // The coefficient for a single regrowth tick.
-        flatHeal: 0,
-        tickData: {tickRate: 5, canPartialTick: false, tickOnCast: false, hasted: false}, 
-        expectedOverheal: 0.4,
-        secondaries: []
-    }
 }
 
 
@@ -40,7 +30,7 @@ const SPECCONSTANTS = {
  * @param {*} talents The talents run in the current set.
  * @returns An updated spell database with any of the above changes made.
  */
- const applyLoadoutEffects = (druidSpells, settings, talents, state, stats) => {
+ export const applyLoadoutEffects = (druidSpells, settings, talents, state, stats) => {
 
     // ==== Default Loadout ====
     // While Top Gear can automatically include everything at once, individual modules like Trinket Analysis require a baseline loadout
@@ -65,35 +55,14 @@ const SPECCONSTANTS = {
         const fullSpell = value;
         const spellInfo = fullSpell[0];
 
-
-        if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
-            druidSpells[key].push({
-                name: "Temporal Compression",
-                type: "buff",
-                canStack: true,
-                stacks: 1,
-                maxStacks: 4,
-                value: 0.05 * talents.temporalCompression,
-                buffDuration: 999,
-                buffType: 'special',
-            })
-        }
-        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
-            value.forEach(spellSlice => {
-                if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
-                spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
-            });
-        }
-
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
-        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * BASECONSTANTS.baseMana / 100;
+        if (spellInfo.cost) spellInfo.cost = spellInfo.cost * SPECCONSTANTS.baseMana / 100;
        
         if (settings.includeOverheal === "No") {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
-
             })
  
         }
@@ -145,7 +114,12 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
-
+    // Handle Mastery
+    if (spell.secondaries.includes('mastery')) {
+        const masteryPerc = (8 + currentStats.mastery / STATCONVERSION.MASTERY) * 1.12 * SPECCONSTANTS.masteryMod / 100;
+        //console.log(masteryPerc);
+        healingVal += (healingVal / (1 - spell.expectedOverheal)) * masteryPerc * SPECCONSTANTS.masteryExpectedOverheal;
+    }
 
     // Compile healing and add report if necessary.
     state.healingDone[spell.name || spellName] = (state.healingDone[spell.name || spellName] || 0) + healingVal;

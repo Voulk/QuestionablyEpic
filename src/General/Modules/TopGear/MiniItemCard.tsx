@@ -138,6 +138,7 @@ interface ItemCardProps {
   itemKey: number;
   item: Item;
   upgradeItem: (item: Item, newItemLevel: number, socketFlag: boolean, vaultFlag: boolean) => void;
+  embellishItem: (item: Item, embellishmenName: string) => void;
   activateItem: (unique: string, active: boolean) => void;
   delete: (unique: string) => void;
   catalyze: (item: Item) => void;
@@ -223,6 +224,7 @@ export default function ItemCard(props: ItemCardProps) {
                 catalyseItemCard={catalyseItemCard}
                 itemLevel={itemLevel}
                 upgradeItem={props.upgradeItem}
+                embellishItem={props.embellishItem}
                 item={item}
                 gameType={gameType}
               />

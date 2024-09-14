@@ -20,10 +20,18 @@ export const getTalentPoints = (talents, talentName) => {
     return talents[talentName] ? talents[talentName].points : 0;
 }
 
+export const getTalentData = (state, talentName, attribute) => {
+    if (state.talents[talentName].data[attribute]) return state.talents[talentName].data[attribute];
+    else {
+        console.error("Looking for missing talent data: " + talentName + " " + attribute);
+        return "";
+    }
+}
+
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
         const talent = state.talents[talentName];
-        if (talent.points > 0) {
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
             talent.runFunc(state, spellDB, talent.points, stats)
         }
     });
@@ -71,7 +79,15 @@ export const spendSpellCost = (spell, state, spellName = "") => {
     } 
         
     else if ('cost' in spell[0]) {
-        state.manaSpent += spell[0].cost;
+        if (spellName === "Flash of Light" && checkBuffActive(state.activeBuffs, "Infusion of Light")) {
+            state.manaSpent += spell[0].cost * (1 - PALADINCONSTANTS.infusion.flashOfLightReduction); }
+        if ((spellName === "Flash of Light" || spellName === "Holy Light") && checkBuffActive(state.activeBuffs, "Divine Favor")) {
+            state.manaSpent += spell[0].cost * 0.5; }
+        else if (spellName == "Holy Shock" && state.talents.reclamation.points == 1) {
+            state.manaSpent += spell[0].cost * (1 - ((1 - PALADINCONSTANTS.reclamation.avgHealHealth) * (PALADINCONSTANTS.reclamation.manaReduction))); }
+        else if (spellName == "Crusader Strike" && state.talents.reclamation.points == 1) {
+            state.manaSpent += spell[0].cost * (1 - ((1 - PALADINCONSTANTS.reclamation.avgDamHealth) * (PALADINCONSTANTS.reclamation.manaReduction))); }
+        else state.manaSpent += spell[0].cost;
         state.manaPool = (state.manaPool || 0) - spell[0].cost;
     }
     else {
@@ -172,18 +188,47 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             else if (spell.type === "buffExtension") {
                 extendBuff(state.activeBuffs, 0, spell.extensionList, spell.extensionDuration)
             }
-            else {
-                console.error("Spell Type Error: " + spell.type);
+            // The spell reduces the cooldown of another spell. 
+            else if (spell.type === "cooldownReduction") {
+                const targetSpell = evokerSpells[spell.targetSpell];
+                targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+            }
+             // The spell reduces the cooldown of multiple spells. 
+            else if (spell.type === "cooldownReductions") {
+                spell.targetSpells.forEach(target => {
+                    const targetSpell = evokerSpells[target];
+                    if (targetSpell[0].cooldownData.activeCooldown) targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
+                    //(target + ": " + targetSpell[0].cooldownData.activeCooldown + " - " + (targetSpell[0].cooldownData.activeCooldown - spell.cooldownReduction));
+                    
+                })
+                
+            }
+            else if (spellName !== "Rest") {
+                console.error("Spell Type Error: " + spellName);
             }
 
             // These are special exceptions where we need to write something special that can't be as easily generalized.
-            if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
-        
+            if (state.spec.includes("Holy Paladin") && 'cooldownData' in spell && spell.cooldownData.cooldown && !flags.bonus/*&& !bonusSpell*/) {
+                // Handle charges by changing the base cooldown value
+                const newCooldownBase = ((spell.cooldownData.charges > 1 && spell.cooldownData.activeCooldown > state.t) ? spell.cooldownData.activeCooldown : state.t)
+                //const newCooldownBase = state.t;
+
+                if (spell.cooldownData.hasted) spell.cooldownData.activeCooldown = state.t + spell.cooldownData.cooldown / getHaste(state.currentStats);
+                else spell.cooldownData.activeCooldown = state.t + spell.cooldownData.cooldown;
+
+
+                /*
+                if (spellName === "Holy Shock" && state.talents.sanctifiedWrath.points && checkBuffActive(state.activeBuffs, "Avenging Wrath")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.2);
+                else if ((spellName === "Crusader Strike" || spellName === "Judgment") && checkBuffActive(state.activeBuffs, "Avenging Crusader")) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats) / 1.3);
+                else if (spell.hastedCooldown) spell.cooldownData.activeCooldown = newCooldownBase + (spell.cooldowndata.cooldown / getHaste(state.currentStats));
+                else spell.cooldownData.activeCooldown = newCooldownBase + spell.cooldown; */
             }
+            else if ('cooldownData' in spell && spell.cooldownData.cooldown && !('ignoreCD' in flags)) spell.cooldownData.activeCooldown = state.t + (spell.cooldownData.cooldown / getHaste(state.currentStats));
+    
+            if (spell.holyPower) state.holyPower = Math.min(state.holyPower + spell.holyPower, 5);
 
+        }
 
- 
-        // Grab the next timestamp we are able to cast our next spell. This is equal to whatever is higher of a spells cast time or the GCD.
     }); 
 
     // Any post-spell code.
@@ -196,6 +241,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
     // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
     if (["Rejuvenation", "Regrowth", "Wild Growth"].includes(spellName)) state.activeBuffs = removeBuffStack(state.activeBuffs, "Soul of the Forest");
+
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
     state.currentTarget = [];
 
@@ -251,8 +297,6 @@ function shuffleArray(array) {
 }
 
 export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
-
-
     if (seqType === "Manual") castState.queuedSpell = seq.shift();
     // if its is "Auto", use genSpell to auto generate a cast sequence
     else {
@@ -423,7 +467,7 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
 
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
-
+    
     
     if (stats.includes("vers") || stats.includes("versatility")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
@@ -518,6 +562,11 @@ export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0) =
     return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
 }
 
+export const getSpellAttribute = (spell, attribute, index = 0) => {
+    if (attribute === "cooldown") return spell[index].cooldownData.cooldown;
+    else return spell[index][attribute];
+    
+}
 
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.

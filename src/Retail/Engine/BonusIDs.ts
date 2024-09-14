@@ -82700,13 +82700,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11069": {
     "id": 11069,
-    "ilevel": "21 @plvl 1 - 558 @plvl 558",
+    "ilevel": "21 @plvl 1 - 554 @plvl 554",
     "curveId": 74086,
     "quality": 3
   },
   "11070": {
     "id": 11070,
-    "ilevel": "21 @plvl 1 - 558 @plvl 558",
+    "ilevel": "21 @plvl 1 - 554 @plvl 554",
     "curveId": 74086,
     "quality": 3
   },
@@ -84295,7 +84295,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "id": 187511,
       "index": 0,
       "spell": {
-        "id": 463610,
+        "id": 463232,
         "name": "Symbiosis",
         "icon": "inv_inscriptions_darkmoondeckshine_0"
       }
@@ -87081,5 +87081,16 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_cape_special_explorer_b_03"
       }
     }
+  },
+  "12057": {
+    "id": 12057,
+    "ilevel": "356 @plvl 55 - 551 @plvl 551",
+    "curveId": 71408
+  },
+  "12058": {
+    "id": 12058,
+    "ilevel": "363 @plvl 55 - 554 @plvl 554",
+    "curveId": 71409,
+    "quality": 3
   }
 }

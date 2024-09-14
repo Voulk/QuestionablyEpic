@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "QE Live TWW is now available in a limited format. Note that changes are being made in-game every single day!"
+    "Top Gear is beginning to open but expect further changes over the next few days. I recommend HOLDING YOUR SPARK."
   ]
 ;
   if (messageOfTheDay.length === 0) return;

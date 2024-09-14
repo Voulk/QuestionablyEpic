@@ -27,14 +27,14 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    groupBuffValuation: {value: "Half", options: ["Half", "Full"], category: "trinkets", type: "selector", gameType: "Retail"},
+    groupBuffValuation: {value: "75%", options: ["50%", "75%", "100%"], category: "trinkets", type: "selector", gameType: "Retail"},
     //incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
     //broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry", gameType: "Retail"},
     //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
 
     // TWW Trinkets
-    creepingCoagOverheal: { value: 34, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    ovinaxAverageIntStacks: { value: 18, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    creepingCoagOverheal: { value: 36, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     pheromoneSecreter: { value: "Haste / Versatility", options: [
@@ -54,7 +54,7 @@ const initialState : RootState = {
     
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
-    phialChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
+    flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
 
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 

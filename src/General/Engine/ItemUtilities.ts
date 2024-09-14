@@ -14,6 +14,7 @@ import { CONSTANTS } from "./CONSTANTS";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
+import { getSeasonalDungeons } from "Databases/InstanceDB";
 
 
 
@@ -314,7 +315,8 @@ export function getGemProp(id: number, prop: string) {
     if (temp.length > 0) {
       const gem = temp[0];
 
-      if (prop === "name") return gem.name.en || "";
+      if (prop === "name" && gem.name.en) return gem.name.en || "";
+      else if (prop === "name") return gem.name || "";
       else if (gem && prop in gem) return gem[prop as keyof typeof gem];
       else return ""
 
@@ -363,13 +365,10 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2737 || bossID === 2728) return 3; // Forgotten Experiments, Rashok, 
-  else if (bossID === 2731 || bossID === 2708 || bossID === 2824) return 6; // Zskarn, Magmorax
-  else if (bossID === 2786 || bossID === 2677) return 9; // Echo of Neltharion, Sarkarethreturn 9; 
+  if (bossID === 2599 || bossID === 2609) return 3; // Sikran, Rashanan
+  else if (bossID === 2612 || bossID === 2601) return 6; // Broodtwister, Princess
+  else if (bossID === 2608 || bossID === 2602) return 9; // Silken Court, Queen
 
-  else if (bossID === 2557 || bossID === 2555) return 3; // Volcoross, Council: +3
-  else if (bossID === 2553 || bossID === 2556 || bossID === 2563) return 6; // Larodar, Nymue, Smolderon: +6
-  else if (bossID === 2565 || bossID === 2519) return 9; // Tindral, Fyrakk: +9
 
   return 0;
 }
@@ -380,15 +379,13 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [208616, 210214, 207171, 195526, 204201, 204202, 204211, 204465];
+  const boostedItems = [225574, 225577, 225578];
 
   if (boostedItems.includes(itemID)) {
     // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
-    if (difficulty === CONSTANTS.difficulties.normalMax) return 0;
-    else if (difficulty === CONSTANTS.difficulties.heroicMax) return 0;
-    else if (bossID === 2519 || bossID === 2493 || bossID === 2523 || bossID === 2520) return 7;
-    else if (bossID === 2556) return 0; // ???
-    else if (!isMaxxed(difficulty)) return 6;
+    if (isMaxxed(difficulty)) return 0;
+    else if (bossID === 2609 || bossID === 2599) return 13;
+    else if (bossID === 2602) return 7; // Queen
     else return 0;
   } 
   else return 0;
@@ -412,16 +409,15 @@ export function filterItemListBySource(itemList: any[], sourceInstance: number, 
     let expectedItemLevel = level;
     
     // "Very Rare" items come with an item level boost. This is annoyingly either a 6 or 7 item level boost.
-    if ('source' in item && item.source.instanceId === 1207) {
+    if ('source' in item && item.source.instanceId === 1273) {
       const max = isMaxxed(difficulty);
       if (max) expectedItemLevel += getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       else expectedItemLevel += getItemLevelBoost(itemEncounter, difficulty) + getVeryRareItemLevelBoost(item.id, itemEncounter, difficulty);
       
     }
-    else if (item.source.instanceId === 1205) { // World Bosses
-      if (itemEncounter === 2531) expectedItemLevel = 415
-      else if (itemEncounter === 2562) expectedItemLevel = 454 // Technically the neck is 460.
-      else expectedItemLevel = 389;
+    else if (item.source.instanceId === 1278) { // World Bosses
+      expectedItemLevel = 603;
+
     }
 
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
@@ -942,6 +938,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
+      (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
       (gameType === "Classic" || itemLevel > 400) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
@@ -958,21 +955,21 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     let sourceCheck = true;
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
-      console.log(sources);
       // Check the item drops from the expected location.
       if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
-      if (source === "S1 Dungeons"&& sources) sourceCheck = sources.instanceId === -1; // TODO
+      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
     const slot = getItemProp(item.id, "slot", gameType);
     if (
-        ((slot === 'Trinket' && item.levelRange) || 
-        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit)) && 
+        ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
+        (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
+        (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
         (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))
         && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
-      const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
       console.log("Item Passes: " + item.name);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
@@ -1123,7 +1120,8 @@ export const getAllyStatsValue = (contentType: contentTypes, statValue: number, 
   const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
 
-  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "Half") return (dpsValue * 0.75 + healerValue * 0.25) / 2;
+  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "50%") return (dpsValue * 0.75 + healerValue * 0.25) * 0.5;
+  else if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "75%")return (dpsValue * 0.75 + healerValue * 0.25) * 0.75;
   else return dpsValue * 0.75 + healerValue * 0.25;
 }
 

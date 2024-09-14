@@ -1,11 +1,11 @@
-import React from "react";
+
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, Typography, Grid, Divider, Stack } from "@mui/material";
-import { getTranslatedItemName, getItemIcon } from "../../../Engine/ItemUtilities";
+import { getTranslatedItemName, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import "./ItemUpgrade.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { encounterDB } from "../../../../Databases/InstanceDB";
+import { encounterDB, craftedDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     minWidth: 250,
   },
   dom: {
-    borderColor: "#1286E5",
+    borderColor: "#169600",
     //backgroundColor: "#515751",
     borderStyle: "dashed",
     minWidth: 250,
@@ -54,12 +54,16 @@ export default function ItemCard(props) {
   const currentLanguage = i18n.language;
   const isLegendary = false; // Legendaries are currently so rare that we can just ID them when necessary. 
   const itemDifferential = item.score;
-  const isTierPiece = false; // item.isTierPiece();
+  const isTierPiece = getItemProp(item.item, "itemSetId") && item.slot !== "Trinket" && item.slot !== "Finger";
   const gameType = useSelector((state) => state.gameType);
   const wowheadDomain = (gameType === "Classic" ? "cata" : currentLanguage);
 
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
+    225577: "Very rare. Procs on healing received, not healing done. You will benefit from the raid in general getting more of these but you don't have to prioritize it for yourself is the stats aren't good for you.",
+    212452: "An underwhelming trinket option.",
+    225574: "The effect isn't incredible, but it's free on top of the base item.",
+
     207171: "There are much better trinkets than Blossom of Amidrassil in season 4. Note that lack of intellect too.",
     207172: "Belor'relos isn't a healing trinket but it does excellent damage which makes it a competitive choice in Mythic+.",
     //207170: "",
@@ -102,33 +106,39 @@ export default function ItemCard(props) {
       let dungeons = { ...encounterDB["-1"][gameType] };
       dungeons = Object.assign(dungeons, encounterDB[123]);
 
-      return dungeons[item.source.encounterId].name[currentLanguage];
+      return dungeons[item.source.encounterId];
     } else if (item.source.instanceId === 1194) {
-      return encounterDB[1194][item.source.encounterId].name[currentLanguage] + " (Tazavesh)";
+      return encounterDB[1194][item.source.encounterId] + " (Tazavesh)";
     }
     /* ----------------------------- Raid Boss Name ----------------------------- */
     if (item.source.instanceId === 1200 && item.source.encounterId > 0) {
-      return encounterDB[1200].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[1200].bosses[item.source.encounterId];
+    }
+    if (item.source.instanceId === 1273 && item.source.encounterId > 0) {
+      return encounterDB[1273].bosses[item.source.encounterId];
     }
     if (item.source.instanceId === 1208 && item.source.encounterId > 0) {
-      return encounterDB[1208].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[1208].bosses[item.source.encounterId];
     }
     if (item.source.instanceId === 1207 && item.source.encounterId > 0) {
-      return encounterDB[1207].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[1207].bosses[item.source.encounterId];
     }
     if (item.source.instanceId === 1193 && item.source.encounterId > 0) {
-      return encounterDB[1193].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[1193].bosses[item.source.encounterId];
     }
     if (item.source.instanceId === 1195 && item.source.encounterId > 0) {
-      return encounterDB[1195].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[1195].bosses[item.source.encounterId];
     }
     /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
-      return encounterDB[item.source.instanceId].bosses[item.source.encounterId].name[currentLanguage];
+      return encounterDB[item.source.instanceId].bosses[item.source.encounterId];
     }
     /* ------------------------------ World Bosses ------------------------------ */
     if (item.source.instanceId === 1205 && item.source.encounterId > 0) {
-      return encounterDB[1205][item.source.encounterId].name[currentLanguage];
+      return encounterDB[1205][item.source.encounterId];
+    }
+    if (item.source.instanceId === 1278 && item.source.encounterId > 0) {
+      return encounterDB[1278][item.source.encounterId];
     }
     /* ---------------------------------- Honor --------------------------------- */
     if (item.source.instanceId === -30 || item.source.encounterId === -30) {
@@ -144,7 +154,7 @@ export default function ItemCard(props) {
     }
     /* -------------------------------- TBC Badge Gear -------------------------------- */
     if (item.source.instanceId === -4) {
-      return t("BadgeGear");
+      return craftedDB[item.source.encounterId];
     }
   };
 

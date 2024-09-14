@@ -57,6 +57,29 @@ export const otherTrinketData = [
     }
   },
   { 
+    name: "Concoction: Kiss of Death",
+    description: "Assumes a 25s duration. You really don't want to play this close to the stun timer. Lines up with nothing.",
+    effects: [
+      {
+        coefficient: 0.555679, 
+        table: -7,
+        duration: 25, // Can go up to 30 but you get stunned
+        cooldown: 150,
+        stat: "all",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.versatility = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
+  { 
     name: "Spelunker's Waning Candle",
     description: "",
     effects: [
@@ -114,6 +137,35 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { // lol
+    name: "Fungal Friend Flute",
+    description: "",
+    effects: [
+      {
+        coefficient: 106.9512, 
+        table: -9,
+        efficiency: 0.8,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.33,
+      },
+      { // DPS
+        coefficient: 24.3678, 
+        table: -9,
+        efficiency: 1,
+        ticks: 3, // Ticks every second for 3s
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.33,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
     }
@@ -267,7 +319,7 @@ export const otherTrinketData = [
     description: "Fairly poor as a healing trinket without intellect, but does a decent amount of extra DPS.",
     effects: [
       {
-        coefficient: 78.5124, 
+        coefficient: 78.5124 * 0.9, 
         table: -8,
         ppm: 4,
       },
@@ -364,7 +416,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 0.599917, 
+        coefficient: 0.599917 * 0.95, 
         table: -1,
         uptime: 1,
         stat: "intellect",

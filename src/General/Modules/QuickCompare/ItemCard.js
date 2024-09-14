@@ -254,6 +254,7 @@ export default function ItemCard(props) {
                 catalyseItemCard={catalyseItemCard}
                 itemLevel={item.level}
                 upgradeItem={props.upgradeItem}
+                embellishItem={props.embellishItem}
                 item={item}
                 gameType={gameType}
 

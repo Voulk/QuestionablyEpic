@@ -17,6 +17,44 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 8,
+    date: "September 9",
+    changes: [ 
+      "Upgrade Finder",
+      "Added Armor Banding and the Linings to the context menu for crafted items.",
+      "Writhing Armor Banding and Sureki Zealot's Insignia now work in Top Gear.",
+      "New Auto-Add Option: M0 Gear."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 7,
+    date: "September 9",
+    changes: [ 
+      "Top Gear: Mistweaver, Resto Shaman",
+      "You can now add embellishments to crafted weapons from the context menu on each.",
+      "Bugfix: The top gear stat panel should no longer be missing 17k intellect.",
+      "Bugfix: Crafted items can now be upgraded or socketed without losing secondaries"
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 7,
+    date: "September 8",
+    changes: [ 
+      "Added a crafted tag to a lot more items.",
+      "The S1 dungeon button will now only add season 1 items."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 6,
+    date: "September 8",
+    changes: [ 
+      "Added offspec weapons with a red warning.",
+      "Top Gear: Resto Druid, Holy Paladin, Preservation Evoker.",
+      "Added drop location to Trinket descriptions.",
+      "New buttons to auto add all items from a content type."
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 5,
     date: "August 28",
     changes: [ 

@@ -10,7 +10,17 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
   const healingMult = 1.06 * 1.04 // Class talents
-  if (effectName === "Druid T31-4") {
+
+  if (effectName === "Druid S1-2") {
+    // +10% Regrowth, Swiftmend, Wild Growth
+    const percentEffected = 0.32; 
+    bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
+  }
+  else if (effectName === "Druid S1-4") {
+    const effectiveUptime = 0.5; 
+    bonus_stats.hps = effectiveUptime * 0.08 * player.getHPS();
+  }
+  else if (effectName === "Druid T31-4") {
     // 
 
     const oneNourish = 2.23 * player.getStatMults(["intellect", "crit", "versatility"]) * ((player.getStatPerc("mastery") - 1) * 3 * 1.9 + 1) * 1.8 * healingMult; // Triple mastery value.

@@ -54,7 +54,7 @@ export const dungeonTrinketData =
         name: "Burin of the Candle King",
         effects: [
           {  // Heal effect
-            coefficient: 250.157, // 371.7325,
+            coefficient: 250.157 * 1.15, // 371.7325,
             table: -9,
             secondaries: ['versatility'],
             efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
@@ -85,7 +85,7 @@ export const dungeonTrinketData =
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType)
           bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
-
+          console.log("CHANGELING", JSON.stringify(bonus_stats))
           return bonus_stats;
         }
       },
@@ -93,7 +93,7 @@ export const dungeonTrinketData =
         name: "Scrapsinger's Symphony",
         effects: [
           {  // Heal effect
-            coefficient: 42.7805,
+            coefficient: 42.7805 * 1.15,
             table: -9,
             secondaries: ['versatility', 'haste'],
             efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
@@ -212,7 +212,7 @@ export const dungeonTrinketData =
             cooldown: 90,
           },
           { // Vers Buff
-            coefficient: 0.504093, 
+            coefficient: 0.504093 * 1.08, 
             table: -7,
             duration: 10,
             cooldown: 90,
@@ -294,7 +294,7 @@ export const dungeonTrinketData =
         description: "Buff lasts 60s and you can expect to have 2-3 up at almost all times. The Spider DPS is a nice bonus but don't expect too much from it.",
         effects: [
           {
-            coefficient: 0.204476, 
+            coefficient: 0.204476 * 0.95, 
             table: -1,
             duration: 60, // Yes really
             ppm: 2.5,

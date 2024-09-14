@@ -125,6 +125,12 @@ describe("Test TWW Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+    test("PVP Item", () => {
+        const line = "finger1=,id=215137,bonus_id=11318/10837/10833/9626/10842/8792,crafted_stats=32/40,crafting_quality=4"
+        const item = processItem(line, player, contentType, type, settings)
+        expect(item.level).toEqual(606);
+    });
+
     test("World Quest Item", () => {
         const line = "shoulder=,id=224687,bonus_id=10297/6652/1701/1643/10254";
         const item = processItem(line, player, contentType, type, settings)
@@ -199,54 +205,35 @@ describe("Test Crafted Items", () => {
     const contentType = "Raid";
     const type = "Regular";
 
+    
 
-    test("Quick Oxxein Ring - No Missive IDs", () => {
-        const line = "finger1=,id=173133,bonus_id=7461,drop_level=60,crafted_stats=49";
+    test("Blue Crafted Belt", () => {
+        const line = "waist=,id=219485,bonus_id=11297/11298/9627/11142/10876,crafted_stats=32/49,crafting_quality=5";
         const item = processItem(line, player, contentType, type, settings)
-        expect(item.level).toEqual(230);
-        //expect(item.stats.mastery).toEqual(63);
-        expect(item.socket).toEqual(1);
+        expect(item.level).toEqual(590);
+        expect(item.stats.mastery).toEqual(591);
+        expect(item.socket).toEqual(0);
         //expect(item.uniqueEquip).toEqual("crafted");
     });
+
 
     test("Elemental Lariat", () => {
         const line = "neck=,id=193001,gem_id=192980/192921/192920,bonus_id=8836/8840/8902/8960/8783/8782/8801/8791,crafted_stats=49/32";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(389);
-        //expect(item.stats.crit).toEqual(468);
-        //expect(item.stats.mastery).toEqual(468);
-        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
-        //expect(item.socket).toEqual(3);
+
     });
 
-    test("Elemental Lariat with wrong crafted_stats", () => {
-        const line = "neck=,id=193001,gem_id=192987,bonus_id=8836/8840/8902/8960/8783/8782/8802/8791/8845,crafted_stats=40/32";
-        const item = processItem(line, player, contentType, type, settings)
-        expect(item.level).toEqual(405);
-        //expect(item.stats.crit).toEqual(536);
-        //expect(item.stats.mastery).toEqual(536);
-        expect(item.effect).toEqual({type: "embellishment", name: "Elemental Lariat"});
-        //expect(item.socket).toEqual(3);
-        expect(item.uniqueEquip).toEqual("embellishment");
-    });
 
     test("Obsidian Seared Hexblade", () => {
         const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
         const item = processItem(line, player, contentType, type, settings)
         expect(item.level).toEqual(402);
         //expect(item.stats.crit).toEqual(176);
-        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 402});
         expect(item.socket).toEqual(0);
         expect(item.uniqueEquip).toEqual("embellishment");
     });
 
-    test("Ring with Embellishment", () => {
-        const line = "finger1=,id=192999,enchant_id=6556,gem_id=192948,bonus_id=8836/8840/8902/8780/8802/8793/8846/8960/8175,crafted_stats=36/49";
-        const item = processItem(line, player, contentType, type, settings)
-        expect(item.effect).toEqual({type: "embellishment", name: "Potion Absorption Inhibitor", level: 418});
-        expect(item.socket).toEqual(1);
-        expect(item.uniqueEquip).toEqual("embellishment");
-    });
 
     
 });

@@ -1,77 +1,84 @@
 import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
 import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
+import { paladinMeleeProfile } from "./PaladinDefaultAPL";
+import { runHolyPaladinCastProfile } from "./HolyPaladinCastProfile";
 import { genStatWeights } from './HolyPaladinUtilities';
 import { buildRamp } from "./HolyPaladinRampGen";
 import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDB";
-
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
+describe("Evang Cast Sequence", () => {
+    test("Test APL", () => {
+        
+        console.log("Testing APL");
+
+
+        const profile = paladinMeleeProfile;
+    
+        const baseSpells = PALADINSPELLDB;
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
+
+        const playerData = { spec: "Holy Paladin", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: profile.defaultStats }
+        
+
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        const data = runCastProfileSuites(playerData, runHolyPaladinCastProfile)
+        //const data = runStatSuites(playerData, profile, runCastSequence);
+        //console.log(data);
+
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        //console.log(data);
+        //const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
+        //console.log(data);
+
+        expect(true).toEqual(true);
+
+        
+        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+            baseline += runHolyPaladinCastProfile(playerData).hps;
+        }
+
+        baseline = baseline / iterations
+        
+        /*
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 2400;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += runHolyPaladinCastProfile(newPlayerData).hps;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+
+        */
+        
+    })
+
+
+}); 
+
 /*
-describe("Test Base Spells", () => {
-    const errorMargin = 1.1; // There's often some blizzard rounding hijinx in spells. If our formulas are within 1 (a fraction of a percent) then we are likely calculating it correctly.
-    const activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 1000,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    }
-    const critMult = 1.05 + activeStats.crit / 35 / 100; 
-    test("Smite", () => {
-        const spell = DISCSPELLS['Smite'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        //expect(Math.round(damage)).toEqual(Math.round(1110*critMult));
-    });
-    test("Mind Blast", () => {
-        const spell = DISCSPELLS['Mind Blast'][0];
-        expect(Math.abs(getSpellRaw(spell, activeStats) - 1666*critMult)).toBeLessThan(3);
-    });
-    test("Solace", () => {
-        const spell = DISCSPELLS['Power Word: Solace'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 1680*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Schism", () => {
-        const spell = DISCSPELLS['Schism'][0];
-
-        const damage = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(damage - 3150*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Radiance", () => {
-        const spell = DISCSPELLS['Power Word: Radiance'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 2347*critMult)).toBeLessThan(errorMargin);
-    });
-    test("Power Word: Shield", () => {
-        const spell = DISCSPELLS['Power Word: Shield'][0];
-
-        const healing = getSpellRaw(spell, activeStats);
-
-        expect(Math.abs(healing - 3687*critMult)).toBeLessThan(errorMargin);
-    });
-
-    // TODO: test more spells.
-});
-*/
 describe("Evang Cast Sequence", () => {
     //const player = new Player("Mock", "Discipline Priest", 99, "NA", "Stonemaul", "Night Elf");
-    /*player.activeStats = {
-            intellect: 1974,
-            haste: 869,
-            crit: 445,
-            mastery: 451,
-            versatility: 528,
-            stamina: 1900,
-    } */
+
     const activeStats = {
         intellect: 11400 * 1.05 * 1.04, // Arcane int + Seal of Might
         haste: 3215,
@@ -80,12 +87,7 @@ describe("Evang Cast Sequence", () => {
         versatility: 2762 + (3 * 205), // MotW
         stamina: 0,
 }
-/* Old Stats
-        haste: 5200,
-        crit: 3800,
-        mastery: 2800,
-        versatility: 1600 + (3 * 205), // MotW
-        */
+
     
     // Old Sequences
     const talents = baseTalents;
@@ -190,7 +192,7 @@ describe("Evang Cast Sequence", () => {
         const build3 = ["lightsHammer", "commandingLight", "glisteningRadiance", "overflowingLight", "holyInfusion", "handOfDivinity", "divineGlimpse", "avengingWrathMight", 
         "reclamation", "daybreak", "tyrsDeliverance", "risingSunlight", "gloriousDawn", "imbuedInfusions",
         "divinePurpose", "boundlessSalvation"] // Boundless
-        */
+        
 
 
         // Blank Point
@@ -255,7 +257,7 @@ describe("Evang Cast Sequence", () => {
         strings.push(evalTalentStrings([...build1, "boundlessSalvation"], talents, activeStats, settings, baselineHealing / iterations, "Boundless Salv"));
         strings.push(evalTalentStrings([...build1, "sanctifiedWrath"], talents, activeStats, settings, baselineHealing / iterations, "Sanctified Wrath"));
         strings.push(evalTalentStrings([...build1, "awakening"], talents, activeStats, settings, baselineHealing / iterations, "Awakening"));
-        */
+
 
         
         //strings.push(evalTalentStrings(build3, talents, activeStats, settings, baselineHealing / iterations, "CM + awakening"));
@@ -321,7 +323,7 @@ describe("Evang Cast Sequence", () => {
         console.log(weights); 
     });*/
     
-}); 
+
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
 // We need this to ensure we're always running a clean DB, free from any changes made on previous runs.
 const deepCopyFunction = (inObject) => {

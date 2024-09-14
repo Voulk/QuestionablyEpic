@@ -19,7 +19,32 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   const essenceBurst = valueEssenceBurst(player, contentType);
   let bonus_stats = {};
 
-  if (effectName === "Evoker T31-2") {
+  if (effectName === "Evoker S1-2") {
+    // This bonus is just awful
+    if (contentType === "Raid") bonus_stats.hps = 0;
+    else {
+      const percentEffected = 0.25;
+      bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
+    }
+  }
+  else if (effectName === "Evoker S1-4") {
+    // +40% to spiritbloom, dream breath baseline + possible extras like Lifebind
+    const spiritbloomCPM = 2.4;
+    const spiritbloomData = EVOKERSPELLDB["Spiritbloom"][0];
+    const oneSpiritbloom = spiritbloomData.coeff * 4 * 1.4 * player.getInt() * player.getStatMults(spiritbloomData.secondaries) * 1.1 * healingBonus; // Lush Growth
+
+    bonus_stats.hps = oneSpiritbloom * spiritbloomCPM * 0.4 / 60;
+
+    const dreamBreathCPM = 1.9;
+    const dreamBreathData = EVOKERSPELLDB["Dream Breath"];
+    const dreamBreathTicks = dreamBreathData[2].buffDuration[0] / dreamBreathData[2].tickData.tickRate * player.getStatPerc("haste") + 3.5;
+    const dreamBreathCoeff = dreamBreathData[0].coeff + dreamBreathData[1].coeff[0] + dreamBreathData[2].coeff * dreamBreathTicks;
+    const specialBonuses = 1.4; // Call of Ysera
+    const oneDreamBreath = dreamBreathCoeff * 5 * player.getInt() * player.getStatMults(dreamBreathData[0].secondaries) * 1.1 * healingBonus * specialBonuses; // Lush Growth
+
+    bonus_stats.hps += oneDreamBreath * dreamBreathCPM * 0.4 / 60;
+  }
+  else if (effectName === "Evoker T31-2") {
     // 
     
     

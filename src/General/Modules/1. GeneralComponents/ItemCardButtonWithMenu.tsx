@@ -5,11 +5,13 @@ import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getItemProp } from "General/Engine/ItemUtilities";
 
 interface MenuItemType {
   id: number;
   ilvlMinimum: number;
   label: string;
+  effectName?: string;
 }
 
 interface ItemCardButtonWithMenuProps {
@@ -20,6 +22,7 @@ interface ItemCardButtonWithMenuProps {
   catalyseItemCard: () => void;
   itemLevel: number;
   upgradeItem: (item: any, ilvlMinimum: number, socketFlag: boolean, vaultFlag: boolean) => void;
+  embellishItem: (item: any, embellishmentName: string) => void;
   item: any;
 }
 
@@ -28,8 +31,9 @@ const getMenuItems = (item: any): MenuItemType[] => {
   let items: MenuItemType[] = [];
   //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
-  const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
-  const itemLevelCaps: { [key: string]: number } = { Explorer: 476, Adventurer: 489, Veteran: 502, Champion: 515, Hero: 522, Myth: 528, Awakened: 528 };
+  //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
+  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 635, 639];
+  const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
@@ -44,15 +48,23 @@ const getMenuItems = (item: any): MenuItemType[] => {
 const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   const items: MenuItemType[] = [];
 
-  if (CONSTANTS.socketSlots.includes(item.slot) && item.slot !== "Neck" && gameType === "Retail") {
+  if (CONSTANTS.socketSlots.includes(item.slot) && gameType === "Retail") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (!item.socket) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
     //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
 
   }
   if (!item.vaultItem && gameType === "Retail") items.push({id: items.length + 1, ilvlMinimum: 0, label: "Convert to Vault"})
-
+  if (item.effect === "" && getItemProp(item.id, "crafted") && (item.slot.includes("Weapon") || item.slot === "Offhand")) {
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+  }
+  if (item.effect === "" &&  item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && getItemProp(item.id, "crafted")) {
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Dawnthread Lining", effectName: "Dawnthread Lining"})
+    items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Embellishment: Duskthread Lining", effectName: "Duskthread Lining"})
+  }
   // Add embellishment options.
   
   
@@ -60,7 +72,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 
 }
 
-const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, item, gameType }) => {
+const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, embellishItem, item, gameType }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
 
@@ -83,6 +95,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   const handleExtraMenuItemClick = (menuItem: MenuItemType) => {
     if (menuItem.label === "Add Socket") upgradeItem(item, 0, true, false);
     else if (menuItem.label === "Convert to Vault") upgradeItem(item, 0, false, true);
+    else if (menuItem.label.includes("Add Embellishment")) embellishItem(item, menuItem.effectName);
     handleClose();
 
   }
@@ -109,7 +122,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #888888",
+            border: "1px solid #DAA520",
             borderRadius: "4px",
           },
         }}
@@ -122,19 +135,19 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         {menuItems
           .filter((filter) => filter.ilvlMinimum > itemLevel)
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem style={{ color: "plum", fontSize: "12px" }} key={item.id} onClick={() => handleMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
+            <MenuItem style={{  fontSize: "12px" }} key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
               {item.label}
             </MenuItem>
           ))}
 
         {deleteActive ? (
-          <MenuItem onClick={handledeleteItem} style={{ color: "#ff1744" }}>
+          <MenuItem style={{  fontSize: "12px", color: "#ff1744" }} onClick={handledeleteItem}>
             {t("Delete")}
           </MenuItem>
         ) : null}
