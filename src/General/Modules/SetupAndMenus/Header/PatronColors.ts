@@ -15,6 +15,6 @@ export const patronCaps: { [key: string]: number } = {
     Basic: 30, 
     Gold: 34, 
     Diamond: 36, 
-    "Rolls Royce": 38, 
-    Sapphire: 38 
+    "Rolls Royce": 40, 
+    Sapphire: 40 
 }
