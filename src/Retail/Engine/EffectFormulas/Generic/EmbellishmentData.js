@@ -301,7 +301,7 @@ export const embellishmentData = [
   },
   { // Healing Spells
     name: "Adrenal Surge Clasp", 
-    description: "!! It can't yet be confirmed if regular raid or dungeon damage will proc this so hold off on a craft until it can be tested. Currently set at 85% efficiency.",
+    description: "This is not proccing well on most logs and I wouldn't recommend it at this time.",
     effects: [
       { 
         coefficient: 0.312343, 
@@ -321,8 +321,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.7;
-      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.7;
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.3;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.3;
 
       return bonus_stats;
     }
