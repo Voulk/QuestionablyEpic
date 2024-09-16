@@ -23,6 +23,8 @@ export const changeLog: entry[] = [
       "Weekly trinket hotfixes.",
       "Added Crafted tags to all PVP items.",
       "Imported items with suffixes will now function correctly with the gear upgrader.",
+      "Added the Fateweavers Needle / Mallet effect.",
+      "Tidied up some embellishments now we have live data.",
     ]},
   {
     version: "11.0.2 / 4.4",

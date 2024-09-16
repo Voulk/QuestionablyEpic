@@ -343,7 +343,7 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag")) {
+      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag") || additionalData.contentType === "Dungeon") {
         const bestStat = player.getHighestStatWeight(additionalData.contentType)
         const effectData = {...data[0], stat: bestStat};
         bonus_stats[bestStat] = runGenericPPMTrinket(effectData, itemLevel, additionalData.castModel) * data[0].maxStacks / 2;
