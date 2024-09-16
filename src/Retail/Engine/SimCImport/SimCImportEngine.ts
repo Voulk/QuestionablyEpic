@@ -361,6 +361,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
           let statName = stat["name"].toLowerCase();
           if (statName === "vers") statName = "versatility"; // Pain
           specialAllocations[statName] = stat["amount"];
+
         }
       });
       } else if ("curveId" in idPayload) {
@@ -533,8 +534,10 @@ export function processItem(line: string, player: Player, contentType: contentTy
     item.itemConversion = protoItem.itemConversion || 0;
     item.active = protoItem.itemEquipped || item.vaultItem;
     if (protoItem.missiveStats) item.missiveStats = protoItem.missiveStats;
-
+    console.log(itemAllocations);
+    if (Object.keys(specialAllocations).length > 0) {item.specialAllocations = itemAllocations; console.log("GOOD");}
     // Add stats to our item based on its item allocations.
+    console.log(item);
     item.stats = calcStatsAtLevel(item.level, protoItem.slot, itemAllocations, protoItem.tertiary);
     item.gemString = gemString !== "" ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);

@@ -84,7 +84,7 @@ export const paladinMeleeStatWeights = (contentType) => {
     haste: 0.735,
     crit: 0.691,
     mastery: 0.71,
-    versatility: 0.687,
+    versatility: 0.684,
     leech: 0.42,
     defaults: true,
   };

@@ -187,7 +187,7 @@ function getGemOptions(spec: string, contentType: contentTypes) {
  */
 export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Player, contentType: contentTypes, 
                             baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true) {
-  console.log("Running Top Gear")
+  //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -248,7 +248,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
     differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
   }
-  console.log(resultSets);
+
   // == Return sets ==
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.

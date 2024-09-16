@@ -15,16 +15,16 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   const healingRainCPM = 3.4;
   const riptidesActive = 4.9;
   // Tier Sets
-  if (effectName === "Shaman T31-2") {
+  if (effectName === "Shaman S1-2") {
     // 
 
-    bonusStats.hps = 9000;
+    bonusStats.hps = player.getHPS() * 0.029;
 
   }
-  else if (effectName === "Shaman T31-4") {
+  else if (effectName === "Shaman S1-4") {
     // 
 
-    bonusStats.hps = 8500;
+    bonusStats.hps = player.getHPS() * 0.032
 
   }
 
