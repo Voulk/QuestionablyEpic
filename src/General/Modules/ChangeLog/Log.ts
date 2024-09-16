@@ -18,6 +18,15 @@ export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
     update: 8,
+    date: "September 16",
+    changes: [ 
+      "Weekly trinket hotfixes.",
+      "Added Crafted tags to all PVP items.",
+      "Imported items with suffixes will now function correctly with the gear upgrader.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 8,
     date: "September 9",
     changes: [ 
       "Upgrade Finder",

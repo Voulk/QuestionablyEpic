@@ -165,11 +165,12 @@ export const embellishmentData = [
   },
   { // DPS Spells
     name: "Woven Dusk",
+    description: "Appears to be bugged in-game and the uptime is much lower than it should be.",
     effects: [
       { 
         coefficient: 0.453908, 
         table: -571,
-        ppm: 1.2,
+        ppm: 1.2 * 0.5,
         duration: 30,
         stat: "haste",
       },

@@ -132,7 +132,6 @@ export class Item {
 
   updateLevel(level: number, missiveStats: string[] = []) {
     this.level = level;
-    console.log(this.specialAllocations);
     if (Object.keys(this.specialAllocations).length > 0) this.stats = (calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), this.specialAllocations, this.tertiary));
     else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
   }
