@@ -1,6 +1,34 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  {
+    name: "Fateweaved Needle",
+    effects: [
+      {  // Int
+        coefficient: 1.440925,
+        table: -1,
+        ppm: 2,
+        duration: 5,
+      },
+      {  // DPS
+        coefficient: 35.653 * 0.66,
+        table: -9,
+        ppm: 2,
+        secondaries: ["crit", "haste", "versatility"]
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      const intValue = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc("haste"));
+      bonus_stats.intellect = intValue;
+      bonus_stats.allyStats = intValue;
+
+      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
   {
 
     name: "Sureki Zealot's Insignia",

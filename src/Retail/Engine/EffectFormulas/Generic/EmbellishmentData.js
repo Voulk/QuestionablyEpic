@@ -165,11 +165,12 @@ export const embellishmentData = [
   },
   { // DPS Spells
     name: "Woven Dusk",
+    description: "Appears to be bugged in-game and the uptime is much lower than it should be.",
     effects: [
       { 
         coefficient: 0.453908, 
         table: -571,
-        ppm: 1.2,
+        ppm: 1.2 * 0.5,
         duration: 30,
         stat: "haste",
       },
@@ -300,7 +301,7 @@ export const embellishmentData = [
   },
   { // Healing Spells
     name: "Adrenal Surge Clasp", 
-    description: "!! It can't yet be confirmed if regular raid or dungeon damage will proc this so hold off on a craft until it can be tested. Currently set at 85% efficiency.",
+    description: "This is not proccing well on most logs and I wouldn't recommend it at this time.",
     effects: [
       { 
         coefficient: 0.312343, 
@@ -320,8 +321,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.7;
-      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.7;
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.3;
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.3;
 
       return bonus_stats;
     }
@@ -342,7 +343,7 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag")) {
+      if (player.spec === "Discipline Priest" || getSetting(additionalData.settings, "dpsFlag") || additionalData.contentType === "Dungeon") {
         const bestStat = player.getHighestStatWeight(additionalData.contentType)
         const effectData = {...data[0], stat: bestStat};
         bonus_stats[bestStat] = runGenericPPMTrinket(effectData, itemLevel, additionalData.castModel) * data[0].maxStacks / 2;

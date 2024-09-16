@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "Top Gear is beginning to open but expect further changes over the next few days. I recommend HOLDING YOUR SPARK."
+    "Top Gear is beginning to open but expect further changes over the next few days. Trinket changes are in. Consult guides for Spark recommendations."
   ]
 ;
   if (messageOfTheDay.length === 0) return;

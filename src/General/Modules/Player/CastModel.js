@@ -83,14 +83,14 @@ class CastModel {
         spellList = druidDefaultSpellData(contentType);
         specialQueries = druidDefaultSpecialQueries(contentType);
         this.baseStatWeights = druidDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 50000);
+        this.fightInfo.dps = (contentType === "Raid" ? 30000 : 90000);
       }
       else if (modelID === "Balanced") {
         this.modelName = "Balanced";
         spellList = druidBalancedSpellData(contentType);
         specialQueries = druidBalancedSpecialQueries(contentType);
         this.baseStatWeights = druidBalancedStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 180000);
 
       }
 

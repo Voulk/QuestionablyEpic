@@ -132,7 +132,7 @@ export const raidTrinketData = [
             table: -1,
           },
           {  // On-use Int
-            coefficient: 0.141408,
+            coefficient: 0.141408 * 0.95,
             table: -1,
             duration: 20,
             cooldown: 60, // Technically 20
