@@ -17,6 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 9,
+    date: "September 17",
+    changes: [ 
+      "Hovering over tooltips will now include secondaries / effects.",
+      "Bugfix: Ascension / Symbiosis will now count toward the two embellishment limit when added via SimC.",
+      "Bugfix: Sureki's is now correctly valued.",
+      "In game changes: Algari Alchemist Stone buffed. Fateweaver's Needle / Mallet nerfed.",
+      "Added Crystal Spire of Karabor.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 8,
     date: "September 16",
     changes: [ 
