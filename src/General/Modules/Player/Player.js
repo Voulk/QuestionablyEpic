@@ -235,13 +235,13 @@ export class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "of the Furnace Seraph",
-      "Discipline Priest": "of the Furnace Seraph",
-      "Restoration Druid": "of the Autumn Blaze",
-      "Restoration Shaman": "Greatwolf Outcast's",
-      "Mistweaver Monk": "of the Waking Fist",
-      "Holy Paladin": "Heartfire Sentinel's",
-      "Preservation Evoker": "of the Awakened",
+      "Holy Priest": "Living Luster's",
+      "Discipline Priest": "Living Luster's",
+      "Restoration Druid": "of the Greatlynx",
+      "Restoration Shaman": "Forgotten Reservoir",
+      "Mistweaver Monk": "Gatecrasher's",
+      "Holy Paladin": "Entombed Seraph's",
+      "Preservation Evoker": "of the Destroyer",
     };
 
     const temp = itemDB.filter(function (item) {
@@ -304,7 +304,8 @@ export class Player {
       name: embellishmentName,
       level: item.level,
     }
-    newItem.uniqueTag = "embellishment";
+    newItem.uniqueEquip = "embellishment";
+    newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
 
     if (newItem) this.activeItems = this.activeItems.concat(newItem);

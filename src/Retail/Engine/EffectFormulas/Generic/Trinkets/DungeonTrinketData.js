@@ -85,7 +85,6 @@ export const dungeonTrinketData =
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType)
           bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
-          console.log("CHANGELING", JSON.stringify(bonus_stats))
           return bonus_stats;
         }
       },

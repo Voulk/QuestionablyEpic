@@ -178,7 +178,6 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
     statList = topSet.setStats;
     const manaSources = {}
-    console.log(topSet);
 
     // Setup Slots / Set IDs.
     let gemCount = 0;

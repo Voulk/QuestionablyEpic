@@ -928,6 +928,14 @@ export function compileStats(stats: Stats, bonus_stats: Stats) {
   return stats;
 }
 
+/*
+export function getEmbellishmentID(embellishmentName) {
+  const Object.keys(bonus_IDs).filter(bonusID => {
+
+  })
+
+}*/
+
 // It is useful to have some items to work with.
 export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
   let itemDB = getItemDB(gameType);

@@ -44,7 +44,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts --max_old_space_size=4600 start",
+    "start": "react-scripts --max_old_space_size=5200 start",
     "build": "react-scripts build --max_old_space_size=6144",
     "build:dev": "env-cmd -f .env.ptr react-scripts build --max_old_space_size=4096",
     "build:prod": "env-cmd -f .env react-scripts build --max_old_space_size=4096",
