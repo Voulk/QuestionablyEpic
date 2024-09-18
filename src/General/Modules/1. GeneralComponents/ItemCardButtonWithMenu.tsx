@@ -128,7 +128,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         }}
       >
         {canBeCatalyzed ? (
-          <MenuItem onClick={handlecatalyseItemCard} style={{ color: "plum" }} divider>
+          <MenuItem style={{ fontSize: "12px", color: "plum" }} onClick={handlecatalyseItemCard} divider>
             {t("Catalyst")}
           </MenuItem>
         ) : null}
