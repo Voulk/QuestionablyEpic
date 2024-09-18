@@ -445,6 +445,7 @@ export default function TopGear(props: any) {
         if (item.quality) newItem.quality = item.quality;
         if (item.effect) newItem.effect = item.effect;
         if (item.flags) newItem.flags = item.flags;
+        if (item.bonusIDS) newItem.bonusIDS = item.bonusIDS;
   
         shortReport.itemSet.itemList.push(newItem)
         }

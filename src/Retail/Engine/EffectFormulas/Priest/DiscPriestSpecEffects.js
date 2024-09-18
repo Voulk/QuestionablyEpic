@@ -10,7 +10,7 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = player.getRampID('twoPc', contentType);
 
   }
-  else if (effectName === "DPriest S4-4") {
+  else if (effectName === "DPriest S1-4") {
     // Placeholder pulled from sheet. Replace very soon.
     bonus_stats.hps = player.getRampID('fourPc', contentType);
 

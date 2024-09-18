@@ -5,7 +5,7 @@ export const effectData = [
     name: "Fateweaved Needle",
     effects: [
       {  // Int
-        coefficient: 1.440925,
+        coefficient: 0.611248, //1.440925,
         table: -1,
         ppm: 2,
         duration: 5,
@@ -20,7 +20,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       
-      const intValue = runGenericPPMTrinketHasted(data[0], itemLevel, player.getStatPerc("haste"));
+      const intValue = runGenericPPMTrinket(data[0], itemLevel);
       bonus_stats.intellect = intValue;
       bonus_stats.allyStats = intValue;
 
@@ -55,9 +55,9 @@ export const effectData = [
 
 
       // This mana is technically distributed through the raid but it's fairly reasonable to value it as our own with a penalty.
-      bonus_stats.mana = processedValue(data[1], itemLevel) * data[1].ppm / 60 * 0.7;
+      bonus_stats.mana = data[1].value * data[1].ppm / 60 * 0.7;
     
-
+      console.log(bonus_stats);
       return bonus_stats;
     }
   },
@@ -129,7 +129,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
+      console.log(bonus_stats);
       return bonus_stats;
     }
   },

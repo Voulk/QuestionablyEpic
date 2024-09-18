@@ -406,7 +406,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
         //console.log("Legendary detected" + JSON.stringify(itemEffect));
         if ("effect" in idPayload) {
           if ("spell" in idPayload["effect"] && bonus_id !== "8174" && bonus_id !== "6917") { // Ignore Flavor Packet.
-            const specialEffectName = idPayload["effect"]["spell"]["name"]
+            let specialEffectName = idPayload["effect"]["spell"]["name"]
             /*itemEffect = {
               type: "embellishment",
               name: specialEffectName,
@@ -417,6 +417,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
             // Embellishments that require a tag.
             if (['Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
+              if (specialEffectName === "Ascendance") specialEffectName = "Darkmoon Sigil: Ascension"
+              else if (specialEffectName === "Symbiosis") specialEffectName = "Darkmoon Sigil: Symbiosis"
+              
               protoItem.effect = {
                 type: "embellishment",
                 name: specialEffectName,
@@ -534,10 +537,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
     item.itemConversion = protoItem.itemConversion || 0;
     item.active = protoItem.itemEquipped || item.vaultItem;
     if (protoItem.missiveStats) item.missiveStats = protoItem.missiveStats;
-    console.log(itemAllocations);
-    if (Object.keys(specialAllocations).length > 0) {item.specialAllocations = itemAllocations; console.log("GOOD");}
+
+    if (Object.keys(specialAllocations).length > 0) item.specialAllocations = itemAllocations;
     // Add stats to our item based on its item allocations.
-    console.log(item);
     item.stats = calcStatsAtLevel(item.level, protoItem.slot, itemAllocations, protoItem.tertiary);
     item.gemString = gemString !== "" ? gemString.slice(0, -1) : "";
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
