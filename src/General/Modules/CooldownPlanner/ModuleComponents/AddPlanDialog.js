@@ -110,7 +110,7 @@ export default function AddPlanDialog(props) {
     setPlanName("");
   };
 
-  const [planType, setPlanType] = React.useState("default");
+  const [planType, setPlanType] = React.useState("BlankPlan");
   const [boss, setBoss] = useState(currentBoss);
 
   const newPlanType = (event, newPlanType) => {
@@ -320,7 +320,7 @@ export default function AddPlanDialog(props) {
                     Blank Plan
                   </ToggleButton>
 
-                  <ToggleButton value="default" aria-label="Default">
+                  <ToggleButton value="default" aria-label="Default" disabled>
                     Default
                   </ToggleButton>
                 </ToggleButtonGroup>
