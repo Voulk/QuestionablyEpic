@@ -285,7 +285,10 @@ export class Player {
     const newItem = item.clone();
     newItem.active = true;
     if (newLevel !== 0) newItem.updateLevel(newLevel, item.missiveStats);
-    if (socketFlag) newItem.socket = 1;
+    if (socketFlag) {
+      newItem.socket = 1;
+      newItem.bonusIDS += ":523"
+    }
     if (vaultFlag) {
       newItem.vaultItem = true;
       newItem.uniqueEquip = "vault";

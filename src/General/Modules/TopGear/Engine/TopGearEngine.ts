@@ -136,6 +136,17 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
 
 }
 
+function getGemStats(gemArray: number[]) {
+  const gem_stats: Stats = {};
+  gemArray.forEach(gem => {
+    const gemStats = gemDB.filter(g => g.id === gem)[0].stats;
+    Object.keys(gemStats).forEach(stat => {
+      gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
+    });
+  });
+  return gem_stats;
+}
+
 function getGemOptions(spec: string, contentType: contentTypes) {
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
@@ -708,9 +719,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
-    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings);
-    const gemStats = {};
+    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
+    const gemStats = getGemStats(enchants["Gems"]);
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+    compileStats(bonus_stats, gemStats);
   }
   if (enchants["Gems"].length > 1) {
     // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 
