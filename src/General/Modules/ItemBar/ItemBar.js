@@ -64,7 +64,7 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     let craftedSocket = itemSocket || checkDefaultSocket(itemID);
     item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
-    if (item.slot === "Neck") item.socket = 3;
+    //if (item.slot === "Neck") item.socket = 3;
 
     let bonusString = "";
     if (missives.includes("Haste")) bonusString += ":6649";
