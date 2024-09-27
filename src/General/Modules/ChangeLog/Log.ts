@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 10,
+    date: "September 27",
+    changes: [ 
+      "Bugfix: Necks will no longer be auto-socketed in Upgrade Finder.",
+      "The 635 ilvl option is now correctly 636.",
+      "Manually added necks will no longer default to 3 sockets.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 9,
     date: "September 17",
     changes: [ 
