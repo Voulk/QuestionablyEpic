@@ -1,5 +1,5 @@
 
-import { getCurrentStats, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { getCurrentStats, getSpellRaw, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { runHeal, EVOKERCONSTANTS } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
@@ -69,22 +69,22 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     // Assign echo usage
     const echoUsage = {
-        "Spiritbloom": 0.4,
-        "Verdant Embrace": 0.4,
+        "Spiritbloom": 0,
+        "Verdant Embrace": 0,
         "Dream Breath": 0.2, 
-        "Reversion": 0,
+        "Reversion": 0.8,
     }
 
-    // Afterimage
-    getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
-
+    // Stasis
+    // As Flameshaper we'll stasis Dream Breath -> Engulf -> Engulf
+    getSpellEntry(castProfile, "Dream Breath").cpm += 1 / 1.5;
+    getSpellEntry(castProfile, "Engulf").cpm += 1 / 1.5;
 
     // Essence Bursts generated
     const essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
 
     // Total Echo CPM
-    const goldenOpportunity = getCPM(castProfile, "Echo") * 0.2;
-    const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5 + goldenOpportunity;
+    const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5;
 
     // Handle Echo'd Spell Healing
     // Note that we only take care of our ramp healing here. Regular spiritbloom healing is handled further below.
@@ -126,7 +126,27 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
         fullSpell.forEach(spell => {
             let spellThroughput = 0;
-            if (spell.type === "heal" && spellProfile.cpm > 0) {
+
+            // Special Cases
+            if (spellName === "Engulf") {
+                // Engulf itself
+
+                // Consume Flame
+                const dreamBreathHoT = evokerSpells["Dream Breath"][2];
+                const tickCount = 4 / (dreamBreathHoT.tickData.tickRate / getHaste(state.currentStats));
+                const expectedTargets = 20;
+                const sqrtMod = Math.sqrt(5 / expectedTargets);
+                const consumeMult = 3 * 1.4 * 1.4;
+
+                
+                let consumeHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
+                consumeHealing *= 1.06;
+                console.log("DREAM BREATH TICK: " + getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS))
+                console.log("CONSUME HEALING: " + consumeHealing / 60, sqrtMod, tickCount, spellCPM, expectedTargets, consumeMult);
+                healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));
+            }
+            // Regular spells
+            else if (spell.type === "heal" && spellProfile.cpm > 0) {
                 const value = runHeal(state, spell, spellName) ;
                 
                 spellThroughput += (value * spellCPM);

@@ -3,6 +3,7 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { reversionProfile, blossomProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { runPreservationEvokerCastProfile } from "./PreservationEvokerCastProfile";
+import { runPreservationEvokerCastProfileEchoshaper } from "./PreservationEvokerCastProfileEchoshaper";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -13,11 +14,11 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 60000,
-            haste: 7000,
-            crit: 7000,
-            mastery: 7000 + (2 * 700),
-            versatility: 7000,
+            intellect: 65000,
+            haste: 8500,
+            crit: 8500,
+            mastery: 8500 + (2 * 700),
+            versatility: 8500 + (3 * 780),
             stamina: 29000,
             critMult: 2,
         }
@@ -36,7 +37,7 @@ describe("Test APL", () => {
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runPreservationEvokerCastProfile(playerData).hps;
+            baseline += runPreservationEvokerCastProfileEchoshaper(playerData).hps;
         }
 
         baseline = baseline / iterations
@@ -49,7 +50,7 @@ describe("Test APL", () => {
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
-                statHealing += runPreservationEvokerCastProfile(newPlayerData).hps;
+                statHealing += runPreservationEvokerCastProfileEchoshaper(newPlayerData).hps;
                 
             }
             results[stat] = statHealing / iterations;
