@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 11,
+    date: "October 3",
+    changes: [ 
+      "Added an 'Upgrade All' button to SimC imports.",
+
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 10,
     date: "September 27",
     changes: [ 
