@@ -21,6 +21,7 @@ export const changeLog: entry[] = [
     date: "October 3",
     changes: [ 
       "Added an 'Upgrade All' button to SimC imports.",
+      "In game change: Mercurial Egg buffed 5%.",
 
 
     ]},
