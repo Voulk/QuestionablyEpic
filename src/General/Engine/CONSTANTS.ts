@@ -16,7 +16,7 @@ export const CONSTANTS = {
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
     seasonalItemConversion: 8, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-
+    seasonID: 24,
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic"],
 }

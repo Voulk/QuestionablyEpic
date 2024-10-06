@@ -46,7 +46,7 @@ describe("Ovi'nax's Mercurial Egg", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${616}  | ${[145, 140]}
+    ${616}  | ${[152, 147]}
     // add new test cases here
     `.test("Ovi'nax's Mercurial Egg Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level, 1)).toBe(expectedResult[0]);
