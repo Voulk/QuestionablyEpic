@@ -273,9 +273,13 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
               else spellHealing = spellHealing * tickCount * targetCount;
           }
 
+
+          // These are functional on the high end, but may run into issues for players with sub 2k haste. This isn't impactful since the trinket is much worse there.
           if (spellProfile.spell === "Rejuvenation" && shardOfWoe && statProfile.haste >= 2032) {
-            // This represents 
             spellHealing *= (1.2 * 1 / 6 + 5 / 6); // 20% more healing 1/6th of the time.
+          }
+          if ((spellProfile.spell === "Wild Growth" || spellProfile.spell === "Efflorescence") && statProfile.haste >= 2005) {
+            spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
           }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
