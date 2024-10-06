@@ -221,8 +221,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
-    applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
-    //applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
    
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -372,6 +372,8 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
 
     // Travelling Flame + Consume
+
+    /*
     evokerSpells["Engulf"].push(
         {
             type: "function",
@@ -396,13 +398,13 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
                     addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
 
 
-                    /*if (state.t > buff.expiration) {
-                        removeBuffStack(state.activeBuffs, "Dream Breath");
-                    } */
+                    //if (state.t > buff.expiration) {
+                    //    removeBuffStack(state.activeBuffs, "Dream Breath");
+                    //} 
                 }
             }
         });
-
+    */
     // Expanded Lungs
     // Check if 0 should also be buffed.
     if (true) {

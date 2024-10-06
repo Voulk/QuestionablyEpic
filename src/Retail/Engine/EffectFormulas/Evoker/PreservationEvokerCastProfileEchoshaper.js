@@ -90,9 +90,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Note that we only take care of our ramp healing here. Regular spiritbloom healing is handled further below.
     // Echo Spiritbloom
     const spiritbloomHealing = runHeal(state, evokerSpells["Spiritbloom"][0], "Spiritbloom");
-    const spiritbloomHoT = evokerSpells["Spiritbloom"][1];
-    const spiritbloomHoTHealing = runHeal(state, spiritbloomHoT, "Spiritbloom (HoT)") * spiritbloomHoT.buffDuration / (spiritbloomHoT.tickData.tickRate)
-    const totalSpiritbloom = (spiritbloomHealing + spiritbloomHoTHealing) / evokerSpells["Spiritbloom"][0].targets;
+    const totalSpiritbloom = (spiritbloomHealing) / evokerSpells["Spiritbloom"][0].targets;
 
     healingBreakdown["Echo - Spiritbloom"] = totalSpiritbloom * echoUsage["Spiritbloom"] * totalEchoPower;
 
