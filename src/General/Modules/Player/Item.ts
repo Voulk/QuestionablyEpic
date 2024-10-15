@@ -124,7 +124,7 @@ export class Item {
     clonedItem.specialAllocations = { ...this.specialAllocations };
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
-    
+    if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.id, this.missiveStats, "Retail"), this.tertiary);
     // ... (copy other properties as needed)
 
     return clonedItem;
