@@ -17,6 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.2 / 4.4",
+    update: 12,
+    date: "October 14",
+    changes: [ 
+      "Enabled Crafting panel.",
+      "Upgrade Finder: Jewelry will now have two sockets.",
+      "Bugfix: Adding a socket to jewelry will now add two instead.",
+      "Bugfix: Added a socket to, or converting a crafted item to Vault will now keep its secondaries.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
     update: 11,
     date: "October 3",
     changes: [ 
