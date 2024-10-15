@@ -51,7 +51,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   if (CONSTANTS.socketSlots.includes(item.slot) && gameType === "Retail") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket(s)"})
     //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
 
   }
@@ -93,7 +93,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   };
 
   const handleExtraMenuItemClick = (menuItem: MenuItemType) => {
-    if (menuItem.label === "Add Socket") upgradeItem(item, 0, true, false);
+    if (menuItem.label === "Add Socket(s)") upgradeItem(item, 0, true, false);
     else if (menuItem.label === "Convert to Vault") upgradeItem(item, 0, false, true);
     else if (menuItem.label.includes("Add Embellishment")) embellishItem(item, menuItem.effectName);
     handleClose();

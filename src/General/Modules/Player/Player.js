@@ -286,8 +286,15 @@ export class Player {
     newItem.active = true;
     if (newLevel !== 0) newItem.updateLevel(newLevel, item.missiveStats);
     if (socketFlag) {
-      newItem.socket = 1;
-      newItem.bonusIDS += ":523"
+      if ((newItem.slot === "Finger" || newItem.slot === "Neck")) {
+        newItem.socket = 2;
+        newItem.bonusIDS += ":10879"
+      }
+      else {
+        newItem.socket = 1;
+        newItem.bonusIDS += ":523"
+      }
+
     }
     if (vaultFlag) {
       newItem.vaultItem = true;

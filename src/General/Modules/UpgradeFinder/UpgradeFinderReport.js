@@ -167,7 +167,7 @@ export default function UpgradeFinderReport(props) {
 
                 {/* Render Crafted Gear tab only if gameType is Retail */}
                 {gameType === "Retail" && (
-                  <Tab disabled className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
+                  <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
                 )}
 
                 {/* Render World Bosses tab only if gameType is Retail */}
