@@ -127,7 +127,7 @@ const getClassicTrinketScore = (id, player) => {
   return item.softScore;
 };
 
-const getHighestTrinketScore = (db, trinket) => {
+const getHighestTrinketScore = (db, trinket, maxLevel) => {
   const trinketID = trinket.id;
 
   let temp = db.filter(function (item) {
@@ -135,7 +135,8 @@ const getHighestTrinketScore = (db, trinket) => {
   });
 
   const item = temp[0];
-  const highestLevel = item.levelRange[item.levelRange.length - 1];
+  console.log(Math.min(item.levelRange[item.levelRange.length - 1], maxLevel))
+  const highestLevel = Math.min(item.levelRange[item.levelRange.length - 1], maxLevel);
 
   return trinket["i" + highestLevel];
 };
@@ -210,7 +211,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [577, 584, 590, 597, 603, 610, 616, 619, 623, 626, 629, 632, 639];
+  const itemLevels = [577, 584, 590, 597, 603, 610, 616, 619, 623, 626/*, 629, 632, 639*/];
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -274,7 +275,7 @@ export default function TrinketAnalysis(props) {
     const getHighestClassicScore = (trinket) => {return trinket.heroic || trinket.normal || 0}
     activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
   } else {
-    activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, gameType) < getHighestTrinketScore(finalDB, b, gameType) ? 1 : -1));
+    activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
   const trinketText = gameType === "Retail" ? "Tuning is ongoing. All results subject to change."  :
