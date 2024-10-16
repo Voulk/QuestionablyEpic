@@ -18,6 +18,7 @@ import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
+import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
@@ -135,7 +136,7 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
   });
 
   const item = temp[0];
-  console.log(Math.min(item.levelRange[item.levelRange.length - 1], maxLevel))
+
   const highestLevel = Math.min(item.levelRange[item.levelRange.length - 1], maxLevel);
 
   return trinket["i" + highestLevel];
@@ -152,6 +153,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
+  const [levelCap, setLevelCap] = React.useState(626);
+  const maxLevelMarks = [
+    { value: 0, label: "606" },
+    { value: 1, label: "619" },
+    { value: 2, label: "626" },
+    { value: 3, label: "639" },
+  ]
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
@@ -204,6 +212,11 @@ export default function TrinketAnalysis(props) {
     return results;
   };
 
+  const changeLevelCap = (event, newValue) => {
+    const newItemLevel = parseInt(maxLevelMarks[newValue].label);
+    setLevelCap(newItemLevel);
+  }
+
   const handleSource = (event, newSources) => {
     if (newSources.length) {
       setSources(newSources);
@@ -211,7 +224,9 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const itemLevels = [577, 584, 590, 597, 603, 610, 616, 619, 623, 626/*, 629, 632, 639*/];
+  const allItemLevels = [577, 584, 590, 597, 606, 610, 616, 619, 623, 626, 629, 632, 639];
+
+  const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
   const gameType = useSelector((state) => state.gameType);
   const trinketDB = getItemDB(gameType).filter(
@@ -278,7 +293,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Tuning is ongoing. All results subject to change."  :
+  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket."  :
                                               "";
 
   return (
@@ -302,12 +317,30 @@ export default function TrinketAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Tabs value={tabIndex} onChange={handleTabChange} variant="fullWidth">
-            <Tab label={"Trinkets at a Glance"} />
-            {gameType === "" ? <Tab label={"Trinket Deep Dive"} /> : null}
-          </Tabs>
+          <Grid item xs={12}>
+            <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+              <div style={{ padding: 4 }}>
+                <Grid container justifyContent="center" spacing={1}>
+                  <Grid item xs={12}>
+                    <Typography color="primary" align="center" variant="h5">
+                      {"Chart Max Level"}
+                    </Typography>
+                  </Grid>
+                </Grid>
 
-          <TabPanel value={tabIndex} index={0}>
+                <UpgradeFinderSlider
+                  className={classes.slider}
+                  style={{ color: "#52af77" }}
+                  defaultValue={3}
+                  step={null}
+                  valueLabelDisplay="off"
+                  marks={maxLevelMarks} //marks
+                  max={3}
+                  change={changeLevelCap} //setDungeonDifficulty
+                />
+              </div>
+            </Paper>
+          </Grid>
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
               <InformationBox information={trinketText} variant="yellow" />
 
@@ -375,22 +408,6 @@ export default function TrinketAnalysis(props) {
                 ""
               )}
             </Grid>
-          </TabPanel>
-
-          <TabPanel value={tabIndex} index={1}>
-            <TrinketDeepDive 
-              itemCardData={itemCardData}
-              tabIndex={tabIndex}
-            />
-            {/*<Grid container spacing={1} sx={{ marginTop: "16px" }}>
-              {itemCardData.map((item) => (
-                <Grid item xs={6}>
-                  <ItemDetailCard item={item} />
-                </Grid>
-              ))}
-            </Grid>*/}
-          </TabPanel> 
-
         </Grid>
       </Grid>
 
