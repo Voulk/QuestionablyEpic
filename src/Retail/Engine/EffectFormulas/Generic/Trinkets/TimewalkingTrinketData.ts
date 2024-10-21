@@ -151,6 +151,12 @@ export const timewalkingTrinketData = [
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
+
+            const averageStacks = 20 / (1.5 / player.getStatPerc('haste'));
+            const intPerStack = processedValue(data[0], itemLevel);
+
+            bonus_stats.intellect = averageStacks * intPerStack * data[0].duration! / data[0].cooldown!;
+
             
             return bonus_stats;
         }

@@ -16,6 +16,16 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.5 / 4.4",
+    update: 1,
+    date: "October",
+    changes: [ 
+      "Added all WoW Anniversary items & effects.",
+      "Added a Max Level slider to the Trinket Analysis chart."
+
+
+    ]},
+  {
     version: "11.0.2 / 4.4",
     update: 12,
     date: "October 14",
