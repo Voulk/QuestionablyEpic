@@ -1,6 +1,57 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { 
+    name: "Lingering Grace",
+    effects: [
+      {
+        coefficient: 57.11988067627, 
+        table: -8,
+        ppm: 3,
+        secondaries: ['haste', 'crit', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      bonus_stats.hps = runGenericFlatProc(data[0], 571, player) * 0.65; // Appears to be a flat item level but will need to be checked.
+
+      return bonus_stats;
+    },
+  },
+  { 
+    name: "Guiding Stave of Wisdom",
+    effects: [
+      {
+        coefficient: 1.469991, 
+        table: -7,
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { // This is a channel so kind of awful. I don't see why you would ever wear this.
+    name: "Circle of Flame",
+    effects: [
+      { 
+        coefficient: 2.105363,
+        table: -7,
+        cooldown: 60,
+        ticks: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      return bonus_stats;
+    }
+  },
   {
     name: "Fateweaved Needle",
     effects: [
@@ -129,7 +180,7 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      console.log(bonus_stats);
+
       return bonus_stats;
     }
   },
