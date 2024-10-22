@@ -384,7 +384,8 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
                                 (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130) ||
-                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137))) {
+                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137) ||
+                                splitItems.Finger[finger].id === 215135)) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;

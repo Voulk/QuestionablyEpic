@@ -15,7 +15,7 @@ export const effectData = [
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
 
-      bonus_stats.hps = runGenericFlatProc(data[0], 626, player); // Appears to be a flat item level but will need to be checked.
+      bonus_stats.hps = runGenericFlatProc(data[0], 571, player) * 0.65; // Appears to be a flat item level but will need to be checked.
 
       return bonus_stats;
     },

@@ -18,12 +18,11 @@ export const changeLog: entry[] = [
   {
     version: "11.0.5 / 4.4",
     update: 1,
-    date: "October",
+    date: "October 22",
     changes: [ 
       "Added all WoW Anniversary items & effects.",
-      "Added a Max Level slider to the Trinket Analysis chart."
-
-
+      "Added a Max Level slider to the Trinket Analysis chart.",
+      "Fixed a bug that would prevent running 2x Ring of Earthen Craftsmanship in Top Gear.",
     ]},
   {
     version: "11.0.2 / 4.4",
