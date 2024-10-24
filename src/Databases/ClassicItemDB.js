@@ -116927,6 +116927,10 @@ export const classicItemDB = [
                 "difficulty": 0
             }
         ],
+        "levelRange": [
+            378, 
+            391,
+        ],
         "stats": {
             "intellect": 383,
             "stamina": 0
@@ -117371,6 +117375,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Eye of Blazing Power"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 194,

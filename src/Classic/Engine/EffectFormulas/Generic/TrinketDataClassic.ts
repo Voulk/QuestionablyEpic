@@ -58,6 +58,14 @@ const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
   return bonus_stats;
 }
 
+const getGenericThroughputTrinket = (data: EffectData, itemLevel: number): Stats => {
+  const trinketValue = data.value[itemLevel] * data.ppm / 60
+  const statType = data.stat;
+  const bonus_stats: Stats = {};
+  bonus_stats[statType] = trinketValue;
+  return bonus_stats;
+}
+
 const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
   const bonus_stats: Stats = {};
   const trinketValue = data.duration * data.value[itemLevel] / data.cooldown;
@@ -96,6 +104,74 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Firelands
+  {
+    name: "Eye of Blazing Power",
+    effects: [
+      { // 
+        value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
+        stat: "hps",
+        ppm: getEffectPPM(0.1, 45, 1.5),
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
+      return getGenericThroughputTrinket(data[0], itemLevel);
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Jaws of Defeat",
+    effects: [
+      { // 
+        value: {378: 110, 391: 125}, 
+        stat: "mp5",
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Necromantic Focus", // DPS spells only
+    effects: [
+      { // 
+        value: {378: 39, 391: 44}, 
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Fiery Quintessence", 
+    effects: [
+      { // 
+        value: {378: 1297}, // 391 version not available
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+      
+    }
+  },
+  // Tier 11
   {
     name: "Fall of Mortality",
     effects: [
