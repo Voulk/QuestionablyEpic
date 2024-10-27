@@ -17,6 +17,13 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.5 / 4.4",
+    update: 2,
+    date: "October 26",
+    changes: [ 
+      "Added significantly more items from the anniversary event including timewalking dungeons and world bosses.",
+    ]},
+  {
+    version: "11.0.5 / 4.4",
     update: 1,
     date: "October 22",
     changes: [ 
