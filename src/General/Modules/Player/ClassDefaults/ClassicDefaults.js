@@ -222,6 +222,7 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     const healingBreakdown = {};
     const fightLength = 6;
 
+
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
@@ -298,6 +299,10 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
     console.log(healingBreakdown); */
+
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
+
     return score;
 }
 

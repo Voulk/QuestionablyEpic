@@ -194,12 +194,13 @@ class CastModel {
       spellList = this.getClassicDruid();
         this.baseStatWeights = {
           spellpower: 1,
-          intellect: 1.9,
-          crit: 0.701,
-          mastery: 0.801,
+          intellect: 3,
+          crit: 0.98,
+          mastery: 1.1,
           haste: 0.3,
-          mp5: 1.46,
-          spirit: 0.791,
+          mp5: 1.7,
+          spirit: 1.3,
+          hps: 0.7, // 
         };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();

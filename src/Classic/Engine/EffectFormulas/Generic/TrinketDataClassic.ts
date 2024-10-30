@@ -1,5 +1,6 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
+import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 type EffectData = {
   coefficient: number;
@@ -58,12 +59,23 @@ const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
   return bonus_stats;
 }
 
-const getGenericThroughputTrinket = (data: EffectData, itemLevel: number): Stats => {
-  const trinketValue = data.value[itemLevel] * data.ppm / 60
+const getGenericThroughputTrinket = (data: EffectData, itemLevel: number, player: player): Stats => {
+  const trinketValue = data.value[itemLevel] * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(player.activeStats, player.spec.replace(" Classic", "")));
   const statType = data.stat;
   const bonus_stats: Stats = {};
   bonus_stats[statType] = trinketValue;
   return bonus_stats;
+}
+
+const getGenericHealingIncrease = (spec: string): number => {
+  if (spec.includes("Restoration Druid")) {
+    return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
+  }
+  else if (spec.includes("Holy Paladin")) {
+    return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
+  }
+
+  return 1;
 }
 
 const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
@@ -74,6 +86,8 @@ const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
   return bonus_stats;
 
 }
+
+
 
 /*
 Phase One: Bell of Enraging Resonance, Jar of Ancient Remedies, Fall of Mortality, Theralion's Mana, 
@@ -108,17 +122,18 @@ const raidTrinketData: Effect[] = [
   {
     name: "Eye of Blazing Power",
     effects: [
-      { // 
+      { // Confirmed no Paladin mastery scaling, wings appears to work, everything else up in the air. Appears to scale with something. Can hit pets.
         value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
+        secondaries: ["crit"],
+        efficiency: 0.8 * 0.9, // 20% overheal, 10% lost to pets.
         stat: "hps",
         ppm: getEffectPPM(0.1, 45, 1.5),
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
-      //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
-      return getGenericThroughputTrinket(data[0], itemLevel);
+
+      return getGenericThroughputTrinket(data[0], itemLevel, player);
       
      // return bonus_stats;
     }
@@ -128,12 +143,30 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {378: 110, 391: 125}, 
+        maxStacks: 10,
         stat: "mp5",
         cooldown: 120,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
+
+      const redPerStack = data[0].value[itemLevel];
+
+      // Time to 10 stacks
+      const timeToMax = 11.5;
+      
+      // Spells cast during duration
+      const totalSpellsCast = 15;
+      const countAtMax = totalSpellsCast - 10;
+      // Average cost reduction
+      const averageCostReduction = (10 / totalSpellsCast * (redPerStack * data[0].maxStacks / 2)) + // Stacking reduction
+                                    (countAtMax * (redPerStack * data[0].maxStacks)); // Max stacks
+      console.log(averageCostReduction);
+      
+
+      // Convert to MP5
+      bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
 
       return bonus_stats;
       
@@ -160,12 +193,16 @@ const raidTrinketData: Effect[] = [
     name: "Fiery Quintessence", 
     effects: [
       { // 
-        value: {378: 1297}, // 391 version not available
+        value: {378: 1149}, // 391 version not available
         stat: "intellect",
+        duration: 25,
+        cooldown: 90,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
 
       return bonus_stats;
       

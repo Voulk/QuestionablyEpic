@@ -116785,11 +116785,15 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_shark jaws",
+        "icon": "trade_archaeology_shark-jaws",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
         "itemLevel": 378,
+        "levelRange": [
+            378,
+            391
+        ],
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
@@ -117071,6 +117075,7 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
+        "levelRange": [378],
         "itemLevel": 378,
         "effect": {
             "type": "trinket",
@@ -117207,11 +117212,15 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_shark jaws",
+        "icon": "trade_archaeology_shark-jaws",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
         "itemLevel": 391,
+        "levelRange": [
+            378,
+            391
+        ],
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"

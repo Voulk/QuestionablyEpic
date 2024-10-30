@@ -1039,8 +1039,8 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
     }
   }
 
-  // Add any bonus HPS
-  if (bonus_stats.hps) {
+  // Add any bonus HPS. Classic treats HPS as a weight instead. 
+  if (bonus_stats.hps && gameType === "Retail") {
     score += (bonus_stats.hps / player.getHPS(contentType)) * player.activeStats.intellect;
   }
 
