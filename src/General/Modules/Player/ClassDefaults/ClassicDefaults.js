@@ -222,7 +222,6 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     const healingBreakdown = {};
     const fightLength = 6;
 
-
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
@@ -234,6 +233,14 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     // Take care of any extras.
     if (tierSets.includes("Druid T11-4")) {
       statProfile.spirit += 540;
+    }
+    if (tierSets.includes("Druid T12-2")) {
+      // 40% chance on Lifebloom tick to restore 184 mana.
+      // Ignoring ToL for now. We know it has some form of reduced proc rate but not how much.
+      statProfile.mp5 = (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
+    }
+    if (tierSets.includes("Druid T13-2")) {
+      // TODO. 5% discount on Rejuv / Healing Touch.
     }
 
     // Calculate filler CPM
@@ -281,6 +288,11 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
           }
           if ((spellProfile.spell === "Wild Growth" || spellProfile.spell === "Efflorescence") && statProfile.haste >= 2005) {
             spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
+          }
+
+          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "Heal") {
+            // Heal for a portion of the Swiftmend only. No Efflo, effective healing only.
+            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * (1 - spell.expectedOverheal);
           }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
