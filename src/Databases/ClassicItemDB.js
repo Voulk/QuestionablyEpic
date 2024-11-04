@@ -74655,30 +74655,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Abandoned Dark Iron Ring",
-        "id": 56465,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Abandoned Dark Iron Ring",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_vinering",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 346,
-        "stats": {
-            "intellect": 168,
-            "stamina": 252,
-            "crit": 112,
-            "haste": 112
-        }
-    },
-    {
         "name": "Curse-Tainted Leggings",
         "id": 56466,
         "quality": 3,
@@ -103402,63 +103378,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Corehammer's Riveted Girdle",
-        "id": 65011,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Corehammer's Riveted Girdle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_plate_raidpaladin_i_01",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Waist",
-        "itemLevel": 372,
-        "sockets": {
-            "gems": [
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 266,
-            "stamina": 429,
-            "spirit": 191,
-            "mastery": 171
-        }
-    },
-    {
-        "name": "Maldo's Sword Cane",
-        "id": 65013,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Maldo's Sword Cane",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_sword_1h_bwdraid_d_02",
-        "itemClass": 2,
-        "itemSubClass": 7,
-        "slot": "1H Weapon",
-        "itemLevel": 372,
-        "stats": {
-            "intellect": 165,
-            "stamina": 247,
-            "crit": 99,
-            "mastery": 117,
-            "spellpower": 2207
-        }
-    },
-    {
         "name": "DONTUSEFury of Angerforge",
         "id": 65015,
         "quality": 4,
@@ -116790,14 +116709,14 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Trinket",
         "itemLevel": 378,
-        "levelRange": [
-            378,
-            391
-        ],
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 197,
@@ -116924,16 +116843,16 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Eye of Blazing Power"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 194,
                 "instanceId": 78,
                 "difficulty": 0
             }
-        ],
-        "levelRange": [
-            378, 
-            391,
         ],
         "stats": {
             "intellect": 383,
@@ -117217,14 +117136,14 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Trinket",
         "itemLevel": 391,
-        "levelRange": [
-            378,
-            391
-        ],
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 197,
@@ -117517,33 +117436,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "crit": 433
-        }
-    },
-    {
-        "name": "Fiery Quintessence",
-        "id": 69198,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Fiery Quintessence",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_41",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 391,
-        "effect": {
-            "type": "trinket",
-            "name": "Fiery Quintessence"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 433
         }
     },
     {
@@ -130826,6 +130718,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -130859,6 +130752,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -130893,6 +130787,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -130927,6 +130822,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -130960,6 +130856,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -130993,12 +130890,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 282,
             "stamina": 454,
             "crit": 177,
             "mastery": 203
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 171,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Helm",
@@ -131027,12 +130932,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 348,
             "stamina": 611,
             "spirit": 254,
             "mastery": 227
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 174,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Legwraps",
@@ -131061,12 +130974,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 368,
             "stamina": 611,
             "spirit": 284,
             "mastery": 212
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 173,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Tunic",
@@ -131095,12 +131016,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 368,
             "stamina": 611,
             "spirit": 255,
             "haste": 238
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 156,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Mantle",
@@ -131128,12 +131057,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 282,
             "stamina": 454,
             "spirit": 183,
             "haste": 201
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 167,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Gloves",
@@ -131973,6 +131910,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -132007,6 +131945,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -132041,6 +131980,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132075,6 +132015,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132108,6 +132049,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -132814,6 +132756,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132847,6 +132790,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -132881,6 +132825,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -132915,6 +132860,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132948,6 +132894,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -135174,12 +135121,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 322,
             "stamina": 513,
             "crit": 202,
             "mastery": 230
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 171,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Helm",
@@ -135208,12 +135163,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 400,
             "stamina": 689,
             "spirit": 289,
             "mastery": 261
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 174,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Legwraps",
@@ -135242,12 +135205,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 420,
             "stamina": 689,
             "spirit": 320,
             "mastery": 244
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 173,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Tunic",
@@ -135276,12 +135247,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 420,
             "stamina": 689,
             "spirit": 291,
             "haste": 269
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 156,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Mantle",
@@ -135309,12 +135288,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 322,
             "stamina": 513,
             "spirit": 209,
             "haste": 227
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 167,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Gloves",
@@ -135679,6 +135666,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135712,6 +135700,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135746,6 +135735,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -135780,6 +135770,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135813,6 +135804,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135846,6 +135838,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135880,6 +135873,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -135914,6 +135908,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135948,6 +135943,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135981,6 +135977,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -136183,6 +136180,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -136216,6 +136214,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -136250,6 +136249,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -136284,6 +136284,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -136317,6 +136318,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -153583,6 +153585,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153617,6 +153620,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153651,6 +153655,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153685,6 +153690,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153719,6 +153725,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -153752,6 +153759,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153786,6 +153794,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153820,6 +153829,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 446,
             "stamina": 730,
@@ -153854,6 +153864,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153888,6 +153899,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -153922,6 +153934,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153955,6 +153968,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153989,6 +154003,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154023,6 +154038,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154057,6 +154073,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -154091,6 +154108,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154124,6 +154142,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -154158,6 +154177,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154192,6 +154212,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154226,6 +154247,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -164033,6 +164055,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164166,6 +164189,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164199,6 +164223,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164265,6 +164290,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164364,6 +164390,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164432,6 +164459,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164466,6 +164494,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164500,6 +164529,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164568,6 +164598,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164704,6 +164735,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 509,
             "stamina": 824,
@@ -164806,6 +164838,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164840,6 +164873,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164874,6 +164908,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165044,6 +165079,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165078,6 +165114,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165112,6 +165149,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165248,6 +165286,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165282,6 +165321,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165384,6 +165424,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165418,6 +165459,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165554,6 +165596,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -165687,6 +165730,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165720,6 +165764,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165786,6 +165831,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165885,6 +165931,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165953,6 +166000,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -165987,6 +166035,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166021,6 +166070,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166089,6 +166139,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166225,6 +166276,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -166327,6 +166379,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166361,6 +166414,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166395,6 +166449,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166565,6 +166620,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166599,6 +166655,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166633,6 +166690,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166769,6 +166827,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166803,6 +166862,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166905,6 +166965,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166939,6 +167000,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 280,
             "stamina": 480,
