@@ -157,13 +157,13 @@ const raidTrinketData: Effect[] = [
       const timeToMax = 11.5;
       
       // Spells cast during duration
-      const totalSpellsCast = 15;
+      const totalSpellsCast = 14;
       const countAtMax = totalSpellsCast - 10;
+      const maxManaSaving = redPerStack * data[0].maxStacks
+
       // Average cost reduction
-      const averageCostReduction = (10 / totalSpellsCast * (redPerStack * data[0].maxStacks / 2)) + // Stacking reduction
-                                    (countAtMax * (redPerStack * data[0].maxStacks)); // Max stacks
-      console.log(averageCostReduction);
-      
+      const averageCostReduction = (10 / totalSpellsCast * (maxManaSaving / 2)) + // Stacking reduction
+                                    (countAtMax * (maxManaSaving)) / totalSpellsCast; // Max stacks
 
       // Convert to MP5
       bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
