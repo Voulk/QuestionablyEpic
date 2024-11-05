@@ -190,7 +190,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           }
           else {
             // We do not have a tie, pick the secondary with the highest value to maximize Haste.
-            console.log(item.stats);
             fromStat = Object.keys(item.stats)
                         .filter(key => ['crit', 'mastery', 'spirit'].includes(key))
                         .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);
