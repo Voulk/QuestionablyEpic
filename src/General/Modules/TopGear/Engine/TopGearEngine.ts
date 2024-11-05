@@ -136,6 +136,17 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
 
 }
 
+function getGemStats(gemArray: number[]) {
+  const gem_stats: Stats = {};
+  gemArray.forEach(gem => {
+    const gemStats = gemDB.filter(g => g.id === gem)[0].stats;
+    Object.keys(gemStats).forEach(stat => {
+      gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
+    });
+  });
+  return gem_stats;
+}
+
 function getGemOptions(spec: string, contentType: contentTypes) {
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
@@ -187,7 +198,7 @@ function getGemOptions(spec: string, contentType: contentTypes) {
  */
 export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Player, contentType: contentTypes, 
                             baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true) {
-  console.log("Running Top Gear")
+  //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
   const newPlayer = setupPlayer(player, contentType, castModel);
@@ -248,7 +259,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
     differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
   }
-  console.log(resultSets);
+
   // == Return sets ==
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
@@ -373,7 +384,8 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
                                 (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130) ||
-                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137))) {
+                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137) ||
+                                splitItems.Finger[finger].id === 215135)) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
@@ -708,9 +720,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
   }
   else {
-    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings);
-    const gemStats = {};
+    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
+    const gemStats = getGemStats(enchants["Gems"]);
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+    compileStats(bonus_stats, gemStats);
   }
   if (enchants["Gems"].length > 1) {
     // At least two gems, grab element of second. If we don't, then we have no elemental gems and can ignore it. 
@@ -741,6 +754,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // --- Item Set Bonuses ---
   
   const usedSets: any[] = []
+  console.log(setBonuses);
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
 
@@ -748,6 +762,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
           effectList = effectList.concat(setBonus);
+          console.log("ADDING SET BONUS: " + JSON.stringify(setBonus));
           usedSets.push(setBonus.name);
         }
       })

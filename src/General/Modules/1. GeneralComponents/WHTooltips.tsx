@@ -28,7 +28,7 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
 
   const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}`;
   const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
-
+  
   return (
     <a
       href={baseWowheadLink}

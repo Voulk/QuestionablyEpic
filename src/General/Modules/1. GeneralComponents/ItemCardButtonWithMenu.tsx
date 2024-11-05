@@ -32,7 +32,7 @@ const getMenuItems = (item: any): MenuItemType[] => {
   //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
   //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
-  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 635, 639];
+  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 636, 639];
   const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
@@ -51,7 +51,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   if (CONSTANTS.socketSlots.includes(item.slot) && gameType === "Retail") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket"})
+    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket(s)"})
     //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
 
   }
@@ -93,7 +93,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   };
 
   const handleExtraMenuItemClick = (menuItem: MenuItemType) => {
-    if (menuItem.label === "Add Socket") upgradeItem(item, 0, true, false);
+    if (menuItem.label === "Add Socket(s)") upgradeItem(item, 0, true, false);
     else if (menuItem.label === "Convert to Vault") upgradeItem(item, 0, false, true);
     else if (menuItem.label.includes("Add Embellishment")) embellishItem(item, menuItem.effectName);
     handleClose();
@@ -128,7 +128,7 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         }}
       >
         {canBeCatalyzed ? (
-          <MenuItem onClick={handlecatalyseItemCard} style={{ color: "plum" }} divider>
+          <MenuItem style={{ fontSize: "12px", color: "plum" }} onClick={handlecatalyseItemCard} divider>
             {t("Catalyst")}
           </MenuItem>
         ) : null}

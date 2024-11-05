@@ -18,6 +18,7 @@ export class Item {
   tertiary: "Leech" | "Avoidance" | ""; // Can probably just be moved to stats.
   stats: Stats = {}; // The stats on a given item.
   missiveStats?: string[];
+  specialAllocations?: {[key: string]: number} = {};
 
   effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
@@ -120,9 +121,10 @@ export class Item {
     clonedItem.offHandUniqueHash = this.offHandUniqueHash;
     clonedItem.gemString = this.gemString;
     clonedItem.missiveStats = this.missiveStats;
+    clonedItem.specialAllocations = { ...this.specialAllocations };
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
-    
+    if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.id, this.missiveStats, "Retail"), this.tertiary);
     // ... (copy other properties as needed)
 
     return clonedItem;
@@ -130,7 +132,8 @@ export class Item {
 
   updateLevel(level: number, missiveStats: string[] = []) {
     this.level = level;
-    this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
+    if (Object.keys(this.specialAllocations).length > 0) this.stats = (calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), this.specialAllocations, this.tertiary));
+    else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and

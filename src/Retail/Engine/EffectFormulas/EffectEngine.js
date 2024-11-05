@@ -53,31 +53,39 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
     // For tier sets, 2pc and 4c should be calculated separately, but the 4pc can include the 2pc in it's valuation if 
     // there's synergy.
     else if (effectType === "set bonus" || effectType === "spec legendary") {
-      switch (player.spec) {
-        case "Discipline Priest":
-          bonus_stats = getDiscPriestSpecEffect(effectName, player, contentType);
-          break;
-        case "Restoration Druid":
-          bonus_stats = getDruidSpecEffect(effectName, player, contentType);
-          break;
-        case "Holy Priest":
-          bonus_stats = getHolyPriestSpecEffect(effectName, player, contentType);
-          break;
-        case "Holy Paladin":
-          bonus_stats = getPaladinSpecEffect(effectName, player, contentType);
-          break;
-        case "Mistweaver Monk":
-          bonus_stats = getMonkSpecEffect(effectName, player, contentType);
-          break;
-        case "Restoration Shaman":
-          bonus_stats = getShamanSpecEffect(effectName, player, contentType);
-          break;
-        case "Preservation Evoker":
-          bonus_stats = getEvokerSpecEffect(effectName, player, contentType);
-          break;
-        default:
-          break;
+      if (effect.class && effect.class === "All") {
+        // Generic sets available to every class.
+        bonus_stats = getGenericEffect(effectName, itemLevel, additionalData);
       }
+      else {
+        switch (player.spec) {
+          case "Discipline Priest":
+            bonus_stats = getDiscPriestSpecEffect(effectName, player, contentType);
+            break;
+          case "Restoration Druid":
+            bonus_stats = getDruidSpecEffect(effectName, player, contentType);
+            break;
+          case "Holy Priest":
+            bonus_stats = getHolyPriestSpecEffect(effectName, player, contentType);
+            break;
+          case "Holy Paladin":
+            bonus_stats = getPaladinSpecEffect(effectName, player, contentType);
+            break;
+          case "Mistweaver Monk":
+            bonus_stats = getMonkSpecEffect(effectName, player, contentType);
+            break;
+          case "Restoration Shaman":
+            bonus_stats = getShamanSpecEffect(effectName, player, contentType);
+            break;
+          case "Preservation Evoker":
+            bonus_stats = getEvokerSpecEffect(effectName, player, contentType);
+            break;
+          default:
+            break;
+        }
+      }
+
+
     } 
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffect(effectName, itemLevel, additionalData);

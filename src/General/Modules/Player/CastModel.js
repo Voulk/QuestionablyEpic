@@ -83,14 +83,14 @@ class CastModel {
         spellList = druidDefaultSpellData(contentType);
         specialQueries = druidDefaultSpecialQueries(contentType);
         this.baseStatWeights = druidDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 50000);
+        this.fightInfo.dps = (contentType === "Raid" ? 30000 : 90000);
       }
       else if (modelID === "Balanced") {
         this.modelName = "Balanced";
         spellList = druidBalancedSpellData(contentType);
         specialQueries = druidBalancedSpecialQueries(contentType);
         this.baseStatWeights = druidBalancedStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
+        this.fightInfo.dps = (contentType === "Raid" ? 7000 : 180000);
 
       }
 
@@ -194,12 +194,13 @@ class CastModel {
       spellList = this.getClassicDruid();
         this.baseStatWeights = {
           spellpower: 1,
-          intellect: 1.9,
-          crit: 0.701,
-          mastery: 0.801,
+          intellect: 3,
+          crit: 0.98,
+          mastery: 1.1,
           haste: 0.3,
-          mp5: 1.46,
-          spirit: 0.791,
+          mp5: 1.7,
+          spirit: 1.3,
+          hps: 0.7, // 
         };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();

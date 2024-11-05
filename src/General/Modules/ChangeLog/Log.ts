@@ -16,6 +16,66 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.5 / 4.4",
+    update: 1,
+    date: "October 22",
+    changes: [ 
+      "Added all WoW Anniversary items & effects.",
+      "Added a Max Level slider to the Trinket Analysis chart.",
+      "Fixed a bug that would prevent running 2x Ring of Earthen Craftsmanship in Top Gear.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 12,
+    date: "October 14",
+    changes: [ 
+      "Enabled Crafting panel.",
+      "Upgrade Finder: Jewelry will now have two sockets.",
+      "Bugfix: Adding a socket to jewelry will now add two instead.",
+      "Bugfix: Added a socket to, or converting a crafted item to Vault will now keep its secondaries.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 11,
+    date: "October 3",
+    changes: [ 
+      "Added an 'Upgrade All' button to SimC imports.",
+      "In game change: Mercurial Egg buffed 5%.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 10,
+    date: "September 27",
+    changes: [ 
+      "Bugfix: Necks will no longer be auto-socketed in Upgrade Finder.",
+      "The 635 ilvl option is now correctly 636.",
+      "Manually added necks will no longer default to 3 sockets.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 9,
+    date: "September 17",
+    changes: [ 
+      "Hovering over tooltips will now include secondaries / effects.",
+      "Bugfix: Ascension / Symbiosis will now count toward the two embellishment limit when added via SimC.",
+      "Bugfix: Sureki's is now correctly valued.",
+      "In game changes: Algari Alchemist Stone buffed. Fateweaver's Needle / Mallet nerfed.",
+      "Added Crystal Spire of Karabor.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 8,
+    date: "September 16",
+    changes: [ 
+      "Weekly trinket hotfixes.",
+      "Added Crafted tags to all PVP items.",
+      "Imported items with suffixes will now function correctly with the gear upgrader.",
+      "Added the Fateweavers Needle / Mallet effect.",
+      "Tidied up some embellishments now we have live data.",
+    ]},
+  {
     version: "11.0.2 / 4.4",
     update: 8,
     date: "September 9",

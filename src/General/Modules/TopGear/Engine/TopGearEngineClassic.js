@@ -155,8 +155,61 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
         });
       }
 
-      // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
+      // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
       else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
+
+        const secondaryRank = ["spirit", "mastery", "crit"]
+        // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
+        if (itemStats.includes("haste")) {
+          
+          const targetStat = secondaryRank.find(value => !itemStats.includes(value));
+          const newItem = JSON.parse(JSON.stringify(item));
+          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+          const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
+          newItem.stats[targetStat] = Math.round(reforgeAmount);
+          newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
+          //newItem.uniqueHash = Math.random().toString(36).substring(7);
+          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+          newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
+          newItem.flags.push("ItemReforged");
+          reforgedItems.push(newItem);
+
+  
+          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
+          
+        }
+        else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
+          // Sort first by the secondary with the most stats on the piece. If they are tied, then prio by stat list.
+          // Check for tie
+          const values = Object.values(item.stats);
+          let fromStat = "";
+          if (values.every(value => value === values[0])) {
+            // We have a tie. Just go by the stat list.
+            fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
+
+          }
+          else {
+            // We do not have a tie, pick the secondary with the highest value to maximize Haste.
+            fromStat = Object.keys(item.stats)
+                        .filter(key => ['crit', 'mastery', 'spirit'].includes(key))
+                        .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);
+          }
+          
+          const newItem = JSON.parse(JSON.stringify(item));
+          const reforgeAmount = Math.floor(item.stats[fromStat] * 0.4);
+          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
+          newItem.stats['haste'] = Math.round(reforgeAmount);
+          newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
+          //newItem.uniqueHash = Math.random().toString(36).substring(7);
+          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
+          newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
+          newItem.flags.push("ItemReforged");
+          reforgedItems.push(newItem);
+          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
+        }
+      }
+      // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
+      else if (reforgeSetting === "Smart V1" && player.spec === "Restoration Druid Classic") {
 
         const secondaryRank = ["spirit", "mastery", "crit"]
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.

@@ -22,15 +22,16 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 4900,
-            spirit: 1500,
-            spellpower: 1800,
-            haste: 1500,
+            intellect: 6000,
+            spirit: 2800,
+            spellpower: 2800,
+            haste: 2005,
             crit: 1500,
             mastery: 1500,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
+            hps: 0,
         }
 
         const castProfile = [
@@ -72,7 +73,7 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
-        const spec = "Discipline Priest"
+        const spec = "Restoration Druid"
         const testSuite = "Top Gear Scoring Function";
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
         const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
@@ -94,7 +95,7 @@ describe("Test APL", () => {
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
         else if (testSuite === "Top Gear Scoring Function") {
-            /*const baseline = initializeDruidSet();
+            const baseline = initializeDruidSet();
             const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
             console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
@@ -102,11 +103,12 @@ describe("Test APL", () => {
             console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
             //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
 
-            buildStatChart(baseline, activeStats, testSettings); */
+            //buildStatChart(baseline, activeStats, testSettings); 
+            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scoreDruidSet;
 
-            const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
+            /*const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
             const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;
-
+            */
             let playerStats = JSON.parse(JSON.stringify(activeStats));
             playerStats['intellect'] *= 1.15;
             applyRaidBuffs({}, playerStats);
@@ -114,7 +116,7 @@ describe("Test APL", () => {
             const scoredBaseline = scoreFunction(baseline, playerStats, {}, testSettings);
             //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
-            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5'];
+            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
             console.log(scoredBaseline);
             
             const results = {};
@@ -124,18 +126,18 @@ describe("Test APL", () => {
                 playerStats[stat] = playerStats[stat] + 10;
                 playerStats['intellect'] *= 1.15;
                 applyRaidBuffs({}, playerStats);
-                console.log(playerStats);
                 const newPlayerData = {...playerData, stats: playerStats};
                 const result = scoreFunction(baseline, playerStats, {}, testSettings)
-                console.log(result);
                 results[stat] = result;
             });
             const weights = {}
         
             stats.forEach(stat => {
-        
                 weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
             });
+            //weights['hps'] = Math.round(10000*(10)/(results['spellpower'] - scoredBaseline))/10000;
+            
+            console.log(results['crit'] - scoredBaseline)
             console.log(weights); 
 
             //buildStatChart(baseline, activeStats, testSettings);

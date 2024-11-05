@@ -60,7 +60,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.16,
         c90: 1,
-        c120: 1.115,
+        c120: 1.34,
         c180: 1,
 
         oneMinute: 1.16,
@@ -106,7 +106,7 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.745,
+    haste: 0.798,
     crit: 0.7,
     mastery: 0.55,
     versatility: 0.694,

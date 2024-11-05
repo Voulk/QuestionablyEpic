@@ -1,6 +1,85 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, getHighestStat } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { 
+    name: "Lingering Grace",
+    effects: [
+      {
+        coefficient: 57.11988067627, 
+        table: -8,
+        ppm: 3,
+        secondaries: ['haste', 'crit', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      bonus_stats.hps = runGenericFlatProc(data[0], 571, player) * 0.65; // Appears to be a flat item level but will need to be checked.
+
+      return bonus_stats;
+    },
+  },
+  { 
+    name: "Guiding Stave of Wisdom",
+    effects: [
+      {
+        coefficient: 1.469991, 
+        table: -7,
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  { // This is a channel so kind of awful. I don't see why you would ever wear this.
+    name: "Circle of Flame",
+    effects: [
+      { 
+        coefficient: 2.105363,
+        table: -7,
+        cooldown: 60,
+        ticks: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Fateweaved Needle",
+    effects: [
+      {  // Int
+        coefficient: 0.611248, //1.440925,
+        table: -1,
+        ppm: 2,
+        duration: 5,
+      },
+      {  // DPS
+        coefficient: 35.653 * 0.66,
+        table: -9,
+        ppm: 2,
+        secondaries: ["crit", "haste", "versatility"]
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      
+      const intValue = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.intellect = intValue;
+      bonus_stats.allyStats = intValue;
+
+      bonus_stats.dps = runGenericFlatProc(data[1], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
   {
 
     name: "Sureki Zealot's Insignia",
@@ -27,9 +106,9 @@ export const effectData = [
 
 
       // This mana is technically distributed through the raid but it's fairly reasonable to value it as our own with a penalty.
-      bonus_stats.mana = processedValue(data[1], itemLevel) * data[1].ppm / 60 * 0.7;
+      bonus_stats.mana = data[1].value * data[1].ppm / 60 * 0.7;
     
-
+      console.log(bonus_stats);
       return bonus_stats;
     }
   },

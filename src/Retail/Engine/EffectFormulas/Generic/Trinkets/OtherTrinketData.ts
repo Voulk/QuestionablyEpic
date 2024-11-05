@@ -194,7 +194,7 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 0.277491, 
+        coefficient: 2, //0.277491, 
         table: -1,
         duration: 15,
         ppm: 1,
