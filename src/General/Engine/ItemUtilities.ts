@@ -938,9 +938,9 @@ export function getEmbellishmentID(embellishmentName) {
 
 function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   // Handle any exceptions. These might include items that don't match the item level but that are best in their category so should be included anyway.
-  if (item.id === 71249 && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options.
+  if ((item.id === 71249 || item.id === 71086) && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options. Also Tarecgosa.
   else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
-
+  
   // Deal with Rag loot
   else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
   else if (itemLevelReq === 378 && item.itemLevel === 384  && item.sources && item.sources[0].encounterId === 198) return true;
