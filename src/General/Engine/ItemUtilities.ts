@@ -936,6 +936,19 @@ export function getEmbellishmentID(embellishmentName) {
 
 }*/
 
+function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
+  // Handle any exceptions. These might include items that don't match the item level but that are best in their category so should be included anyway.
+  if (item.id === 71249 && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options.
+  else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
+
+  // Deal with Rag loot
+  else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
+  else if (itemLevelReq === 378 && item.itemLevel === 384  && item.sources && item.sources[0].encounterId === 198) return true;
+
+  // The rest
+  else return ((item.itemLevel === 379 && itemLevelReq === 372 || (item.itemLevel === 359 && itemLevelReq === 372 && item.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/)
+}
+
 // It is useful to have some items to work with.
 export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
   let itemDB = getItemDB(gameType);
@@ -949,7 +962,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
       (gameType === "Classic" || itemLevel > 400) &&
-      (key.itemLevel === itemLevel || gameType === "Retail" || (key.itemLevel === 379 && itemLevel === 372 || (key.itemLevel === 359 && itemLevel === 372 && key.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/) && 
+      (key.itemLevel === itemLevel || gameType === "Retail" || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -975,7 +988,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
-        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327].includes(item.id)))
+        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 

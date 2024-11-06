@@ -237,7 +237,7 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     if (tierSets.includes("Druid T12-2")) {
       // 40% chance on Lifebloom tick to restore 184 mana.
       // Ignoring ToL for now. We know it has some form of reduced proc rate but not how much.
-      statProfile.mp5 = (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
+      statProfile.mp5 = (statProfile.mp5 || 0) + (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
     }
     if (tierSets.includes("Druid T13-2")) {
       // TODO. 5% discount on Rejuv / Healing Touch.
@@ -248,6 +248,7 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     const regen = (getManaRegen(statProfile, "Restoration Druid") + 
                   getAdditionalManaEffects(statProfile, "Restoration Druid").additionalMP5 +
                   (statProfile.mp5 || 0)) * 12 * fightLength;
+
     const totalManaPool = manaPool + regen;
     const fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] // This could be more efficient;
     //console.log(totalManaPool);

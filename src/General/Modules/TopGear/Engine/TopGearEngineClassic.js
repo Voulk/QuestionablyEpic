@@ -695,7 +695,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     compileStats(setStats, compiledEffects);
 
     applyRaidBuffs({}, setStats);
-
     // SCORING FUNCTIONS
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
