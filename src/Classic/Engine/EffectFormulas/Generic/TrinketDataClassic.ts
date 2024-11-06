@@ -125,7 +125,7 @@ const raidTrinketData: Effect[] = [
       { // Confirmed no Paladin mastery scaling, wings appears to work, everything else up in the air. Appears to scale with something. Can hit pets.
         value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
         secondaries: ["crit"],
-        efficiency: 0.8 * 0.9, // 20% overheal, 10% lost to pets.
+        efficiency: 0.7 * 0.9, // 20% overheal, 10% lost to pets.
         stat: "hps",
         ppm: getEffectPPM(0.1, 45, 1.5),
       },
@@ -168,6 +168,7 @@ const raidTrinketData: Effect[] = [
       // Convert to MP5
       bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
 
+      console.log("JAWS MP5", bonus_stats.mp5)
       return bonus_stats;
       
      // return bonus_stats;
@@ -223,9 +224,10 @@ const raidTrinketData: Effect[] = [
       let bonus_stats: Stats = {};
       //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
+
+      console.log("FALL OF MORTALITY", JSON.stringify(getGenericTrinket(data[0], itemLevel)));
       return getGenericTrinket(data[0], itemLevel);
       
-     // return bonus_stats;
     }
   },
   {
