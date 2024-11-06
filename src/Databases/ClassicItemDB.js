@@ -69939,10 +69939,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Anhuur's Hymnal"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 70,
@@ -73591,10 +73587,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Anhuur's Hymnal"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 70,
@@ -81163,10 +81155,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Ignacious"
         },
-        "levelRange": [
-            359,
-            372
-        ],
         "sources": [
             {
                 "encounterId": 158,
@@ -97729,9 +97717,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "World-Queller Focus"
         },
-        "levelRange": [
-            318
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -105197,10 +105182,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Ignacious"
         },
-        "levelRange": [
-            359,
-            372
-        ],
         "sources": [
             {
                 "encounterId": 158,
@@ -116994,12 +116975,14 @@ export const classicItemDB = [
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
-        "levelRange": [378],
         "itemLevel": 378,
         "effect": {
             "type": "trinket",
             "name": "Fiery Quintessence"
         },
+        "levelRange": [
+            378
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -130072,6 +130055,166 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Flickering Cowl of the Undertow",
+        "id": 710110,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "spirit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Fireflash",
+        "id": 710111,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "crit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Feverflare",
+        "id": 710112,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "haste": 276,
+            "mastery": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Wavecrest",
+        "id": 710113,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "mastery": 276,
+            "spirit": 276
+        }
+    },
+    {
         "name": "Heartstone of Rhyolith",
         "id": 71012,
         "quality": 4,
@@ -130201,6 +130344,162 @@ export const classicItemDB = [
             "stamina": 341,
             "mastery": 162,
             "crit": 133
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Undertow",
+        "id": 710250,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "spirit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Fireflash",
+        "id": 710251,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "crit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Feverflare",
+        "id": 710252,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "haste": 218,
+            "mastery": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Wavecrest",
+        "id": 710253,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "mastery": 218,
+            "spirit": 218
         }
     },
     {
@@ -134123,6 +134422,166 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Flickering Cowl of the Undertow",
+        "id": 714210,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "spirit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Fireflash",
+        "id": 714211,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "crit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Feverflare",
+        "id": 714212,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "haste": 276,
+            "mastery": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Wavecrest",
+        "id": 714213,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "mastery": 276,
+            "spirit": 276
+        }
+    },
+    {
         "name": "Volcanospike",
         "id": 71422,
         "quality": 4,
@@ -134622,6 +135081,162 @@ export const classicItemDB = [
             "stamina": 384,
             "mastery": 183,
             "crit": 150
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Undertow",
+        "id": 714500,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "spirit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Fireflash",
+        "id": 714501,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "crit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Feverflare",
+        "id": 714502,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "haste": 218,
+            "mastery": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Wavecrest",
+        "id": 714503,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "mastery": 218,
+            "spirit": 218
         }
     },
     {
