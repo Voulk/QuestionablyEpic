@@ -265,6 +265,17 @@ export const raceDB = [
     id: "Races.Dracthyr",
     icon: "",
   },
+  {
+    name: {
+      en: "Earthen",
+      fr: "Earthen",
+      de: "Earthen",
+      ru: "Earthen",
+      ch: "Earthen",
+    },
+    id: "Races.Earthen",
+    icon: "",
+  },
 ];
 
 export const getTranslatedRaceName = (string, currentLanguage) => {

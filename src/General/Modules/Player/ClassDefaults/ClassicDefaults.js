@@ -234,12 +234,21 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     if (tierSets.includes("Druid T11-4")) {
       statProfile.spirit += 540;
     }
+    if (tierSets.includes("Druid T12-2")) {
+      // 40% chance on Lifebloom tick to restore 184 mana.
+      // Ignoring ToL for now. We know it has some form of reduced proc rate but not how much.
+      statProfile.mp5 = (statProfile.mp5 || 0) + (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
+    }
+    if (tierSets.includes("Druid T13-2")) {
+      // TODO. 5% discount on Rejuv / Healing Touch.
+    }
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
     const regen = (getManaRegen(statProfile, "Restoration Druid") + 
                   getAdditionalManaEffects(statProfile, "Restoration Druid").additionalMP5 +
                   (statProfile.mp5 || 0)) * 12 * fightLength;
+
     const totalManaPool = manaPool + regen;
     const fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] // This could be more efficient;
     //console.log(totalManaPool);
@@ -281,6 +290,11 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
           if ((spellProfile.spell === "Wild Growth" || spellProfile.spell === "Efflorescence") && statProfile.haste >= 2005) {
             spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
           }
+
+          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "Heal") {
+            // Heal for a portion of the Swiftmend only. No Efflo, effective healing only.
+            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * (1 - spell.expectedOverheal);
+          }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
           healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing * spellProfile.cpm);
@@ -298,6 +312,10 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
     console.log(healingBreakdown); */
+
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
+
     return score;
 }
 

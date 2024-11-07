@@ -6,7 +6,7 @@ export const classRaceDB = {
 
   /* ------------------------------------------- Retail ------------------------------------------- */
   "Holy Paladin": {
-    races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
+    races: ["Races.Earthen", "Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Lightforged Draenei", "Races.Dark Iron Dwarf", "Races.Blood Elf", "Races.Tauren", "Races.Zandalari Troll"],
     gameType: "Retail",
   },
 
@@ -72,6 +72,8 @@ export const classRaceDB = {
       "Races.Vulpera",
       "Races.Highmountain Tauren",
       "Races.Orc",
+      "Races.Dracthyr",
+      "Races.Earthen",
     ],
     gameType: "Retail",
   },
@@ -100,6 +102,8 @@ export const classRaceDB = {
       "Races.Vulpera",
       "Races.Highmountain Tauren",
       "Races.Orc",
+      "Races.Dracthyr",
+      "Races.Earthen",
     ],
     gameType: "Retail",
   },
@@ -134,6 +138,7 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Earthen",
     ],
     gameType: "Retail",
   },
@@ -175,6 +180,7 @@ export const classRaceDB = {
       "Races.Mag'har Orc",
       "Races.Zandalari Troll",
       "Races.Vulpera",
+      "Races.Earthen",
     ],
     gameType: "Retail",
   },
