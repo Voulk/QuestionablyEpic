@@ -121,11 +121,12 @@ const raidTrinketData: Effect[] = [
   // Firelands
   {
     name: "Eye of Blazing Power",
+    description: "Eye of Blazing Power competes well on HPS but the format is fairly unproductive.",
     effects: [
       { // Confirmed no Paladin mastery scaling, wings appears to work, everything else up in the air. Appears to scale with something. Can hit pets.
         value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
         secondaries: ["crit"],
-        efficiency: 0.7 * 0.9, // 20% overheal, 10% lost to pets.
+        efficiency: 0.72 * 0.9, // 20% overheal, 10% lost to pets.
         stat: "hps",
         ppm: getEffectPPM(0.1, 45, 1.5),
       },
@@ -145,7 +146,7 @@ const raidTrinketData: Effect[] = [
         value: {378: 110, 391: 125}, 
         maxStacks: 10,
         stat: "mp5",
-        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 12, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         cooldown: 120,
       },
     ],

@@ -217,7 +217,8 @@ class CastModel {
         mastery: 0.398,
         haste: 1.083,
         spirit: 1.123,
-        mp5: 1.199
+        mp5: 1.199,
+        hps: 0.7, // 
       };
     } 
     else if (spec === "Discipline Priest Classic") {
@@ -229,7 +230,8 @@ class CastModel {
         mastery: 0.461,
         haste: 0.914,
         spirit: 0.711,
-        mp5: 1.028
+        mp5: 1.028,
+        hps: 0.7, // 
       }
     } else {
       spellList = {};
