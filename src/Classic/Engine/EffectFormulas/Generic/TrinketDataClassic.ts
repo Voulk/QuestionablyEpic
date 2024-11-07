@@ -145,6 +145,7 @@ const raidTrinketData: Effect[] = [
         value: {378: 110, 391: 125}, 
         maxStacks: 10,
         stat: "mp5",
+        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 12, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         cooldown: 120,
       },
     ],
@@ -157,8 +158,8 @@ const raidTrinketData: Effect[] = [
       const timeToMax = 11.5;
       
       // Spells cast during duration
-      const totalSpellsCast = 14;
-      const countAtMax = totalSpellsCast - 10;
+      const totalSpellsCast = data[0].expectedCasts[player.spec];
+      const countAtMax = Math.max(0, totalSpellsCast - 10);
       const maxManaSaving = redPerStack * data[0].maxStacks
 
       // Average cost reduction

@@ -99,14 +99,14 @@ export default function QEMainMenu(props: Props) {
           { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile", glow: false },
         ]
-      : [
+      : [ // Classic
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
           { route: "/UpgradeFinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
-          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 3, localization: "MainMenu.TierSets", glow: false },
-          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 4, localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 3, localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 4, localization: "MainMenu.TierSets", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
-          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 5, localization: "MainMenu.SequenceSandbox", glow: false },
           // Tools
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile", glow: false },
         ];
