@@ -173,6 +173,11 @@ export default function raceIcons(props) {
     sourceFemale = ZandalariFemale;
     alt = "Zandalari";
   }
+  if (props === "Races.Earthen") {
+    sourceMale = DwarfMale;
+    sourceFemale = DwarfFemale;
+    alt = "Earthen";
+  }
   if (props === "Races.Dracthyr") {
     source = Dracthyr;
     alt = "Dracthyr";
