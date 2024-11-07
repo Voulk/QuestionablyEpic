@@ -1,5 +1,6 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
+import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 type EffectData = {
   coefficient: number;
@@ -58,6 +59,25 @@ const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
   return bonus_stats;
 }
 
+const getGenericThroughputTrinket = (data: EffectData, itemLevel: number, player: player): Stats => {
+  const trinketValue = data.value[itemLevel] * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(player.activeStats, player.spec.replace(" Classic", "")));
+  const statType = data.stat;
+  const bonus_stats: Stats = {};
+  bonus_stats[statType] = trinketValue;
+  return bonus_stats;
+}
+
+const getGenericHealingIncrease = (spec: string): number => {
+  if (spec.includes("Restoration Druid")) {
+    return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
+  }
+  else if (spec.includes("Holy Paladin")) {
+    return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
+  }
+
+  return 1;
+}
+
 const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
   const bonus_stats: Stats = {};
   const trinketValue = data.duration * data.value[itemLevel] / data.cooldown;
@@ -66,6 +86,8 @@ const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
   return bonus_stats;
 
 }
+
+
 
 /*
 Phase One: Bell of Enraging Resonance, Jar of Ancient Remedies, Fall of Mortality, Theralion's Mana, 
@@ -96,6 +118,100 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Firelands
+  {
+    name: "Eye of Blazing Power",
+    description: "Eye of Blazing Power competes well on HPS but the format is fairly unproductive.",
+    effects: [
+      { // Confirmed no Paladin mastery scaling, wings appears to work, everything else up in the air. Appears to scale with something. Can hit pets.
+        value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
+        secondaries: ["crit"],
+        efficiency: 0.72 * 0.9, // 20% overheal, 10% lost to pets.
+        stat: "hps",
+        ppm: getEffectPPM(0.1, 45, 1.5),
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericThroughputTrinket(data[0], itemLevel, player);
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Jaws of Defeat",
+    effects: [
+      { // 
+        value: {378: 110, 391: 125}, 
+        maxStacks: 10,
+        stat: "mp5",
+        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      const redPerStack = data[0].value[itemLevel];
+
+      // Time to 10 stacks
+      const timeToMax = 11.5;
+      
+      // Spells cast during duration
+      const totalSpellsCast = data[0].expectedCasts[player.spec];
+      const countAtMax = Math.max(0, totalSpellsCast - 10);
+      const maxManaSaving = redPerStack * data[0].maxStacks
+
+      // Average cost reduction
+      const averageCostReduction = (10 / totalSpellsCast * (maxManaSaving / 2)) + // Stacking reduction
+                                    (countAtMax * (maxManaSaving)) / totalSpellsCast; // Max stacks
+
+      // Convert to MP5
+      bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
+
+      console.log("JAWS MP5", bonus_stats.mp5)
+      return bonus_stats;
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Necromantic Focus", // DPS spells only
+    effects: [
+      { // 
+        value: {378: 39, 391: 44}, 
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+      
+     // return bonus_stats;
+    }
+  },
+  {
+    name: "Fiery Quintessence", 
+    effects: [
+      { // 
+        value: {378: 1149}, // 391 version not available
+        stat: "intellect",
+        duration: 25,
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+      
+    }
+  },
+  // Tier 11
   {
     name: "Fall of Mortality",
     effects: [
@@ -110,9 +226,10 @@ const raidTrinketData: Effect[] = [
       let bonus_stats: Stats = {};
       //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
+
+      console.log("FALL OF MORTALITY", JSON.stringify(getGenericTrinket(data[0], itemLevel)));
       return getGenericTrinket(data[0], itemLevel);
       
-     // return bonus_stats;
     }
   },
   {

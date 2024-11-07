@@ -317,7 +317,7 @@ export default function TrinketAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Grid item xs={12}>
+          {gameType === "Retail" ? <Grid item xs={12}>
             <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 4 }}>
                 <Grid container justifyContent="center" spacing={1}>
@@ -340,7 +340,7 @@ export default function TrinketAnalysis(props) {
                 />
               </div>
             </Paper>
-          </Grid>
+          </Grid> : null }
             <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
               <InformationBox information={trinketText} variant="yellow" />
 

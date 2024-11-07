@@ -194,12 +194,13 @@ class CastModel {
       spellList = this.getClassicDruid();
         this.baseStatWeights = {
           spellpower: 1,
-          intellect: 1.9,
-          crit: 0.701,
-          mastery: 0.801,
+          intellect: 3,
+          crit: 0.98,
+          mastery: 1.1,
           haste: 0.3,
-          mp5: 1.46,
-          spirit: 0.791,
+          mp5: 1.7,
+          spirit: 1.3,
+          hps: 0.7, // 
         };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
@@ -216,7 +217,8 @@ class CastModel {
         mastery: 0.398,
         haste: 1.083,
         spirit: 1.123,
-        mp5: 1.199
+        mp5: 1.199,
+        hps: 0.7, // 
       };
     } 
     else if (spec === "Discipline Priest Classic") {
@@ -228,7 +230,8 @@ class CastModel {
         mastery: 0.461,
         haste: 0.914,
         spirit: 0.711,
-        mp5: 1.028
+        mp5: 1.028,
+        hps: 0.7, // 
       }
     } else {
       spellList = {};
