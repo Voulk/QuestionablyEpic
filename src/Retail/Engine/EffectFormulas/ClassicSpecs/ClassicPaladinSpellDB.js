@@ -60,7 +60,7 @@ export const CLASSICPALADINSPELLDB = {
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
-    "Divine Light": [{ // NYI
+    "Divine Light": [{ 
         // Regrowth direct heal portion
         spellData: {id: 82326, icon: "spell_holy_surgeoflight", cat: "heal"},
         type: "heal",
