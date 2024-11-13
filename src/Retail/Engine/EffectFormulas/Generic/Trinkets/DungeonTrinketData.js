@@ -129,8 +129,8 @@ export const dungeonTrinketData =
       },
       {
         // Cirral Concoctory procs on allies and so gives them buffs. It can also proc on yourself but it's just as likely as hitting anyone else. Support trinket.
-        // - Int buff (only meaningful proc)
-        // - All Terts buff
+        // - Strand of the Lord - Int buff (only meaningful proc)
+        // - Strand of the Queen - All Terts buff
         // - Secondary Buff (same name - crit / mast seen but likely all four)
         // - Sundered: High chance for heals to do more healing / Chance to deal damage when hit (tank, not seen) / chance for damage to deal more damage (DPS, not seen)
         // - Mana (not seen)
@@ -141,10 +141,14 @@ export const dungeonTrinketData =
           {  // Int Proc
             coefficient: 0.909246,
             table: -1,
+            duration: 20,
+            ppm: 2 / 5,
           },
-          {  // Secondary Proc - Crit or Mastery. Seems random which.
+          {  // Secondary Proc
             coefficient: 0.954766,
             table: -7,
+            duration: 20,
+            ppm: 2 / 5,
           },
           {  // Tertiary Proc - All three
             coefficient: 0.477577,
