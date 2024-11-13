@@ -171,6 +171,8 @@ export const dungeonTrinketData =
           let bonus_stats = {};
     
           //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+          bonus_stats.allyStats = runGenericRandomPPMTrinket(data[0], itemLevel) / 0.8;
+          bonus_stats.allyStats += runGenericRandomPPMTrinket(data[1], itemLevel);
     
           return bonus_stats;
         }
