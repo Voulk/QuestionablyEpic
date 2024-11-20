@@ -9,6 +9,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
+import { getCircletIcon } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData";
 
 const getTooltip = (data, id) => {
   return [];
@@ -97,7 +98,7 @@ export default class CircletChart extends PureComponent {
         let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2, itemLevels)]));
         /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
-          name: map2.name.replace(" Citrine", ""),
+          name: map2.name,
           ...x,
         });
       });
@@ -107,7 +108,8 @@ export default class CircletChart extends PureComponent {
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
-      const idSet = [228644, 228644, 228644]
+      console.log(payload);
+      const idSet = payload.value.split("/");
 
       return (
         <g transform={`translate(${x},${y})`}>
@@ -119,13 +121,13 @@ export default class CircletChart extends PureComponent {
             flexWrap: 'wrap',
             }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(/*payload.value*/ "a", 32)}
+              {truncateString(/*payload.value*/ "", 32)}
             </text>
 
             {idSet.map((id) => {
               return (
                 <WowheadTooltip type="item" id={id} level={639} domain={currentLanguage}>
-                  <img width={20} height={20} x={0} y={0} src={"https://wow.zamimg.com/images/wow/icons/large/" + "inv_siren_isle_blessed_citrine_purple" + ".jpg"} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+                  <img width={20} height={20} x={0} y={0} src={getCircletIcon(id)/*"https://wow.zamimg.com/images/wow/icons/large/" + "inv_siren_isle_blessed_citrine_purple" + ".jpg"*/} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
                 </WowheadTooltip>
             )})}
             {/*<WowheadTooltip type="item" id={payload.value} level={639} domain={currentLanguage}>

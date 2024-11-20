@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-
+import { getAllCombos } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
@@ -184,22 +184,21 @@ export default function CircletAnalysis(props) {
   const itemLevels = [619, 623, 627, 630, 633, 636, 639 ];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
-  const combos = [["Storm Sewer's Citrine", "Mariner's Hallowed Citrine", "Old Salt's Bardic Citrine"],
-                  ["Roaring War-Queen's Citrine", "Fathomdweller's Runed Citrine", "Legendary Skipper's Citrine"]]
+  const combos = getAllCombos();
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
     "Note that the value of the slot some embellishments must be placed on is NOT included in the graph.",
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
-
+  console.log(combos);
   let activeCombos = [];
 
   for (var i = 0; i < combos.length; i++) {
     const gemCombo = combos[i];
     let comboAtLevels = {
       id: i,
-      name: gemCombo.join(" / "),
+      name: gemCombo.join("/"),
       tooltip: []
     };
 
@@ -213,7 +212,7 @@ export default function CircletAnalysis(props) {
 
   activeCombos.sort((a, b) => (getHighestScore(a) < getHighestScore(b) ? 1 : -1));
 
-
+  
   return (
     <div className={classes.root}>
       <div style={{ height: 96 }} />

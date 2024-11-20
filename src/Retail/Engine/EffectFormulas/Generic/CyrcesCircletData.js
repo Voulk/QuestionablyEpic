@@ -20,6 +20,34 @@ import s204000 from "Images/Resources/PrimordialGems/s204000.jpg";
 // One works out the best combination of gems.
 // The other does one calculation run where it computes the bonus stats of that combo.
 
+
+export const getAllCombos = () => {
+  const allWind = circletGemData.filter((gem) => gem.school === "Wind");
+  const allSea = circletGemData.filter((gem) => gem.school === "Sea");
+  const allThunder = circletGemData.filter((gem) => gem.school === "Thunder");
+
+  const combinations = []
+
+  for(let i = 0; i < allWind.length; i++){
+    for(let j = 0; j < allSea.length; j++){
+      for(let k = 0; k < allThunder.length; k++){
+        combinations.push([allWind[i].id, allSea[j].id, allThunder[k].id])
+      }
+    }
+  }
+
+  return combinations;
+}
+
+export const getCircletIcon = (id) => {
+  console.log(id);
+  const gem = circletGemData.filter(gem => gem.id == id)[0];
+  console.log(gem);
+  if (gem) return "https://wow.zamimg.com/images/wow/icons/large/" + gem.icon + ".jpg";
+  else console.error("Gem Icon not found");
+  
+}
+
 export const getBestCombo = (player, contentType, itemLevel, setStats, settings, returnType="names") => {
     // Find the best possible set. There are only 2000 combinations so this isn't too bad. 
     // This could be optimized by separating out combinations that don't require other gems.
@@ -132,422 +160,84 @@ const circletData = [
 
 
 export const circletGemData = [
-    {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Cold Frost Stone                                             */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Gain a frost shield every 20 seconds that absorbs damage. Does not proc Wild Spirit Stone.
-        */
-        name: "Cold Frost Stone",
-        id: 204012,
-        school: "Frost",
-        type: "Absorb",
-        effects: [
-          { 
-            coefficient: 49.23086,
-            table: -9,
-            ppm: 3,
-            efficiency: 0.9,
-            secondaries: ['versatility'],
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-            
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      
-            return bonus_stats;
-        }
+  {
+    /* Heal proc that hits 3 targets.
+    */
+    name: "Mariner's Hallowed Citrine",
+    id: 228644,
+    icon: "inv_siren_isle_blessed_citrine_purple",
+    school: "Sea",
+    type: "Heal",
+    effects: [
+      { 
+        value: 1362,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+        efficiency: 0.9,
+        secondaries: ['versatility'],
       },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Deluging Water Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Abilities have a chance to heal a nearby ally. (Smart? Dumb?). Spell data is for one tick of the HoT.
-        */
-        name: "Deluging Water Stone",
-        id: 204010,
-        image: s204010,
-        school: "Frost",
-        type: "Heal",
-        effects: [
-          { 
-            coefficient: 11.029875,
-            table: -9,
-            ppm: 2.5,
-            efficiency: {Raid: 0.35, Dungeon: 0.35},
-            ticks: 6,
-            secondaries: ['crit', 'versatility'], // Was fixed to scale with crit.
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, contentType) {
-            let bonus_stats = {};
-            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, contentType)
-
-            return bonus_stats;
-        }
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* Heal proc that hits 3 targets.
+    */
+    name: "Storm Sewer's Citrine",
+    id: 228642,
+    icon: "inv_siren_isle_blessed_citrine_blue",
+    school: "Thunder",
+    type: "Absorb",
+    effects: [
+      { 
+        value: 2451,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+        efficiency: 0.9,
+        secondaries: ['versatility'],
       },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Exuding Steam Stone                                          */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Check range. At least appears to be smart healing. 
-        */
-        name: "Exuding Steam Stone",
-        id: 204013,
-        image: s204013,
-        school: "Frost",
-        type: "Heal",
-        effects: [
-          { 
-            coefficient: 27.350668, //36.759411,
-            table: -9,
-            ppm: 3,
-            targets: 3,
-            efficiency: {Raid: 0.65, Dungeon: 0.4},
-            secondaries: ['crit', 'versatility'], // Crit confirmed in game.
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, contentType) {
-            let bonus_stats = {};
-
-            //bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].targets * data[0].ppm / 60;
-            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, contentType)
-
-            return bonus_stats;
-        }
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* AoE ticking heal
+    */
+    name: "Old Salt's Bardic Citrine",
+    id: 228643,
+    icon: "inv_siren_isle_blessed_citrine_red",
+    school: "Wind",
+    type: "Heal",
+    effects: [
+      { 
+        value: 1143,
+        //coefficient: 49.23086,
+        //table: -9,
+        targets: 5,
+        ppm: 4,
+        efficiency: 0.9,
+        secondaries: ['versatility'],
       },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Freezing Ice Stone                                           */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* 
-        */
-        name: "Freezing Ice Stone",
-        id: 0,
-        school: "Frost",
-        type: "Damage",
-        effects: [
-          { 
-            coefficient: 36.73718,
-            table: -9,
-            ppm: 2.5,
-            secondaries: ['crit', 'versatility'],
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-            bonus_stats.dps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Humming Arcane Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Damage based on the number of stone families you have. It's assumed this also includes the Arcane family this stone is in, but TODO.
-        */
-        name: "Humming Arcane Stone",
-        id: 0,
-        school: "Arcane",
-        type: "Damage",
-        effects: [
-            { 
-                coefficient: 19.13384,
-                table: -9,
-                ppm: 2,
-                secondaries: ['crit', 'versatility'],
-            },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-
-            // Convert our gemData schools into a Set which will auto-remove duplicates.
-            // The max is mostly for easier testing, since 3 should be a natural cap due to only having 3 gems.
-            const categories = Math.min(3, new Set(gemData.map(g => g.school)).size);
-
-            bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * data[0].ppm * categories / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Sparkling Mana Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Mana stone based off PPM of Frost effects.
-        */
-        name: "Sparkling Mana Stone",
-        id: 0,
-        school: "Arcane",
-        type: "Mana",
-        effects: [
-          { 
-            coefficient: 0.315707,
-            table: -7,
-            ticks: 3,
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-
-            let ppm = 0;
-
-            gemData.forEach(gem => {
-                if (gem.school === "Frost") ppm += gem.effects[0].ppm || 0;
-            })
-
-            bonus_stats.mana = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ticks * ppm / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                  Flame Licked Stone                                            */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* 
-        */
-        name: "Flame Licked Stone",
-        id: 204002,
-        school: "Fire",
-        type: "Damage",
-        effects: [
-          { 
-            coefficient: 5.624381,
-            table: -9,
-            ppm: 2.5,
-            secondaries: ['crit', 'versatility'],
-            ticks: 7,
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-
-            const mult = gemData.map(g => g.name).includes("Entropic Fel Stone") ? 1.6 : 1;
-
-            bonus_stats.dps = processedValue(data[0], itemLevel, 1) * mult * data[0].ticks * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                  Entropic Fel Stone                                            */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Entropic Fel Stone buffs our other stones fire damage by 60%. We've chosen to include this in their own formulas rather than here.
-        /* This stone thus has no value or function of its own. It still gets a stub so that it's counted in other formulas.
-        */
-        name: "Entropic Fel Stone",
-        id: 0,
-        school: "Fire",
-        type: "N/A",
-        effects: [
-          { 
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Gleaming Iron Stone                                          */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Shield when you stand still for 3s. ICD of 25s + 3s charge time after ICD for maximum ppm of 2.14.
-        */
-        name: "Gleaming Iron Stone",
-        id: 0,
-        school: "Earth",
-        type: "Absorb",
-        effects: [
-            { 
-                coefficient: 36.925285,
-                table: -9,
-                ppm: 1.8, // Max of 2.14.
-                efficiency: 0.95,
-                secondaries: ['versatility'],
-              },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-            
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Indomitable Earth Stone                                      */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* 
-        */
-        name: "Indomitable Earth Stone",
-        id: 0,
-        school: "Earth",
-        type: "Absorb",
-        effects: [
-          { 
-            coefficient: 73.84715,
-            table: -9,
-            ppm: 2,
-            efficiency: 0.9,
-            secondaries: ['versatility'],
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-            
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-      
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Desirous Blood Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Lifesteal damage effect. DOES count as healing for Wild Spirits.
-        */
-        name: "Desirous Blood Stone",
-        id: 204027,
-        image: s204027,
-        school: "Necromantic",
-        type: "Heal", 
-        effects: [
-            { 
-                coefficient: 27.55246,
-                table: -9,
-                ppm: 2.25, 
-                efficiency: 0.6,
-                secondaries: ['crit', 'versatility'],
-              },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ppmOverride) {
-            let bonus_stats = {};
-            const ppm = ppmOverride || data[0].ppm;
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * ppm / 60;
-            bonus_stats.dps = processedValue(data[0], itemLevel) * player.getStatMults(data[0].secondaries) * ppm / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                      Wild Spirit Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* AoE heal when you have a heal or nature effect proc. 
-        /* Does proc from Desirous Blood Stone, 
-        /* Will double proc if you have Twilight + a corresponding stone. Double procs can overwrite each other.
-        /*
-        */
-        name: "Wild Spirit Stone",
-        id: 204020,
-        image: s204020,
-        type: "Heal",
-        school: "Nature",
-        effects: [
-          { 
-            coefficient: 1.954597,// 2.188874,//1.975117 * 0.97, // Off by 3% in-game regardless of spec.
-            table: -9,
-            targets: 5,
-            efficiency: {Raid: 0.5, Dungeon: 0.35},
-            ticks: 7,
-            secondaries: ['crit', 'versatility'], // Was fixed to scale with Crit.
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, contentType) {
-            let bonus_stats = {};
-
-            let ppm = 0;
-
-            gemData.forEach(gem => {
-                const procCandidate = gem.name !== "Wild Spirit Stone" && (gem.school === "Nature" || gem.type === "Heal");
-                if (procCandidate) ppm += gem.effects[0].ppm || 0;
-            })
-            
-            bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency[contentType]) * data[0].targets * data[0].ticks * player.getStatMults(data[0].secondaries) * (1.13 * ppm) / 60;
-            
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                   Storm Infused Stone                                          */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* Crits strike an enemy and two nearby enemies. 
-        */
-        name: "Storm Infused Stone",
-        id: 204000,
-        school: "Nature",
-        type: "Damage", 
-        effects: [
-            { 
-                coefficient: 21.12777,
-                table: -9,
-                ppm: 2.25, 
-                targets: 2.2, // TODO: Swap for content type.
-                secondaries: ['haste', 'crit', 'versatility'],
-              },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {};
-            
-            bonus_stats.dps = processedValue(data[0], itemLevel) * data[0].targets * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-
-            return bonus_stats;
-        }
-      },
-      {
-        /* ---------------------------------------------------------------------------------------------- */
-        /*                                      Wild Spirit Stone                                         */
-        /* ---------------------------------------------------------------------------------------------- */
-        /* AoE heal when you have a heal or nature effect proc. 
-        /* Does proc from Desirous Blood Stone, 
-        /* Will double proc if you have Twilight + a corresponding stone. Double procs can overwrite each other.
-        /*
-        */
-        name: "Prophetic Twilight Stone",
-        id: 204029,
-        type: "N/A",
-        school: "Shadow",
-        effects: [
-          { 
-          },
-        ],
-        runFunc: function(data, gemData, player, itemLevel, settings, ) {
-            let bonus_stats = {dps: 0, hps: 0};
-
-
-
-            const canProc = gemData.some(gem => {return gem.type === "Damage" || gem.name === "Desirous Blood Stone"}) && gemData.some(gem => {return gem.type === "Heal"}) && !gemData.some(gem => {return gem.type === "Absorb" || gem.type === "Mana" || gem.name === "Entropic Fel Stone"})
-
-            if (!canProc) return bonus_stats;
-
-            const newGemData = gemData.filter(gem => (gem.type === "Damage" || gem.type === "Heal"));
-
-            for (let i = 0; i < newGemData.length; i++) {
-              const otherGemID = (i === 0 ? 1 : 0);
-              const gem = JSON.parse(JSON.stringify(newGemData[i]));
-              gem.runFunc = newGemData[i].runFunc;
-
-              const gemPPM = newGemData[otherGemID].effects[0].ppm || 0//('effects' in newGemData[otherGemID] ? newGemData[otherGemID].effects[0].ppm : 0);
-              gem.effects[0].ppm = gemPPM;
-
-              const gemStats = gem.runFunc(gem.effects, gemData, player, itemLevel, settings);
-
-              bonus_stats.dps += gemStats.dps || 0;
-              bonus_stats.hps += gemStats.hps || 0;
-            }
-
-            
-            return bonus_stats;
-        }
-      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
 
 ]
