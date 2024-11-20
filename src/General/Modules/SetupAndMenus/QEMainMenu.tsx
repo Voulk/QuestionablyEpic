@@ -91,7 +91,7 @@ export default function QEMainMenu(props: Props) {
           { route: "/upgradeFinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis", glow: false },
-          { route: "/", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.Cyrcescirclet", glow: false },
+          { route: "/circlet", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.CyrcesCirclet", glow: false },
           { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
           // Tools
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
