@@ -167,6 +167,7 @@ export const circletGemData = [
     id: 228644,
     icon: "inv_siren_isle_blessed_citrine_purple",
     school: "Sea",
+    shortName: "3T Heal",
     type: "Heal",
     effects: [
       { 
@@ -193,6 +194,7 @@ export const circletGemData = [
     id: 228639,
     icon: "inv_siren_isle_searuned_citrine_blue",
     school: "Sea",
+    shortName: "Mastery",
     type: "Stats",
     effects: [
       { 
@@ -242,6 +244,7 @@ export const circletGemData = [
     id: 228642,
     icon: "inv_siren_isle_blessed_citrine_blue",
     school: "Thunder",
+    shortName: "Shield",
     type: "Absorb",
     effects: [
       { 
@@ -295,6 +298,7 @@ export const circletGemData = [
     id: 228638,
     icon: "inv_siren_isle_searuned_citrine_red",
     school: "Thunder",
+    shortName: "All Sec",
     type: "Stats",
     effects: [
       { 
@@ -319,6 +323,7 @@ export const circletGemData = [
     id: 228643,
     icon: "inv_siren_isle_blessed_citrine_red",
     school: "Wind",
+    shortName: "AoE HoT",
     type: "Heal",
     effects: [
       { 
@@ -346,6 +351,7 @@ export const circletGemData = [
     id: 228640,
     icon: "inv_siren_isle_searuned_citrine_pink",
     school: "Wind",
+    shortName: "Highest Stat",
     type: "Stats",
     effects: [
       { 
