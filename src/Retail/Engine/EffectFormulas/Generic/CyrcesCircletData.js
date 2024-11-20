@@ -187,6 +187,55 @@ export const circletGemData = [
     }
   },
   {
+    /* Mastery
+    */
+    name: "Fathomdweller's Runed Citrine",
+    id: 228639,
+    icon: "inv_siren_isle_searuned_citrine_blue",
+    school: "Sea",
+    type: "Stats",
+    effects: [
+      { 
+        value: 80,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* DPS proc
+    */
+    name: "Undersea Overseer's Citrine",
+    id: 228636,
+    icon: "inv_siren_isle_stormcharged_citrine_green",
+    school: "Sea",
+    shortName: "Freeze DPS",
+    type: "DPS",
+    effects: [
+      { 
+        value: 80,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
     /* Heal proc that hits 3 targets.
     */
     name: "Storm Sewer's Citrine",
@@ -202,6 +251,57 @@ export const circletGemData = [
         ppm: 4,
         efficiency: 0.9,
         secondaries: ['versatility'],
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* Heal proc that hits 3 targets.
+    */
+    name: "Thunderlord's Crackling Citrine",
+    id: 228634,
+    icon: "inv_siren_isle_stormcharged_citrine_blue",
+    shortName: "ST Zap",
+    school: "Thunder",
+    type: "DPS",
+    effects: [
+      { 
+        value: 0,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+        efficiency: 0.9,
+        secondaries: ['versatility'],
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* All Stats
+    */
+    name: "Stormbringer's Runed Citrine",
+    id: 228638,
+    icon: "inv_siren_isle_searuned_citrine_red",
+    school: "Thunder",
+    type: "Stats",
+    effects: [
+      { 
+        value: 25,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
       },
     ],
     runFunc: function(data, gemData, player, itemLevel, settings, ) {
@@ -229,6 +329,80 @@ export const circletGemData = [
         ppm: 4,
         efficiency: 0.9,
         secondaries: ['versatility'],
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* Highest Secondary
+    */
+    name: "Stormbringer's Runed Citrine",
+    id: 228640,
+    icon: "inv_siren_isle_searuned_citrine_pink",
+    school: "Wind",
+    type: "Stats",
+    effects: [
+      { 
+        value: 25,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* Highest Secondary
+    */
+    name: "Squall Sailor's Citrine",
+    id: 228635,
+    icon: "inv_siren_isle_stormcharged_citrine_turquoise",
+    school: "Wind",
+    shortName: "AoE Slice",
+    type: "DPS",
+    effects: [
+      { 
+        value: 25,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+        let bonus_stats = {};
+        
+        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+  {
+    /* Highest Secondary
+    */
+    name: "Legendary Skipper's Citrine",
+    id: 228646,
+    icon: "inv_siren_isle_singing_citrine_prismatic",
+    school: "Wind",
+    shortName: "Random",
+    type: "Misc",
+    effects: [
+      { 
+        value: 25,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
       },
     ],
     runFunc: function(data, gemData, player, itemLevel, settings, ) {
