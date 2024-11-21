@@ -203,7 +203,7 @@ export default function CircletAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
-      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = x * 100// getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
+      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = Math.random() * 160 + x * 50// getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
     comboAtLevels.tooltip = "" // buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
@@ -211,7 +211,7 @@ export default function CircletAnalysis(props) {
   }
 
   activeCombos.sort((a, b) => (getHighestScore(a) < getHighestScore(b) ? 1 : -1));
-
+  activeCombos = activeCombos.slice(0, 20);
   
   return (
     <div className={classes.root}>

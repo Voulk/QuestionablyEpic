@@ -40,12 +40,15 @@ export const getAllCombos = () => {
 }
 
 export const getCircletIcon = (id) => {
-  console.log(id);
   const gem = circletGemData.filter(gem => gem.id == id)[0];
-  console.log(gem);
   if (gem) return "https://wow.zamimg.com/images/wow/icons/large/" + gem.icon + ".jpg";
   else console.error("Gem Icon not found");
-  
+}
+
+export const getShortName = (id) => {
+  const gem = circletGemData.filter(gem => gem.id == id)[0];
+  if (gem) return gem.shortName;
+  else "Not Found";
 }
 
 export const getBestCombo = (player, contentType, itemLevel, setStats, settings, returnType="names") => {
@@ -219,7 +222,7 @@ export const circletGemData = [
     id: 228636,
     icon: "inv_siren_isle_stormcharged_citrine_green",
     school: "Sea",
-    shortName: "Freeze DPS",
+    shortName: "3T DPS",
     type: "DPS",
     effects: [
       { 
@@ -351,7 +354,7 @@ export const circletGemData = [
     id: 228640,
     icon: "inv_siren_isle_searuned_citrine_pink",
     school: "Wind",
-    shortName: "Highest Stat",
+    shortName: "Secondary",
     type: "Stats",
     effects: [
       { 
@@ -376,7 +379,7 @@ export const circletGemData = [
     id: 228635,
     icon: "inv_siren_isle_stormcharged_citrine_turquoise",
     school: "Wind",
-    shortName: "AoE Slice",
+    shortName: "AoE Dmg",
     type: "DPS",
     effects: [
       { 

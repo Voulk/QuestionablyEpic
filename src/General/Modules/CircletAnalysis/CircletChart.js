@@ -9,7 +9,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
-import { getCircletIcon } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData";
+import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData";
 
 const getTooltip = (data, id) => {
   return [];
@@ -113,7 +113,7 @@ export default class CircletChart extends PureComponent {
 
       return (
         <g transform={`translate(${x},${y})`}>
-          <foreignObject x={-400} y={-10} width="400" height="22" style={{ textAlign: "right" }}>
+          <foreignObject x={-500} y={-10} width="500" height="22" style={{ textAlign: "right" }}>
           <div style={{
             display: 'flex',
             alignItems: 'right',
@@ -125,11 +125,38 @@ export default class CircletChart extends PureComponent {
             </text>
 
             {idSet.map((id) => {
+              const name = getShortName(id) //"DefaultName" // getItemName(id); // Assuming this function fetches the name
               return (
-                <WowheadTooltip type="item" id={id} level={639} domain={currentLanguage}>
-                  <img width={20} height={20} x={0} y={0} src={getCircletIcon(id)/*"https://wow.zamimg.com/images/wow/icons/large/" + "inv_siren_isle_blessed_citrine_purple" + ".jpg"*/} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
-                </WowheadTooltip>
-            )})}
+                <div 
+                  key={id} 
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}
+                >
+                  <WowheadTooltip type="item" id={id} level={639} domain={currentLanguage}>
+                    <img 
+                      width={20} 
+                      height={20} 
+                      src={getCircletIcon(id)} 
+                      style={{ 
+                        borderRadius: 4, 
+                        border: "1px solid rgba(255, 255, 255, 0.12)" 
+                      }} 
+                    />
+                  </WowheadTooltip>
+                  <span style={{ 
+                      color: '#FFFFFF', 
+                      fontSize: '14px', 
+                      width: '64px', // Fixed width to nicely align icons
+                      whiteSpace: 'nowrap', // Don't wrap text.
+                      overflow: 'hidden', 
+                      textOverflow: 'ellipsis', // Adds ellipsis (...) if the text is too long
+                      display: 'inline-block', // Ensures the span respects width
+                      textAlign: 'left' // Aligns text to the left
+                    }}>
+                    {name}
+                  </span>
+                </div>
+              );
+            })}
             {/*<WowheadTooltip type="item" id={payload.value} level={639} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>*/}
@@ -162,7 +189,7 @@ export default class CircletChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={800}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={500}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -171,7 +198,7 @@ export default class CircletChart extends PureComponent {
             top: -10,
             right: 40,
             bottom: 10,
-            left: 250,
+            left: 300,
           }}
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
