@@ -95,7 +95,7 @@ export const dungeonTrinketData =
             coefficient: 42.7805 * 1.15,
             table: -9,
             secondaries: ['versatility', 'haste'],
-            efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
+            efficiency: {Raid: 0.88, Dungeon: 0.74}, // This is an absorb so you won't lose much value.
             ppm: 3,
           },
         ],

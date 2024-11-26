@@ -130183,8 +130183,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "spirit": 276,
-            "haste": 276
+            "spirit": 242,
+            "haste": 242
         }
     },
     {
@@ -130223,8 +130223,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "crit": 276,
-            "haste": 276
+            "crit": 242,
+            "haste": 242
         }
     },
     {
@@ -130263,8 +130263,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "haste": 276,
-            "mastery": 276
+            "haste": 242,
+            "mastery": 242
         }
     },
     {
@@ -130303,8 +130303,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "mastery": 276,
-            "spirit": 276
+            "mastery": 242,
+            "spirit": 242
         }
     },
     {
@@ -130474,8 +130474,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "spirit": 218,
-            "haste": 218
+            "spirit": 192,
+            "haste": 192
         }
     },
     {
@@ -130513,8 +130513,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "crit": 218,
-            "haste": 218
+            "crit": 192,
+            "haste": 192
         }
     },
     {
@@ -130552,8 +130552,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "haste": 218,
-            "mastery": 218
+            "haste": 192,
+            "mastery": 192
         }
     },
     {
@@ -130591,8 +130591,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "mastery": 218,
-            "spirit": 218
+            "mastery": 192,
+            "spirit": 192
         }
     },
     {

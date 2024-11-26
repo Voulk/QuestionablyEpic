@@ -47,7 +47,7 @@ export const getMasteryPercentage = (statQuantity: number, spec: string) => {
 }
 
 export const STATCONVERSION = {
-    LEECH: 1080,
+    LEECH: 1020,
     HASTE: 660,
     CRIT: 700,
     VERSATILITY: 780,
@@ -70,7 +70,7 @@ export const STATCONVERSION = {
  */
 export const STATPERONEPERCENT = {
   Retail: {
-    LEECH: 510,
+    LEECH: 1020,
     HASTE: 660,
     CRIT: 700,
     VERSATILITY: 780,
