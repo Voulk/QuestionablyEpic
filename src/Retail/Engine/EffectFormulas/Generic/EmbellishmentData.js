@@ -62,8 +62,8 @@ export const embellishmentData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      // TODO Add top gear support for auto-generating gems.
-      const statAvg = runGenericPPMTrinket(data[0], itemLevel);
+
+      const statAvg = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm * 1.13 / 60; // Avoid using our functions because buffs overwriting will be rare.
 
       bonus_stats.allyStats = statAvg;
 
@@ -135,7 +135,7 @@ export const embellishmentData = [
         table: -571,
         duration: 12, 
         ppm: 2.5,
-        efficiency: 0.8,
+        efficiency: 0.65,
         stat: "haste",
       },
     ],
@@ -263,7 +263,7 @@ export const embellishmentData = [
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       let averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
-      if (additionalData.contentType === "Dungeon") averageStacks *= 0.6;
+      if (additionalData.contentType === "Dungeon") averageStacks *= 0.7;
 
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
@@ -292,7 +292,7 @@ export const embellishmentData = [
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
       let averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
-      if (additionalData.contentType === "Dungeon") averageStacks *= 0.6;
+      if (additionalData.contentType === "Dungeon") averageStacks *= 0.7;
       
       bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
 
