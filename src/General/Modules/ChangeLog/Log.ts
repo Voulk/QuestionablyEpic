@@ -22,7 +22,7 @@ export const changeLog: entry[] = [
     changes: [ 
       "Bugfix: Leech should display correctly on Top Gear sets now. No change to results.",
       "Renamed a bunch of models to make it clearer what they're optimizing. Disc Priest M+ will now use a healing focused model.",
-      "Cata: Random-affix Firelands items should now import fine.",
+      "Cata: Random-affix Firelands items should now import fine. So should the Tempest Keeper plate belt.",
     ]},
   {
     version: "11.0.5 / 4.4.1",
