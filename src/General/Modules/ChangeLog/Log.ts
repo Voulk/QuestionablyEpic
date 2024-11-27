@@ -16,6 +16,26 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.5 / 4.4.1",
+    update: 4,
+    date: "November 21",
+    changes: [ 
+      "Bugfix: Leech should display correctly on Top Gear sets now. No change to results.",
+      "Renamed a bunch of models to make it clearer what they're optimizing. Disc Priest M+ will now use a healing focused model.",
+      "Cata: Random-affix Firelands items should now import fine. So should the Tempest Keeper plate belt.",
+    ]},
+  {
+    version: "11.0.5 / 4.4.1",
+    update: 3,
+    date: "November 7",
+    changes: [ 
+      "QE Live: Firelands",
+      "Cata: Fixed a bug with triple socketed items.",
+      "Cata: Added new buttons for 378 and 391 loot.",
+      "TWW: Added Dracthyr and Earthen race options.",
+      "TWW: Fixed a bug where the Headless Horseman rings wouldn't import correctly",
+    ]},
+  {
     version: "11.0.5 / 4.4",
     update: 2,
     date: "October 26",

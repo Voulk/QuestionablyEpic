@@ -95,15 +95,15 @@ class CastModel {
       }
 
     } else if (spec === SPEC.HOLYPALADIN) {
-      if (modelID === "Melee Default") {
-        this.modelName = "Melee Default";
+      if (modelID === "Herald of the Sun") {
+        this.modelName = "Herald of the Sun";
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights("Raid");
         this.fightInfo.dps = 17000;
       }
-      else if (modelID === "Avenging Crusader") {
-        this.modelName = "Avenging Crusader";
+      else if (modelID === "Lightsmith") {
+        this.modelName = "Lightsmith";
         spellList = paladinACSpellData(contentType);
         specialQueries = paladinACSpecialQueries(contentType);
         this.baseStatWeights = paladinACStatWeights("Raid");
@@ -164,11 +164,11 @@ class CastModel {
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
       else {
-        this.modelName = "Default";
+        this.modelName = "Healing Focused";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 90000);
+        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
       }
 
 
@@ -186,7 +186,7 @@ class CastModel {
       spellList = evokerDefaultSpellData(contentType);
       specialQueries = evokerDefaultSpecialQueries(contentType);
       this.baseStatWeights = evokerDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
+      this.fightInfo.dps = (contentType === "Raid" ? 120000 : 280000);
     } 
     
     // Burning Crusade Profiles
