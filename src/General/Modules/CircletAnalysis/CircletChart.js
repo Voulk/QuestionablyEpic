@@ -9,7 +9,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
-import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData";
+import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 
 const getTooltip = (data, id) => {
   return [];

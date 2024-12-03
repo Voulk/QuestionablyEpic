@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-import { getAllCombos } from "Retail/Engine/EffectFormulas/Generic/CyrcesCircletData"
+import { getAllCombos } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";

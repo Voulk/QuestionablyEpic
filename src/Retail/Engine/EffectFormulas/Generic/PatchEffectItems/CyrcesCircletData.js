@@ -136,6 +136,19 @@ export const getPrimordialImage = (id) => {
   return gem.image;
 }
 
+/**
+ * 
+ * @param {*} data An individual gems data.
+ * @param {*} gemData An array of gems we're wearing so we can check for mastery gem or anything else that might be relevant
+ * @param {*} circletLevel The level of our ring
+ * @param {*} player 
+ * 
+ * @returns The number on the gem. The amount of stat, or healing it provides. 
+ */
+export const getCircletProcessedValue = (data, gemData, circletLevel, player) => {
+
+}
+
 // The circlet data itself is used in all of the formulas, so we'll provide it here so that it doesn't need to be passed around. 
 const circletData = [
   {
@@ -207,9 +220,13 @@ export const circletGemData = [
         ppm: 4,
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
+    },
+    runFunc: function(allData, gemData, player, itemLevel, settings, ) {
         let bonus_stats = {};
         
+        const masteryValue = allData.processedValue(allData.effects[0], gemData, player, itemLevel);
         bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
         return bonus_stats;
