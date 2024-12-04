@@ -86,7 +86,7 @@ export default class CircletChart extends PureComponent {
     /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
     // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
     //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
-    console.log(data);
+
     const barColours = this.props.theme;
 
     let arr = [];
@@ -108,7 +108,6 @@ export default class CircletChart extends PureComponent {
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = (props) => {
       const { x, y, payload } = props;
-      console.log(payload);
       const idSet = payload.value.split("/");
 
       return (

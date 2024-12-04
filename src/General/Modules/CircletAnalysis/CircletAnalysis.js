@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-import { getAllCombos } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
+import { getAllCombos, getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
@@ -118,11 +118,9 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
 }
 
-const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
-  const embel = embellishmentDB.filter(function (emb) {
-    return emb.effect.name === effectName;
-  });
+const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, playerSettings) => {
+  const effect = getCircletEffect(gemCombo, player, contentType, itemLevel, {}, playerSettings);
+  //const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
 
   let score = 0;
   if (metric === "hps") {
@@ -134,7 +132,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
     score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
   }
 
-  if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
+  //if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
 
   return Math.max(score, 0);
 
@@ -202,8 +200,8 @@ export default function CircletAnalysis(props) {
       tooltip: []
     };
 
-    for (var x = 0; x < itemLevels.length; x++) {
-      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = Math.random() * 160 + x * 50// getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
+    for (var x = 0; x < itemLevels.length; x++) { // (gemNames, player, contentType, itemLevel, setStats, settings)
+      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = getEffectAtLevel(gemCombo, itemLevels[x], props.player, contentType, metric, playerSettings); 
       
     }
     comboAtLevels.tooltip = "" // buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
@@ -211,8 +209,8 @@ export default function CircletAnalysis(props) {
   }
 
   activeCombos.sort((a, b) => (getHighestScore(a) < getHighestScore(b) ? 1 : -1));
-  activeCombos = activeCombos.slice(0, 20);
-  
+  activeCombos = activeCombos.slice(0, 15);
+
   return (
     <div className={classes.root}>
       <div style={{ height: 96 }} />
