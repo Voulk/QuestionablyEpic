@@ -119,7 +119,8 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
 }
 
 const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, playerSettings) => {
-  const effect = getCircletEffect(gemCombo, player, contentType, itemLevel, {}, playerSettings);
+  const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player, setVariables: []};
+  const effect = getCircletEffect(gemCombo, itemLevel, additionalData);
   //const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
 
   let score = 0;

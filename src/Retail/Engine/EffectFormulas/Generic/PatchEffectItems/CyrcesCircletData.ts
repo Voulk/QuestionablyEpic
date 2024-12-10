@@ -109,7 +109,7 @@ export const getAnnuletGemTag = (settings, saved) => {
  * @param {*} settings 
  * @returns the bonus_effects data from one specific set of gems.
  */
-export const getCircletEffect = (gemNames, player, contentType, itemLevel, setStats, settings) => {
+export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
     console.log(gemNames);
     let bonus_stats = {};
     let temp = [];
@@ -120,7 +120,7 @@ export const getCircletEffect = (gemNames, player, contentType, itemLevel, setSt
 
     gemsEquipped.forEach((gem => {
         if (gem) {
-          const gemStats = gem.runFunc(gem, gemsEquipped, player, itemLevel, contentType);
+          const gemStats = gem.runFunc(gem, gemsEquipped, itemLevel, additionalData);
           temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
           //bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
           //bonus_stats.dps += gemStats.dps || 0;
@@ -176,8 +176,20 @@ const getMastMult = (equippedGems, stats) => {
   else return 1;
 }
 
+type circletGemType = {
+  name: string,
+  id: number,
+  icon: string,
+  school: string,
+  shortName: string,
+  type: string,
+  effects: Array<any>,
+  processedValue: Function,
+  runFunc: Function,
+}
 
-export const circletGemData = [
+
+export const circletGemData: Array<circletGemType> = [
   {
     /* Heal proc that hits 3 targets.
     */
@@ -189,22 +201,24 @@ export const circletGemData = [
     type: "Heal",
     effects: [
       { 
-        value: 1362,
+        value: 1960,
+        coefficient: 0.28371,
         ppm: 4,
-        efficiency: 0.8,
+        efficiency: 0.7,
         targets: 3,
         secondaries: ['versatility', 'haste'], // TODO: Check Crit
       },
     ],
-    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value / 100 * processedValue(circletData[1], circletLevel));
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
-    runFunc: function(data, gemData, player, itemLevel, settings) {
-        let bonus_stats = {};
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+      
+        let bonus_stats: Stats = {};
         const effect = data.effects[0];
 
         // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, player, itemLevel) / 60; 
+        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, player, itemLevel) / 60; 
   
         return bonus_stats;
     }
@@ -249,8 +263,8 @@ export const circletGemData = [
     type: "DPS",
     effects: [
       { 
-        value: 80,
-        //coefficient: 49.23086,
+        value: 1306,
+        //coefficient: 0.18911,
         //table: -9,
         ppm: 4,
       },
@@ -264,7 +278,7 @@ export const circletGemData = [
     }
   },
   {
-    /* Heal proc that hits 3 targets.
+    /* Shield
     */
     name: "Storm Sewer's Citrine",
     id: 228642,
@@ -274,8 +288,8 @@ export const circletGemData = [
     type: "Absorb",
     effects: [
       { 
-        value: 2451,
-        //coefficient: 49.23086,
+        value: 2941,
+        //coefficient: 0.42571,
         //table: -9,
         ppm: 4,
         efficiency: 0.9,
@@ -300,7 +314,7 @@ export const circletGemData = [
     type: "DPS",
     effects: [
       { 
-        value: 0,
+        value: 0, // 1961
         //coefficient: 49.23086,
         //table: -9,
         ppm: 4,
@@ -360,12 +374,12 @@ export const circletGemData = [
     type: "Heal",
     effects: [
       { 
-        value: 1143,
-        //coefficient: 49.23086,
+        value: 1634,
+        //coefficient: 0.236522,
         //table: -9,
         targets: 5,
         ppm: 4,
-        efficiency: 0.8,
+        efficiency: 0.6,
         secondaries: ['versatility', 'haste'], // Cannot currently crit
       },
     ],
@@ -421,7 +435,7 @@ export const circletGemData = [
     type: "DPS",
     effects: [
       { 
-        value: 25,
+        value: 1089,
         //coefficient: 49.23086,
         //table: -9,
         ppm: 4,

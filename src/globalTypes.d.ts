@@ -100,6 +100,7 @@ declare interface effectData  {
     ticks?: number; // The number of ticks a DoT or HoT effect might have.
     targets?: number; // The number of targets affected by the damage or healing effect.
     stacks?: number; // The number of stacks the buff can stack up to.
+    value?: number; // Rare effects (and most classic effects) just use a set value either instead of or as part of their formula.
 }
 
 // TODO: Split effectData into multiple interfaces
