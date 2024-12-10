@@ -292,14 +292,18 @@ export const circletGemData: Array<circletGemType> = [
         //coefficient: 0.42571,
         //table: -9,
         ppm: 4,
-        efficiency: 0.9,
-        secondaries: ['versatility'],
+        efficiency: 0.92,
+        secondaries: ['haste', 'versatility'],
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats = {};
-        
-        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        const effect = data.effects[0];
+
+        bonus_stats.hps = effect.ppm * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60
   
         return bonus_stats;
     }
