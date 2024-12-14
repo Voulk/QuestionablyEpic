@@ -111,7 +111,7 @@ export const getAnnuletGemTag = (settings, saved) => {
  */
 export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
     console.log(gemNames);
-    let bonus_stats = {};
+    let bonus_stats: Stats = {};
     let temp = [];
 
     const gemsEquipped = gemNames.map(gemID => {
@@ -240,13 +240,13 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
-    runFunc: function(allData, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         
-        const masteryValue = allData.processedValue(allData.effects[0], gemData, player, itemLevel);
+        const masteryValue = data.processedValue(data.effects[0], gemData, additionalData.player, itemLevel);
         bonus_stats.mastery = masteryValue; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
         return bonus_stats;
@@ -269,8 +269,11 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         
         bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
@@ -300,7 +303,7 @@ export const circletGemData: Array<circletGemType> = [
       return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats = {};
+        let bonus_stats: Stats = {};
         const effect = data.effects[0];
 
         bonus_stats.hps = effect.ppm * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60
@@ -326,8 +329,11 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['versatility'],
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         
         bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
@@ -351,13 +357,13 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.round(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
 
-        const allStats = data.processedValue(data.effects[0], gemData, player, itemLevel);
+        const allStats = data.processedValue(data.effects[0], gemData, additionalData.player, itemLevel);
 
         bonus_stats.crit = allStats;
         bonus_stats.haste = allStats;
@@ -387,15 +393,15 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['versatility', 'haste'], // Cannot currently crit
       },
     ],
-    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value / 100 * processedValue(circletData[1], circletLevel));
     },
-    runFunc: function(data, gemData, player, itemLevel, settings) {
-        let bonus_stats = {};
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         const effect = data.effects[0];
 
         // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, player, itemLevel) / 60; 
+        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
   
         return bonus_stats;
     }
@@ -417,13 +423,13 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data, gemData, player, circletLevel) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
-    runFunc: function(data, gemData, player, itemLevel, additionalData) {
-        let bonus_stats = {};
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         const bestStat = getHighestStat(additionalData.setStats || []);//player.getHighestStatWeight(additionalData.contentType);
-        bonus_stats[bestStat] = data.processedValue(data.effects[0], gemData, player, itemLevel); //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        bonus_stats[bestStat] = data.processedValue(data.effects[0], gemData, additionalData.player, itemLevel); //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
         return bonus_stats;
     }
@@ -445,8 +451,11 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0;
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         
         bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
@@ -470,8 +479,11 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    runFunc: function(data, gemData, player, itemLevel, settings, ) {
-        let bonus_stats = {};
+    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
         
         bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
   
