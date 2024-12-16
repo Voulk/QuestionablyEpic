@@ -154,9 +154,9 @@ export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
 
 }
 
-export const getPrimordialImage = (id) => {
-  const gem = annuletGemData.filter(gem => gem.id === id)[0];
-  return gem.image;
+export const getGemImage = (id: number) => {
+  const gem = circletGemData.filter(gem => gem.id === id)[0];
+  return process.env.PUBLIC_URL + "/Images/CircletGems/" + gem.icon + ".jpg";
 }
 
 // The circlet data itself is used in all of the formulas, so we'll provide it here so that it doesn't need to be passed around. 
