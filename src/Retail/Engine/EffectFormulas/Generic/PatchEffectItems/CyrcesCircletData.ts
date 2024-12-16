@@ -8,6 +8,7 @@ import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
 import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
 import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
 import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
+import Player from "General/Modules/Player/Player";
 
 /*
 import s204002 from "Images/Resources/PrimordialGems/s204002.jpg";
@@ -110,20 +111,24 @@ export const getAnnuletGemTag = (settings, saved) => {
  * @returns the bonus_effects data from one specific set of gems.
  */
 export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
-    console.log(gemNames);
     let bonus_stats: Stats = {};
+    let bonus_stats_all = Array<Stats>();
     let temp = [];
 
     const gemsEquipped = gemNames.map(gemID => {
         return circletGemData.find((effect) => effect.id === gemID);
     })
 
+    const gemIDs = gemsEquipped.map(gem => gem.id);
+
     gemsEquipped.forEach((gem => {
         if (gem) {
-          const gemStats = gem.runFunc(gem, gemsEquipped, itemLevel, additionalData);
-          temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, player, contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
+          const gemStats = gem.runFunc(gem, gemIDs, itemLevel, additionalData);
+          bonus_stats_all.push(gemStats);
+          temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, additionalData.player, additionalData.contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
           //bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
           //bonus_stats.dps += gemStats.dps || 0;
+
 
           bonus_stats = compileStats(bonus_stats, gemStats); // TODO
         }
@@ -131,7 +136,18 @@ export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
           console.log("Gem not found" + gem);
         }
 
-    }))
+    }));
+
+    if (gemIDs.includes(228639)) {
+      // Multiply out the stats of our non-mastery gems. Remember to add our bonus stats to our set stats since the ring itself provides a lot of mastery.
+      const masteryMult = 1 + (additionalData.setStats.mastery + bonus_stats.mastery) / 700 / 100 * 0.833;
+      Object.keys(bonus_stats).forEach(stat => {
+
+        if (stat !== "mastery") {
+          bonus_stats[stat] = bonus_stats[stat] * masteryMult;
+        }
+      });
+    }
 
 
     return bonus_stats;
@@ -163,18 +179,11 @@ const circletData = [
     value: 0, 
   },
   {
-    value: 5282, 
+    value: 5663, 
   }
   
 ]
 
-// returns mastery multiplier 
-const getMastMult = (equippedGems, stats) => {
-  if (equippedGems.includes(228639)) {
-    return 1 + stats.mastery / 700;
-  }
-  else return 1;
-}
 
 type circletGemType = {
   name: string,
@@ -209,7 +218,7 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['versatility', 'haste'], // TODO: Check Crit
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -218,7 +227,7 @@ export const circletGemData: Array<circletGemType> = [
         const effect = data.effects[0];
 
         // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, player, itemLevel) / 60; 
+        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
   
         return bonus_stats;
     }
@@ -235,12 +244,12 @@ export const circletGemData: Array<circletGemType> = [
     effects: [
       { 
         value: 80,
-        //coefficient: 49.23086,
-        //table: -9,
+        //coefficient: 0.01491,
+        //table: -7,
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -269,7 +278,7 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -299,7 +308,7 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['haste', 'versatility'],
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -329,7 +338,7 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['versatility'],
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -357,7 +366,7 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.round(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -393,7 +402,7 @@ export const circletGemData: Array<circletGemType> = [
         secondaries: ['versatility', 'haste'], // Cannot currently crit
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -423,7 +432,7 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -435,7 +444,7 @@ export const circletGemData: Array<circletGemType> = [
     }
   },
   {
-    /* Highest Secondary
+    /* 
     */
     name: "Squall Sailor's Citrine",
     id: 228635,
@@ -451,7 +460,7 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0;
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
@@ -479,7 +488,7 @@ export const circletGemData: Array<circletGemType> = [
         ppm: 4,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
