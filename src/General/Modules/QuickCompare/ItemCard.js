@@ -62,7 +62,7 @@ function getSockets(item, gameType)  {
   // Retail sockets: 1-3 Prismatic gems
   if (gameType === "Retail") {
     if (item.id === 228411) {
-      const gemData = buildPrimGems([228639, 228638, 228640])
+      const gemData = buildPrimGems(item.primGems || [])
       socket = gemData.socket;
     }
     if (item.socket) {

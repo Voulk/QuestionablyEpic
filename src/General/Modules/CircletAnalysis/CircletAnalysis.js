@@ -141,7 +141,7 @@ const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, play
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestScore = (combo) => {
-  return combo.i639 
+  return combo.i658
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -180,7 +180,7 @@ export default function CircletAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [619, 623, 627, 630, 633, 636, 639 ];
+  const itemLevels = [ 639, 642, 645, 648, 651, 654, 658];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const combos = getAllCombos();
@@ -233,7 +233,7 @@ export default function CircletAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="The following Graph is a work in progress. Values could be wrong, or could be later tuned." variant="red" />
+        <InformationBox information="Expect early changes to the ring since several bugs went live." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
