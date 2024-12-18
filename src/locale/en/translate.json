@@ -306,6 +306,10 @@
           "title": "Ally Buffs",
           "tooltip": "Estimate value from stats you give to your group."
         },
+        "circletOptions": {
+          "title": "Circlet Combos",
+          "tooltip": "A temporary way to specify which gems you'd like to run in your Circlet."
+        },
         "incarnateAllies": {
           "title": "Incarnate Icon Roles",
           "tooltip": "Select which roles in your party are wearing the trinket."

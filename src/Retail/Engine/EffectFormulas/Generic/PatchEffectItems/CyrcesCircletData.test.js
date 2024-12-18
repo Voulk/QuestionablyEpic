@@ -13,8 +13,8 @@ describe("Fathomdweller's Runed Citrine Data Check", () => {
 
     each`
     level   | expectedResult
-    ${619}  | ${1408}
-    ${639}  | ${1634}
+    ${619}  | ${1509}
+    ${639}  | ${1752}
     // add new test cases here
     `.test("Fathomdweller's Runed Citrine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         const value = activeEffect.processedValue(activeEffect.effects[0], [], null, level)
@@ -28,8 +28,8 @@ describe("Windsinger's Runed Citrine Data Check", () => {
 
     each`
     level   | expectedResult
-    ${619}  | ${1760}
-    ${639}  | ${2043}
+    ${619}  | ${1887}
+    ${639}  | ${2190}
     // add new test cases here
     `.test("Windsinger's Runed Citrine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         const value = activeEffect.processedValue(activeEffect.effects[0], [], null, level)
@@ -43,8 +43,8 @@ describe("Stormbringer's Runed Citrine Data Check", () => {
 
     each`
     level   | expectedResult
-    ${619}  | ${440}
-    ${639}  | ${511}
+    ${619}  | ${472}
+    ${639}  | ${548}
     // add new test cases here
     `.test("Stormbringer's Runed Citrine Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         const value = activeEffect.processedValue(activeEffect.effects[0], [], null, level)

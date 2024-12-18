@@ -212,9 +212,9 @@ export const circletGemData: Array<circletGemType> = [
         value: 1960,
         coefficient: 0.28371,
         ppm: 4,
-        efficiency: 0.7,
+        efficiency: 0.6,
         targets: 3,
-        secondaries: ['versatility', 'haste'], // TODO: Check Crit
+        secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
@@ -499,7 +499,6 @@ export const circletGemData: Array<circletGemType> = [
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
         
-        console.log(circletGemData);
 
         const multiplier = 1.5;
         const gemPPM = 1/11 * data.effects[0].ppm * additionalData.player.getStatPerc("haste");
@@ -511,7 +510,6 @@ export const circletGemData: Array<circletGemType> = [
           if (circletGem.id !== data.id) {
             if (circletGem.type === "Stats") {
               const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
-              console.log(local_stats);
               const uptime = gemPPM * 15 / 60;
 
               Object.keys(local_stats).forEach(stat => {
@@ -535,7 +533,6 @@ export const circletGemData: Array<circletGemType> = [
         })
 
         //bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-        console.log(bonus_stats);
         return bonus_stats;
     }
   },
