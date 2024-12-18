@@ -95,7 +95,7 @@ export const dungeonTrinketData =
             coefficient: 42.7805 * 1.15,
             table: -9,
             secondaries: ['versatility', 'haste'],
-            efficiency: {Raid: 0.92, Dungeon: 0.84}, // This is an absorb so you won't lose much value.
+            efficiency: {Raid: 0.88, Dungeon: 0.74}, // This is an absorb so you won't lose much value.
             ppm: 3,
           },
         ],
@@ -136,7 +136,7 @@ export const dungeonTrinketData =
         // - Mana (not seen)
         // Assumption is even distribution with sundered taking 1 slot. Target is chosen first, then buff. 
         name: "Cirral Concoctory",
-
+        description: "Procs various stat buffs on other players. Worthless for healing but is actually quite good as a DPS trinket.",
         effects: [
           {  // Int Proc
             coefficient: 0.909246,
@@ -171,8 +171,8 @@ export const dungeonTrinketData =
           let bonus_stats = {};
     
           //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-          bonus_stats.allyStats = runGenericRandomPPMTrinket(data[0], itemLevel) / 0.8;
-          bonus_stats.allyStats += runGenericRandomPPMTrinket(data[1], itemLevel);
+          bonus_stats.allyStats = runGenericPPMTrinket(data[0], itemLevel) / 0.8;
+          bonus_stats.allyStats += runGenericPPMTrinket(data[1], itemLevel);
     
           return bonus_stats;
         }

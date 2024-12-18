@@ -116,7 +116,8 @@ function processItem(line, player, contentType, type) {
 
   if (itemID === 63494 || itemID === 63497 || itemID === 63506 || itemID === 65373 || itemID === 65374 ||
       itemID === 65384 || itemID === 68127 || itemID === 69830 || itemID === 69835 || itemID === 69881 ||
-      itemID === 69882 || itemID === 71025 || itemID === 71450 || itemID === 71421 || itemID === 71011) 
+      itemID === 69882 || itemID === 71025 || itemID === 71450 || itemID === 71421 || itemID === 71011 ||
+      itemID === 65375 ) 
   {
     // Dear god please replace this with a renovation of suffixDB.
     if ([138, 186, 192, 213, 230, 262, 268, 186, 192, 213].includes(suffix)) itemID = parseInt(itemID.toString() + "2") // Feverflare

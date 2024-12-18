@@ -198,14 +198,15 @@
         "TrinketAnalysis": "Check out how strong trinkets are at different item levels",
         "UpgradeFinder": "Find your next piece of gear",
         "SequenceSandbox": "Details coming soon",
-        "OneShot": "Mythic+ Damage Calculator"
+        "OneShot": "Mythic+ Damage Calculator",
+        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
       "SequenceSandbox": "Spell Information (Alpha)",
       "OneShot": "One Shot (Beta)",
-      "CyrcesCirclet": "Cyrce's Circlet"
+      "CyrcesCirclet": "Cyrce's Circlet (Coming Soon)"
     },
     "Name": "Name",
     "No": "No",
