@@ -19,6 +19,7 @@ export class Item {
   stats: Stats = {}; // The stats on a given item.
   missiveStats?: string[];
   specialAllocations?: {[key: string]: number} = {};
+  primGems?: number[];
 
   effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
@@ -83,6 +84,7 @@ export class Item {
       //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
     }
     else if (gameType === "Retail") {
+      if (this.id === 228411) this.primGems = [228639, 228638, 228640];
       this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
     }
 
