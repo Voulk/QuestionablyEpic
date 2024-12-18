@@ -122,15 +122,18 @@ const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, play
   const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player, setVariables: []};
   const effect = getCircletEffect(gemCombo, itemLevel, additionalData);
   //const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
+  const expHPS = getEstimatedHPS(effect, player, contentType, playerSettings) || 0
+  const expDPS = getEstimatedDPS(effect, player, contentType, playerSettings) || 0
+
 
   let score = 0;
   if (metric === "hps") {
-    score =  getEstimatedHPS(effect, player, contentType, playerSettings) || 0;
+    score = expHPS;
   } else if (metric === "dps") {
-    score = getEstimatedDPS(effect, player, contentType, playerSettings) || 0;
+    score = expDPS;
   }
   else if (metric === "both") {
-    score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
+    score = expHPS + expDPS;
   }
 
   //if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);

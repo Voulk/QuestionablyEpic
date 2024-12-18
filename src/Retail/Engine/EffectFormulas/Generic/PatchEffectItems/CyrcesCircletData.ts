@@ -115,7 +115,7 @@ export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
     let bonus_stats_all = Array<Stats>();
     let temp = [];
 
-    const gemsEquipped = gemNames.map(gemID => {
+    const gemsEquipped = gemNames.map((gemID: number) => {
         return circletGemData.find((effect) => effect.id === gemID);
     })
 
@@ -148,7 +148,6 @@ export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
         }
       });
     }
-
 
     return bonus_stats;
 
@@ -276,15 +275,17 @@ export const circletGemData: Array<circletGemType> = [
         //coefficient: 0.18911,
         //table: -9,
         ppm: 4,
+        targets: 3,
+        secondaries: ['versatility', 'haste'],
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return 0
+      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
-        
-        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        const effect = data.effects[0];
+        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
   
         return bonus_stats;
     }
@@ -330,21 +331,22 @@ export const circletGemData: Array<circletGemType> = [
     type: "DPS",
     effects: [
       { 
-        value: 0, // 1961
-        //coefficient: 49.23086,
+        value: 1961, // 1961
+        //coefficient: 0.283813,
         //table: -9,
         ppm: 4,
-        efficiency: 0.9,
-        secondaries: ['versatility'],
+        targets: 1,
+        secondaries: ['versatility', 'haste'],
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return 0
+      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
-        
-        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        const effect = data.effects[0];
+
+        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
   
         return bonus_stats;
     }
@@ -458,15 +460,18 @@ export const circletGemData: Array<circletGemType> = [
         //coefficient: 49.23086,
         //table: -9,
         ppm: 4,
+        secondaries: ['versatility', 'haste'],
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return 0;
+      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
     },
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
-        
-        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        const effect = data.effects[0];
+
+        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
+
   
         return bonus_stats;
     }
@@ -494,7 +499,68 @@ export const circletGemData: Array<circletGemType> = [
     runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
         
-        bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        console.log(circletGemData);
+
+        const multiplier = 1.5;
+        const gemPPM = 1/11 * data.effects[0].ppm * additionalData.player.getStatPerc("haste");
+
+        circletGemData.forEach(circletGem => {
+          // For each circlet gem, add a proc of it to our bonus stats.
+          // Stat procs are boosted by 30% for some reason.
+          // Do not include the gem itself or we will loop infinitely (and be wrong, infinitely!)
+          if (circletGem.id !== data.id) {
+            if (circletGem.type === "Stats") {
+              const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
+              console.log(local_stats);
+              const uptime = gemPPM * 15 / 60;
+
+              Object.keys(local_stats).forEach(stat => {
+                  bonus_stats[stat] = (bonus_stats[stat] || 0) + local_stats[stat] * uptime * multiplier * 1.3;
+              });
+              
+            }
+            else if (circletGem.type === "Support") {
+              const local_stats = circletGem.processedValue(circletGem.effects[0], gemData, additionalData.player, itemLevel)
+              const targetCount = 4;
+              
+              bonus_stats['allyStats'] = (bonus_stats['allyStats'] || 0) + local_stats * gemPPM * 15 / 60 * multiplier * targetCount * 4;
+            }
+            else if (circletGem.type === "Heal") {
+              const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
+
+              bonus_stats.hps = (bonus_stats.hps || 0) + local_stats.hps * (gemPPM / circletGem.effects[0].ppm) * multiplier;
+            }
+
+          }
+        })
+
+        //bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        console.log(bonus_stats);
+        return bonus_stats;
+    }
+  },
+  {
+    /* Roaring War-Queen's Citrine
+    */
+    name: "Roaring War-Queen's Citrine",
+    id: 228648,
+    icon: "inv_siren_isle_searuned_citrine_yellow",
+    school: "Thunder",
+    shortName: "Support",
+    type: "Support",
+    effects: [
+      { 
+        value: 25,
+        //coefficient: 49.23086,
+        //table: -9,
+        ppm: 4,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.round(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
+    },
+    runFunc: function(data: circletGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
   
         return bonus_stats;
     }
