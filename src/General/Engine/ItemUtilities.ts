@@ -1,6 +1,7 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
@@ -1030,6 +1031,11 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
       reportError(player, "ItemUtil Annulet Error", error, "");
     }
 
+  }
+  if (item.id === 228411) {
+    const combo = item.primGems;
+    const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player};
+    bonus_stats = getCircletEffect(combo, item.level, additionalData);
   }
 
   // Add Retail Socket

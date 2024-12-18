@@ -13,6 +13,7 @@ import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
@@ -809,6 +810,28 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     builtSet.primGems = combo; 
     effectStats.push(annuletStats);
  } */
+
+  if (builtSet.checkHasItem(228411)) {
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 639;
+
+    const comboSetting = getSetting(userSettings, "circletOptions");
+    let combo = [];
+
+    if (comboSetting === "Thunderlords / Mariners / Windsingers") combo = [228634, 228644, 228640];
+    else if (comboSetting === "Skippers / Fathomdwellers / Stormbringers") combo = [228646, 228639, 228638];
+    else if (comboSetting === "Skippers / Mariners / Stormbringers") combo = [228646, 228644, 228638];
+
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
+
+    // Handle Annulet
+    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+    const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
+
+    //builtSet.primGems = combo; 
+    console.log(annuletStats);
+    effectStats.push(annuletStats);
+
+  }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 

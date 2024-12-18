@@ -48,6 +48,10 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       // to give different effects. We thus need to evaluate them as a whole rather than three individual pieces.
       bonus_stats = getOnyxAnnuletEffect(effectName.split(","), player, contentType, itemLevel, setStats, userSettings);
     }
+    else if (effect.type === "Cyrces Circlet") {
+      // Cyrces Circlet is an 11.0.7 special effect ring.
+      bonus_stats = getOnyxAnnuletEffect(effectName.split(","), player, contentType, itemLevel, setStats, userSettings);
+    }
     // == Class specific effects ==
     // These can be single-slot effects like Legendaries, or entire set bonuses.
     // For tier sets, 2pc and 4c should be calculated separately, but the 4pc can include the 2pc in it's valuation if 

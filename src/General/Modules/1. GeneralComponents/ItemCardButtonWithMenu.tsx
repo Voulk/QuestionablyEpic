@@ -51,7 +51,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
   if (CONSTANTS.socketSlots.includes(item.slot) && gameType === "Retail") {
     // If the item is in a compatible slot, add an option to add or remove a socket.
     // Note that necks are hard coded to have three sockets so we won't offer the option there.
-    if (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger"))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket(s)"})
+    if (item.id !== 228411 && (!item.socket || (item.socket < 2 && (item.slot === "Neck" || item.slot === "Finger")))) items.push({id: items.length + 1, ilvlMinimum: 0, label: "Add Socket(s)"})
     //else items.push({id: items.length + 1, ilvlMinimum: 0, label: "Remove Socket"})
 
   }
