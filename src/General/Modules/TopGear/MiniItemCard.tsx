@@ -98,15 +98,26 @@ const GetSockets: React.FC<{ item: Item, gameType: gameTypes }> = ({ item, gameT
   let socket = [];
   // Retail sockets: 1-3 Prismatic gems
   if (gameType === "Retail") {
-    return (
+    if (item.id === 228411) {
+      const gemData = buildPrimGems(item.primGems || [])
+      socket = gemData.socket;
+
       <div style={{ verticalAlign: "middle" }}>
-        {Array.from({ length: item.socket }).map((_, index) => (
-          <div key={index} style={{ marginRight: 4, display: "inline" }}>
-            <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
-          </div>
-        ))}
+        {socket}
       </div>
-    );
+    }
+    else {
+      return (
+        <div style={{ verticalAlign: "middle" }}>
+          {Array.from({ length: item.socket }).map((_, index) => (
+            <div key={index} style={{ marginRight: 4, display: "inline" }}>
+              <img src={socketImage} width={15} height={15} alt={`Socket ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      );
+    }
+
   }
   else if (gameType === "Classic") {
     // We probably want some way to tell them what we actually socketed but maybe we'll use tooltip for that.
@@ -139,6 +150,7 @@ interface ItemCardProps {
   item: Item;
   upgradeItem: (item: Item, newItemLevel: number, socketFlag: boolean, vaultFlag: boolean) => void;
   embellishItem: (item: Item, embellishmenName: string) => void;
+  setCustomItemOptions: (item: Item, selectedOption: number[]) => void;
   activateItem: (unique: string, active: boolean) => void;
   delete: (unique: string) => void;
   catalyze: (item: Item) => void;
@@ -227,6 +239,7 @@ export default function ItemCard(props: ItemCardProps) {
                 embellishItem={props.embellishItem}
                 item={item}
                 gameType={gameType}
+                setCustomItemOptions={props.setCustomItemOptions}
               />
             </Grid>
           </Grid>
@@ -254,7 +267,7 @@ export default function ItemCard(props: ItemCardProps) {
                         src={getItemIcon(item.id, gameType)}
                         style={{
                           borderRadius: 4,
-                          borderWidth: "2px",
+                          borderWidth: "1px",
                           borderStyle: "solid",
                           borderColor: itemQuality,
                           zIndex:-1,

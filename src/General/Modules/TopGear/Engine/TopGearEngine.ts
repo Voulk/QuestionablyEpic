@@ -63,7 +63,8 @@ function setupPlayer(player: Player, contentType: contentTypes, castModel: any) 
 function autoSocketItems(itemList: Item[]) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+    if (item.id === 228411) item.socket = 0;
+    else if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
     else if (item.slot === "Neck" || item.slot === "Finger") {

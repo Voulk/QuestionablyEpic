@@ -186,6 +186,12 @@ export default function TopGear(props: any) {
     setItemList([...player.getActiveItems(activeSlot)]);
   }
 
+  const setCustomItemOptions = (item: Item, selectedOption: number[]) => {
+    let player = props.player;
+    player.changeCustomOption(item, selectedOption);
+    setItemList([...player.getActiveItems(activeSlot)]);
+  }
+
   // Right now the available item levels are static, but given the removal of titanforging each item could hypothetically share
   // a list of available ilvls and the player could select from a smaller list instead.
   // This is left as a TODO until key functionality is completed but is a moderate priority.
@@ -734,7 +740,7 @@ export default function TopGear(props: any) {
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
                 <Grid container spacing={1}>
                   {[...props.player.getActiveItems(key.slotName)].map((item, index) => (
-                    <MiniItemCard key={index} item={item} itemKey={index} embellishItem={embellishItem} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} /*primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)}*/ />
+                    <MiniItemCard key={index} item={item} itemKey={index} setCustomItemOptions={setCustomItemOptions} embellishItem={embellishItem} upgradeItem={upgradeItem} activateItem={activateItem} delete={deleteItem} catalyze={catalyzeItem} /*primGems={props.player.getBestPrimordialIDs(playerSettings, contentType)}*/ />
                   ))}
                 </Grid>
               </Grid>

@@ -16,6 +16,14 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.7 / 4.4.1",
+    update: 1,
+    date: "December 18",
+    changes: [ 
+      "New Module: Cyrce's Circlet",
+      "Circlet added as an option in Top Gear with new setting",
+    ]},
+  {
     version: "11.0.5 / 4.4.1",
     update: 4,
     date: "November 21",
