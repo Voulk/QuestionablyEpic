@@ -95,8 +95,13 @@ export class Item {
 
       // TEMPORARY
       if (this.id === 228411) {
-        this.customOptions = [{label: "Ring set 1", id: [0, 1, 2]},
-                              {label: "Ring set 2", id: [0, 1, 2]},]
+        this.customOptions = [{label: "Thunderlords, Mariners, Windsingers", id: [0, 1, 2]},
+                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [0, 1, 2]},
+                              {label: "Stormbringers, Fathomdwellers, Windsingers", id: [0, 1, 2]},
+                              {label: "Stormbringers, Mariners, Skippers", id: [0, 1, 2]},
+                              {label: "Stormbringers, Mariners, Windsingers", id: [0, 1, 2]},
+
+                            ]
       }
       if (this.id === 178708) {
         this.customOptions = [{label: "Convert to Crit", id: [0]},
