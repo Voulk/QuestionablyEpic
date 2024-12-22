@@ -30,6 +30,16 @@ declare type ItemEffect = {
     onUse?: boolean;
 }
 
+
+declare type AdditionalData = {
+    contentType: contentTypes;
+    settings: PlayerSettings;
+    setStats: Stats;
+    castModel: any;
+    player: Player;
+    setVariables: any;
+}
+
 declare type contentTypes = "Raid" | "Dungeon";
 declare type gameTypes = "Retail" | "Classic";
 
