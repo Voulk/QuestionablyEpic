@@ -99,7 +99,7 @@ const GetSockets: React.FC<{ item: Item, gameType: gameTypes }> = ({ item, gameT
   // Retail sockets: 1-3 Prismatic gems
   if (gameType === "Retail") {
     if (item.id === 228411) {
-      const gemData = buildPrimGems(item.primGems || [])
+      const gemData = buildPrimGems(item.selectedOptions || [])
       socket = gemData.socket;
 
       <div style={{ verticalAlign: "middle" }}>

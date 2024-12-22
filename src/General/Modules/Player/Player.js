@@ -326,7 +326,7 @@ export class Player {
     const newItem = item.clone();
     newItem.active = true;
 
-    newItem.selectedOption = selectedOption;
+    newItem.selectedOptions = selectedOption;
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
     console.log(selectedOption);

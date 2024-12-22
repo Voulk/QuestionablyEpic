@@ -193,7 +193,6 @@ export default function CircletAnalysis(props) {
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
-  console.log(combos);
   let activeCombos = [];
 
   for (var i = 0; i < combos.length; i++) {
@@ -236,7 +235,7 @@ export default function CircletAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="Expect early changes to the ring since several bugs went live." variant="red" />
+        <InformationBox information="Expect early changes to the ring since several bugs went live. Legendary Skippers is also the best healing variant if everyone in the group commits to using it." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

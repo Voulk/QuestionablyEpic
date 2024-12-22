@@ -107,18 +107,26 @@ export const getCircletEffect = (gemNames: number[], itemLevel: number, addition
           });
           
         }
+        else {
+          Object.keys(output.stats).forEach(stat => {
+            final_stats[stat] = (final_stats[stat] ?? 0) +  output.stats[stat];
+
+        });
+        }
       });
 
-      
       /*Object.keys(bonus_stats).forEach(stat => {
 
         if (stat !== "mastery") {
           bonus_stats[stat] = bonus_stats[stat] * masteryMult;
         }
       });*/
+      return final_stats;
     }
-
-    return final_stats;
+    else {
+      return bonus_stats; // We aren't using the mastery gem so just return our stats as they are.
+    }
+    
 
 }
 
@@ -510,7 +518,7 @@ export const circletGemData: Array<circletGemType> = [
     */
     name: "Roaring War-Queen's Citrine",
     id: 228648,
-    icon: "inv_siren_isle_searuned_citrine_yellow",
+    icon: "inv_siren_isle_singing_citrine_yellow",
     school: "Thunder",
     shortName: "Support",
     type: "Support",

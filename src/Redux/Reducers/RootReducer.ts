@@ -27,7 +27,7 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    groupBuffValuation: {value: "75%", options: ["50%", "75%", "100%"], category: "trinkets", type: "selector", gameType: "Retail"},
+    groupBuffValuation: {value: "100%", options: ["50%", "75%", "100%"], category: "trinkets", type: "selector", gameType: "Retail"},
     //incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
     //broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry", gameType: "Retail"},
     //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
@@ -58,7 +58,7 @@ const initialState : RootState = {
 
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
-    circletOptions: { value: "Thunderlords / Mariners / Windsingers", options: ["Thunderlords / Mariners / Windsingers", "Skippers / Fathomdwellers / Stormbringers", "Skippers / Mariners / Stormbringers"], category: "topGear", type: "selector", gameType: "Retail" },
+    //circletOptions: { value: "Thunderlords / Mariners / Windsingers", options: ["Thunderlords / Mariners / Windsingers", "Skippers / Fathomdwellers / Stormbringers", "Skippers / Mariners / Stormbringers"], category: "topGear", type: "selector", gameType: "Retail" },
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},

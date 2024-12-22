@@ -95,19 +95,21 @@ export class Item {
 
       // TEMPORARY
       if (this.id === 228411) {
-        this.customOptions = [{label: "Thunderlords, Mariners, Windsingers", id: [0, 1, 2]},
-                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [0, 1, 2]},
-                              {label: "Stormbringers, Fathomdwellers, Windsingers", id: [0, 1, 2]},
-                              {label: "Stormbringers, Mariners, Skippers", id: [0, 1, 2]},
-                              {label: "Stormbringers, Mariners, Windsingers", id: [0, 1, 2]},
-
+        this.customOptions = [
+                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [228638, 228639, 228646]},
+                              {label: "Stormbringers, Fathomdwellers, Windsingers", id: [228638, 228639, 228640]},
+                              {label: "Stormbringers, Mariners, Skippers", id: [228638, 228644, 228646]},
+                              {label: "Stormbringers, Mariners, Windsingers", id: [228638, 228644, 228640]},
+                              {label: "Thunderlords, Mariners, Windsingers", id: [228634, 228644, 228640]},
                             ]
+        this.selectedOptions = this.customOptions[0].id;
       }
+      /*
       if (this.id === 178708) {
         this.customOptions = [{label: "Convert to Crit", id: [0]},
                               {label: "Convert to Haste", id: [1]},
                               {label: "Convert to Mastery", id: [2]},]
-      }
+      }*/
     }
 
   }
@@ -149,6 +151,7 @@ export class Item {
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
     if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.id, this.missiveStats, "Retail"), this.tertiary);
+    if (this.customOptions) clonedItem.customOptions = [...this.customOptions];
     // ... (copy other properties as needed)
 
     return clonedItem;

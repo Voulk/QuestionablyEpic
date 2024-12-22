@@ -815,12 +815,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (builtSet.checkHasItem(228411)) {
     const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 639;
 
-    const comboSetting = getSetting(userSettings, "circletOptions");
+    //const comboSetting = getSetting(userSettings, "circletOptions");
     let combo = [];
 
-    if (comboSetting === "Thunderlords / Mariners / Windsingers") combo = [228634, 228644, 228640];
+    /*if (comboSetting === "Thunderlords / Mariners / Windsingers") combo = [228634, 228644, 228640];
     else if (comboSetting === "Skippers / Fathomdwellers / Stormbringers") combo = [228646, 228639, 228638];
-    else if (comboSetting === "Skippers / Mariners / Stormbringers") combo = [228646, 228644, 228638];
+    else if (comboSetting === "Skippers / Mariners / Stormbringers") combo = [228646, 228644, 228638];*/
+    combo = builtSet.itemList.filter(item => item.id === 228411)[0].selectedOptions || [];
 
     // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
 
@@ -829,7 +830,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
 
     //builtSet.primGems = combo; 
-    console.log(annuletStats);
     effectStats.push(annuletStats);
 
   }
