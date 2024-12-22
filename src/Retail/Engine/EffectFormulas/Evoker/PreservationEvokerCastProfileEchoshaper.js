@@ -134,13 +134,14 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 const tickCount = 4 / (dreamBreathHoT.tickData.tickRate / getHaste(state.currentStats));
                 const expectedTargets = 20;
                 const sqrtMod = Math.sqrt(5 / expectedTargets);
-                const consumeMult = 3 * 1.4 * 1.4;
+                const consumeMult = 1.5; 
+                const dbMods = 1.4 * 1.4; // Call of Ysera & Tier Set
 
-                
-                let consumeHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
+                const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
+                let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
                 consumeHealing *= 1.06;
-                console.log("DREAM BREATH TICK: " + getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS))
-                console.log("CONSUME HEALING: " + consumeHealing / 60, sqrtMod, tickCount, spellCPM, expectedTargets, consumeMult);
+                console.log("DREAM BREATH TICK: " + dreamBreathHealing)
+                console.log("CONSUME HEALING: " + consumeHealing, consumeHealing / 60, sqrtMod, tickCount, spellCPM, expectedTargets);
                 healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));
             }
             // Regular spells
@@ -198,6 +199,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     })
     
     console.log(spellBreakdown);
-    console.log(totalHealing / 60);
+    console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }

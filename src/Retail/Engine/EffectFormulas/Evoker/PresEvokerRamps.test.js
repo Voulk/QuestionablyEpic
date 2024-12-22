@@ -14,10 +14,10 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 65000,
-            haste: 8500,
-            crit: 8500,
-            mastery: 8500 + (2 * 700),
+            intellect: 76000 * 1.05,
+            haste: 3500,
+            crit: 9500,
+            mastery: 19000 + (2 * 700),
             versatility: 8500 + (3 * 780),
             stamina: 29000,
             critMult: 2,
@@ -43,7 +43,7 @@ describe("Test APL", () => {
         baseline = baseline / iterations
         
         const results = {};
-        stats.forEach(stat => {
+        /*stats.forEach(stat => {
             let statHealing = 0;
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
             playerStats[stat] = playerStats[stat] + 2400;
@@ -61,7 +61,7 @@ describe("Test APL", () => {
         stats.forEach(stat => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
-        console.log(weights); 
+        console.log(weights); */
         
     })
 
