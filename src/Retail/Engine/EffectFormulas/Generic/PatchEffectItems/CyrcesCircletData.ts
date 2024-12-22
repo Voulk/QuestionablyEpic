@@ -40,65 +40,19 @@ export const getAllCombos = () => {
   return combinations;
 }
 
-export const getCircletIcon = (id) => {
+export const getCircletIcon = (id: number) => {
   const gem = circletGemData.filter(gem => gem.id == id)[0];
   if (gem) return "https://wow.zamimg.com/images/wow/icons/large/" + gem.icon + ".jpg";
   else console.error("Gem Icon not found");
 }
 
-export const getShortName = (id) => {
+export const getShortName = (id: number) => {
   const gem = circletGemData.filter(gem => gem.id == id)[0];
   if (gem) return gem.shortName;
   else "Not Found";
 }
 
-export const getBestCombo = (player, contentType, itemLevel, setStats, settings, returnType="names") => {
-    // Find the best possible set. There are only 2000 combinations so this isn't too bad. 
-    // This could be optimized by separating out combinations that don't require other gems.
-    // The sample set is so small though that we might find that rather unnecessary.
-    // We can also just pre-prune combinations with no chance of being best. All of this is left as a TODO for now and the function is fast regardless.
-    const data = ["Cold Frost Stone", "Deluging Water Stone", "Exuding Steam Stone", "Sparkling Mana Stone", "Gleaming Iron Stone", 
-    "Freezing Ice Stone", "Desirous Blood Stone", "Humming Arcane Stone", "Indomitable Earth Stone", "Wild Spirit Stone",
-    "Storm Infused Stone", "Flame Licked Stone", "Entropic Fel Stone", "Prophetic Twilight Stone"]
-  
-    // While the following combination code is very useful, it's unnecessary in our case since we know
-    // which gems are best via running the code earlier and there is no secondary scenario where your choice would change.
-    // Annulet code is also a little buggy so we're going to return a specific set instead.
-    return [204020, 204010, 204013];
-    /*
-    const combinations = []
 
-    for(let i = 0; i < data.length -2; i++){
-        for(let j = i + 1; j < data.length -1; j++){
-            for(let k = j + 1; k < data.length; k++){
-                if (i !== j && i !== k && j !== k) combinations.push({dps: 0, hps: 0, gems: 
-                                                    [convertGemNameToID(data[i]), convertGemNameToID(data[j]), convertGemNameToID(data[k])]})
-                
-            }
-        }
-    }
-
-    combinations.forEach(set => {
-        const bonus_stats = getOnyxAnnuletEffect(set.gems, player, contentType, itemLevel, setStats, settings);
-        set.dps = bonus_stats.dps;
-        set.hps = bonus_stats.hps;
-    })
-    combinations.sort((a, b) => (a.hps < b.hps ? 1 : -1))
-
-    //console.log(combinations)
-    return combinations[0].gems; */
-}
-
-export const convertGemNameToID = (gemName) => {
-  const gem = annuletGemData.filter((gem) => gemName === gem.name)[0];
-  return gem.id;
-}
-
-export const getAnnuletGemTag = (settings, saved) => {
-  if (saved) return saved.toString()
-  else if (settings.automatic) return "Wild Spirits, Exuding Steam, Deluging Water";
-  else return settings.toString();
-}
   
 /**
  * 
@@ -110,21 +64,22 @@ export const getAnnuletGemTag = (settings, saved) => {
  * @param {*} settings 
  * @returns the bonus_effects data from one specific set of gems.
  */
-export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
+export const getCircletEffect = (gemNames: number[], itemLevel: number, additionalData: AdditionalData) => {
     let bonus_stats: Stats = {};
-    let bonus_stats_all = Array<Stats>();
+    let final_stats: Stats = {};
+    let bonus_stats_all: { id: number; stats: Stats }[] = [];
     let temp = [];
 
-    const gemsEquipped = gemNames.map((gemID: number) => {
+    let gemsEquipped = gemNames.map((gemID: number) => {
         return circletGemData.find((effect) => effect.id === gemID);
-    })
+    }).filter(gem => gem !== undefined);
 
-    const gemIDs = gemsEquipped.map(gem => gem.id);
-
-    gemsEquipped.forEach((gem => {
+    const gemIDs = gemsEquipped.map((gem: circletGemType) => gem.id);
+    
+    gemsEquipped.forEach(((gem: circletGemType) => {
         if (gem) {
           const gemStats = gem.runFunc(gem, gemIDs, itemLevel, additionalData);
-          bonus_stats_all.push(gemStats);
+          bonus_stats_all.push({id: gem.id, stats: gemStats});
           temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, additionalData.player, additionalData.contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
           //bonus_stats.hps += getEstimatedHPS(gemStats, player, contentType);
           //bonus_stats.dps += gemStats.dps || 0;
@@ -139,17 +94,39 @@ export const getCircletEffect = (gemNames, itemLevel, additionalData) => {
     }));
 
     if (gemIDs.includes(228639)) {
+
+      const masteryMult = 1 + ((additionalData.setStats.mastery ?? 0) + (bonus_stats.mastery ?? 0)) / 700 / 100 * 0.833;
+
       // Multiply out the stats of our non-mastery gems. Remember to add our bonus stats to our set stats since the ring itself provides a lot of mastery.
-      const masteryMult = 1 + (additionalData.setStats.mastery + bonus_stats.mastery) / 700 / 100 * 0.833;
-      Object.keys(bonus_stats).forEach(stat => {
+      bonus_stats_all.forEach(output => {
+        if (output.id !== 228639) {
+          // This isn't the mastery gem, so we can multiply it out. 
+          Object.keys(output.stats).forEach(stat => {
+              final_stats[stat] = (final_stats[stat] ?? 0) +  output.stats[stat] * masteryMult;
+
+          });
+          
+        }
+        else {
+          Object.keys(output.stats).forEach(stat => {
+            final_stats[stat] = (final_stats[stat] ?? 0) +  output.stats[stat];
+
+        });
+        }
+      });
+
+      /*Object.keys(bonus_stats).forEach(stat => {
 
         if (stat !== "mastery") {
           bonus_stats[stat] = bonus_stats[stat] * masteryMult;
         }
-      });
+      });*/
+      return final_stats;
     }
-
-    return bonus_stats;
+    else {
+      return bonus_stats; // We aren't using the mastery gem so just return our stats as they are.
+    }
+    
 
 }
 
@@ -541,7 +518,7 @@ export const circletGemData: Array<circletGemType> = [
     */
     name: "Roaring War-Queen's Citrine",
     id: 228648,
-    icon: "inv_siren_isle_searuned_citrine_yellow",
+    icon: "inv_siren_isle_singing_citrine_yellow",
     school: "Thunder",
     shortName: "Support",
     type: "Support",

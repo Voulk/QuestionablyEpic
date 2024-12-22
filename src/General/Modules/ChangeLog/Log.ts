@@ -16,6 +16,22 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.7 / 4.4.1",
+    update: 1,
+    date: "December 21",
+    changes: [ 
+      "Circlet setting moved to individual items instead of being global.",
+      "Circlet will now show gems used in Top Gear.",
+    ]},
+  {
+    version: "11.0.7 / 4.4.1",
+    update: 1,
+    date: "December 18",
+    changes: [ 
+      "New Module: Cyrce's Circlet",
+      "Circlet added as an option in Top Gear with new setting",
+    ]},
+  {
     version: "11.0.5 / 4.4.1",
     update: 4,
     date: "November 21",

@@ -322,6 +322,18 @@ export class Player {
     
   };
 
+  changeCustomOption = (item, selectedOption) => {
+    const newItem = item.clone();
+    newItem.active = true;
+
+    newItem.selectedOptions = selectedOption;
+    newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
+    newItem.updateLevel(item.level, item.missiveStats);
+    console.log(selectedOption);
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
+  };
+
   // TODO: Move to playerUtilities and just call addItem.
   // @deprecated
   // Use UpgradeItem above.
