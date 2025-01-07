@@ -3,7 +3,7 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 import { reversionProfile, blossomProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
 import { runPreservationEvokerCastProfile } from "./PreservationEvokerCastProfile";
-import { runPreservationEvokerCastProfileEchoshaper } from "./PreservationEvokerCastProfileEchoshaper";
+import { runPreservationEvokerCastProfileEchoshaper } from "./PreservationEvokerProfileEchoshaper";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -20,7 +20,7 @@ describe("Test APL", () => {
             mastery: 19000 + (2 * 700),
             versatility: 8500 + (3 * 780),
             stamina: 29000,
-            critMult: 2,
+            critMult: 2.6,
         }
 
         const profile = reversionProfile;

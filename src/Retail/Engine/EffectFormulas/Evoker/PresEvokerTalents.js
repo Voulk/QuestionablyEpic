@@ -101,6 +101,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
     }
     //if (settings.twoPc) evokerSpells['Reversion']
+
     if (talents.goldenHour) evokerSpells['Reversion'].push({
         type: "heal",
         name: "Golden Hour",

@@ -17,7 +17,7 @@ export const EVOKERCONSTANTS = {
     defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1.05,
     auraDamageBuff: 1.15,
-    goldenHourHealing: 34000,
+    goldenHourHealing: 240000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 
                             'Disintegrate', 'Rewind', "Stasis", "StasisRelease"], // These are spells that do not consume or otherwise interact with our Echo buff.
@@ -168,7 +168,7 @@ const getHealingMult = (state, t, spellName, talents) => {
 
     } 
     //else if (spellName.includes("Renewing Breath") || spellName.includes("Fire Breath")) return 1; // Renewing Breath should strictly benefit from no multipliers.
-    if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.02)
+    if (state.talents.attunedToTheDream) mult *= (1 + state.talents.attunedToTheDream * 0.03)
     
     return mult;
 }

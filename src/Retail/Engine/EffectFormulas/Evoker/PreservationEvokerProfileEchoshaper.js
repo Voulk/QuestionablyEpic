@@ -4,6 +4,8 @@ import { runHeal, EVOKERCONSTANTS } from "Retail/Engine/EffectFormulas/Evoker/Pr
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
+import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
+
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
     let cpm = 0;
@@ -53,9 +55,12 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
         {spell: "Dream Breath", cpm: 2},       
         {spell: "Spiritbloom", cpm: 2},      
+        {spell: "Reversion", cpm: 5},
+        {spell: "Verdant Embrace", cpm: 2},
+        {spell: "Emerald Communion", cpm: buildCPM(evokerSpells, "Dream Flight")},
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
-        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly")},    
-
+        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly"), hastedCPM: true},    
+        {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
         {spell: "Engulf", cpm: buildCPM(evokerSpells, "Engulf")}, 
         //{spell: "Chrono Flame", cpm: 0},     
       ]
@@ -98,7 +103,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
     // We'll need to include the 4pc too if we're running tier.
     const lifebindIncoming = spiritbloomHealing / evokerSpells["Spiritbloom"][0].targets * 2.05 + runHeal(state, evokerSpells["Echo"][0], "Dream Breath");
-    console.log(lifebindIncoming);
 
     const verdantEmbraceHealing = runHeal(state, evokerSpells["Verdant Embrace"][0], "Verdant Embrace");
     healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
@@ -112,6 +116,20 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     healingBreakdown["Echo - Dream Breath"] = totalDream * echoUsage["Dream Breath"] * totalEchoPower;
     //spellThroughput += oneTickHealing * tickCount * spellCPM;
 
+    // Reversion
+    /// Calculate Reversion HoT healing
+    const reversion = evokerSpells["Reversion"][0]
+    const reversionBaseHealing = runHeal(state, reversion, "Reversion");
+    const reversionDuration = (reversion.buffDuration / (1 - (getCrit(state.currentStats)-1))) 
+    const reversionTickCount = reversionDuration / (reversion.tickData.tickRate / getHaste(state.currentStats));
+    const reversionHealing = reversionBaseHealing * reversionTickCount;
+    healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
+    console.log("Reversion Duration - " + reversionDuration + " - " + reversionTickCount);
+
+    /// Calculate Golden Hour Healing
+    const avgGoldenHour = evokerSpells["Reversion"][1].flatHeal || 0;
+
+    healingBreakdown["Echo - Reversion (Golden Hour)"] = avgGoldenHour * echoUsage["Reversion"] * totalEchoPower;
 
     // Tier Set
 
@@ -140,8 +158,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
                 let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
                 consumeHealing *= 1.06;
-                console.log("DREAM BREATH TICK: " + dreamBreathHealing)
-                console.log("CONSUME HEALING: " + consumeHealing, consumeHealing / 60, sqrtMod, tickCount, spellCPM, expectedTargets);
+
                 healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));
             }
             // Regular spells
@@ -170,6 +187,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 //const value = spell.runFunc(state, spell) * spellCPM;
             }
 
+            if (spellName === "Dream Breath") if (state.talents.callOfYsera) spellThroughput *= 1.4;
+
             if (spellName === "Judgment" && spell.name === "Greater Judgment") {
                 // Double Judgment healing for each Infusion we collected.
                 const percInfused = Math.min(1, totalInfusions / getCPM(castProfile, "Judgment"));
@@ -187,18 +206,12 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
         });
-
-
     })
     //console.log("HPS: " + totalHealing / 60);
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
-    const spellBreakdown = {}
-    Object.keys(healingBreakdown).forEach(spellName => {
-        spellBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) / 60) + " (" + Math.round(healingBreakdown[spellName] / totalHealing * 10000) / 100 + "%)";
-    })
-    
-    console.log(spellBreakdown);
+
+    printHealingBreakdown(healingBreakdown, totalHealing);
     console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }
