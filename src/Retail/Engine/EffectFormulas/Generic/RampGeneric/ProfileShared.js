@@ -6,3 +6,7 @@ export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
                             .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%)`);
     console.log(sortedEntries);
 }
+
+export const hasTier = (playerData, tier) => {
+    return playerData.tier.includes(tier);
+}

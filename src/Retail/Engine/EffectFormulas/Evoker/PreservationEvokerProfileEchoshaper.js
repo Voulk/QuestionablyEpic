@@ -4,7 +4,7 @@ import { runHeal, EVOKERCONSTANTS } from "Retail/Engine/EffectFormulas/Evoker/Pr
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
-import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
+import { printHealingBreakdown, hasTier } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
@@ -44,6 +44,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const healingBreakdown = {}
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+    const reportingData = {};
     const cooldownWastage = 0.9;
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
@@ -86,11 +87,21 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     getSpellEntry(castProfile, "Engulf").cpm += 1 / 1.5;
 
     // Essence Bursts generated
-    const essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+    // TODO: Turn these into Echo casts with some wastage.
+    let essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+    essenceBurst += (getCPM(castProfile, "Reversion") + (getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5) * echoUsage['Reversion']) * 0.15;
+
+    getSpellEntry(castProfile, "Echo").cpm += essenceBurst;
+    reportingData.essenceBurst = essenceBurst;
 
     // Total Echo CPM
+    // Echo Power is most relevant, but Echo casts are also stored since spells like Reversion have a standard chance to proc Essence Burst per Echo.
     const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5;
+    const totalEchoCasts = getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5;
 
+
+    reportingData.totalEchoPower = totalEchoPower;
+    reportingData.totalEchoCasts = totalEchoCasts;
     // Handle Echo'd Spell Healing
     // Note that we only take care of our ramp healing here. Regular spiritbloom healing is handled further below.
     // Echo Spiritbloom
@@ -125,7 +136,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const reversionHealing = reversionBaseHealing * reversionTickCount;
     healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
     console.log("Reversion Duration - " + reversionDuration + " - " + reversionTickCount);
-
+    const reversionCoverage = 0; // TODO
     /// Calculate Golden Hour Healing
     const avgGoldenHour = evokerSpells["Reversion"][1].flatHeal || 0;
 
@@ -188,7 +199,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             }
 
             if (spellName === "Dream Breath") if (state.talents.callOfYsera) spellThroughput *= 1.4;
-
+            if ((spellName === "Dream Breath" || spellName === "Spiritbloom") && hasTier(playerData, "S1-2")) spellThroughput *= 1.4; // Tier Set
             if (spellName === "Judgment" && spell.name === "Greater Judgment") {
                 // Double Judgment healing for each Infusion we collected.
                 const percInfused = Math.min(1, totalInfusions / getCPM(castProfile, "Judgment"));
@@ -212,6 +223,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const totalHealing = sumValues(healingBreakdown);
 
     printHealingBreakdown(healingBreakdown, totalHealing);
+    console.log(reportingData);
     console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }

@@ -124,8 +124,17 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery']
     }) */
-    if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.1 * talents.timelessMagic);
-    if (talents.timeLord) evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
+    if (talents.timelessMagic) {
+        evokerSpells['Reversion'][0].buffDuration *= (1 + 0.15 * talents.timelessMagic);
+        evokerSpells['Reversion'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+        evokerSpells['Temporal Anomaly'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+        evokerSpells['Echo'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+    }
+    if (talents.timeLord) {
+        // Temporal Anomaly handled in function.
+        evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
+
+    }
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
         // TODO
         name: "Fluttering Seedlings",
