@@ -19,10 +19,10 @@ const getSpellEntry = (profile, spellName, index = 0) => {
 }
 
 const buildCPM = (spells, spell) => {
-    return 60 / getSpellAttribute(spells[spell], "cooldown");
+    return 60 / getSpellAttribute(spells[spell], "cooldown") * 0.9;
 }
 
-const getEmpowerCPM = (profile) => {
+const getTotalEmpowerCPM = (profile) => {
     return getCPM(profile, "Spiritbloom") + getCPM(profile, "Dream Breath") + getCPM(profile, "Fire Breath");
 }
 
@@ -31,7 +31,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: playerData.talents, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
-    
+    const profileSettings = {gracePeriodOverheal: 0.8};
+
     const talents = {};
     for (const [key, value] of Object.entries(state.talents)) {
         talents[key] = value.points;
@@ -46,7 +47,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const reportingData = {};
     const cooldownWastage = 0.9;
-    let genericHealingIncrease = 1;
+    let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
 
     const castProfile = [
@@ -55,12 +56,12 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Living Flame", cpm: 0},
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
         {spell: "Dream Breath", cpm: 2},       
-        {spell: "Spiritbloom", cpm: 2},      
+        {spell: "Spiritbloom", cpm: buildCPM(evokerSpells, "Spiritbloom")},      
         {spell: "Reversion", cpm: 5},
-        {spell: "Verdant Embrace", cpm: 2},
-        {spell: "Emerald Communion", cpm: buildCPM(evokerSpells, "Dream Flight")},
+        {spell: "Verdant Embrace", cpm: 2}, // Combine with Dream Breath
+        {spell: "Emerald Communion", cpm: buildCPM(evokerSpells, "Emerald Communion")},
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
-        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly"), hastedCPM: true},    
+        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.9, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
         {spell: "Engulf", cpm: buildCPM(evokerSpells, "Engulf")}, 
         //{spell: "Chrono Flame", cpm: 0},     
@@ -73,13 +74,16 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         }
     );
 
+    console.log(castProfile);
+
     // Assign echo usage
     const echoUsage = {
         "Spiritbloom": 0,
-        "Verdant Embrace": 0,
+        "Verdant Embrace": 0.1,
         "Dream Breath": 0.2, 
-        "Reversion": 0.8,
+        "Reversion": 0.7,
     }
+
 
     // Stasis
     // As Flameshaper we'll stasis Dream Breath -> Engulf -> Engulf
@@ -89,7 +93,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Essence Bursts generated
     // TODO: Turn these into Echo casts with some wastage.
     let essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
-    essenceBurst += (getCPM(castProfile, "Reversion") + (getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5) * echoUsage['Reversion']) * 0.15;
+    const echoReversionCasts = (getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5) * echoUsage['Reversion'];
+    essenceBurst += (getCPM(castProfile, "Reversion") + echoReversionCasts) * 0.15;
 
     getSpellEntry(castProfile, "Echo").cpm += essenceBurst;
     reportingData.essenceBurst = essenceBurst;
@@ -136,7 +141,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const reversionHealing = reversionBaseHealing * reversionTickCount;
     healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
     console.log("Reversion Duration - " + reversionDuration + " - " + reversionTickCount);
-    const reversionCoverage = 0; // TODO
+    const reversionCoverage = reversionDuration * (getCPM(castProfile, "Reversion") + echoReversionCasts) / 20 / 60; // TODO
+    reportingData.reversionCoverage = reversionCoverage;
     /// Calculate Golden Hour Healing
     const avgGoldenHour = evokerSpells["Reversion"][1].flatHeal || 0;
 
@@ -189,7 +195,10 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                     secondaries: spell.secondaries,
                 }
                 const oneTickHealing = runHeal(state, oneTick, spellName);
-                const tickCount = spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats))
+                const tickCount = spell.ignoreHaste ? 
+                    (spell.buffDuration / (spell.tickData.tickRate))
+                        :
+                    (spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
 
                 spellThroughput += oneTickHealing * tickCount * spellCPM;
 
@@ -210,14 +219,17 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             // Spell Slice complete
             if (spellProfile.mult) spellThroughput *= spellProfile.mult;
 
-            // Blessing of Anshe
-            if (spellName === "Holy Shock") spellThroughput *= 1 + (2 * getHaste(state.currentStats) / spellCPM * 3);
-
             spellThroughput *= genericHealingIncrease;
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
         });
     })
+
+    // Grace Period
+    Object.keys(healingBreakdown).forEach(key => {
+        healingBreakdown[key] *= (0.1 * profileSettings.gracePeriodOverheal + 1);
+    })
+
     //console.log("HPS: " + totalHealing / 60);
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);

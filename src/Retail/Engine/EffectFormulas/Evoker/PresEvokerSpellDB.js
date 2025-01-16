@@ -373,6 +373,7 @@ export const EVOKERSPELLDB = {
         coeff: 0,
         flatHeal: 0,
         hastedDuration: true,
+        ignoreHaste: true,
         canPartialTick: false,
         expectedOverheal: 0.4,
         secondaries: [],

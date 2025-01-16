@@ -32,7 +32,7 @@ describe("Test APL", () => {
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
 
-        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        const stats = ['crit', 'mastery', 'haste', 'versatility', 'intellect', ];
         const iterations = 1;
         let baseline = 0;
         
@@ -61,7 +61,7 @@ describe("Test APL", () => {
         stats.forEach(stat => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
-        console.log(weights); */
+        console.log(weights);*/
         
     })
 
