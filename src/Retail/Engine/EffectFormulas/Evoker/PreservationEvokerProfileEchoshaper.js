@@ -30,8 +30,10 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+                    talents: playerData.talents, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const profileSettings = {gracePeriodOverheal: 0.8};
+
+    state.currentStats.crit += (15 * 700);
 
     const talents = {};
     for (const [key, value] of Object.entries(state.talents)) {
@@ -43,12 +45,14 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     state.spellDB = evokerSpells;
     state.talents = talents;
     const healingBreakdown = {}
-    let currentStats = {...playerData.stats};
-    state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
+    //let currentStats = {...playerData.stats};
+    //state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const reportingData = {};
     const cooldownWastage = 0.9;
     let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
+
+    
 
     const castProfile = [
         //{spell: "Echo", cpm: 0},
@@ -70,11 +74,13 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Echo Breakdown
     // Haste our CPMs
     castProfile.forEach(spellProfile => {
-        if (spellProfile.hastedCPM) spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+        if (spellProfile.hastedCPM) {
+            spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+        }
         }
     );
 
-    console.log(castProfile);
+    
 
     // Assign echo usage
     const echoUsage = {
@@ -103,7 +109,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Echo Power is most relevant, but Echo casts are also stored since spells like Reversion have a standard chance to proc Essence Burst per Echo.
     const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5;
     const totalEchoCasts = getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5;
-
 
     reportingData.totalEchoPower = totalEchoPower;
     reportingData.totalEchoCasts = totalEchoCasts;
@@ -136,7 +141,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     /// Calculate Reversion HoT healing
     const reversion = evokerSpells["Reversion"][0]
     const reversionBaseHealing = runHeal(state, reversion, "Reversion");
-    const reversionDuration = (reversion.buffDuration / (1 - (getCrit(state.currentStats)-1))) 
+    const reversionDuration = (reversion.buffDuration)// / (1 - (getCrit(state.currentStats)-1))
     const reversionTickCount = reversionDuration / (reversion.tickData.tickRate / getHaste(state.currentStats));
     const reversionHealing = reversionBaseHealing * reversionTickCount;
     healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
@@ -150,6 +155,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     // Tier Set
 
+    console.log(castProfile);
 
     // Run healing
     castProfile.forEach(spellProfile => {

@@ -12,27 +12,26 @@ describe("Test APL", () => {
     test("Test APL", () => {
         
         console.log("Testing APL");
+        const exhilUptime = 0.7;
 
-        const activeStats = {
+        let activeStats = {
             intellect: 76000 * 1.05,
             haste: 3500,
             crit: 9500,
             mastery: 19000 + (2 * 700),
             versatility: 8500 + (3 * 780),
             stamina: 29000,
-            critMult: 2.6,
+            critMult: 2 + (0.6 * exhilUptime),
         }
 
         const profile = reversionProfile;
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 200};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["S1-2", "S1-4"] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
-
-        const stats = ['crit', 'mastery', 'haste', 'versatility', 'intellect', ];
         const iterations = 1;
         let baseline = 0;
         
@@ -42,31 +41,63 @@ describe("Test APL", () => {
 
         baseline = baseline / iterations
         
-        const results = {};
-        /*stats.forEach(stat => {
-            let statHealing = 0;
-            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 2400;
-            const newPlayerData = {...playerData, stats: playerStats};
-            for (let i = 0; i < iterations; i++) {
-
-                statHealing += runPreservationEvokerCastProfileEchoshaper(newPlayerData).hps;
-                
-            }
-            results[stat] = statHealing / iterations;
-
-        });
-        const weights = {}
-
-        stats.forEach(stat => {
-            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
-        });
-        console.log(weights);*/
+        //runStats(playerData, profile);
         
     })
 
 
 });
+
+const runStats = (playerData, profile) => {
+    const stats = ['crit', 'mastery', 'haste', 'versatility', 'intellect', ];
+    const iterations = 1;
+    let baseline = 0;
+    const exhilUptime = 0.7;
+
+    const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
+        intellect: 76000 * 1.05,
+        haste: 9500,
+        crit: 9500,
+        mastery: 9500 + (2 * 700),
+        versatility: 9500 + (3 * 780),
+        stamina: 29000,
+        critMult: 2 + (0.6 * exhilUptime),
+    }
+
+    playerData.stats = activeStats;
+    
+    for (let i = 0; i < iterations; i++) {
+        baseline += runPreservationEvokerCastProfileEchoshaper(playerData).hps;
+    }
+
+    baseline = baseline / iterations
+    
+    const results = {};
+
+
+
+    stats.forEach(stat => {
+        let statHealing = 0;
+        let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+        playerStats[stat] = playerStats[stat] + 2400;
+        const newPlayerData = {...playerData, stats: playerStats};
+        for (let i = 0; i < iterations; i++) {
+
+            statHealing += runPreservationEvokerCastProfileEchoshaper(newPlayerData).hps;
+            
+        }
+        results[stat] = statHealing / iterations;
+
+    });
+    const weights = {}
+
+    console.log(baseline);
+    console.log(results);
+    stats.forEach(stat => {
+        weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+    });
+    console.log(weights); 
+}
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
 // it also lets us test the underlying spells at the same time.

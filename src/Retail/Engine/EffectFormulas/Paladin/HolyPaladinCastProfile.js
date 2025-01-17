@@ -3,6 +3,8 @@ import { getCurrentStats, getCrit, getHaste, applyTalents, deepCopyFunction, get
 import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
+import { printHealingBreakdown, hasTier } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
+
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
     let cpm = 0;
@@ -37,7 +39,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
         {spell: "Avenging Wrath", cpm: 0.5},
         {spell: "Divine Toll", cpm: 1},
         {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-        {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+        {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
         {spell: "Eternal Flame", cpm: 0},
         {spell: "Light of Dawn", cpm: 0},
         
@@ -171,11 +173,9 @@ export const runHolyPaladinCastProfile = (playerData) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
     const spellBreakdown = {}
-    Object.keys(healingBreakdown).forEach(spellName => {
-        spellBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) / 60) + " (" + Math.round(healingBreakdown[spellName] / totalHealing * 10000) / 100 + "%)";
-    })
-    
-    console.log(spellBreakdown);
+    printHealingBreakdown(healingBreakdown, totalHealing);
+
     console.log(totalHealing / 60);
+    console.log(castProfile);
     return { hps: totalHealing / 60, hpm: 0 }
 }

@@ -418,11 +418,11 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
     // Expanded Lungs
     // Check if 0 should also be buffed.
     if (true) {
-        evokerSpells["Dream Breath"][1].coeff[0] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[1] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[2] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[3] *= 1.2;
-        evokerSpells["Dream Breath"][2].coeff *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[0] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[1] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[2] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[3] *= 1.3;
+        evokerSpells["Dream Breath"][2].coeff *= 1.3;
     }
 
     // Red Hot
