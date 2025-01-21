@@ -70,6 +70,12 @@ export const runHolyPaladinCastProfile = (playerData) => {
         {spell: "Dawnlight", cpm: 0, freeSpell: true},       
         {spell: "Sunsear", cpm: 0, freeSpell: true},                                   
       ]
+
+    const spenderUsage = {
+        "Light of Dawn": 0.3,
+        "Eternal Flame": 0.7,
+        "Word of Glory": 0,
+    }
     
 
     // Second Sunrise
@@ -91,7 +97,6 @@ export const runHolyPaladinCastProfile = (playerData) => {
         }
     )
 
-
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.1;
     getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.1;
@@ -99,8 +104,8 @@ export const runHolyPaladinCastProfile = (playerData) => {
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
-    getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * 0.8;
-    getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * 0.2;
+    getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
+    getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
 
     // Calculate Wings Effects
     // Calculate Wings uptime
@@ -144,6 +149,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
                 
                 spellThroughput += (value * spellCPM);
 
+                if (spellName === "Eternal Flame") console.log("ETERNAL FLAME ", value)
 
             }
             else if (spell.type === "buff" && spell.buffType === "heal") {
@@ -195,7 +201,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
     const spellBreakdown = {}
     printHealingBreakdown(healingBreakdown, totalHealing);
 
-    console.log(totalHealing / 60);
+    console.log(Math.round(totalHealing / 60).toLocaleString() + " HPS");
     console.log(castProfile);
     return { hps: totalHealing / 60, hpm: 0 }
 }

@@ -2,11 +2,11 @@
 
 export const paladinMeleeProfile = {
     defaultStats: {
-        intellect: 75000,
+        intellect: 75000 * 1.04, // Seal of Intellect. TODO: Clean
         haste: 9000,
         crit: 9000,
         mastery: 9000 + (2 * 700),
-        versatility: 9000,
+        versatility: 9000 + (3 * 780),
         stamina: 29000,
         critMult: 2,
     },

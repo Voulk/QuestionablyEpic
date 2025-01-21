@@ -52,8 +52,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
 
-    
-
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Living Flame O", cpm: 0},

@@ -435,10 +435,10 @@ export const baseTalents = {
     }}, 
     */
 
-
     // == Holy Tree ==
     // Seal of Alacrity (2% haste pp + 0.5s off Judgment CD)
-    sealOfAlacrity: {points: 2, maxPoints: 2, icon: "spell_holy_sealofvengeance", id: 385425, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+    // REMOVED in 11.0.5
+    /*sealOfAlacrity: {points: 2, maxPoints: 2, icon: "spell_holy_sealofvengeance", id: 385425, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
         // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
         const buff = {
             name: "Seal of Alacrity",
@@ -452,7 +452,7 @@ export const baseTalents = {
         addBuff(state, buff, "Seal of Alacrity")
 
         spellDB['Judgment'][0].cooldownData.cooldown -= (0.5 * points);
-    }}, 
+    }}, */
 
     // Seal of Might (2% base mastery pp + 2% intellect)
     sealOfMight: {points: 2, maxPoints: 2, icon: "spell_holy_sealofwrath", id: 385450, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
@@ -501,7 +501,7 @@ export const baseTalents = {
             type: "buff",
             name: "Golden Path",
             buffType: "heal",
-            coeff: 0.05,
+            coeff: 0.05 * 1.04,
             buffDuration: 12,
             expectedOverheal: 0.5,
             targets: 6, // You and 5 allies
@@ -511,9 +511,10 @@ export const baseTalents = {
     }},
 
     // Seal of Mercy - Golden Path heals the lowest health ally an additional time for 100% value.
-    sealOfMercy: {points: 1, maxPoints: 1, icon: "spell_holy_greaterblessingofsalvation", id: 384897, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
+    // REMOVED
+    /*sealOfMercy: {points: 1, maxPoints: 1, icon: "spell_holy_greaterblessingofsalvation", id: 384897, select: true, tier: 4, runFunc: function (state, spellDB, points) { 
         spellDB['Consecration'][1].targets += 1;
-    }},
+    }},*/
 
     // Judgment of Light - Judgment heals allies 5 times.
     judgmentOfLight: {points: 1, maxPoints: 1, icon: "spell_holy_divineprovidence", id: 183778, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -529,7 +530,7 @@ export const baseTalents = {
     }}, 
 
     // Holy Aegis - Crit +2% per point.
-    holyAegis: {points: 2, maxPoints: 2, icon: "ability_paladin_touchedbylight", id: 385515, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
+    holyAegis: {points: 1, maxPoints: 1, icon: "ability_paladin_touchedbylight", id: 385515, select: true, tier: 4, runFunc: function (state, spellDB, points, stats) {
         // We'll add this via a buff because it's a multiplicative stat gain and needs to be applied post-DR.
         const buff = {
             name: "Holy Aegis",
@@ -538,7 +539,7 @@ export const baseTalents = {
             buffDuration: 999,
             buffType: 'statsMult',
             stat: 'crit',
-            value: (2 * points * STATCONVERSION.CRIT),
+            value: (4 * points * STATCONVERSION.CRIT),
         };
         addBuff(state, buff, "Holy Aegis")
 
@@ -565,11 +566,10 @@ export const baseTalents = {
     }}, 
 
     // Justification. +10% Judgment damage.
-    justification: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    // REMOVED
+    /*justification: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Judgment'][0].coeff *= 1.1;
-    }},
-
-
+    }},*/
 
     // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
     lightforgedBlessing: {points: 0, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 406468, select: true, tier: 4, runFunc: function (state, spellDB, points) {
@@ -578,9 +578,9 @@ export const baseTalents = {
             coeff: 0,
             flatHeal: getHealth(state.currentStats, {}) * 0.01,
             expectedOverheal: 0.20,
-            targets: 5,
+            targets: 3,
             statMods: {'crit': 0},
-            secondaries: [] // TODO: Check secondary scaling on launch.
+            secondaries: [] // TODO: Check secondary scaling
         })
     }},
 
@@ -598,9 +598,6 @@ export const baseTalents = {
         };
         addBuff(state, buff, "Seal of the Crusader")
     }},
-
-
-
 
     // Zealot's Paragon - Hammer of Wrath and Judgment deal 10% additional damage and extend the duration of Avenging Crusader by 0.5s.
     // == REMOVED ==
@@ -626,7 +623,7 @@ export const baseTalents = {
     // Divine Resonance - Buff that casts a free Holy Shock every 5s for 15s.
 
     // Quickened Invocation - 15s off DT cooldown.
-    quickenedInvocation: {points: 0, maxPoints: 1, icon: "spell_holy_pureofheart", id: 379391, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+    quickenedInvocation: {points: 1, maxPoints: 1, icon: "spell_holy_pureofheart", id: 379391, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Divine Toll'][0].cooldownData.cooldown -= 15;
     }}, 
 
@@ -675,7 +672,7 @@ export const baseTalents = {
         spellDB['Judgment'].push({
             name: "Greater Judgment",
             type: "heal",
-            coeff: 1.84,
+            coeff: 1.38,
             expectedOverheal: 0.04,
             targets: 1,
             secondaries: ['crit', 'versatility']
@@ -746,7 +743,7 @@ export const baseTalents = {
         spellDB['Judgment'].push({
             type: "heal",
             name: "Truth Prevails",
-            coeff: 2.7,
+            coeff: 2.4,
             expectedOverheal: 0.15, 
             targets: 1,
             secondaries: ['crit', 'versatility', 'mastery']
@@ -793,9 +790,9 @@ export const baseTalents = {
     // Might - Gain 20% Crit during wings. Currently just built in.
     avengingCrusader: {points: 0, maxPoints: 1, icon: "ability_paladin_veneration", id: 216331, select: true, tier: 4, runFunc: function (state, spellDB, points) { }},
 
-    might: {points: 1, maxPoints: 1, icon: "spell_holy_avenginewrath", id: 384442, select: true, tier: 4, runFunc: function (state, spellDB, points) {
-        spellDB['Avenging Wrath'][0].value = (15 * STATCONVERSION.CRIT);
-    }},
+    /*might: {points: 1, maxPoints: 1, icon: "spell_holy_avenginewrath", id: 384442, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        spellDB['Avenging Wrath'][0].value = (20 * STATCONVERSION.CRIT);
+    }},*/
 
     // Power of the Silver Hand - HL and FoL have a chance to give you a buff, increasing the healing of the next HS you cast by 10% of the damage / healing you do in the next 10s.
 
@@ -847,12 +844,12 @@ export const baseTalents = {
 
         spellDB['Light of Dawn'].push(awakeningBuff);
         spellDB['Word of Glory'].push(awakeningBuff);
-
+        spellDB['Eternal Flame'].push(awakeningBuff);
     }}, 
 
 
 
-    // Holy Shock has a 10 + 1.5% chance per glimmer to refund a charge when cast. Glimmer of Lights damage and healing is increased by 10%.
+    // Holy Shock has a 12% chance to refund a charge when cast and it's healing is increased by 10%.
     gloriousDawn: {points: 1, maxPoints: 1, icon: "ability_paladin_holyavenger", id: 414065, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         const resetSlice = {
             type: "function",
@@ -995,6 +992,7 @@ export const baseTalents = {
     dawnlight: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, heroTree: "heraldOfTheSun", select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
     }},
+
 
 
     // Meta
