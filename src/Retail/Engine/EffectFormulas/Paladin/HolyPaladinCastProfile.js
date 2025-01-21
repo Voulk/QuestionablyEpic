@@ -1,6 +1,6 @@
 
 import { getCurrentStats, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
-import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
+import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 import { printHealingBreakdown, hasTier } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
@@ -17,11 +17,26 @@ const getSpellEntry = (profile, spellName, index = 0) => {
     return profile.filter(spell => spell.spell === spellName)[index]
 }
 
+const getBeaconHealing = (state, healingVal, spellName) => {
+        let beaconHealing = 0;
+        let beaconMult = 1;
+        if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
+        else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
+    
+    
+        // Beacons
+        if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        //else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.1 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
+        
+        return beaconHealing;
+}
+
 export const runHolyPaladinCastProfile = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroTree: "heraldOfTheSun", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+                    beacon: "Beacon of Faith", talents: playerData.talents, reporting: true, heroTree: "heraldOfTheSun", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
     
     // Run Talents
     const paladinSpells = applyLoadoutEffects(deepCopyFunction(playerData.spells), state.settings, state.talents, state, state.currentStats);
@@ -128,6 +143,8 @@ export const runHolyPaladinCastProfile = (playerData) => {
                 const value = runHeal(state, spell, spellName) ;
                 
                 spellThroughput += (value * spellCPM);
+
+
             }
             else if (spell.type === "buff" && spell.buffType === "heal") {
                 // HoT
@@ -164,6 +181,9 @@ export const runHolyPaladinCastProfile = (playerData) => {
 
             spellThroughput *= genericHealingIncrease;
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
+
+            const beaconHealing = getBeaconHealing(state, spellThroughput, spellName);
+            healingBreakdown[state.beacon] = Math.round((healingBreakdown[state.beacon] || 0) + (beaconHealing));
 
         });
 

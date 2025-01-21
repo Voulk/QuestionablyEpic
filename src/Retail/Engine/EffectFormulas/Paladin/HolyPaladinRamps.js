@@ -7,13 +7,13 @@ import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell,
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/RampGeneric/BuffBase";
 import { genSpell } from "../Generic/RampGeneric/APLBase";
 
-const PALADINCONSTANTS = {
+export const PALADINCONSTANTS = {
     
     masteryMod: 1.5, 
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    auraHealingBuff: 1,
+    auraHealingBuff: 0.97,
     auraDamageBuff: 1,
     enemyTargets: 1,
 
@@ -26,7 +26,7 @@ const PALADINCONSTANTS = {
     // Talents
     tyrsHitRate: 0.8,
     barrierOverhealing: 0.15, // Barrier of Faith - Expected overhealing. Likely to be quite low.
-    infusion: {holyLightHoPo: 2, flashOfLightReduction: 0.7, judgmentBonus: 2},
+    infusion: {holyLight: 1.3, flashOfLight: 1.3, judgment: 2},
     reclamation: {avgHealHealth: 0.75, avgDamHealth: 0.5, manaReduction: 0.15, throughputIncrease: 0.5},
     
     // Fading light
@@ -280,8 +280,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
 
     // Beacons
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.14 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
     else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.1 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
     
     // Compile healing and add report if necessary.

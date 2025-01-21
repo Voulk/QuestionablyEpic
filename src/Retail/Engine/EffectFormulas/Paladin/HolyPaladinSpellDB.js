@@ -163,8 +163,8 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 0.6,
-        coeff: 3.465, //2.89
-        expectedOverheal: 0.3,
+        coeff: 5.7519, // 3.15 x 1.66 x 1.1
+        expectedOverheal: 0.25,
         holyPower: -3,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'versatility', 'mastery']
@@ -173,7 +173,7 @@ export const PALADINSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: 16,
-        coeff: 0.114, // The coefficient for a single regrowth tick.
+        coeff: 0.1254, // 0.114 x 1.1
         tickData: {tickRate: 2, canPartialTick: true, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'versatility', 'mastery']
