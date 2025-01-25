@@ -1,7 +1,7 @@
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../CombatMultByLevel";
 import { randPropPoints } from "../RandPropPointsBylevel";
 import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
-import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
+import { allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { instanceDB } from "Databases/InstanceDB";
 // This file contains utility formulas that might be useful for calculating Effect values.

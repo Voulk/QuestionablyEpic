@@ -272,7 +272,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
 
-        if (settings.includeOverheal === "No") {
+        if (settings.includeOverheal === false) {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
 

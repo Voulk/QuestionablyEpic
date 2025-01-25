@@ -1,5 +1,5 @@
 
-import { allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
+import { allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "./DiscRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {

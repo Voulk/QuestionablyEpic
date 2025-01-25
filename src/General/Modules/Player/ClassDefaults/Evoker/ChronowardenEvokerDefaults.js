@@ -1,4 +1,4 @@
-export const evokerDefaultSpellData = (contentType) => {
+export const chronoDefaultSpellData = (contentType) => {
     let spellList = {};
     if (contentType === "Raid") {
       spellList = {
@@ -15,11 +15,11 @@ export const evokerDefaultSpellData = (contentType) => {
     return spellList;
   };
 
-  export const runCastModel = (contentType) => {
+  export const runChronoCastModel = (contentType) => {
     
   }
   
-  export const evokerDefaultStatWeights = (contentType) => {
+  export const chronoDefaultStatWeights = (contentType) => {
     let statWeights = {};
   
     statWeights.Raid = {
@@ -44,30 +44,21 @@ export const evokerDefaultSpellData = (contentType) => {
     return statWeights[contentType];
   };
   
-  export const evokerDefaultSpecialQueries = (contentType) => {
+  export const chronoDefaultSpecialQueries = (contentType) => {
     let specialQueries = {};
     if (contentType === "Raid") {
       specialQueries = {
         OneManaHealing: 11,
-        chilledClarityExtension: 32000,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
           c60: 1,
           c90: 1,
           c120: 1.15,
           c180: 1,
-
-          oneMinute: 1, 
-          ninetySeconds: 1,
-          twoMinutes: 1,
-          twoMinutesOrb: 0.85, // It is tough to get value in Prepatch.
-          threeMinutes: 1,
         },
-        HoldYourGroundUptime: 0.8
       };
     } else if (contentType === "Dungeon") {
       specialQueries = {
-        ConvokeChannelHPS: 460,
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
@@ -75,14 +66,7 @@ export const evokerDefaultSpellData = (contentType) => {
           c90: 1.15,
           c120: 1,
           c180: 1,
-
-          oneMinute: 1,
-          ninetySeconds: 1,
-          twoMinutes: 1,
-          twoMinutesOrb: 0.7, 
-          threeMinutes: 1,
         },
-        HoldYourGroundUptime: 0.8
       };
     } else {
       console.error("Unknown Content Type");

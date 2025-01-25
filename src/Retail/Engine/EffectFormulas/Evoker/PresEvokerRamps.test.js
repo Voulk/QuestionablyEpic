@@ -27,7 +27,7 @@ describe("Test APL", () => {
         const profile = reversionProfile;
     
         const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 200};
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
 
         const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["S1-2", "S1-4"] }
 

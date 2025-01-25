@@ -8,7 +8,7 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
@@ -690,8 +690,9 @@ export class Player {
       }
     }
       else if (spec === SPEC.PRESEVOKER) {
-        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+        this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
+        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
           intellect: 60000,
           haste: 2600,

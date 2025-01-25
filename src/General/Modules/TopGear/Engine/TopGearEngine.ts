@@ -8,8 +8,8 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
-import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
-import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
+import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
@@ -826,16 +826,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
     setStats.intellect = (setStats.intellect || 0) * 1.05;
-    const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
+    const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
 
-    setStats.hps = (setStats.hps || 0) + setRamp.totalHealing / 180;
+    setStats.hps = (setStats.hps || 0) + castModelResult.hps;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
     evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
   }
   // == Diminishing Returns ==
-  // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
+  // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
   if (!(player.spec === "Discipline Priest" && contentType === "Raid" && useSeq)) {
