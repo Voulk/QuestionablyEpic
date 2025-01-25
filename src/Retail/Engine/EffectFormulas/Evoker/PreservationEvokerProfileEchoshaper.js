@@ -52,6 +52,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
 
+
+
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Living Flame O", cpm: 0},
@@ -65,20 +67,18 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
         {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.9, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
-        {spell: "Engulf", cpm: buildCPM(evokerSpells, "Engulf")}, 
+        {spell: "Engulf", cpm: Math.floor(90 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
         //{spell: "Chrono Flame", cpm: 0},     
       ]
-    
     // Echo Breakdown
     // Haste our CPMs
     castProfile.forEach(spellProfile => {
         if (spellProfile.hastedCPM) {
             spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+
         }
         }
     );
-
-    
 
     // Assign echo usage
     const echoUsage = {
@@ -92,7 +92,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Stasis
     // As Flameshaper we'll stasis Dream Breath -> Engulf -> Engulf
     getSpellEntry(castProfile, "Dream Breath").cpm += 1 / 1.5;
-    getSpellEntry(castProfile, "Engulf").cpm += 1 / 1.5;
+    getSpellEntry(castProfile, "Engulf").cpm += 2 / 1.5;
 
     // Essence Bursts generated
     // TODO: Turn these into Echo casts with some wastage.

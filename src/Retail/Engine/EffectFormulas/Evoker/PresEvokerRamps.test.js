@@ -16,7 +16,7 @@ describe("Test APL", () => {
 
         let activeStats = {
             intellect: 76000 * 1.05,
-            haste: 3500,
+            haste: 13200,
             crit: 9500,
             mastery: 19000 + (2 * 700),
             versatility: 8500 + (3 * 780),
