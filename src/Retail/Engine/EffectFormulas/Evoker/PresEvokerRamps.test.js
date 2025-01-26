@@ -15,7 +15,7 @@ describe("Test APL", () => {
         const exhilUptime = 0.7;
 
         let activeStats = {
-            intellect: 76000 * 1.05,
+            intellect: 76000 * 1.05 * 1.05,
             haste: 13200,
             crit: 9500,
             mastery: 19000 + (2 * 700),

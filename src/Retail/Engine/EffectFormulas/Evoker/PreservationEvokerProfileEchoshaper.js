@@ -4,6 +4,8 @@ import { runHeal, EVOKERCONSTANTS } from "Retail/Engine/EffectFormulas/Evoker/Pr
 import { applyLoadoutEffects } from "./PresEvokerTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
+import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
+
 import { printHealingBreakdown, hasTier } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 const getCPM = (profile, spellName) => {
@@ -26,12 +28,16 @@ const getTotalEmpowerCPM = (profile) => {
     return getCPM(profile, "Spiritbloom") + getCPM(profile, "Dream Breath") + getCPM(profile, "Fire Breath");
 }
 
+const setupTalents = () => {
+
+}
+
 export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
-    const profileSettings = {gracePeriodOverheal: 0.8};
+                    talents: {...evokerTalents}, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
+    const localSettings = {gracePeriodOverheal: 0.8};
 
     state.currentStats.crit += (15 * 700);
 
@@ -40,7 +46,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         talents[key] = value.points;
     }
     // Run Talents
-    const evokerSpells = applyLoadoutEffects(deepCopyFunction(playerData.spells), state.settings, talents, state, state.currentStats, EVOKERCONSTANTS);
+    const evokerSpells = applyLoadoutEffects(deepCopyFunction(EVOKERSPELLDB), state.settings, talents, state, state.currentStats, EVOKERCONSTANTS);
     //applyTalents(state, evokerSpells, state.currentStats)
     state.spellDB = evokerSpells;
     state.talents = talents;
@@ -231,7 +237,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     // Grace Period
     Object.keys(healingBreakdown).forEach(key => {
-        healingBreakdown[key] *= (0.1 * profileSettings.gracePeriodOverheal + 1);
+        healingBreakdown[key] *= (0.1 * localSettings.gracePeriodOverheal + 1);
     })
 
     //console.log("HPS: " + totalHealing / 60);

@@ -1,3 +1,5 @@
+import { runPreservationEvokerCastProfileEchoshaper } from "Retail/Engine/EffectFormulas/Evoker/PreservationEvokerProfileEchoshaper"
+
 export const evokerDefaultSpellData = (contentType) => {
     let spellList = {};
     if (contentType === "Raid") {
@@ -17,7 +19,7 @@ export const evokerDefaultSpellData = (contentType) => {
 
   export const runFlameshaperCastModel = (itemSet, setStats, castModel, effectList) => {
     const settings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: false};
-    const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: settings, talents: {...evokerTalents}, stats: setStats, tier: ["S1-2", "S1-4"] }
+    const playerData = { spec: "Preservation Evoker", settings: settings, stats: setStats, tier: ["S1-2", "S1-4"] }
     const result = runPreservationEvokerCastProfileEchoshaper(playerData);
 
     return result;

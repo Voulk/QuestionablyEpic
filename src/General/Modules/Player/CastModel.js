@@ -11,7 +11,7 @@ import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights
 import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
-import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
 import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
 
@@ -19,8 +19,9 @@ class CastModel {
   constructor(spec, contentType, modelID, arrID) {
     this.contentType = contentType;
     this.arrayID = arrID;
-    this.setDefaults(spec, contentType, modelID);
     this.modelType = {"Raid": "", "Dungeon": ""};
+    this.setDefaults(spec, contentType, modelID);
+    
   }
 
   spellList = {};
@@ -33,7 +34,7 @@ class CastModel {
   modelName = "";
   arrayID = 0;
   baseStatWeights = {}
-  modelType = "Default";
+  modelType = {"Raid": "Default", "Dungeon": "Default"};
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -193,7 +194,8 @@ class CastModel {
       else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
-        this.modelType = "CastModel";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
         this.runCastModel = runFlameshaperCastModel;
         spellList = evokerDefaultSpellData(contentType);
         specialQueries = evokerDefaultSpecialQueries(contentType);

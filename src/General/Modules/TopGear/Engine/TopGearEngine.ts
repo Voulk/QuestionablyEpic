@@ -17,6 +17,7 @@ import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngine
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { Console } from "console";
 
 /**
  * == Top Gear Engine ==
@@ -809,10 +810,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 
+  // TODO: Centralize raid buffs
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest" && contentType === "Raid" && castModel.modelType[contentType] === "Sequences") {
+  if (castModel.modelType[contentType] === "Sequences") {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
     if (reporting) report.ramp = setRamp;
@@ -838,12 +840,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
-  if (!(player.spec === "Discipline Priest" && contentType === "Raid" && useSeq)) {
+  else {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Talents (DR does not apply)
     if (player.spec === "Holy Paladin") {
-      setStats.haste = (((setStats.haste || 0) / STATCONVERSION.HASTE / 100 + 1) * 1.04 - 1) * STATCONVERSION.HASTE * 100;
       setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
       setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       setStats.intellect = (setStats.intellect || 0) * 1.04;
@@ -881,7 +882,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   for (var stat in evalStats) {
     // Handle flat HPS increases like most tier sets, some trinkets, Annulet and more.
     if (stat === "hps" && evalStats.hps) {
-      
       hardScore += (evalStats.hps / baseHPS) * player.activeStats.intellect;
     } 
     // Handle flat DPS increases like DPS trinkets. Note that additional DPS value isn't currently evaluated.

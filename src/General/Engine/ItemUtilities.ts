@@ -964,7 +964,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
+      if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296;
       if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
@@ -979,7 +979,6 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
-      console.log("Item Passes: " + item.name);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
