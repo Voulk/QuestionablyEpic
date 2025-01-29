@@ -59,7 +59,8 @@ function getPlayerRace(lines: string[]) {
 }
 
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
-                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, allPlayers: PlayerChars, autoUpgradeVault: boolean) {
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, 
+                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
   let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -90,7 +91,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
       }
     }
     
-    processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault);
+    processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
     player.savedPTRString = simCInput;
 
     allPlayers.updatePlayerChar(player);
@@ -102,7 +103,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
   }
 }
 
-export function processAllLines(player: Player, contentType: contentTypes, lines: string[], linkedItems: number, vaultItems: number, playerSettings: PlayerSettings, autoUpgradeVault: boolean) {
+export function processAllLines(player: Player, contentType: contentTypes, lines: string[], linkedItems: number, vaultItems: number, playerSettings: PlayerSettings, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
   for (var i = 8; i < lines.length; i++) {
     let line = lines[i];
     let type = i > vaultItems && i < linkedItems ? "Vault" : "Regular";
@@ -113,7 +114,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
         // this code is left in in case we need to res it in future.
         //processToken(line, player, contentType, type);
       } else {
-        const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault);
+        const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault, autoUpgradeAll);
         if (item) player.addActiveItem(item);
       }
     }
@@ -257,7 +258,7 @@ export function processCurve(curveID: string, dropLevel: number) {
   return 0;
 }
 
-export function processItem(line: string, player: Player, contentType: contentTypes, type: string, playerSettings: PlayerSettings, autoUpgradeVault: boolean) {
+export function processItem(line: string, player: Player, contentType: contentTypes, type: string, playerSettings: PlayerSettings, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
   // Split string.
   interface ProtoItem {
     id: number;
@@ -375,7 +376,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
         const upgradeName = idPayload.upgrade.name;
         // Note that previous seasons have their bonus IDs updated to be an item tag instead of an upgrade track.
         // For that reason we don't really need to support multiple seasons at once.
-        if (["Myth", "Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName)) {
+        if (["Myth", "Veteran", "Adventurer", "Explorer", "Champion", "Hero"].includes(upgradeName) && idPayload.upgrade.seasonId === CONSTANTS.seasonID) {
           protoItem.upgradeTrack = upgradeName;
           protoItem.upgradeRank = idPayload.upgrade.level;
         }
@@ -518,11 +519,15 @@ export function processItem(line: string, player: Player, contentType: contentTy
   }
 
   // Auto upgrade vaults
-  if (type === "Vault" && autoUpgradeVault) {
+  if (autoUpgradeAll) {
     const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
-
   }
+  else if (type === "Vault" && autoUpgradeVault) {
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 580, Adventurer: 593, Veteran: 606, Champion: 619, Hero: 626, Myth: 639 };
+    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
+  }
+
 
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import EmbelChart from "./EmbellishmentChart";
-import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
+import CircletChart from "./CircletChart";
+import HelpText from "../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-
+import { getAllCombos, getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
-import MetricToggle from "./MetricToggle";
+import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,6 @@ import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/E
 import { getAllyStatsValue } from "General/Engine/ItemUtilities";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import EmbellishmentDeepDive from "General/Modules/EmbellishmentAnalysis/EmbellishmentDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
@@ -33,22 +32,6 @@ function TabPanel(props) {
   );
 }
 
-const setupItemCardData = (embList, contentType, player, playerSettings) => {
-  const itemData = [];
-  const additionalData = {contentType: contentType, settings: playerSettings, castModel: player.getActiveModel(contentType), setStats: player.activeStats}
-  embList.forEach((emb) => {
-    const data = getEmbellishmentDescription(emb.name['en'], player, additionalData);
-    //const data = null;
-    if (data) {
-      data.name = emb.name['en'];
-      data.id = emb.id;
-      data.icon = emb.icon;
-      itemData.push(data);
-    }
-  });
-
-  return itemData;
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -135,31 +118,33 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
 }
 
-const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric, playerSettings) => {
-  const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
-  const embel = embellishmentDB.filter(function (emb) {
-    return emb.effect.name === effectName;
-  });
+const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, playerSettings) => {
+  const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player, setVariables: []};
+  const effect = getCircletEffect(gemCombo, itemLevel, additionalData);
+  //const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
+  const expHPS = getEstimatedHPS(effect, player, contentType, playerSettings) || 0
+  const expDPS = getEstimatedDPS(effect, player, contentType, playerSettings) || 0
+
 
   let score = 0;
   if (metric === "hps") {
-    score =  getEstimatedHPS(effect, player, contentType, playerSettings) || 0;
+    score = expHPS;
   } else if (metric === "dps") {
-    score = getEstimatedDPS(effect, player, contentType, playerSettings) || 0;
+    score = expDPS;
   }
   else if (metric === "both") {
-    score = getEstimatedHPS(effect, player, contentType, playerSettings) + getEstimatedDPS(effect, player, contentType, playerSettings);
+    score = expHPS + expDPS;
   }
 
-  if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
+  //if ("pieces" in embel[0]) score = Math.round(score / embel[0].pieces);
 
   return Math.max(score, 0);
 
 };
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
-const getHighestDomScore = (gem) => {
-  return gem.r636 //gem.r5;
+const getHighestScore = (combo) => {
+  return combo.i658
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -179,7 +164,7 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 //   userSettings[setting] = newValue;
 // };
 
-export default function EmbellishmentAnalysis(props) {
+export default function CircletAnalysis(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
@@ -198,43 +183,36 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [600, 606, 612, 618, 624, 630, 636 ];
+  const itemLevels = [ 639, 642, 645, 648, 651, 654, 658];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
-  const db = embellishmentDB.filter((embel) => {
-    return embel.armorType === 0 ||
-      (embel.armorType === 4 && playerSpec === "Holy Paladin") ||
-      (embel.armorType === 3 && (playerSpec === "Restoration Shaman" || playerSpec === "Preservation Evoker")) ||
-      (embel.armorType === 2 && (playerSpec === "Restoration Druid" || playerSpec === "Mistweaver Monk")) ||
-      (embel.armorType === 1 && (playerSpec === "Holy Priest" || playerSpec === "Discipline Priest"))
-  });
+  const combos = getAllCombos();
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
     "Note that the value of the slot some embellishments must be placed on is NOT included in the graph.",
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
-  const itemCardData = setupItemCardData(db, contentType, props.player, playerSettings);
-  let activeGems = [];
+  let activeCombos = [];
 
-  for (var i = 0; i < db.length; i++) {
-    const domGem = db[i];
-    let gemAtLevels = {
-      id: domGem.id,
-      name: domGem.name["en"],
+  for (var i = 0; i < combos.length; i++) {
+    const gemCombo = combos[i];
+    let comboAtLevels = {
+      id: i,
+      name: gemCombo.join("/"),
       tooltip: []
     };
 
-    for (var x = 0; x < itemLevels.length; x++) {
-      if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
+    for (var x = 0; x < itemLevels.length; x++) { // (gemNames, player, contentType, itemLevel, setStats, settings)
+      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = getEffectAtLevel(gemCombo, itemLevels[x], props.player, contentType, metric, playerSettings); 
       
     }
-    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
-    activeGems.push(gemAtLevels);
+    comboAtLevels.tooltip = "" // buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
+    activeCombos.push(comboAtLevels);
   }
 
-  activeGems.sort((a, b) => (getHighestDomScore(a) < getHighestDomScore(b) ? 1 : -1));
-
+  activeCombos.sort((a, b) => (getHighestScore(a) < getHighestScore(b) ? 1 : -1));
+  activeCombos = activeCombos.slice(0, 15);
 
   return (
     <div className={classes.root}>
@@ -257,7 +235,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="You are limited to two embellishment effects. Make sure you consult your favorite guide before crafting anything." variant="red" />
+        <InformationBox information="Expect early changes to the ring since several bugs went live. Legendary Skippers is also the best healing variant if everyone in the group commits to using it." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
@@ -267,7 +245,7 @@ export default function EmbellishmentAnalysis(props) {
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
+                {<CircletChart data={activeCombos} db={activeCombos} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
               </Paper>
 
             </Grid>

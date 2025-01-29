@@ -17,6 +17,14 @@ export function getItemSet(id, pieces, spec) {
 
 export const itemSets = [
   {
+    // Blackrock Depths Healing Set.
+    id: [1834],
+    class: "All",
+    setBonuses: {
+      2: "Lingering Grace", // 
+    },
+  },
+  {
     // The War within Season 1
     id: [1694],
     class: "Restoration Druid",

@@ -97,15 +97,15 @@ class CastModel {
       }
 
     } else if (spec === SPEC.HOLYPALADIN) {
-      if (modelID === "Melee Default") {
-        this.modelName = "Melee Default";
+      if (modelID === "Herald of the Sun") {
+        this.modelName = "Herald of the Sun";
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights("Raid");
         this.fightInfo.dps = 17000;
       }
-      else if (modelID === "Avenging Crusader") {
-        this.modelName = "Avenging Crusader";
+      else if (modelID === "Lightsmith") {
+        this.modelName = "Lightsmith";
         spellList = paladinACSpellData(contentType);
         specialQueries = paladinACSpecialQueries(contentType);
         this.baseStatWeights = paladinACStatWeights("Raid");
@@ -166,11 +166,11 @@ class CastModel {
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
       else {
-        this.modelName = "Default";
+        this.modelName = "Healing Focused";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 90000);
+        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
       }
 
 
@@ -210,12 +210,13 @@ class CastModel {
       spellList = this.getClassicDruid();
         this.baseStatWeights = {
           spellpower: 1,
-          intellect: 1.9,
-          crit: 0.701,
-          mastery: 0.801,
+          intellect: 3,
+          crit: 0.98,
+          mastery: 1.1,
           haste: 0.3,
-          mp5: 1.46,
-          spirit: 0.791,
+          mp5: 1.7,
+          spirit: 1.3,
+          hps: 0.7, // 
         };
     } else if (spec === "Restoration Shaman Classic") {
       spellList = this.getClassicShaman();
@@ -232,7 +233,8 @@ class CastModel {
         mastery: 0.398,
         haste: 1.083,
         spirit: 1.123,
-        mp5: 1.199
+        mp5: 1.199,
+        hps: 0.7, // 
       };
     } 
     else if (spec === "Discipline Priest Classic") {
@@ -244,7 +246,8 @@ class CastModel {
         mastery: 0.461,
         haste: 0.914,
         spirit: 0.711,
-        mp5: 1.028
+        mp5: 1.028,
+        hps: 0.7, // 
       }
     } else {
       spellList = {};

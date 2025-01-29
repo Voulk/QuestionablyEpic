@@ -13,6 +13,7 @@ import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
@@ -63,7 +64,8 @@ function setupPlayer(player: Player, contentType: contentTypes, castModel: any) 
 function autoSocketItems(itemList: Item[]) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+    if (item.id === 228411) item.socket = 0;
+    else if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
     else if (item.slot === "Neck" || item.slot === "Finger") {
@@ -385,7 +387,8 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                             if (finger < finger2 && 
                                 ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
                                 (splitItems.Finger[finger].id === 215130 || splitItems.Finger[finger2].id === 215130) ||
-                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137))) {
+                                (splitItems.Finger[finger].id === 215137 || splitItems.Finger[finger2].id === 215137) ||
+                                splitItems.Finger[finger].id === 215135)) {
 
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
@@ -754,6 +757,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // --- Item Set Bonuses ---
   
   const usedSets: any[] = []
+  console.log(setBonuses);
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
 
@@ -761,6 +765,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
           effectList = effectList.concat(setBonus);
+          console.log("ADDING SET BONUS: " + JSON.stringify(setBonus));
           usedSets.push(setBonus.name);
         }
       })
@@ -807,6 +812,28 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     builtSet.primGems = combo; 
     effectStats.push(annuletStats);
  } */
+
+  if (builtSet.checkHasItem(228411)) {
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 639;
+
+    //const comboSetting = getSetting(userSettings, "circletOptions");
+    let combo = [];
+
+    /*if (comboSetting === "Thunderlords / Mariners / Windsingers") combo = [228634, 228644, 228640];
+    else if (comboSetting === "Skippers / Fathomdwellers / Stormbringers") combo = [228646, 228639, 228638];
+    else if (comboSetting === "Skippers / Mariners / Stormbringers") combo = [228646, 228644, 228638];*/
+    combo = builtSet.itemList.filter(item => item.id === 228411)[0].selectedOptions || [];
+
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
+
+    // Handle Annulet
+    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+    const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
+
+    //builtSet.primGems = combo; 
+    effectStats.push(annuletStats);
+
+  }
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 

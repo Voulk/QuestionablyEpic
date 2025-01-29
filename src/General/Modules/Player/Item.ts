@@ -19,6 +19,13 @@ export class Item {
   stats: Stats = {}; // The stats on a given item.
   missiveStats?: string[];
   specialAllocations?: {[key: string]: number} = {};
+  primGems?: number[];
+
+  // Used for items where we might have multiple variations at the same item level. 
+  // Single option items like Unbound Changeling would end up as a 1 length array but
+  // we also support items like Cyrces Circlet or Onyx Annulet where all three gem options can end up here.   
+  selectedOptions?: number[]; 
+  customOptions?: {label: string, id: number[]}[]; // This just stored the options available. {label: string, id: number}[]
 
   effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
@@ -83,7 +90,26 @@ export class Item {
       //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
     }
     else if (gameType === "Retail") {
+      if (this.id === 228411) this.primGems = [228639, 228638, 228640];
       this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
+
+      // TEMPORARY
+      if (this.id === 228411) {
+        this.customOptions = [
+                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [228638, 228639, 228646]},
+                              {label: "Stormbringers, Fathomdwellers, Windsingers", id: [228638, 228639, 228640]},
+                              {label: "Stormbringers, Mariners, Skippers", id: [228638, 228644, 228646]},
+                              {label: "Stormbringers, Mariners, Windsingers", id: [228638, 228644, 228640]},
+                              {label: "Thunderlords, Mariners, Windsingers", id: [228634, 228644, 228640]},
+                            ]
+        this.selectedOptions = this.customOptions[0].id;
+      }
+      /*
+      if (this.id === 178708) {
+        this.customOptions = [{label: "Convert to Crit", id: [0]},
+                              {label: "Convert to Haste", id: [1]},
+                              {label: "Convert to Mastery", id: [2]},]
+      }*/
     }
 
   }
@@ -124,7 +150,8 @@ export class Item {
     clonedItem.specialAllocations = { ...this.specialAllocations };
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
-    
+    if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.id, this.missiveStats, "Retail"), this.tertiary);
+    if (this.customOptions) clonedItem.customOptions = [...this.customOptions];
     // ... (copy other properties as needed)
 
     return clonedItem;

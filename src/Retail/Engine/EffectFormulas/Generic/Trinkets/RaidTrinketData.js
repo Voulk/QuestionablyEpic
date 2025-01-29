@@ -98,12 +98,12 @@ export const raidTrinketData = [
         setting: true,
         effects: [
           {  // Intellect effect
-            coefficient: 0.024938,
+            coefficient: 0.024938 * 1.05,
             table: -1,
             avgStacks: 15, // Setting
           },
           {  // Secondary effect
-            coefficient: 0.05418,
+            coefficient: 0.05418 * 1.05,
             table: -7,
             avgStacks: 15, // Setting
           },

@@ -1,6 +1,7 @@
 import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/EmbellishmentData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
 import { correctCasing, getItemProp } from "General/Engine/ItemUtilities";
@@ -146,7 +147,7 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
 }
 
 const getTrinketData = (trinketName) => {
-    const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, embellishmentData/*, timewalkTrinketData*/)
+    const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, embellishmentData, timewalkingTrinketData)
     let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
     return activeTrinket;

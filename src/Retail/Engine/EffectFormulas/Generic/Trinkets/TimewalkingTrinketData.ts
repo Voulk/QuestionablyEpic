@@ -139,6 +139,66 @@ export const timewalkingTrinketData = [
           return bonus_stats;
         }
       },
+      { // Stacks once per spell cast for the rest of the duration.
+        name: "Burst of Knowledge",
+        effects: [
+          { // 469925
+            coefficient: 0.137649, 
+            table: -1,
+            duration: 20,
+            cooldown: 120,
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            const averageStacks = 20 / (1.5 / player.getStatPerc('haste'));
+            const intPerStack = processedValue(data[0], itemLevel);
+
+            bonus_stats.intellect = averageStacks * intPerStack * data[0].duration! / data[0].cooldown!;
+
+            
+            return bonus_stats;
+        }
+      },
+      { // Standard heal proc trinket
+        name: "Bottled Magma",
+        description: "Bog standard healing proc trinket.",
+        effects: [
+          {
+            coefficient: 42.78218, 
+            table: -9,
+            efficiency: 0.9,
+            secondaries: ["crit", "haste", "versatility"], // Crit untested, haste in PPM scaling
+            ppm: 3,
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+    
+          return bonus_stats;
+        }
+      },
+      {
+        name: "Second Wind",
+        effects: [
+            { // Mana proc chance.
+              coefficient: 2.240427,
+              table: -1,
+              cooldown: 300,
+              ticks: 10,
+            },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.mana = processedValue(data[0], itemLevel) * data[0].ticks / data[0].cooldown!;
+
+            return bonus_stats;
+        }
+    },
 
 
 ]

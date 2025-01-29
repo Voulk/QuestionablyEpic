@@ -16,6 +16,87 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.7 / 4.4.1",
+    update: 1,
+    date: "December 21",
+    changes: [ 
+      "Circlet setting moved to individual items instead of being global.",
+      "Circlet will now show gems used in Top Gear.",
+    ]},
+  {
+    version: "11.0.7 / 4.4.1",
+    update: 1,
+    date: "December 18",
+    changes: [ 
+      "New Module: Cyrce's Circlet",
+      "Circlet added as an option in Top Gear with new setting",
+    ]},
+  {
+    version: "11.0.5 / 4.4.1",
+    update: 4,
+    date: "November 21",
+    changes: [ 
+      "Bugfix: Leech should display correctly on Top Gear sets now. No change to results.",
+      "Renamed a bunch of models to make it clearer what they're optimizing. Disc Priest M+ will now use a healing focused model.",
+      "Cata: Random-affix Firelands items should now import fine. So should the Tempest Keeper plate belt.",
+    ]},
+  {
+    version: "11.0.5 / 4.4.1",
+    update: 3,
+    date: "November 7",
+    changes: [ 
+      "QE Live: Firelands",
+      "Cata: Fixed a bug with triple socketed items.",
+      "Cata: Added new buttons for 378 and 391 loot.",
+      "TWW: Added Dracthyr and Earthen race options.",
+      "TWW: Fixed a bug where the Headless Horseman rings wouldn't import correctly",
+    ]},
+  {
+    version: "11.0.5 / 4.4",
+    update: 2,
+    date: "October 26",
+    changes: [ 
+      "Added significantly more items from the anniversary event including timewalking dungeons and world bosses.",
+    ]},
+  {
+    version: "11.0.5 / 4.4",
+    update: 1,
+    date: "October 22",
+    changes: [ 
+      "Added all WoW Anniversary items & effects.",
+      "Added a Max Level slider to the Trinket Analysis chart.",
+      "Fixed a bug that would prevent running 2x Ring of Earthen Craftsmanship in Top Gear.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 12,
+    date: "October 14",
+    changes: [ 
+      "Enabled Crafting panel.",
+      "Upgrade Finder: Jewelry will now have two sockets.",
+      "Bugfix: Adding a socket to jewelry will now add two instead.",
+      "Bugfix: Added a socket to, or converting a crafted item to Vault will now keep its secondaries.",
+
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 11,
+    date: "October 3",
+    changes: [ 
+      "Added an 'Upgrade All' button to SimC imports.",
+      "In game change: Mercurial Egg buffed 5%.",
+    ]},
+  {
+    version: "11.0.2 / 4.4",
+    update: 10,
+    date: "September 27",
+    changes: [ 
+      "Bugfix: Necks will no longer be auto-socketed in Upgrade Finder.",
+      "The 635 ilvl option is now correctly 636.",
+      "Manually added necks will no longer default to 3 sockets.",
+
+    ]},
+  {
     version: "11.0.2 / 4.4",
     update: 9,
     date: "September 17",

@@ -10447,7 +10447,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -10998,7 +10999,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -11474,7 +11476,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18281,7 +18284,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18557,6 +18561,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "blue",
                 "blue"
             ],
             "bonus": {
@@ -18646,7 +18651,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18891,7 +18897,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19156,7 +19163,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19346,7 +19354,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19663,7 +19672,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19814,7 +19824,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19847,7 +19858,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -20149,7 +20161,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -21727,7 +21740,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -21819,6 +21833,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "blue",
                 "blue"
             ],
             "bonus": {
@@ -21940,7 +21955,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22070,7 +22086,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22161,7 +22178,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22292,7 +22310,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22472,7 +22491,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22531,7 +22551,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22564,7 +22585,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22720,7 +22742,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23522,7 +23545,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23555,7 +23579,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23588,7 +23613,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23621,7 +23647,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23654,7 +23681,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23687,7 +23715,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23720,7 +23749,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23753,7 +23783,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23786,7 +23817,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23819,7 +23851,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -29343,6 +29376,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
+                "yellow",
                 "yellow"
             ]
         },
@@ -30646,6 +30680,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
+                "yellow",
                 "yellow"
             ]
         },
@@ -42959,7 +42994,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -42992,7 +43028,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43124,7 +43161,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43157,7 +43195,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43190,7 +43229,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43695,7 +43735,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44019,7 +44060,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44163,7 +44205,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44764,7 +44807,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44918,7 +44962,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -45058,7 +45103,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -47361,7 +47407,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -47600,7 +47647,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48329,7 +48377,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48427,7 +48476,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48678,7 +48728,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48710,7 +48761,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49135,7 +49187,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49295,7 +49348,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49328,7 +49382,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49716,7 +49771,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49870,7 +49926,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49935,7 +49992,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49995,6 +50053,7 @@ export const classicItemDB = [
         "itemLevel": 284,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -50381,7 +50440,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -50744,7 +50804,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ]
         },
         "stats": {
@@ -51572,7 +51633,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51605,7 +51667,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51638,7 +51701,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51671,7 +51735,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51704,7 +51769,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52028,7 +52094,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52337,7 +52404,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52435,6 +52503,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ]
         },
@@ -52465,6 +52534,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -56561,7 +56631,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -59037,7 +59108,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61188,7 +61260,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61279,6 +61352,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -61557,6 +61631,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -61656,7 +61731,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61814,7 +61890,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61976,7 +62053,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62103,7 +62181,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62198,6 +62277,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -62230,6 +62310,7 @@ export const classicItemDB = [
         "itemLevel": 264,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ]
@@ -62326,7 +62407,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62489,7 +62571,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62649,7 +62732,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ]
         },
         "stats": {
@@ -62745,7 +62829,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ]
         },
         "stats": {
@@ -62774,6 +62859,7 @@ export const classicItemDB = [
         "itemLevel": 264,
         "sockets": {
             "gems": [
+                "blue",
                 "blue",
                 "blue"
             ],
@@ -63124,7 +63210,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -63311,6 +63398,7 @@ export const classicItemDB = [
         "itemLevel": 271,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -64156,7 +64244,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -69939,10 +70028,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Anhuur's Hymnal"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 70,
@@ -73591,10 +73676,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Anhuur's Hymnal"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 70,
@@ -74652,30 +74733,6 @@ export const classicItemDB = [
             "stamina": 252,
             "spirit": 112,
             "mastery": 112
-        }
-    },
-    {
-        "name": "Abandoned Dark Iron Ring",
-        "id": 56465,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Abandoned Dark Iron Ring",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_vinering",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 346,
-        "stats": {
-            "intellect": 168,
-            "stamina": 252,
-            "crit": 112,
-            "haste": 112
         }
     },
     {
@@ -79961,6 +80018,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -79992,6 +80050,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -80133,6 +80192,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -80235,6 +80295,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -81187,10 +81248,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Ignacious"
         },
-        "levelRange": [
-            359,
-            372
-        ],
         "sources": [
             {
                 "encounterId": 158,
@@ -97753,9 +97810,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "World-Queller Focus"
         },
-        "levelRange": [
-            318
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -103402,63 +103456,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Corehammer's Riveted Girdle",
-        "id": 65011,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Corehammer's Riveted Girdle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_plate_raidpaladin_i_01",
-        "itemClass": 4,
-        "itemSubClass": 4,
-        "slot": "Waist",
-        "itemLevel": 372,
-        "sockets": {
-            "gems": [
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 266,
-            "stamina": 429,
-            "spirit": 191,
-            "mastery": 171
-        }
-    },
-    {
-        "name": "Maldo's Sword Cane",
-        "id": 65013,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Maldo's Sword Cane",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_sword_1h_bwdraid_d_02",
-        "itemClass": 2,
-        "itemSubClass": 7,
-        "slot": "1H Weapon",
-        "itemLevel": 372,
-        "stats": {
-            "intellect": 165,
-            "stamina": 247,
-            "crit": 99,
-            "mastery": 117,
-            "spellpower": 2207
-        }
-    },
-    {
         "name": "DONTUSEFury of Angerforge",
         "id": 65015,
         "quality": 4,
@@ -105278,10 +105275,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Ignacious"
         },
-        "levelRange": [
-            359,
-            372
-        ],
         "sources": [
             {
                 "encounterId": 158,
@@ -116785,7 +116778,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_shark jaws",
+        "icon": "trade_archaeology_shark-jaws",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
@@ -116794,6 +116787,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Jaws of Defeat"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 197,
@@ -116920,6 +116917,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Eye of Blazing Power"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 194,
@@ -117072,6 +117073,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Fiery Quintessence"
         },
+        "levelRange": [
+            378
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -117203,7 +117207,7 @@ export const classicItemDB = [
             "fr": "",
             "de": ""
         },
-        "icon": "trade_archaeology_shark jaws",
+        "icon": "trade_archaeology_shark-jaws",
         "itemClass": 4,
         "itemSubClass": 0,
         "slot": "Trinket",
@@ -117212,6 +117216,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Jaws of Defeat"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 197,
@@ -117371,6 +117379,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Eye of Blazing Power"
         },
+        "levelRange": [
+            378,
+            391
+        ],
         "sources": [
             {
                 "encounterId": 194,
@@ -117500,33 +117512,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "crit": 433
-        }
-    },
-    {
-        "name": "Fiery Quintessence",
-        "id": 69198,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Fiery Quintessence",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_41",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 391,
-        "effect": {
-            "type": "trinket",
-            "name": "Fiery Quintessence"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 433
         }
     },
     {
@@ -130163,6 +130148,166 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Flickering Cowl of the Undertow",
+        "id": 710110,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "spirit": 242,
+            "haste": 242
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Fireflash",
+        "id": 710111,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "crit": 242,
+            "haste": 242
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Feverflare",
+        "id": 710112,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "haste": 242,
+            "mastery": 242
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Wavecrest",
+        "id": 710113,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "mastery": 242,
+            "spirit": 242
+        }
+    },
+    {
         "name": "Heartstone of Rhyolith",
         "id": 71012,
         "quality": 4,
@@ -130292,6 +130437,162 @@ export const classicItemDB = [
             "stamina": 341,
             "mastery": 162,
             "crit": 133
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Undertow",
+        "id": 710250,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "spirit": 192,
+            "haste": 192
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Fireflash",
+        "id": 710251,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "crit": 192,
+            "haste": 192
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Feverflare",
+        "id": 710252,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "haste": 192,
+            "mastery": 192
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Wavecrest",
+        "id": 710253,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 378,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "mastery": 192,
+            "spirit": 192
         }
     },
     {
@@ -130768,6 +131069,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -130809,6 +131111,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -130842,6 +131145,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -130876,6 +131180,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -130910,6 +131215,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -130943,6 +131249,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -130976,12 +131283,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 282,
             "stamina": 454,
             "crit": 177,
             "mastery": 203
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 171,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Helm",
@@ -131010,12 +131325,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 348,
             "stamina": 611,
             "spirit": 254,
             "mastery": 227
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 174,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Legwraps",
@@ -131044,12 +131367,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 368,
             "stamina": 611,
             "spirit": 284,
             "mastery": 212
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 173,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Tunic",
@@ -131078,12 +131409,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 368,
             "stamina": 611,
             "spirit": 255,
             "haste": 238
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 156,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Mantle",
@@ -131111,12 +131450,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 282,
             "stamina": 454,
             "spirit": 183,
             "haste": 201
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 167,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Gloves",
@@ -131956,6 +132303,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -131990,6 +132338,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -132024,6 +132373,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132058,6 +132408,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132091,6 +132442,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -132797,6 +133149,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132830,6 +133183,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -132864,6 +133218,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 348,
             "stamina": 611,
@@ -132898,6 +133253,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -132931,6 +133287,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 282,
             "stamina": 454,
@@ -134159,6 +134516,166 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Flickering Cowl of the Undertow",
+        "id": 714210,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "spirit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Fireflash",
+        "id": 714211,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "crit": 276,
+            "haste": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Feverflare",
+        "id": 714212,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "haste": 276,
+            "mastery": 276
+        }
+    },
+    {
+        "name": "Flickering Cowl of the Wavecrest",
+        "id": 714213,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Cowl of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helm_robe_raidwarlock_j_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 193,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "meta",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 400,
+            "stamina": 0,
+            "mastery": 276,
+            "spirit": 276
+        }
+    },
+    {
         "name": "Volcanospike",
         "id": 71422,
         "quality": 4,
@@ -134661,6 +135178,162 @@ export const classicItemDB = [
         }
     },
     {
+        "name": "Flickering Shoulderpads of the Undertow",
+        "id": 714500,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Undertow",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "spirit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Fireflash",
+        "id": 714501,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Fireflash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "crit": 218,
+            "haste": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Feverflare",
+        "id": 714502,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Feverflare",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "haste": 218,
+            "mastery": 218
+        }
+    },
+    {
+        "name": "Flickering Shoulderpads of the Wavecrest",
+        "id": 714503,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Flickering Shoulderpads of the Wavecrest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_raiddruid_j_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 391,
+        "sources": [
+            {
+                "encounterId": 195,
+                "instanceId": 78,
+                "difficulty": 1
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0,
+            "mastery": 218,
+            "spirit": 218
+        }
+    },
+    {
         "name": "Treads of Implicit Obedience",
         "id": 71451,
         "quality": 4,
@@ -135157,12 +135830,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 322,
             "stamina": 513,
             "crit": 202,
             "mastery": 230
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 171,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Helm",
@@ -135191,12 +135872,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 400,
             "stamina": 689,
             "spirit": 289,
             "mastery": 261
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 174,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Legwraps",
@@ -135225,12 +135914,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 420,
             "stamina": 689,
             "spirit": 320,
             "mastery": 244
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 73,
+                "encounterId": 173,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Tunic",
@@ -135259,12 +135956,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 420,
             "stamina": 689,
             "spirit": 291,
             "haste": 269
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 156,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Mantle",
@@ -135292,12 +135997,20 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1004,
         "stats": {
             "intellect": 322,
             "stamina": 513,
             "spirit": 209,
             "haste": 227
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 72,
+                "encounterId": 167,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Gloves",
@@ -135662,6 +136375,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135695,6 +136409,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135729,6 +136444,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -135763,6 +136479,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135796,6 +136513,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1011,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135829,6 +136547,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -135863,6 +136582,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -135897,6 +136617,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135931,6 +136652,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -135964,6 +136686,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1009,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -136166,6 +136889,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -136199,6 +136923,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -136233,6 +136958,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 400,
             "stamina": 689,
@@ -136267,6 +136993,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 420,
             "stamina": 689,
@@ -136300,6 +137027,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1014,
         "stats": {
             "intellect": 322,
             "stamina": 513,
@@ -137584,6 +138312,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -137617,6 +138346,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -137650,6 +138380,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -137683,6 +138414,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -137716,6 +138448,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -153120,7 +153853,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153154,7 +153888,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153256,7 +153991,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153290,7 +154026,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153425,7 +154162,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153459,7 +154197,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153566,6 +154305,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153600,6 +154340,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153627,13 +154368,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153661,6 +154404,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -153668,6 +154412,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153702,6 +154447,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -153735,6 +154481,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153769,6 +154516,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153796,6 +154544,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -153803,6 +154552,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 446,
             "stamina": 730,
@@ -153830,13 +154580,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153871,6 +154623,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -153898,13 +154651,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153938,6 +154693,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -153972,6 +154728,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -153999,13 +154756,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154040,6 +154799,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -154067,13 +154827,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154107,6 +154869,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 341,
             "stamina": 542,
@@ -154141,6 +154904,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154168,13 +154932,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 426,
             "stamina": 730,
@@ -154209,6 +154975,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 321,
             "stamina": 542,
@@ -154303,6 +155070,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -154337,7 +155105,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154439,6 +155208,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -154539,6 +155309,7 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -157374,6 +158145,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -159139,6 +159911,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -159297,6 +160070,7 @@ export const classicItemDB = [
         ],
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -164009,13 +164783,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164043,7 +164819,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -164149,6 +164926,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164182,6 +164960,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164248,6 +165027,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164347,6 +165127,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 388,
             "stamina": 611,
@@ -164415,6 +165196,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164449,6 +165231,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164483,6 +165266,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164551,6 +165335,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164680,6 +165465,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -164687,6 +165473,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 509,
             "stamina": 824,
@@ -164714,6 +165501,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -164747,6 +165535,7 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -164782,13 +165571,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164816,13 +165607,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164850,13 +165643,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -164884,7 +165679,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -164918,7 +165714,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -164952,7 +165749,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -164985,6 +165783,7 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -165020,13 +165819,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165054,13 +165855,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165088,6 +165891,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -165095,6 +165899,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 489,
             "stamina": 824,
@@ -165122,7 +165927,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165156,7 +165962,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165190,7 +165997,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165231,6 +166039,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165265,6 +166074,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165367,6 +166177,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165401,6 +166212,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 368,
             "stamina": 611,
@@ -165530,13 +166342,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -165564,7 +166378,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165670,6 +166485,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165703,6 +166519,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165769,6 +166586,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165868,6 +166686,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 300,
             "stamina": 480,
@@ -165936,6 +166755,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -165970,6 +166790,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166004,6 +166825,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166072,6 +166894,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166201,6 +167024,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -166208,6 +167032,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 391,
             "stamina": 646,
@@ -166235,6 +167060,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -166268,6 +167094,7 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -166303,13 +167130,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166337,13 +167166,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166371,13 +167202,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166405,7 +167238,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166439,7 +167273,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166473,7 +167308,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166506,6 +167342,7 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -166541,13 +167378,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166575,13 +167414,15 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166609,6 +167450,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -166616,6 +167458,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 371,
             "stamina": 646,
@@ -166643,7 +167486,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166677,7 +167521,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166711,7 +167556,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166752,6 +167598,7 @@ export const classicItemDB = [
             }
         },
         "class": "Shaman",
+        "itemSetId": 1069,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166786,6 +167633,7 @@ export const classicItemDB = [
             }
         },
         "class": "Druid",
+        "itemSetId": 1060,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166888,6 +167736,7 @@ export const classicItemDB = [
             }
         },
         "class": "Paladin",
+        "itemSetId": 1063,
         "stats": {
             "intellect": 280,
             "stamina": 480,
@@ -166922,6 +167771,7 @@ export const classicItemDB = [
             }
         },
         "class": "Priest",
+        "itemSetId": 1066,
         "stats": {
             "intellect": 280,
             "stamina": 480,

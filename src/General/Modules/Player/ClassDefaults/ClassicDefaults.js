@@ -26,6 +26,16 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
   if (tierSets.includes("Priest T11-4")) {
     statProfile.spirit += 540;
   }
+  if (tierSets.includes("Priest T12-2")) { 
+    // You regenerate 2% of your base mana every 5 seconds, basically in perpetuity by casting any helpful healing spell.
+    statProfile.mp5 = (statProfile.mp5 || 0) + 0.02 * 20590;
+  }
+  if (tierSets.includes("Priest T12-4")) {
+    // 5s ticking heal on a 45s cooldown.
+    const tierDuration = 5
+    const expectedOverheal = 0.2;
+    statProfile.hps = (statProfile.hps || 0) + (9250 + 10750) / 2 * tierDuration * (1 - expectedOverheal) / 55;
+  }
 
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, "Discipline Priest");
@@ -121,10 +131,14 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
       
       
   })
+
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
+
     Object.keys(healingBreakdown).forEach(spell => {
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
-    console.log(healingBreakdown); 
+
   return score;
 }
 
@@ -234,12 +248,21 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     if (tierSets.includes("Druid T11-4")) {
       statProfile.spirit += 540;
     }
+    if (tierSets.includes("Druid T12-2")) {
+      // 40% chance on Lifebloom tick to restore 184 mana.
+      // Ignoring ToL for now. We know it has some form of reduced proc rate but not how much.
+      statProfile.mp5 = (statProfile.mp5 || 0) + (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
+    }
+    if (tierSets.includes("Druid T13-2")) {
+      // TODO. 5% discount on Rejuv / Healing Touch.
+    }
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
     const regen = (getManaRegen(statProfile, "Restoration Druid") + 
                   getAdditionalManaEffects(statProfile, "Restoration Druid").additionalMP5 +
                   (statProfile.mp5 || 0)) * 12 * fightLength;
+
     const totalManaPool = manaPool + regen;
     const fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] // This could be more efficient;
     //console.log(totalManaPool);
@@ -273,9 +296,18 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
               else spellHealing = spellHealing * tickCount * targetCount;
           }
 
+
+          // These are functional on the high end, but may run into issues for players with sub 2k haste. This isn't impactful since the trinket is much worse there.
           if (spellProfile.spell === "Rejuvenation" && shardOfWoe && statProfile.haste >= 2032) {
-            // This represents 
             spellHealing *= (1.2 * 1 / 6 + 5 / 6); // 20% more healing 1/6th of the time.
+          }
+          if ((spellProfile.spell === "Wild Growth" || spellProfile.spell === "Efflorescence") && statProfile.haste >= 2005) {
+            spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
+          }
+
+          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "Heal") {
+            // Heal for a portion of the Swiftmend only. No Efflo, effective healing only.
+            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * (1 - spell.expectedOverheal);
           }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
@@ -294,6 +326,10 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
     console.log(healingBreakdown); */
+
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
+
     return score;
 }
 
@@ -314,11 +350,11 @@ export function initializePaladinSet() {
 }
   const castProfile = [
     //{spell: "Judgement", cpm: 1, hpc: 0},
-
-    {spell: "Holy Light", cpm: 4, fillerSpell: true, hastedCPM: true},
-    {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
+    {spell: "Divine Light", cpm: 3.4, hastedCPM: true},
+    {spell: "Holy Light", cpm: 4.6, fillerSpell: true, hastedCPM: true},
+    {spell: "Flash of Light", cpm: 1.2, hastedCPM: true},
     {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
-    {spell: "Holy Radiance", cpm: 6, fillerSpell: true, hastedCPM: true},
+    {spell: "Holy Radiance", cpm: 5.8, fillerSpell: true, hastedCPM: true},
     {spell: "Light of Dawn", cpm: (8.5 + 4 + 4)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
     {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
@@ -360,6 +396,10 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   // Take care of any extras.
   if (tierSets.includes("Paladin T11-4")) {
     statProfile.spirit += 540;
+  }
+  if (tierSets.includes("Paladin T12-2")) {
+    // 40% chance on Holy Shock cast to restore 184 mana.
+    statProfile.mp5 = (statProfile.mp5 || 0) + (baseline.castProfile.filter(spell => spell.spell === "Holy Shock")[0].cpm * baseHastePercentage * 1405 * 0.4) / 12;
   }
 
   // Calculate filler CPM
@@ -412,6 +452,12 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
 
           spellHealing = spellHealing * cpm;
 
+          // Tier Set
+          if (tierSets.includes("Paladin T12-4")) {
+            // Divine Light, Flash of Light and Holy Light also heal a nearby ally for 10% of the value.
+            if (["Divine Light", "Holy Light", "Flash of Light"].includes(spellName)) spellHealing *= 1.1;
+          }
+
           // Mastery
           if (spell.secondaries.includes("mastery")) {
             const absorbVal = spellHealing /*/ (1 - spell.expectedOverheal) */* (getMastery(statProfile, "Holy Paladin") - 1);
@@ -420,6 +466,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
             spellTotalHealing += absorbVal;
             score += absorbVal;
           }
+
+
 
           // Beacon Healing
           let beaconHealing = 0;
@@ -442,6 +490,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
         }
 
 
+
       })
 
       // Filler mana
@@ -450,6 +499,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       }
       
   })
+
   
     Object.keys(healingBreakdown).forEach(spell => {
       const filteredSpells = baseline.castProfile.filter(spellName => spellName.spell === spell);
@@ -463,6 +513,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
     //const spiritRegen = getManaRegen({...playerData.stats, 'spirit': statProfile.spirit}, playerData.spec) * 12 * 7;
     //score += spiritRegen
 
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
 
     console.log("Score: " + score / 60);
 

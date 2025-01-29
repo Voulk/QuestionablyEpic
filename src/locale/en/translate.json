@@ -149,7 +149,7 @@
     "Filter": "Filter",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Wrath of the Lich King)",
-      "Retail": "Change to Retail (Dragonflight)"
+      "Retail": "Change to Retail (The War Within)"
     },
     "HPS": "HPS",
     "HallOfFame": {
@@ -198,13 +198,15 @@
         "TrinketAnalysis": "Check out how strong trinkets are at different item levels",
         "UpgradeFinder": "Find your next piece of gear",
         "SequenceSandbox": "Details coming soon",
-        "OneShot": "Mythic+ Damage Calculator"
+        "OneShot": "Mythic+ Damage Calculator",
+        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
       "SequenceSandbox": "Spell Information (Alpha)",
-      "OneShot": "One Shot (Beta)"
+      "OneShot": "One Shot (Beta)",
+      "CyrcesCirclet": "Cyrce's Circlet"
     },
     "Name": "Name",
     "No": "No",
@@ -303,6 +305,10 @@
         "includeGroupBenefits": {
           "title": "Ally Buffs",
           "tooltip": "Estimate value from stats you give to your group."
+        },
+        "circletOptions": {
+          "title": "Circlet Combos",
+          "tooltip": "A temporary way to specify which gems you'd like to run in your Circlet."
         },
         "incarnateAllies": {
           "title": "Incarnate Icon Roles",

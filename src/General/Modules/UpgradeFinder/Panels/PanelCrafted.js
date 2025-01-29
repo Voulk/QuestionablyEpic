@@ -27,10 +27,10 @@ export default function CraftedGearContainer(props) {
   const difficulty = props.playerSettings.craftedLevel;
   const gameType = useSelector((state) => state.gameType);
   const craftedIntro = "You have a lot of decisions you can make when crafting items. While you can fine tune stats, you're usually quite safe just picking out a \
-                        strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. For your spec X \
-                        is a reliable choice. \
+                        strong default missive for your spec rather than changing secondaries every time you get a new piece of gear. \
                         \n\n \
-                        Note that this section isn't ideal for handling embellishments. You can do that via Top Gear."
+                        Note that this section isn't ideal for handling embellishments and you should do that via Top Gear or your favorite guide. \
+                        Keep in mind that crafting after your embellishments is much lower value than in Dragonflight and you might be better off just upgrading items instead."
 
   function a11yProps(index) {
     return {
