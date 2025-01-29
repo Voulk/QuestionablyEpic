@@ -1,6 +1,8 @@
 
 const softSlice = 25;
 import { gemDB } from "Databases/GemDB";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
@@ -134,6 +136,39 @@ export function formatReport(report) {
 })*/
 
 }
+
+// It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 
+export function exportGearSet(itemSet, spec) {
+  // Slot, itemID, bonusTag, source
+  // [tr][td]Cloak[/td][td][item=212446 bonus=[=gv-raid]][/td][td][npc=215657][/td][/tr]
+  const classColor = CONSTANTS.wh.classColor[spec];
+  const results = ["[center][table class=grid width=900px]", "[tr]", `[td background=${classColor}][b]Slot[/b][/td]`, `[td background=${classColor}][b]Item[/b][/td]`, `[td background=${classColor}][b]Source[/b][/td]`, "[/tr]"];
+  
+
+  itemSet.forEach(item => {
+    let source = "";
+    let bonusTag = "";
+    console.log(item.sources);
+    if (item.source) {
+      source = CONSTANTS.WHCodes[item.source.encounterId] || "";
+
+      if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
+      else if (item.source.instanceId === -1) {
+        const instanceID = item.source.encounterId;
+        if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
+        else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
+        else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
+      }
+      else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
+    }
+    
+    results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
+  })
+  results.push(`[/table][/center]`)
+
+  const formattedArray = results.map(String).join('\n');
+  console.log(formattedArray);
+}
   
 export function sumScore(obj) {
     var sum = 0;
@@ -169,7 +204,7 @@ export const deepCopyFunction = (inObject) => {
 
 export const setupGems = (itemList, adjusted_weights) => {
 
-      // Handle sockets
+    // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
     
     // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
