@@ -118,6 +118,81 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+
+  // Dragon Soul
+  {
+    name: "Will of Unbinding",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {403: 88, 416: 99}, // Spirit effect
+        stat: "intellect",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        maxStacks: 10,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Insignia of the Corrupted Mind",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {397: 2904}, // Spirit effect
+        stat: "haste",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Heart of Unliving",
+    effects: [ // Healing Spells
+      { 
+        value: {403: 88, 416: 99}, // Spirit effect
+        stat: "intellect",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        maxStacks: 10,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Windward Heart",
+    effects: [ // Healing Spells
+      { 
+        value: {397: (10388+12073)/2, 410: (11726+13627)/2}, // Spirit effect
+        stat: "hps",
+        ppm: getEffectPPM(0.1, 20, 1.5), // Crits only
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+
+
+  // ------------------------------
   // Firelands
   {
     name: "Eye of Blazing Power",
