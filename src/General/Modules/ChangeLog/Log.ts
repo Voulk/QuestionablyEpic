@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.0.7 / 4.4.1",
+    update: 2,
+    date: "February 2",
+    changes: [ 
+      "Cata: Added new versions of the Love is in the Air necks.",
+      "Scrapsinger's Symphony underperforms its spell data. Its ranking now reflects that.",
+    ]},
+  {
+    version: "11.0.7 / 4.4.1",
     update: 1,
     date: "December 21",
     changes: [ 
