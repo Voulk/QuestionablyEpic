@@ -140,7 +140,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 0.6,
-        coeff: 1.38,
+        coeff: 1.5456,
         expectedOverheal: 0.26,
         holyPower: -3,
         targets: 5,
@@ -152,7 +152,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 0.6,
-        coeff: 3.465, //2.89
+        coeff: 6.61815, // 3.15 x 1.91 x 1.1
         expectedOverheal: 0.3,
         holyPower: -3,
         statMods: {'crit': 0, critEffect: 0},
@@ -163,7 +163,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 0,
         cost: 0.6,
-        coeff: 5.7519, // 3.15 x 1.66 x 1.1
+        coeff: 6.61815, // 3.15 x 1.91 x 1.1
         expectedOverheal: 0.25,
         holyPower: -3,
         statMods: {'crit': 0, critEffect: 0},
@@ -200,6 +200,27 @@ export const PALADINSPELLDB = {
         secondaries: ['crit', 'versatility', 'mastery']
 
     }],
+    "Holy Bulwark": [{
+        spellData: {id: 0, icon: "inv_ability_lightsmithpaladin_holybulwark", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0,
+        coeff: 0,
+        flatHeal: getHealth({stamina: 360000}, {}) * 15,
+        expectedOverheal: 0.05,
+        secondaries: ['versatility']
+    },
+    {
+        type: "buff",
+        buffType: "heal",
+        buffDuration: 20,
+        flatHeal: getHealth({stamina: 360000}, {}) * 2,
+        coeff: 0.1254, // 0.114 x 1.1
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.07,
+        secondaries: ['versatility']
+    },
+    ],
     "Avenging Wrath": [{
         spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",
@@ -988,11 +1009,28 @@ export const baseTalents = {
         spellDB['Holy Shock'][0].statMods.crit += (0.05 * points);
         spellDB['Light of Dawn'][0].statMods.crit += (0.05 * points);
     }}, 
-
     dawnlight: {points: 1, maxPoints: 1, icon: "ability_paladin_empoweredsealsrighteous", id: 377043, heroTree: "heraldOfTheSun", select: true, tier: 4, runFunc: function (state, spellDB, points) {
 
     }},
 
+    // Lightsmith
+    // Rite of Sanctification
+
+    // Divine Guidance
+
+    // Hammer and Anvil
+    hammerAndAnvil: {points: 1, maxPoints: 1, icon: "", id: 377043, heroTree: "lightsmith", select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        const data = {
+            name: "Hammer and Anvil",
+            type: "heal",
+            coeff: 2,
+            expectedOverheal: 0.3,
+            secondaries: ['versatility', 'crit']
+        }
+
+        spellDB['Judgment'].push(data);
+
+    }},
 
 
     // Meta

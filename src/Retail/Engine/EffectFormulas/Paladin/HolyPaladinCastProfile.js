@@ -1,5 +1,5 @@
 
-import { getCurrentStats, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { getCurrentStats, getCrit, getHaste, applyTalents, hasTalent, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
@@ -32,6 +32,76 @@ const getBeaconHealing = (state, healingVal, spellName) => {
         return beaconHealing;
 }
 
+const getCastData = (profileName) => {
+    const castData = {
+        profile: [],
+        extras: {},
+    }
+
+    if (profileName === "Herald of the Sun AW") {
+        castData.profile = [
+            {spell: "Avenging Wrath", cpm: 0.5},
+            {spell: "Divine Toll", cpm: 1},
+            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+            {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+            {spell: "Eternal Flame", cpm: 0},
+            {spell: "Light of Dawn", cpm: 0},
+            
+            {spell: "Judgment", cpm: 5.5 / blessingOfDawnCDR, hastedCPM: true }, // Technically a hasted CPM but in practice we cast this twice every 20s
+            {spell: "Flash of Light", cpm: 4, hastedCPM: true},
+            {spell: "Holy Light", cpm: 3.5, hastedCPM: true},
+            {spell: "Holy Prism", cpm: 2},
+    
+            // Free Holy Shocks
+            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Divine Toll"], "cooldown") * 9
+                                    + 60 / getSpellAttribute(paladinSpells["Avenging Wrath"], "cooldown") * 4, freeSpell: true},
+     
+            {spell: "Dawnlight", cpm: 0, freeSpell: true},       
+            {spell: "Sunsear", cpm: 0, freeSpell: true},       
+            
+            
+          ]
+
+          extras.spenderUsage = {
+            "Light of Dawn": 0.3,
+            "Eternal Flame": 0.7,
+            "Word of Glory": 0
+            }
+    }
+    else if (profileName === "Lightsmith AW") {
+
+    }
+    else if (profileName === "Lightsmith AC") {
+        castData.profile = [
+            {spell: "Avenging Wrath", cpm: 0.5},
+            {spell: "Divine Toll", cpm: 1},
+            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+            {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+            {spell: "Eternal Flame", cpm: 0},
+            {spell: "Light of Dawn", cpm: 0},
+            
+            {spell: "Judgment", cpm: 5.5 / blessingOfDawnCDR, hastedCPM: true }, // Technically a hasted CPM but in practice we cast this twice every 20s
+            {spell: "Flash of Light", cpm: 4, hastedCPM: true},
+            {spell: "Holy Light", cpm: 3.5, hastedCPM: true},
+            {spell: "Holy Prism", cpm: 2},
+    
+            // Free Holy Shocks
+            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Divine Toll"], "cooldown") * 9
+                                    + 60 / getSpellAttribute(paladinSpells["Avenging Wrath"], "cooldown") * 4, freeSpell: true},    
+            
+            // AC
+            {spell: "Crusader Strike", avengingCrusader: true, cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+
+            
+          ]
+    }
+    else {
+        console.error("Paladin Cast Profile not found: " + profileName);
+    }
+
+    return castData;
+}
+
 export const runHolyPaladinCastProfile = (playerData) => {
     const fightLength = 300;
 
@@ -41,7 +111,10 @@ export const runHolyPaladinCastProfile = (playerData) => {
     // Run Talents
     const paladinSpells = applyLoadoutEffects(deepCopyFunction(playerData.spells), state.settings, state.talents, state, state.currentStats);
     applyTalents(state, paladinSpells, state.currentStats)
+    const talents = state.talents;
     state.spellDB = paladinSpells;
+
+    console.log(state.talents);
 
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
@@ -49,47 +122,24 @@ export const runHolyPaladinCastProfile = (playerData) => {
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
     const blessingOfDawnCDR = 1 + 0.1 * 0.9
+    const castData = getCastData(playerData.profileName);
 
-    const castProfile = [
-        {spell: "Avenging Wrath", cpm: 0.5},
-        {spell: "Divine Toll", cpm: 1},
-        {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-        {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-        {spell: "Eternal Flame", cpm: 0},
-        {spell: "Light of Dawn", cpm: 0},
-        
-        {spell: "Judgment", cpm: 5.5 / blessingOfDawnCDR, hastedCPM: true }, // Technically a hasted CPM but in practice we cast this twice every 20s
-        {spell: "Flash of Light", cpm: 4, hastedCPM: true},
-        {spell: "Holy Light", cpm: 3.5, hastedCPM: true},
-        {spell: "Holy Prism", cpm: 2},
-
-        // Free Holy Shocks
-        {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Divine Toll"], "cooldown") * 9
-                                + 60 / getSpellAttribute(paladinSpells["Avenging Wrath"], "cooldown") * 4, freeSpell: true},
- 
-        {spell: "Dawnlight", cpm: 0, freeSpell: true},       
-        {spell: "Sunsear", cpm: 0, freeSpell: true},                                   
-      ]
-
-    const spenderUsage = {
-        "Light of Dawn": 0.3,
-        "Eternal Flame": 0.7,
-        "Word of Glory": 0,
-    }
-    
+    const castProfile = castData.profile;
+    const spenderUsage = castData.extras.spenderUsage;
 
     // Second Sunrise
-    castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Holy Shock") * 0.15, mult: 0.3});
+    if (hasTalent(talents, "Second Sunrise")) castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Holy Shock") * 0.15, mult: 0.3});
+   
 
     // Dawnlight
-    const dawnlightCPM = getCPM(castProfile, "Avenging Wrath") * 4 + getCPM(castProfile, "Holy Prism") * 2;
-    getSpellEntry(castProfile, "Dawnlight").cpm = dawnlightCPM;
-
-    // Apply multiplicative haste
-    const averageDawnlightStacks = dawnlightCPM * 12 / 60;
-    console.log(currentStats.haste);
-    currentStats.haste = (((currentStats.haste / STATCONVERSION.HASTE / 100 + 1) * (1 + 0.02 * averageDawnlightStacks))-1) * STATCONVERSION.HASTE * 100
-    console.log(currentStats.haste);
+    if (state.heroTree === "heraldOfTheSun") {
+        const dawnlightCPM = getCPM(castProfile, "Avenging Wrath") * 4 + getCPM(castProfile, "Holy Prism") * 2;
+        getSpellEntry(castProfile, "Dawnlight").cpm = dawnlightCPM;
+    
+        // Apply multiplicative haste
+        const averageDawnlightStacks = dawnlightCPM * 12 / 60;
+        currentStats.haste = (((currentStats.haste / STATCONVERSION.HASTE / 100 + 1) * (1 + 0.02 * averageDawnlightStacks))-1) * STATCONVERSION.HASTE * 100
+    }
 
     // Haste our CPMs
     castProfile.forEach(spellProfile => {
@@ -110,10 +160,17 @@ export const runHolyPaladinCastProfile = (playerData) => {
     // Calculate Wings Effects
     // Calculate Wings uptime
     const awakeningProcs = averageSpenderCPM / 15
-    const wingsUptime = getCPM(castProfile, "Avenging Wrath") * 20 / 60 +  awakeningProcs * 12 / 60;
-    getSpellEntry(castProfile, "Dawnlight").cpm += awakeningProcs;
-    genericHealingIncrease *= (wingsUptime * 0.2 + 1);
-    genericCritIncrease *= (wingsUptime * 0.2 + 1);
+    if (hasTalent(talents, "Avenging Wrath")) {
+        const wingsUptime = getCPM(castProfile, "Avenging Wrath") * 20 / 60 +  awakeningProcs * 12 / 60;
+        getSpellEntry(castProfile, "Dawnlight").cpm += awakeningProcs;
+        genericHealingIncrease *= (wingsUptime * 0.2 + 1);
+        genericCritIncrease *= (wingsUptime * 0.2 + 1);
+    }
+    else if (hasTalent(talents, "Avenging Crusader")) {
+
+    }
+    
+
     // Infusion Count
     const baseCritChance = getCrit(state.currentStats) - 1 + genericCritIncrease - 1;
     const holyShockCritChance = (baseCritChance + paladinSpells["Holy Shock"][0].statMods.crit)
@@ -130,10 +187,10 @@ export const runHolyPaladinCastProfile = (playerData) => {
     getSpellEntry(castProfile, "Holy Shock").cpm += extraHolyShockCPM;
 
     // Sunsear
-    const sunsearCPM = getCPM(castProfile, "Holy Shock") * holyShockCritChance + getCPM(castProfile, "Light of Dawn") * (baseCritChance + paladinSpells["Light of Dawn"][0].statMods.crit);
-    getSpellEntry(castProfile, "Sunsear").cpm = sunsearCPM;
-
-    //console.log(paladinSpells["Holy Shock"])
+    if (state.heroTree === "heraldOfTheSun") {
+        const sunsearCPM = getCPM(castProfile, "Holy Shock") * holyShockCritChance + getCPM(castProfile, "Light of Dawn") * (baseCritChance + paladinSpells["Light of Dawn"][0].statMods.crit);
+        getSpellEntry(castProfile, "Sunsear").cpm = sunsearCPM;
+    }
 
     const healingBreakdown = {}
     // Run healing
@@ -145,12 +202,14 @@ export const runHolyPaladinCastProfile = (playerData) => {
         fullSpell.forEach(spell => {
             let spellThroughput = 0;
             if (spell.type === "heal" && spellProfile.cpm > 0) {
-                const value = runHeal(state, spell, spellName) ;
+                let value = runHeal(state, spell, spellName) ;
                 
+                if (onCrit) {
+                    // Spell only heals on crits. 
+                    value *= (getCrit(state.currentStats) / 100);
+                }
+
                 spellThroughput += (value * spellCPM);
-
-                if (spellName === "Eternal Flame") console.log("ETERNAL FLAME ", value)
-
             }
             else if (spell.type === "buff" && spell.buffType === "heal") {
                 // HoT
@@ -183,7 +242,8 @@ export const runHolyPaladinCastProfile = (playerData) => {
             if (spellProfile.mult) spellThroughput *= spellProfile.mult;
 
             // Blessing of Anshe
-            if (spellName === "Holy Shock") spellThroughput *= 1 + (2 * getHaste(state.currentStats) / spellCPM * 3);
+            // 2ppm of triple Holy Shocks
+            if (spellName === "Holy Shock" && state.heroTree === "heraldOfTheSun") spellThroughput *= 1 + (2 * getHaste(state.currentStats) / spellCPM * 3);
 
             spellThroughput *= genericHealingIncrease;
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
