@@ -130183,8 +130183,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "spirit": 242,
-            "haste": 242
+            "spirit": 276,
+            "haste": 276
         }
     },
     {
@@ -130223,8 +130223,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "crit": 242,
-            "haste": 242
+            "crit": 276,
+            "haste": 276
         }
     },
     {
@@ -130263,8 +130263,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "haste": 242,
-            "mastery": 242
+            "haste": 276,
+            "mastery": 276
         }
     },
     {
@@ -130303,8 +130303,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "mastery": 242,
-            "spirit": 242
+            "mastery": 276,
+            "spirit": 276
         }
     },
     {
@@ -130474,8 +130474,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "spirit": 192,
-            "haste": 192
+            "spirit": 218,
+            "haste": 218
         }
     },
     {
@@ -130513,8 +130513,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "crit": 192,
-            "haste": 192
+            "crit": 218,
+            "haste": 218
         }
     },
     {
@@ -130552,8 +130552,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "haste": 192,
-            "mastery": 192
+            "haste": 218,
+            "mastery": 218
         }
     },
     {
@@ -130591,8 +130591,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "mastery": 192,
-            "spirit": 192
+            "mastery": 218,
+            "spirit": 218
         }
     },
     {
@@ -168209,6 +168209,54 @@ export const classicItemDB = [
             "intellect": 225,
             "stamina": 338,
             "haste": 150
+        }
+    },
+    {
+        "name": "Heartbreak Charm",
+        "id": 238334,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Heartbreak Charm",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_23",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 147,
+            "haste": 154
+        }
+    },
+    {
+        "name": "Winking Eye of Love",
+        "id": 238335,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Winking Eye of Love",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_27",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 154,
+            "spirit": 147
         }
     }
 ]
