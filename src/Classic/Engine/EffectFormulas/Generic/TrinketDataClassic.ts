@@ -118,8 +118,40 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  { // Dragon Soul
+    name: "Seal of the Seven Signs",
+    effects: [
+      { // 
+        value: {397: 2904, 410: 3278}, 
+        table: -1,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+        stat: "haste",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericTrinket(data[0], itemLevel);
+    }
+  },
+  {
+    name: "Creche of the Final Dragon",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {397: 2904, 410: 3278}, // Spirit effect
+        stat: "crit",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        maxStacks: 10,
+      },
 
-  // Dragon Soul
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
   {
     name: "Will of Unbinding",
     effects: [ // DPS SPELLS ONLY
@@ -161,8 +193,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // Healing Spells
       { 
         value: {403: 88, 416: 99}, // Spirit effect
-        stat: "intellect",
-        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        stat: "spirit",
         duration: 20,
         maxStacks: 10,
       },
@@ -170,6 +201,12 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
+
+      // It's not pretty, but we'll assume you just prestack this before the fight but even if you don't, mana tends to be fine in the few seconds before you stack this.
+      // Assumption: Doesn't proc off HoTs
+      console.log(itemLevel);
+
+      bonus_stats.spirit = data[0].value[itemLevel] * data[0].maxStacks;
 
       return bonus_stats;
     }
@@ -245,7 +282,6 @@ const raidTrinketData: Effect[] = [
       // Convert to MP5
       bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
 
-      console.log("JAWS MP5", bonus_stats.mp5)
       return bonus_stats;
       
      // return bonus_stats;
@@ -302,7 +338,6 @@ const raidTrinketData: Effect[] = [
       //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
 
-      console.log("FALL OF MORTALITY", JSON.stringify(getGenericTrinket(data[0], itemLevel)));
       return getGenericTrinket(data[0], itemLevel);
       
     }
@@ -376,6 +411,22 @@ const raidTrinketData: Effect[] = [
  * DUNGEON TRINKETS
  */
 const dungeonTrinketData: Effect[] = [
+  {
+    name: "Foul Gift of the Demon Lord",
+    effects: [
+      { // 
+        value: {378: 1710}, 
+        table: -1,
+        ppm: getEffectPPM(0.15, 50, 1.5),
+        stat: "mastery",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericTrinket(data[0], itemLevel);
+    }
+  },
   {
     name: "Tendrils of Burrowing Dark",
     effects: [

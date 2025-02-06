@@ -63468,10 +63468,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Sea Star"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 65,
@@ -63702,10 +63698,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Rainsong"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -70124,10 +70116,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Blood of Isiset"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 70,
@@ -70980,10 +70968,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Gale of Shadows"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 71,
@@ -71544,10 +71528,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Sea Star"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 65,
@@ -73828,10 +73808,7 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Blood of Isiset"
         },
-        "levelRange": [
-            333,
-            346
-        ],
+
         "sources": [
             {
                 "encounterId": 70,
@@ -74654,10 +74631,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Gale of Shadows"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 71,
@@ -81345,10 +81318,7 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Theralion's Mirror"
         },
-        "levelRange": [
-            359,
-            372
-        ],
+
         "sources": [
             {
                 "encounterId": 157,
@@ -105174,10 +105144,7 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Theralion's Mirror"
         },
-        "levelRange": [
-            359,
-            372
-        ],
+
         "sources": [
             {
                 "encounterId": 157,
@@ -111676,9 +111643,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Talisman of Sinister Order"
         },
-        "levelRange": [
-            325
-        ],
         "stats": {
             "intellect": 234,
             "stamina": 0
@@ -144090,6 +144054,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Foul Gift of the Demon Lord"
         },
+        "levelRange": [
+            378
+        ],
         "stats": {
             "intellect": 383,
             "stamina": 0
@@ -156791,6 +156758,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Will of Unbinding"
         },
+        "levelRange": [
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
@@ -156824,6 +156795,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Unliving"
         },
+        "levelRange": [
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
@@ -157154,6 +157129,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Windward Heart"
         },
+        "levelRange": [
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 332,
@@ -158658,6 +158637,7 @@ export const classicItemDB = [
                 "difficulty": 0
             }
         ],
+        
         "class": "Priest, Shaman, Mage, Warlock, Druid",
         "stats": {
             "intellect": 0,
@@ -159283,6 +159263,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Will of Unbinding"
         },
+        "levelRange": [
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
@@ -159322,6 +159306,10 @@ export const classicItemDB = [
                 "instanceId": 187,
                 "difficulty": 0
             }
+        ],
+        "levelRange": [
+            403,
+            416
         ],
         "stats": {
             "intellect": 364,
@@ -159487,6 +159475,10 @@ export const classicItemDB = [
                 "instanceId": 187,
                 "difficulty": 0
             }
+        ],
+        "levelRange": [
+            397,
+            410
         ],
         "stats": {
             "intellect": 517,

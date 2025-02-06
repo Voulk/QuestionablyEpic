@@ -9,6 +9,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "",
         castTime: 1.5,
         cost: 0,
+        secondaries: [],
     }],
     "Power Word: Shield": [{
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
@@ -31,7 +32,7 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 3175,
         expectedOverheal: 0.45,
         targets: 5,
-        secondaries: ['crit'],
+        secondaries: ['crit', 'hmastery'],
     }],
     "Prayer of Mending": [{
         spellData: {id: 33076, icon: "spell_holy_prayerofmendingtga", cat: "heal"},
@@ -52,17 +53,20 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.72500002384, 
         flat: 6781,
         expectedOverheal: 0.1,
-        secondaries: ['crit'],
+        secondaries: ['crit', 'hmastery'],
     }],
     "Renew": [{
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
-        type: "heal",
-        castTime: 0, 
-        cost: 17, 
+        cost: 17,
+        castTime: 0,
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 12,
         coeff: 0.13099999726, 
         flat: 1224,
-        expectedOverheal: 0.1,
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
+        expectedOverheal: 0.3,
     }],
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
@@ -138,9 +142,38 @@ export const CLASSICPRIESTSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
         expectedOverheal: 0.1,
         targets: 5,
-        secondaries: ['crit']
+        secondaries: ['crit', 'hmastery']
     }],
 
+
+    // HPriest only
+    "Holy Word: Sanctuary": [{
+        spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal"},
+        type: "classic periodic",
+        buffType: "heal",
+        castTime: 0.5, 
+        cost: 44, 
+        buffDuration: 18,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+        coeff: 0.04199999943, 
+        flat: 327,
+        expectedOverheal: 0.3,
+        targets: 6, // sqrt
+        secondaries: ['crit', 'hmastery'], // HPriest Mastery
+    }],
+
+    "Circle of Healing": [{
+        spellData: {id: 34861, icon: "spell_holy_circleofrenewal", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 21, 
+        coeff: 0.25999999046, 
+        flat: 2430,
+        expectedOverheal: 0.15,
+        cooldownData: {cooldown: 10},
+        targets: 5, // sqrt
+        secondaries: ['crit', 'hmastery'], // HPriest Mastery
+    }],
 }
 
 // Talents that aren't in the 
@@ -199,7 +232,7 @@ const holyTalents = {
 
 
 const glyphs = {
-    glyphOfPrayerOfHealing: {points: 0, maxPoints: 1, icon: "spell_holy_searinglight", id: 63224, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    glyphOfPrayerOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_searinglight", id: 63224, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         const healOverTimeEffect = {        
             type: "classic periodic",
             buffType: "heal",
@@ -207,13 +240,12 @@ const glyphs = {
             coeff: 0.34000000358 * 0.1, // This ticks twice for 20% total
             flat: 3175 * 0.1,
             tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
+            expectedOverheal: 0.3,
             secondaries: ['crit'], // This effectively has crit scaling because the casting Prayer of Healing does. It can't double dip though.
             ignoreEffects: true};
 
         spellDB["Prayer of Healing"].push(healOverTimeEffect);
     }},
-
-    
 
     glyphOfDivineFavor: {points: 1, maxPoints: 1, icon: "spell_holy_divineillumination", id: 54937, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
@@ -222,8 +254,9 @@ const glyphs = {
     glyphOfSealOfInsight: {points: 1, maxPoints: 1, icon: "spell_holy_healingaura", id: 54943, select: true, tier: 1, runFunc: function (state, spellDB, points) {
 
     }},
-    glyphOfWordOfGlory: {points: 1, maxPoints: 1, icon: "inv_helmet_96", id: 54936, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-
+    glyphOfCircleOfHealing: {points: 1, maxPoints: 1, icon: "inv_helmet_96", id: 54936, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Circle of Healing"][0].targets = 6;
+        spellDB["Circle of Healing"][0].cost *= 1.2;
     }},
 
 }

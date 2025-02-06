@@ -210,6 +210,19 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, state);
 
+
+    if (state.spec.includes("Holy Priest")) {
+        // Convert Mastery
+        Object.keys(playerSpells).forEach(spellName => {
+            const spell = playerSpells[spellName];
+            spell.forEach(spellSlice => {
+                console.log(spellSlice);
+                if (spellSlice.secondaries.includes("hmastery")) spellSlice.secondaries.push("mastery");
+            })
+            
+        })
+    }
+
     const baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
     
     if (settings.preBuffs) {
