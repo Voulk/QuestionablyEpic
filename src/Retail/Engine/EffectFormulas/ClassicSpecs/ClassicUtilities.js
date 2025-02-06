@@ -80,6 +80,11 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
     return classicSpells;
 }
 
+export const logHeal = (breakdown, spellName, value, spell = {}) => {
+    const adjName = spell.name ? spell.name : spellName;
+    breakdown[adjName] = (breakdown[adjName] || 0) + value;
+}
+
 export const getTalentedSpellDB = (spec, state) => {
     let spellDB = null;
     let talents = null;

@@ -7,7 +7,8 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
-import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet, initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
+import { scoreHPriestSet, initializeHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -110,7 +111,7 @@ describe("Test APL", () => {
             const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;
             */
             let playerStats = JSON.parse(JSON.stringify(activeStats));
-            playerStats['intellect'] *= 1.15;
+            //playerStats['intellect'] *= 1.15;
             applyRaidBuffs({}, playerStats);
 
             const scoredBaseline = scoreFunction(baseline, playerStats, {}, testSettings);
@@ -124,7 +125,7 @@ describe("Test APL", () => {
                 // Change result to be casts agnostic.
                 let playerStats = JSON.parse(JSON.stringify(activeStats));
                 playerStats[stat] = playerStats[stat] + 10;
-                playerStats['intellect'] *= 1.15;
+                //playerStats['intellect'] *= 1.15;
                 applyRaidBuffs({}, playerStats);
                 const newPlayerData = {...playerData, stats: playerStats};
                 const result = scoreFunction(baseline, playerStats, {}, testSettings)
@@ -137,7 +138,7 @@ describe("Test APL", () => {
             });
             //weights['hps'] = Math.round(10000*(10)/(results['spellpower'] - scoredBaseline))/10000;
             
-            console.log(results['crit'] - scoredBaseline)
+            console.log(scoredBaseline / 60);
             console.log(weights); 
 
             //buildStatChart(baseline, activeStats, testSettings);
