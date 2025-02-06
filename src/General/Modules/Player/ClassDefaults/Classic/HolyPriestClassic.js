@@ -1,7 +1,7 @@
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
-import { getTalentedSpellDB, logHeal } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
+import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
@@ -13,7 +13,7 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
-  const spellpower = /*statProfile.intellect + */ statProfile.spellpower + 532; // Inner Fire
+  statProfile.spellpower += 532; // Inner Fire
   const critPercentage = getCritPercentage(statProfile, "Holy Priest"); // +4% crit
 
   const chakraBreakdown = {
@@ -21,8 +21,6 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
     "sanctuary": 0.9,
     "chastise": 0
   }
-  // Evaluate Stats
-  // Spellpower
 
   // Take care of any extras.
   if (tierSets.includes("Priest T11-4")) {
@@ -61,58 +59,31 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
       const spellName = spellProfile.spell;
 
       fullSpell.forEach(spell => {
-        let genericMult = 1 * (spellProfile.bonus ? spellProfile.bonus : 1);
-
-        // Handle Crit
-        let spellCritPercentage = critPercentage + ((spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0);
-        const critEffect = ('statMods' in spell && spell.statMods.critEffect) ? spell.statMods.critEffect : 2;
-        const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (spellCritPercentage * critEffect + (1 - critPercentage)) : 1;
-        
-        const additiveScaling = (spell.additiveScaling || 0) + 1;
+        const specialMult = 1;
         const cpm = (spellProfile.cpm + ( spellProfile.fillerSpell ? (fillerCPM * spellProfile.fillerRatio) : 0)) * (spellProfile.hastedCPM ? baseHastePerc : 1);
-        // Regular mastery scaling (PW:S)
-        const targetCount = spell.targets ? spell.targets : 1;
-
-        if ((spell.type === "heal" || spell.buffType === "heal")) genericMult *= (0.15 * 18 / 30 + 1); // Archangel
-        if (spellName === "Smite" || spellName === "Holy Fire") genericMult *= (1 + 0.02 * 5 / 2);
-
-        let spellThroughput = (spell.flat + spell.coeff * spellpower) *
-                            (critMult) *
-                            targetCount * 
-                            genericMult *
-                            ((1 - spell.expectedOverheal) || 1);
+        let spellThroughput = getSpellThroughput(spell, spellProfile, statProfile, fillerCPM, baseHastePerc, specialMult)
 
         // Handle HoT
         if (spell.type === "classic periodic") {
-            const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
-            const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
-            
-            const tickCount = Math.round(spell.buffDuration / (adjTickRate));
+            const tickCount = getTickCount(spell, getHaste(statProfile, "Classic") * hasteBuff);
 
             spellThroughput = spellThroughput * tickCount;
         }
 
         if (spell.type === "heal" || spell.buffType === "heal") {
-          // Check if direct heal
           if (spell.healType === "direct") {
             // Echo of Light
             const echoValue = (spellThroughput * (getMastery(statProfile, "Holy Priest")-1) * cpm)
             logHeal(healingBreakdown, "Echo of Light", echoValue);
-            //healingBreakdown["Echo of Light"] = (healingBreakdown["Echo of Light"] || 0) + echoValue;
             score += echoValue;
           }
           
-          //healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellThroughput * cpm);
-          logHeal(healingBreakdown, spellProfile.spell, (spellThroughput * cpm), spell);
+
+          logHeal(healingBreakdown, spellName, (spellThroughput * cpm), spell);
           score += (spellThroughput * cpm);
         } 
         else if (spell.type === "damage" || spell.buffType === "damage") {
         }
-        
-        //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
-
-
-      //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
       })
       // Filler mana
   })
@@ -132,16 +103,6 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
 export function initializeHPriestSet() {
   const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
-  const activeStats = {
-    intellect: 100,
-    spirit: 1,
-    spellpower: 100,
-    haste: 1,
-    crit: 1,
-    mastery: 1,
-    stamina: 5000,
-    critMult: 2,
-}
   const castProfile = [
     {spell: "Power Word: Shield", cpm: 3.5, hastedCPM: true, fillerSpell: true, fillerRatio: 0.1},
     {spell: "Renew", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.3},

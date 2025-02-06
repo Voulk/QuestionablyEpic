@@ -79,7 +79,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
         if ((spell.type === "heal" || spell.buffType === "heal")) genericMult *= (0.15 * 18 / 30 + 1); // Archangel
         if (spellName === "Smite" || spellName === "Holy Fire") genericMult *= (1 + 0.02 * 5 / 2);
 
-        let spellThroughput = (spell.flat + spell.coeff * spellpower) *
+        let spellThroughput = (spell.flat + spell.coeff * statProfile.spellpower) *
                             (critMult) *
                             (masteryMult) *
                             targetCount * 

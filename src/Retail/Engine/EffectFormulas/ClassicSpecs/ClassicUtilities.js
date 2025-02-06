@@ -5,6 +5,7 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./ClassicDruid
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -78,6 +79,40 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
 
 
     return classicSpells;
+}
+
+export const getTickCount = (spell, haste) => {
+    const hastePerc = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : haste;
+    const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+    
+    const tickCount = Math.round(spell.buffDuration / (adjTickRate));
+
+    return tickCount;
+}
+
+export const getSpellThroughput = (spell, spellProfile, statProfile, fillerCPM, baseHastePerc, specialMult) => {
+
+    let genericMult = 1 * (spellProfile.bonus ? spellProfile.bonus : 1);
+
+    const critPercentage = getCritPercentage(statProfile, "Holy Priest"); // +4% crit
+    const spellCritPercentage = critPercentage + ((spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0);
+    const critEffect = ('statMods' in spell && spell.statMods.critEffect) ? spell.statMods.critEffect : 2;
+    const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (spellCritPercentage * critEffect + (1 - critPercentage)) : 1;
+    
+    const additiveScaling = (spell.additiveScaling || 0) + 1;
+    const cpm = (spellProfile.cpm + ( spellProfile.fillerSpell ? (fillerCPM * spellProfile.fillerRatio) : 0)) * (spellProfile.hastedCPM ? baseHastePerc : 1);
+
+    const targetCount = spell.targets ? spell.targets : 1;
+
+    if (specialMult) genericMult *= specialMult;
+
+    const spellThroughput = (spell.flat + spell.coeff * statProfile.spellpower) 
+                        * critMult 
+                        * targetCount  
+                        * genericMult 
+                        * ((1 - spell.expectedOverheal) || 1);
+
+    return spellThroughput;
 }
 
 export const logHeal = (breakdown, spellName, value, spell = {}) => {
