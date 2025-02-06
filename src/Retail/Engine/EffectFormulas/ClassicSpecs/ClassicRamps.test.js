@@ -7,7 +7,7 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
-import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet, initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -73,7 +73,7 @@ describe("Test APL", () => {
         })
 
         //const baseSpells = EVOKERSPELLDB;
-        const spec = "Restoration Druid"
+        const spec = "Holy Priest"
         const testSuite = "Top Gear Scoring Function";
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
         const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
@@ -95,16 +95,16 @@ describe("Test APL", () => {
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
         else if (testSuite === "Top Gear Scoring Function") {
-            const baseline = initializeDruidSet();
-            const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
-            console.log(scoredSet + "(" + scoredSet / 60 + ")")
+            const baseline = initializeHPriestSet();
+            //const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
+            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
-            const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
-            console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
+           // const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
+            //console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
             //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
 
             //buildStatChart(baseline, activeStats, testSettings); 
-            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scoreDruidSet;
+            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scoreHPriestSet;
 
             /*const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
             const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;

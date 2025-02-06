@@ -20,12 +20,13 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 8863,
         expectedOverheal: 0.07,
         cooldownData: {cooldown: 3},
-        secondaries: ["mastery"],
+        secondaries: [], // Disc Mastery
         absorb: true,
     }],
     "Prayer of Healing": [{
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
         type: "heal",
+        healType: "direct",
         castTime: 2.5, 
         cost: 26, 
         coeff: 0.34000000358, 
@@ -49,6 +50,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 2061, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
+        healType: "direct",
         cost: 28, 
         coeff: 0.72500002384, 
         flat: 6781,
@@ -136,6 +138,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
         type: "buff",
         buffType: "heal",
+        healType: "direct",
         buffDuration: 8,
         coeff: 0.429, // The coefficient for a single regrowth tick.
         flat: 3023,
@@ -151,6 +154,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal"},
         type: "classic periodic",
         buffType: "heal",
+        healType: "direct",
         castTime: 0.5, 
         cost: 44, 
         buffDuration: 18,
@@ -161,11 +165,26 @@ export const CLASSICPRIESTSPELLDB = {
         targets: 6, // sqrt
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
     }],
+    "Holy Word: Serenity": [{
+        spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal"},
+        type: "classic periodic",
+        buffType: "heal",
+        castTime: 0.5, 
+        cost: 0, 
+        buffDuration: 0,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+        coeff: 0, 
+        flat: 0,
+        expectedOverheal: 0.3,
+        targets: 6, // sqrt
+        secondaries: ['crit', 'hmastery'], // HPriest Mastery
+    }],
 
     "Circle of Healing": [{
         spellData: {id: 34861, icon: "spell_holy_circleofrenewal", cat: "heal"},
         type: "heal",
         castTime: 0,
+        healType: "direct",
         cost: 21, 
         coeff: 0.25999999046, 
         flat: 2430,

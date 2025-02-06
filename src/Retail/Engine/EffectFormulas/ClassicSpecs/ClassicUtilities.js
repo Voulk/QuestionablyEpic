@@ -3,7 +3,7 @@
 import { getHealth } from "../Generic/RampGeneric/RampBase";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 
 /**
@@ -93,8 +93,12 @@ export const getTalentedSpellDB = (spec, state) => {
         talents = druidTalents;
     }
     else if (spec.includes("Discipline Priest")) {
-        spellDB = discSpells;
+        spellDB = priestSpells;
         talents = discTalents;
+    }
+    else if (spec.includes("Holy Priest")) {
+        spellDB = priestSpells;
+        talents = holyPriestTalents;
     }
 
     const playerSpells = deepCopyFunction(spellDB);

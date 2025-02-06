@@ -1,7 +1,7 @@
 
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
@@ -98,10 +98,11 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
             // Echo of Light
             const echoValue = (spellThroughput * getMastery(statProfile, "Holy Priest") * cpm)
             healingBreakdown["Echo of Light"] = (healingBreakdown["Echo of Light"] || 0) + echoValue;
+            score += echoValue;
           }
           
           healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellThroughput * cpm);
-          score += (spellThroughput * cpm + echoValue);
+          score += (spellThroughput * cpm);
         } 
         else if (spell.type === "damage" || spell.buffType === "damage") {
           if (spell.damageToHeal) {
@@ -160,7 +161,7 @@ export function initializeHPriestSet() {
     {spell: "Prayer of Mending", cpm: 2},
   ]
 
-  const adjSpells = getTalentedSpellDB("Holy Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: discTalents, spec: "Holy Priest", genericBonus: {damage: 1, healing: 1}});
+  const adjSpells = getTalentedSpellDB("Holy Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: holyPriestTalents, spec: "Holy Priest", genericBonus: {damage: 1, healing: 1}});
 
   castProfile.forEach(spell => {
     spell.castTime = adjSpells[spell.spell][0].castTime;
