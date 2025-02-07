@@ -58,6 +58,8 @@ const initialState : RootState = {
 
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
+    //circletOptions: { value: "Thunderlords / Mariners / Windsingers", options: ["Thunderlords / Mariners / Windsingers", "Skippers / Fathomdwellers / Stormbringers", "Skippers / Mariners / Stormbringers"], category: "topGear", type: "selector", gameType: "Retail" },
+
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
     reforgeSetting: {value: "Smart", options: ["Smart", "Manual", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},

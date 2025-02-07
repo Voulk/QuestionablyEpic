@@ -10,16 +10,18 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights } from "./ClassDefaults/EvokerDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
-import { getRampData, genStatWeights } from "General/Modules/Player/DiscPriest/DiscPriestUtilities";
+import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
+import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
     this.contentType = contentType;
     this.arrayID = arrID;
-    this.setDefaults(spec, contentType, modelID);
     this.modelType = {"Raid": "", "Dungeon": ""};
+    this.setDefaults(spec, contentType, modelID);
+    
   }
 
   spellList = {};
@@ -32,7 +34,7 @@ class CastModel {
   modelName = "";
   arrayID = 0;
   baseStatWeights = {}
-  modelType = "Default";
+  modelType = {"Raid": "Default", "Dungeon": "Default"};
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -95,15 +97,15 @@ class CastModel {
       }
 
     } else if (spec === SPEC.HOLYPALADIN) {
-      if (modelID === "Melee Default") {
-        this.modelName = "Melee Default";
+      if (modelID === "Herald of the Sun") {
+        this.modelName = "Herald of the Sun";
         spellList = paladinMeleeSpellData(contentType);
         specialQueries = paladinMeleeSpecialQueries(contentType);
         this.baseStatWeights = paladinMeleeStatWeights("Raid");
         this.fightInfo.dps = 17000;
       }
-      else if (modelID === "Avenging Crusader") {
-        this.modelName = "Avenging Crusader";
+      else if (modelID === "Lightsmith") {
+        this.modelName = "Lightsmith";
         spellList = paladinACSpellData(contentType);
         specialQueries = paladinACSpecialQueries(contentType);
         this.baseStatWeights = paladinACStatWeights("Raid");
@@ -164,11 +166,11 @@ class CastModel {
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
       else {
-        this.modelName = "Default";
+        this.modelName = "Healing Focused";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 14000 : 90000);
+        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
       }
 
 
@@ -180,13 +182,27 @@ class CastModel {
       this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
     } 
     else if (spec === SPEC.PRESEVOKER) {
-      // TODO
-      this.modelName = "Default";
-      //this.modelType = "CastModel";
-      spellList = evokerDefaultSpellData(contentType);
-      specialQueries = evokerDefaultSpecialQueries(contentType);
-      this.baseStatWeights = evokerDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
+      if (modelID === "Chronowarden") {
+        // TODO
+        this.modelName = "Chronowarden";
+        //this.modelType = "CastModel";
+        spellList = chronoDefaultSpellData(contentType);
+        specialQueries = chronoDefaultSpecialQueries(contentType);
+        this.baseStatWeights = chronoDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
+      }
+      else if (modelID === "Flameshaper") {
+        // TODO
+        this.modelName = "Flameshaper";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
+        this.runCastModel = runFlameshaperCastModel;
+        spellList = evokerDefaultSpellData(contentType);
+        specialQueries = evokerDefaultSpecialQueries(contentType);
+        this.baseStatWeights = evokerDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
+      }
+
     } 
     
     // Burning Crusade Profiles
@@ -217,7 +233,8 @@ class CastModel {
         mastery: 0.398,
         haste: 1.083,
         spirit: 1.123,
-        mp5: 1.199
+        mp5: 1.199,
+        hps: 0.7, // 
       };
     } 
     else if (spec === "Discipline Priest Classic") {
@@ -229,7 +246,8 @@ class CastModel {
         mastery: 0.461,
         haste: 0.914,
         spirit: 0.711,
-        mp5: 1.028
+        mp5: 1.028,
+        hps: 0.7, // 
       }
     } else {
       spellList = {};

@@ -8,15 +8,17 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
-import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
-import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
+import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { Console } from "console";
 
 /**
  * == Top Gear Engine ==
@@ -62,7 +64,8 @@ function setupPlayer(player: Player, contentType: contentTypes, castModel: any) 
 function autoSocketItems(itemList: Item[]) {
   for (var i = 0; i < itemList.length; i++) {
     let item = itemList[i];
-    if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
+    if (item.id === 228411) item.socket = 0;
+    else if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
     else if (item.slot === "Neck" || item.slot === "Finger") {
@@ -810,12 +813,35 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     effectStats.push(annuletStats);
  } */
 
+  if (builtSet.checkHasItem(228411)) {
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 639;
+
+    //const comboSetting = getSetting(userSettings, "circletOptions");
+    let combo = [];
+
+    /*if (comboSetting === "Thunderlords / Mariners / Windsingers") combo = [228634, 228644, 228640];
+    else if (comboSetting === "Skippers / Fathomdwellers / Stormbringers") combo = [228646, 228639, 228638];
+    else if (comboSetting === "Skippers / Mariners / Stormbringers") combo = [228646, 228644, 228638];*/
+    combo = builtSet.itemList.filter(item => item.id === 228411)[0].selectedOptions || [];
+
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
+
+    // Handle Annulet
+    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+    const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
+
+    //builtSet.primGems = combo; 
+    effectStats.push(annuletStats);
+
+  }
+
   const mergedEffectStats = mergeBonusStats(effectStats);
 
+  // TODO: Centralize raid buffs
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
-  if (player.spec === "Discipline Priest" && contentType === "Raid" && castModel.modelType[contentType] === "Sequences") {
+  if (castModel.modelType[contentType] === "Sequences") {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
     if (reporting) report.ramp = setRamp;
@@ -829,24 +855,23 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
     setStats.intellect = (setStats.intellect || 0) * 1.05;
-    const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
+    const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
 
-    setStats.hps = (setStats.hps || 0) + setRamp.totalHealing / 180;
+    setStats.hps = (setStats.hps || 0) + castModelResult.hps;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
     evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
   }
   // == Diminishing Returns ==
-  // Here we'll apply diminishing returns. If we're a Disc Priest then we already took care of this during the ramp phase.
+  // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.
   // DR on trinket procs and such are calculated in their effect formulas, so that we can DR them at their proc value, rather than their average value.
   // Disc Note: Disc DR on base stats is already included in the ramp modules and doesn't need to be reapplied here.
-  if (!(player.spec === "Discipline Priest" && contentType === "Raid" && useSeq)) {
+  else {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
     // Talents (DR does not apply)
     if (player.spec === "Holy Paladin") {
-      setStats.haste = (((setStats.haste || 0) / STATCONVERSION.HASTE / 100 + 1) * 1.04 - 1) * STATCONVERSION.HASTE * 100;
       setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
       setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       setStats.intellect = (setStats.intellect || 0) * 1.04;
@@ -884,7 +909,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   for (var stat in evalStats) {
     // Handle flat HPS increases like most tier sets, some trinkets, Annulet and more.
     if (stat === "hps" && evalStats.hps) {
-      
       hardScore += (evalStats.hps / baseHPS) * player.activeStats.intellect;
     } 
     // Handle flat DPS increases like DPS trinkets. Note that additional DPS value isn't currently evaluated.

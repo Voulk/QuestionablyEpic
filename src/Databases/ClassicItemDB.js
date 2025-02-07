@@ -10447,7 +10447,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -10998,7 +10999,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -11474,7 +11476,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18281,7 +18284,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18557,6 +18561,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "blue",
                 "blue"
             ],
             "bonus": {
@@ -18646,7 +18651,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -18891,7 +18897,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19156,7 +19163,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19346,7 +19354,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19663,7 +19672,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19814,7 +19824,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -19847,7 +19858,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -20149,7 +20161,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -21727,7 +21740,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -21819,6 +21833,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "blue",
                 "blue"
             ],
             "bonus": {
@@ -21940,7 +21955,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22070,7 +22086,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22161,7 +22178,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22292,7 +22310,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22472,7 +22491,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22531,7 +22551,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22564,7 +22585,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -22720,7 +22742,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23522,7 +23545,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23555,7 +23579,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23588,7 +23613,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23621,7 +23647,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23654,7 +23681,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23687,7 +23715,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23720,7 +23749,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23753,7 +23783,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23786,7 +23817,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -23819,7 +23851,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -29343,6 +29376,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
+                "yellow",
                 "yellow"
             ]
         },
@@ -30646,6 +30680,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
+                "yellow",
                 "yellow"
             ]
         },
@@ -42959,7 +42994,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -42992,7 +43028,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43124,7 +43161,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43157,7 +43195,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43190,7 +43229,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -43695,7 +43735,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44019,7 +44060,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44163,7 +44205,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44764,7 +44807,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -44918,7 +44962,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -45058,7 +45103,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -47361,7 +47407,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -47600,7 +47647,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48329,7 +48377,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48427,7 +48476,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48678,7 +48728,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -48710,7 +48761,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49135,7 +49187,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49295,7 +49348,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49328,7 +49382,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49716,7 +49771,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49870,7 +49926,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49935,7 +49992,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -49995,6 +50053,7 @@ export const classicItemDB = [
         "itemLevel": 284,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -50381,7 +50440,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -50744,7 +50804,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ]
         },
         "stats": {
@@ -51572,7 +51633,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51605,7 +51667,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51638,7 +51701,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51671,7 +51735,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -51704,7 +51769,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52028,7 +52094,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52337,7 +52404,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -52435,6 +52503,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ]
         },
@@ -52465,6 +52534,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -56561,7 +56631,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -59037,7 +59108,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61188,7 +61260,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61279,6 +61352,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -61557,6 +61631,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -61656,7 +61731,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "red"
+                "red",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61814,7 +61890,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -61976,7 +62053,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62103,7 +62181,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62198,6 +62277,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -62230,6 +62310,7 @@ export const classicItemDB = [
         "itemLevel": 264,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ]
@@ -62326,7 +62407,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62489,7 +62571,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "yellow"
+                "yellow",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -62649,7 +62732,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "blue"
+                "blue",
+                "yellow"
             ]
         },
         "stats": {
@@ -62745,7 +62829,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "yellow"
+                "yellow",
+                "blue"
             ]
         },
         "stats": {
@@ -62774,6 +62859,7 @@ export const classicItemDB = [
         "itemLevel": 264,
         "sockets": {
             "gems": [
+                "blue",
                 "blue",
                 "blue"
             ],
@@ -63124,7 +63210,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "yellow",
-                "blue"
+                "blue",
+                "red"
             ],
             "bonus": {
                 "spellpower": 9
@@ -63311,6 +63398,7 @@ export const classicItemDB = [
         "itemLevel": 271,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -64156,7 +64244,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "blue",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "spellpower": 9
@@ -79929,6 +80018,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -79960,6 +80050,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -80101,6 +80192,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -80203,6 +80295,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "meta",
+                "cogwheel",
                 "cogwheel"
             ],
             "bonus": {
@@ -130090,8 +130183,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "spirit": 276,
-            "haste": 276
+            "spirit": 242,
+            "haste": 242
         }
     },
     {
@@ -130130,8 +130223,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "crit": 276,
-            "haste": 276
+            "crit": 242,
+            "haste": 242
         }
     },
     {
@@ -130170,8 +130263,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "haste": 276,
-            "mastery": 276
+            "haste": 242,
+            "mastery": 242
         }
     },
     {
@@ -130210,8 +130303,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "mastery": 276,
-            "spirit": 276
+            "mastery": 242,
+            "spirit": 242
         }
     },
     {
@@ -130381,8 +130474,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "spirit": 218,
-            "haste": 218
+            "spirit": 192,
+            "haste": 192
         }
     },
     {
@@ -130420,8 +130513,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "crit": 218,
-            "haste": 218
+            "crit": 192,
+            "haste": 192
         }
     },
     {
@@ -130459,8 +130552,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "haste": 218,
-            "mastery": 218
+            "haste": 192,
+            "mastery": 192
         }
     },
     {
@@ -130498,8 +130591,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "mastery": 218,
-            "spirit": 218
+            "mastery": 192,
+            "spirit": 192
         }
     },
     {
@@ -130975,6 +131068,7 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -138218,6 +138312,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -138251,6 +138346,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -138284,6 +138380,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -138317,6 +138414,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -138350,6 +138448,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -153754,7 +153853,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153788,7 +153888,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153890,7 +153991,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -153924,7 +154026,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154059,7 +154162,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154093,7 +154197,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154263,7 +154368,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154297,6 +154403,7 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -154437,6 +154544,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -154472,7 +154580,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154542,7 +154651,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154646,7 +154756,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154716,7 +154827,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154820,7 +154932,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -154957,6 +155070,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -154991,7 +155105,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -155093,6 +155208,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -155193,6 +155309,7 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -158028,6 +158145,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -159793,6 +159911,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -159951,6 +160070,7 @@ export const classicItemDB = [
         ],
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -164663,7 +164783,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -164698,7 +164819,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165343,6 +165465,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -165378,6 +165501,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -165411,6 +165535,7 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -165446,7 +165571,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165481,7 +165607,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165516,7 +165643,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165551,7 +165679,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165585,7 +165714,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165619,7 +165749,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165652,6 +165783,7 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -165687,7 +165819,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165722,7 +165855,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165756,6 +165890,7 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -165792,7 +165927,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165826,7 +165962,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -165860,7 +165997,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166204,7 +166342,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166239,7 +166378,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -166884,6 +167024,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "red",
                 "red"
             ],
             "bonus": {
@@ -166919,6 +167060,7 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
+                "yellow",
                 "yellow"
             ],
             "bonus": {
@@ -166952,6 +167094,7 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -166987,7 +167130,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167022,7 +167166,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167057,7 +167202,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167092,7 +167238,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167126,7 +167273,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167160,7 +167308,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167193,6 +167342,7 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -167228,7 +167378,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167263,7 +167414,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167297,6 +167449,7 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sockets": {
             "gems": [
+                "red",
                 "red",
                 "red"
             ],
@@ -167333,7 +167486,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167367,7 +167521,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30
@@ -167401,7 +167556,8 @@ export const classicItemDB = [
         "sockets": {
             "gems": [
                 "red",
-                "red"
+                "red",
+                "yellow"
             ],
             "bonus": {
                 "intellect": 30

@@ -16,6 +16,11 @@ const GLOBALCONST = {
 
 }
 
+// Returns true if the player has at least one point in a talent.
+export const hasTalent = (talents, talentName) => {
+    return talents[talentName] ? talents[talentName].points > 0 : 0;
+}
+
 export const getTalentPoints = (talents, talentName) => {
     return talents[talentName] ? talents[talentName].points : 0;
 }
@@ -468,7 +473,6 @@ export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
-    
     if (stats.includes("vers") || stats.includes("versatility")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
     if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
@@ -529,8 +533,8 @@ export const addReport = (state, entry) => {
     }
 }
 
-export const getHealth = (stats, talents) => {
-    return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.02);
+export const getHealth = (stats, talents = {}) => {
+    return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.03);
 }
 
 

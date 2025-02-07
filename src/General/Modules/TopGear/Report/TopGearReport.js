@@ -10,7 +10,7 @@ import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunct
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
@@ -179,11 +179,14 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     statList = topSet.setStats;
     const manaSources = {}
 
+
     // Setup Slots / Set IDs.
     let gemCount = 0;
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
+      item.sources = getItemProp(item.id, "sources", gameType)
+      if (item.sources) item.source = item.sources[0];
       item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
       if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
 
@@ -195,6 +198,8 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
         
       }
     })
+
+    exportGearSet(itemList, player.spec);
 
 
     if (gameType === "Classic") {
@@ -240,8 +245,8 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       <div style={{ height: 96 }} />
       {resultValid ? (
         <Grid container spacing={1}>
-          {gameType === "Retail" ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
-            "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} /> : ""}
+          {/*gameType === "Retail" ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
+            "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} /> : ""*/}
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
               <div

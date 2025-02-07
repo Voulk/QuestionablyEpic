@@ -1,4 +1,4 @@
-import { DISCSPELLS, discConduits } from "General/Modules/Player/DiscPriest/DiscSpellDB"
+import { DISCSPELLS, discConduits } from "General/Modules/Player/DisciplinePriest/DiscSpellDB"
 
 // Disc and Holy use one shared entry here since a lot of conduits overlap.
 export const getPriestConduit = (conduitID, player, contentType, conduitLevel) => {

@@ -8,7 +8,7 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
@@ -322,6 +322,18 @@ export class Player {
     
   };
 
+  changeCustomOption = (item, selectedOption) => {
+    const newItem = item.clone();
+    newItem.active = true;
+
+    newItem.selectedOptions = selectedOption;
+    newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
+    newItem.updateLevel(item.level, item.missiveStats);
+    console.log(selectedOption);
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
+  };
+
   // TODO: Move to playerUtilities and just call addItem.
   // @deprecated
   // Use UpgradeItem above.
@@ -628,10 +640,10 @@ export class Player {
 
       this.activeStats = {
         intellect: 60000,
-        haste: 9000,
-        crit: 5400,
-        mastery: 6500,
-        versatility: 2050,
+        haste: 14500,
+        crit: 2050,
+        mastery: 12000,
+        versatility: 5000,
         stamina: 1900,
       };
       /*
@@ -640,10 +652,10 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "Melee Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Avenging Crusader", 2));
-
+      this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 2));
+      
       this.activeStats = {
         intellect: 60000,
         haste: 4200,
@@ -670,14 +682,14 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
 
       this.activeStats = {
         intellect: 60000,
-        haste: 9250,
+        haste: 18000,
         crit: 4700,
-        mastery: 6500,
+        mastery: 11100,
         versatility: 3100,
         stamina: 1900,
         critMult: 2,
@@ -697,8 +709,9 @@ export class Player {
       }
     }
       else if (spec === SPEC.PRESEVOKER) {
-        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+        this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
+        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
           intellect: 60000,
           haste: 2600,

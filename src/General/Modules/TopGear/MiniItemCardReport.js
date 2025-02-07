@@ -93,12 +93,17 @@ export default function ItemCardReport(props) {
 
   let socket = [];
 
-  if (item.id === 203460) {
+  /*if (item.id === 203460) {
     const gemCombo = props.primGems;
     const gemData = buildPrimGems(gemCombo);
     socket = gemData.socket;
     gemString = gemData.string;
-  } 
+  } */
+  if (item.id === 228411) {
+    const gemData = buildPrimGems(item.selectedOptions);
+    socket = gemData.socket;
+    gemString = gemData.string;
+  }
   /*else if (item.socket) {
     let socketCount = item.socket;
 

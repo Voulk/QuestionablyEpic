@@ -101,6 +101,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         evokerSpells['Dream Breath'][2].coeff *= (1 + 0.15 * talents.renewingBreath);
     }
     //if (settings.twoPc) evokerSpells['Reversion']
+
     if (talents.goldenHour) evokerSpells['Reversion'].push({
         type: "heal",
         name: "Golden Hour",
@@ -123,8 +124,17 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery']
     }) */
-    if (talents.timelessMagic) evokerSpells['Reversion'][0].buffDuration *= (1 + 0.1 * talents.timelessMagic);
-    if (talents.timeLord) evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
+    if (talents.timelessMagic) {
+        evokerSpells['Reversion'][0].buffDuration *= (1 + 0.15 * talents.timelessMagic);
+        evokerSpells['Reversion'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+        evokerSpells['Temporal Anomaly'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+        evokerSpells['Echo'][0].cost *= (1 - 0.15 * talents.timelessMagic);
+    }
+    if (talents.timeLord) {
+        // Temporal Anomaly handled in function.
+        evokerSpells['Echo'][1].value *= (1 + 0.25 * talents.timeLord);
+
+    }
     if (talents.flutteringSeedlings) evokerSpells['Emerald Blossom'].push({
         // TODO
         name: "Fluttering Seedlings",
@@ -221,8 +231,8 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         })
     }
 
-    applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
-    //applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
+    applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
    
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
@@ -262,7 +272,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
         if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * EVOKERCONSTANTS.baseMana / 100;
 
-        if (settings.includeOverheal === "No") {
+        if (settings.includeOverheal === false) {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
 
@@ -372,6 +382,8 @@ export const applyChronowarden = (evokerSpells, settings, talents, state, stats,
 export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS) => {
 
     // Travelling Flame + Consume
+
+    /*
     evokerSpells["Engulf"].push(
         {
             type: "function",
@@ -396,21 +408,21 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
                     addBuff(state, evokerSpells["Dream Breath"][2], "Dream Breath");
 
 
-                    /*if (state.t > buff.expiration) {
-                        removeBuffStack(state.activeBuffs, "Dream Breath");
-                    } */
+                    //if (state.t > buff.expiration) {
+                    //    removeBuffStack(state.activeBuffs, "Dream Breath");
+                    //} 
                 }
             }
         });
-
+    */
     // Expanded Lungs
     // Check if 0 should also be buffed.
     if (true) {
-        evokerSpells["Dream Breath"][1].coeff[0] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[1] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[2] *= 1.2;
-        evokerSpells["Dream Breath"][1].coeff[3] *= 1.2;
-        evokerSpells["Dream Breath"][2].coeff *= 1.2;
+        evokerSpells["Dream Breath"][1].coeff[0] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[1] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[2] *= 1.3;
+        evokerSpells["Dream Breath"][1].coeff[3] *= 1.3;
+        evokerSpells["Dream Breath"][2].coeff *= 1.3;
     }
 
     // Red Hot

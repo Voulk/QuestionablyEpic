@@ -1,6 +1,7 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
@@ -938,9 +939,9 @@ export function getEmbellishmentID(embellishmentName) {
 
 function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   // Handle any exceptions. These might include items that don't match the item level but that are best in their category so should be included anyway.
-  if (item.id === 71249 && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options.
+  if ((item.id === 71249 || item.id === 71086) && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options. Also Tarecgosa.
   else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
-
+  
   // Deal with Rag loot
   else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
   else if (itemLevelReq === 378 && item.itemLevel === 384  && item.sources && item.sources[0].encounterId === 198) return true;
@@ -977,8 +978,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (source === "Palace" && sources) sourceCheck = sources.instanceId === 1273;
-      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296;
+      if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
     const slot = getItemProp(item.id, "slot", gameType);
@@ -988,11 +989,10 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
-        (!([62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
+        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
-      console.log("Item Passes: " + item.name);
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
@@ -1031,6 +1031,11 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
       reportError(player, "ItemUtil Annulet Error", error, "");
     }
 
+  }
+  if (item.id === 228411) {
+    const combo = item.primGems;
+    const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player};
+    bonus_stats = getCircletEffect(combo, item.level, additionalData);
   }
 
   // Add Retail Socket

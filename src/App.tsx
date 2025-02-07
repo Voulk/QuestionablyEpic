@@ -8,6 +8,7 @@ import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
+import CircletAnalysis from "General/Modules/CircletAnalysis/CircletAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
@@ -426,6 +427,20 @@ const App = () => {
                     player={activePlayer}
                     render={() => (
                       <EmbellishmentAnalysis
+                        player={activePlayer}
+                        updatePlayerChar={updatePlayerChar}
+                        singleUpdate={updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={handleSimCSnackOpen}
+                        patronStatus={patronStatus}
+                      />
+                    )}
+                  />
+                  <CustomRoute
+                    path="/circlet"
+                    player={activePlayer}
+                    render={() => (
+                      <CircletAnalysis
                         player={activePlayer}
                         updatePlayerChar={updatePlayerChar}
                         singleUpdate={updatePlayerChar}

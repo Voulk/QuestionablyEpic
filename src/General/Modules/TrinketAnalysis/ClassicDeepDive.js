@@ -33,13 +33,17 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
         trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000, player.spec));
         trinketDescription.push("Effective MP5 at 7k int: " + convertSpiritToMP5(trinketStats.spirit, 7000, player.spec));
     }
+    
 
     const trinketOpinion = getTrinketOpinion(trinketName, player.spec);
     if (trinketOpinion) {
         trinketDescription.push("");
         trinketDescription.push(getTrinketOpinion(trinketName, player.spec));
     }
-
+    if (trinketData.description) {
+        trinketDescription.push("");
+        trinketDescription.push(trinketData.description);
+    }
 
     return trinketDescription;
 }

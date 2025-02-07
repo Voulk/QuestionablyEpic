@@ -1,0 +1,247 @@
+import React, { PureComponent } from "react";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
+// import chroma from "chroma-js";
+import { getItemIcon, getTranslatedItemName } from "General/Engine/ItemUtilities";
+import MuiTooltip from '@mui/material/Tooltip';
+import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
+import IconButton from '@mui/material/IconButton';
+import HelpIcon from '@mui/icons-material/Help';
+import i18n from "i18next";
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import { styled } from "@mui/material/styles";
+import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
+
+const getTooltip = (data, id) => {
+  return [];
+  const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
+  return tooltip;
+}
+
+const StyledTooltip = styled(({ className, ...props }) => (
+  <MuiTooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  zIndex: theme.zIndex.tooltip + 1,
+  //margin: 4,
+  [`& .MuiTooltip-tooltip`]: {
+    //maxWidth: 150,
+    //height: 100,
+    //fontFamily: "'Grape Nuts', Helvetica",
+    backgroundColor: "rgba(0,0,25,0.9)",
+    //color: "deepskyblue", see sx value
+    margin: 4,
+    padding: 8,
+    whiteSpace: "pre-line"
+    //border: "solid yellow 1px"
+  }
+}));
+
+const getLevelDiff = (trinketName, db, ilvl, map2, itemLevels) => {
+  /* ---------- Check if item exists at item level. If not, return 0. --------- */
+
+
+  /* ----------- Return item score - the previous item levels score. ---------- */
+  const pos = itemLevels.indexOf(ilvl);
+    // added a or 0 to handle NANs
+
+    if (pos > 0) {
+      return map2["i" + ilvl] - (map2["i" + itemLevels[pos - 1]]) || 0;
+    }
+    else {
+      return map2["i" + ilvl];
+    }
+} 
+
+/* ------------------------ Cleans Zeros from Objects ----------------------- */
+const cleanZerosFromArray = (obj) => {
+  return Object.keys(obj)
+    .filter((key) => {
+      return obj[key] !== 0;
+    })
+    .reduce((object, key) => {
+      object[key] = obj[key];
+      return object;
+    }, {});
+};
+
+const truncateString = (str, num) => {
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + "...";
+};
+export default class CircletChart extends PureComponent {
+  constructor() {
+    super();
+    this.state = { focusBar: null, mouseLeave: true };
+  }
+
+  render() {
+    const currentLanguage = i18n.language;
+    const data = this.props.data;
+    const db = this.props.db;
+    const itemLevels = this.props.itemLevels;
+    /* ------------------------- Ilvls to Show on Chart & Colour Generation ------------------------- */
+    //const iLvls = [359, 372, 379, 382, 385, 389, 395, 405, 408, 411, 415, 418, 421, 424];
+
+    /* ------------------------------------- Visibility of Ilvls ------------------------------------ */
+    // (Currently won't work as intended due to how the data is provided, currently the previous ilvl is needed to build the stacked bars)
+    //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
+
+    const barColours = this.props.theme;
+
+    let arr = [];
+    let cleanedArray = [];
+    Object.entries(data)
+      .map((key) => key[1])
+      .map((map2) => {
+        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
+        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2, itemLevels)]));
+        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
+        arr.push({
+          name: map2.name,
+          ...x,
+        });
+      });
+    /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
+    arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
+
+    /* ----------------------- Y-Axis Label Customization ----------------------- */
+    const CustomizedYAxisTick = (props) => {
+      const { x, y, payload } = props;
+      const idSet = payload.value.split("/");
+
+      return (
+        <g transform={`translate(${x},${y})`}>
+          <foreignObject x={-500} y={-10} width="500" height="22" style={{ textAlign: "right" }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'right',
+            justifyContent: "flex-end",
+            flexWrap: 'wrap',
+            }}>
+            <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
+              {truncateString(/*payload.value*/ "", 32)}
+            </text>
+
+            {idSet.map((id) => {
+              const name = getShortName(id) //"DefaultName" // getItemName(id); // Assuming this function fetches the name
+              return (
+                <div 
+                  key={id} 
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}
+                >
+                  <WowheadTooltip type="item" id={id} level={639} domain={currentLanguage}>
+                    <img 
+                      width={20} 
+                      height={20} 
+                      src={getCircletIcon(id)} 
+                      style={{ 
+                        borderRadius: 4, 
+                        border: "1px solid rgba(255, 255, 255, 0.12)" 
+                      }} 
+                    />
+                  </WowheadTooltip>
+                  <span style={{ 
+                      color: '#FFFFFF', 
+                      fontSize: '14px', 
+                      width: '64px', // Fixed width to nicely align icons
+                      whiteSpace: 'nowrap', // Don't wrap text.
+                      overflow: 'hidden', 
+                      textOverflow: 'ellipsis', // Adds ellipsis (...) if the text is too long
+                      display: 'inline-block', // Ensures the span respects width
+                      textAlign: 'left' // Aligns text to the left
+                    }}>
+                    {name}
+                  </span>
+                </div>
+              );
+            })}
+            {/*<WowheadTooltip type="item" id={payload.value} level={639} domain={currentLanguage}>
+              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+            </WowheadTooltip>*/}
+            <StyledTooltip title={
+              <div>
+                {getTooltip(data, payload.value).map((key, index) => {
+                  return (
+                    <span key={key}/* style={{ fontWeight: "bold" }}*/
+                    style={{ 
+                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Drops from")) ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : key.includes("Drops from") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
+                    }}
+                    >
+                      {key}
+                      <br />
+                    </span>
+                  );
+                })}
+              </div>
+            }
+            style={{ display: "inline-block", lineHeight: "0px" }}>
+              <IconButton sx={{ color: 'goldenrod', marginTop: '-5px' }} size="small">
+                <HelpIcon fontSize="inherit" />
+              </IconButton>
+            </StyledTooltip>
+            </div>
+          </foreignObject>
+        </g>
+      );
+    };
+
+    return (
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={500}>
+        <BarChart
+          barCategoryGap="15%"
+          data={cleanedArray}
+          layout="vertical"
+          margin={{
+            top: -10,
+            right: 40,
+            bottom: 10,
+            left: 300,
+          }}
+          onMouseMove={(state) => {
+            if (state.isTooltipActive) {
+              this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
+            } else {
+              this.setState({ focusBar: null, mouseLeave: true });
+            }
+          }}
+        >
+          <XAxis type="number" stroke="#f5f5f5" axisLine={false} scale="linear" />
+          <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
+          <Tooltip
+            cursor={false}
+            labelStyle={{ color: "#ffffff" }}
+            contentStyle={{
+              backgroundColor: "#1b1b1b",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+            }}
+            isAnimationActive={false}
+            labelFormatter={(timeStr) => timeStr}
+            formatter={(value, name, props) => {
+              {
+                if (value > 0) {
+                  return [
+                    data
+                      .filter((filter) => filter.id === props["payload"].name)
+                      .map((key) => key["i" + name])
+                      .toString(),
+                    name,
+                  ];
+                } else {
+                  return ["Unobtainable", name];
+                }
+              }
+            }}
+          />
+          <Legend verticalAlign="top" />
+          <CartesianGrid vertical={true} horizontal={false} />
+          <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          {itemLevels.map((key, i) => (
+            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}

@@ -26,6 +26,16 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
   if (tierSets.includes("Priest T11-4")) {
     statProfile.spirit += 540;
   }
+  if (tierSets.includes("Priest T12-2")) { 
+    // You regenerate 2% of your base mana every 5 seconds, basically in perpetuity by casting any helpful healing spell.
+    statProfile.mp5 = (statProfile.mp5 || 0) + 0.02 * 20590;
+  }
+  if (tierSets.includes("Priest T12-4")) {
+    // 5s ticking heal on a 45s cooldown.
+    const tierDuration = 5
+    const expectedOverheal = 0.2;
+    statProfile.hps = (statProfile.hps || 0) + (9250 + 10750) / 2 * tierDuration * (1 - expectedOverheal) / 55;
+  }
 
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, "Discipline Priest");
@@ -121,10 +131,14 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
       
       
   })
+
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
+
     Object.keys(healingBreakdown).forEach(spell => {
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
-    console.log(healingBreakdown); 
+
   return score;
 }
 
@@ -336,11 +350,11 @@ export function initializePaladinSet() {
 }
   const castProfile = [
     //{spell: "Judgement", cpm: 1, hpc: 0},
-
-    {spell: "Holy Light", cpm: 4, fillerSpell: true, hastedCPM: true},
-    {spell: "Flash of Light", cpm: 2.2, hastedCPM: true},
+    {spell: "Divine Light", cpm: 3.4, hastedCPM: true},
+    {spell: "Holy Light", cpm: 4.6, fillerSpell: true, hastedCPM: true},
+    {spell: "Flash of Light", cpm: 1.2, hastedCPM: true},
     {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
-    {spell: "Holy Radiance", cpm: 6, fillerSpell: true, hastedCPM: true},
+    {spell: "Holy Radiance", cpm: 5.8, fillerSpell: true, hastedCPM: true},
     {spell: "Light of Dawn", cpm: (8.5 + 4 + 4)/3, hastedCPM: true},
     {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
     {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
@@ -382,6 +396,10 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
   // Take care of any extras.
   if (tierSets.includes("Paladin T11-4")) {
     statProfile.spirit += 540;
+  }
+  if (tierSets.includes("Paladin T12-2")) {
+    // 40% chance on Holy Shock cast to restore 184 mana.
+    statProfile.mp5 = (statProfile.mp5 || 0) + (baseline.castProfile.filter(spell => spell.spell === "Holy Shock")[0].cpm * baseHastePercentage * 1405 * 0.4) / 12;
   }
 
   // Calculate filler CPM
@@ -434,6 +452,12 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
 
           spellHealing = spellHealing * cpm;
 
+          // Tier Set
+          if (tierSets.includes("Paladin T12-4")) {
+            // Divine Light, Flash of Light and Holy Light also heal a nearby ally for 10% of the value.
+            if (["Divine Light", "Holy Light", "Flash of Light"].includes(spellName)) spellHealing *= 1.1;
+          }
+
           // Mastery
           if (spell.secondaries.includes("mastery")) {
             const absorbVal = spellHealing /*/ (1 - spell.expectedOverheal) */* (getMastery(statProfile, "Holy Paladin") - 1);
@@ -442,6 +466,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
             spellTotalHealing += absorbVal;
             score += absorbVal;
           }
+
+
 
           // Beacon Healing
           let beaconHealing = 0;
@@ -464,6 +490,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
         }
 
 
+
       })
 
       // Filler mana
@@ -472,6 +499,7 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
       }
       
   })
+
   
     Object.keys(healingBreakdown).forEach(spell => {
       const filteredSpells = baseline.castProfile.filter(spellName => spellName.spell === spell);
@@ -485,6 +513,8 @@ export function scorePaladinSet(baseline, statProfile, player, userSettings, tie
     //const spiritRegen = getManaRegen({...playerData.stats, 'spirit': statProfile.spirit}, playerData.spec) * 12 * 7;
     //score += spiritRegen
 
+    // Handle HPS
+    score += (60 * statProfile.hps || 0)
 
     console.log("Score: " + score / 60);
 

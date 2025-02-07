@@ -51,7 +51,7 @@ export const embellishmentData = [
     /* -------------------- */
 
     name: "Binding of Binding",
-    description: "Nerfed shortly after release. Purely a support item.",
+    description: "A purely support embellishment effect but a reasonable choice in Mythic+ where the alternatives can be dreadful.",
     effects: [
       { 
         coefficient: 0.27231, // Check this. I guess it scales with num gem types they have?
@@ -62,8 +62,8 @@ export const embellishmentData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      // TODO Add top gear support for auto-generating gems.
-      const statAvg = runGenericPPMTrinket(data[0], itemLevel);
+
+      const statAvg = processedValue(data[0], itemLevel) * data[0].duration * data[0].ppm * 1.13 / 60; // Avoid using our functions because buffs overwriting will be rare.
 
       bonus_stats.allyStats = statAvg;
 
@@ -72,6 +72,7 @@ export const embellishmentData = [
   },
   {
     name: "Waders of the Unifying Flame",
+    description: "An overly convoluted way of getting a minimal amount of stats.",
     effects: [
       { 
         coefficient: 0.204581,
@@ -134,7 +135,7 @@ export const embellishmentData = [
         table: -571,
         duration: 12, 
         ppm: 2.5,
-        efficiency: 0.8,
+        efficiency: 0.65,
         stat: "haste",
       },
     ],
@@ -206,6 +207,7 @@ export const embellishmentData = [
   },
   { // Vers while above 80% health. Need to check if heartbeat or cooldown.
     name: "Duskthread Lining",
+    description: "While uptime can be good, uptime tends to be much lower during moments where your healing is actually relevant making these just ok. Often better in Mythic+.",
     setting: true,
     effects: [
       { 
@@ -224,6 +226,7 @@ export const embellishmentData = [
   },
   { // Crit while above 80% health. Need to check if heartbeat or cooldown.
     name: "Dawnthread Lining",
+    description: "While uptime can be good, uptime tends to be much lower during moments where your healing is actually relevant making these just ok. Often better in Mythic+.",
     setting: true,
     effects: [
       { 
@@ -242,7 +245,7 @@ export const embellishmentData = [
   },
   { // Stacking stat buff
     name: "Darkmoon Sigil: Ascension",
-    description: "Powerful, but note it can only be put on a weapon (and potentially offhand) slot.",
+    description: "Powerful, but note it can only be put on a weapon or offhand slot. Weaker in Mythic+ where stacks often fall off in between packs.",
     effects: [
       { // Gives 89 of a random stat
         coefficient: 0.021938, // 0.025246 appears to be the trinket, // 0.034796 at -9 in the spell data too, 0.007428
@@ -259,8 +262,9 @@ export const embellishmentData = [
       const fightLength = additionalData.castModel.fightInfo.fightLength
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
-      const averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
-      console.log(processedValue(data[0], itemLevel));
+      let averageStacks = ((fightLength - 80) * 10 + 80 * 5) / fightLength;
+      if (additionalData.contentType === "Dungeon") averageStacks *= 0.7;
+
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
         bonus_stats[stat] = 89 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
@@ -272,7 +276,7 @@ export const embellishmentData = [
   },
   { // Stacking vers buff
     name: "Darkmoon Sigil: Symbiosis",
-    description: "Strong, but note it can only be put on a weapon (and potentially offhand) slot. It also tends to just lose to the Ascension sigil quite often so you might just use that instead.",
+    description: "Strong, but note it can only be put on a weapon or offhand slot. It also tends to just lose to the Ascension sigil quite often so you might just use that instead.",
     effects: [
       { 
         coefficient: 0.022809, // 0.088359 at -9 in the spell data too.
@@ -287,7 +291,8 @@ export const embellishmentData = [
       const fightLength = additionalData.castModel.fightInfo.fightLength
       // The Sigil gives a random stat so we'll split our value into quarters after we calculate it.
       // It takes 80 seconds of combat to reach max buffs which we'll then have for the rest of the fight.
-      const averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
+      let averageStacks = ((fightLength - 50) * 5 + 50 * 2.5) / fightLength;
+      if (additionalData.contentType === "Dungeon") averageStacks *= 0.7;
       
       bonus_stats.versatility = processedValue(data[0], itemLevel) * averageStacks;
 
@@ -301,7 +306,7 @@ export const embellishmentData = [
   },
   { // Healing Spells
     name: "Adrenal Surge Clasp", 
-    description: "This is not proccing well on most logs and I wouldn't recommend it at this time.",
+    description: "This doesn't proc regularly enough to make it a competitive option for a non-tank.",
     effects: [
       { 
         coefficient: 0.312343, 
@@ -329,7 +334,7 @@ export const embellishmentData = [
   },
   { // DPS Spells
     name: "Blessed Weapon Grip",
-    description: "Procs off DPS spells. Effect starts strong and then fades over its duration",
+    description: "Procs off DPS spells. Effect starts strong and then fades over its duration.",
     effects: [
       { 
         coefficient: 0.032211, 
