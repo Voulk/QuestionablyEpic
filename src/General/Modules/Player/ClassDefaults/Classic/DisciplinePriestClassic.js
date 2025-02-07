@@ -12,6 +12,14 @@ export const discPriestDefaults = {
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+        spellpower: 1,
+        intellect: 2.668,
+        crit: 0.545,
+        mastery: 0.461,
+        haste: 0.914,
+        spirit: 0.711,
+        mp5: 1.028,
+        hps: 0.7, // 
     },
     specialQueries: {
         // Any special information we need to pull.

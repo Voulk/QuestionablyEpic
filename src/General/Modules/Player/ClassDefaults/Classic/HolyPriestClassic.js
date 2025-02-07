@@ -1,5 +1,3 @@
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
 import { compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
@@ -16,7 +14,15 @@ export const holyPriestDefaults = {
 
     },
     defaultStatWeights: {
-        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+      // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+      spellpower: 1,
+      intellect: 2.062,
+      crit: 0.656,
+      mastery: 0.634,
+      haste: 0.588,
+      spirit: 1.481,
+      mp5: 1.296,
+      hps: 1.027
     },
     specialQueries: {
         // Any special information we need to pull.
