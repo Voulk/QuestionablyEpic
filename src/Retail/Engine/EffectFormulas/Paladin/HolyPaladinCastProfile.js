@@ -37,6 +37,8 @@ const getCastData = (profileName, paladinSpells) => {
         profile: [],
         extras: {},
     }
+    const cooldownWastage = 0.9;
+    const blessingOfDawnCDR = 1 + 0.1 * 0.9
 
     if (profileName === "Herald of the Sun AW") {
         castData.profile = [
@@ -62,7 +64,7 @@ const getCastData = (profileName, paladinSpells) => {
             
           ]
 
-          extras.spenderUsage = {
+          castData.extras.spenderUsage = {
             "Light of Dawn": 0.3,
             "Eternal Flame": 0.7,
             "Word of Glory": 0
@@ -118,10 +120,10 @@ export const runHolyPaladinCastProfile = (playerData) => {
 
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
-    const cooldownWastage = 0.9;
+    
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
-    const blessingOfDawnCDR = 1 + 0.1 * 0.9
+    
     const castData = getCastData(playerData.profileName, paladinSpells);
 
     const castProfile = castData.profile;
@@ -204,7 +206,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
             if (spell.type === "heal" && spellProfile.cpm > 0) {
                 let value = runHeal(state, spell, spellName) ;
                 
-                if (onCrit) {
+                if (spell.onCrit) {
                     // Spell only heals on crits. 
                     value *= (getCrit(state.currentStats) / 100);
                 }

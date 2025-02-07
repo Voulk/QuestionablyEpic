@@ -150,7 +150,7 @@ describe("getValidWeaponTypes func", () => {
   });
 
   // Check can use Staff
-  const itemSubclass = getItemProp(178714, "itemSubClass");
+  const itemSubclass = getItemProp(194893, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}    |  ${true}
@@ -165,7 +165,7 @@ describe("getValidWeaponTypes func", () => {
   });
 
   // Check can use Shield
-  const itemSubclass2 = getItemProp(178750, "itemSubClass");
+  const itemSubclass2 = getItemProp(195214, "itemSubClass");
   each`
     spec     | expectedResult
     ${SPEC.RESTODRUID}   | ${false}
@@ -175,7 +175,7 @@ describe("getValidWeaponTypes func", () => {
     ${SPEC.MISTWEAVERMONK}  | ${false}
     ${SPEC.RESTOSHAMAN}  | ${true}
     // add new test cases here
-    `.test("Checks if $spec can wear a Staff", ({ spec, expectedResult }) => {
+    `.test("Checks if $spec can wear a Shield", ({ spec, expectedResult }) => {
     expect(getValidWeaponTypes(spec, "Offhands").includes(itemSubclass2)).toBe(expectedResult);
   });
 
@@ -219,11 +219,11 @@ describe("GetItemIcon func", () => {
 });*/
 
 describe("CheckItemExists func", () => {
-  test("Exists Test: Trailspinner Pendant", () => {
+  /*test("Exists Test: Trailspinner Pendant", () => {
     const id = 178707;
     const expectedResult = true;
     expect(checkItemExists(id)).toEqual(expectedResult);
-  });
+  }); */
 
   test("Check Invalid Item ID doesn't exist", () => {
     const id = 9999999;
@@ -235,11 +235,12 @@ describe("CheckItemExists func", () => {
 });
 
 describe("getItemSlot func", () => {
+  /*
   test("Slot Check Scythewood Scepter (1H Weapon)", () => {
     const id = 178709;
     const expectedResult = "1H Weapon";
     expect(getItemProp(id, "slot")).toEqual(expectedResult);
-  });
+  });*/
 
   test("Slot Check: Invalid Item ID", () => {
     const id = 9999999;

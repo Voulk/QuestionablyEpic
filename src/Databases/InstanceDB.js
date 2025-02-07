@@ -1,6 +1,9 @@
+import { CONSTANTS } from "General/Engine/CONSTANTS"
+
 
 export const getSeasonalDungeons = () => {
-  return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+  //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+  return CONSTANTS.currentDungeonIDs;
 }
 
 export const instanceDB = {

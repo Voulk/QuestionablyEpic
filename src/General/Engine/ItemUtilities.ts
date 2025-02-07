@@ -979,7 +979,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
       if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296;
-      if (source === "S1 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
     const slot = getItemProp(item.id, "slot", gameType);
