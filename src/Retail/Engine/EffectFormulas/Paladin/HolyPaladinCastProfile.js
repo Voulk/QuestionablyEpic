@@ -32,7 +32,7 @@ const getBeaconHealing = (state, healingVal, spellName) => {
         return beaconHealing;
 }
 
-const getCastData = (profileName) => {
+const getCastData = (profileName, paladinSpells) => {
     const castData = {
         profile: [],
         extras: {},
@@ -122,7 +122,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
     const blessingOfDawnCDR = 1 + 0.1 * 0.9
-    const castData = getCastData(playerData.profileName);
+    const castData = getCastData(playerData.profileName, paladinSpells);
 
     const castProfile = castData.profile;
     const spenderUsage = castData.extras.spenderUsage;
