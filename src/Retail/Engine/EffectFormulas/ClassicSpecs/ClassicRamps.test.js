@@ -8,7 +8,7 @@ import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents 
 import { runCastSequence} from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 import { getTalentedSpellDB } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
-import { scoreHPriestSet, initializeHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
+import { scoreHPriestSet, initializeHPriestSet, holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -75,9 +75,10 @@ describe("Test APL", () => {
 
         //const baseSpells = EVOKERSPELLDB;
         const spec = "Holy Priest"
-        const testSuite = "Top Gear Scoring Function";
+        const testSuite = "Stat";
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
         const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+        const profile = holyPriestDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -86,7 +87,7 @@ describe("Test APL", () => {
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(playerData, castProfile, runCastSequence, "CastProfile")
+            const data = runClassicStatSuite(playerData, profile)
             
             console.log(data.weights);
 
@@ -96,52 +97,7 @@ describe("Test APL", () => {
             runCastProfileSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
         }
         else if (testSuite === "Top Gear Scoring Function") {
-            const baseline = initializeHPriestSet();
-            //const scoredSet = scoreDruidSet(baseline, activeStats, {}, testSettings)
-            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
 
-           // const scoredSet2 = scoreDruidSet(baseline, {...activeStats, intellect: activeStats.intellect + 1000}, {}, testSettings)
-            //console.log(scoredSet2 + "(" + scoredSet2 / 60 + ")")
-            //console.log(scoreDruidSet(baseline, {...activeStats, spellpower: 2800}, {}, testSettings))
-
-            //buildStatChart(baseline, activeStats, testSettings); 
-            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scoreHPriestSet;
-
-            /*const baseline = spec === "Discipline Priest" ? initializeDiscSet() : initializePaladinSet();
-            const scoreFunction = spec === "Discipline Priest" ? scoreDiscSet : scorePaladinSet;
-            */
-            let playerStats = JSON.parse(JSON.stringify(activeStats));
-            //playerStats['intellect'] *= 1.15;
-            applyRaidBuffs({}, playerStats);
-
-            const scoredBaseline = scoreFunction(baseline, playerStats, {}, testSettings);
-            //console.log(scoredSet + "(" + scoredSet / 60 + ")")
-
-            const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
-            console.log(scoredBaseline);
-            
-            const results = {};
-            stats.forEach(stat => {
-                // Change result to be casts agnostic.
-                let playerStats = JSON.parse(JSON.stringify(activeStats));
-                playerStats[stat] = playerStats[stat] + 10;
-                //playerStats['intellect'] *= 1.15;
-                applyRaidBuffs({}, playerStats);
-                const newPlayerData = {...playerData, stats: playerStats};
-                const result = scoreFunction(baseline, playerStats, {}, testSettings)
-                results[stat] = result;
-            });
-            const weights = {}
-        
-            stats.forEach(stat => {
-                weights[stat] = Math.round(1000*(results[stat] - scoredBaseline)/(results['spellpower'] - scoredBaseline))/1000;
-            });
-            //weights['hps'] = Math.round(10000*(10)/(results['spellpower'] - scoredBaseline))/10000;
-            
-            console.log(scoredBaseline / 60);
-            console.log(weights); 
-
-            //buildStatChart(baseline, activeStats, testSettings);
         }
 
 

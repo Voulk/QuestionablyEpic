@@ -6,6 +6,24 @@ import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampB
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
+export const holyPriestDefaults = {
+    spec: "Holy Priest Classic",
+    name: "Holy Priest Classic",
+    scoreSet: scoreHPriestSet,
+    initializeSet: initializeHPriestSet,
+    defaultStatProfile: { 
+        // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
+
+    },
+    defaultStatWeights: {
+        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+    },
+    specialQueries: {
+        // Any special information we need to pull.
+    }
+
+}
+
 export function scoreHPriestSet(baseline, statProfile, player, userSettings, tierSets = []) { 
   let score = 0;
   const healingBreakdown = {};
