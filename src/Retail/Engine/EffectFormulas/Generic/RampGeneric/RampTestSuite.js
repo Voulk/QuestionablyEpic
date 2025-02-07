@@ -51,7 +51,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
         return weights;
 }
 
-export function runClassicStatSuite(playerData, profile) {
+export function runClassicStatSuite(profile) {
     // Weights
     const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
     const fightLength = 420;
@@ -85,7 +85,7 @@ export function runClassicStatSuite(playerData, profile) {
         playerStats[stat] = playerStats[stat] + 10;
         applyRaidBuffs({}, playerStats);
 
-        const newPlayerData = {...playerData, stats: playerStats};
+        //const newPlayerData = {...playerData, stats: playerStats};
         const result = scoreFunction(baseline, playerStats, {}, testSettings)
         results[stat] = result;
     });

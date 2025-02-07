@@ -1,6 +1,6 @@
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
+import { compiledHolyTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
 import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
@@ -20,8 +20,8 @@ export const holyPriestDefaults = {
     },
     specialQueries: {
         // Any special information we need to pull.
-    }
-
+    },
+    autoReforgeOrder: [],
 }
 
 export function scoreHPriestSet(baseline, statProfile, player, userSettings, tierSets = []) { 
