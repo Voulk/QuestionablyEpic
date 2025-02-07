@@ -156964,6 +156964,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Seal of the Seven Signs"
         },
+        "levelRange": [
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 324,

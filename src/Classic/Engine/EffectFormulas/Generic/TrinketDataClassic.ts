@@ -167,6 +167,8 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.intellect = data[0].value[itemLevel] * data[0].maxStacks * data[0].specMod[player.spec] * 0.95;
+
       return bonus_stats;
     }
   },
@@ -204,7 +206,6 @@ const raidTrinketData: Effect[] = [
 
       // It's not pretty, but we'll assume you just prestack this before the fight but even if you don't, mana tends to be fine in the few seconds before you stack this.
       // Assumption: Doesn't proc off HoTs
-      console.log(itemLevel);
 
       bonus_stats.spirit = data[0].value[itemLevel] * data[0].maxStacks;
 
@@ -215,14 +216,18 @@ const raidTrinketData: Effect[] = [
     name: "Windward Heart",
     effects: [ // Healing Spells
       { 
-        value: {397: (10388+12073)/2, 410: (11726+13627)/2}, // Spirit effect
+        value: {397: (10388+12073)/2, 410: (11726+13627)/2},
         stat: "hps",
-        ppm: getEffectPPM(0.1, 20, 1.5), // Crits only
+        secondaries: ["crit"],
+        efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.
+        ppm: 2.5, //getEffectPPM(0.1, 20, 1.5), // Crits only
 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
+
+      return getGenericThroughputTrinket(data[0], itemLevel, player);
 
       return bonus_stats;
     }
@@ -258,7 +263,7 @@ const raidTrinketData: Effect[] = [
         value: {378: 110, 391: 125}, 
         maxStacks: 10,
         stat: "mp5",
-        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        expectedCasts: {"Restoration Druid Classic": 13.4, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         cooldown: 120,
       },
     ],

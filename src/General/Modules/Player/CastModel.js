@@ -226,15 +226,15 @@ class CastModel {
 
       this.baseStatWeights = {
         spellpower: 1,
-        intellect: 1.645,
-        crit: 0.785,
-        mastery: 0.398,
-        haste: 1.083,
-        spirit: 1.123,
-        mp5: 1.199,
-        hps: 0.7, // 
+        intellect: 2.062,
+        crit: 0.656,
+        mastery: 0.634,
+        haste: 0.588,
+        spirit: 1.481,
+        mp5: 1.296,
+        hps: 1.027
       }; // Placeholder
-      
+
     } else if (spec === "Holy Paladin Classic") {
       spellList = this.getClassicPaladin();
       this.baseStatWeights = {
