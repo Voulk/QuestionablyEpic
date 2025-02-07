@@ -5,7 +5,7 @@ import { Item } from "General/Modules/Player/Item"
 import { createStore } from 'redux';
 import rootReducer from "Redux/Reducers/RootReducer";
 import { composeWithDevTools } from '@redux-devtools/extension';
-import { runTopGearBC } from "General/Modules/TopGear/Engine/TopGearEngineClassic"
+import { runTopGearClassic } from "General/Modules/TopGear/Engine/TopGearEngineClassic"
 
 describe("Top Gear Test", () => {
     test("Top Gear Test", () => {
@@ -30,7 +30,7 @@ describe("Top Gear Test", () => {
         let wepCombos = buildNewWepCombos(player, true);
 
         /*
-        const result = runTopGearBC(itemList, wepCombos, player, "Raid", 0, "en", store.getState().playerSettings, castModel, true, [], [])
+        const result = runTopGearClassic(itemList, wepCombos, player, "Raid", 0, "en", store.getState().playerSettings, castModel, true, [], [])
 
         //console.log(JSON.stringify(result.differentials.map(differentials => differentials.items.map(item => item.name))));
 

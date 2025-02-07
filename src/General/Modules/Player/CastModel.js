@@ -17,7 +17,7 @@ import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriest
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
-import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
+import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
 
 import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
 

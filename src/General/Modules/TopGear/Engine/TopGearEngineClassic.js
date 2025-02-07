@@ -266,7 +266,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   return itemSets;
 }
 
-export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
+export function runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -497,6 +497,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       */
       
     }
+    console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {

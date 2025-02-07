@@ -607,7 +607,7 @@ export default function TopGear(props: any) {
     return new Promise((resolve, reject) => {
         const instance = new worker();
         instance
-            .runTopGearBC(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+            .runTopGearClassic(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
             .then(result => {
                 instance.terminate();
                 resolve(result);
