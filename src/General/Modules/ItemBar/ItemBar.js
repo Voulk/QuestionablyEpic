@@ -510,8 +510,8 @@ export default function ItemBar(props) {
      }}>
        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
        <Grid item>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(665, props.player, "Retail", "Undermine")}>{"Undermine Heroic"}</Button>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "Undermine")}>{"Undermine Mythic"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(665, props.player, "Retail", "Undermine")}>{"Undermine H"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "Undermine")}>{"Undermine M"}</Button>
          <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "S2 Dungeons")}>{"S2 Mythic+"}</Button>
        </Grid>
      </Grid>}
