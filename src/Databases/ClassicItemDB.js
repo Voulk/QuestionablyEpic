@@ -68567,10 +68567,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Witching Hourglass"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 66,
@@ -68883,10 +68879,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Tendrils of Burrowing Dark"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 67,
@@ -72008,10 +72000,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Witching Hourglass"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 66,
@@ -72435,10 +72423,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Tendrils of Burrowing Dark"
         },
-        "levelRange": [
-            333,
-            346
-        ],
         "sources": [
             {
                 "encounterId": 67,
@@ -73808,7 +73792,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Blood of Isiset"
         },
-
         "sources": [
             {
                 "encounterId": 70,
@@ -81318,7 +81301,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Theralion's Mirror"
         },
-
+        "levelRange": [
+            359,
+            372
+        ],
         "sources": [
             {
                 "encounterId": 157,
@@ -93227,9 +93213,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Mandala of Stirring Patterns"
         },
-        "levelRange": [
-            359
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -93365,9 +93348,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Mandala of Stirring Patterns"
         },
-        "levelRange": [
-            359
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -105144,7 +105124,10 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Theralion's Mirror"
         },
-
+        "levelRange": [
+            359,
+            372
+        ],
         "sources": [
             {
                 "encounterId": 157,
@@ -116473,9 +116456,6 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Mandala of Stirring Patterns"
         },
-        "levelRange": [
-            359
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -130147,8 +130127,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "spirit": 242,
-            "haste": 242
+            "spirit": 276,
+            "haste": 276
         }
     },
     {
@@ -130187,8 +130167,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "crit": 242,
-            "haste": 242
+            "crit": 276,
+            "haste": 276
         }
     },
     {
@@ -130227,8 +130207,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "haste": 242,
-            "mastery": 242
+            "haste": 276,
+            "mastery": 276
         }
     },
     {
@@ -130267,8 +130247,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 400,
             "stamina": 0,
-            "mastery": 242,
-            "spirit": 242
+            "mastery": 276,
+            "spirit": 276
         }
     },
     {
@@ -130438,8 +130418,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "spirit": 192,
-            "haste": 192
+            "spirit": 218,
+            "haste": 218
         }
     },
     {
@@ -130477,8 +130457,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "crit": 192,
-            "haste": 192
+            "crit": 218,
+            "haste": 218
         }
     },
     {
@@ -130516,8 +130496,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "haste": 192,
-            "mastery": 192
+            "haste": 218,
+            "mastery": 218
         }
     },
     {
@@ -130555,8 +130535,8 @@ export const classicItemDB = [
         "stats": {
             "intellect": 321,
             "stamina": 0,
-            "mastery": 192,
-            "spirit": 192
+            "mastery": 218,
+            "spirit": 218
         }
     },
     {
@@ -156759,6 +156739,7 @@ export const classicItemDB = [
             "name": "Will of Unbinding"
         },
         "levelRange": [
+            390,
             403,
             416
         ],
@@ -156796,6 +156777,7 @@ export const classicItemDB = [
             "name": "Heart of Unliving"
         },
         "levelRange": [
+            390,
             403,
             416
         ],
@@ -156931,6 +156913,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Insignia of the Corrupted Mind"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 325,
@@ -156965,6 +156952,7 @@ export const classicItemDB = [
             "name": "Seal of the Seven Signs"
         },
         "levelRange": [
+            384,
             397,
             410
         ],
@@ -157001,6 +156989,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Creche of the Final Dragon"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 331,
@@ -157134,6 +157127,7 @@ export const classicItemDB = [
             "name": "Windward Heart"
         },
         "levelRange": [
+            384,
             397,
             410
         ],
@@ -158435,6 +158429,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Seal of the Seven Signs"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 324,
@@ -158501,6 +158500,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Insignia of the Corrupted Mind"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 325,
@@ -158535,6 +158539,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Creche of the Final Dragon"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 331,
@@ -158634,6 +158643,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Will of Unbinding"
         },
+        "levelRange": [
+            390,
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
@@ -158641,7 +158655,6 @@ export const classicItemDB = [
                 "difficulty": 0
             }
         ],
-        
         "class": "Priest, Shaman, Mage, Warlock, Druid",
         "stats": {
             "intellect": 0,
@@ -158669,6 +158682,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Unliving"
         },
+        "levelRange": [
+            390,
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
@@ -158835,6 +158853,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Windward Heart"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 332,
@@ -159069,6 +159092,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Seal of the Seven Signs"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 324,
@@ -159135,6 +159163,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Insignia of the Corrupted Mind"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 325,
@@ -159168,6 +159201,11 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Creche of the Final Dragon"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 331,
@@ -159268,6 +159306,7 @@ export const classicItemDB = [
             "name": "Will of Unbinding"
         },
         "levelRange": [
+            390,
             403,
             416
         ],
@@ -159304,16 +159343,17 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Heart of Unliving"
         },
+        "levelRange": [
+            390,
+            403,
+            416
+        ],
         "sources": [
             {
                 "encounterId": 318,
                 "instanceId": 187,
                 "difficulty": 0
             }
-        ],
-        "levelRange": [
-            403,
-            416
         ],
         "stats": {
             "intellect": 364,
@@ -159473,16 +159513,17 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Windward Heart"
         },
+        "levelRange": [
+            384,
+            397,
+            410
+        ],
         "sources": [
             {
                 "encounterId": 332,
                 "instanceId": 187,
                 "difficulty": 0
             }
-        ],
-        "levelRange": [
-            397,
-            410
         ],
         "stats": {
             "intellect": 517,
@@ -168205,6 +168246,54 @@ export const classicItemDB = [
             "intellect": 225,
             "stamina": 338,
             "haste": 150
+        }
+    },
+    {
+        "name": "Heartbreak Charm",
+        "id": 238334,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Heartbreak Charm",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_23",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 147,
+            "haste": 154
+        }
+    },
+    {
+        "name": "Winking Eye of Love",
+        "id": 238335,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Winking Eye of Love",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_27",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 154,
+            "spirit": 147
         }
     }
 ]

@@ -176,7 +176,7 @@ const raidTrinketData: Effect[] = [
     name: "Insignia of the Corrupted Mind",
     effects: [ // DPS SPELLS ONLY
       { 
-        value: {397: 2904}, // Spirit effect
+        value: {384: 2573, 397: 2904, 410: 3278}, // Spirit effect
         stat: "haste",
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         duration: 20,
@@ -194,7 +194,7 @@ const raidTrinketData: Effect[] = [
     name: "Heart of Unliving",
     effects: [ // Healing Spells
       { 
-        value: {403: 88, 416: 99}, // Spirit effect
+        value: {390: 78, 403: 88, 416: 99}, // Spirit effect
         stat: "spirit",
         duration: 20,
         maxStacks: 10,
@@ -216,7 +216,7 @@ const raidTrinketData: Effect[] = [
     name: "Windward Heart",
     effects: [ // Healing Spells
       { 
-        value: {397: (10388+12073)/2, 410: (11726+13627)/2},
+        value: {384: (9203+10696)/2, 397: (10388+12073)/2, 410: (11726+13627)/2},
         stat: "hps",
         secondaries: ["crit"],
         efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.
