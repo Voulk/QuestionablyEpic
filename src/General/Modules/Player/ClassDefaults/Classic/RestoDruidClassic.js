@@ -104,8 +104,29 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
       statProfile.mp5 = (statProfile.mp5 || 0) + (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
     }
     if (tierSets.includes("Druid T13-2")) {
-      // TODO. 5% discount on Rejuv / Healing Touch.
-    }
+        // 25% cost reduction for 15s after pressing Innervate
+        const spellsCast = {
+            "Wild Growth": 2,
+            "Nourish": 2,
+            "Swiftmend": 1,
+            "Rejuvenation": Math.floor(15-5*1.5/getHaste(statProfile, "Classic")) * 0.8
+        }
+
+        const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
+            const spell = druidBaseline.castProfile.find(spell => spell.spell === spellName);
+            
+            if (!spell) return total; // Spell can't be found, ignore.
+
+            const spellCost = spell.cost;
+            const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
+
+
+            return total + manaSavedForSpell;
+        }, 0); // Start accumulating from 0
+
+        statProfile.mp5 = (statProfile.mp5 || 0) + (manaSaved / 180 * 5);
+      }
+
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -114,14 +135,21 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
                   (statProfile.mp5 || 0)) * 12 * fightLength;
 
     const totalManaPool = manaPool + regen;
-    const fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] // This could be more efficient;
+    //const manaSpendEdit = tierSets.includes("Druid T13-2") ? 1 - (0.25 * 15 / 180) : 1;
+    // Here we can include anything that edits the cost of our spells. Note that it does cause an average but while the buff is active you are likely to spam.
+    // This could be rectified by simulating the entire buff window 
+
+    let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    let costPerMinute = druidBaseline.costPerMinute;
+
     //console.log(totalManaPool);
     //console.log("Rejuv cost: " + fillerCost);
     //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
-    const fillerCPM = ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost;
+    const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost;
 
     druidBaseline.castProfile.forEach(spellProfile => {
         const fullSpell = druidBaseline.spellDB[spellProfile.spell];
+        const spellName = spellProfile.spell;
 
         fullSpell.forEach(spell => {
           const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
@@ -137,13 +165,18 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
           
           // Handle HoT
           if (spell.type === "classic periodic") {
-              const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
-              const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
-              
-              const targetCount = spell.targets ? spell.targets : 1;
-              const tickCount = Math.round(spell.buffDuration / (adjTickRate));
-              if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
-              else spellHealing = spellHealing * tickCount * targetCount;
+            const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
+            const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
+            const targetCount = spell.targets ? spell.targets : 1;
+            let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+
+            if (tierSets.includes("Druid T13-4") && (spellName === "Rejuvenation" || spellName === "Regrowth")) {
+                // 10% chance to double the duration of Rejuv / Regrowth HoT
+                tickCount *= 1.1;
+            }
+
+            if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
+            else spellHealing = spellHealing * tickCount * targetCount;
           }
 
 
@@ -155,9 +188,10 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
             spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
           }
 
-          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "Heal") {
+          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "heal") {
             // Heal for a portion of the Swiftmend only. No Efflo, effective healing only.
-            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * (1 - spell.expectedOverheal);
+            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * 0.9;
+            score += spellHealing * spellProfile.cpm * 0.9;
           }
           
           //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));

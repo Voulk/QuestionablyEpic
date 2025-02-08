@@ -171,7 +171,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {

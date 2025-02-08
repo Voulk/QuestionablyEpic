@@ -497,7 +497,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       */
       
     }
-    console.log(JSON.stringify(castModel));
+    //console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {

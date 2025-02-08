@@ -148,7 +148,6 @@ export function exportGearSet(itemSet, spec) {
   itemSet.forEach(item => {
     let source = "";
     let bonusTag = "";
-    console.log(item.sources);
     if (item.source) {
       source = CONSTANTS.WHCodes[item.source.encounterId] || "";
 
@@ -167,7 +166,6 @@ export function exportGearSet(itemSet, spec) {
   results.push(`[/table][/center]`)
 
   const formattedArray = results.map(String).join('\n');
-  console.log(formattedArray);
 }
   
 export function sumScore(obj) {
