@@ -77,7 +77,7 @@ import Stonevault from "Images/MythicPlus/Stonevault.png";
 import SiegeOfBoralus from "Images/MythicPlus/SiegeOfBoralus.png";
 
 import CinderbrewMeadery from "Images/MythicPlus/CinderbrewMeadery.png";
-import DarkFlameCleft from "Images/MythicPlus/DarkFlameCleft.png";
+import DarkFlameCleft from "Images/MythicPlus/DarkflameCleft.png";
 import Motherlode from "Images/MythicPlus/Motherlode.png";
 import OperationFloodgate from "Images/MythicPlus/OperationFloodgate.png";
 import Priory from "Images/MythicPlus/Priory.png";

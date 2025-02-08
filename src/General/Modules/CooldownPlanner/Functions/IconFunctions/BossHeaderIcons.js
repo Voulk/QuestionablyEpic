@@ -572,14 +572,14 @@ export default function bossHeaders(props, style, QEmodule) {
   else if (props === 2602) source = require("Images/Bosses/NerubarPalace/ui-ej-boss-queen ansurek.png");
 
   // Undermine
-  else if (props === 2639) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Vexie and the Geargrinders.png");
-  else if (props === 2640) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Cauldron of Carnage.png");
-  else if (props === 2641) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Rik Reverb.png");
-  else if (props === 2642) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Stix Bunkjunker.png");
-  else if (props === 2653) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Sprocketmonger Locknstock.png");
-  else if (props === 2644) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-One Armed Bandit.png");
-  else if (props === 2645) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Mugzee Heads of Security.png");
-  else if (props === 2646) source = require("Images/Bosses/NerubarPalace/UI-EJ-BOSS-Chrome King Gallywix.png");
+  else if (props === 2639) source = require("Images/Bosses/Undermine/ui-ej-boss-vexie and the geargrinders.png");
+  else if (props === 2640) source = require("Images/Bosses/Undermine/ui-ej-boss-cauldron of carnage.png");
+  else if (props === 2641) source = require("Images/Bosses/Undermine/ui-ej-boss-rik reverb.png");
+  else if (props === 2642) source = require("Images/Bosses/Undermine/ui-ej-boss-stix bunkjunker.png");
+  else if (props === 2653) source = require("Images/Bosses/Undermine/ui-ej-boss-sprocketmonger locknstock.png");
+  else if (props === 2644) source = require("Images/Bosses/Undermine/ui-ej-boss-one armed bandit.png");
+  else if (props === 2645) source = require("Images/Bosses/Undermine/ui-ej-boss-mugzee heads of security.png");
+  else if (props === 2646) source = require("Images/Bosses/Undermine/ui-ej-boss-chrome king gallywix.png");
 
 
   return <img style={{ ...style }} src={source} alt={props} />;

@@ -160,6 +160,10 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
   }
+  else if (instanceID === -69) {
+    // Delves
+    itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
+  }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
   else if (instanceID === -31) {
@@ -259,6 +263,16 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Crafted";
+        item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
+        item.quality = 4;
+        itemPoss.push(item);
+      } 
+      else if (primarySource === -69) {
+        // Delves
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
+        item.dropLoc = "Delves";
         item.dropDifficulty = "";
         item.dropDifficultyTxt = "";
         item.quality = 4;

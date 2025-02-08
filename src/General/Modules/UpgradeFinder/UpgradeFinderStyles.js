@@ -67,6 +67,16 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     ...commonTabStyles,
     borderRadius: "0px 4px 4px 0px",
   },
+  delvesHeaderStyle: {
+    backgroundImage: `url(${require("../../../Images/Bosses/PanelDelves.png")})`,
+    ...commonTabStyles,
+    borderRadius: "0px 4px 4px 0px",
+  },
+  craftedHeaderStyle: {
+    backgroundImage: `url(${require("../../../Images/Bosses/PanelCrafts.png")})`,
+    ...commonTabStyles,
+    borderRadius: "0px 4px 4px 0px",
+  },
   slotsBCHeaderStyle: {
     backgroundImage: `url(${require("../../../Images/Classic/SlotsHeader.jpg")})`,
     ...commonTabStyles,
