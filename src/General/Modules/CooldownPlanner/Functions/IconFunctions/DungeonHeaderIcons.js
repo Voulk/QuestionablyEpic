@@ -76,6 +76,14 @@ import Dawnbreaker from "Images/MythicPlus/Dawnbreaker.png";
 import Stonevault from "Images/MythicPlus/Stonevault.png";
 import SiegeOfBoralus from "Images/MythicPlus/SiegeOfBoralus.png";
 
+import CinderbrewMeadery from "Images/MythicPlus/CinderbrewMeadery.png";
+import DarkFlameCleft from "Images/MythicPlus/DarkFlameCleft.png";
+import Motherlode from "Images/MythicPlus/Motherlode.png";
+import OperationFloodgate from "Images/MythicPlus/OperationFloodgate.png";
+import Priory from "Images/MythicPlus/Priory.png";
+import Rookery from "Images/MythicPlus/Rookery.png";
+
+
 export default function DungeonHeaderIcons(props) {
   let source = "";
 
@@ -254,6 +262,14 @@ export default function DungeonHeaderIcons(props) {
   if (props === 1270) source = Dawnbreaker;
   if (props === 1269) source = Stonevault;
   if (props === 1023) source = SiegeOfBoralus;
+
+  if (props === 1210) source = DarkFlameCleft;
+  if (props === 1272) source = CinderbrewMeadery;
+  if (props === 1268) source = Rookery;
+  if (props === 1267) source = Priory;
+  if (props === 1298) source = OperationFloodgate;
+  if (props === 1012) source = Motherlode;
+
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                       Legion Timewalking                                       */
