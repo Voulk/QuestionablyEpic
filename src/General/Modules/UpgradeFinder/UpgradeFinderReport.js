@@ -242,7 +242,7 @@ export default function UpgradeFinderReport(props) {
             <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
                 <Grid container>
-                  <DelvesContainer player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                  <DelvesContainer spec={result.spec} player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
                 </Grid>
               </div>
             </UFTabPanel>
