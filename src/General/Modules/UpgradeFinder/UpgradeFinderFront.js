@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import ReactGA from "react-ga";
+import { itemLevels } from "Databases/itemLevelsDB";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -81,14 +82,16 @@ const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (M
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
-const craftedItemLevels = [
+/*const craftedItemLevels = [
   { value: 0, label: "590" },
   { value: 1, label: "606" },
   { value: 2, label: "616" },
   { value: 3, label: "622" },
   { value: 4, label: "626" },
   { value: 5, label: "636" },
-]
+]*/
+
+const craftedItemLevels = itemLevels.crafted.map((label, index) => ({ value: index, label }));
 
 const craftedOptions = [
   "Crit / Mastery",
@@ -144,17 +147,19 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 593, label: "M0" },
-  { value: 597, label: "+2/3" },
-  { value: 600, label: "+4" },
-  { value: 603, label: "+5" },
-  { value: 606, label: "+6" },
-  { value: 610, label: "+7/8" },
-  { value: 613, label: "+9/10" },
-  { value: 616, label: "Vault" },
-  { value: 619, label: "" },
-  { value: 626, label: "" },
-  { value: 639, label: "" },
+  { value: 632, label: "M0" },
+  { value: 636, label: "+2/3" },
+  { value: 639, label: "+4" },
+  { value: 642, label: "+5" },
+  { value: 645, label: "+6" },
+  { value: 649, label: "+7/8" },
+  { value: 652, label: "+9/10" },
+  { value: 658, label: "Vault" },
+  { value: 665, label: "" },
+  { value: 672, label: "" },
+  { value: 678, label: "" },
+
+
 ]
 
 export default function UpgradeFinderFront(props) {
@@ -524,7 +529,7 @@ export default function UpgradeFinderFront(props) {
                 step={null}
                 valueLabelDisplay="off"
                 marks={craftedItemLevels}
-                max={5}
+                max={6}
                 change={setCraftedLevel}
               />
             </Grid>
