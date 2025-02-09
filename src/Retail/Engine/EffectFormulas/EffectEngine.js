@@ -8,10 +8,11 @@ import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
-import { getGenericEffectBC} from "Classic/Engine/EffectFormulas/Generic/GenericEffectBC"
+
 import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
 
 // Classic
+import { getGenericEffectClassic } from "Classic/Engine/EffectFormulas/Generic/GenericEffectClassic"
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
 import { getClassicTierSet } from "Classic/Engine/EffectFormulas/ClassicTierSets";
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
@@ -111,8 +112,8 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
     else if (effectType === "trinket") {
       bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, userSettings);
     }
-    if (effect.type === "special") {
-      bonus_stats = getGenericEffectBC(effectName, player, contentType);
+    if (effectType === "special") {
+      bonus_stats = getGenericEffectClassic(effectName, player, itemLevel, userSettings);
     } 
   }
   //console.log("ITEM EFFECT" + JSON.stringify(effect) + ". " + ". Result: " + JSON.stringify(bonus_stats));

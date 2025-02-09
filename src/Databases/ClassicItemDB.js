@@ -156682,7 +156682,11 @@ export const classicItemDB = [
             "intellect": 220,
             "stamina": 331,
             "spellpower": 2945
-        }
+        },
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        } 
     },
     {
         "name": "Wrath of Unchaining",
@@ -161939,7 +161943,11 @@ export const classicItemDB = [
             "intellect": 249,
             "stamina": 373,
             "spellpower": 3324
-        }
+        },
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        } 
     },
     {
         "name": "Ti'tahk, the Steps of Time",
@@ -162029,7 +162037,11 @@ export const classicItemDB = [
             "intellect": 195,
             "stamina": 293,
             "spellpower": 2607
-        }
+        },
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        } 
     },
     {
         "name": "Ti'tahk, the Steps of Time",

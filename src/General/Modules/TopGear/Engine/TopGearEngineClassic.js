@@ -176,8 +176,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
           newItem.flags.push("ItemReforged");
           reforgedItems.push(newItem);
-
-  
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
           
         }
@@ -257,7 +255,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   });
 
   itemList = itemList.concat(reforgedItems);
-  console.log("Total item count: " + itemList.length);
+  //console.log("Total item count: " + itemList.length);
   
   }
   let wepCombosNew = buildDistinctWepCombos(itemList);

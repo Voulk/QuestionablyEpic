@@ -1,30 +1,18 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
-import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
-type EffectData = {
-  coefficient: number;
-  table: number;
-  cooldown: number;
-  duration: number;
-};
+import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket } from "./ClassicEffectUtilities";
 
-type TrinketRunFunc = (data: EffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
+
+type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
 
 type Effect = {
   name: string;
-  effects: EffectData[];
+  effects: ClassicEffectData[];
   runFunc: TrinketRunFunc;
 };
 
 
-// Calculates an effects expected ppm given its ICD, proc chance, and our GCD or cast time.
-export function getEffectPPM(procChance: number, internalCooldown: number, gcd: number): number {
-
-  //return 60 / (internalCooldown + 1/procChance*gcd)
-  return 60 / (internalCooldown + 2.5)
-
-}
 
 export function getAllTrinketDataClassic() {
   return raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
@@ -51,41 +39,9 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 }
 
-const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
-  const trinketValue = data.duration * data.value[itemLevel] * data.ppm / 60
-  const statType = data.stat;
-  const bonus_stats: Stats = {};
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-}
 
-const getGenericThroughputTrinket = (data: EffectData, itemLevel: number, player: player): Stats => {
-  const trinketValue = data.value[itemLevel] * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(player.activeStats, player.spec.replace(" Classic", "")));
-  const statType = data.stat;
-  const bonus_stats: Stats = {};
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-}
 
-const getGenericHealingIncrease = (spec: string): number => {
-  if (spec.includes("Restoration Druid")) {
-    return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
-  }
-  else if (spec.includes("Holy Paladin")) {
-    return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
-  }
 
-  return 1;
-}
-
-const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
-  const bonus_stats: Stats = {};
-  const trinketValue = data.duration * data.value[itemLevel] / data.cooldown;
-  const statType = data.stat;
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-
-}
 
 
 
@@ -131,7 +87,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
     }
   },
   {
@@ -227,7 +183,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericThroughputTrinket(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player);
 
       return bonus_stats;
     }
@@ -251,7 +207,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericThroughputTrinket(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player);
       
      // return bonus_stats;
     }
@@ -343,7 +299,7 @@ const raidTrinketData: Effect[] = [
       //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -402,7 +358,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      bonus_stats = getGenericTrinket(data[0], itemLevel);
+      bonus_stats = getGenericStatEffect(data[0], itemLevel);
       bonus_stats.mastery *= data[0].specMod[player.spec];
 
       return bonus_stats;
@@ -429,7 +385,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
     }
   },
   {
@@ -445,7 +401,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -461,7 +417,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -493,7 +449,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
     }
   },
   {
@@ -509,7 +465,7 @@ const dungeonTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -526,7 +482,7 @@ const dungeonTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -582,7 +538,7 @@ const otherTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -599,7 +555,7 @@ const otherTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
