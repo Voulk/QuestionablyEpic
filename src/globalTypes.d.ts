@@ -113,9 +113,16 @@ declare interface effectData  {
     value?: number; // Rare effects (and most classic effects) just use a set value either instead of or as part of their formula.
 }
 
+
 // TODO: Split effectData into multiple interfaces
 declare interface statEffect extends effectData {
     stat?: string; // If this is a secondary stat trinket then this is the stat it procs.
-
 }
+
+declare type ClassicEffectData = {
+    coefficient: number;
+    table: number;
+    cooldown: number;
+    duration: number;
+  };
 

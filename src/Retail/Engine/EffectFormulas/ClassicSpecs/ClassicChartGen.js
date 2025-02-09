@@ -14,7 +14,7 @@ import { buildChartEntry } from "Retail/Engine/EffectFormulas/Generic/RampGeneri
  */
 
 
-
+// Long term it would be really nice to just push all of this into the CastModel and have you call the chart data instead of having everything in ten places.
 export const buildClassicChartData = (activeStats, spec) => {
     if (spec === "Restoration Druid") {
         return buildClassicDruidChartData(activeStats, druidTalents);
@@ -25,10 +25,60 @@ export const buildClassicChartData = (activeStats, spec) => {
     else if (spec === "Discipline Priest") {
         return buildClassicDiscChartData(activeStats, classicDiscTalents);
     }
+    else if (spec === "Holy Priest") {
+        return buildClassicHolyChartData(activeStats, classicHolyTalents);
+    }
 
     else {
         console.error("invalid spec");
     }
+}
+
+export const buildClassicHolyChartData = (activeStats, baseTalents) => {
+    //
+    let results = [];
+
+    const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Priest"};
+    const sequences = [
+        {cat: "Single Target Healing", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
+        {cat: "AoE Healing", tag: "Prayer of Mending (2 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
+        {cat: "AoE Healing", tag: "Prayer of Healing", seq: ["Prayer of Healing"], preBuffs: []},
+        {cat: "Single Target Healing", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
+        {cat: "Single Target Healing", tag: "Renew", seq: ["Renew"], preBuffs: []},
+        {cat: "AoE Healing", tag: "Circle of Healing", seq: ["Circle of Healing"], preBuffs: []},
+
+        {cat: "AoE Healing", tag: "Holy Word: Sanctuary", seq: ["Holy Word: Sanctuary"], preBuffs: []},
+        
+        //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
+
+    ]
+
+    sequences.forEach(sequence => {
+        const newSeq = sequence.seq;
+        const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        const spellData = {id: 0, icon: CLASSICPRIESTSPELLDB[newSeq[0]] ? CLASSICPRIESTSPELLDB[newSeq[0]][0].spellData.icon : ""};
+        const cat = sequence.cat;
+
+        if (cat === "Package") {
+            // All auto based.
+            Object.keys(sequence.details).forEach(spellName => {
+                const value = sequence.details[spellName];
+                for (let i = 0; i < value; i++) {
+                    newSeq.push(spellName);
+                }
+            })
+            
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        
+        }
+        else {
+            // All sequence based.
+            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
+
+        };  
+    }); 
+
+    return results;
 }
 
 export const buildClassicDiscChartData = (activeStats, baseTalents) => {
@@ -74,8 +124,6 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
             // All sequence based.
             const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
-
-            
 
         };  
     }); 

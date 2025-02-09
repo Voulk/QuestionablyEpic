@@ -11,7 +11,10 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
-import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
+import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
+import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
+import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
@@ -173,8 +176,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
           newItem.flags.push("ItemReforged");
           reforgedItems.push(newItem);
-
-  
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
           
         }
@@ -254,7 +255,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   });
 
   itemList = itemList.concat(reforgedItems);
-  console.log("Total item count: " + itemList.length);
+  //console.log("Total item count: " + itemList.length);
   
   }
   let wepCombosNew = buildDistinctWepCombos(itemList);
@@ -263,7 +264,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   return itemSets;
 }
 
-export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
+export function runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -494,6 +495,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       */
       
     }
+    //console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {

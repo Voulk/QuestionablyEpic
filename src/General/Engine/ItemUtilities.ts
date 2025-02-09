@@ -944,8 +944,9 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   
   // Deal with Rag loot
   else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
-  else if (itemLevelReq === 378 && item.itemLevel === 384  && item.sources && item.sources[0].encounterId === 198) return true;
-
+  else if (itemLevelReq === 378 && item.itemLevel === 384/*  && item.sources && item.sources[0].encounterId === 198*/) return true;
+  else if (itemLevelReq === 397 && item.itemLevel === 403) return true;
+  else if (itemLevelReq === 410 && item.itemLevel === 416) return true;
   // The rest
   else return ((item.itemLevel === 379 && itemLevelReq === 372 || (item.itemLevel === 359 && itemLevelReq === 372 && item.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/)
 }

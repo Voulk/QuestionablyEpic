@@ -1,30 +1,18 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
-import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
-type EffectData = {
-  coefficient: number;
-  table: number;
-  cooldown: number;
-  duration: number;
-};
+import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket } from "./ClassicEffectUtilities";
 
-type TrinketRunFunc = (data: EffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
+
+type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
 
 type Effect = {
   name: string;
-  effects: EffectData[];
+  effects: ClassicEffectData[];
   runFunc: TrinketRunFunc;
 };
 
 
-// Calculates an effects expected ppm given its ICD, proc chance, and our GCD or cast time.
-export function getEffectPPM(procChance: number, internalCooldown: number, gcd: number): number {
-
-  //return 60 / (internalCooldown + 1/procChance*gcd)
-  return 60 / (internalCooldown + 2.5)
-
-}
 
 export function getAllTrinketDataClassic() {
   return raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
@@ -51,41 +39,9 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 }
 
-const getGenericTrinket = (data: EffectData, itemLevel: number): Stats => {
-  const trinketValue = data.duration * data.value[itemLevel] * data.ppm / 60
-  const statType = data.stat;
-  const bonus_stats: Stats = {};
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-}
 
-const getGenericThroughputTrinket = (data: EffectData, itemLevel: number, player: player): Stats => {
-  const trinketValue = data.value[itemLevel] * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(player.activeStats, player.spec.replace(" Classic", "")));
-  const statType = data.stat;
-  const bonus_stats: Stats = {};
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-}
 
-const getGenericHealingIncrease = (spec: string): number => {
-  if (spec.includes("Restoration Druid")) {
-    return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
-  }
-  else if (spec.includes("Holy Paladin")) {
-    return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
-  }
 
-  return 1;
-}
-
-const getGenericOnUseTrinket = (data: EffectData, itemLevel: number): Stats => {
-  const bonus_stats: Stats = {};
-  const trinketValue = data.duration * data.value[itemLevel] / data.cooldown;
-  const statType = data.stat;
-  bonus_stats[statType] = trinketValue;
-  return bonus_stats;
-
-}
 
 
 
@@ -118,6 +74,123 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  { // Dragon Soul
+    name: "Seal of the Seven Signs",
+    effects: [
+      { // 
+        value: {384: 2573, 397: 2904, 410: 3278}, 
+        table: -1,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+        stat: "haste",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+  {
+    name: "Creche of the Final Dragon",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {397: 2904, 410: 3278}, // Spirit effect
+        stat: "crit",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        maxStacks: 10,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Will of Unbinding",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {390: 78, 403: 88, 416: 99}, //
+        stat: "intellect",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        maxStacks: 10,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = data[0].value[itemLevel] * data[0].maxStacks * data[0].specMod[player.spec] * 0.95;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Insignia of the Corrupted Mind",
+    effects: [ // DPS SPELLS ONLY
+      { 
+        value: {384: 2573, 397: 2904, 410: 3278}, // Spirit effect
+        stat: "haste",
+        specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        duration: 20,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Heart of Unliving",
+    effects: [ // Healing Spells
+      { 
+        value: {390: 78, 403: 88, 416: 99}, // Spirit effect
+        stat: "spirit",
+        duration: 20,
+        maxStacks: 10,
+      },
+
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      // It's not pretty, but we'll assume you just prestack this before the fight but even if you don't, mana tends to be fine in the few seconds before you stack this.
+      // Assumption: Doesn't proc off HoTs
+
+      bonus_stats.spirit = data[0].value[itemLevel] * data[0].maxStacks;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Windward Heart",
+    effects: [ // Healing Spells
+      { 
+        value: {384: (9203+10696)/2, 397: (10388+12073)/2, 410: (11726+13627)/2},
+        stat: "hps",
+        secondaries: ["crit"],
+        efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.
+        ppm: 2.5, //getEffectPPM(0.1, 20, 1.5), // Crits only
+
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      return getGenericThroughputEffect(data[0], itemLevel, player);
+
+      return bonus_stats;
+    }
+  },
+
+
+  // ------------------------------
   // Firelands
   {
     name: "Eye of Blazing Power",
@@ -134,7 +207,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericThroughputTrinket(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player);
       
      // return bonus_stats;
     }
@@ -146,7 +219,7 @@ const raidTrinketData: Effect[] = [
         value: {378: 110, 391: 125}, 
         maxStacks: 10,
         stat: "mp5",
-        expectedCasts: {"Restoration Druid Classic": 14, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
+        expectedCasts: {"Restoration Druid Classic": 13.4, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         cooldown: 120,
       },
     ],
@@ -170,7 +243,6 @@ const raidTrinketData: Effect[] = [
       // Convert to MP5
       bonus_stats.mp5 = averageCostReduction * totalSpellsCast / data[0].cooldown * 5;
 
-      console.log("JAWS MP5", bonus_stats.mp5)
       return bonus_stats;
       
      // return bonus_stats;
@@ -227,8 +299,7 @@ const raidTrinketData: Effect[] = [
       //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       //bonus_stats.spirit = data[0].duration * data[0].value[itemLevel] * data[0].ppm / 60
 
-      console.log("FALL OF MORTALITY", JSON.stringify(getGenericTrinket(data[0], itemLevel)));
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -287,7 +358,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      bonus_stats = getGenericTrinket(data[0], itemLevel);
+      bonus_stats = getGenericStatEffect(data[0], itemLevel);
       bonus_stats.mastery *= data[0].specMod[player.spec];
 
       return bonus_stats;
@@ -302,6 +373,22 @@ const raidTrinketData: Effect[] = [
  */
 const dungeonTrinketData: Effect[] = [
   {
+    name: "Foul Gift of the Demon Lord",
+    effects: [
+      { // 
+        value: {378: 1710}, 
+        table: -1,
+        ppm: getEffectPPM(0.15, 50, 1.5),
+        stat: "mastery",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+  {
     name: "Tendrils of Burrowing Dark",
     effects: [
       { // 
@@ -314,7 +401,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -330,7 +417,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -362,7 +449,7 @@ const dungeonTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
     }
   },
   {
@@ -378,7 +465,7 @@ const dungeonTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -395,7 +482,7 @@ const dungeonTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -451,7 +538,7 @@ const otherTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },
@@ -468,7 +555,7 @@ const otherTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericTrinket(data[0], itemLevel);
+      return getGenericStatEffect(data[0], itemLevel);
       
     }
   },

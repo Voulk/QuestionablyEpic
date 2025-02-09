@@ -491,10 +491,11 @@ export default function ItemBar(props) {
       }}>
         <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
         <Grid item>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(359, props.player, "Classic")}>{"359 Gear"}</Button>
           <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(372, props.player, "Classic")}>{"372 Gear"}</Button>
           <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(378, props.player, "Classic")}>{"378 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(391, props.player, "Classic")}>{"391 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150, marginRight: 1 }} color="primary" onClick={() => autoFillItems(391, props.player, "Classic")}>{"391 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(397, props.player, "Classic")}>{"397 Gear"}</Button>
+          <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(410, props.player, "Classic")}>{"410 Gear"}</Button>
         </Grid>
       </Grid> : 
        <Grid 
