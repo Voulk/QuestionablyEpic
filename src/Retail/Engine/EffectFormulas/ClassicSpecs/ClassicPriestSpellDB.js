@@ -133,9 +133,9 @@ export const CLASSICPRIESTSPELLDB = {
     }],
     "Divine Hymn": [
     {
+        spellData: {id: 64843, icon: "spell_holy_divinehymn", cat: "heal"},
         castTime: 8, 
         cost: 36, 
-        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
         type: "buff",
         buffType: "heal",
         healType: "direct",
@@ -166,18 +166,15 @@ export const CLASSICPRIESTSPELLDB = {
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
     }],
     "Holy Word: Serenity": [{
-        spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal"},
-        type: "classic periodic",
-        buffType: "heal",
-        castTime: 0.5, 
-        cost: 0, 
-        buffDuration: 0,
-        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
-        coeff: 0, 
-        flat: 0,
-        expectedOverheal: 0.3,
-        targets: 6, // sqrt
-        secondaries: ['crit', 'hmastery'], // HPriest Mastery
+        spellData: {id: 88684, icon: "spell_holy_persuitofjustice", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        healType: "direct",
+        cost: 8, 
+        coeff: 0.486, 
+        flat: 5649,
+        expectedOverheal: 0.12,
+        secondaries: ['crit', 'hmastery'],
     }],
 
     "Circle of Healing": [{
