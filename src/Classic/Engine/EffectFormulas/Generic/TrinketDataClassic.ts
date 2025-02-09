@@ -78,7 +78,7 @@ const raidTrinketData: Effect[] = [
     name: "Seal of the Seven Signs",
     effects: [
       { // 
-        value: {397: 2904, 410: 3278}, 
+        value: {384: 2573, 397: 2904, 410: 3278}, 
         table: -1,
         ppm: getEffectPPM(0.15, 115, 1.5),
         stat: "haste",
@@ -112,7 +112,7 @@ const raidTrinketData: Effect[] = [
     name: "Will of Unbinding",
     effects: [ // DPS SPELLS ONLY
       { 
-        value: {403: 88, 416: 99}, // Spirit effect
+        value: {390: 78, 403: 88, 416: 99}, //
         stat: "intellect",
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         duration: 20,

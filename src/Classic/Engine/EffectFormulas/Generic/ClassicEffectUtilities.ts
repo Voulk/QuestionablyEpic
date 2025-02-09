@@ -46,6 +46,12 @@ export const getGenericHealingIncrease = (spec: string): number => {
   
     return 1;
   }
+
+  export const getDPSWeighting = (spec: string): number => {
+    const specMod = {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0};
+    
+    return specMod[spec];
+  }
   
 export const getGenericOnUseTrinket = (data: ClassicEffectData, itemLevel: number): Stats => {
     const bonus_stats: Stats = {};
