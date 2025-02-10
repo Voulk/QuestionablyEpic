@@ -30,6 +30,11 @@ export const generateReportCode = () => {
     return result;
   }
 
+  export function buildDifferentialClassic(itemSet, primeSet, player, contentType) {
+
+
+  }
+
   export function buildDifferential(itemSet, primeSet, player, contentType) {
     let doubleSlot = {};
     const primeList = primeSet.itemList;
