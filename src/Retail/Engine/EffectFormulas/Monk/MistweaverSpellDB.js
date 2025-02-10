@@ -39,26 +39,35 @@ export const MONKSPELLS = {
         overheal: 0.15,
         secondaries: ['mastery', 'crit', 'vers'],
     }],
+    "Soothing Mist": [    {
+        type: "buff",
+        buffType: "heal",
+        coeff: 3.612,
+        tickRate: 1,
+        buffDuration: 8,
+        overheal: 0.17,
+        channel: true,
+        secondaries: ['crit', 'vers'], // + Haste
+    }],
     "Vivify": [{
         type: "heal",
         castTime: 1.5,
-        cost: 3.8, // Mana cost as a percent. 
-        coeff: 1.41,
+        cost: 3, // Mana cost as a percent. 
+        coeff: 6.0372, //2.58 x 1.95 x 1.2 (Vivify main) x 1.2 (Vivify all)
         overheal: 0.15,
         secondaries: ['crit', 'vers'],
         mastery: true
     },
-    {
+    { // Invigorating Mists
         type: "special",
-        coeff: 1.04,
+        coeff: 1.2428,
         overheal: 0.35,
-        castTime: 1.5,
         secondaries: ['crit', 'vers'],
         mastery: false,
         runFunc: function (state) {
             // Heal allies with Renewing Mist.
             const activeRem = state.activeBuffs.filter(function (buff) {return buff.name === "Renewing Mist"})
-            const spell = { type: "heal", coeff: 1.04, overheal: 0.37, secondaries: ['crit', 'vers'], targets: activeRem.length} 
+            const spell = { type: "heal", coeff: 1.2428, overheal: 0.35, secondaries: ['crit', 'vers'], targets: activeRem.length} 
             if (activeRem.length > 0) runHeal(state, spell, "Vivify (Cleave)")
         }
     },
@@ -129,7 +138,7 @@ export const MONKSPELLS = {
     {
         type: "buff",
         buffType: "heal",
-        coeff: 0.225, // 
+        coeff: 0.19665,
         tickRate: 2,
         buffDuration: 20,
         cooldown: 9,
@@ -633,83 +642,170 @@ export const MONKSPELLS = {
 }
 
 export const baseTalents = {
-    // Disc spec tree
     // Tier 1
-    lightsPromise: {points: 0, maxPoints: 1, icon: "spell_priest_power-word", id: 322115, select: false, tier: 1},
-    darkIndulgence: {points: 1, maxPoints: 1, icon: "spell_shadow_painandsuffering", id: 372972, select: true, tier: 1},
-    schism: {points: 1, maxPoints: 1, icon: "spell_warlock_focusshadow", id: 214621, select: false, tier: 1},
-    brightPupil: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 390684, select: true, tier: 1},
-    enduringLuminescence: {points: 0, maxPoints: 1, icon: "ability_priest_holybolts01", id: 390685, select: true, tier: 1},
-    powerWordSolace: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 129250, select: false, tier: 1, exclusive: "shieldDiscipline"},
-    shieldDiscipline: {points: 0, maxPoints: 1, icon: "spell_holy_divineprotection", id: 197045, select: true, tier: 1, exclusive: "powerWordSolace"},
-    powerWordBarrier: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordbarrier", id: 62618, select: false, tier: 1},
-    painfulPunishment: {points: 1, maxPoints: 1, icon: "ability_priest_clarityofpower", id: 390686, select: true, tier: 1},
-    maliciousIntent: {points: 0, maxPoints: 1, icon: "ability_demonhunter_darkness", id: 372969, select: true, tier: 1},
-    
-    // Tier 2
-    purgeTheWicked: {points: 1, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true, tier: 2},
-    rapture: {points: 1, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: false, tier: 2},
-    shadowCovenant: {points: 0, maxPoints: 1, icon: "spell_shadow_summonvoidwalker", id: 314867, select: true, tier: 2},
-    revelInPurity: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true, tier: 2},
-    contrition: {points: 0, maxPoints: 2, icon: "ability_priest_savinggrace", id: 197419, select: true, tier: 2},
-    exaltation: {points: 1, maxPoints: 1, icon: "spell_holy_spiritualguidence", id: 373042, select: true, tier: 2},
-    indemnity: {points: 1, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 373049, select: true, tier: 2},
-    painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true, tier: 2},
-    embraceShadow: {points: 0, maxPoints: 1, icon: "spell_warlock_demonsoul", id: 372985, select: true, tier: 2},
-    twilightCorruption: {points: 0, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
-    borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
-    castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
-    stolenPsyche: {points: 2, maxPoints: 2, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
+    fastFeet: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // +70% RSK damage, +10% SCK damage
+    }},
+    graceOfTheCrane: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // +4% healing tkn
+    }},
+    vivaciousVivification: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        // Every 10s your Vivify is instant and heals for 20% more.
+    }},
 
-    
-    // Tier 3
-    trainOfThought: {points: 1, maxPoints: 1, icon: "ability_mage_studentofthemind", id: 390693, select: true, tier: 3},
-    lightsWrath: {points: 1, maxPoints: 1, icon: "inv_staff_2h_artifacttome_d_01", id: 373178, select: false, tier: 3},
-    lenience: {points: 0, maxPoints: 1, icon: "ability_priest_atonement", id: 238063, select: true, tier: 3},
-    evangelism: {points: 1, maxPoints: 1, icon: "spell_holy_divineillumination", id: 246287, select: false, tier: 3},
-    mindbender: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: false, tier: 3},
-    divineAegis: {points: 2, maxPoints: 2, icon: "spell_holy_devineaegis", id: 47515, select: true, tier: 3},
-    //sinsOfTheMany: {points: 0, maxPoints: 2, icon: "spell_holy_holyguidance", id: 280391, select: true, tier: 3},
-    blazeOfLight: {points: 2, maxPoints: 2, icon: "spell_holy_searinglight", id: 215768, select: true, tier: 3},
-    resplendentLight: {points: 0, maxPoints: 2, icon: "inv_staff_2h_artifacttome_d_01", id: 390765, select: true, tier: 3},
-    harshDiscipline: {points: 2, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true, tier: 3},
-    expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true, tier: 3},
-    voidSummoner: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowfiend", id: 391218, select: true, tier: 3},
-    aegisOfWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true, tier: 3},
-    makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true, tier: 3},
-    wealAndWoe: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true, tier: 3},
-    wrathUnleashed: {points: 0, maxPoints: 1, icon: "spell_priest_divinestar_holy", id: 390781, select: true, tier: 3},
-    twilightEquilibrium: {points: 1, maxPoints: 1, icon: "ability_priest_innerlightandshadow", id: 390705, select: true, tier: 3},
-    inescapableTorment: {points: 0, maxPoints: 1, icon: "spell_shadow_chilltouch", id: 373427, select: true, tier: 3},
+    // Class Tree Tier 2
+    ferocityOfXuen: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        // +2% damage done
+    }},
+    vigorousExpulsion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        // +5% Expel Harm healing, +15% crit chance
+    }},
 
-    // Priest class tree
-    improvedFlashHeal: {points: 0, maxPoints: 1, icon: "spell_holy_heal", id: 393870, select: true, tier: 4},
-    bindingHeals: {points: 1, maxPoints: 1, icon: "spell_holy_blindingheal", id: 368275, select: true, tier: 4},
-    shadowWordDeath: {points: 1, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 32379, select: false, tier: 4},
-    focusedMending: {points: 0, maxPoints: 1, icon: "achievement_bg_returnxflags_def_wsg", id: 372354, select: false, tier: 4},
-    deathAndMadness: {points: 0, maxPoints: 1, icon: "spell_shadow_demonicfortitude", id: 321291, select: true, tier: 4},
-    wordsOfThePious: {points: 0, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 377438, select: true, tier: 4},
-    unwaveringWill: {points: 0, maxPoints: 1, icon: "ability_warrior_unrelentingassault", id: 373456, select: false, tier: 4},
-    //twistOfFaith:
-    throesOfPain: {points: 0, maxPoints: 2, icon: "spell_shadow_haunting", id: 377427, select: true, tier: 4},
-    
-    surgeOfLight: {points: 0, maxPoints: 2, icon: "spell_holy_surgeoflight", id: 114255, select: true, tier: 4},
-    crystallineReflection: {points: 0, maxPoints: 2, icon: "ability_priest_reflectiveshield", id: 373457, select: true, tier: 4},
-    //manipulation:
-    mindgames: {points: 1, maxPoints: 1, icon: "ability_revendreth_priest", id: 323673, select: false, tier: 4},
-    shatteredPerceptions: {points: 1, maxPoints: 1, icon: "spell_animarevendreth_debuff", id: 391112, select: true, tier: 4},
+    // Class Tree Tier 3
+    saveThemAll: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        // +10% healing for 4s when you heal someone below 35%.
+    }},
+    chiProficiency: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        // +2% magic damage done. +2% healing done.
+    }},
+    martialInstincts: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        // +2% physical damage done.
+    }},
+
+    // Spec Tree Tier 1
+    craneStyle: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 4, runFunc: function (state, spellDB, points) {
+        // RSK, SCK, BoK have a chance to heal via Gust of Mists.
+    }},
+    calmingCoalescence: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // +80% absorb on Life Cocoon
+    }},
+    refreshment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Life Cocoon grants 5 stacks of Mana Tea and applies 2 stacks of healing elixir to the target.
+    }},
+    upliftedSpirits: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Vivify and RSK reduce the cooldown on Revival by 1s. Revival heals targets for 15% of its amount over 10 seconds.
+    }},
+    energizingBrew: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Mana Tea channels 50% faster and generates 20% more mana.
+    }},
+    lifecycles: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Vivify has a 20% chance to cause your next RSK or EnV to generate 1 stack of mana tea. EnV and RSK have a 20% chance to cause your next vivify
+        // to generate 1 stack of Mana Tea.
+    }},
+    zenPulse: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Renewing Mists HoT effect has a chance to cause your next Vivify to trigger a Zen Pulse on its target and all allies with Renewing Mist, healing them.
+        // Increased by 6% for each ReM active up to 30%.
+    }},
+    mistsOfLife: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Life Cocoon applies ReM and Env
+    }},
+    overflowingMist: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Your Env heals the target for 0.6% of their health each time they take direct damage.
+    }},
+    deepClarity: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // After you consume TFT, your next Vivify triggers Zen Pulse.
+    }},
+    rapidDiffusion: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // RSk and EnV apply ReM for 3s to an ally.
+    }},
+    chrysalis: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Reduces the CD of Life Cocoon by 45s.
+    }},
+    burstOfLife: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // When Life Cocoon expires it heals 3 targets for 806% sp.
+    }},
+    yulonsWhisper: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // While channeling mana tea you heal 5 allies for 45.5% sp every 0.5s.
+    }},
+    mistWrap: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Increases EnV duration by 1s and healing bonus by 10%.
+    }},
+    refreshingJadeWind: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // TFT heals 5 allies every 0.75s for 6s.
+    }},
+    celestialHarmony: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // While active, Yulon / Chiji cast Enveloping Breath on 5 targets when you cast EnV healing them over 6s and increasing their healing taken by 10%.
+        // When activated, they apply Chi Cocoons to 5 targets, absorbing damage.
+    }},
+    dancingMists: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Renewing Mist has an 8% chance to immediately spread when cast or travelling to a new target.
+    }},
+    lotusInfusion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // Allies with ReM take 10% more healing from you, and ReMs duration is increased by 2s.
+    }},
+    chiHarmony: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        // ReM increases its targets healing received from you by 50% for the first 8s of its duration but can't jump during this time.
+    }},
+    peerIntoPeace: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // 5% of overhealing done with Soom spreads to 3 nearby allies. Soom now follows the target of your EnV / Vivify and its duration is increased by 4s.
+    }},
+    poolOfMists: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // ReM now has 3 charges and reduces the CD on RSK by 1s. RSK now reduces the CD on ReM by 1s.
+    }},
+    jadeBond: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Chi Cocoons now apply EnV for 4s when they expire or are consumed. Chi-Ji GoM healing +40%, Yu'lons Soothing Breath healing +500%.
+    }},
+    giftOfTheCelestials: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Reduces the CD on Chi'ji / Yulon by 1 minute but reduces their duration to 12s.
+    }},
+    danceOfChiji: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // 3ppm: Chance to make next SCK deal +400% damage.
+    }},
+    jadeEmpowerment: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Casting TFT: Your next CJL deals +2500% damage and causes it to chain to 4 nearby enemies at 15% effectiveness.
+    }},
+    focusedThunder: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // TFT now empowers two spells.
+    }},
+    awakenedJadefire: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Abilitie reset stomp twice as often. While within Stomp: TP strikes twice, BoK strikes two extra targets at 20% effectiveness, SCK heals 3 allies for 110% damage done.
+    }},
+    jadefireTeachings: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // After casting Stomp or TFT: Ancient Teachings transfers an extra 160% damage -> healing. +5% stamina while active.
+    }},
+    resplendentMist: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // GoM has a 30% chance to heal +75%.
+    }},
+    secretInfusion: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        /* After using TFT your next spell gives you a stat for 10s.
+            Vivify: Mastery
+            Enveloping Mist: Crit
+            Renewing Mist: Haste
+            Rising Sun Kick / Expel Harm: Versatility
+        */
+    }},
+    mistyPeaks: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // ReM has a 4% / 8% chance per tick to apply Enveloping Mist
+    }},
+    teaOfSerenity: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // TFT empowers 2 additional ReM, Vivify or Enveloping Mist at random.
+    }},
+    teaOfPlenty: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // TFT empowers 2 additional EnV, Expel Harm or RSK at random.
+    }},
+    unison: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Soothing Harm heals a second ally for 25% of the amount.
+    }},
+    mendingProliferation: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Each time EnV heals, its healing bonus has a 50% chance to spread to an ally.
+    }},
+    invokersDelight: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // You gain 33% haste for 20s after summoning a celestial.
+    }},
+    tearOfMorning: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // On Viv / EnV cast on ally with ReM: 10% chance to spread ReM to another target.
+        // Vivify cleave + 10%. EnV also now cleaves for 12%.
+    }},
+    risingMist: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // RSK heals all allies with ReM / EnV and extends by 4s up to 100% of their base duration.
+    }},
+    legacyOfWisdom: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // SG heals +2 allies, cast time -0.5s
+    }},
+    emperorsFavor: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // SG healing +150%, cast time -100%, heals only 1 target now.
+    }},
+
+
 
 };
-
-// TODO
-export const mistweaverConduits = (conduit, rank) => {
-    if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
-    else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);
-    else if (conduit === "Pain Transformation") return 0.135 + (rank * 0.015);
-    else if (conduit === "Rabid Shadows") return 0.171 + (rank * 0.19);
-    else if (conduit === "Courageous Ascension") return 0.225 + (rank * 0.025);
-    else if (conduit === "Shattered Perception") return 0.117 + (rank * 0.013);
-    else {
-        console.error("Invalid Conduit");
-    }
-}
