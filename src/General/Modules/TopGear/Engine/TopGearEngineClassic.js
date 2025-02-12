@@ -276,7 +276,8 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
+    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : player.spec === "Holy Priest Classic" ? initializeHPriestSet() :  initializeDruidSet();
+
     count = itemSets.length;
 
     for (var i = 0; i < count; i++) {
@@ -503,7 +504,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+          let secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+          if (player.spec === "Holy Priest Classic") secondaryRank = ["spirit", "crit", "mastery", "haste"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -719,6 +721,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
       hardScore = scoreDiscSet(baseline, setStats, player, playerSettings, tierList);
+    }
+    else if (player.spec === "Holy Priest Classic") {
+      //setStats.intellect *= 1.15; // Spec passive.
+      hardScore = scoreHPriestSet(baseline, setStats, player, playerSettings, tierList);
     }
     else {
       console.log("DOING OLD SCORING");

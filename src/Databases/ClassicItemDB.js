@@ -155687,6 +155687,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Bottled Wishes"
         },
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -155714,6 +155717,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Reflection of the Light"
         },
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -158988,6 +158994,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Bottled Wishes"
         },
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159015,7 +159024,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Reflection of the Light"
         },
-        "levelRange": [397],
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159649,7 +159660,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Bottled Wishes"
         },
-        "levelRange": [397],
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159677,6 +159690,9 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Reflection of the Light"
         },
+        "levelRange": [
+            397
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -162332,54 +162348,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Woundlicker Cover",
-        "id": 78508,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Woundlicker Cover",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cape_deathwingraid_d_03",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Back",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "spirit": 219,
-            "haste": 179
-        }
-    },
-    {
-        "name": "Nanoprecise Cape",
-        "id": 78510,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Nanoprecise Cape",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cape_deathwingraid_d_03",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Back",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "mastery": 207,
-            "hit": 199
-        }
-    },
-    {
         "name": "Sabatons of the Graceful Spirit",
         "id": 78513,
         "quality": 4,
@@ -162542,70 +162510,6 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 247,
             "haste": 257
-        }
-    },
-    {
-        "name": "Seal of the Grand Architect",
-        "id": 78522,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Seal of the Grand Architect",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_ring_90",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 286,
-            "stamina": 459,
-            "hit": 184,
-            "haste": 200
-        }
-    },
-    {
-        "name": "Band of Reconstruction",
-        "id": 78523,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Band of Reconstruction",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_ring_generic_1",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 286,
-            "stamina": 459,
-            "spirit": 194,
-            "mastery": 194
         }
     },
     {
@@ -162835,39 +162739,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Helmet of Perpetual Rebirth",
-        "id": 78540,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Helmet of Perpetual Rebirth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helmet_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Head",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "meta",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 30
-            }
-        },
-        "stats": {
-            "intellect": 489,
-            "stamina": 824,
-            "spirit": 362,
-            "mastery": 299
-        }
-    },
-    {
         "name": "Hood of Hidden Flesh",
         "id": 78541,
         "quality": 4,
@@ -162934,102 +162805,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Threadlinked Chain",
-        "id": 78545,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Threadlinked Chain",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_35",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Neck",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "spirit": 222,
-            "crit": 174
-        }
-    },
-    {
-        "name": "Opal of the Secret Order",
-        "id": 78547,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Opal of the Secret Order",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_necklace_16",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Neck",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "hit": 160,
-            "haste": 230
-        }
-    },
-    {
-        "name": "Hungermouth Wand",
-        "id": 78548,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Hungermouth Wand",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_1h_deathwingraid_d_01",
-        "itemClass": 2,
-        "itemSubClass": 19,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 172,
-            "stamina": 259,
-            "hit": 109,
-            "mastery": 118
-        }
-    },
-    {
-        "name": "Scintillating Rods",
-        "id": 78549,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Scintillating Rods",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_1h_deathwingraid_d_02",
-        "itemClass": 2,
-        "itemSubClass": 19,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 172,
-            "stamina": 259,
-            "spirit": 127,
-            "haste": 95
-        }
-    },
-    {
         "name": "Gutripper Shard",
         "id": 78550,
         "quality": 4,
@@ -163084,64 +162859,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 259,
             "mastery": 115
-        }
-    },
-    {
-        "name": "Lightning Spirit in a Bottle",
-        "id": 78552,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Lightning Spirit in a Bottle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_feather_06",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 172,
-            "stamina": 259,
-            "spirit": 123,
-            "mastery": 101
-        }
-    },
-    {
-        "name": "Mindbender Lens",
-        "id": 78553,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Mindbender Lens",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 172,
-            "stamina": 259,
-            "crit": 87,
-            "haste": 131
         }
     },
     {
@@ -163449,30 +163166,6 @@ export const classicItemDB = [
             "stamina": 459,
             "spirit": 189,
             "mastery": 213
-        }
-    },
-    {
-        "name": "Luminescent Bracers",
-        "id": 78575,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Luminescent Bracers",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Wrist",
-        "itemLevel": 410,
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "spirit": 204,
-            "crit": 204
         }
     },
     {
