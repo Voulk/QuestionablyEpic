@@ -449,6 +449,19 @@ export const EVOKERSPELLDB = {
         cooldownData: {cooldown: 180, charges: 1},
         secondaries: []
     }],
+    "Insurance": [{
+        spellData: {id: 443328, icon: "inv_ability_flameshaperevoker_engulf", cat: "N/A"},
+        type: "buff",
+        buffName: "Insurance",
+        buffType: "heal",
+        tickRate: 3,
+        tickData: {tickRate: 3, canPartialTick: true},
+        targets: 1,
+        coeff: 0.8064, // Proc is 2.40
+        buffDuration: 15,
+        expectedOverheal: 0.5,
+        secondaries: ['crit', 'vers', 'mastery']
+    }]
 }
 
 

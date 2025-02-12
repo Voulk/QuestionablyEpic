@@ -234,6 +234,14 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
     applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
    
+    if (true /*settings.t2_4*/) {
+        const insuranceHoT = {...evokerSpells["Insurance"][0]};
+        insuranceHoT.buffDuration = 6;
+
+        evokerSpells["Verdant Embrace"].push(insuranceHoT);
+    }
+
+
     // Setup mana costs & cooldowns.
     for (const [key, value] of Object.entries(evokerSpells)) {
         const fullSpell = value;

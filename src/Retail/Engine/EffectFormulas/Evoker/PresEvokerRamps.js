@@ -303,7 +303,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-                    talents: talents, reporting: true, essence: 5, heroSpec: "Chronowarden"};
+                    talents: talents, reporting: true, essence: 5, heroSpec: "Chronowarden", spec: "Preservation Evoker"};
 
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
