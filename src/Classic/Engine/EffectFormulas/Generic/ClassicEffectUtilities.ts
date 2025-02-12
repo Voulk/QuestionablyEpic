@@ -38,10 +38,13 @@ export function getEffectPPMWithHots(procChance: number, internalCooldown: numbe
 
 export const getGenericHealingIncrease = (spec: string): number => {
     if (spec.includes("Restoration Druid")) {
-      return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
+      return 1.25 * 1.04 * (0.15 * 31 / 180 + 1) // Spec aura, Master Shapeshifter, Tree of Life
     }
     else if (spec.includes("Holy Paladin")) {
-      return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
+      return 1.1 * 1.06 * (0.2 * 20 / 120 + 1) // Aura, talent, wings
+    }
+    else if (spec.includes("Holy Priest")) {
+      return 1.15; // Spec Aura
     }
   
     return 1;

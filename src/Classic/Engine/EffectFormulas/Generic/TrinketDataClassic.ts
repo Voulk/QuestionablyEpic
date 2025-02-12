@@ -74,6 +74,43 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Reflection of the Light", 
+    effects: [
+      { // Same effect as Bottled Wishes.
+        value: {397: 2290},
+        stat: "spellpower",
+        duration: 15,
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Bottled Wishes", 
+    effects: [
+      { // 
+        value: {397: 2290},
+        stat: "spellpower",
+        duration: 15,
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+      
+    }
+  },
   { // Dragon Soul
     name: "Seal of the Seven Signs",
     effects: [

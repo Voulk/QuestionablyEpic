@@ -47,8 +47,8 @@ export function initializeDruidSet() {
   }
     const druidCastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", cpm: 3.5},
-      {spell: "Wild Growth", cpm: 3.7 * (144 / 180)},
+      {spell: "Swiftmend", cpm: 3.8},
+      {spell: "Wild Growth", cpm: 3.8 * (144 / 180)},
       {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
       {spell: "Nourish", cpm: 5},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
@@ -58,7 +58,7 @@ export function initializeDruidSet() {
       // Tree of Life casts
       {spell: "Lifebloom", cpm: 13 * (36 / 180), bonus: 1.15}, // Tree of Life - Single stacks
       {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15}, // Tree of Life OOC Regrowths
-      {spell: "Wild Growth", cpm: 3.7 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
+      {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
     ]
 
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: druidTalents, spec: "Restoration Druid"});
@@ -140,12 +140,13 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     // This could be rectified by simulating the entire buff window 
 
     let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    const fillerWastage = 0.9
     let costPerMinute = druidBaseline.costPerMinute;
 
     //console.log(totalManaPool);
     //console.log("Rejuv cost: " + fillerCost);
     //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
-    const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost;
+    const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
     druidBaseline.castProfile.forEach(spellProfile => {
         const fullSpell = druidBaseline.spellDB[spellProfile.spell];

@@ -159015,6 +159015,7 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Reflection of the Light"
         },
+        "levelRange": [397],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159648,6 +159649,7 @@ export const classicItemDB = [
             "type": "trinket",
             "name": "Bottled Wishes"
         },
+        "levelRange": [397],
         "stats": {
             "intellect": 0,
             "stamina": 0,
