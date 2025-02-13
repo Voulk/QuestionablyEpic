@@ -59,6 +59,30 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
     statProfile.hps = (statProfile.hps || 0) + (9250 + 10750) / 2 * tierDuration * (1 - expectedOverheal) / 55;
   }
 
+  if (tierSets.includes("Priest T13-2")) {
+    // 25% cost reduction for 23s after pressing PI or DH.
+    // Ultimately you often use PI on a DPS which means you can't save it as well for high healing phases. 
+    const spellsCast = {
+        "Holy Fire": 2,
+        "Prayer of Healing": 5,
+        "Power Word: Shield": 3,
+        "Smite": Math.floor(23-(2*2+5*2.5+3*1.5)/getHaste(statProfile, "Classic")) * 0.9,
+    }
+
+    const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
+        const spell = baseline.castProfile.find(spell => spell.spell === spellName);
+        
+        if (!spell) return total; // Spell can't be found, ignore.
+
+        const spellCost = spell.cost;
+        const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
+
+
+        return total + manaSavedForSpell;
+    }, 0); // Start accumulating from 0
+    statProfile.mp5 = (statProfile.mp5 || 0) + (manaSaved / 120 * 5);
+  }
+
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, "Discipline Priest");
   const regen = (getManaRegen(statProfile, "Discipline Priest") + 
@@ -98,6 +122,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
 
         if ((spell.type === "heal" || spell.buffType === "heal")) genericMult *= (0.15 * 18 / 30 + 1); // Archangel
         if (spellName === "Smite" || spellName === "Holy Fire") genericMult *= (1 + 0.02 * 5 / 2);
+        if (spellName === "Power Word: Shield" && tierSets.includes("Priest T13-4")) genericMult *= 1.1;
 
         let spellThroughput = (spell.flat + spell.coeff * statProfile.spellpower) *
                             (critMult) *
@@ -175,8 +200,8 @@ export function initializeDiscSet() {
     critMult: 2,
 }
   const discCastProfile = [
-    {spell: "Power Word: Shield", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.34},
-    {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.66},
+    {spell: "Power Word: Shield", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.3},
+    {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.7},
     {spell: "Penance D", cpm: 7},
     {spell: "Smite", cpm: 10, hastedCPM: true},
     {spell: "Holy Fire", cpm: 5, hastedCPM: false},

@@ -207,7 +207,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
-      console.log(manaSources);
+      //console.log(manaSources);
       manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
       console.log("Total Mana" + manaSources.totalMana)
 
