@@ -48,6 +48,7 @@ export const buildClassicHolyChartData = (activeStats, baseTalents) => {
         {cat: "AoE Healing", tag: "Circle of Healing", seq: ["Circle of Healing"], preBuffs: []},
 
         {cat: "AoE Healing", tag: "Holy Word: Sanctuary", seq: ["Holy Word: Sanctuary"], preBuffs: []},
+        {cat: "Single Target Healing", tag: "Holy Word: Serenity", seq: ["Holy Word: Serenity"], preBuffs: []},
         
         //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 

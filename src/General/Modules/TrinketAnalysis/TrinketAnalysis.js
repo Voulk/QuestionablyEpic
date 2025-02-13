@@ -267,7 +267,6 @@ export default function TrinketAnalysis(props) {
       if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1)) difficulty = "heroic";
       else if (trinket.levelRange.length === 3 && pos === 0) difficulty = "lfr";
       else difficulty = "normal";
-      console.log(trinket.name + " - " + trinket.itemLevel + " - " + difficulty)
       
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]

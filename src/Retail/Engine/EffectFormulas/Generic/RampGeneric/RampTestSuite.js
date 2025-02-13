@@ -57,9 +57,9 @@ export function runClassicStatSuite(profile) {
     const fightLength = 420;
 
     const activeStats = {
-        intellect: 6000,
-        spirit: 2800,
-        spellpower: 2800,
+        intellect: 8000,
+        spirit: 3800,
+        spellpower: 4200,
         haste: 1500,
         crit: 1500,
         mastery: 1500,

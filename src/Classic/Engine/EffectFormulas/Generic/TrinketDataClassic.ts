@@ -19,10 +19,8 @@ export function getAllTrinketDataClassic() {
 }
 
 // TODO: Write proper comments.
-export function getTrinketEffectClassic(effectName: string, player: Player, itemLevel: number, playerSettings: PlayerSettings | {} = {}) {
+export function getTrinketEffectClassic(effectName: string, player: Player, itemLevel: number, additionalData: any) {
   let bonus_stats = {};
-  
-  let additionalData = {}; // {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const trinketData: Effect[] = raidTrinketData.concat(dungeonTrinketData, otherTrinketData);
@@ -60,8 +58,7 @@ const raidTrinketData: Effect[] = [
     name: "TrinketName",
     effects: [
       { // 
-        coefficient: 0, 
-        table: -1,
+        value: {100: 0, 200: 0}, 
         cooldown: 120,
         duration: 20,
       },
@@ -74,12 +71,47 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Reflection of the Light", 
+    effects: [
+      { // Same effect as Bottled Wishes.
+        value: {397: 2290},
+        stat: "spellpower",
+        duration: 15,
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Bottled Wishes", 
+    effects: [
+      { // 
+        value: {397: 2290},
+        stat: "spellpower",
+        duration: 15,
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+      return bonus_stats;
+      
+    }
+  },
   { // Dragon Soul
     name: "Seal of the Seven Signs",
     effects: [
       { // 
         value: {384: 2573, 397: 2904, 410: 3278}, 
-        table: -1,
         ppm: getEffectPPM(0.15, 115, 1.5),
         stat: "haste",
         duration: 20,
@@ -170,20 +202,22 @@ const raidTrinketData: Effect[] = [
   },
   {
     name: "Windward Heart",
+    description: "Scales with spell power for some reason!",
     effects: [ // Healing Spells
       { 
         value: {384: (9203+10696)/2, 397: (10388+12073)/2, 410: (11726+13627)/2},
+        spScaling: {384: 1.107, 397: 1.25, 410: 1.411},
         stat: "hps",
         secondaries: ["crit"],
-        efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.
-        ppm: 2.5, //getEffectPPM(0.1, 20, 1.5), // Crits only
+        efficiency: 0.75 * 0.95, // 5% lost to pets. Check this with logs.
+        ppm: 2.4, //getEffectPPM(0.1, 20, 1.5), // Crits only
 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      return getGenericThroughputEffect(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -206,8 +240,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
-      return getGenericThroughputEffect(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
       
      // return bonus_stats;
     }

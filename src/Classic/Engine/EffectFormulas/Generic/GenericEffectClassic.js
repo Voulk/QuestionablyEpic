@@ -1,10 +1,10 @@
 import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getEffectPPMWithHots, getGenericHealingIncrease, getGenericOnUseTrinket } from "./ClassicEffectUtilities";
 
-export function getGenericEffectClassic(effectName, player, itemLevel, userSettings) {
+export function getGenericEffectClassic(effectName, player, itemLevel, additionalData) {
   let bonus_stats = {};
   
   //let additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
-  let additionalData = {}; 
+
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const effectsData = classicEffectData;
   let activeEffect = effectsData.find((effect) => effect.name === effectName);
@@ -35,7 +35,8 @@ export const classicEffectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
-      return getGenericThroughputEffect(data[0], itemLevel, player);
+      
+      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
     },
   },

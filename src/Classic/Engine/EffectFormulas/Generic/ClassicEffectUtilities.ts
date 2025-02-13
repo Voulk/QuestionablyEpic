@@ -12,13 +12,16 @@ export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number)
 }
   
 // A generic HPS or DPS effect.
-export const getGenericThroughputEffect = (data: ClassicEffectData, itemLevel: number, player: player): Stats => {
-    let trinketValue = data.value[itemLevel] * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(player.activeStats, player.spec.replace(" Classic", "")));
-    if (data.targets) trinketValue *= data.targets;
+export const getGenericThroughputEffect = (data: ClassicEffectData, itemLevel: number, player: Player, setStats: any = {}): Stats => {
+    // Most classic trinkets just use a hard coded value but there are rare exceptions that also have spellpower scaling.
+    const trinketValue = data.value[itemLevel] + (data.spScaling ? (data.spScaling[itemLevel] * (setStats.spellpower + setStats.intellect)) : 0); // TODO: Inner Fire
+
+    const trinketThroughput = trinketValue * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(setStats, player.spec.replace(" Classic", "")));
+    if (data.targets) trinketThroughput *= data.targets;
     
     const statType = data.stat;
     const bonus_stats: Stats = {};
-    bonus_stats[statType] = trinketValue;
+    bonus_stats[statType] = trinketThroughput;
     return bonus_stats;
 }
   
@@ -38,10 +41,13 @@ export function getEffectPPMWithHots(procChance: number, internalCooldown: numbe
 
 export const getGenericHealingIncrease = (spec: string): number => {
     if (spec.includes("Restoration Druid")) {
-      return 1.25 * 1.04 * (0.15 * 31 / 180 + 1)
+      return 1.04 * (0.15 * 31 / 180 + 1) // Spec aura, Master Shapeshifter, Tree of Life
     }
     else if (spec.includes("Holy Paladin")) {
-      return 1.1 * 1.06 * (0.2 * 20 / 120 + 1)
+      return 1.06 * (0.2 * 20 / 120 + 1) // Aura, talent, wings
+    }
+    else if (spec.includes("Holy Priest")) {
+      return 1; // Spec Aura
     }
   
     return 1;
