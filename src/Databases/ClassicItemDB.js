@@ -84856,14 +84856,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 228,
             "crit": 168
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Robes",
@@ -84898,14 +84891,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 198,
             "crit": 218
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Legwraps",
@@ -84940,14 +84926,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 228,
             "mastery": 188
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Mantle",
@@ -84981,14 +84960,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "haste": 149
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Handwraps",
@@ -85022,14 +84994,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "mastery": 149
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Robes",
@@ -85064,14 +85029,7 @@ export const classicItemDB = [
             "stamina": 512,
             "mastery": 228,
             "crit": 188
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Helm",
@@ -85106,14 +85064,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 208,
             "haste": 188
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Legwraps",
@@ -85148,14 +85099,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 208,
             "crit": 208
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Mantle",
@@ -85189,14 +85133,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "mastery": 149
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Handwraps",
@@ -85230,14 +85167,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "haste": 149
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Vestment",
@@ -85440,14 +85370,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 208,
             "mastery": 188
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Tunic of the Raging Elements",
@@ -85482,14 +85405,7 @@ export const classicItemDB = [
             "stamina": 512,
             "haste": 228,
             "crit": 188
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Legwraps of the Raging Elements",
@@ -85524,14 +85440,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 218,
             "crit": 198
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Mantle of the Raging Elements",
@@ -85565,14 +85474,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "mastery": 149
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Handwraps of the Raging Elements",
@@ -85606,14 +85508,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "haste": 149
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Hauberk of the Raging Elements",
@@ -85816,14 +85711,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 228,
             "crit": 168
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Breastplate",
@@ -85858,14 +85746,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 228,
             "mastery": 188
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Greaves",
@@ -85900,14 +85781,7 @@ export const classicItemDB = [
             "stamina": 512,
             "spirit": 213,
             "crit": 203
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Mantle",
@@ -85941,14 +85815,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 149,
             "crit": 169
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Gloves",
@@ -85982,14 +85849,7 @@ export const classicItemDB = [
             "stamina": 380,
             "spirit": 169,
             "mastery": 149
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 0
-            }
-        ]
+        }
     },
     {
         "name": "Elementium Dragonling",
@@ -106485,14 +106345,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "haste": 171
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Helm",
@@ -106527,14 +106380,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 237,
             "haste": 217
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Legwraps",
@@ -106569,14 +106415,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 237,
             "crit": 237
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Robes",
@@ -106611,14 +106450,7 @@ export const classicItemDB = [
             "stamina": 578,
             "mastery": 257,
             "crit": 217
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Mantle",
@@ -106652,14 +106484,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "mastery": 171
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Stormrider's Gloves",
@@ -107030,14 +106855,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 257,
             "mastery": 217
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Gloves",
@@ -107071,14 +106889,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "mastery": 171
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Headguard",
@@ -107113,14 +106924,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 257,
             "crit": 197
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Greaves",
@@ -107155,14 +106959,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 242,
             "crit": 232
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Reinforced Sapphirium Mantle",
@@ -107196,14 +106993,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 171,
             "crit": 191
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Handwraps",
@@ -107237,14 +107027,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "mastery": 171
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Cowl",
@@ -107279,14 +107062,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 257,
             "crit": 197
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Legwraps",
@@ -107321,14 +107097,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 257,
             "mastery": 217
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Robes",
@@ -107363,14 +107132,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 227,
             "crit": 247
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Mantle",
@@ -107404,14 +107166,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "haste": 171
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mercurial Gloves",
@@ -107614,14 +107369,7 @@ export const classicItemDB = [
             "stamina": 578,
             "haste": 257,
             "crit": 217
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Handwraps of the Raging Elements",
@@ -107655,14 +107403,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "haste": 171
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Faceguard of the Raging Elements",
@@ -107697,14 +107438,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 237,
             "mastery": 217
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Legwraps of the Raging Elements",
@@ -107739,14 +107473,7 @@ export const classicItemDB = [
             "stamina": 578,
             "spirit": 247,
             "crit": 227
-        },
-        "sources": [
-            {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Mantle of the Raging Elements",
@@ -107780,14 +107507,7 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 191,
             "mastery": 171
-        },
-        "sources": [
-            {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 1
-            }
-        ]
+        }
     },
     {
         "name": "Hauberk of the Raging Elements",
@@ -131061,7 +130781,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 276,
             "crit": 225
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 194,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Immolation Gloves",
@@ -131095,7 +130822,14 @@ export const classicItemDB = [
             "stamina": 454,
             "crit": 176,
             "haste": 204
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 196,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Immolation Headguard",
@@ -131130,7 +130864,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 239,
             "haste": 245
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -5,
+                "encounterId": -5,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Immolation Greaves",
@@ -131165,7 +130906,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 271,
             "haste": 233
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 195,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Immolation Mantle",
@@ -131199,7 +130947,14 @@ export const classicItemDB = [
             "stamina": 454,
             "spirit": 229,
             "crit": 134
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 197,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Obsidian Arborweave Handwraps",
@@ -131236,9 +130991,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 171,
-                "difficulty": 1
+                "instanceId": 78,
+                "encounterId": 196,
+                "difficulty": 0
             }
         ]
     },
@@ -131278,9 +131033,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 174,
-                "difficulty": 1
+                "instanceId": -5,
+                "encounterId": -5,
+                "difficulty": 0
             }
         ]
     },
@@ -131320,9 +131075,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 173,
-                "difficulty": 1
+                "instanceId": 78,
+                "encounterId": 195,
+                "difficulty": 0
             }
         ]
     },
@@ -131362,9 +131117,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 72,
-                "encounterId": 156,
-                "difficulty": 1
+                "instanceId": 78,
+                "encounterId": 194,
+                "difficulty": 0
             }
         ]
     },
@@ -131403,9 +131158,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 72,
-                "encounterId": 167,
-                "difficulty": 1
+                "instanceId": 78,
+                "encounterId": 197,
+                "difficulty": 0
             }
         ]
     },
@@ -132253,7 +132008,14 @@ export const classicItemDB = [
             "stamina": 454,
             "spirit": 206,
             "haste": 172
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 196,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Cowl of the Cleansing Flame",
@@ -132288,7 +132050,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 255,
             "mastery": 229
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -5,
+                "encounterId": -5,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Legwraps of the Cleansing Flame",
@@ -132323,7 +132092,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 291,
             "crit": 198
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 195,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Robes of the Cleansing Flame",
@@ -132358,7 +132134,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 261,
             "mastery": 243
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 194,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Mantle of the Cleansing Flame",
@@ -132392,7 +132175,14 @@ export const classicItemDB = [
             "stamina": 454,
             "spirit": 201,
             "haste": 183
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 197,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Gloves of the Cleansing Flame",
@@ -135783,8 +135573,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 171,
+                "instanceId": 78,
+                "encounterId": 196,
                 "difficulty": 1
             }
         ]
@@ -135825,8 +135615,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 174,
+                "instanceId": 78,
+                "encounterId": 198,
                 "difficulty": 1
             }
         ]
@@ -135867,8 +135657,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 73,
-                "encounterId": 173,
+                "instanceId": 78,
+                "encounterId": 195,
                 "difficulty": 1
             }
         ]
@@ -135909,8 +135699,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 72,
-                "encounterId": 156,
+                "instanceId": 78,
+                "encounterId": 194,
                 "difficulty": 1
             }
         ]
@@ -135950,8 +135740,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 72,
-                "encounterId": 167,
+                "instanceId": 78,
+                "encounterId": 197,
                 "difficulty": 1
             }
         ]
@@ -136325,7 +136115,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 311,
             "crit": 259
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 194,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Immolation Gloves",
@@ -136359,7 +136156,14 @@ export const classicItemDB = [
             "stamina": 513,
             "crit": 201,
             "haste": 231
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 196,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Immolation Headguard",
@@ -136394,7 +136198,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 273,
             "haste": 279
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 198,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Immolation Greaves",
@@ -136429,7 +136240,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 305,
             "haste": 267
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 195,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Immolation Mantle",
@@ -136463,7 +136281,14 @@ export const classicItemDB = [
             "stamina": 513,
             "spirit": 259,
             "crit": 154
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 197,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Handwraps of the Cleansing Flame",
@@ -136497,7 +136322,14 @@ export const classicItemDB = [
             "stamina": 513,
             "spirit": 233,
             "haste": 196
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 196,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Cowl of the Cleansing Flame",
@@ -136532,7 +136364,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 289,
             "mastery": 263
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 198,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Legwraps of the Cleansing Flame",
@@ -136567,7 +136406,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 329,
             "crit": 229
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 195,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Robes of the Cleansing Flame",
@@ -136602,7 +136448,14 @@ export const classicItemDB = [
             "stamina": 689,
             "spirit": 295,
             "mastery": 277
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 194,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Mantle of the Cleansing Flame",
@@ -136636,7 +136489,14 @@ export const classicItemDB = [
             "stamina": 513,
             "spirit": 227,
             "haste": 209
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 78,
+                "encounterId": 197,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Gloves of the Cleansing Flame",
@@ -154258,7 +154118,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 247,
             "crit": 205
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Cowl of Dying Light",
@@ -154293,7 +154160,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 311,
             "haste": 277
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Legwraps of Dying Light",
@@ -154329,7 +154203,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 318,
             "haste": 264
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Robes of Dying Light",
@@ -154365,7 +154246,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 319,
             "mastery": 260
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Mantle of Dying Light",
@@ -154400,7 +154288,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 229,
             "mastery": 213
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Handwraps",
@@ -154434,7 +154329,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 237,
             "mastery": 223
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Helm",
@@ -154469,7 +154371,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 313,
             "haste": 272
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Legwraps",
@@ -154505,7 +154414,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 323,
             "mastery": 236
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Robes",
@@ -154541,7 +154457,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 293,
             "haste": 286
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Mantle",
@@ -154576,7 +154499,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 217,
             "mastery": 225
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Tunic",
@@ -154788,7 +154718,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 319,
             "haste": 260
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Gloves of Radiant Glory",
@@ -154822,7 +154759,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 242,
             "crit": 215
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Headguard of Radiant Glory",
@@ -154857,7 +154801,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 308,
             "mastery": 280
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Greaves of Radiant Glory",
@@ -154893,7 +154844,14 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 301,
             "mastery": 284
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Mantle of Radiant Glory",
@@ -154928,7 +154886,14 @@ export const classicItemDB = [
             "stamina": 542,
             "spirit": 242,
             "haste": 193
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Gloves",
@@ -155504,6 +155469,12 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Neck",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 271,
             "stamina": 406,
@@ -155528,6 +155499,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Back",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "red"
@@ -155624,6 +155601,12 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Finger",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "yellow"
@@ -155690,6 +155673,12 @@ export const classicItemDB = [
         "levelRange": [
             397
         ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -155719,6 +155708,12 @@ export const classicItemDB = [
         },
         "levelRange": [
             397
+        ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
         ],
         "stats": {
             "intellect": 0,
@@ -155797,6 +155792,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Chest",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 2200
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -155962,6 +155963,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Head",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 2200
+            }
+        ],
         "sockets": {
             "gems": [
                 "meta",
@@ -156127,6 +156134,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Hands",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "red"
@@ -156419,6 +156432,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Feet",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -156452,6 +156471,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -156584,6 +156609,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -156677,6 +156708,10 @@ export const classicItemDB = [
         "itemSubClass": 4,
         "slot": "1H Weapon",
         "itemLevel": 403,
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        },
         "sources": [
             {
                 "encounterId": 333,
@@ -156688,11 +156723,7 @@ export const classicItemDB = [
             "intellect": 220,
             "stamina": 331,
             "spellpower": 2945
-        },
-        "effect": {
-            "type": "special",
-            "name": "Maw of the Dragonlord"
-        } 
+        }
     },
     {
         "name": "Wrath of Unchaining",
@@ -157105,8 +157136,8 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
+                "encounterId": -2,
                 "difficulty": 0
             }
         ],
@@ -157143,8 +157174,8 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
+                "encounterId": -2,
                 "difficulty": 0
             }
         ],
@@ -157460,8 +157491,8 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
+                "encounterId": -2,
                 "difficulty": 0
             }
         ],
@@ -157499,8 +157530,8 @@ export const classicItemDB = [
         "itemLevel": 397,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
+                "encounterId": -2,
                 "difficulty": 0
             }
         ],
@@ -158355,6 +158386,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Wrist",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 271,
             "stamina": 406,
@@ -158446,9 +158483,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 324,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158479,9 +158516,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 325,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158517,9 +158554,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 325,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "class": "Priest, Shaman, Mage, Warlock, Druid",
@@ -158556,9 +158593,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158589,9 +158626,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158622,9 +158659,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158660,9 +158697,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "class": "Priest, Shaman, Mage, Warlock, Druid",
@@ -158699,9 +158736,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158732,9 +158769,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158765,9 +158802,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158798,9 +158835,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158831,9 +158868,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": -1
             }
         ],
         "class": "Priest, Shaman, Mage, Warlock, Druid",
@@ -158870,9 +158907,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": -1
             }
         ],
         "stats": {
@@ -158903,9 +158940,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158936,9 +158973,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -158975,7 +159012,7 @@ export const classicItemDB = [
     },
     {
         "name": "Bottled Wishes",
-        "id": 77985,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -158997,6 +159034,12 @@ export const classicItemDB = [
         "levelRange": [
             397
         ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159005,7 +159048,7 @@ export const classicItemDB = [
     },
     {
         "name": "Reflection of the Light",
-        "id": 77986,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -159026,6 +159069,12 @@ export const classicItemDB = [
         },
         "levelRange": [
             397
+        ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
         ],
         "stats": {
             "intellect": 0,
@@ -159117,7 +159166,7 @@ export const classicItemDB = [
             {
                 "encounterId": 324,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159150,7 +159199,7 @@ export const classicItemDB = [
             {
                 "encounterId": 325,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159188,7 +159237,7 @@ export const classicItemDB = [
             {
                 "encounterId": 325,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159226,7 +159275,7 @@ export const classicItemDB = [
             {
                 "encounterId": 331,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159259,7 +159308,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159292,7 +159341,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159330,7 +159379,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159368,7 +159417,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159401,7 +159450,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159434,7 +159483,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159467,7 +159516,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159498,9 +159547,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159536,9 +159585,9 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159571,7 +159620,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159604,7 +159653,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159641,7 +159690,7 @@ export const classicItemDB = [
     },
     {
         "name": "Bottled Wishes",
-        "id": 78005,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -159663,6 +159712,12 @@ export const classicItemDB = [
         "levelRange": [
             397
         ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "stats": {
             "intellect": 0,
             "stamina": 0,
@@ -159671,7 +159726,7 @@ export const classicItemDB = [
     },
     {
         "name": "Reflection of the Light",
-        "id": 78006,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -159692,6 +159747,12 @@ export const classicItemDB = [
         },
         "levelRange": [
             397
+        ],
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
         ],
         "stats": {
             "intellect": 0,
@@ -159853,7 +159914,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -159893,7 +159954,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -159933,7 +159994,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -159964,7 +160025,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160005,7 +160066,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160045,7 +160106,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160085,7 +160146,7 @@ export const classicItemDB = [
             {
                 "encounterId": 311,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160122,9 +160183,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160164,9 +160225,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160204,9 +160265,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -160268,9 +160329,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160307,9 +160368,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160347,9 +160408,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 311,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160389,7 +160450,7 @@ export const classicItemDB = [
             {
                 "encounterId": 324,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160429,7 +160490,7 @@ export const classicItemDB = [
             {
                 "encounterId": 324,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -160460,7 +160521,7 @@ export const classicItemDB = [
             {
                 "encounterId": 324,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160497,9 +160558,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 324,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160537,9 +160598,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 324,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "class": "Priest, Mage, Warlock",
@@ -160569,9 +160630,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 324,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160610,7 +160671,7 @@ export const classicItemDB = [
             {
                 "encounterId": 325,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -160642,7 +160703,7 @@ export const classicItemDB = [
             {
                 "encounterId": 325,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160682,7 +160743,7 @@ export const classicItemDB = [
             {
                 "encounterId": 325,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160744,9 +160805,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 325,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160784,9 +160845,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 325,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -160825,7 +160886,7 @@ export const classicItemDB = [
             {
                 "encounterId": 317,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160864,7 +160925,7 @@ export const classicItemDB = [
             {
                 "encounterId": 317,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160904,7 +160965,7 @@ export const classicItemDB = [
             {
                 "encounterId": 317,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160943,7 +161004,7 @@ export const classicItemDB = [
             {
                 "encounterId": 317,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -160981,9 +161042,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 317,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161053,9 +161114,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 317,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161092,9 +161153,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 317,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161134,7 +161195,7 @@ export const classicItemDB = [
             {
                 "encounterId": 331,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161173,7 +161234,7 @@ export const classicItemDB = [
             {
                 "encounterId": 331,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161213,7 +161274,7 @@ export const classicItemDB = [
             {
                 "encounterId": 331,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161253,7 +161314,7 @@ export const classicItemDB = [
             {
                 "encounterId": 331,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161291,9 +161352,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161330,9 +161391,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161370,9 +161431,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161410,9 +161471,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161452,7 +161513,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161492,7 +161553,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161531,7 +161592,7 @@ export const classicItemDB = [
             {
                 "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161569,9 +161630,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161609,9 +161670,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161684,7 +161745,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161724,7 +161785,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161764,7 +161825,7 @@ export const classicItemDB = [
             {
                 "encounterId": 318,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -161802,9 +161863,9 @@ export const classicItemDB = [
         "itemLevel": 390,
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161842,9 +161903,9 @@ export const classicItemDB = [
         "itemLevel": 390,
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161882,9 +161943,9 @@ export const classicItemDB = [
         "itemLevel": 390,
         "sources": [
             {
-                "encounterId": 318,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -161924,7 +161985,7 @@ export const classicItemDB = [
             {
                 "encounterId": 333,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -161950,22 +162011,22 @@ export const classicItemDB = [
         "itemSubClass": 4,
         "slot": "1H Weapon",
         "itemLevel": 416,
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        },
         "sources": [
             {
                 "encounterId": 333,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
             "intellect": 249,
             "stamina": 373,
             "spellpower": 3324
-        },
-        "effect": {
-            "type": "special",
-            "name": "Maw of the Dragonlord"
-        } 
+        }
     },
     {
         "name": "Ti'tahk, the Steps of Time",
@@ -161988,7 +162049,7 @@ export const classicItemDB = [
             {
                 "encounterId": 333,
                 "instanceId": 187,
-                "difficulty": 0
+                "difficulty": 1
             }
         ],
         "stats": {
@@ -162016,9 +162077,9 @@ export const classicItemDB = [
         "itemLevel": 390,
         "sources": [
             {
-                "encounterId": 333,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -162044,22 +162105,22 @@ export const classicItemDB = [
         "itemSubClass": 4,
         "slot": "1H Weapon",
         "itemLevel": 390,
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        },
         "sources": [
             {
-                "encounterId": 333,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
             "intellect": 195,
             "stamina": 293,
             "spellpower": 2607
-        },
-        "effect": {
-            "type": "special",
-            "name": "Maw of the Dragonlord"
-        } 
+        }
     },
     {
         "name": "Ti'tahk, the Steps of Time",
@@ -162080,9 +162141,9 @@ export const classicItemDB = [
         "itemLevel": 390,
         "sources": [
             {
-                "encounterId": 333,
-                "instanceId": 187,
-                "difficulty": 0
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "stats": {
@@ -162110,9 +162171,9 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -162149,9 +162210,9 @@ export const classicItemDB = [
         "itemLevel": 410,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": 1
             }
         ],
         "sockets": {
@@ -162188,9 +162249,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": -1
             }
         ],
         "sockets": {
@@ -162228,9 +162289,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "encounterId": 332,
                 "instanceId": 187,
-                "difficulty": 0
+                "encounterId": -2,
+                "difficulty": -1
             }
         ],
         "sockets": {
@@ -162481,7 +162542,7 @@ export const classicItemDB = [
     },
     {
         "name": "Splinterfoot Sandals",
-        "id": 78519,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -162496,6 +162557,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Feet",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -162642,7 +162709,7 @@ export const classicItemDB = [
     },
     {
         "name": "The Hands of Gilly",
-        "id": 78533,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -162657,6 +162724,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Hands",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "red"
@@ -162769,39 +162842,6 @@ export const classicItemDB = [
             "stamina": 824,
             "crit": 349,
             "hit": 316
-        }
-    },
-    {
-        "name": "Soulgaze Cowl",
-        "id": 78542,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Soulgaze Cowl",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helm_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Head",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "meta",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 30
-            }
-        },
-        "stats": {
-            "intellect": 489,
-            "stamina": 824,
-            "spirit": 322,
-            "mastery": 350
         }
     },
     {
@@ -162924,7 +162964,7 @@ export const classicItemDB = [
     },
     {
         "name": "Lightwarper Vestments",
-        "id": 78556,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -162939,6 +162979,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Chest",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 2200
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -163056,7 +163102,7 @@ export const classicItemDB = [
     },
     {
         "name": "Tentacular Belt",
-        "id": 78567,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163071,6 +163117,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -163089,7 +163141,7 @@ export const classicItemDB = [
     },
     {
         "name": "Vestal's Irrepressible Girdle",
-        "id": 78568,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163104,6 +163156,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -163194,7 +163252,7 @@ export const classicItemDB = [
     },
     {
         "name": "Bracers of the Black Dream",
-        "id": 78577,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163209,6 +163267,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Wrist",
         "itemLevel": 410,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 306,
             "stamina": 459,
@@ -163317,7 +163381,7 @@ export const classicItemDB = [
     },
     {
         "name": "Woundlicker Cover",
-        "id": 78585,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163332,6 +163396,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Back",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 240,
             "stamina": 360,
@@ -163497,7 +163567,7 @@ export const classicItemDB = [
     },
     {
         "name": "Splinterfoot Sandals",
-        "id": 78598,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163512,6 +163582,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Feet",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -163562,7 +163638,7 @@ export const classicItemDB = [
     },
     {
         "name": "Band of Reconstruction",
-        "id": 78601,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163577,6 +163653,12 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Finger",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "yellow"
@@ -163626,7 +163708,7 @@ export const classicItemDB = [
     },
     {
         "name": "The Hands of Gilly",
-        "id": 78607,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163641,6 +163723,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Hands",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "sockets": {
             "gems": [
                 "red"
@@ -163852,39 +163940,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Soulgaze Cowl",
-        "id": 78620,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Soulgaze Cowl",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helm_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Head",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "meta",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 30
-            }
-        },
-        "stats": {
-            "intellect": 371,
-            "stamina": 646,
-            "spirit": 243,
-            "mastery": 271
-        }
-    },
-    {
         "name": "Glowing Wings of Hope",
         "id": 78621,
         "quality": 4,
@@ -163943,7 +163998,7 @@ export const classicItemDB = [
     },
     {
         "name": "Threadlinked Chain",
-        "id": 78626,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -163958,6 +164013,12 @@ export const classicItemDB = [
         "itemSubClass": 0,
         "slot": "Neck",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 240,
             "stamina": 360,
@@ -164191,7 +164252,7 @@ export const classicItemDB = [
     },
     {
         "name": "Lightwarper Vestments",
-        "id": 78635,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -164206,6 +164267,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Chest",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 2200
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -164224,7 +164291,7 @@ export const classicItemDB = [
     },
     {
         "name": "Tentacular Belt",
-        "id": 78639,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -164239,6 +164306,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -164356,7 +164429,7 @@ export const classicItemDB = [
     },
     {
         "name": "Vestal's Irrepressible Girdle",
-        "id": 78647,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -164371,6 +164444,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1650
+            }
+        ],
         "sockets": {
             "gems": [
                 "red",
@@ -164461,7 +164540,7 @@ export const classicItemDB = [
     },
     {
         "name": "Bracers of the Black Dream",
-        "id": 78655,
+        "id": -1,
         "quality": 4,
         "names": {
             "cn": "",
@@ -164476,6 +164555,12 @@ export const classicItemDB = [
         "itemSubClass": 1,
         "slot": "Wrist",
         "itemLevel": 384,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 240,
             "stamina": 360,
@@ -164541,7 +164626,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 336,
             "haste": 325
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Deep Earth Vestment",
@@ -164710,7 +164802,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 274,
             "crit": 244
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Deep Earth Gloves",
@@ -164777,7 +164876,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 268,
             "mastery": 253
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Gloves of the Faceless Shroud",
@@ -164877,7 +164983,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 280,
             "crit": 233
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Headpiece",
@@ -164946,7 +165059,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 356,
             "haste": 313
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Faceguard",
@@ -165016,7 +165136,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 350,
             "mastery": 322
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Deep Earth Cover",
@@ -165085,7 +165212,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 353,
             "haste": 319
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 332,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Time Lord's Hood",
@@ -165223,7 +165357,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 366,
             "mastery": 275
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Kilt",
@@ -165329,7 +165470,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 344,
             "mastery": 325
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Legwraps",
@@ -165401,7 +165549,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 361,
             "haste": 304
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 325,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Time Lord's Leggings",
@@ -165613,7 +165768,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 362,
             "haste": 299
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Robes of Dying Light",
@@ -165649,7 +165811,14 @@ export const classicItemDB = [
             "stamina": 824,
             "spirit": 362,
             "mastery": 299
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 331,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Time Lord's Robes",
@@ -165824,7 +165993,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 248,
             "mastery": 256
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Shoulderwraps",
@@ -165927,7 +166103,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 274,
             "haste": 222
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Mantle of Dying Light",
@@ -165962,7 +166145,14 @@ export const classicItemDB = [
             "stamina": 611,
             "spirit": 260,
             "mastery": 244
-        }
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 317,
+                "difficulty": 1
+            }
+        ]
     },
     {
         "name": "Time Lord's Mantle",
@@ -166100,7 +166290,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 254,
             "haste": 252
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Vestment",
@@ -166269,7 +166465,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 214,
             "crit": 189
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Gloves",
@@ -166336,7 +166538,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 209,
             "mastery": 196
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Gloves of the Faceless Shroud",
@@ -166436,7 +166644,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 218,
             "crit": 181
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Headpiece",
@@ -166505,7 +166719,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 275,
             "haste": 236
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Faceguard",
@@ -166575,7 +166795,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 271,
             "mastery": 243
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Deep Earth Cover",
@@ -166644,7 +166870,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 274,
             "haste": 240
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Time Lord's Hood",
@@ -166782,7 +167014,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 284,
             "mastery": 202
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Kilt",
@@ -166888,7 +167126,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 263,
             "mastery": 248
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Legwraps",
@@ -166960,7 +167204,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 280,
             "haste": 229
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Time Lord's Leggings",
@@ -167172,7 +167422,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 280,
             "haste": 226
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Robes of Dying Light",
@@ -167208,7 +167464,13 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 280,
             "mastery": 226
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Time Lord's Robes",
@@ -167383,7 +167645,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 190,
             "mastery": 198
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Spiritwalker's Shoulderwraps",
@@ -167486,7 +167754,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 213,
             "haste": 168
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Mantle of Dying Light",
@@ -167521,7 +167795,13 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 202,
             "mastery": 186
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -8,
+                "cost": 0
+            }
+        ]
     },
     {
         "name": "Time Lord's Mantle",
