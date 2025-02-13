@@ -5947,62 +5947,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Furious Gladiator's Idol of Resolve",
-        "id": 42589,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Furious Gladiator's Idol of Resolve",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_idolofhealth",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 238,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 57,
-            "crit": 25
-        }
-    },
-    {
-        "name": "Relentless Gladiator's Idol of Resolve",
-        "id": 42591,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relentless Gladiator's Idol of Resolve",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_idolofhealth",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 251,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 68,
-            "crit": 30
-        }
-    },
-    {
         "name": "Furious Gladiator's Totem of the Third Wind",
         "id": 42598,
         "quality": 4,
@@ -6143,34 +6087,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relentless Gladiator's Totem of Indomitability",
-        "id": 42609,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relentless Gladiator's Totem of Indomitability",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_nature_slowingtotem",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 251,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 68,
-            "crit": 30
-        }
-    },
-    {
         "name": "Furious Gladiator's Libram of Justice",
         "id": 42615,
         "quality": 4,
@@ -6224,118 +6140,6 @@ export const classicItemDB = [
             "intellect": 45,
             "stamina": 68,
             "spirit": 30
-        }
-    },
-    {
-        "name": "Furious Gladiator's Sigil of Strife",
-        "id": 42621,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Furious Gladiator's Sigil of Strife",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 238,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 57,
-            "crit": 25
-        }
-    },
-    {
-        "name": "Relentless Gladiator's Sigil of Strife",
-        "id": 42622,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relentless Gladiator's Sigil of Strife",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 251,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 68,
-            "crit": 30
-        }
-    },
-    {
-        "name": "Furious Gladiator's Libram of Fortitude",
-        "id": 42853,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Furious Gladiator's Libram of Fortitude",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 238,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 57,
-            "crit": 25
-        }
-    },
-    {
-        "name": "Relentless Gladiator's Libram of Fortitude",
-        "id": 42854,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relentless Gladiator's Libram of Fortitude",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 251,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 68,
-            "crit": 30
         }
     },
     {
@@ -6948,60 +6752,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Sigil of Deflection",
-        "id": 45144,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of Deflection",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54
-        }
-    },
-    {
-        "name": "Libram of the Sacred Shield",
-        "id": 45145,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of the Sacred Shield",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54
-        }
-    },
-    {
         "name": "Shackles of the Odalisque",
         "id": 45146,
         "quality": 4,
@@ -7238,35 +6988,6 @@ export const classicItemDB = [
             "stamina": 95,
             "haste": 36,
             "crit": 46
-        }
-    },
-    {
-        "name": "Totem of the Dancing Flame",
-        "id": 45169,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Totem of the Dancing Flame",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_herb_flamecap",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54,
-            "crit": 24,
-            "hit": 24
         }
     },
     {
@@ -7732,35 +7453,6 @@ export const classicItemDB = [
             "stamina": 126,
             "spirit": 62,
             "haste": 49
-        }
-    },
-    {
-        "name": "Sigil of the Vengeful Heart",
-        "id": 45254,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of the Vengeful Heart",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54,
-            "crit": 24,
-            "hit": 24
         }
     },
     {
@@ -11237,63 +10929,6 @@ export const classicItemDB = [
             "stamina": 119,
             "crit": 49,
             "hit": 56
-        }
-    },
-    {
-        "name": "Idol of the Corruptor",
-        "id": 45509,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Idol of the Corruptor",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_qirajidol_strife",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54,
-            "crit": 24
-        }
-    },
-    {
-        "name": "Libram of Discord",
-        "id": 45510,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of Discord",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 54,
-            "crit": 24,
-            "hit": 24
         }
     },
     {
@@ -24133,34 +23768,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Libram of Valiance",
-        "id": 47661,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of Valiance",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
-            "haste": 28
-        }
-    },
-    {
         "name": "Libram of Veracity",
         "id": 47662,
         "quality": 4,
@@ -24211,34 +23818,6 @@ export const classicItemDB = [
             "stamina": 94,
             "hit": 36,
             "haste": 50
-        }
-    },
-    {
-        "name": "Libram of Defiance",
-        "id": 47664,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of Defiance",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
-            "hit": 28
         }
     },
     {
@@ -24297,63 +23876,6 @@ export const classicItemDB = [
             "stamina": 64,
             "crit": 28,
             "haste": 28
-        }
-    },
-    {
-        "name": "Totem of Quaking Earth",
-        "id": 47667,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Totem of Quaking Earth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_nature_earthelemental_totem",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
-            "haste": 28
-        }
-    },
-    {
-        "name": "Idol of Mutilation",
-        "id": 47668,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Idol of Mutilation",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_qirajidol_strife",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
-            "haste": 28,
-            "hit": 28
         }
     },
     {
@@ -24443,62 +23965,6 @@ export const classicItemDB = [
             "intellect": 43,
             "stamina": 64,
             "spirit": 28,
-            "haste": 28
-        }
-    },
-    {
-        "name": "Sigil of Insolence",
-        "id": 47672,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of Insolence",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
-            "hit": 28
-        }
-    },
-    {
-        "name": "Sigil of Virulence",
-        "id": 47673,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of Virulence",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 64,
             "haste": 28
         }
     },
@@ -47724,64 +47190,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Libram of Three Truths",
-        "id": 50455,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of Three Truths",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 77,
-            "crit": 34,
-            "haste": 34
-        }
-    },
-    {
-        "name": "Idol of the Crying Moon",
-        "id": 50456,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Idol of the Crying Moon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_nature_natureguardian",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 77,
-            "crit": 34,
-            "haste": 34
-        }
-    },
-    {
         "name": "Idol of the Lunar Eclipse",
         "id": 50457,
         "quality": 4,
@@ -47840,35 +47248,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Sigil of the Hanged Man",
-        "id": 50459,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of the Hanged Man",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_noose_01",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 77,
-            "crit": 34,
-            "haste": 34
-        }
-    },
-    {
         "name": "Libram of Blinding Light",
         "id": 50460,
         "quality": 4,
@@ -47892,89 +47271,6 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 51,
-            "stamina": 77,
-            "crit": 34,
-            "haste": 34
-        }
-    },
-    {
-        "name": "Libram of the Eternal Tower",
-        "id": 50461,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Libram of the Eternal Tower",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_offhand_ulduarraid_d_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 77
-        }
-    },
-    {
-        "name": "Sigil of the Bone Gryphon",
-        "id": 50462,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Sigil of the Bone Gryphon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "ability_mount_ebonblade",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 77
-        }
-    },
-    {
-        "name": "Totem of the Avalanche",
-        "id": 50463,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Totem of the Avalanche",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_gem_diamond_03",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
             "stamina": 77,
             "crit": 34,
             "haste": 34
@@ -57183,34 +56479,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Wrathful Gladiator's Sigil of Strife",
-        "id": 51417,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Wrathful Gladiator's Sigil of Strife",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 270,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 36
-        }
-    },
-    {
         "name": "Wrathful Gladiator's Kodohide Robes",
         "id": 51419,
         "quality": 4,
@@ -57393,34 +56661,6 @@ export const classicItemDB = [
             "intellect": 119,
             "stamina": 181,
             "spirit": 77
-        }
-    },
-    {
-        "name": "Wrathful Gladiator's Idol of Resolve",
-        "id": 51429,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Wrathful Gladiator's Idol of Resolve",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_idolofhealth",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 270,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 36
         }
     },
     {
@@ -58150,34 +57390,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Wrathful Gladiator's Libram of Fortitude",
-        "id": 51478,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Wrathful Gladiator's Libram of Fortitude",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 270,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 36
-        }
-    },
-    {
         "name": "Wrathful Gladiator's Mooncloth Robe",
         "id": 51482,
         "quality": 4,
@@ -58671,34 +57883,6 @@ export const classicItemDB = [
             "intellect": 119,
             "stamina": 181,
             "spirit": 76
-        }
-    },
-    {
-        "name": "Wrathful Gladiator's Totem of Indomitability",
-        "id": 51507,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Wrathful Gladiator's Totem of Indomitability",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_nature_slowingtotem",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 270,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 36
         }
     },
     {
@@ -65306,32 +64490,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Cracked Jewelry Box",
-        "id": 54547,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Cracked Jewelry Box",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_box_04",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 300,
-        "effect": {
-            "type": "trinket",
-            "name": "Cracked Jewelry Box"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Waterlogged Leggings",
         "id": 54548,
         "quality": 2,
@@ -67061,42 +66219,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Conch of Thundering Waves",
-        "id": 55248,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Conch of Thundering Waves",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_shell_04",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 308,
-        "sources": [
-            {
-                "encounterId": 65,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 100,
-            "hit": 46,
-            "crit": 42
-        }
-    },
-    {
         "name": "Might of the Ocean",
         "id": 55251,
         "quality": 3,
@@ -67283,39 +66405,6 @@ export const classicItemDB = [
             "stamina": 177,
             "haste": 85,
             "crit": 69
-        }
-    },
-    {
-        "name": "Grace of the Herald",
-        "id": 55266,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Grace of the Herald",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_horn_02",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 308,
-        "effect": {
-            "type": "trinket",
-            "name": "Grace of the Herald"
-        },
-        "sources": [
-            {
-                "encounterId": 66,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -68418,42 +67507,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Sandshift Relic",
-        "id": 55783,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Sandshift Relic",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_qiraj_skinsandworm",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 308,
-        "sources": [
-            {
-                "encounterId": 66,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 100,
-            "crit": 43,
-            "hit": 45
-        }
-    },
-    {
         "name": "Clutches of Dying Light",
         "id": 55784,
         "quality": 3,
@@ -68790,41 +67843,6 @@ export const classicItemDB = [
             "stamina": 191,
             "crit": 85,
             "haste": 85
-        }
-    },
-    {
-        "name": "Stalagmite Dragon",
-        "id": 55800,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Stalagmite Dragon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_head_dragon_bronze",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 316,
-        "sources": [
-            {
-                "encounterId": 67,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 108,
-            "mastery": 43
         }
     },
     {
@@ -70549,39 +69567,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Skardyn's Grace",
-        "id": 56115,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Skardyn's Grace",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_coin_08",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 333,
-        "effect": {
-            "type": "trinket",
-            "name": "Skardyn's Grace"
-        },
-        "sources": [
-            {
-                "encounterId": 71,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Modgud's Blade",
         "id": 56116,
         "quality": 3,
@@ -70768,39 +69753,6 @@ export const classicItemDB = [
             "stamina": 224,
             "spirit": 107,
             "crit": 87
-        }
-    },
-    {
-        "name": "Mark of Khardros",
-        "id": 56132,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Mark of Khardros",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_hammer_04",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 333,
-        "effect": {
-            "type": "trinket",
-            "name": "Mark of Khardros"
-        },
-        "sources": [
-            {
-                "encounterId": 71,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -71296,42 +70248,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Conch of Thundering Waves",
-        "id": 56279,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Conch of Thundering Waves",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_shell_04",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sources": [
-            {
-                "encounterId": 65,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "hit": 65,
-            "crit": 60
-        }
-    },
-    {
         "name": "Porcelain Crab",
         "id": 56280,
         "quality": 3,
@@ -71571,39 +70487,6 @@ export const classicItemDB = [
             "stamina": 454,
             "spirit": 172,
             "mastery": 192
-        }
-    },
-    {
-        "name": "Grace of the Herald",
-        "id": 56295,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Grace of the Herald",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_horn_02",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 346,
-        "effect": {
-            "type": "trinket",
-            "name": "Grace of the Herald"
-        },
-        "sources": [
-            {
-                "encounterId": 66,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -71941,42 +70824,6 @@ export const classicItemDB = [
             "stamina": 252,
             "spirit": 112,
             "crit": 112
-        }
-    },
-    {
-        "name": "Sandshift Relic",
-        "id": 56316,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Sandshift Relic",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_qiraj_skinsandworm",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sources": [
-            {
-                "encounterId": 66,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "crit": 62,
-            "hit": 64
         }
     },
     {
@@ -72365,41 +71212,6 @@ export const classicItemDB = [
             "stamina": 337,
             "spirit": 150,
             "haste": 130
-        }
-    },
-    {
-        "name": "Stalagmite Dragon",
-        "id": 56337,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Stalagmite Dragon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_head_dragon_bronze",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sources": [
-            {
-                "encounterId": 67,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "mastery": 57
         }
     },
     {
@@ -74219,39 +73031,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Skardyn's Grace",
-        "id": 56440,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Skardyn's Grace",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_coin_08",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 346,
-        "effect": {
-            "type": "trinket",
-            "name": "Skardyn's Grace"
-        },
-        "sources": [
-            {
-                "encounterId": 71,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Modgud's Blade",
         "id": 56441,
         "quality": 3,
@@ -74486,39 +73265,6 @@ export const classicItemDB = [
             "stamina": 252,
             "spirit": 112,
             "crit": 112
-        }
-    },
-    {
-        "name": "Mark of Khardros",
-        "id": 56458,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Mark of Khardros",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_hammer_04",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 346,
-        "effect": {
-            "type": "trinket",
-            "name": "Mark of Khardros"
-        },
-        "sources": [
-            {
-                "encounterId": 71,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -75769,35 +74515,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Azralon's Twisted Rune",
-        "id": 57297,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Azralon's Twisted Rune",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 285,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 36,
-            "hit": 36
-        }
-    },
-    {
         "name": "Gatekeeper Treads",
         "id": 57298,
         "quality": 2,
@@ -76107,32 +74824,6 @@ export const classicItemDB = [
             "intellect": 85,
             "stamina": 113,
             "crit": 91
-        }
-    },
-    {
-        "name": "Bileberry Smelling Salts",
-        "id": 57325,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Bileberry Smelling Salts",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_dust_05",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 272,
-        "effect": {
-            "type": "trinket",
-            "name": "Bileberry Smelling Salts"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -79922,39 +78613,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Prestor's Talisman of Machination",
-        "id": 59441,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Prestor's Talisman of Machination",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_17",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Prestor's Talisman of Machination"
-        },
-        "sources": [
-            {
-                "encounterId": 174,
-                "instanceId": 73,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Specialized Bio-Optic Killshades",
         "id": 59448,
         "quality": 4,
@@ -80469,39 +79127,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Essence of the Cyclone",
-        "id": 59473,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Essence of the Cyclone",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Essence of the Cyclone"
-        },
-        "sources": [
-            {
-                "encounterId": 156,
-                "instanceId": 72,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Bracers of the Bronze Flight",
         "id": 59475,
         "quality": 4,
@@ -80932,39 +79557,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Crushing Weight",
-        "id": 59506,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Crushing Weight",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket05",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Crushing Weight"
-        },
-        "sources": [
-            {
-                "encounterId": 158,
-                "instanceId": 72,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Treads of Liquid Ice",
         "id": 59508,
         "quality": 4,
@@ -81318,32 +79910,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Unheeded Warning",
-        "id": 59520,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Unheeded Warning",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket11",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Unheeded Warning"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Chelley's Staff of Dark Mending",
         "id": 59525,
         "quality": 4,
@@ -81614,35 +80180,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Wil'hai's Extraneous Tooth",
-        "id": 59626,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Wil'hai's Extraneous Tooth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_monsterhorn_08",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 285,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "hit": 36,
-            "crit": 36
-        }
-    },
-    {
         "name": "Hood of Teeming Horror",
         "id": 59628,
         "quality": 2,
@@ -81745,35 +80282,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Fetish of Azrajar",
-        "id": 59637,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Fetish of Azrajar",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 285,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 39,
-            "haste": 31
-        }
-    },
-    {
         "name": "Spikemender Shoulderplates",
         "id": 59639,
         "quality": 2,
@@ -81795,35 +80303,6 @@ export const classicItemDB = [
             "stamina": 169,
             "spirit": 75,
             "crit": 75
-        }
-    },
-    {
-        "name": "Fetish of Azrajar",
-        "id": 59640,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Fetish of Azrajar",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 285,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 80,
-            "crit": 39,
-            "haste": 31
         }
     },
     {
@@ -90094,62 +88573,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vicious Gladiator's Relic of Triumph",
-        "id": 61390,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vicious Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 365,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 170,
-            "crit": 76
-        }
-    },
-    {
-        "name": "Vicious Gladiator's Relic of Conquest",
-        "id": 61391,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vicious Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 365,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 170,
-            "crit": 76
-        }
-    },
-    {
         "name": "Pillarbind Waistguard",
         "id": 61397,
         "quality": 3,
@@ -90171,34 +88594,6 @@ export const classicItemDB = [
             "stamina": 260,
             "haste": 115,
             "mastery": 115
-        }
-    },
-    {
-        "name": "Emerald Heart",
-        "id": 61399,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Emerald Heart",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 305,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 97,
-            "mastery": 43
         }
     },
     {
@@ -90618,35 +89013,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relic of the Waywalker",
-        "id": 61437,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Relic of the Waywalker",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 318,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 110,
-            "crit": 49,
-            "mastery": 49
-        }
-    },
-    {
         "name": "Starscraper Signet",
         "id": 61438,
         "quality": 2,
@@ -90668,35 +89034,6 @@ export const classicItemDB = [
             "stamina": 195,
             "hit": 94,
             "haste": 74
-        }
-    },
-    {
-        "name": "Relic of the Waywalker",
-        "id": 61440,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Relic of the Waywalker",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 318,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 110,
-            "crit": 49,
-            "mastery": 49
         }
     },
     {
@@ -90817,32 +89154,6 @@ export const classicItemDB = [
             "stamina": 230,
             "crit": 99,
             "mastery": 104
-        }
-    },
-    {
-        "name": "Oremantle's Favor",
-        "id": 61448,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Oremantle's Favor",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_stone_weightstone_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 305,
-        "effect": {
-            "type": "trinket",
-            "name": "Oremantle's Favor"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -91035,32 +89346,6 @@ export const classicItemDB = [
             "stamina": 148,
             "crit": 72,
             "haste": 56
-        }
-    },
-    {
-        "name": "Gear Detector",
-        "id": 61462,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Gear Detector",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gizmo_08",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 289,
-        "effect": {
-            "type": "trinket",
-            "name": "Gear Detector"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -91599,32 +89884,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Darkmoon Card: Hurricane",
-        "id": 62049,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Darkmoon Card: Hurricane",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_inscription_tarot_hurricanecard",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Darkmoon Card: Hurricane"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Darkmoon Card: Tsunami",
         "id": 62050,
         "quality": 4,
@@ -91650,32 +89909,6 @@ export const classicItemDB = [
         ],
         "stats": {
             "intellect": 321,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Darkmoon Card: Hurricane",
-        "id": 62051,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Darkmoon Card: Hurricane",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_inscription_tarot_hurricanecard",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Darkmoon Card: Hurricane"
-        },
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -91799,34 +90032,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Etched Horn",
-        "id": 62240,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Etched Horn",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_monsterhorn_01",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 316,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 108,
-            "mastery": 48
-        }
-    },
-    {
         "name": "Manual of the Planes",
         "id": 62241,
         "quality": 3,
@@ -91856,63 +90061,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Runed Dragonscale",
-        "id": 62242,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Runed Dragonscale",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_monsterscales_07",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 316,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 108,
-            "hit": 48
-        }
-    },
-    {
-        "name": "Notched Jawbone",
-        "id": 62243,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Notched Jawbone",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_trinket_06",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "mastery": 63,
-            "hit": 63
-        }
-    },
-    {
         "name": "Tattooed Eyeball",
         "id": 62244,
         "quality": 3,
@@ -91939,35 +90087,6 @@ export const classicItemDB = [
             "stamina": 143,
             "crit": 72,
             "haste": 48
-        }
-    },
-    {
-        "name": "Silver Inlaid Leaf",
-        "id": 62245,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Silver Inlaid Leaf",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_idolofrejuvenation",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "crit": 65,
-            "haste": 60
         }
     },
     {
@@ -93619,42 +91738,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relic of Arathor",
-        "id": 63460,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Relic of Arathor",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_stonetablet_01",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sources": [
-            {
-                "encounterId": 64,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "crit": 63,
-            "haste": 63
-        }
-    },
-    {
         "name": "Staff of Isolation",
         "id": 63461,
         "quality": 3,
@@ -94016,42 +92099,6 @@ export const classicItemDB = [
             "stamina": 252,
             "spirit": 112,
             "crit": 112
-        }
-    },
-    {
-        "name": "Record of the Brotherhood's End",
-        "id": 63480,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Record of the Brotherhood's End",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_book_08",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 346,
-        "sources": [
-            {
-                "encounterId": 63,
-                "instanceId": -1,
-                "difficulty": 1
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 143,
-            "haste": 63,
-            "mastery": 63
         }
     },
     {
@@ -96672,35 +94719,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Exhausted Flashgrowth Mote",
-        "id": 63776,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Exhausted Flashgrowth Mote",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_elemental_mote_earth01",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 318,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 110,
-            "hit": 49,
-            "mastery": 49
-        }
-    },
-    {
         "name": "Flashseal Sandals",
         "id": 63777,
         "quality": 2,
@@ -97495,32 +95513,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Shrine-Cleansing Purifier",
-        "id": 63838,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Shrine-Cleansing Purifier",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 318,
-        "effect": {
-            "type": "trinket",
-            "name": "Shrine-Cleansing Purifier"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Harmlight Token",
         "id": 63839,
         "quality": 2,
@@ -97571,32 +95563,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "mastery": 219
-        }
-    },
-    {
-        "name": "Tank-Commander Insignia",
-        "id": 63841,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Tank-Commander Insignia",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_token_argentdawn",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 318,
-        "effect": {
-            "type": "trinket",
-            "name": "Tank-Commander Insignia"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -98230,34 +96196,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Blackblood Freedom Standard",
-        "id": 63888,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Blackblood Freedom Standard",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bannerpvp_03",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 318,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 110,
-            "mastery": 54
-        }
-    },
-    {
         "name": "Shackle-Shatter Wand",
         "id": 63889,
         "quality": 2,
@@ -98279,34 +96217,6 @@ export const classicItemDB = [
             "stamina": 110,
             "haste": 52,
             "mastery": 43
-        }
-    },
-    {
-        "name": "Shore-Cleansing Standard",
-        "id": 63891,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Shore-Cleansing Standard",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bannerpvp_03",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 318,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 110,
-            "mastery": 54
         }
     },
     {
@@ -98772,35 +96682,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relic of Golganneth",
-        "id": 64671,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Golganneth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_stonetablet_06",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 359,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 161,
-            "crit": 72,
-            "haste": 72
-        }
-    },
-    {
         "name": "Relic of Norgannon",
         "id": 64672,
         "quality": 4,
@@ -98856,62 +96737,6 @@ export const classicItemDB = [
             "stamina": 161,
             "spirit": 72,
             "crit": 72
-        }
-    },
-    {
-        "name": "Relic of Aggramar",
-        "id": 64674,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Aggramar",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_stone_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 359,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 161,
-            "crit": 72
-        }
-    },
-    {
-        "name": "Relic of Khaz'goroth",
-        "id": 64676,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Khaz'goroth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_stonetablet_03",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 359,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 161,
-            "mastery": 72
         }
     },
     {
@@ -101016,34 +98841,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Bloodthirsty Gladiator's Relic of Conquest",
-        "id": 64819,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Bloodthirsty Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 352,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 151,
-            "crit": 67
-        }
-    },
-    {
         "name": "Bloodthirsty Gladiator's Relic of Dominance",
         "id": 64820,
         "quality": 3,
@@ -101097,34 +98894,6 @@ export const classicItemDB = [
             "intellect": 100,
             "stamina": 151,
             "spirit": 67
-        }
-    },
-    {
-        "name": "Bloodthirsty Gladiator's Relic of Triumph",
-        "id": 64822,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Bloodthirsty Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 352,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 151,
-            "crit": 67
         }
     },
     {
@@ -103530,39 +101299,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Prestor's Talisman of Machination",
-        "id": 65026,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Prestor's Talisman of Machination",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_17",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 372,
-        "effect": {
-            "type": "trinket",
-            "name": "Prestor's Talisman of Machination"
-        },
-        "sources": [
-            {
-                "encounterId": 174,
-                "instanceId": 73,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Jar of Ancient Remedies",
         "id": 65029,
         "quality": 4,
@@ -104938,32 +102674,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "DONTUSEUnheeded Warning",
-        "id": 65104,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "DONTUSEUnheeded Warning",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_bone_08",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 372,
-        "effect": {
-            "type": "trinket",
-            "name": "DONTUSEUnheeded Warning"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Theralion's Mirror",
         "id": 65105,
         "quality": 4,
@@ -105314,39 +103024,6 @@ export const classicItemDB = [
             "stamina": 429,
             "spirit": 171,
             "mastery": 191
-        }
-    },
-    {
-        "name": "Crushing Weight",
-        "id": 65118,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Crushing Weight",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket05",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 372,
-        "effect": {
-            "type": "trinket",
-            "name": "Crushing Weight"
-        },
-        "sources": [
-            {
-                "encounterId": 158,
-                "instanceId": 72,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -105777,39 +103454,6 @@ export const classicItemDB = [
             "stamina": 322,
             "mastery": 143,
             "haste": 143
-        }
-    },
-    {
-        "name": "Essence of the Cyclone",
-        "id": 65140,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Essence of the Cyclone",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cat_trinket01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 372,
-        "effect": {
-            "type": "trinket",
-            "name": "Essence of the Cyclone"
-        },
-        "sources": [
-            {
-                "encounterId": 156,
-                "instanceId": 72,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -111300,32 +108944,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Harrison's Insignia of Panache",
-        "id": 65803,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Harrison's Insignia of Panache",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_28",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 325,
-        "effect": {
-            "type": "trinket",
-            "name": "Harrison's Insignia of Panache"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Talisman of Sinister Order",
         "id": 65804,
         "quality": 3,
@@ -111348,32 +108966,6 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 234,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Schnottz's Medallion of Command",
-        "id": 65805,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Schnottz's Medallion of Command",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_amulet_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 325,
-        "effect": {
-            "type": "trinket",
-            "name": "Schnottz's Medallion of Command"
-        },
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -111447,34 +109039,6 @@ export const classicItemDB = [
             "stamina": 184,
             "spirit": 88,
             "haste": 72
-        }
-    },
-    {
-        "name": "Namkhare's Cabochon Charm",
-        "id": 65812,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Namkhare's Cabochon Charm",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_gem_goldendraenite_03",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 312,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 104,
-            "mastery": 50
         }
     },
     {
@@ -114220,89 +111784,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Mindbender Bloom",
-        "id": 66961,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Mindbender Bloom",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_flower_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 308,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 100,
-            "crit": 48,
-            "haste": 39
-        }
-    },
-    {
-        "name": "Heart of the Vile",
-        "id": 66969,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Heart of the Vile",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_organ_02",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 325,
-        "effect": {
-            "type": "trinket",
-            "name": "Heart of the Vile"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Ashes of Youth",
-        "id": 66988,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Ashes of Youth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_dust_02",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 316,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 108,
-            "mastery": 55
-        }
-    },
-    {
         "name": "Soul's Anguish",
         "id": 66994,
         "quality": 3,
@@ -114401,34 +111882,6 @@ export const classicItemDB = [
             "stamina": 93,
             "spirit": 41,
             "haste": 41
-        }
-    },
-    {
-        "name": "Halted Clock",
-        "id": 67059,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Halted Clock",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_nature_timestop",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 325,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 118,
-            "hit": 52
         }
     },
     {
@@ -116045,34 +113498,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Scarab Leg Talisman",
-        "id": 68612,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Scarab Leg Talisman",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_monsterclaw_08",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 312,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 104,
-            "crit": 51
-        }
-    },
-    {
         "name": "Fine-Toothed Comb",
         "id": 68609,
         "quality": 2,
@@ -116237,70 +113662,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Volatile Alchemist Stone",
-        "id": 68775,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Volatile Alchemist Stone",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "item_alchemiststoneb",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Volatile Alchemist Stone"
-        },
-        "sockets": {
-            "gems": [
-                "red"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "mastery": 194
-        }
-    },
-    {
-        "name": "Quicksilver Alchemist Stone",
-        "id": 68776,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Quicksilver Alchemist Stone",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "item_alchemiststone",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 359,
-        "effect": {
-            "type": "trinket",
-            "name": "Quicksilver Alchemist Stone"
-        },
-        "sockets": {
-            "gems": [
-                "red"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "crit": 194
-        }
-    },
-    {
         "name": "Vibrant Alchemist Stone",
         "id": 68777,
         "quality": 4,
@@ -116336,39 +113697,6 @@ export const classicItemDB = [
             "intellect": 301,
             "stamina": 0,
             "haste": 194
-        }
-    },
-    {
-        "name": "The Hungerer",
-        "id": 68927,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "The Hungerer",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_deathknight_gnaw_ghoul",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 378,
-        "effect": {
-            "type": "trinket",
-            "name": "The Hungerer"
-        },
-        "sources": [
-            {
-                "encounterId": 197,
-                "instanceId": 78,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -116502,32 +113830,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Apparatus of Khaz'goroth",
-        "id": 68972,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Apparatus of Khaz'goroth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_enggizmos_20",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 378,
-        "effect": {
-            "type": "trinket",
-            "name": "Apparatus of Khaz'goroth"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Necromantic Focus",
         "id": 68982,
         "quality": 4,
@@ -116594,72 +113896,6 @@ export const classicItemDB = [
         ],
         "stats": {
             "intellect": 383,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Matrix Restabilizer",
-        "id": 68994,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Matrix Restabilizer",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gizmo_electrifiedether",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Matrix Restabilizer"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": 78,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Vessel of Acceleration",
-        "id": 68995,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vessel of Acceleration",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_summerfest_firepotion",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Vessel of Acceleration"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": 78,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -116897,65 +114133,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "The Hungerer",
-        "id": 69112,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "The Hungerer",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_deathknight_gnaw_ghoul",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 391,
-        "effect": {
-            "type": "trinket",
-            "name": "The Hungerer"
-        },
-        "sources": [
-            {
-                "encounterId": 197,
-                "instanceId": 78,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Apparatus of Khaz'goroth",
-        "id": 69113,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Apparatus of Khaz'goroth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_enggizmos_20",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 391,
-        "effect": {
-            "type": "trinket",
-            "name": "Apparatus of Khaz'goroth"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Spidersilk Spindle",
         "id": 69138,
         "quality": 4,
@@ -117056,72 +114233,6 @@ export const classicItemDB = [
         ],
         "stats": {
             "intellect": 433,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Matrix Restabilizer",
-        "id": 69150,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Matrix Restabilizer",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gizmo_electrifiedether",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Matrix Restabilizer"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": 78,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Vessel of Acceleration",
-        "id": 69167,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vessel of Acceleration",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_summerfest_firepotion",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Vessel of Acceleration"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": 78,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -120798,34 +117909,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Bloodthirsty Charm of Triumph",
-        "id": 70077,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Bloodthirsty Charm of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 358,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 159,
-            "crit": 71
-        }
-    },
-    {
         "name": "Bloodthirsty Eyeball of Dominance",
         "id": 70078,
         "quality": 3,
@@ -120854,34 +117937,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Bloodthirsty Jawbone of Conquest",
-        "id": 70079,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Bloodthirsty Jawbone of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 358,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 159,
-            "crit": 71
-        }
-    },
-    {
         "name": "Nightweaver's Amulet",
         "id": 70106,
         "quality": 4,
@@ -120903,34 +117958,6 @@ export const classicItemDB = [
             "stamina": 301,
             "haste": 102,
             "mastery": 153
-        }
-    },
-    {
-        "name": "Relic of Elune's Shadow",
-        "id": 70109,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Elune's Shadow",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_datacrystal12",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 365,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 170,
-            "mastery": 79
         }
     },
     {
@@ -121171,88 +118198,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relic of Lo'Gosh",
-        "id": 70125,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Lo'Gosh",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "ability_mount_whitedirewolf",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 365,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 170,
-            "hit": 61,
-            "crit": 84
-        }
-    },
-    {
-        "name": "Relic of Tortolla",
-        "id": 70128,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of Tortolla",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_fish_turtle_01",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 365,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 170
-        }
-    },
-    {
-        "name": "Dwyer's Caber",
-        "id": 70141,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Dwyer's Caber",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_branch_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 365,
-        "effect": {
-            "type": "trinket",
-            "name": "Dwyer's Caber"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Moonwell Chalice",
         "id": 70142,
         "quality": 4,
@@ -121302,32 +118247,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 510
-        }
-    },
-    {
-        "name": "Ricket's Magnetic Fireball",
-        "id": 70144,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ricket's Magnetic Fireball",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_elemental_mote_nether",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 365,
-        "effect": {
-            "type": "trinket",
-            "name": "Ricket's Magnetic Fireball"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -124664,62 +121583,6 @@ export const classicItemDB = [
             "intellect": 135,
             "stamina": 203,
             "spirit": 90
-        }
-    },
-    {
-        "name": "Ruthless Gladiator's Relic of Triumph",
-        "id": 70407,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ruthless Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 203,
-            "crit": 90
-        }
-    },
-    {
-        "name": "Ruthless Gladiator's Relic of Conquest",
-        "id": 70408,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ruthless Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 203,
-            "crit": 90
         }
     },
     {
@@ -128478,34 +125341,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vicious Gladiator's Relic of Conquest",
-        "id": 70628,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vicious Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 371,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 180,
-            "crit": 80
-        }
-    },
-    {
         "name": "Vicious Gladiator's Relic of Dominance",
         "id": 70629,
         "quality": 4,
@@ -128559,34 +125394,6 @@ export const classicItemDB = [
             "intellect": 120,
             "stamina": 180,
             "spirit": 80
-        }
-    },
-    {
-        "name": "Vicious Gladiator's Relic of Triumph",
-        "id": 70631,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vicious Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 371,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 180,
-            "crit": 80
         }
     },
     {
@@ -129412,33 +126219,6 @@ export const classicItemDB = [
             "intellect": 263,
             "stamina": 425,
             "haste": 169
-        }
-    },
-    {
-        "name": "Deathclutch Figurine",
-        "id": 70939,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Deathclutch Figurine",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_statue_09",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 378,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 192
         }
     },
     {
@@ -131330,64 +128110,6 @@ export const classicItemDB = [
             "stamina": 454,
             "crit": 203,
             "mastery": 172
-        }
-    },
-    {
-        "name": "Covenant of the Flame",
-        "id": 71146,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Covenant of the Flame",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 378,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 192,
-            "crit": 88,
-            "mastery": 81
-        }
-    },
-    {
-        "name": "Relic of the Elemental Lords",
-        "id": 71147,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of the Elemental Lords",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_fire_sealoffire",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 378,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 192,
-            "crit": 83,
-            "haste": 86
         }
     },
     {
@@ -137058,35 +133780,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Covenant of the Flame",
-        "id": 71567,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Covenant of the Flame",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 391,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 217,
-            "crit": 99,
-            "mastery": 92
-        }
-    },
-    {
         "name": "Emberflame Bracers",
         "id": 71571,
         "quality": 4,
@@ -137409,62 +134102,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Relic of the Elemental Lords",
-        "id": 71587,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relic of the Elemental Lords",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_fire_sealoffire",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 391,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 217,
-            "crit": 94,
-            "haste": 98
-        }
-    },
-    {
-        "name": "Deathclutch Figurine",
-        "id": 71590,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Deathclutch Figurine",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_statue_09",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 391,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 217
-        }
-    },
-    {
         "name": "Balespider's Handwraps",
         "id": 71594,
         "quality": 4,
@@ -137780,32 +134417,6 @@ export const classicItemDB = [
             "stamina": 730,
             "spirit": 319,
             "haste": 260
-        }
-    },
-    {
-        "name": "Aella's Bottle",
-        "id": 71633,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Aella's Bottle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_alchemy_crystalvial",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 365,
-        "effect": {
-            "type": "trinket",
-            "name": "Aella's Bottle"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -138481,34 +135092,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 0
-        }
-    },
-    {
-        "name": "Ruthless Gladiator's Relic of Triumph",
-        "id": 72310,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ruthless Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 390,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 215,
-            "crit": 95
         }
     },
     {
@@ -141121,34 +137704,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 0
-        }
-    },
-    {
-        "name": "Ruthless Gladiator's Relic of Conquest",
-        "id": 72456,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ruthless Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 390,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 215,
-            "crit": 95
         }
     },
     {
@@ -143848,32 +140403,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Arrow of Time",
-        "id": 72897,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Arrow of Time",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_ammo_arrow_06",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 378,
-        "effect": {
-            "type": "trinket",
-            "name": "Arrow of Time"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Foul Gift of the Demon Lord",
         "id": 72898,
         "quality": 4,
@@ -143903,32 +140432,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Varo'then's Brooch",
-        "id": 72899,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Varo'then's Brooch",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_warpring",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 378,
-        "effect": {
-            "type": "trinket",
-            "name": "Varo'then's Brooch"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Veil of Lies",
         "id": 72900,
         "quality": 4,
@@ -143952,32 +140455,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 575
-        }
-    },
-    {
-        "name": "Rosary of Light",
-        "id": 72901,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Rosary of Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 378,
-        "effect": {
-            "type": "trinket",
-            "name": "Rosary of Light"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -144858,32 +141335,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Zealous Stone of Battle",
-        "id": 73061,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Zealous Stone of Battle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nightseye_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Zealous Stone of Battle"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Zealous Idol of Battle",
         "id": 73062,
         "quality": 2,
@@ -145014,32 +141465,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "mastery": 85
-        }
-    },
-    {
-        "name": "Wildsoul Stone of Rage",
-        "id": 73067,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Wildsoul Stone of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nobletopaz_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Wildsoul Stone of Rage"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -145570,32 +141995,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Shadowstalking Stone of Rage",
-        "id": 73121,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Shadowstalking Stone of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nobletopaz_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Shadowstalking Stone of Rage"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Shadowstalking Idol of Rage",
         "id": 73124,
         "quality": 2,
@@ -145772,32 +142171,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "mastery": 85
-        }
-    },
-    {
-        "name": "Stormbinder Stone of Rage",
-        "id": 73135,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Stormbinder Stone of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nobletopaz_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Stormbinder Stone of Rage"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -146078,58 +142451,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Beastsoul Stone of Rage",
-        "id": 73150,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Beastsoul Stone of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nobletopaz_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Beastsoul Stone of Rage"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Ebonsoul Stone of Battle",
-        "id": 73154,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Ebonsoul Stone of Battle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nightseye_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Ebonsoul Stone of Battle"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Ebonsoul Idol of Battle",
         "id": 73155,
         "quality": 2,
@@ -146206,32 +142527,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 128
-        }
-    },
-    {
-        "name": "Valiant Stone of Battle",
-        "id": 73164,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Valiant Stone of Battle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelcrafting_nightseye_03",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 232,
-        "effect": {
-            "type": "trinket",
-            "name": "Valiant Stone of Battle"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -146631,35 +142926,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Wildsoul Idol of Rage",
-        "id": 73338,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Wildsoul Idol of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_idolofferocity",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "haste": 19,
-            "mastery": 19
-        }
-    },
-    {
         "name": "Wildsoul Idol of Destruction",
         "id": 73339,
         "quality": 2,
@@ -146744,149 +143010,6 @@ export const classicItemDB = [
             "stamina": 43,
             "spirit": 19,
             "crit": 19
-        }
-    },
-    {
-        "name": "Stormbinder Totem of Rage",
-        "id": 73342,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Stormbinder Totem of Rage",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_totemofrage",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "haste": 19,
-            "mastery": 19
-        }
-    },
-    {
-        "name": "Ebonsoul Sigil of Battle",
-        "id": 73343,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Ebonsoul Sigil of Battle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "haste": 19,
-            "mastery": 19
-        }
-    },
-    {
-        "name": "Ebonsoul Sigil of Stoicism",
-        "id": 73346,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Ebonsoul Sigil of Stoicism",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "ability_mount_ebonblade",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "mastery": 19
-        }
-    },
-    {
-        "name": "Zealous Libram of Battle",
-        "id": 73354,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Zealous Libram of Battle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofgrace",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "haste": 19,
-            "mastery": 19
-        }
-    },
-    {
-        "name": "Zealous Libram of Stoicism",
-        "id": 73355,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Zealous Libram of Stoicism",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_libramofhope",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 232,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 43,
-            "mastery": 19
         }
     },
     {
@@ -147538,34 +143661,6 @@ export const classicItemDB = [
             "intellect": 362,
             "stamina": 573,
             "hit": 235
-        }
-    },
-    {
-        "name": "Cataclysmic Gladiator's Relic of Conquest",
-        "id": 73490,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 403,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 242,
-            "crit": 108
         }
     },
     {
@@ -150342,34 +146437,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Cataclysmic Gladiator's Relic of Triumph",
-        "id": 73642,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 403,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 242,
-            "crit": 108
-        }
-    },
-    {
         "name": "Cataclysmic Gladiator's Insignia of Conquest",
         "id": 73643,
         "quality": 4,
@@ -152131,34 +148198,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Cataclysmic Gladiator's Relic of Conquest",
-        "id": 74783,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Relic of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 259,
-            "crit": 115
-        }
-    },
-    {
         "name": "Cataclysmic Gladiator's Relic of Salvation",
         "id": 74784,
         "quality": 4,
@@ -152210,34 +148249,6 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 172,
-            "stamina": 259,
-            "crit": 115
-        }
-    },
-    {
-        "name": "Cataclysmic Gladiator's Relic of Triumph",
-        "id": 74786,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Relic of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scarab_bone",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
             "stamina": 259,
             "crit": 115
         }
@@ -152409,34 +148420,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vicious Jawbone of Conquest",
-        "id": 75069,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Vicious Jawbone of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 339,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 133,
-            "crit": 59
-        }
-    },
-    {
         "name": "Vicious Embersilk Gloves",
         "id": 75070,
         "quality": 3,
@@ -152526,34 +148509,6 @@ export const classicItemDB = [
             "intellect": 158,
             "stamina": 237,
             "haste": 105
-        }
-    },
-    {
-        "name": "Vicious Charm of Triumph",
-        "id": 75079,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Vicious Charm of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 339,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 133,
-            "crit": 59
         }
     },
     {
@@ -155286,63 +151241,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Ripfang Relic",
-        "id": 77080,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ripfang Relic",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 230,
-            "crit": 104
-        }
-    },
-    {
-        "name": "Gutripper Shard",
-        "id": 77081,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Gutripper Shard",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_fire_sealoffire",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 230,
-            "mastery": 92,
-            "haste": 108
-        }
-    },
-    {
         "name": "Mindbender Lens",
         "id": 77082,
         "quality": 4,
@@ -155398,34 +151296,6 @@ export const classicItemDB = [
             "stamina": 230,
             "spirit": 109,
             "mastery": 90
-        }
-    },
-    {
-        "name": "Stoutheart Talisman",
-        "id": 77084,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Stoutheart Talisman",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_hammer_17",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 230,
-            "mastery": 102
         }
     },
     {
@@ -156901,39 +152771,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Starcatcher Compass",
-        "id": 77202,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Starcatcher Compass",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_sundial",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Starcatcher Compass"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Insignia of the Corrupted Mind",
         "id": 77203,
         "quality": 4,
@@ -157010,44 +152847,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Creche of the Final Dragon",
-        "id": 77205,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Creche of the Final Dragon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "creatureportrait_twilightshammer_dragonegg_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Creche of the Final Dragon"
-        },
-        "levelRange": [
-            384,
-            397,
-            410
-        ],
-        "sources": [
-            {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Soulshifter Vortex",
         "id": 77206,
         "quality": 4,
@@ -157078,39 +152877,6 @@ export const classicItemDB = [
         "stats": {
             "intellect": 0,
             "stamina": 687
-        }
-    },
-    {
-        "name": "Vial of Shadows",
-        "id": 77207,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vial of Shadows",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_85",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Vial of Shadows"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
         }
     },
     {
@@ -157181,39 +152947,6 @@ export const classicItemDB = [
         ],
         "stats": {
             "intellect": 458,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Bone-Link Fetish",
-        "id": 77210,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bone-Link Fetish",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_coin_12",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 397,
-        "effect": {
-            "type": "trinket",
-            "name": "Bone-Link Fetish"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -158566,77 +154299,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Creche of the Final Dragon",
-        "id": 77972,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Creche of the Final Dragon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "creatureportrait_twilightshammer_dragonegg_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Creche of the Final Dragon"
-        },
-        "levelRange": [
-            384,
-            397,
-            410
-        ],
-        "sources": [
-            {
-                "instanceId": -8,
-                "encounterId": -8,
-                "cost": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Starcatcher Compass",
-        "id": 77973,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Starcatcher Compass",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_sundial",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Starcatcher Compass"
-        },
-        "sources": [
-            {
-                "instanceId": -8,
-                "encounterId": -8,
-                "cost": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Wrath of Unchaining",
         "id": 77974,
         "quality": 4,
@@ -158813,39 +154475,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vial of Shadows",
-        "id": 77979,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vial of Shadows",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_85",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Vial of Shadows"
-        },
-        "sources": [
-            {
-                "instanceId": -8,
-                "encounterId": -8,
-                "cost": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Cunning of the Cruel",
         "id": 77980,
         "quality": 4,
@@ -158868,9 +154497,9 @@ export const classicItemDB = [
         },
         "sources": [
             {
-                "instanceId": 187,
-                "encounterId": -2,
-                "difficulty": -1
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "class": "Priest, Shaman, Mage, Warlock, Druid",
@@ -158907,46 +154536,13 @@ export const classicItemDB = [
         ],
         "sources": [
             {
-                "instanceId": 187,
-                "encounterId": -2,
-                "difficulty": -1
-            }
-        ],
-        "stats": {
-            "intellect": 406,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Bone-Link Fetish",
-        "id": 77982,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bone-Link Fetish",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_coin_12",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Bone-Link Fetish"
-        },
-        "sources": [
-            {
                 "instanceId": -8,
                 "encounterId": -8,
                 "cost": 0
             }
         ],
         "stats": {
-            "intellect": 0,
+            "intellect": 406,
             "stamina": 0
         }
     },
@@ -159008,78 +154604,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "haste": 406
-        }
-    },
-    {
-        "name": "Bottled Wishes",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bottled Wishes",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_109",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Bottled Wishes"
-        },
-        "levelRange": [
-            397
-        ],
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "haste": 406
-        }
-    },
-    {
-        "name": "Reflection of the Light",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Reflection of the Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "item_uncutmetagemb",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 384,
-        "effect": {
-            "type": "trinket",
-            "name": "Reflection of the Light"
-        },
-        "levelRange": [
-            397
-        ],
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 406
         }
     },
     {
@@ -159242,77 +154766,6 @@ export const classicItemDB = [
         ],
         "stats": {
             "intellect": 517,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Creche of the Final Dragon",
-        "id": 77992,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Creche of the Final Dragon",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "creatureportrait_twilightshammer_dragonegg_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Creche of the Final Dragon"
-        },
-        "levelRange": [
-            384,
-            397,
-            410
-        ],
-        "sources": [
-            {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
-        "name": "Starcatcher Compass",
-        "id": 77993,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Starcatcher Compass",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_relics_sundial",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Starcatcher Compass"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
             "stamina": 0
         }
     },
@@ -159492,39 +154945,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vial of Shadows",
-        "id": 77999,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vial of Shadows",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_85",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Vial of Shadows"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Cunning of the Cruel",
         "id": 78000,
         "quality": 4,
@@ -159596,39 +155016,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Bone-Link Fetish",
-        "id": 78002,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bone-Link Fetish",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_coin_12",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Bone-Link Fetish"
-        },
-        "sources": [
-            {
-                "encounterId": 332,
-                "instanceId": 187,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0
-        }
-    },
-    {
         "name": "Indomitable Pride",
         "id": 78003,
         "quality": 4,
@@ -159686,78 +155073,6 @@ export const classicItemDB = [
             "intellect": 0,
             "stamina": 0,
             "haste": 517
-        }
-    },
-    {
-        "name": "Bottled Wishes",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bottled Wishes",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_potion_109",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Bottled Wishes"
-        },
-        "levelRange": [
-            397
-        ],
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "haste": 517
-        }
-    },
-    {
-        "name": "Reflection of the Light",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Reflection of the Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "item_uncutmetagemb",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 410,
-        "effect": {
-            "type": "trinket",
-            "name": "Reflection of the Light"
-        },
-        "levelRange": [
-            397
-        ],
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 517
         }
     },
     {
@@ -162249,9 +157564,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "instanceId": 187,
-                "encounterId": -2,
-                "difficulty": -1
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -162289,9 +157604,9 @@ export const classicItemDB = [
         "itemLevel": 384,
         "sources": [
             {
-                "instanceId": 187,
-                "encounterId": -2,
-                "difficulty": -1
+                "instanceId": -8,
+                "encounterId": -8,
+                "cost": 0
             }
         ],
         "sockets": {
@@ -162541,45 +157856,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Splinterfoot Sandals",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Splinterfoot Sandals",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boots_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Feet",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 368,
-            "stamina": 611,
-            "spirit": 247,
-            "haste": 257
-        }
-    },
-    {
         "name": "Gloves of Ghostly Dreams",
         "id": 78528,
         "quality": 4,
@@ -162708,44 +157984,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "The Hands of Gilly",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "The Hands of Gilly",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlet_pants_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Hands",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 388,
-            "stamina": 611,
-            "spirit": 268,
-            "mastery": 256
-        }
-    },
-    {
         "name": "Wolfdream Circlet",
         "id": 78537,
         "quality": 4,
@@ -162845,91 +158083,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Gutripper Shard",
-        "id": 78550,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Gutripper Shard",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_fire_sealoffire",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 259,
-            "mastery": 104,
-            "haste": 122
-        }
-    },
-    {
-        "name": "Stoutheart Talisman",
-        "id": 78551,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Stoutheart Talisman",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_hammer_17",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 259,
-            "mastery": 115
-        }
-    },
-    {
-        "name": "Ripfang Relic",
-        "id": 78554,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ripfang Relic",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 259,
-            "crit": 117
-        }
-    },
-    {
         "name": "Robes of Searing Shadow",
         "id": 78555,
         "quality": 4,
@@ -162960,45 +158113,6 @@ export const classicItemDB = [
             "stamina": 824,
             "hit": 291,
             "crit": 383
-        }
-    },
-    {
-        "name": "Lightwarper Vestments",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Lightwarper Vestments",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 2200
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 509,
-            "stamina": 824,
-            "spirit": 383,
-            "crit": 291
         }
     },
     {
@@ -163101,84 +158215,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Tentacular Belt",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Tentacular Belt",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_robe_raidwarlock_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Waist",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 368,
-            "stamina": 611,
-            "crit": 266,
-            "mastery": 234
-        }
-    },
-    {
-        "name": "Vestal's Irrepressible Girdle",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vestal's Irrepressible Girdle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Waist",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 368,
-            "stamina": 611,
-            "spirit": 281,
-            "crit": 208
-        }
-    },
-    {
         "name": "Bracers of the Spectral Wolf",
         "id": 78572,
         "quality": 4,
@@ -163248,36 +158284,6 @@ export const classicItemDB = [
             "stamina": 459,
             "hit": 213,
             "mastery": 189
-        }
-    },
-    {
-        "name": "Bracers of the Black Dream",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bracers of the Black Dream",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Wrist",
-        "itemLevel": 410,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "stats": {
-            "intellect": 306,
-            "stamina": 459,
-            "spirit": 179,
-            "crit": 219
         }
     },
     {
@@ -163377,36 +158383,6 @@ export const classicItemDB = [
             "stamina": 646,
             "spirit": 296,
             "crit": 233
-        }
-    },
-    {
-        "name": "Woundlicker Cover",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Woundlicker Cover",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_cape_deathwingraid_d_03",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Back",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "stats": {
-            "intellect": 240,
-            "stamina": 360,
-            "spirit": 172,
-            "haste": 140
         }
     },
     {
@@ -163566,45 +158542,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Splinterfoot Sandals",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Splinterfoot Sandals",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boots_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Feet",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 280,
-            "stamina": 480,
-            "spirit": 189,
-            "haste": 199
-        }
-    },
-    {
         "name": "Seal of the Grand Architect",
         "id": 78600,
         "quality": 4,
@@ -163637,44 +158574,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Band of Reconstruction",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Band of Reconstruction",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_misc_ring_generic_1",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 220,
-            "stamina": 360,
-            "spirit": 150,
-            "mastery": 150
-        }
-    },
-    {
         "name": "Fungus-Born Gloves",
         "id": 78604,
         "quality": 4,
@@ -163704,44 +158603,6 @@ export const classicItemDB = [
             "stamina": 480,
             "spirit": 218,
             "haste": 181
-        }
-    },
-    {
-        "name": "The Hands of Gilly",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "The Hands of Gilly",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlet_pants_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Hands",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 300,
-            "stamina": 480,
-            "spirit": 210,
-            "mastery": 198
         }
     },
     {
@@ -163997,36 +158858,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Threadlinked Chain",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Threadlinked Chain",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_35",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Neck",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "stats": {
-            "intellect": 240,
-            "stamina": 360,
-            "spirit": 174,
-            "crit": 136
-        }
-    },
-    {
         "name": "Hungermouth Wand",
         "id": 78627,
         "quality": 4,
@@ -164072,35 +158903,6 @@ export const classicItemDB = [
             "stamina": 203,
             "spirit": 99,
             "haste": 75
-        }
-    },
-    {
-        "name": "Gutripper Shard",
-        "id": 78629,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Gutripper Shard",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "spell_fire_sealoffire",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 203,
-            "mastery": 81,
-            "haste": 95
         }
     },
     {
@@ -164162,62 +158964,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Stoutheart Talisman",
-        "id": 78632,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Stoutheart Talisman",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_hammer_17",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 203,
-            "mastery": 90
-        }
-    },
-    {
-        "name": "Ripfang Relic",
-        "id": 78633,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ripfang Relic",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_scroll_15",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 203,
-            "crit": 91
-        }
-    },
-    {
         "name": "Robes of Searing Shadow",
         "id": 78634,
         "quality": 4,
@@ -164248,84 +158994,6 @@ export const classicItemDB = [
             "stamina": 646,
             "hit": 222,
             "crit": 298
-        }
-    },
-    {
-        "name": "Lightwarper Vestments",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Lightwarper Vestments",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 2200
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 391,
-            "stamina": 646,
-            "spirit": 298,
-            "crit": 222
-        }
-    },
-    {
-        "name": "Tentacular Belt",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Tentacular Belt",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_robe_raidwarlock_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Waist",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 280,
-            "stamina": 480,
-            "crit": 207,
-            "mastery": 178
         }
     },
     {
@@ -164428,45 +159096,6 @@ export const classicItemDB = [
         }
     },
     {
-        "name": "Vestal's Irrepressible Girdle",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Vestal's Irrepressible Girdle",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Waist",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1650
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red",
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 280,
-            "stamina": 480,
-            "spirit": 219,
-            "crit": 157
-        }
-    },
-    {
         "name": "Flashing Bracers of Warmth",
         "id": 78648,
         "quality": 4,
@@ -164536,36 +159165,6 @@ export const classicItemDB = [
             "stamina": 360,
             "spirit": 160,
             "crit": 160
-        }
-    },
-    {
-        "name": "Bracers of the Black Dream",
-        "id": -1,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Bracers of the Black Dream",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Wrist",
-        "itemLevel": 384,
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 1250
-            }
-        ],
-        "stats": {
-            "intellect": 240,
-            "stamina": 360,
-            "spirit": 140,
-            "crit": 172
         }
     },
     {
@@ -168106,62 +162705,6 @@ export const classicItemDB = [
         },
         "stats": {
             "intellect": 127,
-            "stamina": 190,
-            "crit": 84
-        }
-    },
-    {
-        "name": "Vicious Jawbone of Conquest",
-        "id": 226179,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Vicious Jawbone of Conquest",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 377,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 190,
-            "crit": 84
-        }
-    },
-    {
-        "name": "Vicious Charm of Triumph",
-        "id": 226180,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Vicious Charm of Triumph",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shield_56",
-        "itemClass": 4,
-        "itemSubClass": 11,
-        "slot": "Relics & Wands",
-        "itemLevel": 377,
-        "sockets": {
-            "gems": [
-                "prismatic"
-            ]
-        },
-        "stats": {
-            "intellect": 0,
             "stamina": 190,
             "crit": 84
         }

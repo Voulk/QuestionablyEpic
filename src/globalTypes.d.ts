@@ -119,10 +119,20 @@ declare interface statEffect extends effectData {
     stat?: string; // If this is a secondary stat trinket then this is the stat it procs.
 }
 
-declare type ClassicEffectData = {
-    coefficient: number;
-    table: number;
+declare type ClassicEffectData = 
+{ // Cooldown based effects
+    value: { [key: number]: number }; // The value of the effect at each item level.
     cooldown: number;
-    duration: number;
-  };
+    duration?: number;
+  } | 
+  { // ppm based stat effects
+    value: { [key: number]: number }; // The value of the effect at each item level.
+    stat: string;
+    ppm?: number;
+    duration?: number;
+    secondaries?: Array<string>;
+    efficiency?: number;
+    specMod?: { [key: string]: number };
+  }
+
 

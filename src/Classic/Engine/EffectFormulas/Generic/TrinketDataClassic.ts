@@ -58,8 +58,7 @@ const raidTrinketData: Effect[] = [
     name: "TrinketName",
     effects: [
       { // 
-        coefficient: 0, 
-        table: -1,
+        value: {100: 0, 200: 0}, 
         cooldown: 120,
         duration: 20,
       },
@@ -102,9 +101,8 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      console.log(itemLevel);
+      
       bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
-
       return bonus_stats;
       
     }
@@ -114,7 +112,6 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {384: 2573, 397: 2904, 410: 3278}, 
-        table: -1,
         ppm: getEffectPPM(0.15, 115, 1.5),
         stat: "haste",
         duration: 20,
@@ -219,7 +216,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      console.log(additionalData);
+
       return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
