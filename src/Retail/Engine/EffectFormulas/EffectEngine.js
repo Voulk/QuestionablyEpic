@@ -110,10 +110,10 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericSet(effectName, player, setStats);
     }
     else if (effectType === "trinket") {
-      bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, userSettings);
+      bonus_stats = getTrinketEffectClassic(effectName, player, itemLevel, additionalData);
     }
     if (effectType === "special") {
-      bonus_stats = getGenericEffectClassic(effectName, player, itemLevel, userSettings);
+      bonus_stats = getGenericEffectClassic(effectName, player, itemLevel, additionalData);
     } 
   }
   //console.log("ITEM EFFECT" + JSON.stringify(effect) + ". " + ". Result: " + JSON.stringify(bonus_stats));

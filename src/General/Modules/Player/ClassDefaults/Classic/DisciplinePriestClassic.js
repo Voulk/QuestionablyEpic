@@ -39,7 +39,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
-  const spellpower = /*statProfile.intellect + */ statProfile.spellpower + 532; // Inner Fire
+  const spellpower = statProfile.intellect +  statProfile.spellpower + 532; // Inner Fire
   const critPercentage = getCritPercentage(statProfile, "Discipline Priest"); // +4% crit
   // Evaluate Stats
   // Spellpower
@@ -124,7 +124,7 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
         if (spellName === "Smite" || spellName === "Holy Fire") genericMult *= (1 + 0.02 * 5 / 2);
         if (spellName === "Power Word: Shield" && tierSets.includes("Priest T13-4")) genericMult *= 1.1;
 
-        let spellThroughput = (spell.flat + spell.coeff * statProfile.spellpower) *
+        let spellThroughput = (spell.flat + spell.coeff * spellpower) *
                             (critMult) *
                             (masteryMult) *
                             targetCount * 

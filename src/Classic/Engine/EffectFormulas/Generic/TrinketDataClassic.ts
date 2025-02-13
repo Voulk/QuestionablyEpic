@@ -19,10 +19,8 @@ export function getAllTrinketDataClassic() {
 }
 
 // TODO: Write proper comments.
-export function getTrinketEffectClassic(effectName: string, player: Player, itemLevel: number, playerSettings: PlayerSettings | {} = {}) {
+export function getTrinketEffectClassic(effectName: string, player: Player, itemLevel: number, additionalData: any) {
   let bonus_stats = {};
-  
-  let additionalData = {}; // {contentType: contentType, settings: playerSettings, setStats: setStats, castModel: castModel, player: player};
 
   /* -------- Trinket Data holds a trinkets actual power values. Formulas here, data there. ------- */
   const trinketData: Effect[] = raidTrinketData.concat(dungeonTrinketData, otherTrinketData);
@@ -104,7 +102,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
+      console.log(itemLevel);
       bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
 
       return bonus_stats;
@@ -214,15 +212,15 @@ const raidTrinketData: Effect[] = [
         spScaling: {384: 1.107, 397: 1.25, 410: 1.411},
         stat: "hps",
         secondaries: ["crit"],
-        efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.
-        ppm: 2.5, //getEffectPPM(0.1, 20, 1.5), // Crits only
+        efficiency: 0.75 * 0.95, // 5% lost to pets. Check this with logs.
+        ppm: 2.4, //getEffectPPM(0.1, 20, 1.5), // Crits only
 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
-      return getGenericThroughputEffect(data[0], itemLevel, player);
+      console.log(additionalData);
+      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -245,8 +243,7 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
-      return getGenericThroughputEffect(data[0], itemLevel, player);
+      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
       
      // return bonus_stats;
     }
