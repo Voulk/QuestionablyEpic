@@ -207,9 +207,11 @@ const raidTrinketData: Effect[] = [
   },
   {
     name: "Windward Heart",
+    description: "Scales with spell power for some reason!",
     effects: [ // Healing Spells
       { 
         value: {384: (9203+10696)/2, 397: (10388+12073)/2, 410: (11726+13627)/2},
+        spScaling: {384: 1.107, 397: 1.25, 410: 1.411},
         stat: "hps",
         secondaries: ["crit"],
         efficiency: 0.85 * 0.9, // 20% overheal, 10% lost to pets.

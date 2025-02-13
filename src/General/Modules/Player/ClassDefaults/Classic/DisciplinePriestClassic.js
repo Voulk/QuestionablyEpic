@@ -64,9 +64,9 @@ export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSe
     // Ultimately you often use PI on a DPS which means you can't save it as well for high healing phases. 
     const spellsCast = {
         "Holy Fire": 2,
-        "Prayer of Healing": 5,
+        "Prayer of Healing": 4,
         "Power Word: Shield": 3,
-        "Smite": Math.floor(23-(2*2+5*2.5+3*1.5)/getHaste(statProfile, "Classic")) * 0.9,
+        "Smite": Math.floor(23-(2*2+4*2.5+3*1.5)/getHaste(statProfile, "Classic")) * 0.9,
     }
 
     const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
