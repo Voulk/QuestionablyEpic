@@ -3,6 +3,55 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { // 
+    name: "Reverb Radio",
+    description: "",
+    effects: [
+      {
+        coefficient: 0, 
+        table: -7,
+        duration: 0, 
+        ppm: 5,
+        stat: "haste",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      averageStackCount = 0;
+
+      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
+  { // Coagulum at home
+    name: "Mister Pick-Me-Up",
+    description: "",
+    setting: true,
+    effects: [
+      {  // Heal effect but used in different ways.
+        coefficient: 0, 
+        table: -9,
+        secondaries: ['versatility', 'crit', 'haste'], // Crit TODO
+        targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
+        ppm: 2.5,
+      },
+      {  // The damage portion.
+        coefficient: 0,
+        table: -9,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.dps = 0;
+
+
+      return bonus_stats;
+    }
+  },
+
     { // While the buffs appear in the same stack, they are individual buffs. This does mean it's impossible to lose any value if you get an int proc while you already have one.
         name: "Gruesome Syringe",
         description: "The problem with Gruesome Syringe is that the backup prize of an int proc if nobody drops low is much stronger than the heal proc but you're unlikely to get the int when you need it.",
