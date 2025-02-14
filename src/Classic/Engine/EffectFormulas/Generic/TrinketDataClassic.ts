@@ -217,6 +217,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      //console.log(getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats));
       return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;

@@ -34,7 +34,7 @@ export const holyPaladinDefaults = {
 
 export function initializePaladinSet() {
     console.log("Initializing Paladin Set")
-    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
+    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
     const activeStats = {
       intellect: 100,
@@ -51,11 +51,13 @@ export function initializePaladinSet() {
       {spell: "Divine Light", cpm: 3.4, hastedCPM: true},
       {spell: "Holy Light", cpm: 4.6, fillerSpell: true, hastedCPM: true},
       {spell: "Flash of Light", cpm: 1.2, hastedCPM: true},
-      {spell: "Holy Shock", cpm: 8.5, hastedCPM: true},
-      {spell: "Holy Radiance", cpm: 5.8, fillerSpell: true, hastedCPM: true},
-      {spell: "Light of Dawn", cpm: (8.5 + 4 + 4)/3, hastedCPM: true},
+      {spell: "Holy Shock", cpm: 8.4, hastedCPM: false},
+      {spell: "Holy Radiance", cpm: 5.6, fillerSpell: true, hastedCPM: true},
+      {spell: "Light of Dawn", cpm: (8.4 + 4 + 4)/3, hastedCPM: true, spenderRatio: 0.8},
       {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
       {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
+      {spell: "Word of Glory", cpm: 0, hastedCPM: true, spenderRatio: 0.2},
+      {spell: "Judgement", cpm: 1.2, hastedCPM: false},
   
       //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
   
@@ -90,6 +92,7 @@ export function initializePaladinSet() {
     const critPercentage = statProfile.crit / 179 / 100 + 1;
     const baseHastePercentage = (statProfile.haste / 128 / 100 + 1) * 1.05 * 1.09 * 1.03; // Haste buff, JotP, SoL
     let fillerHPM = 0;
+    const beaconOverheal = 0.15;
   
     // Take care of any extras.
     if (tierSets.includes("Paladin T11-4")) {
@@ -108,10 +111,11 @@ export function initializePaladinSet() {
     const totalManaPool = manaPool + regen;
     const fillerCost = baseline.castProfile.filter(spell => spell.spell === "Holy Light")[0]['cost'] +
                         baseline.castProfile.filter(spell => spell.spell === "Holy Radiance")[0]['cost']// This could be more efficient;
+    const fillerWastage = 0.85;
     //console.log(totalManaPool);
     //console.log("Rejuv cost: " + fillerCost);
     //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
-    const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
+    const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost * fillerWastage;
     console.log("Filler CPM: " + fillerCPM + " (Cost: " + fillerCost + ")" + " (Total Mana: " + totalManaPool + ")" + "Cost per min" + baseline.costPerMinute);
     // Evaluate Stats
     // Spellpower
@@ -127,7 +131,7 @@ export function initializePaladinSet() {
             const targetCount = spell.targets ? spell.targets : 1;
             let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
             if (tierSets.includes("Paladin T11-2") && spellName === "Holy Light") critBonus += 0.05;
-  
+            
             const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + critBonus) : 1;
             const additiveScaling = (spell.additiveScaling || 0) + 1
             //const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
@@ -138,6 +142,7 @@ export function initializePaladinSet() {
                                 genericMult * 
                                 targetCount;
             if (spellName === "Light of Dawn" || spellName === "Word of Glory") spellHealing *= 3; // Holy Power.
+            if (tierSets.includes("Paladin T13-4") && spellName === "Holy Radiance") spellHealing *= 1.05;
             //console.log(spellName, spell.flat, spell.coeff, spellpower, critMult, genericMult, spellHealing);
             // Handle HoT
             if (spell.type === "classic periodic") {
@@ -174,13 +179,15 @@ export function initializePaladinSet() {
             else if (["Flash of Light", "Divine Light", "Light of Dawn", "Holy Shock", "Word of Glory"].includes(spellName)) beaconMult = 0.5;
             else beaconMult = 0;
     
-            beaconHealing = spellHealing * (1 - 0.25) * beaconMult; // Beacon OH
+            beaconHealing = spellHealing * (1 - beaconOverheal) * beaconMult; // Beacon OH
     
             healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
             spellTotalHealing += beaconHealing;
             score += beaconHealing;
   
             //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
+            spellHealing *= ((1 - spell.expectedOverheal) || 1)
+
             healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing);
             spellTotalHealing += spellHealing;
             score += spellHealing;
@@ -213,7 +220,7 @@ export function initializePaladinSet() {
   
       // Handle HPS
       score += (60 * statProfile.hps || 0)
-  
+      console.log(healingBreakdown)
       console.log("Score: " + score / 60);
   
   
