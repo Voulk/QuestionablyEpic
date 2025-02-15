@@ -158903,7 +158903,13 @@ export const classicItemDB = [
             "stamina": 203,
             "spirit": 99,
             "haste": 75
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 750
+            }
+        ],
     },
     {
         "name": "Mindbender Lens",
