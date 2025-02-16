@@ -129,6 +129,7 @@ declare type ClassicEffectData =
     secondaries?: Array<string>;
     efficiency?: number;
     specMod?: { [key: string]: number };
+    spScaling?: { [key: number]: number };
   }
 
 

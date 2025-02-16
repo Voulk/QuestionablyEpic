@@ -210,7 +210,7 @@ const raidTrinketData: Effect[] = [
         stat: "hps",
         secondaries: ["crit"],
         efficiency: 0.75 * 0.95, // 5% lost to pets. Check this with logs.
-        ppm: 2.4, //getEffectPPM(0.1, 20, 1.5), // Crits only
+        ppm: 2.2, //getEffectPPM(0.1, 20, 1.5), // Crits only
 
       },
     ],
