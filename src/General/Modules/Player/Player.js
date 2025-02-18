@@ -8,7 +8,7 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./DiscPriest/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
@@ -173,7 +173,7 @@ export class Player {
   scoreActiveItems = (contentType, playerSettings) => {
     for (var i = 0; i < this.activeItems.length; i++) {
       let item = this.activeItems[i];
-      item.softScore = scoreItem(item, this, contentType, "Retail", playerSettings);
+      item.softScore = scoreItem(item, this, contentType, this.gameType, playerSettings);
 
       // Error checking
       if (item.softScore < 0) {
@@ -709,8 +709,9 @@ export class Player {
       }
     }
       else if (spec === SPEC.PRESEVOKER) {
-        this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
-        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
+        this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
+        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
           intellect: 60000,
           haste: 2600,
@@ -750,11 +751,12 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 0));
 
       this.activeStats = {
-        intellect: 12500,
-        haste: 5200,
-        crit: 2350,
-        mastery: 4650,
-        versatility: 1450,
+        intellect: 6000,
+        spellpower: 3500,
+        haste: 1200,
+        crit: 1500,
+        mastery: 1500,
+        spirit: 3000,
         stamina: 1900,
       }
     } else {

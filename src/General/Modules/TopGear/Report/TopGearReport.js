@@ -10,7 +10,7 @@ import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunct
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { formatReport } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { sample } from "./SampleReportData.js";
@@ -179,11 +179,14 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     statList = topSet.setStats;
     const manaSources = {}
 
+
     // Setup Slots / Set IDs.
     let gemCount = 0;
     itemList.forEach(item => {
       item.slot = getItemProp(item.id, "slot", gameType)
       item.setID = getItemProp(item.id, "itemSetId", gameType)
+      item.sources = getItemProp(item.id, "sources", gameType)
+      if (item.sources) item.source = item.sources[0];
       item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
       if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
 
@@ -196,13 +199,15 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       }
     })
 
+    exportGearSet(itemList, player.spec);
+
 
     if (gameType === "Classic") {
       manaSources.pool = Math.round(getManaPool(statList, player.spec.replace(" Classic", "")) + 22000); // Mana pot
       manaSources.regen = Math.round((getManaRegen(statList, player.spec.replace(" Classic", ""))) * 7 * 12);
       manaSources.additional = getAdditionalManaEffects(statList, player.spec.replace(" Classic", ""));
       //console.log("Total mana spend: " + (regen + pool))
-      console.log(manaSources);
+      //console.log(manaSources);
       manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
       console.log("Total Mana" + manaSources.totalMana)
 

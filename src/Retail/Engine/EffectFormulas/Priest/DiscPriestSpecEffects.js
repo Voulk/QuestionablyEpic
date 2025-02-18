@@ -1,6 +1,6 @@
-import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DiscPriest/DiscRampUtilities";
-import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
-import { DISCSPELLS } from "General/Modules/Player/DiscPriest/DiscSpellDB";
+import { runCastSequence, allRamps, allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
+import { DISCSPELLS } from "General/Modules/Player/DisciplinePriest/DiscSpellDB";
 
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};

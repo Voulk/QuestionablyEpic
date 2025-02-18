@@ -101,6 +101,16 @@ export const slotNameLocale = [
   },
   {
     name: {
+      en: "Offhand",
+      fr: "Lié quand ramassé",
+      de: "Schildhand",
+      ru: "Левая рука",
+      ch: "",
+    },
+    id: "offhand",
+  },
+  {
+    name: {
       en: "Relics & Wands",
       fr: "Relique",
       de: "Relikt",
@@ -169,12 +179,42 @@ export const slotNameLocale = [
     },
     id: "wrists",
   },
+  {
+    name: {
+      en: "Bracers",
+      fr: "Poignets",
+      de: "Handgelenk",
+      ru: "Запястья",
+      ch: "",
+    },
+    id: "wrist",
+  },
+  {
+    name: {
+      en: "1h Weapon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "1h weapon",
+  },
+  {
+    name: {
+      en: "2h Weapon",
+      fr: "",
+      de: "",
+      ru: "",
+      ch: "",
+    },
+    id: "2h weapon",
+  },
 ];
 
 export const getTranslatedSlotName = (slot, currentLanguage) => {
   let name = slotNameLocale
     .filter((obj) => {
-      return obj.id === slot;
+      return obj.id === slot.toLowerCase();
     })
     .map((obj) => obj.name[currentLanguage]);
 

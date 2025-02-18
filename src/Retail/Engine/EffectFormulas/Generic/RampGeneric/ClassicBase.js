@@ -159,7 +159,7 @@ export const getManaPool = (currentStats, spec) => {
 
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
-export const getAdditionalManaEffects = (currentStats, spec) => {
+export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     const baseMana = GLOBALCONST.baseMana[spec];
     let additionalManaPerSecond = baseMana * 0.05;
     
@@ -199,7 +199,8 @@ export const getAdditionalManaEffects = (currentStats, spec) => {
     }
     else if (spec.includes("Discipline Priest")) {
         // Rapture
-        const rapture = (pool * 0.07 / 12 * 5); // 7% of total mana, every 12 seconds.
+        let rapture = (pool * 0.07 / 12 * 5); // 7% of total mana, every 12 seconds.
+        if (tierSets.includes("Priest T11-2")) rapture *= 1.1; // 100% bonus 10% of the time.
         manaSources["Rapture"] = rapture;
         additionalManaPerSecond += rapture;
 

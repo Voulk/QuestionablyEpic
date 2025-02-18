@@ -10,7 +10,7 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
-import { runCastSequence as discSequence } from "General/Modules/Player/DiscPriest/DiscPriestRamps";
+import { runCastSequence as discSequence } from "General/Modules/Player/DisciplinePriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
 import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
@@ -21,13 +21,13 @@ import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormu
 import { runCastSequence as classicSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
-import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DiscPriest/DiscSpellDB";
+import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DisciplinePriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
-import { buildRamp } from "General/Modules/Player/DiscPriest/DiscRampGen";
+import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 
 // Classic
@@ -178,7 +178,7 @@ export default function SequenceGenerator(props) {
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
   const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
-                                { spellpower: 1700, intellect: 3500, haste: 2000, crit: 3300, mastery: 3000, spirit: 1000 } :
+                                { spellpower: 3400, intellect: 6000, haste: 2020, crit: 3300, mastery: 3000, spirit: 1000 } :
                                 { intellect: 55000, haste: 7000, crit: 12000, mastery: 12000, versatility: 7500, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
