@@ -373,6 +373,7 @@ export const EVOKERSPELLDB = {
         coeff: 0,
         flatHeal: 0,
         hastedDuration: true,
+        ignoreHaste: true,
         canPartialTick: false,
         expectedOverheal: 0.4,
         secondaries: [],
@@ -430,7 +431,23 @@ export const EVOKERSPELLDB = {
         cost: 5.0,
         coeff: 4.25,
         expectedOverheal: 0.24,
+        cooldownData: {cooldown: 27, hasted: true, charges: 2},
         secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Rewind": [{ 
+        // Can be used for DPS or Healing. This is the healing version but both can be included either together or separately (the latter might be more efficient).
+        spellData: {id: 443328, icon: "inv_ability_flameshaperevoker_engulf", cat: "heal"},
+        name: "Rewind",
+        type: "heal",
+        school: 'N/A',
+        castTime: 0,
+        cost: 0,
+        coeff: 0,
+        flatHeal: 1500000, 
+        targets: 20,
+        expectedOverheal: 0.24,
+        cooldownData: {cooldown: 180, charges: 1},
+        secondaries: []
     }],
 }
 
@@ -458,7 +475,7 @@ export const evokerTalents = {
     spiritualClarity: {points: 1, maxPoints: 1, icon: "ability_evoker_spiritbloom", id: 376150, select: true, tier: 2}, // Spiritbloom CD reduced by 15s. Choice node with Empath.
     empath: {points: 0, maxPoints: 1, icon: "ability_evoker_powernexus2", id: 370840, select: true, tier: 2}, // Spiritbloom increases regen rate by 100% for 10 seconds. Choice node with Spiritual Clarity.
     flutteringSeedlings: {points: 0, maxPoints: 2, icon: "inv_herbalism_70_yserallineseed", id: 359793, select: true, tier: 2}, // Emerald Blossoms sends out 3 flying seedlings when it bursts, each healing for 90% sp.
-    goldenHour: {points: 0, maxPoints: 1, icon: "inv_belt_armor_waistoftime_d_01", id: 378196, select: true, tier: 2}, // Reversion instantly heals the target for 15% of the damage they took in the last 5 seconds.
+    goldenHour: {points: 1, maxPoints: 1, icon: "inv_belt_armor_waistoftime_d_01", id: 378196, select: true, tier: 2}, // Reversion instantly heals the target for 15% of the damage they took in the last 5 seconds.
     temporalAnomaly: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 2}, // Ability.
     fieldOfDreams: {points: 0, maxPoints: 1, icon: "inv_misc_herb_chamlotus", id: 370062, select: true, tier: 2}, // Gain a 30% chance for your fluttering seedlings to grow into a new emerald blossom.
     lifeforceMender: {points: 0, maxPoints: 3, icon: "ability_evoker_dragonrage2", id: 376179, select: true, tier: 2}, // Living Flame and Fire Breath deal extra damage & healing equal to 1% of your maximum health (3 points).
@@ -471,13 +488,13 @@ export const evokerTalents = {
     
     timeOfNeed: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Needs testing.
     sacralEmpowerment: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3}, // Consuming a full Temporal Compression grants Essence Burst (next essence ability is free). Need to test.
-    exhilaratingBurst: {points: 0, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
+    exhilaratingBurst: {points: 2, maxPoints: 2, icon: "ability_evoker_essenceburst3", id: 377100, select: true, tier: 3}, // Each time you gain Essence Burst gain +25/50% crit damage / healing for 8 seconds.
     fontOfMagic: {points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", id: 375783, select: true, tier: 3}, // Your Empower spells go to 4 (longer cast time).
     energyLoop: {points: 0, maxPoints: 1, icon: "inv_elemental_mote_mana", id: 372233, select: true, tier: 3}, // makes Disintegrate deals more damage and grants mana over it's duration.
     renewingBreath: {points: 2, maxPoints: 2, icon: "ability_evoker_dreambreath", id: 371257, select: true, tier: 3}, // Allies healed by dream breath get a HoT for 15/30% of the amount over 8 seconds (2 points).
     titansGift: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
     gracePeriod: {points: 0, maxPoints: 21, icon: "ability_evoker_reversion_green", id: 376239, select: true, tier: 3}, // Your healing is increased by 5/10% on allies with Reversion. Echo Reversion applies it's own. Stacks multiplicatively.
-    timelessMagic: {points: 0, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
+    timelessMagic: {points: 2, maxPoints: 2, icon: "inv_artifact_xp05", id: 376240, select: true, tier: 3}, // Reversion, Time Dilation, Echo last 15/30% longer.
     dreamFlight: {points: 1, maxPoints: 1, icon: "ability_evoker_dreamflight", id: 359816, select: false, tier: 3}, 
     stasis: {points: 1, maxPoints: 1, icon: "", id: 0, select: false, tier: 3},
     cycleOfLife: {points: 0, maxPoints: 1, icon: "spell_lifegivingseed", id: 371871, select: true, tier: 3}, // Emerald Blossom leaves behind a sprout that absorbs 10% of healing over 15 seconds.
@@ -487,7 +504,7 @@ export const evokerTalents = {
     ancientFlame: {points: 1, maxPoints: 1, icon: "ability_evoker_rescue", id: 99998, select: true, tier: 4},
     innateMagic: {points: 2, maxPoints: 2, icon: "ability_evoker_innatemagic4", id: 375520, select: true, tier: 4}, // Essence regens 5% faster (2 charges).
     enkindled: {points: 0, maxPoints: 2, icon: "ability_evoker_livingflame", id: 375554, select: true, tier: 4}, // Living Flame does +3% damage / healing.
-    scarletAdaptation: {points: 0, maxPoints: 1, icon: "inv_bijou_red", id: 372469, select: true, tier: 4}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
+    scarletAdaptation: {points: 1, maxPoints: 1, icon: "inv_bijou_red", id: 372469, select: true, tier: 4}, // Store 20% of healing dealt. Offensive living flame consumes it to increase damage dealt. Cap is 6x SP x Vers.
     cauterizingFlame: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Big dispel that also heals.
     tipTheScales: {points: 0, maxPoints: 1, icon: "", id: 0, select: false, tier: 4}, // Your next empowered spell casts instantly. 2 min CD.
     attunedToTheDream: {points: 2, maxPoints: 2, icon: "ability_rogue_imrovedrecuperate", id: 376930, select: true, tier: 4}, // +2% healing (2 points).

@@ -153,12 +153,12 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(639);
+  const [levelCap, setLevelCap] = React.useState(678);
   const maxLevelMarks = [
-    { value: 0, label: "606" },
-    { value: 1, label: "619" },
-    { value: 2, label: "626" },
-    { value: 3, label: "639" },
+    { value: 0, label: "639" },
+    { value: 1, label: "652" },
+    { value: 2, label: "665" },
+    { value: 3, label: "678" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -224,7 +224,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [577, 584, 590, 597, 606, 610, 616, 619, 623, 626, 629, 632, 639];
+  const allItemLevels = [626, 632, 639, 645, 652, 659, 666, 672, 675, 678];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -261,6 +261,27 @@ export default function TrinketAnalysis(props) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
       const trinketScore = getClassicTrinketScore(trinket.id, props.player);
+      
+      const pos = trinket.levelRange.indexOf(trinket.itemLevel);
+      let difficulty = "";
+      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1)) difficulty = "heroic";
+      else if (trinket.levelRange.length === 3 && pos === 0) difficulty = "lfr";
+      else difficulty = "normal";
+      
+      if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
+        const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
+        existingTrinket[difficulty] = trinketScore;
+        existingTrinket[difficulty + "ilvl"] = trinket.itemLevel;
+        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
+      }
+      else {
+        trinketAtLevels[difficulty] = trinketScore;
+        trinketAtLevels[difficulty + "ilvl"] = trinket.itemLevel;
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
+        activeTrinkets.push(trinketAtLevels);
+      }
+      
+/*
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         // Trinket already exists
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
@@ -273,7 +294,7 @@ export default function TrinketAnalysis(props) {
         trinketAtLevels["normalilvl"] = trinket.itemLevel;
         trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
         activeTrinkets.push(trinketAtLevels);
-      }
+      }*/
 
     } else {
         for (var x = 0; x < itemLevels.length; x++) {

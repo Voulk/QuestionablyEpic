@@ -1,7 +1,9 @@
 
 import { getCurrentStats, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
-import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
+import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
+
+import { printHealingBreakdown, hasTier } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
@@ -15,11 +17,26 @@ const getSpellEntry = (profile, spellName, index = 0) => {
     return profile.filter(spell => spell.spell === spellName)[index]
 }
 
+const getBeaconHealing = (state, healingVal, spellName) => {
+        let beaconHealing = 0;
+        let beaconMult = 1;
+        if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
+        else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
+    
+    
+        // Beacons
+        if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        //else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.1 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
+        
+        return beaconHealing;
+}
+
 export const runHolyPaladinCastProfile = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: playerData.talents, reporting: true, heroTree: "heraldOfTheSun", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
+                    beacon: "Beacon of Faith", talents: playerData.talents, reporting: true, heroTree: "heraldOfTheSun", currentTarget: 0, currentStats: getCurrentStats(playerData.stats, [])};
     
     // Run Talents
     const paladinSpells = applyLoadoutEffects(deepCopyFunction(playerData.spells), state.settings, state.talents, state, state.currentStats);
@@ -37,7 +54,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
         {spell: "Avenging Wrath", cpm: 0.5},
         {spell: "Divine Toll", cpm: 1},
         {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-        {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
+        {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
         {spell: "Eternal Flame", cpm: 0},
         {spell: "Light of Dawn", cpm: 0},
         
@@ -53,6 +70,12 @@ export const runHolyPaladinCastProfile = (playerData) => {
         {spell: "Dawnlight", cpm: 0, freeSpell: true},       
         {spell: "Sunsear", cpm: 0, freeSpell: true},                                   
       ]
+
+    const spenderUsage = {
+        "Light of Dawn": 0.3,
+        "Eternal Flame": 0.7,
+        "Word of Glory": 0,
+    }
     
 
     // Second Sunrise
@@ -74,7 +97,6 @@ export const runHolyPaladinCastProfile = (playerData) => {
         }
     )
 
-
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.1;
     getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.1;
@@ -82,8 +104,8 @@ export const runHolyPaladinCastProfile = (playerData) => {
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
-    getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * 0.8;
-    getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * 0.2;
+    getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
+    getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
 
     // Calculate Wings Effects
     // Calculate Wings uptime
@@ -126,6 +148,9 @@ export const runHolyPaladinCastProfile = (playerData) => {
                 const value = runHeal(state, spell, spellName) ;
                 
                 spellThroughput += (value * spellCPM);
+
+                if (spellName === "Eternal Flame") console.log("ETERNAL FLAME ", value)
+
             }
             else if (spell.type === "buff" && spell.buffType === "heal") {
                 // HoT
@@ -163,6 +188,9 @@ export const runHolyPaladinCastProfile = (playerData) => {
             spellThroughput *= genericHealingIncrease;
             healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
 
+            const beaconHealing = getBeaconHealing(state, spellThroughput, spellName);
+            healingBreakdown[state.beacon] = Math.round((healingBreakdown[state.beacon] || 0) + (beaconHealing));
+
         });
 
 
@@ -171,11 +199,9 @@ export const runHolyPaladinCastProfile = (playerData) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
     const spellBreakdown = {}
-    Object.keys(healingBreakdown).forEach(spellName => {
-        spellBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) / 60) + " (" + Math.round(healingBreakdown[spellName] / totalHealing * 10000) / 100 + "%)";
-    })
-    
-    console.log(spellBreakdown);
-    console.log(totalHealing / 60);
+    printHealingBreakdown(healingBreakdown, totalHealing);
+
+    console.log(Math.round(totalHealing / 60).toLocaleString() + " HPS");
+    console.log(castProfile);
     return { hps: totalHealing / 60, hpm: 0 }
 }

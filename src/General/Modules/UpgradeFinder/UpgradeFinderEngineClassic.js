@@ -1,6 +1,6 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import Item from "../Player/Item";
-import { runTopGearBC, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
+import { runTopGearClassic, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
 import {
   getValidArmorTypes,
   getValidWeaponTypes,
@@ -123,7 +123,7 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   const itemSets = prepareTopGear(baseItemList, player, userSettings, true, [], []);
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
+  const baseSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
 
   const baseScore = baseSet.hardScore;
   console.log(baseScore);
@@ -236,7 +236,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   const itemSets = prepareTopGear(newItemList, player, userSettings, true, [], []);
   //const wepList = buildNewWepCombosUF(player, newItemList);
   
-  const newTGSet = runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
+  const newTGSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
   console.log(newTGSet);
   const newScore = newTGSet.hardScore;
   console.log(newScore);

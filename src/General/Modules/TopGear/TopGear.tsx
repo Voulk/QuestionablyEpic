@@ -171,7 +171,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (gameType === "Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -295,8 +295,8 @@ export default function TopGear(props: any) {
         else iterations *= (slotLengths[key] > 0? slotLengths[key] : 1);
       }
     }
-    console.log("Item count TG" + Object.values(slotLengths).reduce((total, value) => total + value, 0));
-    console.log(iterations);
+    //console.log("Item count TG" + Object.values(slotLengths).reduce((total, value) => total + value, 0));
+    //console.log(iterations);
     return iterations;
     
   }
@@ -542,7 +542,7 @@ export default function TopGear(props: any) {
         const workerPromises = []
         const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
         const chunkSize = itemSets.length / workerCount;
-        console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
+        //console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
         for (let i = 0; i < workerCount; i++) {
           // Create itemSet chunk.
@@ -607,7 +607,7 @@ export default function TopGear(props: any) {
     return new Promise((resolve, reject) => {
         const instance = new worker();
         instance
-            .runTopGearBC(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
+            .runTopGearClassic(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
             .then(result => {
                 instance.terminate();
                 resolve(result);

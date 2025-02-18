@@ -51,28 +51,42 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
         return weights;
 }
 
-export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteType) {
+export function runClassicStatSuite(profile) {
     // Weights
-    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste'];
+    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
     const fightLength = 420;
 
-    const baseline = suiteType === "APL" ? runSuite(playerData, aplList, runCastSequence, "APL") : runCastProfileSuite(playerData, aplList, runCastSequence);
-    
-    const baselineHPS = baseline.avgHPS;
-    const baselineHealing = baseline.totalHealing;
-    const baselineHPM = baseline.fillerHPM; // baseline.avgHPM; // Change to only use filler spells.
+    const activeStats = {
+        intellect: 5000,
+        spirit: 3800,
+        spellpower: 3000,
+        haste: 1500,
+        crit: 1500,
+        mastery: 1500,
+        stamina: 5000,
+        mp5: 0,
+        critMult: 2,
+        hps: 0,
+    }
 
-    const baselineMana = getManaRegen(playerData.stats, playerData.spec) * 12 * 7;
-    const baselinePool = getManaPool(playerData.stats, playerData.spec);
+    const scoreFunction = profile.scoreSet;
+
+    let playerStats = JSON.parse(JSON.stringify(activeStats));
+    applyRaidBuffs({}, playerStats);
+    const testSettings = {hasteBuff: {value: "Haste Aura"}};
+
+    const baseline = profile.initializeSet();
+    const baselineHPS = scoreFunction(baseline, playerStats, {}, testSettings);
 
     const results = {};
     stats.forEach(stat => {
         // Change result to be casts agnostic.
-        let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+        let playerStats = JSON.parse(JSON.stringify(activeStats));
         playerStats[stat] = playerStats[stat] + 10;
-        console.log(playerStats)
-        const newPlayerData = {...playerData, stats: playerStats};
-        const result = suiteType === "APL" ? runSuite(newPlayerData, aplList, runCastSequence, "APL").avgHPS : runCastProfileSuite(newPlayerData, aplList, runCastSequence).avgHPS;
+        applyRaidBuffs({}, playerStats);
+
+        //const newPlayerData = {...playerData, stats: playerStats};
+        const result = scoreFunction(baseline, playerStats, {}, testSettings)
         results[stat] = result;
     });
     const weights = {}
@@ -82,6 +96,7 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
         weights[stat] = Math.round(1000*(results[stat] - baselineHPS)/(results['spellpower'] - baselineHPS))/1000;
     });
 
+    /*
     const intRegen = getManaRegen({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) * 12 * 7;
     const intManaPool = getManaPool({...playerData.stats, 'intellect': playerData.stats['intellect'] + 10}, playerData.spec) - baselinePool;
     weights['intellect'] += Math.round(1000*((intRegen - baselineMana + intManaPool) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
@@ -94,6 +109,7 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / (results['spellpower'] - baselineHPS))/1000;
     //weights['spirit'] = Math.round(1000*((spiritRegen - baselineMana) * baselineHPM) / fightLength / 10)/1000;
     weights['mp5'] = Math.round(1000*(10 * baselineHPM / 5) / (results['spellpower'] - baselineHPS))/1000;
+    */
 
     // To return:
     // A baseline profile (to use for haste weights and mana)
@@ -101,7 +117,7 @@ export function runClassicStatSuite(playerData, aplList, runCastSequence, suiteT
     // To form a set score we'll do the following:
     // - Filler HPM: Filler Spell + (SP x SP weight) + (...crit / mast x crit / mast weight) / fillerCost
     // - Crit / mast / sp valuation is just a simple effective HPW x stat
-    return {weights: weights, baseline: baseline};
+    return {weights: weights, baselineHPS: baselineHPS};
 }
 
 // The stat differential suite takes the stat profile stored on the APL and varies them by +-1000 and then stores the result. 

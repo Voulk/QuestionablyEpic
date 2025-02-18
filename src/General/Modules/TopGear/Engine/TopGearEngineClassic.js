@@ -11,7 +11,10 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ItemSetsDB"
 
-import { initializeDruidSet, scoreDruidSet, initializePaladinSet, scorePaladinSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/ClassicDefaults";
+import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
+import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
+import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
+import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
 
@@ -173,8 +176,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
           newItem.flags.push("ItemReforged");
           reforgedItems.push(newItem);
-
-  
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
           
         }
@@ -254,7 +255,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   });
 
   itemList = itemList.concat(reforgedItems);
-  console.log("Total item count: " + itemList.length);
+  //console.log("Total item count: " + itemList.length);
   
   }
   let wepCombosNew = buildDistinctWepCombos(itemList);
@@ -263,7 +264,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   return itemSets;
 }
 
-export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
+export function runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
     console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
@@ -275,7 +276,8 @@ export function runTopGearBC(itemSets, player, contentType, baseHPS, currentLang
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : initializeDruidSet();
+    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : player.spec === "Holy Priest Classic" ? initializeHPriestSet() :  initializeDruidSet();
+
     count = itemSets.length;
 
     for (var i = 0; i < count; i++) {
@@ -494,6 +496,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       */
       
     }
+    //console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {
@@ -501,7 +504,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          const secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+          let secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+          if (player.spec === "Holy Priest Classic") secondaryRank = ["spirit", "crit", "mastery", "haste"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -717,6 +721,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
       hardScore = scoreDiscSet(baseline, setStats, player, playerSettings, tierList);
+    }
+    else if (player.spec === "Holy Priest Classic") {
+      //setStats.intellect *= 1.15; // Spec passive.
+      hardScore = scoreHPriestSet(baseline, setStats, player, playerSettings, tierList);
     }
     else {
       console.log("DOING OLD SCORING");

@@ -80,7 +80,7 @@ export const CLASSICPALADINSPELLDB = {
         cost: 40, 
         flat: 2666,
         coeff: 0.259, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.35,
         targets: 6,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
@@ -92,7 +92,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 473,
         coeff: 0.0504, // Estimated. Check it in Beta.
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.35,
         targets: 6, // Has *some* scaling above 6. Check. Does sqrt exist in Cata?
         secondaries: ['crit']
     }],
@@ -105,7 +105,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 640,
         coeff: 0.132, // Adjust this per Holy Power. 
         targets: 6,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.25,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
@@ -117,7 +117,7 @@ export const CLASSICPALADINSPELLDB = {
         cost: 0, 
         flat: 2133,
         coeff: 0.209, // Adjust this per Holy Power. 
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.1,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
