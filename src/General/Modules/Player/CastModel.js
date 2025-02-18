@@ -13,6 +13,12 @@ import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriest
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
+
+import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
+import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
+import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
+import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
+
 import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
 
 class CastModel {
@@ -119,11 +125,11 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      this.modelName = "Default";
-      spellList = shamanDefaultSpellData(contentType);
-      specialQueries = shamanDefaultSpecialQueries(contentType);
-      this.baseStatWeights = shamanDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+        this.modelName = "Default";
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -194,7 +200,7 @@ class CastModel {
       else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
-        this.modelType["Raid"] = "CastModel";
+        this.modelType["Raid"] = "Default";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = runFlameshaperCastModel;
         spellList = evokerDefaultSpellData(contentType);
@@ -205,51 +211,32 @@ class CastModel {
 
     } 
     
-    // Burning Crusade Profiles
+    // Classic Profiles
     else if (spec === "Restoration Druid Classic") {
-      spellList = this.getClassicDruid();
-        this.baseStatWeights = {
-          spellpower: 1,
-          intellect: 3,
-          crit: 0.98,
-          mastery: 1.1,
-          haste: 0.3,
-          mp5: 1.7,
-          spirit: 1.3,
-          hps: 0.7, // 
-        };
-    } else if (spec === "Restoration Shaman Classic") {
-      spellList = this.getClassicShaman();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
-    } else if (spec === "Holy Priest Classic") {
-      spellList = this.getClassicPriest();
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
-    } else if (spec === "Holy Paladin Classic") {
-      spellList = this.getClassicPaladin();
-      this.baseStatWeights = {
-        spellpower: 1,
-        intellect: 1.645,
-        crit: 0.785,
-        mastery: 0.398,
-        haste: 1.083,
-        spirit: 1.123,
-        mp5: 1.199,
-        hps: 0.7, // 
-      };
+      this.profile = restoDruidDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
+    } 
+    else if (spec === "Holy Priest Classic") {
+      this.profile = holyPriestDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
+    } 
+    else if (spec === "Holy Paladin Classic") {
+      this.profile = holyPaladinDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Discipline Priest Classic") {
-      spellList = this.getClassicPriest();
-      this.baseStatWeights = {
-        spellpower: 1,
-        intellect: 2.668,
-        crit: 0.545,
-        mastery: 0.461,
-        haste: 0.914,
-        spirit: 0.711,
-        mp5: 1.028,
-        hps: 0.7, // 
-      }
-    } else {
+      this.profile = discPriestDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
+    } 
+    else if (spec === "Restoration Shaman Classic") {
+      spellList = {};
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
+    } 
+    else if (spec === "Mistweaver Monk Classic") {
+      spellList = {};
+      this.baseStatWeights = druidDefaultStatWeights(contentType);
+    } 
+    else {
       spellList = {};
       specialQueries = {};
     }
@@ -270,44 +257,6 @@ class CastModel {
     this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
   }
-
-  getClassicDruid = () => {
-    return {
-      33763: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Lifebloom
-      774: { cpm: 5.6, avgcast: 3245, overhealing: 0.18 }, // Rejuv
-      26980: { cpm: 3.7, avgcast: 5452, overhealing: 0.13 }, // Regrowth R10
-      8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
-
-    };
-  }
-  // TODO
-  getClassicPaladin = () => {
-    return {
-      27137: { cpm: 19.5, avgcast: 1443, overhealing: 0.14 }, // Flash of Light R7
-      19943: { cpm: 4.3, avgcast: 1054, overhealing: 0.18 }, // Flash of Light R6
-      27136: { cpm: 4.2, avgcast: 3339, overhealing: 0.19 }, // Holy Light R11
-
-    };
-  }
-  //TODO
-  getClassicShaman = () => {
-    return {
-      25423: { cpm: 16, avgcast: 5210, overhealing: 0.21 }, // Chain heal generic
-
-    };
-  }
-
-  // TODO
-  getClassicPriest = () => {
-    return {
-      774: { cpm: 21.2, avgcast: 4197, overhealing: 0.29 }, // Rejuv - Rankless
-      33763: { cpm: 5.6, avgcast: 3245, overhealing: 0.18 }, // Lifebloom R1
-      26980: { cpm: 3.7, avgcast: 5452, overhealing: 0.13 }, // Regrowth R10
-      8936: { cpm: 0.6, avgcast: 4321, overhealing: 0.11 }, // Regrowth R8
-
-    };
-  }
-
     // Currently being trialled as Discipline only.
   updateStatWeights = (stats, contentType) => {
 

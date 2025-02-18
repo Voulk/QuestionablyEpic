@@ -4,7 +4,7 @@ import { getAllTrinketDataClassic } from "Classic/Engine/EffectFormulas/Generic/
 const convertSpiritToMP5 = (spiritAmount, intellect, spec) => {
     const regen = 0.001 + spiritAmount * Math.sqrt(intellect) * 0.016725;
 
-    if (spec.includes("Holy Paladin")) return Math.round(regen * 0.8);
+    if (spec.includes("Holy Paladin") || spec.includes("Holy Priest")) return Math.round(regen * 0.8);
     else return Math.round(regen * 0.5);
     
 }
@@ -20,18 +20,19 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     trinketDescription.push("")
     const trinketData = getTrinketData(trinketName);
+    const additionalData = { setStats: player.activeStats }
     if (trinketData === undefined) return [];
-    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, {})
+    const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     
     Object.keys(trinketStats).forEach((statName) => {    
         trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
     });
 
     if (trinketStats.spirit) {
-        trinketDescription.push("Effective MP5 at 4k int: " + convertSpiritToMP5(trinketStats.spirit, 4000, player.spec));
         trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
         trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000, player.spec));
         trinketDescription.push("Effective MP5 at 7k int: " + convertSpiritToMP5(trinketStats.spirit, 7000, player.spec));
+        trinketDescription.push("Effective MP5 at 8k int: " + convertSpiritToMP5(trinketStats.spirit, 8000, player.spec));
     }
     
 

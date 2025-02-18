@@ -21,6 +21,12 @@ export const instanceDB = {
   "1273": "Nerub-ar Palace",
 
   "-4": "Crafted",
+
+  // Classic specific
+  "-5": "Justice",
+  "-6": "Valor",
+  "-8": "Elemental Rune Twilight",
+  
 };
 
 export const craftedDB = {
