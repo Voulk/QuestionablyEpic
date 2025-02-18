@@ -14,9 +14,10 @@ export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number)
 // A generic HPS or DPS effect.
 export const getGenericThroughputEffect = (data: ClassicEffectData, itemLevel: number, player: Player, setStats: any = {}): Stats => {
     // Most classic trinkets just use a hard coded value but there are rare exceptions that also have spellpower scaling.
-    const trinketValue = data.value[itemLevel] + (data.spScaling ? (data.spScaling[itemLevel] * (setStats.spellpower + setStats.intellect)) : 0); // TODO: Inner Fire
+    // Maybe we replace this by calling applyBuffs.
+    const trinketValue = data.value[itemLevel] + (data.spScaling ? (data.spScaling[itemLevel] * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05)) : 0); // TODO: Inner Fire
 
-    const trinketThroughput = trinketValue * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(setStats, player.spec.replace(" Classic", "")));
+    let trinketThroughput = trinketValue * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(setStats, player.spec.replace(" Classic", "")));
     if (data.targets) trinketThroughput *= data.targets;
     
     const statType = data.stat;

@@ -210,13 +210,14 @@ const raidTrinketData: Effect[] = [
         stat: "hps",
         secondaries: ["crit"],
         efficiency: 0.75 * 0.95, // 5% lost to pets. Check this with logs.
-        ppm: 2.4, //getEffectPPM(0.1, 20, 1.5), // Crits only
+        ppm: 2, //getEffectPPM(0.1, 20, 1.5), // Crits only
 
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      //console.log(getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats));
       return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;

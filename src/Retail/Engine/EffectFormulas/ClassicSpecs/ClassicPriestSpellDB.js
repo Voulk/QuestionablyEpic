@@ -227,7 +227,7 @@ const discTalents = {
     }},
 
     divineFury: {points: 3, maxPoints:3, icon: "", id: 18530, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        const reduction = [0.15, 0.3, 0.5][points];
+        const reduction = [0, 0.15, 0.3, 0.5][points];
         spellDB["Smite"][0].castTime -= reduction;
         spellDB["Holy Fire"][0].castTime -= reduction;
         //spellDB["Heal"][0].castTime -= reduction;

@@ -120,19 +120,16 @@ declare interface statEffect extends effectData {
 }
 
 declare type ClassicEffectData = 
-{ // Cooldown based effects
-    value: { [key: number]: number }; // The value of the effect at each item level.
-    cooldown: number;
-    duration?: number;
-  } | 
-  { // ppm based stat effects
+  { // 
     value: { [key: number]: number }; // The value of the effect at each item level.
     stat: string;
     ppm?: number;
+    cooldown?: number;
     duration?: number;
     secondaries?: Array<string>;
     efficiency?: number;
     specMod?: { [key: string]: number };
+    spScaling?: { [key: number]: number };
   }
 
 
