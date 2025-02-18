@@ -16,6 +16,15 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.0.7 / 4.4.2",
+    update: 1,
+    date: "December 21",
+    changes: [ 
+      "Cataclysm: Added Dragon Soul support.",
+      "Cataclysm: Added Holy Priest and Discipline Priest.",
+      "Cataclysm: Added LFR difficulty to the trinket chart."
+    ]},
+  {
     version: "11.0.7 / 4.4.1",
     update: 1,
     date: "December 21",

@@ -102,6 +102,28 @@ export function initializePaladinSet() {
       // 40% chance on Holy Shock cast to restore 184 mana.
       statProfile.mp5 = (statProfile.mp5 || 0) + (baseline.castProfile.filter(spell => spell.spell === "Holy Shock")[0].cpm * baseHastePercentage * 1405 * 0.4) / 12;
     }
+    if (tierSets.includes("Paladin T13-2")) {
+      // 25% cost reduction for 15s after pressing Innervate
+      const spellsCast = {
+          "Holy Shock": 2,
+          "Holy Light": 1,
+          "Holy Radiance": Math.floor(15-(2.5*1+2*1.5)/getHaste(statProfile, "Classic"))/2.5,
+      }
+
+      const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
+          const spell = baseline.castProfile.find(spell => spell.spell === spellName);
+          
+          if (!spell) return total; // Spell can't be found, ignore.
+
+          const spellCost = spell.cost;
+          const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
+
+
+          return total + manaSavedForSpell;
+      }, 0); // Start accumulating from 0
+
+      statProfile.mp5 = (statProfile.mp5 || 0) + (manaSaved / 120 * 5);
+    }
   
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Holy Paladin");
