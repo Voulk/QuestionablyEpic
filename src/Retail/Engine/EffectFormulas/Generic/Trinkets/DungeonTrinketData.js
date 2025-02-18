@@ -2,6 +2,96 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
+  { // Versatility for X% of the fight. Mana one time.
+    name: "Ingenious Mana Battery",
+    effects: [
+      {  // Mana Effect
+        coefficient: 0.076844,
+        table: -10,
+      },
+      {  // MVersatility Effect
+        coefficient: 0.27006, // Increased by 100% due to mana stored.
+        table: -7,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Vial of Spectral Essence",
+    effects: [
+      {  // Heal effect
+        coefficient: 173.7287,
+        table: -9,
+        secondaries: ['versatility'], // TODO: Check
+        efficiency: {Raid: 0.8, Dungeon: 0.64}, // This is an absorb so you won't lose much value.
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { // TODO: Check low health scaling.
+    name: "Soulletting Ruby",
+    description: "",
+    effects: [
+      {
+        coefficient: 1.375703 + 1.681503, 
+        table: -7,
+        duration: 16,
+        cooldown: 120,
+        stat: "crit",
+      },
+      {
+        coefficient: 51.42363, 
+        table: -9,
+        cooldown: 120,
+        efficiency: 0.4, // Heal ultimately does nothing but it's included for accuracy.
+        stat: "hps",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
+  { // TODO: Can it only reproc during its duration or always? Has 3ppm effect attached.
+    name: "Darkfuse Medichopper",
+    description: "",
+    effects: [
+      {
+        coefficient: 18.44994, 
+        table: -9,
+        duration: 15,
+        cooldown: 120,
+      },
+      {
+        coefficient: 0.419281, 
+        table: -7,
+        stat: "versatility",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      
+      return bonus_stats;
+    }
+  },
     {
         name: "Carved Blazikon Wax",
         description: "",

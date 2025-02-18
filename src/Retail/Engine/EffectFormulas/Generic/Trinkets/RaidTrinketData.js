@@ -3,12 +3,100 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
+    name: "Eye of Kezan",
+    description: "",
+    effects: [
+      { 
+        coefficient: 0.045686, 
+        table: -1,
+        ppm: 5,
+        stat: "mastery",
+      },
+      { 
+        coefficient: 13.85549, 
+        table: -9,
+        duration: 0, 
+        ppm: 5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
+  { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
+    name: "Gallagio Bottle Service",
+    description: "",
+    setting: true,
+    effects: [
+      {  // Heal effect but used in different ways.
+        coefficient: 51.42363, 
+        table: -8,
+        secondaries: ['versatility', 'crit'], // Crit TODO
+        targets: 10, // 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+
+      return bonus_stats;
+    }
+  },
+  { // 1:30 cooldown mastery on-use. 
+    name: "House of Cards",
+    description: "",
+    effects: [
+      {
+        coefficient: 2.736594, 
+        table: -7,
+        duration: 15, 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const variance = 0; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
+
+      //bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
+  { // Crit proc trinket. Spells cast while crit buff is up increase the crit.
+    name: "Mug's Moxie Jug",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.276886, 
+        table: -7,
+        duration: 15, 
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      averageStackCount = 0;
+
+      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
   { // 
     name: "Reverb Radio",
     description: "",
     effects: [
       {
-        coefficient: 0, 
+        coefficient: 0.117104, 
         table: -7,
         duration: 0, 
         ppm: 5,
@@ -31,7 +119,7 @@ export const raidTrinketData = [
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
-        coefficient: 0, 
+        coefficient: 10.31673, 
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Crit TODO
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
