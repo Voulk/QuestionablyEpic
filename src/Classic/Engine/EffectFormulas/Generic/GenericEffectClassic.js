@@ -35,7 +35,6 @@ export const classicEffectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
-      
       return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
     },
