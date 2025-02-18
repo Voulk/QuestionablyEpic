@@ -11,6 +11,7 @@ export const raidTrinketData = [
         coefficient: 0.045686, 
         table: -1,
         ppm: 5,
+        maxStacks: 20,
         stat: "mastery",
       },
       { 
@@ -23,7 +24,17 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+      const fightLength = additionalData.castModel.fightInfo.fightLength;
+      const timeToMax = data[0].maxStacks / data[0].ppm * 60;
+      const timeMaxed = fightLength - timeToMax;
+
+      const averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
+      console.log("Fight Length: " + fightLength);
+      console.log(averageStackCount);
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStackCount;
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (timeMaxed / fightLength);
+      // TODO: Shared DPS proc.
 
       return bonus_stats;
     }
@@ -44,7 +55,6 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-
 
       return bonus_stats;
     }
@@ -84,7 +94,6 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      averageStackCount = 0;
 
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
@@ -106,7 +115,7 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      averageStackCount = 0;
+      const averageStackCount = 0;
 
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
@@ -123,6 +132,7 @@ export const raidTrinketData = [
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Crit TODO
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
+        efficiency: 0.8,
         ppm: 2.5,
       },
       {  // The damage portion.
@@ -134,7 +144,6 @@ export const raidTrinketData = [
       let bonus_stats = {};
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
       bonus_stats.dps = 0;
-
 
       return bonus_stats;
     }

@@ -49,6 +49,7 @@ export const dungeonTrinketData =
         coefficient: 1.375703 + 1.681503, 
         table: -7,
         duration: 16,
+        multiplier: 1.6, // Assumes boss is around 50% health.
         cooldown: 120,
         stat: "crit",
       },
@@ -64,31 +65,40 @@ export const dungeonTrinketData =
       let bonus_stats = {};
 
       bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
     }
   },
-  { // TODO: Can it only reproc during its duration or always? Has 3ppm effect attached.
+  { // TODO: The Chopper stays on the target and can reproc whether the initial on-use is active or not. 
+    // So it's basically an on-use and proc trinket in one.
     name: "Darkfuse Medichopper",
     description: "",
     effects: [
       {
         coefficient: 18.44994, 
         table: -9,
-        duration: 15,
         cooldown: 120,
+        ppm: 3 + 0.5,
       },
       {
         coefficient: 0.419281, 
         table: -7,
         stat: "versatility",
+        ppm: 3 + 0.5,
         duration: 15,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      
+      // As this is both a ppm and on-use trinket we'll make use of both of our functions.
+      // Note that additional testing will need to be done as to how the trinket interacts with overlapping procs but this is a minor hit to its value regardless.
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      // You could technically self-use it but I'm not sure you ever would.
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel);
+
       return bonus_stats;
     }
   },
