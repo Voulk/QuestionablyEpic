@@ -125,11 +125,11 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      this.modelName = "Default";
-      spellList = shamanDefaultSpellData(contentType);
-      specialQueries = shamanDefaultSpecialQueries(contentType);
-      this.baseStatWeights = shamanDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+        this.modelName = "Default";
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -200,7 +200,7 @@ class CastModel {
       else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
-        this.modelType["Raid"] = "CastModel";
+        this.modelType["Raid"] = "Default";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = runFlameshaperCastModel;
         spellList = evokerDefaultSpellData(contentType);
