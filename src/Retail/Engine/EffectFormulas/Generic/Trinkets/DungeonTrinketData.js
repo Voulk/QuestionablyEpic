@@ -9,14 +9,17 @@ export const dungeonTrinketData =
         coefficient: 0.076844,
         table: -10,
       },
-      {  // MVersatility Effect
+      {  // Versatility Effect
         coefficient: 0.27006, // Increased by 100% due to mana stored.
         table: -7,
+        uptime: 0.6,
+        multiplier: 2, // The amount of extra vers you get for mana saved.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
+      bonus_stats.versatility = processedValue(data[1], itemLevel) * data[1].uptime * data[1].multiplier;
       //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
@@ -36,6 +39,7 @@ export const dungeonTrinketData =
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
       //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;

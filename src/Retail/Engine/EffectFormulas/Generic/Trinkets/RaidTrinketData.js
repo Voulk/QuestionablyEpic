@@ -29,8 +29,6 @@ export const raidTrinketData = [
       const timeMaxed = fightLength - timeToMax;
 
       const averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
-      console.log("Fight Length: " + fightLength);
-      console.log(averageStackCount);
 
       bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStackCount;
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (timeMaxed / fightLength);
@@ -45,7 +43,7 @@ export const raidTrinketData = [
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
-        coefficient: 51.42363, 
+        coefficient: 89.09773, 
         table: -8,
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
@@ -73,9 +71,9 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      const variance = 0; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
+      const variance = (0.9 + 1.15) / 2; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
 
-      //bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStackCount;
+      bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
 
       return bonus_stats;
     }
@@ -86,6 +84,7 @@ export const raidTrinketData = [
     effects: [
       {
         coefficient: 0.276886, 
+        averageStacks: 15 / 1.5 / 2, // TODO
         table: -7,
         duration: 15, 
         ppm: 2,
@@ -94,6 +93,10 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
+      // We should just hook average stacks into cast models.
+      // Uptime on this looks way worse than 2ppm would suggest.
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks;
+      if (player.spec === "Preservation Evoker") bonus_stats.crit *= 0.7;
 
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
@@ -274,11 +277,11 @@ export const raidTrinketData = [
         setting: true,
         effects: [
           {  // Passive Int
-            coefficient: 0.014709,
+            coefficient: 0.014709 * 0.9,
             table: -1,
           },
           {  // On-use Int
-            coefficient: 0.141408 * 0.95,
+            coefficient: 0.141408 * 0.95 * 0.9,
             table: -1,
             duration: 20,
             cooldown: 60, // Technically 20

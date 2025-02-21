@@ -155,10 +155,10 @@ export default function TrinketAnalysis(props) {
   const [theme, setTheme] = React.useState(false);
   const [levelCap, setLevelCap] = React.useState(678);
   const maxLevelMarks = [
-    { value: 0, label: "606" },
-    { value: 1, label: "619" },
-    { value: 2, label: "626" },
-    { value: 3, label: "639" },
+    { value: 0, label: "639" },
+    { value: 1, label: "645" },
+    { value: 2, label: "665" },
+    { value: 3, label: "678" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -224,7 +224,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [577, 584, 590, 597, 606, 610, 616, 619, 623, 626, 629, 632, 639];
+  const allItemLevels = [626, 632, 639, 645, 652, 659, 665, 672, 675, 678];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 

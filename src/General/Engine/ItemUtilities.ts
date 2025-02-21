@@ -980,7 +980,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296;
+      if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296 || item.id === 228411;
       if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
@@ -1114,7 +1114,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) / 55000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 75000 * player.getHPS(contentType);
     }
   }
 

@@ -75,7 +75,7 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 1900000,
+      hps: 2050000,
       rawhps: 475000,
       dps: 12000,
       fightLength: 400,
@@ -200,7 +200,7 @@ class CastModel {
       else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
-        this.modelType["Raid"] = "Default";
+        this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = runFlameshaperCastModel;
         spellList = evokerDefaultSpellData(contentType);
