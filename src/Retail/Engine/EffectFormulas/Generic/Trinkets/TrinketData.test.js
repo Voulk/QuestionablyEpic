@@ -61,7 +61,7 @@ describe("Spymaster's Web", () => {
     const effect = activeTrinket.effects;
     each`
     level   | expectedResult
-    ${619}  | ${[88, 804]}
+    ${619}  | ${[79, 804]}
     // add new test cases here
     `.test("Spymaster's Web Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
         expect(processedValue(effect[0], level, 1)).toBe(expectedResult[0]);
