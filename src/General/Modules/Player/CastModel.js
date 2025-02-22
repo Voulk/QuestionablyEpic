@@ -75,7 +75,7 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 1600000,
+      hps: 2050000,
       rawhps: 475000,
       dps: 12000,
       fightLength: 400,
@@ -125,11 +125,11 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      this.modelName = "Default";
-      spellList = shamanDefaultSpellData(contentType);
-      specialQueries = shamanDefaultSpecialQueries(contentType);
-      this.baseStatWeights = shamanDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+        this.modelName = "Default";
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {

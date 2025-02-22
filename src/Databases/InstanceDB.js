@@ -1964,6 +1964,27 @@ export const encounterDB = {
       2602: "Queen Ansurek",
     }
   },
+    // Nerub'ar Palace
+    1296: {
+      name: {
+        en: "Liberation of Undermine",
+        fr: "",
+        de: "",
+        ru: "",
+        ch: "",
+      },
+      bossOrder: [2639, 2640, 2641, 2642, 2643, 2644, 2645, 2646, -54],
+      bosses: {
+        2639: "Vexie and the Geargrinders", // Vexie and the Geargrinders.
+        2640: "Cauldron of Carnage", // Cauldron of Carnage
+        2641: "Rik Reverb", // Rik Reverb
+        2642: "Stix Bunkjunker", // Stix Bunkjunker
+        2653: "Sprocketmonger Lockenstock", // Sprocketmonger Lockenstock
+        2644: "One Armed Bandit", // One Armed Bandit
+        2645: "Mug'zee", // Mug'Zee
+        2646: "Chrome King Gallywix" // Chrome King Gallywix
+      }
+    },
   1207: {
     name: {
       en: "Amirdrassil, the Dream's Hope",
@@ -2084,16 +2105,17 @@ export const encounterDB = {
         1204, // Halls of Infusion
         1203, // The Azure Vault
       ],
-      bossOrderMythicPlus: [
-        1271, // "Ara-kara, City of Echoes", 
-        1274, //"City of Threads", 
-        1270, //"The Dawnbreaker",
-        1269, //"The Stonevault",
-        1184, //"Mists of Tirna Scithe",
-        1182, //"The Necrotic Wake",
-        1023, //"Siege of Boralus",
-        71, //"Grim Batol",
-      ],
+      bossOrderMythicPlus: [1178, 1012, 1187, 1298, 1210, 1267, 1272, 1268],
+
+      // M+ season 2
+      1210: "Darkflame Cleft",
+      1272: "Cinderbrew Meadery",
+      1268: "The Rookery",
+      1267: "Priory of the Sacred Flame",
+      1012: "Motherlode",
+      1178: "Mechagon: Workshop",
+      1298: "Operation Floodgate",
+      1187: "Theater of Pain",
 
       // M+
       1271: "Ara-kara, City of Echoes", 

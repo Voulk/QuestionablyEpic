@@ -19,7 +19,13 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   const essenceBurst = valueEssenceBurst(player, contentType);
   let bonus_stats = {};
 
-  if (effectName === "Evoker S1-2") {
+  if (effectName === "Evoker S2-2") {
+    bonus_stats.hps = 12000;
+  }
+  else if (effectName === "Evoker S2-4") {
+    bonus_stats.hps = 12000;
+  }
+  else if (effectName === "Evoker S1-2") {
     // This bonus is just awful
     if (contentType === "Raid") bonus_stats.hps = 0;
     else {

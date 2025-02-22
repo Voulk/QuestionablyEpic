@@ -113,6 +113,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
+  console.log(baseSet);
   const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);
@@ -134,7 +135,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if ([1273].includes(instanceID)) {
+  if (instanceID === CONSTANTS.currentRaidID) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -158,6 +159,10 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
+  }
+  else if (instanceID === -69) {
+    // Delves
+    itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -221,7 +226,8 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const itemSources = rawItem.sources;
       const primarySource = itemSources[0].instanceId;
       const encounter = itemSources[0].encounterId;
-      const isRaid = [1273].includes(primarySource);
+      //const isRaid = [1273].includes(primarySource);
+      const isRaid = primarySource === CONSTANTS.currentRaidID;
 
       if (isRaid && encounter > 0) {
         // 
@@ -235,8 +241,9 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
           itemPoss.push(item);
         }
       } else if (primarySource === -1) {
-        // M+ Dungeons, Dawn of the Infinite & World Bosses
-        if ([ 1271, 1274, 1270, 1269, 1184, 1182, 1023, 71].includes(encounter) || primarySource === 1278) {
+        // M+ Dungeons
+        // Edit which dungeons are in-season in the CONSTANTS file.
+        if (CONSTANTS.currentDungeonIDs.includes(encounter)) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Dungeon";
@@ -256,6 +263,16 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Crafted";
+        item.dropDifficulty = "";
+        item.dropDifficultyTxt = "";
+        item.quality = 4;
+        itemPoss.push(item);
+      } 
+      else if (primarySource === -69) {
+        // Delves
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
+        item.dropLoc = "Delves";
         item.dropDifficulty = "";
         item.dropDifficultyTxt = "";
         item.quality = 4;

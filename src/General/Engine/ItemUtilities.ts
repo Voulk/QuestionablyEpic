@@ -609,13 +609,15 @@ export function getItemAllocations(id: number, missiveStats: any[] = [], gameTyp
     statArray = { ...item.stats };
     // Some items have "unallocated" stats which are then assigned using missives or crafted bonus IDs. We'll handle those here.
     if ("unallocated" in item.stats) {
-      for (var i = 0; i < missiveStats.length; i++) {
-        let mStat = missiveStats[i];
-        statArray[mStat] = (statArray[mStat] || 0) +  item.stats.unallocated;
-        
-      }
+      let mStat = missiveStats[0];
+      statArray[mStat] = (statArray[mStat] || 0) +  item.stats.unallocated;       
+    }
+    if ("unallocated2" in item.stats) {
+      let mStat = missiveStats[1];
+      statArray[mStat] = (statArray[mStat] || 0) +  item.stats.unallocated2;       
     }
   }
+
   if (item) return statArray;
   else return {};
 }
@@ -980,10 +982,13 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (source === "Undermine" && sources) sourceCheck = sources.instanceId === 1296;
-      if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      if (item.id === 228411) sourceCheck = true;
+      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
+      else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
+      else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (!sources) sourceCheck = false;
     }
+
     const slot = getItemProp(item.id, "slot", gameType);
     if (
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
@@ -1114,7 +1119,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) / 55000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) / 75000 * player.getHPS(contentType);
     }
   }
 

@@ -156,7 +156,7 @@ export default function TrinketAnalysis(props) {
   const [levelCap, setLevelCap] = React.useState(678);
   const maxLevelMarks = [
     { value: 0, label: "639" },
-    { value: 1, label: "652" },
+    { value: 1, label: "645" },
     { value: 2, label: "665" },
     { value: 3, label: "678" },
   ]
@@ -224,7 +224,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [626, 632, 639, 645, 652, 659, 666, 672, 675, 678];
+  const allItemLevels = [626, 632, 639, 645, 652, 659, 665, 672, 675, 678];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
