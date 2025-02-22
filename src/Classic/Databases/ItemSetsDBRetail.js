@@ -17,6 +17,14 @@ export function getItemSet(id, pieces, spec) {
 
 export const itemSets = [
   {
+    id: [1873],
+    class: "Mistweaver Monk",
+    setBonuses: {
+      2: "Monk S2-2", // 
+      4: "Monk S2-4"  // 
+    },
+  },
+  {
     id: [1870],
     class: "Preservation Evoker",
     setBonuses: {

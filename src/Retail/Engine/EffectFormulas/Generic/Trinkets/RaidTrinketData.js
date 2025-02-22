@@ -118,8 +118,8 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      const averageStackCount = 0;
-
+      const averageStackCount = 3.33;
+      bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
       return bonus_stats;
