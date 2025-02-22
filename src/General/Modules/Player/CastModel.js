@@ -188,7 +188,7 @@ class CastModel {
       this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
     } 
     else if (spec === SPEC.PRESEVOKER) {
-      if (modelID === "Chronowarden") {
+      if (modelID === "Chronowarden" || modelID === "Default") {
         // TODO
         this.modelName = "Chronowarden";
         //this.modelType = "CastModel";
