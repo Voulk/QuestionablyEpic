@@ -98,7 +98,6 @@ export const runPreservationEvokerCastProfile = (playerData) => {
     // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
     // We'll need to include the 4pc too if we're running tier.
     const lifebindIncoming = spiritbloomHealing / evokerSpells["Spiritbloom"][0].targets * 2.05 + runHeal(state, evokerSpells["Echo"][0], "Dream Breath");
-    console.log(lifebindIncoming);
 
     const verdantEmbraceHealing = runHeal(state, evokerSpells["Verdant Embrace"][0], "Verdant Embrace");
     healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;

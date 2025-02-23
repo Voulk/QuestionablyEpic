@@ -99,7 +99,7 @@ export const EVOKERSPELLDB = {
         coeff: 0.768,
         cooldownData: {cooldown: 30, hasted: false}, 
         expectedOverheal: 0.3, // 0.25
-        targets: 5, // 
+        targets: 6, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
     {  
@@ -108,7 +108,7 @@ export const EVOKERSPELLDB = {
         type: "heal",
         coeff: [0, 0.768, 1.536, 2.304],
         expectedOverheal: 0.3, // 0.25
-        targets: 5, // 
+        targets: 6, // 
         secondaries: ['haste', 'crit', 'vers', 'mastery']
     },
     {  
@@ -120,7 +120,7 @@ export const EVOKERSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
         coeff: 0.384, 
-        targets: 5, 
+        targets: 6, 
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
     }],
