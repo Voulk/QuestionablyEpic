@@ -89,9 +89,9 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Assign echo usage
     const echoUsage = {
         "Spiritbloom": 0,
-        "Verdant Embrace": 0.1,
+        "Verdant Embrace": 0.6,
         "Dream Breath": 0.2, 
-        "Reversion": 0.7,
+        "Reversion": 0.32,
     }
 
 
