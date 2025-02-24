@@ -12,7 +12,7 @@ export const dungeonTrinketData =
       {  // Versatility Effect
         coefficient: 0.27006, // Increased by 100% due to mana stored.
         table: -7,
-        uptime: 0.6,
+        uptime: 0.5,
         multiplier: 2, // The amount of extra vers you get for mana saved.
       },
     ],

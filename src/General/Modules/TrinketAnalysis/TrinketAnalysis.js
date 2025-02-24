@@ -157,8 +157,9 @@ export default function TrinketAnalysis(props) {
   const maxLevelMarks = [
     { value: 0, label: "639" },
     { value: 1, label: "645" },
-    { value: 2, label: "665" },
-    { value: 3, label: "678" },
+    { value: 2, label: "655" },
+    { value: 3, label: "665" },
+    { value: 4, label: "678" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -356,7 +357,7 @@ export default function TrinketAnalysis(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={maxLevelMarks} //marks
-                  max={3}
+                  max={4}
                   change={changeLevelCap} //setDungeonDifficulty
                 />
               </div>
