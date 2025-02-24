@@ -158,10 +158,10 @@ export const dungeonTrinketData =
         name: "Burin of the Candle King",
         effects: [
           {  // Heal effect
-            coefficient: 250.157 * 1.15, // 371.7325,
+            coefficient: 294.3024, // 371.7325,
             table: -9,
             secondaries: ['versatility'],
-            efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+            efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 1.5 min cadence.
             cooldown: 90, 
           },
         ],

@@ -80,15 +80,13 @@ export default class EmbelChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
-          // 600, 606, 612, 618, 624, 630, 636
+          // 600, 606, 612, 618, 624, 630, 636 [619, 636, 642, 662, 675 ];
           name: map2.id,
-          600: map2.r600,
-          606: getRankDiff(606, map2, 600),
-          612: getRankDiff(612, map2, 606),
-          618: getRankDiff(618, map2, 612),
-          624: getRankDiff(624, map2, 618),
-          630: getRankDiff(630, map2, 624),
-          636: getRankDiff(636, map2, 630),
+          619: map2.r619,
+          636: getRankDiff(636, map2, 619),
+          642: getRankDiff(642, map2, 636),
+          662: getRankDiff(662, map2, 642),
+          675: getRankDiff(675, map2, 662),
         });
       });
 
@@ -174,7 +172,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[600, 606, 612, 618, 624, 630, 636].map((key, i) => (
+          {[619, 636, 642, 662, 675 ].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

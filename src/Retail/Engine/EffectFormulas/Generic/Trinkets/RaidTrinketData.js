@@ -130,13 +130,13 @@ export const raidTrinketData = [
     description: "",
     setting: true,
     effects: [
-      {  // Heal effect but used in different ways.
+      {  // Heal effect
         coefficient: 10.31673, 
         table: -9,
-        secondaries: ['versatility', 'crit', 'haste'], // Crit TODO
+        secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
-        efficiency: 0.8,
-        ppm: 2.5,
+        efficiency: 0.78,
+        ppm: 2.5 * 0.65, // Incorrect flagging
       },
       {  // The damage portion.
         coefficient: 0,
