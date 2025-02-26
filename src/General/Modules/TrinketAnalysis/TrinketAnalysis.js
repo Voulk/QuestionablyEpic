@@ -353,7 +353,7 @@ export default function TrinketAnalysis(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={3}
+                  defaultValue={4}
                   step={null}
                   valueLabelDisplay="off"
                   marks={maxLevelMarks} //marks

@@ -5,7 +5,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 export const raidTrinketData = [
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
-    description: "",
+    description: "Almost ridiculously overtuned. Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. ",
     effects: [
       { 
         coefficient: 0.045686, 
@@ -40,7 +40,7 @@ export const raidTrinketData = [
   },
   { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
     name: "Gallagio Bottle Service",
-    description: "",
+    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for an intellect trinket.",
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
@@ -66,7 +66,7 @@ export const raidTrinketData = [
   },
   { // 1:30 cooldown mastery on-use. 
     name: "House of Cards",
-    description: "",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise.",
     effects: [
       {
         coefficient: 2.736594, 
@@ -112,7 +112,7 @@ export const raidTrinketData = [
   },
   { // 
     name: "Reverb Radio",
-    description: "",
+    description: "It's a fine stat stick, you just really need to be able to take advantage of the big haste proc which won't always line up with incoming damage.",
     effects: [
       {
         coefficient: 0.117104, 
@@ -139,7 +139,7 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "",
+    description: "A surprisingly strong flat healing trinket with low overhealing.",
     setting: true,
     effects: [
       {  // Heal effect

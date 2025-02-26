@@ -4,6 +4,26 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+  { // 1:30 cooldown mastery on-use. 
+    name: "Funhouse Lens",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise.",
+    effects: [
+      {
+        coefficient: 0.894932, 
+        table: -9,
+        duration: 15, 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+
+      return bonus_stats;
+    }
+  },
   { 
     name: "Bashful Book",
     description: "",
