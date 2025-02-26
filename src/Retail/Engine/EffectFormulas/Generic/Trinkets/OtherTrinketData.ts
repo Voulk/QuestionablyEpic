@@ -4,6 +4,55 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+  { 
+    name: "Bashful Book",
+    description: "",
+    effects: [
+      { // Damage effect
+        coefficient: 8.199264, 
+        table: -9,
+        ticks: 10,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.2,
+      },
+      { // Heal effect
+        coefficient: 12.30001, 
+        table: -9,
+        efficiency: 0.8,
+        ticks: 10,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.8,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Dr. Scrapheal",
+    description: "",
+    effects: [
+      { // This also technically has a "when ally drops below X effect" but trinket doesn't appear available at good item level.
+        coefficient: 21.39124, 
+        table: -9,
+        efficiency: 0.8,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 3,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
   { // 
     name: "Imperfect Ascendancy Serum",
     description: "Has a short cast time on use.",

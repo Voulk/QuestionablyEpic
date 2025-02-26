@@ -28,7 +28,8 @@ export const raidTrinketData = [
       const timeToMax = data[0].maxStacks / data[0].ppm * 60;
       const timeMaxed = fightLength - timeToMax;
 
-      const averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
+      let averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
+      if (additionalData.contentType === "Dungeon") averageStackCount *= 0.66; // This has potential in M+ so lets revisit it with logs.
 
       bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStackCount;
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (timeMaxed / fightLength);
@@ -47,12 +48,18 @@ export const raidTrinketData = [
         table: -8,
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
+        efficiency: {Raid: 0.8, Dungeon: 0.65},
         cooldown: 90,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
+
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);
+
+      
 
       return bonus_stats;
     }
@@ -110,16 +117,21 @@ export const raidTrinketData = [
       {
         coefficient: 0.117104, 
         table: -7,
-        duration: 0, 
+        duration: 15, 
         ppm: 5,
         stat: "haste",
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
+      const value = processedValue(data[0], itemLevel);
 
-      const averageStackCount = 3.33;
-      bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+      // Giga Buff
+      const uptime = data[0].duration / (75);
+      bonus_stats.haste = uptime * value * 10;
+
+      const averageStackCount = 2;
+      bonus_stats.haste += processedValue(data[0], itemLevel) * averageStackCount;
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
       return bonus_stats;
@@ -135,7 +147,7 @@ export const raidTrinketData = [
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
-        efficiency: 0.78,
+        efficiency: {Raid: 0.78, Dungeon: 0.66},
         ppm: 2.5 * 0.65, // Incorrect flagging
       },
       {  // The damage portion.
