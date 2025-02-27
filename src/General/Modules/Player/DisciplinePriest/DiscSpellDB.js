@@ -35,7 +35,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0.4,
-        coeff: 0.52875, // 0.47 * 1.5 * 0.75 (smite aura nerf)
+        coeff: 1.07, // 0.47 * 1.5 * 0.75 (smite aura nerf)
         atoneOverheal: 0.2,
         school: "holy",
         secondaries: ['crit', 'vers'],
@@ -47,7 +47,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         onGCD: true,
         travelTime: 0.8, // Fixed for now but could be dynamic based on distance from target.
-        coeff: 0.4 * 1.15, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 1.202, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
         school: "holy",
@@ -58,7 +58,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 0.53,
+        coeff: 1.202,
         school: "holy",
         atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
@@ -131,7 +131,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0.96,
-        coeff: 1.42115, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
+        coeff: 1.41, // 0.9792 x 0.809 (Mind Blast aura) x 1.38 x 
         cooldownData: {cooldown: 24, hasted: false}, 
         school: "shadow",
         atoneOverheal: 0.15,
@@ -181,24 +181,6 @@ export const DISCSPELLS = {
         atoneOverheal: 0.17,
         school: "shadow",
         secondaries: ['crit', 'vers']
-    }],
-    "Mindgames": [{
-        spellData: {id: 323673, icon: "ability_revendreth_priest", cat: "damage"},
-        type: "damage",
-        castTime: 1.5,
-        cost: 2,
-        coeff: 1.3767, // 3 x 0.9 (Mindgames specific aura nerf) x 0.5 (nerf :( )
-        cooldownData: {cooldown: 45, hasted: false}, 
-        school: "shadow",
-        atoneOverheal: 0.23,
-        secondaries: ['crit', 'vers'],
-    },
-    { // This is the absorb / damage reverse portion.
-        type: "heal",
-        coeff: 6, // This is 3 x 2 since the damage is both negated and then the target healed.
-        targets: 1,
-        secondaries: ['vers'],
-        expectedOverheal: 0.15, // 
     }],
     "Divine Star": 
     // Divine Star deals damage and heals both on the way out and on the way back. 
@@ -252,7 +234,7 @@ export const DISCSPELLS = {
         school: "holy",
         castTime: 0,
         cost: 2.4,
-        coeff: 4.6032,
+        coeff: 11.2298,
         cooldownData: {cooldown: 7.5, hasted: true}, 
         atonement: 15,
         atonementPos: 'start',
@@ -291,33 +273,12 @@ export const DISCSPELLS = {
         school: "holy",
         castTime: 1.5,
         cost: 3.6,
-        coeff: 4.61825,
+        coeff: 8.822,
         atonement: 15,
         atonementPos: 'end',
         targets: 1,
         secondaries: ['crit', 'vers'],
         expectedOverheal: 0.35,
-    }],
-    // Rapture both buffs Power Word: Shield and adds an absorb to the target that is functionally the same as a buffed Power Word: Shield.
-    // We'll match that in-game behavior here too.
-    "Rapture": [{
-        spellData: {id: 47536, icon: "spell_holy_rapture", cat: "cooldown"},
-        type: "heal",
-        castTime: 0,
-        cost: 3.1,
-        school: "holy",
-        coeff: 4.2 * 1.4,
-        cooldownData: {cooldown: 90, hasted: false}, 
-        atonement: 15,
-        atonementPos: 'start',
-        targets: 1,
-        secondaries: ['crit', 'vers'],
-        expectedOverheal: 0,
-    },
-    {
-        type: "buff",
-        buffType: "special",
-        buffDuration: 8,
     }],
     "Power Word: Radiance": [{
         spellData: {id: 194509, icon: "spell_priest_power-word", cat: "heal"},
@@ -325,7 +286,7 @@ export const DISCSPELLS = {
         castTime: 2,
         cost: 4.5,
         school: "holy",
-        coeff: 4.095,
+        coeff: 5.4048,
         aura: 1,
         targets: 5,
         cooldownData: {cooldown: 20, hasted: false}, 
@@ -360,7 +321,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 0,
         cost: 0.3,
-        coeff: 0.14212, 
+        coeff: 0.2631, 
         aura: 1,
         atoneOverheal: 0.16,
         school: "shadow",
@@ -369,7 +330,7 @@ export const DISCSPELLS = {
     {
         type: "buff",
         buffType: "damage",
-        coeff: 0.10546, // 
+        coeff:  0.1788, // 
         tickRate: 2,
         buffDuration: 16, //20.8,
         tickData: {tickRate: 2, canPartialTick: true},
@@ -389,7 +350,7 @@ export const DISCSPELLS = {
     {
         type: "buff",
         buffType: "damage",
-        coeff: 0.46, // 
+        coeff: 0.4896, // 
         tickData: {tickRate: 1.5, canPartialTick: false},
         tickRate: 1.5,
         buffDuration: 15,
@@ -412,7 +373,7 @@ export const DISCSPELLS = {
         type: "buff",
         buffType: "damage",
         tickData: {tickRate: 1.5, canPartialTick: false},
-        coeff: 0.34, // 
+        coeff: 0.36, // 
         tickRate: 1.5,
         buffDuration: 12,
         atoneOverheal: 0.22,
@@ -440,7 +401,7 @@ export const DISCSPELLS = {
         stat: "haste",
         value: 1.2, 
     }],
-    "Voidmender's Shadowgem": [{
+    "TrinketName": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
         castTime: 0,
@@ -522,16 +483,3 @@ export const baseTalents = {
     shatteredPerceptions: {points: 1, maxPoints: 1, icon: "spell_animarevendreth_debuff", id: 391112, select: true, tier: 4},
 
 };
-
-// These aren't used at all in this branch but don't remove because the conduit code hasn't been cleared out from elsewhere yet.
-export const discConduits = (conduit, rank) => {
-    if (conduit === "Exaltation") return 0.0675 + (rank * 0.0075);
-    else if (conduit === "Shining Radiance") return 0.36 + (rank * 0.04);
-    else if (conduit === "Pain Transformation") return 0.135 + (rank * 0.015);
-    else if (conduit === "Rabid Shadows") return 0.171 + (rank * 0.19);
-    else if (conduit === "Courageous Ascension") return 0.225 + (rank * 0.025);
-    else if (conduit === "Shattered Perception") return 0.117 + (rank * 0.013);
-    else {
-        console.error("Invalid Conduit");
-    }
-}

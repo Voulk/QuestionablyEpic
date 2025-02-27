@@ -16,6 +16,11 @@ const GLOBALCONST = {
 
 }
 
+// Returns true if the player has at least one point in a talent.
+export const hasTalent = (talents, talentName) => {
+    return talents[talentName] ? talents[talentName].points > 0 : 0;
+}
+
 export const getTalentPoints = (talents, talentName) => {
     return talents[talentName] ? talents[talentName].points : 0;
 }
@@ -528,8 +533,8 @@ export const addReport = (state, entry) => {
     }
 }
 
-export const getHealth = (stats, talents) => {
-    return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.02);
+export const getHealth = (stats, talents = {}) => {
+    return stats.stamina * 20 * (1 + (talents.draconicLegacy ? talents.draconicLegacy : 0) * 0.03);
 }
 
 

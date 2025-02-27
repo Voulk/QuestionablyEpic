@@ -153,6 +153,15 @@ export function exportGearSet(itemSet, spec) {
   itemSet.forEach(item => {
     let source = "";
     let bonusTag = "";
+    if (item.id === 228411) {
+      results.push(`[tr][td]Ring[/td][td][=cyrce-circlet]
+                    [ul]
+                    [li][color=c4][item=228638][/color][/li]
+                    [li][color=c8][item=228639][/color][/li]
+                    [li][color=c2][item=228646][/color][/li]
+                    [/ul][/td][td][url guide=27805]Siren Isle[/url][/td][/tr]`
+                    )
+    }
     if (item.source) {
       source = CONSTANTS.WHCodes[item.source.encounterId] || "";
 
@@ -166,11 +175,12 @@ export function exportGearSet(itemSet, spec) {
       else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
     }
     
-    results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
+    if (item.id !== 228411) results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
   })
   results.push(`[/table][/center]`)
 
   const formattedArray = results.map(String).join('\n');
+  console.log(formattedArray);
 }
   
 export function sumScore(obj) {

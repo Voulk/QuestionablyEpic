@@ -38,7 +38,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...evokerTalents}, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const localSettings = {gracePeriodOverheal: 0.8};
-
+    const tier = playerData.tier;
     state.currentStats.crit += (15 * 700);
 
     const talents = {};
@@ -89,9 +89,9 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Assign echo usage
     const echoUsage = {
         "Spiritbloom": 0,
-        "Verdant Embrace": 0.1,
+        "Verdant Embrace": 0.6,
         "Dream Breath": 0.2, 
-        "Reversion": 0.7,
+        "Reversion": 0.32,
     }
 
 
@@ -130,7 +130,13 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const lifebindIncoming = spiritbloomHealing / evokerSpells["Spiritbloom"][0].targets * 2.05 + runHeal(state, evokerSpells["Echo"][0], "Dream Breath");
 
     const verdantEmbraceHealing = runHeal(state, evokerSpells["Verdant Embrace"][0], "Verdant Embrace");
-    healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
+
+    const insuranceVEHoT = {...evokerSpells["Insurance"][0]};
+    insuranceVEHoT.buffDuration = 6;
+
+    const insuranceHealing = tier.includes("Evoker S2-4") ? runHeal(state, insuranceVEHoT, "Insurance (VE)") : 0;
+    healingBreakdown["Echo - Verdant Embrace"] = (verdantEmbraceHealing) * echoUsage["Verdant Embrace"] * totalEchoPower;
+    healingBreakdown["Echo - Verdant Embrace (Insurance)"] = insuranceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
     healingBreakdown["Lifebind"] = lifebindIncoming * 0.4 * echoUsage["Verdant Embrace"] * totalEchoPower;
 
     // TODO Double Time
@@ -176,15 +182,15 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
                 // Consume Flame
                 const dreamBreathHoT = evokerSpells["Dream Breath"][2];
-                const tickCount = 4 / (dreamBreathHoT.tickData.tickRate / getHaste(state.currentStats));
+                const tickCount = 2 / (dreamBreathHoT.tickData.tickRate / getHaste(state.currentStats));
                 const expectedTargets = 20;
                 const sqrtMod = Math.sqrt(5 / expectedTargets);
-                const consumeMult = 1.5; 
-                const dbMods = 1.4 * 1.4; // Call of Ysera & Tier Set
+                const consumeMult = 3; 
+                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1.4 * 0.8) : 1) //* 1.4; // Call of Ysera & Tier Set
 
                 const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
                 let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
-                consumeHealing *= 1.06;
+                consumeHealing *= 1.06; // Generic 6% healing increase.
 
                 healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));
             }

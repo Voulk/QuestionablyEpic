@@ -2,7 +2,7 @@ export const holyPriestDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
     spellList = {
-      77489: { cpm: 0, avgcast: 2600, hps: 12421.9, overhealing: 0 }, // Echo of Light
+    77489: { cpm: 0, avgcast: 2600, hps: 12421.9, overhealing: 0 }, // Echo of Light
     33076: { cpm: 5, avgcast: 12500, hps: 11684, overhealing: 0.342 }, // Prayer of Mending
     34861: { cpm: 21, avgcast: 25900, hps: 8021.7, overhealing: 0.312 }, // Holy Word: Sanctify
     596: { cpm: 9, avgcast: 10400, hps: 6808.2, overhealing: 0.343 }, // Prayer of Healing
@@ -46,7 +46,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1,
+        c120: 1.2,
         c180: 1,
 
         oneMinute: 1,
@@ -87,10 +87,10 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.48,
-    crit: 0.745,
-    mastery: 0.739,
-    versatility: 0.685,
+    haste: 0.78,
+    crit: 0.945,
+    mastery: 0.909,
+    versatility: 0.875,
     leech: 0.32,
   };
   statWeights.Dungeon = {

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { getDifferentialByID, getItem } from "../../Engine/ItemUtilities";
 import MythicPlusGearContainer from "./Panels/PanelMythicPlus";
 import PvPGearContainer from "./Panels/PanelPvP";
+import DelvesContainer from "./Panels/PanelDelves"
 import RaidGearContainer from "./Panels/PanelRaid";
 import CraftedGearContainer from "./Panels/PanelCrafted";
 import WorldBossGearContainer from "./Panels/PanelWorldBosses";
@@ -167,13 +168,18 @@ export default function UpgradeFinderReport(props) {
 
                 {/* Render Crafted Gear tab only if gameType is Retail */}
                 {gameType === "Retail" && (
-                  <Tab className={classes.slotsHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
+                  <Tab className={classes.craftedHeaderStyle} label={"Crafted"} {...a11yProps(2)} />
+                )}
+
+                {/* Render Delves Gear tab only if gameType is Retail */}
+                {gameType === "Retail" && (
+                  <Tab className={classes.delvesHeaderStyle} label={"Delves"} {...a11yProps(3)} />
                 )}
 
                 {/* Render World Bosses tab only if gameType is Retail */}
-                {gameType === "Retail" && (
+                {/*{gameType === "Retail" && (
                   <Tab className={classes.worldBossHeaderStyle} label={t("UpgradeFinder.WorldBosses")} {...a11yProps(3)} />
-                )}
+                )}*/}
 
                 {/* Slots */}
                 <Tab className={classes.slotsHeaderStyle} label={t("UpgradeFinder.UpgradeBySlot")} {...a11yProps(gameType === "Retail" ? 4 : 2)} />
@@ -231,7 +237,18 @@ export default function UpgradeFinderReport(props) {
             </UFTabPanel>
           </Grid> : null}
 
-          {/* World Bosses */}
+          {/* Delves */}
+          {gameType === "Retail" ? <Grid item xs={12}>
+            <UFTabPanel value={tabValue} index={3}>
+              <div className={classes.panel}>
+                <Grid container>
+                  <DelvesContainer spec={result.spec} player={player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
+                </Grid>
+              </div>
+            </UFTabPanel>
+          </Grid> : null}
+
+          {/* World Bosses 
           {gameType === "Retail" ? <Grid item xs={12}>
             <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
@@ -240,7 +257,7 @@ export default function UpgradeFinderReport(props) {
                 </Grid>
               </div>
             </UFTabPanel>
-          </Grid> : null}
+          </Grid> : null}*/}
 
           {/* Slots */}
           <Grid item xs={12}>

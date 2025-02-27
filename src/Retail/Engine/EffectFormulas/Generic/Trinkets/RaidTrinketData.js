@@ -3,6 +3,167 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
+    name: "Eye of Kezan",
+    description: "Almost ridiculously overtuned. Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. ",
+    effects: [
+      { 
+        coefficient: 0.045686, 
+        table: -1,
+        ppm: 5,
+        maxStacks: 20,
+        stat: "mastery",
+      },
+      { 
+        coefficient: 13.85549, 
+        table: -9,
+        duration: 0, 
+        ppm: 5,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const fightLength = additionalData.castModel.fightInfo.fightLength;
+      const timeToMax = data[0].maxStacks / data[0].ppm * 60;
+      const timeMaxed = fightLength - timeToMax;
+
+      let averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
+      if (additionalData.contentType === "Dungeon") averageStackCount *= 0.74; // This has potential in M+ so lets revisit it with logs.
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStackCount;
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (timeMaxed / fightLength);
+      // TODO: Shared DPS proc.
+
+      return bonus_stats;
+    }
+  },
+  { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
+    name: "Gallagio Bottle Service",
+    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for an intellect trinket.",
+    setting: true,
+    effects: [
+      {  // Heal effect but used in different ways.
+        coefficient: 89.09773, 
+        table: -8,
+        secondaries: ['versatility', 'crit'], // Crit TODO
+        targets: 10, // 
+        efficiency: {Raid: 0.8, Dungeon: 0.65},
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
+
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);
+
+      
+
+      return bonus_stats;
+    }
+  },
+  { // 1:30 cooldown mastery on-use. 
+    name: "House of Cards",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise.",
+    effects: [
+      {
+        coefficient: 2.736594, 
+        table: -7,
+        duration: 15, 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      const variance = (0.9 + 1.15) / 2; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
+
+      bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
+
+      return bonus_stats;
+    }
+  },
+  { // Crit proc trinket. Spells cast while crit buff is up increase the crit.
+    name: "Mug's Moxie Jug",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.276886, 
+        averageStacks: 15 / 1.5 / 2, // TODO
+        table: -7,
+        duration: 15, 
+        ppm: 2,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      // We should just hook average stacks into cast models.
+      // Uptime on this looks way worse than 2ppm would suggest.
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks;
+      if (player.spec === "Preservation Evoker") bonus_stats.crit *= 0.7;
+
+      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
+  { // 
+    name: "Reverb Radio",
+    description: "It's a fine stat stick, you just really need to be able to take advantage of the big haste proc which won't always line up with incoming damage.",
+    effects: [
+      {
+        coefficient: 0.117104, 
+        table: -7,
+        duration: 15, 
+        ppm: 5,
+        stat: "haste",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const value = processedValue(data[0], itemLevel);
+
+      // Giga Buff
+      const uptime = data[0].duration / (75);
+      bonus_stats.haste = uptime * value * 10;
+
+      const averageStackCount = 2;
+      bonus_stats.haste += processedValue(data[0], itemLevel) * averageStackCount;
+      //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
+
+      return bonus_stats;
+    }
+  },
+  { // Coagulum at home
+    name: "Mister Pick-Me-Up",
+    description: "A surprisingly strong flat healing trinket with low overhealing.",
+    setting: true,
+    effects: [
+      {  // Heal effect
+        coefficient: 10.31673, 
+        table: -9,
+        secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
+        targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
+        efficiency: {Raid: 0.78, Dungeon: 0.6},
+        ppm: 2.5 * 0.65, // Incorrect flagging
+      },
+      {  // The damage portion.
+        coefficient: 0,
+        table: -9,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.dps = 0;
+
+      return bonus_stats;
+    }
+  },
+
     { // While the buffs appear in the same stack, they are individual buffs. This does mean it's impossible to lose any value if you get an int proc while you already have one.
         name: "Gruesome Syringe",
         description: "The problem with Gruesome Syringe is that the backup prize of an int proc if nobody drops low is much stronger than the heal proc but you're unlikely to get the int when you need it.",
@@ -128,11 +289,11 @@ export const raidTrinketData = [
         setting: true,
         effects: [
           {  // Passive Int
-            coefficient: 0.014709,
+            coefficient: 0.014709 * 0.9,
             table: -1,
           },
           {  // On-use Int
-            coefficient: 0.141408 * 0.95,
+            coefficient: 0.141408 * 0.95 * 0.9,
             table: -1,
             duration: 20,
             cooldown: 60, // Technically 20
@@ -144,16 +305,16 @@ export const raidTrinketData = [
 
           // You can kind of curate this to your preferred cooldown curve.
           if (player.spec === "Discipline Priest" || player.spec === "Preservation Evoker") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 6.4), cooldown: 90}, itemLevel, additionalData.castModel);
           }
           else if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.6);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 7.6)}, itemLevel, additionalData.castModel);
           }
 
           else if (getSetting(additionalData.settings, "dpsFlag") || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
           }
     

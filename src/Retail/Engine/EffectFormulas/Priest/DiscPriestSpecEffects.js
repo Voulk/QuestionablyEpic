@@ -5,13 +5,29 @@ import { DISCSPELLS } from "General/Modules/Player/DisciplinePriest/DiscSpellDB"
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "DPriest S1-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = player.getRampID('twoPc', contentType);
+  if (effectName === "DPriest S2-2") {
+    const insuranceRPPM = 4 * player.getStatPerc('haste');
+    const insuranceHealing = 1.5 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
 
   }
-  else if (effectName === "DPriest S1-4") {
+  else if (effectName === "DPriest S2-4") {
     // Placeholder pulled from sheet. Replace very soon.
+    const extraInsuranceHoTs = 5;
+    const extraInsuranceHealing = 1.5 * extraInsuranceHoTs * 0.4 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect'])
+
+    bonus_stats.hps = extraInsuranceHealing / 60;
+
+    let insuranceUptime = (4 * player.getStatPerc('haste') + extraInsuranceHoTs) * 15 / 60 / 20;
+    const healingIncrease = 0.15;
+
+    bonus_stats.hps += player.getHPS() * insuranceUptime * healingIncrease;
+
+  }
+  else if (effectName === "DPriest S1-2") {
+    bonus_stats.hps = player.getRampID('twoPc', contentType);
+  }
+  else if (effectName === "DPriest S1-4") {
     bonus_stats.hps = player.getRampID('fourPc', contentType);
 
   }

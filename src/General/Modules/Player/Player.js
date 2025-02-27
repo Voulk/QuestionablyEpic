@@ -652,9 +652,11 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
+      
+      
       
       this.activeStats = {
         intellect: 60000,
@@ -686,11 +688,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
 
       this.activeStats = {
-        intellect: 60000,
-        haste: 18000,
-        crit: 4700,
-        mastery: 11100,
-        versatility: 3100,
+        intellect: 72000, // 32k
+        haste: 17000,
+        crit: 9000,
+        mastery: 9600,
+        versatility: 2700,
         stamina: 1900,
         critMult: 2,
       };
