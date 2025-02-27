@@ -20,10 +20,12 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   if (effectName === "Evoker S2-2") {
-    bonus_stats.hps = 12000;
+    const insuranceRPPM = 4 * player.getStatPerc('haste');
+    const insuranceHealing = 2.4 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Evoker S2-4") {
-    bonus_stats.hps = 12000;
+    bonus_stats.hps = 48000;
   }
   else if (effectName === "Evoker S1-2") {
     // This bonus is just awful

@@ -688,11 +688,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
 
       this.activeStats = {
-        intellect: 60000,
-        haste: 18000,
-        crit: 4700,
-        mastery: 11100,
-        versatility: 3100,
+        intellect: 72000, // 32k
+        haste: 17000,
+        crit: 9000,
+        mastery: 9600,
+        versatility: 2700,
         stamina: 1900,
         critMult: 2,
       };

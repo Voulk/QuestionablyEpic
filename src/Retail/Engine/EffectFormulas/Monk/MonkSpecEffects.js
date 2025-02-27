@@ -13,10 +13,12 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   if (effectName === "Monk S2-2") {
-    bonus_stats.hps = 15000;
+    const insuranceRPPM = 5 * player.getStatPerc('haste');
+    const insuranceHealing = 0.7889 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Monk S2-4") {
-    bonus_stats.hps = 15000;
+    bonus_stats.hps = 75000;
   }
   else if (effectName === "Monk S1-2") {
     // +10% EnV, ReM
