@@ -31,7 +31,7 @@ export const embellishmentData = [
     description: "A useful idea in theory but the shield isn't very big for how ridiculous the cooldown is.",
     effects: [
       { 
-        coefficient: 66.05486, // Check this. I guess it scales with num gem types they have?
+        coefficient: 66.05486 * 4.27, // Check this. I guess it scales with num gem types they have?
         table: -9,
         ppm: 60 / (240 - 48),
         efficiency: 0.7

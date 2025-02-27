@@ -11,29 +11,39 @@ const IDHEALINGWAVE = 82326;
 const IDHEALINGSURGE = 20473;
 
 export const getShamanSpecEffect = (effectName, player, contentType) => {
-  const bonusStats = {};
+  const bonus_stats = {};
   const healingRainCPM = 3.4;
   const riptidesActive = 4.9;
   // Tier Sets
-  if (effectName === "Shaman S1-2") {
+  if (effectName === "Shaman S2-2") {
+    const insuranceRPPM = 4 * player.getStatPerc('haste');
+    const insuranceHealing = 1.92 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
+
+  }
+  else if (effectName === "Shaman S2-4") {
     // 
 
-    bonusStats.hps = player.getHPS() * 0.029;
+    bonus_stats.hps = player.getHPS() * 0.032
+
+  }
+  else if (effectName === "Shaman S1-2") {
+    // 
+
+    bonus_stats.hps = player.getHPS() * 0.029;
 
   }
   else if (effectName === "Shaman S1-4") {
     // 
 
-    bonusStats.hps = player.getHPS() * 0.032
+    bonus_stats.hps = player.getHPS() * 0.032
 
   }
-
-
   else if (effectName === "Shaman T30-2") {
     // 
     const oneTidewatersHeal = 2.3 * 1.4 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]);
 
-    bonusStats.hps = healingRainCPM * riptidesActive * oneTidewatersHeal * 0.42 / 60;
+    bonus_stats.hps = healingRainCPM * riptidesActive * oneTidewatersHeal * 0.42 / 60;
 
   }
   else if (effectName === "Shaman T30-4") {
@@ -43,13 +53,13 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const chainHealCast = 6.405 * player.getStatMults(["intellect", "crit", "versatility", "mastery"]) * 1.08 * 1.02 * 1.18 * 1.15;
     const chainHealBuff = riptidesActive * 0.02;
 
-    bonusStats.hps = healingBuffUptime * healingBuffStrength * player.getHPS(contentType) + chainHealCast * chainHealBuff * healingRainCPM / 60;
+    bonus_stats.hps = healingBuffUptime * healingBuffStrength * player.getHPS(contentType) + chainHealCast * chainHealBuff * healingRainCPM / 60;
 
   }
   if (effectName === "Shaman T29-2") {
     // +8% crit to almost everything that matters.
     const uptime = 0.45; // The percentage of your healing while the bonus is active.
-    bonusStats.crit = 15 * uptime * 170;
+    bonus_stats.crit = 15 * uptime * 170;
 
   }
   if (effectName === "Shaman T29-4") {
@@ -57,7 +67,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const crit = player.getStatPerc("crit") - 1;
     const healingInc = ((effectIncrease * crit + (1-crit)) / (2 * crit + (1-crit))) - 1;
 
-    bonusStats.hps = healingInc * player.getHPS(contentType);
+    bonus_stats.hps = healingInc * player.getHPS(contentType);
 
   }
 
@@ -88,8 +98,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
 
     const wastage = 0.15 // It's very easy to waste stacks here and we should account for that.
 
-    //bonusStats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
-    bonusStats.hps = 0;
+    //bonus_stats.hps = avgHealingPerStack * stacksPerMin * (1 - wastage) / 60;
+    bonus_stats.hps = 0;
   }
   else if (effectName === "Shaman T28-4") {
     // Free chain heals
@@ -106,8 +116,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const cooldownRedPerMin = (player.getSpellCPM(1064, contentType) + freeChainHealsPerMinute) * 4 * player.getStatPerc("Crit");// chain heal CPM x targets x modifiedCritChance
     const hpsFreeTotems = oneHealingTide * (2 / 180 * cooldownRedPerMin) / 60;
 
-    //bonusStats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
-    bonusStats.hps = 0;
+    //bonus_stats.hps = hpsFreeChainHeal / 60 + hpsFreeTotems;
+    bonus_stats.hps = 0;
   }
   else if (effectName === PRIMAL_TIDE_CORE) {
     /**
@@ -116,10 +126,10 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
      * (casts / hits) * healing
      */
     // const rtHPS = player.getSpellHPS("Riptide", contentType);
-    // bonusStats.hps = rtHPS * 0.25;
+    // bonus_stats.hps = rtHPS * 0.25;
     const oneRiptide = 1.7 * player.getStatMultiplier("NOHASTE") + (18 / 3) * 0.22 * player.getStatMultiplier("ALL"); // todo torrent
     const rtPerMinute = 60 / 7; // todo echo
-    bonusStats.hps = (oneRiptide * rtPerMinute * 0.25) / 60;
+    bonus_stats.hps = (oneRiptide * rtPerMinute * 0.25) / 60;
   } else if (effectName === SPIRITWALKERS_TIDAL_TOTEM) {
     /**
      * every mtt use gain 10 seconds of quicker chhw casts
@@ -133,14 +143,14 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const castDuration = 2.5 / player.getStatPerc("Haste");
     const possibleCasts = Math.ceil(buffDuration / castDuration);
     const chHeal = 5.3 * player.getStatMultiplier("NOHASTE");
-    bonusStats.hps = (possibleCasts * (chHeal * gain)) / 180;
+    bonus_stats.hps = (possibleCasts * (chHeal * gain)) / 180;
   } else if (effectName === EARTHEN_HARMONY) {
     /**
      * if earth shield target is below 75%, earth shield heals 150% more
      */
     const thisSpellpower = 0.438 * 1.5;
     const assumedEfficiency = 0.4;
-    bonusStats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
+    bonus_stats.hps = (thisSpellpower * player.getStatMultiplier("NOHASTE") * (player.getFightLength(contentType) / 3) * assumedEfficiency) / player.getFightLength(contentType);
   } else if (effectName === JONATS) {
     /**
      * hw hs buff the heal of your next ch by x%, stacking up to 5
@@ -150,7 +160,7 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     const chCasts = player.getSpellCasts(IDCHAINHEAL, contentType);
     const ratio = Math.min(Math.max(triggerCasts / chCasts, 0.01), 5);
     debug && console.log(JONATS, chHPS, triggerCasts, chCasts, ratio);
-    bonusStats.hps = chHPS * (ratio / 5); // Was 10.
+    bonus_stats.hps = chHPS * (ratio / 5); // Was 10.
   }
 
   else if (effectName === "Elemental Conduit") {
@@ -179,8 +189,8 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     // Dungeons overridden hots. 
     const activeRiptideHeal = (((18 + 12 + 6) - 5.4 * 3) / 3) * 0.22 * player.getStatMultiplier("ALL") * shamanCorePassive;
     const rtLostHeal = contentType == "Raid" ? 3 / 20 * activeRiptideHeal : activeRiptideHeal; 
-    bonusStats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
+    bonus_stats.hps = (oneRiptide * 5 / effectiveCD) + hpsDueToCDR - rtLostHeal / effectiveCD; 
   }
 
-  return bonusStats;
+  return bonus_stats;
 };

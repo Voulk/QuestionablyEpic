@@ -55,9 +55,10 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
   let item = "";
 
   const itemSlot = getItemProp(itemID, "slot", gameType);
-  const isCrafted = getItemProp(itemID, "crafted", gameType);
+  const isCrafted = getItemProp(itemID, "crafted", gameType) || itemID === 228843;
 
   if (isCrafted) {
+
     // Item is a legendary and gets special handling.
     const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
     let itemAllocations = getItemAllocations(itemID, missiveStats);
@@ -236,7 +237,7 @@ export default function ItemBar(props) {
     }
   };
   /* ---------------------------------------- Missive Array --------------------------------------- */
-  const craftedStatPossibilities = [
+  let craftedStatPossibilities = [
     "Haste / Versatility",
     "Haste / Mastery",
     "Haste / Crit",
@@ -248,6 +249,24 @@ export default function ItemBar(props) {
     "Mastery (engineering)",
     "Versatility (engineering)",
   ];
+
+  if (itemID === 228843) {
+    craftedStatPossibilities = [
+      "Haste / Versatility",
+      "Haste / Mastery",
+      "Haste / Crit",
+      "Crit / Versatility",
+      "Crit / Haste",
+      "Crit / Mastery",
+      "Mastery / Haste",
+      "Mastery / Crit",
+      "Mastery / Versatility",
+      "Versatility / Haste",
+      "Versatility / Crit",
+      "Versatility / Mastery",
+    ]
+
+  }
 
   /*const getCraftedMissives = (itemID) => {
     const itemSources = getItemDB("Retail").filter((key) => key.id === itemID)[0];
@@ -264,7 +283,7 @@ export default function ItemBar(props) {
     itemLevel: true,
     socket: gameType === "Retail",
     tertiaries: !(isItemCrafted) && gameType === "Retail",
-    missives: isItemCrafted,
+    missives: isItemCrafted || itemID === 228843,
   }
 
   return (
@@ -511,13 +530,9 @@ export default function ItemBar(props) {
      }}>
        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
        <Grid item>
-         {/*<Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(665, props.player, "Retail", "Undermine")}>{"Undermine Heroic"}</Button>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "Undermine")}>{"Undermine Mythic"}</Button>
-         <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "S2 Dungeons")}>{"S2 Mythic+"}</Button>
-          */}
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(626, props.player, "Retail", "Palace")}>{"Palace Heroic"}</Button>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "Palace")}>{"Palace Mythic"}</Button>
-         <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(639, props.player, "Retail", "S1 Dungeons")}>{"S1 Mythic+"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(665, props.player, "Retail", "Undermine")}>{"Undermine H"}</Button>
+         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "Undermine")}>{"Undermine M"}</Button>
+         <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "S2 Dungeons")}>{"S2 Mythic+"}</Button>
        </Grid>
      </Grid>}
     </Paper>

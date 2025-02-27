@@ -2,9 +2,115 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
+  { // Versatility for X% of the fight. Mana one time.
+    name: "Ingenious Mana Battery",
+    description: "It's fine while stacked but you need to never drop below 50% mana for this to be at all viable. Too much work for too little gain.",
+    effects: [
+      {  // Mana Effect
+        coefficient: 0.076844,
+        table: -10,
+      },
+      {  // Versatility Effect
+        coefficient: 0.27006, // Increased by 100% due to mana stored.
+        table: -7,
+        uptime: 0.5,
+        multiplier: 2, // The amount of extra vers you get for mana saved.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.versatility = processedValue(data[1], itemLevel) * data[1].uptime * data[1].multiplier;
+      //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Vial of Spectral Essence",
+    description: "Filler at best.",
+    effects: [
+      {  // Heal effect
+        coefficient: 173.7287,
+        table: -9,
+        secondaries: ['versatility'], // TODO: Check
+        efficiency: {Raid: 0.8, Dungeon: 0.64}, // This is an absorb so you won't lose much value.
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      //bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { // TODO: Check low health scaling.
+    name: "Soulletting Ruby",
+    description: "",
+    effects: [
+      {
+        coefficient: 1.375703 + 1.681503, 
+        table: -7,
+        duration: 16,
+        multiplier: 1.6, // Assumes boss is around 50% health.
+        cooldown: 120,
+        stat: "crit",
+      },
+      {
+        coefficient: 51.42363, 
+        table: -9,
+        cooldown: 120,
+        efficiency: 0.4, // Heal ultimately does nothing but it's included for accuracy.
+        stat: "hps",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { // TODO: The Chopper stays on the target and can reproc whether the initial on-use is active or not. 
+    // So it's basically an on-use and proc trinket in one.
+    name: "Darkfuse Medichopper",
+    description: "The Chopper stays on your target and periodically gives them vers and an absorb. It has potential in theory but undertuned.",
+    effects: [
+      {
+        coefficient: 18.44994, 
+        table: -9,
+        cooldown: 120,
+        ppm: 3 + 0.5,
+      },
+      {
+        coefficient: 0.419281, 
+        table: -7,
+        stat: "versatility",
+        ppm: 3 + 0.5,
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      // As this is both a ppm and on-use trinket we'll make use of both of our functions.
+      // Note that additional testing will need to be done as to how the trinket interacts with overlapping procs but this is a minor hit to its value regardless.
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      // You could technically self-use it but I'm not sure you ever would.
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel);
+
+      return bonus_stats;
+    }
+  },
     {
         name: "Carved Blazikon Wax",
-        description: "",
+        description: "Standing in the candle is a very small part of this trinkets power so don't worry about it too much.",
         effects: [
           {
             coefficient: 1.068708, 
@@ -52,12 +158,13 @@ export const dungeonTrinketData =
       },
       {
         name: "Burin of the Candle King",
+        description: "Honestly fairly well tuned for an absorb trinket. Expect it to see some Mythic+ play depending on how the dungeons are tuned.",
         effects: [
           {  // Heal effect
-            coefficient: 250.157 * 1.15, // 371.7325,
+            coefficient: 294.3024, // 371.7325,
             table: -9,
             secondaries: ['versatility'],
-            efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 2 min cadence.
+            efficiency: {Raid: 0.72, Dungeon: 0.84}, // This is an absorb so you won't lose much value but it's really hard to find good uses for it on a 1.5 min cadence.
             cooldown: 90, 
           },
         ],

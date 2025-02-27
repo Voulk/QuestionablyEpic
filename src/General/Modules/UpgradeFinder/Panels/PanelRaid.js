@@ -15,6 +15,8 @@ import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
 
+import { CONSTANTS } from "General/Engine/CONSTANTS"
+
 const getDifficultyName = (difficulty, gameType = "Retail") => {
   if (gameType === "Retail") {
     switch (difficulty) {
@@ -87,7 +89,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const raidList = [1273]; // This is an array because there are sometimes multiple raids at a time (fated etc);
+    const raidList = [CONSTANTS.currentRaidID]; // This is an array because there are sometimes multiple raids at a time (fated etc);
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -116,7 +118,7 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.nerubarPalaceHeader} label={getTranslatedRaidName(1273)} {...a11yProps(0)} />
+                  <Tab className={classes.nerubarPalaceHeader} label={getTranslatedRaidName(CONSTANTS.currentRaidID)} {...a11yProps(0)} />
                   {/* ------------------------------------------  ------------------------------------------ 
                   <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />*/}
                   {/* ------------------------------------------  ------------------------------------------ 

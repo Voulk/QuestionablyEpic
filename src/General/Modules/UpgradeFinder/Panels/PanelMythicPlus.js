@@ -33,7 +33,7 @@ export default function MythicPlusGearContainer(props) {
       "aria-controls": `simple-tabpanel-${index}`,
     };
   }
-  console.log(encounterDB["-1"][gameType])
+
   const [tabvalue, setTabValue] = React.useState(0);
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);

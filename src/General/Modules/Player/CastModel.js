@@ -4,7 +4,7 @@ import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeig
 import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./RestorationDruid/DruidBalancedFocus";
 
 import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
-import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinMelee";
+import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinHerald";
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
@@ -75,7 +75,7 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 1600000,
+      hps: 2100000,
       rawhps: 475000,
       dps: 12000,
       fightLength: 400,
@@ -188,7 +188,7 @@ class CastModel {
       this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
     } 
     else if (spec === SPEC.PRESEVOKER) {
-      if (modelID === "Chronowarden") {
+      if (modelID === "Chronowarden" || modelID === "Default") {
         // TODO
         this.modelName = "Chronowarden";
         //this.modelType = "CastModel";
@@ -200,7 +200,7 @@ class CastModel {
       else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
-        this.modelType["Raid"] = "Default";
+        this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = runFlameshaperCastModel;
         spellList = evokerDefaultSpellData(contentType);

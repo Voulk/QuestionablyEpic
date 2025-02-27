@@ -11,6 +11,9 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const disc2pc = 61500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
     const disc4pc = 17400; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
 
+    //const season2TwoPc = 61500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+    //const season2FourPc = 17400; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
+
     //console.log("DISC BASELINE: " + discBaseline);
     /*
     const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])

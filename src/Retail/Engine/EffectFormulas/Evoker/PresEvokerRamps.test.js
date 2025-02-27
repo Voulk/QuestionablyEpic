@@ -29,7 +29,7 @@ describe("Test APL", () => {
         const baseSpells = EVOKERSPELLDB;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
 
-        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["S1-2", "S1-4"] }
+        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S2-2", "Evoker S2-4"] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
         const iterations = 1;
