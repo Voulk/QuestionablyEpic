@@ -652,9 +652,11 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.HOLYPALADIN) {
-      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
+      
+      
       
       this.activeStats = {
         intellect: 60000,

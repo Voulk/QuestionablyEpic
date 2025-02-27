@@ -6,7 +6,7 @@ import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 export const otherTrinketData = [
   { // 1:30 cooldown mastery on-use. 
     name: "Funhouse Lens",
-    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise.",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise. Active bug so ranking might change.",
     effects: [
       {
         coefficient: 0.894932, 

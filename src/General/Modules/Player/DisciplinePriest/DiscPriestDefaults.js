@@ -18,8 +18,10 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 8.1,
       CastsPerMinute: 36,
       cooldownMult: {
-        c90: 1.3,
-
+        c60: 1,
+        c90: 1.6,
+        c120: 1,
+        c180: 1,
         oneMinute: 1,
         ninetySeconds: 1.35,
         twoMinutes: 1,
@@ -60,7 +62,7 @@ export const discPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.12,
+    haste: 1.08,
     crit: 1.03,
     mastery: 1.04,
     versatility: 0.93,
@@ -68,9 +70,9 @@ export const discPriestDefaultStatWeights = (contentType) => {
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.105,
+    haste: 1.055,
     crit: 0.905,
-    mastery: 0.975,
+    mastery: 0.935,
     versatility: 0.898,
     leech: 0.34,
   };

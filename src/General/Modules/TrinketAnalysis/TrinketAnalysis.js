@@ -315,7 +315,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket."  :
+  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket. Expect more trinket tuning."  :
                                               "";
 
   return (

@@ -29,7 +29,7 @@ export const raidTrinketData = [
       const timeMaxed = fightLength - timeToMax;
 
       let averageStackCount = (data[0].maxStacks * timeMaxed) / fightLength + (timeToMax * data[0].maxStacks / 2) / fightLength;
-      if (additionalData.contentType === "Dungeon") averageStackCount *= 0.66; // This has potential in M+ so lets revisit it with logs.
+      if (additionalData.contentType === "Dungeon") averageStackCount *= 0.74; // This has potential in M+ so lets revisit it with logs.
 
       bonus_stats.intellect = processedValue(data[0], itemLevel) * averageStackCount;
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (timeMaxed / fightLength);
@@ -147,7 +147,7 @@ export const raidTrinketData = [
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
-        efficiency: {Raid: 0.78, Dungeon: 0.66},
+        efficiency: {Raid: 0.78, Dungeon: 0.6},
         ppm: 2.5 * 0.65, // Incorrect flagging
       },
       {  // The damage portion.
@@ -305,16 +305,16 @@ export const raidTrinketData = [
 
           // You can kind of curate this to your preferred cooldown curve.
           if (player.spec === "Discipline Priest" || player.spec === "Preservation Evoker") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 6.4), cooldown: 90}, itemLevel, additionalData.castModel);
           }
           else if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.6);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 7.6)}, itemLevel, additionalData.castModel);
           }
 
           else if (getSetting(additionalData.settings, "dpsFlag") || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.4);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
             bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
           }
     
