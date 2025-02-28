@@ -62,6 +62,12 @@ export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
   return value;
 }
 
+export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD) {
+  const value = processedValue(effect, itemLevel) * effect.duration / forcedCD
+                * (castModel ? (castModel.getSpecialQuery("c" + forcedCD, "cooldownMult") || 1) : 1);
+  return value;
+}
+
 // This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
