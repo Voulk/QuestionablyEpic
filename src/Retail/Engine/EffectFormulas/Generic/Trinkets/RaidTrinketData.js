@@ -1,14 +1,14 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket, forceGenericOnUseTrinket } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
-    description: "Almost ridiculously overtuned. Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. ",
+    description: "Overtuned. Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. ",
     effects: [
       { 
-        coefficient: 0.045686, 
+        coefficient: 0.045686 * 0.95, 
         table: -1,
         ppm: 5,
         maxStacks: 20,
@@ -40,11 +40,11 @@ export const raidTrinketData = [
   },
   { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
     name: "Gallagio Bottle Service",
-    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for an intellect trinket.",
+    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for a trinket without intellect that costs you 4 seconds of casts.",
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
-        coefficient: 89.09773, 
+        coefficient: 89.09773 * 2, 
         table: -8,
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
@@ -57,9 +57,7 @@ export const raidTrinketData = [
 
       const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
 
-      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);
-
-      
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType) * 0.65;
 
       return bonus_stats;
     }
@@ -80,7 +78,8 @@ export const raidTrinketData = [
 
       const variance = (0.9 + 1.15) / 2; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
 
-      bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
+      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
+      else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
 
       return bonus_stats;
     }
@@ -148,7 +147,7 @@ export const raidTrinketData = [
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
         efficiency: {Raid: 0.78, Dungeon: 0.6},
-        ppm: 2.5 * 0.65, // Incorrect flagging
+        ppm: 2.5 * 0.67, // Incorrect flagging
       },
       {  // The damage portion.
         coefficient: 0,
@@ -289,11 +288,11 @@ export const raidTrinketData = [
         setting: true,
         effects: [
           {  // Passive Int
-            coefficient: 0.014709 * 0.9,
+            coefficient: 0.014709 * 0.9 * 0.9,
             table: -1,
           },
           {  // On-use Int
-            coefficient: 0.141408 * 0.95 * 0.9,
+            coefficient: 0.141408 * 0.95 * 0.9 * 0.9,
             table: -1,
             duration: 20,
             cooldown: 60, // Technically 20

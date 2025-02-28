@@ -52,10 +52,10 @@ export const dungeonTrinketData =
     description: "",
     effects: [
       {
-        coefficient: 1.375703 + 1.681503, 
+        coefficient: (1.375703 + (1.681503+1.375703)) / 2, 
         table: -7,
         duration: 16,
-        multiplier: 1.6, // Assumes boss is around 50% health.
+        //multiplier: 0.725, // Assumes boss is around 50% health.
         cooldown: 120,
         stat: "crit",
       },
@@ -63,7 +63,7 @@ export const dungeonTrinketData =
         coefficient: 51.42363, 
         table: -9,
         cooldown: 120,
-        efficiency: 0.4, // Heal ultimately does nothing but it's included for accuracy.
+        efficiency: 0.3, // Heal ultimately does nothing but it's included for accuracy.
         stat: "hps",
       },
     ],
