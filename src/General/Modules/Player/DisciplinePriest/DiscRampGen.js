@@ -33,20 +33,13 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     else if (type === "Micro") {
         return buildMicroRamp(applicators, trinkets, playstyle, talents);
     }
-    else if (type === "Primary") {
-        // With Boon gone, our primary ramp will generally be with Fiend.
-        // The particular label doesn't matter all that much since it's just a way to categorize what we're intending to cast.
+    else if (type === "Evangelism") {
+        // A ramp where we press Evangelism
         return buildEvangRamp(applicators, trinketAssignments['Fiend'], playstyle, talents, ["Shadowfiend"]);
     }
-    else if (type === "Secondary") {
+    else if (type === "Uppies") {
         //
         return buildEvangRamp(applicators, trinketAssignments['evang'], playstyle, talents, []);
-
-        // Further ramp types can be added here.
-    }
-    else if (type === "RaptureLW") {
-        //
-        return buildRaptureRamp(applicators, '', playstyle, talents, ["Light's Wrath"]);
 
         // Further ramp types can be added here.
     }

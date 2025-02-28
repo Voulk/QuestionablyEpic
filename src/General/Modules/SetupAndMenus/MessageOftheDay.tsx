@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "QE Live is updated for 11.1 but expect tuning changes this week!"
+    "QE Live is updated for 11.1 and the trinket tuning on 27/2."
   ]
 ;
   if (messageOfTheDay.length === 0) return;
