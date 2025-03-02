@@ -1974,7 +1974,7 @@ export const encounterDB = {
         ru: "",
         ch: "",
       },
-      bossOrder: [2639, 2640, 2641, 2642, 2643, 2644, 2645, 2646, -54],
+      bossOrder: [2639, 2640, 2641, 2642, 2653, 2644, 2645, 2646, -54],
       bosses: {
         2639: "Vexie and the Geargrinders", // Vexie and the Geargrinders.
         2640: "Cauldron of Carnage", // Cauldron of Carnage

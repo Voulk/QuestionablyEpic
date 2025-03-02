@@ -162,7 +162,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   }
   else if (instanceID === -69) {
     // Delves
-    itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
+    itemLevel = 665 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
