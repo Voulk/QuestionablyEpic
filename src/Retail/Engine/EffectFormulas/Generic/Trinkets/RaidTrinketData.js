@@ -55,7 +55,7 @@ export const raidTrinketData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10), effi};
+      const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
 
       bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType) * 0.65;
 
@@ -156,7 +156,7 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const efficiency = 1 - getSetting(additionalData.settings, "misterPickMeUpOverheal");
+      const efficiency = 1 - (getSetting(additionalData.settings, "misterPickMeUpOverheal") / 100 || 0);
       const newData = {...data[0], efficiency: efficiency};
 
       bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);

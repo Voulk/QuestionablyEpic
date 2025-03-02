@@ -151,7 +151,7 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [tabIndex, setTabIndex] = React.useState(0);
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
   const [levelCap, setLevelCap] = React.useState(678);
   const maxLevelMarks = [
@@ -174,14 +174,18 @@ export default function TrinketAnalysis(props) {
       //1190, // Castle Nathria
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
-      1200, // Vault of the Incarnates
-      1208, // Aberrus
-      1207, // Amirdrassil
+      //1200, // Vault of the Incarnates
+      //1208, // Aberrus
+      //1207, // Amirdrassil
       1273, // Palace
+      1296, // Liberation of Undermine
     ];
     const dungeonSources = [
       -1, // General Dungeons
     ];
+    const delveSources = [
+      -69
+    ]
     const otherSources = [
       1192, // World Bosses
       1205, // DF World Bosses
@@ -201,6 +205,7 @@ export default function TrinketAnalysis(props) {
           (item["sources"] &&
             ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
               (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });

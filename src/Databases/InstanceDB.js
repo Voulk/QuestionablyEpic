@@ -19,6 +19,7 @@ export const instanceDB = {
   "1207": "Amirdrassil, The Dream's Hope",
 
   "1273": "Nerub-ar Palace",
+  "1296": "Liberation of Undermine",
 
   "-4": "Crafted",
 
