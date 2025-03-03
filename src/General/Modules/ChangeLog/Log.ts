@@ -17,6 +17,18 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 3,
+    date: "March 3",
+    changes: [ 
+      "Updated Trinket graph filters.",
+      "In-game change: Removed Roaring War Queen from Legendary Skippers.",
+      "New Setting: Mr Pick-me-up overhealing.",
+      "Upgrade Finder: Capped Delve item level at 665. Updated dungeon item levels.",
+      "Added Season 2 upgrade tracks to item right cick menus.",
+      "Added some Season 2 4pc bonuses."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 2,
     date: "February 27",
     changes: [ 

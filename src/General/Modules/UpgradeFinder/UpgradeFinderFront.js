@@ -147,13 +147,13 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 632, label: "M0" },
-  { value: 636, label: "+2/3" },
-  { value: 639, label: "+4" },
-  { value: 642, label: "+5" },
-  { value: 645, label: "+6" },
-  { value: 649, label: "+7/8" },
-  { value: 652, label: "+9/10" },
+  { value: 636, label: "M0" },
+  { value: 639, label: "+2/3" },
+  { value: 642, label: "+4" },
+  { value: 645, label: "+5" },
+  { value: 649, label: "+6/7" },
+  { value: 652, label: "+8/9" },
+  { value: 655, label: "+10" },
   { value: 658, label: "Vault" },
   { value: 665, label: "" },
   { value: 672, label: "" },
@@ -171,7 +171,7 @@ export default function UpgradeFinderFront(props) {
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
 
-  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: gameType === "Retail" ? 4 : 1, pvp: 0, craftedLevel: 4, craftedStats: "Crit / Haste" });
+  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: gameType === "Retail" ? 6 : 1, pvp: 0, craftedLevel: 4, craftedStats: "Crit / Haste" });
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
