@@ -108,7 +108,6 @@ export const effectData = [
       // This mana is technically distributed through the raid but it's fairly reasonable to value it as our own with a penalty.
       bonus_stats.mana = data[1].value * data[1].ppm / 60 * 0.7;
     
-      console.log(bonus_stats);
       return bonus_stats;
     }
   },

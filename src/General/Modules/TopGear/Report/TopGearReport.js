@@ -199,7 +199,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       }
     })
 
-    exportGearSet(itemList, player.spec);
+    //exportGearSet(itemList, player.spec);
 
 
     if (gameType === "Classic") {

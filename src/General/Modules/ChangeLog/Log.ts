@@ -16,6 +16,35 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.1 / 4.4.2",
+    update: 3,
+    date: "March 3",
+    changes: [ 
+      "Updated Trinket graph filters.",
+      "In-game change: Removed Roaring War Queen from Legendary Skippers.",
+      "New Setting: Mr Pick-me-up overhealing.",
+      "Upgrade Finder: Capped Delve item level at 665. Updated dungeon item levels.",
+      "Added Season 2 upgrade tracks to item right cick menus.",
+      "Added some Season 2 4pc bonuses.",
+      "Fixed a bug where Ritual Commander's Ring wouldn't import correctly."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 2,
+    date: "February 27",
+    changes: [ 
+      "Added trinket hotfixes including to Eye of Kezan, Mister Pick-me-up & more.",
+      "Fixed a bug that overvalued Soulletting Ruby.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 1,
+    date: "February 26",
+    changes: [ 
+      "Added support for Patch 11.1",
+      "Added Delves tab to Upgrade Finder",
+    ]},
+  {
     version: "11.0.7 / 4.4.2",
     update: 1,
     date: "December 21",

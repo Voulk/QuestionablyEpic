@@ -17,13 +17,18 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   const healingBonus = 1.04;
   const empowersCPM = 2 + 2 + 2.5; 
   const essenceBurst = valueEssenceBurst(player, contentType);
+  const insuranceRPPM = 4 * player.getStatPerc('haste');
+  const insuranceHealing = 0.80664 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
   let bonus_stats = {};
 
   if (effectName === "Evoker S2-2") {
-    bonus_stats.hps = 12000;
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Evoker S2-4") {
-    bonus_stats.hps = 12000;
+    const verdantEmbraceCPM = 3;
+    const verdantEmbraceEchoCPM = 8 + (3.2 * 5); // 10 hard cast Echo + 3.2 Temporal Anomaly casts. Note there is no Echo multiplier currently.
+
+    bonus_stats.hps = (insuranceHealing * 6 / 15) * (verdantEmbraceCPM + verdantEmbraceEchoCPM) / 60;
   }
   else if (effectName === "Evoker S1-2") {
     // This bonus is just awful

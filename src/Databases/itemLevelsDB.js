@@ -15,13 +15,13 @@ export const itemLevels = {
     678, // Mythic Max
   ],
   dungeon: [
-    632,
     636,
     639,
     642,
     645,
     649,
     652,
+    655,
     658,
     665,
     672,

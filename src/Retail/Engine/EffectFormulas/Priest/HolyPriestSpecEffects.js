@@ -5,8 +5,23 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
 
-  if (effectName === "HPriest S1-2") {
-    console.log(player.getHPS())
+
+
+  if (effectName === "HPriest S2-2") {
+    const insuranceRPPM = 4 * player.getStatPerc('haste');
+    const insuranceHealing = 2.04736 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
+
+  }
+  else if (effectName === "HPriest S2-4") {
+    // TODO
+    const apothUptime = 0.4;
+
+    bonus_stats.hps = player.getHPS() * 0.0442;
+  }
+
+  else if (effectName === "HPriest S1-2") {
+
     bonus_stats.hps = player.getHPS() * 0.0295;
 
   }

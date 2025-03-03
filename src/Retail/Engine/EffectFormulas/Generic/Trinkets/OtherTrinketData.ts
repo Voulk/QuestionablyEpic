@@ -1,9 +1,86 @@
-import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket, runGenericRandomPPMTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket, runGenericRandomPPMTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
 import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+  { // 1:30 cooldown mastery on-use. 
+    name: "Funhouse Lens",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise. Active bug so ranking might change.",
+    effects: [
+      {
+        coefficient: 0.894932, 
+        table: -9,
+        duration: 15, 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid") && getSetting(additionalData.settings, "delayOnUseTrinkets")) {
+        bonus_stats.haste = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
+        bonus_stats.crit = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
+      }
+      else {
+        bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+        bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+      }
+      
+
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Bashful Book",
+    description: "",
+    effects: [
+      { // Damage effect
+        coefficient: 8.199264, 
+        table: -9,
+        ticks: 10,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.2,
+      },
+      { // Heal effect
+        coefficient: 12.30001, 
+        table: -9,
+        efficiency: 0.8,
+        ticks: 10,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 1 * 0.8,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Dr. Scrapheal",
+    description: "",
+    effects: [
+      { // This also technically has a "when ally drops below X effect" but trinket doesn't appear available at good item level.
+        coefficient: 21.39124, 
+        table: -9,
+        efficiency: 0.8,
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 3,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
   { // 
     name: "Imperfect Ascendancy Serum",
     description: "Has a short cast time on use.",
@@ -230,10 +307,10 @@ export const otherTrinketData = [
       const secondaryBudget = 6666;
       const randProp = randPropPoints[itemLevel]["slotValues"][1];
       const combatMult = combat_ratings_mult_by_ilvl[itemLevel]
-      const chosenSecondaries = getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
+      const chosenSecondaries = ["haste", "crit"] //getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
       const secondaries = Math.round(randProp * secondaryBudget * 0.0001 * combatMult)
 
-      chosenSecondaries.replace(/ /g, "").split("/").forEach(stat => {
+      chosenSecondaries.forEach(stat => {
         bonus_stats[stat] = Math.round(secondaries / 2);
       });
 

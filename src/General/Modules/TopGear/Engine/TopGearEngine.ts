@@ -790,7 +790,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
-    if (!useSeq || player.spec !== "Discipline Priest" || (player.spec === "Discipline Priest" && !effect.onUse && effect.type !== "spec legendary") || contentType === "Dungeon") {
+    if (!useSeq || (castModel.modelType[contentType] === "Sequences" && !effect.onUse)) {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
@@ -948,8 +948,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
-  if ((player.spec === "Holy Paladin" || player.spec === "Restoration Shaman" || player.spec === "Holy Priest") && "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 500;
+  if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
+    hardScore -= 20000;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

@@ -70,6 +70,7 @@ interface SettingValue {
     category: string;
     type: string;
     gameType: gameTypes;
+    classRestriction?: string;
   }
 
 interface PlayerSettings {

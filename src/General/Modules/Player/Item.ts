@@ -96,8 +96,8 @@ export class Item {
       // TEMPORARY
       if (this.id === 228411) {
         this.customOptions = [
-                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [228638, 228639, 228646]},
                               {label: "Stormbringers, Fathomdwellers, Windsingers", id: [228638, 228639, 228640]},
+                              {label: "Stormbringers, Fathomdwellers, Skippers", id: [228638, 228639, 228646]},
                               {label: "Stormbringers, Mariners, Skippers", id: [228638, 228644, 228646]},
                               {label: "Stormbringers, Mariners, Windsingers", id: [228638, 228644, 228640]},
                               {label: "Thunderlords, Mariners, Windsingers", id: [228634, 228644, 228640]},

@@ -4,6 +4,7 @@ export const dungeonTrinketData =
 [
   { // Versatility for X% of the fight. Mana one time.
     name: "Ingenious Mana Battery",
+    description: "It's fine while stacked but you need to never drop below 50% mana for this to be at all viable. Too much work for too little gain.",
     effects: [
       {  // Mana Effect
         coefficient: 0.076844,
@@ -12,7 +13,7 @@ export const dungeonTrinketData =
       {  // Versatility Effect
         coefficient: 0.27006, // Increased by 100% due to mana stored.
         table: -7,
-        uptime: 0.6,
+        uptime: 0.5,
         multiplier: 2, // The amount of extra vers you get for mana saved.
       },
     ],
@@ -27,6 +28,7 @@ export const dungeonTrinketData =
   },
   {
     name: "Vial of Spectral Essence",
+    description: "Filler at best.",
     effects: [
       {  // Heal effect
         coefficient: 173.7287,
@@ -50,10 +52,10 @@ export const dungeonTrinketData =
     description: "",
     effects: [
       {
-        coefficient: 1.375703 + 1.681503, 
+        coefficient: (1.375703 + (1.681503+1.375703)) / 2, 
         table: -7,
         duration: 16,
-        multiplier: 1.6, // Assumes boss is around 50% health.
+        //multiplier: 0.725, // Assumes boss is around 50% health.
         cooldown: 120,
         stat: "crit",
       },
@@ -61,7 +63,7 @@ export const dungeonTrinketData =
         coefficient: 51.42363, 
         table: -9,
         cooldown: 120,
-        efficiency: 0.4, // Heal ultimately does nothing but it's included for accuracy.
+        efficiency: 0.3, // Heal ultimately does nothing but it's included for accuracy.
         stat: "hps",
       },
     ],
@@ -77,7 +79,7 @@ export const dungeonTrinketData =
   { // TODO: The Chopper stays on the target and can reproc whether the initial on-use is active or not. 
     // So it's basically an on-use and proc trinket in one.
     name: "Darkfuse Medichopper",
-    description: "",
+    description: "The Chopper stays on your target and periodically gives them vers and an absorb. It has potential in theory but undertuned.",
     effects: [
       {
         coefficient: 18.44994, 
@@ -108,7 +110,7 @@ export const dungeonTrinketData =
   },
     {
         name: "Carved Blazikon Wax",
-        description: "",
+        description: "Standing in the candle is a very small part of this trinkets power so don't worry about it too much.",
         effects: [
           {
             coefficient: 1.068708, 
@@ -156,6 +158,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Burin of the Candle King",
+        description: "Honestly fairly well tuned for an absorb trinket. Expect it to see some Mythic+ play depending on how the dungeons are tuned.",
         effects: [
           {  // Heal effect
             coefficient: 294.3024, // 371.7325,

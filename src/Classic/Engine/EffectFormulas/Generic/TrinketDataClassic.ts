@@ -410,7 +410,7 @@ const dungeonTrinketData: Effect[] = [
     name: "Foul Gift of the Demon Lord",
     effects: [
       { // 
-        value: {378: 1710}, 
+        value: {378: 1149}, 
         table: -1,
         ppm: getEffectPPM(0.15, 50, 1.5),
         stat: "mastery",

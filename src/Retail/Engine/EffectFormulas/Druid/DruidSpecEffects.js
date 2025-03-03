@@ -10,12 +10,26 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
   const healingMult = 1.06 * 1.04 // Class talents
+  const insuranceRPPM = 4 * player.getStatPerc('haste');
 
   if (effectName === "Druid S2-2") {
-    bonus_stats.hps = 20000;
+    
+    const insuranceHealing = 1.6 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Druid S2-4") {
-    bonus_stats.hps = 20000;
+    const healingOneRejuv = 0.2465 * 2.1 * 5 * player.getStatMults(["intellect", "crit", "versatility"]) * ((player.getStatPerc("mastery") - 1) + 1) * healingMult * 1.3; // Flourish etc
+    let lifebloomInsurancePPM = 60 / 4 * 0.3;
+    if (contentType === "Dungeon") {
+      // Add Photosynthesis
+      // We'll just be modelling lifebloom + rejuv + spring blossoms. It's common to have more but there's also a ton of wastage on procs.
+      hotTicksPerMinute = (60 + 20 + 30) * player.getStatPerc('haste');
+      lifebloomInsurancePPM = hotTicksPerMinute * 0.04 * 0.3;
+    }
+
+    bonus_stats.hps = (insuranceRPPM + lifebloomInsurancePPM) * healingOneRejuv / 60;
+
+
   }
   else if (effectName === "Druid S1-2") {
     // +10% Regrowth, Swiftmend, Wild Growth

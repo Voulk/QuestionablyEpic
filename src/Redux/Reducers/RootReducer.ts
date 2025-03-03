@@ -34,16 +34,11 @@ const initialState : RootState = {
 
     // TWW Trinkets
     creepingCoagOverheal: { value: 36, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    misterPickMeUpOverheal: { value: 22, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    pheromoneSecreter: { value: "Haste / Versatility", options: [
-      "Haste / Versatility",
-      "Haste / Mastery",
-      "Haste / Crit",
-      "Crit / Mastery",
-      "Crit / Versatility",
-      "Mastery / Versatility"], category: "trinkets", type: "selector", gameType: "Retail" },
+    //syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    delayOnUseTrinkets: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },

@@ -17,6 +17,30 @@ export function getItemSet(id, pieces, spec) {
 
 export const itemSets = [
   {
+    id: [1877],
+    class: "Restoration Shaman",
+    setBonuses: {
+      2: "Shaman S2-2", // 
+      4: "Shaman S2-4"  // 
+    },
+  },
+  {
+    id: [1875],
+    class: "Holy Priest",
+    setBonuses: {
+      2: "HPriest S2-2", // 
+      4: "HPriest S2-4"  // 
+    },
+  },
+  {
+    id: [1875],
+    class: "Discipline Priest",
+    setBonuses: {
+      2: "DPriest S2-2", // 
+      4: "DPriest S2-4"  // 
+    },
+  },
+  {
     id: [1873],
     class: "Mistweaver Monk",
     setBonuses: {

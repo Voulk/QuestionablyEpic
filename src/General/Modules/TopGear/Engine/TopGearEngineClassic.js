@@ -319,14 +319,18 @@ function compileSetStats(itemSet) {
   let setStats = {spellpower: 0,
     intellect: 156, // Technically changes per race.
     spirit: 173, // Technically changes per race.
-    mp5: 0
+    mp5: 0,
+    hps: 0,
+    crit: 0,
+    mastery: 0,
+    haste: 0,
   }
 
     for (let i = 0; i < itemSet.itemList.length; i++) {
       let item = itemSet.itemList[i];
 
       for (const [stat, value] of Object.entries(item.stats)) {
-        
+
         //if (stat in setStats) {
           //setStats[stat as keyof Stats] += value || 0;
           setStats[stat] = (setStats[stat] || 0) + value;
@@ -699,7 +703,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // Override
     if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0; // We'll handle Shard separately but proc-based haste is mostly useless for resto druid.
     compileStats(setStats, compiledEffects);
-
     applyRaidBuffs({}, setStats);
     // SCORING FUNCTIONS
     if (player.spec === "Restoration Druid Classic") {

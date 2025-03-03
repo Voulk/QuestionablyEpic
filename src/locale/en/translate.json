@@ -381,7 +381,11 @@
         },
         "creepingCoagOverheal": {
           "title": "Overheal: Creeping Coag",
-          "tooltip": "Select expected overhealing for the Creeping Coagulum trinket."
+          "tooltip": "Expected overhealing for the Creeping Coagulum trinket."
+        },
+        "misterPickMeUpOverheal": {
+          "title": "Overheal: Mr Pick-me-up",
+          "tooltip": "Expected overhealing for the Mr Pick-me-up trinket."
         },
         "ovinaxAverageIntStacks": {
           "title": "Ovinax Avg Int Stacks",
@@ -394,6 +398,10 @@
         "syringeHealProcs": {
           "title": "Syringe % Heal Procs",
           "tooltip": "The percentage of your Gruesome Syringe trinket procs that you expect to heal instead of giving you intellect."
+        },
+        "delayOnUseTrinkets": {
+          "title": "Delay On-Use Trinkets",
+          "tooltip": "If true, will delay on-use trinkets to try and line them up with a major cooldown if they do not already. Trinkets do lose average stats this way and so it's not always an upgrade to do so."
         },
         "pheromoneSecreter": {
           "title": "Pheromone Secreter",

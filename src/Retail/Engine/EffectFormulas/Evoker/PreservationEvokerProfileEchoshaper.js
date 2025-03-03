@@ -73,7 +73,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
         {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.9, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
-        {spell: "Engulf", cpm: Math.floor(90 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
+        {spell: "Engulf", cpm: Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     // Echo Breakdown
@@ -93,7 +93,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         "Dream Breath": 0.2, 
         "Reversion": 0.32,
     }
-
 
     // Stasis
     // As Flameshaper we'll stasis Dream Breath -> Engulf -> Engulf

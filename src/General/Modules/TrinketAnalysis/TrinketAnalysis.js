@@ -151,14 +151,15 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [tabIndex, setTabIndex] = React.useState(0);
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
   const [levelCap, setLevelCap] = React.useState(678);
   const maxLevelMarks = [
     { value: 0, label: "639" },
     { value: 1, label: "645" },
-    { value: 2, label: "665" },
-    { value: 3, label: "678" },
+    { value: 2, label: "658" },
+    { value: 3, label: "665" },
+    { value: 4, label: "678" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -173,14 +174,18 @@ export default function TrinketAnalysis(props) {
       //1190, // Castle Nathria
       //1193, // Sanctum of Domination
       //1195, // Sepulcher
-      1200, // Vault of the Incarnates
-      1208, // Aberrus
-      1207, // Amirdrassil
+      //1200, // Vault of the Incarnates
+      //1208, // Aberrus
+      //1207, // Amirdrassil
       1273, // Palace
+      1296, // Liberation of Undermine
     ];
     const dungeonSources = [
       -1, // General Dungeons
     ];
+    const delveSources = [
+      -69
+    ]
     const otherSources = [
       1192, // World Bosses
       1205, // DF World Bosses
@@ -200,6 +205,7 @@ export default function TrinketAnalysis(props) {
           (item["sources"] &&
             ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
               (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
@@ -314,7 +320,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket."  :
+  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket. Expect more trinket tuning."  :
                                               "";
 
   return (
@@ -352,11 +358,11 @@ export default function TrinketAnalysis(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={3}
+                  defaultValue={4}
                   step={null}
                   valueLabelDisplay="off"
                   marks={maxLevelMarks} //marks
-                  max={3}
+                  max={4}
                   change={changeLevelCap} //setDungeonDifficulty
                 />
               </div>
