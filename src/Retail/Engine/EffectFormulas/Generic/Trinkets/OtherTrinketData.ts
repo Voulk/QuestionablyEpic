@@ -268,7 +268,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Algari Alchemist Stone",
-    description: "",
+    description: "High variance. Beware the low uptime. Requires a valuable spark to craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
