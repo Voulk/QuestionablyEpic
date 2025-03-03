@@ -90,7 +90,7 @@ export const raidTrinketData = [
     effects: [
       {
         coefficient: 0.276886, 
-        averageStacks: 15 / 1.5 / 1.2 / 2, // TODO
+        averageStacks: 1 + 15 / (1.5 / 1.2) / 2, // TODO
         table: -7,
         duration: 15, 
         ppm: 2,
@@ -101,8 +101,12 @@ export const raidTrinketData = [
 
       // We should just hook average stacks into cast models.
       // Uptime on this looks way worse than 2ppm would suggest.
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks;
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks * 0.8; // Worse than expected uptime on PTR, recheck.
       if (player.spec === "Preservation Evoker") bonus_stats.crit *= 0.7;
+      if (player.spec === "Mistweaver Monk") bonus_stats.crit *= 1.2; // RJW procs, greatly upping stack count.
+
+      console.log(data[0].averageStacks);
+      console.log(convertPPMToUptime(2, 15));
 
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
