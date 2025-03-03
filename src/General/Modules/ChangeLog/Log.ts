@@ -25,7 +25,8 @@ export const changeLog: entry[] = [
       "New Setting: Mr Pick-me-up overhealing.",
       "Upgrade Finder: Capped Delve item level at 665. Updated dungeon item levels.",
       "Added Season 2 upgrade tracks to item right cick menus.",
-      "Added some Season 2 4pc bonuses."
+      "Added some Season 2 4pc bonuses.",
+      "Fixed a bug where Ritual Commander's Ring wouldn't import correctly."
     ]},
   {
     version: "11.1 / 4.4.2",
