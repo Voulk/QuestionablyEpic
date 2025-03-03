@@ -494,12 +494,12 @@ export const circletGemData: Array<circletGemType> = [
               });
               
             }
-            else if (circletGem.type === "Support") {
+            /*else if (circletGem.type === "Support") {
               const local_stats = circletGem.processedValue(circletGem.effects[0], gemData, additionalData.player, itemLevel)
               const targetCount = 4;
               
               bonus_stats['allyStats'] = (bonus_stats['allyStats'] || 0) + local_stats * gemPPM * 15 / 60 * multiplier * targetCount * 4;
-            }
+            }*/
             else if (circletGem.type === "Heal") {
               const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
 

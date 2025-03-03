@@ -34,7 +34,7 @@ export const embellishmentData = [
         coefficient: 66.05486 * 4.27, // Check this. I guess it scales with num gem types they have?
         table: -9,
         ppm: 60 / (240 - 48),
-        efficiency: 0.7
+        efficiency: 0.4
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
