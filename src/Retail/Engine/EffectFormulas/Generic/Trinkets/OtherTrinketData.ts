@@ -268,7 +268,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Algari Alchemist Stone",
-    description: "",
+    description: "High variance. Beware the low uptime. Requires a valuable spark to craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
@@ -307,10 +307,10 @@ export const otherTrinketData = [
       const secondaryBudget = 6666;
       const randProp = randPropPoints[itemLevel]["slotValues"][1];
       const combatMult = combat_ratings_mult_by_ilvl[itemLevel]
-      const chosenSecondaries = getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
+      const chosenSecondaries = ["haste", "crit"] //getSetting(additionalData.settings, 'pheromoneSecreter')//.split("/")
       const secondaries = Math.round(randProp * secondaryBudget * 0.0001 * combatMult)
 
-      chosenSecondaries.replace(/ /g, "").split("/").forEach(stat => {
+      chosenSecondaries.forEach(stat => {
         bonus_stats[stat] = Math.round(secondaries / 2);
       });
 

@@ -381,7 +381,11 @@
         },
         "creepingCoagOverheal": {
           "title": "Overheal: Creeping Coag",
-          "tooltip": "Select expected overhealing for the Creeping Coagulum trinket."
+          "tooltip": "Expected overhealing for the Creeping Coagulum trinket."
+        },
+        "misterPickMeUpOverheal": {
+          "title": "Overheal: Mr Pick-me-up",
+          "tooltip": "Expected overhealing for the Mr Pick-me-up trinket."
         },
         "ovinaxAverageIntStacks": {
           "title": "Ovinax Avg Int Stacks",

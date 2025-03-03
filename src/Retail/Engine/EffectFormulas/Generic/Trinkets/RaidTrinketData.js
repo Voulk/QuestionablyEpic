@@ -90,7 +90,7 @@ export const raidTrinketData = [
     effects: [
       {
         coefficient: 0.276886, 
-        averageStacks: 15 / 1.5 / 2, // TODO
+        averageStacks: 1 + 15 / (1.5 / 1.2) / 2, // TODO
         table: -7,
         duration: 15, 
         ppm: 2,
@@ -101,8 +101,12 @@ export const raidTrinketData = [
 
       // We should just hook average stacks into cast models.
       // Uptime on this looks way worse than 2ppm would suggest.
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks;
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel) * data[0].averageStacks * 0.8; // Worse than expected uptime on PTR, recheck.
       if (player.spec === "Preservation Evoker") bonus_stats.crit *= 0.7;
+      if (player.spec === "Mistweaver Monk") bonus_stats.crit *= 1.2; // RJW procs, greatly upping stack count.
+
+      console.log(data[0].averageStacks);
+      console.log(convertPPMToUptime(2, 15));
 
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
@@ -138,7 +142,7 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "A surprisingly strong flat healing trinket with low overhealing.",
+    description: "A surprisingly strong flat healing trinket with low overhealing. Default overhealing: 22%.",
     setting: true,
     effects: [
       {  // Heal effect
@@ -156,7 +160,10 @@ export const raidTrinketData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      const efficiency = 1 - (getSetting(additionalData.settings, "misterPickMeUpOverheal") / 100 || 0);
+      const newData = {...data[0], efficiency: efficiency};
+
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);
       bonus_stats.dps = 0;
 
       return bonus_stats;
@@ -185,7 +192,7 @@ export const raidTrinketData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          const percentHealProc = getSetting(additionalData.settings, "syringeHealProcs") / 100;
+          const percentHealProc = 0.9 // getSetting(additionalData.settings, "syringeHealProcs") / 100;
           
           bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType) * percentHealProc;
           bonus_stats.intellect = processedValue(data[1], itemLevel) * data[1].duration * data[0].ppm * 1.13 * (1 - percentHealProc) / 60;
