@@ -1,6 +1,54 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  {
+    name: "The Jastor Diamond",
+    effects: [
+      {
+        coefficient: 0.024509, 
+        table: -7,
+        maxStacks: 10,
+        stat: "random",
+        duration: 15,
+        ppm: 3 * 0.875, // Can't proc while on-use is active.
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const chanceCaught = 0.15;
+      
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Best-in-Slots",
+    effects: [
+      {
+        coefficient: 1.374509, 
+        table: -7,
+        stat: "random",
+        duration: 15,
+        ppm: 3 * 0.875, // Can't proc while on-use is active.
+      },
+      {
+        coefficient: 1.374509 * 1.1, // The on-use is 10% higher. 
+        table: -7,
+        stat: "best",
+        duration: 15,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel)
+
+      // On use portion
+      const bestStat = player.getHighestStatWeight(additionalData.contentType)
+      bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + runGenericOnUseTrinket({...data[1], stat: bestStat}, itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
   { 
     name: "Lingering Grace",
     effects: [
