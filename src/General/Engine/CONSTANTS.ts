@@ -15,7 +15,7 @@ export const CONSTANTS = {
         "mythicMax": 7,
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
-    seasonalItemConversion: 8, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
+    seasonalItemConversion: 10, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
     currentRaidID: 1296, // Undermine
     currentDungeonIDs: [1178, 1012, 1187, 1298, 1210, 1267, 1272, 1268],
     bossNPCIDs: {
@@ -58,7 +58,7 @@ export const CONSTANTS = {
         1298: 15452, // Operation Floodgate
         1187: 12841, // Theater of Pain
     },
-    seasonID: 24,
+    seasonID: 25,
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic"],
 
