@@ -1983,7 +1983,8 @@ export const encounterDB = {
         2653: "Sprocketmonger Lockenstock", // Sprocketmonger Lockenstock
         2644: "One Armed Bandit", // One Armed Bandit
         2645: "Mug'zee", // Mug'Zee
-        2646: "Chrome King Gallywix" // Chrome King Gallywix
+        2646: "Chrome King Gallywix", // Chrome King Gallywix
+        999: "BoE Trash Drops",
       }
     },
   1207: {
