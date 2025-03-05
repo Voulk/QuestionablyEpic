@@ -2,6 +2,24 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
+  {
+    name: "Bursting Lightshard",
+    description: "Bursting Lightshard is a capable healer DPS trinket.",
+    effects: [
+      {
+        coefficient: 1.151598, 
+        table: -7,
+        stat: "all",
+        duration: 20,
+        ppm: 1.55,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      return bonus_stats;
+    }
+  },
   { // Versatility for X% of the fight. Mana one time.
     name: "Ingenious Mana Battery",
     description: "It's fine while stacked but you need to never drop below 50% mana for this to be at all viable. Too much work for too little gain.",

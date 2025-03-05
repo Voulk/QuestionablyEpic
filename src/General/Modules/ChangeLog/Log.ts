@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 5,
+    date: "March 5",
+    changes: [ 
+      "Fixed the seasonal upgrade track - this will mean you can upgrade your S2 items correctly.",
+      "Added Dr Scrapheal and a few other delve items to the item chart.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 4,
     date: "March 4",
     changes: [ 

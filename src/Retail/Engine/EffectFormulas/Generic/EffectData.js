@@ -1,6 +1,29 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { 
+    name: "Voltaic Stormcaller",
+    effects: [
+      {
+        coefficient: 0.764501, 
+        stat: "haste",
+        table: -7,
+        duration: 10,
+        ppm: 1,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+
+      if (player.spec !== "Discipline Priest" && additionalData.contentType === "Raid") {
+        bonus_stats.haste = bonus_stats.haste * 0.5; // DPS procs only
+      }
+
+      return bonus_stats;
+    }
+  },
   {
     name: "The Jastor Diamond",
     effects: [
@@ -10,7 +33,7 @@ export const effectData = [
         maxStacks: 10,
         stat: "random",
         duration: 15,
-        ppm: 3 * 0.875, // Can't proc while on-use is active.
+        ppm: 5, // Can't proc while on-use is active.
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
