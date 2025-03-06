@@ -230,18 +230,18 @@ export class Player {
       item.active = true;
     })
   }
-
+  
   catalyzeItem = (item) => {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "Living Luster's",
-      "Discipline Priest": "Living Luster's",
-      "Restoration Druid": "of the Greatlynx",
-      "Restoration Shaman": "Forgotten Reservoir",
-      "Mistweaver Monk": "Gatecrasher's",
-      "Holy Paladin": "Entombed Seraph's",
-      "Preservation Evoker": "of the Destroyer",
+      "Holy Priest": "Confessor's Unshakable",
+      "Discipline Priest": "Confessor's Unshakable",
+      "Restoration Druid": "of Reclaiming Blight",
+      "Restoration Shaman": "Gale Sovereign's",
+      "Mistweaver Monk": "Ageless Serpent's",
+      "Holy Paladin": "Aureate Sentry's",
+      "Preservation Evoker": "Opulent Treasurescale's",
     };
 
     const temp = itemDB.filter(function (item) {

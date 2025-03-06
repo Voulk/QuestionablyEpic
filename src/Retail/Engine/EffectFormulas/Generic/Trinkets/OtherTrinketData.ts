@@ -4,6 +4,57 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+  { 
+    name: "Suspicious Energy Drink",
+    description: "Only procs off DPS spells.",
+    effects: [
+      {
+        coefficient: 0.419337, 
+        table: -9,
+        duration: 10,
+        ppm: 3,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+
+      if (player.spec !== "Discipline Priest" && additionalData.contentType === "Raid") {
+        bonus_stats.mastery = bonus_stats.mastery * 0.5; // DPS procs only
+      }
+
+      return bonus_stats;
+    }
+  },
+  { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+    name: "Abyssal Volt",
+    effects: [
+      {
+        coefficient: 0.746494, 
+        table: -9,
+        duration: 15,
+        cooldown: 90,
+        stat: "haste",
+      },
+      {
+        coefficient: 0.222657, 
+        table: -9,
+        duration: 10,
+        cooldown: 90,
+        stat: "allyStats",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
   { // 1:30 cooldown mastery on-use. 
     name: "Funhouse Lens",
     description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise. Active bug so ranking might change.",

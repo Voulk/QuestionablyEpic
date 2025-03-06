@@ -1,6 +1,25 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+    name: "Neural Synapse Enhancer",
+    effects: [
+      {
+        coefficient: 1.792, 
+        table: -1,
+        duration: 15,
+        cooldown: 45,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 60);
+      console.log(bonus_stats.intellect);
+      return bonus_stats;
+    }
+  },
   { 
     name: "Voltaic Stormcaller",
     effects: [
