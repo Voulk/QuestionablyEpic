@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 6,
+    date: "March 8",
+    changes: [ 
+      "Bugfix: Jastor Diamond should now be evaluated correctly.",
+      "Cleaned up Mechagon: Workshop loot table."
+
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 5,
     date: "March 5",
     changes: [ 
