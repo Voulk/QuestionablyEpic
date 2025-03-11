@@ -47,17 +47,26 @@ export const effectData = [
     name: "The Jastor Diamond",
     effects: [
       {
-        coefficient: 0.024509, 
+        coefficient: 0.048536, 
         table: -7,
         maxStacks: 10,
         stat: "random",
-        duration: 15,
-        ppm: 5, // Can't proc while on-use is active.
+        averageStacks: 5.15, // This is just simulated directly since the Jastor parameters are fixed.
+        averageGifted: 1.2, // Also simulated
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const chanceCaught = 0.15;
+      const statsPerStack = processedValue(data[0], itemLevel);
+
+      const totalPersonalStats = statsPerStack * data[0].averageStacks;
+
+      bonus_stats.versatility = totalPersonalStats / 4;
+      bonus_stats.haste = totalPersonalStats / 4;
+      bonus_stats.crit = totalPersonalStats / 4;
+      bonus_stats.mastery = totalPersonalStats / 4;
+
+      bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
       
       return bonus_stats;
     }
@@ -175,7 +184,7 @@ export const effectData = [
     name: "Sureki Zealot's Insignia",
     effects: [
       {  // Versatility
-        coefficient: 0.139572,
+        coefficient: 0.139572 * 0.5,
         table: -7,
         ppm: 4,
         duration: 10,

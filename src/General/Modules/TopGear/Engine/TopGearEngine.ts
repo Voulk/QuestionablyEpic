@@ -757,7 +757,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // --- Item Set Bonuses ---
   
   const usedSets: any[] = []
-  console.log(setBonuses);
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
 
@@ -765,7 +764,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
           effectList = effectList.concat(setBonus);
-          console.log("ADDING SET BONUS: " + JSON.stringify(setBonus));
           usedSets.push(setBonus.name);
         }
       })

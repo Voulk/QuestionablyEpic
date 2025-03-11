@@ -519,8 +519,8 @@ export const otherTrinketData = [
     }
   },
   { 
-    name: "Forged Gladiator's Insignia of Alacrity",
-    description: "",
+    name: "Gladiator's Insignia of Alacrity",
+    description: "An accessible, on-budget stat stick.",
     effects: [
       {
         coefficient: 1.00266, 
