@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SyntheticEvent } from "react";
+import React, { useState, useEffect } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import "../SetupAndMenus/QEMainMenu.css";
 import ReactGA from "react-ga";
@@ -24,7 +24,6 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { Item } from "General/Modules/Player/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
-import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";

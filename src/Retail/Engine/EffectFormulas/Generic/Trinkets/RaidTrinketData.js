@@ -244,7 +244,7 @@ export const raidTrinketData = [
         description: "Complete 1 of 3 mini-games to get the buff. Jump 3 times, stand in a portal for a second or two, or chase an orb.",
         effects: [
           {  // Intellect effect
-            coefficient: 2.354015,
+            coefficient: 2.354015 * 0.9, // In-game nerf
             table: -1,
             duration: 15,
             cooldown: 90,
@@ -311,17 +311,17 @@ export const raidTrinketData = [
 
           // You can kind of curate this to your preferred cooldown curve.
           if (player.spec === "Discipline Priest" || player.spec === "Preservation Evoker") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
-            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 6.4), cooldown: 90}, itemLevel, additionalData.castModel);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.1);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (90 / 7.1), cooldown: 90}, itemLevel, additionalData.castModel);
           }
           else if (player.spec === "Holy Paladin" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.8);
-            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 7.6)}, itemLevel, additionalData.castModel);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 7.9);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 7.9)}, itemLevel, additionalData.castModel);
           }
 
           else if (getSetting(additionalData.settings, "dpsFlag") || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") {
-            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.8);
-            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.4)}, itemLevel, additionalData.castModel);
+            bonus_stats.intellect = processedValue(data[0], itemLevel) * (60 / 6.9);
+            bonus_stats.intellect += runGenericOnUseTrinket({...data[1], coefficient: data[1].coefficient * (60 / 6.9)}, itemLevel, additionalData.castModel);
           }
     
           return bonus_stats;

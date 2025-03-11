@@ -41,7 +41,7 @@ const initialState : RootState = {
     delayOnUseTrinkets: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
-    catalystLimit: { value: 1, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },
+    catalystLimit: { value: 2, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector", gameType: "Retail" },
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },

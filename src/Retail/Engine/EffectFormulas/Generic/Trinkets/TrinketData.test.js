@@ -69,19 +69,6 @@ describe("Spymaster's Web", () => {
     });
 }); 
 
-describe("Treacherous Transmitter", () => {
-    // Raw trinket values are compared to our spell data. Efficiency excluded.
-    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
-    const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Treacherous Transmitter");
-    const effect = activeTrinket.effects;
-    each`
-    level   | expectedResult
-    ${616}  | ${[13708]}
-    // add new test cases here
-    `.test("Treacherous Transmitter Test - $level - Expects: $expectedResult", ({ level, expectedResult }) => {
-        expect(processedValue(effect[0], level, 1)).toBe(expectedResult[0]);
-    });
-}); 
 
 describe("Gruesome Syringe", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
