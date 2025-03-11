@@ -519,7 +519,7 @@ export const otherTrinketData = [
     }
   },
   { 
-    name: "Gladiator's Insignia of Alacrity",
+    name: "Insignia of Alacrity",
     description: "An accessible, on-budget stat stick.",
     effects: [
       {
