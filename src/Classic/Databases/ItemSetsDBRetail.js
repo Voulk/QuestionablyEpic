@@ -65,6 +65,14 @@ export const itemSets = [
     },
   },
   {
+    id: [1874],
+    class: "Holy Paladin",
+    setBonuses: {
+      2: "Paladin S2-2", // 
+      4: "Paladin S2-4"  // 
+    },
+  },
+  {
     // Blackrock Depths Healing Set.
     id: [1834],
     class: "All",

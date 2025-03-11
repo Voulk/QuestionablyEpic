@@ -47,7 +47,7 @@ export const effectData = [
     name: "The Jastor Diamond",
     effects: [
       {
-        coefficient: 0.024509, 
+        coefficient: 0.048536, 
         table: -7,
         maxStacks: 10,
         stat: "random",
