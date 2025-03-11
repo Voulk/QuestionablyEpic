@@ -3,6 +3,37 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 export const dungeonTrinketData = 
 [
   {
+    name: "Sigil of Algari Concordance",
+    description: "The summoned earthened does flat healing and gives an intellect buff for healers. Uptime variance is high.",
+    effects: [
+      { // Hot Heal Effect -- this one occurs 99% of the time 
+        coefficient: 10.9179,
+        table: -9,
+        ppm: 0.5, 
+        targets: 5 * 3, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
+        ticks: 3,
+        stacks: 4, //5 max, 4 most common. stacks refresh duration
+        secondaries: ['crit', 'versatility'],
+        efficiency: 0.6,
+        
+      },
+      { // Intellect Effect
+        coefficient: 1.185996,
+        table: -1,
+        stat: "intellect",
+        duration: 15,
+        ppm: 0.5,
+        cooldown: 15,
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats.intellect = processedValue(data[1], itemLevel) * convertPPMToUptime(data[1].ppm, data[1].duration);
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      return bonus_stats;
+    },
+  },
+  {
     name: "Bursting Lightshard",
     description: "Bursting Lightshard is a capable healer DPS trinket.",
     effects: [
