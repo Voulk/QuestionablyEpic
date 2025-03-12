@@ -4,7 +4,7 @@ export const dungeonTrinketData =
 [
   {
     name: "Sigil of Algari Concordance",
-    description: "The summoned earthened does flat healing and gives an intellect buff for healers. Uptime variance is high.",
+    description: "The summoned earthen does flat healing and gives an intellect buff for healers. Uptime variance is high.",
     effects: [
       { // Hot Heal Effect -- this one occurs 99% of the time 
         coefficient: 10.9179,
