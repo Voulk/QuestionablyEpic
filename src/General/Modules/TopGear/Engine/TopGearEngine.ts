@@ -947,7 +947,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // but from a practical viewpoint it achieves the objective. It could be replaced with something more
   // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 20000;
+    hardScore -= 2000;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

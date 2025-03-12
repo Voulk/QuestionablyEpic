@@ -30,8 +30,10 @@ const getTrinketDropLoc = (trinketID) => {
 
         const instanceId = sources[0].instanceId;
         if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
+        else if (instanceId === 1296) dropLoc = " Undermine (Raid) - " + encounterDB[1296].bosses[sources[0].encounterId];
         else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
         else if (instanceId === -4) dropLoc = " Crafted";
+        else if (instanceId === -69) dropLoc = " Delves";
         //dropLoc = instanceDB[sources[0].instanceId.toString()]
     }
 
@@ -63,11 +65,14 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
         trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
     });
 
+    
     if (trinketData.setting) {
         trinketDescription.push("")
 
         trinketDescription.push("Setting Available")
     }
+    if (trinketEffects[0].holyMasteryFlag && player.spec === "Holy Priest") trinketDescription.push("Procs Echo of Light")
+
 
     if (getTrinketDropLoc(trinketID)) {
         trinketDescription.push("Drops from: " + getTrinketDropLoc(trinketID));
