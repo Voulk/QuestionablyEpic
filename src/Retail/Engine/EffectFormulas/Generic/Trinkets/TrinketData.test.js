@@ -36,6 +36,7 @@ describe("Cirral Concoctory", () => {
         expect(processedValue(effect[1], level)).toBe(expectedResult[1]);
         expect(processedValue(effect[2], level)).toBe(expectedResult[2]);
         expect(processedValue(effect[4], level)).toBe(expectedResult[4]);
+
     });
 }); 
 
@@ -56,7 +57,6 @@ describe("Ovi'nax's Mercurial Egg", () => {
 
 describe("Spymaster's Web", () => {
     // Raw trinket values are compared to our spell data. Efficiency excluded.
-    // Coeff #2 is used for both the mastery and crit procs and they have the same name.
     const activeTrinket = raidTrinketData.find((trinket) => trinket.name === "Spymaster's Web");
     const effect = activeTrinket.effects;
     each`

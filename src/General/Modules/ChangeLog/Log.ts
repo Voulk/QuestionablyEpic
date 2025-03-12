@@ -17,6 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 7,
+    date: "March 11",
+    changes: [ 
+      "Bugfix: Gallagio Bottle Service's coefficient was 5% too low post-buff.",
+      "Added Mastery value to Gallagio Bottle Service & Mr Pick-me-up.",
+      "Mr Pick-me-up now uses its true ppm value now that we can confirm it works correctly.",
+      "Slightly reduced the penalty for wearing double on-use trinkets.",
+      "Added Amorphous Relic."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 6,
     date: "March 9",
     changes: [ 

@@ -40,15 +40,16 @@ export const raidTrinketData = [
   },
   { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
     name: "Gallagio Bottle Service",
-    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for a trinket without intellect that costs you 4 seconds of casts.",
+    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Slightly undertuned for a trinket with quite a few downsides.",
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
-        coefficient: 89.09773 * 2, 
+        coefficient: 187.105, 
         table: -8,
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
-        efficiency: {Raid: 0.8, Dungeon: 0.65},
+        efficiency: {Raid: 0.8, Dungeon: 0.8},
+        holyMasteryFlag: true,
         cooldown: 90,
       },
     ],
@@ -57,7 +58,7 @@ export const raidTrinketData = [
 
       const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
 
-      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType) * 0.65;
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType, additionalData.setStats) * 0.65;
 
       return bonus_stats;
     }
@@ -105,9 +106,6 @@ export const raidTrinketData = [
       if (player.spec === "Preservation Evoker") bonus_stats.crit *= 0.7;
       if (player.spec === "Mistweaver Monk") bonus_stats.crit *= 1.2; // RJW procs, greatly upping stack count.
 
-      console.log(data[0].averageStacks);
-      console.log(convertPPMToUptime(2, 15));
-
       //bonus_stats.haste = processedValue(data[0], itemLevel) * averageStackCount;
 
       return bonus_stats;
@@ -151,7 +149,8 @@ export const raidTrinketData = [
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
         efficiency: {Raid: 0.78, Dungeon: 0.6},
-        ppm: 2.5 * 0.67, // Incorrect flagging
+        holyMasteryFlag: true,
+        ppm: 2.5 * 0.8, // Incorrect flagging
       },
       {  // The damage portion.
         coefficient: 0,
@@ -163,7 +162,7 @@ export const raidTrinketData = [
       const efficiency = 1 - (getSetting(additionalData.settings, "misterPickMeUpOverheal") / 100 || 0);
       const newData = {...data[0], efficiency: efficiency};
 
-      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType, additionalData.setStats);
       bonus_stats.dps = 0;
 
       return bonus_stats;

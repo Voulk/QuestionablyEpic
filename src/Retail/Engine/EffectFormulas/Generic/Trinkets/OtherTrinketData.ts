@@ -5,6 +5,35 @@ import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
   { 
+    name: "Amorphous Relic",
+    description: "Buffed 108%. They should have picked a higher number.",
+    effects: [
+      {
+        coefficient: 0.951739, 
+        table: -1,
+        duration: 30,
+        ppm: 0.5 / 2,
+        stat: "intellect",
+      },
+      {
+        coefficient: 2.670178, 
+        table: -7,
+        duration: 30,
+        ppm: 0.5 / 2,
+        stat: "haste",
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) / 4;
+      bonus_stats.haste = processedValue(data[1], itemLevel) / 4;
+
+      return bonus_stats;
+    }
+  },
+  { 
     name: "Suspicious Energy Drink",
     description: "Only procs off DPS spells.",
     effects: [
