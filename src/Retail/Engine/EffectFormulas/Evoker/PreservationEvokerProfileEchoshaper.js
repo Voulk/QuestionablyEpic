@@ -185,10 +185,10 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 const expectedTargets = 20;
                 const sqrtMod = Math.sqrt(5 / expectedTargets);
                 const consumeMult = 3; 
-                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1.4 * 0.8) : 1) //* 1.4; // Call of Ysera & Tier Set
+                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1.4 * 0.77) : 1) //* 1.4; // Call of Ysera & Tier Set
 
                 const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
-                let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
+                let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult * 0.8;
                 consumeHealing *= 1.06; // Generic 6% healing increase.
 
                 healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));

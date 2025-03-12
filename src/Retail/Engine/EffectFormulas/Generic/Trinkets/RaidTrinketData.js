@@ -40,15 +40,15 @@ export const raidTrinketData = [
   },
   { // On-use heal effect. Number of targets scales with haste. TODO: Check Haste scaling.
     name: "Gallagio Bottle Service",
-    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Unfortunately undertuned for a trinket without intellect that costs you 4 seconds of casts.",
+    description: "Requires channeling for 5 seconds. Every 10% haste you get gives you +1 drink (rounded up). Slightly undertuned for a trinket with quite a few downsides.",
     setting: true,
     effects: [
       {  // Heal effect but used in different ways.
-        coefficient: 89.09773 * 2, 
+        coefficient: 187.105, 
         table: -8,
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
-        efficiency: {Raid: 0.8, Dungeon: 0.65},
+        efficiency: {Raid: 0.8, Dungeon: 0.8},
         holyMasteryFlag: true,
         cooldown: 90,
       },
