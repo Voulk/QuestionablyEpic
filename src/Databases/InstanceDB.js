@@ -1965,7 +1965,7 @@ export const encounterDB = {
       2602: "Queen Ansurek",
     }
   },
-    // Nerub'ar Palace
+    // Undermine
     1296: {
       name: {
         en: "Liberation of Undermine",

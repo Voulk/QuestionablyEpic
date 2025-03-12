@@ -36,6 +36,7 @@ const initialState : RootState = {
     creepingCoagOverheal: { value: 36, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     misterPickMeUpOverheal: { value: 22, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    fightTimer: { value: 400, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     //syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     delayOnUseTrinkets: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
