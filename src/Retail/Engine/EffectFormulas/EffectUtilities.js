@@ -26,6 +26,11 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   return Math.round(procSize);
 }
 
+// Some effects only proc off DPS spells, we can handle the multiplier here.
+export function getSpecDPSMult(playerSpec, settings, spellsOnly = false) {
+
+}
+
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function addSpecMastery(playerSpec, setStats = {}) {
   let mult = 1;
