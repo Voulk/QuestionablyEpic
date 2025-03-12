@@ -9,7 +9,8 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "HPriest S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');
-    const insuranceHealing = 2.04736 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    const expectedOverheal = 0.26;
+    const insuranceHealing = 2.04736 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect']) * (1 - expectedOverheal)
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
 
   }
@@ -17,16 +18,16 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     // TODO
     const apothUptime = 0.4;
 
-    bonus_stats.hps = player.getHPS() * 0.0442;
+    bonus_stats.hps = player.getHPS() * 0.0842;
   }
 
   else if (effectName === "HPriest S1-2") {
 
-    bonus_stats.hps = player.getHPS() * 0.0295;
+    bonus_stats.hps = player.getHPS() * 0.0205;
 
   }
   else if (effectName === "HPriest S1-4") {
-    bonus_stats.hps = player.getHPS() * 0.0402;
+    bonus_stats.hps = player.getHPS() * 0.0462;
   }
   else if (effectName === "HPriest T31-2") {
     // Placeholder pulled from sheet. Replace very soon.
@@ -52,15 +53,6 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
 
     //bonus_stats.hps = oneSanc * effectivePPM;
     bonus_stats.hps = 17600;
-  }
-
-  else if (effectName === "HPriest T30-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    bonus_stats.hps = 6750;
-  }
-  else if (effectName === "HPriest T30-4") {
-    // Placeholder from sheet. Replace very soon.
-    bonus_stats.hps = 8750;
   }
   /*
     Vastly improved Holy Priest formulas coming soon.
