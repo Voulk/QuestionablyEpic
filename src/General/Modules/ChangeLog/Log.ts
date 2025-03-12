@@ -21,7 +21,7 @@ export const changeLog: entry[] = [
     date: "March 11",
     changes: [ 
       "Bugfix: Gallagio Bottle Service's coefficient was 5% too low post-buff.",
-      "Added Mastery value to Gallagio Bottle Service & Mr Pick-me-up.",
+      "Holy Priest: Added Mastery value to Gallagio Bottle Service & Mr Pick-me-up.",
       "Mr Pick-me-up now uses its true ppm value now that we can confirm it works correctly.",
       "Slightly reduced the penalty for wearing double on-use trinkets.",
       "Added Amorphous Relic."
