@@ -49,6 +49,8 @@ export const raidTrinketData = [
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
         efficiency: {Raid: 0.8, Dungeon: 0.8},
+        specPenalty: {"Holy Priest": 1, "Restoration Druid": 3, "Mistweaver Monk": 1.5, "Restoration Shaman": 2, "Discipline Priest": 2,
+                       "Holy Paladin": 1, "Preservation Evoker": 1},
         holyMasteryFlag: true,
         cooldown: 90,
       },
@@ -57,8 +59,8 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       const newData = {...data[0], targets: data[0].targets * (1 + Math.ceil((player.getStatMults(['haste'])-1)*10)/10)};
-
-      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType, additionalData.setStats) * 0.65;
+      const penalty = player.getHPS() * data[0].specPenalty[player.spec] / data[0].cooldown; 
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType, additionalData.setStats) - penalty;
 
       return bonus_stats;
     }
