@@ -55,7 +55,7 @@ export const STATCONVERSION = {
     VERSATILITY_DR: 1560,
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
-      "Restoration Druid": 0.5,
+      "Restoration Druid": 0.728,
       "Mistweaver Monk": 4.2,
       "Holy Paladin": 1.5,
       "Holy Priest": 0.95625,
