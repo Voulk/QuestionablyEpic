@@ -20,6 +20,15 @@ export const changeLog: entry[] = [
     update: 7,
     date: "March 11",
     changes: [ 
+      "Gallagio Bottle service: Slightly revamped how the penalty for spending 4s casting it is calculated. This is a slight bump to its value in most cases.",
+      "Preservation Evoker: Top Gear & Upgrade Finder will now swap flasks / enchants more aggressively to search for the Haste break point.",
+      "Resto Druid: Mastery percentage in Top Gear will now show up correctly. No change to any results."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 7,
+    date: "March 11",
+    changes: [ 
       "Bugfix: Gallagio Bottle Service's coefficient was 5% too low post-buff.",
       "Holy Priest: Added Mastery value to Gallagio Bottle Service & Mr Pick-me-up.",
       "Mr Pick-me-up now uses its true ppm value now that we can confirm it works correctly.",

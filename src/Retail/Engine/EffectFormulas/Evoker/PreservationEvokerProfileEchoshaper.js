@@ -154,7 +154,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const reversionTickCount = reversionDuration / (reversion.tickData.tickRate / getHaste(state.currentStats));
     const reversionHealing = reversionBaseHealing * reversionTickCount;
     healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
-    console.log("Reversion Duration - " + reversionDuration + " - " + reversionTickCount);
+
     const reversionCoverage = reversionDuration * (getCPM(castProfile, "Reversion") + echoReversionCasts) / 20 / 60; // TODO
     reportingData.reversionCoverage = reversionCoverage;
     /// Calculate Golden Hour Healing
@@ -164,7 +164,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     // Tier Set
 
-    console.log(castProfile);
+
 
     // Run healing
     castProfile.forEach(spellProfile => {
@@ -250,7 +250,5 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const totalHealing = sumValues(healingBreakdown);
 
     printHealingBreakdown(healingBreakdown, totalHealing);
-    console.log(reportingData);
-    console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }
