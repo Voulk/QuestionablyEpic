@@ -154,10 +154,6 @@ export const raidTrinketData = [
         holyMasteryFlag: true,
         ppm: 2.5 * 0.8, // Incorrect flagging
       },
-      {  // The damage portion.
-        coefficient: 0,
-        table: -9,
-      },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
