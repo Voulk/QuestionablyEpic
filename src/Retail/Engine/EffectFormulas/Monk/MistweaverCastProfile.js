@@ -1,10 +1,10 @@
 
-import { getCurrentStats, getSpellRaw, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
-import { runHeal, EVOKERCONSTANTS } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
+import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, applyTalents, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { runHeal, runDamage, MONKCONSTANTS } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 import { applyLoadoutEffects, baseTalents } from "./MistweaverTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
-import { spellDB } from "./MistweaverSpellDB";
+import { MONKSPELLS as spellDB } from "./MistweaverSpellDB";
 import { printHealingBreakdown, hasTier, getCPM, getSpellEntry, buildCPM } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 
@@ -12,25 +12,29 @@ const setupTalents = () => {
 
 }
 
-export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
+const getMasteryHeal = (currentStats, mult = 1) => {
+    return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
+}
+
+export const runMistweaverMonkCastProfile = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
-                    talents: {...evokerTalents}, reporting: true, heroTree: "conduitOfTheCelestials", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
+                    talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const localSettings = {gracePeriodOverheal: 0.8};
 
-    state.currentStats.crit += (15 * 700);
 
     const talents = {};
     for (const [key, value] of Object.entries(state.talents)) {
         talents[key] = value.points;
     }
     // Run Talents
-    const playerSpells = applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, talents, state, state.currentStats, EVOKERCONSTANTS);
+    const playerSpells = applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, talents, state, state.currentStats, MONKCONSTANTS);
     //applyTalents(state, playerSpells, state.currentStats)
     state.spellDB = spellDB;
     state.talents = talents;
     const healingBreakdown = {}
+    const damageBreakdown = {}
     //let currentStats = {...playerData.stats};
     //state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const reportingData = {};
@@ -38,22 +42,27 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
 
-
+    const averageHaste = getHaste(state.currentStats);
 
     const castProfile = [
         //{spell: "Echo", cpm: 0},
-        {spell: "Renewing Mist", cpm: 0},
-        {spell: "Living Flame", cpm: 0},
-        {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
-        {spell: "Dream Breath", cpm: 2},       
-        {spell: "Spiritbloom", cpm: buildCPM(playerSpells, "Spiritbloom")},      
-        {spell: "Reversion", cpm: 5},
-        {spell: "Verdant Embrace", cpm: 2}, // Combine with Dream Breath
+        {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
+        {spell: "Vivify", cpm: 5},
+        {spell: "Tiger Palm", cpm: 6.7},
+        {spell: "Rising Sun Kick", cpm: 7.7}, // Adjust CPM dynamically and then lower.
+        {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
+        {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},
+
+
+        // "Spells"
+        {spell: "Courage of the White Tiger", cpm: 4 * averageHaste},
+        /*
         {spell: "Emerald Communion", cpm: buildCPM(playerSpells, "Emerald Communion")},
         {spell: "Dream Flight", cpm: buildCPM(playerSpells, "Dream Flight")},
         {spell: "Temporal Anomaly", cpm: buildCPM(playerSpells, "Temporal Anomaly") * 0.9, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(playerSpells, "Rewind")},
         {spell: "Engulf", cpm: Math.floor(90 / (getSpellAttribute(playerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
+        */
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     // Echo Breakdown
@@ -64,6 +73,46 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         }
     }
     );
+
+    if (true) {
+        // Sequence Chi-ji
+        // Store triple TotM stacks before pressing Chi-ji
+        const tempStats = {...state.currentStats};
+        let hastePercentage = getHaste(tempStats);
+        if (hasTalent(playerData.talents, "invokersDelight")) hastePercentage *= (1 + 0.2 * 0.8);
+        if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.15 * 0.4);
+
+        const chijiDuration = 25; // todo
+        const chijiCasts = chijiDuration / (1.5 / hastePercentage);
+        const chijiCooldown = 120;
+
+        // Chi Cocoons & Jade Bond
+        const chiCocoon = runHeal(state, spellDB["Chi Cocoon"][0], "Chi Cocoon");
+        console.log(chiCocoon);
+        healingBreakdown["Chi Cocoon"] = chiCocoon * (60 / chijiCooldown);
+
+        // Enveloping Breath
+        const envelopingCasts = 6; // TODO: make dynamic
+        const envelopingHeal = runHeal(state, spellDB["Enveloping Breath"][0], "Enveloping Breath") * envelopingCasts * spellDB["Enveloping Breath"][0].buffDuration * getHaste(state.currentStats);
+        healingBreakdown["Enveloping Breath"] = envelopingHeal * (60 / chijiCooldown);
+
+        // Chi-ji Gusts
+        // Each damage spell procs 6 total Gusts
+        const castBreakdown = {
+            "Tiger Palm": 0.25 * chijiCasts,
+            "Rising Sun Kick": 0.25 * chijiCasts,
+            "Blackout Kick": 0.5 * chijiCasts,
+            "Enveloping Mist": 3,
+        }
+
+        const chijiProcs = 6 * (4 + castBreakdown["Tiger Palm"] + castBreakdown["Rising Sun Kick"] + castBreakdown["Blackout Kick"] * 2);
+        let chijiMult = 1
+        reportingData.chijiGusts = chijiProcs;
+        if (hasTalent(playerData.talents, "jadeBond")) chijiMult *= 1.2;
+
+        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getMasteryHeal(state.currentStats) * chijiMult * (60 / chijiCooldown) * 0.7;
+        
+    }
 
 
     // Run healing
@@ -78,8 +127,31 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             // Regular spells
             if (spell.type === "heal" && spellProfile.cpm > 0) {
                 const value = runHeal(state, spell, spellName) ;
-                
+                if (spellName === "Vivify") console.log("VIVIFY", value);
                 spellThroughput += (value * spellCPM);
+
+                if (spell.mastery) {
+                    // Spell procs Gust of Mists.
+                    const masteryHeal = (0.1 + getMastery(state.currentStats, MONKCONSTANTS)) * state.currentStats.intellect * getStatMult(state.currentStats, ["crit", "versatility"], {}, MONKCONSTANTS);
+
+                    healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * spell.mastery * spellCPM));
+
+                }
+                if (spellName === "Vivify") {
+                    const invig = runHeal(state, playerSpells["Invigorating Mist"][0], "Invigorating Mist");
+
+                    healingBreakdown["Invigorating Mist"] = (healingBreakdown["Invigorating Mist"] || 0) + invig * 1 * spellCPM;
+                }
+            }
+            else if (spell.type === "damage") {
+                // Damage spells
+                const value = runDamage(state, spell, spellName);
+
+                if (spell.damageToHeal) {
+                    if (spellName === "Courage of the White Tiger") healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + value * spell.damageToHeal * spellCPM;
+                    else healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + value * spell.damageToHeal * spellCPM;
+                }
+                damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + value * spellCPM;
             }
             else if (spell.type === "buff" && spell.buffType === "heal") {
                 // HoT
@@ -117,7 +189,9 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             if (spellProfile.mult) spellThroughput *= spellProfile.mult;
 
             spellThroughput *= genericHealingIncrease;
-            healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
+
+            if (spellThroughput > 0)  healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
+           
 
         });
     })
@@ -130,7 +204,9 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     //console.log("HPS: " + totalHealing / 60);
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
+    const totalDamage = sumValues(damageBreakdown);
 
+    printHealingBreakdown(damageBreakdown, totalDamage);
     printHealingBreakdown(healingBreakdown, totalHealing);
     console.log(reportingData);
     console.log("HPS: " + Math.round(totalHealing / 60));

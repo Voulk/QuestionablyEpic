@@ -74,17 +74,13 @@ const runStats = (playerData, profile) => {
     
     const results = {};
 
-
-
     stats.forEach(stat => {
         let statHealing = 0;
         let playerStats = JSON.parse(JSON.stringify(playerData.stats));
         playerStats[stat] = playerStats[stat] + 2400;
         const newPlayerData = {...playerData, stats: playerStats};
         for (let i = 0; i < iterations; i++) {
-
             statHealing += runPreservationEvokerCastProfileEchoshaper(newPlayerData).hps;
-            
         }
         results[stat] = statHealing / iterations;
 

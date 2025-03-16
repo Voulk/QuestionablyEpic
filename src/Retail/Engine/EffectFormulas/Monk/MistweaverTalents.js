@@ -2,6 +2,7 @@
 
 export const applyLoadoutEffects = (spells, settings, conduits, state) => {
 
+    return spells;
 }
 
 export const baseTalents = {

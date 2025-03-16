@@ -56,7 +56,7 @@ export const STATCONVERSION = {
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
       "Restoration Druid": 0.728,
-      "Mistweaver Monk": 4.2,
+      "Mistweaver Monk": 6.93,
       "Holy Paladin": 1.5,
       "Holy Priest": 0.95625,
       "Discipline Priest": 1.35,
