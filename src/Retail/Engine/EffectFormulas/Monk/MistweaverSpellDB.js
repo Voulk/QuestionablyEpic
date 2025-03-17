@@ -228,6 +228,18 @@ export const MONKSPELLS = {
         expectedOverheal: 0.2,
         secondaries: ['crit', 'vers'],
     }],
+    "Crackling Jade Lightning": [{
+        type: "damage",
+        damageType: "magic",
+        castTime: 3,
+        channel: true,
+        cost: 0,
+        coeff: 0.224 * 1.04 * 6.25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        aura: 1.04, // AP -> SP conversion.
+        damageToHeal: 0.3, // Note Armor
+        cooldown: 0,
+        secondaries: ['crit', 'vers'],
+    }],
     "Tiger Palm": [{
         type: "damage",
         damageType: "physical",
@@ -271,68 +283,15 @@ export const MONKSPELLS = {
         }
     }],
     "Blackout Kick": [{
-        type: "special",
-        runFunc: function (state) {
-            // Calculate number of bonus kicks.
-            const teachingsBuff = state.activeBuffs.filter(function (buff) {return buff.name === 'Teachings of the Monastery'});
-            const teachingsStacks = (teachingsBuff.length > 0 && teachingsBuff[0]['stacks'] || 0) + 1 
-
-            const atotmBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0;
-            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
-            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
-
-            // For each bonus kick, deal damage and heal via Ancient Teachings if applicable.
-            for (var i = 0; i < teachingsStacks; i++) {
-                // Deal damage
-                const blackoutKick = { type: "damage", damageType: "physical", coeff: 0.847 * 1.04, secondaries: ['crit', 'vers'], targets: 1} 
-                runDamage(state, blackoutKick, "Blackout Kick")
-
-                // Ancient Teachings if applicable.
-                if (atotmBuff) {
-                    const spell = { type: "heal", coeff: 0.847 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, expectedOverheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                    runHeal(state, spell, "Ancient Teachings of the Monastery")
-                }
-
-                // Chiji if applicable 
-                if (chijiBuff)
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                }
-
-                if (CTAchijiBuff)
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                }
-
-                if (chijiBuff || CTAchijiBuff)
-                {
-                    // Add stack of Chiji reduced mana cost
-                    const activeBuffs = state.activeBuffs;
-                    const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
-                    if (chijiStacks === 0) {
-                        // Add buff
-                        activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
-                    }
-                    else {
-                        // Add stack of buff.
-                        const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
-                        buff.stacks = Math.min(buff.stacks + 1, 3);
-                        buff.expiration = 20;
-                    }
-                }
-            }
-
-            // Remove Teachings of the Monastery stacks.
-            const teachingsStacksBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
-            if (teachingsStacksBuff != 0) {
-                const buff = state.activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
-                buff.stacks = 0;
-            }
-        }
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        cost: 2.5,
+        coeff: 0.847 * 1.04 * 1.28, // 1.438 x 1.7 * 0.88 (RSK Rank 2, MW Monk core passive)
+        aura: 1.04, // AP -> SP conversion.
+        damageToHeal: 0.3,
+        cooldown: 3,
+        secondaries: ['crit', 'vers'],
     }],
     "Rising Sun Kick": [{
         type: "damage",

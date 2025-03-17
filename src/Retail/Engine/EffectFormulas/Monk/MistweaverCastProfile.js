@@ -29,7 +29,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         talents[key] = value.points;
     }
     // Run Talents
-    const playerSpells = applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, talents, state, state.currentStats, MONKCONSTANTS);
+    const playerSpells = applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, state, MONKCONSTANTS);
     //applyTalents(state, playerSpells, state.currentStats)
     state.spellDB = spellDB;
     state.talents = talents;
@@ -49,6 +49,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
         {spell: "Vivify", cpm: 5},
         {spell: "Tiger Palm", cpm: 6.7},
+        {spell: "Blackout Kick", cpm: 5.6},
         {spell: "Rising Sun Kick", cpm: 7.7}, // Adjust CPM dynamically and then lower.
         {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
         {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},

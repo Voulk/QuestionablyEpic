@@ -1,6 +1,18 @@
 
 
-export const applyLoadoutEffects = (spells, settings, conduits, state) => {
+const applyTalents = (state, spellDB, stats) => {
+    Object.keys(state.talents).forEach(talentName => {
+        const talent = state.talents[talentName];
+        if (talent.points > 0) {
+            talent.runFunc(state, spellDB, talent.points, stats)
+        }
+    });
+
+}
+
+export const applyLoadoutEffects = (spells, settings, state, MONKCONSTANTS) => {
+
+    applyTalents(state, spells, state.stats);
 
     return spells;
 }
@@ -126,6 +138,11 @@ export const baseTalents = {
     }},
     jadefireTeachings: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // After casting Stomp or TFT: Ancient Teachings transfers an extra 160% damage -> healing. +5% stamina while active.
+        // This has basically a 100% uptime whenever there's relevant healing but we could set a ratio here if we wanted to.
+        spellDB["Tiger Palm"][0].damageToHeal += 1.6;
+        spellDB["Blackout Kick"][0].damageToHeal += 1.6;
+        spellDB["Rising Sun Kick"][0].damageToHeal += 1.6;
+        spellDB["Crackling Jade Lightning"][0].damageToHeal += 1.6;
     }},
     resplendentMist: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // GoM has a 30% chance to heal +75%.
