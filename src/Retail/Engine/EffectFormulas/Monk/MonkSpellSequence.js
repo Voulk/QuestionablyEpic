@@ -4,7 +4,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { MONKSPELLS } from "./MistweaverSpellDB";
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampGeneric/RampBase";
+            getHealth, getCrit, advanceTime, hasTalent, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, getTalentValue } from "../Generic/RampGeneric/RampBase";
 
 export const MONKCONSTANTS = {
     masteryMod: 6.93, 
@@ -16,16 +16,6 @@ export const MONKCONSTANTS = {
     enemyTargets: 1, 
 }
 
-// This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
-    
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, "Kyrian Evangelism", [])
-    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    return boonRamp + fiendRamp + miniRamp * 2;
-}
-
 
 /** A spells damage multiplier. It's base damage is directly multiplied by anything the function returns.
  * @schism 25% damage buff to primary target if Schism debuff is active.
@@ -33,13 +23,18 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
-const getDamMult = (buffs, t, spellName) => {
+const getDamMult = (state, t, spellName, spell) => {
     let mult = 1
 
-    if (MONKSPELLS[spellName].damageType === "Physical")
+    if (spell.damageType === "physical")
     {
         mult *= 1.05 // Mystic Touch.
+
+        if (hasTalent(state.talents, "martialInstincts")) mult *= (1 + getTalentValue(state.talents, "martialInstincts"))
     }
+
+    if (hasTalent(state.talents, "ferocityOfXuen")) mult *= (1 + getTalentValue(state.talents, "ferocityOfXuen"))
+        
 
     return mult; 
 }
@@ -81,128 +76,17 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
     // As always, Top Gear is able to provide a more complete picture. 
 
     if (settings['DefaultLoadout']) {
-        //settings['Clarity of Mind'] = true;
-        //settings['Pelagos'] = true;
-        //conduits['Shining Radiance'] = 239;
-        //conduits['Rabid Shadows'] = 239;
-        //conduits['Courageous Ascension'] = 239;
 
-        if (settings['covenant'] === "Necrolord") {
-            settings['soulbind'] = "Emeni"
-        }
-        else if (settings['covenant'] === "Night Fae") {
-            settings['soulbind'] = "Dreamweaver"
-        }
-        else if (settings['covenant'] === "Kyrian") {
-            settings['soulbind'] = "Kleia"
-        }
-        else if (settings['covenant'] === "Venthyr") {
-            settings['soulbind'] = "Theotar"
-        }
-    }
-
-    // === Legendaries ===
-    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
-
-    // -- Invoker's Delight --
-    // 33% haste for 20s when summoning celestial
-    if (settings['legendaries'].includes("Invoker's Delight")) 
-    {
-        spells['Invoke Chiji'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.33,
-            buffDuration: 20,
-        });
-
-        spells['Invoke Yulon'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.33,
-            buffDuration: 20,
-        });
-    }
-
-    // === Soulbinds ===
-    // Don't include Conduits here just any relevant soulbind nodes themselves.
-    // This section can be expanded with more nodes, particularly those from other covenants.
-    // Examples: Combat Meditation, Pointed Courage
-    if (settings['soulbind'] === "Dreamweaver") {
-        spells['Faeline Stomp'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.15,
-            buffDuration: 6,
-    });
-        // Chrysalis
-        state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
-        state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
-    }
-
-    if (settings['soulbind'] === "Pelagos") {
-        spells['Weapons of Order'].push({
-            name: "Combat Meditation",
-            type: "buff",
-            buffType: 'stats',
-            stat: 'mastery',
-            value: 315,
-            buffDuration: 32,
-        });
-
-        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
-    }
-    
-    // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
-    if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 385, stat: 'crit'})
-
-    if (settings['soulbind'] === "Emeni") {
-        spells['Bonedust Brew'].push({
-            name: "Lead by Example",
-            type: "buff",
-            buffType: 'statsMult',
-            stat: 'intellect',
-            value: 1.13,
-            buffDuration: 10,
-        });
-    }
-
-    if (settings['soulbind'] === "Theotar") {
-        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
-        state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
     }
 
 
-    // === Trinkets ===
-    // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
-    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
-    if (settings["Instructor's Divine Bell"]) spells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
-    if (settings["Flame of Battle"]) spells["Flame of Battle"][0].value = settings["Flame of Battle"];
-    if (settings['Shadowed Orb']) spells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
-    if (settings['Soulletting Ruby']) spells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
-    //
-
-    // === Conduits ===
-    // These are all scaled based on Conduit rank.
-    // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
-    // Examples of would be Condensed Anima Sphere.
-    if (conduits['Courageous Ascension']) spells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
-    if (conduits['Shining Radiance']) spells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) spells['Shadowfiend'][0].dot.tickRate = spells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
-    if (conduits['Exaltation']) {
-        spells['Rapture'][1].buffDuration = 9;
-        spells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
-    }
-    //
 
     return spells;
 }
 
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
-    let damMultiplier = getDamMult(state.activeBuffs, state.t, spellName); // Get our damage multiplier (Schism, Sins etc);
+    let damMultiplier = getDamMult(state, state.t, spellName, spell); // Get our damage multiplier (Schism, Sins etc);
     if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
     const damageVal = getSpellRaw(spell, state.currentStats, MONKCONSTANTS) * damMultiplier;
 

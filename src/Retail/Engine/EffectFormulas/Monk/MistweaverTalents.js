@@ -21,6 +21,8 @@ export const baseTalents = {
     // Tier 1
     fastFeet: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // +70% RSK damage, +10% SCK damage
+        spellDB["Rising Sun Kick"][0].coeff *= 1.7;
+        //spellDB["Spinning Crane Kick"][0].coeff *= 1.7;
     }},
     graceOfTheCrane: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // +4% healing tkn
@@ -30,8 +32,8 @@ export const baseTalents = {
     }},
 
     // Class Tree Tier 2
-    ferocityOfXuen: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        // +2% damage done
+    ferocityOfXuen: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, value: 0.02, runFunc: function (state, spellDB, points) {
+        // +2% damage done. In getDamMult
     }},
     vigorousExpulsion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         // +5% Expel Harm healing, +15% crit chance
@@ -44,8 +46,8 @@ export const baseTalents = {
     chiProficiency: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         // +2% magic damage done. +2% healing done.
     }},
-    martialInstincts: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
-        // +2% physical damage done.
+    martialInstincts: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, value: 0.02, runFunc: function (state, spellDB, points) {
+        // +2% physical damage done per point.
     }},
 
     // Spec Tree Tier 1
