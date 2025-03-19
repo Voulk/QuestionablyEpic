@@ -10,10 +10,10 @@ import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
 import GameTypeSwitch from "../SetupAndMenus/GameTypeToggle";
 import { classRaceDB } from "../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../Databases/ServerDB";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColours } from "General/Engine/ClassData";
 import { useSelector } from "react-redux";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import raceIcons from "General/Modules/IconFunctions/RaceIcons";;
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { getTranslatedClassName } from "locale/ClassNames";
 

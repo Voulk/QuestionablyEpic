@@ -4,9 +4,8 @@ import { useTranslation } from "react-i18next";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@mui/material";
 import LogLinkInput from "../../../SystemTools/LogImport/LogLinkInput";
 import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../../CooldownPlanner/Functions/Functions";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColours } from "General/Engine/ClassData";
 import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorButton";
-import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
 import { styled } from "@mui/system";
 
@@ -302,7 +301,7 @@ export default function QELogImport(props) {
                   align="center"
                   color="primary"
                 >
-                  {bossIcons(currentBossID)}
+                  {}
                   {showSelectedFight ? bossName : t("InsertLog.PlsSelectFight")}
                 </Typography>
                 <Typography

@@ -37,9 +37,9 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Autocomplete from "@mui/material/Autocomplete";
 import ClearIcon from "@mui/icons-material/Clear";
 import { red } from "@mui/material/colors";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions.js";
-import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import { classColours } from "General/Engine/ClassData";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import raceIcons from "General/Modules/IconFunctions/RaceIcons";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
@@ -364,9 +364,9 @@ export default function CharCards(props) {
                 <Grid container style={{ marginTop: 1 }} spacing={0.5}>
                   {/* ------------------------ Character name and Realm ------------------------ */}
                   <Grid item xs={10}>
-                    <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColoursJS(spec), display: "inline-flex" }}>
+                    <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColours(spec), display: "inline-flex" }}>
                       {props.name}
-                      <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColoursJS(spec) }} placement="top">
+                      <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColours(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                         {classIcons(spec, {
                           height: 20,

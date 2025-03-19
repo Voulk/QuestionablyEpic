@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material/";
-import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import { classColours } from "General/Engine/ClassData";
 
 export default function CharacterHeaderButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);

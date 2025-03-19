@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import CustomRoute from "./CustomRoute";
 import ReportRoute from "./ReportRoute";
-import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
 import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
@@ -23,8 +22,7 @@ import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import * as ls from "local-storage";
-import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
-import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
+import QESnackbar from "General/Modules/BasicComponents/QESnackBar";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
@@ -368,11 +366,8 @@ const App = () => {
                       />
                     )}
                   />
-                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={patronStatus} />} />
-                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={patronStatus} />} />
-                  <Route path="/holydiver" render={() => <TestingPage />} />
                   <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
-                  <Route path="/oneshot" render={() => <OneShot/>} />
+
 
                   <CustomRoute 
                     player={activePlayer} 

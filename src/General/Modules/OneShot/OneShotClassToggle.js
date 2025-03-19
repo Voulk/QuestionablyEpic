@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
 import { Grid, ToggleButtonGroup, ToggleButton, Typography, Paper, Tooltip } from "@mui/material";
 import { getClassIconCD, getTranslatedClassNameCD, getSpecIconCD, getTranslatedSpecNameCD } from "locale/ClassNames";
 import { useTranslation } from "react-i18next";
