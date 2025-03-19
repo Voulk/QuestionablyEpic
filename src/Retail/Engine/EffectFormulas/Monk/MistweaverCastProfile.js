@@ -50,7 +50,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
-        {spell: "Enveloping Mist", cpm: 3},
+        {spell: "Enveloping Mist", cpm: 5},
         {spell: "Vivify", cpm: 5},
         {spell: "Tiger Palm", cpm: 4.8, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 3.7, hastedCPM: true},
@@ -60,7 +60,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         
 
         // "Spells"
-        {spell: "Courage of the White Tiger", cpm: 4 * averageHaste},
+        {spell: "Courage of the White Tiger", cpm: 4 * averageHaste + 0.5},
+        {spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5}, // Identical to White Tiger
 
         {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
         //{spell: "Chrono Flame", cpm: 0},     
@@ -84,12 +85,15 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         // 6s of Renewing Mist for each RSK / EnV cast. These HoTs do benefit from Chi Harmony.
         const casts = getSpellEntry(castProfile, "Enveloping Mist").cpm + getSpellEntry(castProfile, "Rising Sun Kick").cpm;
         freeRenewingMistSec = casts * 6;
+        freeRenewingMistSec *= (1 + localSettings.risingMist.remRapidDiffusion);
     }
 
     // Calculate average ReM count
     const averageRemCount = (getSpellEntry(castProfile, "Renewing Mist").cpm * 20 * (1 + localSettings.risingMist.remStandard) 
                                 + freeRenewingMistSec) / 60;
     reportingData.averageRemCount = averageRemCount;
+    const zenPulsePPM = 1.2 + hasTalent(playerData.talents, "deepClarity") ? 2 : 0; // TODO
+    genericHealingIncrease *= (0.5 * averageRemCount / 20 * (8 / 20) + 1) // TODO: Only applies for 8s so don't count all 20.
 
     if (true) {
         // Sequence Chi-ji
@@ -156,7 +160,10 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                 if (spellName === "Vivify") {
                     const invig = runHeal(state, playerSpells["Invigorating Mist"][0], "Invigorating Mist");
 
-                    healingBreakdown["Invigorating Mist"] = (healingBreakdown["Invigorating Mist"] || 0) + invig * 1 * spellCPM;
+                    healingBreakdown["Invigorating Mist"] = (healingBreakdown["Invigorating Mist"] || 0) + invig * averageRemCount * spellCPM;
+
+                    const zenPulse = runHeal(state, playerSpells["Zen Pulse"][0], "Zen Pulse");
+                    healingBreakdown["Zen Pulse"] = (healingBreakdown["Zen Pulse"] || 0) + zenPulse * averageRemCount * Math.min(zenPulsePPM, spellCPM);
                 }
             }
             else if (spell.type === "damage") {
@@ -164,7 +171,9 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                 const value = runDamage(state, spell, spellName);
 
                 if (spell.damageToHeal) {
-                    if (spellName === "Courage of the White Tiger") healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + value * spell.damageToHeal * spellCPM;
+                    if (spellName === "Courage of the White Tiger") {
+                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + value * spell.damageToHeal * spellCPM;
+                    }
                     else healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + value * spell.damageToHeal * spellCPM;
                 }
                 damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + value * spellCPM;
@@ -208,7 +217,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
             // Spell Slice complete
             if (spellProfile.mult) spellThroughput *= spellProfile.mult;
 
-            spellThroughput *= genericHealingIncrease;
+            //spellThroughput *= genericHealingIncrease;
 
             if (spellThroughput > 0)  healingBreakdown[spellName] = Math.round((healingBreakdown[spellName] || 0) + (spellThroughput));
            
@@ -218,7 +227,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // Grace Period
     Object.keys(healingBreakdown).forEach(key => {
-        healingBreakdown[key] *= (1);
+        //healingBreakdown[key] *= (1);
+        healingBreakdown[key] *= genericHealingIncrease;
     })
 
     //console.log("HPS: " + totalHealing / 60);

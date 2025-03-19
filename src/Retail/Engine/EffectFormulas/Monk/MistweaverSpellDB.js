@@ -73,12 +73,13 @@ export const MONKSPELLS = {
         coeff: 1.2428,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'],
-        runFunc: function (state) {
-            // Heal allies with Renewing Mist.
-            const activeRem = state.activeBuffs.filter(function (buff) {return buff.name === "Renewing Mist"})
-            const spell = { type: "heal", coeff: 1.2428, expectedOverheal: 0.35, secondaries: ['crit', 'vers'], targets: activeRem.length} 
-            if (activeRem.length > 0) runHeal(state, spell, "Vivify (Cleave)")
-        }
+    }],
+    "Zen Pulse": [{ 
+        type: "heal",
+        castTime: 0,
+        coeff: 1.6,
+        expectedOverheal: 0.35,
+        secondaries: ['crit', 'vers'],
     }],
     "Celestial Conduit": [{
         type: "heal",
@@ -385,6 +386,16 @@ export const MONKSPELLS = {
         damageToHeal: 2, // Note Armor
         cooldown: 0,
         secondaries: ['crit', 'vers'],
+    }],
+    "Strength of the Black Ox": [{
+        type: "heal",
+        castTime: 0,
+        coeff: 0,
+        flatHeal: 7500000 * 0.03,
+        offGCD: true, // Called by another spell
+        expectedOverheal: 0.07,
+        targets: 5,
+        secondaries: ['vers'],
     }],
     "Chi Burst": [{
         // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
