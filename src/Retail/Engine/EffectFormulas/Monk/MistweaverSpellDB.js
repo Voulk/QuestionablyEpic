@@ -1,5 +1,5 @@
-import { buildDifferential } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { runHeal, getHaste, runDamage } from "./MonkSpellSequence";
+import { runHeal  } from "./MonkSpellSequence";
+import { getHaste } from "./../Generic/RampGeneric/RampBase";
 
 
 // This is the Mistweaver spell database. 

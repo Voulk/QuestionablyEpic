@@ -282,7 +282,7 @@ export default function QELogImport(props) {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
                         <MenuItem divider={lastItem} key={i} value={key.name}>
-                          <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
+                          <div style={{ color: classColours(key.type) }}>{key.name}</div>
                         </MenuItem>
                       );
                     })}

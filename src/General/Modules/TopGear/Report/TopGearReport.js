@@ -342,20 +342,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                         display="inline"
                                         align="left"
                                         style={{
-                                          color: classColoursJS(player.spec),
+                                          color: classColours(player.spec),
                                         }}
                                       >
                                         {player.name}
                                       </Typography>
 
-                                      <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColoursJS(player.spec) }} placement="top" arrow>
+                                      <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColours(player.spec) }} placement="top" arrow>
                                         {classIcons(player.spec, {
                                           height: 22,
                                           width: 22,
                                           marginLeft: 4,
                                           verticalAlign: "middle",
                                           borderRadius: 4,
-                                          border: "1px solid " + classColoursJS(player.spec),
+                                          border: "1px solid " + classColours(player.spec),
                                         })}
                                       </Tooltip>
                                     </div>

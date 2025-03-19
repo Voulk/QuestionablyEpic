@@ -186,7 +186,7 @@ export default function WelcomeDialog(props: WelcomeDialogProps) {
                     .map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem divider={lastItem} key={i} value={key} style={{ color: classColoursJS(key) }}>
+                        <MenuItem divider={lastItem} key={i} value={key} style={{ color: classColours(key) }}>
                           <div style={{ display: "inline-flex" }}>
                             {classIcons(key, {
                               height: 20,
