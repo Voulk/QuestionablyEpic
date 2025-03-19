@@ -15,7 +15,6 @@ import UpgradeFinderReport from "General/Modules/UpgradeFinder/UpgradeFinderRepo
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import { createPlayerChars } from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSets";
-import OneShot from "General/Modules/OneShot/OneShot";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
 import i18n from "./i18n";

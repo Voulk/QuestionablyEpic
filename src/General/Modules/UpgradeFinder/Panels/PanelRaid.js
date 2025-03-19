@@ -7,7 +7,7 @@ import { encounterDB } from "../../../../Databases/InstanceDB";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
-import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import bossHeaders from "General/Modules/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import UFAccordion from "./ufComponents/ufAccordian";

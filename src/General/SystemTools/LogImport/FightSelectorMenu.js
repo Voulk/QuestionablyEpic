@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import moment from "moment";
 import { MenuItem, ListSubheader, Collapse, Divider } from "@mui/material";
-import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
+import { fightDuration, logDifficulty } from "General/Modules/BasicComponents/Functions";
 import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";
 import axios from "axios";
 import { accessToken } from "./accessToken";
