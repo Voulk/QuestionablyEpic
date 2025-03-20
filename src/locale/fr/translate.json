@@ -1,70 +1,70 @@
 {
   "translations": {
-    "Account": "Account",
-    "Add": "Add",
+    "Account": "Compte",
+    "Add": "Ajouter",
     "BadgeGear": "Badges of Justice",
     "Battletag": "Battletag",
     "Bonus DPS": "Bonus DPS",
     "Bonus HPS": "Bonus HPS",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Annuler",
-    "Casts": "Casts",
-    "Catalyst": "Catalyst",
+    "Casts": "Lancer",
+    "Catalyst": "Catalyseur",
     "Changelog": {
       "Date": "Date",
-      "Header": "Changelog",
-      "LastUpdated": "Last Updated",
-      "Update": "Update",
+      "Header": "Journal des changements",
+      "LastUpdated": "Dernière mise à jour",
+      "Update": "Mise à jour",
       "Version": "Version"
     },
     "CharacterCreator": {
       "AddChar": "Ajouter un personnage",
-      "CharName": "Character Name",
-      "CharacterInfo": "Character Information",
-      "CreateChar": "Create New Character",
-      "DeleteCharacter": "Delete Character",
+      "CharName": "Nom du personnage",
+      "CharacterInfo": "Information du personnage",
+      "CreateChar": "Créer nouveau personnage",
+      "DeleteCharacter": "Supprimer personnage",
       "SavedLogs": {
         "Boss": "Boss",
-        "FightLength": "Fight Length",
+        "FightLength": "Durée du combat",
         "HPS": "HPS",
-        "Header": "Current Log",
-        "RawHPS": "Raw HPS",
-        "Report": "Report",
-        "ResetToDefaults": "Reset to Defaults",
-        "TabHeader": "Saved Logs(Coming Soon)"
+        "Header": "Log actuels",
+        "RawHPS": "HPS brut",
+        "Report": "Rapport",
+        "ResetToDefaults": "Réinitialiser",
+        "TabHeader": "Sauvegarder Logs(Bientôt)"
       },
-      "ServerName": "Server Name",
-      "StatMessage": "While Stat Weights are editable, the QE Live defaults are recommended for most situations.",
-      "StatWeights": "Stat Weights"
+      "ServerName": "Nom du serveur",
+      "StatMessage": "Bien que les poids statistiques soient modifiables, les valeurs par défaut de QE Live sont recommandées dans la plupart des situations.",
+      "StatWeights": "Poids des Stat"
     },
     "Class": "Classe",
     "Cooldown": "Recharge",
     "CooldownPlanner": {
       "AddPlanDialog": {
-        "ButtonLabel": "Add",
-        "ButtonTooltip": "Add a new plan with a sample log, a set of defaults, or a blank slate.",
-        "HeaderTitle": "Enter Plan Name"
+        "ButtonLabel": "Ajouter",
+        "ButtonTooltip": "Ajoutez un nouveau plan avec un exemple de journal, un ensemble de valeurs par défaut ou une ardoise vierge.",
+        "HeaderTitle": "Entrer un nom de plan"
       },
       "ChartLabels": {
-        "MitigatedDamageLabel": "Mitigated",
-        "UnmitigatedDamageLabel": "Unmitigated"
+        "MitigatedDamageLabel": "Mitigé",
+        "UnmitigatedDamageLabel": "Non mitigé"
       },
       "CopyPlanDialog": {
-        "ButtonLabel": "Copy",
-        "ButtonTooltip": "Copy a plan under a new name",
-        "NewPlanTitle": "New Plan Name",
-        "SelectPlanTitle": "Select plan to copy"
+        "ButtonLabel": "Copier",
+        "ButtonTooltip": "Copier votre plan sous un nouveau nom.",
+        "NewPlanTitle": "Nouveau nom de plan",
+        "SelectPlanTitle": "Selectionner un plan à copier"
       },
       "DeletePlanDialog": {
-        "ButtonLabel": "Delete",
-        "ButtonTooltip": "Delete your plan permanently.",
-        "HeaderTitle": "Are you sure you want to delete the current plan?",
-        "PlaceholderText": "Type 'Delete' to confirm"
+        "ButtonLabel": "Supprimer",
+        "ButtonTooltip": "Supprimer définitivement votre plan.",
+        "HeaderTitle": "Est-tu certain de vouloir supprimer ce plan?",
+        "PlaceholderText": "Tappe 'Supprimer' pour confirmer"
       },
-      "DuplicatePlanError": "Duplicate plan name detected, please choose another.",
+      "DuplicatePlanError": "Nom de plan en double détecté, veuillez en choisir un autre.",
       "ExportPlanDialog": {
-        "ButtonLabel": "Export",
-        "HeaderTitle": "Export Plan"
+        "ButtonLabel": "Exporter",
+        "HeaderTitle": "Exporter Plan"
       },
       "Headers": {
         "CooldownTimeline": "Cooldown Timeline",
@@ -345,20 +345,20 @@
       "MythicPlusHeader": "Mythic Plus Ilvl (Keys & Valor)",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
-      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
-      "RaidDifficultyHeader": "Raid Difficulty",
-      "SimCBody1Good": "Import - All Set!",
-      "SimCBody1Invalid": "Import - Empty Item Slot",
-      "SimCBody1Missing": "Import - Missing",
-      "SimCBody2": "Current Equipped Gear:",
-      "SimCButton": "Import Gear",
+      "RaidDifficultyBody": "Sélectionnez jusqu'à deux difficultés pour trouver des mises à niveau à partir de",
+      "RaidDifficultyHeader": "Difficultée de Raid",
+      "SimCBody1Good": "Import - Tout paramétrer!",
+      "SimCBody1Invalid": "Import - Emplacement vide",
+      "SimCBody1Missing": "Import - Manquant",
+      "SimCBody2": "Equipement actuellement équipé:",
+      "SimCButton": "Import équipement",
       "SimCHeader": "SimC/QE Import"
     },
     "Welcome": {
-      "ContinueMessage": "To begin using the app, add one of your characters below.",
-      "CreateCharacter": "Create Character",
-      "GameTypeMessage": "Select which version you'd like to start with.",
-      "WelcomeTo": "Welcome To"
+      "ContinueMessage": "Pour commencer à utiliser l'application, ajoutez l'un de vos personnages ci-dessous.",
+      "CreateCharacter": "Créer personnage",
+      "GameTypeMessage": "Sélectionnez la version avec laquelle vous souhaitez commencer.",
+      "WelcomeTo": "Bienvenue à "
     },
     "WrathOfTheLichKing": "Wrath of the Lich King",
     "Yes": "Oui",
