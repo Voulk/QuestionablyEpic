@@ -1,5 +1,5 @@
-import { buildDifferential } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { runHeal, getHaste, runDamage } from "./MonkSpellSequence";
+import { runHeal } from "./MonkSpellSequence";
+import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 
 
 // This is the Mistweaver spell database. 
@@ -488,6 +488,17 @@ export const MONKSPELLS = {
                 runHeal(state, masteryProc, "Gust of Mists (Revival)")
             }
         }
+    }],
+    "Insurance": [{
+        type: "buff",
+        buffName: "Insurance",
+        buffType: "heal",
+        tickData: {tickRate: 3, canPartialTick: true},
+        targets: 1,
+        coeff: 0.55223, 
+        buffDuration: 15,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers']
     }],
 }
 

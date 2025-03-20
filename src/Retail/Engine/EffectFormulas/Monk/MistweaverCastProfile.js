@@ -44,6 +44,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     let genericHealingIncrease = 1; // Should be handled in runHeal
     let genericCritIncrease = 1;
     let freeRenewingMistSec = 0;
+    let freeInsuranceProcs = 0;
 
     const averageHaste = getHaste(state.currentStats);
 
@@ -64,6 +65,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         {spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5}, // Identical to White Tiger
 
         {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
+        {spell: "Insurance", cpm: 5, hastedCPM: true},
         //{spell: "Chrono Flame", cpm: 0},     
       ]
 
@@ -75,6 +77,9 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     }
     );
 
+    // Insurance
+    freeInsuranceProcs += getSpellEntry(castProfile, "Renewing Mist").cpm;
+
     // Adjust CPMs
     getSpellEntry(castProfile, "Jadefire Stomp").cpm += (getKickCPM(castProfile) * 0.12 * 0.55); // High wastage
     reportingData.extraStomps = getKickCPM(castProfile) * 0.12 * 0.5;
@@ -84,8 +89,10 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     if (hasTalent(playerData.talents, "rapidDiffusion")) {
         // 6s of Renewing Mist for each RSK / EnV cast. These HoTs do benefit from Chi Harmony.
         const casts = getSpellEntry(castProfile, "Enveloping Mist").cpm + getSpellEntry(castProfile, "Rising Sun Kick").cpm;
+        freeInsuranceProcs += casts;
         freeRenewingMistSec = casts * 6;
         freeRenewingMistSec *= (1 + localSettings.risingMist.remRapidDiffusion);
+        
     }
 
     // Calculate average ReM count
@@ -189,17 +196,26 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                     secondaries: spell.secondaries,
                 }
                 const oneTickHealing = runHeal(state, oneTick, spellName);
+                
                 let tickCount = spell.ignoreHaste ? 
                     (spell.buffDuration / (spell.tickData.tickRate))
                         :
                     (spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
-
+                let bonusTickCount = 0;
                 
                 if (spellName === "Renewing Mist") {
                     tickCount *= (localSettings.risingMist.remStandard + 1);
+                    tickCount += (freeRenewingMistSec / (spell.tickData.tickRate / getHaste(state.currentStats)));
+                }
+                else if (spellName === "Insurance") {
+                    // Get bonus ticks from Renewing Mist casts
+                    bonusTickCount += (freeInsuranceProcs * 6 / (spell.tickData.tickRate / getHaste(state.currentStats)));
+                    reportingData.freeInsuranceProcs = freeInsuranceProcs;
+                    reportingData.totalInsuranceTickCount = tickCount;
+                    reportingData.insuranceHealTick = oneTickHealing;
                 }
 
-                spellThroughput += oneTickHealing * tickCount * spellCPM;
+                spellThroughput += oneTickHealing * (tickCount * spellCPM + bonusTickCount);
 
             }
             else if (spell.type === "function") {
