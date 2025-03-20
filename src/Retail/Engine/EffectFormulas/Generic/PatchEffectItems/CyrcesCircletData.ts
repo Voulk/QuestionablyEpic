@@ -377,7 +377,7 @@ export const circletGemData: Array<circletGemType> = [
         //table: -9,
         targets: 5,
         ppm: 4,
-        efficiency: 0.6,
+        efficiency: 0.55,
         secondaries: ['versatility', 'haste'], // Cannot currently crit
       },
     ],
