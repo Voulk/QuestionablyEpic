@@ -27,7 +27,7 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    groupBuffValuation: {value: "75%", options: ["50%", "75%", "100%"], category: "trinkets", type: "selector", gameType: "Retail"},
+    groupBuffValuation: {value: "50%", options: ["50%", "75%", "100%"], category: "trinkets", type: "selector", gameType: "Retail"},
     //incarnateAllies: { value: "Tank + DPS", options: ["Solo", "DPS", "Tank", "Tank + DPS"], category: "trinkets", type: "selector", gameType: "Retail" },
     //broodkeeperCloseTime: {value: 70, options: [], category: "trinkets", type: "Entry", gameType: "Retail"},
     //idolGems: { value: 2, options: [1, 2, 3, 4, 5, 6, 7, 8], category: "trinkets", type: "input", gameType: "Retail" },
@@ -36,7 +36,7 @@ const initialState : RootState = {
     creepingCoagOverheal: { value: 36, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     misterPickMeUpOverheal: { value: 22, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     ovinaxAverageIntStacks: { value: 15, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    fightTimer: { value: 400, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    //fightTimer: { value: 400, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     //syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     delayOnUseTrinkets: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },

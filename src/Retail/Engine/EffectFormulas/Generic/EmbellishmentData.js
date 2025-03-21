@@ -79,7 +79,7 @@ export const embellishmentData = [
         table: -571,
         duration: 15, 
         ppm: 2,
-        efficiency: 0.7,
+        efficiency: 0.55,
       },
       { 
         coefficient: 0.040916,
