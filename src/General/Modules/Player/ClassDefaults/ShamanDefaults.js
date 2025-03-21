@@ -67,8 +67,8 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1,
-        c180: 1.1,
+        c120: 1.2,
+        c180: 1,
 
         oneMinute: 1.1,
         ninetySeconds: 1,
@@ -86,7 +86,7 @@ export const shamanDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1,
+        c120: 1.1,
         c180: 1,
 
         oneMinute: 1.1,

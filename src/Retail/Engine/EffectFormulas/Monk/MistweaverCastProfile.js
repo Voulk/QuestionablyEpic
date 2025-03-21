@@ -45,6 +45,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     let genericCritIncrease = 1;
     let freeRenewingMistSec = 0;
     let freeInsuranceProcs = 0;
+    let averageTeachingsStacks = 0;
 
     const averageHaste = getHaste(state.currentStats);
 
@@ -79,6 +80,10 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // Insurance
     freeInsuranceProcs += getSpellEntry(castProfile, "Renewing Mist").cpm;
+
+    // TotM
+    averageTeachingsStacks = (getSpellEntry(castProfile, "Tiger Palm").cpm * (hasTalent(playerData.talents, "awakenedJadefire") ? 2 : 1)) / getSpellEntry(castProfile, "Blackout Kick").cpm;
+    reportingData.averageTeachingsStacks = averageTeachingsStacks;
 
     // Adjust CPMs
     getSpellEntry(castProfile, "Jadefire Stomp").cpm += (getKickCPM(castProfile) * 0.12 * 0.55); // High wastage
@@ -175,7 +180,11 @@ export const runMistweaverMonkCastProfile = (playerData) => {
             }
             else if (spell.type === "damage") {
                 // Damage spells
-                const value = runDamage(state, spell, spellName);
+                let value = runDamage(state, spell, spellName);
+
+                if (spellName === "Blackout Kick") {
+                    value *= 1 + averageTeachingsStacks;
+                }
 
                 if (spell.damageToHeal) {
                     if (spellName === "Courage of the White Tiger") {

@@ -87,7 +87,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
     let damMultiplier = getDamMult(state, state.t, spellName, spell); // Get our damage multiplier (Schism, Sins etc);
-    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
+    //if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
     const damageVal = getSpellRaw(spell, state.currentStats, MONKCONSTANTS) * damMultiplier;
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
