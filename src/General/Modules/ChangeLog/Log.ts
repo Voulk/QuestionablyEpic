@@ -18,7 +18,7 @@ export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
     update: 7,
-    date: "March 11",
+    date: "March 13",
     changes: [ 
       "Gallagio Bottle service: Slightly revamped how the penalty for spending 4s casting it is calculated. This is a slight bump to its value in most cases.",
       "Preservation Evoker: Top Gear & Upgrade Finder will now swap flasks / enchants more aggressively to search for the Haste break point.",

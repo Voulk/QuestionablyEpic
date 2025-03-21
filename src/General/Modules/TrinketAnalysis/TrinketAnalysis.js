@@ -320,7 +320,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket. Expect more trinket tuning."  :
+  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket. Sigil of Algari Concordance (not on chart) is a potentially powerful ally buff trinket with huge variance. There was no fair way to evaluate it below but it's worth a special mention - just know that its performance will vary widely pull-to-pull from the bottom of the chart to the top!."  :
                                               "";
 
   return (
