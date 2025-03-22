@@ -160,7 +160,7 @@ export const raidTrinketData = [
       const efficiency = 1 - (getSetting(additionalData.settings, "misterPickMeUpOverheal") / 100 || 0);
       const newData = {...data[0], efficiency: efficiency};
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType, additionalData.setStats);
+      bonus_stats.hps = runGenericFlatProc(newData, itemLevel, player, additionalData.contentType, additionalData.setStats);
       bonus_stats.dps = 0;
 
       return bonus_stats;
