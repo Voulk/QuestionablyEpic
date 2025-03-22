@@ -18,6 +18,16 @@ export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
     update: 7,
+    date: "March 21",
+    changes: [ 
+      "In-game: Mister Pick-me-up nerfed 10%.",
+      "Removed Sigil of Algari Concordance from chart & added a note on it.",
+      "Cyrce's Circlet: Fixed a bug with the Old Salt Top Gear options",
+      "Removed some inactive trinkets from the chart.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 7,
     date: "March 13",
     changes: [ 
       "Gallagio Bottle service: Slightly revamped how the penalty for spending 4s casting it is calculated. This is a slight bump to its value in most cases.",
