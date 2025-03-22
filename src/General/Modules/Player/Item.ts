@@ -101,8 +101,8 @@ export class Item {
                               {label: "Stormbringers, Mariners, Skippers", id: [228638, 228644, 228646]},
                               {label: "Stormbringers, Mariners, Windsingers", id: [228638, 228644, 228640]},
                               {label: "Thunderlords, Mariners, Windsingers", id: [228634, 228644, 228640]},
-                              {label: "Stormbringers, Mariners, Old Salts", id: [228638, 228644, 462531]},
-                              {label: "Stormbringers, Fathomdwellers, Old Salts", id: [228638, 228639, 462531]},
+                              {label: "Stormbringers, Mariners, Old Salts", id: [228638, 228644, 228643]},
+                              {label: "Stormbringers, Fathomdwellers, Old Salts", id: [228638, 228639, 228643]},
                             ]
         this.selectedOptions = this.customOptions[0].id;
       }

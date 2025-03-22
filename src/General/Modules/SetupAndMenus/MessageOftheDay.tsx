@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "QE Live is updated for 11.1 and the trinket tuning on 27/2."
+    "The nerf to Mister Pick-me-up is in. It's still immensely strong."
   ]
 ;
   if (messageOfTheDay.length === 0) return;
