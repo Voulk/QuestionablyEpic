@@ -186,26 +186,24 @@ export const MONKSPELLS = {
         offGCD: true,
         cost: 0,
         buffDuration: 10,
+        cooldownData: {cooldown: 30, charges: 1},
     },],
     "Refreshing Jade Wind": [{
-        type: "heal",
         castTime: 0,
-        cost: 3.5,
-        coeff: 0.116,
-        targets: 6,
-        expectedOverheal: 0.2,
+        cost: 0,
+        offGCD: true,
+
+        type: "buff",
+        buffType: "heal",
+        coeff: 0.145,
+        tickData: {tickRate: 0.75, canPartialTick: true},
+        buffDuration: 6,
+        targets: 5,
+        expectedOverheal: 0.25,
         secondaries: ['crit', 'vers'],
     },
     {
-        type: "buff",
-        buffType: "heal",
-        coeff: 0.116,
-        tickRate: 0.75,
-        buffDuration: 9,
-        hastedDuration: true,
-        targets: 6,
-        expectedOverheal: 0.2,
-        secondaries: ['crit', 'vers'],
+
     }],
     "Crackling Jade Lightning": [{
         type: "damage",
@@ -213,7 +211,7 @@ export const MONKSPELLS = {
         castTime: 3,
         channel: true,
         cost: 0,
-        coeff: 0.224 * 1.04 * 6.25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        coeff: 0.224 * 1.04 * 6.25 * 25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
         aura: 1.04, // AP -> SP conversion.
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,

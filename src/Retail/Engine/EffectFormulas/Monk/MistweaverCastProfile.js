@@ -2,7 +2,7 @@
 import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, applyTalents, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { runHeal, runDamage, MONKCONSTANTS } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
 import { applyLoadoutEffects, baseTalents } from "./MistweaverTalents";
-import { STATCONVERSION } from "General/Engine/STAT";
+import { STAT, STATCONVERSION } from "General/Engine/STAT";
 
 import { MONKSPELLS as spellDB } from "./MistweaverSpellDB";
 import { printHealingBreakdown, hasTier, getCPM, getSpellEntry, buildCPM } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
@@ -47,36 +47,49 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     let freeInsuranceProcs = 0;
     let averageTeachingsStacks = 0;
 
-    const averageHaste = getHaste(state.currentStats);
+
+    let averageHaste = getHaste(state.currentStats)
+                            * (1 + 0.08 * 10 * 2 * hasTalent(playerData.talents, "secretInfusion") / 60)
+                            * (1 + 0.33 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
+
+    if (hasTalent(playerData.talents, "innerCompass")) {
+        // A rotating 2% of each stat.
+        state.currentStats.crit += (STATCONVERSION.CRIT * 2 / 4);
+        averageHaste *= (1.005); // Multiplicative
+        state.currentStats.versatility += (STATCONVERSION.VERSATILITY * 2 / 4);
+        state.currentStats.mastery += (STATCONVERSION.MASTERY * 2 / 4);
+    }                        
 
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
         {spell: "Enveloping Mist", cpm: 5},
-        {spell: "Vivify", cpm: 5},
-        {spell: "Tiger Palm", cpm: 4.8, hastedCPM: true},
-        {spell: "Blackout Kick", cpm: 3.7, hastedCPM: true},
-        {spell: "Rising Sun Kick", cpm: 5, hastedCPM: true}, // Adjust CPM dynamically and then lower.
+        {spell: "Vivify", cpm: 5, hastedCPM: true},
+        {spell: "Tiger Palm", cpm: 5.8, hastedCPM: true},
+        {spell: "Blackout Kick", cpm: 4.7, hastedCPM: true},
+        {spell: "Rising Sun Kick", cpm: 6, hastedCPM: true}, // Adjust CPM dynamically and then lower.
         {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
         {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},
-        
+        {spell: "Crackling Jade Lightning", cpm: 2},
 
         // "Spells"
         {spell: "Courage of the White Tiger", cpm: 4 * averageHaste + 0.5},
         {spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5}, // Identical to White Tiger
-
         {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
         {spell: "Insurance", cpm: 5, hastedCPM: true},
+        {spell: "Refreshing Jade Wind", cpm: buildCPM(playerSpells, "Thunder Focus Tea")},
         //{spell: "Chrono Flame", cpm: 0},     
       ]
 
     // Haste our CPMs
     castProfile.forEach(spellProfile => {
         if (spellProfile.hastedCPM) {
-            spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+            spellProfile.cpm = spellProfile.cpm * averageHaste;
         }
     }
     );
+
+    // Expected Downtime
 
     // Insurance
     freeInsuranceProcs += getSpellEntry(castProfile, "Renewing Mist").cpm;
@@ -204,24 +217,22 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                     targets: spell.targets || 1,
                     secondaries: spell.secondaries,
                 }
-                const oneTickHealing = runHeal(state, oneTick, spellName);
+                let oneTickHealing = runHeal(state, oneTick, spellName);
                 
                 let tickCount = spell.ignoreHaste ? 
                     (spell.buffDuration / (spell.tickData.tickRate))
                         :
-                    (spell.buffDuration / (spell.tickData.tickRate / getHaste(state.currentStats)));
+                    (spell.buffDuration / (spell.tickData.tickRate / averageHaste));
                 let bonusTickCount = 0;
                 
                 if (spellName === "Renewing Mist") {
                     tickCount *= (localSettings.risingMist.remStandard + 1);
-                    tickCount += (freeRenewingMistSec / (spell.tickData.tickRate / getHaste(state.currentStats)));
+                    tickCount += (freeRenewingMistSec / (spell.tickData.tickRate / averageHaste));
                 }
                 else if (spellName === "Insurance") {
                     // Get bonus ticks from Renewing Mist casts
-                    bonusTickCount += (freeInsuranceProcs * 6 / (spell.tickData.tickRate / getHaste(state.currentStats)));
-                    reportingData.freeInsuranceProcs = freeInsuranceProcs;
-                    reportingData.totalInsuranceTickCount = tickCount;
-                    reportingData.insuranceHealTick = oneTickHealing;
+                    bonusTickCount += (freeInsuranceProcs * 6 / (spell.tickData.tickRate / averageHaste));
+                    oneTickHealing *= (0.5 * Math.min((averageRemCount / 10), 10) + 1);
                 }
 
                 spellThroughput += oneTickHealing * (tickCount * spellCPM + bonusTickCount);
