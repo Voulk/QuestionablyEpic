@@ -116,8 +116,6 @@ export const runHolyPaladinCastProfile = (playerData) => {
     const talents = state.talents;
     state.spellDB = paladinSpells;
 
-    console.log(state.talents);
-
     let currentStats = {...playerData.stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     

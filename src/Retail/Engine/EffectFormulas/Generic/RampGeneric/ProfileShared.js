@@ -7,6 +7,12 @@ export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
     console.log(sortedEntries);
 }
 
+export const getSpellAttribute = (spell, attribute, index = 0) => {
+    if (attribute === "cooldown") return spell[index].cooldownData.cooldown;
+    else return spell[index][attribute];
+    
+}
+
 export const hasTier = (playerData, tier) => {
     return playerData.tier.includes(tier);
 }

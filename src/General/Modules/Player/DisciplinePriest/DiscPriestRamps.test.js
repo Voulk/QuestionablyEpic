@@ -16,11 +16,11 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 14000,
-            haste: 6000,
-            crit: 5000,
-            mastery: 2500,
-            versatility: 3000,
+            intellect: 88764,
+            haste: 15950,
+            crit: 14275,
+            mastery: 13550,
+            versatility: 5950,
             stamina: 29000,
             critMult: 2,
         }
@@ -31,7 +31,8 @@ describe("Test APL", () => {
         const playerData = { spec: "Discipline Priest", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, shadowFiendProfile, runCastSequence);
 
-        //const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
+        const ttlHealing = allRamps([], activeStats, {}, baseTalents, [])
+        console.log("Total Healing: " + ttlHealing);
     
         expect(true).toEqual(true);
     })

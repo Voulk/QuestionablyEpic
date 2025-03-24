@@ -33,6 +33,14 @@ export const getTalentData = (state, talentName, attribute) => {
     }
 }
 
+export const getTalentValue = (talents, talentName) => {
+    if (talents[talentName].value) return talents[talentName].value * talents[talentName].points;
+    else {
+        console.error("Looking for missing talent value: " + talentName);
+        return "";
+    }
+}
+
 export const applyTalents = (state, spellDB, stats) => {
     Object.keys(state.talents).forEach(talentName => {
         const talent = state.talents[talentName];

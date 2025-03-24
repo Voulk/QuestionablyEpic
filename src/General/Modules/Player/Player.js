@@ -726,9 +726,9 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Rising Mist", content: "Raid" },
+        { identifier: "Yu'lon", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
-        { identifier: "Tear of Morning", content: "Raid" },
+        //{ identifier: "Chi-Ji", content: "Raid" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
