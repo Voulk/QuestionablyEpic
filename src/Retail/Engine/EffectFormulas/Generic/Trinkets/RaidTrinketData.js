@@ -5,7 +5,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 export const raidTrinketData = [
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
-    description: "Overtuned. Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. ",
+    description: "Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",
     effects: [
       { 
         coefficient: 0.045686 * 0.95, 
@@ -49,7 +49,7 @@ export const raidTrinketData = [
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
         efficiency: {Raid: 0.8, Dungeon: 0.8},
-        specPenalty: {"Holy Priest": 1, "Restoration Druid": 3.2, "Mistweaver Monk": 2, "Restoration Shaman": 2, "Discipline Priest": 2.1,
+        specPenalty: {"Holy Priest": 2.25, "Restoration Druid": 3.2, "Mistweaver Monk": 2, "Restoration Shaman": 2, "Discipline Priest": 2.5,
                        "Holy Paladin": 2, "Preservation Evoker": 1.4},
         holyMasteryFlag: true,
         cooldown: 90,
@@ -142,17 +142,17 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "A surprisingly strong flat healing trinket with low overhealing. Default overhealing: 22%.",
+    description: "A surprisingly strong flat healing trinket with low overhealing. Default overhealing: 15%.",
     setting: true,
     effects: [
       {  // Heal effect
-        coefficient: 10.31673, 
+        coefficient: 9.28509, //10.31673, 
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
-        efficiency: {Raid: 0.78, Dungeon: 0.6},
+        efficiency: {Raid: 0.85, Dungeon: 0.6},
+        ppm: 2.5, // Incorrect flagging. Needs to be double checked.
         holyMasteryFlag: true,
-        ppm: 2.5 * 0.8, // Incorrect flagging
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {

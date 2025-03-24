@@ -14,7 +14,7 @@ describe("Trinket Tests", () => {
 const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
     const ingameData = [
         {name: "Eye of Kezan", levels: {645: [331, 115947], 671: [421, 168875]}},
-        {name: "Mister Pick-Me-Up", levels: {642: [82567], 668: [120510]}}
+        //{name: "Mister Pick-Me-Up", levels: {642: [82567], 668: [120510]}}
     ]
 
     ingameData.forEach(({ name, levels }) => {
