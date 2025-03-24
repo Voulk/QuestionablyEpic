@@ -188,4 +188,19 @@ export const baseTalents = {
     emperorsFavor: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // SG healing +150%, cast time -100%, heals only 1 target now.
     }},
+
+    // CONDUIT OF THE CELESTIALS
+    restoreBalance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free RJW cast when you Chi-ji / Yulon.
+    }},
+
+    innerCompass: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free rotating stats
+    }},
+
+    xuensGuidance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free rotating stats
+        spellDB["Tiger Palm"][0].coeff *= 1.1;
+    }},
 };
+

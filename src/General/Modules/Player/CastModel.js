@@ -134,8 +134,8 @@ class CastModel {
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
-      if (modelID === "Rising Mist") {
-        this.modelName = "Rising Mist"
+      if (modelID === "Yu'lon") {
+        this.modelName = "Yu'lon"
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
@@ -148,8 +148,8 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      else if (modelID === "Tear of Morning") {
-        this.modelName = "Tear of Morning"
+      else if (modelID === "Chi-Ji") {
+        this.modelName = "Chi-Ji (Beta)"
         spellList = monkTearSpellData(contentType);
         specialQueries = monkTearSpecialQueries(contentType);
         this.baseStatWeights = monkTearStatWeights("Raid");

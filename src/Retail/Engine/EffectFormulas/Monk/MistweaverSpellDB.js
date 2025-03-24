@@ -395,6 +395,38 @@ export const MONKSPELLS = {
         targets: 5,
         secondaries: ['vers'],
     }],
+    "Rising Mist": [{
+        type: "heal",
+        castTime: 0,
+        coeff: 0,
+        coeff: 0.2394,
+        offGCD: true, // Called by another spell
+        expectedOverheal: 0.1,
+        targets: 1,
+        secondaries: ['crit', 'vers'],
+    }],
+    "Flight of the Red Crane": [{
+        type: "heal",
+        castTime: 0,
+        cost: 0,  
+        offGCD: true,
+        coeff: 1.25, 
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers'],
+        targets: 5,
+    }],
+    "Sheilun's Gift": [{
+        // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
+        // this is reasonably low priority since fitting the entire cast in the 4pc window is trivial. 
+        type: "heal",
+        castTime: 2,
+        cost: 2.5,
+        coeff: 1.2084, // Per Cloud
+        targets: 3,
+        mastery: 1,
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'vers']
+    }],
     "Chi Burst": [{
         // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
         // this is reasonably low priority since fitting the entire cast in the 4pc window is trivial. 

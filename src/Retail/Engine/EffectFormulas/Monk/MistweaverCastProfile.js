@@ -17,6 +17,16 @@ const getMasteryHeal = (currentStats, mult = 1) => {
     return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
 }
 
+const getPercentTimeUsed = (castProfile, spellDB) => {
+    let timeUsed;
+    castProfile.forEach(spellProfile => {
+        const castTime = 0;
+
+        timeUsed += castTime * spellProfile.cpm;
+    }
+    )
+}
+
 export const runMistweaverMonkCastProfile = (playerData) => {
     const fightLength = 300;
 
@@ -50,7 +60,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     let averageHaste = getHaste(state.currentStats)
                             * (1 + 0.08 * 10 * 2 * hasTalent(playerData.talents, "secretInfusion") / 60)
-                            * (1 + 0.33 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
+                            * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
 
     if (hasTalent(playerData.talents, "innerCompass")) {
         // A rotating 2% of each stat.
@@ -65,19 +75,20 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
         {spell: "Enveloping Mist", cpm: 5},
         {spell: "Vivify", cpm: 5, hastedCPM: true},
-        {spell: "Tiger Palm", cpm: 5.8, hastedCPM: true},
-        {spell: "Blackout Kick", cpm: 4.7, hastedCPM: true},
-        {spell: "Rising Sun Kick", cpm: 6, hastedCPM: true}, // Adjust CPM dynamically and then lower.
+        {spell: "Tiger Palm", cpm: 7, hastedCPM: true},
+        {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
+        {spell: "Rising Sun Kick", cpm: 5, hastedCPM: true}, // Adjust CPM dynamically and then lower.
         {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
         {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},
         {spell: "Crackling Jade Lightning", cpm: 2},
+        {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
+        {spell: "Sheilun's Gift", cpm: 1}, // TODO
 
         // "Spells"
         {spell: "Courage of the White Tiger", cpm: 4 * averageHaste + 0.5},
         {spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5}, // Identical to White Tiger
-        {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
         {spell: "Insurance", cpm: 5, hastedCPM: true},
-        {spell: "Refreshing Jade Wind", cpm: buildCPM(playerSpells, "Thunder Focus Tea")},
+        {spell: "Refreshing Jade Wind", cpm: buildCPM(playerSpells, "Thunder Focus Tea") + hasTalent(playerData.talents, "restoreBalance") * 0.5},
         //{spell: "Chrono Flame", cpm: 0},     
       ]
 
@@ -89,6 +100,15 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     }
     );
 
+    // Flight of the Red Crane
+    // This is 3x haste rppm but realistically you will get less due to having fewer events of RJW.
+    castProfile.push({spell: "Flight of the Red Crane", cpm: 3 * averageHaste * 0.5}); // TODO: Adjust for actual RJW uptime.
+    castProfile.push({spell: "Rising Mist", cpm: getSpellEntry(castProfile, "Rising Sun Kick").cpm}); 
+
+    // Sheilun's Gift
+    localSettings.sheilunsClouds = Math.min(12, (60 / 4 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
+    reportingData.sheilunsClouds = localSettings.sheilunsClouds;
+
     // Expected Downtime
 
     // Insurance
@@ -96,11 +116,19 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // TotM
     averageTeachingsStacks = (getSpellEntry(castProfile, "Tiger Palm").cpm * (hasTalent(playerData.talents, "awakenedJadefire") ? 2 : 1)) / getSpellEntry(castProfile, "Blackout Kick").cpm;
+    if (hasTalent(playerData.talents, "xuensGuidance")) averageTeachingsStacks *= 1.15; // Doesn't apply to our base BoK.
     reportingData.averageTeachingsStacks = averageTeachingsStacks;
 
     // Adjust CPMs
-    getSpellEntry(castProfile, "Jadefire Stomp").cpm += (getKickCPM(castProfile) * 0.12 * 0.55); // High wastage
+    getSpellEntry(castProfile, "Jadefire Stomp").cpm += (getKickCPM(castProfile) * 0.12 * 0.6); // High wastage
     reportingData.extraStomps = getKickCPM(castProfile) * 0.12 * 0.5;
+
+    // Rising Mist
+    // This section in particular could use more analysis. It's important that Rising Mist scales with haste since it's a key factor in our resets,
+    // however modelling getting 5 in a ReM duration is trickier. We also don't want to introduce "fake" breakpoints.
+    localSettings.risingMist.remStandard = Math.min(1, (getSpellEntry(castProfile, "Rising Sun Kick").cpm * (40 / 60) / 5 * 0.9));
+    localSettings.risingMist.envStandard = Math.min(1, (getSpellEntry(castProfile, "Enveloping Mist").cpm * (12 / 60) / 2 * 0.9));
+
 
     // Get free Renewing Mists
     // Rapid Diffusion
@@ -110,7 +138,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         freeInsuranceProcs += casts;
         freeRenewingMistSec = casts * 6;
         freeRenewingMistSec *= (1 + localSettings.risingMist.remRapidDiffusion);
-        
     }
 
     // Calculate average ReM count
@@ -120,13 +147,19 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const zenPulsePPM = 1.2 + hasTalent(playerData.talents, "deepClarity") ? 2 : 0; // TODO
     genericHealingIncrease *= (0.5 * averageRemCount / 20 * (8 / 20) + 1) // TODO: Only applies for 8s so don't count all 20.
 
+    // Uplifted Spirits
+    if (hasTalent(playerData.talents, "upliftedSpirits")) {
+        getSpellEntry(castProfile, "Revival").cpm *= getSpellEntry(castProfile, "Rising Sun Kick").cpm / 180;
+    }
+
     if (true) {
         // Sequence Chi-ji
         // Store triple TotM stacks before pressing Chi-ji
         const tempStats = {...state.currentStats};
         let hastePercentage = getHaste(tempStats);
         if (hasTalent(playerData.talents, "invokersDelight")) hastePercentage *= (1 + 0.2 * 0.8);
-        if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.15 * 0.4);
+        if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.08 * 0.4);
+        reportingData.chijiHaste = hastePercentage;
 
         const chijiDuration = 25; // todo
         const chijiCasts = chijiDuration / (1.5 / hastePercentage);
@@ -138,7 +171,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         healingBreakdown["Chi Cocoon"] = chiCocoon * (60 / chijiCooldown);
 
         // Enveloping Breath
-        const envelopingCasts = 6; // TODO: make dynamic
+        const envelopingCasts = 4; // TODO: make dynamic
         const envelopingHeal = runHeal(state, spellDB["Enveloping Breath"][0], "Enveloping Breath") * envelopingCasts * spellDB["Enveloping Breath"][0].buffDuration * getHaste(state.currentStats);
         healingBreakdown["Enveloping Breath"] = envelopingHeal * (60 / chijiCooldown);
 
@@ -148,7 +181,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
             "Tiger Palm": 0.25 * chijiCasts,
             "Rising Sun Kick": 0.25 * chijiCasts,
             "Blackout Kick": 0.5 * chijiCasts,
-            "Enveloping Mist": 3,
+            "Enveloping Mist": 4,
         }
 
         const chijiProcs = 6 * (4 + castBreakdown["Tiger Palm"] + castBreakdown["Rising Sun Kick"] + castBreakdown["Blackout Kick"] * 2);
@@ -182,6 +215,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                     healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * spell.mastery * spellCPM));
 
                 }
+
+                // Spell specifics
                 if (spellName === "Vivify") {
                     const invig = runHeal(state, playerSpells["Invigorating Mist"][0], "Invigorating Mist");
 
@@ -189,6 +224,12 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
                     const zenPulse = runHeal(state, playerSpells["Zen Pulse"][0], "Zen Pulse");
                     healingBreakdown["Zen Pulse"] = (healingBreakdown["Zen Pulse"] || 0) + zenPulse * averageRemCount * Math.min(zenPulsePPM, spellCPM);
+                }
+                else if (spellName === "Rising Mist") {
+                    spellThroughput *= averageRemCount;
+                }
+                else if (spellName === "Sheilun's Gift") {
+                    spellThroughput *= localSettings.sheilunsClouds;
                 }
             }
             else if (spell.type === "damage") {
@@ -265,6 +306,11 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     Object.keys(healingBreakdown).forEach(key => {
         //healingBreakdown[key] *= (1);
         healingBreakdown[key] *= genericHealingIncrease;
+
+        // Chi Harmony
+        // This is a fairly rudimentary way to calculate Chi Harmony. Ideally you'd count ReM events instead and use the uptime from those. TODO.
+        const chiHarmony = 1 + (0.5 * averageRemCount / 20 * (8/20));
+        healingBreakdown[key] *= chiHarmony;
     })
 
     //console.log("HPS: " + totalHealing / 60);
