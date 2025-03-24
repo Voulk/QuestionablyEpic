@@ -2,7 +2,7 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
-  {
+  { // Sigil is NOT currently evaluated. Current opinion is that it's a bait trinket at best and there is concerns around recommending it in great vaults.
     name: "Sigil of Algari Concordance",
     description: "The summoned earthen does flat healing and gives an intellect buff for healers. Uptime variance is high.",
     effects: [
@@ -14,24 +14,27 @@ export const dungeonTrinketData =
         ppm: 0.4, // 0.5 rppm with a 15s ICD
         cooldown: 15,
       },
-      { // Hot Heal Effect -- this one occurs 99% of the time 
+      { // Hot Heal Effect
         coefficient: 10.9179,
         table: -9,
         ppm: 0.4, 
         targets: 5 * 3, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
         ticks: 3,
-        stacks: 4, //5 max, 4 most common. stacks refresh duration
+        stacks: 3, //5 max, 3 most common. stacks refresh duration
         secondaries: ['crit', 'versatility'],
-        efficiency: 0.5,
+        efficiency: 0.45,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const intBonus = processedValue(data[0], itemLevel) * convertPPMToUptime(data[0].ppm, data[0].duration);
 
-      bonus_stats.intellect = intBonus;
-      bonus_stats.allyStats = intBonus * 0
+      /* See Note above
+      bonus_stats.intellect = intBonus * 0.2;
+      bonus_stats.allyStats = intBonus * 0.8; // The int buff is split between the five people hit.
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+      */
+
       return bonus_stats;
     },
   },

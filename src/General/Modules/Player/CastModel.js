@@ -172,7 +172,7 @@ class CastModel {
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
       else {
-        this.modelName = "Healing Focused";
+        this.modelName = "Voidweaver";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
