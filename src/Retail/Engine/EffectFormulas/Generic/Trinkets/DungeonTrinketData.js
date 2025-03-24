@@ -436,7 +436,7 @@ export const dungeonTrinketData =
       },
       { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
         name: "Entropic Skardyn Core",
-        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack.",
+        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack. Very difficult to use on a lot of fights.",
         effects: [
           {
             coefficient: 1.124436, 
@@ -444,12 +444,13 @@ export const dungeonTrinketData =
             duration: 15,
             ppm: 2,
             stat: "intellect",
+            penalty: 0.75,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.75;
 
           return bonus_stats;
         }
