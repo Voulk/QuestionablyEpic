@@ -35,7 +35,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 1.5,
         cost: 0.4,
-        coeff: 1.07, // 0.47 * 1.5 * 0.75 (smite aura nerf)
+        coeff: 1.0735, // 0.47 * 1.5 * 0.75 (smite aura nerf)
         atoneOverheal: 0.2,
         school: "holy",
         secondaries: ['crit', 'vers'],
@@ -401,6 +401,17 @@ export const DISCSPELLS = {
         stat: "haste",
         value: 1.2, 
     }],
+    "Premonition of Piety": [{
+        spellData: {id: 10060, icon: "spell_holy_powerinfusion", cat: "cooldown"},
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldownData: {cooldown: 60, hasted: false}, 
+        buffDuration: 15,
+        buffType: 'special',
+        ongcd: false,
+        value: 1.2, // 20% healing increase, 70% overhealing redist - 98% with upgrade
+    }],
     "TrinketName": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "buff",
@@ -432,11 +443,9 @@ export const baseTalents = {
     
     // Tier 2
     purgeTheWicked: {points: 1, maxPoints: 1, icon: "ability_mage_firestarter", id: 204197, select: true, tier: 2},
-    rapture: {points: 1, maxPoints: 1, icon: "spell_holy_rapture", id: 47536, select: false, tier: 2},
     shadowCovenant: {points: 1, maxPoints: 1, icon: "spell_shadow_summonvoidwalker", id: 314867, select: true, tier: 2},
-    revelInPurity: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true, tier: 2},
+    revelInDarkness: {points: 0, maxPoints: 1, icon: "spell_fire_felflamering_red", id: 373003, select: true, tier: 2},
     contrition: {points: 0, maxPoints: 2, icon: "ability_priest_savinggrace", id: 197419, select: true, tier: 2},
-    exaltation: {points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", id: 373042, select: true, tier: 2},
     indemnity: {points: 1, maxPoints: 1, icon: "ability_priest_clarityofwill", id: 373049, select: true, tier: 2},
     painAndSuffering: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowwordpain", id: 390689, select: true, tier: 2},
     twilightCorruption: {points: 1, maxPoints: 1, icon: "spell_fire_twilightimmolation", id: 373065, select: true, tier: 2},
@@ -457,7 +466,7 @@ export const baseTalents = {
     harshDiscipline: {points: 2, maxPoints: 2, icon: "ability_paladin_handoflight", id: 373180, select: true, tier: 3},
     expiation: {points: 0, maxPoints: 2, icon: "spell_shadow_shadowpower", id: 390832, select: true, tier: 3},
     voidSummoner: {points: 0, maxPoints: 1, icon: "spell_shadow_shadowfiend", id: 391218, select: true, tier: 3},
-    aegisOfWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true, tier: 3},
+    eternalBarrier: {points: 0, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 238135, select: true, tier: 3},
     //makeAmends: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 391079, select: true, tier: 3},
     wealAndWoe: {points: 1, maxPoints: 1, icon: "spell_priest_burningwill", id: 390786, select: true, tier: 3},
     heavensWrath: {points: 0, maxPoints: 1, icon: "spell_holy_penance", id: 421558, select: true, tier: 3},

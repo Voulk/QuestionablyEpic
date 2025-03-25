@@ -2,36 +2,37 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
-  {
+  { // Sigil is a low end evaluation since its variance is very high and the reward is very average.
     name: "Sigil of Algari Concordance",
-    description: "The summoned earthen does flat healing and gives an intellect buff for healers. Uptime variance is high.",
+    description: "The summoned earthen does flat healing and gives an intellect buff for healers. QE Live uses an underestimation since the trinket variance is absurdly high.",
     effects: [
       { // Intellect Effect
         coefficient: 1.185996,
         table: -1,
         stat: "intellect",
         duration: 15,
-        ppm: 0.4, // 0.5 rppm with a 15s ICD
+        ppm: 0.35, // 0.5 rppm with a 15s ICD. It also doesn't proc the int effect every single time though doubles are also possible but rare.
         cooldown: 15,
       },
-      { // Hot Heal Effect -- this one occurs 99% of the time 
+      { // Hot Heal Effect
         coefficient: 10.9179,
         table: -9,
-        ppm: 0.4, 
-        targets: 5 * 3, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
+        ppm: 0.35, 
+        targets: 5, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
         ticks: 3,
-        stacks: 4, //5 max, 4 most common. stacks refresh duration
+        stacks: 4, // 5 max, 3 most common. stacks refresh duration
         secondaries: ['crit', 'versatility'],
-        efficiency: 0.5,
+        efficiency: 0.55,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const intBonus = processedValue(data[0], itemLevel) * convertPPMToUptime(data[0].ppm, data[0].duration);
 
-      bonus_stats.intellect = intBonus;
-      bonus_stats.allyStats = intBonus * 0
+      bonus_stats.intellect = intBonus * 0.2;
+      bonus_stats.allyStats = intBonus * 0.8; // The int buff is split between the five people hit.
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
       return bonus_stats;
     },
   },
@@ -433,7 +434,7 @@ export const dungeonTrinketData =
       },
       { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
         name: "Entropic Skardyn Core",
-        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack.",
+        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack. Very difficult to use on a lot of fights.",
         effects: [
           {
             coefficient: 1.124436, 
@@ -441,12 +442,13 @@ export const dungeonTrinketData =
             duration: 15,
             ppm: 2,
             stat: "intellect",
+            penalty: 0.75,
           },
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.9;
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.75;
 
           return bonus_stats;
         }

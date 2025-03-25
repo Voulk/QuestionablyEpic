@@ -17,6 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 8,
+    date: "March 24",
+    changes: [ 
+      "In-game: Sigil of Algari Concordance nerfed by ~80%.",
+      "Renamed Monk & Disc playstyles to make them clearer. Prepped the app for Chi-Ji support.",
+      "Slightly lowered the percentage of Entropic Skardyn Core orbs picked up.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 7,
     date: "March 21",
     changes: [ 

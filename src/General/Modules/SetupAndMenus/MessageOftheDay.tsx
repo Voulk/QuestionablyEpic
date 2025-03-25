@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "The nerf to Mister Pick-me-up is in. It's still immensely strong."
+    "The nerf to Mister Pick-me-up & Sigil of Algari Concordance are both in."
   ]
 ;
   if (messageOfTheDay.length === 0) return;

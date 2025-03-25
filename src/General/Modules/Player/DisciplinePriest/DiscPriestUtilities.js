@@ -11,27 +11,6 @@ export const getRampData = (playerStats, playerTrinkets, playstyle) => {
     const disc2pc = 61500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
     const disc4pc = 17400; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
 
-    //const season2TwoPc = 61500; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
-    //const season2FourPc = 17400; // allRampsHealing([], playerStats, {"playstyle": playstyle, "reporting": false, "DefaultLoadout": true}, {}, [], false);
-
-    //console.log("DISC BASELINE: " + discBaseline);
-    /*
-    const boonSeq = buildRamp('Boon', 10, [], playerStats.haste, playstyle, ['Rapture'])
-    const fiendSeq = buildRamp('Fiend', 10, [], playerStats.haste, playstyle, ['Rapture'])
-    
-    const baselineAdj = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "DefaultLoadout": true}, {});
-
-    // Legendaries
-    const clarityOfMind = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": true, "Pelagos": false, "4T28": true}, {});
-    const shadowWordManip = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Shadow Word: Manipulation": true, "Pelagos": false}, {});
-    const penitentOne = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false, "Penitent One": true, "4T28": true}, {});
-
-    // Conduits
-    const exaltation = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false, "4T28": true}, {"Exaltation": 226});
-    const rabidShadows = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false, "4T28": true}, {"Rabid Shadows": 226});
-    const courAscension = allRampsHealing(boonSeq, fiendSeq, playerStats, {"playstyle": playstyle, "Clarity of Mind": false, "Pelagos": false, "4T28": true}, {"Courageous Ascension": 226});
-
-    */
     const rampData = {
         baseline: discBaseline / rampTime,
         twoPc: disc2pc, //(disc2pc - discBaseline) / rampTime,
