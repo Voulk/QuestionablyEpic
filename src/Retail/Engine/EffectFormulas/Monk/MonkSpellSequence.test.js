@@ -8,11 +8,11 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         let activeStats = {
-            intellect: 76000 * 1.05 * 1.05,
-            haste: 9500,
-            crit: 9500,
-            mastery: 9500 + (2 * 700),
-            versatility: 9500 + (3 * 780),
+            intellect: 76000 * 1.05,
+            haste: 5000,
+            crit: 5000,
+            mastery: 5000 + (2 * 700),
+            versatility: 5000 + (3 * 780),
             stamina: 29000,
             critMult: 2,
         }
@@ -43,10 +43,10 @@ const runStats = (playerData) => {
 
     const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
         intellect: 76000 * 1.05 * 1.05,
-        haste: 9500,
-        crit: 9500,
-        mastery: 9500 + (2 * 700),
-        versatility: 9500 + (3 * 780),
+        haste: 5000,
+        crit: 5000,
+        mastery: 5000 + (2 * 700),
+        versatility: 5000 + (3 * 780),
         stamina: 29000,
         critMult: 2,
     }

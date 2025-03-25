@@ -17,23 +17,27 @@ const getMasteryHeal = (currentStats, mult = 1) => {
     return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
 }
 
-const getPercentTimeUsed = (castProfile, spellDB) => {
-    let timeUsed;
+const getTimeUsed = (castProfile, spellDB, averageHaste) => {
+    let timeUsed = 0;
     castProfile.forEach(spellProfile => {
-        const castTime = 0;
+        const spell = spellDB[spellProfile.spell][0];
+        let castTime = (spell.castTime / averageHaste) || 0;
 
+        if (castTime === 0 && !spell.offGCD) castTime = 1.5 / averageHaste;
         timeUsed += castTime * spellProfile.cpm;
     }
     )
+
+    return timeUsed;
 }
 
 export const runMistweaverMonkCastProfile = (playerData) => {
     const fightLength = 300;
-
+    playerData.talents = { ...baseTalents };
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}};
-
+    
 
     const talents = {};
     /*for (const [key, value] of Object.entries(state.talents)) {
@@ -61,6 +65,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     let averageHaste = getHaste(state.currentStats)
                             * (1 + 0.08 * 10 * 2 * hasTalent(playerData.talents, "secretInfusion") / 60)
                             * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
+                            * (1 + 0.35 * 40 / 420) // Bloodlust
 
     if (hasTalent(playerData.talents, "innerCompass")) {
         // A rotating 2% of each stat.
@@ -77,7 +82,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         {spell: "Vivify", cpm: 5, hastedCPM: true},
         {spell: "Tiger Palm", cpm: 7, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
-        {spell: "Rising Sun Kick", cpm: 5, hastedCPM: true}, // Adjust CPM dynamically and then lower.
+        {spell: "Rising Sun Kick", cpm: 6, hastedCPM: true}, // Adjust CPM dynamically and then lower.
         {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
         {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},
         {spell: "Crackling Jade Lightning", cpm: 2},
@@ -100,6 +105,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     }
     );
 
+    
+
     // Flight of the Red Crane
     // This is 3x haste rppm but realistically you will get less due to having fewer events of RJW.
     castProfile.push({spell: "Flight of the Red Crane", cpm: 3 * averageHaste * 0.5}); // TODO: Adjust for actual RJW uptime.
@@ -110,6 +117,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     reportingData.sheilunsClouds = localSettings.sheilunsClouds;
 
     // Expected Downtime
+    const timeUsed = getTimeUsed(castProfile, playerSpells, averageHaste);
+    reportingData.timeUsed = timeUsed;
 
     // Insurance
     freeInsuranceProcs += getSpellEntry(castProfile, "Renewing Mist").cpm;

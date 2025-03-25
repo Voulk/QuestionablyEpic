@@ -62,6 +62,7 @@ export const MONKSPELLS = {
         type: "heal",
         cost: 0, // Mana cost as a percent. 
         coeff: 0,
+        offGCD: true,
         flatHeal: 7500000 * 0.24,
         expectedOverheal: 0.05,
         secondaries: ['vers'],
@@ -70,6 +71,7 @@ export const MONKSPELLS = {
     "Invigorating Mist": [{ // Invigorating Mists
         type: "heal",
         castTime: 0,
+        offGCD: true,
         coeff: 1.2428,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'],
@@ -77,6 +79,7 @@ export const MONKSPELLS = {
     "Zen Pulse": [{ 
         type: "heal",
         castTime: 0,
+        offGCD: true,
         coeff: 1.6,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'],
@@ -107,37 +110,7 @@ export const MONKSPELLS = {
         targets: 5,
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers']
-    },
-    {
-        type: "special",
-        runFunc: function (state) {
-                        // Essence Font Heal
-            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
-            const efDirect = { type: "heal", coeff: directData.coeff, expectedOverheal: 0.25, secondaries: ['crit', 'vers'], targets: 1}
-            
-            // Apply 5 special Essence Font hots. These stack with existing EF hots.
-            const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
-            // Essence Font HoT
-            const efHot = { type: "heal", coeff: EF.coeff, expectedOverheal: 0.3, secondaries: ['crit', 'vers'], duration: EF.duration}
-            const newBuff = {name: "Essence Font (HoT - Faeline Stomp)", buffType: "heal", attSpell: efHot,
-                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
-            newBuff['expiration'] = state.t + efHot.duration
-
-            for (let i = 0; i < 5; i++) {
-                runHeal(state, efDirect, "Essence Font (Faeline Stomp)")
-                state.activeBuffs.push(newBuff)
-            }
-        }
-    }/*,
-    {
-        FLH Condition WIP
-        type: "special",
-        //condition: "Faeline Harmony",
-        runFunc: function (state) {
-            const newBuff = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10}
-            state.activeBuffs.push(newBuff)
-        }
-    }*/],
+    }],
     "Renewing Mist": [{
         type: "heal",
         castTime: 0,
@@ -175,6 +148,8 @@ export const MONKSPELLS = {
         tickData: {tickRate: 1, canPartialTick: true},
         targets: 5,
         coeff: 1.026 / 7, 
+        castTime: 0,
+        offGCD: true,
         buffDuration: 7,
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers']
@@ -507,17 +482,6 @@ export const MONKSPELLS = {
         sqrtMin: 5,
         mastery: 20,
         cooldownData: {cooldown: 180, charges: 1},
-    }, 
-    {
-        type: "special",
-        runFunc: function (state) {
-
-            const masteryProc = MONKSPELLS['Gust of Mists'][0];
-            for (var i = 0; i < 20; i++)
-            {
-                runHeal(state, masteryProc, "Gust of Mists (Revival)")
-            }
-        }
     }],
     "Insurance": [{
         type: "buff",
@@ -525,6 +489,8 @@ export const MONKSPELLS = {
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: true},
         targets: 1,
+        castTime: 0,
+        offGCD: true,
         coeff: 0.55223, 
         buffDuration: 15,
         expectedOverheal: 0.3,
