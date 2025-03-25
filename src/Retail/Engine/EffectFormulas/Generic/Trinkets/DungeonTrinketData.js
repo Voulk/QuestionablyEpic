@@ -2,38 +2,36 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, pro
 
 export const dungeonTrinketData = 
 [
-  { // Sigil is NOT currently evaluated. Current opinion is that it's a bait trinket at best and there is concerns around recommending it in great vaults.
+  { // Sigil is a low end evaluation since its variance is very high and the reward is very average.
     name: "Sigil of Algari Concordance",
-    description: "The summoned earthen does flat healing and gives an intellect buff for healers. Uptime variance is high.",
+    description: "The summoned earthen does flat healing and gives an intellect buff for healers. QE Live uses an underestimation since the trinket variance is absurdly high.",
     effects: [
       { // Intellect Effect
         coefficient: 1.185996,
         table: -1,
         stat: "intellect",
         duration: 15,
-        ppm: 0.4, // 0.5 rppm with a 15s ICD
+        ppm: 0.35, // 0.5 rppm with a 15s ICD. It also doesn't proc the int effect every single time though doubles are also possible but rare.
         cooldown: 15,
       },
       { // Hot Heal Effect
         coefficient: 10.9179,
         table: -9,
-        ppm: 0.4, 
-        targets: 5 * 3, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
+        ppm: 0.35, 
+        targets: 5, // lasts 15s and heals 5 people per tick (tick rate 5.0s not hasted)
         ticks: 3,
-        stacks: 3, //5 max, 3 most common. stacks refresh duration
+        stacks: 4, // 5 max, 3 most common. stacks refresh duration
         secondaries: ['crit', 'versatility'],
-        efficiency: 0.45,
+        efficiency: 0.55,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       const intBonus = processedValue(data[0], itemLevel) * convertPPMToUptime(data[0].ppm, data[0].duration);
 
-      /* See Note above
       bonus_stats.intellect = intBonus * 0.2;
       bonus_stats.allyStats = intBonus * 0.8; // The int buff is split between the five people hit.
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
-      */
 
       return bonus_stats;
     },
