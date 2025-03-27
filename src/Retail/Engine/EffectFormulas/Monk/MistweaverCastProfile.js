@@ -38,7 +38,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                     talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", tierSets: [], currentTarget: 0, setStats: JSON.parse(JSON.stringify(playerData.stats)), currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.35, chijiGustsOverhealing: 0.35};
     
-    console.log(JSON.stringify(playerData.effects));
     state.tierSets = playerData.effects.filter(effect => effect.type === "set bonus").map(effect => effect.name);
     //console.log(JSON.stringify(state.tierSets));
 
@@ -356,7 +355,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     printHealingBreakdown(damageBreakdown, totalDamage);
     printHealingBreakdown(healingBreakdown, totalHealing);
-    console.log(reportingData);
-    console.log("HPS: " + Math.round(totalHealing / 60));
+    //console.log(reportingData);
+    //console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }
