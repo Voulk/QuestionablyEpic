@@ -8,7 +8,7 @@ import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeig
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
+import { runChijiCastModel, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
@@ -148,12 +148,15 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      else if (modelID === "Chi-Ji") {
+      else if (modelID === "Chi-Ji (Beta)") {
         this.modelName = "Chi-Ji (Beta)"
-        spellList = monkTearSpellData(contentType);
-        specialQueries = monkTearSpecialQueries(contentType);
-        this.baseStatWeights = monkTearStatWeights("Raid");
-        this.fightInfo.dps = 6000;
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
+        this.runCastModel = runChijiCastModel;
+        spellList = chijiSpellData(contentType);
+        specialQueries = chijiSpecialQueries(contentType);
+        this.baseStatWeights = chijiStatWeights("Raid");
+        this.fightInfo.dps = 600000;
       }
 
     } else if (spec === SPEC.DISCPRIEST) {

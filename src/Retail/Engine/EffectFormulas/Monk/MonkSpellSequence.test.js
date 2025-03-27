@@ -8,18 +8,19 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         let activeStats = {
-            intellect: 76000 * 1.05 * 1.05,
-            haste: 9500,
-            crit: 9500,
-            mastery: 9500 + (2 * 700),
-            versatility: 9500 + (3 * 780),
+            intellect: 76000 * 1.05,
+            haste: 5000,
+            crit: 5000,
+            mastery: 5000 + (2 * 700),
+            versatility: 5000 + (3 * 780),
             stamina: 29000,
             critMult: 2,
         }
         const baseSpells = MONKSPELLS;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
 
-        const playerData = { spec: "Mistweaver Monk", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats, tier: ["Monk S2-2", "Monk S2-4"] }
+        const playerData = { spec: "Mistweaver Monk", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats,
+                                effects: [{type: "set bonus", name: "Monk S2-2"}, {type: "set bonus", name: "Monk S2-4"}] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
         const iterations = 1;
@@ -43,10 +44,10 @@ const runStats = (playerData) => {
 
     const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
         intellect: 76000 * 1.05 * 1.05,
-        haste: 9500,
-        crit: 9500,
-        mastery: 9500 + (2 * 700),
-        versatility: 9500 + (3 * 780),
+        haste: 10000,
+        crit: 10000,
+        mastery: 6000 + (2 * 700),
+        versatility: 10000 + (3 * 780),
         stamina: 29000,
         critMult: 2,
     }
