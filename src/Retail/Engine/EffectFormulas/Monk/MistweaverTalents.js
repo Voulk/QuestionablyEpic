@@ -62,6 +62,19 @@ export const baseTalents = {
     }},
     upliftedSpirits: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // Vivify and RSK reduce the cooldown on Revival by 1s. Revival heals targets for 15% of its amount over 10 seconds.
+
+        // Check this is sqrting properly.
+        /*spellDB["Revival"].push({
+            name: "Uplifted Spirits Revival",
+            type: "buff",
+            buffType: "heal",
+            coeff: spellDB["Revival"][0].coeff * 0.15 * 0.1,
+            tickData: {tickRate: 1, canPartialTick: true},
+            buffDuration: 10,
+            targets: 20,
+            expectedOverheal: 0.42,
+            secondaries: ['crit', 'vers'] // + Haste
+        })*/
     }},
     energizingBrew: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // Mana Tea channels 50% faster and generates 20% more mana.

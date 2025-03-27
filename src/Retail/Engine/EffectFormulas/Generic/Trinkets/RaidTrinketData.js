@@ -81,7 +81,7 @@ export const raidTrinketData = [
 
       const variance = (0.9 + 1.15) / 2; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
 
-      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
+      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
       else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
 
       return bonus_stats;

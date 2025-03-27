@@ -185,7 +185,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 const expectedTargets = 20;
                 const sqrtMod = Math.sqrt(5 / expectedTargets);
                 const consumeMult = 3; 
-                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1.4 * 0.77) : 1) //* 1.4; // Call of Ysera & Tier Set
+                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1 + 0.2 * 0.7) : 1) //* 1.4; // Call of Ysera & Tier Set
 
                 const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
                 let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult * 0.8;

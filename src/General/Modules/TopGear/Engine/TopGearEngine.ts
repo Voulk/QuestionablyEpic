@@ -207,7 +207,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   const newPlayer = setupPlayer(player, contentType, castModel);
   let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0);
   newCastModel = Object.assign(newCastModel, castModel);
-
+  console.log(JSON.stringify(newCastModel));
   // == Setup our list of items ==
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
@@ -880,6 +880,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats = applyDiminishingReturns(setStats);
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
+
+    // Raid Buffs
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
+    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
 
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
