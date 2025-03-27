@@ -20,7 +20,7 @@ export const chijiSpellData = (contentType) => {
 
 export const runChijiCastModel = (itemSet, setStats, castModel, effectList) => {
   const settings = {masteryEfficiency: 1, includeOverheal: true, reporting: false};
-  const playerData = { spec: "Mistweaver Monk", settings: settings, stats: setStats, tier: [] }
+  const playerData = { spec: "Mistweaver Monk", settings: settings, stats: setStats, tier: [], effects: effectList }
   const result = runMistweaverMonkCastProfile(playerData);
 
   return result;
@@ -32,16 +32,10 @@ export const chijiSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 6.8,
       cooldownMult: {
-        c60: 1.44,
+        c60: 1.16,
         c90: 1,
-        c120: 1.115,
+        c120: 1.85,
         c180: 1,
-
-        oneMinute: 1.48,
-        ninetySeconds: 1,
-        twoMinutes: 1.15,
-        twoMinutesOrb: 1.11,
-        threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
     };
@@ -53,12 +47,6 @@ export const chijiSpecialQueries = (contentType) => {
         c90: 1,
         c120: 1.1,
         c180: 1,
-
-        oneMinute: 1.2,
-        ninetySeconds: 1,
-        twoMinutes: 1.2,
-        twoMinutesOrb: 1.1,
-        threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
     };

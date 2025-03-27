@@ -62,12 +62,6 @@ export const monkDefaultSpecialQueries = (contentType) => {
         c90: 1,
         c120: 1.36,
         c180: 1,
-
-        oneMinute: 1.16,
-        ninetySeconds: 1,
-        twoMinutes: 1.15,
-        twoMinutesOrb: 1.11,
-        threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
     };

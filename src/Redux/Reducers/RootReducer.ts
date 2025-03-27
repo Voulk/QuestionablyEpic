@@ -39,7 +39,7 @@ const initialState : RootState = {
     //fightTimer: { value: 400, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     //syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    delayOnUseTrinkets: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
+    delayOnUseTrinkets: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     
     //enchantItems: { value: true, options: [true, false], category: "topGear", type: "selector" },
     catalystLimit: { value: 2, options: [1, 2, 3, 4], category: "topGear", type: "selector", gameType: "Retail" },
