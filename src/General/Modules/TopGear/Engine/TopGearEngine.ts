@@ -207,7 +207,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   const newPlayer = setupPlayer(player, contentType, castModel);
   let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0);
   newCastModel = Object.assign(newCastModel, castModel);
-  console.log(JSON.stringify(newCastModel));
+
   // == Setup our list of items ==
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
@@ -878,7 +878,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (castModel.modelType[contentType] === "CastModel") {
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
-    setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
+    setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs

@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 9,
+    date: "March 27",
+    changes: [ 
+      "Mistweaver: Added Chi-Ji support.",
+      "Sockets are now auto-added to all Rings / Necks for ease of use.",
+      "Renovated Workshop loot table.",
+      "Various minor fixes to the UI.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 8,
     date: "March 24",
     changes: [ 
