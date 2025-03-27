@@ -353,8 +353,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const totalHealing = sumValues(healingBreakdown);
     const totalDamage = sumValues(damageBreakdown);
 
-    printHealingBreakdown(damageBreakdown, totalDamage);
-    printHealingBreakdown(healingBreakdown, totalHealing);
+    //printHealingBreakdown(damageBreakdown, totalDamage);
+    //printHealingBreakdown(healingBreakdown, totalHealing);
     //console.log(reportingData);
     //console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
