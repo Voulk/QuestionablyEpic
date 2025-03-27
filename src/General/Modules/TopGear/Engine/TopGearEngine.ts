@@ -880,6 +880,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats = applyDiminishingReturns(setStats);
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
+
+    // Raid Buffs
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
+    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
 
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;

@@ -176,9 +176,6 @@ export const MONKSPELLS = {
         targets: 5,
         expectedOverheal: 0.25,
         secondaries: ['crit', 'vers'],
-    },
-    {
-
     }],
     "Crackling Jade Lightning": [{
         type: "damage",
@@ -202,37 +199,6 @@ export const MONKSPELLS = {
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
         secondaries: ['crit', 'vers'],
-    },
-    {
-        type: "special",
-        runFunc: (state) => {
-            // Add stack of TotM
-            const activeBuffs = state.activeBuffs;
-            const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
-            if (teachingsStacks === 0) {
-                // Add buff
-                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 30})
-            }
-            else {
-                // Add stack of buff.
-                const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
-                buff.stacks = Math.min(buff.stacks + 1, 3);
-                buff.expiration = 20;
-            }
-        }
-    },
-    {
-        type: "special",
-        condition: "Ancient Teachings of the Monastery",
-        runFunc: function (state) {
-            // Checks if AtoTM active
-            
-            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
-            {
-                const spell = { type: "heal", coeff: 0.297297 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, expectedOverheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                runHeal(state, spell, "Ancient Teachings of the Monastery")
-            }
-        }
     }],
     "Blackout Kick": [{
         type: "damage",
@@ -255,99 +221,7 @@ export const MONKSPELLS = {
         damageToHeal: 0.3,
         cooldown: 0,
         secondaries: ['crit', 'vers'],
-    },
-    {
-        type: "special",
-        runFunc: (state) => {
-            // Rising Mist
-            const rmHots = ["Renewing Mist", "Essence Font (HoT)", "Enveloping Mist", "Essence Font (HoT - Faeline Stomp)"]
-            const risingMistExtension = 4;
-            const activeRMBuffs = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)})
-            let expectedtargets = 0;
-            // Apply heal to allies with ReM, EF or Enveloping Mist.
-            // ReM and EF can be double counted here, slightly inflating value.
-            // The addition of target markers in the buff list would solve this but isn't high priority.
-            // Capped healed targets at 20 - this reduces RM healing on NF
-            if (activeRMBuffs.length > 20)
-                expectedtargets = 20;
-            else expectedtargets = activeRMBuffs.length;
-
-            const spell = { type: "heal", coeff: 0.28, expectedOverheal: 0.15, secondaries: ['crit', 'vers'], targets: expectedtargets} 
-         
-            if (activeRMBuffs.length > 0) runHeal(state, spell, "Rising Mist")
-
-            // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension.
-            activeRMBuffs.forEach((buff) => {
-                if ('durationExtended' in buff) {
-                    buff.durationExtended = buff.durationExtended + 1;
-                }
-                else {
-                    buff.durationExtended = 1;
-                }
-                if ((buff.name === "Enveloping Mist" || buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 2) {
-                    buff.expiration = buff.expiration + risingMistExtension;
-                }
-                if (buff.name === "Renewing Mist" && buff.durationExtended <= 5) {
-                    buff.expiration = buff.expiration + risingMistExtension;
-                }
-                if ((buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 3 && state.settings.misc.includes("2T28")) {
-                    buff.expiration = buff.expiration + risingMistExtension / 2;
-                }
-            })
-        }
-    },
-    {
-        type: "special",
-        condition: "Ancient Teachings of the Monastery",
-        runFunc: function (state) {
-            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
-            {
-                const spell = { type: "heal", coeff: 2.151248 * 2.5 * 1.05 * GLOBALMODS.ARMOR, expectedOverheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                runHeal(state, spell, "Ancient Teachings of the Monastery")
-            }
-        }
-    },
-    {
-        type: "special",
-        condition: "Chiji Active",
-        runFunc: function (state) {
-            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
-            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
-            if (chijiBuff || CTAchijiBuff)
-            {
-                // Gusts healing from Chi-ji
-                if (chijiBuff)
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                }
-
-                // Gusts healing from CTA Chi-ji
-                if (CTAchijiBuff) // Does CTA + Chiji active give double stacks?
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                }
-
-                // Add stack of Chiji reduced mana cost
-                const activeBuffs = state.activeBuffs;
-                const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
-                if (chijiStacks === 0) {
-                    // Add buff
-                    activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
-                }
-                else {
-                    // Add stack of buff.
-                    const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
-                    buff.stacks = Math.min(buff.stacks + 1, 3);
-                    buff.expiration = 20;
-                }
-            }
-        }
-    },
-    ],
+    }],
     "Courage of the White Tiger": [{
         type: "damage",
         damageType: "physical",
@@ -370,10 +244,19 @@ export const MONKSPELLS = {
         targets: 5,
         secondaries: ['vers'],
     }],
-    "Rising Mist": [{
+    "Crane Style": [{
         type: "heal",
         castTime: 0,
         coeff: 0,
+        offGCD: true, // Called by another spell
+        expectedOverheal: 0.2,
+        mastery: 1.5, // This is effective a target count for Crane Style
+        targets: 1,
+        secondaries: [],
+    }],
+    "Rising Mist": [{
+        type: "heal",
+        castTime: 0,
         coeff: 0.2394,
         offGCD: true, // Called by another spell
         expectedOverheal: 0.1,
@@ -389,6 +272,16 @@ export const MONKSPELLS = {
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers'],
         targets: 5,
+    }],
+    "Life Cocoon": [{
+        type: "heal",
+        castTime: 0,
+        cost: 2.4,  
+        flatHeal: 7500000 * 0.48, 
+        expectedOverheal: 0.3,
+        secondaries: ['vers'],
+        cooldownData: {cooldown: 120, charges: 1},
+        targets: 1,
     }],
     "Sheilun's Gift": [{
         // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but

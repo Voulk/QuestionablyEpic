@@ -6,7 +6,6 @@ import { STAT, STATCONVERSION } from "General/Engine/STAT";
 
 import { MONKSPELLS as spellDB } from "./MistweaverSpellDB";
 import { getTrinketData, printHealingBreakdown, hasTier, getCPM, getSpellEntry, buildCPM } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
-import { on } from "events";
 
 
 const getKickCPM = (playerSpells) => {
@@ -37,7 +36,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     playerData.talents = { ...baseTalents };
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", tierSets: [], currentTarget: 0, setStats: JSON.parse(JSON.stringify(playerData.stats)), currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
-    const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}};
+    const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.35, chijiGustsOverhealing: 0.35};
     
     console.log(JSON.stringify(playerData.effects));
     state.tierSets = playerData.effects.filter(effect => effect.type === "set bonus").map(effect => effect.name);
@@ -58,9 +57,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     //let currentStats = {...playerData.stats};
     //state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     const reportingData = {};
-    const cooldownWastage = 0.9;
-    let genericHealingIncrease = 1; // Should be handled in runHeal
-    let genericCritIncrease = 1;
+    let genericHealingIncrease = 1.04;
     let freeRenewingMistSec = 0;
     let freeInsuranceProcs = 0;
     let averageTeachingsStacks = 0;
@@ -72,7 +69,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         onUseData = getTrinketData("Signet of the Priory", playerData.effects.filter(effect => effect.name === "Signet of the Priory")[0].level);
         onUseData.name = "Signet of the Priory";
         state.currentStats.haste += (onUseData.value * onUseData.duration / 120);
-        console.log("LOADING IN PRIORY, BONUS HASTE: " + (onUseData.value * onUseData.duration / 120));
     }
     else if (playerData.effects.filter(effect => effect.name === "House of Cards").length > 0) {
         onUseData = getTrinketData("House of Cards", playerData.effects.filter(effect => effect.name === "House of Cards")[0].level);
@@ -80,8 +76,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         state.currentStats.mastery += (onUseData.value * onUseData.duration / 120);
     }
 
-
-
+    reportingData.hastePre = getHaste(state.currentStats)
     let averageHaste = getHaste(state.currentStats)
                             * (1 + 0.08 * 10 * 2 * hasTalent(playerData.talents, "secretInfusion") / 60)
                             * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
@@ -98,23 +93,28 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
-        {spell: "Enveloping Mist", cpm: 5},
-        {spell: "Vivify", cpm: 5, hastedCPM: true},
-        {spell: "Tiger Palm", cpm: 7, hastedCPM: true},
+        {spell: "Enveloping Mist", cpm: 3, hastedCPM: true},
+        {spell: "Vivify", cpm: 4, hastedCPM: true},
+        {spell: "Tiger Palm", cpm: 7.5, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
-        {spell: "Rising Sun Kick", cpm: 6, hastedCPM: true}, // Adjust CPM dynamically and then lower.
+        {spell: "Rising Sun Kick", cpm: 6.4, hastedCPM: true}, // Adjust CPM dynamically and then lower.
         {spell: "Revival", cpm: buildCPM(playerSpells, "Revival")},
         {spell: "Celestial Conduit", cpm: buildCPM(playerSpells, "Celestial Conduit")},
         {spell: "Crackling Jade Lightning", cpm: 2},
         {spell: "Jadefire Stomp", cpm: buildCPM(playerSpells, "Jadefire Stomp")},
         {spell: "Sheilun's Gift", cpm: 1}, // TODO
+        {spell: "Life Cocoon", cpm: buildCPM(playerSpells, "Life Cocoon")}, // 
 
         // "Spells"
+        // Here we'll put any procs that we'd like to calculate as if they were spells, even if they aren't buttons we'll press.
+        // Note that these should be tagged offGcd in spellDB so we don't calculate cast times for them.
         {spell: "Courage of the White Tiger", cpm: 4 * averageHaste + 0.5},
         {spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5}, // Identical to White Tiger
         {spell: "Insurance", cpm: 0, hastedCPM: true}, // Only active with tier set
-        {spell: "Refreshing Jade Wind", cpm: buildCPM(playerSpells, "Thunder Focus Tea") + hasTalent(playerData.talents, "restoreBalance") * 0.5},
-        //{spell: "Chrono Flame", cpm: 0},     
+
+        // Restore balance gives you a RJW for the entire duration of Chi-Ji / Yulon.
+        {spell: "Refreshing Jade Wind", cpm: buildCPM(playerSpells, "Thunder Focus Tea") + hasTalent(playerData.talents, "restoreBalance") * (25 / 6 * 0.5)},
+        {spell: "Crane Style", cpm: 10, hastedCPM: true}, // This is RPPM. Technically the procs would drop if you don't kick much but this build does.
       ]
 
     // Insurance
@@ -185,7 +185,10 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // Uplifted Spirits
     if (hasTalent(playerData.talents, "upliftedSpirits")) {
-        getSpellEntry(castProfile, "Revival").cpm *= getSpellEntry(castProfile, "Rising Sun Kick").cpm / 180;
+        const adjustedCooldown = 180 - getSpellEntry(castProfile, "Rising Sun Kick").cpm
+        getSpellEntry(castProfile, "Revival").cpm = 60 / adjustedCooldown;
+        //getSpellEntry(castProfile, "Revival").cpm *= getSpellEntry(castProfile, "Rising Sun Kick").cpm / 180;
+        reportingData
     }
 
     if (true) {
@@ -203,8 +206,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         if (hasTalent(playerData.talents, "invokersDelight")) hastePercentage *= (1 + 0.2 * 0.8);
         if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.08 * 0.4);
         reportingData.chijiHaste = hastePercentage;
-        console.log("Adj Mast: " + tempStats.mastery + " Base Mast: " + state.currentStats.mastery);
-        console.log("Adj Haste: " + hastePercentage);
         
         const chijiCasts = chijiDuration / (1.5 / hastePercentage);
         const chijiCooldown = 120;
@@ -216,7 +217,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
         // Enveloping Breath
         const envelopingCasts = 4; // TODO: make dynamic
-        const envelopingHeal = runHeal(state, spellDB["Enveloping Breath"][0], "Enveloping Breath") * envelopingCasts * spellDB["Enveloping Breath"][0].buffDuration * getHaste(state.currentStats);
+        const envelopingHeal = runHeal(state, spellDB["Enveloping Breath"][0], "Enveloping Breath") * envelopingCasts * spellDB["Enveloping Breath"][0].buffDuration * averageHaste;
         healingBreakdown["Enveloping Breath"] = envelopingHeal * (60 / chijiCooldown);
 
         // Chi-ji Gusts
@@ -233,7 +234,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         reportingData.chijiGusts = chijiProcs;
         if (hasTalent(playerData.talents, "jadeBond")) chijiMult *= 1.2;
 
-        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getMasteryHeal(tempStats) * chijiMult * (60 / chijiCooldown) * 0.7;
+        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getMasteryHeal(tempStats) * chijiMult * (60 / chijiCooldown) * (1 - localSettings.chijiGustsOverhealing);
         
     }
 
@@ -254,12 +255,11 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
                 if (spell.mastery) {
                     // Spell procs Gust of Mists.
-                    const masteryHeal = (0.1 + getMastery(state.currentStats, MONKCONSTANTS)) * state.currentStats.intellect * getStatMult(state.currentStats, ["crit", "versatility"], {}, MONKCONSTANTS);
+                    const masteryHeal = ((0.1 + getMastery(state.currentStats, MONKCONSTANTS)) * state.currentStats.intellect * getStatMult(state.currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)) * (1 - localSettings.gustsOverhealing);
 
                     healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * spell.mastery * spellCPM));
 
                 }
-
                 // Spell specifics
                 if (spellName === "Vivify") {
                     const invig = runHeal(state, playerSpells["Invigorating Mist"][0], "Invigorating Mist");
@@ -327,14 +327,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                 //const value = spell.runFunc(state, spell) * spellCPM;
             }
 
-            if ((spellName === "Dream Breath" || spellName === "Spiritbloom") && hasTier(playerData, "S1-2")) spellThroughput *= 1.4; // Tier Set
-            if (spellName === "Judgment" && spell.name === "Greater Judgment") {
-                // Double Judgment healing for each Infusion we collected.
-                const percInfused = Math.min(1, totalInfusions / getCPM(castProfile, "Judgment"));
-
-                spellThroughput *= (1 + percInfused)
-            }
-
             // Spell Slice complete
             if (spellProfile.mult) spellThroughput *= spellProfile.mult;
 
@@ -364,7 +356,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     printHealingBreakdown(damageBreakdown, totalDamage);
     printHealingBreakdown(healingBreakdown, totalHealing);
-    //console.log(reportingData);
-    //console.log("HPS: " + Math.round(totalHealing / 60));
+    console.log(reportingData);
+    console.log("HPS: " + Math.round(totalHealing / 60));
     return { hps: totalHealing / 60, hpm: 0 }
 }
