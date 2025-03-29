@@ -407,6 +407,10 @@
           "title": "Pheromone Secreter",
           "tooltip": "Pick which secondaries you intend to socket in your Pheromone Secreter trinket."
         },
+        "calculateEmbellishments": {
+          "title": "Use Embellishments",
+          "tooltip": "Take into account embellishments' impact in sims. Useful for 3-crafted-items situation where you can move one of the embellishments."
+        },
         "socketedGems": {
           "title": "Socketed Gems",
           "tooltip": "Number of gems you have socketed. Ignored by Top Gear which will just use your actual set."
