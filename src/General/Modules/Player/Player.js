@@ -682,8 +682,9 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Coming Soon)", 2));
 
       this.activeStats = {
         intellect: 80000, // 32k
