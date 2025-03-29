@@ -189,6 +189,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
         item.socketedGems = []
         for (var i = 0; i < item.socket; i++) {
           item.socketedGems.push(enchants["Gems"].shift());
+          //console.log("PUshing gem to ite:")
         }
         
       }

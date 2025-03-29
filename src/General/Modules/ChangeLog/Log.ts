@@ -17,6 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 10,
+    date: "April",
+    changes: [ 
+      "Quality of Life UX changes for Top Gear reports.",
+      "Miniature Roulette Wheel will now show secondaries in its tooltip.",
+      "Top Gear tooltips will now show gems (they're still in their regular place too).",
+
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 9,
     date: "March 27",
     changes: [ 
