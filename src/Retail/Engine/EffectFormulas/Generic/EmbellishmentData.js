@@ -4,6 +4,10 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPM
 
 
 export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
+  if (getSetting(additionalData.settings, "calculateEmbellishments") === false) { // I hate that JS false and 0 are ==. Might break if getSetting gets changed ?
+    return {};
+  }
+
     let activeEffect;
     
     
