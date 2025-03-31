@@ -68,13 +68,27 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     //if (item.slot === "Neck") item.socket = 3;
 
     let bonusString = "";
-    if (missives.includes("Haste")) bonusString += ":6649";
-    if (missives.includes("Mastery")) bonusString += ":6648";
-    if (missives.includes("Crit")) bonusString += ":6647";
-    if (missives.includes("Versatility")) bonusString += ":6650";
+    if (itemID === 228843) {
+      let craftedStats = [];
+      missiveStats.forEach(stat => {
+        if (stat === "haste") craftedStats.push(36);
+        else if (stat ==="crit") craftedStats.push(32);
+        else if (stat === "versatility") craftedStats.push(40);
+        else if (stat === "mastery") craftedStats.push(49);
+      })
 
-    item.bonusIDS = bonusString;
-    item.missiveStats = missiveStats;
+      item.craftedStats = craftedStats;
+    }
+    else {
+      if (missives.includes("Haste")) bonusString += ":6649";
+      if (missives.includes("Mastery")) bonusString += ":6648";
+      if (missives.includes("Crit")) bonusString += ":6647";
+      if (missives.includes("Versatility")) bonusString += ":6650";
+
+      item.missiveStats = missiveStats;
+      item.bonusIDS = bonusString;
+    }
+    
     item.guessItemQuality();
   } else {
     item = new Item(itemID, itemName, getItemProp(itemID, "slot", gameType), itemSocket, itemTertiary, 0, itemLevel, "", gameType);

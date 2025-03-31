@@ -90,7 +90,7 @@ function CompetitiveAlternatives(props) {
                           itemArray = [item];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDom} gems={getGemString(item)} forg={getReforgeID(item)}>
+                              <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} domain={wowheadDom} gems={getGemString(item)} forg={getReforgeID(item)}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"

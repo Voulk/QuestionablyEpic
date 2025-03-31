@@ -249,6 +249,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
 
-    printHealingBreakdown(healingBreakdown, totalHealing);
+    //printHealingBreakdown(healingBreakdown, totalHealing);
     return { hps: totalHealing / 60, hpm: 0 }
 }

@@ -36,7 +36,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     playerData.talents = { ...baseTalents };
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", tierSets: [], currentTarget: 0, setStats: JSON.parse(JSON.stringify(playerData.stats)), currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
-    const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.35, chijiGustsOverhealing: 0.35};
+    const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.4, chijiGustsOverhealing: 0.4};
     
     state.tierSets = playerData.effects.filter(effect => effect.type === "set bonus").map(effect => effect.name);
     //console.log(JSON.stringify(state.tierSets));

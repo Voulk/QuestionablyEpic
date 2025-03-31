@@ -451,6 +451,7 @@ export default function TopGear(props: any) {
         if (item.effect) newItem.effect = item.effect;
         if (item.flags) newItem.flags = item.flags;
         if (item.bonusIDS) newItem.bonusIDS = item.bonusIDS;
+        if (item.craftedStats) newItem.craftedStats = item.craftedStats;
         if (item.selectedOptions) newItem.selectedOptions = item.selectedOptions;
   
         shortReport.itemSet.itemList.push(newItem)

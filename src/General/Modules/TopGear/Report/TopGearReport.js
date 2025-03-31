@@ -8,17 +8,15 @@ import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
-import { useSelector } from "react-redux";
 import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
 import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { getTranslatedClassName } from "locale/ClassNames";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { sample } from "./SampleReportData.js";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
+import InformationBox from "General/Modules/1. GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
-
+import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase"
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -53,8 +51,6 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
 
     //.catch(err => { throw err });
 }
-
-
 
   const classIcon = (spec) => {
     switch (spec) {
@@ -104,13 +100,14 @@ function TopGearReport(props) {
   useEffect(() => {
     if (result && result.new) {
       
-      
       if (process.env.PUBLIC_URL.includes("live")) {
-        window.history.pushState('QE Live Report', 'Title', 'live/report/' + result.id);
+        window.history.replaceState('QE Live Report', 'Title', 'live/report/' + result.id);
+        window.scrollTo(0, 0);
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
-        window.history.pushState('QE Live Report', 'Title', 'ptr/report' + result.id);
+        window.history.replaceState('QE Live Report', 'Title', 'ptr/report' + result.id);
+        window.scrollTo(0, 0);
       }
       else {
         // Call Error
@@ -157,8 +154,6 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
   let itemList = {};
   let statList = {};
   
-  
-
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
     //history.push("/")
@@ -194,6 +189,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
         item.socketedGems = []
         for (var i = 0; i < item.socket; i++) {
           item.socketedGems.push(enchants["Gems"].shift());
+          //console.log("PUshing gem to ite:")
         }
         
       }
@@ -209,8 +205,6 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       //console.log("Total mana spend: " + (regen + pool))
       //console.log(manaSources);
       manaSources.totalMana =  Math.round(manaSources.pool + manaSources.regen + manaSources.additional.additionalMP5 * 12 * 7);
-      console.log("Total Mana" + manaSources.totalMana)
-
     }
 
     // Build Vault items
@@ -233,6 +227,10 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     }
   };
 
+  const handleBackClick = () => {
+    window.history.back(); // Goes back to the previous page in history
+  }
+
 
   return (
     <div
@@ -242,11 +240,15 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
         display: "block",
       }}
     >
-      <div style={{ height: 96 }} />
+      
+      <div style={{ height: 90 }} />
       {resultValid ? (
         <Grid container spacing={1}>
           {/*gameType === "Retail" ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
             "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} /> : ""*/}
+          <Grid item xs={12}>
+          <InformationBox variant={"transparent"} title={"Top Set"} information={"This is your best set of gear. You can see how close other sets are below!"}></InformationBox>
+          </Grid>
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
               <div

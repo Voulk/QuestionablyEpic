@@ -17,6 +17,17 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 10,
+    date: "April",
+    changes: [ 
+      "Quality of Life UX changes for Top Gear reports.",
+      "The playstyle dropdown is now in a more prominent place that's harder to miss.",
+      "Miniature Roulette Wheel will now show secondaries in its tooltip.",
+      "Top Gear tooltips will now show gems (they're still in their regular place too).",
+      "Fixed an issue where manually added Miniature Roulette Wheel would show wrong secondaries on tooltip while calculating correctly.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 9,
     date: "March 27",
     changes: [ 
