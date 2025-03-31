@@ -174,6 +174,13 @@ class CastModel {
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
+      else if (modelID === "Oracle (Coming Soon)") {
+        this.modelName = "Oracle (Coming Soon)";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
+      }
       else {
         this.modelName = "Voidweaver";
         spellList = discPriestDefaultSpellData(contentType);

@@ -16,10 +16,14 @@ export default function InformationBox(props: { information: string, variant?: s
     boxColor = "goldenrod";
     backgroundColor = "#685C42";
   }
+  else if (props.variant === "transparent") {
+    boxColor = "goldenrod";
+    backgroundColor = "rgba(104, 105, 20, 0.5)";
+  }
 
 
   return (
-    <Paper elevation={0} style={{ border: "1px solid", padding: 15, borderColor: boxColor, backgroundColor: backgroundColor, width: "100%" }}>
+    <Paper elevation={2} style={{ border: "1px solid", padding: 15, borderColor: boxColor, backgroundColor: backgroundColor, width: "100%" }}>
       <Grid container spacing={1}>
         {paragraphs.map((paragraph, index) => (
           <Grid item xs={12} key={index}>
