@@ -77,7 +77,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     reportingData.hastePre = getHaste(state.currentStats)
     let averageHaste = getHaste(state.currentStats)
-                            * (1 + 0.15 * 10 * hasTalent(playerData.talents, "secretInfusion") / 30) //SI toward crit for chiji?
+                            * (1 + 0.15 * 10 * hasTalent(playerData.talents, "secretInfusion") / 30) //Potential TODO: SI toward crit for chiji?
                             * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
                             * (1 + 0.35 * 40 / 420) // Bloodlust
 
