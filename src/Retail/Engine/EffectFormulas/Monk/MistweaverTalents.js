@@ -152,12 +152,12 @@ export const baseTalents = {
         // Abilitie reset stomp twice as often. While within Stomp: TP strikes twice, BoK strikes two extra targets at 20% effectiveness, SCK heals 3 allies for 110% damage done.
     }},
     jadefireTeachings: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
-        // After casting Stomp or TFT: Ancient Teachings transfers an extra 160% damage -> healing. +5% stamina while active.
+        // After casting Stomp or TFT: Ancient Teachings transfers an extra 215% damage -> healing. +5% stamina while active.
         // This has basically a 100% uptime whenever there's relevant healing but we could set a ratio here if we wanted to.
-        spellDB["Tiger Palm"][0].damageToHeal += 1.6;
-        spellDB["Blackout Kick"][0].damageToHeal += 1.6;
-        spellDB["Rising Sun Kick"][0].damageToHeal += 1.6;
-        spellDB["Crackling Jade Lightning"][0].damageToHeal += 1.6;
+        spellDB["Tiger Palm"][0].damageToHeal += 2.15;
+        spellDB["Blackout Kick"][0].damageToHeal += 2.15;
+        spellDB["Rising Sun Kick"][0].damageToHeal += 2.15;
+        spellDB["Crackling Jade Lightning"][0].damageToHeal += 2.15;
     }},
     resplendentMist: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // GoM has a 30% chance to heal +75%.

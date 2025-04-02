@@ -11,8 +11,8 @@ export const MONKCONSTANTS = {
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    auraHealingBuff: 1.09,
-    auraDamageBuff: 1,
+    auraHealingBuff: 1.05,
+    auraDamageBuff: 1 - .25,
     enemyTargets: 1, 
 }
 

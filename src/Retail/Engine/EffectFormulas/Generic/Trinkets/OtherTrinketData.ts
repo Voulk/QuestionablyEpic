@@ -98,7 +98,7 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid") && getSetting(additionalData.settings, "delayOnUseTrinkets")) {
+      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) {
         bonus_stats.haste = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
         bonus_stats.crit = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
       }

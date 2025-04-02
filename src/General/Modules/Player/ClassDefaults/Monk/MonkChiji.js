@@ -34,7 +34,7 @@ export const chijiSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.16,
         c90: 1,
-        c120: 1.85,
+        c120: 1.6,
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
