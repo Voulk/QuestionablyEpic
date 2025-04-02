@@ -77,7 +77,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     reportingData.hastePre = getHaste(state.currentStats)
     let averageHaste = getHaste(state.currentStats)
-                            * (1 + 0.08 * 10 * 2 * hasTalent(playerData.talents, "secretInfusion") / 60)
+                            * (1 + 0.15 * 10 * hasTalent(playerData.talents, "secretInfusion") / 30) //SI toward crit for chiji?
                             * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
                             * (1 + 0.35 * 40 / 420) // Bloodlust
 
@@ -92,7 +92,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
-        {spell: "Enveloping Mist", cpm: 3, hastedCPM: true},
+        {spell: "Enveloping Mist", cpm: 4 * averageHaste + 0.5, hastedCPM: true}, //this needs to be at a minimum the same as the number of box procs
         {spell: "Vivify", cpm: 4, hastedCPM: true},
         {spell: "Tiger Palm", cpm: 7.5, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
@@ -137,7 +137,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     castProfile.push({spell: "Rising Mist", cpm: getSpellEntry(castProfile, "Rising Sun Kick").cpm}); 
 
     // Sheilun's Gift
-    localSettings.sheilunsClouds = Math.min(12, (60 / 4 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
+    localSettings.sheilunsClouds = Math.min(10, (60 / 8 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
     reportingData.sheilunsClouds = localSettings.sheilunsClouds;
 
     // Expected Downtime
@@ -162,7 +162,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     // This section in particular could use more analysis. It's important that Rising Mist scales with haste since it's a key factor in our resets,
     // however modelling getting 5 in a ReM duration is trickier. We also don't want to introduce "fake" breakpoints.
     localSettings.risingMist.remStandard = Math.min(1, (getSpellEntry(castProfile, "Rising Sun Kick").cpm * (40 / 60) / 5 * 0.9));
-    localSettings.risingMist.envStandard = Math.min(1, (getSpellEntry(castProfile, "Enveloping Mist").cpm * (12 / 60) / 2 * 0.9));
+    localSettings.risingMist.envStandard = Math.min(1, (getSpellEntry(castProfile, "Enveloping Mist").cpm * (hasTalent(playerData.talents, "mistWrap") ? 14 : 12 / 60) / 2 * 0.9));
 
 
     // Get free Renewing Mists
@@ -192,21 +192,21 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     if (true) {
         // Sequence Chi-ji
-        // Store triple TotM stacks before pressing Chi-ji
+        // Store 4x TotM stacks before pressing Chi-ji
         const tempStats = {...state.setStats};
         const chijiDuration = 25; // todo
 
         // We'll always combine trinkets with Chi-ji. One weakness of the model here is it doesn't consider that Chi-Ji is front loaded.
         // This could be added later.
         if (onUseData.name === "Signet of the Priory") tempStats.haste += (onUseData.value * onUseData.duration / chijiDuration);
-        if (onUseData.name === "House of Cards") tempStats.mastery += (onUseData.value * 15 / chijiDuration);
+        if (onUseData.name === "House of Cards") tempStats.mastery += (onUseData.value * onUseData.duration / chijiDuration);
 
         let hastePercentage = getHaste(tempStats);
         if (hasTalent(playerData.talents, "invokersDelight")) hastePercentage *= (1 + 0.2 * 0.8);
-        if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.08 * 0.4);
+        if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.15 * 0.4);
         reportingData.chijiHaste = hastePercentage;
         
-        const chijiCasts = chijiDuration / (1.5 / hastePercentage);
+        const chijiCasts = chijiDuration / (1.5 / hastePercentage) - 1 ; // casting Chiji itself takes away from the # of casts in the window
         const chijiCooldown = 120;
 
         // Chi Cocoons & Jade Bond
@@ -221,14 +221,15 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
         // Chi-ji Gusts
         // Each damage spell procs 6 total Gusts
+        const chijiKicks = chijiCasts - envelopingCasts;
         const castBreakdown = {
-            "Tiger Palm": 0.25 * chijiCasts,
-            "Rising Sun Kick": 0.25 * chijiCasts,
-            "Blackout Kick": 0.5 * chijiCasts,
-            "Enveloping Mist": 4,
+            "Tiger Palm": 0.25 * chijiKicks,
+            "Rising Sun Kick": 0.25 * chijiKicks,
+            "Blackout Kick": 0.5 * chijiKicks,
+            "Enveloping Mist": envelopingCasts,
         }
 
-        const chijiProcs = 6 * (4 + castBreakdown["Tiger Palm"] + castBreakdown["Rising Sun Kick"] + castBreakdown["Blackout Kick"] * 2);
+        const chijiProcs = 6 * (4 + castBreakdown["Tiger Palm"] * (hasTalent(playerData.talents, "awakenedJadefire") ? 2 : 1) + castBreakdown["Rising Sun Kick"] + castBreakdown["Blackout Kick"]);
         let chijiMult = 1
         reportingData.chijiGusts = chijiProcs;
         if (hasTalent(playerData.talents, "jadeBond")) chijiMult *= 1.2;
@@ -348,14 +349,14 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         healingBreakdown[key] *= chiHarmony;
     })
 
-    //console.log("HPS: " + totalHealing / 60);
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
     const totalDamage = sumValues(damageBreakdown);
 
-    //printHealingBreakdown(damageBreakdown, totalDamage);
-    //printHealingBreakdown(healingBreakdown, totalHealing);
-    //console.log(reportingData);
-    //console.log("HPS: " + Math.round(totalHealing / 60));
+    // printHealingBreakdown(damageBreakdown, totalDamage);
+    // printHealingBreakdown(healingBreakdown, totalHealing);
+    // console.log(reportingData);
+    // console.log("HPS: " + Math.round(totalHealing / 60));
+    // console.log("HPS: " + totalHealing / 60);
     return { hps: totalHealing / 60, hpm: 0 }
 }
