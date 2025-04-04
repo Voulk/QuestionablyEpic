@@ -3,6 +3,7 @@ const softSlice = 25;
 import { gemDB } from "Databases/GemDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTranslatedSlotName } from "locale/slotsLocale";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
@@ -215,8 +216,10 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
-export const setupGems = (itemList, adjusted_weights) => {
+export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
+    const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
+    const gemBudget = useEpicGems ? 50 : 40;
     // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
     
@@ -226,16 +229,19 @@ export const setupGems = (itemList, adjusted_weights) => {
     const gemIDS = {
       52208: 'yellow',
       52207: 'red',
-      52236: 'blue'
+      52236: 'blue',
 
+      71881: 'red',
+      71850: 'yellow', // int / haste
+      71868: 'blue',
     }
-    const yellowGemID = 52208; // TODO: Autocalc this based on which would be best. 
+    const yellowGemID = useEpicGems ? 71850 : 52208; // TODO: Autocalc this based on which would be best. 
     const metaGemID = 52296;
-    const redGemID = 52207;
-    const blueGemID = 52236;
-    const socketScores = {red: adjusted_weights.intellect * 40, 
-                          blue: adjusted_weights.intellect * 20 + adjusted_weights.spirit * 20, 
-                          yellow: adjusted_weights.intellect * 20 + adjusted_weights.haste * 20}
+    const redGemID = useEpicGems ? 71881 : 52207;
+    const blueGemID = useEpicGems ? 71868 : 52236;
+    const socketScores = {red: adjusted_weights.intellect * gemBudget, 
+                          blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget / 2, 
+                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget / 2}
 
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
@@ -291,7 +297,7 @@ export const setupGems = (itemList, adjusted_weights) => {
         const sockets = item.classicSockets.sockets;
         let itemIndex = 0;
         sockets.forEach((socket, socketIndex) => {
-          if (item.socketedGems[socketIndex] === 52208 || sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
+          if (gemIDS[item.socketedGems[socketIndex]] === "yellow" || sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
           else {
             let score = 0;
             // The socket isn't yellow, try and make it orange.

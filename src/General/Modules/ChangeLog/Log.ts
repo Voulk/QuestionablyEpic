@@ -17,8 +17,15 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
-    update: 10,
+    update: 11,
     date: "April",
+    changes: [ 
+      "Cataclysm: Added Epic Gem setting. Removed some more items that don't exist."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 10,
+    date: "March 31",
     changes: [ 
       "Quality of Life UX changes for Top Gear reports.",
       "The playstyle dropdown is now in a more prominent place that's harder to miss.",

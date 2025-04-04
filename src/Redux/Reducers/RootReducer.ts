@@ -58,6 +58,7 @@ const initialState : RootState = {
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
+    classicGemSettings: {value: "Rare", options: ["Rare", "Epic"], category: "topGear", type: "selector", gameType: "Classic"},
     reforgeSetting: {value: "Smart", options: ["Smart", "Manual", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
     hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura", "Haste Aura + Dark Intent"], category: "topGear", type: "selector", gameType: "Classic"},
     numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
@@ -67,6 +68,7 @@ const initialState : RootState = {
     wristEnchant: {value: "Intellect (better)", options: ["Haste (cheaper)", "Intellect (better)"], category: "enchants", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
     bootsEnchant: {value: "Lavawalker", options: ["Haste (cheaper)", "Lavawalker", "Earthen Vitality"], category: "enchants", type: "selector", gameType: "Classic"},
+    
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
   patronStatus: "Standard", // Currently not used. Will be once we evolve app into a functional component.
