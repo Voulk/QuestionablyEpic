@@ -20,7 +20,9 @@ export const changeLog: entry[] = [
     update: 11,
     date: "April",
     changes: [ 
-      "Cataclysm: Added Epic Gem setting. Removed some more items that don't exist."
+      "Cataclysm: Added Epic Gem setting. Removed some more items that don't exist.",
+      "Added Catalyst offpieces and BoE items to Upgrade Finder.",
+      "Bugfix: Some missing crafted items will now appear in Upgrade Finder."
     ]},
   {
     version: "11.1 / 4.4.2",
