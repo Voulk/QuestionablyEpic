@@ -1,11 +1,14 @@
 export const localizationFR = {
   body: {
-    emptyDataSourceMessage: "Pas d'enregistreent à afficher",
+    emptyDataSourceMessage: "Pas d'enregistrement à afficher",
     addTooltip: "Ajouter",
     deleteTooltip: "Supprimer",
-    editTooltip: "Editer",
+    editTooltip: "Modifier",
+    bulkEditTooltip: "Tout modifier",
+    bulkEditApprove: "Enregistrer tous les changements",
+    bulkEditCancel: "Effacer tous les changements",
     filterRow: {
-      filterTooltip: "Filtrer",
+      filterTooltip: "Effacer le filtre",
     },
     editRow: {
       deleteText: "Voulez-vous supprimer cette ligne?",
@@ -14,7 +17,7 @@ export const localizationFR = {
     },
   },
   grouping: {
-    placeholder: "Tirer l'entête ...",
+    placeholder: "Déplacer l'entête ici pour grouper",
     groupedBy: "Grouper par:",
   },
   header: {
@@ -41,7 +44,10 @@ export const localizationFR = {
     exportTitle: "Exporter",
     exportAriaLabel: "Exporter",
     exportName: "Exporter en CSV",
+    exportPDFName: "Exporter en PDF",
     searchTooltip: "Chercher",
     searchPlaceholder: "Chercher",
+    searchAriaLabel: "Chercher",
+    clearSearchAriaLabel: "Effacer la recherche",
   },
 };
