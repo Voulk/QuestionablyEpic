@@ -22,7 +22,10 @@ export const changeLog: entry[] = [
     changes: [ 
       "Cataclysm: Added Epic Gem setting. Removed some more items that don't exist.",
       "Added Catalyst offpieces and BoE items to Upgrade Finder.",
-      "Bugfix: Some missing crafted items will now appear in Upgrade Finder."
+      "Bugfix: Some missing crafted items will now appear in Upgrade Finder.",
+      "Upgrade Finder: Non-max difficulties will now respect drop level.",
+      "New Setting: Ignore Embellishment value.",
+      "Some Chi-Ji model updates.",
     ]},
   {
     version: "11.1 / 4.4.2",
