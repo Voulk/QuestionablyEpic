@@ -890,7 +890,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
     
-    console.log(castModelResult.hps)
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
     hardScore = setStats.hps || 0;
