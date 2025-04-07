@@ -887,12 +887,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
 
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-
+    
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
-
+    
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
-    evalStats.hps = (setStats.hps || 0);
+    hardScore = setStats.hps || 0;
+    //evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==
   // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.
@@ -976,9 +977,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
 
   // Double on-use adjustment
-  // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
-  // but from a practical viewpoint it achieves the objective. It could be replaced with something more
-  // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
+  // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
+  // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
     hardScore -= 1800;
   }
