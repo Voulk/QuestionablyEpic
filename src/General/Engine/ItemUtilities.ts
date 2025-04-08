@@ -366,10 +366,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2599 || bossID === 2609) return 3; // Sikran, Rashanan
-  else if (bossID === 2612 || bossID === 2601) return 6; // Broodtwister, Princess
-  else if (bossID === 2608 || bossID === 2602) return 9; // Silken Court, Queen
-
+  if (bossID === 2640 || bossID === 2641) return 3; // Cauldron, Rik
+  else if (bossID === 2642 || bossID === 2653 || bossID === 2644) return 6; // Stix, Sprocket, OAB
+  else if (bossID === 2645 || bossID === 2646) return 9; // Mug'zee, Gallywix
 
   return 0;
 }
@@ -380,13 +379,13 @@ const isMaxxed = (difficulty: number) => {
 }
 
 export function getVeryRareItemLevelBoost(itemID: number, bossID: number, difficulty: number) {
-  const boostedItems = [225574, 225577, 225578];
+  const boostedItems = [228844, 231265, 232805];
 
   if (boostedItems.includes(itemID)) {
     // MAX difficulties are a bit pointless for very rare items now since they all drop in the same upgrade band and so get no boost.
     if (isMaxxed(difficulty)) return 0;
-    else if (bossID === 2609 || bossID === 2599) return 13;
-    else if (bossID === 2602) return 7; // Queen
+    else if (bossID === 2653 || bossID === 2644) return 10; // Sprocket, OAB
+    else if (bossID === 2646) return 7; // Gally
     else return 0;
   } 
   else return 0;
@@ -806,13 +805,13 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
     }
   }
 
-  // This, on the other hand, is a close estimate that should be replaced ASAP.
+  // This could all be shortened to a one line formula by using slot-by-slot allocations like the trinket formula.
+  // Accuracy is the same but tidy code is nice code.
   if (tertiary === "Leech") {
+    const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
     if (slot === "Trinket") {
-      // This is an occasionally off-by-one formula for leech that should eventually be replaced.
-      stats.leech = Math.ceil(194 + 1.2307 * (itemLevel - 376));
+      stats.leech = Math.round(rand_prop * combat_mult * 0.0001 * terMult * 6995);
     } else {
-      const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
       stats.leech = Math.floor(terMult * (((stats.haste) || 0) + (stats.crit || 0) + (stats.mastery || 0) + (stats.versatility || 0)));
     }
   }
