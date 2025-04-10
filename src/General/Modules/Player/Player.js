@@ -734,11 +734,11 @@ export class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 80000,
-        haste: 9200,
-        crit: 6000,
+        intellect: 90000,
+        haste: 15000,
+        crit: 10000,
         mastery: 3400,
-        versatility: 6020,
+        versatility: 8000,
         stamina: 1900,
       };
       /*
