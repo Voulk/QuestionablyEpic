@@ -618,7 +618,7 @@ export const otherTrinketData = [
   },
   {
     name: "Hallowed Tome",
-    description: "",
+    description: "Assumes you have one ally with a Hallowed effect. Approx 20% weaker if you don't since you won't get the ally buff portion.",
     effects: [
       {
         coefficient: 0.665355, 
@@ -627,14 +627,24 @@ export const otherTrinketData = [
         ppm: 4,
         stat: "mixed",
       },
+      { // This does assume you have at least one ally who is wearing a Hallowed trinket. It could be a setting but feels a bit bloaty. 
+        coefficient: 0.665355 * 20 * 0.01, // Formula is from blizzard. Not my fault! 
+        table: -7,
+        duration: 15,
+        ppm: 4,
+        stat: "allyStats",
+      },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      let bonus_stats = {};
+      let bonus_stats: Stats = {};
 
       const bestStat = player.getHighestStatWeight(additionalData.contentType)
       bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
 
-      // TODO: Ally effect.
+      // Technically if you have multiple devout allies your uptime would be slightly higher than this because you'll proc munch less
+      // but you're not guaranteed to have that so we'll use this approach for now.
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel); 
+
 
       return bonus_stats;
     }
