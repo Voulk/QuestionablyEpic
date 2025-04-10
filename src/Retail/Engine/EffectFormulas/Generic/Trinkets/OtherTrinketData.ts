@@ -476,16 +476,17 @@ export const otherTrinketData = [
     description: "Fairly poor as a healing trinket without intellect, but does a decent amount of extra DPS.",
     effects: [
       {
-        coefficient: 78.5124 * 0.9, 
+        coefficient: 70.66128, 
         table: -8,
         ppm: 4,
+        secondaries: ["crit", "versatility"], // Unhasted PPM for some reason.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
       bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      bonus_stats.hps = bonus_stats.dps * 0.8;
+      bonus_stats.hps = bonus_stats.dps * 0.9;
 
       return bonus_stats;
     }
@@ -592,6 +593,48 @@ export const otherTrinketData = [
       bonus_stats = runGenericRandomPPMTrinket(data[1], itemLevel);
       bonus_stats.intellect = processedValue(data[0], itemLevel);
 
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Arathi Minister's Receptacle",
+    description: "This is really just an int / vers stat stick. The healing effect is flavor ONLY.",
+    effects: [
+      {
+        coefficient: 0.701963, 
+        table: -9,
+        targets: 5,
+        tickRate: 5,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel) * data[0].targets! / data[0].tickRate!;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Hallowed Tome",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.665355, 
+        table: -7,
+        duration: 15,
+        ppm: 4,
+        stat: "mixed",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats = {};
+
+      const bestStat = player.getHighestStatWeight(additionalData.contentType)
+      bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
+
+      // TODO: Ally effect.
 
       return bonus_stats;
     }
