@@ -1,13 +1,28 @@
 
 
-export const applyLoadoutEffects = (spells, settings, conduits, state) => {
+const applyTalents = (state, spellDB, stats) => {
+    Object.keys(state.talents).forEach(talentName => {
+        const talent = state.talents[talentName];
+        if (talent.points > 0) {
+            talent.runFunc(state, spellDB, talent.points, stats)
+        }
+    });
 
+}
+
+export const applyLoadoutEffects = (spells, settings, state, MONKCONSTANTS) => {
+
+    applyTalents(state, spells, state.stats);
+
+    return spells;
 }
 
 export const baseTalents = {
     // Tier 1
     fastFeet: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // +70% RSK damage, +10% SCK damage
+        spellDB["Rising Sun Kick"][0].coeff *= 1.7;
+        //spellDB["Spinning Crane Kick"][0].coeff *= 1.7;
     }},
     graceOfTheCrane: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         // +4% healing tkn
@@ -17,8 +32,8 @@ export const baseTalents = {
     }},
 
     // Class Tree Tier 2
-    ferocityOfXuen: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        // +2% damage done
+    ferocityOfXuen: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, value: 0.02, runFunc: function (state, spellDB, points) {
+        // +2% damage done. In getDamMult
     }},
     vigorousExpulsion: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         // +5% Expel Harm healing, +15% crit chance
@@ -31,8 +46,8 @@ export const baseTalents = {
     chiProficiency: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         // +2% magic damage done. +2% healing done.
     }},
-    martialInstincts: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, runFunc: function (state, spellDB, points) {
-        // +2% physical damage done.
+    martialInstincts: {points: 2, maxPoints: 2, icon: "", id: 0, select: true, tier: 3, value: 0.02, runFunc: function (state, spellDB, points) {
+        // +2% physical damage done per point.
     }},
 
     // Spec Tree Tier 1
@@ -47,6 +62,19 @@ export const baseTalents = {
     }},
     upliftedSpirits: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // Vivify and RSK reduce the cooldown on Revival by 1s. Revival heals targets for 15% of its amount over 10 seconds.
+
+        // Check this is sqrting properly.
+        /*spellDB["Revival"].push({
+            name: "Uplifted Spirits Revival",
+            type: "buff",
+            buffType: "heal",
+            coeff: spellDB["Revival"][0].coeff * 0.15 * 0.1,
+            tickData: {tickRate: 1, canPartialTick: true},
+            buffDuration: 10,
+            targets: 20,
+            expectedOverheal: 0.42,
+            secondaries: ['crit', 'vers'] // + Haste
+        })*/
     }},
     energizingBrew: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         // Mana Tea channels 50% faster and generates 20% more mana.
@@ -124,7 +152,12 @@ export const baseTalents = {
         // Abilitie reset stomp twice as often. While within Stomp: TP strikes twice, BoK strikes two extra targets at 20% effectiveness, SCK heals 3 allies for 110% damage done.
     }},
     jadefireTeachings: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
-        // After casting Stomp or TFT: Ancient Teachings transfers an extra 160% damage -> healing. +5% stamina while active.
+        // After casting Stomp or TFT: Ancient Teachings transfers an extra 215% damage -> healing. +5% stamina while active.
+        // This has basically a 100% uptime whenever there's relevant healing but we could set a ratio here if we wanted to.
+        spellDB["Tiger Palm"][0].damageToHeal += 2.15;
+        spellDB["Blackout Kick"][0].damageToHeal += 2.15;
+        spellDB["Rising Sun Kick"][0].damageToHeal += 2.15;
+        spellDB["Crackling Jade Lightning"][0].damageToHeal += 2.15;
     }},
     resplendentMist: {points: 1, maxPoints: 2, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // GoM has a 30% chance to heal +75%.
@@ -168,4 +201,19 @@ export const baseTalents = {
     emperorsFavor: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
         // SG healing +150%, cast time -100%, heals only 1 target now.
     }},
+
+    // CONDUIT OF THE CELESTIALS
+    restoreBalance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free RJW cast when you Chi-ji / Yulon.
+    }},
+
+    innerCompass: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free rotating stats
+    }},
+
+    xuensGuidance: {points: 1, maxPoints: 1, icon: "", id: 0, select: true, tier: 6, runFunc: function (state, spellDB, points) {
+        // Free rotating stats
+        spellDB["Tiger Palm"][0].coeff *= 1.1;
+    }},
 };
+

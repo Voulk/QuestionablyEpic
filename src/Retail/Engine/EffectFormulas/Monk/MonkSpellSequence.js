@@ -3,20 +3,17 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { MONKSPELLS } from "./MistweaverSpellDB";
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
+import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+            getHealth, getCrit, advanceTime, hasTalent, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, getTalentValue } from "../Generic/RampGeneric/RampBase";
 
-// Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
-const discSettings = {
-    chaosBrand: true
-}
+export const MONKCONSTANTS = {
+    masteryMod: 6.93, 
+    masteryEfficiency: 0.82, 
+    baseMana: 250000,
 
-// This function automatically casts a full set of ramps. It's easier than having functions call ramps individually and then sum them.
-export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
-    
-    const miniSeq = buildRamp('Mini', 6, [], stats.haste, "Kyrian Evangelism", [])
-    const miniRamp = runCastSequence(miniSeq, stats, settings, conduits);
-    const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
-    const fiendRamp = runCastSequence(fiendSeq, stats, settings, conduits);
-    return boonRamp + fiendRamp + miniRamp * 2;
+    auraHealingBuff: 1.05,
+    auraDamageBuff: 1 - .25,
+    enemyTargets: 1, 
 }
 
 
@@ -26,23 +23,18 @@ export const allRamps = (boonSeq, fiendSeq, stats, settings = {}, conduits) => {
  * @chaosbrand A 5% damage buff if we have Chaos Brand enabled in Disc Settings.
  * @AscendedEruption A special buff for the Ascended Eruption spell only. The multiplier is equal to 3% (4 with conduit) x the number of Boon stacks accrued.
  */
-const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => {
+const getDamMult = (state, t, spellName, spell) => {
     let mult = 1
 
-    if (MONKSPELLS[spellName].damageType === "Physical")
+    if (spell.damageType === "physical")
     {
         mult *= 1.05 // Mystic Touch.
+
+        if (hasTalent(state.talents, "martialInstincts")) mult *= (1 + getTalentValue(state.talents, "martialInstincts"))
     }
 
-    const multiplierBuffList = ["Dream Delver", "Tea Time"];
-    multiplierBuffList.forEach(buffName => {
-        if (checkBuffActive(buffs, buffName)) 
-    {
-        mult *= buffs.filter(function (buff) {return buff.name === buffName})[0].value;
-    }
-    });
-
-    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= 1.08;
+    if (hasTalent(state.talents, "ferocityOfXuen")) mult *= (1 + getTalentValue(state.talents, "ferocityOfXuen"))
+        
 
     return mult; 
 }
@@ -53,63 +45,6 @@ const getDamMult = (buffs, activeAtones, t, spellName, boonStacks, conduits) => 
  */
 const getHealingMult = (state, spellName, conduits) => {
     let mult = 1
-    const buffs = state.activeBuffs;
-
-    const multiplierBuffList = ["Dream Delver", "Token of Appreciation", "Tea Time"];
-
-    multiplierBuffList.forEach(buffName => {
-        if (checkBuffActive(buffs, buffName)) 
-    {
-        mult *= buffs.filter(function (buff) {return buff.name === buffName})[0].value;
-    }
-    });
-
-    // Healing multiplier of 2pc affects all healing (including 4pc)
-    if (state.settings.misc.includes("2T28") && (spellName === "Essence Font (HoT)" || spellName === "Essence Font (HoT - Faeline Stomp)")) {
-        mult *= 1.05;
-    }
-
-    // Apply Jade Bond conduit
-    if (spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Soothing Breath (CTA Yulon)" || spellName === "Soothing Breath (Yulon)")
-    {
-        mult *= 1.125;
-    }
-
-    // Apply Resplendant Mist conduit
-    if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)" || spellName === "Gust of Mists (Essence Font)" || spellName === "Gust of Mists (Bonedust Brew)")
-    {
-        mult *= 1 + 0.3 * 1;
-    }
-
-    if (spellName === "Gust of Mists (Essence Font)")
-    {
-        const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
-        const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
-        let multi = activeEFBuffs.length / 20;
-        if (multi > 1) multi = 1;
-        mult *= multi;
-    }
-
-    // FLS buffs 5 targets. We'll take the average healing increase. This is likely a slight underestimation since your RJW and FLS targets will line up closely. On the other
-    // hand FLS likes to hit pets sometimes so it should be fair. 
-    if (checkBuffActive(buffs, "Faeline Harmony Inc")) mult *= (0.08 * 5 / 20) + 1; 
-
-    // Enveloping mist and breath healing increase
-    if (spellName != "Faeline Stomp" && spellName != "Enveloping Mist" && spellName != "Enveloping Breath")
-    {
-        if (checkBuffActive(buffs, "Enveloping Mist"))
-        {
-            const EnvelopingMistCount = buffs.filter(function (buff) {return buff.name === "Enveloping Mist"}).length;
-            mult *= 1 + 0.3 * EnvelopingMistCount / 20;
-        }
-
-        // This currently multiplies the healing value by 3.5 due to number of targets hit per buff
-        if (checkBuffActive(buffs, "Enveloping Breath"))
-        {
-            const EnvelopingBreathCount = buffs.filter(function (buff) {return buff.name === "Enveloping Breath"}).length;
-            mult *= 1 + 0.1 * EnvelopingBreathCount / 20 * 3.5;
-        }
-    }
 
     return mult;
 }
@@ -122,70 +57,6 @@ const checkBuffActive = (buffs, buffName) => {
     return buffs.filter(function (buff) {return buff.name === buffName}).length > 0;
 }
 
-
-/**
- * Returns a spells stat multiplier based on which stats it scales with.
- * @param {*} statArray A characters current stats including any active buffs.
- * @param {*} stats The secondary stats a spell scales with. Pulled from it's SpellDB entry.
- * @returns An effective multiplier. For a spell that scales with both crit and vers this would just be crit x vers.
- */
-const getStatMult = (currentStats, stats) => {
-    let mult = 1;
-    if (stats.includes("vers")) mult *= (1 + currentStats['versatility'] / 40 / 100);
-    if (stats.includes("crit")) mult *= (1.05 + currentStats['crit'] / 35 / 100); // TODO: Re-enable
-    if (stats.includes("mastery")) mult *= (1.336 + currentStats['mastery'] / 35 * 4.2 / 100);
-    return mult;
-}
-
-/**
- * Get our players active stats. This is made up of our base stats + any buffs. 
- * Diminishing returns is not in play in this function. It's instead included when we get the stat multiplier itself. 
- * @param {} statArray Our active stats.
- * @param {*} buffs Our active buffs.
- * @returns 
- */
-const getCurrentStats = (statArray, buffs) => {
-    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
-    statBuffs.forEach(buff => {
-        statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
-
-    statArray = applyDiminishingReturns(statArray);
-    const multBuffs = buffs.filter(function (buff) {return buff.buffType === "statsMult"});
-    multBuffs.forEach(buff => {
-        // Multiplicative Haste buffs need some extra code. 
-        if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / 32 / 100 + 1) * buff.value)-1) * 32 * 100
-        else statArray[buff.stat] = (statArray[buff.stat] || 0) * buff.value;
-        
-    });
-    return statArray;
-    //return statArray;
-}
-
-export const getHaste = (stats) => {  
-    return 1 + stats.haste / 32 / 100;
-}
-
-const getSqrt = (targets, softCap = 1) => {
-    if (softCap === 1) return Math.sqrt(targets);
-    else return Math.min(Math.sqrt(softCap / targets), 1)
-}
-
-/**
- * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
- * We'll take care of multipliers like Schism and Sins in another function.
- * @param {object} spell The spell being cast. Spell data is pulled from DiscSpellDB. 
- * @param {object} currentStats A players current stats, including any buffs.
- * @returns The raw damage or healing of the spell.
- */
-export const getSpellRaw = (spell, currentStats) => {
-    return spell.coeff * currentStats.intellect * getStatMult(currentStats, spell.secondaries); // Multiply our spell coefficient by int and secondaries.
-}
-
-// This function is for time reporting. It just rounds the number to something easier to read. It's not a factor in any results.
-const getTime = (t) => {
-    return Math.round(t*1000)/1000
-}
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.
@@ -205,145 +76,23 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
     // As always, Top Gear is able to provide a more complete picture. 
 
     if (settings['DefaultLoadout']) {
-        //settings['Clarity of Mind'] = true;
-        //settings['Pelagos'] = true;
-        //conduits['Shining Radiance'] = 239;
-        //conduits['Rabid Shadows'] = 239;
-        //conduits['Courageous Ascension'] = 239;
 
-        if (settings['covenant'] === "Necrolord") {
-            settings['soulbind'] = "Emeni"
-        }
-        else if (settings['covenant'] === "Night Fae") {
-            settings['soulbind'] = "Dreamweaver"
-        }
-        else if (settings['covenant'] === "Kyrian") {
-            settings['soulbind'] = "Kleia"
-        }
-        else if (settings['covenant'] === "Venthyr") {
-            settings['soulbind'] = "Theotar"
-        }
-    }
-
-    // === Legendaries ===
-    // Note: Some legendaries do not need to be added to a ramp and can be compared with an easy formula instead like Cauterizing Shadows.
-
-    // -- Invoker's Delight --
-    // 33% haste for 20s when summoning celestial
-    if (settings['legendaries'].includes("Invoker's Delight")) 
-    {
-        spells['Invoke Chiji'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.33,
-            buffDuration: 20,
-        });
-
-        spells['Invoke Yulon'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.33,
-            buffDuration: 20,
-        });
-    }
-
-    // === Soulbinds ===
-    // Don't include Conduits here just any relevant soulbind nodes themselves.
-    // This section can be expanded with more nodes, particularly those from other covenants.
-    // Examples: Combat Meditation, Pointed Courage
-    if (settings['soulbind'] === "Dreamweaver") {
-        spells['Faeline Stomp'].push({
-            type: "buff",
-            buffType: "statsMult",
-            stat: 'haste',
-            value: 1.15,
-            buffDuration: 6,
-    });
-        // Chrysalis
-        state.activeBuffs.push({name: "Empowered Chrysalis", expiration: 999, buffType: "special", value: 0.1});
-        state.activeBuffs.push({name: "Dream Delver", expiration: 999, buffType: "special", value: 1.03});
-    }
-
-    if (settings['soulbind'] === "Pelagos") {
-        spells['Weapons of Order'].push({
-            name: "Combat Meditation",
-            type: "buff",
-            buffType: 'stats',
-            stat: 'mastery',
-            value: 315,
-            buffDuration: 32,
-        });
-
-        state.activeBuffs.push({name: "Newfound Resolve", expiration: 999, buffType: "statsMult", value: 1 + convertPPMToUptime(1/1.5, 15) * 0.1, stat: 'intellect'});
-    }
-    
-    // 385 = 35 * 11% crit (this goes into diminishing returns so probably underestimating)
-    if (settings['soulbind'] === "Kleia") state.activeBuffs.push({name: "Kleia", expiration: 999, buffType: "stats", value: 385, stat: 'crit'})
-
-    if (settings['soulbind'] === "Emeni") {
-        spells['Bonedust Brew'].push({
-            name: "Lead by Example",
-            type: "buff",
-            buffType: 'statsMult',
-            stat: 'intellect',
-            value: 1.13,
-            buffDuration: 10,
-        });
-    }
-
-    if (settings['soulbind'] === "Theotar") {
-        state.activeBuffs.push({name: "Token of Appreciation", expiration: 999, buffType: "special", value: 1.025}); // 4% is overvalued wwhen factoring in tier and "high HPS sim"
-        state.activeBuffs.push({name: "Tea Time", expiration: 999, buffType: "special", value: 1.025}); // Int doesn't scale with tier so not 3%, other stats scale worse
     }
 
 
-    // === Trinkets ===
-    // These settings change the stat value prescribed to a given trinket. We call these when adding trinkets so that we can grab their value at a specific item level.
-    // When adding a trinket to this section, make sure it has an entry in DiscSpellDB first prescribing the buff duration, cooldown and type of stat.
-    if (settings["Instructor's Divine Bell"]) spells["Instructor's Divine Bell"][0].value = settings["Instructor's Divine Bell"];
-    if (settings["Flame of Battle"]) spells["Flame of Battle"][0].value = settings["Flame of Battle"];
-    if (settings['Shadowed Orb']) spells['Shadowed Orb'][0].value = settings['Shadowed Orb'];
-    if (settings['Soulletting Ruby']) spells['Soulletting Ruby'][0].value = settings['Soulletting Ruby'];
-    //
-
-    // === Conduits ===
-    // These are all scaled based on Conduit rank.
-    // You can add whichever conduits you like here, though if it doesn't change your ramp then you might be better calculating it in the conduit formulas file instead.
-    // Examples of would be Condensed Anima Sphere.
-    if (conduits['Courageous Ascension']) spells['Ascended Blast'][0].coeff *= 1.45; // Blast +40%, Eruption +1% per stack (to 4%)
-    if (conduits['Shining Radiance']) spells['Power Word: Radiance'][0].coeff *= 1.64; // +64% radiance healing
-    if (conduits['Rabid Shadows']) spells['Shadowfiend'][0].dot.tickRate = spells['Shadowfiend'][0].dot.tickRate / 1.342; // Fiends faster tick rate.
-    if (conduits['Exaltation']) {
-        spells['Rapture'][1].buffDuration = 9;
-        spells['Rapture'][0].coeff = 1.65 * (1 + 2 * 1.135);
-    }
-    //
 
     return spells;
 }
 
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
-    let damMultiplier = getDamMult(state.activeBuffs, 0, state.t, spellName, 0, state.conduits); // Get our damage multiplier (Schism, Sins etc);
-    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
-    const damageVal = getSpellRaw(spell, state.currentStats) * damMultiplier;
+    let damMultiplier = getDamMult(state, state.t, spellName, spell); // Get our damage multiplier (Schism, Sins etc);
+    //if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
+    const damageVal = getSpellRaw(spell, state.currentStats, MONKCONSTANTS) * damMultiplier;
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
 
-    if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
-        // Run duplicate damage.
-        const bonedustDam = damageVal * 0.5 * 0.72 // 268 conduit
-        state.damageDone['Bonedust Brew'] = (state.damageDone['Bonedust Brew'] || 0) + bonedustDam;
-    }
-    else if (state.settings.misc.includes("BB")) // Simulate second legendary
-    {
-        const emenibonus = damageVal * (0.13 * convertPPMToUptime(1.5, 10));
-        const bonedustDam = (damageVal + emenibonus) * 0.5 * 0.4 * 1.88 * 0.256 // 268 conduit
-        state.damageDone['Bonedust Brew (Plus Emeni)'] = (state.damageDone['Bonedust Brew (Plus Emeni)'] || 0) + bonedustDam + emenibonus;
-    }
-
+    return damageVal;
     //if (reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs));
 }
 
@@ -351,127 +100,19 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
-    let flatHeal = 0;
-    let T284pcOverhealMultiplier = 1;
-    let healingMult = 1;
-    let bonedustBrewGust = 0;
-
-    // == 4T28 ==
-    // Some spells do not benefit from the bonus. It's unknown whether this is intentional.
-    if (checkBuffActive(state.activeBuffs, "Primordial Mending") && !["Ancient Teachings of the Monastery"].includes(spellName) && !["Yulon's Whisper (Initial)"].includes(spellName)) {
-        flatHeal = 450;
-        T284pcOverhealMultiplier = 1.05;
-    }
-
-    // Add Bonedust Brew additional mastery healing
-    if (spellName === "Gust of Mists (Bonedust Brew)")
-    {
-        bonedustBrewGust = (0.42 * 1.04) * getStatMult(currentStats, ['crit', 'vers']) * currentStats.intellect;
-    }
     
-    healingMult = getHealingMult(state, spellName, state.conduits); 
+    let healingMult = getHealingMult(state, spellName, state.conduits); 
 
     const targetMult = ('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.softCap || 1) * spell.targets : spell.targets || 1;
-    const healingVal = (getSpellRaw(spell, currentStats) + bonedustBrewGust + flatHeal * getStatMult(currentStats,  ['crit', 'vers'])) * (1 - spell.overheal * T284pcOverhealMultiplier) * healingMult * targetMult * specialMult;
+    const healingVal = getSpellRaw(spell, currentStats, MONKCONSTANTS) * (1 - spell.expectedOverheal) * healingMult * targetMult;
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal; 
-    if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
-        state.T284pcwindow[spellName] = (state.T284pcwindow[spellName] || 0) + healingVal; 
-    }
 
-    if (spell.mastery) {
+    /*if (spell.mastery) {
         const masteryProc = MONKSPELLS['Gust of Mists'][0];
         runHeal(state, masteryProc, "Gust of Mists")
-    }
+    }*/
 
-    // EF Mastery duplication
-    const efHots = ["Essence Font (HoT)", "Essence Font (HoT - Faeline Stomp)"]
-    const activeEFBuffs = state.activeBuffs.filter(function (buff) {return efHots.includes(buff.name)})
-    if (activeEFBuffs.length > 0 && (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)"))
-    {
-        const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-        runHeal(state, bonusMasteryProc, "Gust of Mists (Essence Font)");
-    }
-
-    if (checkBuffActive(state.activeBuffs, "Bonedust Brew")) {
-        if (spellName === "Gust of Mists" || spellName === "Gust of Mists (Revival)" || spellName === "Gust of Mists (CTA Chiji)" || spellName === "Gust of Mists (Chiji)") {
-            const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-            runHeal(state, bonusMasteryProc, "Gust of Mists (Bonedust Brew)");
-        }
-
-        // Run duplicate heal.
-        // 278 conduit (in enhanced slot)
-        // Hits 75% of raid
-        // Logs show 50% overhealing, had it scaled down again with the spells overheal (as any overhealing of the spells makes sense that the duplicated heal can't heal extra)
-        // This causes a "double dip" in the spell overheal but that's accurate with how BDB works 
-        let bonedustHealing = healingVal * 0.5 * 0.4 * 1.88
-
-        if (state.settings.misc.includes("BDB40"))
-        {
-            bonedustHealing *= 0.4;
-        }
-        else if (state.settings.misc.includes("BDB60"))
-        {
-            bonedustHealing *= 0.6;
-        }
-        else if (state.settings.misc.includes("BDB90"))
-        {
-            bonedustHealing *= 0.9;
-        }
-        else
-        {   // 75% raid hit by default
-            bonedustHealing *= 0.75;
-        }
-
-        state.healingDone['Bonedust Brew'] = (state.healingDone['Bonedust Brew'] || 0) + bonedustHealing;
-
-        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
-            state.T284pcwindow['Bonedust Brew'] = (state.T284pcwindow['Bonedust Brew'] || 0) + bonedustHealing; 
-        }
-    }
-    else if (state.settings.misc.includes("BB")) // Simulate second legendary
-    {
-        const emenigroupbonus = (0.8 * convertPPMToUptime(1.5, 10));
-        // Hits 75% of predicted hits
-        const emenibonus = healingVal * (0.13 * convertPPMToUptime(1.5, 10));
-        let bonedustHealing = (healingVal + emenibonus) * 0.5 * 0.4 * 1.8 * 0.75 * 0.256
-
-        if (state.settings.misc.includes("BDB40"))
-        {
-            bonedustHealing *= 0.4;
-        }
-        else if (state.settings.misc.includes("BDB60"))
-        {
-            bonedustHealing *= 0.6;
-        }
-        else if (state.settings.misc.includes("BDB90"))
-        {
-            bonedustHealing *= 0.9;
-        }
-        else
-        {   // 75% raid hit by default
-            bonedustHealing *= 0.75;
-        }
-
-        state.healingDone['Bonedust Brew (Bountiful Brew)'] = (state.healingDone['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
-        state.healingDone['Emeni (Bountiful Brew)'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
-        state.healingDone['Emeni Group bonus'] = (state.healingDone['Emeni (Bountiful Brew)'] || 0) + emenibonus;
-
-        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
-            state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] = (state.T284pcwindow['Bonedust Brew (Bountiful Brew)'] || 0) + bonedustHealing;
-            state.T284pcwindow['Emeni (Bountiful Brew)'] = (state.T284pcwindow['Emeni (Bountiful Brew)'] || 0) + emenibonus;
-        }
-    }
-
-    
-    
-    if (checkBuffActive(state.activeBuffs, "Empowered Chrysalis")) {
-        const chrysalisSize = (healingVal / (1 - spell.overheal * T284pcOverhealMultiplier) * (spell.overheal * T284pcOverhealMultiplier) * 0.1)
-        state.healingDone['Empowered Chrysalis'] = (state.healingDone['Empowered Chrysalis'] || 0) + chrysalisSize;
-
-        if (checkBuffActive(state.activeBuffs, "Primordial Mending")){
-            state.T284pcwindow['Empowered Chrysalis'] = (state.T284pcwindow['Empowered Chrysalis'] || 0) + chrysalisSize; 
-        }
-    }
+    return healingVal;
 }
 
 /**
@@ -670,24 +311,4 @@ const printDamage = (damageDone, sumValues, duration, manaSpent) => {
     console.log("DPS: " + totalDamage / duration + ". DPM: " + totalDamage / manaSpent)
 }
 
-// This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
-const deepCopyFunction = (inObject) => {
-    let outObject, value, key;
-  
-    if (typeof inObject !== "object" || inObject === null) {
-      return inObject; // Return the value if inObject is not an object
-    }
-  
-    // Create an array or object to hold the values
-    outObject = Array.isArray(inObject) ? [] : {};
-  
-    for (key in inObject) {
-      value = inObject[key];
-  
-      // Recursively (deep) copy for nested objects, including arrays
-      outObject[key] = deepCopyFunction(value);
-    }
-  
-    return outObject;
-  };
 

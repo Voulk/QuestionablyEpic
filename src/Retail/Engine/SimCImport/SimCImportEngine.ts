@@ -296,6 +296,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let gemID: string[] = []; // This is used to construct a gem string but doesn't affect any stats on the item.
   let gemString: string = ""; // Gem string. Just used for tooltips.
   let bonusIDS = "";
+  let craftedIDs = []; // Used to append crafted stats to the wowhead tooltip.
   let enchantID = 0;
 
   let specialAllocations: {[key: string]: number} = {};
@@ -322,6 +323,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
       craftedStats.forEach(stat => {
         protoItem.missiveStats.push(stat_ids[parseInt(stat)]);
       });
+      craftedIDs = craftedStats;
       
     }
     else if (info.includes("ilevel=") || info.includes("ilvl=")) protoItem.level.override = parseInt(info.split("=")[1]);//  levelOverride = 
@@ -399,6 +401,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
         craftedStats.forEach((stat: number) => {
           protoItem.missiveStats.push(stat_ids[stat]);
         });
+        
       }
       else {
       }
@@ -534,8 +537,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
   if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "") {
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
-    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
     
+    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
+    if (craftedIDs) item.craftedStats = craftedIDs;
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
     item.isEquipped = protoItem.itemEquipped;

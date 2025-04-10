@@ -23,7 +23,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     if (contentType === "Dungeon") {
       // Add Photosynthesis
       // We'll just be modelling lifebloom + rejuv + spring blossoms. It's common to have more but there's also a ton of wastage on procs.
-      hotTicksPerMinute = (60 + 20 + 30) * player.getStatPerc('haste');
+      const hotTicksPerMinute = (60 + 20 + 30) * player.getStatPerc('haste');
       lifebloomInsurancePPM = hotTicksPerMinute * 0.04 * 0.3;
     }
 

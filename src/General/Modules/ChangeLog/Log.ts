@@ -17,6 +17,103 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 11,
+    date: "April",
+    changes: [ 
+      "Cataclysm: Added Epic Gem setting. Removed some more items that don't exist.",
+      "Added Catalyst offpieces and BoE items to Upgrade Finder.",
+      "Bugfix: Some missing crafted items will now appear in Upgrade Finder.",
+      "Upgrade Finder: Non-max difficulties will now respect drop level.",
+      "New Setting: Ignore Embellishment value.",
+      "Some Chi-Ji model updates.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 10,
+    date: "March 31",
+    changes: [ 
+      "Quality of Life UX changes for Top Gear reports.",
+      "The playstyle dropdown is now in a more prominent place that's harder to miss.",
+      "Miniature Roulette Wheel will now show secondaries in its tooltip.",
+      "Top Gear tooltips will now show gems (they're still in their regular place too).",
+      "Fixed an issue where manually added Miniature Roulette Wheel would show wrong secondaries on tooltip while calculating correctly.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 9,
+    date: "March 27",
+    changes: [ 
+      "Mistweaver: Added Chi-Ji support.",
+      "Sockets are now auto-added to all Rings / Necks for ease of use.",
+      "Renovated Workshop loot table.",
+      "Various minor fixes to the UI.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 8,
+    date: "March 24",
+    changes: [ 
+      "In-game: Sigil of Algari Concordance nerfed by ~80%.",
+      "Renamed Monk & Disc playstyles to make them clearer. Prepped the app for Chi-Ji support.",
+      "Slightly lowered the percentage of Entropic Skardyn Core orbs picked up.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 7,
+    date: "March 21",
+    changes: [ 
+      "In-game: Mister Pick-me-up nerfed 10%.",
+      "Removed Sigil of Algari Concordance from chart & added a note on it.",
+      "Cyrce's Circlet: Fixed a bug with the Old Salt Top Gear options",
+      "Removed some inactive trinkets from the chart.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 7,
+    date: "March 13",
+    changes: [ 
+      "Gallagio Bottle service: Slightly revamped how the penalty for spending 4s casting it is calculated. This is a slight bump to its value in most cases.",
+      "Preservation Evoker: Top Gear & Upgrade Finder will now swap flasks / enchants more aggressively to search for the Haste break point.",
+      "Resto Druid: Mastery percentage in Top Gear will now show up correctly. No change to any results."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 7,
+    date: "March 11",
+    changes: [ 
+      "Bugfix: Gallagio Bottle Service's coefficient was 5% too low post-buff.",
+      "Holy Priest: Added Mastery value to Gallagio Bottle Service & Mr Pick-me-up.",
+      "Mr Pick-me-up now uses its true ppm value now that we can confirm it works correctly.",
+      "Slightly reduced the penalty for wearing double on-use trinkets.",
+      "Added Amorphous Relic."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 6,
+    date: "March 9",
+    changes: [ 
+      "Bugfix: Jastor Diamond should now be evaluated correctly.",
+      "Cleaned up Mechagon: Workshop loot table.",
+      "Fixed Holy Paladin tier set",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 5,
+    date: "March 5",
+    changes: [ 
+      "Fixed the seasonal upgrade track - this will mean you can upgrade your S2 items correctly.",
+      "Added Dr Scrapheal and a few other delve items to the item chart.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 4,
+    date: "March 4",
+    changes: [ 
+      "Fixed a bug undervaluing Best-in-slots.",
+      "Added a few missing items.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 3,
     date: "March 3",
     changes: [ 

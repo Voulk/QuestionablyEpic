@@ -276,17 +276,6 @@
     "Select Class": "Select Class",
     "Select Race": "Select Race",
     "Settings": {
-      "Classic": {
-        "Setting0Title": "Mana Profile",
-        "Setting0Tooltip": "Mana varies a little in value based on fight length and how frequently you cast.",
-        "Setting1Title": "Include Raid Buffs?",
-        "Setting1Tooltip": "Enable this to include common raid buffs in the gear comparison.",
-        "Setting2Title": "Meta Gem",
-        "Setting2Tooltip": "Pick which Meta gem you'd like the app to try and socket.",
-        "Setting3Title": "Auto-Enchant Items?",
-        "Setting4Title": "Gem Rarity",
-        "Setting4Tooltip": "Pick which gems you'd like the app to socket. Jewelcrafting-specifics ignored for now."
-      },
       "Retail": {
         "topGear": "Top Gear",
         "trinkets": "Trinkets",
@@ -407,6 +396,10 @@
           "title": "Pheromone Secreter",
           "tooltip": "Pick which secondaries you intend to socket in your Pheromone Secreter trinket."
         },
+        "calculateEmbellishments": {
+          "title": "Use Embellishments",
+          "tooltip": "Take into account embellishments' impact in sims. Useful for 3-crafted-items situation where you can move one of the embellishments."
+        },
         "socketedGems": {
           "title": "Socketed Gems",
           "tooltip": "Number of gems you have socketed. Ignored by Top Gear which will just use your actual set."
@@ -421,6 +414,10 @@
         "manaProfile": {
           "title": "Mana Profile",
           "tooltip": "Pick a more or less aggressive mana profile."
+        },
+        "classicGemSettings": {
+          "title": "Gem Rarity",
+          "tooltip": "Pick whether you'd like to use Rare or Epic gems."
         },
 
         "wristEnchant": {

@@ -4,6 +4,10 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPM
 
 
 export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
+  if (getSetting(additionalData.settings, "calculateEmbellishments") === false) { // I hate that JS false and 0 are ==. Might break if getSetting gets changed ?
+    return {};
+  }
+
     let activeEffect;
     
     
@@ -34,7 +38,7 @@ export const embellishmentData = [
         coefficient: 66.05486 * 4.27, // Check this. I guess it scales with num gem types they have?
         table: -9,
         ppm: 60 / (240 - 48),
-        efficiency: 0.7
+        efficiency: 0.4
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -79,7 +83,7 @@ export const embellishmentData = [
         table: -571,
         duration: 15, 
         ppm: 2,
-        efficiency: 0.7,
+        efficiency: 0.55,
       },
       { 
         coefficient: 0.040916,

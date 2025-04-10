@@ -76,15 +76,14 @@ const buildTrinkets = (trinkets) => {
  * @param {*} applicators The number of single target atonement applicators. Configurable.
  * @param {*} trinkets Any trinkets we want to combine with our mini-ramp. Currently unused.
  * @param {*} specialSpells Any special spells we want to include in our mini-ramp. Currently unused.
- * @param {*} playstyle Our current playstyle. Setting playstyle to Venthyr will include Mindgames in the mini-ramp.
+ * @param {*} playstyle Our current playstyle.
  * @returns Returns a sequence of spells representing a mini ramp.
  */
 export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) => {
     let sequence = [];
     let t = 0;
 
-    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
-    else sequence.push('Shadow Word: Pain');
+    sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
@@ -97,7 +96,6 @@ export const buildMiniRamp = (applicators, trinkets, playstyle, talents, haste) 
     //sequence.push('Shadow Covenant');
     //sequence.push('Schism');
     sequence.push(getPenance(talents));
-    if (talents.mindgames) sequence.push("Mindgames");
     sequence.push('Mind Blast');
     sequence.push('Mind Blast');
     //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
@@ -121,8 +119,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
     let sequence = [];
     let t = 0;
 
-    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
-    else sequence.push('Shadow Word: Pain');
+    sequence.push('Shadow Word: Pain');
 
     for (var x = 0; x < applicators; x++) {
         if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
@@ -161,10 +158,8 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
     let sequence = [];
     let t = 0;
 
-    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
-    else sequence.push('Shadow Word: Pain');
+    sequence.push('Shadow Word: Pain');
 
-    sequence.push("Rapture");
 
     for (var x = 0; x < applicators; x++) {
         sequence.push('Power Word: Shield')
@@ -198,7 +193,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
 }
 
 /**
- * Generates a Fiend ramp sequence. Also includes Mindgames if Venthyr.
+ * Generates a Fiend ramp sequence.
  *
  * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable.
  * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
@@ -209,94 +204,40 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
 export const buildEvangRamp = (applicators, trinket, playstyle, talents, specialSpells = []) => {
     let sequence = []
 
-    if (talents.purgeTheWicked) sequence.push('Purge the Wicked');
-    else sequence.push('Shadow Word: Pain');
+    sequence.push('Shadow Word: Pain');
+    sequence.push('Power Word: Shield');
 
-    for (var x = 0; x < applicators; x++) {
-        if (talents.trainOfThought && x % 4 === 0) sequence.push('Power Word: Shield');
-        else if (!talents.trainOfThought && x % 5 === 0) sequence.push('Power Word: Shield');
-        else sequence.push('Renew');
-    }
+    for (var x = 0; x < 6; x++) sequence.push('Renew');
+    sequence.push('Power Word: Shield');
+    sequence.push('Flash Heal');
 
-    if (trinket === "Voidmender's Shadowgem") sequence.push("Voidmender's Shadowgem");
     sequence.push('Power Word: Radiance');
+    sequence.push('Power Word: Radiance');
+
+    sequence.push('Evangelism');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
-
-    sequence.push('Power Word: Radiance');
-    sequence.push('Evangelism');
-    //sequence.push('Shadow Covenant');
-    //sequence.push('Schism');
-    //if (talents.lightsWrath) sequence.push("Light's Wrath");
-    sequence.push(getPenance(talents));
     sequence.push('Mind Blast');
-    sequence.push('Halo');
-    sequence.push('Mind Blast');
-    sequence.push("Mindgames");
-    //if (talents.powerWordSolace) sequence.push('Power Word: Solace');
-    sequence.push("Smite");
-    sequence.push("Smite");
-    if (talents.mindgames) sequence.push('Mindgames');
-    sequence.push("Penance");
-    sequence.push("Power Word: Shield");
+    // Premonition
+    sequence.push('Smite');
+    sequence.push('Premonition of Piety');
+    sequence.push('Penance');
+    sequence.push('Smite');
+    sequence.push('Penance');
+    sequence.push('Smite');
+    sequence.push('Penance');
+    sequence.push('Smite');
+    sequence.push('Penance');
+    sequence.push('Smite');
     sequence.push('Shadow Word: Death');
 
     for (var i = 0; i < 4; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics.
         sequence.push('Smite');
     }
-    sequence.push(getPenance(talents));
+    sequence.push('Penance');
 
-    for (var i = 0; i < 4; i++) {
-        // The number of smites here is adjustable but also not very important outside of DPS metrics.
-        sequence.push('Smite');
-    }
 
     return sequence;
 }
 
-/**
- * Generates a Fiend ramp sequence.
- *
- * @param {*} applicators Number of single target atonement applicators. Default is 10 but configurable.
- * @param {*} trinket The specific trinket we'd like to combine with our Fiend ramp. Note that a name is fine here. We don't need ilvl information since we'll pull that later.
- * @param {*} specialSpells Any special spells we'd like to include in the ramp like Rapture.
- * @param {*} playstyle Previous examples: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism, Venthyr Spirit Shell.
- * @returns Returns a sequence of spells representing a Shadowfiend ramp.
- */
- export const buildMindgamesRamp = (applicators, trinket, specialSpells, playstyle) => {
-
-    let sequence = []
-    if (specialSpells.includes('Purge the Wicked')) sequence.push('Purge the Wicked');
-    else sequence.push('Shadow Word: Pain');
-
-    if (specialSpells.includes("Rapture")) {sequence.push('Rapture'); applicators -= 1 };
-    for (var x = 0; x < applicators; x++) {
-        // Power Word: Shield can also be swapped out for Shadow Mend on non-Rapture ramps.
-        sequence.push('Power Word: Shield');
-    }
-
-    sequence.push('Power Word: Radiance');
-    sequence.push('Power Word: Radiance');
-    sequence.push('Evangelism');
-
-    //sequence.push('Schism');
-    sequence.push('Mindgames')
-    sequence.push('Penance');
-    if (specialSpells.includes("Divine Star")) sequence.push("Divine Star");
-    sequence.push('Mind Blast');
-    //sequence.push('Power Word: Solace');
-
-    for (var i = 0; i < 3; i++) {
-        // The number of smites here is adjustable but also not very important outside of DPS metrics.
-        sequence.push('Smite');
-    }
-    sequence.push('Penance');
-
-    for (var i = 0; i < 8; i++) {
-        // The number of smites here is adjustable but also not very important outside of DPS metrics.
-        sequence.push('Smite');
-    }
-
-    return sequence;
-}

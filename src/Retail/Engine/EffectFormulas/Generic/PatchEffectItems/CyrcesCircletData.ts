@@ -132,7 +132,15 @@ export const getCircletEffect = (gemNames: number[], itemLevel: number, addition
 
 export const getGemImage = (id: number) => {
   const gem = circletGemData.filter(gem => gem.id === id)[0];
-  return process.env.PUBLIC_URL + "/Images/CircletGems/" + gem.icon + ".jpg";
+
+  try {
+    return process.env.PUBLIC_URL + "/Images/CircletGems/" + gem.icon + ".jpg";
+  }
+  catch {
+    console.log("Can't find gem icon: " + id);
+    return null;
+  }
+
 }
 
 // The circlet data itself is used in all of the formulas, so we'll provide it here so that it doesn't need to be passed around. 
@@ -189,7 +197,7 @@ export const circletGemData: Array<circletGemType> = [
         value: 1960,
         coefficient: 0.28371,
         ppm: 4,
-        efficiency: 0.6,
+        efficiency: 0.58,
         targets: 3,
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
@@ -377,7 +385,7 @@ export const circletGemData: Array<circletGemType> = [
         //table: -9,
         targets: 5,
         ppm: 4,
-        efficiency: 0.6,
+        efficiency: 0.55,
         secondaries: ['versatility', 'haste'], // Cannot currently crit
       },
     ],

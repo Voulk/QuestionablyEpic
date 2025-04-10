@@ -154,7 +154,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const reversionTickCount = reversionDuration / (reversion.tickData.tickRate / getHaste(state.currentStats));
     const reversionHealing = reversionBaseHealing * reversionTickCount;
     healingBreakdown["Echo - Reversion"] = reversionHealing * echoUsage["Reversion"] * totalEchoPower;
-    console.log("Reversion Duration - " + reversionDuration + " - " + reversionTickCount);
+
     const reversionCoverage = reversionDuration * (getCPM(castProfile, "Reversion") + echoReversionCasts) / 20 / 60; // TODO
     reportingData.reversionCoverage = reversionCoverage;
     /// Calculate Golden Hour Healing
@@ -164,7 +164,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     // Tier Set
 
-    console.log(castProfile);
+
 
     // Run healing
     castProfile.forEach(spellProfile => {
@@ -185,10 +185,10 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
                 const expectedTargets = 20;
                 const sqrtMod = Math.sqrt(5 / expectedTargets);
                 const consumeMult = 3; 
-                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1.4 * 0.8) : 1) //* 1.4; // Call of Ysera & Tier Set
+                const dbMods = 1.4 * (tier.includes("Evoker S1-4") ? (1 + 0.2 * 0.7) : 1) //* 1.4; // Call of Ysera & Tier Set
 
                 const dreamBreathHealing = getSpellRaw(dreamBreathHoT, state.currentStats, EVOKERCONSTANTS) * dbMods;
-                let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult;
+                let consumeHealing = dreamBreathHealing * sqrtMod * tickCount * spellCPM * expectedTargets * consumeMult * 0.8;
                 consumeHealing *= 1.06; // Generic 6% healing increase.
 
                 healingBreakdown['Consume Flame'] = Math.round((healingBreakdown['Consume Flame'] || 0) + (consumeHealing));
@@ -249,8 +249,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
 
-    printHealingBreakdown(healingBreakdown, totalHealing);
-    console.log(reportingData);
-    console.log("HPS: " + Math.round(totalHealing / 60));
+    //printHealingBreakdown(healingBreakdown, totalHealing);
     return { hps: totalHealing / 60, hpm: 0 }
 }

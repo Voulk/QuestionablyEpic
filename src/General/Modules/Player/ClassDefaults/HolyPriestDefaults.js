@@ -46,7 +46,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1.3,
+        c120: 1.44,
         c180: 1,
 
         oneMinute: 1,

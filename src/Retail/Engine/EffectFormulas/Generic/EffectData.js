@@ -1,6 +1,105 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+    name: "Neural Synapse Enhancer",
+    effects: [
+      {
+        coefficient: 1.792, 
+        table: -1,
+        duration: 15,
+        cooldown: 45,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 60);
+      console.log(bonus_stats.intellect);
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Voltaic Stormcaller",
+    effects: [
+      {
+        coefficient: 0.764501, 
+        stat: "haste",
+        table: -7,
+        duration: 10,
+        ppm: 1,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+
+      if (player.spec !== "Discipline Priest" && additionalData.contentType === "Raid") {
+        bonus_stats.haste = bonus_stats.haste * 0.5; // DPS procs only
+      }
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "The Jastor Diamond",
+    effects: [
+      {
+        coefficient: 0.048536, 
+        table: -7,
+        maxStacks: 10,
+        stat: "random",
+        averageStacks: 5.15, // This is just simulated directly since the Jastor parameters are fixed.
+        averageGifted: 1.2, // Also simulated
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      const statsPerStack = processedValue(data[0], itemLevel);
+
+      const totalPersonalStats = statsPerStack * data[0].averageStacks;
+
+      bonus_stats.versatility = totalPersonalStats / 4;
+      bonus_stats.haste = totalPersonalStats / 4;
+      bonus_stats.crit = totalPersonalStats / 4;
+      bonus_stats.mastery = totalPersonalStats / 4;
+
+      bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
+      
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Best-in-Slots",
+    effects: [
+      {
+        coefficient: 1.374509, 
+        table: -7,
+        stat: "random",
+        duration: 15,
+        ppm: 3 * 0.875, // Can't proc while on-use is active.
+      },
+      {
+        coefficient: 1.374509 * 1.1, // The on-use is 10% higher. 
+        table: -7,
+        stat: "best",
+        duration: 15,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel)
+
+      // On use portion
+      const bestStat = player.getHighestStatWeight(additionalData.contentType)
+      bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + runGenericOnUseTrinket({...data[1], stat: bestStat}, itemLevel, additionalData.castModel);
+
+      return bonus_stats;
+    }
+  },
   { 
     name: "Lingering Grace",
     effects: [
@@ -85,7 +184,7 @@ export const effectData = [
     name: "Sureki Zealot's Insignia",
     effects: [
       {  // Versatility
-        coefficient: 0.139572,
+        coefficient: 0.139572 * 0.5,
         table: -7,
         ppm: 4,
         duration: 10,

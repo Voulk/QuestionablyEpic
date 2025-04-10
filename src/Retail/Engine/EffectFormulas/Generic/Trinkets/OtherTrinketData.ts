@@ -4,6 +4,86 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+  { 
+    name: "Amorphous Relic",
+    description: "Buffed 108%. They should have picked a higher number.",
+    effects: [
+      {
+        coefficient: 0.951739, 
+        table: -1,
+        duration: 30,
+        ppm: 0.5 / 2,
+        stat: "intellect",
+      },
+      {
+        coefficient: 2.670178, 
+        table: -7,
+        duration: 30,
+        ppm: 0.5 / 2,
+        stat: "haste",
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) / 4;
+      bonus_stats.haste = processedValue(data[1], itemLevel) / 4;
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Suspicious Energy Drink",
+    description: "Only procs off DPS spells.",
+    effects: [
+      {
+        coefficient: 0.419337, 
+        table: -9,
+        duration: 10,
+        ppm: 3,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+
+      if (player.spec !== "Discipline Priest" && additionalData.contentType === "Raid") {
+        bonus_stats.mastery = bonus_stats.mastery * 0.5; // DPS procs only
+      }
+
+      return bonus_stats;
+    }
+  },
+  { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+    name: "Abyssal Volt",
+    effects: [
+      {
+        coefficient: 0.746494, 
+        table: -9,
+        duration: 15,
+        cooldown: 90,
+        stat: "haste",
+      },
+      {
+        coefficient: 0.222657, 
+        table: -9,
+        duration: 10,
+        cooldown: 90,
+        stat: "allyStats",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
+
+      return bonus_stats;
+    }
+  },
   { // 1:30 cooldown mastery on-use. 
     name: "Funhouse Lens",
     description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise. Active bug so ranking might change.",
@@ -18,7 +98,7 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid") && getSetting(additionalData.settings, "delayOnUseTrinkets")) {
+      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) {
         bonus_stats.haste = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
         bonus_stats.crit = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) / 2;
       }
@@ -268,7 +348,7 @@ export const otherTrinketData = [
   },
   { 
     name: "Algari Alchemist Stone",
-    description: "",
+    description: "High variance. Beware the low uptime. Requires a valuable spark to craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
@@ -396,16 +476,17 @@ export const otherTrinketData = [
     description: "Fairly poor as a healing trinket without intellect, but does a decent amount of extra DPS.",
     effects: [
       {
-        coefficient: 78.5124 * 0.9, 
+        coefficient: 70.66128, 
         table: -8,
         ppm: 4,
+        secondaries: ["crit", "versatility"], // Unhasted PPM for some reason.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
       bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
-      bonus_stats.hps = bonus_stats.dps * 0.8;
+      bonus_stats.hps = bonus_stats.dps * 0.9;
 
       return bonus_stats;
     }
@@ -468,8 +549,8 @@ export const otherTrinketData = [
     }
   },
   { 
-    name: "Forged Gladiator's Insignia of Alacrity",
-    description: "",
+    name: "Insignia of Alacrity",
+    description: "An accessible, on-budget stat stick.",
     effects: [
       {
         coefficient: 1.00266, 
@@ -511,6 +592,58 @@ export const otherTrinketData = [
 
       bonus_stats = runGenericRandomPPMTrinket(data[1], itemLevel);
       bonus_stats.intellect = processedValue(data[0], itemLevel);
+
+
+      return bonus_stats;
+    }
+  },
+  { 
+    name: "Arathi Minister's Receptacle",
+    description: "This is really just an int / vers stat stick. The healing effect is flavor ONLY.",
+    effects: [
+      {
+        coefficient: 0.701963, 
+        table: -9,
+        targets: 5,
+        tickRate: 5,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = processedValue(data[0], itemLevel) * data[0].targets! / data[0].tickRate!;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Hallowed Tome",
+    description: "Assumes you have one ally with a Hallowed effect. Approx 20% weaker if you don't since you won't get the ally buff portion.",
+    effects: [
+      {
+        coefficient: 0.665355, 
+        table: -7,
+        duration: 15,
+        ppm: 4,
+        stat: "mixed",
+      },
+      { // This does assume you have at least one ally who is wearing a Hallowed trinket. It could be a setting but feels a bit bloaty. 
+        coefficient: 0.665355 * 20 * 0.01, // Formula is from blizzard. Not my fault! 
+        table: -7,
+        duration: 15,
+        ppm: 4,
+        stat: "allyStats",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      const bestStat = player.getHighestStatWeight(additionalData.contentType)
+      bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], stat: bestStat}, itemLevel);
+
+      // Technically if you have multiple devout allies your uptime would be slightly higher than this because you'll proc munch less
+      // but you're not guaranteed to have that so we'll use this approach for now.
+      bonus_stats.allyStats = runGenericPPMTrinket(data[1], itemLevel); 
 
 
       return bonus_stats;

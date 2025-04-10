@@ -1965,7 +1965,7 @@ export const encounterDB = {
       2602: "Queen Ansurek",
     }
   },
-    // Nerub'ar Palace
+    // Undermine
     1296: {
       name: {
         en: "Liberation of Undermine",
@@ -1974,7 +1974,7 @@ export const encounterDB = {
         ru: "",
         ch: "",
       },
-      bossOrder: [2639, 2640, 2641, 2642, 2653, 2644, 2645, 2646, -54],
+      bossOrder: [2639, 2640, 2641, 2642, 2653, 2644, 2645, 2646, 999],
       bosses: {
         2639: "Vexie and the Geargrinders", // Vexie and the Geargrinders.
         2640: "Cauldron of Carnage", // Cauldron of Carnage
@@ -1983,7 +1983,8 @@ export const encounterDB = {
         2653: "Sprocketmonger Lockenstock", // Sprocketmonger Lockenstock
         2644: "One Armed Bandit", // One Armed Bandit
         2645: "Mug'zee", // Mug'Zee
-        2646: "Chrome King Gallywix" // Chrome King Gallywix
+        2646: "Chrome King Gallywix", // Chrome King Gallywix
+        999: "BoE Trash Drops & Catalyst",
       }
     },
   1207: {

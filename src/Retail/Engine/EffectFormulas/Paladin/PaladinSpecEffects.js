@@ -13,17 +13,20 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
   const holyShockBaseCPM = 60 / 9.5 * player.getStatPerc("Haste") * 1.12 * 1.1;
   const holyShockCPM = holyShockBaseCPM + (5 + 4 + 2 + 3) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
-
+  const insuranceHealing = 1.2752 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
 
   // These will be replaced by the CastProfile. This is a fairly rough estimate as a result.
   if (effectName === "Paladin S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');
-    const insuranceHealing = 1.2752 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
 
   }
   else if (effectName === "Paladin S2-4") {
-    bonus_stats.hps = 55000;
+    const divineTollCPM = 1.5;
+    const extraDivineTollHPS = 30000;
+    const freeInsuranceSeconds = divineTollCPM * 5 * 8;
+
+    bonus_stats.hps = (freeInsuranceSeconds / 15) * insuranceHealing / 60 + extraDivineTollHPS;
   }
   else if (effectName === "Paladin S1-2") {
     

@@ -545,7 +545,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
-    const compiledGems = setupGems(builtSet.itemList, adjusted_weights)
+    const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
 

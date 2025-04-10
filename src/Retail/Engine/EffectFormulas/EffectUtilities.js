@@ -4,6 +4,7 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { instanceDB } from "Databases/InstanceDB";
+import { getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
@@ -25,10 +26,27 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   return Math.round(procSize);
 }
 
+// Some effects only proc off DPS spells, we can handle the multiplier here.
+export function getSpecDPSMult(playerSpec, settings, spellsOnly = false) {
+
+}
+
+// A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
+export function addSpecMastery(playerSpec, setStats = {}) {
+  let mult = 1;
+  if (!setStats.mastery) return mult;
+  if (playerSpec === "Holy Priest") {
+    const mastery = getMastery(setStats, {masteryMod: 0.95625 })
+    mult *= (1 + mastery * 0.8);
+  };
+  // Other specs don't get mastery scaling with anything :(
+  return mult;
+}
+
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     const rawValue = processedValue(effect, itemLevel);
-    const diminishedValue = getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
+    const diminishedValue = effect.stat === "allyStats" ? rawValue : getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
     const uptime = convertPPMToUptime(effect.ppm, effect.duration);
     return diminishedValue * uptime;
 }
@@ -71,7 +89,7 @@ export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD)
 // This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
-export function runGenericFlatProc(effect, itemLevel, player, contentType = "Raid") {
+export function runGenericFlatProc(effect, itemLevel, player, contentType = "Raid", setStats = {}) {
 
   let efficiency = 1;
   if ('efficiency' in effect) {
@@ -88,6 +106,7 @@ export function runGenericFlatProc(effect, itemLevel, player, contentType = "Rai
   if ('ticks' in effect) mult *= effect.ticks;
   if ('secondaries' in effect) mult *= player.getStatMults(effect.secondaries);
   if ('ppm' in effect) mult *= (effect.ppm * 1.13);
+  if ('holyMasteryFlag' in effect) mult *= addSpecMastery(player.spec, setStats);
 
   if ('cooldown' in effect) return value * mult / effect.cooldown;
   else return value * mult / 60;

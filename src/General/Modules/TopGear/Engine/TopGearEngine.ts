@@ -528,7 +528,7 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  128; // 64 x 2.
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  315; // 64 x 2.
   enchants["Finger"] = "+315 " + highestWeight;
 
   // Chest
@@ -584,6 +584,9 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
     enchants["1H Weapon"] = wepEnchantName; 
   }
 
+  // Algari Mana Oil
+  bonus_stats.haste = (bonus_stats.haste || 0) + 232;
+  bonus_stats.crit = (bonus_stats.crit || 0) + 232;
 
   return enchants;
 }
@@ -757,7 +760,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // --- Item Set Bonuses ---
   
   const usedSets: any[] = []
-  console.log(setBonuses);
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
 
@@ -765,7 +767,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
           effectList = effectList.concat(setBonus);
-          console.log("ADDING SET BONUS: " + JSON.stringify(setBonus));
           usedSets.push(setBonus.name);
         }
       })
@@ -813,8 +814,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     effectStats.push(annuletStats);
  } */
 
+  // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
-    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 639;
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 658;
 
     //const comboSetting = getSetting(userSettings, "circletOptions");
     let combo = [];
@@ -837,7 +839,30 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   const mergedEffectStats = mergeBonusStats(effectStats);
 
-  // TODO: Centralize raid buffs
+  // Post-effect overrides. Use these very sparingly.
+  if (player.spec === "Preservation Evoker" && castModel.modelName === "Flameshaper") {
+    // Try and swap ring enchants and / or flask to hit breakpoint. 
+    const totalHaste = (setStats.haste || 0) + (mergedEffectStats.haste || 0);
+    if (totalHaste < 9834 && totalHaste > (9834 - 315 * 2)) {
+      // Haste enchants are enough to hit our breakpoint. Swap over. 
+      enchants["Finger"] = "+315 Haste";
+      setStats.haste = (setStats.haste || 0) + 315 * 2;
+      setStats.mastery = (setStats.mastery || 0) - 315 * 2;
+    }
+    else if (totalHaste < 9834 && totalHaste > (9834 - 2825)) {
+      // Haste Flask is enough to hit our breakpoint. Swap over. 
+      enchants.flask = "Flask of Tempered Swiftness";
+      setStats.haste = (setStats.haste || 0) + 2825;
+      setStats.mastery = (setStats.mastery || 0) - 2825;
+    }
+    else if (totalHaste < 9834 && totalHaste > (9834 - 2825 - 315 * 2)) {
+      // We need both flask and ring to hit our breakpoint.
+      enchants.flask = "Flask of Tempered Swiftness";
+      enchants["Finger"] = "+315 Haste";
+      setStats.haste = (setStats.haste || 0) + 2825 + 315 * 2;
+      setStats.mastery = (setStats.mastery || 0) - 2825 - 315 * 2;
+    }
+  }
 
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
@@ -854,14 +879,23 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (castModel.modelType[contentType] === "CastModel") {
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
+    setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
     setStats.intellect = (setStats.intellect || 0) * 1.05;
+
+    // Raid Buffs
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
+    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-
+    
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
-
-    evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
-    evalStats.leech = (setStats.leech || 0) + (mergedEffectStats.leech || 0);
-    evalStats.hps = (setStats.hps || 0) + (mergedEffectStats.hps || 0);
+    
+    //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
+    evalStats.leech = (setStats.leech || 0);
+    //hardScore = setStats.hps || 0;
+    console.log(castModelResult.hps);
+    evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==
   // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.
@@ -945,11 +979,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
 
   // Double on-use adjustment
-  // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
-  // but from a practical viewpoint it achieves the objective. It could be replaced with something more
-  // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
+  // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
+  // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 20000;
+    hardScore -= 1800;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

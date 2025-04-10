@@ -32,7 +32,7 @@ export const getMonkSpecEffect = (effectName, player, contentType) => {
 
     //const HPSExtension = (renewingMistTick / 2 * 3 * percBuffed) / 60; // 18 seconds of extra HoT uptime per Essence Font cast.
     
-    bonus_stats.hps = player.getHPS() * 0.0405;
+    bonus_stats.hps = player.getHPS() * 0.0174;
   }
   // Tier Sets
   else if (effectName === "Mistweaver T29-2") {
