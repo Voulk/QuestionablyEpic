@@ -3,11 +3,12 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+            getHealth, getCrit, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
+import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -30,7 +31,7 @@ export const DISCCONSTANTS = {
     },
     
     atonementMults: {"shadow": 1, "holy": 1},
-    shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
+    shadowCovenantSpells: ["Halo", "Divine Star", "DefPenance", "DefPenanceTick"],
     enemyTargets: 1, 
     sins: {0: 1.2, 1: 1.2, 2: 1.2, 3: 1.2, 4: 1.2, 5: 1.2, 
             6: 1.175, 7: 1.15, 8: 1.125, 9: 1.1, 10: 1.075,
@@ -206,6 +207,13 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
+    if (spell.healType === "direct" && state.talents.divineAegis) {
+        // If the spell crits, DA absorbs 30% of the value.
+        const aegisHeal = healingVal * 0.3 * getCrit(state.currentStats);
+
+        state.healingDone["Divine Aegis"] = (state.healingDone["Divine Aegis"] || 0) + aegisHeal;
+    }
+
     if (!spellName.includes("hot")) {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%`;
         if (targetMult > 1) base += `, ${spell.targets} targets`;
@@ -357,6 +365,14 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                         penanceBolts += getBuffValue(state.activeBuffs, "Harsh Discipline") * getBuffStacks(state.activeBuffs, "Harsh Discipline");
                         removeBuff(state.activeBuffs, "Harsh Discipline");
                     } 
+
+                    // Twinsight
+                    if (state.heroTree === "oracle" && spellName === "Penance") {
+                        specSpells["DefPenanceTick"].castTime = 0;
+                        for (var i = 0; i < 3; i++) {
+                            seq.unshift("DefPenanceTick")
+                        }
+                    }
 
                     specSpells[penTickName][0].castTime = 2 / penanceBolts;
                     specSpells[penTickName][0].coeff = penanceCoeff;
@@ -600,9 +616,11 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     state.dps = (state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
-    const totalHealingValues = state.advancedReport.map(item => item.totalHealing);
+    //const totalHealingValues = state.advancedReport.map(item => item.totalHealing);
     // Print the result as a comma-separated list
-    console.log(JSON.stringify(totalHealingValues));
+    //console.log(JSON.stringify(totalHealingValues));
+    console.log(state.report);
+    printHealingBreakdown(state.healingDone, state.totalHealing);
 
     return state;
 
