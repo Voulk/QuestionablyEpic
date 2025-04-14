@@ -183,7 +183,7 @@ export const MONKSPELLS = {
         castTime: 3,
         channel: true,
         cost: 0,
-        coeff: 0.224 * 1.04 * 6.25 * 25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        coeff: 0.224 * 1.04 * 6.25 * 2, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
         aura: 1.04, // AP -> SP conversion.
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
@@ -289,7 +289,7 @@ export const MONKSPELLS = {
         type: "heal",
         castTime: 2,
         cost: 2.5,
-        coeff: 1.2084, // Per Cloud
+        coeff: 1.2084 * 1.15, // Per Cloud
         targets: 3,
         mastery: 1,
         expectedOverheal: 0.35,

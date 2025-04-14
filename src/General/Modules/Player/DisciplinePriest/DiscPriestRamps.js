@@ -23,6 +23,7 @@ export const DISCCONSTANTS = {
     masteryMod: 1.35,
     masteryEfficiency: 1,
 
+    atonementBaseTransfer: 0.28,
     auraHealingBuff: 0.97, 
     auraDamageBuff: {
         periodic: 1,
@@ -109,7 +110,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         //addReport(state, `Shadow Covenant buffed ${spellName} by ${getBuffValue(state.activeBuffs, "Shadow Covenant") * 100}%`)
     }
 
-    if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
+    if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite")) {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.2);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
@@ -140,7 +141,7 @@ const getHealingMult = (state, buffs, spellName, spell) => {
         }
     }
     if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Power Word: Shield") {
-        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.03);
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.05);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
@@ -171,7 +172,7 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.35;
+    const atonementBaseTransfer = DISCCONSTANTS.atonementBaseTransfer;;
     return atonementBaseTransfer * (1.108 + mastery / STATCONVERSION.MASTERY * DISCCONSTANTS.masteryMod / 100);
 }
 

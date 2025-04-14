@@ -47,7 +47,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         onGCD: true,
         travelTime: 0.8, // Fixed for now but could be dynamic based on distance from target.
-        coeff: 1.202, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 1.202 * 0.85, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
         school: "holy",
@@ -58,7 +58,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 1.202,
+        coeff: 1.202 * 0.85,
         school: "holy",
         atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
@@ -70,7 +70,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         healType: "direct",
         onGCD: true,
-        coeff: 1.25 * 1.3, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 1.25 * 1.3 * 0.85, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         expectedOverheal: 0.6,
         school: "holy",
@@ -82,7 +82,7 @@ export const DISCSPELLS = {
         healType: "direct",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 1.25 * 1.3,
+        coeff: 1.25 * 1.3 * 0.85,
         school: "holy",
         expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'],
