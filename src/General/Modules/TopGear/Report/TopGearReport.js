@@ -8,12 +8,8 @@ import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { classColours } from "General/Engine/ClassData";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
-<<<<<<< HEAD
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
-=======
-import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
->>>>>>> 97e9ab620a9891a1468b3703ca824d67c2f11b5f
 import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
