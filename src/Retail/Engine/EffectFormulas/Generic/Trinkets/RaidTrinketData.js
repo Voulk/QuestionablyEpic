@@ -49,7 +49,7 @@ export const raidTrinketData = [
         secondaries: ['versatility', 'crit'], // Crit TODO
         targets: 10, // 
         efficiency: {Raid: 0.8, Dungeon: 0.8},
-        specPenalty: {"Holy Priest": 2.25, "Restoration Druid": 3.2, "Mistweaver Monk": 2, "Restoration Shaman": 2, "Discipline Priest": 2.5,
+        specPenalty: {"Holy Priest": 2.25, "Restoration Druid": 3.2, "Mistweaver Monk": 3, "Restoration Shaman": 2, "Discipline Priest": 2.5,
                        "Holy Paladin": 2, "Preservation Evoker": 1.4},
         holyMasteryFlag: true,
         cooldown: 90,

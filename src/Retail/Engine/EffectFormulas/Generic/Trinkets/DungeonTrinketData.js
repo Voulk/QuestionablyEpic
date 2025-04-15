@@ -357,8 +357,15 @@ export const dungeonTrinketData =
         ],
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
+
+          /*if (additionalData.castModel.modelName.includes("Chi-Ji")) {
+            bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "Signet of the Priory", itemLevel)
+          }
+          else {*/
           const bestStat = player.getHighestStatWeight(additionalData.contentType)
           bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+          //}
+
 
           // When you wear the trinket, you also give a stat buff to others wearing it. This is a good chance for a setting.
           //bonus_stats.allyStats = runGenericOnUseTrinket(data[1], itemLevel) * 4;

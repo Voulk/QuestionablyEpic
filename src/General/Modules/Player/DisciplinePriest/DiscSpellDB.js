@@ -47,7 +47,7 @@ export const DISCSPELLS = {
         cost: 1.6,
         onGCD: true,
         travelTime: 0.8, // Fixed for now but could be dynamic based on distance from target.
-        coeff: 1.202, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 1.202 * 0.85, //0.376, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         atoneOverheal: 0.16,
         school: "holy",
@@ -58,7 +58,7 @@ export const DISCSPELLS = {
         type: "damage",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 1.202,
+        coeff: 1.202 * 0.85,
         school: "holy",
         atoneOverheal: 0.16,
         secondaries: ['crit', 'vers'],
@@ -68,8 +68,9 @@ export const DISCSPELLS = {
         type: "special",
         castTime: 0, // The spell takes place over 2 seconds (before Haste) but it'll be replaced by X penance bolts in the app so doesn't need a cast time here.
         cost: 1.6,
+        healType: "direct",
         onGCD: true,
-        coeff: 1.25 * 1.3, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
+        coeff: 1.25 * 1.3 * 0.85, // This is shown for informational purposes, but the function itself splits it into individual bolts instead.
         bolts: 3,
         expectedOverheal: 0.6,
         school: "holy",
@@ -78,9 +79,10 @@ export const DISCSPELLS = {
     "DefPenanceTick": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
         type: "heal",
+        healType: "direct",
         castTime: 2, // This will still be dynamically adjusted at runtime.
         cost: 0,
-        coeff: 1.25 * 1.3,
+        coeff: 1.25 * 1.3 * 0.85,
         school: "holy",
         expectedOverheal: 0.6,
         secondaries: ['crit', 'vers', 'mastery'],
@@ -270,6 +272,7 @@ export const DISCSPELLS = {
     "Flash Heal": [{
         spellData: {id: 2061, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
+        healType: "direct",
         school: "holy",
         castTime: 1.5,
         cost: 3.6,
@@ -283,6 +286,7 @@ export const DISCSPELLS = {
     "Power Word: Radiance": [{
         spellData: {id: 194509, icon: "spell_priest_power-word", cat: "heal"},
         type: "heal",
+        healType: "direct",
         castTime: 2,
         cost: 4.5,
         school: "holy",

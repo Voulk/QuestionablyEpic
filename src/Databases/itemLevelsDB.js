@@ -24,7 +24,7 @@ export const itemLevels = {
     655,
     658,
     665,
-    672,
+    671,
     678
 
   ],

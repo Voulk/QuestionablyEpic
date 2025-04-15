@@ -54,7 +54,7 @@ export const MONKSPELLS = {
         castTime: 1.5,
         cost: 3, // Mana cost as a percent. 
         coeff: 6.0372, //2.58 x 1.95 x 1.2 (Vivify main) x 1.2 (Vivify all)
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.17,
         secondaries: ['crit', 'vers'],
         mastery: 1
     }],
@@ -64,7 +64,7 @@ export const MONKSPELLS = {
         coeff: 0,
         offGCD: true,
         flatHeal: 7500000 * 0.24,
-        expectedOverheal: 0.05,
+        expectedOverheal: 0.075,
         secondaries: ['vers'],
         targets: 5,
     }],
@@ -116,7 +116,7 @@ export const MONKSPELLS = {
         castTime: 0,
         cost: 1.8, // Mana cost as a percent. 
         coeff: 0,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: [],
         cooldownData: {cooldown: 9, charges: 3},
         mastery: 1
@@ -127,7 +127,7 @@ export const MONKSPELLS = {
         coeff: 0.19665,
         tickData: {tickRate: 2, canPartialTick: true},
         buffDuration: 20,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'], // + Haste
     }],
     "Enveloping Mist": [{
@@ -174,7 +174,7 @@ export const MONKSPELLS = {
         tickData: {tickRate: 0.75, canPartialTick: true},
         buffDuration: 6,
         targets: 5,
-        expectedOverheal: 0.25,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'vers'],
     }],
     "Crackling Jade Lightning": [{
@@ -183,7 +183,7 @@ export const MONKSPELLS = {
         castTime: 3,
         channel: true,
         cost: 0,
-        coeff: 0.224 * 1.04 * 6.25 * 25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        coeff: 0.224 * 1.04 * 6.25 * 2, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
         aura: 1.04, // AP -> SP conversion.
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
@@ -240,7 +240,7 @@ export const MONKSPELLS = {
         coeff: 0,
         flatHeal: 7500000 * 0.03,
         offGCD: true, // Called by another spell
-        expectedOverheal: 0.07,
+        expectedOverheal: 0.1,
         targets: 5,
         secondaries: ['vers'],
     }],
@@ -249,7 +249,7 @@ export const MONKSPELLS = {
         castTime: 0,
         coeff: 0,
         offGCD: true, // Called by another spell
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.24,
         mastery: 1.5, // This is effective a target count for Crane Style
         targets: 1,
         secondaries: [],
@@ -259,7 +259,7 @@ export const MONKSPELLS = {
         castTime: 0,
         coeff: 0.2394,
         offGCD: true, // Called by another spell
-        expectedOverheal: 0.1,
+        expectedOverheal: 0.12,
         targets: 1,
         secondaries: ['crit', 'vers'],
     }],
@@ -269,7 +269,7 @@ export const MONKSPELLS = {
         cost: 0,  
         offGCD: true,
         coeff: 1.25, 
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.45,
         secondaries: ['crit', 'vers'],
         targets: 5,
     }],
@@ -289,10 +289,10 @@ export const MONKSPELLS = {
         type: "heal",
         castTime: 2,
         cost: 2.5,
-        coeff: 1.2084, // Per Cloud
+        coeff: 1.2084 * 1.15, // Per Cloud
         targets: 3,
         mastery: 1,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'vers']
     }],
     "Chi Burst": [{
@@ -386,7 +386,7 @@ export const MONKSPELLS = {
         offGCD: true,
         coeff: 0.55223, 
         buffDuration: 15,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'vers']
     }],
 }

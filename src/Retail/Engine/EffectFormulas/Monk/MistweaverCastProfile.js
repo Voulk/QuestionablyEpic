@@ -36,7 +36,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     playerData.talents = { ...baseTalents };
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...playerData.talents}, reporting: true, heroTree: "conduitOfTheCelestials", tierSets: [], currentTarget: 0, setStats: JSON.parse(JSON.stringify(playerData.stats)), currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
-    const localSettings = {risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.4, chijiGustsOverhealing: 0.4};
+    const localSettings = {downtime: 0.15, risingMist: {remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9}, gustsOverhealing: 0.4, chijiGustsOverhealing: 0.4, ancientTeachingsOverhealing: 0.14};
     
     state.tierSets = playerData.effects.filter(effect => effect.type === "set bonus").map(effect => effect.name);
     //console.log(JSON.stringify(state.tierSets));
@@ -68,6 +68,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         onUseData = getTrinketData("Signet of the Priory", playerData.effects.filter(effect => effect.name === "Signet of the Priory")[0].level);
         onUseData.name = "Signet of the Priory";
         state.currentStats.haste += (onUseData.value * onUseData.duration / 120);
+        console.log("Adding " + (onUseData.value * onUseData.duration / 120) + " haste from Signet of the Priory");
     }
     else if (playerData.effects.filter(effect => effect.name === "House of Cards").length > 0) {
         onUseData = getTrinketData("House of Cards", playerData.effects.filter(effect => effect.name === "House of Cards")[0].level);
@@ -75,7 +76,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         state.currentStats.mastery += (onUseData.value * onUseData.duration / 120);
     }
 
-    reportingData.hastePre = getHaste(state.currentStats)
     let averageHaste = getHaste(state.currentStats)
                             * (1 + 0.15 * 10 * hasTalent(playerData.talents, "secretInfusion") / 30) //Potential TODO: SI toward crit for chiji?
                             * (1 + 0.2 * 20 * hasTalent(playerData.talents, "invokersDelight") / 120)
@@ -92,7 +92,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
-        {spell: "Enveloping Mist", cpm: 4 * averageHaste + 0.5, hastedCPM: true}, //this needs to be at a minimum the same as the number of box procs
+        {spell: "Enveloping Mist", cpm: 4 * averageHaste + 0.5}, // This needs to be at a minimum the same as the number of box procs
         {spell: "Vivify", cpm: 4, hastedCPM: true},
         {spell: "Tiger Palm", cpm: 7.5, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
@@ -126,6 +126,11 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         if (spellProfile.hastedCPM) {
             spellProfile.cpm = spellProfile.cpm * averageHaste;
         }
+
+        // Ultimately players are not robots and fights have natural downtime. We can't model that ultra precisely but it's better to try than not,
+        // since with no downtime flat healing effects get hit harder than they would in a real fight. 
+        spellProfile.cpm *= (1 - localSettings.downtime); 
+        
     }
     );
 
@@ -187,7 +192,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         const adjustedCooldown = 180 - getSpellEntry(castProfile, "Rising Sun Kick").cpm
         getSpellEntry(castProfile, "Revival").cpm = 60 / adjustedCooldown;
         //getSpellEntry(castProfile, "Revival").cpm *= getSpellEntry(castProfile, "Rising Sun Kick").cpm / 180;
-        reportingData
     }
 
     if (true) {
@@ -206,7 +210,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         if (hasTalent(playerData.talents, "secretInfusion")) hastePercentage *= (1 + 0.15 * 0.4);
         reportingData.chijiHaste = hastePercentage;
         
-        const chijiCasts = chijiDuration / (1.5 / hastePercentage) - 1 ; // casting Chiji itself takes away from the # of casts in the window
+        const chijiCasts = (chijiDuration / (1.5 / hastePercentage) - 1) * (1 - localSettings.downtime);  ; // Casting Chiji itself takes away from the # of casts in the window
         const chijiCooldown = 120;
 
         // Chi Cocoons & Jade Bond
@@ -288,7 +292,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
                     if (spellName === "Courage of the White Tiger") {
                         healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + value * spell.damageToHeal * spellCPM;
                     }
-                    else healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + value * spell.damageToHeal * spellCPM;
+                    else healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + value * spell.damageToHeal * spellCPM  * (1 - localSettings.ancientTeachingsOverhealing);
                 }
                 damageBreakdown[spellName] = (damageBreakdown[spellName] || 0) + value * spellCPM;
             }
@@ -355,8 +359,8 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // printHealingBreakdown(damageBreakdown, totalDamage);
     // printHealingBreakdown(healingBreakdown, totalHealing);
-    // console.log(reportingData);
+    //console.log(reportingData);
     // console.log("HPS: " + Math.round(totalHealing / 60));
-    // console.log("HPS: " + totalHealing / 60);
+
     return { hps: totalHealing / 60, hpm: 0 }
 }

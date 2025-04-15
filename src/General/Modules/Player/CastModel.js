@@ -8,7 +8,7 @@ import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeig
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { runChijiCastModel, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
+import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
@@ -153,6 +153,7 @@ class CastModel {
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = runChijiCastModel;
+        this.modelOnUseTrinket = modelChijiOnUseTrinket;
         spellList = chijiSpellData(contentType);
         specialQueries = chijiSpecialQueries(contentType);
         this.baseStatWeights = chijiStatWeights("Raid");
