@@ -10,7 +10,7 @@ import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } fr
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
+import { getItemSet } from "Classic/Databases/RetailItemSetDB.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData"
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"

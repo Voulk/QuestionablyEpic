@@ -9,7 +9,7 @@ import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/Effect
 import Player from "../../Player/Player";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
-import { getItemSet } from "Classic/Databases/ItemSetsDB"
+import { getItemSet } from "Classic/Databases/ClassicItemSetDB"
 
 import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
 import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"

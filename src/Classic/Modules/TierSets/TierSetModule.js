@@ -1,5 +1,3 @@
-// This module will be focused on Classic mostly, Until Retail reintroduces tier sets
-
 import React, { useEffect } from "react";
 import makeStyles from '@mui/styles/makeStyles';
 import "../../../General/Modules/SetupAndMenus/QEMainMenu";
@@ -8,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga";
 import { Grid, Typography } from "@mui/material";
 // import { useSelector } from "react-redux";
-import { tierSets } from "../../Databases/TierSetsDB";
+import { tierSets } from "../../Databases/ClassicTierDescriptions";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
 
 const useStyles = makeStyles((theme) => ({

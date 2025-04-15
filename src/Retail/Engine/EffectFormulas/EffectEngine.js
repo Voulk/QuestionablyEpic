@@ -13,7 +13,6 @@ import { getEmbellishmentEffect } from "./Generic/Embellishments/EmbellishmentDa
 // Classic
 import { getGenericEffectClassic } from "Classic/Engine/EffectFormulas/Generic/GenericEffectClassic"
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
-import { getClassicTierSet } from "Classic/Engine/EffectFormulas/ClassicTierSets";
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
 
 
@@ -101,7 +100,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // Includes Tier Set bonuses, trinkets, and special effects on items that aren't just pure stats. 
   else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
-        bonus_stats = getClassicTierSet(effectName, player);
         // Call error
       }
     else if (effectType === "set bonus") {
