@@ -1,15 +1,15 @@
 import { getGenericEffect  } from "./Generic/GenericEffectFormulas";
-import { getDruidSpecEffect } from "./Druid/DruidSpecEffects";
-import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
+import { getDruidSpecEffect } from "../../../General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects";
+import { getDiscPriestSpecEffect } from "../../../General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects";
 import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
 import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
 import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
-import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
-import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
+import { getEvokerSpecEffect } from "../../../General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
+import { getPaladinSpecEffect } from "../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
 import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 
-import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
+import { getEmbellishmentEffect } from "./Generic/Embellishments/EmbellishmentData";
 
 // Classic
 import { getGenericEffectClassic } from "Classic/Engine/EffectFormulas/Generic/GenericEffectClassic"

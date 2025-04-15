@@ -3,12 +3,12 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
-import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
+            getHealth, getCrit, getSpellCastTime, spendSpellCost } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
-import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
+import { genSpell } from "General/Modules/Player/ClassDefaults/Generic/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
+import { printHealingBreakdown } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {

@@ -1,6 +1,6 @@
 import { convertPPMToUptime, getProcessedValue } from "../EffectUtilities";
 import { effectData} from "./EffectData";
-import { embellishmentData } from "./EmbellishmentData";
+import { embellishmentData } from "./Embellishments/EmbellishmentData";
 
 /* ---------------------------------------------------------------------------------------------- */
 /*                                         Generic Effects                                        */

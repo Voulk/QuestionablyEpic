@@ -6,7 +6,7 @@ import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { shadowFiendProfile } from './DiscPriestDefaultAPL';
-import { runAPLSuites } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampTestSuite";
+import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 

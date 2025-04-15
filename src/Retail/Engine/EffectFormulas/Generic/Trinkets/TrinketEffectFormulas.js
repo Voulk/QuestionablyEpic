@@ -5,7 +5,7 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
-import { getAdjustedHolyShock } from "../../Paladin/PaladinMiscFormulas"
+import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";

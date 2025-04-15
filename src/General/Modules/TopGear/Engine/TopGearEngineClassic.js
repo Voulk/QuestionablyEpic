@@ -16,7 +16,7 @@ import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassD
 import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
 import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
-import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.

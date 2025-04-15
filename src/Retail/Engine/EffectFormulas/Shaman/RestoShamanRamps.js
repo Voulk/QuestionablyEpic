@@ -2,8 +2,8 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { SHAMANSPELLDB } from "./RestoShamanSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getCurrentStats, getHaste, getSpellRaw, getStatMult } from "../Generic/RampGeneric/RampBase";
-import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/RampGeneric/BuffBase";
+import { getCurrentStats, getHaste, getSpellRaw, getStatMult } from "../../../../General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../../../../General/Modules/Player/ClassDefaults/Generic/BuffBase";
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const Settings = {

@@ -4,7 +4,7 @@ import { STATDIMINISHINGRETURNS } from "General/Engine/STAT";
 import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { instanceDB } from "Databases/InstanceDB";
-import { getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
+import { getMastery } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {

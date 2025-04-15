@@ -1,7 +1,7 @@
 
 import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
 //import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
-import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase"
+import { removeBuffStack } from "General/Modules/Player/ClassDefaults/Generic/BuffBase"
 /**
 * This function handles all of our effects that might change our spell database before the ramps begin.
 * It includes conduits, legendaries, and some trinket effects.

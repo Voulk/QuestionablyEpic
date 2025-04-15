@@ -1,7 +1,7 @@
 import { Stats } from 'fs';
 import Player from 'General/Modules/Player/Player';
 import { runCastSequence, allRamps, allRampsHealing } from "./DiscRampUtilities";
-import { getSpellRaw } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+import { getSpellRaw } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { genStatWeights } from './DiscPriestUtilities';
 import { buildRamp } from "./DiscRampGen";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";

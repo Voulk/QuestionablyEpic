@@ -10,13 +10,13 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 
-import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
+import { buildEvokerChartData } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
-import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
-import { buildDruidChartData } from "Retail/Engine/EffectFormulas/Druid/DruidRampGen";
+import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRampUtilities";
+import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidRampGen";
 import { buildHolyPriestChartData } from "Retail/Engine/EffectFormulas/Priest/HolyPriestRampGen";
 
-import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
+import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
