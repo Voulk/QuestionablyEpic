@@ -24,9 +24,16 @@ export function getTrinketValue(trinketName, itemLevel) {
   const effect = activeTrinket.effects[0];
   const trinketValue = processedValue(effect, itemLevel);
   return trinketValue;
-
 }
 
+export function getTrinketParam(trinketName, parameter) {
+  const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData)
+  let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
+
+  const effect = activeTrinket.effects[0];
+  if (parameter in effect) return effect[parameter];
+  else return 0;
+}
 
 
 // Return the effect of running a trinkets runFunc function. This will return a bonus_stats object if the trinket exists and an empty one if it does not.

@@ -1,5 +1,5 @@
-import { runHeal  } from "./MonkSpellSequence";
-import { getHaste } from "./../Generic/RampGeneric/RampBase";
+import { runHeal } from "./MonkSpellSequence";
+import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 
 
 // This is the Mistweaver spell database. 
@@ -54,7 +54,7 @@ export const MONKSPELLS = {
         castTime: 1.5,
         cost: 3, // Mana cost as a percent. 
         coeff: 6.0372, //2.58 x 1.95 x 1.2 (Vivify main) x 1.2 (Vivify all)
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.17,
         secondaries: ['crit', 'vers'],
         mastery: 1
     }],
@@ -62,14 +62,16 @@ export const MONKSPELLS = {
         type: "heal",
         cost: 0, // Mana cost as a percent. 
         coeff: 0,
+        offGCD: true,
         flatHeal: 7500000 * 0.24,
-        expectedOverheal: 0.05,
+        expectedOverheal: 0.075,
         secondaries: ['vers'],
         targets: 5,
     }],
     "Invigorating Mist": [{ // Invigorating Mists
         type: "heal",
         castTime: 0,
+        offGCD: true,
         coeff: 1.2428,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'],
@@ -77,6 +79,7 @@ export const MONKSPELLS = {
     "Zen Pulse": [{ 
         type: "heal",
         castTime: 0,
+        offGCD: true,
         coeff: 1.6,
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'],
@@ -107,43 +110,13 @@ export const MONKSPELLS = {
         targets: 5,
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers']
-    },
-    {
-        type: "special",
-        runFunc: function (state) {
-                        // Essence Font Heal
-            const directData = {coeff: 0.472 * (state.settings.misc.includes("2T28") ? 1 : 1)}
-            const efDirect = { type: "heal", coeff: directData.coeff, expectedOverheal: 0.25, secondaries: ['crit', 'vers'], targets: 1}
-            
-            // Apply 5 special Essence Font hots. These stack with existing EF hots.
-            const EF = {coeff: 0.042 * (state.settings.misc.includes("2T28") ? 1 : 1), duration: 8 + (state.settings.misc.includes("2T28") ? 2 : 0)}
-            // Essence Font HoT
-            const efHot = { type: "heal", coeff: EF.coeff, expectedOverheal: 0.3, secondaries: ['crit', 'vers'], duration: EF.duration}
-            const newBuff = {name: "Essence Font (HoT - Faeline Stomp)", buffType: "heal", attSpell: efHot,
-                tickRate: 2, next: state.t + (2 / getHaste(state.currentStats))}
-            newBuff['expiration'] = state.t + efHot.duration
-
-            for (let i = 0; i < 5; i++) {
-                runHeal(state, efDirect, "Essence Font (Faeline Stomp)")
-                state.activeBuffs.push(newBuff)
-            }
-        }
-    }/*,
-    {
-        FLH Condition WIP
-        type: "special",
-        //condition: "Faeline Harmony",
-        runFunc: function (state) {
-            const newBuff = {name: "Faeline Harmony Inc", buffType: "special", expiration: state.t + 10}
-            state.activeBuffs.push(newBuff)
-        }
-    }*/],
+    }],
     "Renewing Mist": [{
         type: "heal",
         castTime: 0,
         cost: 1.8, // Mana cost as a percent. 
         coeff: 0,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: [],
         cooldownData: {cooldown: 9, charges: 3},
         mastery: 1
@@ -154,7 +127,7 @@ export const MONKSPELLS = {
         coeff: 0.19665,
         tickData: {tickRate: 2, canPartialTick: true},
         buffDuration: 20,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'], // + Haste
     }],
     "Enveloping Mist": [{
@@ -175,6 +148,8 @@ export const MONKSPELLS = {
         tickData: {tickRate: 1, canPartialTick: true},
         targets: 5,
         coeff: 1.026 / 7, 
+        castTime: 0,
+        offGCD: true,
         buffDuration: 7,
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers']
@@ -186,25 +161,20 @@ export const MONKSPELLS = {
         offGCD: true,
         cost: 0,
         buffDuration: 10,
+        cooldownData: {cooldown: 30, charges: 1},
     },],
     "Refreshing Jade Wind": [{
-        type: "heal",
         castTime: 0,
-        cost: 3.5,
-        coeff: 0.116,
-        targets: 6,
-        expectedOverheal: 0.2,
-        secondaries: ['crit', 'vers'],
-    },
-    {
+        cost: 0,
+        offGCD: true,
+
         type: "buff",
         buffType: "heal",
-        coeff: 0.116,
-        tickRate: 0.75,
-        buffDuration: 9,
-        hastedDuration: true,
-        targets: 6,
-        expectedOverheal: 0.2,
+        coeff: 0.145,
+        tickData: {tickRate: 0.75, canPartialTick: true},
+        buffDuration: 6,
+        targets: 5,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'vers'],
     }],
     "Crackling Jade Lightning": [{
@@ -213,7 +183,7 @@ export const MONKSPELLS = {
         castTime: 3,
         channel: true,
         cost: 0,
-        coeff: 0.224 * 1.04 * 6.25, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        coeff: 0.224 * 1.04 * 6.25 * 2, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
         aura: 1.04, // AP -> SP conversion.
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
@@ -229,37 +199,6 @@ export const MONKSPELLS = {
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
         secondaries: ['crit', 'vers'],
-    },
-    {
-        type: "special",
-        runFunc: (state) => {
-            // Add stack of TotM
-            const activeBuffs = state.activeBuffs;
-            const teachingsStacks = activeBuffs.filter(function (buff) {return buff.name === "Teachings of the Monastery"}).length;
-            if (teachingsStacks === 0) {
-                // Add buff
-                activeBuffs.push({name: "Teachings of the Monastery", buffType: "special", stacks: 1, expiration: 30})
-            }
-            else {
-                // Add stack of buff.
-                const buff = activeBuffs.filter(buff => buff.name === "Teachings of the Monastery")[0]
-                buff.stacks = Math.min(buff.stacks + 1, 3);
-                buff.expiration = 20;
-            }
-        }
-    },
-    {
-        type: "special",
-        condition: "Ancient Teachings of the Monastery",
-        runFunc: function (state) {
-            // Checks if AtoTM active
-            
-            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
-            {
-                const spell = { type: "heal", coeff: 0.297297 * 1.04 * 2.5 * 1.05 * GLOBALMODS.ARMOR, expectedOverheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                runHeal(state, spell, "Ancient Teachings of the Monastery")
-            }
-        }
     }],
     "Blackout Kick": [{
         type: "damage",
@@ -282,99 +221,7 @@ export const MONKSPELLS = {
         damageToHeal: 0.3,
         cooldown: 0,
         secondaries: ['crit', 'vers'],
-    },
-    {
-        type: "special",
-        runFunc: (state) => {
-            // Rising Mist
-            const rmHots = ["Renewing Mist", "Essence Font (HoT)", "Enveloping Mist", "Essence Font (HoT - Faeline Stomp)"]
-            const risingMistExtension = 4;
-            const activeRMBuffs = state.activeBuffs.filter(function (buff) {return rmHots.includes(buff.name)})
-            let expectedtargets = 0;
-            // Apply heal to allies with ReM, EF or Enveloping Mist.
-            // ReM and EF can be double counted here, slightly inflating value.
-            // The addition of target markers in the buff list would solve this but isn't high priority.
-            // Capped healed targets at 20 - this reduces RM healing on NF
-            if (activeRMBuffs.length > 20)
-                expectedtargets = 20;
-            else expectedtargets = activeRMBuffs.length;
-
-            const spell = { type: "heal", coeff: 0.28, expectedOverheal: 0.15, secondaries: ['crit', 'vers'], targets: expectedtargets} 
-         
-            if (activeRMBuffs.length > 0) runHeal(state, spell, "Rising Mist")
-
-            // Extend ReM, EF and Enveloping Mist HoTs. Mark down the extension.
-            activeRMBuffs.forEach((buff) => {
-                if ('durationExtended' in buff) {
-                    buff.durationExtended = buff.durationExtended + 1;
-                }
-                else {
-                    buff.durationExtended = 1;
-                }
-                if ((buff.name === "Enveloping Mist" || buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 2) {
-                    buff.expiration = buff.expiration + risingMistExtension;
-                }
-                if (buff.name === "Renewing Mist" && buff.durationExtended <= 5) {
-                    buff.expiration = buff.expiration + risingMistExtension;
-                }
-                if ((buff.name === "Essence Font (HoT)" || buff.name === "Essence Font (HoT - Faeline Stomp") && buff.durationExtended <= 3 && state.settings.misc.includes("2T28")) {
-                    buff.expiration = buff.expiration + risingMistExtension / 2;
-                }
-            })
-        }
-    },
-    {
-        type: "special",
-        condition: "Ancient Teachings of the Monastery",
-        runFunc: function (state) {
-            if (state.activeBuffs.filter(function (buff) {return buff.name === "Ancient Teachings of the Monastery"}).length > 0)
-            {
-                const spell = { type: "heal", coeff: 2.151248 * 2.5 * 1.05 * GLOBALMODS.ARMOR, expectedOverheal: 0.4, secondaries: ['crit', 'vers'], targets: 1} 
-                runHeal(state, spell, "Ancient Teachings of the Monastery")
-            }
-        }
-    },
-    {
-        type: "special",
-        condition: "Chiji Active",
-        runFunc: function (state) {
-            const chijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "Chiji Active"}).length > 0;
-            const CTAchijiBuff = state.activeBuffs.filter(function (buff) {return buff.name === "CTA Chiji Active"}).length > 0;
-            if (chijiBuff || CTAchijiBuff)
-            {
-                // Gusts healing from Chi-ji
-                if (chijiBuff)
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (Chiji)");
-                }
-
-                // Gusts healing from CTA Chi-ji
-                if (CTAchijiBuff) // Does CTA + Chiji active give double stacks?
-                {
-                    const bonusMasteryProc = MONKSPELLS['Gust of Mists'][0];
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                    runHeal(state, bonusMasteryProc, "Gust of Mists (CTA Chiji)");
-                }
-
-                // Add stack of Chiji reduced mana cost
-                const activeBuffs = state.activeBuffs;
-                const chijiStacks = activeBuffs.filter(function (buff) {return buff.name === "Chiji Stacks"}).length;
-                if (chijiStacks === 0) {
-                    // Add buff
-                    activeBuffs.push({name: "Chiji Stacks", buffType: "special", stacks: 1, expiration: 20})
-                }
-                else {
-                    // Add stack of buff.
-                    const buff = activeBuffs.filter(buff => buff.name === "Chiji Stacks")[0]
-                    buff.stacks = Math.min(buff.stacks + 1, 3);
-                    buff.expiration = 20;
-                }
-            }
-        }
-    },
-    ],
+    }],
     "Courage of the White Tiger": [{
         type: "damage",
         damageType: "physical",
@@ -393,9 +240,60 @@ export const MONKSPELLS = {
         coeff: 0,
         flatHeal: 7500000 * 0.03,
         offGCD: true, // Called by another spell
-        expectedOverheal: 0.07,
+        expectedOverheal: 0.1,
         targets: 5,
         secondaries: ['vers'],
+    }],
+    "Crane Style": [{
+        type: "heal",
+        castTime: 0,
+        coeff: 0,
+        offGCD: true, // Called by another spell
+        expectedOverheal: 0.24,
+        mastery: 1.5, // This is effective a target count for Crane Style
+        targets: 1,
+        secondaries: [],
+    }],
+    "Rising Mist": [{
+        type: "heal",
+        castTime: 0,
+        coeff: 0.2394,
+        offGCD: true, // Called by another spell
+        expectedOverheal: 0.12,
+        targets: 1,
+        secondaries: ['crit', 'vers'],
+    }],
+    "Flight of the Red Crane": [{
+        type: "heal",
+        castTime: 0,
+        cost: 0,  
+        offGCD: true,
+        coeff: 1.25, 
+        expectedOverheal: 0.45,
+        secondaries: ['crit', 'vers'],
+        targets: 5,
+    }],
+    "Life Cocoon": [{
+        type: "heal",
+        castTime: 0,
+        cost: 2.4,  
+        flatHeal: 7500000 * 0.48, 
+        expectedOverheal: 0.3,
+        secondaries: ['vers'],
+        cooldownData: {cooldown: 120, charges: 1},
+        targets: 1,
+    }],
+    "Sheilun's Gift": [{
+        // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
+        // this is reasonably low priority since fitting the entire cast in the 4pc window is trivial. 
+        type: "heal",
+        castTime: 2,
+        cost: 2.5,
+        coeff: 1.2084 * 1.15, // Per Cloud
+        targets: 3,
+        mastery: 1,
+        expectedOverheal: 0.35,
+        secondaries: ['crit', 'vers']
     }],
     "Chi Burst": [{
         // Note: Chi Burst is currently coded to apply it's damage & healing immediately. Travel time could be added if necessary but
@@ -477,17 +375,19 @@ export const MONKSPELLS = {
         sqrtMin: 5,
         mastery: 20,
         cooldownData: {cooldown: 180, charges: 1},
-    }, 
-    {
-        type: "special",
-        runFunc: function (state) {
-
-            const masteryProc = MONKSPELLS['Gust of Mists'][0];
-            for (var i = 0; i < 20; i++)
-            {
-                runHeal(state, masteryProc, "Gust of Mists (Revival)")
-            }
-        }
+    }],
+    "Insurance": [{
+        type: "buff",
+        buffName: "Insurance",
+        buffType: "heal",
+        tickData: {tickRate: 3, canPartialTick: true},
+        targets: 1,
+        castTime: 0,
+        offGCD: true,
+        coeff: 0.55223, 
+        buffDuration: 15,
+        expectedOverheal: 0.35,
+        secondaries: ['crit', 'vers']
     }],
 }
 

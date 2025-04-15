@@ -16,7 +16,7 @@ export const DRUIDSPELLDB = {
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: true, tickOnCast: true}, 
         buffDuration: 12,
-        coeff: 0.2465 * 2.1,
+        coeff: 0.2588 * 2.1,
         expectedOverheal: 0.2,
         targeting: {type: "friendly", count: 1, behavior: "avoidSame"},
         secondaries: ['crit', 'versatility'] // Rejuv also scales with haste, but this is handled elsewhere.
@@ -89,7 +89,7 @@ export const DRUIDSPELLDB = {
         tickData: {tickRate: 1, canPartialTick: true, tickOnCast: false}, 
         buffDuration: 7,
         targets: 5, // Talent to increase to 6.
-        coeff: 0.168, //0.1344, // This is the base coefficient before decay. The 0.1344 listed in places appears to just be an average, but not the base coefficient.
+        coeff: 0.1411, //0.168, //0.1344, // This is the base coefficient before decay. The 0.1344 listed in places appears to just be an average, but not the base coefficient.
         specialMod: 1.44, // Aura buff + any extras.
         expectedOverheal: 0.2,
         flags: {targeted: true},

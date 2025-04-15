@@ -8,7 +8,7 @@ import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeig
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { monkTearSpecialQueries, monkTearSpellData, monkTearStatWeights } from "./ClassDefaults/Monk/MonkTear";
+import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
@@ -134,8 +134,8 @@ class CastModel {
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
-      if (modelID === "Rising Mist") {
-        this.modelName = "Rising Mist"
+      if (modelID === "Yu'lon") {
+        this.modelName = "Yu'lon"
         spellList = monkDefaultSpellData("Raid");
         specialQueries = monkDefaultSpecialQueries("Raid");
         this.baseStatWeights = monkDefaultStatWeights("Raid");
@@ -148,12 +148,16 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      else if (modelID === "Tear of Morning") {
-        this.modelName = "Tear of Morning"
-        spellList = monkTearSpellData(contentType);
-        specialQueries = monkTearSpecialQueries(contentType);
-        this.baseStatWeights = monkTearStatWeights("Raid");
-        this.fightInfo.dps = 6000;
+      else if (modelID === "Chi-Ji (Beta)") {
+        this.modelName = "Chi-Ji (Beta)"
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
+        this.runCastModel = runChijiCastModel;
+        this.modelOnUseTrinket = modelChijiOnUseTrinket;
+        spellList = chijiSpellData(contentType);
+        specialQueries = chijiSpecialQueries(contentType);
+        this.baseStatWeights = chijiStatWeights("Raid");
+        this.fightInfo.dps = 600000;
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
@@ -171,8 +175,15 @@ class CastModel {
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
       }
+      else if (modelID === "Oracle (Coming Soon)") {
+        this.modelName = "Oracle (Coming Soon)";
+        spellList = discPriestDefaultSpellData(contentType);
+        specialQueries = discPriestDefaultSpecialQueries(contentType);
+        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
+      }
       else {
-        this.modelName = "Healing Focused";
+        this.modelName = "Voidweaver";
         spellList = discPriestDefaultSpellData(contentType);
         specialQueries = discPriestDefaultSpecialQueries(contentType);
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);

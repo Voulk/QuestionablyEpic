@@ -16,11 +16,11 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 14000,
-            haste: 6000,
-            crit: 5000,
-            mastery: 2500,
-            versatility: 3000,
+            intellect: 88764,
+            haste: 15950,
+            crit: 14275,
+            mastery: 13550,
+            versatility: 5950,
             stamina: 29000,
             critMult: 2,
         }
@@ -28,15 +28,61 @@ describe("Test APL", () => {
         const baseSpells = DISCSPELLS;
         const testSettings = {includeOverheal: "No", reporting: true, t31_2: false, seqLength: 45};
 
-        const playerData = { spec: "Discipline Priest", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
+        const playerData = { spec: "Discipline Priest", heroTree: "oracle", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: activeStats }
         //const data = runAPLSuites(playerData, shadowFiendProfile, runCastSequence);
 
-        //const data = runStatSuites(playerData, evokerDefaultAPL, runCastSequence);
-    
+        const ttlHealing = allRampsHealing([], activeStats, {}, baseTalents, [])
+        console.log("Total Healing: " + ttlHealing);
+        
+        runStats(playerData);
         expect(true).toEqual(true);
     })
-
 });
+
+const runStats = (playerData) => {
+    const stats = ['crit', 'mastery', 'haste', 'versatility', 'intellect', ];
+    const iterations = 1;
+    let baseline = 0;
+
+    const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
+        intellect: 76000 * 1.05 * 1.05,
+        haste: 10000,
+        crit: 10000,
+        mastery: 10000 + (2 * 700),
+        versatility: 10000 + (3 * 780),
+        stamina: 29000,
+        critMult: 2,
+    }
+
+    playerData.stats = activeStats;
+    
+    for (let i = 0; i < iterations; i++) {
+        baseline += allRampsHealing([], activeStats, {}, baseTalents, []);
+    }
+
+    baseline = baseline / iterations
+    
+    const results = {};
+
+    stats.forEach(stat => {
+        let statHealing = 0;
+        let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+        playerStats[stat] = playerStats[stat] + 2400;
+        const newPlayerData = {...playerData, stats: playerStats};
+        for (let i = 0; i < iterations; i++) {
+            statHealing += allRampsHealing([], playerStats, {}, baseTalents, []);
+        }
+        results[stat] = statHealing / iterations;
+
+    });
+    const weights = {}
+
+    stats.forEach(stat => {
+        weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+    });
+    console.log(baseline);
+    console.log(weights); 
+}
 
 /*
 

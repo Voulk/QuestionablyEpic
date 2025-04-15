@@ -11,6 +11,33 @@
 
 export const gemDB = [
   {
+    id: 71850,
+    rarity: "epic",
+    name: {
+      en: "Reckless Lava Coral",
+    },
+    icon: "inv_misc_epicgem_04",
+    stats: { intellect: 25, haste: 25 },
+  },
+  {
+    id: 71868,
+    rarity: "epic",
+    name: {
+      en: "Purified Shadow Spinel",
+    },
+    icon: "inv_misc_epicgem_05",
+    stats: { intellect: 25, spirit: 25 },
+  },
+  {
+    id: 71881,
+    rarity: "epic",
+    name: {
+      en: "Brilliant Queen's Garnet",
+    },
+    icon: "inv_misc_epicgem_01",
+    stats: { intellect: 50 },
+  },
+  {
     id: 59480,
     rarity: "epic",
     name: {

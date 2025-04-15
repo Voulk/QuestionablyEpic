@@ -814,6 +814,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     effectStats.push(annuletStats);
  } */
 
+  // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
     const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 658;
 
@@ -878,14 +879,22 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (castModel.modelType[contentType] === "CastModel") {
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
-    setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
+    setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
     setStats.intellect = (setStats.intellect || 0) * 1.05;
+
+    // Raid Buffs
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
+    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-
+    
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
-
+    
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
+    //hardScore = setStats.hps || 0;
+    console.log(castModelResult.hps);
     evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==
@@ -970,9 +979,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
 
   // Double on-use adjustment
-  // This is not a perfect representation of the cost of wearing two on-use trinkets as Paladin and Disc,
-  // but from a practical viewpoint it achieves the objective. It could be replaced with something more
-  // mathematically comprehensive in future. Disc Priest will be swapped to the new tech very soon.
+  // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
+  // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
     hardScore -= 1800;
   }

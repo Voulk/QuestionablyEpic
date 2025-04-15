@@ -3,11 +3,12 @@ import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
+            getHealth, getCrit, getSpellCastTime, spendSpellCost } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/BuffBase";
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
+import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -18,19 +19,20 @@ const discSettings = {
 }
 
 export const DISCCONSTANTS = {
-    baseMana: 50000, // Note that this is multiplied by 5 to get our actual mana pool.
+    baseMana: 500000, // Note that this is multiplied by 5 to get our actual mana pool.
     masteryMod: 1.35,
     masteryEfficiency: 1,
 
+    atonementBaseTransfer: 0.28,
     auraHealingBuff: 0.97, 
     auraDamageBuff: {
-        periodic: 0.915,
-        direct: 0.915,
+        periodic: 1,
+        direct: 1,
         pet: 1.17,
     },
     
     atonementMults: {"shadow": 1, "holy": 1},
-    shadowCovenantSpells: ["Halo", "Divine Star", "Penance", "PenanceTick"],
+    shadowCovenantSpells: ["Halo", "Divine Star", "DefPenance", "DefPenanceTick"],
     enemyTargets: 1, 
     sins: {0: 1.2, 1: 1.2, 2: 1.2, 3: 1.2, 4: 1.2, 5: 1.2, 
             6: 1.175, 7: 1.15, 8: 1.125, 9: 1.1, 10: 1.075,
@@ -105,17 +107,14 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
-
+        //addReport(state, `Shadow Covenant buffed ${spellName} by ${getBuffValue(state.activeBuffs, "Shadow Covenant") * 100}%`)
     }
 
-    if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite" || spellName === "Power Word: Solace")) {
+    if (checkBuffActive(buffs, "Weal & Woe") && (spellName === "Smite")) {
         mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.2);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
     }
-    if (checkBuffActive(buffs, "Light Weaving")) {
-        mult *= 1.1;
-        state.activeBuffs = removeBuff(state.activeBuffs, "Light Weaving");
-    }
+
     return mult; 
 }
 
@@ -133,9 +132,6 @@ const penanceCleanup = (state) => {
  */
 const getHealingMult = (state, buffs, spellName, spell) => {
     let mult = DISCCONSTANTS.auraHealingBuff;
-    if (spellName === "Power Word: Shield" && checkBuffActive(buffs, "Rapture")) {
-        mult *= 1.4;
-    }
     if (spellName === "DefPenanceTick") {
 
         if (checkBuffActive(buffs, "Power of the Dark Side")) {
@@ -143,20 +139,10 @@ const getHealingMult = (state, buffs, spellName, spell) => {
             mult = mult * potdsMult;
             state.activeBuffs = removeBuffStack(state.activeBuffs, "Power of the Dark Side")
         }
-        if (checkBuffActive(buffs, "Swift Penitence")) {
-
-            const spMult = buffs.filter(function (buff) {return buff.name === "Swift Penitence"})[0].value
-            mult = mult * spMult;
-            state.activeBuffs = removeBuffStack(state.activeBuffs, "Swift Penitence")
-        }
     }
     if (checkBuffActive(buffs, "Weal & Woe") && spellName === "Power Word: Shield") {
-        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.03);
+        mult *= (1 + getBuffStacks(buffs, "Weal & Woe") * 0.05);
         state.activeBuffs = removeBuff(state.activeBuffs, "Weal & Woe");
-    }
-    if (checkBuffActive(buffs, "Light Weaving")) {
-        mult *= 1.1;
-        state.activeBuffs = removeBuff(state.activeBuffs, "Light Weaving");
     }
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
@@ -186,7 +172,7 @@ const getActiveAtone = (atoneApp, timer) => {
 // Diminishing returns are taken care of in the getCurrentStats function and so the number passed 
 // to this function can be considered post-DR.
 const getAtoneTrans = (mastery) => {
-    const atonementBaseTransfer = 0.4;
+    const atonementBaseTransfer = DISCCONSTANTS.atonementBaseTransfer;;
     return atonementBaseTransfer * (1.108 + mastery / STATCONVERSION.MASTERY * DISCCONSTANTS.masteryMod / 100);
 }
 
@@ -222,7 +208,14 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
     //console.log("Healing value: " + getSpellRaw(spell, currentStats, DISCCONSTANTS));
     state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;
 
-    if (!spellName.includes("hot") || true) {
+    if (spell.healType === "direct" && state.talents.divineAegis) {
+        // If the spell crits, DA absorbs 30% of the value.
+        const aegisHeal = healingVal * 0.3 * getCrit(state.currentStats);
+
+        state.healingDone["Divine Aegis"] = (state.healingDone["Divine Aegis"] || 0) + aegisHeal;
+    }
+
+    if (!spellName.includes("hot")) {
         let base = `${spellName} healed for ${Math.round(healingVal)} (Exp OH: ${spell.expectedOverheal * 100}%`;
         if (targetMult > 1) base += `, ${spell.targets} targets`;
         if (spell.atonement) base += `, +${spell.atonement}s atone`;
@@ -231,7 +224,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         addReport(state, base);
     }
 
-    if ((spell.name === "Power Word: Shield" || spell.name === "Rapture") && state.talents.crystallineReflection) {
+    if ((spell.name === "Power Word: Shield") && state.talents.crystallineReflection) {
         const reflection = {
             type: "damage",
             coeff: 0,
@@ -249,18 +242,24 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     const activeAtonements = getActiveAtone(atonementApp, state.t); // Get number of active atonements.
     const damMultiplier = getDamMult(state, state.activeBuffs, activeAtonements, state.t, spellName, state.talents, spell); // Get our damage multiplier (Schism, Sins etc);
     const damageVal = getSpellRaw(spell, state.currentStats, DISCCONSTANTS) * damMultiplier;
-    const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * (1 - spell.atoneOverheal) * getAtonementBonus(state, spellName, spell));
+    const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * getAtonementBonus(state, spellName, spell));
+    const atonementOverhealing = atonementHealing * spell.atoneOverheal;
     // This is stat tracking, the atonement healing will be returned as part of our result.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
-    state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + atonementHealing;
+    state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + (atonementHealing - atonementOverhealing);
 
     if (!spellName.includes("dot")) addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage (${atonementHealing} atone)`)
-    //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
-    if (spellName === "PenanceTick" && checkBuffActive(state.activeBuffs, "T29_4")) {
-        addReport(state, `Penance added ${Math.round(damageVal * 0.6)} healing to 4T29 buff)`)
-        const buff = state.activeBuffs.filter(function (buff) {return buff.name === "T29_4"})[0]
-        buff.value += damageVal * 0.6;
+
+    if (checkBuffActive(state.activeBuffs, "Premonition of Piety")) {
+        // Piety active. Transfer a portion of overhealing.
+        const pietyPercentage = 0.98;
+        state.healingDone['premonition of piety'] = (state.healingDone['premonition of piety'] || 0) + atonementOverhealing * pietyPercentage;
+        if (!spellName.includes("dot")) addReport(state, `Premonition of Piety transferred ${Math.round(atonementOverhealing * pietyPercentage)} atonement overhealing`);
+
     }
+    
+    //if (state.reporting) console.log(getTime(state.t) + " " + spellName + ": " + damageVal + ". Buffs: " + JSON.stringify(state.activeBuffs) + " to " + activeAtonements);
+
 }
 
 const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, canRepeat = false) => {
@@ -368,6 +367,14 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                         removeBuff(state.activeBuffs, "Harsh Discipline");
                     } 
 
+                    // Twinsight
+                    if (state.heroTree === "oracle" && spellName === "Penance") {
+                        specSpells["DefPenanceTick"].castTime = 0;
+                        for (var i = 0; i < 3; i++) {
+                            seq.unshift("DefPenanceTick")
+                        }
+                    }
+
                     specSpells[penTickName][0].castTime = 2 / penanceBolts;
                     specSpells[penTickName][0].coeff = penanceCoeff;
                     for (var i = 0; i < penanceBolts; i++) {
@@ -448,17 +455,18 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
         talents[key] = value.points;
     }
 
-    let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true}
+    let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, heroTree: "oracle"}
     let stats = JSON.parse(JSON.stringify(incStats));
     stats.critMult = 2;
-    stats.versatility += 720 // Phial.
 
+    state.settings.reporting = true;
+    state.settings.advancedReporting = true;
     let atonementApp = []; // We'll hold our atonement timers in here. We keep them seperate from buffs for speed purposes.
     let nextSpell = 0; // The time when the next spell cast can begin.
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-
+    console.log(sequence);
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
@@ -478,6 +486,13 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     }
 
     for (var t = 0; state.t < sequenceLength; state.t += 0.01) {
+
+        // Advanced reporting
+        if (state.settings.advancedReporting && (Math.floor(state.t * 100) % 100 === 0)) {
+            const healing = (Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0);
+            if ('advancedReport' in state === false) state.advancedReport = [];
+            state.advancedReport.push({t: Math.floor(state.t*100)/100, totalHealing: healing, hps: healing / state.t, manaSpent: state.manaSpent, buffs: state.activeBuffs.map(obj => obj.name)});
+        }
 
         // Check for any expired atonements. 
         atonementApp = atonementApp.filter(function (buff) {return buff > state.t});
@@ -530,7 +545,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
         // This is a check of the current time stamp against the tick our GCD ends and we can begin our queued spell.
         // It'll also auto-cast Ascended Eruption if Boon expired.
-        if (/*seq.length > 0 && */(state.t > nextSpell)) {
+        if (seq.length > 0 && (state.t > nextSpell)) {
 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
@@ -552,9 +567,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 }
                 
             }
-
             const fullSpell = discSpells[queuedSpell];
-
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
@@ -598,16 +611,23 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
 
     // Add up our healing values (including atonement) and return it.
-    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     state.totalDamage = Object.keys(state.damageDone).length > 0 ? Math.round(sumValues(state.damageDone)) : 0;
     state.totalHealing = Object.keys(state.healingDone).length > 0 ? Math.round(sumValues(state.healingDone)) : 0;
     state.hps = (state.totalHealing / sequenceLength);
     state.dps = (state.totalDamage / sequenceLength);
     state.hpm = (state.totalHealing / state.manaSpent) || 0;
 
+    //const totalHealingValues = state.advancedReport.map(item => item.totalHealing);
+    // Print the result as a comma-separated list
+    //console.log(JSON.stringify(totalHealingValues));
+    console.log(state.report);
+    printHealingBreakdown(state.healingDone, state.totalHealing);
+
     return state;
 
 }
+
+const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
 
 // This is a boilerplate function that'll let us clone our spell database to avoid making permanent changes.
 // We need this to ensure we're always running a clean DB, free from any changes made on previous runs.

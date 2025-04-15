@@ -12,9 +12,10 @@ interface WowheadTooltipProps {
   gems?: string;
   keyProp?: string;
   rank?: number;
+  craftedStats?: number[];
 }
 
-const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, forg, keyProp = "defaultKey", rank }) => {
+const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, forg, keyProp = "defaultKey", rank, craftedStats }) => {
   if (type === "none" || id === 203460) {
     return <>{children}</>;
   }
@@ -26,9 +27,9 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
   const baseWowheadLink = domain === "cata" ? `https://www.wowhead.com/cata/${type}=${id}` : `https://www.wowhead.com/${type}=${id}`;
   const dataWowhead = `${type}=${id}&domain=${domain}`;
 
-  const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}`;
+  const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}${craftedStats ? "&crafted-stats=" + craftedStats.join(":") : ""}`;
   const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
-  
+
   return (
     <a
       href={baseWowheadLink}

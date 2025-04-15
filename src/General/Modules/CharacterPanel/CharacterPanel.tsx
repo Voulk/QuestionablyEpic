@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import makeStyles from "@mui/styles/makeStyles";
-import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery } from "@mui/material";
+import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery, MenuItem, TextField } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
@@ -43,6 +43,8 @@ interface CurrentCharacter {
   charName: string;
 }
 
+
+
 const checkCharacterValid = (player: Player, gameType: string) => {
   const weaponSet = player.getActiveItems("AllMainhands", false, true);
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
@@ -80,11 +82,27 @@ const specImages: { [key: string]: string } = {
   "Discipline Priest Classic": require("Images/DiscSmall.jpg"),
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(14),
+    marginRight: 4,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+}));
+
 export default function CharacterPanel(props: Props) {
   const theme = useTheme();
   const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
+  const classes = useStyles();
+  const specBuilds = props.player.getAllModels(props.contentType);
 
   const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state: any) => state.gameType);
@@ -95,6 +113,8 @@ export default function CharacterPanel(props: Props) {
   const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const currentCharacter: CurrentCharacter = props.allChars.getActiveChar();
   const playerStats = props.player !== null ? props.player.getActiveStats() : {};
+  const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
+
 
   useEffect(() => {
     async function setImg() {
@@ -105,6 +125,12 @@ export default function CharacterPanel(props: Props) {
 
     setImg();
   }, []);
+
+  const updateSpecBuild = (value) => {
+    props.player.setModelID(parseInt(value), props.contentType);
+    setSpecBuild(value); // This is mostly just used to forced a CharPanel UI update.
+    props.singleUpdate(props.player);
+  };
 
   const imageStyle: React.CSSProperties = {
     backgroundRepeat: "no-repeat",
@@ -371,6 +397,42 @@ export default function CharacterPanel(props: Props) {
           )}
 
           <Grid item xs={12}>
+                <Grid container spacing={1} direction="row" style={{ paddingBottom: "10px", paddingTop: "5px"}}>
+                  {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
+                  <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+                    <Tooltip
+                      title={
+                        <Typography align="center" variant="body2">
+                          {t("Settings.Retail.Setting5Tooltip")}
+                        </Typography>
+                      }
+                      placement="top-start"
+                    >
+                      <TextField
+                        className={classes.select}
+                        InputProps={{ variant: "outlined" }}
+                        select
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        value={props.player.activeModelID[props.contentType]}
+                        onChange={(e) => updateSpecBuild(e.target.value)}
+                        label={t("Settings.Retail.Setting5Title")}
+                        style={{ textAlign: "center", minWidth: 120 }}
+                      >
+                        {specBuilds.map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          const disabled = key.modelName.includes("Coming Soon");
+                          return (
+                            <MenuItem divider={lastItem} key={"playstyle" + i} id={key.modelName} value={key.arrayID} style={{ justifyContent: "center" }} disabled={disabled}>
+                              {key.modelName}
+                            </MenuItem>
+                          );
+                        })}
+                      </TextField>
+                    </Tooltip>
+                  </Grid>
+                </Grid>
             <Divider />
             <Settings player={props.player} contentType={props.contentType} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />
           </Grid>

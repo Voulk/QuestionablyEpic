@@ -11,8 +11,8 @@ export const MONKCONSTANTS = {
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 
-    auraHealingBuff: 1.09,
-    auraDamageBuff: 1,
+    auraHealingBuff: 1.05,
+    auraDamageBuff: 1 - .25,
     enemyTargets: 1, 
 }
 
@@ -87,7 +87,7 @@ const applyLoadoutEffects = (spells, settings, conduits, state) => {
 export const runDamage = (state, spell, spellName) => {
     //const activeAtonements = getActiveAtone(atonementApp, t); // Get number of active atonements.
     let damMultiplier = getDamMult(state, state.t, spellName, spell); // Get our damage multiplier (Schism, Sins etc);
-    if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
+    //if ('damageType' in spell && spell.damageType === "physical") damMultiplier *= 0.7
     const damageVal = getSpellRaw(spell, state.currentStats, MONKCONSTANTS) * damMultiplier;
 
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.

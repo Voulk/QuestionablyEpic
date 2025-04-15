@@ -26,7 +26,7 @@ export const BASESTAT = {
   MASTERY: { // This is not really used anymore.
     "Preservation Evoker": 0,
     "Restoration Druid": 0.04,
-    "Mistweaver Monk": 0.336,
+    "Mistweaver Monk": 0.5544,
     "Holy Paladin": 0.12,
     "Holy Priest": 0.1,
     "Discipline Priest": 0.108,
@@ -79,7 +79,7 @@ export const STATPERONEPERCENT = {
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
       "Restoration Druid": 0.5,
-      "Mistweaver Monk": 4.2,
+      "Mistweaver Monk": 6.93,
       "Holy Paladin": 1.5,
       "Holy Priest": 1.125,
       "Discipline Priest": 1.35,

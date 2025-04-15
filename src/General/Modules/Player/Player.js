@@ -682,8 +682,9 @@ export class Player {
       this.statWeights.DefaultWeights = true;
       */
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Coming Soon)", 2));
 
       this.activeStats = {
         intellect: 80000, // 32k
@@ -726,18 +727,18 @@ export class Player {
       this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Rising Mist", content: "Raid" },
+        { identifier: "Yu'lon", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
-        { identifier: "Tear of Morning", content: "Raid" },
+        { identifier: "Chi-Ji (Beta)", content: "Raid" },
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 80000,
-        haste: 9200,
-        crit: 6000,
+        intellect: 90000,
+        haste: 15000,
+        crit: 10000,
         mastery: 3400,
-        versatility: 6020,
+        versatility: 8000,
         stamina: 1900,
       };
       /*

@@ -74,23 +74,22 @@ export const allRamps = (fiendSeq, stats, settings = {}, talents, trinkets, repo
 
     let rampResult = {totalHealing: 0, ramps: [], rampSettings: settings}
     // Setup Sequences
-    const miniSeq = buildRamp('Mini', 6, trinkets, stats.haste || 0, settings.playstyle || "", talents)
-    const evangSeq = buildRamp('Secondary', 10, trinkets, stats.haste || 0, settings.playstyle || "", talents);
-    const newFiendSeq = buildRamp('Primary', 10, trinkets, stats.haste || 0, settings.playstyle || "", talents);
-    const raptureSeq = buildRamp('RaptureLW', 8, trinkets, stats.haste || 0, settings.playstyle || "", talents)
-    const microSeq = buildRamp('Micro', 5, [], stats.haste || 0, settings.playstyle || "", talents)
+    const miniSeq = []//buildRamp('Mini', 6, trinkets, stats.haste || 0, settings.playstyle || "", talents)
+    const evangSeq = buildRamp('Evangelism', 10, trinkets, stats.haste || 0, settings.playstyle || "", talents);
+    const newFiendSeq = []//buildRamp('Primary', 10, trinkets, stats.haste || 0, settings.playstyle || "", talents);
+    const raptureSeq = []//buildRamp('RaptureLW', 8, trinkets, stats.haste || 0, settings.playstyle || "", talents)
+    const microSeq = []//buildRamp('Micro', 5, [], stats.haste || 0, settings.playstyle || "", talents)
 
     // Run Sequences
     settings.trinkets = trinkets;
-    const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
-    //const boonRamp = runCastSequence(boonSeq, stats, settings, conduits);
+    //const miniRamp = runCastSequence(miniSeq, stats, settings, talents);
     const evangRamp = runCastSequence(evangSeq, stats, {...settings, harshDiscipline: true}, talents);
-    const fiendRamp = runCastSequence(newFiendSeq, stats, {...settings, harshDiscipline: true}, talents);
-    const raptureRamp = runCastSequence(raptureSeq, stats, settings, talents);
-    const microRamp = runCastSequence(microSeq, stats, settings, talents);
+    //const fiendRamp = runCastSequence(newFiendSeq, stats, {...settings, harshDiscipline: true}, talents);
+    //const raptureRamp = runCastSequence(raptureSeq, stats, settings, talents);
+    //const microRamp = runCastSequence(microSeq, stats, settings, talents);
 
 
-    rampResult.totalHealing = fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2 + microRamp.totalHealing * 7;
+    rampResult.totalHealing = evangRamp.totalHealing; //fiendRamp.totalHealing + evangRamp.totalHealing + miniRamp.totalHealing * 2 + raptureRamp.totalHealing * 2 + microRamp.totalHealing * 7;
     
     if (reporting) {
         rampResult.ramps.push({"tag": "Secondary Ramp", "prerampConditions": ["Power of the Dark Side", "Active DoT"], "sequence": (evangSeq), "totalHealing": Math.round(evangRamp.totalHealing)});

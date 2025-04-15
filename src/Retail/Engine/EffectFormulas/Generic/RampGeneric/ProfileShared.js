@@ -1,4 +1,4 @@
-
+import { getTrinketValue, getTrinketParam } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas"
 
 export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
     const sortedEntries = Object.entries(healingBreakdown)
@@ -15,6 +15,11 @@ export const getSpellAttribute = (spell, attribute, index = 0) => {
 
 export const hasTier = (playerData, tier) => {
     return playerData.tier.includes(tier);
+}
+
+// Returns duration and effective value on a trinket
+export const getTrinketData = (trinketName, itemLevel) => {
+    return {value: getTrinketValue(trinketName, itemLevel), duration: getTrinketParam(trinketName, "duration")};
 }
 
 export const getCPM = (profile, spellName) => {

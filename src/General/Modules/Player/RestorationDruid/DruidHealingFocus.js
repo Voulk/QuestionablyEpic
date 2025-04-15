@@ -20,10 +20,10 @@ export const druidDefaultStatWeights = (contentType) => {
   statWeights.Raid = {
     intellect: 1,
     haste: 1.06, 
-    crit: 0.59, 
-    mastery: 0.91, 
-    versatility: 0.78,
-    leech: 0.42,
+    crit: 0.565, 
+    mastery: 0.972, 
+    versatility: 0.82,
+    leech: 0.41,
     defaults: true,
   };
   statWeights.Dungeon = {
@@ -43,23 +43,16 @@ export const druidDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      chilledClarityExtension: 33000,
       ConvokeChannelHPS: 480,
       OneManaHealing: 38, // This is an upper bound already.
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
         c60: 1.1,
-        c90: 1,
-        c120: 1.05,
+        c90: 1.2,
+        c120: 1,
         c180: 1,
 
-        oneMinute: 1.4, // 1.7 once 4pc,
-        ninetySeconds: 1.12,
-        twoMinutes: 1.4,
-        twoMinutesOrb: 1.1,
-        threeMinutes: 1.2,
       },
-      HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -68,17 +61,10 @@ export const druidDefaultSpecialQueries = (contentType) => {
       CastsPerMinute: 30,
       cooldownMult: {
         c60: 1,
-        c90: 1.1,
+        c90: 1.2,
         c120: 1,
         c180: 1,
-
-        oneMinute: 1.2,
-        ninetySeconds: 1,
-        twoMinutes: 1.35,
-        twoMinutesOrb: 0.85, // There is no practical way to use Orb to it's maximum potential in dungeons.
-        threeMinutes: 1,
       },
-      HoldYourGroundUptime: 0.8
     };
   } else {
     console.error("Unknown Content Type");

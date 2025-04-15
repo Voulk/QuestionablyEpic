@@ -4,6 +4,10 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPM
 
 
 export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
+  if (getSetting(additionalData.settings, "calculateEmbellishments") === false) { // I hate that JS false and 0 are ==. Might break if getSetting gets changed ?
+    return {};
+  }
+
     let activeEffect;
     
     
@@ -79,7 +83,7 @@ export const embellishmentData = [
         table: -571,
         duration: 15, 
         ppm: 2,
-        efficiency: 0.7,
+        efficiency: 0.55,
       },
       { 
         coefficient: 0.040916,
@@ -159,7 +163,9 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.allyStats = processedValue(data[0], itemLevel) * data[0].uptime * getSetting(additionalData.settings, "socketedGems");
+      let socketedGems = getSetting(additionalData.settings, "socketedGems") || 3;
+      if (additionalData.contentType === "Dungeon") socketedGems = Math.min(socketedGems, 4); 
+      bonus_stats.allyStats = processedValue(data[0], itemLevel) * data[0].uptime * socketedGems;
 
       return bonus_stats;
     }
@@ -311,14 +317,14 @@ export const embellishmentData = [
       { 
         coefficient: 0.312343, 
         table: -1,
-        ppm: 2,
+        ppm: 2 * 0.3,
         duration: 12,
         stat: "intellect",
       },
       { 
         coefficient: -0.053974, 
         table: -571,
-        ppm: 2,
+        ppm: 2 * 0.3,
         duration: 12,
         stat: "mastery",
       },
@@ -326,8 +332,8 @@ export const embellishmentData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.3;
-      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel) * 0.3;
+      bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel);
+      bonus_stats.mastery = runGenericPPMTrinket(data[1], itemLevel);
 
       return bonus_stats;
     }
