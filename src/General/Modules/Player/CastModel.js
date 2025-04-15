@@ -12,7 +12,8 @@ import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSp
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestVoidweaver";
+import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./DisciplinePriest/DiscPriestOracle";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
@@ -161,35 +162,24 @@ class CastModel {
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
-      if (modelID === "Kyrian Evangelism") {
-        this.modelName = "Kyrian Evangelism";
-        spellList = discPriestDefaultSpellData(contentType);
-        specialQueries = discPriestDefaultSpecialQueries(contentType);
-        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
-      }
-      else if (modelID === "Venthyr Evangelism") {
-        this.modelName = "Venthyr Evangelism";
-        spellList = discPriestDefaultSpellData(contentType);
-        specialQueries = discPriestDefaultSpecialQueries(contentType);
-        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 1300 : 4100);
-      }
-      else if (modelID === "Oracle (Coming Soon)") {
-        this.modelName = "Oracle (Coming Soon)";
-        spellList = discPriestDefaultSpellData(contentType);
-        specialQueries = discPriestDefaultSpecialQueries(contentType);
-        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
-      }
-      else {
-        this.modelName = "Voidweaver";
-        spellList = discPriestDefaultSpellData(contentType);
-        specialQueries = discPriestDefaultSpecialQueries(contentType);
-        this.baseStatWeights = discPriestDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
-      }
-
+        if (modelID === "Oracle (Beta)") {
+          this.modelName = "Oracle (Beta)";
+          this.modelType["Raid"] = "CastModel";
+          this.modelType["Dungeon"] = "Default";
+          this.runCastModel = runOracleCastModel;
+          this.modelOnUseTrinket = modelOracleOnUseTrinket;
+          spellList = {};
+          specialQueries = discPriestOracleSpecialQueries(contentType);
+          this.baseStatWeights = discPriestOracleStatWeights(contentType);
+          this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
+        }
+        else {
+          this.modelName = "Voidweaver";
+          spellList = discPriestDefaultSpellData(contentType);
+          specialQueries = discPriestDefaultSpecialQueries(contentType);
+          this.baseStatWeights = discPriestDefaultStatWeights(contentType);
+          this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
+        }
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";

@@ -108,6 +108,13 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats,
        // That also lets us track its healing separately from the spell that triggered it.
        //stats.critMult *= (1 + 0.6 * talents.divineAegis);
    }
+   if (talents.divineProcession) {
+        discSpells['Smite'].push({
+            type: "atonementExtension",
+            extensionType: "lowestDuration",
+            extension: 3,
+        })
+}
    if (talents.harshDiscipline) {
        const hdBuff = {
         name: "Harsh Discipline",

@@ -8,7 +8,7 @@ import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
 import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
+import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestVoidweaver";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
@@ -684,7 +684,7 @@ export class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Coming Soon)", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
 
       this.activeStats = {
         intellect: 80000, // 32k

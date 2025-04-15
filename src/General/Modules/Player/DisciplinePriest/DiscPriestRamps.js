@@ -42,13 +42,25 @@ export const DISCCONSTANTS = {
 }   
 
 
-/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
+/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism. */
 const extendActiveAtonements = (atoneApp, timer, extension) => {
     atoneApp.forEach((application, i, array) => {
         if (application >= timer) {
             array[i] = application + extension;
         };
     });
+}
+
+/**  Extend the atonement closest to expiry. */
+const extendLowestAtonement = (atoneApp, timer, extension) => {
+  // Extend the lowest value since this is the Atonement application closest to expiry.
+  const minIndex = atoneApp.indexOf(Math.min(...atoneApp));
+
+  // Extend that atonement by X seconds where X = extension
+  atoneApp[minIndex] += extension;
+
+  return minIndex;
+
 }
 
 
@@ -334,7 +346,15 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "atonementExtension") {
-                    extendActiveAtonements(atonementApp, state.t, spell.extension);
+                    if (spell.extensionType === "all") {
+                        extendActiveAtonements(atonementApp, state.t, spell.extension);
+                    }
+                    else if (spell.extensionType === "lowestDuration") {
+                        // Extend the atonement that is closest to expiry.
+                        const extended = extendLowestAtonement(atonementApp, state.t, spell.extension);
+                        addReport(state, `Extending Atonement #${extended} by ${spell.extension}s`)
+                    }
+                    
                 }
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "buffExtension") {
@@ -369,9 +389,9 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
                     // Twinsight
                     if (state.heroTree === "oracle" && spellName === "Penance") {
-                        specSpells["DefPenanceTick"].castTime = 0;
                         for (var i = 0; i < 3; i++) {
-                            seq.unshift("DefPenanceTick")
+                            //seq.unshift("DefPenanceTick")
+                            runSpell(specSpells["DefPenanceTick"], state, "DefPenanceTick", specSpells, atonementApp, seq, false)
                         }
                     }
 
@@ -570,7 +590,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             const fullSpell = discSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
+            if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD === false) nextSpell = state.t + 0.01;
+            else if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
 

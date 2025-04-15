@@ -231,12 +231,17 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Smite');
     sequence.push('Shadow Word: Death');
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics.
         sequence.push('Smite');
     }
     sequence.push('Penance');
 
+
+    for (var i = 0; i < 3; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics.
+        sequence.push('Smite');
+    }
 
     return sequence;
 }

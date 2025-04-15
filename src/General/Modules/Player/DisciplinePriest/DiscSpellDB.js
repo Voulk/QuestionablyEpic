@@ -387,6 +387,7 @@ export const DISCSPELLS = {
     "Evangelism": [{
         spellData: {id: 246287, icon: "spell_holy_divineillumination", cat: "cooldown"},
         type: "atonementExtension",
+        extensionType: "all",
         castTime: 0,
         cost: 0,
         coeff: 0,
@@ -456,7 +457,7 @@ export const baseTalents = {
     borrowedTime: {points: 0, maxPoints: 2, icon: "spell_holy_borrowedtime", id: 390691, select: true, tier: 2},
     castigation: {points: 1, maxPoints: 1, icon: "spell_holy_searinglightpriest", id: 193134, select: true, tier: 2},
     stolenPsyche: {points: 2, maxPoints: 2, icon: "ability_priest_surgeofdarkness", id: 373054, select: true, tier: 2},
-
+    divineProcession: {points: 1, maxPoints: 1, icon: "ability_priest_evangelism", id: 193134, select: true, tier: 2},
     
     // Tier 3
     trainOfThought: {points: 1, maxPoints: 1, icon: "ability_mage_studentofthemind", id: 390693, select: true, tier: 3},
