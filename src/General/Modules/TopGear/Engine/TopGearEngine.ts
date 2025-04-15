@@ -814,6 +814,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     effectStats.push(annuletStats);
  } */
 
+  // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
     const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 658;
 
@@ -892,8 +893,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
-    hardScore = setStats.hps || 0;
-    //evalStats.hps = (setStats.hps || 0);
+    //hardScore = setStats.hps || 0;
+    console.log(castModelResult.hps);
+    evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==
   // Here we'll apply diminishing returns. If we're using CastModels of sequence based evaluation then we already took care of this during the ramp phase.

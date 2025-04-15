@@ -17,6 +17,14 @@ export const chijiSpellData = (contentType) => {
   return spellList;
 };
 
+// Run an on-use trinket through our model to get the amount of HPS it adds. Top Gear can just do this directly,
+// but trinket charts need a stronger way to approximate value.
+export const modelChijiOnUseTrinket = (setStats, trinketName, trinketLevel ) => {
+  const baseline = runChijiCastModel(null, {...setStats, critMult: 2}, null, []).hps;
+  const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
+  return withTrinket - baseline
+}
+
 
 export const runChijiCastModel = (itemSet, setStats, castModel, effectList) => {
   const settings = {masteryEfficiency: 1, includeOverheal: true, reporting: false};
@@ -34,7 +42,7 @@ export const chijiSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.16,
         c90: 1,
-        c120: 1.6,
+        c120: 1.8, // This is to match the results from our cast profile.
         c180: 1,
       },
       HoldYourGroundUptime: 0.6

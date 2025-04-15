@@ -46,7 +46,7 @@ const runStats = (playerData) => {
         intellect: 76000 * 1.05 * 1.05,
         haste: 10000,
         crit: 10000,
-        mastery: 6000 + (2 * 700),
+        mastery: 10000 + (2 * 700),
         versatility: 10000 + (3 * 780),
         stamina: 29000,
         critMult: 2,
