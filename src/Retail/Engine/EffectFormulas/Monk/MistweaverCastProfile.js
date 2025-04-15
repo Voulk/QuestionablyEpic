@@ -92,7 +92,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     const castProfile = [
         //{spell: "Echo", cpm: 0},
         {spell: "Renewing Mist", cpm: buildCPM(playerSpells, "Renewing Mist")},
-        {spell: "Enveloping Mist", cpm: 4 * averageHaste + 0.5, hastedCPM: true}, //this needs to be at a minimum the same as the number of box procs
+        {spell: "Enveloping Mist", cpm: 4 * averageHaste + 0.5}, // This needs to be at a minimum the same as the number of box procs
         {spell: "Vivify", cpm: 4, hastedCPM: true},
         {spell: "Tiger Palm", cpm: 7.5, hastedCPM: true},
         {spell: "Blackout Kick", cpm: 6.7, hastedCPM: true},
@@ -359,7 +359,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
 
     // printHealingBreakdown(damageBreakdown, totalDamage);
     // printHealingBreakdown(healingBreakdown, totalHealing);
-    // console.log(reportingData);
+    //console.log(reportingData);
     // console.log("HPS: " + Math.round(totalHealing / 60));
 
     return { hps: totalHealing / 60, hpm: 0 }
