@@ -1,25 +1,25 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
-import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./RestorationDruid/DruidBalancedFocus";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
+import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./ClassDefaults/RestoDruid/DruidBalancedFocus";
 
-import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
-import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinHerald";
+import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/HolyPaladin/PaladinAvengingCrusader";
+import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/HolyPaladin/PaladinHerald";
 
-import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
-import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
-import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
+import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/ShamanDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
+import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/MistweaverMonk/MonkChiji";
+import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
+import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
 
-import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
+import { getRampData, genStatWeights } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestUtilities";
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -189,9 +189,8 @@ class CastModel {
         this.baseStatWeights = discPriestDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
       }
-
-
-    } else if (spec === SPEC.HOLYPRIEST) {
+    } 
+    else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);

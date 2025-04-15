@@ -1,5 +1,5 @@
 
-import { allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "./HolyPaladinRampGen";
 
 export const getRampData = (playerStats, playerTrinkets, playstyle) => {

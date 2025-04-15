@@ -3,7 +3,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@mui/material";
 import LogLinkInput from "../../../SystemTools/LogImport/LogLinkInput";
-import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "General/Modules/BasicComponents/Functions";
+import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "General/Modules/1. GeneralComponents/Functions";
 import { classColours } from "General/Engine/ClassData";
 import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorButton";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";

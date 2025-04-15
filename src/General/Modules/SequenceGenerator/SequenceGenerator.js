@@ -10,7 +10,7 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
-import { runCastSequence as discSequence } from "General/Modules/Player/DisciplinePriest/DiscPriestRamps";
+import { runCastSequence as discSequence } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestRamps";
 import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
 import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
@@ -21,14 +21,14 @@ import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormu
 import { runCastSequence as classicSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
 
 import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
-import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DisciplinePriest/DiscSpellDB";
+import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
 import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
 import { baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverTalents"
-import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
+import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
 
 // Classic

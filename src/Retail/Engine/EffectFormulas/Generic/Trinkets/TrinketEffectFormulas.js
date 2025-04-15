@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import { getAdjustedHolyShock } from "../../Paladin/PaladinMiscFormulas"
 import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
-import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
+import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
+import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 
 // import { STAT } from "../../../../General/Engine/STAT";
 import SPEC from "../../../../../General/Engine/SPECS";

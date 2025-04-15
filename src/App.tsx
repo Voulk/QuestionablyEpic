@@ -21,7 +21,7 @@ import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import * as ls from "local-storage";
-import QESnackbar from "General/Modules/BasicComponents/QESnackBar";
+import QESnackbar from "General/Modules/1. GeneralComponents/QESnackBar";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";

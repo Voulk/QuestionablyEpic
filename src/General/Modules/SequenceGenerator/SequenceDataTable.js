@@ -11,7 +11,7 @@ import { useState } from "react";
 import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 
 import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
-import { buildDiscChartData } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
 import { buildDruidChartData } from "Retail/Engine/EffectFormulas/Druid/DruidRampGen";
 import { buildHolyPriestChartData } from "Retail/Engine/EffectFormulas/Priest/HolyPriestRampGen";
