@@ -1,6 +1,6 @@
 import { itemDB } from "Databases/ItemDB";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
-import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import { classicItemDB } from "Databases/ClassicItemDB";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";

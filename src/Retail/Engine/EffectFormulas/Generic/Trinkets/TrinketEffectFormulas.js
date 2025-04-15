@@ -1,5 +1,5 @@
 import { convertPPMToUptime, processedValue, getProcessedValue, getDiminishedValue, getHighestStat } from "../../EffectUtilities";
-import { trinket_data } from "../ShadowlandsTrinketData";
+import { trinket_data } from "../PatchEffectItems/ShadowlandsTrinketData";
 import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";

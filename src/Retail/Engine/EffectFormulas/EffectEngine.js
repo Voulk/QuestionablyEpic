@@ -6,7 +6,6 @@ import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
 import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
 import { getEvokerSpecEffect } from "../../../General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
-import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 
 import { getEmbellishmentEffect } from "./Generic/Embellishments/EmbellishmentData";

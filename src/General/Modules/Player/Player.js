@@ -14,7 +14,7 @@ import { monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefau
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
-import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { classRaceDB } from "Databases/ClassRaceDB";
 
 export class Player {
