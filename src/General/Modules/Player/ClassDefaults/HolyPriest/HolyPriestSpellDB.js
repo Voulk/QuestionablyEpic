@@ -1,6 +1,6 @@
 
 import { checkRoll, getTalentPoints, getHaste, } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { runHeal } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
+import { runHeal } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence"
 
 export const HOLYPRIESTSPELLDB = {
     "Smite": [{

@@ -14,7 +14,7 @@ import { buildEvokerChartData } from "General/Modules/Player/ClassDefaults/Prese
 import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRampUtilities";
 import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidRampGen";
-import { buildHolyPriestChartData } from "Retail/Engine/EffectFormulas/Priest/HolyPriestRampGen";
+import { buildHolyPriestChartData } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestRampGen";
 
 import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
 

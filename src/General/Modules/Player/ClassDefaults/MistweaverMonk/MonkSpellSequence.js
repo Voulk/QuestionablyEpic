@@ -4,7 +4,7 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { MONKSPELLS } from "./MistweaverSpellDB";
 import { convertPPMToUptime } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, hasTalent, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, getTalentValue } from "../Generic/RampGeneric/RampBase";
+            getHealth, getCrit, advanceTime, hasTalent, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, getTalentValue } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 
 export const MONKCONSTANTS = {
     masteryMod: 6.93, 

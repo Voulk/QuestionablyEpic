@@ -1,11 +1,11 @@
 import { getGenericEffect  } from "./Generic/GenericEffectFormulas";
-import { getDruidSpecEffect } from "../../../General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects";
-import { getDiscPriestSpecEffect } from "../../../General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects";
-import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
-import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
-import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
-import { getEvokerSpecEffect } from "../../../General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
-import { getPaladinSpecEffect } from "../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
+import { getDruidSpecEffect } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects";
+import { getDiscPriestSpecEffect } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects";
+import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpecEffects";
+import { getMonkSpecEffect } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpecEffects";
+import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/ShamanSpecEffects";
+import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
+import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 
 import { getEmbellishmentEffect } from "./Generic/Embellishments/EmbellishmentData";

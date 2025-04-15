@@ -1,6 +1,6 @@
 
 import { getCurrentStats, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { runHeal, applyLoadoutEffects } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence"
+import { runHeal, applyLoadoutEffects } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence"
 
 const getCPM = (profile, spellName) => {
     return profile.filter(spell => spell.spell === spellName)[0].cpm || 0;

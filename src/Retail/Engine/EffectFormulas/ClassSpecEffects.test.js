@@ -6,7 +6,7 @@ import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/Preser
 import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects"
 import { getDruidSpecEffect } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects"
 import { getDiscPriestSpecEffect } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects"
-import { getHolyPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpecEffects"
+import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpecEffects"
 
 // This is a dummy test unit and is not fully functional yet.
 describe("Shaman", () => {

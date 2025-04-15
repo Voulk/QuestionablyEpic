@@ -1,6 +1,6 @@
 
 import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, applyTalents, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { runHeal, runDamage, MONKCONSTANTS } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
+import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";
 import { applyLoadoutEffects, baseTalents } from "./MistweaverTalents";
 import { STAT, STATCONVERSION } from "General/Engine/STAT";
 

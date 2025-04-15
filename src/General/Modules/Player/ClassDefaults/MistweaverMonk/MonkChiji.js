@@ -1,4 +1,4 @@
-import { runMistweaverMonkCastProfile } from "Retail/Engine/EffectFormulas/Monk/MistweaverCastProfile";
+import { runMistweaverMonkCastProfile } from "./MistweaverCastProfile";
 
 export const chijiSpellData = (contentType) => {
   let spellList = {};

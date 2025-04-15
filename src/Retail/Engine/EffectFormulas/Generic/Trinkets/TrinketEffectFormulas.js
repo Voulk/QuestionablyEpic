@@ -6,15 +6,8 @@ import { otherTrinketData } from "./OtherTrinketData";
 import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
 import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinMiscFormulas"
-import { getMasteryAddition } from "../../Monk/MistweaverMiscFormulas"
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-
-// import { STAT } from "../../../../General/Engine/STAT";
-import SPEC from "../../../../../General/Engine/SPECS";
-
-
 
 // Returns the value of a trinket effect while active. This is different to its average value which is typically what we'll use.
 export function getTrinketValue(trinketName, itemLevel) {
@@ -740,9 +733,6 @@ else if (
 
   if (player.getSpec() === "Mistweaver Monk") {
     // Average mastery value is a poor approximation for Mistweaver who are likely to combine the trinket with a higher than normal stream of mastery events.
-    const mastery = getProcessedValue(effect.coefficient, effect.table, itemLevel);
-    const gusts = (contentType === "Raid") ? 41 : 22;
-    bonus_stats.hps = getMasteryAddition(player.getInt(), mastery, player.getStatPerc("Crit"), player.getStatPerc("Vers")) * gusts / effect.cooldown;
   }
   else if (player.getSpec() === "Discipline Priest" && contentType === "Raid") {
     const boonSeq = buildRamp('Boon', 10, ["Shadowed Orb of Torment"], setStats.haste, castModel.modelName, ['Rapture']);

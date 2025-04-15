@@ -10,23 +10,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import { useTheme } from "@mui/material/styles";
 
-import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
-import { runCastSequence as discSequence } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestRamps";
-import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
-import { runCastSequence as paladinSequence } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
-import { runCastSequence as druidSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps";
-import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
-import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
-
-import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
-import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
-import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
-import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
-import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
-import { MONKSPELLS, baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
-import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";

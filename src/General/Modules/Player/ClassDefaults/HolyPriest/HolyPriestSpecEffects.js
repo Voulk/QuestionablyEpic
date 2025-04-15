@@ -1,4 +1,4 @@
-import { HOLYPRIESTSPELLDB } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
 
 
 export const getHolyPriestSpecEffect = (effectName, player, contentType) => {

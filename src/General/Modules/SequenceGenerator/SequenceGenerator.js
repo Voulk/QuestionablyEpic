@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import ReactGA from "react-ga";
-import { useTranslation } from "react-i18next";
+import { useState, useRef } from "react";
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
@@ -11,23 +9,23 @@ import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestRamps";
-import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
+import { runCastSequence as shamanSequence } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanRamps";
 import { runCastSequence as paladinSequence } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps";
-import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
-import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
+import { runCastSequence as monkSequence } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";
+import { runCastSequence as holyPriestSequence } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence";
 
 // Classic
 import { runCastSequence as classicSequence } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 
 import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
-import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
+import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
-import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
-import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
-import { baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverTalents"
+import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
+import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
+import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 
