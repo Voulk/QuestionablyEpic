@@ -164,7 +164,7 @@ class CastModel {
     } else if (spec === SPEC.DISCPRIEST) {
         if (modelID === "Oracle (Beta)") {
           this.modelName = "Oracle (Beta)";
-          this.modelType["Raid"] = "CastModel";
+          this.modelType["Raid"] = "Default";
           this.modelType["Dungeon"] = "Default";
           this.runCastModel = runOracleCastModel;
           this.modelOnUseTrinket = modelOracleOnUseTrinket;

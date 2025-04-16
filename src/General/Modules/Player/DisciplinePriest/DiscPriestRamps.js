@@ -486,7 +486,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    console.log(sequence);
+
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
@@ -641,8 +641,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     //const totalHealingValues = state.advancedReport.map(item => item.totalHealing);
     // Print the result as a comma-separated list
     //console.log(JSON.stringify(totalHealingValues));
-    console.log(state.report);
-    printHealingBreakdown(state.healingDone, state.totalHealing);
+    //console.log(state.report);
+    //printHealingBreakdown(state.healingDone, state.totalHealing);
 
     return state;
 

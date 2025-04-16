@@ -28,8 +28,7 @@ export const runOracleCastModel = (itemSet, setStats, castModel, effectList) => 
   const playerData = { spec: "Discipline Priest", settings: settings, stats: setStats, tier: [], effects: effectList }
   const result = allRampsHealing([], setStats, {}, baseTalents, [])
   //const result = runMistweaverMonkCastProfile(playerData);
-  console.log("RESULT: " + result)
-  return result;
+  return {hps: result};
 }
 
 export const discPriestOracleSpecialQueries = (contentType) => {
@@ -71,18 +70,18 @@ export const discPriestOracleStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.11,
-    crit: 0.95,
-    mastery: 1.05,
-    versatility: 0.93,
+    haste: 0.96,
+    crit: 1.03,
+    mastery: 1.01,
+    versatility: 0.94,
     leech: 0.46,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.055,
-    crit: 0.905,
-    mastery: 0.935,
-    versatility: 0.898,
+    haste: 0.96,
+    crit: 1.04,
+    mastery: 1.0,
+    versatility: 0.93,
     leech: 0.34,
   };
 
