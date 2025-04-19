@@ -8,7 +8,7 @@ import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, r
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { printHealingBreakdown } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
+import { printHealingBreakdown, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -495,7 +495,19 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
 
     // Setup Trinkets
+    console.log(settings.trinkets);
     if (settings.trinkets) {
+        console.log(settings.trinkets);
+        console.log((settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0))
+        if (settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0) {
+            const onUseData = getTrinketData("House of Cards", settings.trinkets.filter(effect => effect.name === "House of Cards")[0].level);
+            const spell = discSpells["House of Cards"][0];
+            spell.value = onUseData.value;
+            spell.buffDuration = onUseData.duration;
+            console.log(spell);
+        }
+
+        
         Object.keys(settings.trinkets).forEach((key) => {
             if (key in discSpells) {
                 const spell = discSpells[key][0];

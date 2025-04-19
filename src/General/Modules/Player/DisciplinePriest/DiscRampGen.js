@@ -35,7 +35,7 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     }
     else if (type === "Evangelism") {
         // A ramp where we press Evangelism
-        return buildEvangRamp(applicators, trinketAssignments['Fiend'], playstyle, talents, ["Shadowfiend"]);
+        return buildEvangRamp(applicators, trinketList, playstyle, talents, ["Shadowfiend"]);
     }
     else if (type === "Uppies") {
         //
@@ -201,7 +201,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
  * @param {*} playstyle Previous examples: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism, Venthyr Spirit Shell.
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
-export const buildEvangRamp = (applicators, trinket, playstyle, talents, specialSpells = []) => {
+export const buildEvangRamp = (applicators, trinketList, playstyle, talents, specialSpells = []) => {
     let sequence = []
 
     sequence.push('Shadow Word: Pain');
@@ -217,6 +217,7 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Evangelism');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
+    if (trinketList.includes("House of Cards")) sequence.push("House of Cards");
     sequence.push('Mind Blast');
     // Premonition
     sequence.push('Smite');

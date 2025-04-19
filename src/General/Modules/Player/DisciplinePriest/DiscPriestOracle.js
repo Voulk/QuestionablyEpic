@@ -17,9 +17,12 @@ export const discPriestOracleSpellData = (contentType) => {
 // Run an on-use trinket through our model to get the amount of HPS it adds. Top Gear can just do this directly,
 // but trinket charts need a stronger way to approximate value.
 export const modelOracleOnUseTrinket = (setStats, trinketName, trinketLevel ) => {
-  const baseline = runChijiCastModel(null, {...setStats, critMult: 2}, null, []).hps;
-  const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
-  return withTrinket - baseline
+  const baseline = allRampsHealing([], setStats, {}, baseTalents, []);
+  const withTrinket = allRampsHealing([], setStats, {}, baseTalents, [{name: trinketName, level: trinketLevel}])
+  //const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
+
+  console.log("HOUSE OF CARDS HPS:" + (withTrinket.hps - baseline), baseline, withTrinket.hps);
+  return withTrinket - baseline;
 }
 
 
@@ -39,7 +42,7 @@ export const discPriestOracleSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         c60: 1,
-        c90: 1.7,
+        c90: 2.4,
         c120: 1,
         c180: 1,
       },
