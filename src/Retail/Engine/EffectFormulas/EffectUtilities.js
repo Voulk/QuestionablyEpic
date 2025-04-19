@@ -45,7 +45,7 @@ export function addSpecMastery(playerSpec, setStats = {}) {
 // A lot of trinkets in the game are very generic PPM stat trinkets. These all use effectively the same formula.
 export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     const rawValue = processedValue(effect, itemLevel);
-    const diminishedValue = getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
+    const diminishedValue = effect.stat === "allyStats" ? rawValue : getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
     const uptime = convertPPMToUptime(effect.ppm, effect.duration);
     return diminishedValue * uptime;
 }
