@@ -8,11 +8,11 @@ import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
-import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
-import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
-import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
+import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
+import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
+import { getItemSet } from "Classic/Databases/RetailItemSetDB.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
+import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData"
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";

@@ -6,17 +6,17 @@ import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
 
 import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import ClassicPlayer from "../../Player/ClassicPlayer";
+import Player from "../../Player/Player";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
-import { getItemSet } from "Classic/Databases/ItemSetsDB"
+import { getItemSet } from "Classic/Databases/ClassicItemSetDB"
 
 import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
 import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
 import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
 import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
-import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
@@ -107,7 +107,7 @@ export function buildDistinctWepCombos(itemList) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  let newPlayer = new ClassicPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
+  let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "Classic");
   //newPlayer = Object.assign(newPlayer, player);
 
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);

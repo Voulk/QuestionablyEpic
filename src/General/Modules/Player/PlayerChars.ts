@@ -1,6 +1,5 @@
 import Player from "./Player";
 import * as ls from "local-storage";
-import ClassicPlayer from "./ClassicPlayer";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -30,16 +29,11 @@ export function createPlayerChars(): PlayerChars {
       let index = 0;
       if (playerChars.length !== 0) {
         playerChars.forEach(function (player: any) {
-          if (false) {//player.gameType === "Classic" || player.gameType === "BurningCrusade") {
-            //charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
-          }
-          else {
-            let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
-            if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
-            if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
-            specsAdded.push(player.spec);
-            charArray.push(newChar);
-          }
+          let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
+          if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+          if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
+          specsAdded.push(player.spec);
+          charArray.push(newChar);
           index += 1;
         });
       } else {
@@ -136,9 +130,6 @@ export function createPlayerChars(): PlayerChars {
     },
   
     addChar(name, spec, region, realm, race, gameType) {
-      /*if (gameType === "Classic" || gameType === "BurningCrusade") {
-        this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race));
-      } */
 
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race, "default", gameType);
       newChar.setPlayerAvatars();

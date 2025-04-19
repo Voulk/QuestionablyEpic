@@ -1,8 +1,8 @@
 
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
-import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicUtilities";
-import { getHaste } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase";
-import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicDruidSpellDB";
+import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 export const restoDruidDefaults = {

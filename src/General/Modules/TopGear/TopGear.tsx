@@ -10,7 +10,6 @@ import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from
 import MuiAlert from "@mui/material/Alert";
 import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
-//import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -498,12 +497,17 @@ export default function TopGear(props: any) {
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
     if (gameType === "Retail") {
-      const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-      let instance = new worker();
       //console.log(instance);
 
-      instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
+      runWorker("Retail", {
+        itemList,
+        wepCombos,
+        strippedPlayer,
+        contentType,
+        baseHPS,
+        playerSettings,
+        strippedCastModel,
+      })
         .then((result: TopGearResult | null) => { // 
           if (result) {
             // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
@@ -534,19 +538,20 @@ export default function TopGear(props: any) {
     } else if (gameType === "Classic") {
         console.log("Initiating Top Gear Classic");
         const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
-        const worker = require("workerize-loader!./Engine/TopGearEngineClassic"); // eslint-disable-line import/no-webpack-loader-syntax
         const t0 = performance.now();
         // Start multiple workers and run TopGearBC with each worker
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
-        const itemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
+        const allItemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
         const workerPromises = []
         const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
-        const chunkSize = itemSets.length / workerCount;
+        const chunkSize = allItemSets.length / workerCount;
         //console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
         for (let i = 0; i < workerCount; i++) {
           // Create itemSet chunk.
-          workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
+          const itemSets = allItemSets.slice(i * chunkSize, (i + 1) * chunkSize);
+          //workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
+          workerPromises.push(runWorker("Classic", {itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel}))
         }
         //console.log("Thread Spins took " + (performance.now() - t1) + " milliseconds.");
         // Wait for all worker promises to resolve
@@ -594,7 +599,7 @@ export default function TopGear(props: any) {
             history.push("/report/");
         })
         .catch(error => {
-            console.error("Error running TopGearBC:", error);
+            console.error("Error running TopGearBC:", error.message);
         });
       } 
      else {
@@ -603,19 +608,27 @@ export default function TopGear(props: any) {
     }
   };
 
-  function runTopGearWorker(i, worker, itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel) {
+  // We'll run our Engine in a separate thread to avoid blocking the UI.
+  const runWorker = (gameType: gameTypes, args: any) => {
     return new Promise((resolve, reject) => {
-        const instance = new worker();
-        instance
-            .runTopGearClassic(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-            .then(result => {
-                instance.terminate();
-                resolve(result);
-            })
-            .catch(error => {
-                instance.terminate();
-                reject(error);
-            });
+      const worker = new Worker(
+        new URL('./TopGearWorker.js', import.meta.url),
+        { type: 'module' }
+      );
+  
+      worker.onmessage = (event) => {
+        const { success, result, error } = event.data;
+        worker.terminate();
+        if (success) resolve(result);
+        else reject(error);
+      };
+  
+      worker.onerror = (err) => {
+        worker.terminate();
+        reject(err.message || err);
+      };
+  
+      worker.postMessage({ gameType, ...args });
     });
   }
 

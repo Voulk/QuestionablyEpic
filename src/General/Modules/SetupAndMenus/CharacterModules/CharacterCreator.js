@@ -3,13 +3,13 @@ import React from "react";
 import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
-import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import raceIcons from "General/Modules/IconFunctions/RaceIcons";
 import Autocomplete from "@mui/material/Autocomplete";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColours } from "General/Engine/ClassData";
 import { useSelector } from "react-redux";
 import { getTranslatedClassName } from "locale/ClassNames";
 
@@ -175,7 +175,7 @@ export default function AddNewChar(props) {
                     .map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem divider={lastItem} key={"class" + i} value={key} style={{ color: classColoursJS(key) }}>
+                        <MenuItem divider={lastItem} key={"class" + i} value={key} style={{ color: classColours(key) }}>
                           <div style={{ display: "inline-flex" }}>
                             {classIcons(key, {
                               height: 20,

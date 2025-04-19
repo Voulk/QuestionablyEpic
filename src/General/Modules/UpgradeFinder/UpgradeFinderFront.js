@@ -156,7 +156,7 @@ const mythicPlusLevels = [
   { value: 655, label: "+10" },
   { value: 658, label: "Vault" },
   { value: 665, label: "" },
-  { value: 672, label: "" },
+  { value: 671, label: "" },
   { value: 678, label: "" },
 
 

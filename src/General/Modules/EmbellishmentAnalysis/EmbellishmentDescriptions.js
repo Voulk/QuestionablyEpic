@@ -1,5 +1,5 @@
 
-import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/EmbellishmentData";
+import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/Embellishments/EmbellishmentData";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 import { getSetting, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 

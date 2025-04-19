@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import { classColours } from "General/Engine/ClassData";
 import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
@@ -136,7 +136,7 @@ export default function CharacterPanel(props: Props) {
     backgroundRepeat: "no-repeat",
     textAlign: "center",
     position: "relative", // This should be one of the valid values
-    border: "1px solid" + classColoursJS(currentCharacter.spec),
+    border: "1px solid" + classColours(currentCharacter.spec),
     backgroundSize: "auto 100%",
     height: 72,
     width: 72,
@@ -185,8 +185,8 @@ export default function CharacterPanel(props: Props) {
                       margin: "0px 2px 0px 0px",
                       verticalAlign: "middle",
                       borderRadius: "0px 0px 0px 4px",
-                      borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
-                      borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                      borderRight: "1px solid " + classColours(currentCharacter.spec),
+                      borderTop: "1px solid" + classColours(currentCharacter.spec),
                       }
                     ) || <></>}
                   </Tooltip>
@@ -211,7 +211,7 @@ export default function CharacterPanel(props: Props) {
                             <Typography
                               variant={xsBreakpoint ? "h5" : "h6"}
                               style={{
-                                color: classColoursJS(currentCharacter.spec),
+                                color: classColours(currentCharacter.spec),
                                 marginRight: 8,
                                 fontSize: gameType === "Retail" ? 16 : 22,
                               }}

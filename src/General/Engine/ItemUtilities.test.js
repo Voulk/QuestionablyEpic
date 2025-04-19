@@ -235,12 +235,6 @@ describe("CheckItemExists func", () => {
 });
 
 describe("getItemSlot func", () => {
-  /*
-  test("Slot Check Scythewood Scepter (1H Weapon)", () => {
-    const id = 178709;
-    const expectedResult = "1H Weapon";
-    expect(getItemProp(id, "slot")).toEqual(expectedResult);
-  });*/
 
   test("Slot Check: Invalid Item ID", () => {
     const id = 9999999;
@@ -251,17 +245,3 @@ describe("getItemSlot func", () => {
   // Add new tests
 });
 
-/*
-describe("socketItem", () => {
-  test("Red Gem Test", () => {
-    const player = new ClassicPlayer("Mock", "Restoration Druid Classic", 99, "NA", "Stonemaul", "Night Elf");
-    const item = new ClassicItem(29087, "Chestguard of Malorne", "Chest", "");
-
-    socketItem(item, player);
-
-  });
-
-
-
-  // Add new tests
-}); */

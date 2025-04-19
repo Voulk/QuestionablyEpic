@@ -10,10 +10,10 @@ import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
 import GameTypeSwitch from "../SetupAndMenus/GameTypeToggle";
 import { classRaceDB } from "../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../Databases/ServerDB";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColours } from "General/Engine/ClassData";
 import { useSelector } from "react-redux";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import raceIcons from "../CooldownPlanner/Functions/IconFunctions/RaceIcons";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import raceIcons from "General/Modules/IconFunctions/RaceIcons";;
 import { getTranslatedRaceName } from "Databases/RacesDB";
 import { getTranslatedClassName } from "locale/ClassNames";
 
@@ -186,7 +186,7 @@ export default function WelcomeDialog(props: WelcomeDialogProps) {
                     .map((key, i, arr) => {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
-                        <MenuItem divider={lastItem} key={i} value={key} style={{ color: classColoursJS(key) }}>
+                        <MenuItem divider={lastItem} key={i} value={key} style={{ color: classColours(key) }}>
                           <div style={{ display: "inline-flex" }}>
                             {classIcons(key, {
                               height: 20,

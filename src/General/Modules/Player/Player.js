@@ -6,15 +6,15 @@ import Item from "./Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
-import { druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
-import { shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestDefaults";
-import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
+import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
+import { shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/ShamanDefaults";
+import { discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
+import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
+import { monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
-import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData";
+import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { classRaceDB } from "Databases/ClassRaceDB";
 
 export class Player {

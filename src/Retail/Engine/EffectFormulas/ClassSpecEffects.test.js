@@ -2,11 +2,11 @@
 import Player from "General/Modules/Player/Player";
 import { getShamanSpecEffect } from "Retail/Engine/EffectFormulas/Shaman/ShamanSpecEffects"
 import { getMonkSpecEffect } from "Retail/Engine/EffectFormulas/Monk/MonkSpecEffects"
-import { getEvokerSpecEffect } from "Retail/Engine/EffectFormulas/Evoker/EvokerSpecEffects"
-import { getPaladinSpecEffect } from "Retail/Engine/EffectFormulas/Paladin/PaladinSpecEffects"
-import { getDruidSpecEffect } from "Retail/Engine/EffectFormulas/Druid/DruidSpecEffects"
-import { getDiscPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/DiscPriestSpecEffects"
-import { getHolyPriestSpecEffect } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpecEffects"
+import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects"
+import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects"
+import { getDruidSpecEffect } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects"
+import { getDiscPriestSpecEffect } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects"
+import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpecEffects"
 
 // This is a dummy test unit and is not fully functional yet.
 describe("Shaman", () => {

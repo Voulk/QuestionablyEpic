@@ -1,12 +1,11 @@
 // Action Types
-import { TOGGLE_CONTENT, TOGGLE_GAMETYPE, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS, TOGGLE_COOLDOWNPLANNERTHEME } from "../ActionTypes";
+import { TOGGLE_CONTENT, TOGGLE_GAMETYPE, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS } from "../ActionTypes";
 
 // Reducers
 import { contentType } from "./ContentType";
 import { gameType } from "./GameType";
 import { playerSettings } from "./PlayerSettings";
 import { patronStatus } from "./PatronStatus";
-import { cooldownPlannerTheme } from "./CooldownPlannerTheme";
 
 // Local Storage
 import * as ls from "local-storage";
@@ -90,8 +89,6 @@ const rootReducer: Reducer<RootState, any> = (state = initialState, action) => {
       return patronStatus(state, action);
     case TOGGLE_PATRONSTATUS:
       return patronStatus(state, action);
-    case TOGGLE_COOLDOWNPLANNERTHEME:
-      return cooldownPlannerTheme(state, action);
     default:
       return state;
   }
