@@ -160,7 +160,6 @@ const getHealingMult = (state, buffs, spellName, spell) => {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
     }
     if (checkBuffActive(buffs, "Premonition of Piety")) {
-        console.log(spellName + " getting " + getBuffValue(state.activeBuffs, "Premonition of Piety") + " buff from Piety")
         mult *= (1 + getBuffValue(state.activeBuffs, "Premonition of Piety")) || 1; // Should realistically never return undefined.;
     }
     return mult;

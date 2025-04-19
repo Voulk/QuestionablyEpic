@@ -21,7 +21,6 @@ export const modelOracleOnUseTrinket = (setStats, trinketName, trinketLevel ) =>
   const withTrinket = allRampsHealing([], setStats, {}, baseTalents, [{name: trinketName, level: trinketLevel}])
   //const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
 
-  console.log("HOUSE OF CARDS HPS:" + (withTrinket.hps - baseline), baseline, withTrinket);
   return (withTrinket - baseline) / 60;
 }
 
