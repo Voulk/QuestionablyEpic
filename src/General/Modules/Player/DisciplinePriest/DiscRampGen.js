@@ -18,7 +18,7 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-    const trinketList = trinkets !== undefined ? Object.keys(trinkets) : [];
+    const trinketList = trinkets !== undefined ? trinkets.map(trinket => trinket.name) : [];
     const trinketAssignments = buildTrinkets(trinketList);
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
@@ -27,11 +27,11 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
 
     // A mini-ramp includes two Radiance charges
     if (type === "Mini") {
-        return buildMiniRamp(applicators, trinkets, playstyle, talents);
+        return buildMiniRamp(applicators, trinketList, playstyle, talents);
     }
     // A micro-ramp doesn't include any Radiance charges or major cooldowns at all. We tend to throw these out through a fight in between ramps.
     else if (type === "Micro") {
-        return buildMicroRamp(applicators, trinkets, playstyle, talents);
+        return buildMicroRamp(applicators, trinketList, playstyle, talents);
     }
     else if (type === "Evangelism") {
         // A ramp where we press Evangelism
@@ -39,7 +39,7 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
     }
     else if (type === "Uppies") {
         //
-        return buildEvangRamp(applicators, trinketAssignments['evang'], playstyle, talents, []);
+        return buildEvangRamp(applicators, [], playstyle, talents, []);
 
         // Further ramp types can be added here.
     }
@@ -217,6 +217,7 @@ export const buildEvangRamp = (applicators, trinketList, playstyle, talents, spe
     sequence.push('Evangelism');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
+
     if (trinketList.includes("House of Cards")) sequence.push("House of Cards");
     sequence.push('Mind Blast');
     // Premonition

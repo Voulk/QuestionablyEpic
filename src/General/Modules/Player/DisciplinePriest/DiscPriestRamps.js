@@ -159,6 +159,10 @@ const getHealingMult = (state, buffs, spellName, spell) => {
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
     }
+    if (checkBuffActive(buffs, "Premonition of Piety")) {
+        console.log(spellName + " getting " + getBuffValue(state.activeBuffs, "Premonition of Piety") + " buff from Piety")
+        mult *= (1 + getBuffValue(state.activeBuffs, "Premonition of Piety")) || 1; // Should realistically never return undefined.;
+    }
     return mult;
 }
 
@@ -192,7 +196,8 @@ const getAtoneTrans = (mastery) => {
 // Some spells do more than the usual amount of atonement healing. An example might be through Abssal Reverie.
 // We'll handle those here.
 const getAtonementBonus = (state, spellName, spell) => {
-    return DISCCONSTANTS.atonementMults[getSpellSchool(state, spellName, spell)] || 1
+
+    return (DISCCONSTANTS.atonementMults[getSpellSchool(state, spellName, spell)] || 1) * getHealingMult(state, state.activeBuffs, "Atonement", {});
 }
 
 // Get a spells school.
@@ -495,16 +500,12 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
 
     // Setup Trinkets
-    console.log(settings.trinkets);
     if (settings.trinkets) {
-        console.log(settings.trinkets);
-        console.log((settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0))
         if (settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0) {
             const onUseData = getTrinketData("House of Cards", settings.trinkets.filter(effect => effect.name === "House of Cards")[0].level);
             const spell = discSpells["House of Cards"][0];
             spell.value = onUseData.value;
             spell.buffDuration = onUseData.duration;
-            console.log(spell);
         }
 
         

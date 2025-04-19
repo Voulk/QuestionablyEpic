@@ -415,7 +415,8 @@ export const DISCSPELLS = {
         buffDuration: 15,
         buffType: 'special',
         ongcd: false,
-        value: 1.2, // 20% healing increase, 70% overhealing redist - 98% with upgrade
+        value: 0.2, // 20% healing increase, 70% overhealing redist - 98% with upgrade
+        overhealDist: 0.7, // 
     }],
     "TrinketName": [{
         spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},

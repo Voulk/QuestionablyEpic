@@ -687,10 +687,10 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
 
       this.activeStats = {
-        intellect: 80000, // 32k
+        intellect: 85000, // 32k
         haste: 17000,
-        crit: 9000,
-        mastery: 9600,
+        crit: 10000,
+        mastery: 9800,
         versatility: 2700,
         stamina: 1900,
         critMult: 2,

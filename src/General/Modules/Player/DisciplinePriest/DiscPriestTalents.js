@@ -324,6 +324,13 @@ const applyOracle = (discSpells, settings, talents, state, stats, heroTree) => {
 
     // Twinsight
     // We'll mostly use Penance offensively which means this adds 3 healing bolts to the cast. 
+    // Handled in Ramps file.
+
+    // Fatebender
+    discSpells["Premonition of Piety"][0].value *= 1.4;
+    discSpells["Premonition of Piety"][0].overhealDist *= 1.4;
+
+
 
 
     

@@ -21,8 +21,8 @@ export const modelOracleOnUseTrinket = (setStats, trinketName, trinketLevel ) =>
   const withTrinket = allRampsHealing([], setStats, {}, baseTalents, [{name: trinketName, level: trinketLevel}])
   //const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
 
-  console.log("HOUSE OF CARDS HPS:" + (withTrinket.hps - baseline), baseline, withTrinket.hps);
-  return withTrinket - baseline;
+  console.log("HOUSE OF CARDS HPS:" + (withTrinket.hps - baseline), baseline, withTrinket);
+  return (withTrinket - baseline) / 60;
 }
 
 
@@ -42,7 +42,7 @@ export const discPriestOracleSpecialQueries = (contentType) => {
       CastsPerMinute: 36,
       cooldownMult: {
         c60: 1,
-        c90: 2.4,
+        c90: 1.9,
         c120: 1,
         c180: 1,
       },
