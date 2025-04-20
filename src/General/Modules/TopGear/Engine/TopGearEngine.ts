@@ -888,13 +888,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
 
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-    
+
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
     //hardScore = setStats.hps || 0;
-    console.log(castModelResult.hps);
+
     evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==

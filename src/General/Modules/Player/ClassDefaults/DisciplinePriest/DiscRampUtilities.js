@@ -54,7 +54,7 @@ export const getDefaultDiscTalents = (playstyle) => {
     return baseTalents;
 }
 
-
+// Trinkets = {name: x, level: x}
 export const allRampsHealing = (boonSeq, stats, settings, talents, trinkets, reporting = false) => {
 
     if (talents == undefined || Object.keys(talents).length === 0) talents = getDefaultDiscTalents(settings.playstyle);

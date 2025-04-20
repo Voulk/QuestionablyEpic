@@ -8,7 +8,7 @@ import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, r
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "General/Modules/Player/ClassDefaults/Generic/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { printHealingBreakdown } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ProfileShared"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
@@ -42,13 +42,25 @@ export const DISCCONSTANTS = {
 }   
 
 
-/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism / Spirit Shell. */
+/**  Extend all active atonements by @extension seconds. This is triggered by Evanglism. */
 const extendActiveAtonements = (atoneApp, timer, extension) => {
     atoneApp.forEach((application, i, array) => {
         if (application >= timer) {
             array[i] = application + extension;
         };
     });
+}
+
+/**  Extend the atonement closest to expiry. */
+const extendLowestAtonement = (atoneApp, timer, extension) => {
+  // Extend the lowest value since this is the Atonement application closest to expiry.
+  const minIndex = atoneApp.indexOf(Math.min(...atoneApp));
+
+  // Extend that atonement by X seconds where X = extension
+  atoneApp[minIndex] += extension;
+
+  return minIndex;
+
 }
 
 
@@ -147,6 +159,9 @@ const getHealingMult = (state, buffs, spellName, spell) => {
     if (checkBuffActive(buffs, "Shadow Covenant") && getSpellSchool(state, spellName, spell) === "shadow") {
         mult *= getBuffValue(state.activeBuffs, "Shadow Covenant") || 1; // Should realistically never return undefined.;
     }
+    if (checkBuffActive(buffs, "Premonition of Piety")) {
+        mult *= (1 + getBuffValue(state.activeBuffs, "Premonition of Piety")) || 1; // Should realistically never return undefined.;
+    }
     return mult;
 }
 
@@ -180,7 +195,8 @@ const getAtoneTrans = (mastery) => {
 // Some spells do more than the usual amount of atonement healing. An example might be through Abssal Reverie.
 // We'll handle those here.
 const getAtonementBonus = (state, spellName, spell) => {
-    return DISCCONSTANTS.atonementMults[getSpellSchool(state, spellName, spell)] || 1
+
+    return (DISCCONSTANTS.atonementMults[getSpellSchool(state, spellName, spell)] || 1) * getHealingMult(state, state.activeBuffs, "Atonement", {});
 }
 
 // Get a spells school.
@@ -334,7 +350,15 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "atonementExtension") {
-                    extendActiveAtonements(atonementApp, state.t, spell.extension);
+                    if (spell.extensionType === "all") {
+                        extendActiveAtonements(atonementApp, state.t, spell.extension);
+                    }
+                    else if (spell.extensionType === "lowestDuration") {
+                        // Extend the atonement that is closest to expiry.
+                        const extended = extendLowestAtonement(atonementApp, state.t, spell.extension);
+                        addReport(state, `Extending Atonement #${extended} by ${spell.extension}s`)
+                    }
+                    
                 }
                 // The spell extends atonements already active. This is specific to Evanglism. 
                 else if (spell.type === "buffExtension") {
@@ -369,9 +393,9 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
                     // Twinsight
                     if (state.heroTree === "oracle" && spellName === "Penance") {
-                        specSpells["DefPenanceTick"].castTime = 0;
                         for (var i = 0; i < 3; i++) {
-                            seq.unshift("DefPenanceTick")
+                            //seq.unshift("DefPenanceTick")
+                            runSpell(specSpells["DefPenanceTick"], state, "DefPenanceTick", specSpells, atonementApp, seq, false)
                         }
                     }
 
@@ -466,7 +490,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     let spellFinish = 0; // The time when the cast will finish. HoTs / DoTs can continue while this charges.
     let queuedSpell = "";
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
-    console.log(sequence);
+
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
     const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
@@ -476,6 +500,14 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
 
     // Setup Trinkets
     if (settings.trinkets) {
+        if (settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0) {
+            const onUseData = getTrinketData("House of Cards", settings.trinkets.filter(effect => effect.name === "House of Cards")[0].level);
+            const spell = discSpells["House of Cards"][0];
+            spell.value = onUseData.value;
+            spell.buffDuration = onUseData.duration;
+        }
+
+        
         Object.keys(settings.trinkets).forEach((key) => {
             if (key in discSpells) {
                 const spell = discSpells[key][0];
@@ -570,7 +602,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             const fullSpell = discSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
-            if (fullSpell[0].castTime === 0) nextSpell = state.t + 1.5 / getHaste(currentStats);
+            if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD === false) nextSpell = state.t + 0.01;
+            else if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD) nextSpell = state.t + 1.5 / getHaste(currentStats);
             else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
 
@@ -620,8 +653,8 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     //const totalHealingValues = state.advancedReport.map(item => item.totalHealing);
     // Print the result as a comma-separated list
     //console.log(JSON.stringify(totalHealingValues));
-    console.log(state.report);
-    printHealingBreakdown(state.healingDone, state.totalHealing);
+    //console.log(state.report);
+    //printHealingBreakdown(state.healingDone, state.totalHealing);
 
     return state;
 

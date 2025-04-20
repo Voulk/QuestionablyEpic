@@ -74,14 +74,18 @@ export const raidTrinketData = [
         table: -7,
         duration: 15, 
         cooldown: 90,
+        mult: (0.966 + 1.15) / 2
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      const variance = (0.9 + 1.15) / 2; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times.
+      const variance = data[0].mult; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times, which we'll average at 2.
 
-      if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
+      if (additionalData.castModel.modelName.includes("Oracle")) {
+        bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "House of Cards", itemLevel)
+      }
+      else if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
       else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
 
       return bonus_stats;
