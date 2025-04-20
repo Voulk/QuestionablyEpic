@@ -8,6 +8,7 @@ import { Grid, Typography } from "@mui/material";
 // import { useSelector } from "react-redux";
 import { tierSets } from "../../Databases/ClassicTierDescriptions";
 import HelpText from "../../../General/Modules/SetupAndMenus/HelpText";
+import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -45,7 +46,7 @@ export default function LegendaryCompare(props) {
   const classes = useStyles();
   // const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
   }, []);
   const { t } = useTranslation();
 

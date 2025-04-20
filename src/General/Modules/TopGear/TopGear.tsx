@@ -27,6 +27,7 @@ import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
 import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
+import { trackPageView } from "Analytics";
 
 type ShortReport = {
   id: string;
@@ -390,7 +391,8 @@ export default function TopGear(props: any) {
   }
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
+    //ReactGA.pageview(window.location.pathname + window.location.search);
     checkTopGearValid();
   }, []);
 

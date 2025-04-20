@@ -31,7 +31,7 @@ import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
 import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 
-process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
+//process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 const App = () => {
     /* ---------------- Here we bind functions to this component ---------------- */

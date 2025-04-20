@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import { trackPageView } from "Analytics";
 
 function a11yProps(index) {
   return {
@@ -73,7 +74,7 @@ const addItemSources = (diffList, gameType) => {
 
 export default function UpgradeFinderReport(props) {
   //   useEffect(() => {
-  //     ReactGA.pageview(window.location.pathname + window.location.search);
+  //     trackPageView(window.location.pathname + window.location.search);
   //   }, []);
 
   const classes = UpgradeFinderStyles();

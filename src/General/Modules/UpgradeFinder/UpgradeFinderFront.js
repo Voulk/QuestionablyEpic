@@ -14,6 +14,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import ReactGA from "react-ga";
 import { itemLevels } from "Databases/itemLevelsDB";
+import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -174,7 +175,7 @@ export default function UpgradeFinderFront(props) {
   const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: gameType === "Retail" ? 6 : 1, pvp: 0, craftedLevel: 4, craftedStats: "Crit / Haste" });
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
   }, []);
 
 

@@ -16,6 +16,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import { Item } from "General/Modules/Player/Item"
+import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -149,7 +150,7 @@ export default function QuickCompare(props) {
   const playerSettings = useSelector((state) => state.playerSettings);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
     loadBottomBannerAd(props.patronStatus);
   }, props.player.scoreActiveItems(contentType, playerSettings));

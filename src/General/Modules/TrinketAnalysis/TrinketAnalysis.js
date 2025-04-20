@@ -19,7 +19,7 @@ import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
 import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
-
+import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
 
@@ -144,7 +144,7 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
 
 export default function TrinketAnalysis(props) {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
     loadBottomBannerAd(props.patronStatus);
   }, []);

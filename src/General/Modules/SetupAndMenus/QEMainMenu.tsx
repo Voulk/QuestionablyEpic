@@ -18,6 +18,7 @@ import Player from "../Player/Player";
 import { RootState } from "Redux/Reducers/RootReducer";
 import { styled } from "@mui/system";
 import GameTypeSwitch from "./GameTypeToggle";
+import { trackPageView } from "Analytics";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -62,7 +63,7 @@ interface Props {
 
 export default function QEMainMenu(props: Props) {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
   }, []);
 
   const gameType = useSelector((state: RootState) => state.gameType);
