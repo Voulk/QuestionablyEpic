@@ -519,13 +519,11 @@ export default function TopGear(props: any) {
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);
 
-            instance.terminate();
             history.push("/report/");
           }
           else { // A valid set was not returned.
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             console.log("Null Set Returned");
-            instance.terminate();
             setBtnActive(true);
           }
         })
@@ -534,7 +532,6 @@ export default function TopGear(props: any) {
           reportError("", "Top Gear Crash", err, strippedPlayer.spec);
           setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
           console.log(err);
-          instance.terminate();
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
