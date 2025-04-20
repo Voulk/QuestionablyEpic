@@ -16,7 +16,7 @@ self.onmessage = async function (e) {
   
     try {
       if (gameType === "Retail") {
-        const { runTopGear } = await import("./TopGearEngine.js");
+        const { runTopGear } = await import("./TopGearEngine.ts");
 
         const result = await runTopGear(
           itemList,
