@@ -7,6 +7,13 @@ import rootReducer from "Redux/Reducers/RootReducer";
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { runTopGearClassic } from "General/Modules/TopGear/Engine/TopGearEngineClassic"
 
+jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+    return {
+      createFetcherWorker: jest.fn(),
+      createLoaderWorker: jest.fn(),
+    };
+  });
+
 describe("Top Gear Test", () => {
     test("Top Gear Test", () => {
         const itemIDList = [68777,67131,67130,64904,64673,64672,64645,64489,62431,62420,62050,60280,60278,59453,59220,58484,58189,56561,56297,56361,56405, 60276]; // 

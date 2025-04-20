@@ -6,6 +6,13 @@ import { buildNewWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
 import each from "jest-each";
 
+jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+    return {
+      createFetcherWorker: jest.fn(),
+      createLoaderWorker: jest.fn(),
+    };
+  });
+
 describe("Top Gear Gems", () => {
     test("Crit / Mastery gem", () => {
         let bonusStats = {};

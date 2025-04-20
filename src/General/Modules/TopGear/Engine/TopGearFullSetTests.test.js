@@ -6,6 +6,12 @@ import { applyDiminishingReturns, buildNewWepCombos } from "General/Engine/ItemU
 
 import { runTopGear } from "./TopGearEngine";
 
+jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+  return {
+    createFetcherWorker: jest.fn(),
+    createLoaderWorker: jest.fn(),
+  };
+});
 
 describe("Top Gear full test", () => {
     

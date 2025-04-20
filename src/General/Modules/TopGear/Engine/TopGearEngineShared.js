@@ -5,6 +5,10 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
+export function createTopGearWorker() {
+  return new Worker(new URL('./topGearWorker.js', import.meta.url), { type: 'module' });
+}
+
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
 
