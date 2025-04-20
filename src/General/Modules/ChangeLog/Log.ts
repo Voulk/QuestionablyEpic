@@ -14,6 +14,10 @@ interface entry {
   changes: string[];
 }
 
+export const getVersion = (): string => {
+  return changeLog[0].update + " (" + changeLog[0].version + ")";
+}
+
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",

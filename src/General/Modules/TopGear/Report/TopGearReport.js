@@ -378,6 +378,11 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                             {"Playstyle: " + player.model}
                                           </Typography>
                                         </Grid>
+                                        <Grid item xs={12}>
+                                          <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                          </Typography>
+                                        </Grid>
                                       </Grid>
                                     </Grid>
                                   ) : (

@@ -28,6 +28,7 @@ import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
 import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
 import { trackPageView } from "Analytics";
+import { getVersion } from "../ChangeLog/Log";
 
 type ShortReport = {
   id: string;
@@ -439,8 +440,8 @@ export default function TopGear(props: any) {
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
-        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
-      
+        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
+        version: getVersion(),
       };
     
       
