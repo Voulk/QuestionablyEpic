@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";

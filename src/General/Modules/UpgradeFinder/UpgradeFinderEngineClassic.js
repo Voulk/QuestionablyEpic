@@ -1,5 +1,5 @@
 import { classicItemDB} from "../../../Databases/ClassicItemDB";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 import { runTopGearClassic, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
 import {
   getValidArmorTypes,

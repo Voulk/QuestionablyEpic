@@ -20,6 +20,7 @@ import { getAllyStatsValue } from "General/Engine/ItemUtilities";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import { trackPageView } from "Analytics";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -166,7 +167,7 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function CircletAnalysis(props) {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
   }, []);
 

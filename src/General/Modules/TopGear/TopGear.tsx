@@ -20,13 +20,14 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { patronColor, patronCaps } from "General/Modules/SetupAndMenus/Header/PatronColors";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { Item } from "General/Modules/Player/Item";
+import { Item } from "General/Items/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
 import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
+import { trackPageView } from "Analytics";
 
 type ShortReport = {
   id: string;
@@ -390,7 +391,8 @@ export default function TopGear(props: any) {
   }
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
+    //ReactGA.pageview(window.location.pathname + window.location.search);
     checkTopGearValid();
   }, []);
 

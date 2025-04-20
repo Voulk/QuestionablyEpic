@@ -2,7 +2,7 @@
 import SPEC from "../../Engine/SPECS";
 import STAT, { STATCONVERSION } from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
-import Item from "./Item";
+import Item from "../../Items/Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
@@ -684,13 +684,13 @@ export class Player {
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Coming Soon)", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
 
       this.activeStats = {
-        intellect: 80000, // 32k
+        intellect: 85000, // 32k
         haste: 17000,
-        crit: 9000,
-        mastery: 9600,
+        crit: 10000,
+        mastery: 9800,
         versatility: 2700,
         stamina: 1900,
         critMult: 2,

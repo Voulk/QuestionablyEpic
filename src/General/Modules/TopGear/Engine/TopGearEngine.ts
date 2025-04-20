@@ -15,7 +15,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData"
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
-import Item from "General/Modules/Player/Item";
+import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Console } from "console";
@@ -888,13 +888,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
 
     const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-    
+
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
     //hardScore = setStats.hps || 0;
-    console.log(castModelResult.hps);
+
     evalStats.hps = (setStats.hps || 0);
   }
   // == Diminishing Returns ==

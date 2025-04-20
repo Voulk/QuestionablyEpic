@@ -1,5 +1,5 @@
 import { itemDB, tokenDB } from "../../../Databases/ItemDB";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
 import { calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";

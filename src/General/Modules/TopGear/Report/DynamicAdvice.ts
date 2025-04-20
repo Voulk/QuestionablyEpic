@@ -1,6 +1,6 @@
 
 import { Player } from "General/Modules/Player/Player"
-import { Item } from "General/Modules/Player/Item"
+import { Item } from "General/Items/Item"
 
 const checkHasItem = (itemList: Item[], itemID: number) => {
     return itemList.filter((item: Item) => item.id === itemID).length > 0;

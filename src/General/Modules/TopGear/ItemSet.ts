@@ -1,6 +1,6 @@
 // Represents a full set of items.
 import { getTranslatedItemName } from "../../Engine/ItemUtilities";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 
 
 class ItemSet {

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "General/Engine/ItemUtilities";

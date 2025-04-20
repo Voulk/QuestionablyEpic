@@ -1,7 +1,7 @@
 import { bonus_IDs } from "../BonusIDs";
 import { curveDB } from "../ItemCurves";
 import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
-import Item from "../../../General/Modules/Player/Item";
+import Item from "../../../General/Items/Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 

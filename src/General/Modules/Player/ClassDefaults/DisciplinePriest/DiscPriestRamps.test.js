@@ -46,10 +46,10 @@ const runStats = (playerData) => {
 
     const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
         intellect: 76000 * 1.05 * 1.05,
-        haste: 10000,
-        crit: 10000,
-        mastery: 10000 + (2 * 700),
-        versatility: 10000 + (3 * 780),
+        haste: 7000,
+        crit: 7000,
+        mastery: 7000 + (2 * 700),
+        versatility: 7000 + (3 * 780),
         stamina: 29000,
         critMult: 2,
     }
@@ -67,7 +67,7 @@ const runStats = (playerData) => {
     stats.forEach(stat => {
         let statHealing = 0;
         let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-        playerStats[stat] = playerStats[stat] + 2400;
+        playerStats[stat] = playerStats[stat] + 2800;
         const newPlayerData = {...playerData, stats: playerStats};
         for (let i = 0; i < iterations; i++) {
             statHealing += allRampsHealing([], playerStats, {}, baseTalents, []);

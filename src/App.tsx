@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import CustomRoute from "./CustomRoute";
 import ReportRoute from "./ReportRoute";
-import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
@@ -31,7 +30,7 @@ import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
 import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 
-process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
+//process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 const App = () => {
     /* ---------------- Here we bind functions to this component ---------------- */
@@ -365,7 +364,7 @@ const App = () => {
                       />
                     )}
                   />
-                  <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
+                  <Route path="/spelldata" render={() => <SequenceGen player={activePlayer} />} />
 
 
                   <CustomRoute 

@@ -18,7 +18,7 @@
  */
 export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTalents) => {
     //const talents = ['Power Word: Solace', 'Divine Star']
-    const trinketList = trinkets !== undefined ? Object.keys(trinkets) : [];
+    const trinketList = trinkets !== undefined ? trinkets.map(trinket => trinket.name) : [];
     const trinketAssignments = buildTrinkets(trinketList);
     const talents = {};
     for (const [key, value] of Object.entries(incTalents)) {
@@ -27,19 +27,19 @@ export const buildRamp = (type, applicators, trinkets, haste, playstyle, incTale
 
     // A mini-ramp includes two Radiance charges
     if (type === "Mini") {
-        return buildMiniRamp(applicators, trinkets, playstyle, talents);
+        return buildMiniRamp(applicators, trinketList, playstyle, talents);
     }
     // A micro-ramp doesn't include any Radiance charges or major cooldowns at all. We tend to throw these out through a fight in between ramps.
     else if (type === "Micro") {
-        return buildMicroRamp(applicators, trinkets, playstyle, talents);
+        return buildMicroRamp(applicators, trinketList, playstyle, talents);
     }
     else if (type === "Evangelism") {
         // A ramp where we press Evangelism
-        return buildEvangRamp(applicators, trinketAssignments['Fiend'], playstyle, talents, ["Shadowfiend"]);
+        return buildEvangRamp(applicators, trinketList, playstyle, talents, ["Shadowfiend"]);
     }
     else if (type === "Uppies") {
         //
-        return buildEvangRamp(applicators, trinketAssignments['evang'], playstyle, talents, []);
+        return buildEvangRamp(applicators, [], playstyle, talents, []);
 
         // Further ramp types can be added here.
     }
@@ -201,7 +201,7 @@ export const buildMicroRamp = (applicators, trinkets, playstyle, talents, haste)
  * @param {*} playstyle Previous examples: Kyrian Evangelism, Kyrian Spirit Shell, Venthyr Evanglism, Venthyr Spirit Shell.
  * @returns Returns a sequence of spells representing a Shadowfiend ramp.
  */
-export const buildEvangRamp = (applicators, trinket, playstyle, talents, specialSpells = []) => {
+export const buildEvangRamp = (applicators, trinketList, playstyle, talents, specialSpells = []) => {
     let sequence = []
 
     sequence.push('Shadow Word: Pain');
@@ -217,6 +217,8 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Evangelism');
     if (specialSpells.includes("Shadowfiend")) sequence.push("Shadowfiend");
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
+
+    if (trinketList.includes("House of Cards")) sequence.push("House of Cards");
     sequence.push('Mind Blast');
     // Premonition
     sequence.push('Smite');
@@ -231,12 +233,17 @@ export const buildEvangRamp = (applicators, trinket, playstyle, talents, special
     sequence.push('Smite');
     sequence.push('Shadow Word: Death');
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 3; i++) {
         // The number of smites here is adjustable but also not very important outside of DPS metrics.
         sequence.push('Smite');
     }
     sequence.push('Penance');
 
+
+    for (var i = 0; i < 3; i++) {
+        // The number of smites here is adjustable but also not very important outside of DPS metrics.
+        sequence.push('Smite');
+    }
 
     return sequence;
 }

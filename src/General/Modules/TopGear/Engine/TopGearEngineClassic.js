@@ -1,6 +1,6 @@
 import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import Item from "../../Player/Item";
+import Item from "../../../Items/Item";
 import React, { useState, useEffect } from "react";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 

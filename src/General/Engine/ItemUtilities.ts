@@ -9,7 +9,7 @@ import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from ".
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "./SPECS";
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
-import Item from "../Modules/Player/Item";
+import Item from "../Items/Item";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { CONSTANTS } from "./CONSTANTS";
 import { gemDB } from "Databases/GemDB";
@@ -371,6 +371,31 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (bossID === 2645 || bossID === 2646) return 9; // Mug'zee, Gallywix
 
   return 0;
+}
+
+// Sometimes items have an optional effect that can be added to them. Embellishments for example, or different variations (Changeling / Circlet).
+export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Retail"): { type: string; label: string; effectName: string }[] => {
+  const options: { type: string; label: string; effectName: string }[] = []; // type: "embellishment", label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"
+  const item = getItem(itemID);
+
+  if (getItemProp(item.id, "crafted")) {
+    // Crafted item effects are limited to Embellishments currently.
+    if (item.slot.includes("Weapon") || item.slot === "Offhand") {
+      // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
+      options.push({type: "embellishment", label: "Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
+      options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+    }
+    if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon")) {
+      // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
+      options.push({type: "embellishment", label: "Writhing Armor Banding", effectName: "Writhing Armor Banding"})
+      options.push({type: "embellishment", label: "Dawnthread Lining", effectName: "Dawnthread Lining"})
+      options.push({type: "embellishment", label: "Duskthread Lining", effectName: "Duskthread Lining"})
+    }
+  }
+  // Now, we can also add non-embellishment options here but we don't have any prominent ones yet so TODO.
+
+
+  return options;
 }
 
 const isMaxxed = (difficulty: number) => {

@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getItemProp } from "General/Engine/ItemUtilities";
+import { getItemEffectOptions, getItemProp } from "General/Engine/ItemUtilities";
 
 interface MenuItemType {
   id: number;
@@ -58,6 +58,17 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 
   }
   if (!item.vaultItem && gameType === "Retail") items.push({id: items.length + 1, type: "vault", ilvlMinimum: 0, label: "Convert to Vault"})
+
+  if (item.effect === "") {
+    const itemOptions = getItemEffectOptions(item.id);
+
+    if (itemOptions.length > 0) {
+      itemOptions.forEach((option: {type: string, label: string, effectName: string}) => {
+        items.push({id: items.length + 1, ilvlMinimum: 0, type: option.type, label: "Add " + option.type + ": " + option.label, effectName: option.effectName})
+      })
+    }
+  }  
+  /*
   if (item.effect === "" && getItemProp(item.id, "crafted") && (item.slot.includes("Weapon") || item.slot === "Offhand")) {
     items.push({id: items.length + 1, ilvlMinimum: 0, type: "embellishment", label: "Add Embellishment: Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
     items.push({id: items.length + 1, ilvlMinimum: 0, type: "embellishment", label: "Add Embellishment: Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
@@ -66,7 +77,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
     items.push({id: items.length + 1, ilvlMinimum: 0, type: "embellishment", label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"})
     items.push({id: items.length + 1, ilvlMinimum: 0, type: "embellishment", label: "Add Embellishment: Dawnthread Lining", effectName: "Dawnthread Lining"})
     items.push({id: items.length + 1, ilvlMinimum: 0, type: "embellishment", label: "Add Embellishment: Duskthread Lining", effectName: "Duskthread Lining"})
-  }
+  }*/
   // Add embellishment options.
 
   if (item.customOptions) {
