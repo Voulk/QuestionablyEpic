@@ -1,4 +1,4 @@
-import React from "react";
+
 import BloodElfMale from "Images/Races/BloodElf/BloodElfMale.jpg";
 import BloodElfFemale from "Images/Races/BloodElf/BloodElfFemale.jpg";
 import DarkIronMale from "Images/Races/DarkIron/DarkIronMale.jpg";
