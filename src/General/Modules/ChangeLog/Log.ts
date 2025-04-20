@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 99,
+    date: "April",
+    changes: [ 
+      "Heavy app-wide refactor.",
+      "Embellishments can now be added directly in the Item Bar in addition to the cog menu."
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 11,
     date: "April",
     changes: [ 

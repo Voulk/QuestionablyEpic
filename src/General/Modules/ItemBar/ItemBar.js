@@ -6,6 +6,7 @@ import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../../Items/Item";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import {
   checkDefaultSocket,
   getTranslatedItemName,
@@ -17,11 +18,11 @@ import {
   getItemAllocations,
   calcStatsAtLevel,
   autoAddItems,
+  getItemEffectOptions,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { getTranslatedStats } from "locale/statsLocale";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -159,6 +160,7 @@ export default function ItemBar(props) {
   const [itemTertiary, setItemTertiary] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [missives, setMissives] = useState("Haste / Versatility");
+  const [itemEffect, setItemEffect] = useState({type: "", effectName: "", label: ""});
 
   /* ------------------------ End Simc Module Functions ----------------------- */
 
@@ -190,6 +192,10 @@ export default function ItemBar(props) {
       const item = createItem(itemID, itemName, itemLevel, itemSocket, itemTertiary, missives, gameType);
 
       if (item) {
+        if (itemEffect.type !== "") {
+          item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
+        }
+
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
         item.active = true;
         player.addActiveItem(item);
@@ -233,6 +239,10 @@ export default function ItemBar(props) {
 
   const itemMissivesChanged = (event) => {
     setMissives(event.target.value);
+  };
+
+  const itemEffectChanged = (event) => {
+    setItemEffect(event.target.value);
   };
 
   const [openAuto, setOpenAuto] = React.useState(false);
@@ -287,16 +297,17 @@ export default function ItemBar(props) {
 
   }*/
 
-  const isItemCrafted = (getItemDB("Retail")
-    .filter((key) => key.id === itemID)
-    .map((key) => key.crafted)[0]) || false; // Change this to crafted.
+  const isItemCrafted = (getItemProp(itemID, "crafted", gameType)); // Change this to crafted.
+
+  const itemEffectOptions = getItemEffectOptions(itemID, gameType);
 
   const availableFields = {
     name: true,
     itemLevel: true,
-    socket: gameType === "Retail",
+    socket: gameType === "Retail" && CONSTANTS.socketSlots.includes(getItemProp(itemID, "slot", gameType)),
     tertiaries: !(isItemCrafted) && gameType === "Retail",
     missives: isItemCrafted || itemID === 228843,
+    specialEffect: itemEffectOptions.length > 0,
   }
 
   const autoAddOptions = [
@@ -483,6 +494,36 @@ export default function ItemBar(props) {
                 <MenuItem key={"NoneItem"} label={t("None")} value={"None"} onClick={""}>
                   {t("None")}
                 </MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+        ) : (
+          ""
+        )}
+
+        {/* -------------------------------------------------------------------------- */
+        /*                              Item Effects                                   */
+        /* -------------------------------------------------------------------------- */}
+
+        {availableFields.specialEffect ? (
+          <Grid item>
+            <FormControl
+              className={classes.formControl}
+              variant="outlined"
+              size="small"
+              style={{ width: t("QuickCompare.ItemLevel").length > 10 ? 160 : 120 }}
+              disabled={false}
+            >
+              <InputLabel id="itemeffect">{t("QuickCompare.Effect")}</InputLabel>
+              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
+              {itemEffectOptions.map((key, i, arr) => {
+                    let lastItem = i + 1 === arr.length ? false : true;
+                    return (
+                      <MenuItem divider={lastItem} key={key.label} label={key.label} value={key.label}>
+                        {key.label}
+                      </MenuItem>
+                    );
+                  })}
               </Select>
             </FormControl>
           </Grid>
