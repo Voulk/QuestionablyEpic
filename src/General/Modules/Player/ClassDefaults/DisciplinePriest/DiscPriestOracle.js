@@ -1,4 +1,4 @@
-import { allRamps, allRampsHealing } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
+import { allRamps, allRampsHealing } from "./DiscRampUtilities";
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 export const discPriestOracleSpellData = (contentType) => {

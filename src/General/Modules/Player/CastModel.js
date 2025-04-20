@@ -13,6 +13,8 @@ import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriest
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
+import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
+
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
@@ -213,26 +215,32 @@ class CastModel {
     
     // Classic Profiles
     else if (spec === "Restoration Druid Classic") {
+      this.modelName = "Default";
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Holy Priest Classic") {
+      this.modelName = "Default";
       this.profile = holyPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Holy Paladin Classic") {
+      this.modelName = "Default";
       this.profile = holyPaladinDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Discipline Priest Classic") {
+      this.modelName = "Default";
       this.profile = discPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Restoration Shaman Classic") {
+      this.modelName = "Default";
       spellList = {};
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } 
     else if (spec === "Mistweaver Monk Classic") {
+      this.modelName = "Default";
       spellList = {};
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } 
