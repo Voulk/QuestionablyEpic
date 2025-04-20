@@ -10,7 +10,7 @@ import { classColours } from "General/Engine/ClassData";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
-import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+//import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";

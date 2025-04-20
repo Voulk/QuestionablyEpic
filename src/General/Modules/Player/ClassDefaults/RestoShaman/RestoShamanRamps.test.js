@@ -1,4 +1,4 @@
-import { getSpellRaw, runCastSequence } from "../Shaman/RestoShamanRamps";
+import { getSpellRaw, runCastSequence } from "./RestoShamanRamps";
 
 
 

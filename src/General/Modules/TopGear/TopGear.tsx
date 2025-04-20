@@ -26,7 +26,7 @@ import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
-import { buildDifferential, generateReportCode } from "./Engine/TopGearEngineShared";
+import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
 
 type ShortReport = {
   id: string;
@@ -126,6 +126,8 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 }));
+
+
 
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -611,10 +613,7 @@ export default function TopGear(props: any) {
   // We'll run our Engine in a separate thread to avoid blocking the UI.
   const runWorker = (gameType: gameTypes, args: any) => {
     return new Promise((resolve, reject) => {
-      const worker = new Worker(
-        new URL('./TopGearWorker.js', import.meta.url),
-        { type: 'module' }
-      );
+      const worker = createTopGearWorker();
   
       worker.onmessage = (event) => {
         const { success, result, error } = event.data;
