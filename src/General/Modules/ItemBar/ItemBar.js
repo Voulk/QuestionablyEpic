@@ -300,6 +300,18 @@ export default function ItemBar(props) {
     missives: isItemCrafted || itemID === 228843,
   }
 
+  const autoAddOptions = [
+    { label: "372 Gear", value: 372, gameType: "Classic" },
+    { label: "378 Gear", value: 378, gameType: "Classic" },
+    { label: "391 Gear", value: 391, gameType: "Classic" },
+    { label: "397 Gear", value: 397, gameType: "Classic" },
+    { label: "410 Gear", value: 410, gameType: "Classic" },
+
+    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine" },
+    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine" },
+    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons" },
+  ]
+
   return (
     <Paper
       id="itemBarPaper"
@@ -511,7 +523,7 @@ export default function ItemBar(props) {
           </Alert>
         </Snackbar>
       </Grid>
-      {gameType === "Classic" ? <Grid 
+      <Grid 
         container
         justifyContent="center"
         alignItems="center"
@@ -523,32 +535,24 @@ export default function ItemBar(props) {
           paddingBottom: "10px",
       }}>
         <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
-        <Grid item>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(372, props.player, "Classic")}>{"372 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(378, props.player, "Classic")}>{"378 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150, marginRight: 1 }} color="primary" onClick={() => autoFillItems(391, props.player, "Classic")}>{"391 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(397, props.player, "Classic")}>{"397 Gear"}</Button>
-          <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(410, props.player, "Classic")}>{"410 Gear"}</Button>
+        <Grid item xs={12}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: 1, 
+            mt: 1,
+          }}
+        >
+          {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
+            return (
+              <Button key={option.label} variant="contained" sx={{ minWidth: 150 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>{option.label}</Button>
+            )
+          })}
+        </Box>
         </Grid>
-      </Grid> : 
-       <Grid 
-       container
-       justifyContent="center"
-       alignItems="center"
-       direction="column"
-
-       spacing={1}
-       sx={{
-         paddingTop: "30px",
-         paddingBottom: "10px",
-     }}>
-       <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
-       <Grid item>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(665, props.player, "Retail", "Undermine")}>{"Undermine H"}</Button>
-         <Button variant="contained" sx={{width: 150, marginRight: 1}} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "Undermine")}>{"Undermine M"}</Button>
-         <Button variant="contained" sx={{width: 150 }} color="primary" onClick={() => autoFillItems(678, props.player, "Retail", "S2 Dungeons")}>{"S2 Mythic+"}</Button>
-       </Grid>
-     </Grid>}
+      </Grid>
     </Paper>
   );
 }
