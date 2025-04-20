@@ -12,7 +12,7 @@ import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMe
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 
 import socketImage from "Images/Resources/EmptySocket.png";
 import blueSocket from "Images/Resources/socketBlue.png";

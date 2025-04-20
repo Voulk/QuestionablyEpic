@@ -5,7 +5,7 @@ import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typogra
 import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 import {
   checkDefaultSocket,
   getTranslatedItemName,

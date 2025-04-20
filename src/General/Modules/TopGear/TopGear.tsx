@@ -20,7 +20,7 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { patronColor, patronCaps } from "General/Modules/SetupAndMenus/Header/PatronColors";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { Item } from "General/Modules/Player/Item";
+import { Item } from "General/Items/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import TopGearReforgePanel from "./TopGearReforgePanel";

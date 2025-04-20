@@ -1,7 +1,7 @@
 
 import Player from "General/Modules/Player/Player";
 import { buildNewWepCombos, getItemProp } from "General/Engine/ItemUtilities"
-import { Item } from "General/Modules/Player/Item"
+import { Item } from "General/Items/Item"
 import { createStore } from 'redux';
 import rootReducer from "Redux/Reducers/RootReducer";
 import { composeWithDevTools } from '@redux-devtools/extension';

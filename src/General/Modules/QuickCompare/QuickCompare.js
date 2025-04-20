@@ -15,7 +15,7 @@ import ItemBar from "../ItemBar/ItemBar";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import { Item } from "General/Modules/Player/Item"
+import { Item } from "General/Items/Item"
 import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({

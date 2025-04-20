@@ -9,7 +9,7 @@ import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from ".
 import { getEffectValue } from "../../Retail/Engine/EffectFormulas/EffectEngine";
 import SPEC from "./SPECS";
 import { translatedStat, STATDIMINISHINGRETURNS } from "./STAT";
-import Item from "../Modules/Player/Item";
+import Item from "../Items/Item";
 import { reportError } from "../SystemTools/ErrorLogging/ErrorReporting";
 import { CONSTANTS } from "./CONSTANTS";
 import { gemDB } from "Databases/GemDB";

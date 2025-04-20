@@ -2,7 +2,7 @@
 import SPEC from "../../Engine/SPECS";
 import STAT, { STATCONVERSION } from "../../Engine/STAT";
 import { itemDB } from "Databases/ItemDB";
-import Item from "./Item";
+import Item from "../../Items/Item";
 import { scoreItem } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
