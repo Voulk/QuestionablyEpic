@@ -6,7 +6,6 @@ import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
 import Item from "../Player/Item";
-import ClassicItem from "../Player/ClassicItem";
 import {
   checkDefaultSocket,
   getTranslatedItemName,

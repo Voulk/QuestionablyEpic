@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../Player/Item";
-import ClassicItem from "../Player/ClassicItem";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
 import BCChart from "./Charts/ClassicTrinketChart";

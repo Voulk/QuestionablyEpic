@@ -79,7 +79,6 @@ export default function QEMainMenu(props: Props) {
     disabled: boolean;
     tooltip: string;
     type: string;
-    order: number;
     localization: string;
     glow: boolean;
   }
@@ -88,29 +87,29 @@ export default function QEMainMenu(props: Props) {
     gameType === "Retail"
       ? [
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradefinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
-          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 2, localization: "MainMenu.TrinketAnalysis", glow: false },
-          { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", order: 3, localization: "MainMenu.EmbellishmentAnalysis", glow: false },
-          { route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", order: 3, localization: "MainMenu.CyrcesCirclet", glow: false },
-          { route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
+          { route: "/upgradefinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", localization: "MainMenu.EmbellishmentAnalysis", glow: false },
+          { route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", localization: "MainMenu.CyrcesCirclet", glow: false },
+          //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
           // Tools
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
           //{ route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
           //{ route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
-          { route: "/sequenceGen", disabled: true, tooltip: "SequenceSandbox", type: "Tools", order: 3, localization: "MainMenu.SequenceSandbox", glow: false },
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 4, localization: "MainMenu.Profile", glow: false },
+          { route: "/spelldata", disabled: true, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },
         ]
       : [ // Classic
           // Gearing
-          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", order: 0, localization: "MainMenu.TopGear", glow: true },
-          { route: "/UpgradeFinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", order: 1, localization: "MainMenu.UpgradeFinder", glow: false },
-          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", order: 3, localization: "MainMenu.TrinketAnalysis", glow: false },
-          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", order: 4, localization: "MainMenu.TierSets", glow: false },
-          //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 2, localization: "MainMenu.QuickCompare", glow: false },
-          { route: "/sequenceGen", disabled: false, tooltip: "SequenceSandbox", type: "Tools", order: 5, localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
+          { route: "/upgradefinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
+          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
+          //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", localization: "MainMenu.QuickCompare", glow: false },
+          { route: "/spelldata", disabled: false, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           // Tools
-          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", order: 0, localization: "MainMenu.Profile", glow: false },
+          { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },
         ];
 
   const filterByType = (type: string) => mainMenuOptions.filter((item) => item.type === type);
@@ -120,7 +119,7 @@ export default function QEMainMenu(props: Props) {
 
   const generateButtons = (items: MainMenuOption[]) =>
     items
-      .sort((a, b) => a.order - b.order)
+      //.sort((a, b) => a.order - b.order)
       .map((key, index) => (
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={index}>
           <Button
