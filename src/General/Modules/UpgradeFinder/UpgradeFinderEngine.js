@@ -1,7 +1,7 @@
-import { itemDB, tokenDB } from "../../../Databases/ItemDB";
+
 import Item from "../../Items/Item";
 import { runTopGear } from "../TopGear/Engine/TopGearEngine";
-import { calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
+import { getItemDB, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/itemLevelsDB";
@@ -220,6 +220,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
   let itemPoss = [];
 
   // Grab items.
+  const itemDB = getItemDB("Retail");
   for (var i = 0; i < itemDB.length; i++) {
     const rawItem = itemDB[i];
     if ("sources" in rawItem && checkItemViable(rawItem, player)) {

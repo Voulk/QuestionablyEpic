@@ -2,6 +2,9 @@
 import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
 import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Divider } from "@mui/material";
 
+/***
+ * @deprecated
+ */
 export default function EmbellishmentDeepDive(props) {
     const itemCardData = props.itemCardData;
     const categories = ["Items", "Item Attachments"]

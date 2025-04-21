@@ -1,4 +1,4 @@
-import { classicItemDB} from "../../../Databases/ClassicItemDB";
+import classicItemDB from "Databases/ClassicItemDB.json";
 import Item from "../../Items/Item";
 import { runTopGearClassic, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
 import {

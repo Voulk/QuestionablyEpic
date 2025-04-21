@@ -1,9 +1,8 @@
 
 import SPEC from "../../Engine/SPECS";
 import STAT, { STATCONVERSION } from "../../Engine/STAT";
-import { itemDB } from "Databases/ItemDB";
 import Item from "../../Items/Item";
-import { scoreItem } from "../../Engine/ItemUtilities";
+import { scoreItem, getItemDB } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
@@ -244,7 +243,7 @@ export class Player {
       "Preservation Evoker": "Opulent Treasurescale's",
     };
 
-    const temp = itemDB.filter(function (item) {
+    const temp = getItemDB("Retail").filter(function (item) {
       return item.slot === slot && item.name.includes(classTag[pClass]);
     });
 

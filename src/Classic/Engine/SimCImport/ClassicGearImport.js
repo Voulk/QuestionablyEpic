@@ -1,4 +1,3 @@
-import { classicItemDB} from "../../../Databases/ClassicItemDB";
 import { autoAddItems, calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
 import Item from "General/Items/Item";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
