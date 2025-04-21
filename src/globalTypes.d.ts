@@ -28,6 +28,7 @@ declare type ItemEffect = {
     name: string;
     level?: number;
     onUse?: boolean;
+    class?: string; // Only used for effectEngine routing so could be refactored later.
 }
 
 

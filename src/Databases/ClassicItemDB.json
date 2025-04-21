@@ -40519,6 +40519,30 @@
         }
     },
     {
+        "name": "Titan-Forged Armwraps of Dominance",
+        "id": 48974,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Titan-Forged Armwraps of Dominance",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_09",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Wrist",
+        "itemLevel": 226,
+        "class": "Druid",
+        "stats": {
+            "intellect": 63,
+            "stamina": 90,
+            "hit": 42
+        }
+    },
+    {
         "name": "Etched Loop of the Kirin Tor",
         "id": 48955,
         "quality": 4,
@@ -40563,30 +40587,6 @@
             "stamina": 94,
             "crit": 41,
             "haste": 43
-        }
-    },
-    {
-        "name": "Titan-Forged Armwraps of Dominance",
-        "id": 48974,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Titan-Forged Armwraps of Dominance",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracer_09",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Wrist",
-        "itemLevel": 226,
-        "class": "Druid",
-        "stats": {
-            "intellect": 63,
-            "stamina": 90,
-            "hit": 42
         }
     },
     {
@@ -40958,6 +40958,38 @@
         }
     },
     {
+        "name": "Relentless Gladiator's Blade of Alacrity",
+        "id": 49189,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Relentless Gladiator's Blade of Alacrity",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_knife_1h_pvp320_c_02",
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "slot": "1H Weapon",
+        "itemLevel": 245,
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "spellpower": 5
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 111,
+            "spellpower": 777,
+            "haste": 41
+        }
+    },
+    {
         "name": "Relentless Gladiator's Cord of Alacrity",
         "id": 49179,
         "quality": 4,
@@ -41086,38 +41118,6 @@
             "intellect": 80,
             "stamina": 113,
             "haste": 53
-        }
-    },
-    {
-        "name": "Relentless Gladiator's Blade of Alacrity",
-        "id": 49189,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Relentless Gladiator's Blade of Alacrity",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_knife_1h_pvp320_c_02",
-        "itemClass": 2,
-        "itemSubClass": 15,
-        "slot": "1H Weapon",
-        "itemLevel": 245,
-        "sockets": {
-            "gems": [
-                "blue"
-            ],
-            "bonus": {
-                "spellpower": 5
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 111,
-            "spellpower": 777,
-            "haste": 41
         }
     },
     {
@@ -42344,40 +42344,6 @@
             "crit": 51,
             "spellpower": 777,
             "hit": 44
-        }
-    },
-    {
-        "name": "Dying Light",
-        "id": 50181,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Dying Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_staff_106",
-        "itemClass": 2,
-        "itemSubClass": 10,
-        "slot": "2H Weapon",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "yellow",
-                "blue"
-            ],
-            "bonus": {
-                "spellpower": 7
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 293,
-            "spellpower": 928,
-            "spirit": 121,
-            "haste": 121
         }
     },
     {
@@ -44440,6 +44406,40 @@
             "stamina": 231,
             "haste": 84,
             "spirit": 108
+        }
+    },
+    {
+        "name": "Dying Light",
+        "id": 50181,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Dying Light",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_106",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 264,
+        "sockets": {
+            "gems": [
+                "yellow",
+                "blue"
+            ],
+            "bonus": {
+                "spellpower": 7
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 293,
+            "spellpower": 928,
+            "spirit": 121,
+            "haste": 121
         }
     },
     {
@@ -47025,39 +47025,6 @@
             "spellpower": 992,
             "spirit": 130,
             "haste": 130
-        }
-    },
-    {
-        "name": "Lockjaw",
-        "id": 51875,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Lockjaw",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_mace_118",
-        "itemClass": 2,
-        "itemSubClass": 4,
-        "slot": "1H Weapon",
-        "itemLevel": 264,
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "spellpower": 5
-            }
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 117,
-            "spellpower": 928,
-            "haste": 51,
-            "spirit": 58
         }
     },
     {
@@ -61736,6 +61703,39 @@
         }
     },
     {
+        "name": "Lockjaw",
+        "id": 51875,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Lockjaw",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_118",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 264,
+        "sockets": {
+            "gems": [
+                "red"
+            ],
+            "bonus": {
+                "spellpower": 5
+            }
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 117,
+            "spellpower": 928,
+            "haste": 51,
+            "spirit": 58
+        }
+    },
+    {
         "name": "Kilt of Untreated Wounds",
         "id": 51882,
         "quality": 4,
@@ -62632,40 +62632,6 @@
         }
     },
     {
-        "name": "Sea Star",
-        "id": 55256,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Sea Star",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_datacrystal05",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 308,
-        "effect": {
-            "type": "trinket",
-            "name": "Sea Star"
-        },
-        "sources": [
-            {
-                "encounterId": 65,
-                "instanceId": -1,
-                "difficulty": 0
-            }
-        ],
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 200
-        }
-    },
-    {
         "name": "Figurine - Demon Panther",
         "id": 52199,
         "quality": 3,
@@ -62859,33 +62825,6 @@
         "stats": {
             "intellect": 285,
             "stamina": 0
-        }
-    },
-    {
-        "name": "Rainsong",
-        "id": 55854,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Rainsong",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_elemental_mote_water01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Trinket",
-        "itemLevel": 316,
-        "effect": {
-            "type": "trinket",
-            "name": "Rainsong"
-        },
-        "stats": {
-            "intellect": 0,
-            "stamina": 0,
-            "spirit": 215
         }
     },
     {
@@ -66315,6 +66254,40 @@
         }
     },
     {
+        "name": "Sea Star",
+        "id": 55256,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Sea Star",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_datacrystal05",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 308,
+        "effect": {
+            "type": "trinket",
+            "name": "Sea Star"
+        },
+        "sources": [
+            {
+                "encounterId": 65,
+                "instanceId": -1,
+                "difficulty": 0
+            }
+        ],
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "spirit": 200
+        }
+    },
+    {
         "name": "Pipefish Cord",
         "id": 55258,
         "quality": 3,
@@ -68513,6 +68486,33 @@
             "stamina": 108,
             "haste": 52,
             "spirit": 41
+        }
+    },
+    {
+        "name": "Rainsong",
+        "id": 55854,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Rainsong",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_elemental_mote_water01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 316,
+        "effect": {
+            "type": "trinket",
+            "name": "Rainsong"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "spirit": 215
         }
     },
     {
@@ -88259,30 +88259,6 @@
         }
     },
     {
-        "name": "Firm Grips",
-        "id": 61434,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Firm Grips",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlets_leather_cataclysm_b_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Hands",
-        "itemLevel": 305,
-        "stats": {
-            "intellect": 153,
-            "stamina": 230,
-            "crit": 85,
-            "mastery": 112
-        }
-    },
-    {
         "name": "Vicious Gladiator's Spellblade",
         "id": 61329,
         "quality": 4,
@@ -88986,6 +88962,30 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
+        }
+    },
+    {
+        "name": "Firm Grips",
+        "id": 61434,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Firm Grips",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Hands",
+        "itemLevel": 305,
+        "stats": {
+            "intellect": 153,
+            "stamina": 230,
+            "crit": 85,
+            "mastery": 112
         }
     },
     {
@@ -97442,6 +97442,36 @@
         }
     },
     {
+        "name": "Bloodthirsty Gladiator's Satin Robe",
+        "id": 64842,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Bloodthirsty Gladiator's Satin Robe",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_pvppriest_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 352,
+        "sockets": {
+            "gems": [
+                "red",
+                "yellow"
+            ]
+        },
+        "class": "Priest",
+        "stats": {
+            "intellect": 280,
+            "stamina": 480,
+            "crit": 173
+        }
+    },
+    {
         "name": "Bloodthirsty Gladiator's Drape of Prowess",
         "id": 64734,
         "quality": 3,
@@ -99253,36 +99283,6 @@
             "intellect": 218,
             "stamina": 357,
             "haste": 138
-        }
-    },
-    {
-        "name": "Bloodthirsty Gladiator's Satin Robe",
-        "id": 64842,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Bloodthirsty Gladiator's Satin Robe",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_robe_pvppriest_c_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 352,
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ]
-        },
-        "class": "Priest",
-        "stats": {
-            "intellect": 280,
-            "stamina": 480,
-            "crit": 173
         }
     },
     {
@@ -111837,78 +111837,6 @@
         }
     },
     {
-        "name": "Belt of Redeemed Fate",
-        "id": 67103,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Belt of Redeemed Fate",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_26",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Waist",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 146,
-            "stamina": 219,
-            "spirit": 97,
-            "mastery": 97
-        }
-    },
-    {
-        "name": "Torchlight Wand",
-        "id": 67104,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Torchlight Wand",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_1h_cataclysm_c_02",
-        "itemClass": 2,
-        "itemSubClass": 19,
-        "slot": "Relics & Wands",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 62,
-            "stamina": 93,
-            "spirit": 41,
-            "haste": 41
-        }
-    },
-    {
-        "name": "Elementbinder Grips",
-        "id": 67105,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Elementbinder Grips",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Hands",
-        "itemLevel": 300,
-        "stats": {
-            "intellect": 146,
-            "stamina": 219,
-            "spirit": 97,
-            "crit": 97
-        }
-    },
-    {
         "name": "Falling Snow Bracers",
         "id": 67088,
         "quality": 3,
@@ -112030,6 +111958,78 @@
             "stamina": 275,
             "spirit": 107,
             "crit": 131
+        }
+    },
+    {
+        "name": "Belt of Redeemed Fate",
+        "id": 67103,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Belt of Redeemed Fate",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_26",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 300,
+        "stats": {
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 97,
+            "mastery": 97
+        }
+    },
+    {
+        "name": "Torchlight Wand",
+        "id": 67104,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Torchlight Wand",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_1h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "slot": "Relics & Wands",
+        "itemLevel": 300,
+        "stats": {
+            "intellect": 62,
+            "stamina": 93,
+            "spirit": 41,
+            "haste": 41
+        }
+    },
+    {
+        "name": "Elementbinder Grips",
+        "id": 67105,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Elementbinder Grips",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Hands",
+        "itemLevel": 300,
+        "stats": {
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 97,
+            "crit": 97
         }
     },
     {
@@ -117672,6 +117672,12 @@
         "itemSubClass": 1,
         "slot": "Chest",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 338,
             "stamina": 507,
@@ -117695,6 +117701,12 @@
         "itemSubClass": 1,
         "slot": "Feet",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 251,
             "stamina": 377,
@@ -117718,6 +117730,12 @@
         "itemSubClass": 1,
         "slot": "Waist",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 251,
             "stamina": 377,
@@ -117741,6 +117759,12 @@
         "itemSubClass": 1,
         "slot": "Wrist",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 188,
             "stamina": 282,
@@ -117764,6 +117788,12 @@
         "itemSubClass": 1,
         "slot": "Shoulder",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 251,
             "stamina": 377,
@@ -117787,6 +117817,12 @@
         "itemSubClass": 1,
         "slot": "Hands",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 251,
             "stamina": 377,
@@ -117810,6 +117846,12 @@
         "itemSubClass": 1,
         "slot": "Legs",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 338,
             "stamina": 507,
@@ -117833,6 +117875,12 @@
         "itemSubClass": 1,
         "slot": "Head",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 338,
             "stamina": 507,
@@ -117856,6 +117904,12 @@
         "itemSubClass": 1,
         "slot": "Back",
         "itemLevel": 358,
+        "sources": [
+            {
+                "instanceId": -30,
+                "cost": 0
+            }
+        ],
         "stats": {
             "intellect": 188,
             "stamina": 282,
@@ -127649,7 +127703,7 @@
             {
                 "instanceId": -5,
                 "encounterId": -5,
-                "difficulty": 0
+                "cost": 2200
             }
         ]
     },
@@ -127815,7 +127869,7 @@
             {
                 "instanceId": -5,
                 "encounterId": -5,
-                "difficulty": 0
+                "cost": 2200
             }
         ]
     },
@@ -128219,30 +128273,6 @@
         }
     },
     {
-        "name": "Amulet of Burning Brilliance",
-        "id": 71213,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Amulet of Burning Brilliance",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_necklace_18",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Neck",
-        "itemLevel": 378,
-        "stats": {
-            "intellect": 227,
-            "stamina": 341,
-            "hit": 119,
-            "crit": 171
-        }
-    },
-    {
         "name": "Crystalline Brimstone Ring",
         "id": 71210,
         "quality": 4,
@@ -128283,11 +128313,41 @@
         "itemSubClass": 0,
         "slot": "Finger",
         "itemLevel": 378,
+        "sources": [
+            {
+                "instanceId": -5,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 227,
             "stamina": 341,
             "spirit": 156,
             "crit": 144
+        }
+    },
+    {
+        "name": "Amulet of Burning Brilliance",
+        "id": 71213,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Amulet of Burning Brilliance",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_18",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "hit": 119,
+            "crit": 171
         }
     },
     {
@@ -128307,6 +128367,12 @@
         "itemSubClass": 0,
         "slot": "Neck",
         "itemLevel": 378,
+        "sources": [
+            {
+                "instanceId": -5,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 227,
             "stamina": 341,
@@ -128667,6 +128733,12 @@
         "itemSubClass": 1,
         "slot": "Wrist",
         "itemLevel": 378,
+        "sources": [
+            {
+                "instanceId": -5,
+                "cost": 1250
+            }
+        ],
         "stats": {
             "intellect": 227,
             "stamina": 341,
@@ -128777,7 +128849,7 @@
             {
                 "instanceId": -5,
                 "encounterId": -5,
-                "difficulty": 0
+                "cost": 2200
             }
         ]
     },
@@ -134708,40 +134780,6 @@
         }
     },
     {
-        "name": "Leggings of Nature's Champion",
-        "id": 71986,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Leggings of Nature's Champion",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_pant_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Legs",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow",
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 30
-            }
-        },
-        "stats": {
-            "intellect": 426,
-            "stamina": 730,
-            "spirit": 296,
-            "haste": 292
-        }
-    },
-    {
         "name": "Lavaquake Legwraps",
         "id": 71980,
         "quality": 4,
@@ -134841,6 +134879,40 @@
             "stamina": 730,
             "haste": 256,
             "spirit": 323
+        }
+    },
+    {
+        "name": "Leggings of Nature's Champion",
+        "id": 71986,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Leggings of Nature's Champion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pant_leather_raiddruid_k_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 397,
+        "sockets": {
+            "gems": [
+                "red",
+                "yellow",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "stats": {
+            "intellect": 426,
+            "stamina": 730,
+            "spirit": 296,
+            "haste": 292
         }
     },
     {
@@ -135040,6 +135112,37 @@
             "stamina": 406,
             "spirit": 177,
             "haste": 139
+        }
+    },
+    {
+        "name": "Ruthless Gladiator's Kodohide Robes",
+        "id": 72348,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Ruthless Gladiator's Kodohide Robes",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_leather_pvpdruid_c_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Chest",
+        "itemLevel": 390,
+        "sockets": {
+            "gems": [
+                "red",
+                "yellow"
+            ]
+        },
+        "class": "Druid",
+        "itemSetId": 923,
+        "stats": {
+            "intellect": 415,
+            "stamina": 683,
+            "spirit": 264
         }
     },
     {
@@ -135760,37 +135863,6 @@
             "intellect": 415,
             "stamina": 683,
             "crit": 264
-        }
-    },
-    {
-        "name": "Ruthless Gladiator's Kodohide Robes",
-        "id": 72348,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ruthless Gladiator's Kodohide Robes",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_leather_pvpdruid_c_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Chest",
-        "itemLevel": 390,
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ]
-        },
-        "class": "Druid",
-        "itemSetId": 923,
-        "stats": {
-            "intellect": 415,
-            "stamina": 683,
-            "spirit": 264
         }
     },
     {
@@ -137861,6 +137933,30 @@
         }
     },
     {
+        "name": "Magesoul Leggings",
+        "id": 72625,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Magesoul Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_cloth_19",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 232,
+        "stats": {
+            "intellect": 91,
+            "stamina": 136,
+            "crit": 53,
+            "haste": 65
+        }
+    },
+    {
         "name": "Magesoul Robe",
         "id": 72621,
         "quality": 2,
@@ -137954,30 +138050,6 @@
             "stamina": 136,
             "haste": 53,
             "mastery": 65
-        }
-    },
-    {
-        "name": "Magesoul Leggings",
-        "id": 72625,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Magesoul Leggings",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_pants_cloth_19",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Legs",
-        "itemLevel": 232,
-        "stats": {
-            "intellect": 91,
-            "stamina": 136,
-            "crit": 53,
-            "haste": 65
         }
     },
     {
@@ -141495,6 +141567,30 @@
         }
     },
     {
+        "name": "Dreadsoul Ring of Destruction",
+        "id": 73107,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Dreadsoul Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_47",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 232,
+        "stats": {
+            "intellect": 50,
+            "stamina": 76,
+            "haste": 26,
+            "crit": 38
+        }
+    },
+    {
         "name": "Magesoul Stone of Destruction",
         "id": 73101,
         "quality": 2,
@@ -141643,30 +141739,6 @@
         "stats": {
             "intellect": 85,
             "stamina": 0
-        }
-    },
-    {
-        "name": "Dreadsoul Ring of Destruction",
-        "id": 73107,
-        "quality": 2,
-        "names": {
-            "cn": "",
-            "en": "Dreadsoul Ring of Destruction",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_jewelry_ring_47",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Finger",
-        "itemLevel": 232,
-        "stats": {
-            "intellect": 50,
-            "stamina": 76,
-            "haste": 26,
-            "crit": 38
         }
     },
     {
@@ -144295,6 +144367,36 @@
         }
     },
     {
+        "name": "Cataclysmic Gladiator's Satin Robe",
+        "id": 73541,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Cataclysmic Gladiator's Satin Robe",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_robe_robe_pvppriest_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 403,
+        "sockets": {
+            "gems": [
+                "red",
+                "yellow"
+            ]
+        },
+        "class": "Priest",
+        "stats": {
+            "intellect": 474,
+            "stamina": 771,
+            "crit": 303
+        }
+    },
+    {
         "name": "Cataclysmic Gladiator's Waistguard of Meditation",
         "id": 73522,
         "quality": 4,
@@ -144516,36 +144618,6 @@
             "intellect": 362,
             "stamina": 573,
             "haste": 235
-        }
-    },
-    {
-        "name": "Cataclysmic Gladiator's Satin Robe",
-        "id": 73541,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Satin Robe",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_robe_robe_pvppriest_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 403,
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ]
-        },
-        "class": "Priest",
-        "stats": {
-            "intellect": 474,
-            "stamina": 771,
-            "crit": 303
         }
     },
     {
@@ -144792,6 +144864,36 @@
             "intellect": 362,
             "stamina": 573,
             "haste": 235
+        }
+    },
+    {
+        "name": "Cataclysmic Gladiator's Silk Cowl",
+        "id": 73575,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Cataclysmic Gladiator's Silk Cowl",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_robe_pvpmage_d_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 403,
+        "sockets": {
+            "gems": [
+                "meta",
+                "red"
+            ]
+        },
+        "class": "Mage",
+        "stats": {
+            "intellect": 454,
+            "stamina": 771,
+            "mastery": 283
         }
     },
     {
@@ -145213,36 +145315,6 @@
             "intellect": 474,
             "stamina": 771,
             "haste": 303
-        }
-    },
-    {
-        "name": "Cataclysmic Gladiator's Silk Cowl",
-        "id": 73575,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Cataclysmic Gladiator's Silk Cowl",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_helmet_robe_pvpmage_d_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Head",
-        "itemLevel": 403,
-        "sockets": {
-            "gems": [
-                "meta",
-                "red"
-            ]
-        },
-        "class": "Mage",
-        "stats": {
-            "intellect": 454,
-            "stamina": 771,
-            "mastery": 283
         }
     },
     {
@@ -148254,6 +148326,29 @@
         }
     },
     {
+        "name": "Vicious Charscale Shoulders",
+        "id": 75061,
+        "quality": 3,
+        "names": {
+            "cn": "",
+            "en": "Vicious Charscale Shoulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_mail_dungeonmail_c_04",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Shoulder",
+        "itemLevel": 377,
+        "stats": {
+            "intellect": 300,
+            "stamina": 450,
+            "hit": 152
+        }
+    },
+    {
         "name": "Vicious Fireweave Cowl",
         "id": 75062,
         "quality": 3,
@@ -148297,29 +148392,6 @@
             "intellect": 300,
             "stamina": 450,
             "mastery": 200
-        }
-    },
-    {
-        "name": "Vicious Charscale Shoulders",
-        "id": 75061,
-        "quality": 3,
-        "names": {
-            "cn": "",
-            "en": "Vicious Charscale Shoulders",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shoulder_mail_dungeonmail_c_04",
-        "itemClass": 4,
-        "itemSubClass": 3,
-        "slot": "Shoulder",
-        "itemLevel": 377,
-        "stats": {
-            "intellect": 300,
-            "stamina": 450,
-            "hit": 152
         }
     },
     {
@@ -149271,30 +149343,6 @@
         }
     },
     {
-        "name": "Evergreen Wristbands",
-        "id": 76150,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Evergreen Wristbands",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_bracers_leather_dungeonleather_c_05",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Wrist",
-        "itemLevel": 378,
-        "stats": {
-            "intellect": 226,
-            "stamina": 341,
-            "crit": 162,
-            "mastery": 133
-        }
-    },
-    {
         "name": "Cloak of Subtle Light",
         "id": 76151,
         "quality": 4,
@@ -149315,6 +149363,30 @@
             "intellect": 226,
             "stamina": 341,
             "spirit": 162,
+            "mastery": 133
+        }
+    },
+    {
+        "name": "Evergreen Wristbands",
+        "id": 76150,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Evergreen Wristbands",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracers_leather_dungeonleather_c_05",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Wrist",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 226,
+            "stamina": 341,
+            "crit": 162,
             "mastery": 133
         }
     },
@@ -149700,6 +149772,75 @@
         }
     },
     {
+        "name": "Mantle of Dying Light",
+        "id": 76344,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Mantle of Dying Light",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_robe_raidpriest_k_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Shoulder",
+        "itemLevel": 397,
+        "sockets": {
+            "gems": [
+                "red",
+                "red"
+            ],
+            "bonus": {
+                "intellect": 20
+            }
+        },
+        "class": "Priest",
+        "stats": {
+            "intellect": 321,
+            "stamina": 542,
+            "crit": 187,
+            "mastery": 233
+        }
+    },
+    {
+        "name": "Robes of Dying Light",
+        "id": 76345,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Robes of Dying Light",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_raidpriest_k_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 397,
+        "sockets": {
+            "gems": [
+                "red",
+                "red",
+                "yellow"
+            ],
+            "bonus": {
+                "intellect": 30
+            }
+        },
+        "class": "Priest",
+        "stats": {
+            "intellect": 426,
+            "stamina": 730,
+            "spirit": 266,
+            "haste": 319
+        }
+    },
+    {
         "name": "Mantle of the Faceless Shroud",
         "id": 76339,
         "quality": 4,
@@ -149868,75 +150009,6 @@
             "stamina": 542,
             "hit": 197,
             "mastery": 255
-        }
-    },
-    {
-        "name": "Mantle of Dying Light",
-        "id": 76344,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Mantle of Dying Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_shoulder_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Shoulder",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "red",
-                "red"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "class": "Priest",
-        "stats": {
-            "intellect": 321,
-            "stamina": 542,
-            "crit": 187,
-            "mastery": 233
-        }
-    },
-    {
-        "name": "Robes of Dying Light",
-        "id": 76345,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Robes of Dying Light",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_chest_robe_raidpriest_k_01",
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "slot": "Chest",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "red",
-                "red",
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 30
-            }
-        },
-        "class": "Priest",
-        "stats": {
-            "intellect": 426,
-            "stamina": 730,
-            "spirit": 266,
-            "haste": 319
         }
     },
     {
@@ -150253,47 +150325,6 @@
         ]
     },
     {
-        "name": "Deep Earth Handwraps",
-        "id": 76749,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Deep Earth Handwraps",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_glove_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Hands",
-        "itemLevel": 397,
-        "sockets": {
-            "gems": [
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "class": "Druid",
-        "itemSetId": 1060,
-        "stats": {
-            "intellect": 341,
-            "stamina": 542,
-            "spirit": 237,
-            "mastery": 223
-        },
-        "sources": [
-            {
-                "instanceId": 187,
-                "encounterId": 324,
-                "difficulty": 0
-            }
-        ]
-    },
-    {
         "name": "Deep Earth Helm",
         "id": 76750,
         "quality": 4,
@@ -150331,6 +150362,47 @@
             {
                 "instanceId": 187,
                 "encounterId": 332,
+                "difficulty": 0
+            }
+        ]
+    },
+    {
+        "name": "Deep Earth Handwraps",
+        "id": 76749,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Deep Earth Handwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_glove_leather_raiddruid_k_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Hands",
+        "itemLevel": 397,
+        "sockets": {
+            "gems": [
+                "blue"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "class": "Druid",
+        "itemSetId": 1060,
+        "stats": {
+            "intellect": 341,
+            "stamina": 542,
+            "spirit": 237,
+            "mastery": 223
+        },
+        "sources": [
+            {
+                "instanceId": 187,
+                "encounterId": 324,
                 "difficulty": 0
             }
         ]
@@ -151209,6 +151281,12 @@
         "itemSubClass": 19,
         "slot": "Relics & Wands",
         "itemLevel": 397,
+        "sources": [
+            {
+                "instanceId": -6,
+                "cost": 700
+            }
+        ],
         "stats": {
             "intellect": 153,
             "stamina": 230,
@@ -153404,6 +153482,45 @@
         }
     },
     {
+        "name": "Ledger of Revolting Rituals",
+        "id": 77245,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Ledger of Revolting Rituals",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_offhand_1h_deathwingraid_d_01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Offhand",
+        "itemLevel": 397,
+        "sources": [
+            {
+                "encounterId": 331,
+                "instanceId": 187,
+                "difficulty": 0
+            }
+        ],
+        "sockets": {
+            "gems": [
+                "red"
+            ],
+            "bonus": {
+                "intellect": 10
+            }
+        },
+        "stats": {
+            "intellect": 251,
+            "stamina": 406,
+            "spirit": 173,
+            "haste": 166
+        }
+    },
+    {
         "name": "Imperfect Specimens 27 and 28",
         "id": 77242,
         "quality": 4,
@@ -153521,45 +153638,6 @@
             "stamina": 542,
             "spirit": 224,
             "haste": 213
-        }
-    },
-    {
-        "name": "Ledger of Revolting Rituals",
-        "id": 77245,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Ledger of Revolting Rituals",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_offhand_1h_deathwingraid_d_01",
-        "itemClass": 4,
-        "itemSubClass": 0,
-        "slot": "Offhand",
-        "itemLevel": 397,
-        "sources": [
-            {
-                "encounterId": 331,
-                "instanceId": 187,
-                "difficulty": 0
-            }
-        ],
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 251,
-            "stamina": 406,
-            "spirit": 173,
-            "haste": 166
         }
     },
     {
@@ -157080,6 +157158,40 @@
         }
     },
     {
+        "name": "Maw of the Dragonlord",
+        "id": 78476,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Maw of the Dragonlord",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_1h_deathwingraiddw_d_01",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 416,
+        "effect": {
+            "type": "special",
+            "name": "Maw of the Dragonlord"
+        },
+        "sources": [
+            {
+                "encounterId": 333,
+                "instanceId": 187,
+                "difficulty": 1
+            }
+        ],
+        "stats": {
+            "intellect": 249,
+            "stamina": 373,
+            "spellpower": 3324
+        }
+    },
+    {
         "name": "Belt of Shattered Elementium",
         "id": 78463,
         "quality": 4,
@@ -157296,40 +157408,6 @@
         "itemSubClass": 15,
         "slot": "1H Weapon",
         "itemLevel": 416,
-        "sources": [
-            {
-                "encounterId": 333,
-                "instanceId": 187,
-                "difficulty": 1
-            }
-        ],
-        "stats": {
-            "intellect": 249,
-            "stamina": 373,
-            "spellpower": 3324
-        }
-    },
-    {
-        "name": "Maw of the Dragonlord",
-        "id": 78476,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Maw of the Dragonlord",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_mace_1h_deathwingraiddw_d_01",
-        "itemClass": 2,
-        "itemSubClass": 4,
-        "slot": "1H Weapon",
-        "itemLevel": 416,
-        "effect": {
-            "type": "special",
-            "name": "Maw of the Dragonlord"
-        },
         "sources": [
             {
                 "encounterId": 333,
@@ -157790,39 +157868,6 @@
         }
     },
     {
-        "name": "Boots of Fungoid Growth",
-        "id": 78517,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Boots of Fungoid Growth",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_boot_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Feet",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "red",
-                "yellow"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 368,
-            "stamina": 611,
-            "spirit": 247,
-            "haste": 257
-        }
-    },
-    {
         "name": "Kavan's Forsaken Treads",
         "id": 78518,
         "quality": 4,
@@ -157917,38 +157962,6 @@
             "stamina": 611,
             "spirit": 285,
             "mastery": 224
-        }
-    },
-    {
-        "name": "Fungus-Born Gloves",
-        "id": 78531,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Fungus-Born Gloves",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_glove_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Hands",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "red"
-            ],
-            "bonus": {
-                "intellect": 10
-            }
-        },
-        "stats": {
-            "intellect": 388,
-            "stamina": 611,
-            "spirit": 280,
-            "haste": 233
         }
     },
     {
@@ -158179,39 +158192,6 @@
             "stamina": 611,
             "spirit": 206,
             "mastery": 270
-        }
-    },
-    {
-        "name": "Belt of Universal Curing",
-        "id": 78566,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Belt of Universal Curing",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_belt_leather_raiddruid_k_01",
-        "itemClass": 4,
-        "itemSubClass": 2,
-        "slot": "Waist",
-        "itemLevel": 410,
-        "sockets": {
-            "gems": [
-                "red",
-                "blue"
-            ],
-            "bonus": {
-                "intellect": 20
-            }
-        },
-        "stats": {
-            "intellect": 368,
-            "stamina": 611,
-            "spirit": 250,
-            "haste": 248
         }
     },
     {
@@ -158880,36 +158860,6 @@
             "hit": 86,
             "mastery": 93
         }
-    },
-    {
-        "name": "Scintillating Rods",
-        "id": 78628,
-        "quality": 4,
-        "names": {
-            "cn": "",
-            "en": "Scintillating Rods",
-            "ru": "",
-            "es": "",
-            "fr": "",
-            "de": ""
-        },
-        "icon": "inv_wand_1h_deathwingraid_d_02",
-        "itemClass": 2,
-        "itemSubClass": 19,
-        "slot": "Relics & Wands",
-        "itemLevel": 384,
-        "stats": {
-            "intellect": 135,
-            "stamina": 203,
-            "spirit": 99,
-            "haste": 75
-        },
-        "sources": [
-            {
-                "instanceId": -6,
-                "cost": 750
-            }
-        ]
     },
     {
         "name": "Mindbender Lens",
@@ -160899,7 +160849,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161074,7 +161024,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -161147,7 +161097,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -161253,7 +161203,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -161328,7 +161278,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161404,7 +161354,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161479,7 +161429,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161623,7 +161573,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161735,7 +161685,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -161813,7 +161763,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -162031,7 +161981,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -162073,7 +162023,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 55
             }
         ]
     },
@@ -162254,7 +162204,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -162363,7 +162313,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -162404,7 +162354,7 @@
         "sources": [
             {
                 "instanceId": -8,
-                "cost": 0
+                "cost": 45
             }
         ]
     },
@@ -162639,6 +162589,4234 @@
         }
     },
     {
+        "name": "Naturalist Bracers",
+        "id": 92077,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Bracers",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_82",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "hit": 145,
+            "mastery": 96
+        }
+    },
+    {
+        "name": "Naturalist Bindings",
+        "id": 92080,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Bindings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_82",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "crit": 136,
+            "mastery": 111
+        }
+    },
+    {
+        "name": "Enlightened Wristwraps",
+        "id": 92081,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Wristwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "hit": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Partisan Armplates",
+        "id": 92082,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Armplates",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 111,
+            "crit": 136
+        }
+    },
+    {
+        "name": "Deliverer Bindings",
+        "id": 92085,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Bindings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "crit": 145,
+            "mastery": 96
+        }
+    },
+    {
+        "name": "Deliverer Wristwraps",
+        "id": 92086,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Wristwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "spirit": 136,
+            "mastery": 111
+        }
+    },
+    {
+        "name": "Thundercaller Armbands",
+        "id": 92088,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Armbands",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Thundercaller Bracers",
+        "id": 92090,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Bracers",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Soulseizer Wristwraps",
+        "id": 92092,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Wristwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Naturalist Waistband",
+        "id": 92096,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Waistband",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_103",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 169,
+            "spirit": 169
+        }
+    },
+    {
+        "name": "Enlightened Cord",
+        "id": 92097,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Cord",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 181,
+            "crit": 148
+        }
+    },
+    {
+        "name": "Partisan Belt",
+        "id": 92098,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Belt",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 148,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Deliverer Sash",
+        "id": 92101,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Sash",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 181,
+            "haste": 148
+        }
+    },
+    {
+        "name": "Deliverer Cord",
+        "id": 92102,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Cord",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "spirit": 169,
+            "haste": 169
+        }
+    },
+    {
+        "name": "Thundercaller Belt",
+        "id": 92104,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Belt",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 128,
+            "haste": 193
+        }
+    },
+    {
+        "name": "Thundercaller Girdle",
+        "id": 92106,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Girdle",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 148,
+            "spirit": 181
+        }
+    },
+    {
+        "name": "Soulseizer Cord",
+        "id": 92108,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Cord",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "hit": 181,
+            "crit": 148
+        }
+    },
+    {
+        "name": "Deliverer Idol of Destruction",
+        "id": 92113,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Idol of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Deliverer Idol of Destruction"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Partisan Defender Stone",
+        "id": 92114,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Defender Stone",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Partisan Defender Stone"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Deliverer Stone of Wisdom",
+        "id": 92115,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Stone of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Deliverer Stone of Wisdom"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Thundercaller Idol of Rage",
+        "id": 92116,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Idol of Rage",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Thundercaller Idol of Rage"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Darkwalker Idol of Rage",
+        "id": 92118,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Darkwalker Idol of Rage",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Darkwalker Idol of Rage"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Thundercaller Stone of Destruction",
+        "id": 92119,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Stone of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Thundercaller Stone of Destruction"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Thundercaller Idol of Destruction",
+        "id": 92120,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Idol of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Thundercaller Idol of Destruction"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Thundercaller Stone of Wisdom",
+        "id": 92122,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Stone of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Thundercaller Stone of Wisdom"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Thundercaller Idol of Wisdom",
+        "id": 92123,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Idol of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Thundercaller Idol of Wisdom"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Soulseizer Stone of Destruction",
+        "id": 92124,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Stone of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Soulseizer Stone of Destruction"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Soulseizer Idol of Destruction",
+        "id": 92125,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Idol of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Soulseizer Idol of Destruction"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Martial Defender Stone",
+        "id": 92126,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Martial Defender Stone",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Martial Defender Stone"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Martial Defender Idol",
+        "id": 92127,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Martial Defender Idol",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Martial Defender Idol"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Martial Idol of Battle",
+        "id": 92128,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Martial Idol of Battle",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Martial Idol of Battle"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "crit": 321
+        }
+    },
+    {
+        "name": "Naturalist Belt",
+        "id": 92132,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Belt",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_103",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Naturalist Idol of Rage",
+        "id": 92133,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Idol of Rage",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Naturalist Idol of Rage"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Scourgeheart Defender Stone",
+        "id": 92134,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Scourgeheart Defender Stone",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Scourgeheart Defender Stone"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Scourgeheart Defender Idol",
+        "id": 92135,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Scourgeheart Defender Idol",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Scourgeheart Defender Idol"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Naturalist Stone of Destruction",
+        "id": 92136,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Stone of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Naturalist Stone of Destruction"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Naturalist Idol of Destruction",
+        "id": 92137,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Idol of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Naturalist Idol of Destruction"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Naturalist Stone of Wisdom",
+        "id": 92139,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Stone of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Naturalist Stone of Wisdom"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Naturalist Idol of Wisdom",
+        "id": 92140,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Idol of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Naturalist Idol of Wisdom"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Forestwalker Idol of Rage",
+        "id": 92142,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Forestwalker Idol of Rage",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Forestwalker Idol of Rage"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Enlightened Stone of Destruction",
+        "id": 92143,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Stone of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Enlightened Stone of Destruction"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Enlightened Idol of Destruction",
+        "id": 92144,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Idol of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Enlightened Idol of Destruction"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Partisan Stone of Wisdom",
+        "id": 92145,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Stone of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Partisan Stone of Wisdom"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Partisan Idol of Wisdom",
+        "id": 92146,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Idol of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Partisan Idol of Wisdom"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Partisan Defender Idol",
+        "id": 92147,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Defender Idol",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Partisan Defender Idol"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Partisan Idol of Battle",
+        "id": 92148,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Idol of Battle",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Partisan Idol of Battle"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "crit": 321
+        }
+    },
+    {
+        "name": "Deliverer Idol of Wisdom",
+        "id": 92150,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Idol of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Deliverer Idol of Wisdom"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Deliverer Stone of Destruction",
+        "id": 92151,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Stone of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Deliverer Stone of Destruction"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Enlightened Shoulderpads",
+        "id": 92154,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Shoulderpads",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "hit": 193,
+            "mastery": 128
+        }
+    },
+    {
+        "name": "Partisan Spaulders",
+        "id": 92155,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Spaulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "mastery": 169
+        }
+    },
+    {
+        "name": "Deliverer Mantle",
+        "id": 92158,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Mantle",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 128,
+            "crit": 193
+        }
+    },
+    {
+        "name": "Deliverer Shoulderpads",
+        "id": 92159,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Shoulderpads",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 128,
+            "spirit": 193
+        }
+    },
+    {
+        "name": "Thundercaller Pauldrons",
+        "id": 92161,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Pauldrons",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 128,
+            "crit": 193
+        }
+    },
+    {
+        "name": "Soulseizer Shoulderpads",
+        "id": 92163,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Shoulderpads",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 128,
+            "crit": 193
+        }
+    },
+    {
+        "name": "Thundercaller Spaulders",
+        "id": 92164,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Spaulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Scourgeheart Idol of Battle",
+        "id": 92167,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Scourgeheart Idol of Battle",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Scourgeheart Idol of Battle"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "crit": 321
+        }
+    },
+    {
+        "name": "Enlightened Robe",
+        "id": 92169,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Robe",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 228,
+            "hit": 228
+        }
+    },
+    {
+        "name": "Deliverer Robe",
+        "id": 92170,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Robe",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 228,
+            "mastery": 228
+        }
+    },
+    {
+        "name": "Deliverer Vestments",
+        "id": 92171,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Vestments",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "spirit": 259,
+            "haste": 173
+        }
+    },
+    {
+        "name": "Soulseizer Robe",
+        "id": 92172,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Robe",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 228,
+            "hit": 228
+        }
+    },
+    {
+        "name": "Partisan Shield",
+        "id": 92174,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Shield",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shield_cataclysm_c_01 ",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "slot": "Shield",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 111,
+            "mastery": 136
+        }
+    },
+    {
+        "name": "Thundercaller Aegis",
+        "id": 92175,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Aegis",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shield_cataclysm_c_01 ",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "slot": "Shield",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 111,
+            "crit": 136
+        }
+    },
+    {
+        "name": "Thundercaller Shield",
+        "id": 92176,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Shield",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shield_cataclysm_c_01 ",
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "slot": "Shield",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "spirit": 111,
+            "mastery": 136
+        }
+    },
+    {
+        "name": "Naturalist Spaulders",
+        "id": 92180,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Spaulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_152",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 181,
+            "mastery": 148
+        }
+    },
+    {
+        "name": "Naturalist Shoulders",
+        "id": 92181,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Shoulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_152",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 181,
+            "spirit": 148
+        }
+    },
+    {
+        "name": "Deliverer Necklace",
+        "id": 92183,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Necklace",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Deliverer Medallion",
+        "id": 92184,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Medallion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Thundercaller Medallion",
+        "id": 92187,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Medallion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Thundercaller Necklace",
+        "id": 92188,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Necklace",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Soulseizer Medallion",
+        "id": 92189,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Medallion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Enlightened Wand",
+        "id": 92194,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Wand",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_1h_cataclysm_c_01 ",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "slot": "Relics & Wands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 107,
+            "stamina": 161,
+            "haste": 72,
+            "crit": 72
+        }
+    },
+    {
+        "name": "Deliverer Wand",
+        "id": 92195,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Wand",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_1h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "slot": "Relics & Wands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 107,
+            "stamina": 161,
+            "haste": 72,
+            "crit": 72
+        }
+    },
+    {
+        "name": "Soulseizer Wand",
+        "id": 92196,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Wand",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_wand_1h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 19,
+        "slot": "Relics & Wands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 107,
+            "stamina": 161,
+            "haste": 72,
+            "crit": 72
+        }
+    },
+    {
+        "name": "Soulseizer Leggings",
+        "id": 92198,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 200,
+            "haste": 244
+        }
+    },
+    {
+        "name": "Thundercaller Leggings",
+        "id": 92199,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 228,
+            "haste": 228
+        }
+    },
+    {
+        "name": "Partisan Scepter",
+        "id": 92202,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Scepter",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_1h_cataclysm_c_05",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 105,
+            "haste": 86,
+            "spellpower": 1954
+        }
+    },
+    {
+        "name": "Thundercaller Gavel",
+        "id": 92205,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Gavel",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_1h_cataclysm_c_05",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 146,
+            "stamina": 219,
+            "mastery": 105,
+            "haste": 86,
+            "spellpower": 1954
+        }
+    },
+    {
+        "name": "Thundercaller Scepter",
+        "id": 92206,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Scepter",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_mace_1h_cataclysm_c_05",
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "slot": "1H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 146,
+            "stamina": 219,
+            "spirit": 97,
+            "haste": 97,
+            "spellpower": 1954
+        }
+    },
+    {
+        "name": "Naturalist Medallion",
+        "id": 92210,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Medallion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Naturalist Necklace",
+        "id": 92211,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Necklace",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Enlightened Medallion",
+        "id": 92212,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Medallion",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "crit": 127
+        }
+    },
+    {
+        "name": "Partisan Necklace",
+        "id": 92214,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Necklace",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Thundercaller Coif",
+        "id": 92216,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Coif",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 244,
+            "haste": 200
+        }
+    },
+    {
+        "name": "Soulseizer Cowl",
+        "id": 92218,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Cowl",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 228,
+            "crit": 228
+        }
+    },
+    {
+        "name": "Thundercaller Cowl",
+        "id": 92219,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Cowl",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 244,
+            "spirit": 200
+        }
+    },
+    {
+        "name": "Naturalist Leggings",
+        "id": 92225,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_43",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 244,
+            "haste": 200
+        }
+    },
+    {
+        "name": "Naturalist Britches",
+        "id": 92226,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Britches",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_43",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 259,
+            "mastery": 173
+        }
+    },
+    {
+        "name": "Enlightened Leggings",
+        "id": 92228,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "hit": 200,
+            "haste": 244
+        }
+    },
+    {
+        "name": "Partisan Leggings",
+        "id": 92229,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 259,
+            "haste": 173
+        }
+    },
+    {
+        "name": "Deliverer Leggings",
+        "id": 92232,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Leggings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 200,
+            "haste": 244
+        }
+    },
+    {
+        "name": "Deliverer Pants",
+        "id": 92233,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Pants",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 228,
+            "crit": 228
+        }
+    },
+    {
+        "name": "Thundercaller Legwraps",
+        "id": 92235,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Legwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "spirit": 173,
+            "mastery": 259
+        }
+    },
+    {
+        "name": "Thundercaller Gloves",
+        "id": 92236,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Gloves",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 181,
+            "mastery": 148
+        }
+    },
+    {
+        "name": "Soulseizer Handwraps",
+        "id": 92238,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Handwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "mastery": 169
+        }
+    },
+    {
+        "name": "Thundercaller Grips",
+        "id": 92239,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Grips",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Naturalist Headpiece",
+        "id": 92245,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Headpiece",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_192",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 228,
+            "haste": 228
+        }
+    },
+    {
+        "name": "Naturalist Hood",
+        "id": 92246,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Hood",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_192",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 244,
+            "spirit": 200
+        }
+    },
+    {
+        "name": "Enlightened Hood",
+        "id": 92249,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Hood",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 200,
+            "mastery": 244
+        }
+    },
+    {
+        "name": "Partisan Headpiece",
+        "id": 92250,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Headpiece",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 244,
+            "crit": 200
+        }
+    },
+    {
+        "name": "Deliverer Hood",
+        "id": 92252,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Hood",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 259,
+            "crit": 173
+        }
+    },
+    {
+        "name": "Deliverer Cowl",
+        "id": 92253,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Cowl",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 259,
+            "spirit": 173
+        }
+    },
+    {
+        "name": "Thundercaller Ring of Wisdom",
+        "id": 92255,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Ring of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Soulseizer Band of Destruction",
+        "id": 92256,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Band of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Soulseizer Ring of Destruction",
+        "id": 92257,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "hit": 145,
+            "crit": 96
+        }
+    },
+    {
+        "name": "Naturalist Grips",
+        "id": 92265,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Grips",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_125",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "spirit": 181,
+            "haste": 148
+        }
+    },
+    {
+        "name": "Naturalist Gloves",
+        "id": 92266,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Gloves",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_125",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "haste": 169
+        }
+    },
+    {
+        "name": "Enlightened Handwraps",
+        "id": 92269,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Handwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "mastery": 169
+        }
+    },
+    {
+        "name": "Partisan Gloves",
+        "id": 92270,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Gloves",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_glove_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "mastery": 169,
+            "spirit": 169
+        }
+    },
+    {
+        "name": "Deliverer Handwraps",
+        "id": 92272,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Handwraps",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "haste": 169
+        }
+    },
+    {
+        "name": "Deliverer Gloves",
+        "id": 92273,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Gloves",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "spirit": 181,
+            "mastery": 148
+        }
+    },
+    {
+        "name": "Enlightened Band of Destruction",
+        "id": 92275,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Band of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Enlightened Ring of Destruction",
+        "id": 92276,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Partisan Ring of Wisdom",
+        "id": 92277,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Ring of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Partisan Band of Wisdom",
+        "id": 92278,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Band of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Deliverer Band of Destruction",
+        "id": 92281,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Band of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Deliverer Ring of Destruction",
+        "id": 92282,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Deliverer Band of Wisdom",
+        "id": 92285,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Band of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Deliverer Ring of Wisdom",
+        "id": 92286,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Ring of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Thundercaller Band of Destruction",
+        "id": 92289,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Band of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Thundercaller Ring of Destruction",
+        "id": 92290,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Thundercaller Band of Wisdom",
+        "id": 92293,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Band of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Deliverer Boots",
+        "id": 92294,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Boots",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 181,
+            "crit": 148
+        }
+    },
+    {
+        "name": "Thundercaller Boots",
+        "id": 92296,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Boots",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 148,
+            "spirit": 181
+        }
+    },
+    {
+        "name": "Soulseizer Sandals",
+        "id": 92298,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Sandals",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 193,
+            "hit": 128
+        }
+    },
+    {
+        "name": "Thundercaller Sabatons",
+        "id": 92299,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Sabatons",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 169,
+            "mastery": 169
+        }
+    },
+    {
+        "name": "Naturalist Band of Destruction",
+        "id": 92308,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Band of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "mastery": 127
+        }
+    },
+    {
+        "name": "Naturalist Ring of Destruction",
+        "id": 92309,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Ring of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Naturalist Band of Wisdom",
+        "id": 92310,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Band of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Naturalist Ring of Wisdom",
+        "id": 92311,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Ring of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Deliverer Cloak of Destruction",
+        "id": 92315,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Cloak of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Thundercaller Cloak of Destruction",
+        "id": 92317,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Cloak of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Thundercaller Cloak of Wisdom",
+        "id": 92318,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Cloak of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Soulseizer Cloak of Destruction",
+        "id": 92320,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Cloak of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "hit": 127
+        }
+    },
+    {
+        "name": "Naturalist Treads",
+        "id": 92325,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Treads",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_leather_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "haste": 181
+        }
+    },
+    {
+        "name": "Naturalist Boots",
+        "id": 92326,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Boots",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_leather_15",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Enlightened Sandals",
+        "id": 92329,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Sandals",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 193,
+            "hit": 128
+        }
+    },
+    {
+        "name": "Partisan Boots",
+        "id": 92330,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Boots",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 181,
+            "mastery": 148
+        }
+    },
+    {
+        "name": "Deliverer Sandals",
+        "id": 92332,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Sandals",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_robe_dungeonrobe_c_03",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "spirit": 181,
+            "crit": 148
+        }
+    },
+    {
+        "name": "Partisan Breastplate",
+        "id": 92334,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Breastplate",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_plate_dungeonplate_c_03",
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 228,
+            "spirit": 228
+        }
+    },
+    {
+        "name": "Thundercaller Tunic",
+        "id": 92337,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Tunic",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 228,
+            "haste": 228
+        }
+    },
+    {
+        "name": "Thundercaller Vest",
+        "id": 92338,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Thundercaller Vest",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_mail_dungeonmail_c_03",
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 200,
+            "spirit": 244
+        }
+    },
+    {
+        "name": "Naturalist Cloak of Destruction",
+        "id": 92345,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Cloak of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Naturalist Cloak of Wisdom",
+        "id": 92346,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Cloak of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Enlightened Cloak of Destruction",
+        "id": 92348,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Cloak of Destruction",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "haste": 127
+        }
+    },
+    {
+        "name": "Partisan Cloak of Wisdom",
+        "id": 92349,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Partisan Cloak of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Deliverer Cloak of Wisdom",
+        "id": 92352,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Cloak of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Naturalist Stave",
+        "id": 92355,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Stave",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_stave_2h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 228,
+            "mastery": 228,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Naturalist Staff",
+        "id": 92358,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Staff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_116",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 244,
+            "spirit": 200,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Enlightened Staff",
+        "id": 92359,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Enlightened Staff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_stave_2h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 228,
+            "mastery": 228,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Deliverer Stave",
+        "id": 92361,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Stave",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_stave_2h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 244,
+            "mastery": 200,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Deliverer Staff",
+        "id": 92362,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Deliverer Staff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_116",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 200,
+            "spirit": 244,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Soulseizer Staff",
+        "id": 92365,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Soulseizer Staff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_stave_2h_cataclysm_c_02",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 200,
+            "crit": 244,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Naturalist Tunic",
+        "id": 92369,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Tunic",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_leather_31",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 244,
+            "mastery": 200
+        }
+    },
+    {
+        "name": "Naturalist Jerkin",
+        "id": 92370,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Naturalist Jerkin",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_leather_31",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 198,
+            "spirit": 198
+        }
+    },
+    {
+        "name": "Waterdancer Staff",
+        "id": 92373,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Staff",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_staff_116",
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "slot": "2H Weapon",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 244,
+            "spirit": 200,
+            "spellpower": 1955
+        }
+    },
+    {
+        "name": "Waterdancer Jerkin",
+        "id": 92374,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Jerkin",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_chest_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Chest",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "haste": 198,
+            "spirit": 198
+        }
+    },
+    {
+        "name": "Waterdancer Cloak of Wisdom",
+        "id": 92376,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Cloak of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_cataclysm_healer_c_01",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "mastery": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Waterdancer Boots",
+        "id": 92378,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Boots",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_boots_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Feet",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 148,
+            "mastery": 181
+        }
+    },
+    {
+        "name": "Waterdancer Ring of Wisdom",
+        "id": 92382,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Ring of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_95",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 96,
+            "crit": 145
+        }
+    },
+    {
+        "name": "Waterdancer Band of Wisdom",
+        "id": 92383,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Band of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_ring_98",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Waterdancer Gloves",
+        "id": 92386,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Gloves",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_gauntlets_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Hands",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "crit": 169,
+            "haste": 169
+        }
+    },
+    {
+        "name": "Waterdancer Hood",
+        "id": 92388,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Hood",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_helmet_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Head",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "mastery": 244,
+            "spirit": 200
+        }
+    },
+    {
+        "name": "Waterdancer Britches",
+        "id": 92390,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Britches",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_pants_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Legs",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 341,
+            "stamina": 512,
+            "crit": 259,
+            "mastery": 173
+        }
+    },
+    {
+        "name": "Waterdancer Necklace",
+        "id": 92393,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Necklace",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_54",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "haste": 127,
+            "spirit": 127
+        }
+    },
+    {
+        "name": "Waterdancer Shoulders",
+        "id": 92395,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Shoulders",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_shoulder_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Shoulder",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 181,
+            "spirit": 148
+        }
+    },
+    {
+        "name": "Waterdancer Idol of Wisdom",
+        "id": 92397,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Idol of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Waterdancer Idol of Wisdom"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Waterdancer Defender Stone",
+        "id": 92398,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Defender Stone",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Waterdancer Defender Stone"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Waterdancer Defender Idol",
+        "id": 92399,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Defender Idol",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Waterdancer Defender Idol"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 482
+        }
+    },
+    {
+        "name": "Waterdancer Idol of Rage",
+        "id": 92401,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Idol of Rage",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Waterdancer Idol of Rage"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "mastery": 321
+        }
+    },
+    {
+        "name": "Waterdancer Stone of Wisdom",
+        "id": 92402,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Stone of Wisdom",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cat_trinket01",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 359,
+        "effect": {
+            "type": "trinket",
+            "name": "Waterdancer Stone of Wisdom"
+        },
+        "stats": {
+            "intellect": 321,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Waterdancer Waistband",
+        "id": 92403,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Waistband",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_belt_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Waist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 253,
+            "stamina": 380,
+            "haste": 169,
+            "spirit": 169
+        }
+    },
+    {
+        "name": "Waterdancer Bindings",
+        "id": 92406,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Waterdancer Bindings",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_bracer_leather_cataclysm_b_01",
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "slot": "Wrist",
+        "itemLevel": 359,
+        "stats": {
+            "intellect": 190,
+            "stamina": 286,
+            "crit": 136,
+            "mastery": 111
+        }
+    },
+    {
         "name": "The Horseman's Seal",
         "id": 211844,
         "quality": 4,
@@ -162782,6 +166960,405 @@
             "intellect": 225,
             "stamina": 338,
             "haste": 150
+        }
+    },
+    {
+        "name": "Bitterer Balebrew Charm",
+        "id": 232017,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Bitterer Balebrew Charm",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_drink_04",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Bitterer Balebrew Charm"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 456
+        }
+    },
+    {
+        "name": "Coren's Chilled Chromium Coaster",
+        "id": 232012,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Coren's Chilled Chromium Coaster",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_talisman_08",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Coren's Chilled Chromium Coaster"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "crit": 304
+        }
+    },
+    {
+        "name": "Mithril Stopwatch",
+        "id": 232013,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Mithril Stopwatch",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_pocketwatch_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Mithril Stopwatch"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0,
+            "crit": 304
+        }
+    },
+    {
+        "name": "Petrified Pickled Egg",
+        "id": 232014,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Petrified Pickled Egg",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_egg_02",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Petrified Pickled Egg"
+        },
+        "stats": {
+            "intellect": 304,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Brawler's Trophy",
+        "id": 232015,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Brawler's Trophy",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_bone_08",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Brawler's Trophy"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 0
+        }
+    },
+    {
+        "name": "Bubblier Brightbrew Charm",
+        "id": 232016,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Bubblier Brightbrew Charm",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_drink_08",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Trinket",
+        "itemLevel": 353,
+        "effect": {
+            "type": "trinket",
+            "name": "Bubblier Brightbrew Charm"
+        },
+        "stats": {
+            "intellect": 0,
+            "stamina": 456
+        }
+    },
+    {
+        "name": "The Horseman's Signet",
+        "id": 232537,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "The Horseman's Signet",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_bag_28_halloween",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 353,
+        "stats": {
+            "intellect": 180,
+            "stamina": 269,
+            "haste": 129,
+            "hit": 105
+        }
+    },
+    {
+        "name": "Wicked Witch's Ring",
+        "id": 232540,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Wicked Witch's Ring",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_bag_28_halloween",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Finger",
+        "itemLevel": 353,
+        "stats": {
+            "intellect": 180,
+            "stamina": 269,
+            "crit": 120,
+            "spirit": 120
+        }
+    },
+    {
+        "name": "Heartbreak Charm",
+        "id": 238334,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Heartbreak Charm",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_23",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 147,
+            "haste": 154
+        }
+    },
+    {
+        "name": "Winking Eye of Love",
+        "id": 238335,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Winking Eye of Love",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_jewelry_necklace_27",
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "slot": "Neck",
+        "itemLevel": 378,
+        "stats": {
+            "intellect": 227,
+            "stamina": 341,
+            "crit": 154,
+            "spirit": 147
+        }
+    },
+    {
+        "name": "Secondhand Book of Healing",
+        "id": 209807,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Secondhand Book of Healing",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_relics_libramofhope",
+        "itemClass": 4,
+        "itemSubClass": 7,
+        "slot": "Relics & Wands",
+        "itemLevel": 232,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 28,
+            "stamina": 43,
+            "spirit": 19,
+            "crit": 19
+        }
+    },
+    {
+        "name": "Secondhand Idol of Wrath",
+        "id": 209809,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Secondhand Idol of Wrath",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_rune_10",
+        "itemClass": 4,
+        "itemSubClass": 8,
+        "slot": "Relics & Wands",
+        "itemLevel": 232,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 28,
+            "stamina": 43,
+            "haste": 19,
+            "crit": 19
+        }
+    },
+    {
+        "name": "Secondhand Totem of Restoration",
+        "id": 209811,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Secondhand Totem of Restoration",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_relics_totemoflife",
+        "itemClass": 4,
+        "itemSubClass": 9,
+        "slot": "Relics & Wands",
+        "itemLevel": 232,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 28,
+            "stamina": 43,
+            "spirit": 19,
+            "crit": 19
+        }
+    },
+    {
+        "name": "Secondhand Idol of Life",
+        "id": 209814,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Secondhand Idol of Life",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "spell_nature_natureresistancetotem",
+        "itemClass": 4,
+        "itemSubClass": 8,
+        "slot": "Relics & Wands",
+        "itemLevel": 232,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 28,
+            "stamina": 43,
+            "spirit": 19,
+            "crit": 19
+        }
+    },
+    {
+        "name": "Secondhand Totem of Lightning",
+        "id": 209815,
+        "quality": 2,
+        "names": {
+            "cn": "",
+            "en": "Secondhand Totem of Lightning",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "spell_arcane_blast",
+        "itemClass": 4,
+        "itemSubClass": 9,
+        "slot": "Relics & Wands",
+        "itemLevel": 232,
+        "sockets": {
+            "gems": [
+                "prismatic"
+            ]
+        },
+        "stats": {
+            "intellect": 28,
+            "stamina": 43,
+            "haste": 19,
+            "crit": 19
         }
     },
     {

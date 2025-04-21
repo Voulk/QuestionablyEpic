@@ -2,7 +2,7 @@
 export function getItemSet(id: number, pieces: number) {
   let effects = [];
   let temp = itemSets.filter(function (set) {
-    return set.id === parseInt(id);
+    return set.id === id;
   });
   if (temp.length > 0) {
     for (const [bonus, effectid] of Object.entries(temp[0].setBonuses)) {
