@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { reforgeIDs } from "Databases/ReforgeDB";
 
 function CompetitiveAlternatives(props) {

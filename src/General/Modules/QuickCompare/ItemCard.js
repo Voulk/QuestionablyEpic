@@ -10,9 +10,9 @@ import redSocket from "../../../Images/Resources/socketRed.png"
 import yellowSocket from "../../../Images/Resources/socketYellow.png"
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
+import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {

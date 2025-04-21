@@ -8,7 +8,7 @@ type GemEntry = {
     stats: { [key: string]: number };
   }
 
-  const gemDB: GemEntry[] = [
+export const gemDB: GemEntry[] = [
     {
       id: 213488,
       element: "Emerald",
@@ -71,6 +71,69 @@ type GemEntry = {
       name: "Masterful Ruby",
       icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color4_1",
       stats: { crit: 147, mastery: 49 },
-    }
+    },
+    {
+      id: 213455,
+      element: "Ruby",
+      name: "Quick Ruby",
+      icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color4_3",
+      stats: { crit: 147, haste: 49 },
+    },
+    {
+      id: 213461,
+      element: "Ruby",
+      name: "Versatile Ruby",
+      icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color4_2",
+      stats: { crit: 147, versatility: 49 },
+    },
+    {
+      id: 213464,
+      element: "Ruby",
+      name: "Deadly Ruby",
+      icon: "inv_jewelcrafting_cut-standart-gem_color5",
+      stats: { crit: 176 },
+    },
+    {
+      id: 213470,
+      element: "Sapphire",
+      name: "Quick Sapphire",
+      icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color5_3",
+      stats: { versatility: 147, haste: 49 },
+    },
+    {
+      id: 213473,
+      element: "Sapphire",
+      name: "Masterful Sapphire",
+      icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color5_1",
+      stats: { versatility: 147, mastery: 49 },
+    },
+    {
+      id: 213467,
+      element: "Sapphire",
+      name: "Deadly Sapphire",
+      icon: "inv_jewelcrafting_cut-standart-gem-hybrid_color5_2",
+      stats: { versatility: 147, crit: 49 },
+    },
+    {
+      id: 213476,
+      element: "Sapphire",
+      name: "Versatile Sapphire",
+      icon: "inv_jewelcrafting_cut-standart-gem_color3",
+      stats: { versatility: 176 },
+    },
+    {
+      id: 213743,
+      element: "Meta",
+      name: "Culminating Blasphemite",
+      icon: "item_cutmetagemb",
+      stats: { intellect: 181 },
+    },
+    {
+      id: 213746,
+      element: "Meta",
+      name: "Elusive Blasphemite",
+      icon: "inv_misc_gem_x4_metagem_cut",
+      stats: { intellect: 181 },
+    },
 ];
   

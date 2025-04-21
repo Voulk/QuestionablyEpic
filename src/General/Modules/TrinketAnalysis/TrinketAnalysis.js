@@ -20,7 +20,7 @@ import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/Class
 import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 
 function TabPanel(props) {
   const { children, value, index } = props;

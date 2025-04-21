@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Divider, Typography, Paper, useMediaQuery, useTheme, Grid } from "@mui/material";
 import { getItemIcon } from "General/Engine/ItemUtilities";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 
 interface Item {
   id: number;

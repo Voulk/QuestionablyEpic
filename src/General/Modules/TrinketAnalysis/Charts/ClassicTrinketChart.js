@@ -7,7 +7,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {

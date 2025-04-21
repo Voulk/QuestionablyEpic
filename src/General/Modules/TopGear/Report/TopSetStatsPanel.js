@@ -19,7 +19,7 @@ export default function TopSetStatsPanel(props) {
           ["Haste", statList.haste / STATCONVERSION.HASTE],
           ["Crit", statList.crit / STATCONVERSION.CRIT],
           ["Mastery", getMasteryPercentage(statList.mastery, props.spec)],
-          ["Versatility", statList.versatility / STATCONVERSION..VERSATILITY],
+          ["Versatility", statList.versatility / STATCONVERSION.VERSATILITY],
           ["Leech", statList.leech / STATCONVERSION.LEECH],
         ]
       : [

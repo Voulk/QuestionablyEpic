@@ -16,11 +16,10 @@ import { createPlayerChars } from "General/Modules/Player/PlayerChars";
 import TierSets from "./Classic/Modules/TierSets/TierSetModule";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
-import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import * as ls from "local-storage";
-import QESnackbar from "General/Modules/1. GeneralComponents/QESnackBar";
+import QESnackbar from "General/Modules/GeneralComponents/QESnackBar";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";

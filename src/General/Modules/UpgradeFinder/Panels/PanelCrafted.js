@@ -15,7 +15,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 
 export default function CraftedGearContainer(props) {
   const classes = dungeonStyles();

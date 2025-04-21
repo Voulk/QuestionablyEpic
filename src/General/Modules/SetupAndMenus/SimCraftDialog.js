@@ -13,8 +13,8 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
-import { runSimC } from "../../Items/GearImport/SimCImportEngine";
-import { runClassicGearImport } from "../../Items/ClassicGearImport";
+import { runSimC } from "General/Items/GearImport/SimCImportEngine";
+import { runClassicGearImport } from "General/Items/GearImport/ClassicImportEngine";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
 

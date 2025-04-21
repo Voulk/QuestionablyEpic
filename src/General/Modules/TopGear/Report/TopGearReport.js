@@ -13,8 +13,8 @@ import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
-import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox";
+import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";

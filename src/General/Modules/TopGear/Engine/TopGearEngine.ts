@@ -10,15 +10,13 @@ import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } fr
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { getItemSet } from "Classic/Databases/RetailItemSetDB.js";
+import { getItemSet } from "Classic/Databases/RetailItemSetDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData"
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { Console } from "console";
 
 /**
  * == Top Gear Engine ==
