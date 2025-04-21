@@ -1,6 +1,6 @@
 
 
-import ItemDetailCard from "../1. GeneralComponents/ItemDetailCard";
+import ItemDetailCard from "../GeneralComponents/ItemDetailCard";
 import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Divider } from "@mui/material";
 
 export default function TrinketDeepDive(props) {

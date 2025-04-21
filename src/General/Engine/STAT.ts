@@ -17,22 +17,6 @@ export const STAT = {
   SPEED: "speed",
 };
 
-// Mostly unused now.
-/**
- * @deprecated
- */
-export const BASESTAT = {
-  CRIT: 0.05,
-  MASTERY: { // This is not really used anymore.
-    "Preservation Evoker": 0,
-    "Restoration Druid": 0.04,
-    "Mistweaver Monk": 0.5544,
-    "Holy Paladin": 0.12,
-    "Holy Priest": 0.1,
-    "Discipline Priest": 0.108,
-    "Restoration Shaman": 0.25,
-  },
-};
 
 export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
   CRIT: [21000, 28000, 35000, 42000, 49000],
@@ -65,28 +49,8 @@ export const STATCONVERSION = {
 
 }
 
-/**
- * @deprecated
- */
-export const STATPERONEPERCENT = {
-  Retail: {
-    LEECH: 1020,
-    HASTE: 660,
-    CRIT: 700,
-    VERSATILITY: 780,
-    MASTERY: 700,
-    VERSATILITY_DR: 410,
-    MASTERYMULT: {
-      "Preservation Evoker": 1.8,
-      "Restoration Druid": 0.5,
-      "Mistweaver Monk": 6.93,
-      "Holy Paladin": 1.5,
-      "Holy Priest": 1.125,
-      "Discipline Priest": 1.35,
-      "Restoration Shaman": 3,
-    },
-
-  },
+  // Classic Stat percentages
+  /*
   Classic: {
     HASTE: 128,
     CRIT: 179, // 
@@ -100,10 +64,7 @@ export const STATPERONEPERCENT = {
       "Holy Priest": 80,
     },
     MANAINT: 15, // You get 15 mana per point of intellect.
-  }
-
-
-};
+  } */
 
 
 export const translatedStat = {

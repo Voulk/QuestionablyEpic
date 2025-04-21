@@ -3,6 +3,9 @@ import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/Embellis
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 import { getSetting, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
+/***
+ * @deprecated
+ */
 export const getEmbellishmentDescription = (embellishmentName, player, additionalData) => {
     let embData = embellishmentData.filter(emb => emb.name === embellishmentName || (emb.name === "Verdant Tether" && embellishmentName.includes("Verdant Tether")))[0];
     

@@ -13,8 +13,8 @@ import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
-import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox";
+import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
@@ -107,7 +107,7 @@ function TopGearReport(props) {
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
-        window.history.replaceState('QE Live Report', 'Title', 'ptr/report' + result.id);
+        window.history.replaceState('QE Live Report', 'Title', 'ptr/report/' + result.id);
         window.scrollTo(0, 0);
       }
       else {
@@ -378,6 +378,11 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                             {"Playstyle: " + player.model}
                                           </Typography>
                                         </Grid>
+                                        <Grid item xs={12}>
+                                          <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                          </Typography>
+                                        </Grid>
                                       </Grid>
                                     </Grid>
                                   ) : (
@@ -403,7 +408,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
+           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} gameType={gameType} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
           <Grid item style={{ height: 60 }} xs={12} />

@@ -8,14 +8,14 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB, craftedDB } from "../../../../Databases/InstanceDB";
-import { itemLevels } from "../../../../Databases/itemLevelsDB";
+import { itemLevels } from "../../../../Databases/ItemLevelsDB";
 import { useSelector } from "react-redux";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 
 export default function CraftedGearContainer(props) {
   const classes = dungeonStyles();

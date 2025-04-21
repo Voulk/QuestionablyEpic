@@ -47,6 +47,7 @@ import ZandalariMale from "Images/Races/Zandalari/ZandalariMale.jpg";
 import ZandalariFemale from "Images/Races/Zandalari/ZandalariFemale.jpg";
 import Dracthyr from "Images/Races/Dracthyr/ui_dracthyr.jpg";
 
+// Yeah look we're just going to come back to this.
 export default function raceIcons(props) {
   let sourceMale = "";
   let sourceFemale = "";

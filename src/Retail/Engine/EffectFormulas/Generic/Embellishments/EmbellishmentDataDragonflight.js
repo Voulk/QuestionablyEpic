@@ -1,4 +1,4 @@
-import { itemLevels } from "Databases/itemLevelsDB";
+import { itemLevels } from "Databases/ItemLevelsDB";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
 

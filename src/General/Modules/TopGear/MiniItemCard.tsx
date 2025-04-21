@@ -8,10 +8,10 @@ import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import CardActionArea from "@mui/material/CardActionArea";
-import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
+import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 import Item from "../../Items/Item";
 
 import socketImage from "Images/Resources/EmptySocket.png";

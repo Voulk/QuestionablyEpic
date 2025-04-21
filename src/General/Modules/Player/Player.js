@@ -1,9 +1,8 @@
 
 import SPEC from "../../Engine/SPECS";
-import STAT, { STATCONVERSION } from "../../Engine/STAT";
-import { itemDB } from "Databases/ItemDB";
+import { STATCONVERSION } from "../../Engine/STAT";
 import Item from "../../Items/Item";
-import { scoreItem } from "../../Engine/ItemUtilities";
+import { scoreItem, getItemDB } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
@@ -244,7 +243,7 @@ export class Player {
       "Preservation Evoker": "Opulent Treasurescale's",
     };
 
-    const temp = itemDB.filter(function (item) {
+    const temp = getItemDB("Retail").filter(function (item) {
       return item.slot === slot && item.name.includes(classTag[pClass]);
     });
 
@@ -329,7 +328,6 @@ export class Player {
     newItem.selectedOptions = selectedOption;
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
-    console.log(selectedOption);
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -596,34 +594,6 @@ export class Player {
     activeModel.setDefaults(this.spec, contentType, activeModel.modelName);
   };
 
-  setDefaultWeights = (spec, contentType) => {
-    if (spec === SPEC.RESTODRUID) {
-      this.statWeights[contentType] = druidDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.HOLYPALADIN) {
-      this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.DISCPRIEST) {
-      this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.HOLYPRIEST) {
-      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.MISTWEAVERMONK) {
-      this.statWeights[contentType] = monkDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.RESTOSHAMAN) {
-      this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.PRESEVOKER) {
-      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else {
-      // Invalid spec replied. Error.
-      reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
-      throw new Error("Invalid Spec Supplied");
-    }
-  };
 
   // Consider replacing this with an external table for cleanliness and ease of editing.
   setupDefaults = (spec) => {
@@ -646,11 +616,6 @@ export class Player {
         versatility: 5500,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = druidDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
-      */
     } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
@@ -676,18 +641,14 @@ export class Player {
         versatility: 11000,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = shamanDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
-      */
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
 
       this.activeStats = {
-        intellect: 85000, // 32k
+        intellect: 85000, 
         haste: 17000,
         crit: 10000,
         mastery: 9800,
@@ -721,10 +682,6 @@ export class Player {
           versatility: 3400,
           stamina: 30000,
         }
-      /*
-      this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
         { identifier: "Yu'lon", content: "Raid" },
@@ -741,10 +698,6 @@ export class Player {
         versatility: 8000,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = monkDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } 
     else if (spec.includes("Classic")) {
       //console.log("Setting up classic spec");

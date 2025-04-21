@@ -1,6 +1,6 @@
 
 const softSlice = 25;
-import { gemDB } from "Databases/GemDB";
+import { classicGemDB } from "Databases/ClassicGemDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
@@ -337,7 +337,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
     const socketedGemStats = [];
     itemList.forEach(item => {
       item.socketedGems.forEach(gemID => {
-        socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
+        socketedGemStats.push(classicGemDB.filter(gem => gem.id === gemID)[0].stats);
       });
 
       if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {

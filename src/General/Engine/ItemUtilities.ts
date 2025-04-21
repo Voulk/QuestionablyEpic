@@ -1,8 +1,8 @@
-import { itemDB } from "Databases/ItemDB";
+import itemDB from "Databases/ItemDB.json";
 import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
-import { classicItemDB } from "Databases/ClassicItemDB";
+import classicItemDB from "Databases/ClassicItemDB.json";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
