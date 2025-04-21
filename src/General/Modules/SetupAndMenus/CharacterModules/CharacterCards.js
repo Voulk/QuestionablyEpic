@@ -53,9 +53,8 @@ import { getTranslatedStats } from "locale/statsLocale.js";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
-  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
+  "Preservation Evoker": require("Images/EvokerSmall2.jpg"),
   "Restoration Druid": require("Images/DruidSmall.jpg"),
-  "Preservation Evoker": require("Images/EvokerSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
   "Discipline Priest": require("Images/DiscSmall.jpg"),
   "Holy Paladin": require("Images/PaladinSmall.png"),

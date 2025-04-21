@@ -616,11 +616,6 @@ export class Player {
         versatility: 5500,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = druidDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = druidDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
-      */
     } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
@@ -650,9 +645,10 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
 
       this.activeStats = {
-        intellect: 85000, // 32k
+        intellect: 85000, 
         haste: 17000,
         crit: 10000,
         mastery: 9800,
@@ -686,10 +682,6 @@ export class Player {
           versatility: 3400,
           stamina: 30000,
         }
-      /*
-      this.statWeights.Raid = holyPriestDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = holyPriestDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
         { identifier: "Yu'lon", content: "Raid" },
@@ -706,10 +698,6 @@ export class Player {
         versatility: 8000,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = monkDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = monkDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true; */
     } 
     else if (spec.includes("Classic")) {
       //console.log("Setting up classic spec");
