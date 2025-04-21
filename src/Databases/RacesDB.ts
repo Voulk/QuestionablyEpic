@@ -1,6 +1,18 @@
-import { useTranslation } from "react-i18next";
 
-export const raceDB = [
+type RaceEntry = {
+  name: {
+    en: string;
+    fr?: string;
+    de?: string;
+    ru?: string;
+    ch?: string; 
+  };
+  id: string;
+  icon: string;
+};
+
+// This file is probably due a revamp at some point but low priority.
+export const raceDB: RaceEntry[] = [
   {
     name: {
       en: "Blood Elf",
@@ -278,17 +290,8 @@ export const raceDB = [
   },
 ];
 
-export const getTranslatedRaceName = (string, currentLanguage) => {
-  if (string === "Default" || string === "" || currentLanguage === undefined) return string;
-  else {
-    let translatedName = raceDB
-      .filter((obj) => {
-        return obj.id === string;
-      })
-      .map((obj) => obj.name[currentLanguage])[0]
-      .toString();
-
-  return translatedName;
-  }
-
+export const getTranslatedRaceName = (id: string, currentLanguage: "en" | "fr" | "de" | "ru" | "ch"): string => {
+  if (!id || id === "Default" || !currentLanguage) return id;
+  const match = raceDB.find((race) => race.id === id);
+  return match?.name[currentLanguage] ?? match?.name.en ?? id;
 };

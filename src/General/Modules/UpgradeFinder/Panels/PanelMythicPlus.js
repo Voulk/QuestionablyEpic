@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID, getNumUpgrades, filterItemListByDropLoc } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB } from "../../../../Databases/InstanceDB";
-import { itemLevels } from "../../../../Databases/itemLevelsDB";
+import { itemLevels } from "../../../../Databases/ItemLevelsDB";
 import { useSelector } from "react-redux";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

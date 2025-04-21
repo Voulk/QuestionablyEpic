@@ -1,5 +1,12 @@
 // Contains the list of races localization IDs for each class's available races.
-export const classRaceDB = {
+
+interface ClassRaceEntry {
+  races: string[]; // Can arguably be its own type in future.
+  gameType: gameTypes;
+}
+
+// TODO. This file is weirdly chunky and could be greatly slimmed down.
+export const classRaceDB: Record<string, ClassRaceEntry> = {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Paladins                                            */
   /* ---------------------------------------------------------------------------------------------- */
@@ -10,7 +17,7 @@ export const classRaceDB = {
     gameType: "Retail",
   },
 
-  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  /* --------------------------------------- Classic -------------------------------------- */
   "Holy Paladin Classic": {
     races: ["Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Blood Elf", "Races.Tauren"],
     gameType: "Classic",
@@ -26,7 +33,7 @@ export const classRaceDB = {
     gameType: "Retail",
   },
 
-  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  /* --------------------------------------- Classic -------------------------------------- */
   "Restoration Druid Classic": {
     races: ["Races.Night Elf", "Races.Tauren", "Races.Worgen", "Races.Troll"],
     gameType: "Classic",
@@ -108,7 +115,7 @@ export const classRaceDB = {
     gameType: "Retail",
   },
 
-  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  /* --------------------------------------- Classic -------------------------------------- */
   "Holy Priest Classic": {
     races: ["Races.Goblin", "Races.Draenei", "Races.Dwarf", "Races.Human", "Races.Night Elf", "Races.Blood Elf", "Races.Troll", "Races.Undead", "Races.Gnome", "Races.Worgen", "Races.Tauren"],
     gameType: "Classic",
@@ -143,7 +150,7 @@ export const classRaceDB = {
     gameType: "Retail",
   },
 
-  /* --------------------------------------- Burning Crusade -------------------------------------- */
+  /* --------------------------------------- Classic -------------------------------------- */
   "Restoration Shaman Classic": {
     races: ["Races.Draenei", "Races.Orc", "Races.Tauren", "Races.Troll", "Races.Dwarf", "Races.Goblin"],
     gameType: "Classic",

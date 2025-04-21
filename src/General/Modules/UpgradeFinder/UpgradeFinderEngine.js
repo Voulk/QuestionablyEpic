@@ -4,7 +4,7 @@ import { runTopGear } from "../TopGear/Engine/TopGearEngine";
 import { getItemDB, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoost, getItemAllocations, scoreItem, getValidArmorTypes, getValidWeaponTypes, getItem, filterItemListByType, getItemProp, getExpectedItemLevel } from "../../Engine/ItemUtilities";
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
-import { itemLevels } from "../../../Databases/itemLevelsDB";
+import { itemLevels } from "../../../Databases/ItemLevelsDB";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 /*

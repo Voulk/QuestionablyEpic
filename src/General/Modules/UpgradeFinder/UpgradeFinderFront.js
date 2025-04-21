@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import ReactGA from "react-ga";
-import { itemLevels } from "Databases/itemLevelsDB";
+import { itemLevels } from "Databases/ItemLevelsDB";
 import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({

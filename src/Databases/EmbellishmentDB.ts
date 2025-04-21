@@ -1,317 +1,202 @@
-export const embellishmentDB = [
+type embellishmentData = {
+  id: number;
+  icon: string; // Shown in the Embellishment Chart
+  armorType: 0 | 1 | 2 | 3 | 4; // Cloth, Leather etc.
+  name: string;
+  pieces?: 1 | 2; // Number of pieces required for the effect. Always 1 or 2.
+  effect: {
+    type: "embellishment";
+    name: string;
+  };
+}
+
+export const embellishmentDB: embellishmentData[] = [
   {
     id: 215135,
     icon: "inv_ringwod_d3_4",
-    armorType: 2, // All
-    name: {
-      en: "Ardenal Surge Clasp",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 2,
+    name: "Ardenal Surge Clasp",
     effect: {
       type: "embellishment",
       name: "Ardenal Surge Clasp",
-      rank: 0,
     },
   },
   {
     id: 215133,
     icon: "inv_ringwod_d3_4",
-    armorType: 0, // All
-    name: {
-      en: "Binding of Binding",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Binding of Binding",
     effect: {
       type: "embellishment",
       name: "Binding of Binding",
-      rank: 0,
     },
   },
   {
     id: 219495,
     icon: "inv_misc_emberweavebandage",
-    armorType: 0, // All
-    name: {
-      en: "Blessed Weapon Grip",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Blessed Weapon Grip",
     effect: {
       type: "embellishment",
       name: "Blessed Weapon Grip",
-      rank: 0,
     },
   },
-
-  ///
-
   {
     id: 219489,
     icon: "inv_leather_outdoorarathor_d_01_boot",
-    armorType: 2, // Leather
-    name: {
-      en: "Waders of the Unifying Flame",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 2,
+    name: "Waders of the Unifying Flame",
     effect: {
       type: "embellishment",
       name: "Waders of the Unifying Flame",
-      rank: 0,
     },
   },
   {
     id: 219502,
     icon: "inv_belt_leather_undergroundquest_b_01",
-    armorType: 2, // Leather - Damage taken portion need testing
-    name: {
-      en: "Adrenal Surge Clasp",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 2,
+    name: "Adrenal Surge Clasp",
     effect: {
       type: "embellishment",
       name: "Adrenal Surge Clasp",
-      rank: 0,
     },
   },
   {
     id: 219509,
     icon: "inv_misc_food_legion_gooamber_drop",
     pieces: 2,
-    armorType: 3, // 2pc set
-    name: {
-      en: "Embrace of the Cinderbee",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 3,
+    name: "Embrace of the Cinderbee",
     effect: {
       type: "embellishment",
       name: "Embrace of the Cinderbee",
-      rank: 0,
     },
   },
   {
     id: 219512,
     icon: "spell_nature_stormreach",
-    armorType: 2, // 2pc
+    armorType: 2,
     pieces: 2,
-    name: {
-      en: "Fury of the Stormrook (2pc)",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    name: "Fury of the Stormrook (2pc)",
     effect: {
       type: "embellishment",
       name: "Fury of the Stormrook",
-      rank: 0,
     },
   },
   {
     id: 215134,
     icon: "inv_11_0_arathor_necklace_02_color5",
-    armorType: 0, 
-    name: {
-      en: "Fractured Gemstone Locket",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Fractured Gemstone Locket",
     effect: {
       type: "embellishment",
       name: "Fractured Gemstone Locket",
-      rank: 0,
     },
   },
   {
     id: 221943,
     icon: "inv_shoulder_cloth_dragondungeon_c_01",
     armorType: 0,
-    name: {
-      en: "Energy Redistribution Beacon",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    name: "Energy Redistribution Beacon",
     effect: {
       type: "embellishment",
       name: "Energy Redistribution Beacon",
-      rank: 0,
     },
   },
   {
     id: 213773,
     icon: "inv_cloth_raidmageprimalist_d_01_bracer",
-    armorType: 0, 
-    name: {
-      en: "Prismatic Null Stone",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Prismatic Null Stone",
     effect: {
       type: "embellishment",
       name: "Prismatic Null Stone",
-      rank: 0,
     },
   },
   {
     id: 222810,
     icon: "inv_10_tailoring_silkrare_color3",
-    armorType: 1, // Cloth - Damaging Spells only
+    armorType: 1,
     pieces: 2,
-    name: {
-      en: "Woven Dusk (2pc)",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    name: "Woven Dusk (2pc)",
     effect: {
       type: "embellishment",
       name: "Woven Dusk",
-      rank: 0, // Requires 2pc
     },
   },
   {
     id: 222807,
     icon: "inv_10_tailoring_silkrare_color2",
     pieces: 2,
-    armorType: 1, // Cloth
-    name: {
-      en: "Woven Dawn (2pc)",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 1,
+    name: "Woven Dawn (2pc)",
     effect: {
       type: "embellishment",
       name: "Woven Dawn",
-      rank: 0, // Requires 2pc
     },
   },
   {
     id: 222873,
     icon: "inv_10_tailoring_tailoringconsumable_color3",
-    armorType: 0, 
-    name: {
-      en: "Duskthread Lining",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Duskthread Lining",
     effect: {
       type: "embellishment",
       name: "Duskthread Lining",
-      rank: 0, // Requires 2pc
     },
   },
   {
     id: 222870,
     icon: "inv_10_tailoring_tailoringconsumable_color2",
-    armorType: 0, 
-    name: {
-      en: "Dawnthread Lining",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Dawnthread Lining",
     effect: {
       type: "embellishment",
       name: "Dawnthread Lining",
-      rank: 0, 
     },
   },
   {
     id: 213774,
     icon: "spell_priest_divinestar_holy",
-    armorType: 0, 
-    name: {
-      en: "Captured Starlight",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Captured Starlight",
     effect: {
       type: "embellishment",
       name: "Captured Starlight",
-      rank: 0, // Requires 2pc
     },
   },
   {
     id: 226024,
     icon: "inv_inscriptions_darkmoonsigil_purple",
-    armorType: 0, 
-    name: {
-      en: "Darkmoon Sigil: Ascension",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Darkmoon Sigil: Ascension",
     effect: {
       type: "embellishment",
       name: "Darkmoon Sigil: Ascension",
-      rank: 0, 
     },
   },
   {
     id: 226030,
     icon: "inv_inscriptions_darkmoonsigil_teal",
-    armorType: 0, 
-    name: {
-      en: "Darkmoon Sigil: Symbiosis",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Darkmoon Sigil: Symbiosis",
     effect: {
       type: "embellishment",
       name: "Darkmoon Sigil: Symbiosis",
-      rank: 0, 
     },
   },
   {
     id: 226033,
     icon: "inv_inscriptions_darkmoonsigil_blue",
-    armorType: 0, // Extra
-    name: {
-      en: "Darkmoon Sigil: Vivacity",
-      de: "",
-      fr: "",
-      ru: "",
-      ch: "",
-    },
+    armorType: 0,
+    name: "Darkmoon Sigil: Vivacity",
     effect: {
       type: "embellishment",
       name: "Darkmoon Sigil: Vivacity",
-      rank: 0, 
     },
   },
+];
+
   /*
   {
     id: 204710, //406254,
@@ -621,4 +506,3 @@ export const embellishmentDB = [
     },
   }, */
 
-];

@@ -1,3 +1,6 @@
+/***
+ * @deprecated
+ */
 export const talentTreeDB = [
   {
     traitTreeId: 793,

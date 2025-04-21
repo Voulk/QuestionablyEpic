@@ -1,6 +1,5 @@
-
-
-export const reforgeIDs = {
+// Used for showing the correct reforge on wowhead tooltips.
+export const reforgeIDs: { [reforgeTag: string]: number } = {
     "Reforged: haste -> spirit": 148,
     "Reforged: haste -> mastery": 154,
     "Reforged: haste -> crit": 152,
