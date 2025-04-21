@@ -25,7 +25,8 @@ export const changeLog: entry[] = [
     date: "April",
     changes: [ 
       "Heavy app-wide refactor.",
-      "Embellishments can now be added directly in the Item Bar in addition to the cog menu."
+      "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
+      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
     ]},
   {
     version: "11.1 / 4.4.2",

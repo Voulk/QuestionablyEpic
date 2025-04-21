@@ -408,7 +408,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
+           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} gameType={gameType} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
           <Grid item style={{ height: 60 }} xs={12} />

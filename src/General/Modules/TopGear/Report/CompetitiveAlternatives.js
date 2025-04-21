@@ -12,7 +12,7 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials;
-  const gameType = useSelector((state) => state.gameType);
+  const gameType = props.gameType;
   const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
