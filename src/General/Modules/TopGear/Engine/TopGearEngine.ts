@@ -1,6 +1,6 @@
 import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import { STATPERONEPERCENT, BASESTAT, STATCONVERSION } from "../../../Engine/STAT";
+import { STATCONVERSION } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
