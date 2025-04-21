@@ -328,7 +328,6 @@ export class Player {
     newItem.selectedOptions = selectedOption;
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
-    console.log(selectedOption);
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -595,34 +594,6 @@ export class Player {
     activeModel.setDefaults(this.spec, contentType, activeModel.modelName);
   };
 
-  setDefaultWeights = (spec, contentType) => {
-    if (spec === SPEC.RESTODRUID) {
-      this.statWeights[contentType] = druidDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.HOLYPALADIN) {
-      this.statWeights[contentType] = paladinDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.DISCPRIEST) {
-      this.statWeights[contentType] = discPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.HOLYPRIEST) {
-      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.MISTWEAVERMONK) {
-      this.statWeights[contentType] = monkDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.RESTOSHAMAN) {
-      this.statWeights[contentType] = shamanDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else if (spec === SPEC.PRESEVOKER) {
-      this.statWeights[contentType] = holyPriestDefaultStatWeights(contentType);
-      this.statWeights.DefaultWeights = true;
-    } else {
-      // Invalid spec replied. Error.
-      reportError(this, "Player", "Invalid Spec Supplied for Default Weights", spec);
-      throw new Error("Invalid Spec Supplied");
-    }
-  };
 
   // Consider replacing this with an external table for cleanliness and ease of editing.
   setupDefaults = (spec) => {
@@ -675,11 +646,6 @@ export class Player {
         versatility: 11000,
         stamina: 1900,
       };
-      /*
-      this.statWeights.Raid = shamanDefaultStatWeights("Raid");
-      this.statWeights.Dungeon = shamanDefaultStatWeights("Dungeon");
-      this.statWeights.DefaultWeights = true;
-      */
     } else if (spec === SPEC.DISCPRIEST) {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));

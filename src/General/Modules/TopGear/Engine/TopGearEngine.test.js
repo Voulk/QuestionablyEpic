@@ -1,7 +1,7 @@
 import { mergeBonusStats, getTopGearGems } from "./TopGearEngine";
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities"
 import Player from '../../Player/Player';
-import { processItem } from "Retail/Engine/SimCImport/SimCImportEngine"
+import { processItem } from "General/Items/GearImport/SimCImportEngine"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities"
 import { runTopGear } from "./TopGearEngine";
 import each from "jest-each";

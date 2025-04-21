@@ -107,7 +107,7 @@ function TopGearReport(props) {
         //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
-        window.history.replaceState('QE Live Report', 'Title', 'ptr/report' + result.id);
+        window.history.replaceState('QE Live Report', 'Title', 'ptr/report/' + result.id);
         window.scrollTo(0, 0);
       }
       else {

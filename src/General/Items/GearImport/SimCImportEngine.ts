@@ -1,7 +1,7 @@
-import { bonus_IDs } from "../BonusIDs";
-import { curveDB } from "../ItemCurves";
-import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../../General/Engine/ItemUtilities";
-import Item from "../../../General/Items/Item";
+import { bonus_IDs } from "../../../Retail/Engine/BonusIDs";
+import { curveDB } from "../../../Retail/Engine/ItemCurves";
+import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../Engine/ItemUtilities";
+import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 

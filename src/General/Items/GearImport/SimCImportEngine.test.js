@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processItem, processCurve, processAllLines, runSimC} from "Retail/Engine/SimCImport/SimCImportEngine"
+import { processItem, processCurve, processAllLines, runSimC} from "General/Items/GearImport/SimCImportEngine"
 
 const testDruidSet = 
 `

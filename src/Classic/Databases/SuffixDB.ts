@@ -1,6 +1,6 @@
 
 
-export const suffixDB = {
+export const suffixDB: Record<number, Record<string, number>> = {
     6: {intellect: 0.666, stamina: 1}, // Eagle
     8: {spirit: 0.666, stamina: 1},
     9: {intellect: 0.666, spirit: 0.666}, // Owl
@@ -21,7 +21,7 @@ export const suffixDB = {
     44: {stamina: 0.7889, intellect: 0.5259, mp5: 0.2104}, // Elder
     51: {intellect: 0.3193, spelldamage: 0.8501, spellcrit: 0.4106}, // Mind
     53: {stamina: 0.3193, intellect: 0.4106, spelldamage: 0.8501}, // Vision
-    58: {stamina: 0.5259, stamina: 0.5259, spelldamage: 0.6153}, // Sun
+    58: {stamina: 0.5259, spelldamage: 0.6153}, // Sun
 
     //230: Feverflare
 }

@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processAllLines } from "Retail/Engine/SimCImport/SimCImportEngine"
+import { processAllLines } from "General/Items/GearImport/SimCImportEngine"
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns, buildNewWepCombos } from "General/Engine/ItemUtilities"
 
