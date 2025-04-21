@@ -18,7 +18,16 @@ jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
 });
 
 it("renders without crashing", () => {
-  const initialState = {output:10}
-  const store = mockStore(initialState)
-  render(<Provider store={store}><App /></Provider>);
+  const initialState = { output: 10 };
+  const store = mockStore(initialState);
+
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+
+  const root = createRoot(div);
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 });
