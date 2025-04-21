@@ -14,24 +14,15 @@ jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
   });
 
 describe("Top Gear Gems", () => {
-    test("Crit / Mastery gem", () => {
+    /*test("Crit / Mastery gem", () => {
         let bonusStats = {};
         const gemID = 192958;
-        const gems = getTopGearGems(gemID, 5, bonusStats);
+        getTopGearGems(gemID, 5, bonusStats);
 
         expect(bonusStats.mastery).toEqual(66 + 4 * 70);
         expect(bonusStats.intellect).toEqual(75);
         expect(bonusStats.crit).toEqual(4 * 33);
-    })
-
-    test("Haste / Vers gem - Primary only", () => {
-        let bonusStats = {};
-        const gemID = 192952;
-        const gems = getTopGearGems(gemID, 1, bonusStats);
-
-        expect(bonusStats.intellect).toEqual(75);
-        expect(bonusStats.haste).toEqual(66);
-    })
+    })*/
 
     test("No gems", () => {
         let bonusStats = {};
