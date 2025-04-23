@@ -68,7 +68,6 @@ export const runMistweaverMonkCastProfile = (playerData) => {
         onUseData = getTrinketData("Signet of the Priory", playerData.effects.filter(effect => effect.name === "Signet of the Priory")[0].level);
         onUseData.name = "Signet of the Priory";
         state.currentStats.haste += (onUseData.value * onUseData.duration / 120);
-        console.log("Adding " + (onUseData.value * onUseData.duration / 120) + " haste from Signet of the Priory");
     }
     else if (playerData.effects.filter(effect => effect.name === "House of Cards").length > 0) {
         onUseData = getTrinketData("House of Cards", playerData.effects.filter(effect => effect.name === "House of Cards")[0].level);
