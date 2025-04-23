@@ -104,10 +104,9 @@ export const applyLoadoutEffects = (discSpells, settings, talents, state, stats,
        discSpells['Smite'][0].coeff *= (1 + 0.075 * talents.blazeOfLight);
    }
    if (talents.divineAegis) {
-       // Can either just increase crit mod, or have it proc on all healing events as a separate line (too messy?).
-       // Note that we increase our crit modifier by twice the amount of Divine Aegis since it's a wrapper around the entire crit.
-       stats.critMult *= (1 + 0.6 * talents.divineAegis);
-       // TODO: PW:S Crit mod
+       // Now that Divine Aegis doesn't work with some direct healing (atonement) we're going to handle it within DiscRamps instead of as a global wrapper.
+       // That also lets us track its healing separately from the spell that triggered it.
+       //stats.critMult *= (1 + 0.6 * talents.divineAegis);
    }
    if (talents.harshDiscipline) {
        const hdBuff = {
@@ -320,7 +319,7 @@ const applyOracle = (discSpells, settings, talents, state, stats, heroTree) => {
     // We'll mostly use Penance offensively which means this adds 3 healing bolts to the cast. 
 
 
-
+    
 
 }
 
