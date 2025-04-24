@@ -9,7 +9,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import { toggleContent } from "Redux/Actions";
 
 import RetailLogo from "../../../Images/Logos/Logo_WarWithin.png";
-import ClassicLogo from "../../../Images/Logos/CataLogoAlpha.png";
+import ClassicLogo from "../../../Images/Logos/LogoMistsOfPandaria.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
