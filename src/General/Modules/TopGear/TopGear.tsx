@@ -717,7 +717,7 @@ export default function TopGear(props: any) {
     { label: getTranslatedSlotName("weapons", currentLanguage), slotName: "AllMainhands" },
     { label: getTranslatedSlotName("offhands", currentLanguage), slotName: "Offhands" },
   ];
-  if (gameType === "Classic") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
+
   return (
     <div className={classes.root}>
       <div style={{ height: 96 }} />

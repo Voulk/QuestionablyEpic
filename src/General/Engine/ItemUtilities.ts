@@ -970,12 +970,11 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   else if ((item.id === 77096 || item.id === 77083) && (itemLevelReq === 410)) return true; // Relic / cape. No 410+ options.
   
   // Deal with Rag loot
-  else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
-  else if (itemLevelReq === 378 && item.itemLevel === 384/*  && item.sources && item.sources[0].encounterId === 198*/) return true;
-  else if (itemLevelReq === 397 && item.itemLevel === 403) return true;
-  else if (itemLevelReq === 410 && item.itemLevel === 416) return true;
+  else if (itemLevelReq === 476 && item.itemLevel === 483) return true;
+  else if (itemLevelReq === 489 && item.itemLevel === 496/*  && item.sources && item.sources[0].encounterId === 198*/) return true;
+  else if (itemLevelReq === 502 && item.itemLevel === 509) return true;
   // The rest
-  else return ((item.itemLevel === 379 && itemLevelReq === 372 || (item.itemLevel === 359 && itemLevelReq === 372 && item.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/)
+  else return false
 }
 
 // It is useful to have some items to work with.
@@ -990,7 +989,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
-      (gameType === "Classic" || itemLevel > 400) &&
+      (gameType === "Classic" || itemLevel > 550) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -1018,10 +1017,9 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
-        && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
+        && sourceCheck) { 
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
