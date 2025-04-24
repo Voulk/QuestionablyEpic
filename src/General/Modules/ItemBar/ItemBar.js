@@ -194,6 +194,9 @@ export default function ItemBar(props) {
       if (item) {
         if (itemEffect.type !== "") {
           item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
+          if (itemEffect.type === "Embellishment") {
+            item.uniqueTag = "embellishment";
+          }
         }
 
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);

@@ -523,7 +523,7 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
     return embel.id === id;
   });
   // @ts-ignore
-  if (temp.length > 0) return temp[0].name[lang];
+  if (temp.length > 0) return temp[0].name;
   else return "Unknown Effect";
 }
 
