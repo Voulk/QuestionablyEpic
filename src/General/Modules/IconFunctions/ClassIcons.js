@@ -122,7 +122,7 @@ export default function classIcons(props, style) {
   }
 
   // Mistweaver Monk
-  if (iconName === "mistweaverMonk" || iconName === "mistweaver monk" || iconName === "monk-mistweaver" || iconName === "monk") {
+  if (iconName === "mistweaverMonk" || iconName === "mistweaver monk" || iconName === "monk-mistweaver" || iconName === "monk" || iconName === "mistweaver monk classic") {
     src = MistweaverIcon;
     alt = "Mistweaver Monk";
   }

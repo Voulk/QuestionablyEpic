@@ -4,6 +4,7 @@
 import { getSpellRaw, runCastSequence } from "./ClassicRamps";
 import { CLASSICDRUIDSPELLDB, druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
+import { CLASSICMONKSPELLDB, monkTalents } from "./Monk/ClassicMonkSpellDB";
 import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "./ClassicPriestSpellDB";
 
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
@@ -25,10 +26,53 @@ export const buildClassicChartData = (activeStats, spec) => {
     else if (spec === "Holy Priest") {
         return buildClassicHolyChartData(activeStats, classicHolyTalents);
     }
+    else if (spec === "Mistweaver Monk") {
+        return buildClassicMonkChartData(activeStats, monkTalents);
+    }
 
     else {
         console.error("invalid spec");
     }
+}
+
+export const buildClassicMonkChartData = (activeStats, baseTalents) => {
+    //
+    let results = [];
+
+    const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Mistweaver Monk"};
+    const sequences = [
+        {cat: "Single Target Healing", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
+        
+        //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
+
+    ]
+
+    sequences.forEach(sequence => {
+        const newSeq = sequence.seq;
+        const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        const spellData = {id: 0, icon: CLASSICMONKSPELLDB[newSeq[0]] ? CLASSICMONKSPELLDB[newSeq[0]][0].spellData.icon : ""};
+        const cat = sequence.cat;
+
+        if (cat === "Package") {
+            // All auto based.
+            Object.keys(sequence.details).forEach(spellName => {
+                const value = sequence.details[spellName];
+                for (let i = 0; i < value; i++) {
+                    newSeq.push(spellName);
+                }
+            })
+            
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        
+        }
+        else {
+            // All sequence based.
+            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
+
+        };  
+    }); 
+
+    return results;
 }
 
 export const buildClassicHolyChartData = (activeStats, baseTalents) => {

@@ -339,6 +339,8 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
 
     // Check if the spell has a custom GCD. 
     const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
+    console.log(castState.queuedSpell);
+    console.log(spellDB);
     const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats, castState.queuedSpell);
     const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;

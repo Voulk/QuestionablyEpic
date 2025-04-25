@@ -23,6 +23,7 @@ import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/C
 import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
+
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
 import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
@@ -33,6 +34,7 @@ import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/Preservati
 import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "General/Modules/Player/ClassDefaults/Classic/Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
+import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
 import "./Sequence.css";
@@ -87,6 +89,7 @@ const getSpellDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
   else if (spec === "Discipline Priest Classic") return CLASSICPRIESTSPELLDB;
   else if (spec === "Holy Priest Classic") return CLASSICPRIESTSPELLDB;
+  else if (spec === "Mistweaver Monk Classic") return CLASSICMONKSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -103,6 +106,7 @@ const getTalentDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return classicPaladinTalents;
   else if (spec === "Discipline Priest Classic") return classicDiscTalents;
   else if (spec === "Holy Priest Classic") return classicHolyTalents;
+  else if (spec === "Mistweaver Monk Classic") return classicMonkTalents;
   else return null;
 };
 

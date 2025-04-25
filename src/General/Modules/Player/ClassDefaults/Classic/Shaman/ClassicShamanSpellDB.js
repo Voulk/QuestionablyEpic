@@ -3,7 +3,7 @@ import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicB
 import { addBuff } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 
 // Add onTick, onExpiry functions to spells.
-export const CLASSICPALADINSPELLDB = {
+export const CLASSICSHAMANSPELLDB = {
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
         type: "",

@@ -3,6 +3,8 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB } from "./ClassicPriestSpellDB";
+import { CLASSICSHAMANSPELLDB } from "./Shaman/ClassicShamanSpellDB";
+import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
@@ -47,11 +49,14 @@ const CLASSICCONSTANTS = {
 
 }
 
+// Eh don't we have this function somewhere else already?
 const getSpellDB = (spec) => {
     if (spec === "Restoration Druid" || spec === "Resto Druid") return CLASSICDRUIDSPELLDB;
     else if (spec === "Holy Paladin") return CLASSICPALADINSPELLDB;
     else if (spec === "Discipline Priest") return CLASSICPRIESTSPELLDB;
     else if (spec === "Holy Priest") return CLASSICPRIESTSPELLDB;
+    else if (spec === "Mistweaver Monk") return CLASSICMONKSPELLDB;
+    else if (spec === "Restoration Shaman" || spec === "Resto Shaman") return CLASSICSHAMANSPELLDB;
     else return {};
 }
 

@@ -47,7 +47,9 @@ export function getValidArmorTypes(spec: string) {
     case "Holy Paladin Classic":
       return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 2, 8, 11]; // Misc + Plate + Shields
+      return [0, 2, 8, 11]; // Misc + Plate
+    case "Mistweaver Monk Classic":
+      return [0, 2, 8, 11]; // Misc + Plate
     case "Restoration Shaman Classic":
       return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
     default:
@@ -116,6 +118,8 @@ export function getValidWeaponTypes(spec: string, slot: string) {
           return [0, 1, 4, 5, 10, 11, 13, 15];
         case "Holy Priest Classic":
           return [4, 10, 15, 19];
+        case "Mistweaver Monk Classic":
+            return [0, 4, 6, 7, 10, 13];
         default:
           return [-1];
       }
@@ -331,6 +335,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.RESTODRUID:
       return [4, 5, 6, 10, 13, 15];
     case SPEC.MISTWEAVERMONK:
+    case "Mistweaver Monk Classic":
       return [0, 4, 6, 7, 10, 13];
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];

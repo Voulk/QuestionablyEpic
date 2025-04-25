@@ -48,6 +48,9 @@ function buildChartData(spec, stats, talents) {
   else if (spec === "Holy Priest Classic") {
     return buildClassicChartData(stats, "Holy Priest")
   }
+  else if (spec === "Mistweaver Monk Classic") {
+    return buildClassicChartData(stats, "Mistweaver Monk")
+  }
   else {
     return [];
   }

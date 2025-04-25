@@ -66,6 +66,7 @@ const specImages = {
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
   "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
+  "Mistweaver Monk Classic": require("Images/MistweaverSmall.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */

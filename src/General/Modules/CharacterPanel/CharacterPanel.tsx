@@ -80,6 +80,7 @@ const specImages: { [key: string]: string } = {
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
   "Discipline Priest Classic": require("Images/DiscSmall.jpg"),
+  "Mistweaver Monk Classic": require("Images/MistweaverSmall.jpg"),
 };
 
 const useStyles = makeStyles((theme) => ({

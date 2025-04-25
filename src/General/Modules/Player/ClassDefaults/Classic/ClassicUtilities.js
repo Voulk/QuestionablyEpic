@@ -34,7 +34,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         "Holy Paladin": 23422,
         "Holy Priest": 20590,
         "Restoration Shaman": 23430, 
-        "Mistweaver Monk": 0, 
+        "Mistweaver Monk": 20590, // PLACEHOLDER. NOT A REAL VALUE.
     };
 
     // ==== Default Loadout ====
