@@ -4,11 +4,11 @@
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 179.279998779296875,
-        mastery: 179.279998779296875,
-        haste: 128.057006835937500,
+        crit: 600, // 179.279998779296875,
+        mastery: 600, // 179.279998779296875,
+        haste: 425, //128.057006835937500,
 
-        critInt: 648.91,
+        critInt: 2168,
     },
 
     baseCrit: {
@@ -17,7 +17,7 @@ const GLOBALCONST = {
         "Holy Paladin": 0.033355,
         "Holy Priest": 0.012375,
         "Restoration Shaman": 0.02201, 
-        "Mistweaver Monk": 1, // Soon :)
+        "Mistweaver Monk": 0, // Soon :)
     },
 
     masteryMod: {
@@ -26,10 +26,10 @@ const GLOBALCONST = {
         "Holy Paladin": 1.5,
         "Holy Priest": 1.25,
         "Restoration Shaman": 3, 
-        "Mistweaver Monk": 1, 
+        "Mistweaver Monk": 1.25, 
     },
 
-    baseMana: {
+    baseMana: { // TODO
         "Holy Paladin": 23422,
         "Restoration Druid": 18355,
         "Discipline Priest": 20590,
@@ -37,8 +37,6 @@ const GLOBALCONST = {
         "Restoration Shaman": 23430,
         "Mistweaver Monk": 0,
     }
-
-
 
 }
 
@@ -131,6 +129,8 @@ export const getCritPercentage = (currentStats, spec) => {
 
 // Returns MP5.
 export const getManaRegen = (currentStats, spec) => {
+    const spiritToMP5 = currentStats.spirit * 1.128;
+
     const inCombatRegen = {
         "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
@@ -138,7 +138,7 @@ export const getManaRegen = (currentStats, spec) => {
         "Holy Priest": 0.8,
         "Restoration Shaman": 0.5,
     }
-    return (0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
+    return (spiritToMP5 * inCombatRegen[spec]);
 }
 
 export const getManaPool = (currentStats, spec) => {

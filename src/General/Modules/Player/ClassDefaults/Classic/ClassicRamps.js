@@ -1,7 +1,7 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB } from "./ClassicPriestSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";

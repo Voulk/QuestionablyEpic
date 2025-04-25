@@ -2,8 +2,8 @@
 
 
 import { getSpellRaw, runCastSequence } from "./ClassicRamps";
-import { CLASSICDRUIDSPELLDB, druidTalents } from "./ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB, paladinTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB, druidTalents } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "./ClassicPriestSpellDB";
 
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";

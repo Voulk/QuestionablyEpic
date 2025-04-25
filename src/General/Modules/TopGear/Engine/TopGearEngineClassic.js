@@ -11,10 +11,10 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ClassicItemSetDB"
 
-import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
-import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
-import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
-import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
+import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
+import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
+import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
+import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { buildNewWepCombos } from "General/Engine/ItemUtilities";
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 

@@ -1,6 +1,6 @@
 
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "General/Modules/Player/ClassDefaults/Classic/ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents  } from "General/Modules/Player/ClassDefaults/Classic/Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
 import { getTalentedSpellDB, logHeal } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
