@@ -28,11 +28,12 @@ export const discPriestDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["Haste", "Crit", "Mastery", "Spirit"],
 
 }
 
 export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSets = []) { 
+  console.log("Scoring Disc Set");
   let score = 0;
   const healingBreakdown = {};
   const fightLength = 6;
