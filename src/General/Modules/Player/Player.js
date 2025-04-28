@@ -685,6 +685,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
 
       this.activeStats = {
         intellect: 85000, // 32k
