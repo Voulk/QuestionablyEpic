@@ -123,9 +123,12 @@ function shortenReport(player, contentType, result, ufSettings, settings) {
 
   const socketSetting = settings.topGearAutoGem.value || false;
   
+  // Equipped items
+  const equippedItems = player.activeItems.filter((item) => item.isEquipped);
   
   const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
-                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings };
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings, 
+                    equippedItems: equippedItems, gameType: player.gameType };
   return report;
 }
 
