@@ -15,6 +15,7 @@ import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngine
 import ReactGA from "react-ga";
 import { itemLevels } from "Databases/ItemLevelsDB";
 import { trackPageView } from "Analytics";
+import IconHeader from "./IconHeader";
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -359,7 +360,7 @@ export default function UpgradeFinderFront(props) {
       <Grid container spacing={1}>
         {/* ---------------------------- Help Text Section --------------------------- */}
         <Grid item xs={12}>
-          <HelpText blurb={helpBlurb} text={helpText} expanded={true} />
+          <HelpText blurb={helpBlurb} text={helpText} expanded={false} />
         </Grid>
         <Grid item xs={12}>
           <CharacterPanel
@@ -377,13 +378,16 @@ export default function UpgradeFinderFront(props) {
 
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+            <Paper elevation={3} style={{ width: "80%", margin: "auto" }} >
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
-                    <Typography color="primary" align="center" variant="h5">
-                      {t("UpgradeFinderFront.RaidDifficultyHeader")}
-                    </Typography>
+                    <IconHeader
+                      icon={require("Images/Logos/RaidLogo.jpg")}
+                      alt="Raid Logo"
+                      text={"Raid Difficulty"}
+                      />
+
                     <Grid item xs={12}>
                       <Typography align="center">{t("UpgradeFinderFront.RaidDifficultyBody")}</Typography>
                     </Grid>
@@ -431,18 +435,22 @@ export default function UpgradeFinderFront(props) {
           /* ---------------------------------------------------------------------------------------------- */
 
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
-                <Grid container justifyContent="center" spacing={1}>
+              <Grid container justifyContent="center" spacing={1}>
+                <Grid item xs={12}>
+                <IconHeader
+                      icon={require("Images/inv_relics_hourglass.jpg")}
+                      alt="M+ Logo"
+                      text={"Mythic+ Key Level"}
+                      />
                   <Grid item xs={12}>
-                    <Typography color="primary" align="center" variant="h5">
-                      {t("UpgradeFinderFront.MythicPlusHeader")}
+                    <Typography align="center">
+                      {t("UpgradeFinderFront.MythicPlusBody")}
                     </Typography>
-                    <Grid item xs={12}>
-                      <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
-                    </Grid>
                   </Grid>
                 </Grid>
+              </Grid>
 
                 <UpgradeFinderSlider
                   className={classes.slider}
@@ -459,11 +467,11 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         ) : (
           /* ---------------------------------------------------------------------------------------------- */
-          /*                                 Burning Crusade Dungeon Section                                */
+          /*                                       Classic Dungeon Section                                  */
           /* ---------------------------------------------------------------------------------------------- */
 
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
@@ -495,13 +503,15 @@ export default function UpgradeFinderFront(props) {
         {/* Crafted Items */}
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>
+            <Paper elevation={3} style={{ width: "80%", margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
-                    <Typography color="primary" align="center" variant="h5">
-                      {"Crafted Gear"}
-                    </Typography>
+                  <IconHeader
+                      icon={require("Images/Logos/CraftingIcon.jpg")}
+                      alt="Craft Logo"
+                      text={"Crafted Gear"}
+                    />
                     <Grid item xs={12}>
                       <Typography align="center">{"Pick crafted stats and item level"}</Typography>
                     </Grid>

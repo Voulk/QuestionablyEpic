@@ -22,11 +22,12 @@ export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
     update: 99,
-    date: "April",
+    date: "May",
     changes: [ 
       "Heavy app-wide refactor.",
       "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Upgrade Finder: Currently Equipped items now shown on the report."
     ]},
   {
     version: "11.1 / 4.4.2",
