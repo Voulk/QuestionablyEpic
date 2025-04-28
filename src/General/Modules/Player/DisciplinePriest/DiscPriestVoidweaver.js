@@ -22,14 +22,8 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         c90: 1.7,
         c120: 1,
         c180: 1,
-        oneMinute: 1,
-        ninetySeconds: 1.35,
-        twoMinutes: 1,
-        twoMinutesOrb: 0.85,
-        threeMinutes: 1.3,
       },
       rampData: {},
-      HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -41,14 +35,8 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
         c120: 1.1,
         c180: 1.05,
 
-        oneMinute: 1.2,
-        ninetySeconds: 1.0,
-        twoMinutes: 1.4,
-        twoMinutesOrb: 1,
-        threeMinutes: 1.1,
       },
       rampData: {},
-      HoldYourGroundUptime: 0.8
     };
   } else {
     console.error("Unknown Content Type");

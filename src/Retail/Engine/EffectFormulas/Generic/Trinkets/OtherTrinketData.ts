@@ -79,6 +79,7 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      if (additionalData.castModel.modelName.includes("Oracle")) bonus_stats.haste *= 0.85; // TODO: Swap to integrated ramp on-use.
       bonus_stats.allyStats = processedValue(data[1], itemLevel) * data[1].duration / data[1].cooldown;
 
       return bonus_stats;
@@ -104,6 +105,7 @@ export const otherTrinketData = [
       }
       else {
         bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+        if (additionalData.castModel.modelName.includes("Oracle")) bonus_stats.haste *= 0.8; // TODO: Swap to integrated ramp on-use.
         bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
       }
       

@@ -22,7 +22,8 @@ export function getTrinketValue(trinketName, itemLevel) {
   let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 
   const effect = activeTrinket.effects[0];
-  const trinketValue = processedValue(effect, itemLevel);
+  let trinketValue = processedValue(effect, itemLevel);
+  if (effect.mult) trinketValue *= effect.mult;
   return trinketValue;
 }
 
