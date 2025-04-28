@@ -33,7 +33,7 @@ export default function SimCraftInput(props) {
   const [open, setOpen] = useState(false);
   const [simC, setSimC] = useState(props.player.savedPTRString || "");
   const [errorMessage, setErrorMessage] = useState("");
-  const [autoUpgradeVault, setAutoUpgradeVault] = useState(false); // State for checkbox
+  const [autoUpgradeVault, setAutoUpgradeVault] = useState(true); // State for checkbox
   const [autoUpgradeAll, setAutoUpgradeAll] = useState(false); // State for checkbox
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);

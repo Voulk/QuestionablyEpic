@@ -17,6 +17,14 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
+    update: 12,
+    date: "April 28",
+    changes: [ 
+      "Oracle Disc Priest Beta",
+      "Vault items are now automatically upgraded to max instead of having to click it.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 11,
     date: "April",
     changes: [ 
