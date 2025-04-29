@@ -76,7 +76,7 @@ export default function RaidGearContainer(props) {
     //const raidName = encounterDB.filter((obj) => {
      // return obj.raidID === raid;
     //})[0]["name"][currentLanguage];
-    const raidName = encounterDB[raid].name[currentLanguage];
+    const raidName = encounterDB[raid].name;
     return raidName;
   };
 
@@ -238,9 +238,11 @@ export default function RaidGearContainer(props) {
     // Raid Panel
 
     const raidList = [
-      72, // Bastion
-      73, // Blackwing Descent
-      74, // Throne of Four Winds
+      //72, // Bastion
+      //73, // Blackwing Descent
+      //74, // Throne of Four Winds
+
+      330, // Heart of Fear
 
 
     ];
@@ -270,12 +272,17 @@ export default function RaidGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ */}
-                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[72].name[currentLanguage]} {...a11yProps(0)} />
-                  {/* ---------------------------------------- BWD ---------------------------------------- */}
-                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[73].name[currentLanguage]} {...a11yProps(1)} />
-                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ */}
-                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[74].name[currentLanguage]} {...a11yProps(2)} />
+                  {raidList.map((raidID, index) => (
+                    <Tab className={classes.bastionHeaderStyle} label={encounterDB[raidID].name} {...a11yProps(index)} />
+
+                  ))}
+
+                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ 
+                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[330].name} {...a11yProps(0)} />*/}
+                  {/* ---------------------------------------- BWD ---------------------------------------- 
+                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[330].name} {...a11yProps(1)} />*/}
+                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ 
+                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[330].name} {...a11yProps(2)} />*/}
   
                 </Tabs>
               </AppBar>
@@ -290,7 +297,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key][currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -304,7 +311,7 @@ export default function RaidGearContainer(props) {
                                 >
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                  {encounterDB[raidID].bosses[key][currentLanguage]} -{" "}
+                                  {encounterDB[raidID].bosses[key]} -{" "}
                                   {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
                                       ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)

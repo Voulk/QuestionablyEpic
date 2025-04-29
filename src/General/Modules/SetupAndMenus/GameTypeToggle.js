@@ -101,13 +101,6 @@ export default function GameTypeSwitch(props) {
         </Tooltip>
       </ToggleButton>
 
-      <ToggleButton className={classes.root} value="ClassicMoP" aria-label="classicLabel" disabled>
-        <Tooltip title={"Mists of Pandaria (Coming Soon)"} arrow>
-          <div style={{ display: "inline-flex" }}>
-            <img src={MopLogo} alt={"Mists of Pandaria (Coming Soon)"} />
-          </div>
-        </Tooltip>
-      </ToggleButton>
 
     </ToggleButtonGroup>
   );

@@ -37,7 +37,8 @@ export const craftedDB = {
   7: "Jewelcrafting",
 }
 
-export const encounterDB = {
+
+export const retailInstanceDB = {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Raids                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -116,4 +117,19 @@ export const encounterDB = {
       },
     }
   },
+}
+
+const classicInstanceDB = {
+  330: {
+    name: "Heart of Fear",
+    bossOrder: [745],
+    bosses: {
+      745: "Imperial Vizier Zor'lok",
+    }
+  },
+}
+
+export const encounterDB = {
+  ...classicInstanceDB,
+  ...retailInstanceDB,
 }

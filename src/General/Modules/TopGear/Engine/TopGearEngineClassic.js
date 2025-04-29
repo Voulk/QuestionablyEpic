@@ -429,8 +429,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          let secondaryRank = castModel.autoReforgeOrder;// player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
-
+          let secondaryRank = castModel.profile.autoReforgeOrder;// player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
