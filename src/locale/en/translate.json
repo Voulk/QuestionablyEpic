@@ -479,8 +479,8 @@
     "SimCInput": {
       "SimCDialogueTitleClassic": "Paste Your QE Import String",
       "SimCDialogueTitleRetail": "Paste Your SimC String",
-      "SimCHeaderButtonLabelClassic": "Gear Import",
-      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCHeaderButtonLabelClassic": "Import Gear",
+      "SimCHeaderButtonLabelRetail": "Import Gear",
       "SimCStringLabel": "Import String"
     },
     "Snackbars": {

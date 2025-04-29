@@ -241,6 +241,20 @@ const offspecTalents = {
 
 // Resto talents
 const specTalents = {
+    // Row 2
+    yserasGift: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    renewal: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }},
+    cenarionWard: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+
+    ///// OLD
+
     blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
     }}, 

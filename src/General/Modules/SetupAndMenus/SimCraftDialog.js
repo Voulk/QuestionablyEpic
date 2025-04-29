@@ -66,7 +66,7 @@ export default function SimCraftInput(props) {
           <StyledButton
             disableElevation={props.disableElevation}
             color={props.colour}
-            style={{ fontSize: "14px" }}
+            style={{ fontSize: "14px", whiteSpace: "nowrap" }}
             onClick={handleClickOpen}
             disabled={characterCount === 0}
             variant={buttonVariant}
