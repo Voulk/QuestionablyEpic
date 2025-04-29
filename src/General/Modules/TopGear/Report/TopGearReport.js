@@ -228,6 +228,11 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     window.history.back(); // Goes back to the previous page in history
   }
 
+  const topInfo = {
+    color: player.model.includes("Beta") ? "brick" : "transparent",
+    info: player.model.includes("Beta") ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days.": "This is your best set of gear. You can see how close other sets are below!",
+  }
+
 
   return (
     <div
@@ -244,7 +249,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
           {/*gameType === "Retail" ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
             "Consider which items you might upgrade, or upgrade them in QE Live before hitting go."]} color={"#0288d1"} title={"Vault Advice"} /> : ""*/}
           <Grid item xs={12}>
-          <InformationBox variant={"transparent"} title={"Top Set"} information={"This is your best set of gear. You can see how close other sets are below!"}></InformationBox>
+          <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>
           </Grid>
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>

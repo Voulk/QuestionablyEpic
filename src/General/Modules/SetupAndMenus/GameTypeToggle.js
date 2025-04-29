@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       opacity: 0.3,
     },
     [theme.breakpoints.up("md")]: {
-      minWidth: 300,
+      minWidth: 260,
       padding: 4,
       opacity: 0.3,
     },
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0.3,
       },
       [theme.breakpoints.up("md")]: {
-        minWidth: 300,
+        minWidth: 260,
         padding: 4,
         opacity: 1,
       },
@@ -97,6 +97,14 @@ export default function GameTypeSwitch(props) {
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={ClassicLogo} alt={t("Cataclysm")} />
+          </div>
+        </Tooltip>
+      </ToggleButton>
+
+      <ToggleButton className={classes.root} value="ClassicMoP" aria-label="classicLabel" disabled>
+        <Tooltip title={"Mists of Pandaria (Coming Soon)"} arrow>
+          <div style={{ display: "inline-flex" }}>
+            <img src={MopLogo} alt={"Mists of Pandaria (Coming Soon)"} />
           </div>
         </Tooltip>
       </ToggleButton>

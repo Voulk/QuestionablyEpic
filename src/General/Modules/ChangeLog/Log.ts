@@ -28,6 +28,14 @@ export const changeLog: entry[] = [
       "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
       "Upgrade Finder: Currently Equipped items now shown on the report."
+  ]},
+  {
+    version: "11.1 / 4.4.2",
+    update: 12,
+    date: "April 28",
+    changes: [ 
+      "Oracle Disc Priest Beta",
+      "Vault items are now automatically upgraded to max instead of having to click it.",
     ]},
   {
     version: "11.1 / 4.4.2",
