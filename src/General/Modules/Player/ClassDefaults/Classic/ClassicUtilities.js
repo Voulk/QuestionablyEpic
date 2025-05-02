@@ -20,7 +20,7 @@ import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/
  */
 export const applyLoadoutEffects = (classicSpells, settings, state) => {
     const auraHealingBuff = { // THIS IS ADDITIVE WITH OTHER INCREASES
-        "Restoration Druid": 0.25,
+        "Restoration Druid": 0.1,
         "Discipline Priest": 0, // Gets 15% intellect instead.
         "Holy Paladin": 0.1,
         "Holy Priest": 0.15,

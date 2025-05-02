@@ -20,8 +20,8 @@ export const CLASSICDRUIDSPELLDB = {
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
-        coeff: 0.134,
-        flat: 1307,
+        coeff: 0.392,
+        flat: 3815, // Not final
         expectedOverheal: 0.2,
         flags: {targeted: true},
         secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
@@ -241,6 +241,12 @@ const offspecTalents = {
 
 // Resto talents
 const specTalents = {
+
+    specPassives: {points: 0, maxPoints: 0, icon: "spell_shaman_spiritlink", id: 78784, select: false, tier: 1, runFunc: function (state, spellDB, points) {
+        // Here we'll include any spec passives that we need. These are quite common in MoP.
+        
+    }},
+
     // Row 2
     yserasGift: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         

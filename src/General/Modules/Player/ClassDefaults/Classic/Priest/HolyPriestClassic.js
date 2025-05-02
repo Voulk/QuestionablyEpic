@@ -128,28 +128,31 @@ export function initializeHPriestSet() {
   const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
   const castProfile = [
-    {spell: "Power Word: Shield", cpm: 3.5, hastedCPM: true, fillerSpell: true, fillerRatio: 0.1},
-    {spell: "Renew", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.3},
-    {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.6},
-    {spell: "Circle of Healing", cpm: 4.5},
-    {spell: "Holy Word: Sanctuary", cpm: 3, hastedCPM: false},
-    {spell: "Holy Word: Serenity", cpm: 1, hastedCPM: false},
-    {spell: "Divine Hymn", cpm: 1/3},
-    {spell: "Prayer of Mending", cpm: 3.5},
+    // Cooldowns
+    {spell: "Circle of Healing", efficiency: 0.95},
+    {spell: "Holy Word: Sanctuary", efficiency: 0.95},
+    {spell: "Holy Word: Serenity", efficiency: 0.95},
+    {spell: "Divine Hymn", efficiency: 0.8},
+    {spell: "Prayer of Mending", cpm: 0.9},
+    
+    // Filler Spells
+    {spell: "Power Word: Shield", cpm: 3.5, fillerSpell: true, fillerRatio: 0.1},
+    {spell: "Renew", cpm: 4, fillerSpell: true, fillerRatio: 0.3},
+    {spell: "Prayer of Healing", cpm: 6, fillerSpell: true, fillerRatio: 0.6},
+    
   ]
 
   const adjSpells = getTalentedSpellDB("Holy Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: holyPriestTalents, spec: "Holy Priest", genericBonus: {damage: 1, healing: 1}});
 
+
   castProfile.forEach(spell => {
+    if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
     spell.castTime = adjSpells[spell.spell][0].castTime;
     spell.hpc = 0;
     spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;
     spell.healing = 0;
   })
   const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
-  //const playerData = { spec: "Holy Priest", spells: discSpells, settings: testSettings, talents: {...discTalents}, stats: activeStats }
-  //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
 
-  //console.log(JSON.stringify(adjSpells));
   return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
 }
