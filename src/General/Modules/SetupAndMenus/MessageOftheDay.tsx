@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "The nerf to Mister Pick-me-up & Sigil of Algari Concordance are both in."
+    "The buffs to Soulletting Ruby and Carved Blazikon Wax are in!"
   ]
 ;
   if (messageOfTheDay.length === 0) return;
