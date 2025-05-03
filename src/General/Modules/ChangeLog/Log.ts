@@ -16,7 +16,14 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
-    version: "11.1 / 4.4.2",
+    version: "11.1.5 / 4.4.2",
+    update: 13,
+    date: "May",
+    changes: [ 
+      "In-game trinket tuning to Soulletting Ruby & Carved Blazikon Wax",
+    ]},
+  {
+    version: "11.1.5 / 4.4.2",
     update: 12,
     date: "April 28",
     changes: [ 

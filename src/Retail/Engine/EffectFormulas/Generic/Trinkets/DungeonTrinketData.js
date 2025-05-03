@@ -104,7 +104,7 @@ export const dungeonTrinketData =
     description: "",
     effects: [
       {
-        coefficient: (1.375703 + (1.681503+1.375703)) / 2, 
+        coefficient: (1.5133 + (1.8497+1.5133)) / 2, 
         table: -7,
         duration: 16,
         //multiplier: 0.725, // Assumes boss is around 50% health.
@@ -162,7 +162,7 @@ export const dungeonTrinketData =
   },
     {
         name: "Carved Blazikon Wax",
-        description: "Standing in the candle is a very small part of this trinkets power so don't worry about it too much.",
+        description: "The candle portion got recently buffed and is now about a quarter of the trinkets power.",
         effects: [
           {
             coefficient: 1.068708, 
@@ -172,7 +172,7 @@ export const dungeonTrinketData =
             ppm: 2,
           },
           {
-            coefficient: 0.112286, 
+            coefficient: 0.2808, 
             table: -7,
             stat: "versatility",
             duration: 15,
@@ -441,7 +441,7 @@ export const dungeonTrinketData =
       },
       { // Last 30s, multiple can be up at once. Grabbing multiple orbs just refreshes the buff though.
         name: "Entropic Skardyn Core",
-        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack. Very difficult to use on a lot of fights.",
+        description: "Creates a small orb that you have to run over and grab. Orbs last about 30 seconds but the buff does not stack. They'll slowly float towards you.",
         effects: [
           {
             coefficient: 1.124436, 
@@ -455,7 +455,7 @@ export const dungeonTrinketData =
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
 
-          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.75;
+          bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * data[0].penalty; 
 
           return bonus_stats;
         }
