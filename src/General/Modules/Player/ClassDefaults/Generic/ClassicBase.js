@@ -98,19 +98,18 @@ export const applyRaidBuffs = (state, stats) => {
     stats.crit += 5 * 179;
 
     // 5% spell haste
-    //stats.haste += 5 * 128;
+    // Haste is multiplicative so we'll just handle it in the profiles themselves.
 
     // 5% base stats - The added intellect also becomes spell power.
     stats.intellect *= 1.05;
-    stats.spirit *= 1.05;
-    
-    // Max mana
-    state.manaPool *= 1.06;
 
-    // Armor bonus
+    // Armor-type bonus (all leather etc).
     stats.intellect *= 1.05;
 
     // Mana Spring etc
+
+    // 3k mastery
+    stats.mastery += 3000;
 
     // Add Int to spell power.
     stats.spellpower +=  stats.intellect;
@@ -119,7 +118,6 @@ export const applyRaidBuffs = (state, stats) => {
 
     return stats;
 
-    //console.log(state.currentStats);
 }
 
 export const getCritPercentage = (currentStats, spec) => {
@@ -142,6 +140,7 @@ export const getManaRegen = (currentStats, spec) => {
 }
 
 export const getManaPool = (currentStats, spec) => {
+    return 300000;
     if (spec.includes("Restoration Druid")) return (GLOBALCONST.baseMana[spec] + currentStats.intellect * 15) * 1.02; 
     else {
         const baseManaPool = (GLOBALCONST.baseMana[spec] - 280 + currentStats.intellect * 15) * 1.02; // Includes meta gem
@@ -159,6 +158,8 @@ export const getManaPool = (currentStats, spec) => {
 
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
+
+// Not updated for MoP yet.
 export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     const baseMana = GLOBALCONST.baseMana[spec];
     let additionalManaPerSecond = baseMana * 0.05;

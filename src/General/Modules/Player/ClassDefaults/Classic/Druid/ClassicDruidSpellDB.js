@@ -140,6 +140,49 @@ export const CLASSICDRUIDSPELLDB = {
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery']
     }],
+    "Tranquility": [{
+        // Direct heal portion
+        spellData: {id: 740, icon: "spell_nature_tranquility", cat: "heal"},
+        type: "heal",
+        castTime: 8, 
+        channel: true,
+        cost: 35, 
+        flat: 9037,
+        coeff: 0.835, 
+        targets: 12,
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0}
+    },
+    {
+        // Tranq HoT portion. This constantly refreshes as we channel on anyone we hit. 
+        // TODO: Calculate average stack count and duration per player. On average half the raid will be hit per tick basically.
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 8 + 8,
+        coeff: 0.142,
+        flat: 787,
+        targets: 12,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.3,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0}
+    }],
+    "Cenarion Ward": [
+        {
+        spellData: {id: 102351, icon: "ability_druid_naturalperfection", cat: "heal"},
+        castTime: 0,
+        cost: 14.8, 
+        type: "classic periodic",
+        buffType: "heal",
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        buffDuration: 6,
+        coeff: 1.04,
+        flat: 12349, 
+        expectedOverheal: 0.2,
+        flags: {targeted: true},
+        secondaries: ['crit', 'mastery'] 
+    }],
     "Force of Nature": [{
         // Trees also summon an Efflo at their location. This happens even if you are using Glyph of Efflorescence.
         // Their Efflo: isn't unique, does scale with haste.

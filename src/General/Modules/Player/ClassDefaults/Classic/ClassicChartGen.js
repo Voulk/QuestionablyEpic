@@ -237,14 +237,17 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
     const sequences = [
         
         {cat: "Base Spells", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: []},
-        {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         {cat: "Base Spells", tag: "Lifebloom (1 stack)", seq: ["Lifebloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Lifebloom (3 stack rolling)", seq: ["Lifebloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
         {cat: "Base Spells", tag: "Nourish", seq: ["Nourish"], preBuffs: []},
         {cat: "Base Spells", tag: "Healing Touch", seq: ["Healing Touch"], preBuffs: []},
-        {cat: "Base Spells", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
-        {cat: "Base Spells", tag: "Force of Nature", seq: ["Force of Nature"], preBuffs: []},
+
+        {cat: "Cooldowns", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Tranquility", seq: ["Tranquility"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Force of Nature", seq: ["Force of Nature"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Cenarion Ward", seq: ["Cenarion Ward"], preBuffs: []},
 
         {cat: "In Tree of Life", tag: "Lifebloom", seq: ["Lifebloom"], preBuffs: ["Tree of Life"]},
         {cat: "In Tree of Life", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: ["Tree of Life"]},

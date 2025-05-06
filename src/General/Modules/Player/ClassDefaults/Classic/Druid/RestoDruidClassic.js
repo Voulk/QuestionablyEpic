@@ -122,7 +122,6 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
             const spellCost = spell.cost;
             const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
 
-
             return total + manaSavedForSpell;
         }, 0); // Start accumulating from 0
 
