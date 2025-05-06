@@ -21,7 +21,7 @@ export const CLASSICDRUIDSPELLDB = {
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
         coeff: 0.392,
-        flat: 3815, // Not final
+        flat: 3815, 
         expectedOverheal: 0.2,
         flags: {targeted: true},
         secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
@@ -32,8 +32,8 @@ export const CLASSICDRUIDSPELLDB = {
         type: "heal",
         castTime: 3, // Check
         cost: 10, 
-        coeff: 0.266, 
-        flat: 2598,
+        coeff: 0.614, 
+        flat: 6649,
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
@@ -44,8 +44,8 @@ export const CLASSICDRUIDSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         cost: 35, 
-        flat: 3579,
-        coeff: 0.2936, 
+        flat: 10384,
+        coeff: 0.958, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
@@ -55,8 +55,8 @@ export const CLASSICDRUIDSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         buffDuration: 12,
-        coeff: 0.0296, // The coefficient for a single regrowth tick.
-        flat: 361,
+        coeff: 0.073, // The coefficient for a single regrowth tick.
+        flat: 787,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
@@ -68,10 +68,10 @@ export const CLASSICDRUIDSPELLDB = {
         castTime: 0, 
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 10,
+        buffDuration: 15,
         cost: 7, 
-        coeff: 0.0234, // The coefficient for a single regrowth tick.
-        flat: 228,
+        coeff: 0.057, // The coefficient for a single regrowth tick.
+        flat: 621,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery']
@@ -79,8 +79,8 @@ export const CLASSICDRUIDSPELLDB = {
     {
         // Expiration portion
         type: "heal",
-        coeff: 0.284, 
-        flat: 1848,
+        coeff: 0.752, 
+        flat: 8150,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'] 
     },
@@ -93,8 +93,8 @@ export const CLASSICDRUIDSPELLDB = {
         buffType: "heal",
         buffDuration: 10,
         cost: 7, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
-        coeff: 0.0234 * 3,
-        flat: 228 * 3,
+        coeff: 0.057 * 3,
+        flat: 621 * 3,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery']
@@ -106,7 +106,7 @@ export const CLASSICDRUIDSPELLDB = {
         castTime: 3, 
         cost: 30, 
         coeff: 1.86, // 0.806, 
-        flat: 7863,
+        flat: 20130,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0},
@@ -117,8 +117,8 @@ export const CLASSICDRUIDSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 10, 
-        coeff: 0.536, 
-        flat: 5229,
+        coeff: 1.29, 
+        flat: 13966,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0},
@@ -135,11 +135,53 @@ export const CLASSICDRUIDSPELLDB = {
         cooldownData: {cooldown: 8},
         buffDuration: 7,
         targets: 5,
-        coeff: 0.0437,
-        flat: 425,
+        coeff: 0.092, // Need to check if they changed WG formula.
+        flat: 990,
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery']
     }],
+    "Force of Nature": [{
+        // Trees also summon an Efflo at their location. This happens even if you are using Glyph of Efflorescence.
+        // Their Efflo: isn't unique, does scale with haste.
+        // Their Healing Touch: Does scale with haste. Effectively has a breakpoint where they can fit in one more cast. May or may not be reliable. On retail it isn't.
+        // Their casts inherit stats at cast start, not when the tree is summoned. 
+        // Questions, do they smart heal?
+        spellData: {id: 106737, icon: "ability_druid_forceofnature", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        flat: 2425,
+        coeff: 0.224, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0}
+    },
+    {
+        // Healing Touch casts (id=113828)
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 12,
+        coeff: 0.323, // The coefficient for a single Healing Touch cast. Data differs from wowhead so check this.
+        flat: 3490,
+        tickData: {tickRate: 2.5, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0}
+    },
+    /*{
+        // Efflo Cast (id=113828)
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 12,
+        coeff: 0.323, // The coefficient for a single Healing Touch cast. Data differs from wowhead so check this.
+        flat: 3490,
+        tickData: {tickRate: 2.5, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.2,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0}
+    },*/
+
+],
     // Wild Growth is bugged on Beta. This is the retail version. The Cata live version will likely be some combination of the two.
     /*"Wild Growth": [
         {
@@ -192,7 +234,28 @@ export const CLASSICDRUIDSPELLDB = {
         type: "damage",
         castTime: 1.5, 
         cost: 9, 
-        coeff: 0.879, 
+        coeff: 1.338, 
+        flat: 2930,
+        secondaries: ['crit'] 
+    }],
+    "Moonfire": [{
+        // Regrowth direct heal portion
+        spellData: {id: 8921, icon: "spell_nature_starfall", cat: "damage"},
+        type: "damage",
+        castTime: 1.5, 
+        cost: 8.4, 
+        coeff: 0.24, 
+        flat: 263,
+        secondaries: ['crit'] 
+    },
+    {
+        // Moonfire DoT portion
+        type: "classic periodic",
+        buffType: "damage",
+        buffDuration: 15,
+        coeff: 0.24, 
+        flat: 625,
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'] 
     }],
 
@@ -210,6 +273,7 @@ export const CLASSICDRUIDSPELLDB = {
 // Talents that aren't in the resto portion of the tree (Feral / Balance)
 const offspecTalents = {
 
+    /*
     furor: {points: 3, maxPoints: 3, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         state.manaPool *= (1 + 0.05 * points);
     }},
@@ -235,7 +299,7 @@ const offspecTalents = {
         //buffSpell(spellDB["Regrowth"], buffValue, "additive");
         spellDB["Regrowth"][1].additiveSlice = 0.05 * points;
 
-    }},
+    }},*/
 
 }
 
@@ -248,19 +312,41 @@ const specTalents = {
     }},
 
     // Row 2
-    yserasGift: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    yserasGift: {points: 1, maxPoints: 1, icon: "inv_misc_head_dragon_green", id: 145108, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         
     }}, 
-    renewal: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    renewal: {points: 0, maxPoints: 1, icon: "spell_nature_natureblessing", id: 108238, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         
     }},
-    cenarionWard: {points: 1, maxPoints: 1, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    cenarionWard: {points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", id: 102351, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T2
+    soulOfTheForest: {points: 1, maxPoints: 1, icon: "ability_druid_manatree", id: 114107, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    incarnation: {points: 0, maxPoints: 1, icon: "spell_druid_incarnation", id: 106731, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    forceOfNature: {points: 0, maxPoints: 1, icon: "ability_druid_forceofnature", id: 106737, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T3
+    heartOfTheWild: {points: 1, maxPoints: 1, icon: "spell_holy_blessingofagility", id: 108288, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    dreamOfCenarius: {points: 0, maxPoints: 1, icon: "ability_druid_dreamstate", id: 108373, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    naturesVigil: {points: 0, maxPoints: 1, icon: "achievement_zone_feralas", id: 124974, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
 
 
     ///// OLD
-
+    /*
     blessingOfTheGrove: {points: 2, maxPoints: 2, icon: "spell_shaman_spiritlink", id: 78784, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Rejuvenation"], 0.02 * points, "additive");
     }}, 
@@ -343,22 +429,27 @@ const specTalents = {
     swiftRejuvenation: {points: 1, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", id: 33886, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         spellDB["Rejuvenation"][0].customGCD = 1;
     }},
+    */
 
 }
 
 const glyphs = {
-    glyphOfRejuvenation: {points: 1, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 54754, select: true, tier: 3, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Rejuvenation"], 0.1, "additive");
+    // Majors
+    glyphOfRejuvenation: {points: 0, maxPoints: 1, icon: "spell_nature_rejuvenation", id: 54754, select: true, tier: 5, runFunc: function (state, spellDB, points) {
     }}, 
-    glyphOfLifebloom: {points: 1, maxPoints: 1, icon: "inv_misc_herb_felblossom", id: 54826, select: true, tier: 3, runFunc: function (state, spellDB, points) {
-        spellDB["Lifebloom"][0].statMods = {'crit': 0.1}
-        spellDB["Lifebloom"][1].statMods = {'crit': 0.1}
+    glyphOfBlooming: {points: 1, maxPoints: 1, icon: "spell_nature_protectionformnature", id: 121840, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+
     }}, 
 
-    // Majors
-    glyphOfWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 62970, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    glyphOfWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 62970, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         spellDB["Wild Growth"][0].targets += 1
         spellDB["Wild Growth"][0].cooldown += 2
+    }}, 
+    glyphOfEfflorescence: {points: 1, maxPoints: 1, icon: "inv_misc_herb_talandrasrose", id: 145529, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+
+    }}, 
+    glyphOfRegrowth: {points: 0, maxPoints: 1, icon: "spell_nature_resistnature", id: 116218, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+
     }}, 
 
 }

@@ -4,7 +4,6 @@ import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
 import StatPanel from "./SeqStatPanel";
 
-import { RootState } from "Redux/Reducers/RootReducer";
 import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
@@ -290,6 +289,14 @@ export default function SequenceGenerator(props) {
   const addTalent = (talentName, talentDB, setTalents) => {
     const talent = talentDB[talentName];
 
+    if (gameType === "Classic") {
+      Object.keys(talentDB).forEach((key) => {
+        if (talentDB[key].tier === talent.tier  && key !== talentName && talentDB[key].tier !== 5) {
+            talentDB[key].points = 0;
+        }
+      });
+    }
+
     talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
 
     setTalents({ ...talentDB });
@@ -514,7 +521,7 @@ export default function SequenceGenerator(props) {
                                   e.persist();
                                   addTalent(spell, talentDB, setTalents, e);
                                 }}
-                                style={{ display: "flex", width: '30px', height: '30px' }}
+                                style={{ display: "flex", width: '30px', height: '30px', border: talentDB[spell].points === talentDB[spell].maxPoints ? "2px solid #F2BF59" : "2px solid rgba(255,255,255,0.2)", borderRadius: "2px" }}
                               />
                             </Grid>
                           ) : (

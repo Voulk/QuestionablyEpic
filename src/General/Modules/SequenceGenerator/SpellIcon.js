@@ -31,7 +31,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, gameType, al
     <div style={{position: "relative"  }}> 
       <WowheadTooltip type="spell" id={spellId} domain={domain}>
         <img src={fullURL} alt={alt} className={`icon ${className || ""}`} {...others} />
-        {iconType === "Talent" ? (
+        {(iconType === "Talent" && gameType === "Retail") ? (
           <div {...others} style={{ position: "absolute", top: "19%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "16px", textShadow: "1px 1px 4px black" }}>
             {" "}
             {spell.points}{" "}
