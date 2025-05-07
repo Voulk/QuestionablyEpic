@@ -1,7 +1,7 @@
 import React from "react";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
-export const SpellIcon = ({ spell, spec, iconType, size, className, gameType, alt = "", ...others }) => {
+export const SpellIcon = ({ spell, iconType, size, className, gameType, alt = "", ...others }) => {
   if (!spell) {
     return null;
   }

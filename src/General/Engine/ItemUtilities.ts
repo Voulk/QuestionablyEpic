@@ -974,9 +974,8 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
   else if ((item.id === 77096 || item.id === 77083) && (itemLevelReq === 410)) return true; // Relic / cape. No 410+ options.
   
-  // Deal with Rag loot
   else if (itemLevelReq === 476 && item.itemLevel === 483) return true;
-  else if (itemLevelReq === 489 && item.itemLevel === 496/*  && item.sources && item.sources[0].encounterId === 198*/) return true;
+  else if (itemLevelReq === 489 && item.itemLevel === 496) return true;
   else if (itemLevelReq === 502 && item.itemLevel === 509) return true;
   // The rest
   else return false
@@ -1014,6 +1013,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "T14" && sources) sourceCheck = ([321, 320, 330].includes(sources.instanceId));
       else if (!sources) sourceCheck = false;
     }
 

@@ -200,6 +200,8 @@ const offspecTalents = {
 
 
 const discTalents = {
+
+    /*
     improvedPowerWordShield: {points: 2, maxPoints: 2, icon: "spell_holy_powerwordshield", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Power Word: Shield"], 0.1 * points, "additive");
     }},
@@ -239,11 +241,45 @@ const discTalents = {
 
     }},
 
-
+    */
 
 }
 
 const holyTalents = {
+    // Row 2
+    fromDarknessComesLight: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    mindbender: {points: 1, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    solaceAndInsanity: {points: 1, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T2
+    twistOfFate: {points: 1, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    powerInfusion: {points: 1, maxPoints: 1, icon: "spell_holy_powerinfusion", id: 10060, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    divineInsight: {points: 1, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T3
+    cascade: {points: 1, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    divineStar: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar", id: 110744, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    halo: {points: 1, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    /*
     improvedRenew: {points: 2, maxPoints: 2, icon: "inv_helmet_96", id: 14908, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Renew"], 0.05 * points, "additive"); 
     }},
@@ -283,12 +319,12 @@ const holyTalents = {
         state.genericBonus.healing *= 1 + (0.02 * points);
         state.genericBonus.damage *= 1 + (0.02 * points)
     }},
-
+*/
 }
 
 
 const glyphs = {
-    glyphOfPrayerOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_prayerofhealing02", id: 55680, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    glyphOfPrayerOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_prayerofhealing02", id: 55680, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         const healOverTimeEffect = {       
             name: "Glyph of Prayer of Healing", 
             type: "classic periodic",
@@ -304,12 +340,12 @@ const glyphs = {
 
         spellDB["Prayer of Healing"].push(healOverTimeEffect);
     }},
-    glyphOfCircleOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 55675, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    glyphOfCircleOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 55675, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         spellDB["Circle of Healing"][0].targets = 6;
         spellDB["Circle of Healing"][0].cost *= 1.2;
     }},
 
-    glyphOfRenew: {points: 1, maxPoints: 1, icon: "spell_holy_renew", id: 55674, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    glyphOfRenew: {points: 1, maxPoints: 1, icon: "spell_holy_renew", id: 55674, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Renew"], 0.1, "additive"); 
     }},
 

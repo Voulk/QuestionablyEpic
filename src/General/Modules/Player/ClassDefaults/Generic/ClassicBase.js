@@ -95,7 +95,7 @@ export const buffSpell = (fullSpell, buffPerc, type = "additive") => {
 
 export const applyRaidBuffs = (state, stats) => {
     // Crit
-    stats.crit += 5 * 179;
+    stats.crit += 5 * GLOBALCONST.statPoints.crit;
 
     // 5% spell haste
     // Haste is multiplicative so we'll just handle it in the profiles themselves.
