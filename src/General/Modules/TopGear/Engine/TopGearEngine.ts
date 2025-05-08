@@ -444,6 +444,7 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   let doubleSlot: {[key: string]: number} = {};
   const primeList = primeSet.itemList;
   const diffList = itemSet.itemList;
+
   let differentials: {
     items: Item[]; //
     gems: number[]; //
@@ -469,6 +470,9 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
       // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
         differentials.items.push(diffList[x - 1]);
+      }
+      else if ((x === 10 || x === 12) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x + 1]);
       }
     }
   }

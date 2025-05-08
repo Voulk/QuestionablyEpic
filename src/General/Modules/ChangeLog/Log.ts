@@ -17,8 +17,16 @@ interface entry {
 export const changeLog: entry[] = [
   {
     version: "11.1.5 / 4.4.2",
+    update: 14,
+    date: "May 9",
+    changes: [ 
+      "Enabled Turbo Boost item levels across the app.",
+      "Top Gear will now make it clear which ring / trinket slot are being replaced.",
+    ]},
+  {
+    version: "11.1.5 / 4.4.2",
     update: 13,
-    date: "May",
+    date: "May 2",
     changes: [ 
       "In-game trinket tuning to Soulletting Ruby & Carved Blazikon Wax",
     ]},
