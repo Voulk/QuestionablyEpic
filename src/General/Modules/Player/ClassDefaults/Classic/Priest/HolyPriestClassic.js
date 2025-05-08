@@ -37,7 +37,7 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
 
-  statProfile.spellpower += 532; // Inner Fire
+  statProfile.spellpower *= 1.1; // Inner Fire
   const critPercentage = getCritPercentage(statProfile, "Holy Priest"); // +4% crit
 
   const chakraBreakdown = {
@@ -49,16 +49,6 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
   // Take care of any extras.
   if (tierSets.includes("Priest T11-4")) {
     statProfile.spirit += 540;
-  }
-  if (tierSets.includes("Priest T12-2")) { 
-    // You regenerate 2% of your base mana every 5 seconds, basically in perpetuity by casting any helpful healing spell.
-    statProfile.mp5 = (statProfile.mp5 || 0) + 0.02 * 20590;
-  }
-  if (tierSets.includes("Priest T12-4")) {
-    // 5s ticking heal on a 45s cooldown.
-    const tierDuration = 5
-    const expectedOverheal = 0.2;
-    statProfile.hps = (statProfile.hps || 0) + (9250 + 10750) / 2 * tierDuration * (1 - expectedOverheal) / 55;
   }
 
   // Calculate filler CPM
@@ -134,6 +124,7 @@ export function initializeHPriestSet() {
     {spell: "Holy Word: Serenity", efficiency: 0.95},
     {spell: "Divine Hymn", efficiency: 0.8},
     {spell: "Prayer of Mending", cpm: 0.9},
+    //{spell: "Sequence", sequence: ["Spirit Shell", "Prayer of Healing", "Prayer of Healing", "Prayer of Healing"], cooldown: 60},
     
     // Filler Spells
     {spell: "Power Word: Shield", cpm: 3.5, fillerSpell: true, fillerRatio: 0.1},

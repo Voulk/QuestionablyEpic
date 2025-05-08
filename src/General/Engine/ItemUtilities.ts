@@ -1013,7 +1013,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
-      else if (source === "T14" && sources) sourceCheck = ([321, 320, 330].includes(sources.instanceId));
+      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId));
       else if (!sources) sourceCheck = false;
     }
 

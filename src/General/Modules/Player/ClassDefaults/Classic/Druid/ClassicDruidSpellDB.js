@@ -15,7 +15,7 @@ export const CLASSICDRUIDSPELLDB = {
         // The number of rejuv ticks is (5 x haste) + 1.
         spellData: {id: 774, icon: "spell_nature_rejuvenation", cat: "heal"},
         castTime: 0,
-        cost: 20, // 699
+        cost: 20,
         type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
