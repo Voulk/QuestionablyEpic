@@ -121,6 +121,7 @@ export const getCircletEffect = (gemNames: number[], itemLevel: number, addition
           bonus_stats[stat] = bonus_stats[stat] * masteryMult;
         }
       });*/
+      console.log(JSON.stringify(final_stats));
       return final_stats;
     }
     else {
