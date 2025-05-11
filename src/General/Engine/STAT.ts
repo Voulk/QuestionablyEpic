@@ -46,8 +46,23 @@ export const STATCONVERSION = {
       "Discipline Priest": 1.35,
       "Restoration Shaman": 3,
     } as Record<string, number>,
-
 }
+
+export const STATCONVERSIONCLASSIC = {
+  HASTE: 425,
+  CRIT: 600,
+  INTCRIT: 2168,
+  MASTERY: 600,
+  MASTERYMULT: {
+    "Restoration Druid": 1.25,
+    "Mistweaver Monk": 1.25,
+    "Holy Paladin": 1.5,
+    "Holy Priest": 1.25,
+    "Discipline Priest": 2.5,
+    "Restoration Shaman": 3,
+  } as Record<string, number>,
+}
+
 
   // Classic Stat percentages
   /*

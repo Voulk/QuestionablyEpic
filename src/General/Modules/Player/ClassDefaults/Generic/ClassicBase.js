@@ -1,14 +1,17 @@
 // Classic sometimes works in different ways to retail. If we can use a retail function then we should, but if we need a classic version then it can be added here.
 // If it can be solved with a flag instead (like "No partial tick") then that is preferable to writing a new function.
 
+import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
+
+
+// Since we've moved these to STAT we can probably start folding references back and delete this part of the file.
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 600, // 179.279998779296875,
-        mastery: 600, // 179.279998779296875,
-        haste: 425, //128.057006835937500,
-
-        critInt: 2168,
+        crit: STATCONVERSIONCLASSIC.CRIT,
+        mastery: STATCONVERSIONCLASSIC.MASTERY, 
+        haste: STATCONVERSIONCLASSIC.HASTE,
+        critInt: STATCONVERSIONCLASSIC.INTCRIT,
     },
 
     baseCrit: {
@@ -21,21 +24,21 @@ const GLOBALCONST = {
     },
 
     masteryMod: {
-        "Restoration Druid": 1.25,
-        "Discipline Priest": 2.5, 
-        "Holy Paladin": 1.5,
-        "Holy Priest": 1.25,
-        "Restoration Shaman": 3, 
-        "Mistweaver Monk": 1.25, 
+        "Restoration Druid": STATCONVERSIONCLASSIC.MASTERYMULT["Restoration Druid"],
+        "Discipline Priest": STATCONVERSIONCLASSIC.MASTERYMULT["Discipline Priest"],
+        "Holy Paladin": STATCONVERSIONCLASSIC.MASTERYMULT["Holy Paladin"],
+        "Holy Priest": STATCONVERSIONCLASSIC.MASTERYMULT["Holy Priest"],
+        "Restoration Shaman": STATCONVERSIONCLASSIC.MASTERYMULT["Restoration Shaman"],
+        "Mistweaver Monk":STATCONVERSIONCLASSIC.MASTERYMULT["Mistweaver Monk"],
     },
 
-    baseMana: { // TODO
-        "Holy Paladin": 23422,
-        "Restoration Druid": 18355,
-        "Discipline Priest": 20590,
-        "Holy Priest": 20590,
-        "Restoration Shaman": 23430,
-        "Mistweaver Monk": 0,
+    baseMana: { // This doesn't vary by spec anymore. It could be merged into one value.
+        "Holy Paladin": 300000,
+        "Restoration Druid": 300000,
+        "Discipline Priest": 300000,
+        "Holy Priest": 300000,
+        "Restoration Shaman": 300000,
+        "Mistweaver Monk": 300000,
     }
 
 }

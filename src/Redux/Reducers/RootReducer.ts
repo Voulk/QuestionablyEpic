@@ -60,7 +60,7 @@ const initialState : RootState = {
     manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
     classicGemSettings: {value: "Rare", options: ["Rare", "Epic"], category: "topGear", type: "selector", gameType: "Classic"},
     reforgeSetting: {value: "Smart", options: ["Smart", "Manual", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
-    hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura", "Haste Aura + Dark Intent"], category: "topGear", type: "selector", gameType: "Classic"},
+    hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura"], category: "topGear", type: "selector", gameType: "Classic"},
     numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
     metaGem: {value: "Ember Shadowspirit", options: ["Ember Shadowspirit"], category: "topGear", type: "selector", gameType: "Classic"},
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},

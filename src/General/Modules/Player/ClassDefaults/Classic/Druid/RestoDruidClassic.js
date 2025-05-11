@@ -89,45 +89,15 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     const fightLength = 6;
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
-    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
+    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
     const spellpower = statProfile.intellect + statProfile.spellpower;
-    const critPercentage = 1.04 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
-    // Evaluate Stats
-    // Spellpower
+    const critPercentage = 1 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
 
     // Take care of any extras.
-    if (tierSets.includes("Druid T11-4")) {
-      statProfile.spirit += 540;
-    }
-    if (tierSets.includes("Druid T12-2")) {
-      // 40% chance on Lifebloom tick to restore 184 mana.
-      // Ignoring ToL for now. We know it has some form of reduced proc rate but not how much.
-      statProfile.mp5 = (statProfile.mp5 || 0) + (60 * getHaste(statProfile, "Classic") * hasteBuff * 0.4 * 184) / 12;
-    }
     if (tierSets.includes("Druid T13-2")) {
-        // 25% cost reduction for 15s after pressing Innervate
-        const spellsCast = {
-            "Wild Growth": 2,
-            "Nourish": 2,
-            "Swiftmend": 1,
-            "Rejuvenation": Math.floor(15-5*1.5/getHaste(statProfile, "Classic")) * 0.8
-        }
-
-        const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
-            const spell = druidBaseline.castProfile.find(spell => spell.spell === spellName);
-            
-            if (!spell) return total; // Spell can't be found, ignore.
-
-            const spellCost = spell.cost;
-            const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
-
-            return total + manaSavedForSpell;
-        }, 0); // Start accumulating from 0
-
-        statProfile.mp5 = (statProfile.mp5 || 0) + (manaSaved / 180 * 5);
-      }
-
+      // Left in as templates but old tier sets now removed.
+    }
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -141,12 +111,9 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
     // This could be rectified by simulating the entire buff window 
 
     let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.9
+    const fillerWastage = 0.9;
     let costPerMinute = druidBaseline.costPerMinute;
 
-    //console.log(totalManaPool);
-    //console.log("Rejuv cost: " + fillerCost);
-    //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
     druidBaseline.castProfile.forEach(spellProfile => {
@@ -154,51 +121,16 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
         const spellName = spellProfile.spell;
 
         fullSpell.forEach(spell => {
-          const genericMult = 1.04 * (spellProfile.bonus ? spellProfile.bonus : 1);
-          let critBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0;
-          if (tierSets.includes("Druid T11-2") && spellProfile.spell === "Lifebloom") critBonus += 0.05;
-          const critMult = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + critBonus) : 1;
-          const additiveScaling = (spell.additiveScaling || 0) + 1
-          const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling : 1;
-          let spellHealing = (spell.flat + spell.coeff * spellpower) *
-                              (critMult) * // Add base crit
-                              (masteryMult) *
-                              genericMult;
+
+        // Exception Cases
+        
+        // Regular cases
+        spellThroughput = runClassicSpell(spellName, spell, statProfile);
+
           
-          // Handle HoT
-          if (spell.type === "classic periodic") {
-            const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
-            const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
-            const targetCount = spell.targets ? spell.targets : 1;
-            let tickCount = Math.round(spell.buffDuration / (adjTickRate));
-
-            if (tierSets.includes("Druid T13-4") && (spellName === "Rejuvenation" || spellName === "Regrowth")) {
-                // 10% chance to double the duration of Rejuv / Regrowth HoT
-                tickCount *= 1.1;
-            }
-
-            if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
-            else spellHealing = spellHealing * tickCount * targetCount;
-          }
-
-
-          // These are functional on the high end, but may run into issues for players with sub 2k haste. This isn't impactful since the trinket is much worse there.
-          if (spellProfile.spell === "Rejuvenation" && shardOfWoe && statProfile.haste >= 2032) {
-            spellHealing *= (1.2 * 1 / 6 + 5 / 6); // 20% more healing 1/6th of the time.
-          }
-          if ((spellProfile.spell === "Wild Growth" || spellProfile.spell === "Efflorescence") && statProfile.haste >= 2005) {
-            spellHealing *= (1.11 * 1 / 6 + 5 / 6) // 11% more healing 1/6th of the time.
-          }
-
-          if (tierSets.includes("Druid T12-4") && spellProfile.spell === "Swiftmend" && spell.type === "heal") {
-            // Heal for a portion of the Swiftmend only. No Efflo, effective healing only.
-            healingBreakdown["T12-4"] = spellHealing * spellProfile.cpm * 0.9;
-            score += spellHealing * spellProfile.cpm * 0.9;
-          }
-          
-          //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
-          healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing * spellProfile.cpm);
-          score += spellProfile.fillerSpell ? (spellHealing * fillerCPM) : (spellHealing * spellProfile.cpm);
+        //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
+        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing * spellProfile.cpm);
+        score += spellProfile.fillerSpell ? (spellHealing * fillerCPM) : (spellHealing * spellProfile.cpm);
 
         //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
         })
