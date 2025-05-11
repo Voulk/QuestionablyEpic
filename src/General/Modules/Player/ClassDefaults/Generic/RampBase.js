@@ -119,6 +119,8 @@ const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
     
     tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
+    if (spellName === "Wild Growth") console.log(tickCount);
+
     // Run heal
     for (let i = 0; i < tickCount; i++) {
         if (spell.buffType === "heal") runHeal(state, spell, spellName + " (HoT)");
@@ -286,8 +288,7 @@ export const generateSpellTarget = (state, spell, spellName) => {
     for (let num of numbers) {
         if (!targets.has(num)) {
             addReport(state, "Adding Buff: " + spellName + " to target " + num);
-            //console.log(targets);
-            //console.log("Adding Buff: " + spellName + " to target " + num);
+
             return [num];
         }
     }
@@ -339,8 +340,6 @@ export const queueSpell = (castState, seq, state, spellDB, seqType, apl) => {
 
     // Check if the spell has a custom GCD. 
     const GCDCap = state.gameType === "Classic" ? 1 : 0.75;
-    console.log(castState.queuedSpell);
-    console.log(spellDB);
     const GCD = fullSpell[0].customGCD || 1.5;
     const castTime = getSpellCastTime(fullSpell[0], state, state.currentStats, castState.queuedSpell);
     const effectiveCastTime = castTime === 0 ? Math.max(GCD / getHaste(state.currentStats, state.gameType), GCDCap) : castTime;
@@ -526,7 +525,7 @@ export const getCurrentStats = (statArray, buffs) => {
 export const getHaste = (stats, gameType = "Retail") => {
     if (gameType === "Retail") return 1 + stats.haste / STATCONVERSION.HASTE / 100;
     else {
-        return (1 + stats.haste / 128.057006835937500 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
+        return (1 + stats.haste / 425 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
         
     }
 }

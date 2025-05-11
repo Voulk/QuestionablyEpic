@@ -191,6 +191,18 @@ export const CLASSICPRIESTSPELLDB = {
         targets: 5, // sqrt
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
     }],
+    "Power Infusion": [{
+        spellData: {id: 10060, icon: "spell_holy_powerinfusion", cat: "cooldown"},
+        type: "buff",
+        castTime: 0,
+        cost: 0,
+        cooldownData: {cooldown: 120, hasted: false}, 
+        buffDuration: 20,
+        buffType: 'statsMult',
+        ongcd: true,
+        stat: "haste",
+        value: 1.2, 
+    }],
 }
 
 // Talents that aren't in the 

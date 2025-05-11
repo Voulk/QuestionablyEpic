@@ -244,6 +244,7 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
         {cat: "Base Spells", tag: "Healing Touch", seq: ["Healing Touch"], preBuffs: []},
 
         {cat: "Cooldowns", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
+        {cat: "Cooldowns", tag: "SotF Wild Growth", seq: ["Wild Growth"], preBuffs: ["Soul of the Forest"]},
         {cat: "Cooldowns", tag: "Swiftmend", seq: ["Swiftmend"], preBuffs: []},
         {cat: "Cooldowns", tag: "Tranquility", seq: ["Tranquility"], preBuffs: []},
         {cat: "Cooldowns", tag: "Force of Nature", seq: ["Force of Nature"], preBuffs: []},
@@ -256,19 +257,20 @@ export const buildClassicDruidChartData = (activeStats, baseTalents) => {
         {cat: "DPS Spells", tag: "Wrath", seq: ["Wrath"], preBuffs: []},
         {cat: "DPS Spells", tag: "Moonfire", seq: ["Moonfire"], preBuffs: []},
 
-        {cat: "Package", tag: "Swiftmend, WG, Lifebloom, Rejuv filler", seq: [], preBuffs: [], details: {
+        /*{cat: "Package", tag: "Swiftmend, WG, Lifebloom, Rejuv filler", seq: [], preBuffs: [], details: {
             "Swiftmend": 4,
             "Lifebloom": 6,
             "Regrowth": 6,
             "Rejuvenation": 15,
             "Wild Growth": 5,
-        }}
+        }}*/
 
     ]
 
     sequences.forEach(sequence => {
         const newSeq = sequence.seq;
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
+        sequence.preBuffs.push("Haste Aura");
         const spellData = {id: 0, icon: CLASSICDRUIDSPELLDB[newSeq[0]] ? CLASSICDRUIDSPELLDB[newSeq[0]][0].spellData.icon : ""};
         const cat = sequence.cat;
         if (cat === "Package") {

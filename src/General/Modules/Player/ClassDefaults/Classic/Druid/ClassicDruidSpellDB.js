@@ -190,7 +190,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Their casts inherit stats at cast start, not when the tree is summoned. 
         // Questions, do they smart heal?
         spellData: {id: 106737, icon: "ability_druid_forceofnature", cat: "heal"},
-        type: "heal",
+        type: "heal", // Swiftmend Cast (id=142421)
         castTime: 0, 
         cost: 0, 
         flat: 2425,
@@ -203,7 +203,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Healing Touch casts (id=113828)
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 12,
+        buffDuration: 15,
         coeff: 0.323, // The coefficient for a single Healing Touch cast. Data differs from wowhead so check this.
         flat: 3490,
         tickData: {tickRate: 2.5, canPartialTick: false, tickOnCast: false}, 
@@ -211,18 +211,19 @@ export const CLASSICDRUIDSPELLDB = {
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
     },
-    /*{
-        // Efflo Cast (id=113828)
+{
+        // Efflo Cast (id=142424)
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 12,
-        coeff: 0.323, // The coefficient for a single Healing Touch cast. Data differs from wowhead so check this.
-        flat: 3490,
-        tickData: {tickRate: 2.5, canPartialTick: false, tickOnCast: false}, 
+        buffDuration: 15,
+        coeff: 0.04725, //
+        flat: 512,
+        targets: 3,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
-    },*/
+    },
 
 ],
     // Wild Growth is bugged on Beta. This is the retail version. The Cata live version will likely be some combination of the two.
@@ -302,6 +303,7 @@ export const CLASSICDRUIDSPELLDB = {
         secondaries: ['crit'] 
     }],
 
+    // Fake spells
     "Harmony": [{
         // Regrowth direct heal portion
         spellData: {id: 0, icon: "", cat: "Ghost"},
@@ -309,6 +311,14 @@ export const CLASSICDRUIDSPELLDB = {
         buffType: "special",
         buffDuration: 6,
         value: 1.25,
+    }],
+    "Soul of the Forest": [{
+        spellData: {id: 0, icon: "", cat: "Ghost"},
+        type: "buff",
+        buffDuration: 6,
+        buffType: 'statsMult',
+        stat: "haste",
+        value: 2, 
     }],
 
 }
