@@ -63,7 +63,9 @@ export const runClassicSpell = (spellName, spell, statProfile) => {
       const targetCount = spell.targets ? spell.targets : 1;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
-      if (spellProfile.spell === "Rolling Lifebloom") spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
+      // Take care of any HoTs that don't have obvious breakpoints.
+      // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
+      if (spell.tickData.rolling) spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
       else spellHealing = spellHealing * tickCount * targetCount;
     }
 

@@ -95,7 +95,7 @@ export const CLASSICDRUIDSPELLDB = {
         cost: 7, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
         coeff: 0.057 * 3,
         flat: 621 * 3,
-        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, rolling: true}, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery']
     }],
