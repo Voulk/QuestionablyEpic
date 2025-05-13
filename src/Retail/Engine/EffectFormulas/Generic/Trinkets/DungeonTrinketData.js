@@ -38,7 +38,7 @@ export const dungeonTrinketData =
   },
   {
     name: "Bursting Lightshard",
-    description: "Bursting Lightshard is a capable healer DPS trinket.",
+    description: "Bursting Lightshard is a capable healer DPS trinket. You're required to heal it when it spawns.",
     effects: [
       {
         coefficient: 1.151598, 
@@ -101,7 +101,7 @@ export const dungeonTrinketData =
   },
   { // TODO: Check low health scaling.
     name: "Soulletting Ruby",
-    description: "",
+    description: "Gives more crit if you use it on low health targets.",
     effects: [
       {
         coefficient: (1.5133 + (1.8497+1.5133)) / 2, 
@@ -162,7 +162,7 @@ export const dungeonTrinketData =
   },
     {
         name: "Carved Blazikon Wax",
-        description: "The candle portion got recently buffed and is now about a quarter of the trinkets power.",
+        description: "The candle portion got recently buffed and is now about a quarter of the trinkets power. A standard but powerful stat stick - even if Versatility isn't your best stat.",
         effects: [
           {
             coefficient: 1.068708, 
@@ -210,7 +210,7 @@ export const dungeonTrinketData =
       },
       {
         name: "Burin of the Candle King",
-        description: "Honestly fairly well tuned for an absorb trinket. Expect it to see some Mythic+ play depending on how the dungeons are tuned.",
+        description: "Honestly fairly well tuned for an absorb trinket. Niche pick in Mythic+ - not good in raid.",
         effects: [
           {  // Heal effect
             coefficient: 294.3024, // 371.7325,

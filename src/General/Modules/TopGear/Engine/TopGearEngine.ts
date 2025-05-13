@@ -2,7 +2,7 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import { STATPERONEPERCENT, BASESTAT, STATCONVERSION } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
-import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, getSetting, getDiminishedValue } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
@@ -835,6 +835,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Handle Annulet
     const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
     const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
+
+    Object.keys(annuletStats).forEach(stat => {
+      // Apply DR
+      annuletStats[stat] = getDiminishedValue(stat, annuletStats[stat], setStats[stat]);
+    });
 
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);
