@@ -8,7 +8,7 @@ import { getMastery } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/Ram
 // This file contains utility formulas that might be useful for calculating Effect values.
 
 export function getDiminishedValue(statID, procValue, baseStat) {
-  if (statID === "intellect" || statID === undefined) return procValue;
+  if (statID === "intellect" || statID === undefined || statID === "hps" || statID === "dps") return procValue;
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
   const totalStat = baseStat + procValue;
   let currentStat = baseStat + procValue;
@@ -18,7 +18,6 @@ export function getDiminishedValue(statID, procValue, baseStat) {
     if (totalStat > DRBreakpoints[j])  {
       // Calculate proportion that's above DR.
       procSize -= (Math.min(procSize, totalStat - DRBreakpoints[j]) * 0.1);
-
     }
     
   }

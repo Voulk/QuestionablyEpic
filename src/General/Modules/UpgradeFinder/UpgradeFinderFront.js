@@ -525,11 +525,11 @@ export default function UpgradeFinderFront(props) {
               <UpgradeFinderSlider
                 className={classes.slider}
                 style={{ color: "#af5050" }}
-                defaultValue={4}
+                defaultValue={5}
                 step={null}
                 valueLabelDisplay="off"
                 marks={craftedItemLevels}
-                max={4}
+                max={5}
                 change={setCraftedLevel}
               />
             </Grid>
