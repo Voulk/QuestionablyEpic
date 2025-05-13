@@ -16,7 +16,6 @@ export const effectData = [
       let bonus_stats = {};
 
       bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 60);
-      console.log(bonus_stats.intellect);
       return bonus_stats;
     }
   },
@@ -92,6 +91,12 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel)
+
+      Object.keys(bonus_stats).forEach((key) => {
+        // Ultimately healers just do not get full uptime from this and Evoker sees barely more than a proc per fight.
+        if (player.spec === "Preservation Evoker") bonus_stats[key] = bonus_stats[key] * 0.25; 
+        else bonus_stats[key] = bonus_stats[key] * 0.5; //
+      });
 
       // On use portion
       const bestStat = player.getHighestStatWeight(additionalData.contentType)
