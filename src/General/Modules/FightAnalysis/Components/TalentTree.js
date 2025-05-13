@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
-import { talentTreeDB } from "Databases/talentTreeDB";
 import { getIconURL } from "General/Modules/CooldownPlanner/Functions/IconFunctions/getIconURL";
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -322,7 +321,7 @@ const TalentTreeApp = ({ classIcon, combatantInfo }) => {
   // It then goes through each node in the class's 'classNodes' & 'specNodes' array and adds the node's posX and posY values to the corresponding sets.
   // This effectively collects all unique posX and posY values for the class nodes and spec nodes.
   // It then creates a new object with the class's properties and the collected posX and posY values, and adds this object to the 'treeStructures' array.
-  talentTreeDB.forEach((classObj) => {
+  [].forEach((classObj) => {
     let classNodesPosXSet = new Set();
     let classNodesPosYSet = new Set();
 
@@ -356,7 +355,7 @@ const TalentTreeApp = ({ classIcon, combatantInfo }) => {
     });
   });
 
-  const talents = talentTreeDB.find((talents) => talents.classId === classIdentity.classId && talents.specId === classIdentity.specId);
+  const talents = [];
   const treeStructure = treeStructures.find((classAndSpec) => classAndSpec.classId === classIdentity.classId && classAndSpec.specId === classIdentity.specId);
   const classNodes = talents.classNodes;
   const specNodes = talents.specNodes;
