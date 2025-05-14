@@ -158,6 +158,7 @@ const mythicPlusLevels = [
   { value: 665, label: "" },
   { value: 671, label: "" },
   { value: 678, label: "" },
+  { value: 684, label: "" },
 
 
 ]
@@ -198,7 +199,7 @@ export default function UpgradeFinderFront(props) {
   }
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 10 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
+    if (difficulty <= 11 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
@@ -447,7 +448,7 @@ export default function UpgradeFinderFront(props) {
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={10}
+                  max={11}
                   change={setDungeonDifficulty}
                 />
               </div>
