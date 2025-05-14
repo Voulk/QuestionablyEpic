@@ -12,7 +12,6 @@ import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Module
 import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/ItemSetsDBRetail.js";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getBestCombo, getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/OnyxAnnuletData"
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Modules/Player/Item";
@@ -464,15 +463,20 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
       continue;
     }
     if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      differentials.items.push(diffList[x]);
+      //differentials.items.push(diffList[x]);
       doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
 
       // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
         differentials.items.push(diffList[x - 1]);
       }
       else if ((x === 10 || x === 12) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
         differentials.items.push(diffList[x + 1]);
+      }
+      else if (doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
       }
     }
   }

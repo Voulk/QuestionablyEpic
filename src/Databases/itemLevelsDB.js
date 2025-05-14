@@ -25,7 +25,8 @@ export const itemLevels = {
     658,
     665,
     671,
-    678
+    678,
+    684,
 
   ],
   pvp: [

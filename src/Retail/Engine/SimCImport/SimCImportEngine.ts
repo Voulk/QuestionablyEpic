@@ -497,8 +497,13 @@ export function processItem(line: string, player: Player, contentType: contentTy
       // Versatility Crafted Override
       craftedStats = ["40"]
     }*/
-    if (bonus_id === "7881") protoItem.uniqueTag = "crafted";
-    else if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
+    if (bonus_id === "12043") {
+      protoItem.upgradeTrack = "Gilded Crafted";
+    }
+    else if (bonus_id === "12042") {
+      protoItem.upgradeTrack = "Runed Crafted";
+    }
+    if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   
@@ -523,13 +528,14 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684, "Runed Crafted": 664, "Gilded Crafted": 681 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
     const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
+  
 
 
   // Add the new item to our characters item collection.

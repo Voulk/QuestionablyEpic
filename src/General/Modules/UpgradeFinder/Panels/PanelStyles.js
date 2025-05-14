@@ -121,6 +121,10 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("../../../../Images/Bosses/NerubarPalace/NerubarPalaceLong.png")})`,
       ...commonStyles,
     },
+    liberationOfUndermineHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/Undermine/LiberationOfUndermineLong.png")})`,
+      ...commonStyles,
+    },
   };
 });
 
