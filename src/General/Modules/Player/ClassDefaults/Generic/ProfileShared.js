@@ -1,4 +1,8 @@
 import { getTrinketValue, getTrinketParam } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas"
+import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { STATCONVERSIONCLASSIC } from "General/Engine/STAT"
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
     const sortedEntries = Object.entries(healingBreakdown)
@@ -40,9 +44,15 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
 
 
 // Classic
-export const runClassicSpell = (spellName, spell, statProfile) => {
+export const runClassicSpell = (spellName, spell, statProfile, spec, settings) => {
 
-    const genericMult = 1 * (spellProfile.bonus ? spellProfile.bonus : 1);
+    // Seems like a lot to call every spell. Maybe we can put these somewhere else and pass them. 
+    const genericMult = 1;
+    const critPercentage = 1 + getCritPercentage(statProfile, spec); // +4% crit
+    const hasteSetting = getSetting(settings, "hasteBuff");
+    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+
+    const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     const adjCritChance = (spell.secondaries && spell.secondaries.includes("crit")) ? (critPercentage + spellCritBonus) : 1; 
     const additiveScaling = (spell.additiveScaling || 0) + 1
@@ -51,7 +61,7 @@ export const runClassicSpell = (spellName, spell, statProfile) => {
     const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25) / additiveScaling : 1;
     
     // 
-    let spellHealing = (spell.flat + spell.coeff * spellpower) * // Spell "base" healing
+    let spellOutput = (spell.flat + spell.coeff * spellpower) * // Spell "base" healing
                         adjCritChance * // Multiply by secondary stats & any generic multipliers. 
                         masteryMult *
                         genericMult;
@@ -65,9 +75,9 @@ export const runClassicSpell = (spellName, spell, statProfile) => {
 
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
-      if (spell.tickData.rolling) spellHealing = spellHealing * (spell.buffDuration / spell.tickData.tickRate * haste);
-      else spellHealing = spellHealing * tickCount * targetCount;
+      if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);
+      else spellOutput = spellOutput * tickCount * targetCount;
     }
 
-    return spellHealing;
+    return spellOutput;
 }

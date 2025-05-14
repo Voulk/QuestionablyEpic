@@ -88,6 +88,13 @@ export class Item {
       if (slot === "Waist") this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
       this.stats = getItemProp(id, "stats", "Classic");
+
+      /*this.customOptions = [
+        {label: "No Reforge", id: [0]},
+        {label: "Reforge Mastery to Haste", id: [1]},
+        {label: "Reforge Mastery to Crit", id: [2]},
+                          ]
+      this.selectedOptions = this.customOptions[0].id;*/
       //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
     }
     else if (gameType === "Retail") {
@@ -114,7 +121,6 @@ export class Item {
                               {label: "Convert to Mastery", id: [2]},]
       }*/
     }
-
   }
 
   clone(): Item {

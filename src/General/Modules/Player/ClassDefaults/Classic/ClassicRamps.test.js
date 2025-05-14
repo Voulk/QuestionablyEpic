@@ -11,6 +11,7 @@ import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSe
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
+import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -37,15 +38,20 @@ describe("Test APL", () => {
             hps: 0,
         }
 
-        const spec = "Holy Paladin"
-        const testSuite = "Stat";
+        const spec = "Restoration Druid"
+        const testSuite = "TopGearProfile";
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
         const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
-        const profile = holyPaladinDefaults;
+        const profile = restoDruidDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
             
+        }
+        else if (testSuite === "TopGearProfile") {
+            const init = profile.initializeSet();
+            const score = profile.scoreSet(init, playerData.stats, testSettings, []);
+            console.log(score);
         }
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));

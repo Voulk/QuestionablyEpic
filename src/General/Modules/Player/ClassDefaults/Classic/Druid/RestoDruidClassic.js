@@ -4,6 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -83,7 +84,7 @@ export function initializeDruidSet() {
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, tierSets = [], shardOfWoe) {
+export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets = [], shardOfWoe) {
     let score = 0;
     const healingBreakdown = {};
     const fightLength = 6;
@@ -125,12 +126,12 @@ export function scoreDruidSet(druidBaseline, statProfile, player, userSettings, 
         // Exception Cases
         
         // Regular cases
-        spellThroughput = runClassicSpell(spellName, spell, statProfile);
+        let spellOutput = runClassicSpell(spellName, spell, statProfile, "Restoration Druid", userSettings);
 
-          
-        //if (isNaN(spellHealing)) console.log(JSON.stringify(spell));
-        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellHealing * spellProfile.cpm);
-        score += spellProfile.fillerSpell ? (spellHealing * fillerCPM) : (spellHealing * spellProfile.cpm);
+        if (spellProfile.bonus) spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+
+        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * spellProfile.cpm);
+        score += spellProfile.fillerSpell ? (spellOutput * fillerCPM) : (spellOutput* spellProfile.cpm);
 
         //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
         })
