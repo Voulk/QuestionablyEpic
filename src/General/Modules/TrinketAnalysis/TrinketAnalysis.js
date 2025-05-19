@@ -153,13 +153,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(678);
+  const [levelCap, setLevelCap] = React.useState(684);
   const maxLevelMarks = [
     { value: 0, label: "639" },
     { value: 1, label: "645" },
     { value: 2, label: "658" },
-    { value: 3, label: "665" },
-    { value: 4, label: "678" },
+    { value: 3, label: "671" },
+    { value: 4, label: "684" },
   ]
 
   const handleTabChange = (event, newValue) => {
