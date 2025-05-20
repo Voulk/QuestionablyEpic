@@ -559,10 +559,8 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   bonus_stats.intellect += 747;
   enchants["Legs"] = "Sunset Spellthread";
 
-
-
   if (contentType === "Raid") {
-    const dreamingData =  { // Mastery benefit. This is short and not all that useful.
+    const dreamingData =  { // 
       coefficient: 40.32042, 
       table: -8,
       ppm: 4,
@@ -595,6 +593,21 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   // Algari Mana Oil
   bonus_stats.haste = (bonus_stats.haste || 0) + 232;
   bonus_stats.crit = (bonus_stats.crit || 0) + 232;
+
+  // Corruption
+  enchants["Head"] = "Void Ritual";
+  const voidRitualData =  { // 
+    coefficient: 0.032154, 
+    table: -1, // ????
+    uptime: 0.42, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
+    averageStacks: 10,
+  };
+  const statPerStack = processedValue(voidRitualData, 571)
+  const statAvg = statPerStack * voidRitualData.averageStacks * voidRitualData.uptime;
+  bonus_stats.haste = (bonus_stats.haste || 0) + statAvg;
+  bonus_stats.crit = (bonus_stats.crit || 0) + statAvg;
+  bonus_stats.mastery = (bonus_stats.mastery || 0) + statAvg;
+  bonus_stats.versatility = (bonus_stats.versatility || 0) + statAvg;
 
   return enchants;
 }
