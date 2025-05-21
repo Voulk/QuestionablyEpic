@@ -29,7 +29,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
     };
 
     const baseMana = {
-        "Restoration Druid": 18635,
+        "Restoration Druid": 60000,
         "Discipline Priest": 20590, 
         "Holy Paladin": 23422,
         "Holy Priest": 20590,
@@ -132,7 +132,7 @@ export const getTalentedSpellDB = (spec, state) => {
     }
     else if (spec.includes("Restoration Druid")) {
         spellDB = druidSpells;
-        talents = druidTalents;
+        talents = state.talents;
     }
     else if (spec.includes("Discipline Priest")) {
         spellDB = priestSpells;

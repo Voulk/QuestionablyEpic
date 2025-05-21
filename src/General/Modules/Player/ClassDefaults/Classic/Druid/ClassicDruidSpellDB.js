@@ -15,7 +15,7 @@ export const CLASSICDRUIDSPELLDB = {
         // The number of rejuv ticks is (5 x haste) + 1.
         spellData: {id: 774, icon: "spell_nature_rejuvenation", cat: "heal"},
         castTime: 0,
-        cost: 20,
+        cost: 14.5,
         type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
@@ -43,7 +43,7 @@ export const CLASSICDRUIDSPELLDB = {
         spellData: {id: 8936, icon: "spell_nature_resistnature", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
-        cost: 35, 
+        cost: 29.7, 
         flat: 10384,
         coeff: 0.958, 
         expectedOverheal: 0.2,
@@ -69,7 +69,7 @@ export const CLASSICDRUIDSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         buffDuration: 15,
-        cost: 7, 
+        cost: 5.9, 
         coeff: 0.057, // The coefficient for a single regrowth tick.
         flat: 621,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
@@ -92,7 +92,7 @@ export const CLASSICDRUIDSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         buffDuration: 10,
-        cost: 7, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
+        cost: 5.9, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
         coeff: 0.057 * 3,
         flat: 621 * 3,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, rolling: true}, 
@@ -128,7 +128,7 @@ export const CLASSICDRUIDSPELLDB = {
         // Simple version of WG that matches Cata Beta
         spellData: {id: 48438, icon: "ability_druid_flourish", cat: "heal"},
         castTime: 1.5,
-        cost: 27, // 699
+        cost: 22.9, // 699
         type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
@@ -146,7 +146,7 @@ export const CLASSICDRUIDSPELLDB = {
         type: "heal",
         castTime: 8, 
         channel: true,
-        cost: 35, 
+        cost: 27.1, 
         flat: 9037,
         coeff: 0.835, 
         targets: 12,
@@ -277,7 +277,7 @@ export const CLASSICDRUIDSPELLDB = {
         spellData: {id: 5176, icon: "spell_nature_wrathv2", cat: "damage"},
         type: "damage",
         castTime: 1.5, 
-        cost: 9, 
+        cost: 8.8, 
         coeff: 1.338, 
         flat: 2930,
         secondaries: ['crit'] 
@@ -323,38 +323,6 @@ export const CLASSICDRUIDSPELLDB = {
 
 }
 
-// Talents that aren't in the resto portion of the tree (Feral / Balance)
-const offspecTalents = {
-
-    /*
-    furor: {points: 3, maxPoints: 3, icon: "spell_holy_blessingofstamina", id: 17056, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        state.manaPool *= (1 + 0.05 * points);
-    }},
-
-    naturesMajesty: {points: 2, maxPoints: 2, icon: "inv_staff_01", id: 35363, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        state.currentStats.crit += (179 * 2 * points);
-    }},
-
-    moonglow: {points: 3, maxPoints: 3, icon: "spell_nature_sentinal", id: 16847, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        Object.keys(spellDB).forEach(spellName => {
-            if (spellDB[spellName][0].cost) spellDB[spellName][0].cost *= (1 - 0.03 * points);
-
-        })
-    }},
-
-    genesis: {points: 3, maxPoints: 3, icon: "spell_arcane_arcane03", id: 57810, select: true, tier: 2, runFunc: function (state, spellDB, points) {
-        const buffValue = 0.02 * points;
-        // TODO: Assumed Efflo doesn't count which is why Swiftmend is on the node.
-        buffSpell(spellDB["Rejuvenation"], buffValue, "additive"); 
-        buffSpell(spellDB["Swiftmend"], buffValue, "additive");
-        buffSpell(spellDB["Lifebloom"], buffValue, "additive"); // TODO: Change to HoT only.
-        buffSpell(spellDB["Wild Growth"], buffValue, "additive");
-        //buffSpell(spellDB["Regrowth"], buffValue, "additive");
-        spellDB["Regrowth"][1].additiveSlice = 0.05 * points;
-
-    }},*/
-
-}
 
 // Resto talents
 const specTalents = {
@@ -508,7 +476,6 @@ const glyphs = {
 }
 
 export const druidTalents = {
-    ...offspecTalents,
     ...specTalents,
     ...glyphs,
 };

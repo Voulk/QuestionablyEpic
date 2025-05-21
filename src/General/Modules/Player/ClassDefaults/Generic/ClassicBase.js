@@ -133,10 +133,10 @@ export const getManaRegen = (currentStats, spec) => {
     const spiritToMP5 = currentStats.spirit * 1.128;
 
     const inCombatRegen = {
-        "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
+        "Holy Paladin": 0.5, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
         "Discipline Priest": 0.5,
-        "Holy Priest": 0.8,
+        "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,
     }
     return (spiritToMP5 * inCombatRegen[spec]);
@@ -165,17 +165,19 @@ export const getManaPool = (currentStats, spec) => {
 // Not updated for MoP yet.
 export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     const baseMana = GLOBALCONST.baseMana[spec];
-    let additionalManaPerSecond = baseMana * 0.05;
+    let additionalManaPerSecond = 6000; //baseMana * 0.05;
     
     const manaSources = {additionalMP5: 0};
     const pool = getManaPool(currentStats, spec);
 
     manaSources["Base Regen"] = additionalManaPerSecond;
-    const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
-    manaSources["Replenishment"] = replenishment;
-    additionalManaPerSecond += replenishment;
 
-    manaSources["Mana Potion"] = 22000 / 420 * 5;
+    /*const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
+    manaSources["Replenishment"] = replenishment;
+    additionalManaPerSecond += replenishment; */
+
+    // Potion of Focus is 45k but stuns you for 10s.
+    manaSources["Mana Potion"] = 30000 / 420 * 5;
     additionalManaPerSecond += manaSources["Mana Potion"];
 
     if (spec.includes("Holy Paladin")) {
@@ -194,12 +196,10 @@ export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     }
     else if (spec.includes("Restoration Druid")) {
         // Innervate
-        additionalManaPerSecond += (pool * 0.2 / 180 * 5);
-        manaSources["Innervate"] = (pool * 0.2 / 180 * 5);
+        const innervate = currentStats.spirit * 0.5 * 10 / 180 * 5;
+        additionalManaPerSecond += (innervate);
+        manaSources["Innervate"] = (innervate);
 
-        // Revitalize
-        manaSources["Revitalize"] = (pool * 0.01 * 5 / 60 * 5);
-        additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
     }
     else if (spec.includes("Discipline Priest")) {
         // Rapture

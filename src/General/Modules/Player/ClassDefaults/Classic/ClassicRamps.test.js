@@ -26,12 +26,12 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 6000,
-            spirit: 2800,
-            spellpower: 2800,
-            haste: 2005,
-            crit: 1500,
-            mastery: 1500,
+            intellect: 10267,
+            spirit: 6654,
+            spellpower: 5151,
+            haste: 1247,
+            crit: 1698,
+            mastery: 2319,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
@@ -40,8 +40,10 @@ describe("Test APL", () => {
 
         const spec = "Restoration Druid"
         const testSuite = "TopGearProfile";
+        const revisedTalents = {...druidTalents};
+        revisedTalents.glyphOfWildGrowth.points = 0;
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
+        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
         const profile = restoDruidDefaults;
 
         if (testSuite === "APL") {
@@ -49,9 +51,9 @@ describe("Test APL", () => {
             
         }
         else if (testSuite === "TopGearProfile") {
-            const init = profile.initializeSet();
+            const init = profile.initializeSet(playerData.talents);
             const score = profile.scoreSet(init, playerData.stats, testSettings, []);
-            console.log(score);
+            console.log(score / 60);
         }
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
