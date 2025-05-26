@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdown, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -37,43 +37,50 @@ export const restoDruidDefaults = {
 export function initializeDruidSet(talents) {
     const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
   
-    const druidCastProfile = [
+    let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Swiftmend", cpm: 3.8},
-      {spell: "Wild Growth", cpm: 3.8 * (144 / 180)},
-      {spell: "Rejuvenation", cpm: 12 * (144 / 180), fillerSpell: true, castOverride: 1.0},
+      {spell: "Wild Growth", cpm: 3.8},
+      {spell: "Rejuvenation", cpm: 12, fillerSpell: true, castOverride: 1.0},
       {spell: "Nourish", cpm: 5},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
       {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
-      {spell: "Rolling Lifebloom", cpm: 6, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
+      {spell: "Rolling Lifebloom", cpm: 4, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
   
-      // Tree of Life casts
-      {spell: "Lifebloom", cpm: 13 * (36 / 180), bonus: 1.15}, // Tree of Life - Single stacks
-      {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15}, // Tree of Life OOC Regrowths
-      {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
     ]
 
+    if (talents.incarnation.points === 1) {
+      getSpellEntry(castProfile, "Wild Growth").cpm *= (144 / 180);
+      getSpellEntry(castProfile, "Rejuvenation").cpm *= (144 / 180);
 
+      castProfile = castProfile.concat([
+        // Tree of Life casts
+        {spell: "Lifebloom", cpm: 13 * (36 / 180), bonus: 1.15}, // Tree of Life - Single stacks
+        {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15}, // Tree of Life OOC Regrowths
+        {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
+      ])
+    }
 
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Restoration Druid"});
   
-    druidCastProfile.forEach(spell => {
+    castProfile.forEach(spell => {
       spell.castTime = druidSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;
       spell.healing = 0;
     })
-    const costPerMinute = druidCastProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
     //console.log(JSON.stringify(adjSpells));
-    return { castProfile: druidCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
+    return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
   
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets = []) {
+export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets = [], talents) {
     let score = 0;
     const healingBreakdown = {};
     const castBreakdown = {};
@@ -85,9 +92,21 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const spellpower = statProfile.intellect + statProfile.spellpower;
     const critPercentage = 1 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
 
+    const statPercentages = {
+      crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
+      haste: getHaste(statProfile, "Classic") * hasteBuff,
+      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25
+    }
+
     // Take care of any extras.
     if (tierSets.includes("Druid T13-2")) {
       // Left in as templates but old tier sets now removed.
+    }
+
+    // Soul of the Forest
+    if (talents.soulOfTheForest.points === 1) {
+      const wildGrowthPercentage = 1;
+      getSpellEntry(druidBaseline.castProfile, "Wild Growth").hasteBonus = 1;
     }
 
     // Calculate filler CPM
@@ -119,7 +138,12 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
         // Regular cases
         let spellOutput = runClassicSpell(spellName, spell, statProfile, "Restoration Druid", userSettings);
 
-        if (spellProfile.bonus) spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+
+        if (spellProfile.bonus) {
+          spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+          console.log("Spell: " + spellProfile.spell + " Bonus: " + spellProfile.bonus);
+        }
+        
 
         const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 

@@ -91,12 +91,12 @@ export const CLASSICDRUIDSPELLDB = {
         castTime: 0, 
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 10,
+        buffDuration: 15,
         cost: 5.9, // We'll preserve the cost since refreshing with Lifebloom is acceptable. 
         coeff: 0.057 * 3,
         flat: 621 * 3,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false, rolling: true}, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.25,
         secondaries: ['crit', 'mastery']
     }],
     "Healing Touch": [{

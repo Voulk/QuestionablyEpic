@@ -4,6 +4,7 @@ import {
   getItemAllocations,
   getItemProp,
   calcStatsAtLevel,
+  calcStatsAtLevelClassic,
   getValidArmorTypes,
   getValidWeaponTypes,
   getTranslatedItemName,
@@ -180,6 +181,16 @@ describe("getValidWeaponTypes func", () => {
   });
 
   // Add more tests.
+});
+
+describe("Classic Item Allocations func", () => {
+  test("Mask of Screaming Secrets", () => {
+    const stats = calcStatsAtLevelClassic(86160, 496, "Chest"/*, statAllocations: any*/)
+    
+
+    expect(stats.spirit).toEqual(735);
+  });
+
 });
 
 /*

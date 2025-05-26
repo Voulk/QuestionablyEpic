@@ -777,10 +777,33 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
   return wep_list.slice(0, 9);
 } */
 
-export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAllocations: any) {
+/***
+ * In Mists of Pandaria, items are available at different levels again due to Thunderforging and Challenge modes (among others). That means we can use
+ * a similar function to retail again to calculate stats but with one catch:
+ * - Sockets have a penalty of 80 intellect and 80 secondaries. This 80 secondaries can be taken in different ways which is defined in the StatPercentEditor columns of ItemSparse.
+ * - Note that crafted items appear to be bugged and the secondary penalty is taken almost at random. This will need to be investigated further later.
+ */
+
+export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, statAllocations: any*/) {
   let combat_mult = 0;
 
   let stats: Stats = {}; 
+  const itemData = getItem(itemID, "Classic");
+  const slot = itemData.slot;
+  // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
+
+  if (itemLevel === itemData.level) {
+    return itemData.stats;
+  }
+
+  // An item is using a custom item level, so we'll calculate its stats using a scaling formula.
+  const statAllocations = itemData.allocations;
+  let gemCount = 0;
+  let penalties: Stats = {};
+  if (itemData.sockets && itemData.sockets.gems.length > 0) {
+    gemCount = itemData.sockets.gems.length;
+    penalties = itemData.socketPenalties;
+  }
 
   let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
   //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -793,10 +816,10 @@ export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAll
 
     if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
     else if (key === "intellect") {
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;;
     } else if (key === "stamina") {
       // todo
     }

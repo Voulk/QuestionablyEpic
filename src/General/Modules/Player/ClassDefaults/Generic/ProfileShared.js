@@ -68,7 +68,7 @@ export const runClassicSpell = (spellName, spell, statProfile, spec, settings) =
     
     // Handle HoT
     if (spell.type === "classic periodic") {
-      const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
+      let haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (getHaste(statProfile, "Classic") * hasteBuff);
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
       const targetCount = spell.targets ? spell.targets : 1;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));

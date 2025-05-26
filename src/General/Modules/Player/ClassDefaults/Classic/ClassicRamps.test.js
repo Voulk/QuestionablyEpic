@@ -41,7 +41,8 @@ describe("Test APL", () => {
         const spec = "Restoration Druid"
         const testSuite = "TopGearProfile";
         const revisedTalents = {...druidTalents};
-        revisedTalents.glyphOfWildGrowth.points = 0;
+        revisedTalents.incarnation.points = 0;
+
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
         const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
         const profile = restoDruidDefaults;
