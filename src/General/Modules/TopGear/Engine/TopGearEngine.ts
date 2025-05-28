@@ -599,7 +599,7 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   const voidRitualData =  { // 
     coefficient: 0.032154, 
     table: -1, // ????
-    uptime: 0.42, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
+    uptime: 0.35, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
     averageStacks: 10,
   };
   const statPerStack = processedValue(voidRitualData, 571)
