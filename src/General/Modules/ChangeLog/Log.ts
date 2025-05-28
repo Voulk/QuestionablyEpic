@@ -15,6 +15,14 @@ interface entry {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.1.5 / 4.4.2",
+    update: 16,
+    date: "May 20",
+    changes: [ 
+      "Corruption: Added Void Ritual to Top Gear.",
+      "Fixed a bug with the log import.",
+    ]},
   {
     version: "11.1.5 / 4.4.2",
     update: 15,
