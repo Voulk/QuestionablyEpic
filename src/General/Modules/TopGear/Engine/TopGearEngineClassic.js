@@ -184,7 +184,6 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
 }
 
 export function runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
-    console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
@@ -295,7 +294,6 @@ function verifySet(itemSet) {
 // THIS IS CLASSIC CODE AND IS NOT COMPATIBLE WITH RETAIL.
 function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
-    console.log("Evaluating set: ");
     
     let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -430,7 +428,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          let secondaryRank = castModel.profile.autoReforgeOrder;// player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+
+          let secondaryRank = castModel.autoReforgeOrder;// player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -500,10 +499,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     if (castModel.scoreSet) {
       hardScore = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
     }
-    
     else {
       console.error("Invalid Scoring Detected. No scoring function.");
     }
+
     builtSet.reforges = reforges;
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
@@ -714,7 +713,6 @@ function createSets(itemList, rawWepCombos, filter) {
   }
 
   // console.log("Created " + itemSets.length + " item sets.");
-  console.log("Item Set Creation took " + (performance.now() - t0) + " milliseconds.");
   return itemSets;
 }
 

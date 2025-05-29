@@ -153,7 +153,6 @@ export const getTalentedSpellDB = (spec, state) => {
 
     applyLoadoutEffects(playerSpells, state.settings, {spec: spec, genericBonus: {healing: 1, damage: 1}});
 
-    console.log("Loadout effects applied");
     return playerSpells;
 }
 

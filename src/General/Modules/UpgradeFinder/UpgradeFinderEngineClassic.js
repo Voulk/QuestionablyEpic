@@ -193,39 +193,6 @@ function buildItemPossibilities(player, contentType, playerSettings) {
   }
  
 
-  // console.log("Tokens: " + Object.keys(tokenDB).length);
-
-  // --------------------------
-  // Take care of Tokens >:(
-  // --------------------------
-  /*
-  for (const [key, value] of Object.entries(tokenDB)) {
-    const rawToken = value;
-    //  console.log(rawToken);
-
-    if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
-      // console.log("Player Covenant: " + player.getCovenant());
-      const newItemIDs = rawToken[player.getCovenant()];
-      const itemSource = { instanceId: 1190, encounterId: rawToken.encounterId };
-
-      for (var j = 0; j < newItemIDs.length; j++) {
-        for (var x = 0; x < playerSettings.raid.length; x++) {
-          const rawItem = getItem(newItemIDs[j]);
-
-          if (checkItemViable(rawItem, player)) {
-            const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
-            const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
-            //console.log(item);
-            itemPoss.push(item);
-          }
-        }
-      }
-    }
-  } 
-
-  //console.log(itemPoss.length);
-  return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment.
-}*/
 
 // Returns a small dict
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
@@ -237,12 +204,12 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   //const wepList = buildNewWepCombosUF(player, newItemList);
   
   const newTGSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
-  console.log(newTGSet);
+
   const newScore = newTGSet.hardScore;
-  console.log(newScore);
+
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100 / 60;
-  console.log(baseScore);
+
   return { item: item.id, level: item.level, score: differential, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, };
 }
 

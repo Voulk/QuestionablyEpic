@@ -3,7 +3,7 @@ import Item from "General/Items/Item";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
 
-export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers) {
+export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers, useChallengeMode) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -26,7 +26,7 @@ export function runClassicGearImport(simCInput, player, contentType, setErrorMes
       let line = lines[i];
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        processItem(line, player, contentType);
+        processItem(line, player, contentType, useChallengeMode);
       }
     }
 
@@ -71,7 +71,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 }
 
 
-function processItem(line, player, contentType, type) {
+function processItem(line, player, contentType, useChallengeMode = false) {
   // Split string.
   let infoArray = line.split(",");
   let itemID = -1;
@@ -151,7 +151,7 @@ function processItem(line, player, contentType, type) {
 
   // Add the new item to our characters item collection.
   if (itemID !== 0 && itemSlot !== "") {
-
+    if (useChallengeMode && itemLevel > 463) itemLevel = 463; // Cap item level at 463 if cmode flag is enabled.
     let item = new Item(itemID, "", itemSlot, 0, "", 0, itemLevel, bonusIDS, "Classic");
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;

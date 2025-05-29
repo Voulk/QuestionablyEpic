@@ -88,8 +88,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const fightLength = 6;
     const talents = druidBaseline.talents || druidTalents;
 
-    console.log(userSettings);
-
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
@@ -125,7 +123,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     // This could be rectified by simulating the entire buff window 
 
     let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    console.log(fillerCost);
     const fillerWastage = 0.9;
     let costPerMinute = druidBaseline.costPerMinute;
 
@@ -145,7 +142,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
         if (spellProfile.bonus) {
           spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
-          console.log("Spell: " + spellProfile.spell + " Bonus: " + spellProfile.bonus);
         }
         
 
@@ -171,8 +167,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    console.log(castBreakdown);
-    printHealingBreakdown(healingBreakdown, score);
+    //printHealingBreakdown(healingBreakdown, score);
 
     return score;
 }
