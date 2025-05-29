@@ -5,6 +5,7 @@ import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { runClassicSpell, printHealingBreakdown, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -34,7 +35,7 @@ export const restoDruidDefaults = {
 }
 
 // --------------- Druid --------------
-export function initializeDruidSet(talents) {
+export function initializeDruidSet(talents = druidTalents) {
     const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
   
     let castProfile = [
@@ -73,18 +74,21 @@ export function initializeDruidSet(talents) {
     const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
     //console.log(JSON.stringify(adjSpells));
-    return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
+    return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents };
   }
   
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
 // We want to run a CastProfile for each spell but we can optimize that slightly.
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
-export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets = [], talents) {
+export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets = []) {
     let score = 0;
     const healingBreakdown = {};
     const castBreakdown = {};
     const fightLength = 6;
+    const talents = druidBaseline.talents || druidTalents;
+
+    console.log(userSettings);
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)

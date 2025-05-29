@@ -452,7 +452,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
-    console.log("Checkpoint");
+
     if (true) {
       const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
       enchant_stats = enchantInfo.enchantStats;
@@ -492,23 +492,23 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         builtSet.gems[59453] = [52296, 59496, 59480];
       }
 
-      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList, builtSet.itemList.filter(item => item.id === 60233).length > 0);
+      hardScore = scoreDruidSet(baseline, setStats, playerSettings, tierList);
     }
     else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings, tierList);
+      hardScore = scorePaladinSet(baseline, setStats, playerSettings, tierList);
     }
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
       console.log("Tryin to score disc set")
-      hardScore = scoreDiscSet(baseline, setStats, player, playerSettings, tierList);
+      hardScore = scoreDiscSet(baseline, setStats,playerSettings, tierList);
     }
     else if (player.spec === "Holy Priest Classic") {
       //setStats.intellect *= 1.15; // Spec passive.
-      hardScore = scoreHPriestSet(baseline, setStats, player, playerSettings, tierList);
+      hardScore = scoreHPriestSet(baseline, setStats, playerSettings, tierList);
     }
     else if (player.spec === "Mistweaver Monk Classic") {
       //setStats.intellect *= 1.15; // Spec passive.
-      hardScore = castModel.scoreSet(baseline, setStats, player, playerSettings, tierList);
+      hardScore = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
     }
     else {
       console.error("Invalid Scoring Detected");

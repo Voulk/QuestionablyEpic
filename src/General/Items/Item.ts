@@ -82,12 +82,10 @@ export class Item {
       this.classicSockets.bonus = sockets ? sockets.bonus : {};
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
-      // Adjust allocations for sockets.
-      const itemAllocations = getItemAllocations(id, [], gameType);
 
       if (slot === "Waist") this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
-      this.stats = getItemProp(id, "stats", "Classic");
+      this.stats = calcStatsAtLevelClassic(id, level);
 
       /*this.customOptions = [
         {label: "No Reforge", id: [0]},
