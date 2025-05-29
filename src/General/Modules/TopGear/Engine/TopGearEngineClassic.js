@@ -190,17 +190,19 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     var t0 = performance.now();
     let count = 0;
 
+
     const newPlayer = setupPlayer(player, contentType, castModel);
+    const newModel = newPlayer.getActiveModel("Raid").profile;
 
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : player.spec === "Holy Priest Classic" ? initializeHPriestSet() :  initializeDruidSet();
+    const baseline = newModel.initializeSet();
 
     count = itemSets.length;
 
     for (var i = 0; i < count; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, newModel, baseline, professions);
     }
 
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
@@ -294,7 +296,6 @@ function verifySet(itemSet) {
 function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castModel, baseline, professions) {
     // Get Base Stats
     console.log("Evaluating set: ");
-    console.log(JSON.stringify(castModel));
     
     let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
@@ -476,11 +477,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       return acc;
     }, {});
 
-    // Override
+    // Any final adjustments.
     if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0; // Proc based haste needs to be handled in the core profile.
     compileStats(setStats, compiledEffects);
     applyRaidBuffs({}, setStats);
-    // SCORING FUNCTIONS
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
 
@@ -492,27 +492,17 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         builtSet.gems[59453] = [52296, 59496, 59480];
       }
 
-      hardScore = scoreDruidSet(baseline, setStats, playerSettings, tierList);
-    }
-    else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, playerSettings, tierList);
     }
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
-      console.log("Tryin to score disc set")
-      hardScore = scoreDiscSet(baseline, setStats,playerSettings, tierList);
     }
-    else if (player.spec === "Holy Priest Classic") {
-      //setStats.intellect *= 1.15; // Spec passive.
-      hardScore = scoreHPriestSet(baseline, setStats, playerSettings, tierList);
-    }
-    else if (player.spec === "Mistweaver Monk Classic") {
-      //setStats.intellect *= 1.15; // Spec passive.
+
+    if (castModel.scoreSet) {
       hardScore = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
     }
+    
     else {
-      console.error("Invalid Scoring Detected");
-
+      console.error("Invalid Scoring Detected. No scoring function.");
     }
     builtSet.reforges = reforges;
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

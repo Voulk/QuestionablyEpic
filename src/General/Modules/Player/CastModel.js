@@ -218,6 +218,7 @@ class CastModel {
       this.modelName = "Default";
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+
     } 
     else if (spec === "Holy Priest Classic") {
       this.modelName = "Default";

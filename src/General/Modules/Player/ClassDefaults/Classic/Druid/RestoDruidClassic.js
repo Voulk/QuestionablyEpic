@@ -31,7 +31,7 @@ export const restoDruidDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["mastery", "spirit", "crit"],
 }
 
 // --------------- Druid --------------
