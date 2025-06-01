@@ -253,7 +253,7 @@ export const deepCopyFunction = (inObject) => {
 
 export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
-    const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
+    //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
     const gemBudget = 160;
     // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 

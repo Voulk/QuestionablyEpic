@@ -63,7 +63,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
   }
 
   if (!checks.class) errorMessage += "You're currently a " + playerClass + " but this SimC string is for a different spec.";
-  if (!checks.level) errorMessage += "QE Live Cataclysm is best used on level 80-85 characters.";
+  if (!checks.level) errorMessage += "QE Live MoP is best used on level 90 characters.";
   if (!checks.length) errorMessage += "Your SimC string is a bit long. Make sure you haven't pasted it in twice!";
 
   setErrorMessage(errorMessage);

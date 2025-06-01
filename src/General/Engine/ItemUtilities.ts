@@ -16,6 +16,7 @@ import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
 import { getSeasonalDungeons } from "Databases/InstanceDB";
+import { classicGemDB } from "Databases/ClassicGemDB";
 
 
 
@@ -603,9 +604,12 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 
-export function getGemIcon(id: number) {
+export function getGemIcon(id: number, gameType: gameTypes = "Retail") {
 
-  const gem = gemDB.filter((gem) => gem.id === id);
+  const gem = gameType === "Retail" ? gemDB.filter((gem) => gem.id === id) : classicGemDB.filter((gem) => gem.id === id);
+  console.log(id);
+  console.log(gameType);
+  console.log(gem);
 
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";

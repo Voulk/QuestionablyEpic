@@ -16,7 +16,7 @@ export const SpellIcon = ({ spell, iconType, size, className, gameType, alt = ""
   icon = icon.replace(".jpg", "").replace(/-/g, "");
   const baseURL = `//render-us.worldofwarcraft.com/icons/56`;
   let fullURL = `${baseURL}/${icon}.jpg`;
-  const domain = gameType === "Retail" ? "" : "cata";
+  const domain = gameType === "Retail" ? "" : "mop-classic";
 
   if (newIconList.includes(spellId)) {
     // This is a temporary icon override since Evoker spells aren't in the WoW render DB yet.

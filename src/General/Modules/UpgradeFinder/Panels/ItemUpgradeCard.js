@@ -56,7 +56,7 @@ export default function ItemCard(props) {
   const itemDifferential = item.score;
   const isTierPiece = getItemProp(item.item, "itemSetId") && item.slot !== "Trinket" && item.slot !== "Finger";
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "Classic" ? "cata" : currentLanguage);
+  const wowheadDomain = (gameType === "Classic" ? "mop-classic" : currentLanguage);
 
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
