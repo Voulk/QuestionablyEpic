@@ -100,7 +100,7 @@ export default function CraftedGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {craftedDB[key]} -{" "}
                               {
-                                [...filterItemListBySource(itemDifferentials, "-4", key, itemLevels.crafted[difficulty])].length
+                                getNumUpgrades(itemDifferentials, -4, parseInt(key))
                               }{" "}
                               Upgrades
                             </Typography>
