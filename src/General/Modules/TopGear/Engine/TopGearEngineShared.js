@@ -254,14 +254,14 @@ export const deepCopyFunction = (inObject) => {
 export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
     const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
-    const gemBudget = useEpicGems ? 50 : 40;
+    const gemBudget = 160;
     // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
     
     // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
     // Add to "Mandatory yellows" for the next step.
-    let mandatoryYellows = 2;
-    const gemIDS = {
+    let mandatoryYellows = 0;
+    /*const gemIDS = {
       52208: 'yellow',
       52207: 'red',
       52236: 'blue',
@@ -269,14 +269,16 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       71881: 'red',
       71850: 'yellow', // int / haste
       71868: 'blue',
-    }
-    const yellowGemID = useEpicGems ? 71850 : 52208; // TODO: Autocalc this based on which would be best. 
-    const metaGemID = 52296;
-    const redGemID = useEpicGems ? 71881 : 52207;
-    const blueGemID = useEpicGems ? 71868 : 52236;
+    }*/
+    const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
+    const yellowGemID = 76668; // Int / haste but options available.
+    const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
+    const redGemID = 76694; // Pure int but look into hybrids
+    const blueGemID = 76686;
+
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
-                          blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget / 2, 
-                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget / 2}
+                          blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
+                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget}
 
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
@@ -328,7 +330,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
         }
       });
       // == Check yellow replacements ==
-      itemList.forEach((item, index) => {
+      // Potentially can kill this entirely in MoP.
+
+      /*itemList.forEach((item, index) => {
         const sockets = item.classicSockets.sockets;
         let itemIndex = 0;
         sockets.forEach((socket, socketIndex) => {
@@ -362,7 +366,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       for (let i = 0; i < mandatoryYellows; i++) {
         //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
-      } 
+      } */
 
     // Lastly, we need to actually add the stats from socketed gems.
     const socketedGemStats = [];
