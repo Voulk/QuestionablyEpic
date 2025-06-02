@@ -3,6 +3,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 export const holyPriestDefaults = {
     spec: "Holy Priest Classic",
@@ -27,10 +28,10 @@ export const holyPriestDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
 
-export function scoreHPriestSet(baseline, statProfile, player, userSettings, tierSets = []) { 
+export function scoreHPriestSet(baseline, statProfile, userSettings, tierSets = []) { 
   let score = 0;
   const healingBreakdown = {};
   const fightLength = 6;
@@ -65,7 +66,7 @@ export function scoreHPriestSet(baseline, statProfile, player, userSettings, tie
     fillerCost += spell.cost * spell.fillerRatio
   });
 
-  const baseHastePerc = (statProfile.haste / 128 / 100 + 1) * 1.05 * 1.02; // Haste buff, +2% haste
+  const baseHastePerc = (statProfile.haste / 128 / 100 + 1) * 1.05; // Haste buff, +2% haste
   const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost;
 
   baseline.castProfile.forEach(spellProfile => {

@@ -39,6 +39,7 @@ export const getSpellEntry = (profile, spellName, index = 0) => {
 }
 
 export const buildCPM = (spells, spell, efficiency = 0.9) => {
+    console.log(spell);
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 

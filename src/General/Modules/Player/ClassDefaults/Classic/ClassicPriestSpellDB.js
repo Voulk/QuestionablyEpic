@@ -158,8 +158,9 @@ export const CLASSICPRIESTSPELLDB = {
         healType: "direct",
         castTime: 0.5, 
         cost: 44, 
-        buffDuration: 18,
+        buffDuration: 30,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
+        cooldownData: {cooldown: 40 },
         coeff: 0.04199999943, 
         flat: 327,
         expectedOverheal: 0.35,
@@ -175,6 +176,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.486, 
         flat: 5649,
         expectedOverheal: 0.12,
+        cooldownData: {cooldown: 40 },
         secondaries: ['crit', 'hmastery'],
     }],
 
