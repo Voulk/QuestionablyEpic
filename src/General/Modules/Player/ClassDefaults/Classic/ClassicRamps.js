@@ -222,7 +222,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             const spell = playerSpells[spellName];
             spell.forEach(spellSlice => {
                 console.log(spellSlice);
-                if (spellSlice.secondaries.includes("hmastery")) spellSlice.secondaries.push("mastery");
+                if (spellSlice.secondaries && spellSlice.secondaries.includes("hmastery")) spellSlice.secondaries.push("mastery");
             })
             
         })
