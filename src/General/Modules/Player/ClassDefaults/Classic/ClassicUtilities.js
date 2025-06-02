@@ -23,7 +23,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         "Restoration Druid": 0.1,
         "Discipline Priest": 0, // Gets 15% intellect instead.
         "Holy Paladin": 0.1,
-        "Holy Priest": 0.15,
+        "Holy Priest": 0,
         "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 0, // Soon :)
     };
