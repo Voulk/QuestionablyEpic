@@ -101,7 +101,6 @@ export default function GameTypeSwitch(props) {
         </Tooltip>
       </ToggleButton>
 
-
     </ToggleButtonGroup>
   );
 }

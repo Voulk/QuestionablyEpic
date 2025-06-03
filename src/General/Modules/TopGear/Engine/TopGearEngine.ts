@@ -2,7 +2,7 @@ import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
 import { STATCONVERSION } from "../../../Engine/STAT";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
-import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import { convertPPMToUptime, getSetting, getDiminishedValue } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
@@ -442,6 +442,7 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   let doubleSlot: {[key: string]: number} = {};
   const primeList = primeSet.itemList;
   const diffList = itemSet.itemList;
+
   let differentials: {
     items: Item[]; //
     gems: number[]; //
@@ -467,6 +468,9 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
       // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
         differentials.items.push(diffList[x - 1]);
+      }
+      else if ((x === 10 || x === 12) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x + 1]);
       }
     }
   }
@@ -829,6 +833,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Handle Annulet
     const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
     const annuletStats = getCircletEffect(combo, itemLevel, additionalData)
+
+    Object.keys(annuletStats).forEach(stat => {
+      // Apply DR
+      annuletStats[stat] = getDiminishedValue(stat, annuletStats[stat], setStats[stat]);
+    });
 
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);

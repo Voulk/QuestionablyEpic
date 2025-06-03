@@ -229,7 +229,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [626, 632, 639, 645, 652, 658, 665, 671, 675, 678];
+  const allItemLevels = [626, 632, 639, 645, 652, 658, 665, 671, 675, 678, 684];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -319,7 +319,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Hover over the ? icon to get more information on a trinket. Sigil of Algari Concordance (not on chart) was nerfed on 24 March and is no longer a great pick."  :
+  const trinketText = gameType === "Retail" ? "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection. The ? button on the trinket chart can give you extra information on options."  :
                                               "";
 
   return (

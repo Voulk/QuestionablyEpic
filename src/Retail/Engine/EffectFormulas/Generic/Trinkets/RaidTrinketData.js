@@ -5,7 +5,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 export const raidTrinketData = [
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
-    description: "Takes 2 minutes to be good and 4 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",
+    description: "Takes 2 minutes to be good and 3.5 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",
     effects: [
       { 
         coefficient: 0.045686 * 0.95, 
@@ -67,7 +67,7 @@ export const raidTrinketData = [
   },
   { // 1:30 cooldown mastery on-use. 
     name: "House of Cards",
-    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise.",
+    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest.",
     effects: [
       {
         coefficient: 2.736594, 
@@ -93,7 +93,7 @@ export const raidTrinketData = [
   },
   { // Crit proc trinket. Spells cast while crit buff is up increase the crit.
     name: "Mug's Moxie Jug",
-    description: "",
+    description: "Heavily overbudget crit trinket. Procs off several things that aren't spell casts which increases your average stack count by a lot.",
     effects: [
       {
         coefficient: 0.276886, 
@@ -146,7 +146,7 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "A surprisingly strong flat healing trinket with low overhealing. Default overhealing: 15%.",
+    description: "A surprisingly strong flat healing trinket with low overhealing. In Mythic+ the trinket heals for less but does absurb amounts of damage - particularly in groups with pets. Default overhealing: 15%.",
     setting: true,
     effects: [
       {  // Heal effect

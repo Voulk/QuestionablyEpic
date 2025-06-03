@@ -20,6 +20,30 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
+    version: "11.1.5 / 4.4.2",
+    update: 14,
+    date: "May 13",
+    changes: [ 
+      "Enabled Turbo Boost item levels across the app.",
+      "Top Gear will now make it clear which ring / trinket slot are being replaced.",
+      "Reworked how Cyrce's Circlet handles DR in ultra high mastery sets.",
+    ]},
+  {
+    version: "11.1.5 / 4.4.2",
+    update: 13,
+    date: "May 2",
+    changes: [ 
+      "In-game trinket tuning to Soulletting Ruby & Carved Blazikon Wax",
+    ]},
+  {
+    version: "11.1.5 / 4.4.2",
+    update: 12,
+    date: "April 28",
+    changes: [ 
+      "Oracle Disc Priest Beta",
+      "Vault items are now automatically upgraded to max instead of having to click it.",
+    ]},
+  {
     version: "11.1 / 4.4.2",
     update: 99,
     date: "May",
