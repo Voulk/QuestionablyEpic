@@ -48,7 +48,7 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.958, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
-        statMods: {crit: 0, critEffect: 0}
+        statMods: {crit: 0.6, critEffect: 0}
     },
     {
         // Regrowth HoT portion
