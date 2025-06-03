@@ -1,8 +1,10 @@
 
 
 import { getHealth } from "../Generic/RampBase";
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMonkSpellDB";
+
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
@@ -17,22 +19,22 @@ import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/
  * @returns An updated spell database with any of the above changes made.
  */
 export const applyLoadoutEffects = (classicSpells, settings, state) => {
-    const auraHealingBuff = { // THIS IS ADDITIVE WITH OTHER INCREASES
-        "Restoration Druid": 0.25,
+    const auraHealingBuff = { // 
+        "Restoration Druid": 0.1,
         "Discipline Priest": 0, // Gets 15% intellect instead.
         "Holy Paladin": 0.1,
-        "Holy Priest": 0.15,
+        "Holy Priest": 0,
         "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 0, // Soon :)
     };
 
     const baseMana = {
-        "Restoration Druid": 18635,
+        "Restoration Druid": 60000,
         "Discipline Priest": 20590, 
         "Holy Paladin": 23422,
         "Holy Priest": 20590,
         "Restoration Shaman": 23430, 
-        "Mistweaver Monk": 0, 
+        "Mistweaver Monk": 20590, // PLACEHOLDER. NOT A REAL VALUE.
     };
 
     // ==== Default Loadout ====
@@ -66,12 +68,22 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
             })
  
         }
+        if (settings.testMode) {
+            // We use Test Mode for testing that spells line up. So it removes stuff that'll get in the way of that.
+            value.forEach(spellSlice => {
+                if ('secondaries' in spellSlice) spellSlice.secondaries = [];
+                if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
+            })
+        }
         // Per Slice scaling
         value.forEach(slice => {
             if (spellInfo.additiveScaling) {
-                slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0) + auraHealingBuff[state.spec]);
-                slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0) + auraHealingBuff[state.spec]);
+                slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
+                slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
             }
+            slice.coeff *= (1 + auraHealingBuff[state.spec]);
+            slice.flat *= (1 + auraHealingBuff[state.spec]);
+
         });
     }
 
@@ -130,7 +142,7 @@ export const getTalentedSpellDB = (spec, state) => {
     }
     else if (spec.includes("Restoration Druid")) {
         spellDB = druidSpells;
-        talents = druidTalents;
+        talents = state.talents;
     }
     else if (spec.includes("Discipline Priest")) {
         spellDB = priestSpells;
@@ -140,6 +152,10 @@ export const getTalentedSpellDB = (spec, state) => {
         spellDB = priestSpells;
         talents = holyPriestTalents;
     }
+    else if (spec.includes("Mistweaver Monk")) {
+        spellDB = monkSpells;
+        talents = monkTalents;
+    }
 
     const playerSpells = deepCopyFunction(spellDB);
 
@@ -147,7 +163,6 @@ export const getTalentedSpellDB = (spec, state) => {
 
     applyLoadoutEffects(playerSpells, state.settings, {spec: spec, genericBonus: {healing: 1, damage: 1}});
 
-    console.log("Loadout effects applied");
     return playerSpells;
 }
 

@@ -326,9 +326,6 @@ export default function TopGear(props: any) {
          "1H Weapon" : 0,
          "Offhand" : 0,
        };
-       if (gameType === "Classic") {
-         slotLengths["Relics & Wands"] = 0;
-       }
        for (var i = 0; i < itemList.length; i++) {
          let slot = itemList[i].slot;
          if (slot in slotLengths || slot === "Shield") {
@@ -375,14 +372,13 @@ export default function TopGear(props: any) {
     }
     else if (missingSlots.length > 0) {
       missingSlots.forEach((slot) => {
-        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield", "Relics & Wands"].includes(slot))) errorMessage += getTranslatedSlotName(slot.toLowerCase(), currentLanguage) + ", ";
+        if (!(["2H Weapon", "1H Weapon", "Offhand", "Shield"].includes(slot))) errorMessage += getTranslatedSlotName(slot.toLowerCase(), currentLanguage) + ", ";
         
       })
 
       if ((missingSlots.includes("2H Weapon") && (missingSlots.includes("1H Weapon") || (missingSlots.includes("Offhand") || missingSlots.includes("Shield"))))) {
         errorMessage += " Weapon, " 
       }
-      if (missingSlots.includes("Relics & Wands")) errorMessage += " Relic or Wand, ";
 
       return errorMessage.slice(0, -2);
     }
@@ -717,7 +713,7 @@ export default function TopGear(props: any) {
     { label: getTranslatedSlotName("weapons", currentLanguage), slotName: "AllMainhands" },
     { label: getTranslatedSlotName("offhands", currentLanguage), slotName: "Offhands" },
   ];
-  if (gameType === "Classic") slotList.push({ label: getTranslatedSlotName("relics", currentLanguage), slotName: "Relics & Wands" });
+
   return (
     <div className={classes.root}>
       <div style={{ height: 96 }} />

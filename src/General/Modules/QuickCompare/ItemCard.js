@@ -114,7 +114,7 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage);
   let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;

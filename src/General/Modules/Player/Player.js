@@ -31,6 +31,7 @@ export class Player {
     this.charAvatarURL = "";
     this.gameType = gameType;
     this.setupDefaults(specName);
+    this.talents = [];
     
     if (gameType === "Retail") {
       

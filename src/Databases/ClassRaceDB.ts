@@ -191,4 +191,20 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
     ],
     gameType: "Retail",
   },
+  "Mistweaver Monk Classic": {
+    races: [
+      "Races.Draenei",
+      "Races.Dwarf",
+      "Races.Gnome",
+      "Races.Human",
+      "Races.Night Elf",
+      "Races.Pandaren",
+      "Races.Blood Elf",
+      "Races.Orc",
+      "Races.Tauren",
+      "Races.Troll",
+      "Races.Undead",
+    ],
+    gameType: "Classic",
+  },
 };

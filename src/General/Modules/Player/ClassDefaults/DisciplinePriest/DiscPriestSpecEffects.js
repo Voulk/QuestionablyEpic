@@ -17,10 +17,10 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     const extraInsuranceHealing = 1.5 * extraInsuranceHoTs * 0.4 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect'])
 
     bonus_stats.hps = extraInsuranceHealing / 60;
-
+    
     let insuranceUptime = (4 * player.getStatPerc('haste') + extraInsuranceHoTs) * 15 / 60 / 20;
     const healingIncrease = 0.15;
-
+    console.log("4PC HPS: ", bonus_stats.hps);
     bonus_stats.hps += player.getHPS() * insuranceUptime * healingIncrease;
 
   }

@@ -5,9 +5,56 @@ type GemEntry = {
   name: string; // The English name for the gem.
   icon: string; // The icon to use for the gem.
   stats: { [key: string]: number };
+  color: string;
 }
 
 export const classicGemDB: GemEntry[] = [
+  // Mists of Pandaria Gems
+  {
+    id: 76694,
+    rarity: "rare",
+    name: "Brilliant Primordial Ruby",
+    icon: "inv_misc_gem_x4_rare_cut_red",
+    stats: { intellect: 160 },
+    color: "red",
+  },
+    {
+    id: 76668,
+    rarity: "rare",
+    name: "Reckless Vermilion Onyx",
+    icon: "inv_misc_gem_x4_rare_cut_orange",
+    stats: { intellect: 80, haste: 160 },
+    color: "orange",
+  },
+  {
+    id: 76660,
+    rarity: "rare",
+    name: "Potent Vermilion Onyx",
+    icon: "inv_misc_gem_x4_rare_cut_orange",
+    stats: { intellect: 80, crit: 160 },
+    color: "orange",
+  },
+    {
+    id: 76686,
+    rarity: "rare",
+    name: "Purified Imperial Amethyst",
+    icon: "inv_misc_gem_x4_rare_cut_purple",
+    stats: { intellect: 80, spirit: 160 },
+    color: "purple",
+  },
+
+      {
+    id: 76885,
+    rarity: "rare",
+    name: "Burning Primal Diamond",
+    icon: "inv_misc_gem_x4_metagem_cut",
+    stats: { intellect: 160 },
+    color: "meta",
+  },
+
+
+  // Cataclysm Gems
+  /*
   {
     id: 71850,
     rarity: "epic",
@@ -77,5 +124,5 @@ export const classicGemDB: GemEntry[] = [
     name: "Reckless Ember Topaz",
     icon: "inv_misc_cutgemsuperior4",
     stats: { intellect: 20, haste: 20 },
-  },
+  },*/
 ];

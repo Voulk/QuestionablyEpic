@@ -1,7 +1,6 @@
-import React from "react";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
-export const SpellIcon = ({ spell, spec, iconType, size, className, gameType, alt = "", ...others }) => {
+export const SpellIcon = ({ spell, iconType, size, className, gameType, alt = "", ...others }) => {
   if (!spell) {
     return null;
   }
@@ -16,7 +15,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, gameType, al
   icon = icon.replace(".jpg", "").replace(/-/g, "");
   const baseURL = `//render-us.worldofwarcraft.com/icons/56`;
   let fullURL = `${baseURL}/${icon}.jpg`;
-  const domain = gameType === "Retail" ? "" : "cata";
+  const domain = gameType === "Retail" ? "" : "mop-classic";
 
   if (newIconList.includes(spellId)) {
     // This is a temporary icon override since Evoker spells aren't in the WoW render DB yet.
@@ -31,7 +30,7 @@ export const SpellIcon = ({ spell, spec, iconType, size, className, gameType, al
     <div style={{position: "relative"  }}> 
       <WowheadTooltip type="spell" id={spellId} domain={domain}>
         <img src={fullURL} alt={alt} className={`icon ${className || ""}`} {...others} />
-        {iconType === "Talent" ? (
+        {(iconType === "Talent" && gameType === "Retail") ? (
           <div {...others} style={{ position: "absolute", top: "19%", width: "100%", textAlign: "center", fontWeight: "bold", fontSize: "16px", textShadow: "1px 1px 4px black" }}>
             {" "}
             {spell.points}{" "}

@@ -3,7 +3,8 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection. The ? button on the trinket chart can give you extra information on options - Some M+ trinkets in particular have niche uses outside of HPS alone.",
+    "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection."
+
   ]
 ;
   if (messageOfTheDay.length === 0) return;

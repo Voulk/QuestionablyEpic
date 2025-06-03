@@ -1,14 +1,17 @@
 // Classic sometimes works in different ways to retail. If we can use a retail function then we should, but if we need a classic version then it can be added here.
 // If it can be solved with a flag instead (like "No partial tick") then that is preferable to writing a new function.
 
+import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
+
+
+// Since we've moved these to STAT we can probably start folding references back and delete this part of the file.
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
     statPoints: {
-        crit: 179.279998779296875,
-        mastery: 179.279998779296875,
-        haste: 128.057006835937500,
-
-        critInt: 648.91,
+        crit: STATCONVERSIONCLASSIC.CRIT,
+        mastery: STATCONVERSIONCLASSIC.MASTERY, 
+        haste: STATCONVERSIONCLASSIC.HASTE,
+        critInt: STATCONVERSIONCLASSIC.INTCRIT,
     },
 
     baseCrit: {
@@ -17,28 +20,26 @@ const GLOBALCONST = {
         "Holy Paladin": 0.033355,
         "Holy Priest": 0.012375,
         "Restoration Shaman": 0.02201, 
-        "Mistweaver Monk": 1, // Soon :)
+        "Mistweaver Monk": 0, // Soon :)
     },
 
     masteryMod: {
-        "Restoration Druid": 1.25,
-        "Discipline Priest": 2.5, 
-        "Holy Paladin": 1.5,
-        "Holy Priest": 1.25,
-        "Restoration Shaman": 3, 
-        "Mistweaver Monk": 1, 
+        "Restoration Druid": STATCONVERSIONCLASSIC.MASTERYMULT["Restoration Druid"],
+        "Discipline Priest": STATCONVERSIONCLASSIC.MASTERYMULT["Discipline Priest"],
+        "Holy Paladin": STATCONVERSIONCLASSIC.MASTERYMULT["Holy Paladin"],
+        "Holy Priest": STATCONVERSIONCLASSIC.MASTERYMULT["Holy Priest"],
+        "Restoration Shaman": STATCONVERSIONCLASSIC.MASTERYMULT["Restoration Shaman"],
+        "Mistweaver Monk":STATCONVERSIONCLASSIC.MASTERYMULT["Mistweaver Monk"],
     },
 
-    baseMana: {
-        "Holy Paladin": 23422,
-        "Restoration Druid": 18355,
-        "Discipline Priest": 20590,
-        "Holy Priest": 20590,
-        "Restoration Shaman": 23430,
-        "Mistweaver Monk": 0,
+    baseMana: { // This doesn't vary by spec anymore. It could be merged into one value.
+        "Holy Paladin": 300000,
+        "Restoration Druid": 300000,
+        "Discipline Priest": 300000,
+        "Holy Priest": 300000,
+        "Restoration Shaman": 300000,
+        "Mistweaver Monk": 300000,
     }
-
-
 
 }
 
@@ -97,22 +98,21 @@ export const buffSpell = (fullSpell, buffPerc, type = "additive") => {
 
 export const applyRaidBuffs = (state, stats) => {
     // Crit
-    stats.crit += 5 * 179;
+    stats.crit += 5 * GLOBALCONST.statPoints.crit;
 
     // 5% spell haste
-    //stats.haste += 5 * 128;
+    // Haste is multiplicative so we'll just handle it in the profiles themselves.
 
     // 5% base stats - The added intellect also becomes spell power.
     stats.intellect *= 1.05;
-    stats.spirit *= 1.05;
-    
-    // Max mana
-    state.manaPool *= 1.06;
 
-    // Armor bonus
+    // Armor-type bonus (all leather etc).
     stats.intellect *= 1.05;
 
     // Mana Spring etc
+
+    // 3k mastery
+    stats.mastery += 3000;
 
     // Add Int to spell power.
     stats.spellpower +=  stats.intellect;
@@ -121,7 +121,6 @@ export const applyRaidBuffs = (state, stats) => {
 
     return stats;
 
-    //console.log(state.currentStats);
 }
 
 export const getCritPercentage = (currentStats, spec) => {
@@ -131,17 +130,20 @@ export const getCritPercentage = (currentStats, spec) => {
 
 // Returns MP5.
 export const getManaRegen = (currentStats, spec) => {
+    const spiritToMP5 = currentStats.spirit * 1.128;
+
     const inCombatRegen = {
-        "Holy Paladin": 0.8, // 0.5 base + Judgements of the Pure
+        "Holy Paladin": 0.5, // 0.5 base + Judgements of the Pure
         "Restoration Druid": 0.5,
         "Discipline Priest": 0.5,
-        "Holy Priest": 0.8,
+        "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,
     }
-    return (0.001 + currentStats.spirit * Math.sqrt(currentStats.intellect) * 0.016725 * inCombatRegen[spec]);
+    return (spiritToMP5 * inCombatRegen[spec]);
 }
 
 export const getManaPool = (currentStats, spec) => {
+    return 300000;
     if (spec.includes("Restoration Druid")) return (GLOBALCONST.baseMana[spec] + currentStats.intellect * 15) * 1.02; 
     else {
         const baseManaPool = (GLOBALCONST.baseMana[spec] - 280 + currentStats.intellect * 15) * 1.02; // Includes meta gem
@@ -159,19 +161,23 @@ export const getManaPool = (currentStats, spec) => {
 
 // Returns the equivalent MP5 from external mana effects.
 // Innervate currently only works for druid but we could add a setting.
+
+// Not updated for MoP yet.
 export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     const baseMana = GLOBALCONST.baseMana[spec];
-    let additionalManaPerSecond = baseMana * 0.05;
+    let additionalManaPerSecond = 6000; //baseMana * 0.05;
     
     const manaSources = {additionalMP5: 0};
     const pool = getManaPool(currentStats, spec);
 
     manaSources["Base Regen"] = additionalManaPerSecond;
-    const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
-    manaSources["Replenishment"] = replenishment;
-    additionalManaPerSecond += replenishment;
 
-    manaSources["Mana Potion"] = 22000 / 420 * 5;
+    /*const replenishment = pool * 0.01 / 10 * 5; // 1% mana every 10s.
+    manaSources["Replenishment"] = replenishment;
+    additionalManaPerSecond += replenishment; */
+
+    // Potion of Focus is 45k but stuns you for 10s.
+    manaSources["Mana Potion"] = 30000 / 420 * 5;
     additionalManaPerSecond += manaSources["Mana Potion"];
 
     if (spec.includes("Holy Paladin")) {
@@ -190,12 +196,10 @@ export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
     }
     else if (spec.includes("Restoration Druid")) {
         // Innervate
-        additionalManaPerSecond += (pool * 0.2 / 180 * 5);
-        manaSources["Innervate"] = (pool * 0.2 / 180 * 5);
+        const innervate = currentStats.spirit * 0.5 * 10 / 180 * 5;
+        additionalManaPerSecond += (innervate);
+        manaSources["Innervate"] = (innervate);
 
-        // Revitalize
-        manaSources["Revitalize"] = (pool * 0.01 * 5 / 60 * 5);
-        additionalManaPerSecond += (pool * 0.01 * 5 / 60 * 5); // 15 mana, 5 times per minute
     }
     else if (spec.includes("Discipline Priest")) {
         // Rapture

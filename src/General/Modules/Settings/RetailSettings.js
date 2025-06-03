@@ -92,6 +92,7 @@ export default function RetailSettings(props) {
                         </Typography>
                       }
                       placement="top-start"
+                      key={key}
                     >
 
                       {playerSettings[key].type === "selector" ? (

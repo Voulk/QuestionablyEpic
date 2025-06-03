@@ -52,9 +52,9 @@ export default function ItemCardReport(props) {
   const statString = buildStatString(item.stats, item.effect, currentLanguage);
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage) ;
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage) ;
   let gemString = gameType === "Classic" ? "&gems=" + item.socketedGems.join(':') : "&gems=" + item.gemString;
-  const socketImage = getGemIcon(enchants["Gems"]);
+  const socketImage = getGemIcon(enchants["Gems"], gameType);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
@@ -134,7 +134,7 @@ export default function ItemCardReport(props) {
       socket.push(
       <div style={{ display: "inline", marginRight: "5px" }}>
         <Tooltip title={capitalizeFirstLetter(getGemProp(gem, "name"))} arrow>
-          <img src={getGemIcon(gem)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          <img src={getGemIcon(gem, gameType)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
         </Tooltip>
     </div>);
     })

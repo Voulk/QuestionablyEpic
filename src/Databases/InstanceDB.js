@@ -17,6 +17,11 @@ export const instanceDB = {
   "-4": "Crafted",
 
   // Classic specific
+  "369": "Siege of Orgrimmer",
+  "362": "Throne of Thunder",
+  "330": "Heart of Fear",
+  "321": "Mogu'shan Vaults",
+  "324": "Terrace of Endless Spring",
   "-5": "Justice",
   "-6": "Valor",
   "-8": "Elemental Rune Twilight",
@@ -32,7 +37,8 @@ export const craftedDB = {
   7: "Jewelcrafting",
 }
 
-export const encounterDB = {
+
+export const retailInstanceDB = {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Raids                                             */
   /* ---------------------------------------------------------------------------------------------- */
@@ -97,17 +103,33 @@ export const encounterDB = {
       71: "Grim Batol",
 
     "Classic": {
-      bossOrderMythicPlus: [66, 63, 71, 70, 69, 64, 67, 68, 65], // Dungeon Order
-      66: "Blackrock Caverns",
-      63: "Deadmines",
-      71: "Grim Batol",
-      70: "Halls of Reorigination",
-      69: "Lost City of the Tol'vir",
-      64: "Shadowfang Keep",
-      67: "The Stonecore",
-      68: "The Vortex Pinnacle",
-      65: "Throne of the Tides",
+      //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.
+      bossOrderMythicPlus: [316, 313, 312, 311, 303, 302, 324], // Dungeon Order
+      // TODO
+      316: "Scarlet Monastery",
+      313: "Temple of the Jade Serpent",
+      312: "Shadowpan Monastery",
+      311: "Scarlet Halls",
+      303: "Gate of the Setting Sun",
+      302: "Stormstout Brewery",
+      324: "Siege of Niuzao Temple",
+      99999: "Scholomance",
       },
     }
   },
+}
+
+const classicInstanceDB = {
+  330: {
+    name: "Heart of Fear",
+    bossOrder: [745],
+    bosses: {
+      745: "Imperial Vizier Zor'lok",
+    }
+  },
+}
+
+export const encounterDB = {
+  ...classicInstanceDB,
+  ...retailInstanceDB,
 }

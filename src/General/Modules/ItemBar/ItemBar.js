@@ -194,6 +194,9 @@ export default function ItemBar(props) {
       if (item) {
         if (itemEffect.type !== "") {
           item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
+          if (itemEffect.type === "Embellishment") {
+            item.uniqueTag = "embellishment";
+          }
         }
 
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
@@ -311,11 +314,9 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
-    { label: "372 Gear", value: 372, gameType: "Classic" },
-    { label: "378 Gear", value: 378, gameType: "Classic" },
-    { label: "391 Gear", value: 391, gameType: "Classic" },
-    { label: "397 Gear", value: 397, gameType: "Classic" },
-    { label: "410 Gear", value: 410, gameType: "Classic" },
+    { label: "476 Gear", value: 476, gameType: "Classic", source: "T14" },
+    { label: "489 Gear", value: 489, gameType: "Classic", source: "T14" },
+    { label: "502 Gear", value: 502, gameType: "Classic", source: "T14" },
 
     { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine" },
     { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine" },

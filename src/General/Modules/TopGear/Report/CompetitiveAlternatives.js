@@ -13,7 +13,7 @@ function CompetitiveAlternatives(props) {
   // const item = props.item
   const differentials = props.differentials;
   const gameType = props.gameType;
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage);
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = false; // item.effect.type === "spec legendary";
@@ -121,7 +121,7 @@ function CompetitiveAlternatives(props) {
                                     alt="img"
                                     width={40}
                                     height={40}
-                                    src={getGemIcon(gem)}
+                                    src={getGemIcon(gem, gameType)}
                                     style={{
                                       borderRadius: 4,
                                       borderWidth: item.vaultItem ? "2px" : "1px",

@@ -1,8 +1,10 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { CLASSICDRUIDSPELLDB } from "./ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB } from "./ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB } from "./ClassicPriestSpellDB";
+import { CLASSICSHAMANSPELLDB } from "./Shaman/ClassicShamanSpellDB";
+import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
@@ -47,11 +49,14 @@ const CLASSICCONSTANTS = {
 
 }
 
+// Eh don't we have this function somewhere else already?
 const getSpellDB = (spec) => {
     if (spec === "Restoration Druid" || spec === "Resto Druid") return CLASSICDRUIDSPELLDB;
     else if (spec === "Holy Paladin") return CLASSICPALADINSPELLDB;
     else if (spec === "Discipline Priest") return CLASSICPRIESTSPELLDB;
     else if (spec === "Holy Priest") return CLASSICPRIESTSPELLDB;
+    else if (spec === "Mistweaver Monk") return CLASSICMONKSPELLDB;
+    else if (spec === "Restoration Shaman" || spec === "Resto Shaman") return CLASSICSHAMANSPELLDB;
     else return {};
 }
 
@@ -217,19 +222,30 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             const spell = playerSpells[spellName];
             spell.forEach(spellSlice => {
                 console.log(spellSlice);
-                if (spellSlice.secondaries.includes("hmastery")) spellSlice.secondaries.push("mastery");
+                if (spellSlice.secondaries && spellSlice.secondaries.includes("hmastery")) spellSlice.secondaries.push("mastery");
             })
             
         })
     }
 
-    const baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
+    let baseStats = JSON.parse(JSON.stringify(stats));
+    if (settings.testMode === "No") {
+        baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
+    }
     
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
         settings.preBuffs.forEach(buffName => {
-
-            if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][0], buffName);
+            const hasteBuff = { // We add this in profiles themselves so for simulation or spell data we need to do it manually.
+                type: "buff",
+                buffDuration: 99999,
+                buffType: 'statsMult',
+                stat: "haste",
+                value: 1.05, 
+            }
+            if (buffName === "Haste Aura") addBuff(state, hasteBuff, buffName)
+            else if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][0], buffName);
+            else if (buffName === "Soul of the Forest") addBuff(state, playerSpells["Soul of the Forest"][0], buffName);
             else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
             else if (buffName === "Judgements of the Pure") {
 
@@ -305,6 +321,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             // Cleanup Holy Power.
             if (fullSpell[0].holyPower > 0) state.holyPower = Math.min(3, state.holyPower + fullSpell[0].holyPower);
             if ('tags' in fullSpell[0] && fullSpell[0].tags.includes("Holy Power Spender")) state.holyPower = 0;
+            removeBuff(state.activeBuffs, "Soul of the Forest");
+
         }
 
         if (seqType === "Manual" && (!castState.queuedSpell || castState.queuedSpell === "Rest") && seq.length === 0) {

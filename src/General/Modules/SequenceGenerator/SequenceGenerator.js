@@ -4,7 +4,6 @@ import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
 import StatPanel from "./SeqStatPanel";
 
-import { RootState } from "Redux/Reducers/RootReducer";
 import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
@@ -23,6 +22,7 @@ import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/C
 import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
 import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
+
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
 import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
@@ -30,11 +30,13 @@ import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest
 import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 
 // Classic
-import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "General/Modules/Player/ClassDefaults/Classic/Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
+import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
+import { classColours } from "General/Engine/ClassData";
 import "./Sequence.css";
 import SequenceDataTable from "./SequenceDataTable";
 
@@ -87,6 +89,7 @@ const getSpellDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
   else if (spec === "Discipline Priest Classic") return CLASSICPRIESTSPELLDB;
   else if (spec === "Holy Priest Classic") return CLASSICPRIESTSPELLDB;
+  else if (spec === "Mistweaver Monk Classic") return CLASSICMONKSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -103,6 +106,7 @@ const getTalentDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return classicPaladinTalents;
   else if (spec === "Discipline Priest Classic") return classicDiscTalents;
   else if (spec === "Holy Priest Classic") return classicHolyTalents;
+  else if (spec === "Mistweaver Monk Classic") return classicMonkTalents;
   else return null;
 };
 
@@ -113,6 +117,7 @@ const saveStats = (newStats) => {
 const getSpecSettings = (spec) => {
   const baseSettings = {
     includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+    testMode: { title: "Ignore Secondaries & Buffs", value: "Yes", options: ["Yes", "No"] },
   }
   if (spec === "Preservation Evoker") {
     return baseSettings;
@@ -204,8 +209,8 @@ export default function SequenceGenerator(props) {
   };
 
   const spellList = {
-    Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
-    Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
+    Damage: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "damage" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
+    Healing: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "heal" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
   const talentList = Object.keys(talentDB).filter((talent) => talentDB[talent].select === true);
@@ -285,6 +290,14 @@ export default function SequenceGenerator(props) {
 
   const addTalent = (talentName, talentDB, setTalents) => {
     const talent = talentDB[talentName];
+
+    if (gameType === "Classic") {
+      Object.keys(talentDB).forEach((key) => {
+        if (talentDB[key].tier === talent.tier  && key !== talentName && talentDB[key].tier !== 5) {
+            talentDB[key].points = 0;
+        }
+      });
+    }
 
     talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
 
@@ -480,7 +493,7 @@ export default function SequenceGenerator(props) {
                                 dragStart(e, spell);
                               }}
                               onClick={(e) => addSpell(spell, e)}
-                              style={{ display: "flex", width: '36px', height: '36px' }}
+                              style={{ display: "flex", width: '36px', height: '36px', borderColor: classColours(selectedSpec) }}
                             />
                           </Grid>
                         ))}
@@ -510,7 +523,7 @@ export default function SequenceGenerator(props) {
                                   e.persist();
                                   addTalent(spell, talentDB, setTalents, e);
                                 }}
-                                style={{ display: "flex", width: '30px', height: '30px' }}
+                                style={{ display: "flex", width: '30px', height: '30px', border: talentDB[spell].points === talentDB[spell].maxPoints ? "2px solid #F2BF59" : "2px solid rgba(255,255,255,0.2)", borderRadius: "2px" }}
                               />
                             </Grid>
                           ) : (

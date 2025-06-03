@@ -16,6 +16,7 @@ import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
 import { getSeasonalDungeons } from "Databases/InstanceDB";
+import { classicGemDB } from "Databases/ClassicGemDB";
 
 
 
@@ -47,7 +48,9 @@ export function getValidArmorTypes(spec: string) {
     case "Holy Paladin Classic":
       return [0, 4, 6, 7, 11]; // Misc + Plate + Shields
     case "Restoration Druid Classic":
-      return [0, 2, 8, 11]; // Misc + Plate + Shields
+      return [0, 2, 8, 11]; // Misc + Plate
+    case "Mistweaver Monk Classic":
+      return [0, 2, 8, 11]; // Misc + Plate
     case "Restoration Shaman Classic":
       return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
     default:
@@ -116,6 +119,8 @@ export function getValidWeaponTypes(spec: string, slot: string) {
           return [0, 1, 4, 5, 10, 11, 13, 15];
         case "Holy Priest Classic":
           return [4, 10, 15, 19];
+        case "Mistweaver Monk Classic":
+            return [0, 4, 6, 7, 10, 13];
         default:
           return [-1];
       }
@@ -331,6 +336,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.RESTODRUID:
       return [4, 5, 6, 10, 13, 15];
     case SPEC.MISTWEAVERMONK:
+    case "Mistweaver Monk Classic":
       return [0, 4, 6, 7, 10, 13];
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];
@@ -523,7 +529,7 @@ export function getTranslatedEmbellishment(id: number, lang: string) {
     return embel.id === id;
   });
   // @ts-ignore
-  if (temp.length > 0) return temp[0].name[lang];
+  if (temp.length > 0) return temp[0].name;
   else return "Unknown Effect";
 }
 
@@ -598,9 +604,12 @@ export function getItemIcon(id: number, gameType = "Retail") {
 
 
 
-export function getGemIcon(id: number) {
+export function getGemIcon(id: number, gameType: gameTypes = "Retail") {
 
-  const gem = gemDB.filter((gem) => gem.id === id);
+  const gem = gameType === "Retail" ? gemDB.filter((gem) => gem.id === id) : classicGemDB.filter((gem) => gem.id === id);
+  console.log(id);
+  console.log(gameType);
+  console.log(gem);
 
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
@@ -772,10 +781,33 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
   return wep_list.slice(0, 9);
 } */
 
-export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAllocations: any) {
+/***
+ * In Mists of Pandaria, items are available at different levels again due to Thunderforging and Challenge modes (among others). That means we can use
+ * a similar function to retail again to calculate stats but with one catch:
+ * - Sockets have a penalty of 80 intellect and 80 secondaries. This 80 secondaries can be taken in different ways which is defined in the StatPercentEditor columns of ItemSparse.
+ * - Note that crafted items appear to be bugged and the secondary penalty is taken almost at random. This will need to be investigated further later.
+ */
+
+export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, statAllocations: any*/) {
   let combat_mult = 0;
 
   let stats: Stats = {}; 
+  const itemData = getItem(itemID, "Classic");
+  const slot = itemData.slot;
+  // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
+
+  if (itemLevel === itemData.level) {
+    return itemData.stats;
+  }
+
+  // An item is using a custom item level, so we'll calculate its stats using a scaling formula.
+  const statAllocations = itemData.allocations;
+  let gemCount = 0;
+  let penalties: Stats = {};
+  if (itemData.sockets && itemData.sockets.gems.length > 0) {
+    gemCount = itemData.sockets.gems.length;
+    penalties = itemData.socketPenalties;
+  }
 
   let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
   //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -788,10 +820,10 @@ export function calcStatsAtLevelClassic(itemLevel: number, slot: string, statAll
 
     if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * combat_mult);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
     else if (key === "intellect") {
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1);
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;;
     } else if (key === "stamina") {
       // todo
     }
@@ -969,13 +1001,11 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
   else if ((item.id === 77096 || item.id === 77083) && (itemLevelReq === 410)) return true; // Relic / cape. No 410+ options.
   
-  // Deal with Rag loot
-  else if (itemLevelReq === 391 && item.itemLevel === 397 && item.sources && item.sources[0].encounterId === 198) return true;
-  else if (itemLevelReq === 378 && item.itemLevel === 384/*  && item.sources && item.sources[0].encounterId === 198*/) return true;
-  else if (itemLevelReq === 397 && item.itemLevel === 403) return true;
-  else if (itemLevelReq === 410 && item.itemLevel === 416) return true;
+  else if (itemLevelReq === 476 && item.itemLevel === 483) return true;
+  else if (itemLevelReq === 489 && item.itemLevel === 496) return true;
+  else if (itemLevelReq === 502 && item.itemLevel === 509) return true;
   // The rest
-  else return ((item.itemLevel === 379 && itemLevelReq === 372 || (item.itemLevel === 359 && itemLevelReq === 372 && item.slot === "Relics & Wands")) /*|| key.itemLevel === 379*/)
+  else return false
 }
 
 // It is useful to have some items to work with.
@@ -990,7 +1020,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
-      (gameType === "Classic" || itemLevel > 400) &&
+      (gameType === "Classic" || itemLevel > 550) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -1010,6 +1040,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId));
       else if (!sources) sourceCheck = false;
     }
 
@@ -1018,10 +1049,9 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!item.name.includes("Fireflash") && !item.name.includes("Feverflare") && !item.name.includes("Wavecrest")) &&
         (!item.name.includes("Gladiator")) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
-        && sourceCheck) { // X, Y and two Mandala since there's 3x versions of it.
+        && sourceCheck) { 
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);

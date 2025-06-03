@@ -215,7 +215,6 @@ export default function EmbellishmentAnalysis(props) {
     "This is for informational purposes only. Consult your favourite guides for how to spend your early Sparks."
   ];
   const classes = useStyles();
-  const itemCardData = setupItemCardData(db, contentType, props.player, playerSettings);
   let activeGems = [];
 
   for (var i = 0; i < db.length; i++) {

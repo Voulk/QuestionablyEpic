@@ -2,15 +2,16 @@
 
 import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaultAPL"
-import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./ClassicPaladinSpellDB";
-import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
+import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
-import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
-import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
-import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
+import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
+import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
+import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
+import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -25,27 +26,35 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 6000,
-            spirit: 2800,
-            spellpower: 2800,
-            haste: 2005,
-            crit: 1500,
-            mastery: 1500,
+            intellect: 10267,
+            spirit: 6654,
+            spellpower: 5151,
+            haste: 1247,
+            crit: 1698,
+            mastery: 2319,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
             hps: 0,
         }
 
-        const spec = "Holy Paladin"
-        const testSuite = "Stat";
+        const spec = "Restoration Druid"
+        const testSuite = "TopGearProfile";
+        const revisedTalents = {...druidTalents};
+        revisedTalents.incarnation.points = 0;
+
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...druidTalents}, stats: activeStats }
-        const profile = holyPaladinDefaults;
+        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = restoDruidDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
             
+        }
+        else if (testSuite === "TopGearProfile") {
+            const init = profile.initializeSet(playerData.talents);
+            const score = profile.scoreSet(init, playerData.stats, testSettings, []);
+            console.log(score / 60);
         }
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));

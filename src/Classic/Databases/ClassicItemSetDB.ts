@@ -21,6 +21,49 @@ type ItemSetData = {
 } 
 
 export const itemSets: ItemSetData[] = [
+
+  {
+    id: 1125,
+    class: "Druid",
+    setBonuses: {
+      2: "Druid T14-2", 
+      4: "Druid T14-4", 
+    },
+  },
+  {
+    id: 1131,
+    class: "Monk",
+    setBonuses: {
+      2: "Monk T14-2", 
+      4: "Monk T14-4", 
+    },
+  },
+  {
+    id: 1134,
+    class: "Paladin",
+    setBonuses: {
+      2: "Paladin T14-2", 
+      4: "Paladin T14-4", 
+    },
+  },
+  {
+    id: 1137,
+    class: "Priest",
+    setBonuses: {
+      2: "Priest T14-2", 
+      4: "Priest T14-4", 
+    },
+  },
+  {
+    id: 1140,
+    class: "Shaman",
+    setBonuses: {
+      2: "Shaman T14-2", 
+      4: "Shaman T14-4", 
+    },
+  },
+
+  // Cataclysm
   {
     id: 935,
     class: "Priest",
