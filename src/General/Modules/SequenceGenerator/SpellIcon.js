@@ -1,4 +1,3 @@
-import React from "react";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 export const SpellIcon = ({ spell, iconType, size, className, gameType, alt = "", ...others }) => {

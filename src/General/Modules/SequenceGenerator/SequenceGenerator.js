@@ -36,6 +36,7 @@ import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compil
 import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
+import { classColours } from "General/Engine/ClassData";
 import "./Sequence.css";
 import SequenceDataTable from "./SequenceDataTable";
 
@@ -208,8 +209,8 @@ export default function SequenceGenerator(props) {
   };
 
   const spellList = {
-    Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
-    Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
+    Damage: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "damage" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
+    Healing: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "heal" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
   const talentList = Object.keys(talentDB).filter((talent) => talentDB[talent].select === true);
@@ -492,7 +493,7 @@ export default function SequenceGenerator(props) {
                                 dragStart(e, spell);
                               }}
                               onClick={(e) => addSpell(spell, e)}
-                              style={{ display: "flex", width: '36px', height: '36px' }}
+                              style={{ display: "flex", width: '36px', height: '36px', borderColor: classColours(selectedSpec) }}
                             />
                           </Grid>
                         ))}

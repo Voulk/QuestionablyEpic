@@ -60,7 +60,7 @@ export const CLASSICPRIESTSPELLDB = {
         secondaries: ['crit', 'hmastery'],
     }],
     "Renew": [{
-        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal"},
+        spellData: {id: 139, icon: "spell_holy_renew", cat: "heal", spec: "Holy Priest Classic"},
         cost: 17,
         castTime: 0,
         type: "classic periodic",
@@ -105,7 +105,7 @@ export const CLASSICPRIESTSPELLDB = {
     }
 ],
     "Penance": [{
-        spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage"},
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage", spec: "Discipline Priest Classic"},
         type: "damage",
         castTime: 2, 
         cost: 14, 
@@ -115,7 +115,7 @@ export const CLASSICPRIESTSPELLDB = {
     },
 ],
     "Penance D": [{
-        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal"},
+        spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal", spec: "Discipline Priest Classic"},
         type: "heal",
         castTime: 0, 
         cost: 14, 
@@ -136,7 +136,7 @@ export const CLASSICPRIESTSPELLDB = {
     }],
     "Divine Hymn": [
     {
-        spellData: {id: 64843, icon: "spell_holy_divinehymn", cat: "heal"},
+        spellData: {id: 64843, icon: "spell_holy_divinehymn", cat: "heal", spec: "Holy Priest Classic"},
         castTime: 8, 
         cost: 36, 
         type: "classic periodic",
@@ -155,7 +155,7 @@ export const CLASSICPRIESTSPELLDB = {
 
     // HPriest only
     "Holy Word: Sanctuary": [{
-        spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal"},
+        spellData: {id: 88685, icon: "spell_holy_divineprovidence", cat: "heal", spec: "Holy Priest Classic"},
         type: "classic periodic",
         buffType: "heal",
         healType: "direct",
@@ -171,7 +171,7 @@ export const CLASSICPRIESTSPELLDB = {
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
     }],
     "Holy Word: Serenity": [{
-        spellData: {id: 88684, icon: "spell_holy_persuitofjustice", cat: "heal"},
+        spellData: {id: 88684, icon: "spell_holy_persuitofjustice", cat: "heal", spec: "Holy Priest Classic"},
         type: "heal",
         castTime: 0, 
         healType: "direct",
@@ -184,7 +184,7 @@ export const CLASSICPRIESTSPELLDB = {
     }],
 
     "Circle of Healing": [{
-        spellData: {id: 34861, icon: "spell_holy_circleofrenewal", cat: "heal"},
+        spellData: {id: 34861, icon: "spell_holy_circleofrenewal", cat: "heal", spec: "Holy Priest Classic"},
         type: "heal",
         castTime: 0,
         healType: "direct",
@@ -264,35 +264,35 @@ const discTalents = {
 
 const holyTalents = {
     // Row 2
-    fromDarknessComesLight: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    fromDarknessComesLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         
     }}, 
     mindbender: {points: 1, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         
     }}, 
-    solaceAndInsanity: {points: 1, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+    solaceAndInsanity: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         
     }}, 
 
     // T2
-    twistOfFate: {points: 1, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    twistOfFate: {points: 0, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         
     }}, 
     powerInfusion: {points: 1, maxPoints: 1, icon: "spell_holy_powerinfusion", id: 10060, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         
     }}, 
-    divineInsight: {points: 1, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+    divineInsight: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {
         
     }}, 
 
     // T3
-    cascade: {points: 1, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    cascade: {points: 0, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
     divineStar: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar", id: 110744, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
-    halo: {points: 1, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    halo: {points: 0, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
 
