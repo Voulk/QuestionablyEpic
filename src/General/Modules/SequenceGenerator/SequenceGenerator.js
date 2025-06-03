@@ -116,6 +116,7 @@ const saveStats = (newStats) => {
 const getSpecSettings = (spec) => {
   const baseSettings = {
     includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+    testMode: { title: "Ignore Secondaries & Buffs", value: "Yes", options: ["Yes", "No"] },
   }
   if (spec === "Preservation Evoker") {
     return baseSettings;

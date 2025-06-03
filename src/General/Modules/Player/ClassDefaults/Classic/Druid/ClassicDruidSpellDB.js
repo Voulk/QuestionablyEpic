@@ -21,7 +21,7 @@ export const CLASSICDRUIDSPELLDB = {
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         buffDuration: 12,
         coeff: 0.392,
-        flat: 3815, 
+        flat: 4234, 
         expectedOverheal: 0.2,
         flags: {targeted: true},
         secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.

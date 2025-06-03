@@ -228,7 +228,10 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
         })
     }
 
-    const baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
+    let baseStats = JSON.parse(JSON.stringify(stats));
+    if (settings.testMode === "No") {
+        baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
+    }
     
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.

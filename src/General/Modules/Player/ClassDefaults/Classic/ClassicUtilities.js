@@ -68,12 +68,22 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
             })
  
         }
+        if (settings.testMode) {
+            // We use Test Mode for testing that spells line up. So it removes stuff that'll get in the way of that.
+            value.forEach(spellSlice => {
+                if ('secondaries' in spellSlice) spellSlice.secondaries = [];
+                if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
+            })
+        }
         // Per Slice scaling
         value.forEach(slice => {
             if (spellInfo.additiveScaling) {
-                slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0) + auraHealingBuff[state.spec]);
-                slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0) + auraHealingBuff[state.spec]);
+                slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
+                slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
             }
+            slice.coeff *= (1 + auraHealingBuff[state.spec]);
+            slice.flat *= (1 + auraHealingBuff[state.spec]);
+
         });
     }
 
