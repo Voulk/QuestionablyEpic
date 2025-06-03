@@ -92625,6 +92625,30 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 4
   },
+  "12504": {
+    "id": 12504,
+    "quality": 4
+  },
+  "12517": {
+    "id": 12517,
+    "quality": 4
+  },
+  "12530": {
+    "id": 12530,
+    "quality": 4
+  },
+  "12531": {
+    "id": 12531,
+    "quality": 4
+  },
+  "12532": {
+    "id": 12532,
+    "quality": 4
+  },
+  "12533": {
+    "id": 12533,
+    "quality": 4
+  },
   "12542": {
     "id": 12542,
     "quality": 2
