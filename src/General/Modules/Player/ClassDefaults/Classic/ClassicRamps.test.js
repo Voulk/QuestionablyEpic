@@ -39,7 +39,7 @@ describe("Test APL", () => {
         }
 
         const spec = "Restoration Druid"
-        const testSuite = "TopGearProfile";
+        const testSuite = "Stat" //"TopGearProfile";
         const revisedTalents = {...druidTalents};
         revisedTalents.incarnation.points = 0;
 

@@ -115,7 +115,7 @@ export const applyRaidBuffs = (state, stats) => {
     stats.mastery += 3000;
 
     // Add Int to spell power.
-    stats.spellpower +=  stats.intellect;
+    //stats.spellpower +=  stats.intellect;
     // 10% spell power
     stats.spellpower *= 1.1;
 
