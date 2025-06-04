@@ -68,7 +68,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
             })
  
         }
-        if (settings.testMode) {
+        if (settings.testMode === "Yes") {
             // We use Test Mode for testing that spells line up. So it removes stuff that'll get in the way of that.
             value.forEach(spellSlice => {
                 if ('secondaries' in spellSlice) spellSlice.secondaries = [];
