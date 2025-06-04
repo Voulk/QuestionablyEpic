@@ -147,77 +147,7 @@ export function formatReport(report) {
 
 }
 
-const wowheadCodes = {
-  2639: "[=retail-raid-tww-s2-vexie]", // Vexie and the Geargrinders.
-  2640: "[=retail-raid-tww-s2-cauldron-carnage]", // Cauldron of Carnage
-  2641: "[=retail-raid-tww-s2-rik-reverb]", // Rik Reverb
-  2642: "[=retail-raid-tww-s2-stix-bunkjunker]", // Stix Bunkjunker
-  2653: "[=retail-raid-tww-s2-sprocketmonger]", // Sprocketmonger Lockenstock
-  2644: "[=retail-raid-tww-s2-one-armed-bandit]", // One Armed Bandit
-  2645: "[=retail-raid-tww-s2-mugzee]", // Mug'Zee
-  2646: "[=retail-raid-tww-s2-gallywix]", // Chrome King Gallywix
 
-  // Dungeons
-  1210: "[=retail-dun-darkflame-cleft]", // Darkflame Cleft
-  1272: "[=retail-dun-cinderbrew-meadery]", // Cinderbrew Meadery
-  1268: "[=retail-dun-rookery]", // The Rookery
-  1267: "[=retail-dun-priory-sacred-flame]", // Priory
-  1012: "[=retail-dun-motherlode]", // The Motherlode
-  1178: "[=retail-dun-operation-mechagon-workshop]", // Workshop
-  1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
-  1187: "[=retail-dun-theater-pain]", // Theater of Pain
-}
-
-const wowheadClassColors = {
-  "Holy Paladin": "c2",
-  "Restoration Druid": "c11", 
-  "Preservation Evoker": "c13",  
-  "Discipline Priest": "c5", 
-  "Holy Priest": "c5", 
-  "Restoration Shaman": "c7", 
-  "Mistweaver Monk": "c10"
-}
-
-// It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 
-export function exportGearSet(itemSet, spec) {
-  // Slot, itemID, bonusTag, source
-  // [tr][td]Cloak[/td][td][item=212446 bonus=[=gv-raid]][/td][td][npc=215657][/td][/tr]
-  const classColor = wowheadClassColors[spec];
-  const results = ["[center][table class=grid width=900px]", "[tr]", `[td background=${classColor}][b]Slot[/b][/td]`, `[td background=${classColor}][b]Item[/b][/td]`, `[td background=${classColor}][b]Source[/b][/td]`, "[/tr]"];
-  
-
-  itemSet.forEach(item => {
-    let source = "";
-    let bonusTag = "";
-    if (item.id === 228411) {
-      results.push(`[tr][td]Ring[/td][td][=cyrce-circlet]
-                    [ul]
-                    [li][color=c4][item=228638][/color][/li]
-                    [li][color=c8][item=228639][/color][/li]
-                    [li][color=c2][item=228646][/color][/li]
-                    [/ul][/td][td][url guide=27805]Siren Isle[/url][/td][/tr]`
-                    )
-    }
-    if (item.source) {
-      source = wowheadCodes[item.source.encounterId] || "";
-
-      if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
-      else if (item.source.instanceId === -1) {
-        const instanceID = item.source.encounterId;
-        if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
-        else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-        else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
-      }
-      else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
-    }
-    
-    if (item.id !== 228411) results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
-  })
-  results.push(`[/table][/center]`)
-
-  const formattedArray = results.map(String).join('\n');
-  console.log(formattedArray);
-}
   
 export function sumScore(obj) {
     var sum = 0;

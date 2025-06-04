@@ -11,6 +11,9 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { exportWowheadGearList } from "./TopGearExports";
+import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
@@ -88,6 +91,8 @@ function TopGearReport(props) {
 
   let contentType = "";
   const [result, setResult] = useState(props.result);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const handleDialogOpen = () => setDialogOpen(true);
   const [backgroundImage, setBackgroundImage] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
@@ -124,7 +129,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage);
+    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen);
   }
   else {
     return   (  <div
@@ -139,7 +144,7 @@ function TopGearReport(props) {
   }
 }
 
-function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage) {
+function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen) {
   const boxWidth = "60%";
 
   let resultValid = true;
@@ -264,12 +269,21 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                   borderRadius: 4,
                 }}
               >
-                <Grid container direction="row" spacing={1}>
-                  <Grid item xs={12}>
+              <Grid container direction="row" spacing={1}>
+              <Grid item xs={12}>
+                <Grid container justifyContent="space-between" alignItems="center">
+                  <Grid item>
                     <Button color="primary" variant="outlined" component={Link} to={"/topgear"}>
                       {t("TopGear.BackToGearSelection")}
                     </Button>
                   </Grid>
+
+                  <Grid item>
+                    <MenuDropdown />
+                  </Grid>
+                </Grid>
+                </Grid>
+                  
                   <Grid item xs={12}>
                     <Grid container direction="row">
                       <Grid item xs={4} style={{ width: "100%" }}>
@@ -291,11 +305,14 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                       <Grid item xs={4}>
                         <div style={{ width: "40%" }} />
                       </Grid>
+                      
                       <Grid item xs={4} style={{ width: "100%" }}>
+                        
                         {/* ---------------------------------------------------------------------------------------------- */
                         /*                                        Right Side Items                                        */
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
+                          
                           {itemList
                             .filter(
                               (key) => ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket", "Relics & Wands"].includes(key.slot)
@@ -419,6 +436,10 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
 
+      <GenericDialog 
+        isDialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+      />
     </div>
   );
 }
