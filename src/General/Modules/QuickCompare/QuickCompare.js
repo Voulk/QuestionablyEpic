@@ -74,7 +74,6 @@ function getSlots() {
     { value: "Trinket", activeItem: "Trinket", label: getTranslatedSlotName("trinket", currentLanguage) },
     { value: "Weapons", activeItem: "1H Weapon", label: getTranslatedSlotName("weapons", currentLanguage) },
     { value: "Offhands", activeItem: "Offhands", label: getTranslatedSlotName("offhands", currentLanguage) },
-    { value: "Relics & Wands", activeItem: "Relics & Wands", label: getTranslatedSlotName("relics", currentLanguage) },
   ];
 
   return slots;
