@@ -314,6 +314,7 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
+    { label: "463 Gear", value: 463, gameType: "Classic" },
     { label: "476 Gear", value: 476, gameType: "Classic", source: "T14" },
     { label: "489 Gear", value: 489, gameType: "Classic", source: "T14" },
     { label: "502 Gear", value: 502, gameType: "Classic", source: "T14" },

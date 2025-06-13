@@ -158,7 +158,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
+    const damageVal = spell.weaponDamage? getWeaponScaling (spell, state.currentStats, spec) :
+                        getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
 
     if (spell.damageToHeal) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal;
 
