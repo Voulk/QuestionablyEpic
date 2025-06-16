@@ -42,6 +42,8 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Mistweaver Monk"};
     const sequences = [
         {cat: "Single Target Healing", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
+
+        {cat: "Fistweaving", tag: "Jab", seq: ["Jab"], preBuffs: []},
         
         //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 

@@ -21,7 +21,8 @@ export const CLASSICMONKSPELLDB = {
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0},
     }],
-        "Renewing Mist": [{
+    "Renewing Mist": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
         castTime: 0,
         cost: 1.8, // Mana cost as a percent. 
@@ -40,7 +41,8 @@ export const CLASSICMONKSPELLDB = {
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'], // + Haste
     }],
-        "Enveloping Mist": [{
+    "Enveloping Mist": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "buff",
         buffType: "heal",
         castTime: 2,
@@ -51,7 +53,8 @@ export const CLASSICMONKSPELLDB = {
         expectedOverheal: 0.35,
         secondaries: ['crit', 'vers'] // + Haste
     }],
-        "Thunder Focus Tea": [{ // TFT
+    "Thunder Focus Tea": [{ // TFT
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "buff",
         buffType: "special",
         castTime: 0,
@@ -60,7 +63,8 @@ export const CLASSICMONKSPELLDB = {
         buffDuration: 10,
         cooldownData: {cooldown: 30, charges: 1},
     },],
-        "Refreshing Jade Wind": [{
+    "Refreshing Jade Wind": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         castTime: 0,
         cost: 0,
         offGCD: true,
@@ -74,7 +78,8 @@ export const CLASSICMONKSPELLDB = {
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers'],
     }],
-        "Crackling Jade Lightning": [{
+    "Crackling Jade Lightning": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "damage",
         damageType: "magic",
         castTime: 3,
@@ -86,7 +91,22 @@ export const CLASSICMONKSPELLDB = {
         cooldown: 0,
         secondaries: ['crit', 'vers'],
     }],
-        "Tiger Palm": [{
+    // Fistweaving Stuff
+    // Eminence heals for 42% of damage dealt, but Jade Serpent Statue also heals for 42%.
+    // Muscle Memory gives you a buff that causes the next TP or BoK to deal 1.5x damage and restore 4% total mana.
+    "Jab": [{ 
+        spellData: {id: 100780, icon: "ability_monk_jab", cat: "heal"},
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        cost: 6,
+        coeff: 0, // 
+        weaponScaling: 1.5,
+        damageToHeal: 0.84,
+        secondaries: ['crit'],
+    }],
+    "Tiger Palm": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "damage",
         damageType: "physical",
         castTime: 0,
@@ -95,20 +115,22 @@ export const CLASSICMONKSPELLDB = {
         aura: 1.04, // AP -> SP conversion.
         damageToHeal: 0.3, // Note Armor
         cooldown: 0,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit'],
     }],
     "Blackout Kick": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "damage",
         damageType: "physical",
         castTime: 0,
         cost: 2.5,
         coeff: 0, // 
-        weaponDamage: 7.12,
+        weaponScaling: 7.12,
         damageToHeal: 0.3,
         cooldown: 3,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit'],
     }],
-        "Mana Tea": [{
+    "Mana Tea": [{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "buff",
         castTime: 0,
         cost: 0,
@@ -120,6 +142,7 @@ export const CLASSICMONKSPELLDB = {
         value: -0.5, //
     }],
     "Revival":[{
+        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
         castTime: 0,
         cost: 4.37, // Mana cost as a percent. 

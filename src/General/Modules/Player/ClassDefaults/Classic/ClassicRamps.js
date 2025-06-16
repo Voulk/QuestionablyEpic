@@ -8,7 +8,7 @@ import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
-import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats,  } from "../Generic/ClassicBase"
+import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats, getWeaponScaling, getEnemyArmor } from "../Generic/ClassicBase"
 import { genSpell } from "../Generic/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -158,14 +158,22 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = spell.weaponDamage? getWeaponScaling (spell, state.currentStats, spec) :
+    let damageVal = spell.weaponScaling? getWeaponScaling (spell, state.currentStats, state.spec) :
                         getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
 
-    if (spell.damageToHeal) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal;
+    if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor();
+
+
 
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
+
+    if (spell.damageToHeal) {
+        state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal * spell.damageToHeal;;
+        addReport(state, `Healed for ${Math.round(damageVal * spell.damageToHeal)}`);
+    }
+
     return damageVal;
 }
 
@@ -233,6 +241,8 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     if (settings.testMode === "No") {
         baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
     }
+
+    if (state.spec === "Mistweaver Monk") baseStats.attackPower = baseStats.spellpower * 2;
     
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
