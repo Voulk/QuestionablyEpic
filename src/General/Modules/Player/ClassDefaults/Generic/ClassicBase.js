@@ -71,10 +71,9 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
     To make this easy, we will calculate the weapon portion before we run the sim since it is a constant and doesn't scale with 
 
     */
-    console.log(currentStats);
 
     const damage = (currentStats.weaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
-    console.log("Weapon Damage: " + damage);
+
     return damage* getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
 }
 

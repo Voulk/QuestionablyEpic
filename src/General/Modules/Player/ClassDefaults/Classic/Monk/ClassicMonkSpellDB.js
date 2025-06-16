@@ -60,17 +60,28 @@ export const CLASSICMONKSPELLDB = {
         cooldownData: {cooldown: 45, charges: 1},
     },],
     "Rushing Jade Wind": [{
-        spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "heal"},
+        spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "cooldown"},
         castTime: 0,
         cost: 7.15,
 
-        type: "buff",
-        buffType: "heal",
+        type: "classic periodic",
+        buffType: "damage",
         coeff: 0,
         tickData: {tickRate: 0.75},
         weaponScaling: 1.59, // Might have a second multiplier of 0.880503
         buffDuration: 6,
-        targets: 5, // Can hit everyone so TODO.
+        targets: 1, // Can hit everyone so TODO.
+        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    },
+    {
+        type: "classic periodic",
+        buffType: "heal",
+        flat: 2809,
+        coeff: 0.8 * 0.1152,
+        tickData: {tickRate: 0.75},
+        buffDuration: 6,
+        targets: 1, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
         secondaries: ['crit']
     }],
@@ -89,7 +100,7 @@ export const CLASSICMONKSPELLDB = {
     // Eminence heals for 42% of damage dealt, but Jade Serpent Statue also heals for 42%.
     // Muscle Memory gives you a buff that causes the next TP or BoK to deal 1.5x damage and restore 4% total mana.
     "Jab": [{ 
-        spellData: {id: 100780, icon: "ability_monk_jab", cat: "heal"},
+        spellData: {id: 100780, icon: "ability_monk_jab", cat: "damage"},
         type: "damage",
         damageType: "physical",
         castTime: 0,
@@ -98,7 +109,15 @@ export const CLASSICMONKSPELLDB = {
         weaponScaling: 1.5,
         damageToHeal: 0.84,
         secondaries: ['crit'],
-    }],
+    },
+    {
+        name: "Muscle Memory",
+        type: "buff",
+        buffDuration: 20,
+        buffType: 'special',
+    }
+
+],
     "Tiger Palm": [{
         spellData: {id: 100787, icon: "ability_monk_tigerpalm", cat: "damage"},
         type: "damage",

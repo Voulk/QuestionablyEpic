@@ -66,6 +66,10 @@ const getSpellDB = (spec) => {
 const getDamMult = (state, buffs, t, spellName, talents) => {
     let mult = CLASSICCONSTANTS.auraDamageBuff * state.genericBonus.damage;
 
+    if (checkBuffActive(state.activeBuffs, "Muscle Memory") && (spellName === "Tiger Palm" || spellName === "Blackout Kick")) {
+        mult *= 2.5;
+    }
+
 
     return mult;
 }
@@ -158,12 +162,11 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    let damageVal = spell.weaponScaling? getWeaponScaling (spell, state.currentStats, state.spec) :
-                        getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
+    let damageVal = (spell.weaponScaling? getWeaponScaling (spell, state.currentStats, state.spec) :
+                        getSpellRaw(spell, state.currentStats, state.spec, 0, false))
+                         * damMultiplier;
 
     if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor();
-
-
 
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
@@ -258,6 +261,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             else if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][0], buffName);
             else if (buffName === "Soul of the Forest") addBuff(state, playerSpells["Soul of the Forest"][0], buffName);
             else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
+            else if (buffName === "Muscle Memory") addBuff(state, playerSpells["Jab"][1], buffName);
             else if (buffName === "Judgements of the Pure") {
 
                 if (getTalentPoints(state.talents, "judgementsOfThePure")) addBuff(state, playerSpells["Judgements of the Pure"][0], buffName);
@@ -333,6 +337,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             if (fullSpell[0].holyPower > 0) state.holyPower = Math.min(3, state.holyPower + fullSpell[0].holyPower);
             if ('tags' in fullSpell[0] && fullSpell[0].tags.includes("Holy Power Spender")) state.holyPower = 0;
             removeBuff(state.activeBuffs, "Soul of the Forest");
+
+            if ((spellName === "Tiger Palm" || spellName === "Blackout Kick") && checkBuffActive(state.activeBuffs, "Muscle Memory")){
+                removeBuff(state.activeBuffs, "Muscle Memory");
+                // Add 4% mana
+                state.manaSpent -= 12000; //
+            }
 
         }
 

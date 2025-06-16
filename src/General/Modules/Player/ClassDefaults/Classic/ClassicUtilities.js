@@ -1,4 +1,6 @@
 
+// THIS FILE COULD BE MERGED WITH CLASSICBASE.
+
 
 import { getHealth } from "../Generic/RampBase";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/ClassicDruidSpellDB";
@@ -30,11 +32,11 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
 
     const baseMana = {
         "Restoration Druid": 60000,
-        "Discipline Priest": 20590, 
-        "Holy Paladin": 23422,
-        "Holy Priest": 20590,
-        "Restoration Shaman": 23430, 
-        "Mistweaver Monk": 20590, // PLACEHOLDER. NOT A REAL VALUE.
+        "Discipline Priest": 300000, 
+        "Holy Paladin": 60000,
+        "Holy Priest": 300000,
+        "Restoration Shaman": 60000, 
+        "Mistweaver Monk": 300000, // PLACEHOLDER. NOT A REAL VALUE.
     };
 
     // ==== Default Loadout ====
