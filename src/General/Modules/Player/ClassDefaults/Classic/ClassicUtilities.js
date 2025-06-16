@@ -27,7 +27,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         "Holy Paladin": 0.1,
         "Holy Priest": 0,
         "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
-        "Mistweaver Monk": 0, // Soon :)
+        "Mistweaver Monk": 0.2, // Soon :)
     };
 
     const baseMana = {

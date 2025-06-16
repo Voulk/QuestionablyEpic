@@ -13,10 +13,10 @@ export const CLASSICMONKSPELLDB = {
         // Regrowth direct heal portion
         spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
-        castTime: 3, 
+        castTime: 1.5, 
         cost: 8.8, 
-        coeff: 1.86, // 0.806, 
-        flat: 7863,
+        coeff: 1.8, // 0.806, 
+        flat: 17242,
         expectedOverheal: 0.3,
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0},
@@ -167,7 +167,7 @@ export const CLASSICMONKSPELLDB = {
         cooldownData: {cooldown: 180, charges: 1},
     }],
     "Uplift":[{
-        spellData: {id: 116670, icon: "spell_shaman_blessingofeternals", cat: "heal"},
+        spellData: {id: 116670, icon: "ability_monk_uplift", cat: "heal"},
         type: "heal",
         castTime: 0,
         cost: 0,
@@ -179,9 +179,82 @@ export const CLASSICMONKSPELLDB = {
         secondaries: ['crit'],
     }],
 
+    "Chi Burst": [{
+        spellData: {id: 123986, icon: "spell_arcane_arcanetorrent", cat: "heal"},
+        type: "heal",
+        castTime: 1, 
+        cost: 0, 
+        coeff: 1 * 2, // Technically attack power
+        flat: 1095,
+        expectedOverheal: 0.3,
+        secondaries: ['crit'],
+    },
+    {
+        type: "damage",
+        coeff: 1.21 * 2, // Technically attack power
+        flat: 1325,
+        secondaries: ['crit'],
+    }],
+
+    "Chi Wave": [{
+        spellData: {id: 115098, icon: "ability_monk_chiwave", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.45 * 2, // Technically attack power
+        targets: 4,
+        flat: 493,
+        expectedOverheal: 0.3,
+        secondaries: ['crit'],
+    },
+    {
+        type: "damage",
+        coeff: 0.45 * 2 * 4, // Technically attack power
+        flat: 493,
+        targets: 1,
+        secondaries: ['crit'],
+    }],
+
 }
 
 export const monkTalents = {
+    specPassives: {points: 0, maxPoints: 0, icon: "spell_shaman_spiritlink", id: 78784, select: false, tier: 1, runFunc: function (state, spellDB, points) {
+        // Here we'll include any spec passives that we need. These are quite common in MoP.
+        
+    }},
+
+    // T1
+    chiWave: {points: 0, maxPoints: 1, icon: "ability_monk_chiwave", id: 115098, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    zenSphere: {points: 0, maxPoints: 1, icon: "ability_monk_forcesphere", id: 124081, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }},
+    chiBurst: {points: 1, maxPoints: 1, icon: "spell_arcane_arcanetorrent", id: 123986, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T2
+    powerStrikes: {points: 0, maxPoints: 1, icon: "ability_monk_powerstrikes", id: 121817, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    ascension: {points: 0, maxPoints: 1, icon: "ability_monk_ascension", id: 115396, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    chiBrew: {points: 1, maxPoints: 1, icon: "ability_monk_chibrew", id: 115399, select: true, tier: 2, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+
+    // T3
+    rushingJadeWind: {points: 0, maxPoints: 1, icon: "ability_monk_rushingjadewind", id: 116847, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    invokeXuen: {points: 1, maxPoints: 1, icon: "ability_monk_summontigerstatue", id: 123904, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
+    chiTorpedo: {points: 0, maxPoints: 1, icon: "ability_monk_quitornado", id: 115008, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+        
+    }}, 
     //...offspecTalents,
     //...specTalents,
     //...glyphs,

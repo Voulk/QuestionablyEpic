@@ -27,7 +27,7 @@ const CLASSICCONSTANTS = {
         "Holy Paladin": 1,
         "Holy Priest": 1,
         "Restoration Shaman": 1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
-        "Mistweaver Monk": 1, // Soon :)
+        "Mistweaver Monk": 1, // 
     },
     auraDamageBuff: 1,
     enemyTargets: 1, 
@@ -227,7 +227,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, state);
 
-
+    console.log(stats);
     if (state.spec.includes("Holy Priest")) {
         // Convert Mastery
         Object.keys(playerSpells).forEach(spellName => {
@@ -241,9 +241,13 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let baseStats = JSON.parse(JSON.stringify(stats));
+
+    baseStats.spellpower = baseStats.intellect + baseStats.spellpower; // 
     if (settings.testMode === "No") {
         baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
     }
+
+    
 
     if (state.spec === "Mistweaver Monk") baseStats.attackPower = baseStats.spellpower * 2;
     

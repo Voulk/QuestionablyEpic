@@ -39,12 +39,16 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
     //
     let results = [];
 
+
     const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Mistweaver Monk"};
     const sequences = [
         {cat: "Fillers & Minor Cooldowns", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Renewing Mist", seq: ["Renewing Mist"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Jab", seq: ["Jab"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Chi Burst (per target)", seq: ["Chi Burst"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Chi Wave", seq: ["Chi Wave"], preBuffs: []},
 
+        {cat: "Chi Spenders", tag: "Tiger Palm", seq: ["Tiger Palm"], preBuffs: []},
         {cat: "Chi Spenders", tag: "Tiger Palm (MM)", seq: ["Tiger Palm"], preBuffs: ["Muscle Memory"]},
         {cat: "Chi Spenders", tag: "Blackout Kick (MM)", seq: ["Blackout Kick"], preBuffs: ["Muscle Memory"]},
         {cat: "Chi Spenders", tag: "Uplift (per ReM)", seq: ["Uplift"], preBuffs: [], multiplier: 1},
