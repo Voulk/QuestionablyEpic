@@ -44,6 +44,10 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
         {cat: "Single Target Healing", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
 
         {cat: "Fistweaving", tag: "Jab", seq: ["Jab"], preBuffs: []},
+        {cat: "Fistweaving", tag: "Tiger Palm", seq: ["Tiger Palm"], preBuffs: []},
+        {cat: "Fistweaving", tag: "Blackout Kick", seq: ["Blackout Kick"], preBuffs: []},
+
+        {cat: "Cooldowns", tag: "Revival (25t)", seq: ["Revival"], preBuffs: []},
         
         //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 

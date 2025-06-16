@@ -18,78 +18,72 @@ export const CLASSICMONKSPELLDB = {
         coeff: 1.86, // 0.806, 
         flat: 7863,
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'mastery'],
+        secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0},
     }],
-    "Renewing Mist": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
-        type: "heal",
+    "Renewing Mist": [{ // First two ticks spread a max duration ReM to another target.
+        spellData: {id: 115151, icon: "ability_monk_renewingmists", cat: "heal"},
         castTime: 0,
         cost: 1.8, // Mana cost as a percent. 
-        coeff: 0,
-        expectedOverheal: 0.35,
-        secondaries: [],
-        cooldownData: {cooldown: 9, charges: 3},
-        mastery: 1
-    },
-    {
+        cooldownData: {cooldown: 8},
         type: "buff",
         buffType: "heal",
-        coeff: 0.19665,
+        coeff: 0.107,
         tickData: {tickRate: 2, canPartialTick: true},
-        buffDuration: 20,
+        buffDuration: 18,
+        targets: 3,
         expectedOverheal: 0.35,
-        secondaries: ['crit', 'vers'], // + Haste
+        secondaries: ['crit'], // + Haste
     }],
     "Enveloping Mist": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 124682, icon: "spell_monk_envelopingmist", cat: "heal"},
         type: "buff",
         buffType: "heal",
         castTime: 2,
-        cost: 4.2,
+        cost: 0,
+        chiCost: 3,
         coeff: 0.52, 
         tickData: {tickRate: 1, canPartialTick: true},
-        buffDuration: 7,
+        buffDuration: 6,
         expectedOverheal: 0.35,
-        secondaries: ['crit', 'vers'] // + Haste
+        secondaries: ['crit'] // + Haste
     }],
     "Thunder Focus Tea": [{ // TFT
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 116680, icon: "ability_monk_thunderfocustea", cat: "heal"},
         type: "buff",
         buffType: "special",
         castTime: 0,
         offGCD: true,
         cost: 0,
-        buffDuration: 10,
-        cooldownData: {cooldown: 30, charges: 1},
+        chiCost: 1,
+        buffDuration: 30,
+        cooldownData: {cooldown: 45, charges: 1},
     },],
-    "Refreshing Jade Wind": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+    "Rushing Jade Wind": [{
+        spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "heal"},
         castTime: 0,
-        cost: 0,
-        offGCD: true,
+        cost: 7.15,
 
         type: "buff",
         buffType: "heal",
-        coeff: 0.145,
-        tickData: {tickRate: 0.75, canPartialTick: true},
+        coeff: 0,
+        tickData: {tickRate: 0.75},
+        weaponScaling: 1.59, // Might have a second multiplier of 0.880503
         buffDuration: 6,
-        targets: 5,
+        targets: 5, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
-        secondaries: ['crit', 'vers'],
+        secondaries: ['crit']
     }],
     "Crackling Jade Lightning": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 117952, icon: "ability_monk_cracklingjadelightning", cat: "damage"},
         type: "damage",
         damageType: "magic",
-        castTime: 3,
+        castTime: 6,
         channel: true,
-        cost: 0,
-        coeff: 0.224 * 1.04 * 6.25 * 2, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
-        aura: 1.04, // AP -> SP conversion.
-        damageToHeal: 0.3, // Note Armor
-        cooldown: 0,
-        secondaries: ['crit', 'vers'],
+        cost: 1.57 * 6,
+        coeff: 0, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        damageToHeal: 0.84, // Note Armor
+        secondaries: ['crit'],
     }],
     // Fistweaving Stuff
     // Eminence heals for 42% of damage dealt, but Jade Serpent Statue also heals for 42%.
@@ -106,31 +100,31 @@ export const CLASSICMONKSPELLDB = {
         secondaries: ['crit'],
     }],
     "Tiger Palm": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 100787, icon: "ability_monk_tigerpalm", cat: "damage"},
         type: "damage",
         damageType: "physical",
         castTime: 0,
         cost: 0,
-        coeff: 0.27027 * 1.04 * 3.97, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
-        aura: 1.04, // AP -> SP conversion.
-        damageToHeal: 0.3, // Note Armor
-        cooldown: 0,
+        chiCost: 1,
+        coeff: 0, // 
+        weaponScaling: 6,
+        damageToHeal: 0.84,
         secondaries: ['crit'],
     }],
     "Blackout Kick": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 100784, icon: "ability_monk_roundhousekick", cat: "damage"},
         type: "damage",
         damageType: "physical",
         castTime: 0,
-        cost: 2.5,
+        cost: 0,
+        chiCost: 2,
         coeff: 0, // 
         weaponScaling: 7.12,
-        damageToHeal: 0.3,
-        cooldown: 3,
+        damageToHeal: 0.84,
         secondaries: ['crit'],
     }],
     "Mana Tea": [{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 115294, icon: "monk_ability_cherrymanatea", cat: "cooldown"},
         type: "buff",
         castTime: 0,
         cost: 0,
@@ -139,21 +133,31 @@ export const CLASSICMONKSPELLDB = {
         buffDuration: 10,
         buffType: 'stats',
         stat: "manaMod",
-        value: -0.5, //
+        value: 4, //
     }],
     "Revival":[{
-        spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
+        spellData: {id: 115310, icon: "spell_shaman_blessingofeternals", cat: "cooldown"},
         type: "heal",
         castTime: 0,
-        cost: 4.37, // Mana cost as a percent. 
-        coeff: 14.97 / 20,
+        cost: 7.7,
+        coeff: 3.5,
+        flat: 9579,
         expectedOverheal: 0.35,
-        targets: 20,
-        secondaries: ['crit', 'vers'],
-        tags: ['sqrt'],
-        sqrtMin: 5,
-        mastery: 20,
+        targets: 25,
+        secondaries: ['crit'],
         cooldownData: {cooldown: 180, charges: 1},
+    }],
+    "Uplift":[{
+        spellData: {id: 116670, icon: "spell_shaman_blessingofeternals", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0,
+        chiCost: 2,
+        coeff: 0.69,
+        flat: 7795,
+        expectedOverheal: 0.25,
+        targets: 1, // Hits anyone with ReM.
+        secondaries: ['crit'],
     }],
 
 }
