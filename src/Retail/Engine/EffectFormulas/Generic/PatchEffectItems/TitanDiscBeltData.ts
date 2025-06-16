@@ -119,7 +119,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 }
 
 export const printBeltData = (player: Player) => {
-  const itemLevel = 684;
+  const itemLevel = 691;
   titanBeltData.forEach(effect => {
     const bonus_stats = effect.runFunc(effect.effects, player, itemLevel, {contentType: "Raid"});
     const score = getEstimatedHPS(bonus_stats, player, "Raid");
@@ -137,7 +137,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1233262,
     effects: [
       { 
-        coefficient: 67.39228,
+        coefficient: 77.501129, //67.39228,
         table: -9,
         ppm: 2,
         efficiency: 0.92, // Smart healing
@@ -161,10 +161,10 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236122,
     effects: [
       { 
-        coefficient: 14.97605,
+        coefficient: 19.755123, //14.97605,
         table: -9,
         ppm: 1.5,
-        ticks: 5,
+        ticks: 6,
         efficiency: 0.92, // Smart healing
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
@@ -186,7 +186,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236273,
     effects: [
       { 
-        coefficient: 1.050392,
+        coefficient: 1.522123, //1.050392,
         table: -7,
         ppm: 1.5,
         duration: 20,
@@ -210,7 +210,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236273,
     effects: [
       { 
-        coefficient: 0.191125,
+        coefficient: 0.273946,
         table: -7,
         ppm: 1.5,
         duration: 20,
@@ -223,7 +223,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
 
         //console.log("Value: " + processedValue(data[0], itemLevel) + "uptime: " +convertPPMToUptime(data[0].ppm, data[0].duration));
 
-        const uptime = data[0].uptime /* * player.getStatPerc("Haste") */ * 1.13;
+        const uptime = data[0].uptime * 1.13;
         const averageCritWhileActive = processedValue(data[0], itemLevel) * 5.5;
 
         bonus_stats.crit = averageCritWhileActive * uptime;
@@ -238,7 +238,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236961,
     effects: [
       { 
-        coefficient: 0.084812,
+        coefficient: 0.091581, //0.084812,
         table: -7,
       },
     ],
@@ -247,8 +247,6 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         let bonus_stats: Stats = {};
 
         const masteryValue = processedValue(data[0], itemLevel);
-
-        console.log("Mastery Value: " + masteryValue);
 
         bonus_stats.mastery = masteryValue * 6.5;
   
