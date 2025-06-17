@@ -116,7 +116,7 @@ export class Item {
           {label: "Electric Current", id: [1236937]},
           {label: "Charged Touch", id: [1236277]},
         ]
-
+        this.socket = 1;
         this.selectedOptions = this.customOptions[0].id;
         this.flags.push("DelveBelt")
       }

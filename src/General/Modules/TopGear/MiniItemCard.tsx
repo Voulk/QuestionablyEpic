@@ -13,7 +13,7 @@ import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
 import Item from "../Player/Item";
-
+import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import socketImage from "Images/Resources/EmptySocket.png";
 import blueSocket from "Images/Resources/socketBlue.png";
 import redSocket from "Images/Resources/socketRed.png";
@@ -168,7 +168,7 @@ export default function ItemCard(props: ItemCardProps) {
   const itemLevel: number = item.level;
   let statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
   if (item.flags.includes("DelveBelt")) {
-    statString = item.customOptions.find(option => option.id === item.selectedOptions).label;
+    statString = getTitanDiscName(item.selectedOptions[0]);
   }
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();

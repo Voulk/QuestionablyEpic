@@ -65,7 +65,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         coefficient: 77.501129, //67.39228,
         table: -9,
         ppm: 2,
-        efficiency: 0.88, // Smart healing
+        efficiency: {"Raid": 0.88, "Dungeon": 0.7}, // Smart healing
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
@@ -90,7 +90,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         table: -9,
         ppm: 1.5,
         ticks: 6,
-        efficiency: 0.88, // Smart healing
+        efficiency: {"Raid": 0.88, "Dungeon": 0.7}, // Smart healing
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
@@ -152,7 +152,6 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         const averageCritWhileActive = processedValue(data[0], itemLevel) * 5.5;
        
         bonus_stats.crit = averageCritWhileActive * uptime;
-        console.log("CRIT CHAIN" + bonus_stats.crit);
   
         return bonus_stats;
     }
