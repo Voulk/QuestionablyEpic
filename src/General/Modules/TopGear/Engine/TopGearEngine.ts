@@ -18,6 +18,7 @@ import Item from "General/Modules/Player/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Console } from "console";
+import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData";
 
 /**
  * == Top Gear Engine ==
@@ -860,7 +861,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);
+  } 
 
+  // Titan Disc Belt
+  if (builtSet.checkHasItem(242664) || builtSet.checkHasItem(245964) || builtSet.checkHasItem(245965) || builtSet.checkHasItem(245966)) {
+    const discBelt = builtSet.itemList.filter(item => item.flags.includes("DelveBelt"))[0];
+    const discEffect = discBelt.selectedOptions || [];
+    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+
+    const discStats = getTitanBeltEffect(discEffect, player, discBelt.level, additionalData)
+
+    effectStats.push(discStats);
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);

@@ -107,6 +107,20 @@ export class Item {
                             ]
         this.selectedOptions = this.customOptions[0].id;
       }
+      else if ([242664, 245964, 245965, 245966].includes(this.id)) {
+        this.customOptions = [
+          {label: "Cauterizing Bolts", id: [1236122]},
+          {label: "Critical Chain", id: [1236272]},
+          {label: "Spark Burst", id: [1236273]},
+          {label: "Static Charge", id: [1236938]},
+          {label: "Electric Current", id: [1236937]},
+          {label: "Charged Touch", id: [1236277]},
+        ]
+
+        this.selectedOptions = this.customOptions[0].id;
+        this.flags.push("DelveBelt")
+      }
+
       /*
       if (this.id === 178708) {
         this.customOptions = [{label: "Convert to Crit", id: [0]},
