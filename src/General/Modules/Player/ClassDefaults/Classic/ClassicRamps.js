@@ -227,7 +227,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, state);
 
-    console.log(stats);
     if (state.spec.includes("Holy Priest")) {
         // Convert Mastery
         Object.keys(playerSpells).forEach(spellName => {
