@@ -166,7 +166,10 @@ export default function ItemCard(props: ItemCardProps) {
   const itemKey: number = props.itemKey;
   const item: Item = props.item;
   const itemLevel: number = item.level;
-  const statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
+  let statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
+  if (item.flags.includes("DelveBelt")) {
+    statString = item.customOptions.find(option => option.id === item.selectedOptions).label;
+  }
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
@@ -289,7 +292,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
-                            fontSize: itemName.length > 28 ? "13px" : "14px",
+                            fontSize: itemName.length > 28 ? "11px" : "14px",
                           }}
                         >
                           {itemName}

@@ -109,8 +109,8 @@ export class Item {
       }
       else if ([242664, 245964, 245965, 245966].includes(this.id)) {
         this.customOptions = [
-          {label: "Cauterizing Bolts", id: [1236122]},
           {label: "Critical Chain", id: [1236272]},
+          {label: "Cauterizing Bolts", id: [1236122]},
           {label: "Spark Burst", id: [1236273]},
           {label: "Static Charge", id: [1236938]},
           {label: "Electric Current", id: [1236937]},

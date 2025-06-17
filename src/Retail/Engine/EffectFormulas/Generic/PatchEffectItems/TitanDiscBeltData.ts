@@ -49,6 +49,10 @@ export const printBeltData = (player: Player) => {
 
 }
 
+export const getTitanDiscName = (id: number) => {
+  return titanBeltData.find(effect => effect.id === id)?.name || "Unknown Effect";
+}
+
 
 export const titanBeltData = [// Regular crafted 1800 secondaries.
   {
@@ -61,7 +65,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         coefficient: 77.501129, //67.39228,
         table: -9,
         ppm: 2,
-        efficiency: 0.92, // Smart healing
+        efficiency: 0.88, // Smart healing
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
@@ -86,7 +90,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         table: -9,
         ppm: 1.5,
         ticks: 6,
-        efficiency: 0.92, // Smart healing
+        efficiency: 0.88, // Smart healing
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
@@ -128,7 +132,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     /* Critical Chain
     */
     name: "Critical Chain",
-    id: 1236273,
+    id: 1236272,
     effects: [
       { 
         coefficient: 0.273946,
@@ -146,8 +150,9 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
 
         const uptime = data[0].uptime * 1.13;
         const averageCritWhileActive = processedValue(data[0], itemLevel) * 5.5;
-
+       
         bonus_stats.crit = averageCritWhileActive * uptime;
+        console.log("CRIT CHAIN" + bonus_stats.crit);
   
         return bonus_stats;
     }
