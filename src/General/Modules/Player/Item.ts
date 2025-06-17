@@ -112,9 +112,9 @@ export class Item {
           {label: "Critical Chain", id: [1236272]},
           {label: "Cauterizing Bolts", id: [1236122]},
           {label: "Spark Burst", id: [1236273]},
-          {label: "Static Charge", id: [1236938]},
-          {label: "Electric Current", id: [1236937]},
-          {label: "Charged Touch", id: [1236277]},
+          {label: "Static Charge", id: [1236275]},
+          {label: "Electric Current", id: [1236961]},
+          {label: "Charged Touch", id: [1233262]},
         ]
         this.socket = 1;
         this.selectedOptions = this.customOptions[0].id;
