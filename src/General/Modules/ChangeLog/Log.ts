@@ -15,6 +15,13 @@ interface entry {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.1.7 / 4.4.2",
+    update: 17,
+    date: "June 17",
+    changes: [ 
+      "Added the Titan Disc Belt.",
+    ]},
     {
     version: "11.1.5 / 4.4.2",
     update: 16,
