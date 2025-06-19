@@ -3,8 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection."
-
+    "The new DISC belt is in, but expect multiple options to be very close in throughput.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

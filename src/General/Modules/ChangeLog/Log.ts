@@ -19,6 +19,30 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.1.7 / 4.4.2",
+    update: 17,
+    date: "June 17",
+    changes: [ 
+      "Added the Titan Disc Belt.",
+    ]},
+    {
+    version: "11.1.5 / 4.4.2",
+    update: 16,
+    date: "May 20",
+    changes: [ 
+      "Corruption: Added Void Ritual to Top Gear.",
+      "Fixed a bug with the log import.",
+    ]},
+  {
+    version: "11.1.5 / 4.4.2",
+    update: 15,
+    date: "May 14",
+    changes: [ 
+      "Visual: Duplicate Rings / Trinkets will no longer show in Top Gear.",
+      "Crafted items now use their own upgrade track, will upgrade with the 'upgrade all' button and can be upgraded via cog menu.",
+      "Upgrade Finder: Added a 684 option to the dungeon track.",
+    ]},
   {
     version: "11.1 / 4.4.2",
     update: 99,

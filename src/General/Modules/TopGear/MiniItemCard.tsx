@@ -11,9 +11,9 @@ import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
-import Item from "../../Items/Item";
-
+import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import Item from "../Player/Item";
+import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import socketImage from "Images/Resources/EmptySocket.png";
 import blueSocket from "Images/Resources/socketBlue.png";
 import redSocket from "Images/Resources/socketRed.png";
@@ -166,7 +166,10 @@ export default function ItemCard(props: ItemCardProps) {
   const itemKey: number = props.itemKey;
   const item: Item = props.item;
   const itemLevel: number = item.level;
-  const statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
+  let statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
+  if (item.flags.includes("DelveBelt")) {
+    statString = getTitanDiscName(item.selectedOptions[0]);
+  }
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
@@ -289,7 +292,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
-                            fontSize: itemName.length > 28 ? "13px" : "14px",
+                            fontSize: itemName.length > 28 ? "11px" : "14px",
                           }}
                         >
                           {itemName}
