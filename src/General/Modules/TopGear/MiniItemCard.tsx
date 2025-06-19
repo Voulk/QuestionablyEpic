@@ -11,7 +11,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 import Item from "../Player/Item";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import socketImage from "Images/Resources/EmptySocket.png";

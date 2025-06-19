@@ -7,7 +7,7 @@ import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 
 const useStyles = makeStyles({

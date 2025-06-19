@@ -3,6 +3,30 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { 
+    name: "Astral Antenna",
+    description: "",
+    effects: [
+      {
+        coefficient: 1.558467, 
+        table: -7,
+        duration: 10,
+        ppm: 2.5,
+        stat: "crit",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
+
+
+
+  // Undermine
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
     description: "Takes 2 minutes to be good and 3.5 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",

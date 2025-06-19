@@ -152,13 +152,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(684);
+  const [levelCap, setLevelCap] = React.useState(722);
   const maxLevelMarks = [
     { value: 0, label: "639" },
     { value: 1, label: "645" },
     { value: 2, label: "658" },
     { value: 3, label: "671" },
-    { value: 4, label: "684" },
+    { value: 4, label: "722" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -229,7 +229,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [626, 632, 639, 645, 652, 658, 665, 671, 675, 678, 684];
+  const allItemLevels = [639, 645, 652, 658, 665, 671, 675, 678, 684, 694, 707, 722];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -238,7 +238,7 @@ export default function TrinketAnalysis(props) {
     (key) =>
       key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
-
+  console.log(trinketDB)
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
