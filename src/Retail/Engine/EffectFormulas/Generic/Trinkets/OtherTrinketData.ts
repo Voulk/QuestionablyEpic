@@ -4,6 +4,48 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+    { 
+    name: "Twisted Mana Sprite",
+    description: "",
+    effects: [
+      { // Heal effect
+        coefficient: 8.559967, 
+        table: -9,
+        efficiency: 0.95,
+        ticks: 5, // Heals per Sprite proc.
+        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        ppm: 10,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Essence-Hunter's Hourglass",
+    description: "Fairly easy to keep at 5 stacks but scales incorrectly so expect its ranking to change. Appears to be a Delve trinket.",
+    effects: [
+      {
+        coefficient: 0.179758, 
+        table: -9,
+        stat: "crit",
+        stacks: 4.5,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].stacks!;
+
+      return bonus_stats;
+    }
+  },
+
+  // S2
   { 
     name: "Amorphous Relic",
     description: "Buffed 108%. They should have picked a higher number.",

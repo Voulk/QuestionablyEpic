@@ -23,6 +23,68 @@ export const raidTrinketData = [
       return bonus_stats;
     }
   },
+    { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
+    name: "Nexus-King's Command",
+    description: "",
+    effects: [
+      { // Int Proc
+        coefficient: 1.079763, 
+        table: -1,
+        duration: 10,
+        cooldown: 32, // 30s ticking aura
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
+      { // 
+    name: "Loom'ithar's Living Silk",
+    description: "",
+    effects: [
+      { // Shield proc
+        coefficient: 479.0941,
+        table: -8,
+        secondaries: ['versatility'],
+        targets: 5,
+        efficiency: {Raid: 0.9, Dungeon: 0.9}, // 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Araz's Ritual Forge",
+    description: "",
+    effects: [
+      {
+        coefficient: 2.879601,
+        table: -1,
+        duration: 30,
+        //multiplier: 0.725, // Assumes boss is around 50% health.
+        cooldown: 120,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+
+      return bonus_stats;
+    }
+  },
 
 
 
