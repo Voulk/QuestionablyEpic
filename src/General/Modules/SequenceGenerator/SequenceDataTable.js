@@ -77,6 +77,7 @@ export default function SequenceDataTable(props) {
             <TableCell align="right">HPM</TableCell>
             <TableCell align="right">HPCT</TableCell>
             <TableCell align="right">Damage</TableCell>
+            <TableCell align="right">DPET</TableCell>
           </TableRow>
         </TableHead>
             <TableBody>
@@ -108,6 +109,7 @@ export default function SequenceDataTable(props) {
                               <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>
                               <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>
                               <TableCell align="right">{row.damage}</TableCell>
+                              <TableCell align="right">{row.dps}</TableCell>
                             </TableRow>
                           );
                         })

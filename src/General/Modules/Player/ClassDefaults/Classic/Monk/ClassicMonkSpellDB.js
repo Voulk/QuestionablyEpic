@@ -14,7 +14,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
-        cost: 8.8, 
+        cost: 7.65, 
         coeff: 1.8, // 0.806, 
         flat: 17242,
         expectedOverheal: 0.3,
@@ -25,6 +25,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 115151, icon: "ability_monk_renewingmists", cat: "heal"},
         castTime: 0,
         cost: 1.8, // Mana cost as a percent. 
+        customGCD: 1,
         cooldownData: {cooldown: 8},
         type: "buff",
         buffType: "heal",
@@ -42,7 +43,7 @@ export const CLASSICMONKSPELLDB = {
         castTime: 2,
         cost: 0,
         chiCost: 3,
-        coeff: 0.52, 
+        coeff: 0.52 * 1.48, 
         tickData: {tickRate: 1, canPartialTick: true},
         buffDuration: 6,
         expectedOverheal: 0.35,
@@ -62,6 +63,7 @@ export const CLASSICMONKSPELLDB = {
     "Rushing Jade Wind": [{
         spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "cooldown"},
         castTime: 0,
+        customGCD: 1,
         cost: 7.15,
 
         type: "classic periodic",
@@ -92,7 +94,8 @@ export const CLASSICMONKSPELLDB = {
         castTime: 6,
         channel: true,
         cost: 1.57 * 6,
-        coeff: 0, // 297% aura on Tiger Palm + 4% for the AP -> SP conversion.
+        coeff: 0.386 * 2 * 1.25, // TotM
+        flat: 197,
         damageToHeal: 0.84, // Note Armor
         secondaries: ['crit'],
     }],
@@ -104,6 +107,7 @@ export const CLASSICMONKSPELLDB = {
         type: "damage",
         damageType: "physical",
         castTime: 0,
+        customGCD: 1,
         cost: 6,
         coeff: 0, // 
         weaponScaling: 1.5,
@@ -123,6 +127,7 @@ export const CLASSICMONKSPELLDB = {
         type: "damage",
         damageType: "physical",
         castTime: 0,
+        customGCD: 1,
         cost: 0,
         chiCost: 1,
         coeff: 0, // 
@@ -134,6 +139,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 100784, icon: "ability_monk_roundhousekick", cat: "damage"},
         type: "damage",
         damageType: "physical",
+        customGCD: 1,
         castTime: 0,
         cost: 0,
         chiCost: 2,
@@ -146,6 +152,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 115294, icon: "monk_ability_cherrymanatea", cat: "cooldown"},
         type: "buff",
         castTime: 0,
+        customGCD: 1,
         cost: 0,
         offGCD: true,
         cooldown: 90,
@@ -158,9 +165,10 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 115310, icon: "spell_shaman_blessingofeternals", cat: "cooldown"},
         type: "heal",
         castTime: 0,
+        customGCD: 1,
         cost: 7.7,
-        coeff: 3.5,
-        flat: 9579,
+        coeff: 3.5 * 1.22,
+        flat: 9579 * 1.22,
         expectedOverheal: 0.35,
         targets: 25,
         secondaries: ['crit'],
@@ -170,6 +178,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 116670, icon: "ability_monk_uplift", cat: "heal"},
         type: "heal",
         castTime: 0,
+        customGCD: 1,
         cost: 0,
         chiCost: 2,
         coeff: 0.69,
@@ -196,10 +205,54 @@ export const CLASSICMONKSPELLDB = {
         secondaries: ['crit'],
     }],
 
+    "Zen Sphere": [{
+        spellData: {id: 124081, icon: "ability_monk_forcesphere", cat: "heal"},
+        castTime: 0,
+        cost: 0,
+        customGCD: 1,
+
+        type: "classic periodic",
+        buffType: "damage",
+        flat: 114,
+        coeff: 2 * 0.104,
+        tickData: {tickRate: 2, hasteScaling: false},
+        buffDuration: 16,
+        secondaries: ['crit']
+    },
+    {
+        type: "classic periodic",
+        buffType: "heal",
+        flat: 114,
+        coeff: 2.4 * 0.104,
+        tickData: {tickRate: 2, hasteScaling: false},
+        buffDuration: 6,
+        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    },
+
+    // Detonation
+    {
+        type: "damage",
+        flat: 463,
+        coeff: 2 * 0.423,
+        secondaries: ['crit'],
+        targets: 1,
+    },
+    {
+        type: "heal",
+        flat: 294,
+        coeff: 2 * 0.269,
+        targets: 5,
+        secondaries: ['crit'],
+        expectedOverheal: 0.4,
+    },
+],
+
     "Chi Wave": [{
         spellData: {id: 115098, icon: "ability_monk_chiwave", cat: "heal"},
         type: "heal",
         castTime: 0, 
+        customGCD: 1,
         cost: 0, 
         coeff: 0.45 * 2, // Technically attack power
         targets: 4,
