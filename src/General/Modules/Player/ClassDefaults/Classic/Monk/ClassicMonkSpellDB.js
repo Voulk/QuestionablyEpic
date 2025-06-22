@@ -18,6 +18,7 @@ export const CLASSICMONKSPELLDB = {
         coeff: 1.8, // 0.806, 
         flat: 17242,
         expectedOverheal: 0.3,
+        masteryScalar: 1,
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0},
     }],
@@ -27,9 +28,11 @@ export const CLASSICMONKSPELLDB = {
         cost: 1.8, // Mana cost as a percent. 
         customGCD: 1,
         cooldownData: {cooldown: 8},
-        type: "buff",
+        type: "classic periodic",
         buffType: "heal",
         coeff: 0.107,
+        flat: 2266,
+        masteryScalar: 0.15, // MULTIPLY BY TICK COUNT
         tickData: {tickRate: 2, canPartialTick: true},
         buffDuration: 18,
         targets: 3,
@@ -38,11 +41,12 @@ export const CLASSICMONKSPELLDB = {
     }],
     "Enveloping Mist": [{
         spellData: {id: 124682, icon: "spell_monk_envelopingmist", cat: "heal"},
-        type: "buff",
+        type: "classic periodic",
         buffType: "heal",
         castTime: 2,
         cost: 0,
         chiCost: 3,
+        masteryScalar: 0.2,
         coeff: 0.52 * 1.48, 
         tickData: {tickRate: 1, canPartialTick: true},
         buffDuration: 6,
@@ -70,6 +74,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "damage",
         coeff: 0,
         tickData: {tickRate: 0.75},
+        
         weaponScaling: 1.59, // Might have a second multiplier of 0.880503
         buffDuration: 6,
         targets: 1, // Can hit everyone so TODO.
@@ -82,6 +87,7 @@ export const CLASSICMONKSPELLDB = {
         flat: 2809,
         coeff: 0.8 * 0.1152,
         tickData: {tickRate: 0.75},
+        masteryScalar: 0.1,
         buffDuration: 6,
         targets: 1, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
@@ -97,6 +103,18 @@ export const CLASSICMONKSPELLDB = {
         coeff: 0.386 * 2 * 1.25, // TotM
         flat: 197,
         damageToHeal: 0.84, // Note Armor
+        secondaries: ['crit'],
+    }],
+    "Melee": [{
+        spellData: {id: 0, icon: "ability_monk_tigerpalm", cat: "N/A"},
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        customGCD: 999,
+        cost: 0,
+        coeff: 0, // 
+        weaponScaling: 1,
+        damageToHeal: 0.84,
         secondaries: ['crit'],
     }],
     // Fistweaving Stuff
@@ -169,6 +187,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 7.7,
         coeff: 3.5 * 1.22,
         flat: 9579 * 1.22,
+        masteryScalar: 0.15,
         expectedOverheal: 0.35,
         targets: 25,
         secondaries: ['crit'],
@@ -182,6 +201,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 0,
         chiCost: 2,
         coeff: 0.69,
+        masteryScalar: 0.25,
         flat: 7795,
         expectedOverheal: 0.25,
         targets: 1, // Hits anyone with ReM.
@@ -194,8 +214,11 @@ export const CLASSICMONKSPELLDB = {
         castTime: 1, 
         cost: 0, 
         coeff: 1 * 2, // Technically attack power
+        cooldownData: {cooldown: 15},
         flat: 1095,
-        expectedOverheal: 0.3,
+        masteryScalar: 0.15,
+        expectedOverheal: 0.45,
+        targets: 6,
         secondaries: ['crit'],
     },
     {
@@ -224,6 +247,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "heal",
         flat: 114,
         coeff: 2.4 * 0.104,
+        masteryScalar: 0.25,
         tickData: {tickRate: 2, hasteScaling: false},
         buffDuration: 6,
         expectedOverheal: 0.3,
@@ -242,6 +266,7 @@ export const CLASSICMONKSPELLDB = {
         type: "heal",
         flat: 294,
         coeff: 2 * 0.269,
+        masteryScalar: 0.15,
         targets: 5,
         secondaries: ['crit'],
         expectedOverheal: 0.4,
@@ -255,6 +280,7 @@ export const CLASSICMONKSPELLDB = {
         customGCD: 1,
         cost: 0, 
         coeff: 0.45 * 2, // Technically attack power
+        masteryScalar: 0.25,
         targets: 4,
         flat: 493,
         expectedOverheal: 0.3,
@@ -265,6 +291,18 @@ export const CLASSICMONKSPELLDB = {
         coeff: 0.45 * 2 * 4, // Technically attack power
         flat: 493,
         targets: 1,
+        secondaries: ['crit'],
+    }],
+    "Mastery: Gift of the Serpent":[{
+        spellData: {id: 117907, icon: "tradeskill_inscription_jadeserpent", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0,
+        chiCost: 2,
+        coeff: 0.3517 * 2,
+        flat: 9986,
+        expectedOverheal: 0.7,
+        targets: 1, // 
         secondaries: ['crit'],
     }],
 

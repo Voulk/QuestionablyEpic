@@ -4,6 +4,7 @@ import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, r
 import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaultAPL"
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
@@ -12,6 +13,7 @@ import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
+import { mistweaverMonkDefaults } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -38,14 +40,13 @@ describe("Test APL", () => {
             hps: 0,
         }
 
-        const spec = "Restoration Druid"
-        const testSuite = "Stat" //"TopGearProfile";
-        const revisedTalents = {...druidTalents};
-        revisedTalents.incarnation.points = 0;
+        const spec = "Mistweaver Monk"
+        const testSuite = "TopGearProfile" //"Stat" //;
+        const revisedTalents = {...monkTalents};
 
-        const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = restoDruidDefaults;
+        const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
+        const playerData = { spec: spec, spells: monkSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = mistweaverMonkDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);

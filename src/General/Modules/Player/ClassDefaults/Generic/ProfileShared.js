@@ -62,22 +62,26 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     //const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25) / additiveScaling : 1;
     
     // 
+    const targetCount = spell.targets ? spell.targets : 1;
+
     let spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
                         adjCritChance * // Multiply by secondary stats & any generic multipliers. 
                         (spell.secondaries.includes("mastery") ? statPercentages.mastery : 1) *
-                        genericMult;
-    
+                        genericMult *
+                        targetCount
+
+    if (spell.type === "heal" || spell.buffType === "heal") spellOutput *= (1 - spell.expectedOverheal)
+
     // Handle HoT
     if (spell.type === "classic periodic") {
       const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (statPercentages.haste);
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
-      const targetCount = spell.targets ? spell.targets : 1;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
       if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);
-      else spellOutput = spellOutput * tickCount * targetCount;
+      else spellOutput = spellOutput * tickCount;
     }
 
     return spellOutput;
