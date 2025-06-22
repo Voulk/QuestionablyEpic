@@ -2,7 +2,7 @@ export const statsLocale = [
   {
     name: {
       en: "Avoidance",
-      fr: "",
+      fr: "Évitement",
       de: "",
       ru: "",
       ch: "",
@@ -12,7 +12,7 @@ export const statsLocale = [
   {
     name: {
       en: "Crit",
-      fr: "Score de crit",
+      fr: "Coup critique",
       de: "Kritische Trefferwertung",
       ru: "Критический удар",
       ch: "",
@@ -42,7 +42,7 @@ export const statsLocale = [
   {
     name: {
       en: "Leech",
-      fr: "Leech",
+      fr: "Ponction",
       de: "Lebensraub",
       ru: "Самоисцеление",
       ch: "",
@@ -52,7 +52,7 @@ export const statsLocale = [
   {
     name: {
       en: "Mana",
-      fr: "",
+      fr: "Mana",
       de: "",
       ru: "",
       ch: "",
@@ -72,7 +72,7 @@ export const statsLocale = [
   {
     name: {
       en: "Versatility",
-      fr: "Versatilité",
+      fr: "Polyvalence",
       de: "Vielseitigkeit",
       ru: "универсальность",
       ch: "",
@@ -82,7 +82,7 @@ export const statsLocale = [
   {
     name: {
       en: "Stamina",
-      fr: "",
+      fr: "Endurance",
       de: "",
       ru: "",
       ch: "",
@@ -92,7 +92,7 @@ export const statsLocale = [
   {
     name: {
       en: "Armor",
-      fr: "",
+      fr: "Armure",
       de: "",
       ru: "",
       ch: "",
@@ -102,7 +102,7 @@ export const statsLocale = [
   {
     name: {
       en: "Absorb",
-      fr: "",
+      fr: "Absorption",
       de: "",
       ru: "",
       ch: "",
