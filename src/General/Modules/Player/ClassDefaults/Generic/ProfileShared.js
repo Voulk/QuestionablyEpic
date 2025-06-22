@@ -1,5 +1,5 @@
 import { getTrinketValue, getTrinketParam } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas"
-import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery, getWeaponScaling } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery, getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT"
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
@@ -39,7 +39,6 @@ export const getSpellEntry = (profile, spellName, index = 0) => {
 }
 
 export const buildCPM = (spells, spell, efficiency = 0.9) => {
-    console.log(spell);
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
@@ -69,7 +68,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     if (spell.weaponScaling) {
         // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
-                        * adjCritChance * genericMult * targetCount;
+                        * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);
     }
     else {
         // Most other spells follow a uniform formula.

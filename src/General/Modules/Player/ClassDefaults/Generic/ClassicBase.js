@@ -77,11 +77,11 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
     return damage * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
 }
 
-export const getEnemyArmor = () => {
+export const getEnemyArmor = (armorReductions = 1) => {
     let enemyArmor = 24835;
     const playerLevel = 90;
 
-    const netArmor = 0.88 * enemyArmor;
+    const netArmor = 0.88 * armorReductions * enemyArmor;
 
     return (1-netArmor/(netArmor+(playerLevel*4037.5-317117.5)));
 }

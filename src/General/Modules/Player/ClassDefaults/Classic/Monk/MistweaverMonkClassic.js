@@ -53,6 +53,8 @@ export function initializeMonkSet(talents = monkTalents) {
       {spell: "Chi Burst", efficiency: 0.8 },
       {spell: "Revival", efficiency: 0.8 },
 
+      {spell: "Uplift", cpm: 3 }, // TODO
+
       {spell: "Jab", cpm: 5 },
     ]
 
@@ -64,7 +66,9 @@ export function initializeMonkSet(talents = monkTalents) {
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;
       spell.healing = 0;
+      spell.chiGenerated = monkSpells[spell.spell][0].chiGenerated ? monkSpells[spell.spell][0].chiGenerated : 0;
     })
+
 
     const costPerMinute = 0// castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
@@ -77,7 +81,7 @@ export function initializeMonkSet(talents = monkTalents) {
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
-
+  const castProfile = specBaseline.castProfile;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;
@@ -91,9 +95,6 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-    const spellpower = statProfile.intellect + statProfile.spellpower;
-    const critPercentage = 1 + getCritPercentage(statProfile, spec); // +4% crit
-
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, spec),
@@ -101,6 +102,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
       weaponDamage: statProfile.weaponDamage,
       attackpower: statProfile.attackpower,
+      armorReduction: 0.7,
     }
 
     // Calculate filler CPM
@@ -116,12 +118,16 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     let costPerMinute = specBaseline.costPerMinute;
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
-
-    const chiGenerated = 0;
+    const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
     const masteryOrbsGenerated = 0;
+    const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * 18 * 3 / 60;
+    getSpellEntry(castProfile, "Uplift").bonus = averageRemCount; // This effectively acts as our Uplift target count.
 
+    // TODO: Uplift refreshes ReM count.
+    console.log("REM COUNT: " + averageRemCount)
+    console.log("CHI GENERATED: " + chiGenerated)
 
-    specBaseline.castProfile.forEach(spellProfile => {
+    castProfile.forEach(spellProfile => {
         const fullSpell = specBaseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
 

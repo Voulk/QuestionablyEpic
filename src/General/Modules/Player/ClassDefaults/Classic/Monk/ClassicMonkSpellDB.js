@@ -14,6 +14,7 @@ export const CLASSICMONKSPELLDB = {
         spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
+        chiGenerated: 1,
         cost: 7.65, 
         coeff: 1.8, // 0.806, 
         flat: 17242,
@@ -28,6 +29,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 1.8, // Mana cost as a percent. 
         customGCD: 1,
         cooldownData: {cooldown: 8},
+        chiGenerated: 1,
         type: "classic periodic",
         buffType: "heal",
         coeff: 0.107,
@@ -69,6 +71,7 @@ export const CLASSICMONKSPELLDB = {
         castTime: 0,
         customGCD: 1,
         cost: 7.15,
+        chiGenerated: 1,
 
         type: "classic periodic",
         buffType: "damage",
@@ -129,6 +132,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 6,
         coeff: 0, // 
         weaponScaling: 1.5,
+        chiGenerated: 1,
         damageToHeal: 0.84,
         secondaries: ['crit'],
     },
