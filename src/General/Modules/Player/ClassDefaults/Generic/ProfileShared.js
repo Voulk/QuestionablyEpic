@@ -1,5 +1,5 @@
 import { getTrinketValue, getTrinketParam } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas"
-import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery, getWeaponScaling } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT"
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
@@ -47,6 +47,7 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
 // Classic
 export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
 
+    
     // Seems like a lot to call every spell. Maybe we can put these somewhere else and pass them. 
     const genericMult = 1;
     //const critPercentage = 1 + getCritPercentage(statProfile, spec); // +4% crit
@@ -64,11 +65,20 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     // 
     const targetCount = spell.targets ? spell.targets : 1;
 
-    let spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
-                        adjCritChance * // Multiply by secondary stats & any generic multipliers. 
-                        (spell.secondaries.includes("mastery") ? statPercentages.mastery : 1) *
-                        genericMult *
-                        targetCount
+    let spellOutput = 0;
+    if (spell.weaponScaling) {
+        // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
+        spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
+                        * adjCritChance * genericMult * targetCount;
+    }
+    else {
+        // Most other spells follow a uniform formula.
+        spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
+                            adjCritChance * // Multiply by secondary stats & any generic multipliers. 
+                            (spell.secondaries.includes("mastery") ? statPercentages.mastery : 1) *
+                            genericMult *
+                            targetCount
+    }
 
     if (spell.type === "heal" || spell.buffType === "heal") spellOutput *= (1 - spell.expectedOverheal)
 

@@ -188,7 +188,7 @@ export const CLASSICMONKSPELLDB = {
         coeff: 3.5 * 1.22,
         flat: 9579 * 1.22,
         masteryScalar: 0.15,
-        expectedOverheal: 0.35,
+        expectedOverheal: 0.4,
         targets: 25,
         secondaries: ['crit'],
         cooldownData: {cooldown: 180, charges: 1},

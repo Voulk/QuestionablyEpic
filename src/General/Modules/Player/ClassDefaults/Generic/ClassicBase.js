@@ -74,7 +74,7 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
 
     const damage = (currentStats.weaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
 
-    return damage* getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
+    return damage * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
 }
 
 export const getEnemyArmor = () => {

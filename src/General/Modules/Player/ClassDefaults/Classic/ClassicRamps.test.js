@@ -31,6 +31,8 @@ describe("Test APL", () => {
             intellect: 10267,
             spirit: 6654,
             spellpower: 5151,
+            attackpower: 5151 * 2,
+            weaponDamage: 821,
             haste: 1247,
             crit: 1698,
             mastery: 2319,

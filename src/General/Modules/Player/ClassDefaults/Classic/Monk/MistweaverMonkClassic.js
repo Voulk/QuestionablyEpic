@@ -51,6 +51,9 @@ export function initializeMonkSet(talents = monkTalents) {
       {spell: "Surging Mist", cpm: 1},
       {spell: "Renewing Mist", efficiency: 0.95 },
       {spell: "Chi Burst", efficiency: 0.8 },
+      {spell: "Revival", efficiency: 0.8 },
+
+      {spell: "Jab", cpm: 5 },
     ]
 
     const adjSpells = getTalentedSpellDB("Mistweaver Monk", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Mistweaver Monk"});
@@ -76,11 +79,14 @@ export function initializeMonkSet(talents = monkTalents) {
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
 
   const spec = "Mistweaver Monk";
-    let score = 0;
+    let totalHealing = 0;
+    let totalDamage = 0;
     const healingBreakdown = {};
+    const damageBreakdown = {};
     const castBreakdown = {};
     const fightLength = 6;
     const talents = specBaseline.talents || monkTalents;
+    const eminenceOverheal = 0.35;
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -93,6 +99,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       crit: 1 + getCritPercentage(statProfile, spec),
       haste: getHaste(statProfile, "Classic") * hasteBuff,
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
+      weaponDamage: statProfile.weaponDamage,
+      attackpower: statProfile.attackpower,
     }
 
     // Calculate filler CPM
@@ -109,6 +117,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
+    const chiGenerated = 0;
+    const masteryOrbsGenerated = 0;
+
+
     specBaseline.castProfile.forEach(spellProfile => {
         const fullSpell = specBaseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
@@ -118,8 +130,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
         // Exception Cases
         
         // Regular cases
+        if (spell.type === "buff" && spell.buffType === "special") return;
         let spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
-
 
         if (spellProfile.bonus) {
           spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
@@ -128,20 +140,35 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
         const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
-        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+        if (spell.type === "damage" || spell.buffType === "damage") {
+          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          totalDamage += (spellOutput * effectiveCPM);
 
-        score += (spellOutput * effectiveCPM);
+          if (spell.damageToHeal) {
+            const heal = spellOutput * spell.damageToHeal * effectiveCPM * (1 - eminenceOverheal);
+            healingBreakdown["Eminence"] = (healingBreakdown["Eminence"] || 0) + heal;
+          }
+        }
+        else {
+          healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          totalHealing += (spellOutput * effectiveCPM);
+        }
 
         })
 
         // Filler mana
 
-        
     })
 
-    // Handle HPS
-    score += (60 * statProfile.hps || 0)
-    printHealingBreakdown(healingBreakdown, score);
+    // Mastery healing
 
-    return score;
+    // Add any natural HPS we have on the set.
+    totalHealing += (60 * statProfile.hps || 0)
+
+    // Print stuff.
+    printHealingBreakdown(healingBreakdown, totalHealing);
+    printHealingBreakdown(damageBreakdown, totalDamage);
+    console.log("DPS: " + totalDamage / 60);
+
+    return totalHealing;
 }
