@@ -58,6 +58,7 @@ const raidTrinketData: Effect[] = [
     name: "TrinketName",
     effects: [
       { // 
+        stat: "haste",
         value: {100: 0, 200: 0}, 
         cooldown: 120,
         duration: 20,
