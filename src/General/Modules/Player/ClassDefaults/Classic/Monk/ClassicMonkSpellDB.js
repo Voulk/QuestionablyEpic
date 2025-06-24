@@ -66,6 +66,35 @@ export const CLASSICMONKSPELLDB = {
         buffDuration: 30,
         cooldownData: {cooldown: 45, charges: 1},
     },],
+    "Spinning Crane Kick": [{
+        spellData: {id: 101546, icon: "ability_monk_cranekick_new", cat: "cooldown"},
+        castTime: 2.25,
+        cost: 7.15,
+        chiGenerated: 1,
+
+        type: "classic periodic",
+        buffType: "damage",
+        coeff: 0,
+        tickData: {tickRate: 0.75},
+        
+        weaponScaling: 1.59, // Might have a second multiplier of 0.880503
+        buffDuration: 2.25,
+        targets: 1, // Can hit everyone so TODO.
+        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    },
+    {
+        type: "classic periodic",
+        buffType: "heal",
+        flat: 2809,
+        coeff: 0.1152,
+        tickData: {tickRate: 0.75},
+        masteryScalar: 0.1,
+        buffDuration: 2.25,
+        targets: 1, // Can hit everyone so TODO.
+        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    }],
     "Rushing Jade Wind": [{
         spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "cooldown"},
         castTime: 0,
@@ -87,7 +116,7 @@ export const CLASSICMONKSPELLDB = {
     {
         type: "classic periodic",
         buffType: "heal",
-        flat: 2809,
+        flat: 0.8 * 2809,
         coeff: 0.8 * 0.1152,
         tickData: {tickRate: 0.75},
         masteryScalar: 0.1,

@@ -46,6 +46,7 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
         {cat: "Fillers & Minor Cooldowns", tag: "Renewing Mist", seq: ["Renewing Mist"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Jab", seq: ["Jab"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Crackling Jade Lightning", seq: ["Crackling Jade Lightning"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Spinning Crane Kick", seq: ["Spinning Crane Kick"], preBuffs: []},
 
         {cat: "Talented Abilities", tag: "Chi Burst (per target)", seq: ["Chi Burst"], preBuffs: []},
         {cat: "Talented Abilities", tag: "Chi Wave", seq: ["Chi Wave"], preBuffs: []},

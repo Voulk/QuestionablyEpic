@@ -101,7 +101,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       haste: getHaste(statProfile, "Classic") * hasteBuff,
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
       weaponDamage: statProfile.weaponDamage,
-      attackpower: statProfile.attackpower,
+      attackpower: (statProfile.intellect + statProfile.spellpower) * 2,
       armorReduction: 0.7,
     }
 

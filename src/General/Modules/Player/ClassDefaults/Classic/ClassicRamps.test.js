@@ -43,7 +43,7 @@ describe("Test APL", () => {
         }
 
         const spec = "Mistweaver Monk"
-        const testSuite = "TopGearProfile" //"Stat" //;
+        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
         const revisedTalents = {...monkTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
