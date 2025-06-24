@@ -15,14 +15,23 @@ interface entry {
 }
 
 export const changeLog: entry[] = [
-      {
+  {
+    version: "11.1.7 / 4.4.2",
+    update: 18,
+    date: "June 24",
+    changes: [ 
+      "Titan Disc Belt in-game buffs.",
+      "Cataclysm: Added Cloak of the Frigid Winds.",
+      "Some minor item tidy-up.",
+    ]},
+  {
     version: "11.1.7 / 4.4.2",
     update: 17,
     date: "June 17",
     changes: [ 
       "Added the Titan Disc Belt.",
     ]},
-    {
+  {
     version: "11.1.5 / 4.4.2",
     update: 16,
     date: "May 20",

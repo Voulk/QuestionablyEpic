@@ -162831,5 +162831,29 @@ export const classicItemDB = [
             "crit": 154,
             "spirit": 147
         }
-    }
+    },
+        {
+        "name": "Cloak of the Frigid Winds",
+        "id": 248751,
+        "quality": 4,
+        "names": {
+            "cn": "",
+            "en": "Cloak of the Frigid Winds",
+            "ru": "",
+            "es": "",
+            "fr": "",
+            "de": ""
+        },
+        "icon": "inv_misc_cape_16",
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "slot": "Back",
+        "itemLevel": 403,
+        "stats": {
+            "intellect": 286,
+            "stamina": 408,
+            "spirit": 191,
+            "haste": 191
+        }
+    },
 ]
