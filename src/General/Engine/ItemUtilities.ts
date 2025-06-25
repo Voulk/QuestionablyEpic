@@ -1141,7 +1141,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   if (gameType === "Classic" && item.classicSockets.sockets.length > 0) {
     //socketItem(item, player.statWeights["Raid"]);
-    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 40);
+    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 160);
   } 
 
   return Math.round(100 * score) / 100;

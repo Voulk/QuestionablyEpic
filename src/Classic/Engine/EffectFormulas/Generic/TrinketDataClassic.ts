@@ -49,7 +49,7 @@ Phase Two:
 Phase Three: 
 */
 const raidTrinketData: Effect[] = [
-  {
+    {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                             TrinketName                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -72,6 +72,45 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+
+  {
+    name: "Zen Alchemist Stone",
+    effects: [
+      { // Zen Alchemist Stone
+        value: {458: 4353, 200: 0}, 
+        ppm: getEffectPPM(0.25, 55, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return bonus_stats; //getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+    {
+    name: "Spirits of the Sun",
+    effects: [
+      { 
+        value: {483: 6121, 496: 6908, 509: 7796}, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "spirit",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+
+
   {
     name: "Reflection of the Light", 
     effects: [
