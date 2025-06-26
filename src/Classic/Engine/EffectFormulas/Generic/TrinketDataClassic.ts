@@ -195,6 +195,24 @@ const raidTrinketData: Effect[] = [
       return getGenericStatEffect(data[0], itemLevel);
     }
   },
+        {
+    name: "Relic of Yu'lon",
+    effects: [
+      { 
+        value: {476: 3027}, 
+        ppm: getEffectPPM(0.2, 55, 1.5),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
     {
     name: "Price of Progress",
     effects: [

@@ -28,11 +28,11 @@ export const mistweaverMonkDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.1,
-        crit: 0.4,
+        crit: 0.45,
         mastery: 0.2,
         haste: 0.3,
         mp5: 0.37 * 1.8,
-        spirit: 0.37,
+        spirit: 0.32,
         hit: 0,
         hps: 0.7, // 
     },
