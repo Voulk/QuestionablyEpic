@@ -9,6 +9,12 @@ export const CLASSICMONKSPELLDB = {
         castTime: 1.5,
         cost: 0,
     }],
+    "Mana Tea": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
+        type: "",
+        castTime: 0.5, // 0.5s per stack. Restores 5% of max mana per stack.
+        cost: 0,
+    }],
     "Surging Mist": [{
         // Regrowth direct heal portion
         spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
@@ -247,7 +253,7 @@ export const CLASSICMONKSPELLDB = {
         castTime: 1, 
         cost: 0, 
         coeff: 1 * 2, // Technically attack power
-        cooldownData: {cooldown: 15},
+        cooldownData: {cooldown: 30},
         flat: 1095,
         masteryScalar: 0.15,
         expectedOverheal: 0.45,
