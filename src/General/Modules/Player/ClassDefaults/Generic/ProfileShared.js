@@ -21,6 +21,21 @@ export const hasTier = (playerData, tier) => {
     return playerData.tier.includes(tier);
 }
 
+export const getTimeUsed = (castProfile, spellDB, averageHaste) => {
+    let timeUsed = 0;
+    castProfile.forEach(spellProfile => {
+        const spell = spellDB[spellProfile.spell][0];
+        let castTime = (spell.castTime / averageHaste) || 0;
+
+        if (spell.customGCD) castTime = spell.customGCD;
+        if (castTime === 0 && !spell.offGCD) castTime = 1.5 / averageHaste;
+        timeUsed += castTime * spellProfile.cpm;
+    }
+    )
+
+    return timeUsed;
+}
+
 // Returns duration and effective value on a trinket
 export const getTrinketData = (trinketName, itemLevel) => {
     return {value: getTrinketValue(trinketName, itemLevel), duration: getTrinketParam(trinketName, "duration")};

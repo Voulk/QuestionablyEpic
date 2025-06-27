@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed} from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
@@ -54,12 +54,12 @@ export function initializeMonkSet(talents = monkTalents) {
       {spell: "Revival", efficiency: 0.8 },
 
       {spell: "Uplift", cpm: 3 }, // TODO
-
-      {spell: "Jab", cpm: 5 },
+      {spell: "Blackout Kick", cpm: 2}, // Tiger Power
     ]
 
     const adjSpells = getTalentedSpellDB("Mistweaver Monk", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Mistweaver Monk"});
-  
+    
+
     castProfile.forEach(spell => {
       if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = monkSpells[spell.spell][0].castTime;
@@ -69,7 +69,7 @@ export function initializeMonkSet(talents = monkTalents) {
       spell.chiGenerated = monkSpells[spell.spell][0].chiGenerated ? monkSpells[spell.spell][0].chiGenerated : 0;
     })
 
-
+    getSpellEntry(castProfile, "Uplift").cpm = chiGenerated - getSpellEntry(castProfile, "Blackout Kick").cpm; 
     const costPerMinute = 0// castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
     //console.log(JSON.stringify(adjSpells));
@@ -85,6 +85,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;
+    const reportingData = {}
     const healingBreakdown = {};
     const damageBreakdown = {};
     const castBreakdown = {};
@@ -105,6 +106,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       armorReduction: 0.7,
     }
 
+    reportingData.statPercentages = statPercentages;
+
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, spec);
     const regen = (getManaRegen(statProfile, spec) + 
@@ -115,17 +118,26 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
     let fillerCost = 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
     const fillerWastage = 0.9;
+
+    // Our profile defined our base casts, now we'll use our actual stat line to determine how to spend our filler. This is quite a significant amount of time as MW.
+    const timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
+    reportingData.timeAvailable = timeAvailable;
+
     let costPerMinute = specBaseline.costPerMinute;
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
     const masteryOrbsGenerated = 0;
-    const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * 18 * 3 / 60;
+    const renewingMistDuration = 18;
+    const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
     getSpellEntry(castProfile, "Uplift").bonus = averageRemCount; // This effectively acts as our Uplift target count.
 
+
+    reportingData.averageRemCount = averageRemCount;
+    reportingData.chiGenerated = chiGenerated;
+    reportingData.masteryOrbsGenerated = masteryOrbsGenerated;
+
     // TODO: Uplift refreshes ReM count.
-    console.log("REM COUNT: " + averageRemCount)
-    console.log("CHI GENERATED: " + chiGenerated)
 
     castProfile.forEach(spellProfile => {
         const fullSpell = specBaseline.spellDB[spellProfile.spell];
@@ -175,6 +187,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     printHealingBreakdown(healingBreakdown, totalHealing);
     printHealingBreakdown(damageBreakdown, totalDamage);
     console.log("DPS: " + totalDamage / 60);
+    console.log(reportingData);
 
     return totalHealing;
 }
