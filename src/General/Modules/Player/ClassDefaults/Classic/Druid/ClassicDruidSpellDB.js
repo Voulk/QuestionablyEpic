@@ -320,6 +320,19 @@ export const CLASSICDRUIDSPELLDB = {
         stat: "haste",
         value: 2, 
     }],
+    "Efflorescence": [
+    {
+        castTime: 0,
+        type: "classic periodic",
+        buffType: "heal",
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
+        buffDuration: 30,
+        coeff: 0.31,
+        flat: 3365,
+        expectedOverheal: 0.3,
+        targets: 3,
+        secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+    }],
 
 }
 

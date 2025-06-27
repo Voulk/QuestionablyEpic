@@ -4,6 +4,13 @@ import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT"
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
+export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
+        const sortedEntries = Object.entries(healingBreakdown)
+                            .sort((a, b) => b[1] - a[1])
+                            .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${castProfile.reduce((acc, spell) => acc + ((spell.cpm && spell.spell === key) ? spell.cpm : 0), 0)}`);
+    console.log(sortedEntries);
+}
+
 export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
     const sortedEntries = Object.entries(healingBreakdown)
                             .sort((a, b) => b[1] - a[1])
@@ -89,7 +96,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
         // Most other spells follow a uniform formula.
         spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
                             adjCritChance * // Multiply by secondary stats & any generic multipliers. 
-                            (spell.secondaries.includes("mastery") ? statPercentages.mastery : 1) *
+                            (spell.secondaries.includes("mastery") ? 1 + statPercentages.mastery : 1) *
                             genericMult *
                             targetCount
     }

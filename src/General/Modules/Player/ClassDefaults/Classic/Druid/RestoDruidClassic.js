@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
 export const restoDruidDefaults = {
@@ -40,14 +40,13 @@ export function initializeDruidSet(talents = druidTalents) {
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", cpm: 3.8},
+      {spell: "Swiftmend", cpm: 1.5},
       {spell: "Wild Growth", cpm: 3.8},
-      {spell: "Rejuvenation", cpm: 12, fillerSpell: true, castOverride: 1.0},
-      {spell: "Nourish", cpm: 5},
+      {spell: "Rejuvenation", cpm: 4, fillerSpell: true, castOverride: 1.0},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
       {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
       {spell: "Rolling Lifebloom", cpm: 4, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
-  
+      {spell: "Efflorescence", cpm: 2, freeCast: true, castOverride: 0}, // Rolling Efflorescence.
     ]
 
     if (talents.incarnation.points === 1) {
@@ -87,6 +86,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const castBreakdown = {};
     const fightLength = 6;
     const talents = druidBaseline.talents || druidTalents;
+    const castProfile = druidBaseline.castProfile;
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -126,7 +126,10 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
-    druidBaseline.castProfile.forEach(spellProfile => {
+    console.log("Filler CPM: " + fillerCPM + " | Cost Per Minute: " + costPerMinute + " | Total Mana Pool: " + totalManaPool);
+    getSpellEntry(castProfile, "Rejuvenation").cpm += fillerCPM;
+
+    castProfile.forEach(spellProfile => {
         const fullSpell = druidBaseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
 
@@ -144,6 +147,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
         
         const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 
+
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
 
@@ -158,7 +162,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    printHealingBreakdown(healingBreakdown, score);
+    printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
 
     return score;
 }
