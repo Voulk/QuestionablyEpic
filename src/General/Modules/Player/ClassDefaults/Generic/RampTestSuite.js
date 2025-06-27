@@ -65,6 +65,7 @@ export function runClassicStatSuite(profile) {
         mastery: 2319,
         stamina: 5000,
         weaponDamage: 821,
+        weaponSwingSpeed: 2.6,
         mp5: 0,
         critMult: 2,
         hps: 0,

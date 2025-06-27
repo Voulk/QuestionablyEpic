@@ -161,6 +161,7 @@ export const getManaRegen = (currentStats, spec) => {
         "Discipline Priest": 0.5,
         "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,
+        "Mistweaver Monk": 0.5
     }
     return (spiritToMP5 * inCombatRegen[spec]);
 }
