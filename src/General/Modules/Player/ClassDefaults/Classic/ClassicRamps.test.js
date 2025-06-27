@@ -31,25 +31,24 @@ describe("Test APL", () => {
             intellect: 10267,
             spirit: 6654,
             spellpower: 5151,
-            attackpower: 5151 * 2,
             weaponDamage: 1236,
             weaponSwingSpeed: 3.4,
-            haste: 1247,
-            crit: 1698,
-            mastery: 4000,
+            haste: 1100,
+            crit: 1100,
+            mastery: 1100,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
             hps: 0,
         }
 
-        const spec = "Mistweaver Monk"
+        const spec = "Restoration Druid"
         const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
-        const revisedTalents = {...monkTalents};
+        const revisedTalents = {...druidTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: monkSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = mistweaverMonkDefaults;
+        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = restoDruidDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -78,14 +77,20 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
+        //buildStatChart(profile, playerData, activeStats, testSettings);
     })
+
+    
 
 });
 
-const buildStatChart = (baseline, activeStats, testSettings) => {
+const buildStatChart = (profile, playerData, activeStats, testSettings) => {
+    
+
     const results = [];
-    for (let i = 0; i < 2100; i += 10) {
-        const score = scorePaladinSet(baseline, {...activeStats, spirit: i}, {}, testSettings);
+    for (let i = 0; i < 3500; i += 20) {
+        const init = profile.initializeSet(playerData.talents);
+        const score = profile.scoreSet(init, {...activeStats, mastery: i}, testSettings);
         results.push(Math.round(score));
     }
     console.log(JSON.stringify(results));

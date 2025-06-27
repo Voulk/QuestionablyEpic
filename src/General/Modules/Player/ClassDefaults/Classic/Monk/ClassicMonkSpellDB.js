@@ -151,7 +151,7 @@ export const CLASSICMONKSPELLDB = {
         customGCD: 999,
         cost: 0,
         coeff: 0, // 
-        weaponScaling: 1,
+        weaponScaling: 1 * 1.4,
         damageToHeal: 0.84,
         secondaries: ['crit'],
     }],
@@ -340,7 +340,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 2,
         coeff: 0.3517 * 2,
         flat: 9986,
-        expectedOverheal: 0.7,
+        expectedOverheal: 0.55, // Includes wastage
         targets: 1, // 
         secondaries: ['crit'],
     }],

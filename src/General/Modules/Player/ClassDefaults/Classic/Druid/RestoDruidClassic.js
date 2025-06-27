@@ -158,7 +158,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    //printHealingBreakdown(healingBreakdown, score);
+    printHealingBreakdown(healingBreakdown, score);
 
     return score;
 }

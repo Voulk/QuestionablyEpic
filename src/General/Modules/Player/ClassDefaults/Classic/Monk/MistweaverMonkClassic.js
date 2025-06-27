@@ -102,7 +102,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, spec),
-      haste: getHaste(statProfile, "Classic") * hasteBuff,
+      haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
       weaponDamage: statProfile.weaponDamage,
       weaponSwingSpeed: statProfile.weaponSwingSpeed,
@@ -132,7 +132,6 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     
 
     let costPerMinute = specBaseline.costPerMinute;
-    let manaTeaCPM = 0;
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
@@ -156,7 +155,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     reportingData.upliftTargets = specBaseline.spellDB["Uplift"][0].targets;
 
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
-    manaRemaining += (chiGenerated / 4 * manaTeaReturn); // Include Mana tea returns from our base profile.
+    manaRemaining += (chiGenerated / 4 * manaTeaEffectiveReturn); // Include Mana tea returns from our base profile.
     reportingData.manaRemaining = manaRemaining;
     reportingData.manaPool = totalManaPool;
 
@@ -183,6 +182,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     getSpellEntry(castProfile, "Uplift").cpm += packagesAvailable; // Spend 80% of our mana on Uplift packages.
     getSpellEntry(castProfile, "Jab").cpm += packagesAvailable + tigerPalmPackagesAvailable; // Spend 80% of our mana on Uplift packages.
     getSpellEntry(castProfile, "Tiger Palm").cpm += tigerPalmPackagesAvailable - packagesAvailable;
+    
     timeAvailable -= packagesAvailable * 3.025;
 
     reportingData.upliftRatio = packagesAvailable / (tigerPalmPackagesAvailable - packagesAvailable)
@@ -237,7 +237,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
           totalHealing += (spellOutput * effectiveCPM);
 
           if (spellName === "Renewing Mist") {
-              const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
+            const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
             let tickCount = Math.round(spell.buffDuration / (adjTickRate));
             masteryOrbsGenerated += (getMasteryChance(statProfile, spell) * spell.targets * tickCount * effectiveCPM);
 
