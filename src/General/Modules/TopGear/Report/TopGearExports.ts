@@ -4,6 +4,7 @@
 // Sample ReforgeLite export:
 
 import Item from "General/Items/Item";
+import { getTranslatedSlotName } from "locale/slotsLocale";
 
 // {"player":{"name":"Player","equipment":{"items":[{"id":78785,"enchant":4207,"gems":[52296,52207]},{"id":78382,"reforging":119},{"id":78835,"enchant":4199,"gems":[52207,52207],"reforging":117},{"id":77096,"enchant":4096,"gems":[52207],"reforging":119},{"id":78755,"enchant":4063,"gems":[52207,52207,52208],"reforging":119},{"id":71262,"gems":[0],"reforging":117},{"id":76157,"gems":[52207,0],"reforging":119},{"id":75117,"gems":[0],"reforging":167},{"id":78805,"enchant":4112,"gems":[52207,52207,52207],"reforging":117},{"id":77172,"enchant":4069,"gems":[52207,52208],"reforging":119},{"id":77109,"gems":[52207],"reforging":117},{"id":71211,"reforging":145},{"id":77976},{"id":72898},{"id":78485,"enchant":4084},{"id":72878,"reforging":167},{"id":77083,"gems":[52207],"reforging":117}]}}}
 export const exportReforgeLite = (itemSet: Item[]) => {
@@ -29,6 +30,43 @@ const wowheadCodes = {
   1178: "[=retail-dun-operation-mechagon-workshop]", // Workshop
   1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
   1187: "[=retail-dun-theater-pain]", // Theater of Pain
+
+  // Classic
+  // Dungeons
+  0: "[icon name=achievement_greatwall][/icon][zone=5976]", // Gate of the Setting Sun
+  1: '[icon name=achievement_shadowpan_hideout][/icon][zone=5918]', // "Shado-Pan Monastery"
+  2: '[icon name=inv_helmet_52][/icon][zone=6052]', // "Scarlet Halls"
+  3: '[icon name=spell_holy_resurrection][/icon][zone=6109]', // "Scarlet Monastery"
+  4: '[icon name=spell_holy_senseundead][/icon][zone=6066]', // "Scholomance"
+  324: '[icon name=achievement_dungeon_siegeofniuzaotemple][/icon][zone=6214]', // "Siege of Niuzao Temple"
+  6: '[icon name=achievement_dungeon_stormstoutbrewery][/icon][zone=5963]', // "Stormstout Brewery"
+  7: '[icon name=achievement_dungeon_mogupalace][/icon][zone=6182]', // "Mogu'shan Palace"
+  8: '[icon name=achievement_jadeserpent][/icon][zone=5956]', // "Temple of the Jade Serpent"
+
+  // Raid Bosses
+  // Mogushan Vaults
+  679: '[icon name=achievement_moguraid_01][/icon][npc=60047] [i](Stone Guard, Mogushan Vaults)[/i]', // "Stone Guard"
+  689: '[icon name=achievement_moguraid_02][/icon][npc=60009] [i](Mogushan Vaults)[/i]', // "Feng the Accursed"
+  682: '[icon name=achievement_moguraid_03][/icon][npc=60143] [i](Mogushan Vaults)[/i]', // "Gara'jal the Spiritbinder"
+  687: '[icon name=achievement_moguraid_04][/icon][npc=60701] [i](Spirit Kings, Mogushan Vaults)[/i]', // "Spirit Kings"
+  726: '[icon name=achievement_moguraid_05][/icon][npc=60410] [i](Mogushan Vaults)[/i]', // "Elegon"
+  677: '[icon name=achievement_moguraid_06][/icon][npc=60400] [i](Will of the Emperor, Mogushan Vaults)[/i]', // "Will of the Emperor"
+
+
+  // Heart of Fear
+  21: '[icon name=achievement_raid_mantidraid02][/icon][npc=62980] [i](Heart of Fear)[/i]', // "Imperial Vizier Zor'lok"
+  22: '[icon name=achievement_raid_mantidraid03][/icon][npc=62543] [i](Heart of Fear)[/i]', // "Blade Lord Ta'yak"
+  23: '[icon name=achievement_raid_mantidraid05][/icon][npc=62164] [i](Heart of Fear)[/i]', // "Garalon"
+  24: '[icon name=achievement_raid_mantidraid04][/icon][npc=62397] [i](Heart of Fear)[/i]', // "Wind Lord Mel'jarak"
+  25: '[icon name=achievement_raid_mantidraid06][/icon][npc=62511] [i](Heart of Fear)[/i]', // "Amber-Shaper Un'sok"
+  26: '[icon name=achievement_raid_mantidraid07][/icon][npc=62837] [i](Heart of Fear)[/i]', // "Grand Empress Shek'zeer"
+
+  // Terrace of Endless Spring
+  31: '[icon name=achievement_raid_terraceofendlessspring01][/icon][npc=60583] [i](Terrace of Endless Spring)[/i]', // "Protectors of the Endless"
+  32: '[icon name=achievement_raid_terraceofendlessspring02][/icon][npc=62442] [i](Terrace of Endless Spring)[/i]', // "Tsulong"
+  33: '[icon name=achievement_raid_terraceofendlessspring03][/icon][npc=62983] [i](Terrace of Endless Spring)[/i]', // "Lei Shi"
+  34: '[icon name=achievement_raid_terraceofendlessspring04][/icon][npc=60999] [i](Terrace of Endless Spring)[/i]', // "Sha of Fear"
+
 }
 
 const wowheadClassColors = {
@@ -42,14 +80,16 @@ const wowheadClassColors = {
 }
 
 // It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 
-export function exportWowheadGearList(itemSet, spec) {
+export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
+  console.log(spec);
   // Slot, itemID, bonusTag, source
   // [tr][td]Cloak[/td][td][item=212446 bonus=[=gv-raid]][/td][td][npc=215657][/td][/tr]
-  const classColor = wowheadClassColors[spec];
+  const classColor = wowheadClassColors[spec.replace(" Classic", "")];
   const results = ["[center][table class=grid width=900px]", "[tr]", `[td background=${classColor}][b]Slot[/b][/td]`, `[td background=${classColor}][b]Item[/b][/td]`, `[td background=${classColor}][b]Source[/b][/td]`, "[/tr]"];
   
 
   itemSet.forEach(item => {
+    let colourTag = "";
     let source = "";
     let bonusTag = "";
     if (item.id === 228411) {
@@ -64,20 +104,26 @@ export function exportWowheadGearList(itemSet, spec) {
     if (item.source) {
       source = wowheadCodes[item.source.encounterId] || "";
 
-      if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
-      else if (item.source.instanceId === -1) {
-        const instanceID = item.source.encounterId;
-        if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
-        else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-        else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
+      if (gameType === "Retail") {
+        if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
+        else if (item.source.instanceId === -1) {
+          const instanceID = item.source.encounterId;
+          if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
+          else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
+          else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
+        }
+        else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
       }
-      else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
+
     }
     
-    if (item.id !== 228411) results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
-  })
+    if (item.id !== 228411 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
+    else if (gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
+    })
   results.push(`[/table][/center]`)
 
   const formattedArray = results.map(String).join('\n');
-  console.log(formattedArray);
+  //console.log(formattedArray);
+
+  return formattedArray;
 }

@@ -1,7 +1,11 @@
 import React from "react";
 import { Button, Menu, MenuItem } from "@mui/material";
 
-export default function HoverMenu() {
+interface HoverMenuProps {
+  handleClicked: (value: string) => void;
+}
+
+export default function HoverMenu({ handleClicked }: HoverMenuProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -9,7 +13,8 @@ export default function HoverMenu() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (value: string) => {
+    handleClicked(value);
     setAnchorEl(null);
   };
 
@@ -34,9 +39,9 @@ export default function HoverMenu() {
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
-        <MenuItem onClick={handleClose}>ReforgeLite Export</MenuItem>
-        <MenuItem onClick={handleClose}>Wowhead BIS List</MenuItem>
-        <MenuItem onClick={handleClose}>JSON</MenuItem>
+        <MenuItem onClick={() => handleClose("ReforgeLite Export")}>ReforgeLite Export</MenuItem>
+        <MenuItem onClick={() => handleClose("Wowhead BIS List")}>Wowhead BIS List</MenuItem>
+        <MenuItem onClick={() => handleClose("JSON")}>JSON</MenuItem>
       </Menu>
     </>
   );

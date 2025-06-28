@@ -4,9 +4,10 @@ import { MenuItem, Dialog, DialogTitle, DialogContent, DialogActions, Button, Te
 interface DialogProps {
   isDialogOpen: boolean;
   setDialogOpen: (open: boolean) => void;
+  dialogText: string;
 }
 
-export default function GenericDialog({isDialogOpen, setDialogOpen} : DialogProps) {
+export default function GenericDialog({isDialogOpen, setDialogOpen, dialogText} : DialogProps) {
   const [textValue, setTextValue] = useState("Example Text");
 
   const handleOpen = () => setDialogOpen(true);
@@ -21,7 +22,7 @@ export default function GenericDialog({isDialogOpen, setDialogOpen} : DialogProp
             multiline
             fullWidth
             minRows={4}
-            value={textValue}
+            value={dialogText}
             onChange={(e) => setTextValue(e.target.value)}
             variant="outlined"
             autoFocus

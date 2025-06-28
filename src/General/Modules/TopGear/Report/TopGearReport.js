@@ -23,6 +23,8 @@ import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
 
+
+
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
   /*const requestOptions = {
@@ -94,6 +96,7 @@ function TopGearReport(props) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const handleDialogOpen = () => setDialogOpen(true);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [dialogText, setDialogText] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const location = useLocation();
@@ -129,7 +132,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen);
+    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText);
   }
   else {
     return   (  <div
@@ -144,7 +147,7 @@ function TopGearReport(props) {
   }
 }
 
-function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen) {
+function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText) {
   const boxWidth = "60%";
 
   let resultValid = true;
@@ -155,6 +158,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
   let differentials = {};
   let itemList = {};
   let statList = {};
+
   
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -165,37 +169,44 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
   const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
-    const advice = getDynamicAdvice(result, player, result.contentType, gameType);
-    
-    topSet = result.itemSet;
-    enchants = topSet.enchantBreakdown;
-    differentials = result.differentials;
-    itemList = topSet.itemList;
-    contentType = result.contentType;
-    gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
-    statList = topSet.setStats;
-    const manaSources = {}
+  const advice = getDynamicAdvice(result, player, result.contentType, gameType);
+  
+  topSet = result.itemSet;
+  enchants = topSet.enchantBreakdown;
+  differentials = result.differentials;
+  itemList = topSet.itemList;
+  contentType = result.contentType;
+  gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
+  statList = topSet.setStats;
+  const manaSources = {}
 
 
-    // Setup Slots / Set IDs.
-    let gemCount = 0;
-    itemList.forEach(item => {
-      item.slot = getItemProp(item.id, "slot", gameType)
-      item.setID = getItemProp(item.id, "itemSetId", gameType)
-      item.sources = getItemProp(item.id, "sources", gameType)
-      if (item.sources) item.source = item.sources[0];
-      item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
-      if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
+  // Setup Slots / Set IDs.
+  let gemCount = 0;
+  itemList.forEach(item => {
+    item.slot = getItemProp(item.id, "slot", gameType)
+    item.setID = getItemProp(item.id, "itemSetId", gameType)
+    item.sources = getItemProp(item.id, "sources", gameType)
+    if (item.sources) item.source = item.sources[0];
+    item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
+    if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
 
-      if (item.socket) {
-        item.socketedGems = []
-        for (var i = 0; i < item.socket; i++) {
-          item.socketedGems.push(enchants["Gems"].shift());
-          //console.log("PUshing gem to ite:")
-        }
-        
+    if (item.socket) {
+      item.socketedGems = []
+      for (var i = 0; i < item.socket; i++) {
+        item.socketedGems.push(enchants["Gems"].shift());
+        //console.log("PUshing gem to ite:")
       }
-    })
+      
+    }
+  })
+
+  const handleExportMenuClick = (buttonClicked) => {
+    //alert("Exporting to " + buttonClicked, result.id);
+    setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    setDialogOpen(true);
+  
+  }
 
     //exportGearSet(itemList, player.spec);
 
@@ -279,7 +290,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                   </Grid>
 
                   <Grid item>
-                    <MenuDropdown />
+                    <MenuDropdown handleClicked={handleExportMenuClick}/>
                   </Grid>
                 </Grid>
                 </Grid>
@@ -437,6 +448,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
       )}
 
       <GenericDialog 
+        dialogText={dialogText}
         isDialogOpen={dialogOpen}
         setDialogOpen={setDialogOpen}
       />

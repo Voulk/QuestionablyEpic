@@ -19,14 +19,14 @@ export const restoDruidDefaults = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 3,
-        crit: 0.98,
-        mastery: 1.1,
-        haste: 0.3,
-        mp5: 1.7,
-        spirit: 1.3,
+        intellect: 1.11,
+        crit: 0.348,
+        mastery: 0.427,
+        haste: 0.25,
+        mp5: 0.614,
+        spirit: 0.431,
         hit: 0,
-        hps: 0.7, // 
+        hps: 0.458, // 
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -128,7 +128,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
-    console.log("Filler CPM: " + fillerCPM + " | Cost Per Minute: " + costPerMinute + " | Total Mana Pool: " + totalManaPool);
+
     getSpellEntry(castProfile, "Rejuvenation").cpm += fillerCPM;
 
     castProfile.forEach(spellProfile => {
@@ -164,7 +164,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
+    //printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
 
     return score;
 }
