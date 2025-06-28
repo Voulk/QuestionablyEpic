@@ -333,6 +333,30 @@ export const CLASSICDRUIDSPELLDB = {
         targets: 3,
         secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],
+    "Ysera's Gift": [{
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "N/A"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0, 
+        flat: 400000 * 0.05,
+        expectedOverheal: 0.25,
+        secondaries: [],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+    "Wild Mushroom: Bloom": [{
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "N/A"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.31, 
+        flat: 3365,
+        expectedOverheal: 0.3,
+        targets: 7, // Note that only bonus healing is split among targets.
+        secondaries: [],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+
 
 }
 

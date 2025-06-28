@@ -47,6 +47,7 @@ export function initializeDruidSet(talents = druidTalents) {
       {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
       {spell: "Rolling Lifebloom", cpm: 4, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
       {spell: "Efflorescence", cpm: 2, freeCast: true, castOverride: 0}, // Rolling Efflorescence.
+      {spell: "Wild Mushroom: Bloom", cpm: 2}, 
     ]
 
     if (talents.incarnation.points === 1) {
@@ -59,6 +60,10 @@ export function initializeDruidSet(talents = druidTalents) {
         {spell: "Regrowth", cpm: (6.5 * 36 / 180), freeCast: true, bonus: 1.15}, // Tree of Life OOC Regrowths
         {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
       ])
+    }
+
+    if (talents.yserasGift.points === 1) {
+      castProfile.push({spell: "Ysera's Gift", cpm: 12, freeCast: true, castOverride: 0}); // Ysera's Gift
     }
 
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Restoration Druid"});
@@ -90,9 +95,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
-
-    const spellpower = statProfile.intellect + statProfile.spellpower;
-    const critPercentage = 1 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
 
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,

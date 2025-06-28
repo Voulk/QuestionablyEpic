@@ -29,13 +29,13 @@ describe("Test APL", () => {
 
         const activeStats = {
             intellect: 10267,
-            spirit: 6654,
+            spirit: 6000,
             spellpower: 5151,
             weaponDamage: 1236,
             weaponSwingSpeed: 3.4,
-            haste: 1100,
-            crit: 1100,
-            mastery: 1100,
+            haste: 1000,
+            crit: 1000,
+            mastery: 1000,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
@@ -43,7 +43,7 @@ describe("Test APL", () => {
         }
 
         const spec = "Restoration Druid"
-        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
         const revisedTalents = {...druidTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
@@ -86,14 +86,18 @@ describe("Test APL", () => {
 
 const buildStatChart = (profile, playerData, activeStats, testSettings) => {
     
+    [''].forEach(stat => {
+        const results = [];
+        for (let i = 0; i < 3600; i += 20) {
+            const init = profile.initializeSet(playerData.talents);
+            const score = profile.scoreSet(init, {...activeStats, 'crit': i}, testSettings);
+            results.push(Math.round(score));
+        }
+        console.log("==" + stat + "==")
+        console.log(JSON.stringify(results));
 
-    const results = [];
-    for (let i = 0; i < 3500; i += 20) {
-        const init = profile.initializeSet(playerData.talents);
-        const score = profile.scoreSet(init, {...activeStats, mastery: i}, testSettings);
-        results.push(Math.round(score));
-    }
-    console.log(JSON.stringify(results));
+    });
+
 }
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,
