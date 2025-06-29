@@ -29,6 +29,7 @@ export const changeLog: entry[] = [
       "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
       "Upgrade Finder: Currently Equipped items now shown on the report.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
   ]},
   {
     version: "11.1.5 / 4.4.2",

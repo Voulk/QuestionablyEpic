@@ -1017,8 +1017,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
-      (gameType === "Classic" || itemLevel > 550) &&
-      (key.itemLevel === itemLevel || gameType === "Retail" || checkAutoAddLevelOk(key, itemLevel)) && 
+      (gameType === "Classic" || itemLevel > 640) &&
+      (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -1037,7 +1037,10 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+
+
       else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId));
+      else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (!sources) sourceCheck = false;
     }
 

@@ -33,15 +33,15 @@ const wowheadCodes = {
 
   // Classic
   // Dungeons
-  0: "[icon name=achievement_greatwall][/icon][zone=5976]", // Gate of the Setting Sun
-  1: '[icon name=achievement_shadowpan_hideout][/icon][zone=5918]', // "Shado-Pan Monastery"
-  2: '[icon name=inv_helmet_52][/icon][zone=6052]', // "Scarlet Halls"
-  3: '[icon name=spell_holy_resurrection][/icon][zone=6109]', // "Scarlet Monastery"
-  4: '[icon name=spell_holy_senseundead][/icon][zone=6066]', // "Scholomance"
+  303: "[icon name=achievement_greatwall][/icon][zone=5976]", // Gate of the Setting Sun
+  312: '[icon name=achievement_shadowpan_hideout][/icon][zone=5918]', // "Shado-Pan Monastery"
+  311: '[icon name=inv_helmet_52][/icon][zone=6052]', // "Scarlet Halls"
+  316: '[icon name=spell_holy_resurrection][/icon][zone=6109]', // "Scarlet Monastery"
+  246: '[icon name=spell_holy_senseundead][/icon][zone=6066]', // "Scholomance"
   324: '[icon name=achievement_dungeon_siegeofniuzaotemple][/icon][zone=6214]', // "Siege of Niuzao Temple"
-  6: '[icon name=achievement_dungeon_stormstoutbrewery][/icon][zone=5963]', // "Stormstout Brewery"
-  7: '[icon name=achievement_dungeon_mogupalace][/icon][zone=6182]', // "Mogu'shan Palace"
-  8: '[icon name=achievement_jadeserpent][/icon][zone=5956]', // "Temple of the Jade Serpent"
+  302: '[icon name=achievement_dungeon_stormstoutbrewery][/icon][zone=5963]', // "Stormstout Brewery"
+  321: '[icon name=achievement_dungeon_mogupalace][/icon][zone=6182]', // "Mogu'shan Palace"
+  313: '[icon name=achievement_jadeserpent][/icon][zone=5956]', // "Temple of the Jade Serpent"
 
   // Raid Bosses
   // Mogushan Vaults
@@ -54,18 +54,24 @@ const wowheadCodes = {
 
 
   // Heart of Fear
-  21: '[icon name=achievement_raid_mantidraid02][/icon][npc=62980] [i](Heart of Fear)[/i]', // "Imperial Vizier Zor'lok"
-  22: '[icon name=achievement_raid_mantidraid03][/icon][npc=62543] [i](Heart of Fear)[/i]', // "Blade Lord Ta'yak"
-  23: '[icon name=achievement_raid_mantidraid05][/icon][npc=62164] [i](Heart of Fear)[/i]', // "Garalon"
-  24: '[icon name=achievement_raid_mantidraid04][/icon][npc=62397] [i](Heart of Fear)[/i]', // "Wind Lord Mel'jarak"
-  25: '[icon name=achievement_raid_mantidraid06][/icon][npc=62511] [i](Heart of Fear)[/i]', // "Amber-Shaper Un'sok"
-  26: '[icon name=achievement_raid_mantidraid07][/icon][npc=62837] [i](Heart of Fear)[/i]', // "Grand Empress Shek'zeer"
+  745: '[icon name=achievement_raid_mantidraid02][/icon][npc=62980] [i](Heart of Fear)[/i]', // "Imperial Vizier Zor'lok"
+  744: '[icon name=achievement_raid_mantidraid03][/icon][npc=62543] [i](Heart of Fear)[/i]', // "Blade Lord Ta'yak"
+  713: '[icon name=achievement_raid_mantidraid05][/icon][npc=62164] [i](Heart of Fear)[/i]', // "Garalon"
+  741: '[icon name=achievement_raid_mantidraid04][/icon][npc=62397] [i](Heart of Fear)[/i]', // "Wind Lord Mel'jarak"
+  737: '[icon name=achievement_raid_mantidraid06][/icon][npc=62511] [i](Heart of Fear)[/i]', // "Amber-Shaper Un'sok"
+  743: '[icon name=achievement_raid_mantidraid07][/icon][npc=62837] [i](Heart of Fear)[/i]', // "Grand Empress Shek'zeer"
 
   // Terrace of Endless Spring
-  31: '[icon name=achievement_raid_terraceofendlessspring01][/icon][npc=60583] [i](Terrace of Endless Spring)[/i]', // "Protectors of the Endless"
-  32: '[icon name=achievement_raid_terraceofendlessspring02][/icon][npc=62442] [i](Terrace of Endless Spring)[/i]', // "Tsulong"
-  33: '[icon name=achievement_raid_terraceofendlessspring03][/icon][npc=62983] [i](Terrace of Endless Spring)[/i]', // "Lei Shi"
-  34: '[icon name=achievement_raid_terraceofendlessspring04][/icon][npc=60999] [i](Terrace of Endless Spring)[/i]', // "Sha of Fear"
+  683: '[icon name=achievement_raid_terraceofendlessspring01][/icon][npc=60583] [i](Terrace of Endless Spring)[/i]', // "Protectors of the Endless"
+  742: '[icon name=achievement_raid_terraceofendlessspring02][/icon][npc=62442] [i](Terrace of Endless Spring)[/i]', // "Tsulong"
+  729: '[icon name=achievement_raid_terraceofendlessspring03][/icon][npc=62983] [i](Terrace of Endless Spring)[/i]', // "Lei Shi"
+  709: '[icon name=achievement_raid_terraceofendlessspring04][/icon][npc=60999] [i](Terrace of Endless Spring)[/i]', // "Sha of Fear"
+
+  9997: '[icon name=achievement_raid_terraceofendlessspring02][/icon][npc=62442] [i](Terrace of Endless Spring)[/i][br][icon name=achievement_raid_terraceofendlessspring03][/icon][npc=62983] [i](Terrace of Endless Spring)[/i]', // Shared loot between Tsulon and Lei Shi
+
+  // World Bosses (Pandaria)
+  725: '[icon name=inv_mushanbeastmount][/icon][npc=62346] [i](World Boss)[/i]', // Saylis's Warband (Galleon)
+
 
 }
 
@@ -102,7 +108,9 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
                     )
     }
     if (item.source) {
-      source = wowheadCodes[item.source.encounterId] || "";
+      if (item.name.includes("of the Final Winter")) source = wowheadCodes[9997] || ""
+      else if (item.source.encounterId === -8) source = `[icon name="inv_legendarygem_05"][/icon]{item.source.cost} [currency=3350]}`
+      else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
         if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
