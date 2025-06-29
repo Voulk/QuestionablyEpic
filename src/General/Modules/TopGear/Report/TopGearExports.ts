@@ -39,7 +39,7 @@ const wowheadCodes = {
   316: '[icon name=spell_holy_resurrection][/icon][zone=6109]', // "Scarlet Monastery"
   246: '[icon name=spell_holy_senseundead][/icon][zone=6066]', // "Scholomance"
   324: '[icon name=achievement_dungeon_siegeofniuzaotemple][/icon][zone=6214]', // "Siege of Niuzao Temple"
-  302: '[icon name=achievement_dungeon_stormstoutbrewery][/icon][zone=5963]', // "Stormstout Brewery"
+  302: '[icon name=achievement_brewery][/icon][zone=5963]', // "Stormstout Brewery"
   321: '[icon name=achievement_dungeon_mogupalace][/icon][zone=6182]', // "Mogu'shan Palace"
   313: '[icon name=achievement_jadeserpent][/icon][zone=5956]', // "Temple of the Jade Serpent"
 
@@ -108,7 +108,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
                     )
     }
     if (item.source) {
-      if (item.name.includes("of the Final Winter")) source = wowheadCodes[9997] || ""
+      if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
       else if (item.source.encounterId === -8) source = `[icon name="inv_legendarygem_05"][/icon]{item.source.cost} [currency=3350]}`
       else source = wowheadCodes[item.source.encounterId] || "";
 

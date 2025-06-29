@@ -314,7 +314,7 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
-    { label: "Dungeon Gear", value: 463, gameType: "Classic" },
+    { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons"},
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor" },
     { label: "Mogushan Vaults", value: 489, gameType: "Classic", source: "T14" },
     { label: "502 Gear", value: 502, gameType: "Classic", source: "T14" },
