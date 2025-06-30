@@ -145,6 +145,7 @@ export const CLASSICDRUIDSPELLDB = {
         spellData: {id: 740, icon: "spell_nature_tranquility", cat: "heal"},
         type: "heal",
         castTime: 8, 
+        cooldownData: {cooldown: 180},
         channel: true,
         cost: 27.1, 
         flat: 9037,
@@ -159,7 +160,7 @@ export const CLASSICDRUIDSPELLDB = {
         // TODO: Calculate average stack count and duration per player. On average half the raid will be hit per tick basically.
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 8 + 8,
+        buffDuration: 8,
         coeff: 0.142,
         flat: 787,
         targets: 12,

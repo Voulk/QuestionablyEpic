@@ -121,7 +121,7 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 const getClassicTrinketScore = (id, player) => {
   const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-  console.log(player);
+
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -248,8 +248,6 @@ export default function TrinketAnalysis(props) {
   ];
   const classes = useStyles();
 
-  console.log(trinketDB);
-
 
   let activeTrinkets = [];
   let finalDB = gameType === "Retail" ? filteredTrinketDB : trinketDB;
@@ -287,8 +285,6 @@ export default function TrinketAnalysis(props) {
         trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
         activeTrinkets.push(trinketAtLevels);
       }
-
-      console.log(activeTrinkets);
       
 /*
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {

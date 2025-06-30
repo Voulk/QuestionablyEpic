@@ -6,6 +6,7 @@ import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects,
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
+import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -48,6 +49,8 @@ export function initializeDruidSet(talents = druidTalents) {
       {spell: "Rolling Lifebloom", cpm: 4, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
       {spell: "Efflorescence", cpm: 2, freeCast: true, castOverride: 0}, // Rolling Efflorescence.
       {spell: "Wild Mushroom: Bloom", cpm: 2}, 
+      {spell: "Tranquility", efficiency: 0.9}, 
+
     ]
 
     if (talents.incarnation.points === 1) {
@@ -69,6 +72,7 @@ export function initializeDruidSet(talents = druidTalents) {
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Restoration Druid"});
   
     castProfile.forEach(spell => {
+      if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = druidSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;

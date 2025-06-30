@@ -22,7 +22,7 @@ export const changeLog: entry[] = [
   {
     version: "11.1 / 4.4.2",
     update: 99,
-    date: "May",
+    date: "July",
     changes: [ 
       "Heavy app-wide refactor.",
       "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
@@ -30,6 +30,7 @@ export const changeLog: entry[] = [
       "Upgrade Finder: Currently Equipped items now shown on the report.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
       "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
+      "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
   ]},
   {
     version: "11.1.5 / 4.4.2",

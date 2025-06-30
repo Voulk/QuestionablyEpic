@@ -1074,6 +1074,27 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
                                                     {mastery: 0, crit: 0, spellpower: 0, intellect: 0, haste: 0, hps: 0, mana: 0, spirit: 0};
 
   let item_stats = { ...item.stats };
+
+  if (gameType === "Classic" && item.slot === "trinket") {
+    // Try and reforge 
+    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    const trinketSecondary = Object.keys(item.stats)[0];
+
+    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+          const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
+
+          if (trinketSecondaryPos !== 0) {
+            // Not best secondary, reforge.
+            const reforgeValue = item.stats[trinketSecondary] * 0.4;
+            item_stats[trinketSecondary] = Math.round(item_stats[trinketSecondary] - reforgeValue);
+            item_stats[playerStatPriorityList[0]] = reforgeValue;
+
+            console.log("Reforging " + trinketSecondary + " to " + playerStatPriorityList[0] + " for item: " + item.name);
+          }
+
+    }
+
+  }
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);

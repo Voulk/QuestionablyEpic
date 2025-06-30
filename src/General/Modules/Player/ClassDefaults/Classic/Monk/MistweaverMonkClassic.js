@@ -39,7 +39,7 @@ export const mistweaverMonkDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["crit", "spirit", "mastery", "haste", "hit"],
 }
 
 // --------------- Monk --------------
