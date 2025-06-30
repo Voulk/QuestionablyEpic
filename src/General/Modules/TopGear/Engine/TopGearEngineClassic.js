@@ -315,7 +315,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
-        tierList = tierList.concat(getItemSet(set, setBonuses[set]));
+        tierList = tierList.concat(getItemSet(parseInt(set), setBonuses[set]));
+
       }
     }
 

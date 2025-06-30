@@ -4,6 +4,7 @@ export function getItemSet(id: number, pieces: number) {
   let temp = itemSets.filter(function (set) {
     return set.id === id;
   });
+
   if (temp.length > 0) {
     for (const [bonus, effectid] of Object.entries(temp[0].setBonuses)) {
       //console.log("Getting bonuss" + bonus + ". ID: " + effectid + ". Pieces: " + pieces);

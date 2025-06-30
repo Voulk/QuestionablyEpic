@@ -41,7 +41,7 @@ export function initializeDruidSet(talents = druidTalents) {
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", cpm: 1.5},
+      {spell: "Swiftmend", cpm: 3.5, bonus: 1.2},
       {spell: "Wild Growth", cpm: 3.8},
       {spell: "Rejuvenation", cpm: 4, fillerSpell: true, castOverride: 1.0},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
@@ -95,7 +95,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const castBreakdown = {};
     const fightLength = 6;
     const talents = druidBaseline.talents || druidTalents;
-    const castProfile = druidBaseline.castProfile;
+    const castProfile = JSON.parse(JSON.stringify(druidBaseline.castProfile));
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -108,9 +108,14 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     }
 
     // Take care of any extras.
-    if (tierSets.includes("Druid T13-2")) {
-      // Left in as templates but old tier sets now removed.
+    if (tierSets.includes("Druid T14-2")) {
+      getSpellEntry(castProfile, "Rejuvenation").cost *= 0.9; // T14-2 - Rejuv cost reduction
     }
+    if (tierSets.includes("Druid T14-4")) {
+      // The CDR on Swiftmend is also a big deal for SotF. We should probably just move SotF code here. 
+      getSpellEntry(castProfile, "Swiftmend").cpm = 3.5 * 1.2; 
+    }
+
 
     // Soul of the Forest
     if (talents.soulOfTheForest.points === 1) {

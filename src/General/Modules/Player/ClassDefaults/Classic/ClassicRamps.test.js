@@ -77,7 +77,7 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        //buildStatChart(profile, playerData, activeStats, testSettings);
+        buildStatChart(profile, playerData, activeStats, testSettings);
     })
 
     
@@ -88,9 +88,9 @@ const buildStatChart = (profile, playerData, activeStats, testSettings) => {
     
     [''].forEach(stat => {
         const results = [];
-        for (let i = 0; i < 3600; i += 20) {
+        for (let i = 0; i < 4200; i += 20) {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, {...activeStats, 'crit': i}, testSettings);
+            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]);
             results.push(Math.round(score));
         }
         console.log("==" + stat + "==")
