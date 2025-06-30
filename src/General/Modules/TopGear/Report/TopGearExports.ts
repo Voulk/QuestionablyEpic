@@ -73,6 +73,15 @@ const wowheadCodes = {
   725: '[icon name=inv_mushanbeastmount][/icon][npc=62346] [i](World Boss)[/i]', // Saylis's Warband (Galleon)
 
 
+  1: "[skill=197] [i](BoE)[/i]", // Tailoring
+  2: "[skill=165] [i](BoE)[/i]", // Leatherworking
+  3: "[skill=164] [i](BoE)[/i]", // Blacksmithing
+  4: "[skill=202] [i](BoP)[/i]", // Engineering
+  5: "[skill=773] [i](BoE)[/i]", // Inscription
+  6: "[skill=171] [i](BoP)[/i]", // Alchemy
+  7: "[skill=155]", // Jewelcrafting
+
+
 }
 
 const wowheadClassColors = {

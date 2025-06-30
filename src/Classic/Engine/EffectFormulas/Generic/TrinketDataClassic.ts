@@ -108,6 +108,24 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Scroll of Revered Ancestors", 
+    effects: [
+      { 
+        value: {489: 3595},
+        stat: "spirit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
 
   {
     name: "Zen Alchemist Stone",
