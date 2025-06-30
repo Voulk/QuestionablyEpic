@@ -109,7 +109,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
     }
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
-      else if (item.source.encounterId === -8) source = `[icon name="inv_legendarygem_05"][/icon]{item.source.cost} [currency=3350]}`
+      else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]`
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
