@@ -3,7 +3,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 export default function MessageOfTheDay() {
   //prettier-ignore
   const messageOfTheDay: string[] = [
-    "The new DISC belt is in, but expect multiple options to be very close in throughput.",
+    "Mists of Pandaria support is live but light. Mistweaver support and more will go live when the expansion launches!",
   ]
 ;
   if (messageOfTheDay.length === 0) return;
