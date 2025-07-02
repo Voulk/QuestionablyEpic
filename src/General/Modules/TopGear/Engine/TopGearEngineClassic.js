@@ -800,7 +800,6 @@ function getSlotLengths(itemList, wepCombos) {
     Finger: 0,
     Trinket: 0,
     Weapon: 0,
-    'Relics & Wands': 0,
   };
 
   for (var i = 0; i < itemList.length; i++) {
@@ -835,7 +834,6 @@ function createSets(itemList, rawWepCombos, filter) {
     Finger: 0,
     Trinket: 0,
     Weapon: 0,
-    'Relics & Wands': 0,
   };
 
   let splitItems = {
@@ -852,7 +850,6 @@ function createSets(itemList, rawWepCombos, filter) {
     Finger: [],
     Trinket: [],
     WeaponSet: [],
-    'Relics & Wands': [],
   };
 
   // Test
@@ -918,9 +915,6 @@ function createSets(itemList, rawWepCombos, filter) {
                                   if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id
                                     && trinket < trinket2) {
 
-                                      for (var relics = 0; relics < slotLengths['Relics & Wands']; relics++) {
-                                        softScore.relics = splitItems['Relics & Wands'][relics].softScore;  
-
                                         let includedItems = [
                                           splitItems.Head[head],
                                           splitItems.Neck[neck],
@@ -937,7 +931,6 @@ function createSets(itemList, rawWepCombos, filter) {
                                           splitItems.Trinket[trinket],
                                           splitItems.Trinket[trinket2],
                                           wepCombos[weapon][0],
-                                          splitItems['Relics & Wands'][relics],
                                         ];
                                         if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
                                         let sumSoft = sumScore(softScore);
@@ -966,7 +959,6 @@ function createSets(itemList, rawWepCombos, filter) {
             }
           }
         }
-      }
     }
   }
 

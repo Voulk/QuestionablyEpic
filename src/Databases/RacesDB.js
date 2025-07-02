@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 
+// This file is probably due a revamp at some point but low priority.
 export const raceDB = [
   {
     name: {
@@ -278,17 +278,8 @@ export const raceDB = [
   },
 ];
 
-export const getTranslatedRaceName = (string, currentLanguage) => {
-  if (string === "Default" || string === "" || currentLanguage === undefined) return string;
-  else {
-    let translatedName = raceDB
-      .filter((obj) => {
-        return obj.id === string;
-      })
-      .map((obj) => obj.name[currentLanguage])[0]
-      .toString();
-
-  return translatedName;
-  }
-
+export const getTranslatedRaceName = (id, currentLanguage) => {
+  if (!id || id === "Default" || !currentLanguage) return id;
+  const match = raceDB.find((race) => race.id === id);
+  return match?.name[currentLanguage] ?? match?.name.en ?? id;
 };
