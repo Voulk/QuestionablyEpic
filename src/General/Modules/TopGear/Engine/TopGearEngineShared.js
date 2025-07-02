@@ -334,6 +334,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
     return {stats: compiledGems, gems: topGearGems};
 }
 
+export const getRaceBonus = (race, bonus_stats) => {
+  switch (race) {
+    case "Blood Elf":
+      return bonus_stats;
+  }
+}
+
 /*
 export function addOptimizedDruidSets(itemSets) {
   for (let i = 0; i < itemSets.length; i++) {

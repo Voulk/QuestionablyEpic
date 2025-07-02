@@ -793,7 +793,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
   const slot = itemData.slot;
   // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
 
-  if (itemLevel === itemData.level) {
+  if (itemLevel === itemData.itemLevel) {
     return itemData.stats;
   }
 
@@ -820,8 +820,12 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
       stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
     else if (key === "intellect") {
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;;
-    } else if (key === "stamina") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;
+    } 
+    else if (key === "spellpower") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1)
+    }
+    else if (key === "stamina") {
       // todo
     }
   }
@@ -875,7 +879,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
 export function buildStatString(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit", "weaponSwingSpeed", "averageDamage"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }

@@ -54,7 +54,7 @@ export function initializeMonkSet(talents = monkTalents) {
       {spell: "Revival", efficiency: 0.8 },
 
       {spell: "Melee", cpm: 0 }, // TODO
-      {spell: "Jab", cpm: 0 }, // TODO
+      {spell: "Jab", cpm: 1 }, // TODO
       {spell: "Tiger Palm", cpm: 0, bonus: 2.5 }, // TODO
 
       {spell: "Uplift", cpm: 0 }, // TODO
@@ -84,7 +84,8 @@ export function initializeMonkSet(talents = monkTalents) {
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
-  const castProfile = specBaseline.castProfile;
+  const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
+  const reporting = false;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;
@@ -261,11 +262,14 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     totalHealing += (60 * statProfile.hps || 0)
 
     // Print stuff.
-    printHealingBreakdown(healingBreakdown, totalHealing);
-    printHealingBreakdown(damageBreakdown, totalDamage);
-    console.log("DPS: " + totalDamage / 60);
-    reportingData.timeAvailable = timeAvailable;
-    console.log(reportingData);
+    if (reporting) {
+      printHealingBreakdown(healingBreakdown, totalHealing);
+      printHealingBreakdown(damageBreakdown, totalDamage);
+      console.log("DPS: " + totalDamage / 60);
+      reportingData.timeAvailable = timeAvailable;
+    }
+
+    //console.log(reportingData);
     //console.log(castProfile);
 
     return totalHealing;
