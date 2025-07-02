@@ -16,6 +16,15 @@ interface entry {
 
 export const changeLog: entry[] = [
   {
+    version: "11.1.7 / 5.5.0",
+    update: 19,
+    date: "July 1",
+    changes: [ 
+      "Classic: Transitioned to prepatch. Support is light.",
+      "Updated Auto-add buttons to 684 item level.",
+      "Added a few missing items.",
+    ]},
+  {
     version: "11.1.7 / 4.4.2",
     update: 18,
     date: "June 24",
