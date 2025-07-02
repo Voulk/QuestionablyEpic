@@ -15,24 +15,25 @@ export const discPriestDefaults = {
 
     },
     defaultStatWeights: {
-        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+        // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO
         spellpower: 1,
-        intellect: 2.668,
-        crit: 0.545,
-        mastery: 0.461,
-        haste: 0.914,
-        spirit: 0.711,
-        mp5: 1.028,
-        hps: 0.7, // 
+        intellect: 1.11,
+        crit: 0.43,
+        mastery: 0.347,
+        haste: 0.25,
+        mp5: 0.614,
+        spirit: 0.402,
+        hit: 0,
+        hps: 0.458, // 
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["Haste", "Crit", "Mastery", "Spirit"],
+    autoReforgeOrder: ["Crit", "Spirit", "Mastery", "Haste"],
 
 }
 
-export function scoreDiscSet(baseline, statProfile, player, userSettings, tierSets = []) { 
+export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = []) { 
   console.log("Scoring Disc Set");
   let score = 0;
   const healingBreakdown = {};

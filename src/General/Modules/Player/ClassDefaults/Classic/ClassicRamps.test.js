@@ -42,13 +42,13 @@ describe("Test APL", () => {
             hps: 0,
         }
 
-        const spec = "Restoration Druid"
-        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
-        const revisedTalents = {...druidTalents};
+        const spec = "Discipline Priest"
+        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const revisedTalents = {...discTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = restoDruidDefaults;
+        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = discPriestDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -77,7 +77,7 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        buildStatChart(profile, playerData, activeStats, testSettings);
+        //buildStatChart(profile, playerData, activeStats, testSettings);
     })
 
     

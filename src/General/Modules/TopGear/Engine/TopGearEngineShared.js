@@ -312,10 +312,10 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
-        socketedGemStats.push({haste: 208});
-        socketedGemStats.push({spirit: 208});
-        item.socketedGems.push(59479);
-        item.socketedGems.push(59496);
+        socketedGemStats.push({haste: 600});
+        socketedGemStats.push({spirit: 600});
+        item.socketedGems.push(77542);
+        item.socketedGems.push(77546);
       }
 
       topGearGems[item.id] = item.socketedGems;

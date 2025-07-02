@@ -496,6 +496,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
     }
+    else if (player.spec === "Mistweaver Monk Classic") {
+      // Monks require us to provide some information on our weapon too.
+      const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
+      setStats.weaponSwingSpeed = 0
+      setStats.weaponDamage = 0;
+    }
 
     if (castModel.scoreSet) {
       hardScore = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
