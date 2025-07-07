@@ -5,7 +5,7 @@ import each from "jest-each";
 
 describe("Test Mistweaver Spell Values", () => {
     const errorMargin = 2; // There's often some blizzard rounding hijinx in spells. If our formulas are within 2 (a fraction of a percent) then we are likely calculating it correctly.
-    const userSettings = {};
+    const userSettings = {includeOverheal: "No"};
     const activeStats = {
         intellect: 1067,
         spirit: 6000,
@@ -36,7 +36,7 @@ describe("Test Mistweaver Spell Values", () => {
         hps: 0,
     }
 
-    const init = initializeMonkSet();
+    const init = initializeMonkSet({}, true);
     const statPercentages = convertStatPercentages(activeStats, 1, "Mistweaver Monk");
     const statPercentagesOneHanded = convertStatPercentages(oneHandedStats, 1, "Mistweaver Monk");
     const armor = getEnemyArmor(statPercentages.armorReduction);
@@ -72,6 +72,18 @@ describe("Test Mistweaver Spell Values", () => {
     `.test("Base Value Check - Mistweaver Weapon Damage spells (1H): $spellName", ({ spellName, expectedResult }) => {
 
         const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentagesOneHanded, "Mistweaver Monk", userSettings)  / armor;
+        
+        expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
+    });
+
+    // Test Regular Spells.
+    each`
+        spellName                     | expectedResult
+        ${"Surging Mist"}             | ${(32548 + 35652) / 2}
+
+    `.test("Base Value Check - Mistweaver Healing Spells: $spellName", ({ spellName, expectedResult }) => {
+
+        const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings);
         console.log(spellName, value, expectedResult);
         expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
     });

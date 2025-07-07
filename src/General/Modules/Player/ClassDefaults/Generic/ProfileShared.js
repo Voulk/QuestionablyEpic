@@ -68,12 +68,7 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
 // Classic
 export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
 
-    
-    // Seems like a lot to call every spell. Maybe we can put these somewhere else and pass them. 
     const genericMult = 1;
-    //const critPercentage = 1 + getCritPercentage(statProfile, spec); // +4% crit
-    //const hasteSetting = getSetting(settings, "hasteBuff");
-    //const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
