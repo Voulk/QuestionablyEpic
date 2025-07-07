@@ -112,11 +112,11 @@ export const CLASSICMONKSPELLDB = {
         buffType: "damage",
         coeff: 0,
         tickData: {tickRate: 0.75},
+        cooldownData: {cooldown: 6, charges: 1},
         
-        weaponScaling: 1.59, // Might have a second multiplier of 0.880503
+        weaponScaling: 1.59 * 0.880503, // Might have a second multiplier of 0.880503
         buffDuration: 6,
         targets: 1, // Can hit everyone so TODO.
-        expectedOverheal: 0.3,
         secondaries: ['crit']
     },
     {
@@ -127,7 +127,7 @@ export const CLASSICMONKSPELLDB = {
         tickData: {tickRate: 0.75},
         masteryScalar: 0.1,
         buffDuration: 6,
-        targets: 1, // Can hit everyone so TODO.
+        targets: 6, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
         secondaries: ['crit']
     }],
@@ -376,10 +376,10 @@ export const monkTalents = {
     }}, 
 
     // T3
-    rushingJadeWind: {points: 0, maxPoints: 1, icon: "ability_monk_rushingjadewind", id: 116847, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    rushingJadeWind: {points: 1, maxPoints: 1, icon: "ability_monk_rushingjadewind", id: 116847, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
-    invokeXuen: {points: 1, maxPoints: 1, icon: "ability_monk_summontigerstatue", id: 123904, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    invokeXuen: {points: 0, maxPoints: 1, icon: "ability_monk_summontigerstatue", id: 123904, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
     chiTorpedo: {points: 0, maxPoints: 1, icon: "ability_monk_quitornado", id: 115008, select: true, tier: 3, runFunc: function (state, spellDB, points) {

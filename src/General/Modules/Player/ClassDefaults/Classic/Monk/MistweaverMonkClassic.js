@@ -63,6 +63,9 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
 
     const adjSpells = getTalentedSpellDB("Mistweaver Monk", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Mistweaver Monk"});
     
+    if (talents.rushingJadeWind.points === 1) {
+      castProfile.push({spell: "Rushing Jade Wind", efficiency: 0.6});
+    }
 
     castProfile.forEach(spell => {
       if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
@@ -100,7 +103,7 @@ export const convertStatPercentages = (statProfile, hasteBuff, spec) => {
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
-  const reporting = false;
+  const reporting = true;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;

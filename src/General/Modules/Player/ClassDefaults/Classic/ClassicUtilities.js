@@ -83,8 +83,10 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
                 slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
                 slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
             }
-            slice.coeff *= (1 + auraHealingBuff[state.spec]);
-            slice.flat *= (1 + auraHealingBuff[state.spec]);
+            if (slice.type === "heal" || slice.buffType === "heal") {
+                slice.coeff *= (1 + auraHealingBuff[state.spec]);
+                slice.flat *= (1 + auraHealingBuff[state.spec]);
+            }
 
         });
     }

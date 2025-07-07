@@ -31,7 +31,7 @@ describe("Test APL", () => {
             intellect: 10267,
             spirit: 6000,
             spellpower: 5151,
-            weaponDamage: 1236,
+            averageDamage: 5585,
             weaponSwingSpeed: 3.4,
             haste: 1000,
             crit: 1000,
@@ -42,13 +42,13 @@ describe("Test APL", () => {
             hps: 0,
         }
 
-        const spec = "Discipline Priest"
+        const spec = "Mistweaver Monk"
         const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
-        const revisedTalents = {...discTalents};
+        const revisedTalents = {...monkTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = discPriestDefaults;
+        const playerData = { spec: spec, spells: monkSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = mistweaverMonkDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);

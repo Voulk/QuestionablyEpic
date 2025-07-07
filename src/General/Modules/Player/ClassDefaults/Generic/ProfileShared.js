@@ -84,7 +84,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     let spellOutput = 0;
     if (spellName === "Melee") {
         // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 
-        spellOutput = (statPercentages.weaponDamageMelee + statPercentages.attackpower / 14 * statPercentages.weaponAttackSpeed)
+        spellOutput = (statPercentages.weaponDamageMelee + statPercentages.attackpower / 14 * statPercentages.weaponSwingSpeed)
                         * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);
     }
     else if (spell.weaponScaling) {

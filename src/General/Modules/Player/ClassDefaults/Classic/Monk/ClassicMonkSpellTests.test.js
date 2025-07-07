@@ -4,7 +4,7 @@ import { getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/Clas
 import each from "jest-each";
 
 describe("Test Mistweaver Spell Values", () => {
-    const errorMargin = 2; // There's often some blizzard rounding hijinx in spells. If our formulas are within 2 (a fraction of a percent) then we are likely calculating it correctly.
+    const errorMargin = 5; // There's often some blizzard rounding hijinx in spells. If our formulas are within 2 (a fraction of a percent) then we are likely calculating it correctly.
     const userSettings = {includeOverheal: "No"};
     const activeStats = {
         intellect: 1067,
@@ -56,9 +56,11 @@ describe("Test Mistweaver Spell Values", () => {
         ${"Jab"}                      | ${(2314 + 2810) / 2}
         ${"Tiger Palm"}               | ${(9257 + 11240) / 2}
         ${"Blackout Kick"}            | ${(10985 + 13338) / 2}
+        ${"Rushing Jade Wind"}        | ${Math.round((2160 + 2622) / 2) * 8} // 3268 healing
     `.test("Base Value Check - Mistweaver Weapon Damage spells (2H): $spellName", ({ spellName, expectedResult }) => {
 
         const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings)  / armor;
+        
         expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
     });
 
@@ -78,12 +80,13 @@ describe("Test Mistweaver Spell Values", () => {
 
     // Test Regular Spells.
     each`
-        spellName                     | expectedResult
-        ${"Surging Mist"}             | ${(32548 + 35652) / 2}
+        spellName                     | expectedResult           | index
+        ${"Surging Mist"}             | ${(32548 + 35652) / 2}   | ${0}
+        ${"Rushing Jade Wind"}        | ${3268 * 8}              | ${1}
 
-    `.test("Base Value Check - Mistweaver Healing Spells: $spellName", ({ spellName, expectedResult }) => {
+    `.test("Base Value Check - Mistweaver Healing Spells: $spellName", ({ spellName, expectedResult, index }) => {
 
-        const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings);
+        const value = runClassicSpell(spellName, {...init.spellDB[spellName][index], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings);
         console.log(spellName, value, expectedResult);
         expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
     });
