@@ -87,7 +87,12 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     const targetCount = spell.targets ? spell.targets : 1;
 
     let spellOutput = 0;
-    if (spell.weaponScaling) {
+    if (spellName === "Melee") {
+        // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 
+        spellOutput = (statPercentages.weaponDamageMelee + statPercentages.attackpower / 14 * statPercentages.weaponAttackSpeed)
+                        * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);
+    }
+    else if (spell.weaponScaling) {
         // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
                         * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);

@@ -78,6 +78,21 @@ export function initializeMonkSet(talents = monkTalents) {
     //console.log(JSON.stringify(adjSpells));
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents };
   }
+
+export const convertStatPercentages = (statProfile, hasteBuff, spec) => {
+  const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+  return {
+      spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
+      crit: 1 + getCritPercentage(statProfile, spec),
+      haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
+      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
+      weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
+      weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
+      weaponSwingSpeed: statProfile.weaponSwingSpeed,
+      attackpower: (statProfile.intellect + statProfile.spellpower - 10) * 2,
+      armorReduction: 0.7,
+    }
+}
   
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
 // We want to run a CastProfile for each spell but we can optimize that slightly.
@@ -96,20 +111,12 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const fightLength = 6;
     const talents = specBaseline.talents || monkTalents;
     const eminenceOverheal = 0.35;
+    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-    const statPercentages = {
-      spellpower: statProfile.intellect + statProfile.spellpower,
-      crit: 1 + getCritPercentage(statProfile, spec),
-      haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
-      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
-      weaponDamage: statProfile.weaponDamage,
-      weaponSwingSpeed: statProfile.weaponSwingSpeed,
-      attackpower: (statProfile.intellect + statProfile.spellpower) * 2,
-      armorReduction: 0.7,
-    }
+    const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
 
     reportingData.statPercentages = statPercentages;
 
@@ -141,7 +148,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
 
     // Melee swings (proc Eminence)
-    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+    
     const meleeWastage = 0.8;
     getSpellEntry(castProfile, "Melee").cpm = (60 / (isTwoHander ? statProfile.weaponSwingSpeed / 1.4 : statProfile.weaponSwingSpeed)) * meleeWastage * statPercentages.haste; 
     if (!isTwoHander) getSpellEntry(castProfile, "Melee").bonus = 1.7;
