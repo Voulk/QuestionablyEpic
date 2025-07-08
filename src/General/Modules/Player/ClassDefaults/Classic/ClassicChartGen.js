@@ -59,7 +59,7 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
         {cat: "Chi Spenders", tag: "Uplift (per ReM)", seq: ["Uplift"], preBuffs: [], multiplier: 1},
 
         {cat: "Cooldowns", tag: "Revival (25t)", seq: ["Revival"], preBuffs: []},
-        
+        {cat: "Cooldowns", tag: "Xuen", seq: ["Invoke Xuen, the White Tiger"], preBuffs: []},
 
         {cat: "Combos", tag: "Jab -> Tiger Palm", seq: ["Jab", "Tiger Palm"], preBuffs: []},
         

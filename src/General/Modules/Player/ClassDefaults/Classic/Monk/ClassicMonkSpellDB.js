@@ -97,7 +97,7 @@ export const CLASSICMONKSPELLDB = {
         type: "classic periodic",
         buffType: "damage",
         coeff: 0,
-        tickData: {tickRate: 0.75},
+        tickData: {tickRate: 0.75, hasteScaling: false},
         
         weaponScaling: 1.59 * 1.10063, // Might have a second multiplier of 0.880503
         buffDuration: 2.25,
@@ -110,7 +110,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "heal",
         flat: 2808, //2809,
         coeff: 0.096, //0.1152 / 1.2,
-        tickData: {tickRate: 0.75},
+        tickData: {tickRate: 0.75, hasteScaling: false},
         masteryScalar: 0.1,
         buffDuration: 2.25,
         targets: 1, // Can hit everyone so TODO.
@@ -128,7 +128,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "damage",
         damageType: "physical",
         coeff: 0,
-        tickData: {tickRate: 0.75},
+        tickData: {tickRate: 0.75, hasteScaling: false},
         cooldownData: {cooldown: 6, charges: 1},
         
         weaponScaling: 1.59 * 0.880503, // Might have a second multiplier of 0.880503
@@ -141,7 +141,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "heal",
         flat: 0.8 * 2808,
         coeff: 0.8 * 0.096,
-        tickData: {tickRate: 0.75},
+        tickData: {tickRate: 0.75, hasteScaling: false},
         masteryScalar: 0.1,
         buffDuration: 6,
         targets: 6, // Can hit everyone so TODO.
