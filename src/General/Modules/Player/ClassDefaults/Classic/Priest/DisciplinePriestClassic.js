@@ -1,5 +1,5 @@
 
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents} from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents} from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
@@ -37,6 +37,7 @@ export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = [])
   console.log("Scoring Disc Set");
   let score = 0;
   const healingBreakdown = {};
+  const damageBreakdown = {};
   const fightLength = 6;
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1) * (hasteSetting.includes("Dark Intent") ? 1.03 : 1)
@@ -49,40 +50,6 @@ export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = [])
   // Take care of any extras.
   if (tierSets.includes("Priest T11-4")) {
     statProfile.spirit += 540;
-  }
-  if (tierSets.includes("Priest T12-2")) { 
-    // You regenerate 2% of your base mana every 5 seconds, basically in perpetuity by casting any helpful healing spell.
-    statProfile.mp5 = (statProfile.mp5 || 0) + 0.02 * 20590;
-  }
-  if (tierSets.includes("Priest T12-4")) {
-    // 5s ticking heal on a 45s cooldown.
-    const tierDuration = 5
-    const expectedOverheal = 0.2;
-    statProfile.hps = (statProfile.hps || 0) + (9250 + 10750) / 2 * tierDuration * (1 - expectedOverheal) / 55;
-  }
-
-  if (tierSets.includes("Priest T13-2")) {
-    // 25% cost reduction for 23s after pressing PI or DH.
-    // Ultimately you often use PI on a DPS which means you can't save it as well for high healing phases. 
-    const spellsCast = {
-        "Holy Fire": 2,
-        "Prayer of Healing": 4,
-        "Power Word: Shield": 3,
-        "Smite": Math.floor(23-(2*2+4*2.5+3*1.5)/getHaste(statProfile, "Classic")) * 0.9,
-    }
-
-    const manaSaved = Object.keys(spellsCast).reduce((total, spellName) => {
-        const spell = baseline.castProfile.find(spell => spell.spell === spellName);
-        
-        if (!spell) return total; // Spell can't be found, ignore.
-
-        const spellCost = spell.cost;
-        const manaSavedForSpell = spellCost * spellsCast[spellName] * 0.25;
-
-
-        return total + manaSavedForSpell;
-    }, 0); // Start accumulating from 0
-    statProfile.mp5 = (statProfile.mp5 || 0) + (manaSaved / 120 * 5);
   }
 
   // Calculate filler CPM
@@ -185,7 +152,7 @@ export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = [])
       healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
     })
 
-  return score;
+  return {damage: 0, healing: score};
 }
 
 export function initializeDiscSet() {

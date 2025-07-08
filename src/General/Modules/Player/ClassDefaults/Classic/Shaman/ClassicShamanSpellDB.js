@@ -30,7 +30,7 @@ const glyphs = {
 
 }
 
-export const compiledShamanTalents = {
+export const shamanTalents = {
     ...offspecTalents,
     ...specTalents,
     ...glyphs,

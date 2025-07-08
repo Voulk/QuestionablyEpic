@@ -225,8 +225,8 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-
-      return getGenericStatEffect(data[0], itemLevel);
+      return bonus_stats;
+      //return getGenericStatEffect(data[0], itemLevel);
     }
   },
     {

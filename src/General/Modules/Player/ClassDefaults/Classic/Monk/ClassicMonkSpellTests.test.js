@@ -1,5 +1,5 @@
-import { runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
-import { initializeMonkSet, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { initializeMonkSet } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 import { getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import each from "jest-each";

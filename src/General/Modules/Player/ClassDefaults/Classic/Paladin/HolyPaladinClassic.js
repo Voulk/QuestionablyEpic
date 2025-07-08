@@ -246,5 +246,5 @@ export function initializePaladinSet() {
       console.log("Score: " + score / 60);
   
   
-    return score;
+    return {damage: 0, healing: score};
   }

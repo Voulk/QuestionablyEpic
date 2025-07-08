@@ -173,7 +173,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - ((props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -427,8 +427,10 @@ export default function TopGear(props: any) {
         new: false,
         contentType: report.contentType,
         effectList: report.itemSet.effectList, 
+       
         itemSet: {itemList: [],
                   setStats: report.itemSet.setStats,
+                  metrics: report.itemSet.metrics,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
                   socketedGems: report.itemSet.gems || [],
@@ -477,7 +479,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-  
+      console.log(shortReport);
       sendReport(shortReport);
       return shortReport;
 
@@ -541,7 +543,7 @@ export default function TopGear(props: any) {
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
         const allItemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
         const workerPromises = []
-        const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
+        const workerCount = (props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 4 : 1;
         const chunkSize = allItemSets.length / workerCount;
         //console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
@@ -569,11 +571,31 @@ export default function TopGear(props: any) {
             // Build Differentials
             let differentials = [];
             let primeSet = mergedResults[0];
+
+            let diffsAdded = 0;
+            let diffsChecked = 0;
+            let setsAdded: Set<String> = new Set<String>();
+            while (diffsAdded < CONSTRAINTS.Shared.topGearDifferentials && (diffsChecked + 1) < mergedResults.length) {
+                const differential = buildDifferential(mergedResults[diffsChecked + 1], primeSet, props.player, contentType)
+
+                if (differential.items.length > 0 || differential.gems.length > 0) {
+                  const diffIDs = differential.items.map((item: Item) => item.id).sort((a, b) => a - b).join(",")
+
+                  if (!setsAdded.has(diffIDs)) {
+                    setsAdded.add(diffIDs)
+                    differentials.push(differential);
+                    diffsAdded++;
+                  }
+
+                }
+                diffsChecked++;
+            }
+            /*  
             for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, mergedResults.length); i++) {
               const differential = buildDifferential(mergedResults[i], primeSet, props.player, contentType);
               if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
 
-            }
+            }*/
             //itemSets[0].printSet()
 
             let result = new TopGearResult(mergedResults[0], differentials, "Raid");

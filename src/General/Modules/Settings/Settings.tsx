@@ -53,6 +53,7 @@ export default function Settings(props : any) {
               singleUpdate={props.singleUpdate}
             />
 
+
         </AccordionDetails>
       </Accordion>
     </div>

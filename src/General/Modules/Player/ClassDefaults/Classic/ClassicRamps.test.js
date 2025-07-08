@@ -5,7 +5,7 @@ import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classi
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./Priest/ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
@@ -56,7 +56,7 @@ describe("Test APL", () => {
         }
         else if (testSuite === "TopGearProfile") {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, playerData.stats, testSettings, []);
+            const score = profile.scoreSet(init, playerData.stats, testSettings, []).healing;
             console.log(score / 60);
         }
         else if (testSuite === "Stat") {
@@ -90,7 +90,7 @@ const buildStatChart = (profile, playerData, activeStats, testSettings) => {
         const results = [];
         for (let i = 0; i < 4200; i += 20) {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]);
+            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
             results.push(Math.round(score));
         }
         console.log("==" + stat + "==")

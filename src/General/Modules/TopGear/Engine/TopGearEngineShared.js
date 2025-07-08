@@ -208,7 +208,8 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
-                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget}
+                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget,
+                        sha: adjusted_weights.intellect * 500 }
 
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
