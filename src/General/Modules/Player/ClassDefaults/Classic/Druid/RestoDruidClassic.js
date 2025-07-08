@@ -175,5 +175,5 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     score += (60 * statProfile.hps || 0)
     //printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
 
-    return score;
+    return {damage: 0, healing: score};
 }

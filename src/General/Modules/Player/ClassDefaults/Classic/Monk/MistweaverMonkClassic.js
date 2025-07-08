@@ -112,7 +112,7 @@ export const convertStatPercentages = (statProfile, hasteBuff, spec) => {
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
-  const reporting = true;
+  const reporting = false;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;
@@ -291,5 +291,5 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     //console.log(reportingData);
     //console.log(castProfile);
 
-    return totalHealing;
+    return {damage: totalDamage, healing: totalHealing};
 }

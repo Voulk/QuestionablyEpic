@@ -511,7 +511,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
 
     if (castModel.scoreSet) {
-      hardScore = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
+      const result = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
+      builtSet.metrics = result; // HPS & DPS.
+      if (getSetting(playerSettings, "metric") === "HPS + DPS") hardScore = result.healing + result.damage;
+      else hardScore = result.healing;
     }
     else {
       console.error("Invalid Scoring Detected. No scoring function.");

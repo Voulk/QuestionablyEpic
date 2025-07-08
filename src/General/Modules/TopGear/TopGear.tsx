@@ -173,7 +173,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - ((props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -427,8 +427,10 @@ export default function TopGear(props: any) {
         new: false,
         contentType: report.contentType,
         effectList: report.itemSet.effectList, 
+       
         itemSet: {itemList: [],
                   setStats: report.itemSet.setStats,
+                  metrics: report.itemSet.metrics,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
                   socketedGems: report.itemSet.gems || [],
@@ -477,7 +479,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-  
+      console.log(shortReport);
       sendReport(shortReport);
       return shortReport;
 

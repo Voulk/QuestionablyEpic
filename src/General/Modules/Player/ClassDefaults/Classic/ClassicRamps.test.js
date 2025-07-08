@@ -56,7 +56,7 @@ describe("Test APL", () => {
         }
         else if (testSuite === "TopGearProfile") {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, playerData.stats, testSettings, []);
+            const score = profile.scoreSet(init, playerData.stats, testSettings, []).healing;
             console.log(score / 60);
         }
         else if (testSuite === "Stat") {
@@ -90,7 +90,7 @@ const buildStatChart = (profile, playerData, activeStats, testSettings) => {
         const results = [];
         for (let i = 0; i < 4200; i += 20) {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]);
+            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
             results.push(Math.round(score));
         }
         console.log("==" + stat + "==")
