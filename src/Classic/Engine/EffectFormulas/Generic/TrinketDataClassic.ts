@@ -49,7 +49,7 @@ Phase Two:
 Phase Three: 
 */
 const raidTrinketData: Effect[] = [
-  {
+    {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                             TrinketName                                        */
     /* ---------------------------------------------------------------------------------------------- */
@@ -58,6 +58,7 @@ const raidTrinketData: Effect[] = [
     name: "TrinketName",
     effects: [
       { // 
+        stat: "haste",
         value: {100: 0, 200: 0}, 
         cooldown: 120,
         duration: 20,
@@ -71,6 +72,181 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+    {
+    name: "Blossom of Pure Snow", 
+    effects: [
+      { 
+        value: {489: 3595},
+        stat: "crit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Vial of Ichorous Blood", 
+    effects: [
+      { 
+        value: {450: 3757, 463: 4241},
+        stat: "spirit",
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Scroll of Revered Ancestors", 
+    effects: [
+      { 
+        value: {489: 3595},
+        stat: "spirit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+
+  {
+    name: "Zen Alchemist Stone",
+    effects: [
+      { // Zen Alchemist Stone
+        value: {458: 4353, 200: 0}, 
+        ppm: getEffectPPM(0.25, 55, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+      {
+    name: "Qin-xi's Polarizing Seal",
+    effects: [
+      { 
+        value: {476: 2866, 489: 3236, 502: 3653}, 
+        ppm: getEffectPPM(0.15, 55, 1.25),
+        stat: "intellect",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+        {
+    name: "Empty Fruit Barrel",
+    effects: [
+      { 
+        value: {463: 3386}, 
+        ppm: getEffectPPM(0.1, 30, 1.25),
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+    {
+    name: "Spirits of the Sun",
+    effects: [
+      { 
+        value: {483: 6121, 496: 6908, 509: 7796}, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "spirit",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+      {
+    name: "Relic of Chi-Ji",
+    effects: [
+      { 
+        value: {476: 3027}, 
+        ppm: getEffectPPM(0.2, 55, 1.1),
+        stat: "spirit",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+        {
+    name: "Relic of Yu'lon",
+    effects: [
+      { 
+        value: {476: 3027}, 
+        ppm: getEffectPPM(0.2, 55, 1.5),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+    {
+    name: "Price of Progress",
+    effects: [
+      { // 
+        value: {463: 5082}, 
+        stat: "mp5",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mp5 = data[0].value[itemLevel] / 55 * 0.9 * 5;
+
+      return bonus_stats;
+    }
+  },
+
+
   {
     name: "Reflection of the Light", 
     effects: [

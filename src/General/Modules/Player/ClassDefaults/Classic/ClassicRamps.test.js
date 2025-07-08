@@ -4,6 +4,7 @@ import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, r
 import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaultAPL"
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
+import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
@@ -12,6 +13,7 @@ import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
+import { mistweaverMonkDefaults } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -26,26 +28,27 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 10267,
-            spirit: 6654,
-            spellpower: 5151,
-            haste: 1247,
-            crit: 1698,
-            mastery: 2319,
+            intellect: 21000,
+            spirit: 6000,
+            spellpower: 7907,
+            averageDamage: 5585,
+            weaponSwingSpeed: 3.4,
+            haste: 2000,
+            crit: 2000,
+            mastery: 2000,
             stamina: 5000,
             mp5: 0,
             critMult: 2,
             hps: 0,
         }
 
-        const spec = "Restoration Druid"
-        const testSuite = "TopGearProfile";
-        const revisedTalents = {...druidTalents};
-        revisedTalents.incarnation.points = 0;
+        const spec = "Mistweaver Monk"
+        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const revisedTalents = {...monkTalents};
 
-        const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = restoDruidDefaults;
+        const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
+        const playerData = { spec: spec, spells: monkSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = mistweaverMonkDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -74,17 +77,27 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
+        //buildStatChart(profile, playerData, activeStats, testSettings);
     })
+
+    
 
 });
 
-const buildStatChart = (baseline, activeStats, testSettings) => {
-    const results = [];
-    for (let i = 0; i < 2100; i += 10) {
-        const score = scorePaladinSet(baseline, {...activeStats, spirit: i}, {}, testSettings);
-        results.push(Math.round(score));
-    }
-    console.log(JSON.stringify(results));
+const buildStatChart = (profile, playerData, activeStats, testSettings) => {
+    
+    [''].forEach(stat => {
+        const results = [];
+        for (let i = 0; i < 4200; i += 20) {
+            const init = profile.initializeSet(playerData.talents);
+            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]);
+            results.push(Math.round(score));
+        }
+        console.log("==" + stat + "==")
+        console.log(JSON.stringify(results));
+
+    });
+
 }
 
 // We're going to mostly compare these against small in-game scenarios. While this might be longer than comparing if Renewing Breath increased DB healing by 30%,

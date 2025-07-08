@@ -57,13 +57,15 @@ export function runClassicStatSuite(profile) {
     const fightLength = 420;
 
     const activeStats = {
-        intellect: 5000,
-        spirit: 3800,
-        spellpower: 3000,
-        haste: 1500,
-        crit: 1500,
-        mastery: 1500,
+        intellect: 10267,
+        spirit: 2000,
+        spellpower: 5151,
+        haste: 1100,
+        crit: 1100,
+        mastery: 1100,
         stamina: 5000,
+        weaponDamage: 821,
+        weaponSwingSpeed: 2.6,
         mp5: 0,
         critMult: 2,
         hps: 0,
@@ -76,17 +78,19 @@ export function runClassicStatSuite(profile) {
     const testSettings = {hasteBuff: {value: "Haste Aura"}};
 
     const baseline = profile.initializeSet();
-    const baselineHPS = scoreFunction(baseline, playerStats, {}, testSettings);
+    const baselineHPS = scoreFunction(baseline, playerStats, testSettings);
 
     const results = {};
     stats.forEach(stat => {
+        const initSet = profile.initializeSet();
+
         // Change result to be casts agnostic.
         let playerStats = JSON.parse(JSON.stringify(activeStats));
-        playerStats[stat] = playerStats[stat] + 10;
+        playerStats[stat] = playerStats[stat] + 50;
         applyRaidBuffs({}, playerStats);
 
         //const newPlayerData = {...playerData, stats: playerStats};
-        const result = scoreFunction(baseline, playerStats, {}, testSettings)
+        const result = scoreFunction(initSet, playerStats, testSettings)
         results[stat] = result;
     });
     const weights = {}

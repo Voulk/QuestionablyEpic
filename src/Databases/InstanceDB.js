@@ -5,6 +5,11 @@ export const getSeasonalDungeons = () => {
   return CONSTANTS.currentDungeonIDs;
 }
 
+export const getMoPDungeons = () => {
+  //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+  return [246, 316, 313, 312, 311, 303, 302, 324, 321];
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
@@ -104,7 +109,7 @@ export const retailInstanceDB = {
 
     "Classic": {
       //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.
-      bossOrderMythicPlus: [316, 313, 312, 311, 303, 302, 324], // Dungeon Order
+      bossOrderMythicPlus: [246, 316, 313, 312, 311, 303, 302, 324, 321], // Dungeon Order
       // TODO
       316: "Scarlet Monastery",
       313: "Temple of the Jade Serpent",
@@ -113,7 +118,8 @@ export const retailInstanceDB = {
       303: "Gate of the Setting Sun",
       302: "Stormstout Brewery",
       324: "Siege of Niuzao Temple",
-      99999: "Scholomance",
+      321: "Mogu'shan Palace",
+      246: "Scholomance",
       },
     }
   },

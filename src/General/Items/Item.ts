@@ -87,6 +87,7 @@ export class Item {
  
       this.stats = calcStatsAtLevelClassic(id, level);
 
+
       /*this.customOptions = [
         {label: "No Reforge", id: [0]},
         {label: "Reforge Mastery to Haste", id: [1]},

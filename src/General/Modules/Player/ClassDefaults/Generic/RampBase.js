@@ -119,8 +119,6 @@ const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
     
     tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
-    if (spellName === "Wild Growth") console.log(tickCount);
-
     // Run heal
     for (let i = 0; i < tickCount; i++) {
         if (spell.buffType === "heal") runHeal(state, spell, spellName + " (HoT)");

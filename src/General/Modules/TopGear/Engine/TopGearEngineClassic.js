@@ -117,7 +117,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
       }
 
       // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
-      else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
+      else if (reforgeSetting === "Smart" && (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic")) {
 
         const secondaryRank = ["spirit", "mastery", "crit", "hit"]
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
@@ -298,6 +298,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
 
+   
+
     let hardScore = 0;
     const setBonuses = builtSet.sets;
     let effectList = [...itemSet.effectList]
@@ -315,7 +317,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
-        tierList = tierList.concat(getItemSet(set, setBonuses[set]));
+        tierList = tierList.concat(getItemSet(parseInt(set), setBonuses[set]));
+
       }
     }
 
@@ -429,7 +432,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         }
         else {
 
-          let secondaryRank = castModel.autoReforgeOrder;// player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
+          let secondaryRank = castModel.autoReforgeOrder;
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -476,8 +479,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       return acc;
     }, {});
 
+    // Races
+
     // Any final adjustments.
-    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0; // Proc based haste needs to be handled in the core profile.
+    if (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic") compiledEffects.haste = 0; // Proc based haste needs to be handled in the core profile.
     compileStats(setStats, compiledEffects);
     applyRaidBuffs({}, setStats);
     if (player.spec === "Restoration Druid Classic") {
@@ -494,6 +499,15 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
     else if (player.spec === "Discipline Priest Classic") {
       setStats.intellect *= 1.15; // Spec passive.
+    }
+    else if (player.spec === "Mistweaver Monk Classic") {
+      // Monks require us to provide some information on our weapon too.
+      const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
+      setStats.weaponSwingSpeed = weapon.stats.weaponSwingSpeed;
+      //const isTwoHanded = setStats.weaponSwingSpeed > 2.8 ? true : false;
+      setStats.weaponDamage = weapon.stats.averageDamage// / setStats.weaponSwingSpeed * (isTwoHanded ? 0.5 : 0.898882 * 0.75); // Average damage per second.
+      //setStats.meleeWeaponDamage = weapon.stats.averageDamage / setStats.weaponSwingSpeed * (isTwoHanded ? 1 : 0.898882); // Average damage per second.
+      
     }
 
     if (castModel.scoreSet) {

@@ -1,18 +1,18 @@
 export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; crafted: number[];} = {
-  raid: [
+  raid: [ // Updated for S4.
     /* ----------------------------------------- Raid Finder ---------------------------------------- */
     // Slider Value = 0
-    623, // LFR Base
-    645, // LFR Max
+    623, 
+    645, // ?
     /* ------------------------------------------- Normal ------------------------------------------- */
-    636, // Normal Base
-    658, // Normal Max
+    636, // Base
+    658, // Max ?
     /* ------------------------------------------- Heroic ------------------------------------------- */
     649, // Heroic Base
-    665, // Heroic Max
+    671, // Heroic Max
     /* ------------------------------------------- Mythic ------------------------------------------- */
     662, // Mythic Base
-    678, // Mythic Max
+    684, // Mythic Max
   ],
   dungeon: [
     636,
@@ -26,7 +26,34 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     665,
     671,
     678
+
   ],
-  pvp: [], // We aren't supporting PVP gear right now. If it becomes widely relevant we can re-add it.
-  crafted: [606, 629, 636, 658, 675] // We don't really need to support *every* crafted level. Just the 5* crafts. Config is too messy otherwise.
+  pvp: [
+    /* ------------------------------------------ Unranked ------------------------------------------ */
+    // Slider Value = 0
+    382,
+    /* ------------------------------------------ Combatant ----------------------------------------- */
+    // Slider Value = 1
+    385,
+    /* ----------------------------------------- Challenger ----------------------------------------- */
+    // Slider Value = 2
+    389,
+    /* -------------------------------------------- Rival ------------------------------------------- */
+    // Slider Value = 3
+    392,
+    /* ------------------------------------------- Duelist ------------------------------------------ */
+    // Slider Value = 4
+    395,
+    /* -------------------------------------------- Elite ------------------------------------------- */
+    // Slider Value = 5
+    398,
+    // Slider Value = 6
+    402,
+    // Slider Value = 7
+    405,
+    // Slider Value = 8
+    408,
+  ],
+  crafted:
+    [606, 629, 636, 658, 675, 681]
 };

@@ -4,8 +4,9 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
+import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -19,14 +20,14 @@ export const restoDruidDefaults = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 3,
-        crit: 0.98,
-        mastery: 1.1,
-        haste: 0.3,
-        mp5: 1.7,
-        spirit: 1.3,
+        intellect: 1.11,
+        crit: 0.348,
+        mastery: 0.427,
+        haste: 0.25,
+        mp5: 0.614,
+        spirit: 0.431,
         hit: 0,
-        hps: 0.7, // 
+        hps: 0.458, // 
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -40,14 +41,16 @@ export function initializeDruidSet(talents = druidTalents) {
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", cpm: 3.8},
+      {spell: "Swiftmend", cpm: 3.5, bonus: 1.2},
       {spell: "Wild Growth", cpm: 3.8},
-      {spell: "Rejuvenation", cpm: 12, fillerSpell: true, castOverride: 1.0},
-      {spell: "Nourish", cpm: 5},
+      {spell: "Rejuvenation", cpm: 4, fillerSpell: true, castOverride: 1.0},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
       {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
       {spell: "Rolling Lifebloom", cpm: 4, freeCast: true, castOverride: 0}, // Our rolling lifebloom. Kept active by Nourish.
-  
+      {spell: "Efflorescence", cpm: 2, freeCast: true, castOverride: 0}, // Rolling Efflorescence.
+      {spell: "Wild Mushroom: Bloom", cpm: 2}, 
+      {spell: "Tranquility", efficiency: 0.9}, 
+
     ]
 
     if (talents.incarnation.points === 1) {
@@ -62,9 +65,14 @@ export function initializeDruidSet(talents = druidTalents) {
       ])
     }
 
+    if (talents.yserasGift.points === 1) {
+      castProfile.push({spell: "Ysera's Gift", cpm: 12, freeCast: true, castOverride: 0}); // Ysera's Gift
+    }
+
     const adjSpells = getTalentedSpellDB("Restoration Druid", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Restoration Druid"});
   
     castProfile.forEach(spell => {
+      if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = druidSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : adjSpells[spell.spell][0].cost/* * 18635 / 100*/;
@@ -87,23 +95,27 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const castBreakdown = {};
     const fightLength = 6;
     const talents = druidBaseline.talents || druidTalents;
+    const castProfile = JSON.parse(JSON.stringify(druidBaseline.castProfile));
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-    const spellpower = statProfile.intellect + statProfile.spellpower;
-    const critPercentage = 1 + getCritPercentage(statProfile, "Restoration Druid"); // +4% crit
-
     const statPercentages = {
+      spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
       haste: getHaste(statProfile, "Classic") * hasteBuff,
-      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25
+      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Resto Druids mastery coefficient.
     }
 
     // Take care of any extras.
-    if (tierSets.includes("Druid T13-2")) {
-      // Left in as templates but old tier sets now removed.
+    if (tierSets.includes("Druid T14-2")) {
+      getSpellEntry(castProfile, "Rejuvenation").cost *= 0.9; // T14-2 - Rejuv cost reduction
     }
+    if (tierSets.includes("Druid T14-4")) {
+      // The CDR on Swiftmend is also a big deal for SotF. We should probably just move SotF code here. 
+      getSpellEntry(castProfile, "Swiftmend").cpm = 3.5 * 1.2; 
+    }
+
 
     // Soul of the Forest
     if (talents.soulOfTheForest.points === 1) {
@@ -118,9 +130,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
                   (statProfile.mp5 || 0)) * 12 * fightLength;
 
     const totalManaPool = manaPool + regen;
-    //const manaSpendEdit = tierSets.includes("Druid T13-2") ? 1 - (0.25 * 15 / 180) : 1;
-    // Here we can include anything that edits the cost of our spells. Note that it does cause an average but while the buff is active you are likely to spam.
-    // This could be rectified by simulating the entire buff window 
 
     let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
     const fillerWastage = 0.9;
@@ -128,7 +137,10 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
-    druidBaseline.castProfile.forEach(spellProfile => {
+
+    getSpellEntry(castProfile, "Rejuvenation").cpm += fillerCPM;
+
+    castProfile.forEach(spellProfile => {
         const fullSpell = druidBaseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
 
@@ -137,37 +149,31 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
         // Exception Cases
         
         // Regular cases
-        let spellOutput = runClassicSpell(spellName, spell, statProfile, "Restoration Druid", userSettings);
+        let spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Druid", userSettings);
 
 
         if (spellProfile.bonus) {
           spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
         }
         
-
         const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
 
         score += (spellOutput * effectiveCPM);
 
-        //console.log("Spell: " + spellProfile.spell + " Healing: " + spellHealing + " (C: " + critMult + ". M: " + masteryMult + ". AS: " + additiveScaling + ")");
         })
 
         // Filler mana
 
         
     })
-    
-    /*Object.keys(healingBreakdown).forEach(spell => {
-      healingBreakdown[spell] = Math.round(healingBreakdown[spell]) + " (" + Math.round(healingBreakdown[spell] / score * 10000)/100 + "%)";
-    })
-    console.log(healingBreakdown); */
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    //printHealingBreakdown(healingBreakdown, score);
+    //printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
 
     return score;
 }

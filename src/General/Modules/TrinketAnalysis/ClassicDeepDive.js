@@ -29,11 +29,11 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
     });
 
     if (trinketStats.spirit) {
-        trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
-        trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000, player.spec));
-        trinketDescription.push("Effective MP5 at 7k int: " + convertSpiritToMP5(trinketStats.spirit, 7000, player.spec));
-        trinketDescription.push("Effective MP5 at 8k int: " + convertSpiritToMP5(trinketStats.spirit, 8000, player.spec));
-        trinketDescription.push("Effective MP5 at 9k int: " + convertSpiritToMP5(trinketStats.spirit, 9000, player.spec));
+        //trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
+        trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.spirit * 1.128 * 0.5 * 12));
+    }
+    if (trinketStats.mp5) {
+        trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.mp5 * 12));
     }
     
 

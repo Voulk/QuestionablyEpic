@@ -20,6 +20,19 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
+    version: "11.1 / 4.4.2",
+    update: 99,
+    date: "July",
+    changes: [ 
+      "Heavy app-wide refactor.",
+      "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
+      "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
+      "Upgrade Finder: Currently Equipped items now shown on the report.",
+      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
+      "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
+  ]},
+  {
     version: "11.1.5 / 4.4.2",
     update: 14,
     date: "May 13",
@@ -43,16 +56,6 @@ export const changeLog: entry[] = [
       "Oracle Disc Priest Beta",
       "Vault items are now automatically upgraded to max instead of having to click it.",
     ]},
-  {
-    version: "11.1 / 4.4.2",
-    update: 99,
-    date: "May",
-    changes: [ 
-      "Heavy app-wide refactor.",
-      "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
-      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
-      "Upgrade Finder: Currently Equipped items now shown on the report."
-  ]},
   {
     version: "11.1 / 4.4.2",
     update: 12,

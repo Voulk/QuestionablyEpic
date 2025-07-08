@@ -39,9 +39,29 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
     //
     let results = [];
 
+
     const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Mistweaver Monk"};
     const sequences = [
-        {cat: "Single Target Healing", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Surging Mist", seq: ["Surging Mist"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Renewing Mist", seq: ["Renewing Mist"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Jab", seq: ["Jab"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Crackling Jade Lightning", seq: ["Crackling Jade Lightning"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Spinning Crane Kick", seq: ["Spinning Crane Kick"], preBuffs: []},
+
+        {cat: "Talented Abilities", tag: "Chi Burst (per target)", seq: ["Chi Burst"], preBuffs: []},
+        {cat: "Talented Abilities", tag: "Chi Wave", seq: ["Chi Wave"], preBuffs: []},
+        {cat: "Talented Abilities", tag: "Zen Sphere", seq: ["Zen Sphere"], preBuffs: []},
+        {cat: "Talented Abilities", tag: "Rushing Jade Wind", seq: ["Rushing Jade Wind"], preBuffs: []},
+
+        {cat: "Chi Spenders", tag: "Tiger Palm", seq: ["Tiger Palm"], preBuffs: []},
+        {cat: "Chi Spenders", tag: "Tiger Palm (MM)", seq: ["Tiger Palm"], preBuffs: ["Muscle Memory"]},
+        {cat: "Chi Spenders", tag: "Blackout Kick (MM)", seq: ["Blackout Kick"], preBuffs: ["Muscle Memory"]},
+        {cat: "Chi Spenders", tag: "Uplift (per ReM)", seq: ["Uplift"], preBuffs: [], multiplier: 1},
+
+        {cat: "Cooldowns", tag: "Revival (25t)", seq: ["Revival"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Xuen", seq: ["Invoke Xuen, the White Tiger"], preBuffs: []},
+
+        {cat: "Combos", tag: "Jab -> Tiger Palm", seq: ["Jab", "Tiger Palm"], preBuffs: []},
         
         //{cat: "Chakra", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 

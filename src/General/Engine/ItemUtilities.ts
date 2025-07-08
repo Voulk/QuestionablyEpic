@@ -15,7 +15,7 @@ import { CONSTANTS } from "./CONSTANTS";
 import { gemDB } from "Databases/GemDB";
 import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
-import { getSeasonalDungeons } from "Databases/InstanceDB";
+import { getSeasonalDungeons, getMoPDungeons } from "Databases/InstanceDB";
 import { classicGemDB } from "Databases/ClassicGemDB";
 
 
@@ -607,9 +607,6 @@ export function getItemIcon(id: number, gameType = "Retail") {
 export function getGemIcon(id: number, gameType: gameTypes = "Retail") {
 
   const gem = gameType === "Retail" ? gemDB.filter((gem) => gem.id === id) : classicGemDB.filter((gem) => gem.id === id);
-  console.log(id);
-  console.log(gameType);
-  console.log(gem);
 
   if (gem[0] === undefined) {
     return "https://wow.zamimg.com/images/icons/socket-domination.gif";
@@ -796,7 +793,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
   const slot = itemData.slot;
   // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
 
-  if (itemLevel === itemData.level) {
+  if (itemLevel === itemData.itemLevel) {
     return itemData.stats;
   }
 
@@ -823,8 +820,12 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
       stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
     else if (key === "intellect") {
-      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;;
-    } else if (key === "stamina") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1) - gemCount * 80;
+    } 
+    else if (key === "spellpower") {
+      stats[key] = Math.round(rand_prop * allocation * 0.0001 * 1)
+    }
+    else if (key === "stamina") {
       // todo
     }
   }
@@ -878,7 +879,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
 export function buildStatString(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit", "weaponSwingSpeed", "averageDamage"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -1020,8 +1021,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
       (!("class" in key) || player.spec.includes(key.class)) &&
-      (gameType === "Classic" || itemLevel > 550) &&
-      (key.itemLevel === itemLevel || gameType === "Retail" || checkAutoAddLevelOk(key, itemLevel)) && 
+      (gameType === "Classic" || itemLevel > 640) &&
+      (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -1040,7 +1041,13 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+
+
+      else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId));
+      else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
+      else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
+      else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (!sources) sourceCheck = false;
     }
 
@@ -1073,6 +1080,27 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
                                                     {mastery: 0, crit: 0, spellpower: 0, intellect: 0, haste: 0, hps: 0, mana: 0, spirit: 0};
 
   let item_stats = { ...item.stats };
+
+  if (gameType === "Classic" && item.slot === "trinket") {
+    // Try and reforge 
+    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    const trinketSecondary = Object.keys(item.stats)[0];
+
+    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+          const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
+
+          if (trinketSecondaryPos !== 0) {
+            // Not best secondary, reforge.
+            const reforgeValue = item.stats[trinketSecondary] * 0.4;
+            item_stats[trinketSecondary] = Math.round(item_stats[trinketSecondary] - reforgeValue);
+            item_stats[playerStatPriorityList[0]] = reforgeValue;
+
+            console.log("Reforging " + trinketSecondary + " to " + playerStatPriorityList[0] + " for item: " + item.name);
+          }
+
+    }
+
+  }
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
@@ -1144,7 +1172,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   if (gameType === "Classic" && item.classicSockets.sockets.length > 0) {
     //socketItem(item, player.statWeights["Raid"]);
-    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 40);
+    score += (item.classicSockets.sockets.length * player.getStatWeight('raid', 'intellect') * 160);
   } 
 
   return Math.round(100 * score) / 100;

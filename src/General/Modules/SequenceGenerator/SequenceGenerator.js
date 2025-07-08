@@ -182,7 +182,7 @@ export default function SequenceGenerator(props) {
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
   const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
-                                { spellpower: 3400, intellect: 6000, haste: 2020, crit: 3300, mastery: 3000, spirit: 1000 } :
+                                { spellpower: 5000, intellect: 9500, haste: 2020, crit: 3300, mastery: 3000, spirit: 1000, weaponDamage: 821 } :
                                 { intellect: 55000, haste: 7000, crit: 12000, mastery: 12000, versatility: 7500, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));

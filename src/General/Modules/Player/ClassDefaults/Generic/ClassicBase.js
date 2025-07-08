@@ -63,6 +63,29 @@ export const getSpellRaw = (spell, currentStats, spec, flatBonus = 0, masteryFla
     return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.spellpower) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, masteryFlag); // Multiply our spell coefficient by int and secondaries.
 }
 
+export const getWeaponScaling = (spell, currentStats, spec) => {
+    /*
+    2 handers: ((WeaponDamMin + WeaponDamMax) / 2 / WeaponBaseSpeed * 0.5 + AttackPower / 14) * 3
+    1 handers: WepAvgDPS to = (WeaponDamMin + WeaponDamMax) / 2 / Weapon Swing. WepAvgDPS * 0.898882 + AttackPower / 14) * 6
+
+    To make this easy, we will calculate the weapon portion before we run the sim since it is a constant and doesn't scale with 
+
+    */
+
+    const damage = (currentStats.weaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
+
+    return damage * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
+}
+
+export const getEnemyArmor = (armorReductions = 1) => {
+    let enemyArmor = 24835;
+    const playerLevel = 90;
+
+    const netArmor = 0.88 * armorReductions * enemyArmor;
+
+    return (1-netArmor/(netArmor+(playerLevel*4037.5-317117.5)));
+}
+
 /**
  * Returns a spells stat multiplier based on which stats it scales with.
  * Haste is included in calculations but isn't usually a raw multiplier since it changes cooldown instead. 
@@ -115,7 +138,7 @@ export const applyRaidBuffs = (state, stats) => {
     stats.mastery += 3000;
 
     // Add Int to spell power.
-    stats.spellpower +=  stats.intellect;
+    //stats.spellpower +=  stats.intellect;
     // 10% spell power
     stats.spellpower *= 1.1;
 
@@ -138,6 +161,7 @@ export const getManaRegen = (currentStats, spec) => {
         "Discipline Priest": 0.5,
         "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,
+        "Mistweaver Monk": 0.5
     }
     return (spiritToMP5 * inCombatRegen[spec]);
 }

@@ -454,6 +454,14 @@ export class Player {
     }
   };
 
+    getActiveProfile = (contentType) => {
+    if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]].profile;
+    else {
+      //reportError(this, "Player", "Invalid Cast Model", this.getSpec());
+      return this.castModels[0];
+    }
+  };
+
   updatePlayerStats = () => {
     let equippedSet = new ItemSet(0, this.getEquippedItems(false), 0, this.spec);
 

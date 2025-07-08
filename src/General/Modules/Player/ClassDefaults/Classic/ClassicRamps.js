@@ -8,7 +8,7 @@ import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
-import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats,  } from "../Generic/ClassicBase"
+import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats, getWeaponScaling, getEnemyArmor } from "../Generic/ClassicBase"
 import { genSpell } from "../Generic/APLBase";
 import { applyLoadoutEffects } from "./ClassicUtilities";
 
@@ -27,7 +27,7 @@ const CLASSICCONSTANTS = {
         "Holy Paladin": 1,
         "Holy Priest": 1,
         "Restoration Shaman": 1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
-        "Mistweaver Monk": 1, // Soon :)
+        "Mistweaver Monk": 1, // 
     },
     auraDamageBuff: 1,
     enemyTargets: 1, 
@@ -65,6 +65,10 @@ const getSpellDB = (spec) => {
  */
 const getDamMult = (state, buffs, t, spellName, talents) => {
     let mult = CLASSICCONSTANTS.auraDamageBuff * state.genericBonus.damage;
+
+    if (checkBuffActive(state.activeBuffs, "Muscle Memory") && (spellName === "Tiger Palm" || spellName === "Blackout Kick")) {
+        mult *= 2.5;
+    }
 
 
     return mult;
@@ -158,13 +162,21 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 export const runDamage = (state, spell, spellName, compile = true) => {
 
     const damMultiplier = getDamMult(state, state.activeBuffs, state.t, spellName, state.talents); // Get our damage multiplier (Schism, Sins etc);
-    const damageVal = getSpellRaw(spell, state.currentStats, state.spec, 0, false) * damMultiplier;
+    let damageVal = (spell.weaponScaling? getWeaponScaling (spell, state.currentStats, state.spec) :
+                        getSpellRaw(spell, state.currentStats, state.spec, 0, false))
+                         * damMultiplier;
 
-    if (spell.damageToHeal) state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal;
+    if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor();
 
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
+
+    if (spell.damageToHeal) {
+        state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal * spell.damageToHeal;;
+        addReport(state, `Healed for ${Math.round(damageVal * spell.damageToHeal)}`);
+    }
+
     return damageVal;
 }
 
@@ -215,7 +227,6 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     applyTalents(state, playerSpells, stats)
     applyLoadoutEffects(playerSpells, settings, state);
 
-
     if (state.spec.includes("Holy Priest")) {
         // Convert Mastery
         Object.keys(playerSpells).forEach(spellName => {
@@ -229,9 +240,15 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     }
 
     let baseStats = JSON.parse(JSON.stringify(stats));
+
+    baseStats.spellpower = baseStats.intellect + baseStats.spellpower; // 
     if (settings.testMode === "No") {
         baseStats = applyRaidBuffs(state, JSON.parse(JSON.stringify(stats)));
     }
+
+    
+
+    if (state.spec === "Mistweaver Monk") baseStats.attackPower = baseStats.spellpower * 2;
     
     if (settings.preBuffs) {
         // Apply buffs before combat starts. Very useful for comparing individual spells with different buffs active.
@@ -247,6 +264,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             else if (buffName === "Tree of Life") addBuff(state, playerSpells["Tree of Life"][0], buffName);
             else if (buffName === "Soul of the Forest") addBuff(state, playerSpells["Soul of the Forest"][0], buffName);
             else if (buffName === "Harmony") addBuff(state, playerSpells["Harmony"], buffName);
+            else if (buffName === "Muscle Memory") addBuff(state, playerSpells["Jab"][1], buffName);
             else if (buffName === "Judgements of the Pure") {
 
                 if (getTalentPoints(state.talents, "judgementsOfThePure")) addBuff(state, playerSpells["Judgements of the Pure"][0], buffName);
@@ -322,6 +340,12 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
             if (fullSpell[0].holyPower > 0) state.holyPower = Math.min(3, state.holyPower + fullSpell[0].holyPower);
             if ('tags' in fullSpell[0] && fullSpell[0].tags.includes("Holy Power Spender")) state.holyPower = 0;
             removeBuff(state.activeBuffs, "Soul of the Forest");
+
+            if ((spellName === "Tiger Palm" || spellName === "Blackout Kick") && checkBuffActive(state.activeBuffs, "Muscle Memory")){
+                removeBuff(state.activeBuffs, "Muscle Memory");
+                // Add 4% mana
+                state.manaSpent -= 12000; //
+            }
 
         }
 
