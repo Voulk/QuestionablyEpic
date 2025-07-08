@@ -16,7 +16,7 @@ export default function GenericDialog({isDialogOpen, setDialogOpen, dialogText} 
   return (
     <>
       <Dialog open={isDialogOpen} onClose={handleClose} maxWidth="sm" fullWidth>
-        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogTitle>Export</DialogTitle>
         <DialogContent>
           <TextField
             multiline

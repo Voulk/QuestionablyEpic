@@ -1,4 +1,4 @@
-import { CLASSICSHAMANSPELLDB as paladinSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
+import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
@@ -59,13 +59,13 @@ export function initializeShamanSet() {
     ]
   
     castProfile.forEach(spell => {
-      spell.castTime = paladinSpells[spell.spell][0].castTime;
+      spell.castTime = shamanSpells[spell.spell][0].castTime;
       spell.hpc = 0;
-      spell.cost = spell.freeCast ? 0 : paladinSpells[spell.spell][0].cost * 18635 / 100;
+      spell.cost = spell.freeCast ? 0 : shamanSpells[spell.spell][0].cost * 18635 / 100;
       spell.healing = 0;
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
-    const playerData = { spec: "Restoration Shaman", spells: paladinSpells, settings: testSettings, talents: {...paladinTalents}, stats: activeStats }
+    const playerData = { spec: "Restoration Shaman", spells: shamanSpells, settings: testSettings, talents: {...shamanTalents}, stats: activeStats }
 
     const adjSpells = getTalentedSpellDB("Restoration Shaman", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: shamanTalents, spec: "Restoration Shaman"});
     //console.log(JSON.stringify(adjSpells));
