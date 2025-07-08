@@ -395,7 +395,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 2,
         coeff: 0.3517 * 2,
         flat: 9986,
-        expectedOverheal: 0.55, // Includes wastage
+        expectedOverheal: 0.4, // Includes wastage
         targets: 1, // 
         secondaries: ['crit'],
     }],
