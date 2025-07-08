@@ -28,14 +28,14 @@ describe("Test APL", () => {
         console.log("Testing APL");
 
         const activeStats = {
-            intellect: 10267,
+            intellect: 21000,
             spirit: 6000,
-            spellpower: 5151,
+            spellpower: 7907,
             averageDamage: 5585,
             weaponSwingSpeed: 3.4,
-            haste: 1000,
-            crit: 1000,
-            mastery: 1000,
+            haste: 2000,
+            crit: 2000,
+            mastery: 2000,
             stamina: 5000,
             mp5: 0,
             critMult: 2,

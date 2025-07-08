@@ -1,5 +1,6 @@
 import { runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { initializeMonkSet, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
+import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 import { getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import each from "jest-each";
 
@@ -36,7 +37,7 @@ describe("Test Mistweaver Spell Values", () => {
         hps: 0,
     }
 
-    const init = initializeMonkSet({}, true);
+    const init = initializeMonkSet(monkTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, "Mistweaver Monk");
     const statPercentagesOneHanded = convertStatPercentages(oneHandedStats, 1, "Mistweaver Monk");
     const armor = getEnemyArmor(statPercentages.armorReduction);
@@ -57,9 +58,11 @@ describe("Test Mistweaver Spell Values", () => {
         ${"Tiger Palm"}               | ${(9257 + 11240) / 2}
         ${"Blackout Kick"}            | ${(10985 + 13338) / 2}
         ${"Rushing Jade Wind"}        | ${Math.round((2160 + 2622) / 2) * 8} // 3268 healing
+        ${"Spinning Crane Kick"}      | ${Math.round((2700 + 3278) / 2) * 3} // 3268 healing
+        ${"Expel Harm"}               | ${(12960+15736)/2}
     `.test("Base Value Check - Mistweaver Weapon Damage spells (2H): $spellName", ({ spellName, expectedResult }) => {
-
-        const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings)  / armor;
+        const spell = init.spellDB[spellName][0];
+        const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, "Mistweaver Monk", userSettings)  / (spell.damageType === "physical" ? armor : 1);
         
         expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
     });
@@ -83,14 +86,17 @@ describe("Test Mistweaver Spell Values", () => {
         spellName                     | expectedResult           | index
         ${"Surging Mist"}             | ${(32548 + 35652) / 2}   | ${0}
         ${"Rushing Jade Wind"}        | ${3268 * 8}              | ${1}
+        ${"Spinning Crane Kick"}      | ${4085 * 3}              | ${1}
+        ${"Invoke Xuen, the White Tiger"}               | ${1602 * 45}              | ${0}  // 3456 + 1602 melee (2h) - 1h = 1616 (1h)
+        ${"Invoke Xuen, the White Tiger"}               | ${3457 * 45}              | ${1}  // 3456 + 1602 melee (2h) - 1h = 1616 (1h)
 
-    `.test("Base Value Check - Mistweaver Healing Spells: $spellName", ({ spellName, expectedResult, index }) => {
-
-        const value = runClassicSpell(spellName, {...init.spellDB[spellName][index], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings);
+    `.test("Base Value Check - Mistweaver Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
+        const spell = init.spellDB[spellName][index]
+        const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, "Mistweaver Monk", userSettings) / spell.targets;
         console.log(spellName, value, expectedResult);
         expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
     });
 
-    
+    //
 
 })

@@ -85,12 +85,12 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     if (spellName === "Melee") {
         // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 
         spellOutput = (statPercentages.weaponDamageMelee + statPercentages.attackpower / 14 * statPercentages.weaponSwingSpeed)
-                        * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);
+                        * adjCritChance * genericMult * targetCount;
     }
     else if (spell.weaponScaling) {
         // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
-                        * adjCritChance * genericMult * targetCount * getEnemyArmor(statPercentages.armorReduction);
+                        * adjCritChance * genericMult * targetCount;
     }
     else {
         // Most other spells follow a uniform formula.
@@ -102,6 +102,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     }
 
     if (spell.type === "heal" || spell.buffType === "heal") spellOutput *= (1 - spell.expectedOverheal)
+    if ((spell.type === "damage" || spell.buffType === "damage") && spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
 
     // Handle HoT
     if (spell.type === "classic periodic") {
@@ -109,6 +110,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
+      if (spellName.includes("Xuen")) console.log("Xuen tick count: " + tickCount + " - " + spellOutput);
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
       if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);

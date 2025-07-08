@@ -86,6 +86,8 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
             if (slice.type === "heal" || slice.buffType === "heal") {
                 slice.coeff *= (1 + auraHealingBuff[state.spec]);
                 slice.flat *= (1 + auraHealingBuff[state.spec]);
+                
+                if (slice.weaponScaling) slice.weaponScaling *= (1 + auraHealingBuff[state.spec]);
             }
 
         });

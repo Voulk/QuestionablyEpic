@@ -29,6 +29,21 @@ export const CLASSICMONKSPELLDB = {
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0},
     }],
+    "Expel Harm": [{ // Also has a damage effect.
+        spellData: {id: 115072, icon: "ability_monk_expelharm", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        chiGenerated: 1,
+        cost: 2.5, 
+        coeff: 0,
+        weaponScaling: 7, 
+        flat: 0,
+        expectedOverheal: 0.6,
+        masteryScalar: 1,
+        cooldownData: {cooldown: 15, charges: 1},
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0},
+    }],
     "Renewing Mist": [{ // First two ticks spread a max duration ReM to another target.
         spellData: {id: 115151, icon: "ability_monk_renewingmists", cat: "heal"},
         castTime: 0,
@@ -77,13 +92,14 @@ export const CLASSICMONKSPELLDB = {
         castTime: 2.25,
         cost: 7.15,
         chiGenerated: 1,
+        damageType: "physical",
 
         type: "classic periodic",
         buffType: "damage",
         coeff: 0,
         tickData: {tickRate: 0.75},
         
-        weaponScaling: 1.59, // Might have a second multiplier of 0.880503
+        weaponScaling: 1.59 * 1.10063, // Might have a second multiplier of 0.880503
         buffDuration: 2.25,
         targets: 1, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
@@ -92,8 +108,8 @@ export const CLASSICMONKSPELLDB = {
     {
         type: "classic periodic",
         buffType: "heal",
-        flat: 2809,
-        coeff: 0.1152,
+        flat: 2808, //2809,
+        coeff: 0.096, //0.1152 / 1.2,
         tickData: {tickRate: 0.75},
         masteryScalar: 0.1,
         buffDuration: 2.25,
@@ -110,6 +126,7 @@ export const CLASSICMONKSPELLDB = {
 
         type: "classic periodic",
         buffType: "damage",
+        damageType: "physical",
         coeff: 0,
         tickData: {tickRate: 0.75},
         cooldownData: {cooldown: 6, charges: 1},
@@ -122,8 +139,8 @@ export const CLASSICMONKSPELLDB = {
     {
         type: "classic periodic",
         buffType: "heal",
-        flat: 0.8 * 2809,
-        coeff: 0.8 * 0.1152,
+        flat: 0.8 * 2808,
+        coeff: 0.8 * 0.096,
         tickData: {tickRate: 0.75},
         masteryScalar: 0.1,
         buffDuration: 6,
@@ -262,6 +279,7 @@ export const CLASSICMONKSPELLDB = {
     },
     {
         type: "damage",
+        damageType: "magic",
         coeff: 1.21 * 2, // Technically attack power
         flat: 1325,
         secondaries: ['crit'],
@@ -275,6 +293,7 @@ export const CLASSICMONKSPELLDB = {
 
         type: "classic periodic",
         buffType: "damage",
+        damageType: "magic",
         flat: 114,
         coeff: 2 * 0.104,
         tickData: {tickRate: 2, hasteScaling: false},
@@ -298,6 +317,7 @@ export const CLASSICMONKSPELLDB = {
         type: "damage",
         flat: 463,
         coeff: 2 * 0.423,
+        damageType: "magic",
         secondaries: ['crit'],
         targets: 1,
     },
@@ -319,18 +339,53 @@ export const CLASSICMONKSPELLDB = {
         customGCD: 1,
         cost: 0, 
         coeff: 0.45 * 2, // Technically attack power
+        flat: 493,
         masteryScalar: 0.25,
         targets: 4,
-        flat: 493,
+
         expectedOverheal: 0.3,
         secondaries: ['crit'],
     },
     {
         type: "damage",
+        damageType: "magic",
         coeff: 0.45 * 2 * 4, // Technically attack power
         flat: 493,
         targets: 1,
         secondaries: ['crit'],
+    }],
+    "Invoke Xuen, the White Tiger": [{
+        spellData: {id: 123904, icon: "ability_monk_summontigerstatue", cat: "cooldown"},
+        castTime: 0,
+        customGCD: 1,
+        cost: 0,
+
+        type: "classic periodic",
+        buffType: "damage",
+        damageType: "physical",
+        coeff: 0.10519 * 0.9037, // This is close but ultimately not correct. It might even be weapon damage based.
+        flat: 1706 * 0.9037,
+        tickData: {tickRate: 1},
+        buffDuration: 45,
+        cooldownData: {cooldown: 180, charges: 1},
+        damageToHeal: 0.84, 
+        
+        targets: 1, // Can hit everyone so TODO.
+        secondaries: ['crit']
+    },
+    { // Lightning
+        type: "classic periodic",
+        buffType: "damage",
+        damageType: "magic",
+        flat: 322,
+        coeff: 0.2525 * 2,
+        tickData: {tickRate: 1, hasteScaling: false},
+        damageToHeal: 0.84,
+
+        buffDuration: 45,
+        targets: 1, // Can hit everyone so TODO.
+        maxTargets: 3,
+        secondaries: ['crit']
     }],
     "Mastery: Gift of the Serpent":[{
         spellData: {id: 117907, icon: "tradeskill_inscription_jadeserpent", cat: "heal"},

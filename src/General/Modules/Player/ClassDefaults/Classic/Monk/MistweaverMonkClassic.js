@@ -8,6 +8,11 @@ import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed} fro
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
+// Proper Classic Settings
+// Fight Timer, Enemy Targets, Include Overheal, Reporting, Haste Buff
+// Spec Specific: 
+
+
 const getMasteryChance = (statProfile, spell) => {
   const mastery = getMastery(statProfile, "Mistweaver Monk") - 1; // Chance of proccing a mastery orb.
 
@@ -44,7 +49,7 @@ export const mistweaverMonkDefaults = {
 
 // --------------- Monk --------------
 export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = false) {
-    const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+    const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true, fightTimer: 300};
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
@@ -52,6 +57,7 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
       {spell: "Renewing Mist", efficiency: 0.95 },
       {spell: "Chi Burst", efficiency: 0.8 },
       {spell: "Revival", efficiency: 0.8 },
+      {spell: "Expel Harm", efficiency: 0.75 },
 
       {spell: "Melee", cpm: 0 }, // TODO
       {spell: "Jab", cpm: 1 }, // TODO
@@ -65,6 +71,9 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
     
     if (talents.rushingJadeWind.points === 1) {
       castProfile.push({spell: "Rushing Jade Wind", efficiency: 0.6});
+    }
+    else if (talents.invokeXuen.points === 1) {
+      castProfile.push({spell: "Invoke Xuen, the White Tiger", bonus: 1.2, cpm: Math.ceil(testSettings.fightTimer / 180) / (testSettings.fightTimer / 60)});
     }
 
     castProfile.forEach(spell => {
