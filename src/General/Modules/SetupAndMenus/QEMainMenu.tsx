@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -165,6 +165,8 @@ export default function QEMainMenu(props: Props) {
   const characterCount = props.allChars.getAllChar(gameType).length;
   const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  const [welcomeOpen, setWelcomeOpen] = useState(ls.get("welcomeMessage") === null);
+  //const welcomeOpen = ls.get("welcomeMessage") === null /* && characterCountAll === 0 */ ? true : false;
   const dispatch = useDispatch();
 
   let articles = [];
@@ -181,13 +183,15 @@ export default function QEMainMenu(props: Props) {
   };
 
   const finishWelcome = (selectedGameType : gameTypes, selectedSpec : string) => {
-    props.allChars.setPlayerClass(selectedGameType, selectedSpec);
-    dispatch(toggleGameType(gameType));
+    props.allChars.pickPlayerClass(selectedGameType, selectedSpec);
+    dispatch(toggleGameType(selectedGameType));
+    setWelcomeOpen(false);
+    //ls.set("welcomeMessage", "true");
 
   }
 
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = ls.get("welcomeMessage") === null /* && characterCountAll === 0 */ ? true : false;
+  
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
@@ -302,7 +306,7 @@ export default function QEMainMenu(props: Props) {
           ""
         )*/}
 
-        {<WelcomeDialog welcomeOpen={welcomeOpen} finishWelcome={finishWelcome} />}
+        {<WelcomeDialog welcomeOpen={welcomeOpen} setWelcomeOpen={setWelcomeOpen} finishWelcome={finishWelcome} />}
       </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */

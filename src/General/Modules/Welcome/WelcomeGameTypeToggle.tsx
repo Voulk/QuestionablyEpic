@@ -60,8 +60,9 @@ export default function WelcomeGameTypeSwitch(props) {
   /* ------------------------------- Current gameType in redux state ------------------------------ */
 
   /* ---------------------------------- Toggle gameType via redux --------------------------------- */
-  const handleContent = (event, gameType) => {
-    props.handleGameTypeChange(gameType);
+  const handleContent = (event, gameType: gameTypes) => {
+    if (gameType !== null) props.handleGameTypeChange(gameType);
+    
   };
 
   return (

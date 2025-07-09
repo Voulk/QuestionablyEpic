@@ -20,45 +20,51 @@ import WelcomeGameTypeSwitch from "./WelcomeGameTypeToggle";
 
 interface WelcomeDialogProps {
   welcomeOpen: boolean;
-  onClose: () => void;
+  setWelcomeOpen: () => void;
   finishWelcome: (gameType: gameTypes, playerClass: string) => void;
 }
 
-export default function WelcomeDialog({ welcomeOpen, onClose, onCreate , finishWelcome }: WelcomeDialogProps) {
+export default function WelcomeDialog({ welcomeOpen, setWelcomeOpen, finishWelcome }: WelcomeDialogProps) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const [selectedClass, setSelectedClass] = useState("");
+  const [selectedClass, setSelectedClass] = useState("Restoration Druid");
   const [selectedGameType, setSelectedGameType] = useState<gameTypes>("Retail");
 
-  const classList = selectedGameType === "Retail" ? [
+  const classNames = {"Retail": [
     "Restoration Druid",
     "Holy Priest",
+    "Discipline Priest",
     "Restoration Shaman",
     "Holy Paladin",
     "Mistweaver Monk",
     "Preservation Evoker",
-  ] : 
-  [
+  ], 
+  "Classic": [
     "Restoration Druid Classic",
     "Holy Priest Classic",
     "Discipline Priest Classic",
     "Restoration Shaman Classic",
     "Holy Paladin Classic",
     "Mistweaver Monk Classic",
+  ]};
 
-  ];
+
+
+  const classList = selectedGameType === "Retail" ? classNames["Retail"] : classNames["Classic"];
+
 
   const handleCreate = () => {
     // They've locked in their selections. 
     if (selectedClass) {
       finishWelcome(selectedGameType, selectedClass);
-      onClose();
     }
   };
 
   const handleGameTypeChange = (newGameType : gameTypes) => {
-    setSelectedGameType(newGameType)
+    setSelectedGameType(newGameType);
+    setSelectedClass(classNames[newGameType][0]); // Reset to the first class of the new game type
+    console.log("Setting class to " + classList[0] + " for game type " + newGameType);
   }
 
   return (
@@ -104,15 +110,18 @@ export default function WelcomeDialog({ welcomeOpen, onClose, onCreate , finishW
           </Grid>
         </Grid>
       </DialogContent>
-      <DialogActions style={{ justifyContent: "space-between" }}>
-        <LanguageSelector />
+      <DialogActions style={{ justifyContent: "center", padding: "24px" }}>
         <Button
           onClick={handleCreate}
           color="primary"
-          variant="outlined"
+          variant="contained"
           disabled={!selectedClass}
+          style={{
+            padding: "12px 30px",
+            fontSize: "1.25rem",
+          }}
         >
-          {"Go!"}
+          {"Begin!"}
         </Button>
       </DialogActions>
     </Dialog>
