@@ -70,6 +70,16 @@ import ShadowfangKeep from "Images/Classic/Dungeons/ShadowfangKeep.jpg";
 import GrimBatol from "Images/Classic/Dungeons/GrimBatol.jpg";
 import HallsOfReorigination from "Images/Classic/Dungeons/HallsOfReorigination.jpg";
 
+import Scholomance from "Images/Classic/Dungeons/Scholomance.jpg";
+import ScarletMonastery from "Images/Classic/Dungeons/ScarletMonastery.jpg";
+import ScarletHalls from "Images/Classic/Dungeons/ScarletHalls.jpg";
+import StormstoutBrewery from "Images/Classic/Dungeons/StormstoutBrewery.jpg";
+import GateOfTheSettingSun from "Images/Classic/Dungeons/GateOfTheSettingSun.jpg";
+import SiegeOfNiuzaoTemple from "Images/Classic/Dungeons/SiegeOfNiuzaoTemple.jpg";
+import MogushanPalace from "Images/Classic/Dungeons/MogushanPalace.jpg";
+import ShadopanMonastery from "Images/Classic/Dungeons/ShadopanMonastery.jpg";
+
+
 import AraKara from "Images/MythicPlus/Arakara.png";
 import CityOfThreads from "Images/MythicPlus/CityOfThreads.png";
 import Dawnbreaker from "Images/MythicPlus/Dawnbreaker.png";
@@ -88,7 +98,7 @@ export default function DungeonHeaderIcons(props) {
   let source = "";
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                           Shadowlands                                          */
+  /*                                        Cataclysm & MoP                                         */
   /* ---------------------------------------------------------------------------------------------- */
   if (props === 67) source = Stonecore;
   if (props === 66) source = BlackrockCavern;
@@ -97,6 +107,18 @@ export default function DungeonHeaderIcons(props) {
   if (props === 70) source = HallsOfReorigination;
   if (props === 69) source = LostCityOfTolvir;
   if (props === 64) source = ShadowfangKeep;
+
+  if (props === 246) source = Scholomance;
+  if (props === 316) source = ScarletMonastery;
+  if (props === 313) source = TempleoftheJadeSerpent;
+  if (props === 312) source = ShadopanMonastery;
+  if (props === 311) source = ScarletHalls;
+  if (props === 303) source = GateOfTheSettingSun;
+  if (props === 302) source = StormstoutBrewery;
+  if (props === 324) source = SiegeOfNiuzaoTemple;
+  if (props === 321) source = MogushanPalace;
+
+
 
   /* ------------------------------------- Halls of Atonement ------------------------------------- */
   if (props === 12831 || props === 1185) {

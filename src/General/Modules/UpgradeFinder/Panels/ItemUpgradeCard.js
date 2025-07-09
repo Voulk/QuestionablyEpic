@@ -86,7 +86,7 @@ export default function ItemCard(props) {
   }
   // Add tier set check too and report a generic message for those. 
 
-  const itemQuality = "#a73fee" //item.getQualityColor();
+  
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -98,9 +98,10 @@ export default function ItemCard(props) {
 
   const itemID = item.item;
   const itemName = getTranslatedItemName(itemID, currentLanguage, "", gameType);
-  
+  const itemQuality = item.level > 463 ? "#a73fee" : "#328CE3" //item.getQualityColor();
 
   const sourceName = (item) => {
+    // Rework this code goodness gracious
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
       let dungeons = { ...encounterDB["-1"][gameType] };
@@ -134,6 +135,9 @@ export default function ItemCard(props) {
     }
     /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
+      return encounterDB[item.source.instanceId].bosses[item.source.encounterId];
+    }
+    if ([320, 317, 330].includes(item.source.instanceId)) {
       return encounterDB[item.source.instanceId].bosses[item.source.encounterId];
     }
     /* ------------------------------ World Bosses ------------------------------ */

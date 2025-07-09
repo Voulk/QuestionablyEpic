@@ -53,7 +53,8 @@ export const generateReportCode = () => {
   
     for (var x = 0; x < diffList.length; x++) {
       // Check if the other set has the corresponding slot.
-      if ((primeList[x].slot === "Offhand" && !diffList[x])) {
+      //console.log(primeList[x])
+      if ((primeList[x] && primeList[x].slot === "Offhand" && !diffList[x])) {
         // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
         continue;
       }
@@ -205,6 +206,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
     const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
     const redGemID = 76694; // Pure int but look into hybrids
     const blueGemID = 76686;
+    const shaGemID = 89882; // Sha gem, 500 intellect
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
@@ -231,9 +233,10 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
-          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel")).length; // Check for any already socketed gems.
+          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel" && gem !== "sha")).length; // Check for any already socketed gems.
           item.socketedGems = [];
           if (item.slot === "Head") item.socketedGems.push(metaGemID);
+          if (item.classicSockets.sockets[0] === "sha") item.socketedGems.push(shaGemID);
 
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;

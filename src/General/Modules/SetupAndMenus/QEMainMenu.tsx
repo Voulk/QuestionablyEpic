@@ -63,7 +63,7 @@ export default function QEMainMenu(props: Props) {
     trackPageView(window.location.pathname + window.location.search);
   }, []);
 
-  const gameType = useSelector((state: RootState) => state.gameType);
+  const gameType = useSelector((state: any) => state.gameType);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Warning                                            */
@@ -184,7 +184,6 @@ export default function QEMainMenu(props: Props) {
   // const handleClose = () => {
   //   setOpen(false);
   // };
-
   return (
     <div style={{ height: "100%" }}>
       <Root>
@@ -215,7 +214,7 @@ export default function QEMainMenu(props: Props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <MessageOfTheDay />
+            <MessageOfTheDay gameType={gameType}/>
           </Grid>
 
           <Grid item xs={12}>

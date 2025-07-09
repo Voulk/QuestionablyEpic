@@ -126,7 +126,6 @@ export default function UpgradeFinderReport(props) {
     const ufSettings = result.ufSettings;
     //const report = props.report;
     
-    console.log(player);
 
     const itemList = result.itemSet;
     const itemDifferentials = addItemSources(result.results, gameType);

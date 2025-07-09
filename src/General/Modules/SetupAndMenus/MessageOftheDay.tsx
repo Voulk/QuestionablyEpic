@@ -1,10 +1,13 @@
 import { Grid, Paper, Typography } from "@mui/material";
 
-export default function MessageOfTheDay() {
+export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
-  const messageOfTheDay: string[] = [
+  const messageOfTheDay: string[] = gameType === "Retail" ?
+   [
     "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection."
-
+  ] : 
+  [
+    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

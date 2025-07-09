@@ -69,7 +69,7 @@ export class Item {
    
     this.effect = getItemProp(id, "effect", gameType);
     this.setID = getItemProp(id, "itemSetId", gameType);
-    this.uniqueEquip = getItemProp(id, "uniqueEquip").toLowerCase();
+    this.uniqueEquip = getItemProp(id, "uniqueEquip", gameType).toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
     if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 2; // We'll just auto apply sockets to rings / necks now.

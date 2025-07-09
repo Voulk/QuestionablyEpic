@@ -479,7 +479,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-      console.log(shortReport);
+
       sendReport(shortReport);
       return shortReport;
 
@@ -619,7 +619,7 @@ export default function TopGear(props: any) {
             history.push("/report/");
         })
         .catch(error => {
-            console.error("Error running TopGearBC:", error.message);
+            console.error("Error running TopGearBC:", error.stack);
         });
       } 
      else {
@@ -812,7 +812,7 @@ export default function TopGear(props: any) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px", fontSize: "20px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
           <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">

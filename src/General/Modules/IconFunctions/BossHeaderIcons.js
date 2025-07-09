@@ -21,6 +21,26 @@ export default function bossHeaders(props, style, QEmodule) {
     if (props === 154) { source = require("Images/Classic/Raid/Tier11/bossNezir.png")}
     if (props === 155) { source = require("Images/Classic/Raid/Tier11/bossAlakir.png")}
 
+    if (props === 679) { source = require("Images/Classic/Raid/Tier14/bossStoneGuard.png")}
+    if (props === 689) { source = require("Images/Classic/Raid/Tier14/bossFeng.png")}
+    if (props === 682) { source = require("Images/Classic/Raid/Tier14/bossGarajal.png")}
+    if (props === 687) { source = require("Images/Classic/Raid/Tier14/bossSpiritKings.png")}
+    if (props === 726) { source = require("Images/Classic/Raid/Tier14/bossElegon.png")}
+    if (props === 677) { source = require("Images/Classic/Raid/Tier14/bossWillOfTheEmperor.png")}
+
+    if (props === 745) { source = require("Images/Classic/Raid/Tier14/bossImperialVizierZorlok.png")}
+    if (props === 744) { source = require("Images/Classic/Raid/Tier14/bossBladeLordTayak.png")}
+    if (props === 713) { source = require("Images/Classic/Raid/Tier14/bossGaralon.png")}
+    if (props === 741) { source = require("Images/Classic/Raid/Tier14/bossWindLordMeljarak.png")}
+    if (props === 737) { source = require("Images/Classic/Raid/Tier14/bossAmberShaperUnsok.png")}
+    if (props === 743) { source = require("Images/Classic/Raid/Tier14/bossGrandEmpressShekzeer.png")}
+
+    if (props === 683) { source = require("Images/Classic/Raid/Tier14/bossProtectorsOfTheEndless.png")}
+    if (props === 742) { source = require("Images/Classic/Raid/Tier14/bossTsulong.png")}
+    if (props === 729) { source = require("Images/Classic/Raid/Tier14/bossLeiShi.png")}
+    if (props === 709) { source = require("Images/Classic/Raid/Tier14/bossShaOfFear.png")}
+
+
     if (props === 2468) {
       source = require("Images/Bosses/WorldBosses/UI-EJ-BOSS-Antros.png");
     }

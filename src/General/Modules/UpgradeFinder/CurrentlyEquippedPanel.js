@@ -1,7 +1,7 @@
 import { Grid, Paper, Typography, Divider } from "@mui/material";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips"; // adjust the path if needed
 import { getItemIcon } from "General/Engine/ItemUtilities"; // adjust the path if needed
-
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 export default function EquippedItems({ items, gameType, contentType="Raid" }) {
 
@@ -24,7 +24,7 @@ export default function EquippedItems({ items, gameType, contentType="Raid" }) {
       <Grid container spacing={1} justifyContent="flex-start" alignItems="center" wrap="wrap">
         {items.map((item, index) => (
           <Grid item key={index}>
-            <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={gameType}>
+            <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
               <img
                 src={getItemIcon(item.id, gameType)}
                 alt=""
@@ -33,7 +33,7 @@ export default function EquippedItems({ items, gameType, contentType="Raid" }) {
                   width: 32,
                   borderRadius: "8px",
                   border: "2px solid",
-                  borderColor: "#a73fee",
+                  borderColor: CONSTANTS.qualityColors[item.quality] || "#a73fee",
                   transition: "transform 0.2s, box-shadow 0.2s",
                   cursor: "pointer",
                 }}
