@@ -6,7 +6,6 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 export default function EquippedItems({ items, gameType, contentType="Raid" }) {
 
   if (items.length === 0) return null;
-  console.log(items);
 
   return (
     <Paper

@@ -619,7 +619,7 @@ export default function TopGear(props: any) {
             history.push("/report/");
         })
         .catch(error => {
-            console.error("Error running TopGearBC:", error.message);
+            console.error("Error running TopGearBC:", error.stack);
         });
       } 
      else {

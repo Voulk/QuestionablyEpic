@@ -130,7 +130,6 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   console.log("=======")
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
   //console.log(baseSet);
-  console.log(itemPoss)
   for (var x = 0; x < itemPoss.length; x++) {
     completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
   }
@@ -189,6 +188,9 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
       }
     }
+
+    //itemPoss = itemPoss.filter(item => item.id === 87170)
+
     return itemPoss;
   }
  
@@ -221,7 +223,6 @@ function checkItemViable(rawItem, player) {
   const stats = rawItem.stats;
 
   const classRestriction = getItemProp(rawItem.id, "classRestriction", "Classic");
-  if (classRestriction) console.log(classRestriction);
 
   return (
     ("intellect" in stats || "bonushealing" in stats || "spelldamage" in stats || "mp5" in stats || "spirit" in stats || "spellcrit" in stats || rawItem.slot === "trinket") &&

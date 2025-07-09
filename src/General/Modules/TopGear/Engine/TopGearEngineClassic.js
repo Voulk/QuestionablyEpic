@@ -203,13 +203,13 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     for (var i = 0; i < count; i++) {
       itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, newModel, baseline, professions);
     }
-
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
 
     return itemSets;
     
     // Build Differentials
+    /*
     let differentials = [];
     let primeSet = itemSets[0];
     for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
@@ -231,7 +231,7 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
       result.itemsCompared = count;
       result.id = generateReportCode();
       return result;
-    }
+    }*/
 }
 
 
@@ -515,6 +515,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       builtSet.metrics = result; // HPS & DPS.
       if (getSetting(playerSettings, "metric") === "HPS + DPS") hardScore = result.healing + result.damage;
       else hardScore = result.healing;
+      
     }
     else {
       console.error("Invalid Scoring Detected. No scoring function.");
