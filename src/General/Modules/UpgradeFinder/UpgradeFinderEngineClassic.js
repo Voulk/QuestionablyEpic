@@ -220,12 +220,16 @@ function checkItemViable(rawItem, player) {
   const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
   const stats = rawItem.stats;
 
+  const classRestriction = getItemProp(rawItem.id, "classRestriction", "Classic");
+  if (classRestriction) console.log(classRestriction);
+
   return (
     ("intellect" in stats || "bonushealing" in stats || "spelldamage" in stats || "mp5" in stats || "spirit" in stats || "spellcrit" in stats || rawItem.slot === "trinket") &&
     (rawItem.slot === "Back" ||
     (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
     ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass)))
+    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))) &&
+    (classRestriction === "" || spec.includes(classRestriction))
   );
 }
 
