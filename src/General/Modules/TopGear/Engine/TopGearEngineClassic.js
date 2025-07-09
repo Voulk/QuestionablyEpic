@@ -281,7 +281,15 @@ function compileSetStats(itemSet) {
 
 
 export function pruneItems(itemSets) {
-  return itemSets.slice(0, softSlice);
+  let temp = itemSets.filter(function (result) {
+    if (result.uniques["darkmoon card"] && result.uniques["darkmoon card"] > 1) {
+      return false;
+    }
+    return true;
+  });
+
+  return temp.slice(0, softSlice);
+  //return itemSets.slice(0, softSlice);
   }
 
 

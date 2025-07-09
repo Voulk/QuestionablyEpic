@@ -53,7 +53,7 @@ export const generateReportCode = () => {
   
     for (var x = 0; x < diffList.length; x++) {
       // Check if the other set has the corresponding slot.
-      console.log(primeList[x])
+      //console.log(primeList[x])
       if ((primeList[x] && primeList[x].slot === "Offhand" && !diffList[x])) {
         // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
         continue;
