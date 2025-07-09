@@ -48,10 +48,10 @@ export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDia
     "Preservation Evoker",
   ], 
   "Classic": [
-    "Restoration Druid",
+    "Restoration Druid Classic",
     "Holy Priest Classic",
     "Discipline Priest Classic",
-    "Restoration Shaman Classic",
+    //"Restoration Shaman Classic",
     "Holy Paladin Classic",
     "Mistweaver Monk Classic",
   ]};

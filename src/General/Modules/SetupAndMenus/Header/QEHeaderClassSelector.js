@@ -12,17 +12,25 @@ import {
 import { classColours } from "General/Engine/ClassData";
 import classIcons from "General/Modules/IconFunctions/ClassIcons"; // Replace if needed
 
-const classList = [
-  "Restoration Druid",
-  "Discipline Priest",
-  "Holy Priest",
-  "Restoration Shaman",
-  "Holy Paladin",
-  "Mistweaver Monk",
-  "Preservation Evoker",
-];
+const classNames = {"Retail": [
+    "Restoration Druid",
+    "Holy Priest",
+    "Discipline Priest",
+    "Restoration Shaman",
+    "Holy Paladin",
+    "Mistweaver Monk",
+    "Preservation Evoker",
+  ], 
+  "Classic": [
+    "Restoration Druid Classic",
+    "Holy Priest Classic",
+    "Discipline Priest Classic",
+    //"Restoration Shaman Classic",
+    "Holy Paladin Classic",
+    "Mistweaver Monk Classic",
+  ]};
 
-export default function HeaderClassSelect({selectedSpec, setSelectedSpec}) {
+export default function HeaderClassSelect({gameType, selectedSpec, setSelectedSpec}) {
 
   return (
     <FormControl fullWidth size="small">
@@ -35,16 +43,16 @@ export default function HeaderClassSelect({selectedSpec, setSelectedSpec}) {
         renderValue={(value) => (
           <Box display="flex" alignItems="center" gap={1}>
             {classIcons(value, { width: 20, height: 20 })}
-            <Typography>{value}</Typography>
+            <Typography style={{ color: classColours(value) }}>{value.replace(" Classic", "")}</Typography>
           </Box>
         )}
       >
-        {classList.map((playerClass) => (
+        {classNames[gameType].map((playerClass) => (
           <MenuItem key={playerClass} value={playerClass}>
             <Box display="flex" alignItems="center" gap={1}>
               {classIcons(playerClass, { width: 20, height: 20 })}
               <Typography style={{ color: classColours(playerClass) }}>
-                {playerClass}
+                {playerClass.replace(" Classic", "")} 
               </Typography>
             </Box>
           </MenuItem>

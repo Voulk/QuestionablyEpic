@@ -136,7 +136,7 @@ export default function QEHeader(props) {
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
                 <Grid item xs={6} sm="auto">
-                  <HeaderClassSelect selectedSpec={props.allChars.allChar[props.allChars.activeChar].spec} setSelectedSpec={props.handlePickPlayerSpec}/>
+                  <HeaderClassSelect gameType={gameType} selectedSpec={props.allChars.allChar[props.allChars.activeChar].spec} setSelectedSpec={props.handlePickPlayerSpec}/>
                 </Grid>
                 {/*(props.allChars && props.allChars.allChar.length) > 0 ? (
                   <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">

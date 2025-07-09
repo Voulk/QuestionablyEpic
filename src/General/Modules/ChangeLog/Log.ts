@@ -26,6 +26,7 @@ export const changeLog: entry[] = [
     changes: [ 
       "Heavy app-wide refactor.",
       "Brought back a revamped Welcome screen to help introduce new players to the app.",
+      "You can now swap character class at any time from the header instead of having to return to the main menu.",
       "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
       "Upgrade Finder: Currently Equipped items are now shown on the report.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
