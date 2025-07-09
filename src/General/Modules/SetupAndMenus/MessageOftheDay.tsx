@@ -1,6 +1,6 @@
 import { Grid, Paper, Typography } from "@mui/material";
 
-export default function MessageOfTheDay(gameType: gameTypes = "Retail") {
+export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
