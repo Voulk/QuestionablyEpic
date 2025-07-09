@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { styled } from "@mui/system";
 import logo from "Images/QeAssets/QELogo.png";
+import druidPanel from "Images/Classes/DruidPanel.jpg"
+import hpriestPanel from "Images/Classes/PriestPanel.jpg";
+import dpriestPanel from "Images/Classes/DiscPriestPanel.jpg";
+import shamanPanel from "Images/Classes/ShamanPanel.jpg";
+import paladinPanel from "Images/Classes/PaladinPanel.jpg";
+import monkPanel from "Images/Classes/MonkPanel.jpg";
+import evokerPanel from "Images/Classes/EvokerPanel.jpg";
+
 import {
   Button,
   Dialog,
@@ -20,11 +28,10 @@ import WelcomeGameTypeSwitch from "./WelcomeGameTypeToggle";
 
 interface WelcomeDialogProps {
   welcomeOpen: boolean;
-  setWelcomeOpen: () => void;
   finishWelcome: (gameType: gameTypes, playerClass: string) => void;
 }
 
-export default function WelcomeDialog({ welcomeOpen, setWelcomeOpen, finishWelcome }: WelcomeDialogProps) {
+export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDialogProps) {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
@@ -41,7 +48,7 @@ export default function WelcomeDialog({ welcomeOpen, setWelcomeOpen, finishWelco
     "Preservation Evoker",
   ], 
   "Classic": [
-    "Restoration Druid Classic",
+    "Restoration Druid",
     "Holy Priest Classic",
     "Discipline Priest Classic",
     "Restoration Shaman Classic",
@@ -49,9 +56,40 @@ export default function WelcomeDialog({ welcomeOpen, setWelcomeOpen, finishWelco
     "Mistweaver Monk Classic",
   ]};
 
-
-
   const classList = selectedGameType === "Retail" ? classNames["Retail"] : classNames["Classic"];
+
+  const getClassPanel = (playerClass: string) => {
+    switch (playerClass) {
+      case "Restoration Druid":
+      case "Restoration Druid Classic":
+        return druidPanel; // Replace with the correct image for each class
+      case "Holy Priest":
+      case "Holy Priest Classic":
+        return hpriestPanel; // Replace with actual image path
+      case "Discipline Priest":
+      case "Discipline Priest Classic":
+        return dpriestPanel; // Replace with actual image path
+      case "Restoration Shaman":
+      case "Restoration Shaman Classic":
+        return shamanPanel; // Replace with actual image path
+      case "Holy Paladin":
+      case "Holy Paladin Classic":
+        return paladinPanel; // Replace with actual image path
+      case "Mistweaver Monk":
+      case "Mistweaver Monk Classic":
+        return monkPanel; // Replace with actual image path
+      case "Preservation Evoker":
+        return evokerPanel; // Replace with actual image path
+      default:
+        return druidPanel; // Fallback to Druid panel if not found
+    }
+  }
+
+  const getShortClassName = (playerSpec: string) => {
+    if (playerSpec.includes("Holy Priest")) return "H Priest";
+    else if (playerSpec.includes("Discipline Priest")) return "D Priest";
+    else return playerSpec.split(" ")[1]
+  }
 
 
   const handleCreate = () => {
@@ -82,32 +120,49 @@ export default function WelcomeDialog({ welcomeOpen, setWelcomeOpen, finishWelco
           <Grid item>
             <WelcomeGameTypeSwitch gameType={selectedGameType} handleGameTypeChange={handleGameTypeChange} />
           </Grid>
+          
           <Grid item>
+            <hr></hr>
             <Typography variant="h6" align="center">
               {"Next, pick a class. You can change this at any time."}
             </Typography>
           </Grid>
-          <Grid item container spacing={1} justifyContent="center">
+          <Grid item container spacing={0} justifyContent="center" style={{ gap: 0 }}>
             {classList.map((playerClass) => (
-              <Grid item key={playerClass}>
+              <Grid item key={playerClass} style={{ padding: 0, margin: 0, textAlign: "center" }}>
                 <Button
                   onClick={() => setSelectedClass(playerClass)}
                   variant={selectedClass === playerClass ? "contained" : "outlined"}
                   style={{
-                    borderColor: classColours(playerClass),
-                    color: classColours(playerClass),
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    backgroundColor: selectedClass === playerClass ? "rgba(80, 160, 160, 0.4)" : "transparent",
+                    minWidth: 0,
+                    padding: 0,
+                    margin: 0,
+                    border: selectedClass === playerClass
+                      ? "2px solid " + classColours(playerClass)
+                      : "1px solid " + classColours(playerClass),
                   }}
                 >
-                  {classIcons(playerClass, {
-                    height: 20,
-                    width: 20,
-                    marginRight: 4,
-                  })}
-                  {playerClass}
+                  <img
+                    src={getClassPanel(playerClass)} // Replace with the correct image for each class
+                    alt={playerClass}
+                    style={{
+                      display: "block",
+                      height: 300,
+                      width: 100,
+                    }}
+                  />
+                  <Typography variant="caption" style={{ color: classColours(playerClass), marginTop: 4 }}>
+                    {getShortClassName(playerClass)}
+                  </Typography>
                 </Button>
               </Grid>
             ))}
           </Grid>
+
         </Grid>
       </DialogContent>
       <DialogActions style={{ justifyContent: "center", padding: "24px" }}>

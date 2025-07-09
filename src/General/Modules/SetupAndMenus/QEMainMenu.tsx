@@ -186,7 +186,7 @@ export default function QEMainMenu(props: Props) {
     props.allChars.pickPlayerClass(selectedGameType, selectedSpec);
     dispatch(toggleGameType(selectedGameType));
     setWelcomeOpen(false);
-    //ls.set("welcomeMessage", "true");
+    ls.set("welcomeMessage", "true");
 
   }
 
@@ -306,7 +306,7 @@ export default function QEMainMenu(props: Props) {
           ""
         )*/}
 
-        {<WelcomeDialog welcomeOpen={welcomeOpen} setWelcomeOpen={setWelcomeOpen} finishWelcome={finishWelcome} />}
+        {<WelcomeDialog welcomeOpen={welcomeOpen} finishWelcome={finishWelcome} />}
       </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */

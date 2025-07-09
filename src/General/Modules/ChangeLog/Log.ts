@@ -20,20 +20,20 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
-    version: "11.1 / 4.4.2",
+    version: "11.1 / 5.5",
     update: 99,
     date: "July",
     changes: [ 
       "Heavy app-wide refactor.",
-      "Added a revamped version of the Welcome screen to help introduce new players to the app.",
+      "Brought back a revamped Welcome screen to help introduce new players to the app.",
       "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
-      "Upgrade Finder: Currently Equipped items now shown on the report.",
+      "Upgrade Finder: Currently Equipped items are now shown on the report.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
       "War Within: Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
       "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
       "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
-      "Classic: Competitive Alternatives now works for all specs.",
-      "Classic: Added the Upgrade Finder for all specs. "
+      "Classic: Competitive Alternatives now works for Resto Druid.",
+      "Classic: Added Upgrade Finder for all specs. "
   ]},
   {
     version: "11.1.5 / 4.4.2",
