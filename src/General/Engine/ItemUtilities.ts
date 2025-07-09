@@ -915,7 +915,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: string = "en") {
   let statString = "";
   let statsList = [];
-  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit"];
+  const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit", "weaponSwingSpeed", "averageDamage"];
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }

@@ -10,6 +10,14 @@ type GemEntry = {
 
 export const classicGemDB: GemEntry[] = [
   // Mists of Pandaria Gems
+    { // Sha-Touched
+    id: 89882,
+    rarity: "legendary",
+    name: "Crystallized Horror",
+    icon: "inv_legendary_breathofblackprince_str",
+    stats: { intellect: 500 },
+    color: "sha",
+  },
   {
     id: 76694,
     rarity: "rare",

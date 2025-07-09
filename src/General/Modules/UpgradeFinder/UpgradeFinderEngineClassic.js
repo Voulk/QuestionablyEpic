@@ -116,14 +116,16 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   //
   const completedItemList = [];
 
+  const editedSettings = {...userSettings, reforgeSetting: {value: "Dont Reforge"}}
+
   console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.castModel[contentType];
-  const itemSets = prepareTopGear(baseItemList, player, userSettings, true, [], []);
+  const itemSets = prepareTopGear(baseItemList, player, editedSettings, true, [], []);
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
+  const baseSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, editedSettings, castModel, false)[0];
 
   const baseScore = baseSet.hardScore;
   console.log(baseScore);
@@ -131,7 +133,7 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
   //console.log(baseSet);
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, editedSettings, castModel));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);

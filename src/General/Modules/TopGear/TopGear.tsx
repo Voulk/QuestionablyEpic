@@ -812,7 +812,7 @@ export default function TopGear(props: any) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px", fontSize: "20px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
           <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
