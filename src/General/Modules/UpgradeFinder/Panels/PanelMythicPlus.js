@@ -77,6 +77,7 @@ export default function MythicPlusGearContainer(props) {
                         <UFAccordion
                           key={encounterDB["-1"][gameType][key] + "-accordian" + i}
                           elevation={0}
+                          defaultExpanded={true}
                           style={{
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
                           }}
@@ -226,7 +227,7 @@ export default function MythicPlusGearContainer(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          {true ? contentGenerator(gameType) : contentGeneratorBC()}
+          {true ? contentGenerator(gameType) : contentGeneratorBC(gameType)}
         </Grid>
       </Grid>
     </div>

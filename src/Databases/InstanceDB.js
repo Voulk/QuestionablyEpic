@@ -106,11 +106,13 @@ export const retailInstanceDB = {
       1182: "The Necrotic Wake",
       1023: "Siege of Boralus",
       71: "Grim Batol",
-
+    },
     "Classic": {
       //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.
+      bossOrder: [],
       bossOrderMythicPlus: [246, 316, 313, 312, 311, 303, 302, 324, 321], // Dungeon Order
       // TODO
+      246: "Scholomance",
       316: "Scarlet Monastery",
       313: "Temple of the Jade Serpent",
       312: "Shadowpan Monastery",
@@ -119,9 +121,8 @@ export const retailInstanceDB = {
       302: "Stormstout Brewery",
       324: "Siege of Niuzao Temple",
       321: "Mogu'shan Palace",
-      246: "Scholomance",
+      
       },
-    }
   },
 }
 
