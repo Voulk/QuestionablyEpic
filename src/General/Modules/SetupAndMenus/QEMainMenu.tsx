@@ -16,6 +16,9 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { styled } from "@mui/system";
 import GameTypeSwitch from "./GameTypeToggle";
 import { trackPageView } from "Analytics";
+import WelcomeDialog from "../Welcome/Welcome";
+import { useDispatch } from "react-redux";
+import { toggleGameType } from "Redux/Actions";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -162,6 +165,7 @@ export default function QEMainMenu(props: Props) {
   const characterCount = props.allChars.getAllChar(gameType).length;
   const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  const dispatch = useDispatch();
 
   let articles = [];
   if (props.allChars.allChar.length > 0 && props.articleList.length > 0) {
@@ -176,8 +180,14 @@ export default function QEMainMenu(props: Props) {
     return "right";
   };
 
+  const finishWelcome = (selectedGameType : gameTypes, selectedSpec : string) => {
+    props.allChars.setPlayerClass(selectedGameType, selectedSpec);
+    dispatch(toggleGameType(gameType));
+
+  }
+
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = ls.get("welcomeMessage") === null && characterCountAll === 0 ? true : false;
+  const welcomeOpen = ls.get("welcomeMessage") === null /* && characterCountAll === 0 */ ? true : false;
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
@@ -292,7 +302,7 @@ export default function QEMainMenu(props: Props) {
           ""
         )*/}
 
-        {/*<WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> */}
+        {<WelcomeDialog welcomeOpen={welcomeOpen} finishWelcome={finishWelcome} />}
       </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */

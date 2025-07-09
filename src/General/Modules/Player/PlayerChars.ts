@@ -112,6 +112,17 @@ export function createPlayerChars(): PlayerChars {
         }
       }
     },
+
+    pickPlayerClass(gameType, playerClass) {
+      let index = 0;
+      for (let i = 0; i < this.allChar.length; i++) {
+        if (this.allChar[i].gameType === gameType && this.allChar[i].spec === playerClass) {
+          index = i;
+          break;
+        }
+      }
+      this.setActiveChar(index);
+    },
   
     setLowestChar(gameType) {
       let index = 0;
