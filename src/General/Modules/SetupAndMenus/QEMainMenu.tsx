@@ -215,7 +215,7 @@ export default function QEMainMenu(props: Props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <MessageOfTheDay />
+            <MessageOfTheDay gameType={gameType}/>
           </Grid>
 
           <Grid item xs={12}>

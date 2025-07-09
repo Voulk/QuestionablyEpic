@@ -177,7 +177,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
             itemPoss.push(item);
           }
         }
-        else  if ([330].includes(rawItem.sources[0].instanceId)) { // Raid
+        else  if ([317, 320, 330].includes(rawItem.sources[0].instanceId)) { // Raid
           const itemSource = rawItem.sources[0];
           const item = buildItem(player, rawItem, rawItem.sources[0]);
 

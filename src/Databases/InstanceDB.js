@@ -25,8 +25,8 @@ export const instanceDB = {
   "369": "Siege of Orgrimmer",
   "362": "Throne of Thunder",
   "330": "Heart of Fear",
-  "321": "Mogu'shan Vaults",
-  "324": "Terrace of Endless Spring",
+  "317": "Mogu'shan Vaults",
+  "320": "Terrace of Endless Spring",
   "-5": "Justice",
   "-6": "Valor",
   "-8": "Elemental Rune Twilight",
@@ -125,14 +125,43 @@ export const retailInstanceDB = {
   },
 }
 
+
 const classicInstanceDB = {
-  330: {
-    name: "Heart of Fear",
-    bossOrder: [745],
+  317: {
+    name: "Mogushan Vaults",
+    bossOrder: [679, 689, 682, 687, 726, 677],
     bosses: {
-      745: "Imperial Vizier Zor'lok",
+      679: "The Stone Guard",
+      689: "Feng the Accursed",
+      682: "Gara'jal the Spiritbinder",
+      687: "Spirit Kings",
+      726: "Elegon",
+      677: "Will of the Emperor",
     }
   },
+  330: {
+    name: "Heart of Fear",
+    bossOrder: [745, 744, 713, 741, 737, 743],
+    bosses: {
+      745: "Imperial Vizier Zor'lok",
+      744: "Blade Lord Ta'yak",
+      713: "Garalon",
+      741: "Wind Lord Mel'jarak",
+      737: "Amber-Shaper Un'sok",
+      743: "Grand Empress Shek'zeer",
+    }
+  },
+  320: {
+    name: "Terrace of Endless Spring",
+    bossOrder: [683, 742, 729, 709],
+    bosses: {
+      683: "Protectors of the Endless",
+      742: "Tsulong",
+      729: "Lei Shi",
+      709: "Sha of Fear",
+    }
+  },
+
 }
 
 export const encounterDB = {

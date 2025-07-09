@@ -238,11 +238,9 @@ export default function RaidGearContainer(props) {
     // Raid Panel
 
     const raidList = [
-      //72, // Bastion
-      //73, // Blackwing Descent
-      //74, // Throne of Four Winds
-
+      317, // Mogushan Vaults
       330, // Heart of Fear
+      320, // Terrace of Endless Springs
 
 
     ];
@@ -259,32 +257,34 @@ export default function RaidGearContainer(props) {
               <AppBar
                 position="static"
                 style={{
-                  backgroundColor: "#000",
+                  //backgroundColor: "#000",
                   borderRadius: "4px 4px 4px 4px",
                 }}
                 elevation={1}
               >
+                <div style={{ display: "flex", justifyContent: "center", /*backgroundColor: "#323232",*/ }}>
                 <Tabs
                   value={tabvalue}
                   onChange={handleTabChange}
                   aria-label="simple tabs example"
                   variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+                  style={{ borderRadius: 4, width: '80%',  border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {raidList.map((raidID, index) => (
+                  {/*raidList.map((raidID, index) => (
                     <Tab className={classes.bastionHeaderStyle} label={encounterDB[raidID].name} {...a11yProps(index)} />
 
-                  ))}
+                  ))*/}
 
-                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ 
-                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[330].name} {...a11yProps(0)} />*/}
-                  {/* ---------------------------------------- BWD ---------------------------------------- 
-                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[330].name} {...a11yProps(1)} />*/}
-                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ 
-                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[330].name} {...a11yProps(2)} />*/}
-  
+                  {/* ------------------------------------------ Mogushan Vaults ------------------------------------------ */
+                  <Tab className={classes.mogushanVaultsHeaderStyle} label={encounterDB[317].name} {...a11yProps(0)} />}
+                  {/* ---------------------------------------- Heart of Fear ---------------------------------------- */
+                  <Tab className={classes.heartOfFearHeaderStyle} label={encounterDB[330].name} {...a11yProps(1)} />}
+                  {/* ------------------------------------ Terrace ------------------------------------  */
+                  <Tab className={classes.terraceOfEndlessSpringHeaderStyle} label={encounterDB[320].name} {...a11yProps(2)} />}
+                  
                 </Tabs>
+                </div>
               </AppBar>
             </Grid>
 

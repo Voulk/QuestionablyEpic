@@ -24,7 +24,7 @@ export default function EquippedItems({ items, gameType, contentType="Raid" }) {
       <Grid container spacing={1} justifyContent="flex-start" alignItems="center" wrap="wrap">
         {items.map((item, index) => (
           <Grid item key={index}>
-            <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={gameType}>
+            <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
               <img
                 src={getItemIcon(item.id, gameType)}
                 alt=""

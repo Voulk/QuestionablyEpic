@@ -479,7 +479,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-      console.log(shortReport);
+
       sendReport(shortReport);
       return shortReport;
 
