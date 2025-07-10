@@ -58,7 +58,7 @@ export const STATCONVERSIONCLASSIC = {
     "Mistweaver Monk": 1.25,
     "Holy Paladin": 1.5,
     "Holy Priest": 1.25,
-    "Discipline Priest": 2.5,
+    "Discipline Priest": 1.6, // 1.6 for Absorbs, 0.8 for Heals.
     "Restoration Shaman": 3,
   } as Record<string, number>,
 }
