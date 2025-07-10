@@ -155,9 +155,8 @@ export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = [])
   return {damage: 0, healing: score};
 }
 
-export function initializeDiscSet() {
-  const testSettings = {spec: "Discipline Priest Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
-
+export function initializeDiscSet(talents = discTalents, ignoreOverhealing = false) {
+  const testSettings = {spec: "Discipline Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   const discCastProfile = [
     {spell: "Power Word: Shield", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.3},
     {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.7},
@@ -168,7 +167,7 @@ export function initializeDiscSet() {
     {spell: "Prayer of Mending", cpm: 2},
   ]
 
-  const adjSpells = getTalentedSpellDB("Discipline Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: discTalents, spec: "Discipline Priest", genericBonus: {damage: 1, healing: 1}});
+  const adjSpells = getTalentedSpellDB("Discipline Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: talents, spec: "Discipline Priest", genericBonus: {damage: 1, healing: 1}});
 
   discCastProfile.forEach(spell => {
     spell.castTime = discSpells[spell.spell][0].castTime;
