@@ -108,11 +108,12 @@ function TopGearReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.replaceState('QE Live Report', 'Title', 'live/report/' + result.id);
         window.scrollTo(0, 0);
-        //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
         window.history.replaceState('QE Live Report', 'Title', 'ptr/report/' + result.id);
         window.scrollTo(0, 0);
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else {
         // Call Error
@@ -249,7 +250,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     info: player.model.includes("Beta") ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days.": "This is your best set of gear. You can see how close other sets are below!",
   }
 
-
+  backgroundImage = "https://i.imgur.com/uA1E2iE.png"
   return (
     <div
       style={{
@@ -416,10 +417,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                     </Grid>
                                   ) : (
                                     <Grid item xs={12}>
+                                      <Grid container item direction="row" spacing={0}>
+                                      <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
                                         {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                      </Typography>
+                                    </Grid>
+                                    </Grid>
+                                  </Grid>
+                                    
                                   )}
                                 </Grid>
                               </Grid>
