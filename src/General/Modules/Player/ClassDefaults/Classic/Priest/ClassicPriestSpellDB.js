@@ -134,6 +134,7 @@ export const CLASSICPRIESTSPELLDB = {
         cost: 15, 
         coeff: 1.11,
         flat: 1136, 
+        damageToHeal: 1,
         secondaries: ['crit'],
         statMods: {critEffect: 1.5},
     },
@@ -143,6 +144,7 @@ export const CLASSICPRIESTSPELLDB = {
         buffDuration: 7,
         coeff: 0.0312, //
         flat: 57,
+        damageToHeal: 1,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0}
@@ -153,8 +155,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "damage",
         castTime: 2, 
         cost: 3.1, 
-        coeff: 1.12, 
-        flat: 1081,
+        coeff: 1.12 * 3, 
+        flat: 1081 * 3,
         secondaries: ['crit'],
     },
 ],
@@ -163,8 +165,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 3.1, 
-        coeff: 0.838, 
-        flat: 8719,
+        coeff: 0.838 * 3, 
+        flat: 8719 * 3,
         expectedOverheal: 0.1,
         secondaries: ['crit'],
     },
@@ -205,19 +207,19 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
         additiveScaling: 0.25,
         expectedOverheal: 0.1,
-        targets: 5,
+        targets: 3.5, // Maximum is 5.
         secondaries: ['crit', 'hmastery'],
     }],
     "Divine Star": [{
-        spellData: {id: 123986, icon: "spell_arcane_arcanetorrent", cat: "heal"},
+        spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "heal"},
         type: "heal",
-        castTime: 1, 
+        castTime: 0, 
         cost: 0, 
         coeff: 0.758, //
         flat: 7862,
-        cooldownData: {cooldown: 30},
-        expectedOverheal: 0.45, 
-        targets: 6,
+        cooldownData: {cooldown: 15},
+        expectedOverheal: 0.4, 
+        targets: 6 * 2, // Hits on way out and way back.
         secondaries: ['crit'],
     },
     {
@@ -225,6 +227,7 @@ export const CLASSICPRIESTSPELLDB = {
         damageType: "magic",
         coeff: 0.455, // 
         flat: 4717,
+        targets: 1 * 2,
         secondaries: ['crit'],
     }],
 
@@ -324,10 +327,18 @@ const discTalents = {
 
     // Fake talent to include stuff we need.
     discAura: {points: 1, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 9999, select: false, tier: 9, runFunc: function (state, spellDB, points) {
+        const atonementMult = 0.7
         spellDB["Divine Star"][0].coeff *= 0.75;
         spellDB["Divine Star"][1].coeff *= 0.75;
         spellDB["Divine Star"][0].flat *= 0.75;
         spellDB["Divine Star"][1].flat *= 0.75;
+
+        // Atonement
+        spellDB["Smite"][0].damageToHeal = atonementMult;
+        spellDB["Holy Fire"][0].damageToHeal = atonementMult;
+        spellDB["Holy Fire"][1].damageToHeal = atonementMult;
+        spellDB["Penance"][0].damageToHeal = atonementMult;
+
     }},
 
     /*
