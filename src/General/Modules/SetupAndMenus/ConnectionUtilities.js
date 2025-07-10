@@ -114,7 +114,7 @@ export async function apiGetPlayerImage3(playerName, playerRealm, playerRegion, 
     let realm = playerRealm.toLowerCase().replace(" ", "-");
     let urlReturned = "";
     let fetchUrl = "https://questionablyepic.com/api/getplayerimage.php?pregion=" + region + "&pname=" + encodeURIComponent(name) + "&prealm=" + realm;
-    console.log(fetchUrl);
+
     await fetch(fetchUrl)
       .then((res) => res.text())
       .then((response) => {

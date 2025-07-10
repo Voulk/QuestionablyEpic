@@ -278,11 +278,13 @@ export default function CharacterPanel(props: Props) {
                   <SimCraftInput
                     buttonLabel={t("UpgradeFinderFront.SimCButton")}
                     disableElevation={true}
-                    color="primary"
+                    color="secondary"
                     variant="contained"
                     player={props.player}
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}
+                    charPanel={true}
+                    
                   />
                 </Grid>
               )}
@@ -345,11 +347,12 @@ export default function CharacterPanel(props: Props) {
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
                   disableElevation={true}
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   player={props.player}
                   simcSnack={props.simcSnack}
                   allChars={props.allChars}
+                  charPanel={true}
                 />
               </Grid>
 

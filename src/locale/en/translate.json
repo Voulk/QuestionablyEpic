@@ -520,8 +520,8 @@
     },
     "TopGear": {
       "BackToGearSelection": "Back to Gear Selection",
-      "CompetitiveAlternative": "Competitive Alternatives",
-      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
+      "CompetitiveAlternative": "Close Alternatives",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best (pictured above). Anything close in score can be considered a sidegrade.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",

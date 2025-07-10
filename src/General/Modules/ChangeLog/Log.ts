@@ -30,6 +30,7 @@ export const changeLog: entry[] = [
       "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
       "Upgrade Finder: Currently Equipped items are now shown on the report.",
       "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Visual: Multiple smaller improvements app-wide",
       "War Within: Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
       "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
       "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",

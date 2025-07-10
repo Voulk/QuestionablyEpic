@@ -250,7 +250,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     info: player.model.includes("Beta") ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days.": "This is your best set of gear. You can see how close other sets are below!",
   }
 
-  backgroundImage = "https://i.imgur.com/uA1E2iE.png"
+  //backgroundImage = "https://i.imgur.com/uA1E2iE.png" // Tester
   return (
     <div
       style={{
@@ -274,7 +274,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                 style={{
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
-                  backgroundColor: "#0F0E04",
+                  backgroundColor: "#262633",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
                   padding: 16,

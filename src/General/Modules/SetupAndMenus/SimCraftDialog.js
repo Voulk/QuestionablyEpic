@@ -63,11 +63,11 @@ export default function SimCraftInput(props) {
   return (
     <div>
       <Tooltip title={t("QeHeader.Tooltip." + gameType + "SimC")} arrow>
-        {buttonVariant === "outlined" ? (
+        {props.charPanel ? (
           <StyledButton
-            disableElevation={props.disableElevation}
-            color={props.colour}
-            style={{ fontSize: "14px", whiteSpace: "nowrap" }}
+            //disableElevation={props.disableElevation}
+            color={"secondary"}
+            style={{ fontSize: "14px", whiteSpace: "nowrap", border: "2px solid gold", borderRadius: "4px" }}      // optional for visual clarity }}
             onClick={handleClickOpen}
             disabled={characterCount === 0}
             variant={buttonVariant}
@@ -76,18 +76,19 @@ export default function SimCraftInput(props) {
             {props.buttonLabel}
           </StyledButton>
         ) : (
-          <Button
-            disableElevation={props.disableElevation}
-            color={props.colour}
-            style={{ fontSize: "14px" }}
+          <StyledButton
+            //disableElevation={props.disableElevation}
+            color={"secondary"}
+            style={{ fontSize: "14px", whiteSpace: "nowrap" }}      // optional for visual clarity }}
             onClick={handleClickOpen}
             disabled={characterCount === 0}
             variant={buttonVariant}
             fullWidth
           >
             {props.buttonLabel}
-          </Button>
+          </StyledButton>
         )}
+
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>

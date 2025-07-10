@@ -161,8 +161,8 @@ export default function QEHeader(props) {
                 )}
                 <Grid item>
                   <SimCraftInput
-                    colour={"white"}
-                    variant="outlined"
+                    colour="secondary"
+                    variant="contained"
                     buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
                     player={props.player}
                     simcSnack={props.simcSnack}
@@ -170,7 +170,7 @@ export default function QEHeader(props) {
                   />
                 </Grid>
                 <Grid item>
-                  <StyledButton color={"white"} variant="outlined" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
+                  <StyledButton color={"secondary"} variant="contained" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
                     {"Help"}
                   </StyledButton>
                 </Grid>
