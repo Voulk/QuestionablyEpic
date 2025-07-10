@@ -124,8 +124,8 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
       const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (statPercentages.haste);
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+      if (spell.tickData.tickOnCast) tickCount += 1;
 
-      if (spellName.includes("Xuen")) console.log("Xuen tick count: " + tickCount + " - " + spellOutput);
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
       if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);

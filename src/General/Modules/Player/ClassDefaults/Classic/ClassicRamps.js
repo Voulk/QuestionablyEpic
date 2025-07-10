@@ -173,7 +173,7 @@ export const runDamage = (state, spell, spellName, compile = true) => {
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)
 
     if (spell.damageToHeal) {
-        state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal * spell.damageToHeal;;
+        state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + damageVal * spell.damageToHeal;
         addReport(state, `Healed for ${Math.round(damageVal * spell.damageToHeal)}`);
     }
 

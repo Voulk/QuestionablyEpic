@@ -3,6 +3,7 @@ import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicB
 import { addBuff } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 
 // Add onTick, onExpiry functions to spells.
+// It gets increasingly messy keeping two spces in here. Might be able to just have them inherit a core priest DB and then make changes if needed.
 export const CLASSICPRIESTSPELLDB = {
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
@@ -15,9 +16,9 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         type: "heal",
         castTime: 0, 
-        cost: 34, 
-        coeff: 0.87, 
-        flat: 8863,
+        cost: 6.1 * 0.75, 
+        coeff: 1.871, 
+        flat: 19428,
         expectedOverheal: 0.07,
         cooldownData: {cooldown: 3},
         secondaries: [], // Disc Mastery
@@ -59,6 +60,19 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.1,
         secondaries: ['crit', 'hmastery'],
     }],
+    "Binding Heal": [{
+        spellData: {id: 32546, icon: "spell_holy_blindingheal", cat: "heal"},
+        type: "heal",
+        castTime: 1.5, 
+        healType: "direct",
+        cost: 5.4, 
+        coeff: 0.899,
+        flat: 9962,
+        additiveScaling: 0.25,
+        expectedOverheal: 0.1,
+        targets: 2,
+        secondaries: ['crit', 'hmastery'],
+    }],
     "Renew": [{
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal", spec: "Holy Priest Classic"},
         cost: 17,
@@ -70,14 +84,23 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 2152,
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
-        additiveScaling: 0.25,
+        additiveScaling: 0.4375,
         expectedOverheal: 0.3,
+    },
+    {
+        //Rapid Renewal
+        type: "heal",
+        castTime: 0, 
+        flat: 1484.88, 
+        coeff: 0.14268, 
+        expectedOverheal: 0.2,
+        secondaries: ['hmastery'],
     }],
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
         castTime: 2.5, 
-        cost: 15, 
+        cost: 2.7, 
         coeff: 0.8560000062, 
         flat: 2361,
         secondaries: ['crit'],
@@ -86,9 +109,9 @@ export const CLASSICPRIESTSPELLDB = {
     "Holy Fire": [{
         spellData: {id: 14914, icon: "spell_holy_searinglight", cat: "damage"},
         type: "damage",
-        castTime: 2, 
-        cost: 15, 
-        coeff: 1.11000001431,
+        castTime: 0, 
+        cost: 1.8, 
+        coeff: 1.11,
         flat: 1136, 
         secondaries: ['crit'],
         statMods: {critEffect: 1.5},
@@ -97,20 +120,43 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "damage",
         buffDuration: 7,
-        coeff: 0.03119999915, // The coefficient for a single regrowth tick.
-        flat: 51,
+        coeff: 0.0312, //
+        flat: 57,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0}
     }
-],
+    ],
+    "Power Word: Solace": [{
+        spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
+        type: "damage",
+        castTime: 0, 
+        cost: 15, 
+        coeff: 1.11,
+        flat: 1136, 
+        damageToHeal: 1,
+        secondaries: ['crit'],
+        statMods: {critEffect: 1.5},
+    },
+    {
+        type: "classic periodic",
+        buffType: "damage",
+        buffDuration: 7,
+        coeff: 0.0312, //
+        flat: 57,
+        damageToHeal: 1,
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0}
+    }
+    ],
     "Penance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage", spec: "Discipline Priest Classic"},
         type: "damage",
         castTime: 2, 
-        cost: 14, 
-        coeff: 0.458, 
-        flat: 746,
+        cost: 3.1, 
+        coeff: 1.12 * 3, 
+        flat: 1081 * 3,
         secondaries: ['crit'],
     },
 ],
@@ -118,9 +164,9 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "heal", spec: "Discipline Priest Classic"},
         type: "heal",
         castTime: 0, 
-        cost: 14, 
-        coeff: 0.321, 
-        flat: 3006,
+        cost: 3.1, 
+        coeff: 0.838 * 3, 
+        flat: 8719 * 3,
         expectedOverheal: 0.1,
         secondaries: ['crit'],
     },
@@ -150,6 +196,39 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.2,
         targets: 5,
         secondaries: ['crit', 'hmastery']
+    }],
+    "Prayer of Mending": [{
+        spellData: {id: 33076, icon: "spell_holy_prayerofmendingtga", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        healType: "direct",
+        cost: 3.5, 
+        coeff: 0.571 * 1.25,
+        flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
+        additiveScaling: 0.25,
+        expectedOverheal: 0.1,
+        targets: 3.5, // Maximum is 5.
+        secondaries: ['crit', 'hmastery'],
+    }],
+    "Divine Star": [{
+        spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.758, //
+        flat: 7862,
+        cooldownData: {cooldown: 15},
+        expectedOverheal: 0.4, 
+        targets: 6 * 2, // Hits on way out and way back.
+        secondaries: ['crit'],
+    },
+    {
+        type: "damage",
+        damageType: "magic",
+        coeff: 0.455, // 
+        flat: 4717,
+        targets: 1 * 2,
+        secondaries: ['crit'],
     }],
 
 
@@ -208,6 +287,34 @@ export const CLASSICPRIESTSPELLDB = {
         stat: "haste",
         value: 1.2, 
     }],
+    "Mindbender": [{
+        spellData: {id: 123040, icon: "spell_shadow_soulleech_3", cat: "cooldown"},
+        castTime: 0,
+        cost: 0,
+        type: "classic periodic",
+        buffType: "damage",
+        cooldownData: {cooldown: 60, hasted: false}, 
+        tickData: {tickRate: 1.5, canPartialTick: false, tickOnCast: true},
+        coeff: 0.88, // Has a 15% damage ability with 80% uptime. Can also get glancing blows.
+        flat: 1847,
+        tickRate: 1.5, // To confirm. Does tick on cast.
+        buffDuration: 15,
+        secondaries: ['crit'],
+    }],
+    "Shadowfiend": [{
+        spellData: {id: 34433, icon: "spell_shadow_shadowfiend", cat: "cooldown"},
+        castTime: 0,
+        cost: 0,
+        type: "classic periodic",
+        buffType: "damage",
+        cooldownData: {cooldown: 180, hasted: false}, 
+        tickData: {tickRate: 1.5, canPartialTick: false, tickOnCast: true},
+        coeff: 1, // 
+        flat: 2098,
+        tickRate: 1.5, // To confirm. Does tick on cast.
+        buffDuration: 12,
+        secondaries: ['crit'],
+    }],
 }
 
 // Talents that aren't in the 
@@ -217,6 +324,22 @@ const offspecTalents = {
 
 
 const discTalents = {
+
+    // Fake talent to include stuff we need.
+    discAura: {points: 1, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 9999, select: false, tier: 9, runFunc: function (state, spellDB, points) {
+        const atonementMult = 0.7
+        spellDB["Divine Star"][0].coeff *= 0.75;
+        spellDB["Divine Star"][1].coeff *= 0.75;
+        spellDB["Divine Star"][0].flat *= 0.75;
+        spellDB["Divine Star"][1].flat *= 0.75;
+
+        // Atonement
+        spellDB["Smite"][0].damageToHeal = atonementMult;
+        spellDB["Holy Fire"][0].damageToHeal = atonementMult;
+        spellDB["Holy Fire"][1].damageToHeal = atonementMult;
+        spellDB["Penance"][0].damageToHeal = atonementMult;
+
+    }},
 
     /*
     improvedPowerWordShield: {points: 2, maxPoints: 2, icon: "spell_holy_powerwordshield", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
@@ -341,6 +464,7 @@ const holyTalents = {
 
 
 const glyphs = {
+    /*
     glyphOfPrayerOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_prayerofhealing02", id: 55680, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         const healOverTimeEffect = {       
             name: "Glyph of Prayer of Healing", 
@@ -357,13 +481,21 @@ const glyphs = {
 
         spellDB["Prayer of Healing"].push(healOverTimeEffect);
     }},
+    */
     glyphOfCircleOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 55675, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         spellDB["Circle of Healing"][0].targets = 6;
         spellDB["Circle of Healing"][0].cost *= 1.2;
     }},
 
-    glyphOfRenew: {points: 1, maxPoints: 1, icon: "spell_holy_renew", id: 55674, select: true, tier: 5, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Renew"], 0.1, "additive"); 
+    glyphOfBindingHeal: {points: 0, maxPoints:1, icon: "spell_holy_blindingheal", id: 63248, select: true, tier: 5, runFunc: function(state, spellDB, points) {
+        spellDB["Binding Heal"][0].targets = 3;
+        spellDB["Binding Heal"][0].cost *= 1.35;
+    }},
+
+    glyphOfRenew: {points: 0, maxPoints: 1, icon: "spell_holy_renew", id: 119872, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        buffSpell(spellDB["Renew"], 0.15, "additive"); 
+        //spellDB["Renew"][0].additiveScaling += 0.474375; //idfk
+        spellDB["Renew"][0].buffDuration = 9; 
     }},
 
 }

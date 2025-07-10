@@ -467,8 +467,8 @@ export default function UpgradeFinderFront(props) {
           </Grid>
         ) : (
           <Grid item xs={12}>
-          <Typography align="center" style={{ marginTop: 16 }}>
-            {"Import your gear or click Go to run without!"}
+          <Typography color="whitesmoke" align="center" style={{ marginTop: 16 }}>
+            {"Import your gear to run upgrade finder!"}
           </Typography>
           </Grid>
         )}

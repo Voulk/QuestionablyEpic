@@ -77,7 +77,7 @@ export default function UpgradeFinderSimC(props) {
               <SimCraftInput
                 buttonLabel={t("UpgradeFinderFront.SimCButton")}
                 disableElevation={true}
-                color="primary"
+                color="secondary"
                 variant="contained"
                 player={props.player}
                 simcSnack={props.simcSnack}

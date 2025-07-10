@@ -249,11 +249,11 @@ export default function CharacterPanel(props: Props) {
                       // The characters current stat totals are mapped with verticle dividers between them.
                       // We can definitely create a version of this for Classic but TODO for now.
                     }
-                    {gameType === "Retail" ? (
+                    {false /*gameType === "Retail"*/ ? (
                       <Grid container spacing={1}>
                         <Grid item xs={4} sm="auto">
                           <Typography style={{ fontSize: 11, lineHeight: 1 }}>{"Stats (pre-enchants):"}</Typography>
-                        </Grid>
+                        </Grid> 
                         {Object.keys(playerStats)
                           .filter((filterOut) => ["intellect", "haste", "crit", "mastery", "versatility"].includes(filterOut)) //filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech" && filterOut !== "mana")
                           .map((key, i) => (
@@ -278,11 +278,13 @@ export default function CharacterPanel(props: Props) {
                   <SimCraftInput
                     buttonLabel={t("UpgradeFinderFront.SimCButton")}
                     disableElevation={true}
-                    color="primary"
+                    color="secondary"
                     variant="contained"
                     player={props.player}
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}
+                    charPanel={true}
+                    
                   />
                 </Grid>
               )}
@@ -345,11 +347,12 @@ export default function CharacterPanel(props: Props) {
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
                   disableElevation={true}
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   player={props.player}
                   simcSnack={props.simcSnack}
                   allChars={props.allChars}
+                  charPanel={true}
                 />
               </Grid>
 

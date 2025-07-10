@@ -150,7 +150,7 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest"};
     const sequences = [
         {cat: "Base Spells", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
-        {cat: "Base Spells", tag: "Prayer of Mending (2 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
+        {cat: "Base Spells", tag: "Prayer of Mending (3.5 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
         {cat: "Base Spells", tag: "Prayer of Healing", seq: ["Prayer of Healing"], preBuffs: []},
         {cat: "Base Spells", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
         {cat: "Base Spells", tag: "Renew", seq: ["Renew"], preBuffs: []},
@@ -158,9 +158,16 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
         
         {cat: "DPS Spells", tag: "Smite", seq: ["Smite"], preBuffs: []},
         {cat: "DPS Spells", tag: "Holy Fire", seq: ["Holy Fire"], preBuffs: []},
-       
         {cat: "DPS Spells", tag: "Penance (Offensive)", seq: ["Penance"], preBuffs: []},
-        
+
+        {cat: "DPS Spells", tag: "Smite (5x Evang)", seq: ["Smite"], preBuffs: [], manaMod: 0.7, multiplier: 1.2},
+        {cat: "DPS Spells", tag: "Holy Fire (5x Evang)", seq: ["Holy Fire"], preBuffs: [], manaMod: 0.7, multiplier: 1.2},
+        {cat: "DPS Spells", tag: "Penance (Offensive, 5x Evang)", seq: ["Penance"], preBuffs: [], manaMod: 0.7, multiplier: 1.2},
+
+        {cat: "Cooldowns", tag: "Divine Star (6t)", seq: ["Divine Star"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Mindbender", seq: ["Mindbender"], preBuffs: []},
+        {cat: "Cooldowns", tag: "Shadowfiend", seq: ["Shadowfiend"], preBuffs: []},
+
         //{cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
 
     ]

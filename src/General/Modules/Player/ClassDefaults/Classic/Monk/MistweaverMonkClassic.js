@@ -49,7 +49,7 @@ export const mistweaverMonkDefaults = {
 
 // --------------- Monk --------------
 export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = false) {
-    const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true, fightTimer: 300};
+    const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},

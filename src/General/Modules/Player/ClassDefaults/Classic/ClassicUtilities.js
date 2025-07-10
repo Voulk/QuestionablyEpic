@@ -95,7 +95,6 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
 
     if (state.spec === "Holy Paladin") state.holyPower = 1;
 
-
     return classicSpells;
 }
 
