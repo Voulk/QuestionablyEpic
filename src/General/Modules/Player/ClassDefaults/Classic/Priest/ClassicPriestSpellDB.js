@@ -3,6 +3,7 @@ import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicB
 import { addBuff } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 
 // Add onTick, onExpiry functions to spells.
+// It gets increasingly messy keeping two spces in here. Might be able to just have them inherit a core priest DB and then make changes if needed.
 export const CLASSICPRIESTSPELLDB = {
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
         spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
@@ -64,7 +65,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         healType: "direct",
-        cost: 28, 
+        cost: 5.4, 
         coeff: 0.899,
         flat: 9962,
         additiveScaling: 0.25,
@@ -99,7 +100,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
         castTime: 2.5, 
-        cost: 15, 
+        cost: 2.7, 
         coeff: 0.8560000062, 
         flat: 2361,
         secondaries: ['crit'],
@@ -108,9 +109,9 @@ export const CLASSICPRIESTSPELLDB = {
     "Holy Fire": [{
         spellData: {id: 14914, icon: "spell_holy_searinglight", cat: "damage"},
         type: "damage",
-        castTime: 2, 
-        cost: 15, 
-        coeff: 1.11000001431,
+        castTime: 0, 
+        cost: 1.8, 
+        coeff: 1.11,
         flat: 1136, 
         secondaries: ['crit'],
         statMods: {critEffect: 1.5},
@@ -119,13 +120,34 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "damage",
         buffDuration: 7,
-        coeff: 0.03119999915, // The coefficient for a single regrowth tick.
-        flat: 51,
+        coeff: 0.0312, //
+        flat: 57,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0}
     }
-],
+    ],
+    "Power Word: Solace": [{
+        spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
+        type: "damage",
+        castTime: 0, 
+        cost: 15, 
+        coeff: 1.11,
+        flat: 1136, 
+        secondaries: ['crit'],
+        statMods: {critEffect: 1.5},
+    },
+    {
+        type: "classic periodic",
+        buffType: "damage",
+        buffDuration: 7,
+        coeff: 0.0312, //
+        flat: 57,
+        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0}
+    }
+    ],
     "Penance": [{
         spellData: {id: 47540, icon: "spell_holy_penance", cat: "damage", spec: "Discipline Priest Classic"},
         type: "damage",
@@ -179,8 +201,8 @@ export const CLASSICPRIESTSPELLDB = {
         castTime: 0, 
         healType: "direct",
         cost: 3.5, 
-        coeff: 0,
-        flat: 0,
+        coeff: 0.571 * 1.25,
+        flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
         additiveScaling: 0.25,
         expectedOverheal: 0.1,
         targets: 5,
@@ -191,19 +213,18 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 1, 
         cost: 0, 
-        coeff: 1 * 2, // Technically attack power
+        coeff: 0.758, //
+        flat: 7862,
         cooldownData: {cooldown: 30},
-        flat: 1095,
-        masteryScalar: 0.15,
-        expectedOverheal: 0.45,
+        expectedOverheal: 0.45, 
         targets: 6,
         secondaries: ['crit'],
     },
     {
         type: "damage",
         damageType: "magic",
-        coeff: 1.21 * 2, // Technically attack power
-        flat: 1325,
+        coeff: 0.455, // 
+        flat: 4717,
         secondaries: ['crit'],
     }],
 
@@ -263,6 +284,34 @@ export const CLASSICPRIESTSPELLDB = {
         stat: "haste",
         value: 1.2, 
     }],
+    "Mindbender": [{
+        spellData: {id: 123040, icon: "spell_shadow_soulleech_3", cat: "cooldown"},
+        castTime: 0,
+        cost: 0,
+        type: "classic periodic",
+        buffType: "damage",
+        cooldownData: {cooldown: 60, hasted: false}, 
+        tickData: {tickRate: 1.5, canPartialTick: false, tickOnCast: true},
+        coeff: 0.88, // Has a 15% damage ability with 80% uptime. Can also get glancing blows.
+        flat: 1847,
+        tickRate: 1.5, // To confirm. Does tick on cast.
+        buffDuration: 15,
+        secondaries: ['crit'],
+    }],
+    "Shadowfiend": [{
+        spellData: {id: 34433, icon: "spell_shadow_shadowfiend", cat: "cooldown"},
+        castTime: 0,
+        cost: 0,
+        type: "classic periodic",
+        buffType: "damage",
+        cooldownData: {cooldown: 180, hasted: false}, 
+        tickData: {tickRate: 1.5, canPartialTick: false, tickOnCast: true},
+        coeff: 1, // 
+        flat: 2098,
+        tickRate: 1.5, // To confirm. Does tick on cast.
+        buffDuration: 12,
+        secondaries: ['crit'],
+    }],
 }
 
 // Talents that aren't in the 
@@ -272,6 +321,14 @@ const offspecTalents = {
 
 
 const discTalents = {
+
+    // Fake talent to include stuff we need.
+    discAura: {points: 1, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 9999, select: false, tier: 9, runFunc: function (state, spellDB, points) {
+        spellDB["Divine Star"][0].coeff *= 0.75;
+        spellDB["Divine Star"][1].coeff *= 0.75;
+        spellDB["Divine Star"][0].flat *= 0.75;
+        spellDB["Divine Star"][1].flat *= 0.75;
+    }},
 
     /*
     improvedPowerWordShield: {points: 2, maxPoints: 2, icon: "spell_holy_powerwordshield", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {

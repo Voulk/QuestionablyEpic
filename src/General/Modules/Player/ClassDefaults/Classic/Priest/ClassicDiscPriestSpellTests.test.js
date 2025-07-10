@@ -25,7 +25,7 @@ describe("Test Disc Priest Spell Values", () => {
 
     const init = initializeDiscSet(compiledDiscTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
-    console.log(init.spellDB["Flash Heal"])
+
     // Test Regular Spells.
     each`
         spellName                     | expectedResult                   | index
@@ -34,7 +34,19 @@ describe("Test Disc Priest Spell Values", () => {
         ${"Prayer of Healing"}        | ${(16281 + 16792) / 2 / 1.071}   | ${0}
         ${"Penance"}                  | ${(10039 + 10170) / 2}           | ${0}
         ${"Penance D"}                | ${(16000 + 17139) / 2 / 1.071}   | ${0}
+        ${"Prayer of Mending"}        | ${(17607 / 1.071)}               | ${0}
+        ${"Divine Star"}              | ${(9642 + 12800) / 2 / 1.071}    | ${0}
+        ${"Divine Star"}              | ${(5402 + 7172) / 2}             | ${1}
+        ${"Binding Heal"}             | ${(21367 + 24701) / 2 / 1.071}   | ${0}
 
+        ${"Smite"}                    | ${(9122 + 9393) / 2}             | ${0}
+        ${"Holy Fire"}                | ${(9944 + 10215) / 2}            | ${0}
+        ${"Holy Fire"}                | ${(2158)}                        | ${1}
+        ${"Power Word: Solace"}       | ${(10014 + 10145) / 2}           | ${0}
+        ${"Power Word: Solace"}       | ${(2158)}                        | ${1}
+
+        ${"Mindbender"}               | ${(8937 * 11)}                   | ${0}
+        ${"Shadowfiend"}              | ${(10155 * 9)}                   | ${0}
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = init.spellDB[spellName][index]
@@ -48,12 +60,13 @@ describe("Test Disc Priest Spell Values", () => {
 
 })
 
+// Add mana cost test. Flash Heal = 17700, Penance = 9300
+
 /*
                 
         
         
         
-        ${"Prayer of Mending"}        | ${(17607)}               | ${0}
-        ${"Divine Star"}              | ${(9642 + 12800) / 2}    | ${0}
-        ${"Divine Star"}              | ${(5402 + 7172) / 2}     | ${1}
+        
+
         */
