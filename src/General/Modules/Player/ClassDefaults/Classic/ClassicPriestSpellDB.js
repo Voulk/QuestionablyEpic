@@ -59,6 +59,19 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.1,
         secondaries: ['crit', 'hmastery'],
     }],
+    "Binding Heal": [{
+        spellData: {id: 32546, icon: "spell_holy_blindingheal", cat: "heal"},
+        type: "heal",
+        castTime: 1.5, 
+        healType: "direct",
+        cost: 28, 
+        coeff: 0.899,
+        flat: 9962,
+        additiveScaling: 0.25,
+        expectedOverheal: 0.1,
+        targets: 2,
+        secondaries: ['crit', 'hmastery'],
+    }],
     "Renew": [{
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal", spec: "Holy Priest Classic"},
         cost: 17,
@@ -70,8 +83,17 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 2152,
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         secondaries: ['crit'],
-        additiveScaling: 0.25,
+        additiveScaling: 0.4375,
         expectedOverheal: 0.3,
+    },
+    {
+        //Rapid Renewal
+        type: "heal",
+        castTime: 0, 
+        flat: 1484.88, 
+        coeff: 0.14268, 
+        expectedOverheal: 0.2,
+        secondaries: ['hmastery'],
     }],
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
@@ -341,6 +363,7 @@ const holyTalents = {
 
 
 const glyphs = {
+    /*
     glyphOfPrayerOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_prayerofhealing02", id: 55680, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         const healOverTimeEffect = {       
             name: "Glyph of Prayer of Healing", 
@@ -357,13 +380,21 @@ const glyphs = {
 
         spellDB["Prayer of Healing"].push(healOverTimeEffect);
     }},
+    */
     glyphOfCircleOfHealing: {points: 1, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 55675, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         spellDB["Circle of Healing"][0].targets = 6;
         spellDB["Circle of Healing"][0].cost *= 1.2;
     }},
 
-    glyphOfRenew: {points: 1, maxPoints: 1, icon: "spell_holy_renew", id: 55674, select: true, tier: 5, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Renew"], 0.1, "additive"); 
+    glyphOfBindingHeal: {points: 0, maxPoints:1, icon: "spell_holy_blindingheal", id: 63248, select: true, tier: 5, runFunc: function(state, spellDB, points) {
+        spellDB["Binding Heal"][0].targets = 3;
+        spellDB["Binding Heal"][0].cost *= 1.35;
+    }},
+
+    glyphOfRenew: {points: 0, maxPoints: 1, icon: "spell_holy_renew", id: 119872, select: true, tier: 5, runFunc: function (state, spellDB, points) {
+        buffSpell(spellDB["Renew"], 0.15, "additive"); 
+        //spellDB["Renew"][0].additiveScaling += 0.474375; //idfk
+        spellDB["Renew"][0].buffDuration = 9; t
     }},
 
 }
