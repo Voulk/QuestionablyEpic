@@ -1,6 +1,6 @@
 import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { initializeHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic";
-import { compiledHolyTalents } from "./ClassicPriestSpellDB";
+import { compiledHolyTalents } from "../ClassicPriestSpellDB";
 import each from "jest-each";
 
 describe("Test Holy Priest Spell Values", () => {

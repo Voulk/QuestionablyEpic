@@ -1,4 +1,4 @@
-import { compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
+import { compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";

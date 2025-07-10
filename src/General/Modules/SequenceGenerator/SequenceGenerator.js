@@ -32,7 +32,7 @@ import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/Preservati
 // Classic
 import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "General/Modules/Player/ClassDefaults/Classic/Paladin/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
 import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
 import { SpellIcon } from "./SpellIcon";

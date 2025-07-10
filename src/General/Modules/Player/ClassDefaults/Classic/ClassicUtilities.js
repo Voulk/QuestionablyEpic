@@ -7,7 +7,7 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/Classi
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMonkSpellDB";
 
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 

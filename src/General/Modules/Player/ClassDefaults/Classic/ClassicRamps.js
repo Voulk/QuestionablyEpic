@@ -2,7 +2,7 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./Paladin/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB } from "./Priest/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB } from "./ClassicPriestSpellDB";
 import { CLASSICSHAMANSPELLDB } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 

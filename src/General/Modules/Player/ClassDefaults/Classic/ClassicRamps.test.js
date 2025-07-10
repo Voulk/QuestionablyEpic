@@ -5,7 +5,7 @@ import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classi
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
-import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./Priest/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";

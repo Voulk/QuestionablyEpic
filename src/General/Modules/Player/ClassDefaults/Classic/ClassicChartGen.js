@@ -5,7 +5,7 @@ import { getSpellRaw, runCastSequence } from "./ClassicRamps";
 import { CLASSICDRUIDSPELLDB, druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICMONKSPELLDB, monkTalents } from "./Monk/ClassicMonkSpellDB";
-import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "./Priest/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "./ClassicPriestSpellDB";
 
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
