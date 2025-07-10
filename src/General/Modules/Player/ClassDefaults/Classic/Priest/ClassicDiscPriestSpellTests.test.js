@@ -8,11 +8,11 @@ describe("Test Disc Priest Spell Values", () => {
     const userSettings = {includeOverheal: "No"};
     const spec = "Discipline Priest";
     const activeStats = {
-        intellect: 1067,
-        spirit: 6000,
+        intellect: 2916,
+        spirit: 0,
         spellpower: 5151,
-        averageDamage: 5585.25,
-        weaponSwingSpeed: 3.4,
+        averageDamage: 0,
+        weaponSwingSpeed: 1,
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -29,19 +29,27 @@ describe("Test Disc Priest Spell Values", () => {
     // Test Regular Spells.
     each`
         spellName                     | expectedResult           | index
-        ${"Flash Heal"}               | ${(32548 + 35652) / 2}   | ${0}
-        ${"Renew"}                    | ${(0) / 2}       | ${0}
-        ${"Prayer of Healing"}        | ${(0) / 2}     | ${0}
-        ${"Power Word: Shield"}       | ${(0) / 2}     | ${0}
-        ${"Penance"}                  | ${(0) / 2}     | ${0}
+        ${"Power Word: Shield"}       | ${(39403 / 1.142)}        | ${0}
+
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = init.spellDB[spellName][index]
-        const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, spec, userSettings) / spell.targets;
-        //expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
-        expect(true).toEqual(true);
+        const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, spec, userSettings) / (spell.targets || 1);
+        console.log("Spell: " + spellName + " Value: " + value + " Expected: " + expectedResult);
+        expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
+        //expect(true).toEqual(true);
     });
 
     //
 
 })
+
+/*
+                ${"Flash Heal"}               | ${(31066 + 33806) / 2}   | ${0}
+        ${"Prayer of Healing"}        | ${(16281 + 16792) / 2}   | ${0}
+        ${"Penance"}                  | ${(10039 + 10170) / 2}   | ${0}
+        ${"Penance"}                  | ${(16000 + 17139) / 2}   | ${1}
+        ${"Prayer of Mending"}        | ${(17607)}               | ${0}
+        ${"Divine Star"}              | ${(9642 + 12800) / 2}    | ${0}
+        ${"Divine Star"}              | ${(5402 + 7172) / 2}     | ${1}
+        */

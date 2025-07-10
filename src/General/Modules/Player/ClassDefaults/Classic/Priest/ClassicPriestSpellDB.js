@@ -15,9 +15,9 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         type: "heal",
         castTime: 0, 
-        cost: 34, 
-        coeff: 0.87, 
-        flat: 8863,
+        cost: 6.1 * 0.75, 
+        coeff: 1.871, 
+        flat: 19428,
         expectedOverheal: 0.07,
         cooldownData: {cooldown: 3},
         secondaries: [], // Disc Mastery
@@ -172,6 +172,39 @@ export const CLASSICPRIESTSPELLDB = {
         expectedOverheal: 0.2,
         targets: 5,
         secondaries: ['crit', 'hmastery']
+    }],
+    "Prayer of Mending": [{
+        spellData: {id: 33076, icon: "spell_holy_prayerofmendingtga", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        healType: "direct",
+        cost: 3.5, 
+        coeff: 0,
+        flat: 0,
+        additiveScaling: 0.25,
+        expectedOverheal: 0.1,
+        targets: 5,
+        secondaries: ['crit', 'hmastery'],
+    }],
+    "Divine Star": [{
+        spellData: {id: 123986, icon: "spell_arcane_arcanetorrent", cat: "heal"},
+        type: "heal",
+        castTime: 1, 
+        cost: 0, 
+        coeff: 1 * 2, // Technically attack power
+        cooldownData: {cooldown: 30},
+        flat: 1095,
+        masteryScalar: 0.15,
+        expectedOverheal: 0.45,
+        targets: 6,
+        secondaries: ['crit'],
+    },
+    {
+        type: "damage",
+        damageType: "magic",
+        coeff: 1.21 * 2, // Technically attack power
+        flat: 1325,
+        secondaries: ['crit'],
     }],
 
 
@@ -394,7 +427,7 @@ const glyphs = {
     glyphOfRenew: {points: 0, maxPoints: 1, icon: "spell_holy_renew", id: 119872, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         buffSpell(spellDB["Renew"], 0.15, "additive"); 
         //spellDB["Renew"][0].additiveScaling += 0.474375; //idfk
-        spellDB["Renew"][0].buffDuration = 9; t
+        spellDB["Renew"][0].buffDuration = 9; 
     }},
 
 }

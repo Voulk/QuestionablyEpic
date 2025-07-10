@@ -158,16 +158,6 @@ export function scoreDiscSet(baseline, statProfile, userSettings, tierSets = [])
 export function initializeDiscSet() {
   const testSettings = {spec: "Discipline Priest Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
-  const activeStats = {
-    intellect: 100,
-    spirit: 1,
-    spellpower: 100,
-    haste: 1,
-    crit: 1,
-    mastery: 1,
-    stamina: 5000,
-    critMult: 2,
-}
   const discCastProfile = [
     {spell: "Power Word: Shield", cpm: 4, hastedCPM: true, fillerSpell: true, fillerRatio: 0.3},
     {spell: "Prayer of Healing", cpm: 6, hastedCPM: true, fillerSpell: true, fillerRatio: 0.7},
@@ -187,7 +177,7 @@ export function initializeDiscSet() {
     spell.healing = 0;
   })
   const costPerMinute = discCastProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
-  const playerData = { spec: "Discipline Priest", spells: discSpells, settings: testSettings, talents: {...discTalents}, stats: activeStats }
+  const playerData = { spec: "Discipline Priest", spells: discSpells, settings: testSettings, talents: {...discTalents} }
   //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
 
   //console.log(JSON.stringify(adjSpells));
