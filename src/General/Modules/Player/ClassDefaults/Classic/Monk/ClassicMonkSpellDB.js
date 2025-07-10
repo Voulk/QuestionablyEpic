@@ -113,7 +113,7 @@ export const CLASSICMONKSPELLDB = {
         tickData: {tickRate: 0.75, hasteScaling: false},
         masteryScalar: 0.1,
         buffDuration: 2.25,
-        targets: 1, // Can hit everyone so TODO.
+        targets: 6, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
         secondaries: ['crit']
     }],
@@ -150,13 +150,16 @@ export const CLASSICMONKSPELLDB = {
     }],
     "Crackling Jade Lightning": [{
         spellData: {id: 117952, icon: "ability_monk_cracklingjadelightning", cat: "damage"},
-        type: "damage",
         damageType: "magic",
+        type: "classic periodic",
+        buffType: "damage",
+        tickData: {tickRate: 1, hasteScaling: false},
         castTime: 6,
+        buffDuration: 6,
         channel: true,
         cost: 1.57 * 6,
         coeff: 0.386 * 2 * 1.25, // TotM
-        flat: 197,
+        flat: 197 * 1.25,
         damageToHeal: 0.84, // Note Armor
         secondaries: ['crit'],
     }],

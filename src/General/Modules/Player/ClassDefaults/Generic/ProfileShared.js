@@ -118,14 +118,13 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
 
     if (spell.type === "heal" || spell.buffType === "heal") spellOutput *= (1 - spell.expectedOverheal)
     if ((spell.type === "damage" || spell.buffType === "damage") && spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
-
     // Handle HoT
     if (spell.type === "classic periodic") {
       const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (statPercentages.haste);
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
       if (spell.tickData.tickOnCast) tickCount += 1;
-
+      
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
       if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);
