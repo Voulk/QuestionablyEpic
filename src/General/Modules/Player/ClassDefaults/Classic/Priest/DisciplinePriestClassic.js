@@ -13,8 +13,18 @@ export const discPriestDefaults = {
     scoreSet: scoreDiscSet,
     initializeSet: initializeDiscSet,
     defaultStatProfile: { 
-        // The default stat profile is used to compare specs. Each spec should have the same rough gear level.
-
+      intellect: 21000,
+      spirit: 8000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 2500,
+      crit: 9000,
+      mastery: 9000,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO

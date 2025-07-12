@@ -2,7 +2,7 @@
 
 import { runAPLSuites, runStatSuites, runClassicStatSuite, runSpellComboSuite, runStatDifferentialSuite, runCastProfileSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaultAPL"
-import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as baseTalents } from "./Paladin/ClassicPaladinSpellDB";
+import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents } from "./Priest/ClassicPriestSpellDB";
@@ -22,33 +22,63 @@ import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/Cla
 // {spec: "Discipline Priest", spells: XDB, talents: xTalents, scoringFunction: scoreDiscSet, initializeFunction: initializeDiscSet, castProfile: X}
 // and so on. Very messy right now.
 
+const getData = (spec) => {
+    if (spec === "Discipline Priest") {
+        return {
+            spec: "Discipline Priest",
+            talents: discTalents,
+            defaults: discPriestDefaults
+        }
+    }
+    else if (spec === "Mistweaver Monk") {
+        return {
+            spec: "Mistweaver Monk",
+            talents: monkTalents,
+            defaults: mistweaverMonkDefaults
+        }
+    }
+    else if (spec === "Holy Paladin") {
+        return {
+            spec: "Holy Paladin",
+            talents: paladinTalents,
+            defaults: holyPaladinDefaults
+        }
+    }
+    else if (spec === "Restoration Druid") {
+        return {
+            spec: "Restoration Druid",
+            talents: druidTalents,
+            defaults: restoDruidDefaults
+        }
+    }
+    else if (spec === "Holy Priest"){
+        return {
+            spec: "Holy Priest",
+            talents: holyPriestTalents,
+            defaults: holyPriestDefaults
+        }
+    }
+    else {
+        throw new Error("Unknown spec: " + spec);
+    }
+}
+
+
+
 describe("Test APL", () => {
     test("Test APL", () => {
         
         console.log("Testing APL");
 
-        const activeStats = {
-            intellect: 21000,
-            spirit: 6000,
-            spellpower: 7907,
-            averageDamage: 5585,
-            weaponSwingSpeed: 3.4,
-            haste: 2000,
-            crit: 2000,
-            mastery: 2000,
-            stamina: 5000,
-            mp5: 0,
-            critMult: 2,
-            hps: 0,
-        }
+        const data = getData("Restoration Druid");
 
-        const spec = "Discipline Priest"
-        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
-        const revisedTalents = {...discTalents};
+        const spec = data.spec
+        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const revisedTalents = {...data.talents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = discPriestDefaults;
+        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: data.defaults.defaultStatProfile }
+        const profile = data.defaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);

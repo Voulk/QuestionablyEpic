@@ -32,7 +32,7 @@ export const CLASSICPRIESTSPELLDB = {
         cost: 4.5, 
         coeff: 0.838, 
         flat: 8688,
-        expectedOverheal: 0.45,
+        expectedOverheal: 0.25,
         targets: 5,
         secondaries: ['crit', 'hmastery', 'mastery'],
     }],
@@ -222,7 +222,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.758, //
         flat: 7862,
         cooldownData: {cooldown: 15},
-        expectedOverheal: 0.4, 
+        expectedOverheal: 0.35, 
         targets: 6 * 2, // Hits on way out and way back.
         secondaries: ['crit', 'mastery'],
     },

@@ -145,7 +145,7 @@ export const CLASSICMONKSPELLDB = {
         masteryScalar: 0.1,
         buffDuration: 6,
         targets: 6, // Can hit everyone so TODO.
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.33,
         secondaries: ['crit']
     }],
     "Crackling Jade Lightning": [{
