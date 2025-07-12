@@ -108,7 +108,7 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
-  const reporting = false;
+  const reporting = userSettings.reporting || false;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;
