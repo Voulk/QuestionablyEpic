@@ -4,9 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
-import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
-import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 // Proper Classic Settings
 // Fight Timer, Enemy Targets, Include Overheal, Reporting, Haste Buff

@@ -42,13 +42,13 @@ describe("Test APL", () => {
             hps: 0,
         }
 
-        const spec = "Mistweaver Monk"
-        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
-        const revisedTalents = {...monkTalents};
+        const spec = "Discipline Priest"
+        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
+        const revisedTalents = {...discTalents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: monkSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
-        const profile = mistweaverMonkDefaults;
+        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: activeStats }
+        const profile = discPriestDefaults;
 
         if (testSuite === "APL") {
             const data = runAPLSuites(playerData, paladinShockProfile, runCastSequence);
@@ -56,13 +56,13 @@ describe("Test APL", () => {
         }
         else if (testSuite === "TopGearProfile") {
             const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, playerData.stats, testSettings, []).healing;
-            console.log(score / 60);
+            const score = profile.scoreSet(init, playerData.stats, testSettings, []);
+            console.log("HPS: " + score.healing / 60 + " DPS: " + score.damage / 60);
         }
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(profile)
+            const data = runClassicStatSuite(profile, "damage")
             
             console.log(data.weights);
 

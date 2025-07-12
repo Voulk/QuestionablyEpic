@@ -18,6 +18,10 @@ export const printHealingBreakdown = (healingBreakdown, totalHealing) => {
     console.log(sortedEntries);
 }
 
+export const checkHasTalent = (talents, talentName) => {
+    return talents[talentName] && talents[talentName].points > 0;
+}
+
 export const getSpellAttribute = (spell, attribute, index = 0) => {
     if (attribute === "cooldown") return spell[index].cooldownData.cooldown;
     else return spell[index][attribute];
@@ -87,13 +91,11 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
-    const adjCritChance = (spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1; 
+    let adjCritChance = (spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1; 
     //const additiveScaling = (spell.additiveScaling || 0) + 1
+    if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
 
-    // Review how mastery works in the context of additive scaling in MoP.
-    //const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery")) ? (additiveScaling + (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25) / additiveScaling : 1;
-    
-    // 
+     
     const targetCount = spell.targets ? spell.targets : 1;
 
     let spellOutput = 0;

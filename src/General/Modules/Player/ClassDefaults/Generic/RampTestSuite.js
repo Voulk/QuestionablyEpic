@@ -51,7 +51,7 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
         return weights;
 }
 
-export function runClassicStatSuite(profile) {
+export function runClassicStatSuite(profile, metric = "healing") {
     // Weights
     const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
     const fightLength = 420;
@@ -78,7 +78,7 @@ export function runClassicStatSuite(profile) {
     const testSettings = {hasteBuff: {value: "Haste Aura"}};
 
     const baseline = profile.initializeSet();
-    const baselineHPS = scoreFunction(baseline, playerStats, testSettings);
+    const baselineHPS = scoreFunction(baseline, playerStats, testSettings)[metric];
 
     const results = {};
     stats.forEach(stat => {
@@ -91,7 +91,7 @@ export function runClassicStatSuite(profile) {
 
         //const newPlayerData = {...playerData, stats: playerStats};
         const result = scoreFunction(initSet, playerStats, testSettings)
-        results[stat] = result;
+        results[stat] = result[metric];
     });
     const weights = {}
 
