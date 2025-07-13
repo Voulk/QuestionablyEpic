@@ -111,6 +111,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const chakraUptime = {'yellow': 0, 'blue': 0.9, 'red': 0.1}; // Yellow = ST, blue = AoE, red = DPS.
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.35;
+  const echoOverhealing = 0.24;
 
   // Handle Chakras effect on our casts.
   const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
@@ -131,8 +132,6 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
   const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
   statPercentages.spellpower *= 1.1; // Inner Fire
-  const masteryAbsorb = (statPercentages.mastery)*2;
-  const masteryHeal = statPercentages.mastery;
 
   reportingData.statPercentages = statPercentages;
 
@@ -221,20 +220,23 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
           if (spell.damageToHeal) {
             // Needs to be adapted to Solace
-            let heal = spellOutput * spell.damageToHeal * effectiveCPM * (1 - atonementOverheal) * (1 + masteryHeal);
-            healingBreakdown["Atonement_" + spellName] = (healingBreakdown["Atonement_" + spellName] || 0) + heal;
+            let heal = spellOutput * spell.damageToHeal * effectiveCPM * (1 - 0.1);
+            //healingBreakdown["Atonement_" + spellName] = (healingBreakdown["Atonement_" + spellName] || 0) + heal;
+            logHeal(healingBreakdown, spellName, heal);
+
             totalHealing += heal;
             rawHeal = heal;
           }
         }
         else {
-          healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          //healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          logHeal(healingBreakdown, spellName, (spellOutput * effectiveCPM));
           totalHealing += (spellOutput * effectiveCPM);
           rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
         }
 
         if (rawHeal > 0 && (spell.healType === "direct" || spellName === "Power Word: Solace")) {
-            const echoValue = (rawHeal * (getMastery(statProfile, "Holy Priest")-1))
+            const echoValue = (rawHeal * (getMastery(statProfile, "Holy Priest")-1) * (1 - echoOverhealing))
             logHeal(healingBreakdown, "Echo of Light", echoValue);
             totalHealing += echoValue;
 

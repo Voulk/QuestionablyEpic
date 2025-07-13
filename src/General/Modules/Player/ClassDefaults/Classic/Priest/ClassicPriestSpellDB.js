@@ -229,6 +229,7 @@ export const CLASSICPRIESTSPELLDB = {
     "Divine Star": [{
         spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "heal"},
         type: "heal",
+        healType: "direct",
         castTime: 0, 
         chakraType: "blue",
         cost: 0, 

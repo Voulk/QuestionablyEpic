@@ -73,7 +73,7 @@ describe("Test APL", () => {
         const data = getData("Holy Priest");
 
         const spec = data.spec
-        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
         const revisedTalents = {...data.talents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
@@ -92,7 +92,7 @@ describe("Test APL", () => {
         else if (testSuite === "Stat") {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
-            const data = runClassicStatSuite(profile, "damage")
+            const data = runClassicStatSuite(profile, "healing")
             
             console.log(data.weights);
 
