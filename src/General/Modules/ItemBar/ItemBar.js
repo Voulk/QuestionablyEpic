@@ -589,7 +589,14 @@ export default function ItemBar(props) {
         >
           {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
             return (
-              <Button key={option.label} variant="contained" sx={{ minWidth: 150 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>{option.label}</Button>
+              <Button key={option.label} variant="contained" sx={{ minWidth: 150 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
+                <img
+                  src={require("Images/Logos/RaidLogo.jpg")} 
+                  alt=""
+                  style={{ width: 20, height: 20, marginRight: 4, borderRadius: "50%", objectFit: "cover" }}
+                />
+                {option.label}
+              </Button>
             )
           })}
         </Box>

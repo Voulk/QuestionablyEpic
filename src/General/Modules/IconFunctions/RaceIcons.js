@@ -54,132 +54,132 @@ export default function raceIcons(props) {
   let source = "";
   let alt = "";
 
-  if (props === "Races.Blood Elf") {
+  if (props === "Blood Elf") {
     sourceMale = BloodElfMale;
     sourceFemale = BloodElfFemale;
     alt = "Blood Elf";
   }
-  if (props === "Races.Dark Iron Dwarf") {
+  if (props === "Dark Iron Dwarf") {
     sourceMale = DarkIronMale;
     sourceFemale = DarkIronFemale;
     alt = "Dark Iron";
   }
-  if (props === "Races.Draenei") {
+  if (props === "Draenei") {
     sourceMale = DraeneiMale;
     sourceFemale = DraeneiFemale;
     alt = "Draenei";
   }
-  if (props === "Races.Dwarf") {
+  if (props === "Dwarf") {
     sourceMale = DwarfMale;
     sourceFemale = DwarfFemale;
     alt = "Dwarf";
   }
-  if (props === "Races.Gnome") {
+  if (props === "Gnome") {
     sourceMale = GnomeMale;
     sourceFemale = GnomeFemale;
     alt = "Gnome";
   }
-  if (props === "Races.Goblin") {
+  if (props === "Goblin") {
     sourceMale = GoblinMale;
     sourceFemale = GoblinFemale;
     alt = "Goblin";
   }
-  if (props === "Races.Highmountain Tauren") {
+  if (props === "Highmountain Tauren") {
     sourceMale = HighmountainMale;
     sourceFemale = HighmountainFemale;
     alt = "Highmountain";
   }
-  if (props === "Races.Human") {
+  if (props === "Human") {
     sourceMale = HumanMale;
     sourceFemale = HumanFemale;
     alt = "Human";
   }
-  if (props === "Races.Kul Tiran") {
+  if (props === "Kul Tiran") {
     sourceMale = KultiranMale;
     sourceFemale = KultiranFemale;
     alt = "Kul Tiran";
   }
-  if (props === "Races.Lightforged Draenei") {
+  if (props === "Lightforged Draenei") {
     sourceMale = LightforgedMale;
     sourceFemale = LightforgedFemale;
     alt = "Lightforged";
   }
-  if (props === "Races.Mag'har Orc") {
+  if (props === "Mag'har Orc") {
     sourceMale = MagharMale;
     sourceFemale = MagharFemale;
     alt = "Mag'har";
   }
-  if (props === "Races.Mechagnome") {
+  if (props === "Mechagnome") {
     sourceMale = MechagnomeMale;
     sourceFemale = MechagnomeFemale;
     alt = "Mechagnome";
   }
-  if (props === "Races.Nightborne") {
+  if (props === "Nightborne") {
     sourceMale = NightborneMale;
     sourceFemale = NightborneFemale;
     alt = "Nightborne";
   }
-  if (props === "Races.Night Elf") {
+  if (props === "Night Elf") {
     sourceMale = NightElfMale;
     sourceFemale = NightElfFemale;
     alt = "Night elf";
   }
-  if (props === "Races.Orc") {
+  if (props === "Orc") {
     sourceMale = OrcMale;
     sourceFemale = OrcFemale;
     alt = "Orc";
   }
-  if (props === "Races.Pandaren") {
+  if (props === "Pandaren") {
     sourceMale = PandarenMale;
     sourceFemale = PandarenFemale;
     alt = "Pandaren";
   }
-  if (props === "Races.Tauren") {
+  if (props === "Tauren") {
     sourceMale = TaurenMale;
     sourceFemale = TaurenFemale;
     alt = "Tauren";
   }
-  if (props === "Races.Troll") {
+  if (props === "Troll") {
     sourceMale = TrollMale;
     sourceFemale = TrollFemale;
     alt = "Troll";
   }
-  if (props === "Races.Undead") {
+  if (props === "Undead") {
     sourceMale = UndeadMale;
     sourceFemale = UndeadFemale;
     alt = "Undead";
   }
-  if (props === "Races.Void Elf") {
+  if (props === "Void Elf") {
     sourceMale = VoidElfMale;
     sourceFemale = VoidElfFemale;
     alt = "Void elf";
   }
-  if (props === "Races.Vulpera") {
+  if (props === "Vulpera") {
     sourceMale = VulperaMale;
     sourceFemale = VulperaFemale;
     alt = "Vulpera";
   }
-  if (props === "Races.Worgen") {
+  if (props === "Worgen") {
     sourceMale = WorgenMale;
     sourceFemale = WorgenFemale;
     alt = "Worgen";
   }
-  if (props === "Races.Zandalari Troll") {
+  if (props === "Zandalari Troll") {
     sourceMale = ZandalariMale;
     sourceFemale = ZandalariFemale;
     alt = "Zandalari";
   }
-  if (props === "Races.Zandalari Troll") {
+  if (props === "Zandalari Troll") {
     sourceMale = ZandalariMale;
     sourceFemale = ZandalariFemale;
     alt = "Zandalari";
   }
-  if (props === "Races.Earthen") {
+  if (props === "Earthen") {
     sourceMale = DwarfMale;
     sourceFemale = DwarfFemale;
     alt = "Earthen";
   }
-  if (props === "Races.Dracthyr") {
+  if (props === "Dracthyr") {
     source = Dracthyr;
     alt = "Dracthyr";
     return (
@@ -201,7 +201,6 @@ export default function raceIcons(props) {
   }
 
   return (
-    <div>
       <img
         style={{
           height: 20,
@@ -214,6 +213,14 @@ export default function raceIcons(props) {
         src={sourceMale}
         alt={alt}
       />
+
+  );
+}
+
+
+/*
+    {/*<div>
+
       <img
         style={{
           height: 20,
@@ -225,7 +232,6 @@ export default function raceIcons(props) {
         }}
         src={sourceFemale}
         alt={alt}
-      />
+      /> }
     </div>
-  );
-}
+    */

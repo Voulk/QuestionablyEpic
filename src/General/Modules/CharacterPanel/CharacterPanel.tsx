@@ -14,6 +14,7 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 import { classRaceDB } from "Databases/ClassRaceDB";
+import raceIcons from "../IconFunctions/RaceIcons";
 
 // Define your types here
 interface Player {
@@ -474,7 +475,18 @@ export default function CharacterPanel(props: Props) {
                           let lastItem = i + 1 === arr.length ? false : true;
                           //const disabled = key.modelName.includes("Coming Soon");
                           return (
-                            <MenuItem divider={lastItem} key={"playstyle" + i} id={key} value={key} style={{ justifyContent: "center" }} disabled={false}>
+                            <MenuItem divider={lastItem} key={"playstyle" + i} id={key} value={key} style={{ justifyContent: "flex-start" }} disabled={false}>
+                            {/*<img
+                              src={getRaceIconUrl(key)} // <- your function or key.iconUrl
+                              alt=""
+                              style={{
+                                width: 20,
+                                height: 20,
+                                borderRadius: "50%",
+                                objectFit: "cover",
+                              }}
+                            /> */}
+                              {raceIcons(key)}
                               {key /*getTranslatedClassName(key, currentLanguage)*/}
                             </MenuItem>
                           );
