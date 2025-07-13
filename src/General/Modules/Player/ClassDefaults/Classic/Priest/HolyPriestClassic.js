@@ -13,7 +13,18 @@ export const holyPriestDefaults = {
     initializeSet: initializeHPriestSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-
+      intellect: 21000,
+      spirit: 8000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 2500,
+      crit: 9000,
+      mastery: 9000,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
     },
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -37,22 +48,20 @@ export function initializeHPriestSet(talents = holyTalents) {
 
   const castProfile = [
     // Cooldowns
-    {spell: "Circle of Healing", efficiency: 0.95},
-    {spell: "Holy Word: Sanctuary", efficiency: 0.95},
-    {spell: "Holy Word: Serenity", efficiency: 0.95},
-    {spell: "Divine Hymn", efficiency: 0.8},
-    {spell: "Prayer of Mending", cpm: 0.9},
+    {spell: "Circle of Healing", efficiency: 0.85},
+    {spell: "Holy Word: Sanctuary", efficiency: 0.9},
+    {spell: "Holy Word: Serenity", efficiency: 0.1},
+    {spell: "Divine Hymn", efficiency: 0.9},
+    {spell: "Prayer of Mending", efficiency: 0.9},
     //{spell: "Sequence", sequence: ["Spirit Shell", "Prayer of Healing", "Prayer of Healing", "Prayer of Healing"], cooldown: 60},
     
     // Filler Spells
-    {spell: "Power Word: Shield", cpm: 3.5, fillerSpell: true, fillerRatio: 0.1},
-    {spell: "Renew", cpm: 4, fillerSpell: true, fillerRatio: 0.3},
-    {spell: "Prayer of Healing", cpm: 6, fillerSpell: true, fillerRatio: 0.6},
+    {spell: "Prayer of Healing", cpm: 1, fillerSpell: true},
 
     // DPS spells
-    {spell: "Smite", cpm: 0.1},
-    {spell: "Holy Fire", cpm: 0.1},
-    
+    {spell: "Smite", cpm: 4},
+    {spell: "Holy Fire", cpm: 3}, // Try to keep Evang active.
+
   ]
 
   if (checkHasTalent(talents, "mindbender")) {
@@ -77,7 +86,7 @@ export function initializeHPriestSet(talents = holyTalents) {
   })
   const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
-  return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
+  return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents};
 }
 
 // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
@@ -86,6 +95,7 @@ export function initializeHPriestSet(talents = holyTalents) {
 // Rejuv is our baseline spell
 export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSets = []) {
   console.log("Scoring Holy Priest Set");
+  console.log(statProfile);
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
   const spec = "Holy Priest";
@@ -98,10 +108,18 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const fightLength = 6;
   const talents = specBaseline.talents || holyTalents;
   const specSettings = {} // We'll eventually put atonement overhealing etc in here.
-  const chakraUptime = {'yellow': 1, 'blue': 1, 'red': 1}; // Yellow = ST, blue = AoE, red = DPS.
+  const chakraUptime = {'yellow': 0, 'blue': 0.9, 'red': 0.1}; // Yellow = ST, blue = AoE, red = DPS.
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.35;
 
+  // Handle Chakras effect on our casts.
+  const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
+                        ((chakraUptime['blue'] * 2)) -
+                        4; // Tier Set    
+  getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+  // With: 92019 - 
+  // Without: 90540 
+  
   // Apply Evangelism mana cost reduction.
   ["Smite", "Holy Fire"].forEach(spell => {
     getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
@@ -180,6 +198,11 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
         if (spellProfile.bonus) {
           spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
         }
+
+        // Chakra
+        if (spell.chakraType && spell.chakraType === "red") spellOutput *= (1 + chakraUptime[spell.chakraType] * 0.5)
+        if (spell.chakraType) spellOutput *= (1 + chakraUptime[spell.chakraType] * 0.35);
+
         
         if (["Smite", "Holy Fire", "Penance"].includes(spellName)) {
           // Evangelism. 
@@ -210,26 +233,12 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
           rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
         }
 
-
-        if (spellProfile.spiritShell) {
-          // During Spirit Shell we need to handle crit differently again.
-          // Our healing is equal to (Y x AbsorbMastery x critChance) + (Y x (1 - critChance)). 
-
-        }
-        else if (rawHeal > 0 && (spell.healType === "direct" || spellName === "Power Word: Solace")) {
-            const echoValue = (rawHeal * (getMastery(statProfile, "Holy Priest")-1) * cpm)
+        if (rawHeal > 0 && (spell.healType === "direct" || spellName === "Power Word: Solace")) {
+            const echoValue = (rawHeal * (getMastery(statProfile, "Holy Priest")-1))
             logHeal(healingBreakdown, "Echo of Light", echoValue);
-            score += echoValue;
+            totalHealing += echoValue;
 
-            // Divine Aegis
-            // Divine Aegis crits are 90% of our heal value (including any HealMast scaling it might have had) x the absorb value of our mastery.
-            const divineAegis = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
-            healingBreakdown["Echo of Light"] = (healingBreakdown["Divine Aegis"] || 0) + divineAegis;
-            totalHealing += divineAegis;
         }
-
-        // Power Word: Shield on the other hand just has a straightforward crit multipler and can be handled like normal.
-
 
         })
 

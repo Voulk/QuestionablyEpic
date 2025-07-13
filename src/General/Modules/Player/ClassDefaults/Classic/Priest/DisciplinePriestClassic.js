@@ -268,5 +268,5 @@ export function initializeDiscSet(talents = discTalents, ignoreOverhealing = fal
   //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
 
   //console.log(JSON.stringify(adjSpells));
-  return { castProfile: discCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
+  return { castProfile: discCastProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents };
 }

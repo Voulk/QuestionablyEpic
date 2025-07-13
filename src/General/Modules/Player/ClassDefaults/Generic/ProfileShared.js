@@ -94,7 +94,6 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     let adjCritChance = (spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1; 
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
-
      
     const targetCount = spell.targets ? spell.targets : 1;
 
@@ -111,9 +110,10 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     }
     else {
         // Most other spells follow a uniform formula.
+        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? (1 + statPercentages.mastery) : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
                             adjCritChance * // Multiply by secondary stats & any generic multipliers. 
-                            (spell.secondaries.includes("mastery") ? 1 + statPercentages.mastery : 1) *
+                            masteryMult *
                             genericMult *
                             targetCount
     }

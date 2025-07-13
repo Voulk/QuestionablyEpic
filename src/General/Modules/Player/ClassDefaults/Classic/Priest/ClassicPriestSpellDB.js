@@ -16,6 +16,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         type: "heal",
         castTime: 0, 
+        chakraType: "yellow",
         cost: 6.1 * 0.75, 
         coeff: 1.871, 
         flat: 19428,
@@ -28,11 +29,12 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
         type: "heal",
         healType: "direct",
+        chakraType: "blue",
         castTime: 2.5, 
         cost: 4.5, 
         coeff: 0.838, 
         flat: 8688,
-        expectedOverheal: 0.25,
+        expectedOverheal: 0.27,
         targets: 5,
         secondaries: ['crit', 'hmastery', 'mastery'],
     }],
@@ -54,6 +56,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         healType: "direct",
+        chakraType: "yellow",
         cost: 5.9, 
         coeff: 1.314, 
         flat: 13641,
@@ -66,6 +69,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         healType: "direct",
+        chakraType: "blue",
         cost: 5.4, 
         coeff: 0.899,
         flat: 9962,
@@ -80,6 +84,7 @@ export const CLASSICPRIESTSPELLDB = {
         castTime: 0,
         type: "classic periodic",
         buffType: "heal",
+        chakraType: "yellow",
         buffDuration: 12,
         coeff: 0.207, 
         flat: 2152,
@@ -100,6 +105,7 @@ export const CLASSICPRIESTSPELLDB = {
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
+        chakraType: "red",
         castTime: 2.5, 
         cost: 2.7, 
         coeff: 0.8560000062, 
@@ -112,6 +118,7 @@ export const CLASSICPRIESTSPELLDB = {
         castTime: 0, 
         cost: 1.8, 
         coeff: 1.11,
+        chakraType: "red",
         flat: 1136, 
         secondaries: ['crit'],
         cooldownData: {cooldown: 10},
@@ -120,6 +127,7 @@ export const CLASSICPRIESTSPELLDB = {
     {
         type: "classic periodic",
         buffType: "damage",
+        chakraType: "red",
         buffDuration: 7,
         coeff: 0.0312, //
         flat: 57,
@@ -131,6 +139,7 @@ export const CLASSICPRIESTSPELLDB = {
     "Power Word: Solace": [{
         spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
         type: "damage",
+        chakraType: "red",
         castTime: 0, 
         cost: 0, 
         coeff: 1.11,
@@ -143,6 +152,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "damage",
         buffDuration: 7,
+        chakraType: "red",
         coeff: 0.0312, //
         flat: 57,
         damageToHeal: 1,
@@ -191,13 +201,14 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         healType: "direct",
+        chakraType: "blue",
         buffDuration: 8,
-        coeff: 0.429, //
-        flat: 4009,
+        coeff: 1.542, //
+        flat: 7987,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: true}, 
         cooldownData: {cooldown: 180 },
         expectedOverheal: 0.2,
-        targets: 5,
+        targets: 12,
         secondaries: ['crit', 'hmastery']
     }],
     "Prayer of Mending": [{
@@ -205,6 +216,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         healType: "direct",
+        chakraType: "blue",
         cost: 3.5, 
         coeff: 0.571 * 1.25,
         flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
@@ -218,17 +230,19 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "heal"},
         type: "heal",
         castTime: 0, 
+        chakraType: "blue",
         cost: 0, 
         coeff: 0.758, //
         flat: 7862,
         cooldownData: {cooldown: 15},
         expectedOverheal: 0.35, 
-        targets: 6 * 2, // Hits on way out and way back.
+        targets: 11 * 2, // Hits on way out and way back.
         secondaries: ['crit', 'mastery'],
     },
     {
         type: "damage",
         damageType: "magic",
+        chakraType: "red",
         coeff: 0.455, // 
         flat: 4717,
         targets: 1 * 2,
@@ -242,6 +256,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         healType: "direct",
+        chakraType: "blue",
         castTime: 0.5, 
         cost: 3.8, 
         buffDuration: 30,
@@ -258,6 +273,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         healType: "direct",
+        chakraType: "yellow",
         cost: 2, 
         coeff: 1.3, 
         flat: 13442,
@@ -271,10 +287,11 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0,
         healType: "direct",
+        chakraType: "blue",
         cost: 3.2, 
         coeff: 0.467, 
         flat: 4841,
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.12,
         cooldownData: {cooldown: 10},
         targets: 5, // sqrt
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
