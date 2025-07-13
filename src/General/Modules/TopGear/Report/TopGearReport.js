@@ -11,10 +11,9 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { exportWowheadGearList } from "./TopGearExports";
+import { exportWowheadGearList, exportReforgeLite } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox";
@@ -204,8 +203,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
 
   const handleExportMenuClick = (buttonClicked) => {
     //alert("Exporting to " + buttonClicked, result.id);
-    setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
-    setDialogOpen(true);
+    console.log(buttonClicked);
+    if (buttonClicked === "ReforgeLite Export") {
+      setDialogOpen(true);
+      setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
+    }
+    else if (buttonClicked === "Wowhead BIS List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    }
+    else {
+      
+    }
+    
+    
   
   }
 
