@@ -573,7 +573,7 @@ export default function ItemBar(props) {
 
         spacing={1}
         sx={{
-          paddingTop: "30px",
+          paddingTop: "20px",
           paddingBottom: "10px",
       }}>
         <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>

@@ -179,7 +179,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.28)" }} // 52
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -199,7 +199,7 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "2px",
+                        borderWidth: "1px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
