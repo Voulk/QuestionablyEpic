@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection."
+    "QE Live has had significant updates. Let me know if you run into anything strange!"
   ] : 
   [
     "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord.",

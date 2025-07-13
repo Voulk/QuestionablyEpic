@@ -207,8 +207,4 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
     ],
     gameType: "Classic",
   },
-<<<<<<< HEAD:src/Databases/ClassRaceDB.ts
 };
-=======
-};
->>>>>>> 4ecec58852659101af64929a0c5dd7bd0e6a7156:src/Databases/ClassRaceDB.js
