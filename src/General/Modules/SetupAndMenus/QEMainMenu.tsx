@@ -185,7 +185,16 @@ export default function QEMainMenu(props: Props) {
   };
 
   const finishWelcome = (selectedGameType : gameTypes, selectedSpec : string) => {
+    /*
     props.allChars.pickPlayerClass(selectedGameType, selectedSpec);
+    dispatch(toggleGameType(selectedGameType));
+    setWelcomeOpen(false);
+    ls.set("welcomeMessage", "true");
+    */
+
+    const newID = props.allChars.getCharOfClass(selectedSpec.includes("Classic") ? "Classic" : "Retail", selectedSpec);
+    props.allChars.setActiveChar(newID);
+    props.charUpdate(props.allChars);
     dispatch(toggleGameType(selectedGameType));
     setWelcomeOpen(false);
     ls.set("welcomeMessage", "true");

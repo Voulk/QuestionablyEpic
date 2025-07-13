@@ -102,7 +102,6 @@ export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDia
   const handleGameTypeChange = (newGameType : gameTypes) => {
     setSelectedGameType(newGameType);
     setSelectedClass(classNames[newGameType][0]); // Reset to the first class of the new game type
-    console.log("Setting class to " + classList[0] + " for game type " + newGameType);
   }
 
   return (
