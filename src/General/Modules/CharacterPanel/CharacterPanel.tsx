@@ -13,6 +13,7 @@ import Settings from "../Settings/Settings";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import { classRaceDB } from "Databases/ClassRaceDB";
 
 // Define your types here
 interface Player {
@@ -102,12 +103,15 @@ export default function CharacterPanel(props: Props) {
   const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
-  const classes = useStyles();
-  const specBuilds = props.player.getAllModels(props.contentType);
-
-  const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state: any) => state.gameType);
   const contentType = useSelector((state: any) => state.contentType) || "";
+  const classes = useStyles();
+  const specBuilds = props.player.getAllModels(props.contentType);
+  
+  const raceOptions = gameType === "Classic" ? classRaceDB[props.player.spec].races : [];
+
+  const [backgroundImage, setBackgroundImage] = useState("");
+
 
   const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
@@ -115,7 +119,7 @@ export default function CharacterPanel(props: Props) {
   const currentCharacter: CurrentCharacter = props.allChars.getActiveChar();
   const playerStats = props.player !== null ? props.player.getActiveStats() : {};
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
-
+  const [playerRace, setPlayerRace] = useState(props.player.getRace());
 
   useEffect(() => {
     async function setImg() {
@@ -130,6 +134,12 @@ export default function CharacterPanel(props: Props) {
   const updateSpecBuild = (value) => {
     props.player.setModelID(parseInt(value), props.contentType);
     setSpecBuild(value); // This is mostly just used to forced a CharPanel UI update.
+    props.singleUpdate(props.player);
+  };
+
+  const updatePlayerRace = (value) => {
+    props.player.setRace(value);
+    setPlayerRace(value); // This is mostly just used to forced a CharPanel UI update.
     props.singleUpdate(props.player);
   };
 
@@ -436,6 +446,45 @@ export default function CharacterPanel(props: Props) {
                       </TextField>
                     </Tooltip>
                   </Grid>
+
+                  {/* Race Selection */}
+                  {gameType === "Classic" ? (
+                  <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+                    <Tooltip
+                      title={
+                        <Typography align="center" variant="body2">
+                          {"Race Selection"}
+                        </Typography>
+                      }
+                      placement="top-start"
+                    >
+                      <TextField
+                        className={classes.select}
+                        InputProps={{ variant: "outlined" }}
+                        select
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        value={playerRace}
+                        onChange={(e) => updatePlayerRace(e.target.value)}
+                        label={"Race Selection"}
+                        style={{ textAlign: "center", minWidth: 120 }}
+                      >
+                        {raceOptions.map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          //const disabled = key.modelName.includes("Coming Soon");
+                          return (
+                            <MenuItem divider={lastItem} key={"playstyle" + i} id={key} value={key} style={{ justifyContent: "center" }} disabled={false}>
+                              {key /*getTranslatedClassName(key, currentLanguage)*/}
+                            </MenuItem>
+                          );
+                        })}
+                      </TextField>
+                    </Tooltip>
+                  </Grid>
+                  ) : (
+                    ""
+                  )}
                 </Grid>
             <Divider />
             <Settings player={props.player} contentType={props.contentType} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />

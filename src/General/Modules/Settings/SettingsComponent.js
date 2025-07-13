@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RetailSettings(props) {
+export default function SettingsComponent(props) {
   const { t } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();
@@ -31,6 +31,7 @@ export default function RetailSettings(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const dispatch = useDispatch();
+  console.log(props.player.spec);
 
   const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants"];
 
