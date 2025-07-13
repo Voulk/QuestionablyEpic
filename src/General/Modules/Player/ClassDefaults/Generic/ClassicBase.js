@@ -188,7 +188,7 @@ export const getManaPool = (currentStats, spec) => {
 // Innervate currently only works for druid but we could add a setting.
 
 // Not updated for MoP yet.
-export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
+export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") => {
     const baseMana = GLOBALCONST.baseMana[spec];
     let additionalManaPerSecond = 6000; //baseMana * 0.05;
     
@@ -227,6 +227,13 @@ export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
 
     }
     else if (spec.includes("Discipline Priest")) {
+    }
+
+    if (playerRace === "Blood Elf") {
+        // Arcane Torrent
+        const arcaneTorrent = (baseMana * 0.02 / 120 * 5);
+        additionalManaPerSecond += arcaneTorrent;
+        manaSources["Arcane Torrent"] = arcaneTorrent;
     }
 
     manaSources.additionalMP5 = additionalManaPerSecond;

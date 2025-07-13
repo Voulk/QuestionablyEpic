@@ -31,7 +31,6 @@ export default function SettingsComponent(props) {
   const gameType = useSelector((state) => state.gameType);
 
   const dispatch = useDispatch();
-  console.log(props.player.spec);
 
   const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants"];
 

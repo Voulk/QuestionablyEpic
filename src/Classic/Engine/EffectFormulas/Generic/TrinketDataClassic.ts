@@ -8,6 +8,7 @@ type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number
 
 type Effect = {
   name: string;
+  description?: string;
   effects: ClassicEffectData[];
   runFunc: TrinketRunFunc;
 };
@@ -40,7 +41,10 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 
 
-
+const dpsProcMult = (spec: string) => {
+  if (spec.includes("Discipline Priest")) return 1;
+  else return 0.1; 
+}
 
 
 /*
@@ -213,8 +217,9 @@ const raidTrinketData: Effect[] = [
       return getGenericStatEffect(data[0], itemLevel);
     }
   },
-        {
+  {
     name: "Relic of Yu'lon",
+    description: "Relic of Yu'lon is a very overpowered trinket but only procs off damage spells so non-Disc specs might need to play differently to proc it. I'd only recommend it for very advanced players in those cases and it isn't represented on the chart  here.",
     effects: [
       { 
         value: {476: 3027}, 
@@ -224,9 +229,11 @@ const raidTrinketData: Effect[] = [
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.intellect! *= dpsProcMult(player.spec); //
+
       return bonus_stats;
-      //return getGenericStatEffect(data[0], itemLevel);
+      //return ;
     }
   },
     {

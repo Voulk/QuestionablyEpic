@@ -132,7 +132,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, spec) * ((playerRace === "Gnome") ? 1.05 : 1) * 1.02; // Gnomes get a 5% mana pool increase
   const regen = (getManaRegen(statPercentages, spec) + 
-                getAdditionalManaEffects(statProfile, spec).additionalMP5 +
+                getAdditionalManaEffects(statProfile, spec, playerRace).additionalMP5 +
                 (statProfile.mp5 || 0)) * 12 * fightLength;
 
   const totalManaPool = manaPool + regen;
@@ -236,8 +236,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         if (spell.type === "damage" || spell.buffType === "damage") {
-          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-          totalDamage += (spellOutput * effectiveCPM);
+          // Beastslaying
+          const damage = (spellOutput * effectiveCPM);
+          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + damage;
+          totalDamage += damage;
 
           if (spell.damageToHeal) {
 
