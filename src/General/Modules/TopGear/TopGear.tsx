@@ -438,7 +438,7 @@ export default function TopGear(props: any) {
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
-        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
+        player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
         version: getVersion(),
       };
     

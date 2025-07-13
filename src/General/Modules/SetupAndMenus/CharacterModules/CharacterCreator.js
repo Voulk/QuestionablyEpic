@@ -4,7 +4,7 @@ import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogAction
 import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
-import raceIcons from "General/Modules/IconFunctions/RaceIcons";
+import { getRaceIcon } from "General/Modules/IconFunctions/RaceIcons";
 import Autocomplete from "@mui/material/Autocomplete";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { getTranslatedRaceName } from "Databases/RacesDB";
@@ -204,7 +204,7 @@ export default function AddNewChar(props) {
                         return (
                           <MenuItem divider={lastItem} key={"race" + i} value={key}>
                             <div style={{ display: "inline-flex" }}>
-                              {raceIcons(key)}
+                              {getRaceIcon(key, "both")}
                               {getTranslatedRaceName(key, currentLanguage)}
                             </div>
                           </MenuItem>

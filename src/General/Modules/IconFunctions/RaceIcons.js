@@ -47,141 +47,147 @@ import ZandalariMale from "Images/Races/Zandalari/ZandalariMale.jpg";
 import ZandalariFemale from "Images/Races/Zandalari/ZandalariFemale.jpg";
 import Dracthyr from "Images/Races/Dracthyr/ui_dracthyr.jpg";
 
-// Yeah look we're just going to come back to this.
-export default function raceIcons(props) {
-  let sourceMale = "";
-  let sourceFemale = "";
-  let source = "";
-  let alt = "";
 
-  if (props === "Blood Elf") {
-    sourceMale = BloodElfMale;
-    sourceFemale = BloodElfFemale;
-    alt = "Blood Elf";
+export const getRacePath = (race) => {
+  let sources = {male: "", female: ""};
+
+  if (race === "Blood Elf") {
+    sources.male = BloodElfMale;
+    sources.female = BloodElfFemale;
+
   }
-  if (props === "Dark Iron Dwarf") {
-    sourceMale = DarkIronMale;
-    sourceFemale = DarkIronFemale;
-    alt = "Dark Iron";
+  if (race === "Dark Iron Dwarf") {
+    sources.male = DarkIronMale;
+    sources.female = DarkIronFemale;
+
   }
-  if (props === "Draenei") {
-    sourceMale = DraeneiMale;
-    sourceFemale = DraeneiFemale;
-    alt = "Draenei";
+  if (race === "Draenei") {
+    sources.male = DraeneiMale;
+    sources.female = DraeneiFemale;
+
   }
-  if (props === "Dwarf") {
-    sourceMale = DwarfMale;
-    sourceFemale = DwarfFemale;
-    alt = "Dwarf";
+  if (race === "Dwarf") {
+    sources.male = DwarfMale;
+    sources.female = DwarfFemale;
+
   }
-  if (props === "Gnome") {
-    sourceMale = GnomeMale;
-    sourceFemale = GnomeFemale;
-    alt = "Gnome";
+  if (race === "Gnome") {
+    sources.male = GnomeMale;
+    sources.female = GnomeFemale;
+
   }
-  if (props === "Goblin") {
-    sourceMale = GoblinMale;
-    sourceFemale = GoblinFemale;
-    alt = "Goblin";
+  if (race === "Goblin") {
+    sources.male = GoblinMale;
+    sources.female = GoblinFemale;
+
   }
-  if (props === "Highmountain Tauren") {
-    sourceMale = HighmountainMale;
-    sourceFemale = HighmountainFemale;
-    alt = "Highmountain";
+  if (race === "Highmountain Tauren") {
+    sources.male = HighmountainMale;
+    sources.female = HighmountainFemale;
+
   }
-  if (props === "Human") {
-    sourceMale = HumanMale;
-    sourceFemale = HumanFemale;
-    alt = "Human";
+  if (race === "Human") {
+    sources.male = HumanMale;
+    sources.female = HumanFemale;
+
   }
-  if (props === "Kul Tiran") {
-    sourceMale = KultiranMale;
-    sourceFemale = KultiranFemale;
-    alt = "Kul Tiran";
+  if (race === "Kul Tiran") {
+    sources.male = KultiranMale;
+    sources.female = KultiranFemale;
+
   }
-  if (props === "Lightforged Draenei") {
-    sourceMale = LightforgedMale;
-    sourceFemale = LightforgedFemale;
-    alt = "Lightforged";
+  if (race === "Lightforged Draenei") {
+    sources.male = LightforgedMale;
+    sources.female = LightforgedFemale;
+
   }
-  if (props === "Mag'har Orc") {
-    sourceMale = MagharMale;
-    sourceFemale = MagharFemale;
-    alt = "Mag'har";
+  if (race === "Mag'har Orc") {
+    sources.male = MagharMale;
+    sources.female = MagharFemale;
+
   }
-  if (props === "Mechagnome") {
-    sourceMale = MechagnomeMale;
-    sourceFemale = MechagnomeFemale;
-    alt = "Mechagnome";
+  if (race === "Mechagnome") {
+    sources.male = MechagnomeMale;
+    sources.female = MechagnomeFemale;
+
   }
-  if (props === "Nightborne") {
-    sourceMale = NightborneMale;
-    sourceFemale = NightborneFemale;
-    alt = "Nightborne";
+  if (race === "Nightborne") {
+    sources.male = NightborneMale;
+    sources.female = NightborneFemale;
+
   }
-  if (props === "Night Elf") {
-    sourceMale = NightElfMale;
-    sourceFemale = NightElfFemale;
-    alt = "Night elf";
+  if (race === "Night Elf") {
+    sources.male = NightElfMale;
+    sources.female = NightElfFemale;
+
   }
-  if (props === "Orc") {
-    sourceMale = OrcMale;
-    sourceFemale = OrcFemale;
-    alt = "Orc";
+  if (race === "Orc") {
+    sources.male = OrcMale;
+    sources.female = OrcFemale;
+
   }
-  if (props === "Pandaren") {
-    sourceMale = PandarenMale;
-    sourceFemale = PandarenFemale;
-    alt = "Pandaren";
+  if (race === "Pandaren") {
+    sources.male = PandarenMale;
+    sources.female = PandarenFemale;
+
   }
-  if (props === "Tauren") {
-    sourceMale = TaurenMale;
-    sourceFemale = TaurenFemale;
-    alt = "Tauren";
+  if (race === "Tauren") {
+    sources.male = TaurenMale;
+    sources.female = TaurenFemale;
+
   }
-  if (props === "Troll") {
-    sourceMale = TrollMale;
-    sourceFemale = TrollFemale;
-    alt = "Troll";
+  if (race === "Troll") {
+    sources.male = TrollMale;
+    sources.female = TrollFemale;
+
   }
-  if (props === "Undead") {
-    sourceMale = UndeadMale;
-    sourceFemale = UndeadFemale;
-    alt = "Undead";
+  if (race === "Undead") {
+    sources.male = UndeadMale;
+    sources.female = UndeadFemale;
+
   }
-  if (props === "Void Elf") {
-    sourceMale = VoidElfMale;
-    sourceFemale = VoidElfFemale;
-    alt = "Void elf";
+  if (race === "Void Elf") {
+    sources.male = VoidElfMale;
+    sources.female = VoidElfFemale;
+
   }
-  if (props === "Vulpera") {
-    sourceMale = VulperaMale;
-    sourceFemale = VulperaFemale;
-    alt = "Vulpera";
+  if (race === "Vulpera") {
+    sources.male = VulperaMale;
+    sources.female = VulperaFemale;
+
   }
-  if (props === "Worgen") {
-    sourceMale = WorgenMale;
-    sourceFemale = WorgenFemale;
-    alt = "Worgen";
+  if (race === "Worgen") {
+    sources.male = WorgenMale;
+    sources.female = WorgenFemale;
+
   }
-  if (props === "Zandalari Troll") {
-    sourceMale = ZandalariMale;
-    sourceFemale = ZandalariFemale;
-    alt = "Zandalari";
+  if (race === "Zandalari Troll") {
+    sources.male = ZandalariMale;
+    sources.female = ZandalariFemale;
+
   }
-  if (props === "Zandalari Troll") {
-    sourceMale = ZandalariMale;
-    sourceFemale = ZandalariFemale;
-    alt = "Zandalari";
+  if (race === "Zandalari Troll") {
+    sources.male = ZandalariMale;
+    sources.female = ZandalariFemale;
+
   }
-  if (props === "Earthen") {
-    sourceMale = DwarfMale;
-    sourceFemale = DwarfFemale;
-    alt = "Earthen";
+  if (race === "Earthen") {
+    sources.male = DwarfMale;
+    sources.female = DwarfFemale;
+
   }
-  if (props === "Dracthyr") {
-    source = Dracthyr;
-    alt = "Dracthyr";
+  if (race === "Dracthyr") {
+    sources.male = Dracthyr;
+    sources.female = Dracthyr;
+  }
+
+  return sources;
+}
+
+export const getRaceIcon = (race, gender) => {
+  const icons = getRacePath(race);
+
+  if (gender === "both") {
     return (
       <div>
         <img
@@ -193,45 +199,38 @@ export default function raceIcons(props) {
             borderRadius: "4px",
             border: "1px solid rgba(255, 255, 255, 0.12)",
           }}
-          src={source}
-          alt={alt}
+          src={icons.male}
+          alt={""}
         />
+        <img
+          style={{
+            height: 20,
+            width: 20,
+            margin: "0px 5px 0px 5px",
+            verticalAlign: "middle",
+            borderRadius: "4px",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+          }}
+          src={icons.female}
+          alt={""}
+        /> 
       </div>
-    );
+    )
   }
-
-  return (
-      <img
-        style={{
-          height: 20,
-          width: 20,
-          margin: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-          borderRadius: "4px",
-          border: "1px solid rgba(255, 255, 255, 0.12)",
-        }}
-        src={sourceMale}
-        alt={alt}
-      />
-
-  );
+  else {
+    return (
+        <img
+          style={{
+            height: 20,
+            width: 20,
+            margin: "0px 5px 0px 5px",
+            verticalAlign: "middle",
+            borderRadius: "4px",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+          }}
+          src={icons[gender]}
+          alt={""}
+        />
+  )}
 }
 
-
-/*
-    {/*<div>
-
-      <img
-        style={{
-          height: 20,
-          width: 20,
-          margin: "0px 5px 0px 5px",
-          verticalAlign: "middle",
-          borderRadius: "4px",
-          border: "1px solid rgba(255, 255, 255, 0.12)",
-        }}
-        src={sourceFemale}
-        alt={alt}
-      /> }
-    </div>
-    */

@@ -35,7 +35,8 @@ export const changeLog: entry[] = [
       "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
       "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
       "Classic: Competitive Alternatives now works for Resto Druid.",
-      "Classic: Added Upgrade Finder for all specs. "
+      "Classic: Added Upgrade Finder for all specs. ",
+      "Classic: Added a player race dropdown."
   ]},
   {
     version: "11.1.7 / 5.5.0",

@@ -420,7 +420,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                       <Grid container item direction="row" spacing={0}>
                                       <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                        {player.region}-{player.realm}
+                                        {player.race} {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
                                     <Grid item xs={12}>

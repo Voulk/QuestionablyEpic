@@ -68,18 +68,40 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
-export const convertStatPercentages = (statProfile, hasteBuff, spec) => {
-  const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
-  return {
-      spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
-      crit: 1 + getCritPercentage(statProfile, spec),
-      haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
-      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
-      weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
-      weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
-      weaponSwingSpeed: statProfile.weaponSwingSpeed,
-      attackpower: (statProfile.intellect + statProfile.spellpower - 10) * 2,
-      armorReduction: 0.7,
+export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
+    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+
+    const stats = {
+        spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
+        crit: 1 + getCritPercentage(statProfile, spec),
+        haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
+        mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
+        spirit: (statProfile.spirit),
+        weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
+        weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
+        weaponSwingSpeed: statProfile.weaponSwingSpeed,
+        attackpower: (statProfile.intellect + statProfile.spellpower - 10) * 2,
+        armorReduction: 0.7,
+    }
+
+    getClassicRaceBonuses(stats, race);
+    return stats;
+}
+
+const getClassicRaceBonuses = (statPerc, race) => {
+    if (race === "Pandaren") {
+        // Handled before raid buffs.
+    }
+    else if (race === "Worgen") {
+        statPerc.crit += 0.01; // 1% crit
+    }
+    else if (race === "Orc") {
+        // We probably rework this eventually to be 
+        statPerc.spellpower += (282 * 1.1);
+        statPerc.attackpower += (282 * 1.1 * 2);
+    }
+    else if (race === "Human") {
+        statPerc.spirit *= 1.03; // 3% spirit
     }
 }
 

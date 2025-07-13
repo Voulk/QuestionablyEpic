@@ -14,7 +14,7 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 import { classRaceDB } from "Databases/ClassRaceDB";
-import raceIcons from "../IconFunctions/RaceIcons";
+import { getRaceIcon } from "../IconFunctions/RaceIcons";
 
 // Define your types here
 interface Player {
@@ -486,7 +486,7 @@ export default function CharacterPanel(props: Props) {
                                 objectFit: "cover",
                               }}
                             /> */}
-                              {raceIcons(key)}
+                              {getRaceIcon(key, "female")}
                               {key /*getTranslatedClassName(key, currentLanguage)*/}
                             </MenuItem>
                           );
