@@ -25,7 +25,8 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     658,
     665,
     671,
-    678
+    678,
+    684,
 
   ],
   pvp: [

@@ -17,6 +17,7 @@ import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngine
 import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData";
 
 /**
  * == Top Gear Engine ==
@@ -462,15 +463,20 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
       continue;
     }
     if (diffList[x] && primeList[x].uniqueHash !== diffList[x].uniqueHash) {
-      differentials.items.push(diffList[x]);
+      //differentials.items.push(diffList[x]);
       doubleSlot[diffList[x].slot] = (doubleSlot[diffList[x].slot] || 0) + 1;
 
       // Trinkets and Rings
       if ((x === 13 || x === 11) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
         differentials.items.push(diffList[x - 1]);
       }
       else if ((x === 10 || x === 12) && doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
         differentials.items.push(diffList[x + 1]);
+      }
+      else if (doubleSlot[diffList[x].slot] <= 1) {
+        differentials.items.push(diffList[x]);
       }
     }
   }
@@ -553,10 +559,8 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   bonus_stats.intellect += 747;
   enchants["Legs"] = "Sunset Spellthread";
 
-
-
   if (contentType === "Raid") {
-    const dreamingData =  { // Mastery benefit. This is short and not all that useful.
+    const dreamingData =  { // 
       coefficient: 40.32042, 
       table: -8,
       ppm: 4,
@@ -589,6 +593,21 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   // Algari Mana Oil
   bonus_stats.haste = (bonus_stats.haste || 0) + 232;
   bonus_stats.crit = (bonus_stats.crit || 0) + 232;
+
+  // Corruption
+  enchants["Head"] = "Void Ritual";
+  const voidRitualData =  { // 
+    coefficient: 0.032154, 
+    table: -1, // ????
+    uptime: 0.35, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
+    averageStacks: 10,
+  };
+  const statPerStack = processedValue(voidRitualData, 571)
+  const statAvg = statPerStack * voidRitualData.averageStacks * voidRitualData.uptime;
+  bonus_stats.haste = (bonus_stats.haste || 0) + statAvg;
+  bonus_stats.crit = (bonus_stats.crit || 0) + statAvg;
+  bonus_stats.mastery = (bonus_stats.mastery || 0) + statAvg;
+  bonus_stats.versatility = (bonus_stats.versatility || 0) + statAvg;
 
   return enchants;
 }
@@ -841,7 +860,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);
+  } 
 
+  // Titan Disc Belt
+  if (builtSet.checkHasItem(242664) || builtSet.checkHasItem(245964) || builtSet.checkHasItem(245965) || builtSet.checkHasItem(245966)) {
+    const discBelt = builtSet.itemList.filter(item => item.flags.includes("DelveBelt"))[0];
+    const discEffect = discBelt.selectedOptions || [];
+    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+
+    const discStats = getTitanBeltEffect(discEffect, player, discBelt.level, additionalData)
+
+    effectStats.push(discStats);
   }
 
   const mergedEffectStats = mergeBonusStats(effectStats);

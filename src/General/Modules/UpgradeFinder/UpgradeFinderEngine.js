@@ -113,7 +113,6 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
-  console.log(baseSet);
   const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);

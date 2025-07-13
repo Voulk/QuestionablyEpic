@@ -1000,7 +1000,7 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
   // Handle any exceptions. These might include items that don't match the item level but that are best in their category so should be included anyway.
   if ((item.id === 71249 || item.id === 71086) && itemLevelReq === 391) return true; // Rep belt, no good higher ilvl options. Also Tarecgosa.
   else if (item.id === 65124 && (itemLevelReq === 378 || itemLevelReq === 391)) return true; // Fall of Mortality. Available and very good. 
-  else if ((item.id === 77096 || item.id === 77083) && (itemLevelReq === 410)) return true; // Relic / cape. No 410+ options.
+  else if ((item.id === 77096) && (itemLevelReq === 410)) return true; // Relic / cape. No 410+ options.
   
   else if (itemLevelReq === 476 && item.itemLevel === 483) return true;
   else if (itemLevelReq === 489 && item.itemLevel === 496) return true;

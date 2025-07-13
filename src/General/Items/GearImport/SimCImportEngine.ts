@@ -4,7 +4,7 @@ import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getIte
 import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-
+import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -298,6 +298,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let bonusIDS = "";
   let craftedIDs = []; // Used to append crafted stats to the wowhead tooltip.
   let enchantID = 0;
+  let titanDisc = 0;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -316,6 +317,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     } 
     else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
+    else if (info.includes("titan_disc_id=")) titanDisc = parseInt(info.split("=")[1]);
     else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) protoItem.id = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) protoItem.level.drop = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) {
@@ -327,6 +329,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
       
     }
     else if (info.includes("ilevel=") || info.includes("ilvl=")) protoItem.level.override = parseInt(info.split("=")[1]);//  levelOverride = 
+    
   }
 
   // Grab the items base level from our item database.
@@ -497,8 +500,13 @@ export function processItem(line: string, player: Player, contentType: contentTy
       // Versatility Crafted Override
       craftedStats = ["40"]
     }*/
-    if (bonus_id === "7881") protoItem.uniqueTag = "crafted";
-    else if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
+    if (bonus_id === "12043") {
+      protoItem.upgradeTrack = "Gilded Crafted";
+    }
+    else if (bonus_id === "12042") {
+      protoItem.upgradeTrack = "Runed Crafted";
+    }
+    if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
   }
   //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
   
@@ -523,14 +531,14 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684, "Runed Crafted": 664, "Gilded Crafted": 681 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
     const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
-
+  
 
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
@@ -562,6 +570,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
     if (protoItem.upgradeTrack !== "") {
       item.upgradeTrack = protoItem.upgradeTrack;
       item.upgradeRank = protoItem.upgradeRank || 0;
+    }
+    if (item.flags.includes("DelveBelt") && titanDisc !== 0) {
+      if (getTitanDiscName(titanDisc) !== "Unknown Effect") item.selectedOptions = [titanDisc]
     }
 
     item.quality = protoItem.quality !== 0 ? protoItem.quality : (getItemProp(protoItem.id, "quality") || 4);
