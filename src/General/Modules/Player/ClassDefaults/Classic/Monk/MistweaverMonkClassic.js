@@ -4,9 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
-import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
-import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 // Proper Classic Settings
 // Fight Timer, Enemy Targets, Include Overheal, Reporting, Haste Buff
@@ -26,8 +24,19 @@ export const mistweaverMonkDefaults = {
     scoreSet: scoreMonkSet,
     initializeSet: initializeMonkSet,
     defaultStatProfile: { 
-        // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-
+      // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
+      intellect: 21000,
+      spirit: 9000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 3145,
+      crit: 9500,
+      mastery: 2500,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -99,7 +108,7 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
 // Rejuv is our baseline spell
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
-  const reporting = false;
+  const reporting = userSettings.reporting || false;
   const spec = "Mistweaver Monk";
     let totalHealing = 0;
     let totalDamage = 0;

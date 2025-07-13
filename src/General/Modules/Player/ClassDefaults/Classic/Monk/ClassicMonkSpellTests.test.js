@@ -82,14 +82,15 @@ describe("Test Mistweaver Spell Values", () => {
     });
 
     // Test Regular Spells.
+    // Note that the tooltip for CJL is a bait. 
     each`
-        spellName                     | expectedResult           | index
-        ${"Surging Mist"}             | ${(32548 + 35652) / 2}   | ${0}
-        ${"Rushing Jade Wind"}        | ${3268 * 8}              | ${1}
-        ${"Spinning Crane Kick"}      | ${4085 * 3}              | ${1}
-        ${"Invoke Xuen, the White Tiger"}               | ${1602 * 45}              | ${0}  // 3456 + 1602 melee (2h) - 1h = 1616 (1h)
-        ${"Invoke Xuen, the White Tiger"}               | ${3457 * 45}              | ${1}  // 3456 + 1602 melee (2h) - 1h = 1616 (1h)
-
+        spellName                                | expectedResult           | index
+        ${"Surging Mist"}                        | ${(32548 + 35652) / 2}   | ${0}
+        ${"Rushing Jade Wind"}                   | ${3268 * 8}              | ${1}
+        ${"Spinning Crane Kick"}                 | ${4085 * 3}              | ${1}
+        ${"Invoke Xuen, the White Tiger"}        | ${1602 * 45}             | ${0} 
+        ${"Invoke Xuen, the White Tiger"}        | ${3457 * 45}             | ${1}  
+        ${"Crackling Jade Lightning"}            | ${6237 * 6}                 | ${0}
     `.test("Base Value Check - Mistweaver Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = init.spellDB[spellName][index]
         const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, "Mistweaver Monk", userSettings) / spell.targets;

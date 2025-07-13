@@ -46,12 +46,12 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
         {cat: "Fillers & Minor Cooldowns", tag: "Renewing Mist", seq: ["Renewing Mist"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Jab", seq: ["Jab"], preBuffs: []},
         {cat: "Fillers & Minor Cooldowns", tag: "Crackling Jade Lightning", seq: ["Crackling Jade Lightning"], preBuffs: []},
-        {cat: "Fillers & Minor Cooldowns", tag: "Spinning Crane Kick", seq: ["Spinning Crane Kick"], preBuffs: []},
+        {cat: "Fillers & Minor Cooldowns", tag: "Spinning Crane Kick (6t)", seq: ["Spinning Crane Kick"], preBuffs: []},
 
         {cat: "Talented Abilities", tag: "Chi Burst (per target)", seq: ["Chi Burst"], preBuffs: []},
         {cat: "Talented Abilities", tag: "Chi Wave", seq: ["Chi Wave"], preBuffs: []},
         {cat: "Talented Abilities", tag: "Zen Sphere", seq: ["Zen Sphere"], preBuffs: []},
-        {cat: "Talented Abilities", tag: "Rushing Jade Wind", seq: ["Rushing Jade Wind"], preBuffs: []},
+        {cat: "Talented Abilities", tag: "Rushing Jade Wind (6t)", seq: ["Rushing Jade Wind"], preBuffs: []},
 
         {cat: "Chi Spenders", tag: "Tiger Palm", seq: ["Tiger Palm"], preBuffs: []},
         {cat: "Chi Spenders", tag: "Tiger Palm (MM)", seq: ["Tiger Palm"], preBuffs: ["Muscle Memory"]},

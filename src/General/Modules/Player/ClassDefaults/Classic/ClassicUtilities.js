@@ -22,12 +22,12 @@ import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/
  */
 export const applyLoadoutEffects = (classicSpells, settings, state) => {
     const auraHealingBuff = { // 
-        "Restoration Druid": 0.1,
-        "Discipline Priest": 0, // Gets 15% intellect instead.
-        "Holy Paladin": 0.1,
+        "Restoration Druid": 0.15,
+        "Discipline Priest": 0, // 
+        "Holy Paladin": 0,
         "Holy Priest": 0,
-        "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
-        "Mistweaver Monk": 0.2, // Soon :)
+        "Restoration Shaman": 0, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Mistweaver Monk": 0.2, // Serpent Stance
     };
 
     const baseMana = {

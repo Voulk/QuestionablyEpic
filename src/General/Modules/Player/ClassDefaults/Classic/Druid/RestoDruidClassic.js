@@ -15,6 +15,18 @@ export const restoDruidDefaults = {
     initializeSet: initializeDruidSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
+      intellect: 21000,
+      spirit: 9000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 3043,
+      crit: 8000,
+      mastery: 9000,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
 
     },
     defaultStatWeights: {

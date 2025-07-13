@@ -16,6 +16,7 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 17, icon: "spell_holy_powerwordshield", cat: "heal"},
         type: "heal",
         castTime: 0, 
+        chakraType: "yellow",
         cost: 6.1 * 0.75, 
         coeff: 1.871, 
         flat: 19428,
@@ -28,15 +29,16 @@ export const CLASSICPRIESTSPELLDB = {
         spellData: {id: 596, icon: "spell_holy_prayerofhealing02", cat: "heal"},
         type: "heal",
         healType: "direct",
+        chakraType: "blue",
         castTime: 2.5, 
-        cost: 26, 
+        cost: 4.5, 
         coeff: 0.838, 
         flat: 8688,
-        expectedOverheal: 0.45,
+        expectedOverheal: 0.27,
         targets: 5,
-        secondaries: ['crit', 'hmastery'],
+        secondaries: ['crit', 'hmastery', 'mastery'],
     }],
-    "Prayer of Mending": [{
+    /*"Prayer of Mending": [{
         spellData: {id: 33076, icon: "spell_holy_prayerofmendingtga", cat: "heal"},
         type: "heal",
         castTime: 0, 
@@ -45,40 +47,44 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 3299,
         additiveScaling: 0.25,
         expectedOverheal: 0.1,
+        cooldownData: {cooldown: 10},
         targets: 3, // Effectively jumps
         secondaries: ['crit'],
-    }],
+    }],*/
     "Flash Heal": [{
         spellData: {id: 2061, icon: "spell_holy_flashheal", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
         healType: "direct",
-        cost: 28, 
+        chakraType: "yellow",
+        cost: 5.9, 
         coeff: 1.314, 
         flat: 13641,
         additiveScaling: 0.25,
         expectedOverheal: 0.1,
-        secondaries: ['crit', 'hmastery'],
+        secondaries: ['crit', 'hmastery', 'mastery'],
     }],
     "Binding Heal": [{
         spellData: {id: 32546, icon: "spell_holy_blindingheal", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
         healType: "direct",
+        chakraType: "blue",
         cost: 5.4, 
         coeff: 0.899,
         flat: 9962,
         additiveScaling: 0.25,
         expectedOverheal: 0.1,
         targets: 2,
-        secondaries: ['crit', 'hmastery'],
+        secondaries: ['crit', 'hmastery', 'mastery'],
     }],
     "Renew": [{
         spellData: {id: 139, icon: "spell_holy_renew", cat: "heal", spec: "Holy Priest Classic"},
-        cost: 17,
+        cost: 2.6,
         castTime: 0,
         type: "classic periodic",
         buffType: "heal",
+        chakraType: "yellow",
         buffDuration: 12,
         coeff: 0.207, 
         flat: 2152,
@@ -99,12 +105,12 @@ export const CLASSICPRIESTSPELLDB = {
     "Smite": [{
         spellData: {id: 585, icon: "spell_holy_holysmite", cat: "damage"},
         type: "damage",
+        chakraType: "red",
         castTime: 2.5, 
         cost: 2.7, 
         coeff: 0.8560000062, 
         flat: 2361,
         secondaries: ['crit'],
-        statMods: {critEffect: 1.5},
     }],
     "Holy Fire": [{
         spellData: {id: 14914, icon: "spell_holy_searinglight", cat: "damage"},
@@ -112,13 +118,16 @@ export const CLASSICPRIESTSPELLDB = {
         castTime: 0, 
         cost: 1.8, 
         coeff: 1.11,
+        chakraType: "red",
         flat: 1136, 
         secondaries: ['crit'],
-        statMods: {critEffect: 1.5},
+        cooldownData: {cooldown: 10},
+        statMods: {},
     },
     {
         type: "classic periodic",
         buffType: "damage",
+        chakraType: "red",
         buffDuration: 7,
         coeff: 0.0312, //
         flat: 57,
@@ -130,18 +139,20 @@ export const CLASSICPRIESTSPELLDB = {
     "Power Word: Solace": [{
         spellData: {id: 129250, icon: "ability_priest_flashoflight", cat: "damage"},
         type: "damage",
+        chakraType: "red",
         castTime: 0, 
-        cost: 15, 
+        cost: 0, 
         coeff: 1.11,
         flat: 1136, 
         damageToHeal: 1,
         secondaries: ['crit'],
-        statMods: {critEffect: 1.5},
+        cooldownData: {cooldown: 10},
     },
     {
         type: "classic periodic",
         buffType: "damage",
         buffDuration: 7,
+        chakraType: "red",
         coeff: 0.0312, //
         flat: 57,
         damageToHeal: 1,
@@ -157,6 +168,7 @@ export const CLASSICPRIESTSPELLDB = {
         cost: 3.1, 
         coeff: 1.12 * 3, 
         flat: 1081 * 3,
+        cooldownData: {cooldown: 9},
         secondaries: ['crit'],
     },
 ],
@@ -168,7 +180,8 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0.838 * 3, 
         flat: 8719 * 3,
         expectedOverheal: 0.1,
-        secondaries: ['crit'],
+        cooldownData: {cooldown: 9},
+        secondaries: ['crit', 'mastery'],
     },
     {
         type: "buff",
@@ -184,17 +197,18 @@ export const CLASSICPRIESTSPELLDB = {
     {
         spellData: {id: 64843, icon: "spell_holy_divinehymn", cat: "heal", spec: "Holy Priest Classic"},
         castTime: 8, 
-        cost: 36, 
+        cost: 6.3, 
         type: "classic periodic",
         buffType: "heal",
         healType: "direct",
+        chakraType: "blue",
         buffDuration: 8,
-        coeff: 0.429, //
-        flat: 4009,
+        coeff: 1.542, //
+        flat: 7987,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: true}, 
-        cooldownData: {cooldown: 480 },
+        cooldownData: {cooldown: 180 },
         expectedOverheal: 0.2,
-        targets: 5,
+        targets: 12,
         secondaries: ['crit', 'hmastery']
     }],
     "Prayer of Mending": [{
@@ -202,29 +216,34 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         healType: "direct",
+        chakraType: "blue",
         cost: 3.5, 
         coeff: 0.571 * 1.25,
         flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
         additiveScaling: 0.25,
+        cooldownData: {cooldown: 10},
         expectedOverheal: 0.1,
         targets: 3.5, // Maximum is 5.
-        secondaries: ['crit', 'hmastery'],
+        secondaries: ['crit', 'hmastery', 'mastery'],
     }],
     "Divine Star": [{
         spellData: {id: 110744, icon: "spell_priest_divinestar", cat: "heal"},
         type: "heal",
+        healType: "direct",
         castTime: 0, 
+        chakraType: "blue",
         cost: 0, 
         coeff: 0.758, //
         flat: 7862,
         cooldownData: {cooldown: 15},
-        expectedOverheal: 0.4, 
-        targets: 6 * 2, // Hits on way out and way back.
-        secondaries: ['crit'],
+        expectedOverheal: 0.35, 
+        targets: 11 * 2, // Hits on way out and way back.
+        secondaries: ['crit', 'mastery'],
     },
     {
         type: "damage",
         damageType: "magic",
+        chakraType: "red",
         coeff: 0.455, // 
         flat: 4717,
         targets: 1 * 2,
@@ -238,8 +257,9 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         healType: "direct",
+        chakraType: "blue",
         castTime: 0.5, 
-        cost: 44, 
+        cost: 3.8, 
         buffDuration: 30,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, hasteScaling: false}, 
         cooldownData: {cooldown: 40 },
@@ -254,7 +274,8 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         healType: "direct",
-        cost: 8, 
+        chakraType: "yellow",
+        cost: 2, 
         coeff: 1.3, 
         flat: 13442,
         expectedOverheal: 0.12,
@@ -267,10 +288,11 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0,
         healType: "direct",
-        cost: 21, 
+        chakraType: "blue",
+        cost: 3.2, 
         coeff: 0.467, 
         flat: 4841,
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.12,
         cooldownData: {cooldown: 10},
         targets: 5, // sqrt
         secondaries: ['crit', 'hmastery'], // HPriest Mastery
@@ -341,47 +363,20 @@ const discTalents = {
 
     }},
 
-    /*
-    improvedPowerWordShield: {points: 2, maxPoints: 2, icon: "spell_holy_powerwordshield", id: 14748, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        buffSpell(spellDB["Power Word: Shield"], 0.1 * points, "additive");
-    }},
+    // T1
+    fromDarknessComesLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    mindbender: {points: 1, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    solaceAndInsanity: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
 
-    twinDisciplines: {points: 3, maxPoints: 3, icon: "", id: 47586, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        // NYI
-        state.genericBonus.healing *= 1 + (0.02 * points);
-        state.genericBonus.damage *= 1 + (0.02 * points)
-    }},
+    // T2
+    twistOfFate: {points: 1, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
+    powerInfusion: {points: 0, maxPoints: 1, icon: "spell_holy_powerinfusion", id: 10060, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
+    divineInsight: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
 
-    mentalAgility: {points: 3, maxPoints: 3, icon: "", id: 14520, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        Object.keys(spellDB).forEach(spellName => {
-            if (spellDB[spellName][0].castTime === 0) spellDB[spellName][0].cost *= (1 - 0.033 * points);
-        });
-    }},
-
-    soulWarding: {points: 3, maxPoints: 3, icon: "", id: 63574, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Power Word: Shield"][0].cooldownData.cooldown -= points;
-    }},
-
-    atonement: {points: 1, maxPoints: 1, icon: "", id: 14523, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Smite"][0].damageToHeal = true;
-        spellDB["Holy Fire"][0].damageToHeal = true;
-        spellDB["Holy Fire"][1].damageToHeal = true;
-    }},
-
-    divineFury: {points: 3, maxPoints:3, icon: "", id: 18530, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        const reduction = [0, 0.15, 0.3, 0.5][points];
-        spellDB["Smite"][0].castTime -= reduction;
-        spellDB["Holy Fire"][0].castTime -= reduction;
-        //spellDB["Heal"][0].castTime -= reduction;
-        //spellDB["Greater Heal"][0].castTime -= reduction;
-    }},
-
-   renewedHope: {points: 2, maxPoints: 2, icon: "", id: 57470, select: true, tier: 1, runFunc: function (state, spellDB, points) {
-        spellDB["Penance D"][0].statMods = {crit: 0.05 * points};
-
-    }},
-
-    */
+    // T3
+    cascade: {points: 0, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
+    divineStar: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar", id: 110744, select: true, tier: 3, runFunc: function (state, spellDB, points) {    }}, 
+    halo: {points: 0, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
 
 }
 

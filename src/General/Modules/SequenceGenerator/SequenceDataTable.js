@@ -108,8 +108,8 @@ export default function SequenceDataTable(props) {
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>
                               <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>
-                              <TableCell align="right">{row.damage}</TableCell>
-                              <TableCell align="right">{row.dps}</TableCell>
+                              <TableCell align="right">{row.damage.toLocaleString()}</TableCell>
+                              <TableCell align="right">{row.dps.toLocaleString()}</TableCell>
                             </TableRow>
                           );
                         })
