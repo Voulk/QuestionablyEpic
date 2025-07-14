@@ -36,7 +36,8 @@ export const changeLog: entry[] = [
       "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
       "Classic: Competitive Alternatives now works for Resto Druid.",
       "Classic: Added Upgrade Finder for all specs. ",
-      "Classic: Added a player race dropdown."
+      "Classic: Added a player race dropdown.",
+      "Classic: Spell information will now show on your Top Gear report based on the gear you're wearing."
   ]},
   {
     version: "11.1.7 / 5.5.0",
