@@ -24,7 +24,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
     const auraHealingBuff = { // 
         "Restoration Druid": 0.15,
         "Discipline Priest": 0, // 
-        "Holy Paladin": 0,
+        "Holy Paladin": 0.05, // Holy Insight needs to be handled per-spell because it differs for spenders.
         "Holy Priest": 0,
         "Restoration Shaman": 0, // Also gets 0.5s off Healing Wave / Greater Healing Wave
         "Mistweaver Monk": 0.2, // Serpent Stance

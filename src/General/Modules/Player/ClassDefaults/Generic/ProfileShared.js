@@ -132,7 +132,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     }
     else {
         // Most other spells follow a uniform formula.
-        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? (1 + statPercentages.mastery) : 1; // We'll handle Holy mastery differently.
+        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest") && !(spec.includes("Holy Paladin"))) ? (1 + statPercentages.mastery) : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
                             adjCritChance * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *

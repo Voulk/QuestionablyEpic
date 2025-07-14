@@ -32,9 +32,9 @@ export const holyPaladinDefaults = {
 }
 
 
-export function initializePaladinSet() {
+export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing = false) {
     console.log("Initializing Paladin Set")
-    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
+    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
     const activeStats = {
       intellect: 100,
@@ -57,7 +57,7 @@ export function initializePaladinSet() {
       {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
       {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
       {spell: "Word of Glory", cpm: 0, hastedCPM: true, spenderRatio: 0.2},
-      {spell: "Judgement", cpm: 1.2, hastedCPM: false},
+      {spell: "Judgment", cpm: 1.2, hastedCPM: false},
   
       //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
   

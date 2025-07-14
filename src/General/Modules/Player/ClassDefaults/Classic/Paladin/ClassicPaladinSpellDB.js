@@ -16,8 +16,9 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 3, 
         cost: 12, 
-        coeff: 0.432, 
-        flat: 4400,
+        coeff: 0.785, 
+        flat: 8868,
+        additiveScaling: 0.25,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
@@ -28,13 +29,14 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 7, 
-        coeff: 0.2689999938, 
-        flat: 2738,
+        coeff: 0.833, 
+        flat: 9389,
+        additiveScaling: 0.25,
         expectedOverheal: 0.3,
         holyPower: 1,
         secondaries: ['crit', 'mastery'],
-        cooldownData: {cooldown: 8},
-        statMods: {'crit': 0, critEffect: 0},
+        cooldownData: {cooldown: 8, hasted: true},
+        statMods: {'crit': 0.25, critEffect: 0},
     }],
     "Holy Shock O": [{
         // Regrowth direct heal portion
@@ -54,9 +56,10 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 1.5, 
         cost: 31, 
-        flat: 7329,
-        coeff: 0.863, 
-        expectedOverheal: 0.3,
+        flat: 12607,
+        coeff: 1.12, 
+        additiveScaling: 0.25,
+        expectedOverheal: 0.15,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
@@ -66,8 +69,9 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 3, 
         cost: 35, 
-        coeff: 1.15299, 
-        flat: 11733,
+        coeff: 1.49, 
+        flat: 16817,
+        additiveScaling: 0.25,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
@@ -78,23 +82,24 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 3, 
         cost: 40, 
-        flat: 2666,
-        coeff: 0.259, 
-        expectedOverheal: 0.35,
-        targets: 6,
+        flat: 5664,
+        coeff: 0.675, 
+        additiveScaling: 0.25,
+        expectedOverheal: 0.3,
+        targets: 1,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     },
-    {
-        type: "classic periodic",
-        buffType: "heal",
+    { // Heals all allies for 50% of the original amount. Includes overhealing.
+        type: "heal",
         buffDuration: 3,
         flat: 473,
         coeff: 0.0504, // Estimated. Check it in Beta.
+        additiveScaling: 0.25,
         tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.35,
-        targets: 6, // Has *some* scaling above 6. Check. Does sqrt exist in Cata?
-        secondaries: ['crit']
+        targets: 6, // Has *some* scaling above 6. Check.
+        secondaries: ['crit', 'mastery']
     }],
     "Light of Dawn": [{
         // Regrowth direct heal portion
@@ -102,33 +107,58 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 0, 
-        flat: 640,
-        coeff: 0.132, // Adjust this per Holy Power. 
+        flat: 1720,
+        coeff: 0.152, // Adjust this per Holy Power. 
+        additiveScaling: 0.5,
         targets: 6,
         expectedOverheal: 0.25,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
     "Word of Glory": [{
-        // Regrowth direct heal portion
         spellData: {id: 85673, icon: "inv_helmet_96", cat: "heal"},
         type: "heal",
         castTime: 0, 
         cost: 0, 
-        flat: 2133,
-        coeff: 0.209, // Adjust this per Holy Power. 
+        flat: 5538,
+        coeff: 0.49, // Adjust this per Holy Power. 
+        additiveScaling: 0.5,
         expectedOverheal: 0.1,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
-    "Judgement": [{
+    "Eternal Flame": [{
+        spellData: {id: 114163, icon: "inv_torch_thrown", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        flat: 5538,
+        coeff: 0.49, // Adjust this per Holy Power. 
+        additiveScaling: 0.5,
+        expectedOverheal: 0.1,
+        secondaries: ['crit', 'mastery'],
+        tags: ['Holy Power Spender'],
+    },
+    {
+        type: "classic periodic",
+        buffType: "heal",
+        buffDuration: 30,
+        coeff: 0.0819, //
+        flat: 711,
+        additiveScaling: 0.5,
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
+        expectedOverheal: 0.25,
+        secondaries: ['crit', 'mastery'],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+    "Judgment": [{
         spellData: {id: 20271, icon: "spell_holy_righteousfury", cat: "damage"},
         type: "damage",
         castTime: 0, 
-        cost: 5, 
-        flat: 1,
-        coeff: 1, 
-        cooldownData: {cooldown: 6, activeCooldown: 0},
+        cost: 12, 
+        flat: 623,
+        coeff: 0.546, 
+        cooldownData: {cooldown: 6, activeCooldown: 0, hasted: true},
         secondaries: ['crit'] 
     }],
     "Crusader Strike": [{
@@ -136,7 +166,9 @@ export const CLASSICPALADINSPELLDB = {
         type: "damage",
         castTime: 0, 
         cost: 4.5, 
-        flat: 1,
+        //weaponDamage: 1.25,
+        coeff: 0.5, // It's actually weapon damage.
+        flat: 791,
         coeff: 1, 
         cooldownData: {cooldown: 4.5, activeCooldown: 0},
         secondaries: ['crit'] 
@@ -163,7 +195,6 @@ export const CLASSICPALADINSPELLDB = {
         cooldown: 120,
     }],
     "Seal of Insight": [{ // Fake spell. Procs on auto attacks.
-        // Regrowth direct heal portion
         spellData: {id: 85222, icon: "spell_paladin_lightofdawn", cat: "heal"},
         type: "resourceGainFlat",
         castTime: 1.8, 
@@ -193,19 +224,19 @@ const offspecTalents = {
 // Holy Paladin talents
 const specTalents = {
     // T1
-    fromDarknessComesLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
-    mindbender: {points: 1, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
-    solaceAndInsanity: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    selflessHealer: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    eternalFlame: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    sacredShield: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
 
     // T2
-    twistOfFate: {points: 1, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
-    powerInfusion: {points: 0, maxPoints: 1, icon: "spell_holy_powerinfusion", id: 10060, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
-    divineInsight: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
+    holyAvenger: {points: 1, maxPoints: 1, icon: "spell_shadow_mindtwisting", id: 109142, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
+    sanctifiedWrath: {points: 0, maxPoints: 1, icon: "spell_holy_powerinfusion", id: 10060, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
+    divinePurpose: {points: 0, maxPoints: 1, icon: "spell_priest_burningwill", id: 109175, select: true, tier: 2, runFunc: function (state, spellDB, points) {}}, 
 
     // T3
-    cascade: {points: 0, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
-    divineStar: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar", id: 110744, select: true, tier: 3, runFunc: function (state, spellDB, points) {    }}, 
-    halo: {points: 0, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
+    holyPrism: {points: 0, maxPoints: 1, icon: "ability_priest_cascade", id: 121135, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
+    lightsHammer: {points: 1, maxPoints: 1, icon: "spell_priest_divinestar", id: 110744, select: true, tier: 3, runFunc: function (state, spellDB, points) {    }}, 
+    executionSentence: {points: 0, maxPoints: 1, icon: "ability_priest_halo", id: 120517, select: true, tier: 3, runFunc: function (state, spellDB, points) {}}, 
 
 
     /*
