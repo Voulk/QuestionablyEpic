@@ -9,10 +9,6 @@ import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectE
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
 import { getItemSet } from "Classic/Databases/ClassicItemSetDB"
 
-import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
-import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
-import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
-import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
@@ -491,8 +487,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
     // Any final adjustments.
     if (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic") compiledEffects.haste = 0; // Proc based haste needs to be handled in the core profile.
+    
+    // Raid buffs
     compileStats(setStats, compiledEffects);
+    if (player.race === "Pandaren") setStats.intellect += 300;
     applyRaidBuffs({}, setStats);
+
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
 
@@ -519,7 +519,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
 
     if (castModel.scoreSet) {
-      const result = castModel.scoreSet(baseline, setStats, playerSettings, tierList);
+
+      const result = castModel.scoreSet(baseline, setStats, {...playerSettings, playerRace: player.race, tierList});
       builtSet.metrics = result; // HPS & DPS.
       if (getSetting(playerSettings, "metric") === "HPS + DPS") hardScore = result.healing + result.damage;
       else hardScore = result.healing;

@@ -4,10 +4,51 @@
 // Sample ReforgeLite export:
 
 import Item from "General/Items/Item";
+import Player from "General/Modules/Player/Player";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 
 // {"player":{"name":"Player","equipment":{"items":[{"id":78785,"enchant":4207,"gems":[52296,52207]},{"id":78382,"reforging":119},{"id":78835,"enchant":4199,"gems":[52207,52207],"reforging":117},{"id":77096,"enchant":4096,"gems":[52207],"reforging":119},{"id":78755,"enchant":4063,"gems":[52207,52207,52208],"reforging":119},{"id":71262,"gems":[0],"reforging":117},{"id":76157,"gems":[52207,0],"reforging":119},{"id":75117,"gems":[0],"reforging":167},{"id":78805,"enchant":4112,"gems":[52207,52207,52207],"reforging":117},{"id":77172,"enchant":4069,"gems":[52207,52208],"reforging":119},{"id":77109,"gems":[52207],"reforging":117},{"id":71211,"reforging":145},{"id":77976},{"id":72898},{"id":78485,"enchant":4084},{"id":72878,"reforging":167},{"id":77083,"gems":[52207],"reforging":117}]}}}
-export const exportReforgeLite = (itemSet: Item[]) => {
+export const exportReforgeLite = (player: Player, itemSet: Item[], reforges: any) => {
+  console.log(itemSet);
+  console.log(reforges);
+  const reforgeData = {
+    player: {
+      name: player.name,
+      equipment: {
+        items: itemSet.map(item => {
+          const itemData = {
+            id: item.id,
+            enchant: item.enchantID || 0,
+            gems: item.socketedGems ? item.socketedGems : [],
+          };
+          if (reforges[item.id]) itemData.reforging = reforgeIDs[reforges[item.id]];
+          return itemData;
+        }),
+      },
+    },
+  };
+
+  return JSON.stringify(reforgeData, null, 2);
+
+}
+// Spirit: 6
+// Haste: 36
+// Crit: 32
+// Mastery: 49
+// Hit: 31
+const reforgeIDs = {
+  "Reforged: haste -> spirit": 148,
+  "Reforged: crit -> spirit": 141,
+  "Reforged: mastery -> spirit": 162,
+  "Reforged: haste -> crit": 152,
+  "Reforged: spirit -> crit": 116,
+  "Reforged: mastery -> crit": 166,
+  "Reforged: haste -> mastery": 154,
+  "Reforged: crit -> mastery": 147,
+  "Reforged: spirit -> mastery": 119,
+  "Reforged: spirit -> haste": 117,
+  "Reforged: mastery -> haste": 167,
+  "Reforged: crit -> haste": 145,
 
 }
 

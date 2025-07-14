@@ -85162,9 +85162,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 1,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 1/6",
+      "fullName": "Hero 1/8",
       "bonusId": 11985,
       "itemLevel": 649,
       "seasonId": 25,
@@ -85360,9 +85360,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 2,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 2/6",
+      "fullName": "Hero 2/8",
       "bonusId": 11986,
       "itemLevel": 652,
       "seasonId": 25,
@@ -85558,9 +85558,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 3,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 3/6",
+      "fullName": "Hero 3/8",
       "bonusId": 11987,
       "itemLevel": 655,
       "seasonId": 25,
@@ -85756,9 +85756,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 4,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 4/6",
+      "fullName": "Hero 4/8",
       "bonusId": 11988,
       "itemLevel": 658,
       "seasonId": 25,
@@ -85954,9 +85954,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 5,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 5/6",
+      "fullName": "Hero 5/8",
       "bonusId": 11989,
       "itemLevel": 662,
       "seasonId": 25,
@@ -86152,9 +86152,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 441,
       "level": 6,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 6/6",
+      "fullName": "Hero 6/8",
       "bonusId": 11990,
       "itemLevel": 665,
       "seasonId": 25,
@@ -86350,9 +86350,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 1,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 1/6",
+      "fullName": "Myth 1/8",
       "bonusId": 11991,
       "itemLevel": 662,
       "seasonId": 25,
@@ -86548,9 +86548,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 2,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 2/6",
+      "fullName": "Myth 2/8",
       "bonusId": 11992,
       "itemLevel": 665,
       "seasonId": 25,
@@ -86746,9 +86746,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 3,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 3/6",
+      "fullName": "Myth 3/8",
       "bonusId": 11993,
       "itemLevel": 668,
       "seasonId": 25,
@@ -86944,9 +86944,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 4,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 4/6",
+      "fullName": "Myth 4/8",
       "bonusId": 11994,
       "itemLevel": 671,
       "seasonId": 25,
@@ -87143,9 +87143,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 5,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 5/6",
+      "fullName": "Myth 5/8",
       "bonusId": 11995,
       "itemLevel": 675,
       "seasonId": 25,
@@ -87341,9 +87341,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 442,
       "level": 6,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 6/6",
+      "fullName": "Myth 6/8",
       "bonusId": 11996,
       "itemLevel": 678,
       "seasonId": 25,
@@ -91626,6 +91626,34 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12169": {
+    "id": 12169,
+    "effect": {
+      "id": 205093,
+      "index": 0
+    }
+  },
+  "12170": {
+    "id": 12170,
+    "effect": {
+      "id": 205094,
+      "index": 0
+    }
+  },
+  "12171": {
+    "id": 12171,
+    "effect": {
+      "id": 205095,
+      "index": 0
+    }
+  },
+  "12172": {
+    "id": 12172,
+    "effect": {
+      "id": 205096,
+      "index": 0
+    }
+  },
   "12173": {
     "id": 12173,
     "effect": {
@@ -91653,6 +91681,139 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12180": {
+    "id": 12180,
+    "ilevel": "356 @plvl 55 - 551 @plvl 551",
+    "curveId": 71408
+  },
+  "12215": {
+    "id": 12215,
+    "effect": {
+      "id": 206859,
+      "index": 0,
+      "spell": {
+        "id": 1223886,
+        "name": "Hallowed Tome of the Abbot",
+        "icon": "inv_artifact_tome01"
+      }
+    },
+    "name": "of the Abbot"
+  },
+  "12216": {
+    "id": 12216,
+    "effect": {
+      "id": 206860,
+      "index": 0,
+      "spell": {
+        "id": 1223899,
+        "name": "Hallowed Tome of the Zealot",
+        "icon": "inv_artifact_tome01"
+      }
+    },
+    "name": "of the Zealot"
+  },
+  "12217": {
+    "id": 12217,
+    "effect": {
+      "id": 206861,
+      "index": 0,
+      "spell": {
+        "id": 1223902,
+        "name": "Hallowed Tome of the Crusader",
+        "icon": "inv_artifact_tome01"
+      }
+    },
+    "name": "of the Crusader"
+  },
+  "12218": {
+    "id": 12218,
+    "effect": {
+      "id": 206862,
+      "index": 0,
+      "spell": {
+        "id": 1223904,
+        "name": "Hallowed Tome of the Cleric",
+        "icon": "inv_artifact_tome01"
+      }
+    },
+    "name": "of the Cleric"
+  },
+  "12219": {
+    "id": 12219,
+    "effect": {
+      "id": 207468,
+      "index": 0,
+      "spell": {
+        "id": 1225232,
+        "name": "Excerpt on Dark Summons",
+        "icon": "inv_misc_book_01"
+      }
+    },
+    "name": "on Dark Summons",
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 6666,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.6666]"
+  },
+  "12220": {
+    "id": 12220,
+    "effect": {
+      "id": 207469,
+      "index": 0,
+      "spell": {
+        "id": 1225233,
+        "name": "Excerpt on Sacrificial Rituals",
+        "icon": "inv_misc_book_01"
+      }
+    },
+    "name": "on Sacrificial Rituals",
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 6666,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.6666]"
+  },
+  "12221": {
+    "id": 12221,
+    "effect": {
+      "id": 207470,
+      "index": 0,
+      "spell": {
+        "id": 1225234,
+        "name": "Excerpt on Prophetic Death",
+        "icon": "inv_misc_book_01"
+      }
+    },
+    "name": "on Prophetic Death",
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 6666,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.6666]"
+  },
+  "12222": {
+    "id": 12222,
+    "effect": {
+      "id": 191351,
+      "index": 0,
+      "spell": {
+        "id": 468034,
+        "name": "Darktide Wavebender's Orb",
+        "icon": "spell_nature_crystalball"
+      }
+    },
+    "name": "of the Savage"
+  },
   "12263": {
     "id": 12263,
     "ilevel": "24 @plvl 1 - 623 @plvl 623",
@@ -91663,5 +91824,833 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "19 @plvl 1 - 587 @plvl 587",
     "curveId": 82895,
     "tag": "Timewarped"
+  },
+  "12371": {
+    "id": 12371,
+    "upgrade": {
+      "group": 441,
+      "level": 7,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 7/8",
+      "bonusId": 12371,
+      "itemLevel": 668,
+      "seasonId": 25,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3107,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3108,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3109,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3110,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12372": {
+    "id": 12372,
+    "upgrade": {
+      "group": 441,
+      "level": 8,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 8/8",
+      "bonusId": 12372,
+      "itemLevel": 671,
+      "seasonId": 25,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3107,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3108,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3109,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3110,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12373": {
+    "id": 12373,
+    "level": 6
+  },
+  "12374": {
+    "id": 12374,
+    "level": 3
+  },
+  "12375": {
+    "id": 12375,
+    "upgrade": {
+      "group": 442,
+      "level": 7,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 7/8",
+      "bonusId": 12375,
+      "itemLevel": 681,
+      "seasonId": 25,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3107,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3108,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3109,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3110,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12376": {
+    "id": 12376,
+    "upgrade": {
+      "group": 442,
+      "level": 8,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 8/8",
+      "bonusId": 12376,
+      "itemLevel": 684,
+      "seasonId": 25,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3110,
+              "amount": 15,
+              "name": "Gilded Undermine Crest",
+              "icon": "inv_crestupgrade_undermine_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3107,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3108,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3109,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3110,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12504": {
+    "id": 12504,
+    "quality": 4
+  },
+  "12517": {
+    "id": 12517,
+    "quality": 4
+  },
+  "12530": {
+    "id": 12530,
+    "quality": 4
+  },
+  "12531": {
+    "id": 12531,
+    "quality": 4
+  },
+  "12532": {
+    "id": 12532,
+    "quality": 4
+  },
+  "12533": {
+    "id": 12533,
+    "quality": 4
+  },
+  "12542": {
+    "id": 12542,
+    "quality": 2
   }
 }

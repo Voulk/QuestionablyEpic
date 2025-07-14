@@ -8,6 +8,7 @@ import shamanPanel from "Images/Classes/ShamanPanel.jpg";
 import paladinPanel from "Images/Classes/PaladinPanel.jpg";
 import monkPanel from "Images/Classes/MonkPanel.jpg";
 import evokerPanel from "Images/Classes/EvokerPanel.jpg";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 import {
   Button,
@@ -38,23 +39,7 @@ export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDia
   const [selectedClass, setSelectedClass] = useState("Restoration Druid");
   const [selectedGameType, setSelectedGameType] = useState<gameTypes>("Retail");
 
-  const classNames = {"Retail": [
-    "Restoration Druid",
-    "Holy Priest",
-    "Discipline Priest",
-    "Restoration Shaman",
-    "Holy Paladin",
-    "Mistweaver Monk",
-    "Preservation Evoker",
-  ], 
-  "Classic": [
-    "Restoration Druid Classic",
-    "Holy Priest Classic",
-    "Discipline Priest Classic",
-    //"Restoration Shaman Classic",
-    "Holy Paladin Classic",
-    "Mistweaver Monk Classic",
-  ]};
+  const classNames = {"Retail": CONSTANTS.specs, "Classic": CONSTANTS.classicSpecs};
 
   const classList = selectedGameType === "Retail" ? classNames["Retail"] : classNames["Classic"];
 
@@ -102,7 +87,6 @@ export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDia
   const handleGameTypeChange = (newGameType : gameTypes) => {
     setSelectedGameType(newGameType);
     setSelectedClass(classNames[newGameType][0]); // Reset to the first class of the new game type
-    console.log("Setting class to " + classList[0] + " for game type " + newGameType);
   }
 
   return (

@@ -7,7 +7,10 @@ import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+
 
 const useStyles = makeStyles({
   root: {
@@ -49,7 +52,10 @@ export default function ItemCardReport(props) {
   const gameType = props.gameType;
   //const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
-  const statString = buildStatString(item.stats, item.effect, currentLanguage);
+  let statString = ""//buildStatString(item.stats, item.effect, currentLanguage);
+  if (item.flags.includes("DelveBelt")) {
+    statString = getTitanDiscName(item.selectedOptions[0]) //item.customOptions.find(option => option.id === item.selectedOptions).label;
+  }
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage) ;
@@ -173,7 +179,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.28)" }} // 52
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -193,7 +199,7 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "2px",
+                        borderWidth: "1px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}
@@ -227,7 +233,7 @@ export default function ItemCardReport(props) {
                   <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                     <Grid item>
                       <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                      {socket} 
+                      {socket} {statString}
                       </Typography>
                     </Grid>
                     <Grid item>{enchantCheck(item)}</Grid> 

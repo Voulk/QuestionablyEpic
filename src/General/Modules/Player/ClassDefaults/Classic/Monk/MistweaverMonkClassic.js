@@ -110,50 +110,51 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
   const spec = "Mistweaver Monk";
-    let totalHealing = 0;
-    let totalDamage = 0;
-    const reportingData = {}
-    const healingBreakdown = {};
-    const damageBreakdown = {};
-    const castBreakdown = {};
-    const fightLength = 6;
-    const talents = specBaseline.talents || monkTalents;
-    const eminenceOverheal = 0.35;
-    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+  const playerRace = userSettings.playerRace || "Pandaren"; // Default to Human if not set.
+  let totalHealing = 0;
+  let totalDamage = 0;
+  const reportingData = {}
+  const healingBreakdown = {};
+  const damageBreakdown = {};
+  const castBreakdown = {};
+  const fightLength = 6;
+  const talents = specBaseline.talents || monkTalents;
+  const eminenceOverheal = 0.35;
+  const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
-    const hasteSetting = getSetting(userSettings, "hasteBuff");
-    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+  const hasteSetting = getSetting(userSettings, "hasteBuff");
+  const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-    const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
+  const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec, playerRace);
 
-    reportingData.statPercentages = statPercentages;
+  reportingData.statPercentages = statPercentages;
 
-    // Calculate filler CPM
-    const manaPool = getManaPool(statProfile, spec);
-    const regen = (getManaRegen(statProfile, spec) + 
-                  getAdditionalManaEffects(statProfile, spec).additionalMP5 +
-                  (statProfile.mp5 || 0)) * 12 * fightLength;
+  // Calculate filler CPM
+  const manaPool = getManaPool(statProfile, spec) * ((playerRace === "Gnome") ? 1.05 : 1) * 1.02; // Gnomes get a 5% mana pool increase
+  const regen = (getManaRegen(statPercentages, spec) + 
+                getAdditionalManaEffects(statProfile, spec, playerRace).additionalMP5 +
+                (statProfile.mp5 || 0)) * 12 * fightLength;
 
-    const totalManaPool = manaPool + regen;
-    const manaTeaReturn = manaPool * 0.05;
-    const manaTeaEffectiveStacks = statPercentages.crit;
-    const manaTeaEffectiveReturn = manaTeaReturn * manaTeaEffectiveStacks; 
-    const muscleMemoryReturn = manaPool * 0.04;
+  const totalManaPool = manaPool + regen;
+  const manaTeaReturn = manaPool * 0.05;
+  const manaTeaEffectiveStacks = statPercentages.crit;
+  const manaTeaEffectiveReturn = manaTeaReturn * manaTeaEffectiveStacks; 
+  const muscleMemoryReturn = manaPool * 0.04;
 
-    let fillerCost = 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.9;
+  let fillerCost = 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+  const fillerWastage = 0.9;
 
-    // Our profile defined our base casts, now we'll use our actual stat line to determine how to spend our filler. This is quite a significant amount of time as MW.
-    let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
-    
+  // Our profile defined our base casts, now we'll use our actual stat line to determine how to spend our filler. This is quite a significant amount of time as MW.
+  let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
+  
 
-    let costPerMinute = specBaseline.costPerMinute;
+  let costPerMinute = specBaseline.costPerMinute;
 
-    const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
-    const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
-    let masteryOrbsGenerated = 0;
-    const renewingMistDuration = 18;
-    const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
+  const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+  const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
+  let masteryOrbsGenerated = 0;
+  const renewingMistDuration = 18;
+  const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
 
     // Melee swings (proc Eminence)
     
@@ -235,8 +236,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         if (spell.type === "damage" || spell.buffType === "damage") {
-          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-          totalDamage += (spellOutput * effectiveCPM);
+          // Beastslaying
+          const damage = (spellOutput * effectiveCPM);
+          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + damage;
+          totalDamage += damage;
 
           if (spell.damageToHeal) {
 

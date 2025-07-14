@@ -438,7 +438,7 @@ export default function TopGear(props: any) {
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
-        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
+        player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
         version: getVersion(),
       };
     
@@ -765,7 +765,7 @@ export default function TopGear(props: any) {
           slotList.map((key, index) => {
             return (
               <Grid item lg={12} xl={12} xs={12} key={index}>
-                <Typography color="primary" variant="h5">
+                <Typography color="primary" variant="h6">
                   {key.label}
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
@@ -791,7 +791,7 @@ export default function TopGear(props: any) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "60px",
+          height: "66px",
           backgroundColor: "#424242",
           borderTopColor: "Goldenrod",
           borderTopWidth: "1px",
@@ -822,7 +822,7 @@ export default function TopGear(props: any) {
             <Button 
               variant="contained" 
               color="primary" 
-              style={{ height: "64%", width: "180px" }} 
+              style={{ height: "64%", width: "180px", border: "2px solid black" }} 
               disabled={checkSlots(gameType).length > 0 || !btnActive}  //
               onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}

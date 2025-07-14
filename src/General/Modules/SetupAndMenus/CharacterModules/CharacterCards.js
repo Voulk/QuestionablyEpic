@@ -39,7 +39,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { red } from "@mui/material/colors";
 import { classColours } from "General/Engine/ClassData";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
-import raceIcons from "General/Modules/IconFunctions/RaceIcons";
+import { getRaceIcon } from "General/Modules/IconFunctions/RaceIcons";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
@@ -510,7 +510,7 @@ export default function CharCards(props) {
                                   return (
                                     <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
-                                        {raceIcons(key)}
+                                        {getRaceIcon(key, "both")}
                                         {getTranslatedRaceName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>

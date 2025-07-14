@@ -32,11 +32,25 @@ export class Player {
     this.gameType = gameType;
     this.setupDefaults(specName);
     this.talents = [];
+
+    
     
     if (gameType === "Retail") {
-      
       this.gameType = "Retail";
       if (this.race === "Default" || this.race === "") this.race = classRaceDB[this.spec].races[0];
+    }
+    else {
+      if (this.race === "Default" || this.race === "") {
+        const defaultRaces = {
+          "Mistweaver Monk Classic": "Pandaren",
+          "Holy Priest Classic": "Pandaren",
+          "Discipline Priest Classic": "Pandaren",
+          "Restoration Druid Classic": "Troll",
+          "Restoration Shaman Classic": "Troll",
+          "Holy Paladin Classic": "Blood Elf",
+        }
+        this.race = defaultRaces[this.spec] || "Pandaren";
+      }
     }
 
   }
@@ -90,6 +104,10 @@ export class Player {
   getRace = () => {
     return this.race;
   };
+
+  setRace = (newRace) => {
+    this.race = newRace;
+  }
 
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
@@ -685,9 +703,9 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
           intellect: 85000,
-          haste: 2600,
+          haste: 10000,
           crit: 7000,
-          mastery: 10000,
+          mastery: 17000,
           versatility: 3400,
           stamina: 30000,
         }

@@ -11,10 +11,9 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { exportWowheadGearList } from "./TopGearExports";
+import { exportWowheadGearList, exportReforgeLite } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox";
@@ -22,7 +21,7 @@ import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
-
+import SpellDataAccordion from "./SpellDataAccordion";
 
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -204,8 +203,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
 
   const handleExportMenuClick = (buttonClicked) => {
     //alert("Exporting to " + buttonClicked, result.id);
-    setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
-    setDialogOpen(true);
+    console.log(buttonClicked);
+    if (buttonClicked === "ReforgeLite Export") {
+      setDialogOpen(true);
+      setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
+    }
+    else if (buttonClicked === "Wowhead BIS List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    }
+    else {
+      
+    }
+    
+    
   
   }
 
@@ -420,7 +431,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                       <Grid container item direction="row" spacing={0}>
                                       <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                        {player.region}-{player.realm}
+                                        {player.race} {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
                                     <Grid item xs={12}>
@@ -451,8 +462,12 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} gameType={gameType} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
-          <Grid item style={{ height: 60 }} xs={12} />
+          
 
+          {gameType === "Classic" ? <Grid item xs={12}>
+            <SpellDataAccordion spec={player.spec} statList={statList} talents={null} />
+          </Grid> : null}
+          <Grid item style={{ height: 60 }} xs={12} /> {/* This adds space to the bottom of the page to improve scrolling. */}
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
