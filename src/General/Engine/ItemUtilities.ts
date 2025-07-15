@@ -1019,8 +1019,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
-      (!("classRestriction" in key) || key.classRestriction.includes(player.spec)) &&
-      (!("class" in key) || player.spec.includes(key.class)) &&
+      (!("classRestriction" in key) || (key.classRestriction.includes(player.spec) || player.spec.includes(key.classRestriction))) &&
       (gameType === "Classic" || itemLevel > 640) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||

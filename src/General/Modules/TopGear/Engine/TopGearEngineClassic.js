@@ -454,17 +454,22 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
    let adjusted_weights = {...castModel.baseStatWeights}
 
-    // -- GEMS & ENCHANTS --
-    // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
-    const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings)
-    builtSet.gems = compiledGems.gems;
-    compileStats(setStats, compiledGems.stats);
-
+   // Enchants
     if (true) {
       const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
       enchant_stats = enchantInfo.enchantStats;
       enchants = enchantInfo.enchants;
     }
+
+    // -- GEMS & ENCHANTS --
+    // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
+    let hasteNeeded = 0;
+    if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
+    else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
+
+    const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, hasteNeeded)
+    builtSet.gems = compiledGems.gems;
+    compileStats(setStats, compiledGems.stats);
 
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     compileStats(setStats, enchant_stats);
@@ -493,8 +498,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     if (player.race === "Pandaren") setStats.intellect += 300;
     applyRaidBuffs({}, setStats);
 
+    
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
+      
 
       // Set cleanup
       // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.

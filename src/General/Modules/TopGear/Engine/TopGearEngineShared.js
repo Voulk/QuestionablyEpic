@@ -182,7 +182,7 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
-export const setupGems = (itemList, adjusted_weights, playerSettings) => {
+export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeeded = 0) => {
 
     //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
     const gemBudget = 160;
@@ -202,11 +202,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       71868: 'blue',
     }*/
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
-    const yellowGemID = 76668; // Int / haste but options available.
+    const yellowGemID = 76660; // Int / haste but options available. Haste = 76668. Crit = 76660
+    const hasteGemID = 76668;
     const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
     const redGemID = 76694; // Pure int but look into hybrids
     const blueGemID = 76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
+    let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
@@ -254,8 +256,10 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
               //if (socket === "meta") item.socketedGems.push(metaGemID);
               if (socket === "red") item.socketedGems.push(redGemID);
               else if (socket === "yellow") { 
-                item.socketedGems.push(yellowGemID);
-                mandatoryYellows -= 1;
+                if (hasteGemsNeeded > 0) {
+                  item.socketedGems.push(hasteGemID);
+                  hasteGemsNeeded -= 1;
+                } else item.socketedGems.push(yellowGemID);
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
             })
@@ -316,7 +320,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
-        socketedGemStats.push({haste: 600});
+        socketedGemStats.push({crit: 600});
         socketedGemStats.push({spirit: 600});
         item.socketedGems.push(77542);
         item.socketedGems.push(77546);
