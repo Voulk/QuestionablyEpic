@@ -121,8 +121,19 @@ const wowheadCodes = {
   5: "[skill=773] [i](BoE)[/i]", // Inscription
   6: "[skill=171] [i](BoP)[/i]", // Alchemy
   7: "[skill=155]", // Jewelcrafting
+}
 
+const wowheadRepCodes = {
+  1: "[faction=1337]", // Klaxxi
+  2: "[faction=1269]", // GL
+  3: "[faction=1270]", // Shado-Pan
+  4: "[faction=1341]", // August Celestials
+}
 
+const wowheadRepColors = {
+  1: "[color=honored]Honored[/color]",
+  2: "[color=revered]Revered[/color]",
+  3: "[color=exalted]Exalted[/color]",
 }
 
 const wowheadClassColors = {
@@ -159,7 +170,9 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
     }
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
-      else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]`
+      else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
+      else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
+      else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {

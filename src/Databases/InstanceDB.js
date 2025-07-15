@@ -20,6 +20,7 @@ export const instanceDB = {
   "1296": "Liberation of Undermine",
 
   "-4": "Crafted",
+  "-12": "Reptuation",
 
   // Classic specific
   "369": "Siege of Orgrimmer",
@@ -40,6 +41,13 @@ export const craftedDB = {
   5: "Inscription",
   6: "Alchemy",
   7: "Jewelcrafting",
+}
+
+export const reputationDB = {
+  1: "Klaxxi",
+  2: "Golden Lotus",
+  3: "Shado-Pan",
+  4: "August Celestials",
 }
 
 

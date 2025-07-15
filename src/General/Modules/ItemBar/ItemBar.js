@@ -317,7 +317,10 @@ export default function ItemBar(props) {
     { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons"},
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor" },
     { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults" },
+    { label: "All Normal Raid", value: -1, gameType: "Classic", source: "T14" },
     { label: "All Heroic Raid", value: -1, gameType: "Classic", source: "T14+" },
+    { label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
+    { label: "AllRep", value: -1, gameType: "Classic", source: "AllRep" },
 
     { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine" },
     { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine" },
