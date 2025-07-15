@@ -8,11 +8,11 @@ describe("Test Paladin Spell Values", () => {
     const userSettings = {includeOverheal: "No"};
     const spec = "Holy Paladin";
     const activeStats = {
-        intellect: 1067,
+        intellect: 1771,
         spirit: 6000,
-        spellpower: 5151,
-        averageDamage: 5585.25,
-        weaponSwingSpeed: 3.4,
+        spellpower: 4561,
+        averageDamage: 2051,
+        weaponSwingSpeed: 1.9, // Carapace Belter
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -27,17 +27,24 @@ describe("Test Paladin Spell Values", () => {
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.
+    // Need to do melee-based spells after. Some are weapon-damage based.
+    // ${"Judgment"}                 | ${4277 / 1.05}              | ${0} (off by 5%)
     each`
-        spellName                     | expectedResult           | index
-        ${"Flash of Light"}           | ${(32548 + 35652) / 2}   | ${0}
-        ${"Holy Light"}               | ${(0) / 2}               | ${0}
-        ${"Holy Shock"}               | ${(0) / 2}               | ${0}
+        spellName                     | expectedResult              | index
+        ${"Flash of Light"}           | ${(23704 + 25515) / 2}      | ${0}
+        ${"Holy Light"}               | ${(16690 + 17886) / 2}      | ${0}
+        ${"Holy Shock"}               | ${(17850 + 18788) / 2}      | ${0}
+        ${"Holy Radiance"}            | ${(11706 + 13122) / 2}      | ${0}
+        ${"Light of Dawn"}            | ${(3883 + 4160) / 2}        | ${0}
+        ${"Word of Glory"}            | ${(12505 + 13403) / 2}      | ${0}
+        
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = init.spellDB[spellName][index]
         const value = runClassicSpell(spellName, {...spell, secondaries: []}, statPercentages, spec, userSettings) / spell.targets;
-        //expect(Math.abs(value-expectedResult)).toBeLessThan(errorMargin);
-        expect(true).toEqual(true);
+        console.log(spellName, value, expectedResult * 1.05);
+        expect(Math.abs(value-expectedResult*1.05)).toBeLessThan(errorMargin); // The 1.05 is for Seal of Insight which has 100% uptime.
+        //expect(true).toEqual(true);
     });
 
     //

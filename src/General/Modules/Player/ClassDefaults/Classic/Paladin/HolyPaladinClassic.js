@@ -32,9 +32,9 @@ export const holyPaladinDefaults = {
 }
 
 
-export function initializePaladinSet() {
+export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing = false) {
     console.log("Initializing Paladin Set")
-    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
+    const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
     const activeStats = {
       intellect: 100,
@@ -57,7 +57,7 @@ export function initializePaladinSet() {
       {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
       {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
       {spell: "Word of Glory", cpm: 0, hastedCPM: true, spenderRatio: 0.2},
-      {spell: "Judgement", cpm: 1.2, hastedCPM: false},
+      {spell: "Judgment", cpm: 1.2, hastedCPM: false},
   
       //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
   
@@ -82,8 +82,135 @@ export function initializePaladinSet() {
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
   
+  // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
+  // We want to run a CastProfile for each spell but we can optimize that slightly.
+  // Instead we'll run a simulated CastProfile baseline.
+  // Rejuv is our baseline spell
+  export function scorePaladinSet(specBaseline, statProfile, userSettings, tierSets = []) {
+    console.log("Scoring Paladin Set");
+    const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
+    const reporting = userSettings.reporting || false;
+    const spec = "Holy Paladin";
+    let totalHealing = 0;
+    let totalDamage = 0;
+    const reportingData = {}
+    const healingBreakdown = {};
+    const damageBreakdown = {};
+    const castBreakdown = {};
+    const fightLength = 6;
+    const talents = specBaseline.talents || paladinTalents;
+    const specSettings = {} // We'll eventually put atonement overhealing etc in here.
   
-  export function scorePaladinSet(baseline, statProfile, player, userSettings, tierSets = []) {
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+  
+    const hasteSetting = getSetting(userSettings, "hasteBuff");
+    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+  
+    const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
+  
+    reportingData.statPercentages = statPercentages;
+  
+    // Calculate filler CPM
+    const manaPool = getManaPool(statProfile, spec);
+    const regen = (getManaRegen(statProfile, spec) + 
+                  getAdditionalManaEffects(statProfile, spec).additionalMP5 +
+                  (statProfile.mp5 || 0)) * 12 * fightLength;
+  
+    // Hymn of Hope
+  
+  
+    const totalManaPool = manaPool + regen + petRegen;
+  
+
+    // Handle our filler casts. 
+    // We'll probably rework this to be a package.
+    let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    const fillerWastage = 0.85;
+  
+
+    let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
+    
+    const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+    const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
+    const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
+  
+    let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
+    reportingData.manaRemaining = manaRemaining;
+    reportingData.manaPool = totalManaPool;
+  
+  
+      castProfile.forEach(spellProfile => {
+          const fullSpell = specBaseline.spellDB[spellProfile.spell];
+          const spellName = spellProfile.spell;
+  
+          fullSpell.forEach(spell => {
+  
+          // Exception Cases
+          
+          // Regular cases
+          if (spell.type === "buff" && spell.buffType === "special") return; 
+          let spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
+          let rawHeal = 0;
+  
+          if (spellProfile.bonus) {
+            spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+          }
+  
+          const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+  
+          castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
+          if (spell.type === "damage" || spell.buffType === "damage") {
+            damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+            totalDamage += (spellOutput * effectiveCPM); // 
+  
+          }
+          else {
+            healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+            totalHealing += (spellOutput * effectiveCPM);
+            rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
+          }
+  
+  
+
+          if (rawHeal > 0) {
+              // Illuminated Healing
+              const illuminatedHealing = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
+              healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
+              totalHealing += illuminatedHealing;
+
+              // Beacon of Light
+              
+          }
+  
+          // Power Word: Shield on the other hand just has a straightforward crit multipler and can be handled like normal.
+  
+  
+          })
+  
+          // Filler mana
+  
+      })
+  
+      // Add any natural HPS we have on the set.
+      totalHealing += (60 * statProfile.hps || 0)
+  
+      // Print stuff.
+      if (reporting) {
+        printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+        printHealingBreakdownWithCPM(damageBreakdown, totalDamage, castProfile);
+        console.log("DPS: " + totalDamage / 60);
+        reportingData.timeAvailable = timeAvailable;
+        console.log(reportingData);
+      }
+  
+      //
+      //console.log(castProfile);
+  
+      return {damage: totalDamage, healing: totalHealing};
+  }
+  
+  export function scorePaladinSetOld(baseline, statProfile, player, userSettings, tierSets = []) {
     let score = 0;
     const healingBreakdown = {};
     const fightLength = 6;

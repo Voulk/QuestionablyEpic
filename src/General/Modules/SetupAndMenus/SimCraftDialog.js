@@ -121,12 +121,12 @@ export default function SimCraftInput(props) {
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeAll} onChange={() => setAutoUpgradeAll(!autoUpgradeAll)} />}
             label="Upgrade ALL to Max Level"
-          /> : 
-          <FormControlLabel
+          /> : null}
+          {/*<FormControlLabel
             control={<Checkbox checked={useChallengeMode} onChange={() => setChallengeMode(!useChallengeMode)} />}
             label="Import at 463"
           />
-          }
+          */}
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"
