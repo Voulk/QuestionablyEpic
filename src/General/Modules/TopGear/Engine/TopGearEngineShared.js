@@ -209,6 +209,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
     const blueGemID = 76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
     let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    // Add a check to see if it can get there with the oranges available.
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
@@ -321,7 +322,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
         socketedGemStats.push({crit: 600});
-        socketedGemStats.push({spirit: 600});
+        socketedGemStats.push({haste: 600});
         item.socketedGems.push(77542);
         item.socketedGems.push(77546);
       }

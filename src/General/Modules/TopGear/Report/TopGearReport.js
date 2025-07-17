@@ -22,6 +22,7 @@ import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
 import SpellDataAccordion from "./SpellDataAccordion";
+import { getWHData } from "./WowheadGearPlannerExport";
 
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -203,7 +204,6 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
 
   const handleExportMenuClick = (buttonClicked) => {
     //alert("Exporting to " + buttonClicked, result.id);
-    console.log(buttonClicked);
     if (buttonClicked === "ReforgeLite Export") {
       setDialogOpen(true);
       setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
@@ -211,6 +211,10 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     else if (buttonClicked === "Wowhead BIS List") {
       setDialogOpen(true);
       setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    }
+    else if (buttonClicked === "Wowhead Gear Planner") {
+      setDialogOpen(true);
+      setDialogText(getWHData(player, itemList, topSet.reforges, enchants));
     }
     else {
       

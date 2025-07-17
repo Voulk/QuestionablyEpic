@@ -29,7 +29,7 @@ export default function GenericDialog({isDialogOpen, setDialogOpen, dialogText} 
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => navigator.clipboard.writeText(textValue)}>Copy</Button>
+          <Button onClick={() => navigator.clipboard.writeText(dialogText)}>Copy</Button>
           <Button onClick={handleClose} color="primary">Close</Button>
         </DialogActions>
       </Dialog>

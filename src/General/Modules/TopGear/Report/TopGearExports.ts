@@ -36,7 +36,7 @@ export const exportReforgeLite = (player: Player, itemSet: Item[], reforges: any
 // Crit: 32
 // Mastery: 49
 // Hit: 31
-const reforgeIDs = {
+export const reforgeIDs = {
   "Reforged: haste -> spirit": 148,
   "Reforged: crit -> spirit": 141,
   "Reforged: mastery -> spirit": 162,
@@ -124,8 +124,8 @@ const wowheadCodes = {
 }
 
 const wowheadRepCodes = {
-  1: "[faction=1337]", // Klaxxi
-  2: "[faction=1269]", // GL
+  1: "[icon name=achievement_faction_klaxxi][/icon][faction=1337]", // Klaxxi
+  2: "[icon name=achievement_faction_goldenlotus][/icon][faction=1269]", // GL
   3: "[faction=1270]", // Shado-Pan
   4: "[faction=1341]", // August Celestials
 }

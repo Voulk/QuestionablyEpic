@@ -41,6 +41,7 @@ export default function HoverMenu({ handleClicked }: HoverMenuProps) {
       >
         <MenuItem onClick={() => handleClose("ReforgeLite Export")}>ReforgeLite Export</MenuItem>
         <MenuItem onClick={() => handleClose("Wowhead BIS List")}>Wowhead BIS List</MenuItem>
+        <MenuItem onClick={() => handleClose("Wowhead Gear Planner")}>Wowhead Gear Planner</MenuItem>
         <MenuItem onClick={() => handleClose("JSON")}>JSON</MenuItem>
       </Menu>
     </>
