@@ -245,7 +245,7 @@ export function getWHData(player: any, itemList: any[], reforges: any[], enchant
 		};
 
 		const classStr = player.spec.split(' ').at(-2).toLowerCase();
-		const raceStr = player.race.toLowerCase(); // convertWowheadRace(raceNames.get(player.getRace())!);
+		const raceStr = player.race.replace(' ', '-').toLowerCase(); // convertWowheadRace(raceNames.get(player.getRace())!);
 		const url = `https://www.wowhead.com/mop-classic/gear-planner/${classStr}/${raceStr}/`;
 
 		const addGlyph = (glyphItemId: number): number => {
@@ -269,8 +269,7 @@ export function getWHData(player: any, itemList: any[], reforges: any[], enchant
 			items: [],
 		};
 
-       
-
+    
 		//const gear = player.getGear();
         const rings = itemList.filter(item => item.slot === 'Finger');
         const trinkets = itemList.filter(item => item.slot === 'Trinket');

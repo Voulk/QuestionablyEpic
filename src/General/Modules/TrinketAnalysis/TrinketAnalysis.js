@@ -277,12 +277,12 @@ export default function TrinketAnalysis(props) {
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
         existingTrinket[difficulty] = trinketScore;
         existingTrinket[difficulty + "ilvl"] = trinket.itemLevel;
-        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
+        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
       }
       else {
         trinketAtLevels[difficulty] = trinketScore;
         trinketAtLevels[difficulty + "ilvl"] = trinket.itemLevel;
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel);
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
         activeTrinkets.push(trinketAtLevels);
       }
       
