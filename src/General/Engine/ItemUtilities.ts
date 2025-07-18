@@ -1049,6 +1049,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4
       else if (source === "AllRep" && sources) sourceCheck = [-12, -6].includes(sources.instanceId);
+      else if (source === "Rep & Professions" && sources) sourceCheck = [-12, -6, -4].includes(sources.instanceId);
       else if (!sources) sourceCheck = false;
     }
 

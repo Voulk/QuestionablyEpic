@@ -100,17 +100,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     let healingMult = getHealingMult(state, state.t, spellName, state.talents); 
     let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
     
-    // Mastery special checks
-    if (state.spec === "Restoration Druid") {
-        if (checkBuffActive(state.activeBuffs, "Harmony") || CLASSICCONSTANTS.druidMastList.includes(spellName) || state.settings.alwaysMastery) {
-            //masteryFlag = true;
-            const additiveScaling = (spell.additiveScaling || 0) + 1;
-            healingMult *= (additiveScaling + (currentStats.mastery / 179 / 100 + 0.08) * 1.25) / additiveScaling;
-        }
-        masteryFlag = false;
-
-    }
-    else if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
+    if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
 
     // Special cases
     if ('specialMult' in spell) healingVal *= spell.specialMult;
@@ -127,8 +117,8 @@ export const runHeal = (state, spell, spellName, compile = true) => {
         let beaconHealing = 0;
         let beaconMult = 0;
         if (spellName === "Holy Light") beaconMult = 1;
-        else if (["Flash of Light", "Divine Light", "Light of Dawn", "Holy Shock", "Word of Glory"].includes(spellName)) beaconMult = 0.5;
-        else beaconMult = 0;
+        else if (["Holy Radiance", "Light's Hammer", "Light of Dawn", "Holy Shock"].includes(spellName)) beaconMult = 0.5;
+        else beaconMult = 0.5;
 
         beaconHealing = healingVal * (1 - CLASSICCONSTANTS.beaconOverhealing) * beaconMult;
 
@@ -165,9 +155,9 @@ export const runDamage = (state, spell, spellName, compile = true) => {
     let damageVal = (spell.weaponScaling? getWeaponScaling (spell, state.currentStats, state.spec) :
                         getSpellRaw(spell, state.currentStats, state.spec, 0, false))
                          * damMultiplier;
-
-    if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor();
-
+    
+    if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor(state.currentStats.armorReduction);
+    console.log("raw dam" + damageVal + " " + spellName);
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)

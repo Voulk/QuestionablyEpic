@@ -523,7 +523,7 @@ export const getCurrentStats = (statArray, buffs) => {
 export const getHaste = (stats, gameType = "Retail") => {
     if (gameType === "Retail") return 1 + stats.haste / STATCONVERSION.HASTE / 100;
     else {
-        return (1 + stats.haste / 425 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
+        return (1.05 * 1 + stats.haste / 425 / 100); // Haste buff. TODO: Add setting for the 5% buff but it's very common.
         
     }
 }

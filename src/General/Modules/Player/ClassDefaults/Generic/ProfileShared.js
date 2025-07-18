@@ -110,6 +110,7 @@ const getClassicRaceBonuses = (statPerc, race) => {
 export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
 
     const genericMult = 1;
+    let targetCount = 1;
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
@@ -117,7 +118,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
      
-    const targetCount = spell.targets ? spell.targets : 1;
+    
 
     let spellOutput = 0;
     if (spellName === "Melee") {
@@ -127,6 +128,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     }
     else if (spell.weaponScaling) {
         // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
+        
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
                         * adjCritChance * genericMult * targetCount;
     }
@@ -140,13 +142,26 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
                             targetCount
     }
 
-    if (spell.type === "heal" || spell.buffType === "heal") spellOutput *= (1 - spell.expectedOverheal)
-    if ((spell.type === "damage" || spell.buffType === "damage") && spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
+    if (spell.type === "heal" || spell.buffType === "heal") {
+        spellOutput *= (1 - spell.expectedOverheal)
+        targetCount = spell.targets ? spell.targets : 1;
+    }
+    else if (spell.type === "damage" || spell.buffType === "damage") {
+        if (spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
+        
+        targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : targetCount;
+        console.log(settings)
+    }
+
+    
+    spellOutput *= targetCount;
+
     // Handle HoT
     if (spell.type === "classic periodic") {
       const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (statPercentages.haste);
       const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+
       if (spell.tickData.tickOnCast) tickCount += 1;
       
       // Take care of any HoTs that don't have obvious breakpoints.
