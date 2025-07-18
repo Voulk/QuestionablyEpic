@@ -3,6 +3,8 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+
 
 
 export const holyPaladinDefaults = {
@@ -28,7 +30,7 @@ export const holyPaladinDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["Mastery", "Crit", "Spirit", 'Haste', 'Hit'],
 }
 
 
@@ -36,19 +38,9 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     console.log("Initializing Paladin Set")
     const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
-    const activeStats = {
-      intellect: 100,
-      spirit: 1,
-      spellpower: 100,
-      haste: 1,
-      crit: 1,
-      mastery: 1,
-      stamina: 5000,
-      critMult: 2,
-  }
     const castProfile = [
       //{spell: "Judgement", cpm: 1, hpc: 0},
-      {spell: "Divine Light", cpm: 3.4, hastedCPM: true},
+      /*{spell: "Divine Light", cpm: 3.4, hastedCPM: true},
       {spell: "Holy Light", cpm: 4.6, fillerSpell: true, hastedCPM: true},
       {spell: "Flash of Light", cpm: 1.2, hastedCPM: true},
       {spell: "Holy Shock", cpm: 8.4, hastedCPM: false},
@@ -57,28 +49,24 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       {spell: "Seal of Insight", cpm: 0, hastedCPM: true},
       {spell: "Crusader Strike", cpm: 4, hastedCPM: false},
       {spell: "Word of Glory", cpm: 0, hastedCPM: true, spenderRatio: 0.2},
-      {spell: "Judgment", cpm: 1.2, hastedCPM: false},
-  
-      //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
-  
-      // Test
-  
-      // Divine Favor
-      // Divine Favor has an ~1/6 uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
+
+      {spell: "Holy Radiance", cpm: 5.6, fillerSpell: true, hastedCPM: true}, */
+      
+      {spell: "Judgment", efficiency: 0.9},
+      {spell: "Holy Shock", efficiency: 0.9},
     ]
   
     castProfile.forEach(spell => {
+      if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = paladinSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : paladinSpells[spell.spell][0].cost * 18635 / 100;
       spell.healing = 0;
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
-    const playerData = { spec: "Holy Paladin", spells: paladinSpells, settings: testSettings, talents: {...paladinTalents}, stats: activeStats }
-    //const suite = runClassicStatSuite(playerData, druidCastProfile, runCastSequence, "CastProfile");
+
     const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
-    //console.log(JSON.stringify(adjSpells));
-    console.log("Initialized Paladin Set")
+
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
   
@@ -100,6 +88,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     const fightLength = 6;
     const talents = specBaseline.talents || paladinTalents;
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
+    let hopoGenerated = 0;
   
     const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
   
@@ -129,6 +118,9 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
   
 
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
+
+    // Standard package
+
     
     const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;

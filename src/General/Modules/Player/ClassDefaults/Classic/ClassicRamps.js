@@ -157,7 +157,7 @@ export const runDamage = (state, spell, spellName, compile = true) => {
                          * damMultiplier;
     
     if (spell.damageType && spell.damageType === "physical") damageVal *= getEnemyArmor(state.currentStats.armorReduction);
-    console.log("raw dam" + damageVal + " " + spellName);
+
     // This is stat tracking, the atonement healing will be returned as part of our result.
     if (compile) state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     addReport(state, `${spellName} dealt ${Math.round(damageVal)} damage`)

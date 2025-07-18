@@ -68,13 +68,18 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
+// Returns the players current haste percentage. 
+export const getHasteClassic = (stats, hasteBuff = 1.05) => {
+    return (1 + stats.haste / 425 / 100) * hasteBuff;
+}
+
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
     const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
     const stats = {
         spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
         crit: 1 + getCritPercentage(statProfile, spec),
-        haste: getHaste({statProfile, haste: statProfile.haste * 1.5}, "Classic") * hasteBuff,
+        haste: getHasteClassic({statProfile, haste: statProfile.haste * 1.5}, hasteBuff),
         mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
         spirit: (statProfile.spirit),
         weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
@@ -150,7 +155,6 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
         if (spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
         
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : targetCount;
-        console.log(settings)
     }
 
     

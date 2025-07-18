@@ -1,7 +1,7 @@
 import { runHeal } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
-const eminenceCon = 0.42 * 2 * 1.2;
+const eminenceCon = 0.42 * 2 * 0.8;
 
 // Add onTick, onExpiry functions to spells.
 export const CLASSICMONKSPELLDB = {

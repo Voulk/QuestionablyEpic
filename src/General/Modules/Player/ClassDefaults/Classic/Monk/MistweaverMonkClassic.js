@@ -286,18 +286,21 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       const masteryHealing = runClassicSpell("Mastery: Gift of the Serpent", specBaseline.spellDB["Mastery: Gift of the Serpent"][0], statPercentages, spec, userSettings);
       healingBreakdown["Mastery: Gift of the Serpent"] = masteryHealing * masteryOrbsGenerated;
       totalHealing += masteryHealing * masteryOrbsGenerated;
+    
+          // Add any natural HPS we have on the set.
+      totalHealing += (60 * statProfile.hps || 0)
+
+      // Print stuff.
+      if (reporting) {
+        printHealingBreakdown(healingBreakdown, totalHealing);
+        printHealingBreakdown(damageBreakdown, totalDamage);
+        console.log("DPS: " + totalDamage / 60);
+        reportingData.timeAvailable = timeAvailable;
+      }
+    
     }
 
-    // Add any natural HPS we have on the set.
-    totalHealing += (60 * statProfile.hps || 0)
 
-    // Print stuff.
-    if (reporting) {
-      printHealingBreakdown(healingBreakdown, totalHealing);
-      printHealingBreakdown(damageBreakdown, totalDamage);
-      console.log("DPS: " + totalDamage / 60);
-      reportingData.timeAvailable = timeAvailable;
-    }
 
     //console.log(reportingData);
     //console.log(castProfile);
