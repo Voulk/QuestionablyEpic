@@ -56,6 +56,9 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       {spell: "Holy Shock", efficiency: 0.9},
     ]
   
+    const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
+
+
     castProfile.forEach(spell => {
       if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = paladinSpells[spell.spell][0].castTime;
@@ -65,7 +68,6 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
 
-    const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
 
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }

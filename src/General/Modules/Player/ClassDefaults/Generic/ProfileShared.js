@@ -154,7 +154,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     else if (spell.type === "damage" || spell.buffType === "damage") {
         if (spell.damageType === "physical") spellOutput *= getEnemyArmor(statPercentages.armorReduction);
         
-        targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : targetCount;
+        targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
     }
 
     

@@ -82,13 +82,14 @@ describe("Test Mistweaver Spell Values", () => {
     });
 
     // Test Regular Spells.
-    // Note that the tooltip for CJL is a bait. 
+    // Note that the tooltip for CJL is a bait.
+    // ${"Invoke Xuen, the White Tiger"}        | ${1602 * 45}             | ${0}  
     each`
         spellName                                | expectedResult           | index
         ${"Surging Mist"}                        | ${(32548 + 35652) / 2}   | ${0}
         ${"Rushing Jade Wind"}                   | ${3268 * 8}              | ${1}
         ${"Spinning Crane Kick"}                 | ${4085 * 3}              | ${1}
-        ${"Invoke Xuen, the White Tiger"}        | ${1602 * 45}             | ${0} 
+        
         ${"Invoke Xuen, the White Tiger"}        | ${3457 * 45}             | ${1}  
         ${"Crackling Jade Lightning"}            | ${6237 * 6}                 | ${0}
     `.test("Base Value Check - Mistweaver Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
