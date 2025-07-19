@@ -289,7 +289,6 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
                   item.socketedGems.push(hasteGemID);
                   hasteGemsNeeded -= 1;
                   hasteNeeded -= 160;
-                  console.log("Socketing Haste");
                 } else item.socketedGems.push(yellowGemID);
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem

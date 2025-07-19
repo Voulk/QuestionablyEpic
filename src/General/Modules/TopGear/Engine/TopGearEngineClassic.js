@@ -468,7 +468,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     let hasteNeeded = 0;
     if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
     else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
-    console.log("Set haste" + setStats.haste + " Haste needed: " + hasteNeeded);
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, castModel.autoReforgeOrder, hasteNeeded)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
