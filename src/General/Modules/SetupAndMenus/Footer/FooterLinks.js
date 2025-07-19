@@ -1,13 +1,18 @@
 import { Link } from "@mui/material";
 
 const list = [
-  { text: "Guides", link: "https://questionablyepic.com" },
+  { text: "Blog", link: "https://questionablyepic.com" },
   { text: "Support the site", link: "https://patreon.com/questionablyepic" },
   { text: "Discord (bugs & suggestions)", link: "https://discord.gg/jBSGHDm5G8" },
   { text: "Developers", link: "https://github.com/Voulk/QuestionablyEpic" },
 ];
 
 export default function FooterLinks(props) {
+  if (props.gameType === "Classic") {
+    list.push({ text: "DPS or Tank? Check out Wowsims", link: "https://wowsims.com/mop/" });
+  } else {
+    //list.push({ text: "Retail Guides", link: "https://retail.questionablyepic.com" });
+  }
   return (
     <div>
       {list.map((key, i) => [

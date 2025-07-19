@@ -32,7 +32,6 @@ const SpellDataAccordion: React.FC<SpellDataAccordionProps> = ({
   description = "This is an advanced panel that shows you spell information based on what gear your top set above is wearing. You can use it to make determinations on which spells to cast.",
   defaultExpanded = true,
 }) => {
-  console.log(statList);
   return (
     <Grid item xs={12} style={{ paddingBottom: "10px" }}>
       <Accordion 

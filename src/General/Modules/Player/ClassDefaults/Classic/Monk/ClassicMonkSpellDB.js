@@ -1,6 +1,8 @@
 import { runHeal } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
+const eminenceCon = 0.42 * 2 * 0.8;
+
 // Add onTick, onExpiry functions to spells.
 export const CLASSICMONKSPELLDB = {
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
@@ -160,7 +162,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 1.57 * 6,
         coeff: 0.386 * 2 * 1.25, // TotM
         flat: 197 * 1.25,
-        damageToHeal: 0.84, // Note Armor
+        damageToHeal: eminenceCon, // Note Armor
         secondaries: ['crit'],
     }],
     "Melee": [{
@@ -172,7 +174,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 0,
         coeff: 0, // 
         weaponScaling: 1 * 1.4,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     // Fistweaving Stuff
@@ -188,7 +190,7 @@ export const CLASSICMONKSPELLDB = {
         coeff: 0, // 
         weaponScaling: 1.5,
         chiGenerated: 1,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     },
     {
@@ -209,7 +211,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 1,
         coeff: 0, // 
         weaponScaling: 6,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     "Blackout Kick": [{
@@ -222,7 +224,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 2,
         coeff: 0, // 
         weaponScaling: 7.12,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     "Mana Tea": [{
@@ -365,15 +367,16 @@ export const CLASSICMONKSPELLDB = {
 
         type: "classic periodic",
         buffType: "damage",
-        damageType: "physical",
+        damageType: "magic",
         coeff: 0.10519 * 0.9037, // This is close but ultimately not correct. It might even be weapon damage based.
         flat: 1706 * 0.9037,
         tickData: {tickRate: 1},
         buffDuration: 45,
         cooldownData: {cooldown: 180, charges: 1},
-        damageToHeal: 0.84, 
+        damageToHeal: eminenceCon, 
         
         targets: 1, // Can hit everyone so TODO.
+        maxTargets: 1,
         secondaries: ['crit']
     },
     { // Lightning
@@ -383,7 +386,7 @@ export const CLASSICMONKSPELLDB = {
         flat: 322,
         coeff: 0.2525 * 2,
         tickData: {tickRate: 1, hasteScaling: false},
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
 
         buffDuration: 45,
         targets: 1, // Can hit everyone so TODO.

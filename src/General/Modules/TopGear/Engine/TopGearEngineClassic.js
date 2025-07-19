@@ -80,6 +80,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   // - Stat B -> Stat C or stat D
   // - No reforge at all.
   let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+
   const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
   //const reforgeFromOptions = ["crit", "mastery", ];
   //const reforgeOptions = ["haste", "spirit"];
@@ -526,8 +527,10 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
 
     if (castModel.scoreSet) {
-
-      const result = castModel.scoreSet(baseline, setStats, {...playerSettings, playerRace: player.race, tierList});
+      const result = castModel.scoreSet(baseline, setStats, {...playerSettings, 
+                                                                playerRace: player.race,
+                                                                reporting: false,
+                                                                strictSeq: false}, tierList);
       builtSet.metrics = result; // HPS & DPS.
       if (getSetting(playerSettings, "metric") === "HPS + DPS") hardScore = result.healing + result.damage;
       else hardScore = result.healing;

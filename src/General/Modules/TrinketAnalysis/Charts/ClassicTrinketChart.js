@@ -69,7 +69,6 @@ export default class BCChart extends PureComponent {
 
     let arr = [];
     let cleanedArray = [];
-    console.log(data);
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
@@ -108,9 +107,11 @@ export default class BCChart extends PureComponent {
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
-                {getTooltip(data, payload.value).map((key) => {
-                  return (
-                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                {getTooltip(data, payload.value).map((key, index) => {
+                  return (<span key={key} style={{
+                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Item Source")) ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : key.includes("Item Source") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
+                    }}>
                       {key}
                       <br />
                     </span>

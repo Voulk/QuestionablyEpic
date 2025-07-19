@@ -1,4 +1,4 @@
-import { Square } from "@mui/icons-material";
+import { convertStatPercentages, runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"
 
 
 const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
@@ -52,10 +52,7 @@ const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, t
 
 }
 
-export const buildChartEntryClassic = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
-    const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
-    const init = initializeMonkSet(monkTalents, true);
-    const statPercentages = convertStatPercentages(activeStats, 1, "Mistweaver Monk");
+export const buildChartEntryClassic = (sequence, spellData, spell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         healingDone: 0,
         damageDone: 0,
@@ -66,44 +63,40 @@ export const buildChartEntryClassic = (sequence, spellData, newSeq, activeStats,
         }
     }
 
-    // Run sequence X times.
-    // For each time run, save the healing breakdown. We will use it at the end.
-
-    for (let i = 0; i < iterations; i++) {
-        const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
-        const spellBreakdown = result.healingDone;
-        data.healingDone += result.totalHealing;
-        data.damageDone += result.totalDamage;
-        data.manaSpent += result.manaSpent;
-        data.execTime += result.execTime;
-
-        for (const [key, value] of Object.entries(spellBreakdown)) {
-            if (!data.spellValues[key]) data.spellValues[key] = 0;
-            data.spellValues[key] += value;
-        }
+    if (sequence.targets) {
+        userSettings = {...userSettings, enemyTargets: sequence.targets};
     }
+
+    // runClassicSpell = (spellName, spell, statPercentages, spec, settings)
+    const result = scoreSet(playerData, activeStats, userSettings, [])
+    //const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
+    data.healingDone = result.healing;
+    data.damageDone = result.damage;
+    data.manaSpent = spell[0].cost;
+    data.execTime = 1;
+
+
     //console.log(data)
     // After the sequence has run, check for a filter function.
     // - If no filter, return result.
     // - If filter, filter the healing first, then return. 
-    if (filterSpell) {
+    /*if (filterSpell) {
         data.healingDone = Object.entries(data.spellValues)
             .filter(([key]) => key.includes(filterSpell))
             .reduce((sum, [, value]) => sum + value, 0); 
         
-    }
+    }*/
     if (sequence.multiplier) {
         // Artifical multipliers to make some sequences easier to design.
         data.healingDone *= sequence.multiplier;
+        data.damageDone *= sequence.multiplier;
     }
     if (sequence.manaMod) {
         // 
         data.manaSpent *= sequence.manaMod;
     }
 
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, damage: Math.round(data.damageDone / iterations /*/ (data.execTime / iterations)*/) || "-", dps: Math.round(data.damageDone / iterations / (data.execTime / iterations)), spell: spellData, hpct: Math.round(data.healingDone / iterations / (data.execTime / iterations)), advancedReport: {}}
-
-
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, damage: Math.round(data.damageDone / data.execTime) || "-", dps: Math.round(data.damageDone / data.execTime), spell: spellData, hpct: Math.round(data.healingDone / data.execTime), advancedReport: {}}
 }
 
 // newSeq = sequence.seq;

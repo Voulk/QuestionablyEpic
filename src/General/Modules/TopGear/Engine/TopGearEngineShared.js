@@ -209,12 +209,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
     const blueGemID = 76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
     let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    // Add a check to see if it can get there with the oranges available.
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
                           yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget,
                         sha: adjusted_weights.intellect * 500 }
-
+    //console.log("Haste gems needed: " + hasteGemsNeeded);
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
     const topGearGems = {};  // {itemID: [gems]}
@@ -321,7 +322,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
         socketedGemStats.push({crit: 600});
-        socketedGemStats.push({spirit: 600});
+        socketedGemStats.push({haste: 600});
         item.socketedGems.push(77542);
         item.socketedGems.push(77546);
       }

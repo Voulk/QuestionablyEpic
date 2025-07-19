@@ -115,18 +115,20 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   let totalDamage = 0;
   const reportingData = {}
   const healingBreakdown = {};
+  const enemyTargets = userSettings.enemyTargets || 1; // Default to 1 target if not set.
   const damageBreakdown = {};
   const castBreakdown = {};
   const fightLength = 6;
+  let fillerCPM = 0;
   const talents = specBaseline.talents || monkTalents;
-  const eminenceOverheal = 0.35;
+  const eminenceOverheal = 0.15;
   const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
   const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec, playerRace);
-
+  let masteryOrbsGenerated = 0;
   reportingData.statPercentages = statPercentages;
 
   // Calculate filler CPM
@@ -150,14 +152,19 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
   let costPerMinute = specBaseline.costPerMinute;
 
-  const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
-  const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
-  let masteryOrbsGenerated = 0;
-  const renewingMistDuration = 18;
-  const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
+  if (enemyTargets > 1) {
+    
+  }
+
+
+  if (!userSettings.strictSeq) {
+    fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+    const chiGenerated = castProfile.reduce((acc, spell) => acc + (spell.chiGenerated ? spell.chiGenerated * spell.cpm : 0), 0);
+    
+    const renewingMistDuration = 18;
+    const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
 
     // Melee swings (proc Eminence)
-    
     const meleeWastage = 0.8;
     getSpellEntry(castProfile, "Melee").cpm = (60 / (isTwoHander ? statProfile.weaponSwingSpeed / 1.4 : statProfile.weaponSwingSpeed)) * meleeWastage * statPercentages.haste; 
     if (!isTwoHander) getSpellEntry(castProfile, "Melee").bonus = 1.7;
@@ -212,6 +219,9 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     reportingData.averageRemCount = averageRemCount;
     reportingData.chiGenerated = chiGenerated;
     reportingData.masteryOrbsGenerated = masteryOrbsGenerated;
+
+  }
+
 
     // TODO: Uplift refreshes ReM count.
 
@@ -272,20 +282,25 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
     // Mastery healing
     reportingData.masteryOrbsGenerated = masteryOrbsGenerated;
-    const masteryHealing = runClassicSpell("Mastery: Gift of the Serpent", specBaseline.spellDB["Mastery: Gift of the Serpent"][0], statPercentages, spec, userSettings);
-    healingBreakdown["Mastery: Gift of the Serpent"] = masteryHealing * masteryOrbsGenerated;
-    totalHealing += masteryHealing * masteryOrbsGenerated;
+    if (!userSettings.strictSeq) {
+      const masteryHealing = runClassicSpell("Mastery: Gift of the Serpent", specBaseline.spellDB["Mastery: Gift of the Serpent"][0], statPercentages, spec, userSettings);
+      healingBreakdown["Mastery: Gift of the Serpent"] = masteryHealing * masteryOrbsGenerated;
+      totalHealing += masteryHealing * masteryOrbsGenerated;
+    
+          // Add any natural HPS we have on the set.
+      totalHealing += (60 * statProfile.hps || 0)
 
-    // Add any natural HPS we have on the set.
-    totalHealing += (60 * statProfile.hps || 0)
-
-    // Print stuff.
-    if (reporting) {
-      printHealingBreakdown(healingBreakdown, totalHealing);
-      printHealingBreakdown(damageBreakdown, totalDamage);
-      console.log("DPS: " + totalDamage / 60);
-      reportingData.timeAvailable = timeAvailable;
+      // Print stuff.
+      if (reporting) {
+        printHealingBreakdown(healingBreakdown, totalHealing);
+        printHealingBreakdown(damageBreakdown, totalDamage);
+        console.log("DPS: " + totalDamage / 60);
+        reportingData.timeAvailable = timeAvailable;
+      }
+    
     }
+
+
 
     //console.log(reportingData);
     //console.log(castProfile);
