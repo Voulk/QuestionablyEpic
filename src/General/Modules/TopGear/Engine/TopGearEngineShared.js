@@ -182,7 +182,7 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
-export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeeded = 0) => {
+export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder, hasteNeeded = 0) => {
 
     //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
     const gemBudget = 160;
@@ -201,14 +201,26 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
       71850: 'yellow', // int / haste
       71868: 'blue',
     }*/
+    const yellowOptions = {
+      haste: 76668,
+      crit: 76660,
+      mastery: 76672
+    }
+
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
-    const yellowGemID = 76660; // Int / haste but options available. Haste = 76668. Crit = 76660
+    const yellowGemID = yellowOptions[statOrder.find(stat => ['haste', 'mastery', 'crit'].includes(stat))]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
     const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
     const redGemID = 76694; // Pure int but look into hybrids
     const blueGemID = 76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
-    let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    const orangeGemCount = itemSets.filter(item => item.classicSockets.sockets.includes("orange")).length;
+    const hasteSocketBonuses = 0;
+    const cogwheelCount = Math.min(1, itemSets.filter(item => item.classicSockets.sockets.includes("cogwheel")).length);
+    let hasteGemsNeeded = (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) > hasteNeeded) ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+  // Maybe do at the end so we can include socket bonuses?
+
     // Add a check to see if it can get there with the oranges available.
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
@@ -260,6 +272,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
                 if (hasteGemsNeeded > 0) {
                   item.socketedGems.push(hasteGemID);
                   hasteGemsNeeded -= 1;
+                  hasteNeeded -= 160;
                 } else item.socketedGems.push(yellowGemID);
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
@@ -321,10 +334,27 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, hasteNeede
 
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
-        socketedGemStats.push({crit: 600});
-        socketedGemStats.push({haste: 600});
-        item.socketedGems.push(77542);
-        item.socketedGems.push(77546);
+        // Get best two secondaries. 
+        const engSockets = {
+          haste: 77542,
+          crit: 77541,
+          mastery: 77547,
+          spirit: 77546
+        }
+        //socketedGemStats.push({mastery: 600});
+        socketedGemStats.push({[statOrder[0]]: 600});
+        item.socketedGems.push(engSockets[statOrder[0]]);
+
+        if (hasteNeeded < 600 && hasteNeeded > 0) {
+          socketedGemStats.push({haste: 600});
+          item.socketedGems.push(engSockets.haste);
+        }
+        else {
+          socketedGemStats.push({[statOrder[1]]: 600});
+          item.socketedGems.push(engSockets[statOrder[1]]);
+        }
+
+
       }
 
       topGearGems[item.id] = item.socketedGems;

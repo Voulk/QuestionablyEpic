@@ -257,7 +257,7 @@ export function getWHData(player: any, itemList: any[], reforges: any[], enchant
 		const data: WowheadGearPlannerData = {
 			level: CHARACTER_LEVEL,
 			specIndex: specIndexes[player.spec], //player.getPlayerSpec().specIndex,
-			talents: "123123",//player.getTalentsString(),
+			talents: "000000",//player.getTalentsString(),
 			glyphs: [
 				/*addGlyph(glyphs.major1),
 				addGlyph(glyphs.major2),
