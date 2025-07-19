@@ -461,19 +461,19 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchant_stats = enchantInfo.enchantStats;
       enchants = enchantInfo.enchants;
     }
+    compileStats(setStats, enchant_stats);
 
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     let hasteNeeded = 0;
     if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
     else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
-
+    console.log("Set haste" + setStats.haste + " Haste needed: " + hasteNeeded);
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, castModel.autoReforgeOrder, hasteNeeded)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
 
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    compileStats(setStats, enchant_stats);
     
 
     // -- Effects --
@@ -502,19 +502,11 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
-      
 
-      // Set cleanup
-      // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
-      if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
-        setStats.haste -= 208;
-        setStats.mastery += 208;
-        builtSet.gems[59453] = [52296, 59496, 59480];
-      }
 
     }
     else if (player.spec === "Discipline Priest Classic") {
-      setStats.intellect *= 1.15; // Spec passive.
+      //setStats.intellect *= 1.15; // Spec passive.
     }
     else if (player.spec === "Mistweaver Monk Classic") {
       // Monks require us to provide some information on our weapon too.

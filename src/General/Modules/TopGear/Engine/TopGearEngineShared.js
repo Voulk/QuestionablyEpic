@@ -215,12 +215,28 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     const blueGemID = 76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
     //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
-    const orangeGemCount = itemSets.filter(item => item.classicSockets.sockets.includes("orange")).length;
+    const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;
     const hasteSocketBonuses = 0;
-    const cogwheelCount = Math.min(1, itemSets.filter(item => item.classicSockets.sockets.includes("cogwheel")).length);
-    let hasteGemsNeeded = (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) > hasteNeeded) ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    const cogwheelCount = Math.min(1, itemList.filter(item => item.classicSockets.sockets.includes("cogwheel")).length);
+    let hasteGemsNeeded = 0;
+    if (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) {
+      if (cogwheelCount > 0) {
+        // This is only tricky if we have cogwheels.
+        if ((orangeGemCount * 160) >= hasteNeeded) {
+          hasteGemsNeeded = Math.ceil((hasteNeeded) / 160); // 160 haste per gem
+        }
+        else {
+          // Orange gems aren't enough, flip a cogwheel and then re-run.
+          hasteGemsNeeded = Math.max(0, Math.ceil((hasteNeeded - cogwheelCount * 600) / 160)); // 160 haste per gem
+        }
+      }
+      else {
+        hasteGemsNeeded = Math.ceil(hasteNeeded / 160); // 160 haste per gem
+      }
+    }
+    
+   // (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) ? Math.ceil((hasteNeeded - cogwheelCount * 600) / 160) : 0; // 160 haste per gem
   // Maybe do at the end so we can include socket bonuses?
-
     // Add a check to see if it can get there with the oranges available.
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
@@ -273,6 +289,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
                   item.socketedGems.push(hasteGemID);
                   hasteGemsNeeded -= 1;
                   hasteNeeded -= 160;
+                  console.log("Socketing Haste");
                 } else item.socketedGems.push(yellowGemID);
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
