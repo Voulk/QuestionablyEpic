@@ -79,7 +79,7 @@ export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") 
     const stats = {
         spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
         crit: 1 + getCritPercentage(statProfile, spec),
-        haste: getHasteClassic({statProfile, haste: statProfile.haste * 1.5}, hasteBuff),
+        haste: getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
         mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
         spirit: (statProfile.spirit),
         weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),

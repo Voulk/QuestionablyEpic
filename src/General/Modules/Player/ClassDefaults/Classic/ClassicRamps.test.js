@@ -70,7 +70,7 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Holy Priest");
+        const data = getData("Restoration Druid");
 
         const spec = data.spec
         const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
@@ -107,26 +107,43 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        //buildStatChart(profile, playerData, activeStats, testSettings);
+        buildStatChart(profile, playerData,  testSettings);
     })
 
     
 
 });
 
-const buildStatChart = (profile, playerData, activeStats, testSettings) => {
+const buildStatChart = (profile, playerData, testSettings) => {
     
-    [''].forEach(stat => {
-        const results = [];
-        for (let i = 0; i < 4200; i += 20) {
-            const init = profile.initializeSet(playerData.talents);
-            const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
-            results.push(Math.round(score));
-        }
-        console.log("==" + stat + "==")
-        console.log(JSON.stringify(results));
+    const activeStats = {
+      intellect: 21000,
+      spirit: 6000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 0,
+      crit: 0,
+      mastery: 0,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
+    };
 
-    });
+    const results = [];
+    for (let i = 0; i < 5000; i += 20) {
+        const init = profile.initializeSet(playerData.talents);
+        const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
+        results.push(Math.round(score));
+    }
+    //console.log("==" + stat + "==")
+    console.log(JSON.stringify(results));
+
+    //['haste'].forEach(stat => {
+
+
+    //});
 
 }
 

@@ -314,17 +314,18 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
-    { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons"},
-    { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor" },
-    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults" },
-    { label: "All Normal Raid", value: -1, gameType: "Classic", source: "T14" },
-    { label: "All Heroic Raid", value: -1, gameType: "Classic", source: "T14+" },
+    { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
+    { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
+    { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
+    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
+    { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
+    { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
-    { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions" },
+    
 
-    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine" },
-    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine" },
-    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons" },
+    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
+    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
+    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
@@ -592,9 +593,9 @@ export default function ItemBar(props) {
         >
           {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
             return (
-              <Button key={option.label} variant="contained" sx={{ minWidth: 150 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
+              <Button key={option.label} variant="contained" sx={{ width: 230 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
                 <img
-                  src={require("Images/Logos/RaidLogo.jpg")} 
+                  src={option.icon ? process.env.PUBLIC_URL + "/Images/ExtraIcons/" + option.icon + ".jpg" : require("Images/Logos/RaidLogo.jpg")} 
                   alt=""
                   style={{ width: 20, height: 20, marginRight: 4, borderRadius: "50%", objectFit: "cover" }}
                 />

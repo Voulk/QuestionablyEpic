@@ -330,7 +330,7 @@ export const CLASSICDRUIDSPELLDB = {
         buffDuration: 30,
         coeff: 0.31,
         flat: 3365,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.34,
         targets: 3,
         secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
     }],

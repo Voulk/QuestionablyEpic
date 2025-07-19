@@ -127,7 +127,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-  const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec, playerRace);
+  const statPercentages = convertStatPercentages({...statProfile, haste: statProfile.haste * 1.5}, hasteBuff, spec, playerRace);
   let masteryOrbsGenerated = 0;
   reportingData.statPercentages = statPercentages;
 
