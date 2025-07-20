@@ -10,13 +10,13 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 
-import { buildEvokerChartData } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
-import { buildDiscChartData } from "General/Modules/Player/DisciplinePriest/DiscRampUtilities";
-import { buildPaladinChartData } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRampUtilities";
-import { buildDruidChartData } from "Retail/Engine/EffectFormulas/Druid/DruidRampGen";
-import { buildHolyPriestChartData } from "Retail/Engine/EffectFormulas/Priest/HolyPriestRampGen";
+import { buildEvokerChartData } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
+import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
+import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRampUtilities";
+import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidRampGen";
+import { buildHolyPriestChartData } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestRampGen";
 
-import { buildClassicChartData } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicChartGen";
+import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
@@ -48,6 +48,9 @@ function buildChartData(spec, stats, talents) {
   else if (spec === "Holy Priest Classic") {
     return buildClassicChartData(stats, "Holy Priest")
   }
+  else if (spec === "Mistweaver Monk Classic") {
+    return buildClassicChartData(stats, "Mistweaver Monk")
+  }
   else {
     return [];
   }
@@ -73,7 +76,8 @@ export default function SequenceDataTable(props) {
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
             <TableCell align="right">HPCT</TableCell>
-            <TableCell align="right">DPS</TableCell>
+            <TableCell align="right">Damage</TableCell>
+            <TableCell align="right">DPET</TableCell>
           </TableRow>
         </TableHead>
             <TableBody>
@@ -102,9 +106,10 @@ export default function SequenceDataTable(props) {
                                 </div>
                               </TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
-                              <TableCell align="right">{row.hpm}</TableCell>
+                              <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>
                               <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>
-                              <TableCell align="right">{row.dps}</TableCell>
+                              <TableCell align="right">{row.damage.toLocaleString()}</TableCell>
+                              <TableCell align="right">{row.dps.toLocaleString()}</TableCell>
                             </TableRow>
                           );
                         })

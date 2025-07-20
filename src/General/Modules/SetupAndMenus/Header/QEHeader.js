@@ -16,6 +16,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { patronColor } from "./PatronColors";
 import { styled } from "@mui/system";
+import HeaderClassSelect from "./QEHeaderClassSelector";
 
 // import ReactGA from "react-ga";n
 
@@ -134,13 +135,16 @@ export default function QEHeader(props) {
                 wrap={matches && gameType === "Retail" ? "wrap" : "nowrap"}
                 style={{ paddingLeft: 10, paddingRight: 10 }}
               >
-                {(props.allChars && props.allChars.allChar.length) > 0 ? (
+                <Grid item xs={6} sm="auto">
+                  <HeaderClassSelect gameType={gameType} selectedSpec={props.allChars.allChar[props.allChars.activeChar].spec} setSelectedSpec={props.handlePickPlayerSpec}/>
+                </Grid>
+                {/*(props.allChars && props.allChars.allChar.length) > 0 ? (
                   <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
                     <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
                   </Grid>
                 ) : (
                   ""
-                )}
+                )*/}
                 {gameType === "Retail" ? (
                   <Grid item xs={6} sm="auto">
                     <ContentSwitch />
@@ -157,8 +161,8 @@ export default function QEHeader(props) {
                 )}
                 <Grid item>
                   <SimCraftInput
-                    colour={"white"}
-                    variant="outlined"
+                    colour="secondary"
+                    variant="contained"
                     buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
                     player={props.player}
                     simcSnack={props.simcSnack}
@@ -166,7 +170,7 @@ export default function QEHeader(props) {
                   />
                 </Grid>
                 <Grid item>
-                  <StyledButton color={"white"} variant="outlined" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
+                  <StyledButton color={"secondary"} variant="contained" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
                     {"Help"}
                   </StyledButton>
                 </Grid>

@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme?: any) => ({
   },
 }));
 
-export default function QEFooter() {
+export default function QEFooter(props: any) {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -63,7 +63,7 @@ export default function QEFooter() {
           /*                                         Left Side Links                                        */
           /* ----------------------------------------------------------------------------------------------  */}
           <Grid item>
-            <FooterLinks />
+            <FooterLinks gameType={props.gameType} />
           </Grid>
 
           {/* ---------------------------------------------------------------------------------------------- */

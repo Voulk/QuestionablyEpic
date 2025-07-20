@@ -3,10 +3,9 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, InputLabel, FormControl, Select, MenuItem, Typography, Tooltip } from "@mui/material";
 import LogLinkInput from "../../../SystemTools/LogImport/LogLinkInput";
-import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "../../CooldownPlanner/Functions/Functions";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { warcraftLogReportID, logDifficulty, importSummaryData, importDamageLogData } from "General/Modules/GeneralComponents/Functions";
+import { classColours } from "General/Engine/ClassData";
 import FightSelectorButton from "../../../SystemTools/LogImport/FightSelectorButton";
-import bossIcons from "../../CooldownPlanner/Functions/IconFunctions/BossIcons";
 import { convertLogSpellOutput, convertLogStatOutput } from "../../Player/PlayerUtilities";
 import { styled } from "@mui/system";
 
@@ -248,7 +247,7 @@ export default function QELogImport(props) {
           style={{ whiteSpace: "nowrap" }}
           onClick={handleClickOpen}
           disabled={characterCount === 0}
-          variant="outlined"
+          variant="contained"
           color={"secondary"}
           //disabled={true}
         >
@@ -283,7 +282,7 @@ export default function QELogImport(props) {
                       let lastItem = i + 1 === arr.length ? false : true;
                       return (
                         <MenuItem divider={lastItem} key={i} value={key.name}>
-                          <div style={{ color: classColoursJS(key.type) }}>{key.name}</div>
+                          <div style={{ color: classColours(key.type) }}>{key.name}</div>
                         </MenuItem>
                       );
                     })}
@@ -302,7 +301,7 @@ export default function QELogImport(props) {
                   align="center"
                   color="primary"
                 >
-                  {bossIcons(currentBossID)}
+                  {}
                   {showSelectedFight ? bossName : t("InsertLog.PlsSelectFight")}
                 </Typography>
                 <Typography

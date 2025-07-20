@@ -1,6 +1,6 @@
 
 
-import { getCritPercentage } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // A generic stat effect with a duration and a ppm.
 export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number): Stats => {

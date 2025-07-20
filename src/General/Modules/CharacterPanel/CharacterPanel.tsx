@@ -6,13 +6,15 @@ import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
-import classIcons from "../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { classColoursJS } from "../CooldownPlanner/Functions/ClassColourFunctions";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import { classColours } from "General/Engine/ClassData";
 import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import { classRaceDB } from "Databases/ClassRaceDB";
+import { getRaceIcon } from "../IconFunctions/RaceIcons";
 
 // Define your types here
 interface Player {
@@ -79,7 +81,8 @@ const specImages: { [key: string]: string } = {
   "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
-  "Discipline Priest Classic": require("Images/DiscSmall.jpg"),
+  "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
+  "Mistweaver Monk Classic": require("Images/classicon_monk.jpg"),
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -101,12 +104,15 @@ export default function CharacterPanel(props: Props) {
   const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
-  const classes = useStyles();
-  const specBuilds = props.player.getAllModels(props.contentType);
-
-  const [backgroundImage, setBackgroundImage] = useState("");
   const gameType = useSelector((state: any) => state.gameType);
   const contentType = useSelector((state: any) => state.contentType) || "";
+  const classes = useStyles();
+  const specBuilds = props.player.getAllModels(props.contentType);
+  
+  const raceOptions = gameType === "Classic" ? classRaceDB[props.player.spec].races : [];
+
+  const [backgroundImage, setBackgroundImage] = useState("");
+
 
   const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
@@ -114,7 +120,7 @@ export default function CharacterPanel(props: Props) {
   const currentCharacter: CurrentCharacter = props.allChars.getActiveChar();
   const playerStats = props.player !== null ? props.player.getActiveStats() : {};
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
-
+  const [playerRace, setPlayerRace] = useState(props.player.getRace());
 
   useEffect(() => {
     async function setImg() {
@@ -132,11 +138,17 @@ export default function CharacterPanel(props: Props) {
     props.singleUpdate(props.player);
   };
 
+  const updatePlayerRace = (value) => {
+    props.player.setRace(value);
+    setPlayerRace(value); // This is mostly just used to forced a CharPanel UI update.
+    props.singleUpdate(props.player);
+  };
+
   const imageStyle: React.CSSProperties = {
     backgroundRepeat: "no-repeat",
     textAlign: "center",
     position: "relative", // This should be one of the valid values
-    border: "1px solid" + classColoursJS(currentCharacter.spec),
+    border: "1px solid" + classColours(currentCharacter.spec),
     backgroundSize: "auto 100%",
     height: 72,
     width: 72,
@@ -185,8 +197,8 @@ export default function CharacterPanel(props: Props) {
                       margin: "0px 2px 0px 0px",
                       verticalAlign: "middle",
                       borderRadius: "0px 0px 0px 4px",
-                      borderRight: "1px solid " + classColoursJS(currentCharacter.spec),
-                      borderTop: "1px solid" + classColoursJS(currentCharacter.spec),
+                      borderRight: "1px solid " + classColours(currentCharacter.spec),
+                      borderTop: "1px solid" + classColours(currentCharacter.spec),
                       }
                     ) || <></>}
                   </Tooltip>
@@ -211,7 +223,7 @@ export default function CharacterPanel(props: Props) {
                             <Typography
                               variant={xsBreakpoint ? "h5" : "h6"}
                               style={{
-                                color: classColoursJS(currentCharacter.spec),
+                                color: classColours(currentCharacter.spec),
                                 marginRight: 8,
                                 fontSize: gameType === "Retail" ? 16 : 22,
                               }}
@@ -248,11 +260,11 @@ export default function CharacterPanel(props: Props) {
                       // The characters current stat totals are mapped with verticle dividers between them.
                       // We can definitely create a version of this for Classic but TODO for now.
                     }
-                    {gameType === "Retail" ? (
+                    {false /*gameType === "Retail"*/ ? (
                       <Grid container spacing={1}>
                         <Grid item xs={4} sm="auto">
                           <Typography style={{ fontSize: 11, lineHeight: 1 }}>{"Stats (pre-enchants):"}</Typography>
-                        </Grid>
+                        </Grid> 
                         {Object.keys(playerStats)
                           .filter((filterOut) => ["intellect", "haste", "crit", "mastery", "versatility"].includes(filterOut)) //filterOut !== "stamina" && filterOut !== "hps" && filterOut !== "dps" && filterOut !== "leech" && filterOut !== "mana")
                           .map((key, i) => (
@@ -277,11 +289,13 @@ export default function CharacterPanel(props: Props) {
                   <SimCraftInput
                     buttonLabel={t("UpgradeFinderFront.SimCButton")}
                     disableElevation={true}
-                    color="primary"
+                    color="secondary"
                     variant="contained"
                     player={props.player}
                     simcSnack={props.simcSnack}
                     allChars={props.allChars}
+                    charPanel={true}
+                    
                   />
                 </Grid>
               )}
@@ -328,7 +342,7 @@ export default function CharacterPanel(props: Props) {
                   ) : (
                     <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
+                      <Typography variant="body2">Import your gear via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -344,11 +358,12 @@ export default function CharacterPanel(props: Props) {
                 <SimCraftInput
                   buttonLabel={t("UpgradeFinderFront.SimCButton")}
                   disableElevation={true}
-                  color="primary"
+                  color="secondary"
                   variant="contained"
                   player={props.player}
                   simcSnack={props.simcSnack}
                   allChars={props.allChars}
+                  charPanel={true}
                 />
               </Grid>
 
@@ -386,7 +401,7 @@ export default function CharacterPanel(props: Props) {
                   ) : (
                     <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
+                      <Typography variant="body2">Import your gear via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -432,6 +447,56 @@ export default function CharacterPanel(props: Props) {
                       </TextField>
                     </Tooltip>
                   </Grid>
+
+                  {/* Race Selection */}
+                  {gameType === "Classic" ? (
+                  <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+                    <Tooltip
+                      title={
+                        <Typography align="center" variant="body2">
+                          {"Race Selection"}
+                        </Typography>
+                      }
+                      placement="top-start"
+                    >
+                      <TextField
+                        className={classes.select}
+                        InputProps={{ variant: "outlined" }}
+                        select
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        value={playerRace}
+                        onChange={(e) => updatePlayerRace(e.target.value)}
+                        label={"Race Selection"}
+                        style={{ textAlign: "center", minWidth: 120 }}
+                      >
+                        {raceOptions.map((key, i, arr) => {
+                          let lastItem = i + 1 === arr.length ? false : true;
+                          //const disabled = key.modelName.includes("Coming Soon");
+                          return (
+                            <MenuItem divider={lastItem} key={"playstyle" + i} id={key} value={key} style={{ justifyContent: "flex-start" }} disabled={false}>
+                            {/*<img
+                              src={getRaceIconUrl(key)} // <- your function or key.iconUrl
+                              alt=""
+                              style={{
+                                width: 20,
+                                height: 20,
+                                borderRadius: "50%",
+                                objectFit: "cover",
+                              }}
+                            /> */}
+                              {getRaceIcon(key, "female")}
+                              {key /*getTranslatedClassName(key, currentLanguage)*/}
+                            </MenuItem>
+                          );
+                        })}
+                      </TextField>
+                    </Tooltip>
+                  </Grid>
+                  ) : (
+                    ""
+                  )}
                 </Grid>
             <Divider />
             <Settings player={props.player} contentType={props.contentType} singleUpdate={props.singleUpdate} hymnalShow={true} groupBuffShow={true} autoSocket={true} />

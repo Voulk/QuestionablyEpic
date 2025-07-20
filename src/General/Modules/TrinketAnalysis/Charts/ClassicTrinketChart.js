@@ -7,7 +7,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import "./VerticalChart.css";
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
@@ -69,7 +69,6 @@ export default class BCChart extends PureComponent {
 
     let arr = [];
     let cleanedArray = [];
-    console.log(data);
     Object.entries(data)
       .map((key) => key[1])
       .map((map2) => {
@@ -103,14 +102,16 @@ export default class BCChart extends PureComponent {
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 10)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} domain={"cata"}>
+            <WowheadTooltip type="item" id={payload.value} domain={"mop-classic"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
-                {getTooltip(data, payload.value).map((key) => {
-                  return (
-                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                {getTooltip(data, payload.value).map((key, index) => {
+                  return (<span key={key} style={{
+                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Item Source")) ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : key.includes("Item Source") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
+                    }}>
                       {key}
                       <br />
                     </span>

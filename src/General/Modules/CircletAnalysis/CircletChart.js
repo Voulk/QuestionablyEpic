@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "General/Engine/ItemUtilities";
@@ -7,7 +7,7 @@ import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
 import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 

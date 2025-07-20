@@ -1,10 +1,10 @@
-import React from "react";
+
 import makeStyles from "@mui/styles/makeStyles";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
-import RetailSettings from "./RetailSettings";
+import SettingsComponent from "./SettingsComponent";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
 
@@ -47,11 +47,12 @@ export default function Settings(props : any) {
         </AccordionSummary>
         <AccordionDetails className={classes.details}>
           {/* ---- If gameType = "Retail" show Retail Settings, otherwise show Burning Crusade Settings ---- */}
-            <RetailSettings
+            <SettingsComponent
               player={props.player}
               contentType={props.contentType}
               singleUpdate={props.singleUpdate}
             />
+
 
         </AccordionDetails>
       </Accordion>

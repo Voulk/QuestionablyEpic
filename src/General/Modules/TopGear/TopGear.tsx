@@ -10,7 +10,6 @@ import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from
 import MuiAlert from "@mui/material/Alert";
 import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
-//import worker from "workerize-loader!./TopGearEngine"; // eslint-disable-line import/no-webpack-loader-syntax
 import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
@@ -21,13 +20,15 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { patronColor, patronCaps } from "General/Modules/SetupAndMenus/Header/PatronColors";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { Item } from "General/Modules/Player/Item";
+import { Item } from "General/Items/Item";
 import {Player } from "General/Modules/Player/Player";
 import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
-import { buildDifferential, generateReportCode } from "./Engine/TopGearEngineShared";
+import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
+import { trackPageView } from "Analytics";
+import { getVersion } from "../ChangeLog/Log";
 
 type ShortReport = {
   id: string;
@@ -128,6 +129,8 @@ const useStyles = makeStyles((theme?: any) => ({
   },
 }));
 
+
+
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -170,7 +173,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - ((props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -385,7 +388,8 @@ export default function TopGear(props: any) {
   }
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
+    //ReactGA.pageview(window.location.pathname + window.location.search);
     checkTopGearValid();
   }, []);
 
@@ -423,8 +427,10 @@ export default function TopGear(props: any) {
         new: false,
         contentType: report.contentType,
         effectList: report.itemSet.effectList, 
+       
         itemSet: {itemList: [],
                   setStats: report.itemSet.setStats,
+                  metrics: report.itemSet.metrics,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
                   socketedGems: report.itemSet.gems || [],
@@ -432,8 +438,8 @@ export default function TopGear(props: any) {
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
-        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName}
-      
+        player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
+        version: getVersion(),
       };
     
       
@@ -473,7 +479,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-  
+
       sendReport(shortReport);
       return shortReport;
 
@@ -494,12 +500,17 @@ export default function TopGear(props: any) {
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
 
     if (gameType === "Retail") {
-      const worker = require("workerize-loader!./Engine/TopGearEngine"); // eslint-disable-line import/no-webpack-loader-syntax
-      let instance = new worker();
       //console.log(instance);
 
-      instance
-        .runTopGear(itemList, wepCombos, strippedPlayer, contentType, baseHPS, playerSettings, strippedCastModel)
+      runWorker("Retail", {
+        itemList,
+        wepCombos,
+        strippedPlayer,
+        contentType,
+        baseHPS,
+        playerSettings,
+        strippedCastModel,
+      })
         .then((result: TopGearResult | null) => { // 
           if (result) {
             // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
@@ -509,13 +520,11 @@ export default function TopGear(props: any) {
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);
 
-            instance.terminate();
             history.push("/report/");
           }
           else { // A valid set was not returned.
             setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
             console.log("Null Set Returned");
-            instance.terminate();
             setBtnActive(true);
           }
         })
@@ -524,25 +533,25 @@ export default function TopGear(props: any) {
           reportError("", "Top Gear Crash", err, strippedPlayer.spec);
           setErrorMessage("Top Gear has crashed. So sorry! It's been automatically reported.");
           console.log(err);
-          instance.terminate();
           setBtnActive(true);
         });
     } else if (gameType === "Classic") {
         console.log("Initiating Top Gear Classic");
         const reforgeOn = !(getSetting(playerSettings, "reforgeSetting") === "Dont reforge");
-        const worker = require("workerize-loader!./Engine/TopGearEngineClassic"); // eslint-disable-line import/no-webpack-loader-syntax
         const t0 = performance.now();
         // Start multiple workers and run TopGearBC with each worker
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
-        const itemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
+        const allItemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
         const workerPromises = []
-        const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
-        const chunkSize = itemSets.length / workerCount;
+        const workerCount = (props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 4 : 1;
+        const chunkSize = allItemSets.length / workerCount;
         //console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
         for (let i = 0; i < workerCount; i++) {
           // Create itemSet chunk.
-          workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
+          const itemSets = allItemSets.slice(i * chunkSize, (i + 1) * chunkSize);
+          //workerPromises.push(runTopGearWorker(i, worker, itemSets.slice(i * chunkSize, (i + 1) * chunkSize), strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel));
+          workerPromises.push(runWorker("Classic", {itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel}))
         }
         //console.log("Thread Spins took " + (performance.now() - t1) + " milliseconds.");
         // Wait for all worker promises to resolve
@@ -562,11 +571,31 @@ export default function TopGear(props: any) {
             // Build Differentials
             let differentials = [];
             let primeSet = mergedResults[0];
+
+            let diffsAdded = 0;
+            let diffsChecked = 0;
+            let setsAdded: Set<String> = new Set<String>();
+            while (diffsAdded < CONSTRAINTS.Shared.topGearDifferentials && (diffsChecked + 1) < mergedResults.length) {
+                const differential = buildDifferential(mergedResults[diffsChecked + 1], primeSet, props.player, contentType)
+
+                if (differential.items.length > 0 || differential.gems.length > 0) {
+                  const diffIDs = differential.items.map((item: Item) => item.id).sort((a, b) => a - b).join(",")
+
+                  if (!setsAdded.has(diffIDs)) {
+                    setsAdded.add(diffIDs)
+                    differentials.push(differential);
+                    diffsAdded++;
+                  }
+
+                }
+                diffsChecked++;
+            }
+            /*  
             for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, mergedResults.length); i++) {
               const differential = buildDifferential(mergedResults[i], primeSet, props.player, contentType);
               if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
 
-            }
+            }*/
             //itemSets[0].printSet()
 
             let result = new TopGearResult(mergedResults[0], differentials, "Raid");
@@ -590,7 +619,7 @@ export default function TopGear(props: any) {
             history.push("/report/");
         })
         .catch(error => {
-            console.error("Error running TopGearBC:", error);
+            console.error("Error running TopGearBC:", error.stack);
         });
       } 
      else {
@@ -599,19 +628,24 @@ export default function TopGear(props: any) {
     }
   };
 
-  function runTopGearWorker(i, worker, itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel) {
+  // We'll run our Engine in a separate thread to avoid blocking the UI.
+  const runWorker = (gameType: gameTypes, args: any) => {
     return new Promise((resolve, reject) => {
-        const instance = new worker();
-        instance
-            .runTopGearClassic(itemSets, strippedPlayer, contentType, baseHPS, currentLanguage, playerSettings, strippedCastModel)
-            .then(result => {
-                instance.terminate();
-                resolve(result);
-            })
-            .catch(error => {
-                instance.terminate();
-                reject(error);
-            });
+      const worker = createTopGearWorker();
+  
+      worker.onmessage = (event) => {
+        const { success, result, error } = event.data;
+        worker.terminate();
+        if (success) resolve(result);
+        else reject(error);
+      };
+  
+      worker.onerror = (err) => {
+        worker.terminate();
+        reject(err.message || err);
+      };
+  
+      worker.postMessage({ gameType, ...args });
     });
   }
 
@@ -731,7 +765,7 @@ export default function TopGear(props: any) {
           slotList.map((key, index) => {
             return (
               <Grid item lg={12} xl={12} xs={12} key={index}>
-                <Typography color="primary" variant="h5">
+                <Typography color="primary" variant="h6">
                   {key.label}
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
@@ -757,7 +791,7 @@ export default function TopGear(props: any) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "60px",
+          height: "66px",
           backgroundColor: "#424242",
           borderTopColor: "Goldenrod",
           borderTopWidth: "1px",
@@ -778,7 +812,7 @@ export default function TopGear(props: any) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px", fontSize: "20px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
           <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
@@ -788,7 +822,7 @@ export default function TopGear(props: any) {
             <Button 
               variant="contained" 
               color="primary" 
-              style={{ height: "64%", width: "180px" }} 
+              style={{ height: "64%", width: "180px", border: "2px solid black" }} 
               disabled={checkSlots(gameType).length > 0 || !btnActive}  //
               onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}

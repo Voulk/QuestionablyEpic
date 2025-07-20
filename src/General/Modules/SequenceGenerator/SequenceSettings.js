@@ -1,4 +1,4 @@
-import React from "react";
+
 import makeStyles from "@mui/styles/makeStyles";
 import { Accordion, AccordionDetails, AccordionSummary, Typography, Grid, Tooltip, TextField, MenuItem } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -59,7 +59,7 @@ export default function SequenceSettings(props) {
             {settingKeys.map((key) => {
 
                 return (
-                    <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+                    <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
                         <Tooltip title={""}>
                             <TextField
                                 fullWidth

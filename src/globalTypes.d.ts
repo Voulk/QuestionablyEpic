@@ -28,6 +28,7 @@ declare type ItemEffect = {
     name: string;
     level?: number;
     onUse?: boolean;
+    class?: string; // Only used for effectEngine routing so could be refactored later.
 }
 
 
@@ -56,6 +57,8 @@ interface PlayerChars {
     setActiveChar(index: number): void;
     setupChars(): void;
     getAllChar(gameType?: string): any[];
+    pickPlayerClass(gameType: gameTypes, playerClass: string): void;
+    getCharOfClass(gameType: gameTypes, playerClass: string): number;
     updatePlayerChar(player: any): void;
     setLowestChar(gameType: string): void;
     saveAllChar(): void;

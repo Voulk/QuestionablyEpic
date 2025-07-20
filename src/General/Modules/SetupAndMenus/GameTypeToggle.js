@@ -1,4 +1,3 @@
-import React from "react";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useSelector } from "react-redux";
@@ -10,8 +9,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import { toggleContent } from "Redux/Actions";
 
 import RetailLogo from "../../../Images/Logos/Logo_WarWithin.png";
-import ClassicLogo from "../../../Images/Logos/CataLogoAlpha.png";
-import MopLogo from "../../../Images/Logos/LogoMistsOfPandariaComingSoon.png";
+import ClassicLogo from "../../../Images/Logos/LogoMistsOfPandaria.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,14 +97,6 @@ export default function GameTypeSwitch(props) {
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
             <img src={ClassicLogo} alt={t("Cataclysm")} />
-          </div>
-        </Tooltip>
-      </ToggleButton>
-
-      <ToggleButton className={classes.root} value="ClassicMoP" aria-label="classicLabel" disabled>
-        <Tooltip title={"Mists of Pandaria (Coming Soon)"} arrow>
-          <div style={{ display: "inline-flex" }}>
-            <img src={MopLogo} alt={"Mists of Pandaria (Coming Soon)"} />
           </div>
         </Tooltip>
       </ToggleButton>

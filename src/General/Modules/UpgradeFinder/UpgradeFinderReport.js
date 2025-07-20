@@ -15,6 +15,8 @@ import { useSelector } from "react-redux";
 import UFTabPanel from "./Panels/ufComponents/ufTabPanel";
 import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import EquippedItems from "./CurrentlyEquippedPanel";
+import { trackPageView } from "Analytics";
 
 function a11yProps(index) {
   return {
@@ -73,7 +75,7 @@ const addItemSources = (diffList, gameType) => {
 
 export default function UpgradeFinderReport(props) {
   //   useEffect(() => {
-  //     ReactGA.pageview(window.location.pathname + window.location.search);
+  //     trackPageView(window.location.pathname + window.location.search);
   //   }, []);
 
   const classes = UpgradeFinderStyles();
@@ -125,7 +127,6 @@ export default function UpgradeFinderReport(props) {
     //const report = props.report;
     
 
-
     const itemList = result.itemSet;
     const itemDifferentials = addItemSources(result.results, gameType);
     //itemList.sort((a, b) => (getDifferentialByID(itemDifferentials, a.id, a.level) < getDifferentialByID(itemDifferentials, b.id, b.level) ? 1 : -1));
@@ -134,15 +135,18 @@ export default function UpgradeFinderReport(props) {
       <div className={classes.header}>
         <div style={{ height: 96 }} />
         <Grid container spacing={0}>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ padding: "0px 0px 40px 0px" }} >
             <div>
             <Button color="primary" variant="outlined" component={Link} to={"/upgradefinder"} style={{ position: "absolute" }}>
                 {t("UpgradeFinder.BackButton")}
               </Button>
-              <Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
+              {/*<Typography variant="h4" color="primary" align="center" style={{ padding: "1px 1px 1px 1px" }}>
                 {t("UpgradeFinder.Header") + " - " + result.contentType}
-              </Typography>
+              </Typography>*/}
             </div>
+          </Grid>
+          <Grid item sm container spacing={0} style={{ padding: "4px 0px 5px 0px" }}>
+           <EquippedItems items={result.equippedItems} gameType={result.gameType} contentType={result.contentType} />
           </Grid>
           <Grid item xs={12}>
             <AppBar

@@ -7,8 +7,10 @@ import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+
 
 const useStyles = makeStyles({
   root: {
@@ -56,9 +58,9 @@ export default function ItemCardReport(props) {
   }
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage) ;
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage) ;
   let gemString = gameType === "Classic" ? "&gems=" + item.socketedGems.join(':') : "&gems=" + item.gemString;
-  const socketImage = getGemIcon(enchants["Gems"]);
+  const socketImage = getGemIcon(enchants["Gems"], gameType);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isCatalysable = item.isCatalystItem;
@@ -138,7 +140,7 @@ export default function ItemCardReport(props) {
       socket.push(
       <div style={{ display: "inline", marginRight: "5px" }}>
         <Tooltip title={capitalizeFirstLetter(getGemProp(gem, "name"))} arrow>
-          <img src={getGemIcon(gem)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+          <img src={getGemIcon(gem, gameType)} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
         </Tooltip>
     </div>);
     })
@@ -177,7 +179,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.27)" }} // 52
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -197,7 +199,7 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "2px",
+                        borderWidth: "1px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}

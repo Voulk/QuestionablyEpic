@@ -1,26 +1,29 @@
 import { createModifiersFromModifierFlags } from "typescript";
 import SPEC from "../../Engine/SPECS";
-import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./RestorationDruid/DruidHealingFocus";
-import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./RestorationDruid/DruidBalancedFocus";
+import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
+import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./ClassDefaults/RestoDruid/DruidBalancedFocus";
 
-import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/Paladin/PaladinAvengingCrusader";
-import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/Paladin/PaladinHerald";
+import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/HolyPaladin/PaladinAvengingCrusader";
+import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/HolyPaladin/PaladinHerald";
 
-import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/ShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/Monk/MonkDefaults";
-import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/Monk/MonkChiji";
-import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriestDefaults";
-import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/Evoker/ChronowardenEvokerDefaults";
-import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/Evoker/FlameshaperEvokerDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./DisciplinePriest/DiscPriestVoidweaver";
-import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./DisciplinePriest/DiscPriestOracle";
+import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/ShamanDefaults";
+import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
+import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/MistweaverMonk/MonkChiji";
+import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
+import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
+import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
+import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
 
-import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
-import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
-import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
-import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
 
-import { getRampData, genStatWeights } from "General/Modules/Player/DisciplinePriest/DiscPriestUtilities";
+import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
+import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
+import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
+import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
+import { mistweaverMonkDefaults } from "./ClassDefaults/Classic/Monk/MistweaverMonkClassic";
+
+import { getRampData, genStatWeights } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestUtilities";
+
 
 class CastModel {
   constructor(spec, contentType, modelID, arrID) {
@@ -214,28 +217,35 @@ class CastModel {
     
     // Classic Profiles
     else if (spec === "Restoration Druid Classic") {
+      this.modelName = "Default";
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+
     } 
     else if (spec === "Holy Priest Classic") {
+      this.modelName = "Default";
       this.profile = holyPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Holy Paladin Classic") {
+      this.modelName = "Default";
       this.profile = holyPaladinDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Discipline Priest Classic") {
+      this.modelName = "Default";
       this.profile = discPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Restoration Shaman Classic") {
+      this.modelName = "Default";
       spellList = {};
       this.baseStatWeights = druidDefaultStatWeights(contentType);
     } 
     else if (spec === "Mistweaver Monk Classic") {
-      spellList = {};
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.modelName = "Default";
+      this.profile = mistweaverMonkDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else {
       spellList = {};
@@ -257,86 +267,6 @@ class CastModel {
   setRampInfo = (stats, trinkets) => {
     this.specialQueries.rampData = getRampData(stats, trinkets, this.modelName);
 
-  }
-    // Currently being trialled as Discipline only.
-  updateStatWeights = (stats, contentType) => {
-
-    // Take the stats on our set and add 5% for the armor bonus and 5% for Arcane Intellect.
-    stats.intellect = Math.round(stats.intellect * 1.05 * 1.05);
-
-    // These are stat weights with 0 of each stat on top of the default profile.
-    let base_weights = {
-        intellect: 1,
-        haste: 0.47,
-        crit: 0.44,
-        mastery: 0.42,
-        versatility: 0.43,
-        leech: 0.59
-    }
-
-    let scaling = {
-      haste: 1,
-      mastery: 0.72,
-      versatility: 0.99,
-      intellect: 0.991,
-      crit: 0.968,
-      leech: 0.31,
-    };
-
-    let new_weights = {};
-
-    const baselineScore =
-      stats.intellect *
-      scaling.intellect *
-      (1 + (stats.crit / 35 / 100) * scaling.crit) *
-      (1 + (stats.haste / 33 / 100) * scaling.haste) *
-      (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-      (1 + (stats.versatility / 40 / 100) * scaling.versatility);
-
-    const intScore =
-      ((10 + stats.intellect) *
-        scaling.intellect *
-        (1 + (stats.crit / 35 / 100) * scaling.crit) *
-        (1 + (stats.haste / 33 / 100) * scaling.haste) *
-        (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-        (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
-        baselineScore) /
-      10;
-
-    /*(((((stats.intellect) * scaling.intellect) * (1 + ((5 + stats.crit) / 35 / 100 * scaling.crit)) * 
-                            (1 + (stats.haste / 33 / 100 * scaling.haste)) * (1 + (stats.mastery / 27.9 / 100 * scaling.mastery)) * 
-                            (1 + stats.versatility / 40 / 100 * scaling.versatility))) - baselineScore) / 5 / intScore;         */
-
-    //new_weights.intellect = ((100 + stats.intellect * percent_scaling.intellect) * (1 + (stats.crit / 35) * (1 + (stats.haste / 33)))
-
-    for (const [stat, value] of Object.entries(base_weights)) {
-      new_weights[stat] = this.getSecWeight(stats, scaling, baselineScore, intScore, stat);
-    }
-    new_weights.leech = base_weights.leech;
-
-    //console.log(JSON.stringify(base_weights));
-
-    //console.log(JSON.stringify(new_weights));
-
-    this.setStatWeights(new_weights);
-  }
-
-  getSecWeight = (baseStats, scaling, baselineScore, intScore, statName) => {
-    let stats = { ...baseStats };
-    stats[statName] += 5;
-
-    const newWeight =
-      (stats.intellect *
-        scaling.intellect *
-        (1 + (stats.crit / 35 / 100) * scaling.crit) *
-        (1 + (stats.haste / 33 / 100) * scaling.haste) *
-        (1 + (stats.mastery / 27.9 / 100) * scaling.mastery) *
-        (1 + (stats.versatility / 40 / 100) * scaling.versatility) -
-        baselineScore) /
-      5 /
-      intScore;
-
-    return Math.round(1000 * newWeight) / 1000;
   }
 
 }

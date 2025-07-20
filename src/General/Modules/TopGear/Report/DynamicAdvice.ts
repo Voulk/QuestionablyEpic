@@ -1,6 +1,6 @@
 
 import { Player } from "General/Modules/Player/Player"
-import { Item } from "General/Modules/Player/Item"
+import { Item } from "General/Items/Item"
 
 const checkHasItem = (itemList: Item[], itemID: number) => {
     return itemList.filter((item: Item) => item.id === itemID).length > 0;
@@ -20,10 +20,11 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         by clicking on them in the top gear item select screen.")
     }
     if (gameType === "Classic") {
-        if (strippedPlayer.spec === "Discipline Priest Classic") advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.85) + " - " + Math.round(topSet.hardScore / 60 * 1) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
-        else advice.push("Expected HPS: " + Math.round(topSet.hardScore / 60 * 0.5) + " - " + Math.round(topSet.hardScore / 60 * 0.75) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
-        advice.push("Power Torrent is a very powerful weapon enchant but is expensive. It's ok to wear Heartsong until you have a good weapon.")
-        if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has a haste breakpoint at 2005 haste, however this is only a small upgrade over \
+        advice.push("Expected HPS: " + Math.round(topSet.metrics.healing / 60 * 0.85) + " - " + Math.round(topSet.metrics.healing / 60 * 1) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")
+        advice.push("Expected DPS: " + Math.round(topSet.metrics.damage / 60 * 0.7) + " - " + Math.round(topSet.metrics.damage / 60 * 1) + ". Your DPS is heavily dependent on how much time you spend casting DPS spells and will vary per fight.")
+
+        //advice.push("Power Torrent is a very powerful weapon enchant but is expensive. It's ok to wear Heartsong until you have a good weapon.")
+        if (strippedPlayer.spec === "Mistweaver Monk Classic") advice.push("Mistweaver has a haste breakpoint at 3145 haste, however this is only a small upgrade over \
                     spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");
     }
     if (topSet.enchantBreakdown["flask"]) {

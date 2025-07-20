@@ -63,6 +63,7 @@ export default function SlotsContainer(props) {
       case "Restoration Druid Classic":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
       case "Mistweaver Monk":
+      case "Mistweaver Monk Classic":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
       case "Holy Paladin":
       case "Holy Paladin Classic":
@@ -74,6 +75,7 @@ export default function SlotsContainer(props) {
       case "Holy Priest":
       case "Holy Priest Classic":
       case "Discipline Priest":
+      case "Discipline Priest Classic":
         return require("Images/UpgradeFinderIcons/Cloth/" + slot + ".jpg");
       default:
         return [-1];

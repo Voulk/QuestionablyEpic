@@ -14,12 +14,11 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
 import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";
-import { getEmbellishmentDescription } from "General/Modules/EmbellishmentAnalysis/EmbellishmentDescriptions";
-import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { getAllyStatsValue } from "General/Engine/ItemUtilities";
 // 
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
+import { trackPageView } from "Analytics";
 
 // [{TrinketID: 90321, i173: 92, i187: 94, i200: 99, i213: 104, i226: 116}]
 
@@ -166,7 +165,7 @@ const getHighestTrinketScore = (db, trinket, gameType) => {
 
 export default function CircletAnalysis(props) {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
   }, []);
 

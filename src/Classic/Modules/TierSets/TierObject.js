@@ -1,8 +1,8 @@
-import React from "react";
+
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardActions, CardContent, Divider, Grid, Typography } from "@mui/material";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx"
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx"
 import { getItemIcon} from "General/Engine/ItemUtilities";
 // import { legendaryImages } from "./LegendaryIcons";
 
@@ -75,7 +75,7 @@ export default function TierObject(props) {
                   //.filter((filter) => set.slots[filter].id > 0)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <WowheadTooltip type="item" id={key} domain={"cata-" + currentLanguage}>
+                      <WowheadTooltip type="item" id={key} domain={"mop-classic"}>
                         <img
                           height={40}
                           width={40}

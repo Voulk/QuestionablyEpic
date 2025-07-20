@@ -10,9 +10,9 @@ import redSocket from "../../../Images/Resources/socketRed.png"
 import yellowSocket from "../../../Images/Resources/socketYellow.png"
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import ItemCardButtonWithMenu from "../1. GeneralComponents/ItemCardButtonWithMenu";
+import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 const useStyles = makeStyles({
   root: {
@@ -114,7 +114,7 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage);
   let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
