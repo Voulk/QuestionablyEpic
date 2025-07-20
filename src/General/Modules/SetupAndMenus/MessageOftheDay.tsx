@@ -7,7 +7,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
     "QE Live has had significant updates. Let me know if you run into anything strange!"
   ] : 
   [
-    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord.",
+    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin & Shaman will be along this week.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

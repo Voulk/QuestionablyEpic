@@ -117,11 +117,11 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
 
   /* --------------------------------------- Classic -------------------------------------- */
   "Holy Priest Classic": {
-    races: ["Goblin", "Draenei", "Dwarf", "Human", "Night Elf", "Blood Elf", "Troll", "Undead", "Gnome", "Worgen", "Tauren"],
+    races: ["Pandaren", "Goblin", "Draenei", "Dwarf", "Human", "Night Elf", "Blood Elf", "Troll", "Undead", "Gnome", "Worgen", "Tauren"],
     gameType: "Classic",
   },
   "Discipline Priest Classic": {
-    races: ["Goblin", "Draenei", "Dwarf", "Human", "Night Elf", "Blood Elf", "Troll", "Undead", "Gnome", "Worgen", "Tauren"],
+    races: ["Pandaren", "Goblin", "Draenei", "Dwarf", "Human", "Night Elf", "Blood Elf", "Troll", "Undead", "Gnome", "Worgen", "Tauren"],
     gameType: "Classic",
   },
 
