@@ -30,7 +30,7 @@
     "react-google-login": "^5.1.21",
     "react-i18next": "^11.7.3",
     "react-loading-overlay": "^1.0.1",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^7.5.2",
     "react-scripts": "5.0.1",
     "reactstrap": "^8.6.0",
     "recharts": "^2.1.16",
