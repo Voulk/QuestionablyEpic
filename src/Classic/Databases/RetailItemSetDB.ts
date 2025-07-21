@@ -3,11 +3,12 @@
 export function getItemSet(id: number, pieces: number, spec: string) {
     let effects: ItemEffect[] = [];
     let temp = itemSets.filter(function (set) {
-      return set.id.includes(id) && (set.class === spec || set.class === "All");
+      return set.id.includes(parseInt(id)) && (set.class === spec || set.class === "All");
     });
+
     if (temp.length > 0) {
       for (const [bonus, effectID] of Object.entries(temp[0].setBonuses)) {
-        //console.log("Getting bonuss" + bonus + ". ID: " + effectID + ". Pieces: " + pieces);
+        //console.log("Getting bonus " + bonus + ". ID: " + effectID + ". Pieces: " + pieces);
         if (pieces >= Number(bonus)) effects.push({type: 'set bonus', name: effectID, class: temp[0].class});
       }
       return effects;
