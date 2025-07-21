@@ -1,5 +1,5 @@
-import { classicItemDB} from "../../../Databases/ClassicItemDB";
-import Item from "../Player/Item";
+import classicItemDB from "Databases/ClassicItemDB.json";
+import Item from "../../Items/Item";
 import { runTopGearClassic, prepareTopGear } from "../TopGear/Engine/TopGearEngineClassic";
 import {
   getValidArmorTypes,
@@ -116,23 +116,24 @@ export function runUpgradeFinderBC(player, contentType, currentLanguage, playerS
   //
   const completedItemList = [];
 
+  const editedSettings = {...userSettings, reforgeSetting: {value: "Dont Reforge"}}
+
   console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
   const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.castModel[contentType];
-  const itemSets = prepareTopGear(baseItemList, player, userSettings, true, [], []);
+  const itemSets = prepareTopGear(baseItemList, player, editedSettings, true, [], []);
 
   const baseHPS = player.getHPS(contentType);
-  const baseSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
+  const baseSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, editedSettings, castModel, false)[0];
 
   const baseScore = baseSet.hardScore;
   console.log(baseScore);
   console.log("=======")
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings);
   //console.log(baseSet);
-  console.log(itemPoss)
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, editedSettings, castModel));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);
@@ -177,7 +178,7 @@ function buildItemPossibilities(player, contentType, playerSettings) {
             itemPoss.push(item);
           }
         }
-        else  if ([72, 73, 74].includes(rawItem.sources[0].instanceId)) { // Raid
+        else  if ([317, 320, 330].includes(rawItem.sources[0].instanceId)) { // Raid
           const itemSource = rawItem.sources[0];
           const item = buildItem(player, rawItem, rawItem.sources[0]);
 
@@ -189,43 +190,13 @@ function buildItemPossibilities(player, contentType, playerSettings) {
 
       }
     }
+
+    //itemPoss = itemPoss.filter(item => item.id === 87170)
+
     return itemPoss;
   }
  
 
-  // console.log("Tokens: " + Object.keys(tokenDB).length);
-
-  // --------------------------
-  // Take care of Tokens >:(
-  // --------------------------
-  /*
-  for (const [key, value] of Object.entries(tokenDB)) {
-    const rawToken = value;
-    //  console.log(rawToken);
-
-    if ("encounterId" in rawToken && rawToken.specs.includes(player.getSpec())) {
-      // console.log("Player Covenant: " + player.getCovenant());
-      const newItemIDs = rawToken[player.getCovenant()];
-      const itemSource = { instanceId: 1190, encounterId: rawToken.encounterId };
-
-      for (var j = 0; j < newItemIDs.length; j++) {
-        for (var x = 0; x < playerSettings.raid.length; x++) {
-          const rawItem = getItem(newItemIDs[j]);
-
-          if (checkItemViable(rawItem, player)) {
-            const itemLevel = getSetItemLevel(itemSource, playerSettings, x, rawItem.slot);
-            const item = buildItem(player, contentType, rawItem, itemLevel, itemSource);
-            //console.log(item);
-            itemPoss.push(item);
-          }
-        }
-      }
-    }
-  } 
-
-  //console.log(itemPoss.length);
-  return itemPoss; // TODO: Remove Slice. It's just for testing in a smaller environment.
-}*/
 
 // Returns a small dict
 function processItem(item, baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel) {
@@ -237,12 +208,12 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   //const wepList = buildNewWepCombosUF(player, newItemList);
   
   const newTGSet = runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, userSettings, castModel, false)[0];
-  console.log(newTGSet);
+
   const newScore = newTGSet.hardScore;
-  console.log(newScore);
+
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   const differential = Math.round((10000 * (newScore - baseScore)) / baseScore) / 100 / 60;
-  console.log(baseScore);
+
   return { item: item.id, level: item.level, score: differential, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, };
 }
 
@@ -253,12 +224,15 @@ function checkItemViable(rawItem, player) {
   const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
   const stats = rawItem.stats;
 
+  const classRestriction = getItemProp(rawItem.id, "classRestriction", "Classic");
+
   return (
     ("intellect" in stats || "bonushealing" in stats || "spelldamage" in stats || "mp5" in stats || "spirit" in stats || "spellcrit" in stats || rawItem.slot === "trinket") &&
     (rawItem.slot === "Back" ||
     (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
     ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
-    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass)))
+    (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass))) &&
+    (classRestriction === "" || spec.includes(classRestriction))
   );
 }
 

@@ -1,20 +1,18 @@
 import { getGenericEffect  } from "./Generic/GenericEffectFormulas";
-import { getDruidSpecEffect } from "./Druid/DruidSpecEffects";
-import { getDiscPriestSpecEffect } from "./Priest/DiscPriestSpecEffects";
-import { getHolyPriestSpecEffect } from "./Priest/HolyPriestSpecEffects";
-import { getMonkSpecEffect } from "./Monk/MonkSpecEffects";
-import { getShamanSpecEffect } from "./Shaman/ShamanSpecEffects";
-import { getEvokerSpecEffect } from "./Evoker/EvokerSpecEffects";
-import { getPaladinSpecEffect } from "./Paladin/PaladinSpecEffects";
-import { getGenericLegendary } from "./Generic/GenericLegendaryFormulas";
+import { getDruidSpecEffect } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidSpecEffects";
+import { getDiscPriestSpecEffect } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects";
+import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpecEffects";
+import { getMonkSpecEffect } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpecEffects";
+import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/ShamanSpecEffects";
+import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
+import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";
 
-import { getEmbellishmentEffect } from "./Generic/EmbellishmentData";
+import { getEmbellishmentEffect } from "./Generic/Embellishments/EmbellishmentData";
 
 // Classic
 import { getGenericEffectClassic } from "Classic/Engine/EffectFormulas/Generic/GenericEffectClassic"
 import { getTrinketEffectClassic} from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
-import { getClassicTierSet } from "Classic/Engine/EffectFormulas/ClassicTierSets";
 import { getGenericSet } from "Classic/Engine/EffectFormulas/Generic/GenericSets";
 
 
@@ -102,7 +100,6 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   // Includes Tier Set bonuses, trinkets, and special effects on items that aren't just pure stats. 
   else if (gameType === "Classic") {
     if (effectType === "set bonus" && ('class' in effect && effect.class !== -1)) {
-        bonus_stats = getClassicTierSet(effectName, player);
         // Call error
       }
     else if (effectType === "set bonus") {

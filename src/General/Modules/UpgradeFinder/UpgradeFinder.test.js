@@ -1,6 +1,13 @@
 
 import { getSetItemLevel } from "./UpgradeFinderEngine";
 
+jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+    return {
+      createFetcherWorker: jest.fn(),
+      createLoaderWorker: jest.fn(),
+    };
+  });
+
 describe("LFR Item Level tests", () => {
     const lfrSettings = {"raid": [0, 0]}
     const lfrMaxSettings = {"raid": [1, 1]}

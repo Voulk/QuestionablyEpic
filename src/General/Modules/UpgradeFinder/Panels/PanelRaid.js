@@ -4,11 +4,10 @@ import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
-import { raidDB } from "../../CooldownPlanner/Data/CooldownPlannerBossList";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
-import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import bossHeaders from "General/Modules/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import UFAccordion from "./ufComponents/ufAccordian";
@@ -77,7 +76,7 @@ export default function RaidGearContainer(props) {
     //const raidName = encounterDB.filter((obj) => {
      // return obj.raidID === raid;
     //})[0]["name"][currentLanguage];
-    const raidName = encounterDB[raid].name[currentLanguage];
+    const raidName = encounterDB[raid].name;
     return raidName;
   };
 
@@ -239,9 +238,9 @@ export default function RaidGearContainer(props) {
     // Raid Panel
 
     const raidList = [
-      72, // Bastion
-      73, // Blackwing Descent
-      74, // Throne of Four Winds
+      317, // Mogushan Vaults
+      330, // Heart of Fear
+      320, // Terrace of Endless Springs
 
 
     ];
@@ -258,27 +257,34 @@ export default function RaidGearContainer(props) {
               <AppBar
                 position="static"
                 style={{
-                  backgroundColor: "#000",
+                  //backgroundColor: "#000",
                   borderRadius: "4px 4px 4px 4px",
                 }}
                 elevation={1}
               >
+                <div style={{ display: "flex", justifyContent: "center", /*backgroundColor: "#323232",*/ }}>
                 <Tabs
                   value={tabvalue}
                   onChange={handleTabChange}
                   aria-label="simple tabs example"
                   variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
+                  style={{ borderRadius: 4, width: '80%',  border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------ Bastion of Twilight ------------------------------------------ */}
-                  <Tab className={classes.bastionHeaderStyle} label={encounterDB[72].name[currentLanguage]} {...a11yProps(0)} />
-                  {/* ---------------------------------------- BWD ---------------------------------------- */}
-                  <Tab className={classes.blackwingDescentHeaderStyle} label={encounterDB[73].name[currentLanguage]} {...a11yProps(1)} />
-                  {/* ------------------------------------ Throne of Four Winds ------------------------------------ */}
-                  <Tab className={classes.throneOfFourWindsHeaderStyle} label={encounterDB[74].name[currentLanguage]} {...a11yProps(2)} />
-  
+                  {/*raidList.map((raidID, index) => (
+                    <Tab className={classes.bastionHeaderStyle} label={encounterDB[raidID].name} {...a11yProps(index)} />
+
+                  ))*/}
+
+                  {/* ------------------------------------------ Mogushan Vaults ------------------------------------------ */
+                  <Tab className={classes.mogushanVaultsHeaderStyle} label={encounterDB[317].name} {...a11yProps(0)} />}
+                  {/* ---------------------------------------- Heart of Fear ---------------------------------------- */
+                  <Tab className={classes.heartOfFearHeaderStyle} label={encounterDB[330].name} {...a11yProps(1)} />}
+                  {/* ------------------------------------ Terrace ------------------------------------  */
+                  <Tab className={classes.terraceOfEndlessSpringHeaderStyle} label={encounterDB[320].name} {...a11yProps(2)} />}
+                  
                 </Tabs>
+                </div>
               </AppBar>
             </Grid>
 
@@ -291,7 +297,7 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key][currentLanguage] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+                            <UFAccordion key={encounterDB[raidID].bosses[key] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
                               <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
                                 <Typography
                                   variant="h6"
@@ -305,7 +311,7 @@ export default function RaidGearContainer(props) {
                                 >
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                  {encounterDB[raidID].bosses[key][currentLanguage]} -{" "}
+                                  {encounterDB[raidID].bosses[key]} -{" "}
                                   {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
                                       ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)

@@ -67,7 +67,7 @@ export default function LanguageSelector() {
     <div className={classes.root}>
       <div>
         <Tooltip title={t("QeHeader.Tooltip.Language")} arrow>
-          <StyledButton color={"white"} variant="outlined" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
+          <StyledButton color={"secondary"} variant="contained" ref={anchorRef} aria-controls={open ? "menu-list-grow" : undefined} aria-haspopup="true" onClick={handleToggle}>
             <LanguageIcon color={"white"} style={{ marginRight: 4 }} />
             {currentLanguage}
           </StyledButton>

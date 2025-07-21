@@ -14,7 +14,31 @@ interface entry {
   changes: string[];
 }
 
+export const getVersion = (): string => {
+  return changeLog[0].update + " (" + changeLog[0].version + ")";
+}
+
 export const changeLog: entry[] = [
+  {
+    version: "11.1 / 5.5",
+    update: 99,
+    date: "July",
+    changes: [ 
+      "Heavy app-wide refactor.",
+      "Brought back a revamped Welcome screen to help introduce new players to the app.",
+      "You can now swap character class at any time from the header instead of having to return to the main menu.",
+      "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
+      "Upgrade Finder: Currently Equipped items are now shown on the report.",
+      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Visual: Multiple improvements app-wide",
+      "War Within: Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
+      "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
+      "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
+      "Classic: Competitive Alternatives now works for Resto Druid.",
+      "Classic: Added Upgrade Finder for all specs. ",
+      "Classic: Added a player race dropdown.",
+      "Classic: Spell information will now show on your Top Gear report based on the gear you're wearing."
+  ]},
   {
     version: "11.1.7 / 5.5.0",
     update: 19,
@@ -75,6 +99,14 @@ export const changeLog: entry[] = [
     ]},
   {
     version: "11.1.5 / 4.4.2",
+    update: 12,
+    date: "April 28",
+    changes: [ 
+      "Oracle Disc Priest Beta",
+      "Vault items are now automatically upgraded to max instead of having to click it.",
+    ]},
+  {
+    version: "11.1 / 4.4.2",
     update: 12,
     date: "April 28",
     changes: [ 

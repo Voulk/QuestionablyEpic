@@ -9,7 +9,7 @@ import { filterItemListBySource, getDifferentialByID, getNumUpgrades } from "../
 import i18n from "i18next";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import bossHeaders from "General/Modules/CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import bossHeaders from "General/Modules/IconFunctions/BossHeaderIcons";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 

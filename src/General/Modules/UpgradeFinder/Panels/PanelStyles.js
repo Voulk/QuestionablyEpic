@@ -7,7 +7,7 @@ const commonStyles = {
   borderRadius: "4px 0px 0px 4px",
   height: 45,
   whiteSpace: "nowrap",
-  textShadow: "3px 3px 4px black",
+  textShadow: "0px 0px 6px black, 1px 1px 2px black, -1px -1px 2px black",
   color: "#fff",
   fontSize: "0.9rem",
 };
@@ -60,6 +60,18 @@ export const raidStyles = makeStyles((theme) => {
     bastionHeaderStyle: {
       ...commonStyles,
       backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidBastionOfTwilight.png")})`,
+    },
+    mogushanVaultsHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidMogushanVaults.jpg")})`,
+    },
+    heartOfFearHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidHeartOfFear.jpg")})`,
+    },
+    terraceOfEndlessSpringHeaderStyle: {
+      ...commonStyles,
+      backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidTerraceOfEndlessSpring.jpg")})`,
     },
     naxxramasHeaderStyle: {
       ...commonStyles,

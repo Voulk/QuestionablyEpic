@@ -1,68 +1,22 @@
 import ItemSet from "../ItemSet";
 import TopGearResult from "./TopGearResult";
-import Item from "../../Player/Item";
-import React, { useState, useEffect } from "react";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 
-
-import { convertPPMToUptime, getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
-import ClassicPlayer from "../../Player/ClassicPlayer";
+import { getEnchants } from "General/Engine/ItemUtilitiesClassic"
+import { getSetting } from "../../../../Retail/Engine/EffectFormulas/EffectUtilities";
+import Player from "../../Player/Player";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine"
 import { compileStats, buildDifferential, sumScore, deepCopyFunction, setupGems, generateReportCode } from "./TopGearEngineShared"
-import { getItemSet } from "Classic/Databases/ItemSetsDB"
+import { getItemSet } from "Classic/Databases/ClassicItemSetDB"
 
-import { initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/DisciplinePriestClassic"
-import { initializeDruidSet, scoreDruidSet } from "General/Modules/Player/ClassDefaults/Classic/RestoDruidClassic"
-import { initializePaladinSet, scorePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPaladinClassic"
-import { initializeHPriestSet, scoreHPriestSet } from "General/Modules/Player/ClassDefaults/Classic/HolyPriestClassic"
-import { buildNewWepCombos } from "General/Engine/ItemUtilities";
-import { applyRaidBuffs } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase";
+import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 // Most of our sets will fall into a bucket where totalling the individual stats is enough to tell us they aren't viable. By slicing these out in a preliminary phase,
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 1500;
-const DR_CONST = 0.00196669230769231;
-const DR_CONSTLEECH = 0.04322569230769231;
+const softSlice = 6000; //1500;
 
-const classRaceStats = {
-  "Restoration Druid Classic": {
-    "Night Elf": {intellect: 143, spirit: 159},
-    "Tauren": {intellect: 139, spirit: 161},
-  },
-  "Holy Priest Classic": {
-    "Human": {intellect: 174, spirit: 181},
-    "Night Elf": {intellect: 174, spirit: 181},
-    "Dwarf": {intellect: 173, spirit: 180},
-    "Draenei": {intellect: 174, spirit: 183},
-    "Undead": {intellect: 172, spirit: 186},
-    "Troll": {intellect: 170, spirit: 182},
-    "Blood Elf": {intellect: 177, spirit: 179},
-  },
-  "Discipline Priest Classic": {
-    "Human": {intellect: 174, spirit: 181},
-    "Night Elf": {intellect: 174, spirit: 181},
-    "Dwarf": {intellect: 173, spirit: 180},
-    "Draenei": {intellect: 174, spirit: 183},
-    "Undead": {intellect: 172, spirit: 186},
-    "Troll": {intellect: 170, spirit: 182},
-    "Blood Elf": {intellect: 177, spirit: 179},
-  },
-  "Holy Paladin Classic": {
-    "Human": {intellect: 98, spirit: 105},
-    "Dwarf": {intellect: 97, spirit: 104},
-    "Draenei": {intellect: 98, spirit: 107},
-    "Blood Elf": {intellect: 101, spirit: 103},
-  },
-  "Restoration Shaman Classic": {
-    "Draenei": {intellect: 128, spirit: 145},
-    "Orc": {intellect: 125, spirit: 145},
-    "Troll": {intellect: 124, spirit: 144},
-    "Tauren": {intellect: 124, spirit: 145},
-  }
-
-}
 
 // block for `time` ms, then return the number of loops we could run in that time:
 export function expensive(time) {
@@ -107,7 +61,7 @@ export function buildDistinctWepCombos(itemList) {
 // Unfortunately we aren't able to pass objects through to our worker. This recreates our player object since we'll need it for effect formulas. 
 function setupPlayer(player, contentType, castModel) {
 
-  let newPlayer = new ClassicPlayer(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights);
+  let newPlayer = new Player(player.charName, player.spec, player.charID, player.region, player.realm, player.race, player.statWeights, "Classic");
   //newPlayer = Object.assign(newPlayer, player);
 
   //newPlayer.castModel[contentType] = new CastModel(newPlayer.getSpec(), contentType);
@@ -126,6 +80,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
   // - Stat B -> Stat C or stat D
   // - No reforge at all.
   let reforgedItems = []; // We'll merge this with our ItemList at the end but we don't want to iterate over any reforged items.
+
   const reforgeSetting = getSetting(playerSettings, "reforgeSetting");
   //const reforgeFromOptions = ["crit", "mastery", ];
   //const reforgeOptions = ["haste", "spirit"];
@@ -159,7 +114,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
       }
 
       // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
-      else if (reforgeSetting === "Smart" && player.spec === "Restoration Druid Classic") {
+      else if (reforgeSetting === "Smart" && (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic")) {
 
         const secondaryRank = ["spirit", "mastery", "crit", "hit"]
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
@@ -211,46 +166,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
         }
       }
-      // V1 of smart reforge. This will reforge all non-haste stats to haste, and haste to crit/mastery/spirit. It isn't necessary on every spec.
-      else if (reforgeSetting === "Smart V1" && player.spec === "Restoration Druid Classic") {
 
-        const secondaryRank = ["spirit", "mastery", "crit", "hit"]
-        // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
-        if (itemStats.includes("haste")) {
-          
-          const targetStat = secondaryRank.find(value => !itemStats.includes(value));
-          const newItem = JSON.parse(JSON.stringify(item));
-          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-          const reforgeAmount = Math.floor(item.stats['haste'] * 0.4);
-          newItem.stats[targetStat] = Math.round(reforgeAmount);
-          newItem.stats['haste'] = Math.round(item.stats['haste'] - reforgeAmount);
-          //newItem.uniqueHash = Math.random().toString(36).substring(7);
-          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-          newItem.flags.push("Reforged: " +  'haste' + " -> " + targetStat)
-          newItem.flags.push("ItemReforged");
-          reforgedItems.push(newItem);
-
-  
-          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from haste to " + targetStat)
-          
-        }
-        else if (["crit", "spirit", "mastery"].some(value => itemStats.includes(value))) {
-          // Check the lowest value of the set and reforge that.
-          const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
-          
-          const newItem = JSON.parse(JSON.stringify(item));
-          const reforgeAmount = Math.floor(item.stats[fromStat] * 0.4);
-          // console.log("Reforge: " + item.stats[fromStat] * 0.4 + " " +  fromStat + " -> " + targetStat)
-          newItem.stats['haste'] = Math.round(reforgeAmount);
-          newItem.stats[fromStat] = Math.round(item.stats[fromStat] - reforgeAmount);
-          //newItem.uniqueHash = Math.random().toString(36).substring(7);
-          //console.log("Reforged " + item.name + " from " + fromStat + " to " + targetStat);
-          newItem.flags.push("Reforged: " +  fromStat + " -> " + 'haste')
-          newItem.flags.push("ItemReforged");
-          reforgedItems.push(newItem);
-          //console.log("reforged item with stats: " + JSON.stringify(itemStats) + " from " + fromStat + " to haste")
-        }
-      }
       
   });
 
@@ -265,31 +181,32 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
 }
 
 export function runTopGearClassic(itemSets, player, contentType, baseHPS, currentLanguage, playerSettings, castModel) {
-    console.log("TOP GEAR Classic");
     //console.log("WEP COMBOS: " + JSON.stringify(wepCombos));
     //console.log("CL::::" + currentLanguage);
     var t0 = performance.now();
     let count = 0;
 
+
     const newPlayer = setupPlayer(player, contentType, castModel);
+    const newModel = newPlayer.getActiveModel("Raid").profile;
 
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = player.spec === "Discipline Priest Classic" ? initializeDiscSet() : player.spec === "Holy Paladin Classic" ? initializePaladinSet() : player.spec === "Holy Priest Classic" ? initializeHPriestSet() :  initializeDruidSet();
+    const baseline = newModel.initializeSet();
 
     count = itemSets.length;
 
     for (var i = 0; i < count; i++) {
-      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, castModel, baseline, professions);
+      itemSets[i] = evalSet(itemSets[i], newPlayer, contentType, baseHPS, playerSettings, newModel, baseline, professions);
     }
-
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
 
     return itemSets;
     
     // Build Differentials
+    /*
     let differentials = [];
     let primeSet = itemSets[0];
     for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, itemSets.length); i++) {
@@ -311,7 +228,7 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
       result.itemsCompared = count;
       result.id = generateReportCode();
       return result;
-    }
+    }*/
 }
 
 
@@ -361,7 +278,15 @@ function compileSetStats(itemSet) {
 
 
 export function pruneItems(itemSets) {
-  return itemSets.slice(0, softSlice);
+  let temp = itemSets.filter(function (result) {
+    if (result.uniques["darkmoon card"] && result.uniques["darkmoon card"] > 1) {
+      return false;
+    }
+    return true;
+  });
+
+  return temp.slice(0, softSlice);
+  //return itemSets.slice(0, softSlice);
   }
 
 
@@ -377,6 +302,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
+
+   
 
     let hardScore = 0;
     const setBonuses = builtSet.sets;
@@ -395,7 +322,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // --- Item Set Bonuses ---
     for (const set in setBonuses) {
       if (setBonuses[set] > 1) {
-        tierList = tierList.concat(getItemSet(set, setBonuses[set]));
+        tierList = tierList.concat(getItemSet(parseInt(set), setBonuses[set]));
+
       }
     }
 
@@ -508,8 +436,8 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
           // Do nothing
         }
         else {
-          let secondaryRank = player.spec === "Restoration Druid Classic" ? ["spirit", "mastery", "crit", "hit"] : ["haste", "spirit", "crit", "mastery", "hit"];
-          if (player.spec === "Holy Priest Classic") secondaryRank = ["spirit", "crit", "mastery", "haste"];
+
+          let secondaryRank = castModel.autoReforgeOrder;
           const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
           const fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           const toStat = secondaryRank.find(value => !itemStats.includes(value));
@@ -518,8 +446,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
             const reforgeValue = Math.floor(item.stats[fromStat] * 0.4);
             setStats[fromStat] -= reforgeValue;
             setStats[toStat] += reforgeValue;
-            //item.flags.push("Reforged: " + fromStat + " -> " + toStat);
-            //item.flags.push("ItemReforged");
             reforges[item.id] = "Reforged: " + fromStat + " -> " + toStat;
 
           }
@@ -528,165 +454,27 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
   }
 
    let adjusted_weights = {...castModel.baseStatWeights}
-    // Mana Profiles
 
-    if (playerSettings.manaProfile === "Conservative") {
-      //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 1.2;
-      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 1.16;
-      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 1.2;
+   // Enchants
+    if (true) {
+      const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
+      enchant_stats = enchantInfo.enchantStats;
+      enchants = enchantInfo.enchants;
     }
-    else if (playerSettings.manaProfile === "Max Healing") {
-      //adjusted_weights['mp5'] = adjusted_weights['mp5'] * 0.75;
-      adjusted_weights['intellect'] = adjusted_weights['intellect'] * 0.85;
-      adjusted_weights['spirit'] = adjusted_weights['spirit'] * 0.75;
-    }
-  
-    // Apply consumables if ticked.
-    
+    compileStats(setStats, enchant_stats);
+
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
-    const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings)
+    let hasteNeeded = 0;
+    if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
+    else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
+    const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, castModel.autoReforgeOrder, hasteNeeded)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
 
-    if (true) {
-      enchant_stats.intellect += 60;
-      enchant_stats.crit += 35;
-      enchants['Head'] = "Arcanum of Hyjal"
-  
-      if (professions.includes("Inscription")) {
-        enchant_stats.intellect += 130;
-        enchant_stats.haste += 25;
-        enchants['Shoulder'] = "Felfire Inscription"
-      }
-      else {
-        enchant_stats.intellect += 50;
-        enchant_stats.haste += 25;
-        enchants['Shoulder'] = "Greater Inscription of Charged Lodestone" // Lesser version available.
-      }
-
-      enchant_stats.intellect += 20;
-      enchant_stats.spirit += 20;
-      enchants['Chest'] = "Peerless Stats" // TODO
-  
-      enchant_stats.intellect += 50;
-      enchants['Back'] = "Greater Intellect"; // Tailoring version available.
-
-      if (professions.includes("Leatherworking")) {
-        enchant_stats.intellect += 130;
-        enchants['Wrist'] = "Draconic Embossment";
-      }
-      else if (getSetting(playerSettings, "wristEnchant") === "Intellect (better)") {
-        enchant_stats.intellect += 50;
-        enchants['Wrist'] = "Mighty Intellect";
-      }
-      else {
-        enchant_stats.haste += 50;
-        enchants['Wrist'] = "Speed";
-      }
-
-  
-      if (getSetting(playerSettings, "gloveEnchant") === "Haste") {//player.spec === "Restoration Druid Classic" && setStats.haste < 2005 && setStats.haste >= 1955) {
-        enchant_stats.haste += 50;
-        enchants['Hands'] = "Haste"
-      }
-      else { 
-        enchant_stats.mastery += 65;
-        enchants['Hands'] = "Mastery"
-      }
-
-      enchant_stats.spellpower += 95;
-      enchant_stats.spirit += 55;
-      enchants['Legs'] = "Powerful Ghostly Spellthread"
-  
-      if (getSetting(playerSettings, "bootsEnchant") === "Lavawalker") {
-        enchant_stats.mastery += 35;
-        enchants['Feet'] = "Lavawalker"
-      }
-      else if (getSetting(playerSettings, "bootsEnchant") === "Haste (cheaper)") {
-        enchant_stats.haste += 50;
-        enchants['Feet'] = "Haste";
-      }
-      else {
-        enchants['Feet'] = "Earthen Vitality"
-      }
-
-  
-      if ("profession" === "Enchanting") // todo 
-      {
-        enchant_stats.intellect += (40 * 2); // Two finger slots.
-        enchants['Finger'] = "Intellect"
-      }
-  
-      enchant_stats.spellpower += 63;
-      enchants['CombinedWeapon'] = "Power Torrent"
-      enchants['1H Weapon'] = "Power Torrent"
-      enchants['2H Weapon'] = "Power Torrent"
-
-      if (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0) {
-        enchant_stats.intellect += 40;
-        enchants['Offhand'] = "Superior Intellect"
-        enchants['Shield'] = "Superior Intellect"
-      }
-    }
-    // Flasks and profession stuff.
-    enchant_stats.intellect += 300;
-    if (professions.includes("Skinning")) {
-      enchant_stats.crit += 80;
-    }
-    else if (professions.includes("Alchemy")) {
-      enchant_stats.intellect += 80;
-    }
-
-    
-    //console.log("Gems took " + (s1 - s0) + " milliseconds with count ")
-    // ----------------------
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
     
-    compileStats(setStats, enchant_stats);
-    //applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
-    //addBaseStats(setStats, player.race, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
-    
-    
 
-    // Talents & Racials
-
-    // Human
-    /*if (player.race.includes("Human")) {
-      talent_stats.spirit = (setStats.spirit) * 0.03;
-    } */
-
-    // This can be properly formalized.
-
-
-    /*
-    if (player.getSpec() === "Holy Paladin Classic") {
-      talent_stats.intellect = setStats.intellect * 0.1;
-      talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.2;
-      talent_stats.crit = (5 + 5) * 35; 
-    }
-    else if (player.getSpec() === "Restoration Shaman Classic") {
-      talent_stats.intellect = setStats.intellect * 0.1;
-      talent_stats.spellpower = (setStats.intellect + talent_stats.intellect) * 0.15;
-      talent_stats.crit = 4 * 35; // Blessing of the Eternals
-    }
-
-    else if (player.getSpec() === "Holy Priest Classic") {
-      // Also gets 30% of spirit MP5 as MP5
-      //talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
-      talent_stats.crit = 5 * 35;
-      talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
-    }
-    else if (player.getSpec() === "Discipline Priest Classic") {
-      // Also gets 30% of spirit MP5 as MP5
-      //talent_stats.spirit += (setStats.spirit + talent_stats.spirit) * 0.05;
-      talent_stats.intellect = setStats.intellect * 0.15;
-      talent_stats.spirit = setStats.spirit * 0.06;
-      talent_stats.haste = 32.79 * 3;
-      //talent_stats.spelldamage = (setStats.spirit + talent_stats.spirit) * 0.25;
-    } */
-
-   // compileStats(setStats, talent_stats);
     // -- Effects --
     let effectStats = [];
     effectStats.push(bonus_stats);
@@ -700,49 +488,49 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       return acc;
     }, {});
 
-    // Override
-    if (player.spec === "Restoration Druid Classic") compiledEffects.haste = 0; // We'll handle Shard separately but proc-based haste is mostly useless for resto druid.
+    // Races
+
+    // Any final adjustments.
+    if (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic") compiledEffects.haste = 0; // Proc based haste needs to be handled in the core profile.
+    
+    // Raid buffs
     compileStats(setStats, compiledEffects);
+    if (player.race === "Pandaren") setStats.intellect += 300;
     applyRaidBuffs({}, setStats);
-    // SCORING FUNCTIONS
+
+    
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
 
-      // Set cleanup
-      // If Haste < 2005 but > 916 + 208 and we're wearing Eng goggles, then swap the haste gem to mastery.
-      if (itemSet.itemList.filter(item => item.id === 59453).length > 0 && setStats.haste < 2005 && setStats.haste > (916 + 208)) {
-        setStats.haste -= 208;
-        setStats.mastery += 208;
-        builtSet.gems[59453] = [52296, 59496, 59480];
-      }
 
-      hardScore = scoreDruidSet(baseline, setStats, player, playerSettings, tierList, builtSet.itemList.filter(item => item.id === 60233).length > 0);
-    }
-    else if (player.spec === "Holy Paladin Classic") {
-      hardScore = scorePaladinSet(baseline, setStats, player, playerSettings, tierList);
     }
     else if (player.spec === "Discipline Priest Classic") {
-      setStats.intellect *= 1.15; // Spec passive.
-      hardScore = scoreDiscSet(baseline, setStats, player, playerSettings, tierList);
-    }
-    else if (player.spec === "Holy Priest Classic") {
       //setStats.intellect *= 1.15; // Spec passive.
-      hardScore = scoreHPriestSet(baseline, setStats, player, playerSettings, tierList);
+    }
+    else if (player.spec === "Mistweaver Monk Classic") {
+      // Monks require us to provide some information on our weapon too.
+      const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
+      setStats.weaponSwingSpeed = weapon.stats.weaponSwingSpeed;
+      //const isTwoHanded = setStats.weaponSwingSpeed > 2.8 ? true : false;
+      setStats.weaponDamage = weapon.stats.averageDamage// / setStats.weaponSwingSpeed * (isTwoHanded ? 0.5 : 0.898882 * 0.75); // Average damage per second.
+      //setStats.meleeWeaponDamage = weapon.stats.averageDamage / setStats.weaponSwingSpeed * (isTwoHanded ? 1 : 0.898882); // Average damage per second.
+      
+    }
+
+    if (castModel.scoreSet) {
+      const result = castModel.scoreSet(baseline, setStats, {...playerSettings, 
+                                                                playerRace: player.race,
+                                                                reporting: false,
+                                                                strictSeq: false}, tierList);
+      builtSet.metrics = result; // HPS & DPS.
+      if (getSetting(playerSettings, "metric") === "HPS + DPS") hardScore = result.healing + result.damage;
+      else hardScore = result.healing;
+      
     }
     else {
-      console.log("DOING OLD SCORING");
-      for (var stat in setStats) {
-        if (stat === "hps") {
-          hardScore += setStats[stat];
-          //console.log("Adding HPS score of " + setStats[stat]);
-        } else if (stat === "dps") {
-          continue;
-        } else if (stat !== "stamina") {
-          hardScore += (setStats[stat] * adjusted_weights[stat]) || 0;
-          //console.log("Adding " + (setStats[stat] * adjusted_weights[stat]) + " to hardscore for stat " + stat + " with stat weight: " + adjusted_weights[stat]);
-        }
-      }
+      console.error("Invalid Scoring Detected. No scoring function.");
     }
+
     builtSet.reforges = reforges;
     builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
     builtSet.setStats = setStats;
@@ -774,16 +562,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     return val;
   
   }
-
-function addBaseStats(stats, race, spec) {
-
-  const base_stats = classRaceStats[spec][race.replace("Races.", "")];
-
-  for (const [key, value] of Object.entries(base_stats)) {
-    stats[key] = stats[key] + value;
-  }
-
-}
 
 function getSlotLengths(itemList, wepCombos) {
   let slotLengths = {
@@ -959,11 +737,10 @@ function createSets(itemList, rawWepCombos, filter) {
             }
           }
         }
-    }
+      }
   }
 
   // console.log("Created " + itemSets.length + " item sets.");
-  console.log("Item Set Creation took " + (performance.now() - t0) + " milliseconds.");
   return itemSets;
 }
 

@@ -6,18 +6,24 @@ import { apiGetPlayerImage3 } from "../../SetupAndMenus/ConnectionUtilities";
 import { useTranslation } from "react-i18next";
 import { Button, Paper, Typography, Divider, Grid, Tooltip } from "@mui/material";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { classColoursJS } from "../../CooldownPlanner/Functions/ClassColourFunctions";
+import { classColours } from "General/Engine/ClassData";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
-import classIcons from "../../CooldownPlanner/Functions/IconFunctions/ClassIcons";
-import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
+import { useSelector } from "react-redux";
+import classIcons from "General/Modules/IconFunctions/ClassIcons";
+//import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
+import { exportWowheadGearList, exportReforgeLite } from "./TopGearExports";
+import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import { getItemProp } from "General/Engine/ItemUtilities"
-import ListedInformationBox from "General/Modules/1. GeneralComponents/ListedInformationBox";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox";
+import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
-import { getManaRegen, getManaPool, getAdditionalManaEffects } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/ClassicBase"
+import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
+import SpellDataAccordion from "./SpellDataAccordion";
+import { getWHData } from "./WowheadGearPlannerExport";
+
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -55,27 +61,23 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   const classIcon = (spec) => {
     switch (spec) {
       case "Holy Paladin":
-        return require("Images/Classes/Paladin/icon-paladin.png");
       case "Holy Paladin Classic":
         return require("Images/Classes/Paladin/icon-paladin.png");
       case "Restoration Shaman":
-        return require("Images/Classes/Shaman/icon-shaman.png");
       case "Restoration Shaman Classic":
         return require("Images/Classes/Shaman/icon-shaman.png");
       case "Holy Priest":
-        return require("Images/Classes/Priest/icon-priest.png");
       case "Holy Priest Classic":
-        return require("Images/Classes/Priest/icon-priest.png");
       case "Discipline Priest":
       case "Discipline Priest Classic":
         return require("Images/Classes/Priest/icon-priest.png");
       case "Restoration Druid":
+      case "Restoration Druid Classic":
         return require("Images/Classes/Druid/icon-druid.png");
       case "Preservation Evoker":
         return require("Images/Classes/Evoker/icon_dracthyr.png");
-      case "Restoration Druid Classic":
-        return require("Images/Classes/Druid/icon-druid.png");
       case "Mistweaver Monk":
+      case "Mistweaver Monk Classic":
         return require("Images/Classes/Monk/icon-monk.png");
       default:
         break;
@@ -91,7 +93,10 @@ function TopGearReport(props) {
 
   let contentType = "";
   const [result, setResult] = useState(props.result);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const handleDialogOpen = () => setDialogOpen(true);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [dialogText, setDialogText] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const location = useLocation();
@@ -103,11 +108,12 @@ function TopGearReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.replaceState('QE Live Report', 'Title', 'live/report/' + result.id);
         window.scrollTo(0, 0);
-        //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
-        window.history.replaceState('QE Live Report', 'Title', 'ptr/report' + result.id);
+        window.history.replaceState('QE Live Report', 'Title', 'ptr/report/' + result.id);
         window.scrollTo(0, 0);
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else {
         // Call Error
@@ -127,7 +133,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage);
+    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText);
   }
   else {
     return   (  <div
@@ -142,7 +148,7 @@ function TopGearReport(props) {
   }
 }
 
-function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage) {
+function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText) {
   const boxWidth = "60%";
 
   let resultValid = true;
@@ -153,6 +159,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
   let differentials = {};
   let itemList = {};
   let statList = {};
+
   
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -163,37 +170,59 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
   const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
-    const advice = getDynamicAdvice(result, player, result.contentType, gameType);
-    
-    topSet = result.itemSet;
-    enchants = topSet.enchantBreakdown;
-    differentials = result.differentials;
-    itemList = topSet.itemList;
-    contentType = result.contentType;
-    gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
-    statList = topSet.setStats;
-    const manaSources = {}
+  const advice = getDynamicAdvice(result, player, result.contentType, gameType);
+  
+  topSet = result.itemSet;
+  enchants = topSet.enchantBreakdown;
+  differentials = result.differentials;
+  itemList = topSet.itemList;
+  contentType = result.contentType;
+  gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
+  statList = topSet.setStats;
+  const manaSources = {}
 
 
-    // Setup Slots / Set IDs.
-    let gemCount = 0;
-    itemList.forEach(item => {
-      item.slot = getItemProp(item.id, "slot", gameType)
-      item.setID = getItemProp(item.id, "itemSetId", gameType)
-      item.sources = getItemProp(item.id, "sources", gameType)
-      if (item.sources) item.source = item.sources[0];
-      item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
-      if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
+  // Setup Slots / Set IDs.
+  let gemCount = 0;
+  itemList.forEach(item => {
+    item.slot = getItemProp(item.id, "slot", gameType)
+    item.setID = getItemProp(item.id, "itemSetId", gameType)
+    item.sources = getItemProp(item.id, "sources", gameType)
+    if (item.sources) item.source = item.sources[0];
+    item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
+    if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
 
-      if (item.socket) {
-        item.socketedGems = []
-        for (var i = 0; i < item.socket; i++) {
-          item.socketedGems.push(enchants["Gems"].shift());
-          //console.log("PUshing gem to ite:")
-        }
-        
+    if (item.socket) {
+      item.socketedGems = []
+      for (var i = 0; i < item.socket; i++) {
+        item.socketedGems.push(enchants["Gems"].shift());
+        //console.log("PUshing gem to ite:")
       }
-    })
+      
+    }
+  })
+
+  const handleExportMenuClick = (buttonClicked) => {
+    //alert("Exporting to " + buttonClicked, result.id);
+    if (buttonClicked === "ReforgeLite Export") {
+      setDialogOpen(true);
+      setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
+    }
+    else if (buttonClicked === "Wowhead BIS List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    }
+    else if (buttonClicked === "Wowhead Gear Planner") {
+      setDialogOpen(true);
+      setDialogText(getWHData(player, itemList, topSet.reforges, enchants));
+    }
+    else {
+      
+    }
+    
+    
+  
+  }
 
     //exportGearSet(itemList, player.spec);
 
@@ -236,7 +265,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     info: player.model.includes("Beta") ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days.": "This is your best set of gear. You can see how close other sets are below!",
   }
 
-
+  //backgroundImage = "https://i.imgur.com/uA1E2iE.png" // Tester
   return (
     <div
       style={{
@@ -260,19 +289,28 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                 style={{
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
-                  backgroundColor: "#0F0E04",
+                  backgroundColor: "#262633",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
                   padding: 16,
                   borderRadius: 4,
                 }}
               >
-                <Grid container direction="row" spacing={1}>
-                  <Grid item xs={12}>
+              <Grid container direction="row" spacing={1}>
+              <Grid item xs={12}>
+                <Grid container justifyContent="space-between" alignItems="center">
+                  <Grid item>
                     <Button color="primary" variant="outlined" component={Link} to={"/topgear"}>
                       {t("TopGear.BackToGearSelection")}
                     </Button>
                   </Grid>
+
+                  <Grid item>
+                    <MenuDropdown handleClicked={handleExportMenuClick}/>
+                  </Grid>
+                </Grid>
+                </Grid>
+                  
                   <Grid item xs={12}>
                     <Grid container direction="row">
                       <Grid item xs={4} style={{ width: "100%" }}>
@@ -294,11 +332,14 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                       <Grid item xs={4}>
                         <div style={{ width: "40%" }} />
                       </Grid>
+                      
                       <Grid item xs={4} style={{ width: "100%" }}>
+                        
                         {/* ---------------------------------------------------------------------------------------------- */
                         /*                                        Right Side Items                                        */
                         /* ---------------------------------------------------------------------------------------------- */}
                         <Grid container spacing={1}>
+                          
                           {itemList
                             .filter(
                               (key) => ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket", "Relics & Wands"].includes(key.slot)
@@ -349,20 +390,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                         display="inline"
                                         align="left"
                                         style={{
-                                          color: classColoursJS(player.spec),
+                                          color: classColours(player.spec),
                                         }}
                                       >
                                         {player.name}
                                       </Typography>
 
-                                      <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColoursJS(player.spec) }} placement="top" arrow>
+                                      <Tooltip title={getTranslatedClassName(player.spec)} style={{ color: classColours(player.spec) }} placement="top" arrow>
                                         {classIcons(player.spec, {
                                           height: 22,
                                           width: 22,
                                           marginLeft: 4,
                                           verticalAlign: "middle",
                                           borderRadius: 4,
-                                          border: "1px solid " + classColoursJS(player.spec),
+                                          border: "1px solid " + classColours(player.spec),
                                         })}
                                       </Tooltip>
                                     </div>
@@ -382,14 +423,29 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                             {"Playstyle: " + player.model}
                                           </Typography>
                                         </Grid>
+                                        <Grid item xs={12}>
+                                          <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                          </Typography>
+                                        </Grid>
                                       </Grid>
                                     </Grid>
                                   ) : (
                                     <Grid item xs={12}>
+                                      <Grid container item direction="row" spacing={0}>
+                                      <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                        {player.region}-{player.realm}
+                                        {player.race} {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                      </Typography>
+                                    </Grid>
+                                    </Grid>
+                                  </Grid>
+                                    
                                   )}
                                 </Grid>
                               </Grid>
@@ -407,16 +463,25 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
           {/* ---------------------------------------------------------------------------------------------- */
           /*                                    Competitive Alternatives                                    */
           /* ----------------------------------------------------------------------------------------------  */}
-           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} /></Grid>
+           <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} gameType={gameType} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
-          <Grid item style={{ height: 60 }} xs={12} />
+          
 
+          {gameType === "Classic" ? <Grid item xs={12}>
+            <SpellDataAccordion spec={player.spec} statList={statList} talents={null} />
+          </Grid> : null}
+          <Grid item style={{ height: 60 }} xs={12} /> {/* This adds space to the bottom of the page to improve scrolling. */}
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
 
+      <GenericDialog 
+        dialogText={dialogText}
+        isDialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+      />
     </div>
   );
 }

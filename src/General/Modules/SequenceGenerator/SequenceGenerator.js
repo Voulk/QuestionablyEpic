@@ -1,42 +1,42 @@
-import React, { useState, useEffect, useRef } from "react";
-import ReactGA from "react-ga";
-import { useTranslation } from "react-i18next";
+import { useState, useRef } from "react";
 import { Grid, Button, Typography, Tooltip, Paper, Divider, TextField } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { sequence, SequenceObject } from "./Sequence";
 import StatPanel from "./SeqStatPanel";
 
-import { RootState } from "Redux/Reducers/RootReducer";
 import { useSelector } from "react-redux";
 
-import { runCastSequence as evokerSequence } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRamps";
-import { runCastSequence as discSequence } from "General/Modules/Player/DisciplinePriest/DiscPriestRamps";
-import { runCastSequence as shamanSequence } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanRamps";
-import { runCastSequence as paladinSequence } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinRamps";
-import { runCastSequence as druidSequence } from "Retail/Engine/EffectFormulas/Druid/RestoDruidRamps";
-import { runCastSequence as monkSequence } from "Retail/Engine/EffectFormulas/Monk/MonkSpellSequence";
-import { runCastSequence as holyPriestSequence } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellSequence";
+import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
+import { runCastSequence as discSequence } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestRamps";
+import { runCastSequence as shamanSequence } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanRamps";
+import { runCastSequence as paladinSequence } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
+import { runCastSequence as druidSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps";
+import { runCastSequence as monkSequence } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";
+import { runCastSequence as holyPriestSequence } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence";
 
 // Classic
-import { runCastSequence as classicSequence } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicRamps";
+import { runCastSequence as classicSequence } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 
-import { EVOKERSPELLDB, evokerTalents } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerSpellDB";
-import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/DisciplinePriest/DiscSpellDB";
-import { SHAMANSPELLDB } from "Retail/Engine/EffectFormulas/Shaman/RestoShamanSpellDB";
-import { PALADINSPELLDB, baseTalents as palaTalents } from "Retail/Engine/EffectFormulas/Paladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, druidTalents } from "Retail/Engine/EffectFormulas/Druid/RestoDruidSpellDB";
-import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "Retail/Engine/EffectFormulas/Priest/HolyPriestSpellDB";
-import { MONKSPELLS } from "Retail/Engine/EffectFormulas/Monk/MistweaverSpellDB";
-import { baseTalents as monkTalents } from "Retail/Engine/EffectFormulas/Monk/MistweaverTalents"
-import { buildRamp } from "General/Modules/Player/DisciplinePriest/DiscRampGen";
-import { buildEvokerRamp } from "Retail/Engine/EffectFormulas/Evoker/PresEvokerRampGen";
+import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
+import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
+import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB";
+import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
+import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
+
+import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
+import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
+import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
+import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
+import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 
 // Classic
-import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicDruidSpellDB";
-import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "Retail/Engine/EffectFormulas/ClassicSpecs/ClassicPriestSpellDB";
+import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";
+import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "General/Modules/Player/ClassDefaults/Classic/Paladin/ClassicPaladinSpellDB";
+import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
+import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
 import { SpellIcon } from "./SpellIcon";
+import { classColours } from "General/Engine/ClassData";
 import "./Sequence.css";
 import SequenceDataTable from "./SequenceDataTable";
 
@@ -89,6 +89,7 @@ const getSpellDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return CLASSICPALADINSPELLDB;
   else if (spec === "Discipline Priest Classic") return CLASSICPRIESTSPELLDB;
   else if (spec === "Holy Priest Classic") return CLASSICPRIESTSPELLDB;
+  else if (spec === "Mistweaver Monk Classic") return CLASSICMONKSPELLDB;
 };
 
 const getTalentDB = (spec) => {
@@ -105,6 +106,7 @@ const getTalentDB = (spec) => {
   else if (spec === "Holy Paladin Classic") return classicPaladinTalents;
   else if (spec === "Discipline Priest Classic") return classicDiscTalents;
   else if (spec === "Holy Priest Classic") return classicHolyTalents;
+  else if (spec === "Mistweaver Monk Classic") return classicMonkTalents;
   else return null;
 };
 
@@ -115,6 +117,7 @@ const saveStats = (newStats) => {
 const getSpecSettings = (spec) => {
   const baseSettings = {
     includeOverheal: { title: "Include Overhealing", value: "Yes", options: ["Yes", "No"] },
+    testMode: { title: "Ignore Secondaries & Buffs", value: "Yes", options: ["Yes", "No"] },
   }
   if (spec === "Preservation Evoker") {
     return baseSettings;
@@ -179,7 +182,7 @@ export default function SequenceGenerator(props) {
   const [sequences, setSequences] = useState(setupSequences());
   const [selectedSeq, setSelectedSeq] = useState(0);
   const [activeStats, setActiveStats] = useState(selectedSpec.includes("Classic") ? 
-                                { spellpower: 3400, intellect: 6000, haste: 2020, crit: 3300, mastery: 3000, spirit: 1000 } :
+                                { spellpower: 5200, intellect: 9500, haste: 2020, crit: 3300, mastery: 3000, spirit: 1000, averageDamage: 5585.25, weaponSwingSpeed: 3.4 } :
                                 { intellect: 55000, haste: 7000, crit: 12000, mastery: 12000, versatility: 7500, stamina: 16000 });
 
   const [talentDB, setTalentDB] = useState(getTalentDB(selectedSpec));
@@ -206,8 +209,8 @@ export default function SequenceGenerator(props) {
   };
 
   const spellList = {
-    Damage: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "damage"),
-    Healing: Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "heal"),
+    Damage: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "damage" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
+    Healing: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "heal" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
     "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
   };
   const talentList = Object.keys(talentDB).filter((talent) => talentDB[talent].select === true);
@@ -287,6 +290,14 @@ export default function SequenceGenerator(props) {
 
   const addTalent = (talentName, talentDB, setTalents) => {
     const talent = talentDB[talentName];
+
+    if (gameType === "Classic") {
+      Object.keys(talentDB).forEach((key) => {
+        if (talentDB[key].tier === talent.tier  && key !== talentName && talentDB[key].tier !== 5) {
+            talentDB[key].points = 0;
+        }
+      });
+    }
 
     talent.points = talent.points === talent.maxPoints ? 0 : talent.points + 1;
 
@@ -482,7 +493,7 @@ export default function SequenceGenerator(props) {
                                 dragStart(e, spell);
                               }}
                               onClick={(e) => addSpell(spell, e)}
-                              style={{ display: "flex", width: '36px', height: '36px' }}
+                              style={{ display: "flex", width: '36px', height: '36px', borderColor: classColours(selectedSpec) }}
                             />
                           </Grid>
                         ))}
@@ -512,7 +523,7 @@ export default function SequenceGenerator(props) {
                                   e.persist();
                                   addTalent(spell, talentDB, setTalents, e);
                                 }}
-                                style={{ display: "flex", width: '30px', height: '30px' }}
+                                style={{ display: "flex", width: '30px', height: '30px', border: talentDB[spell].points === talentDB[spell].maxPoints ? "2px solid #F2BF59" : "2px solid rgba(255,255,255,0.2)", borderRadius: "2px" }}
                               />
                             </Grid>
                           ) : (

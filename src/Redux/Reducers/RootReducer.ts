@@ -1,12 +1,11 @@
 // Action Types
-import { TOGGLE_CONTENT, TOGGLE_GAMETYPE, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS, TOGGLE_COOLDOWNPLANNERTHEME } from "../ActionTypes";
+import { TOGGLE_CONTENT, TOGGLE_GAMETYPE, TOGGLE_PLAYERSETTINGS, TOGGLE_PATRONSTATUS } from "../ActionTypes";
 
 // Reducers
 import { contentType } from "./ContentType";
 import { gameType } from "./GameType";
 import { playerSettings } from "./PlayerSettings";
 import { patronStatus } from "./PatronStatus";
-import { cooldownPlannerTheme } from "./CooldownPlannerTheme";
 
 // Local Storage
 import * as ls from "local-storage";
@@ -52,23 +51,22 @@ const initialState : RootState = {
     gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
     flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
-
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
     //circletOptions: { value: "Thunderlords / Mariners / Windsingers", options: ["Thunderlords / Mariners / Windsingers", "Skippers / Fathomdwellers / Stormbringers", "Skippers / Mariners / Stormbringers"], category: "topGear", type: "selector", gameType: "Retail" },
 
     // Classic Settings
-    manaProfile: {value: "Standard", options: ["Standard", "Conservative", "Mana Guzzler"], category: "topGear", type: "selector", gameType: "Classic"},
-    classicGemSettings: {value: "Rare", options: ["Rare", "Epic"], category: "topGear", type: "selector", gameType: "Classic"},
-    reforgeSetting: {value: "Smart", options: ["Smart", "Manual", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
-    hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura", "Haste Aura + Dark Intent"], category: "topGear", type: "selector", gameType: "Classic"},
-    numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
-    metaGem: {value: "Ember Shadowspirit", options: ["Ember Shadowspirit"], category: "topGear", type: "selector", gameType: "Classic"},
+    manaProfile: {value: "Standard", options: ["Standard", "More Efficient", "More Burst Healing"], category: "topGear", type: "selector", gameType: "Classic"},
+    metric: {value: "HPS", options: ["HPS", "HPS + DPS"], category: "topGear", type: "selector", gameType: "Classic"},
+    //classicGemSettings: {value: "Rare", options: ["Rare"], category: "topGear", type: "selector", gameType: "Classic"},
+    reforgeSetting: {value: "Smart", options: ["Smart", "Dont reforge"], category: "topGear", type: "selector", gameType: "Classic"},
+    hasteBuff: {value: "Haste Aura", options: ["No Buff", "Haste Aura"], category: "topGear", type: "selector", gameType: "Classic"},
+    //numManaTides: {value: 0, options: [0, 1, 2, 3], category: "topGear", type: "selector", gameType: "Classic"},
+    //metaGem: {value: "Ember Shadowspirit", options: ["Ember Shadowspirit"], category: "topGear", type: "selector", gameType: "Classic"},
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
-    wristEnchant: {value: "Intellect (better)", options: ["Haste (cheaper)", "Intellect (better)"], category: "enchants", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
-    bootsEnchant: {value: "Lavawalker", options: ["Haste (cheaper)", "Lavawalker", "Earthen Vitality"], category: "enchants", type: "selector", gameType: "Classic"},
+
     
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},
@@ -90,8 +88,6 @@ const rootReducer: Reducer<RootState, any> = (state = initialState, action) => {
       return patronStatus(state, action);
     case TOGGLE_PATRONSTATUS:
       return patronStatus(state, action);
-    case TOGGLE_COOLDOWNPLANNERTHEME:
-      return cooldownPlannerTheme(state, action);
     default:
       return state;
   }

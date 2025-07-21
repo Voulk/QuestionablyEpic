@@ -1,9 +1,0 @@
-export const VESPER_SP = .9125; // Includes the 9.0.5 25% buff.
-export const CHAIN_HARVEST_SP = 3.6225; // Includes the 9.0.5 15% buff.
-export const PRIMORDIAL_WAVE_SP = .65;
-export const HEALING_WAVE_COPY_SP = 1.8;
-export const RIPTIDE_INITIAL_SP = 1.7; // Check for Torrent
-export const RIPTIDE_HOT_SP = 1.32;
-export const RESTO_SHAMAN_DPS_AURA = 1.4;
-export const FAE_TRANSFUSION_SP = .94;
-export const UNLEASH_LIFE_MULT = 1.35;

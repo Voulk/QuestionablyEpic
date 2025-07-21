@@ -148,7 +148,7 @@
     "External": "External",
     "Filter": "Filter",
     "GameTypeToggle": {
-      "Classic": "Change to Classic (Wrath of the Lich King)",
+      "Classic": "Change to Classic (Mists of Pandaria)",
       "Retail": "Change to Retail (The War Within)"
     },
     "HPS": "HPS",
@@ -193,10 +193,10 @@
         "QuickCompare": "A quick view of all your items at once",
         "TierSets": "Find out how strong your classes tier sets are.",
         "TopGear": "Find your best gear set",
-        "EmbellishmentAnalysis": "See all Embellishment effects at once",
+        "EmbellishmentAnalysis": "Check out Embellishment effects",
         "FightAnalysis": "",
-        "TrinketAnalysis": "Check out how strong trinkets are at different item levels",
-        "UpgradeFinder": "Find your next piece of gear",
+        "TrinketAnalysis": "Find out which trinkets are good",
+        "UpgradeFinder": "Find your next upgrade",
         "SequenceSandbox": "Details coming soon",
         "OneShot": "Mythic+ Damage Calculator",
         "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!"
@@ -255,6 +255,7 @@
       "Slot": "Slot",
       "Socket": "Socket",
       "Tertiary": "Tertiary",
+      "Effect": "Effect",
       "Title": "Quick Compare"
     },
     "Race": "Race",
@@ -419,6 +420,10 @@
           "title": "Gem Rarity",
           "tooltip": "Pick whether you'd like to use Rare or Epic gems."
         },
+        "metric": {
+          "title": "Scoring Metric",
+          "tooltip": "Pick whether to include DPS value in your score or not."
+        },
 
         "wristEnchant": {
           "title": "Wrist Enchant",
@@ -478,8 +483,8 @@
     "SimCInput": {
       "SimCDialogueTitleClassic": "Paste Your QE Import String",
       "SimCDialogueTitleRetail": "Paste Your SimC String",
-      "SimCHeaderButtonLabelClassic": "Gear Import",
-      "SimCHeaderButtonLabelRetail": "SimC",
+      "SimCHeaderButtonLabelClassic": "Import Gear",
+      "SimCHeaderButtonLabelRetail": "Import Gear",
       "SimCStringLabel": "Import String"
     },
     "Snackbars": {
@@ -519,8 +524,8 @@
     },
     "TopGear": {
       "BackToGearSelection": "Back to Gear Selection",
-      "CompetitiveAlternative": "Competitive Alternatives",
-      "CompetitiveAlternativeHelp": "This is how close other sets are to your best. Anything extremely close in score can be considered a sidegrade.",
+      "CompetitiveAlternative": "Close Alternatives",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best (pictured above). Anything close in score can be considered a sidegrade.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",

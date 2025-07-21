@@ -6,7 +6,7 @@ export const CONSTRAINTS = {
     Retail: {
         maxItemLevel: 800,
         minItemLevel: 180,
-        maxSecondaryWeight: 1.5,
+        maxSecondaryWeight: 2,
         minSecondaryWeight: 0,
         maxTertiaryWeight: 2,
         minTertiaryWeight: 0,

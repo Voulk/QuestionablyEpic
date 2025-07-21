@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import moment from "moment";
 import { MenuItem, ListSubheader, Collapse, Divider } from "@mui/material";
-import bossIcons from "../../Modules/CooldownPlanner/Functions/IconFunctions/BossIcons";
-import { fightDuration, logDifficulty } from "../../Modules/CooldownPlanner/Functions/Functions";
-import { bossList } from "../../Modules/CooldownPlanner/Data/CooldownPlannerBossList";
+import { fightDuration, logDifficulty } from "General/Modules/GeneralComponents/Functions";
+import { bossList } from "General/Modules/IconFunctions/BossList";
 import axios from "axios";
 import { accessToken } from "./accessToken";
 import { makeStyles } from "@mui/styles";
@@ -150,7 +149,7 @@ const LogImport = ({ reportid, cooldownImportFilter, clicker, close, update }) =
     return (
       <div key={encounterID}>
         <ListSubheader style={{ padding: "4px 8px", lineHeight: "1.43", fontSize: "0.875rem", letterSpacing: "0.01071em", backgroundColor: "#525252", color: "gold" }}>
-          {bossIcons(encounterID)}
+          {}
           {boss}
         </ListSubheader>
         {kills.map((fight, index) => (

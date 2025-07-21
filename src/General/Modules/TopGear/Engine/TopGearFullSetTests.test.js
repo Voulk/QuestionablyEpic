@@ -1,11 +1,17 @@
 
 import Player from "General/Modules/Player/Player";
-import { processAllLines } from "Retail/Engine/SimCImport/SimCImportEngine"
+import { processAllLines } from "General/Items/GearImport/SimCImportEngine"
 import { mergeBonusStats, buildBestDomSet } from "./TopGearEngine";
 import { applyDiminishingReturns, buildNewWepCombos } from "General/Engine/ItemUtilities"
 
 import { runTopGear } from "./TopGearEngine";
 
+jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+  return {
+    createFetcherWorker: jest.fn(),
+    createLoaderWorker: jest.fn(),
+  };
+});
 
 describe("Top Gear full test", () => {
     

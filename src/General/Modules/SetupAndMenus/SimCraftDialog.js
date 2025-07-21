@@ -13,8 +13,8 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
-import { runSimC } from "../../../Retail/Engine/SimCImport/SimCImportEngine";
-import { runClassicGearImport } from "../../../Classic/Engine/SimCImport/ClassicGearImport";
+import { runSimC } from "General/Items/GearImport/SimCImportEngine";
+import { runClassicGearImport } from "General/Items/GearImport/ClassicImportEngine";
 import { useSelector } from "react-redux";
 import { styled } from "@mui/system";
 
@@ -35,6 +35,7 @@ export default function SimCraftInput(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const [autoUpgradeVault, setAutoUpgradeVault] = useState(true); // State for checkbox
   const [autoUpgradeAll, setAutoUpgradeAll] = useState(false); // State for checkbox
+  const [useChallengeMode, setChallengeMode] = useState(false); // State for checkbox
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const characterCount = props.allChars.getAllChar().length || 0;
@@ -56,17 +57,17 @@ export default function SimCraftInput(props) {
 
   const handleSubmit = () => {
       if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault, autoUpgradeAll); // Add autoUpgradeVault here.
-      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars);
+      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, useChallengeMode);
   };
 
   return (
     <div>
       <Tooltip title={t("QeHeader.Tooltip." + gameType + "SimC")} arrow>
-        {buttonVariant === "outlined" ? (
+        {props.charPanel ? (
           <StyledButton
-            disableElevation={props.disableElevation}
-            color={props.colour}
-            style={{ fontSize: "14px" }}
+            //disableElevation={props.disableElevation}
+            color={"secondary"}
+            style={{ fontSize: "14px", whiteSpace: "nowrap", border: "2px solid gold", borderRadius: "4px" }}      // optional for visual clarity }}
             onClick={handleClickOpen}
             disabled={characterCount === 0}
             variant={buttonVariant}
@@ -75,18 +76,19 @@ export default function SimCraftInput(props) {
             {props.buttonLabel}
           </StyledButton>
         ) : (
-          <Button
-            disableElevation={props.disableElevation}
-            color={props.colour}
-            style={{ fontSize: "14px" }}
+          <StyledButton
+            //disableElevation={props.disableElevation}
+            color={"secondary"}
+            style={{ fontSize: "14px", whiteSpace: "nowrap" }}      // optional for visual clarity }}
             onClick={handleClickOpen}
             disabled={characterCount === 0}
             variant={buttonVariant}
             fullWidth
           >
             {props.buttonLabel}
-          </Button>
+          </StyledButton>
         )}
+
       </Tooltip>
       <Dialog open={open} onClose={handleClose} aria-labelledby="simc-dialog-title" maxWidth="md" fullWidth={true}>
         <DialogTitle id="simc-dialog-title">{t("SimCInput.SimCDialogueTitle" + gameType)}</DialogTitle>
@@ -119,11 +121,17 @@ export default function SimCraftInput(props) {
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeAll} onChange={() => setAutoUpgradeAll(!autoUpgradeAll)} />}
             label="Upgrade ALL to Max Level"
-          /> : ""}
+          /> : null}
+          {/*<FormControlLabel
+            control={<Checkbox checked={useChallengeMode} onChange={() => setChallengeMode(!useChallengeMode)} />}
+            label="Import at 463"
+          />
+          */}
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"
           /> : ""}
+
 
           <p id="SimCError">{errorMessage}</p>
           <Button onClick={handleClose} color="primary" variant="outlined">

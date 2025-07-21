@@ -10,6 +10,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds"
+import { trackPageView } from "Analytics";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -194,7 +195,7 @@ export default function LegendaryCompare(props) {
   const classes = useStyles();
   const contentType = useSelector((state) => state.contentType);
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    trackPageView(window.location.pathname + window.location.search);
     loadBannerAd(props.patronStatus);
     loadBottomBannerAd(props.patronStatus);
 

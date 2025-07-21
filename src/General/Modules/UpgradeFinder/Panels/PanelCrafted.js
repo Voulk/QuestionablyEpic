@@ -2,21 +2,20 @@ import React from "react";
 import { dungeonStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
-import DungeonHeaderIcons from "../../CooldownPlanner/Functions/IconFunctions/DungeonHeaderIcons";
-import bossHeaders from "../../CooldownPlanner/Functions/IconFunctions/BossHeaderIcons";
+import DungeonHeaderIcons from "General/Modules/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
 import { filterItemListBySource, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB, craftedDB } from "../../../../Databases/InstanceDB";
-import { itemLevels } from "../../../../Databases/itemLevelsDB";
+import { itemLevels } from "../../../../Databases/ItemLevelsDB";
 import { useSelector } from "react-redux";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
-import InformationBox from "General/Modules/1. GeneralComponents/InformationBox.tsx";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 
 export default function CraftedGearContainer(props) {
   const classes = dungeonStyles();
@@ -101,7 +100,7 @@ export default function CraftedGearContainer(props) {
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {craftedDB[key]} -{" "}
                               {
-                                [...filterItemListBySource(itemDifferentials, "-4", key, itemLevels.crafted[difficulty])].length
+                                getNumUpgrades(itemDifferentials, -4, parseInt(key))
                               }{" "}
                               Upgrades
                             </Typography>

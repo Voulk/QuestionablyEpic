@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import CustomRoute from "./CustomRoute";
 import ReportRoute from "./ReportRoute";
-import CooldownPlannerModule from "General/Modules/CooldownPlanner/CooldownPlannerModule.js";
-import FightAnalysis from "General/Modules/FightAnalysis/FightAnalysis";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
@@ -15,16 +13,13 @@ import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
 import UpgradeFinderReport from "General/Modules/UpgradeFinder/UpgradeFinderReport";
 import QEProfile from "General/Modules/SetupAndMenus/QEProfile";
 import { createPlayerChars } from "General/Modules/Player/PlayerChars";
-import TierSets from "./Classic/Modules/TierSets/TierSets";
-import OneShot from "General/Modules/OneShot/OneShot";
+import TierSets from "./Classic/Modules/TierSets/TierSetModule";
 import { ConfirmLogin, QELogin } from "General/Modules/SetupAndMenus/Header/QELogin";
 import { withTranslation } from "react-i18next";
-import i18n from "./i18n";
 import TopGear from "General/Modules/TopGear/TopGear";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import * as ls from "local-storage";
-import QESnackbar from "General/Modules/CooldownPlanner/BasicComponents/QESnackBar";
-import TestingPage from "General/Modules/CooldownPlanner/TestingLandingPage";
+import QESnackbar from "General/Modules/GeneralComponents/QESnackBar";
 // import { createBrowserHistory } from "history"; // not used TODO: remove?
 import { dbCheckPatron, dbGetArticleList } from "General/Modules/SetupAndMenus/ConnectionUtilities.js";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
@@ -34,7 +29,7 @@ import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
 import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 
-process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
+//process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
 const App = () => {
     /* ---------------- Here we bind functions to this component ---------------- */
@@ -251,6 +246,12 @@ const App = () => {
     allChars.saveAllChar();
   };
 
+  // We can use this function if we want a player to be able to swap to the first available character of a given spec.
+  const handlePickPlayerSpec = (newPlayerClass: string) => {
+    const newID = allChars.getCharOfClass(newPlayerClass.includes("Classic") ? "Classic" : "Retail", newPlayerClass);
+    allChars.setActiveChar(newID);
+    updatePlayerChars(allChars);
+  }
 
   /* ---------------------------- Battletag Handler --------------------------- */
   const updatePlayerID = (id: string, battletag: string) => {
@@ -330,6 +331,7 @@ const App = () => {
                   logImportSnack={handleLogSnackOpen}
                   allChars={allChars}
                   isPTR={isPTR}
+                  handlePickPlayerSpec={handlePickPlayerSpec}
                 />
 
                 {/* --------------------------- Char Added Snackbar -------------------------- */}
@@ -368,11 +370,8 @@ const App = () => {
                       />
                     )}
                   />
-                  <Route path="/fightAnalysis" render={() => <FightAnalysis patronStatus={patronStatus} />} />
-                  <Route path="/CooldownPlanner" render={() => <CooldownPlannerModule patronStatus={patronStatus} />} />
-                  <Route path="/holydiver" render={() => <TestingPage />} />
-                  <Route path="/sequenceGen" render={() => <SequenceGen player={activePlayer} />} />
-                  <Route path="/oneshot" render={() => <OneShot/>} />
+                  <Route path="/spelldata" render={() => <SequenceGen player={activePlayer} />} />
+
 
                   <CustomRoute 
                     player={activePlayer} 

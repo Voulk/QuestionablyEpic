@@ -1,9 +1,13 @@
 
 const softSlice = 25;
-import { gemDB } from "Databases/GemDB";
+import { classicGemDB } from "Databases/ClassicGemDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+
+export function createTopGearWorker() {
+  return new Worker(new URL('./TopGearWorker.js', import.meta.url), { type: 'module' });
+}
 
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
@@ -49,7 +53,8 @@ export const generateReportCode = () => {
   
     for (var x = 0; x < diffList.length; x++) {
       // Check if the other set has the corresponding slot.
-      if ((primeList[x].slot === "Offhand" && !diffList[x])) {
+      //console.log(primeList[x])
+      if ((primeList[x] && primeList[x].slot === "Offhand" && !diffList[x])) {
         // The prime list has an offhand but the diffList has ended already. There's nothing to add to differentials so skip.
         continue;
       }
@@ -143,46 +148,7 @@ export function formatReport(report) {
 
 }
 
-// It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 
-export function exportGearSet(itemSet, spec) {
-  // Slot, itemID, bonusTag, source
-  // [tr][td]Cloak[/td][td][item=212446 bonus=[=gv-raid]][/td][td][npc=215657][/td][/tr]
-  const classColor = CONSTANTS.wh.classColor[spec];
-  const results = ["[center][table class=grid width=900px]", "[tr]", `[td background=${classColor}][b]Slot[/b][/td]`, `[td background=${classColor}][b]Item[/b][/td]`, `[td background=${classColor}][b]Source[/b][/td]`, "[/tr]"];
-  
 
-  itemSet.forEach(item => {
-    let source = "";
-    let bonusTag = "";
-    if (item.id === 228411) {
-      results.push(`[tr][td]Ring[/td][td][=cyrce-circlet]
-                    [ul]
-                    [li][color=c4][item=228638][/color][/li]
-                    [li][color=c8][item=228639][/color][/li]
-                    [li][color=c2][item=228646][/color][/li]
-                    [/ul][/td][td][url guide=27805]Siren Isle[/url][/td][/tr]`
-                    )
-    }
-    if (item.source) {
-      source = CONSTANTS.WHCodes[item.source.encounterId] || "";
-
-      if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
-      else if (item.source.instanceId === -1) {
-        const instanceID = item.source.encounterId;
-        if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
-        else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-        else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
-      }
-      else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
-    }
-    
-    if (item.id !== 228411) results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
-  })
-  results.push(`[/table][/center]`)
-
-  const formattedArray = results.map(String).join('\n');
-  console.log(formattedArray);
-}
   
 export function sumScore(obj) {
     var sum = 0;
@@ -216,17 +182,17 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
-export const setupGems = (itemList, adjusted_weights, playerSettings) => {
+export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder, hasteNeeded = 0) => {
 
-    const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
-    const gemBudget = useEpicGems ? 50 : 40;
+    //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
+    const gemBudget = 160;
     // Handle sockets
     // This is a naiive implementation that checks a socket bonus, and grabs it if its worth it. 
     
     // First, let's see how far off the next haste breakpoint we are. This is particularly relevant for Druid.
     // Add to "Mandatory yellows" for the next step.
-    let mandatoryYellows = 2;
-    const gemIDS = {
+    let mandatoryYellows = 0;
+    /*const gemIDS = {
       52208: 'yellow',
       52207: 'red',
       52236: 'blue',
@@ -234,15 +200,50 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       71881: 'red',
       71850: 'yellow', // int / haste
       71868: 'blue',
+    }*/
+    const yellowOptions = {
+      haste: 76668,
+      crit: 76660,
+      mastery: 76672
     }
-    const yellowGemID = useEpicGems ? 71850 : 52208; // TODO: Autocalc this based on which would be best. 
-    const metaGemID = 52296;
-    const redGemID = useEpicGems ? 71881 : 52207;
-    const blueGemID = useEpicGems ? 71868 : 52236;
-    const socketScores = {red: adjusted_weights.intellect * gemBudget, 
-                          blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget / 2, 
-                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget / 2}
 
+    const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
+    const yellowGemID = yellowOptions[statOrder.find(stat => ['haste', 'mastery', 'crit'].includes(stat))]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
+    const hasteGemID = 76668;
+    const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
+    const redGemID = 76694; // Pure int but look into hybrids
+    const blueGemID = 76686;
+    const shaGemID = 89882; // Sha gem, 500 intellect
+    //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
+    const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;
+    const hasteSocketBonuses = 0;
+    const cogwheelCount = Math.min(1, itemList.filter(item => item.classicSockets.sockets.includes("cogwheel")).length);
+    let hasteGemsNeeded = 0;
+    if (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) {
+      if (cogwheelCount > 0) {
+        // This is only tricky if we have cogwheels.
+        if ((orangeGemCount * 160) >= hasteNeeded) {
+          hasteGemsNeeded = Math.ceil((hasteNeeded) / 160); // 160 haste per gem
+        }
+        else {
+          // Orange gems aren't enough, flip a cogwheel and then re-run.
+          hasteGemsNeeded = Math.max(0, Math.ceil((hasteNeeded - cogwheelCount * 600) / 160)); // 160 haste per gem
+        }
+      }
+      else {
+        hasteGemsNeeded = Math.ceil(hasteNeeded / 160); // 160 haste per gem
+      }
+    }
+    
+   // (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) ? Math.ceil((hasteNeeded - cogwheelCount * 600) / 160) : 0; // 160 haste per gem
+  // Maybe do at the end so we can include socket bonuses?
+    // Add a check to see if it can get there with the oranges available.
+
+    const socketScores = {red: adjusted_weights.intellect * gemBudget, 
+                          blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
+                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget,
+                        sha: adjusted_weights.intellect * 500 }
+    //console.log("Haste gems needed: " + hasteGemsNeeded);
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
     const topGearGems = {};  // {itemID: [gems]}
@@ -263,9 +264,10 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
         if (item.classicSockets.sockets.length > 0) {
-          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel")).length; // Check for any already socketed gems.
+          let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel" && gem !== "sha")).length; // Check for any already socketed gems.
           item.socketedGems = [];
           if (item.slot === "Head") item.socketedGems.push(metaGemID);
+          if (item.classicSockets.sockets[0] === "sha") item.socketedGems.push(shaGemID);
 
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
@@ -283,8 +285,11 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
               //if (socket === "meta") item.socketedGems.push(metaGemID);
               if (socket === "red") item.socketedGems.push(redGemID);
               else if (socket === "yellow") { 
-                item.socketedGems.push(yellowGemID);
-                mandatoryYellows -= 1;
+                if (hasteGemsNeeded > 0) {
+                  item.socketedGems.push(hasteGemID);
+                  hasteGemsNeeded -= 1;
+                  hasteNeeded -= 160;
+                } else item.socketedGems.push(yellowGemID);
               }
               else if (socket === "blue") item.socketedGems.push(blueGemID); // Blue gem
             })
@@ -293,7 +298,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
         }
       });
       // == Check yellow replacements ==
-      itemList.forEach((item, index) => {
+      // Potentially can kill this entirely in MoP.
+
+      /*itemList.forEach((item, index) => {
         const sockets = item.classicSockets.sockets;
         let itemIndex = 0;
         sockets.forEach((socket, socketIndex) => {
@@ -327,13 +334,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
       for (let i = 0; i < mandatoryYellows; i++) {
         //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
         itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
-      } 
+      } */
 
     // Lastly, we need to actually add the stats from socketed gems.
     const socketedGemStats = [];
     itemList.forEach(item => {
       item.socketedGems.forEach(gemID => {
-        socketedGemStats.push(gemDB.filter(gem => gem.id === gemID)[0].stats);
+        socketedGemStats.push(classicGemDB.filter(gem => gem.id === gemID)[0].stats);
       });
 
       if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {
@@ -343,10 +350,27 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
 
       if (item.classicSockets.sockets.includes("cogwheel")) {
         // Eng gems
-        socketedGemStats.push({haste: 208});
-        socketedGemStats.push({spirit: 208});
-        item.socketedGems.push(59479);
-        item.socketedGems.push(59496);
+        // Get best two secondaries. 
+        const engSockets = {
+          haste: 77542,
+          crit: 77541,
+          mastery: 77547,
+          spirit: 77546
+        }
+        //socketedGemStats.push({mastery: 600});
+        socketedGemStats.push({[statOrder[0]]: 600});
+        item.socketedGems.push(engSockets[statOrder[0]]);
+
+        if (hasteNeeded < 600 && hasteNeeded > 0) {
+          socketedGemStats.push({haste: 600});
+          item.socketedGems.push(engSockets.haste);
+        }
+        else {
+          socketedGemStats.push({[statOrder[1]]: 600});
+          item.socketedGems.push(engSockets[statOrder[1]]);
+        }
+
+
       }
 
       topGearGems[item.id] = item.socketedGems;
@@ -363,6 +387,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings) => {
     
 
     return {stats: compiledGems, gems: topGearGems};
+}
+
+export const getRaceBonus = (race, bonus_stats) => {
+  switch (race) {
+    case "Blood Elf":
+      return bonus_stats;
+  }
 }
 
 /*

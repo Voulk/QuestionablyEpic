@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB, craftedDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
@@ -56,7 +56,7 @@ export default function ItemCard(props) {
   const itemDifferential = item.score;
   const isTierPiece = getItemProp(item.item, "itemSetId") && item.slot !== "Trinket" && item.slot !== "Finger";
   const gameType = useSelector((state) => state.gameType);
-  const wowheadDomain = (gameType === "Classic" ? "cata" : currentLanguage);
+  const wowheadDomain = (gameType === "Classic" ? "mop-classic" : currentLanguage);
 
   // We can probably merge a lot of these into a more central location.
   const itemTooltips = {
@@ -86,7 +86,7 @@ export default function ItemCard(props) {
   }
   // Add tier set check too and report a generic message for those. 
 
-  const itemQuality = "#a73fee" //item.getQualityColor();
+  
 
   const upgradeColor = (num) => {
     if (num > 0) {
@@ -98,9 +98,10 @@ export default function ItemCard(props) {
 
   const itemID = item.item;
   const itemName = getTranslatedItemName(itemID, currentLanguage, "", gameType);
-  
+  const itemQuality = item.level > 463 ? "#a73fee" : "#328CE3" //item.getQualityColor();
 
   const sourceName = (item) => {
+    // Rework this code goodness gracious
     /* ------------------------------ Dungeon Name ------------------------------ */
     if (item.source.instanceId === -1) {
       let dungeons = { ...encounterDB["-1"][gameType] };
@@ -134,6 +135,9 @@ export default function ItemCard(props) {
     }
     /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {
+      return encounterDB[item.source.instanceId].bosses[item.source.encounterId];
+    }
+    if ([320, 317, 330].includes(item.source.instanceId)) {
       return encounterDB[item.source.instanceId].bosses[item.source.encounterId];
     }
     /* ------------------------------ World Bosses ------------------------------ */

@@ -1,5 +1,7 @@
 
 import { getAllTrinketDataClassic } from "Classic/Engine/EffectFormulas/Generic/TrinketDataClassic"
+import { instanceDB } from "Databases/InstanceDB";
+import { getItemProp } from "General/Engine/ItemUtilities";
 
 const convertSpiritToMP5 = (spiritAmount, intellect, spec) => {
     const regen = 0.001 + spiritAmount * Math.sqrt(intellect) * 0.016725;
@@ -16,7 +18,32 @@ const getTrinketData = (trinketName) => {
     return activeTrinket;
 }
 
-export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
+const getTrinketDropLoc = (trinketID) => {
+    let dropLoc = "";
+    // Get Trinket
+    const sources = getItemProp(trinketID, "sources", "Classic");
+    if (!sources || sources.length === 0) return "";
+
+    const instanceName = instanceDB[sources[0].instanceId.toString()];
+
+    if (instanceName) {
+
+
+        dropLoc = instanceName;
+        //const instanceId = sources[0].instanceId;
+        //if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
+        //else if (instanceId === 1296) dropLoc = " Undermine (Raid) - " + encounterDB[1296].bosses[sources[0].encounterId];
+        //else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
+        //else if (instanceId === -4) dropLoc = " Crafted";
+        //else if (instanceId === -69) dropLoc = " Delves";
+        //dropLoc = instanceDB[sources[0].instanceId.toString()]
+    }
+
+    // Translate Drop Location to readable text
+    return dropLoc
+}
+
+export const buildClassicEffectTooltip = (trinketName, player, itemLevel, trinketID) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     trinketDescription.push("")
     const trinketData = getTrinketData(trinketName);
@@ -29,11 +56,11 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
     });
 
     if (trinketStats.spirit) {
-        trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
-        trinketDescription.push("Effective MP5 at 6k int: " + convertSpiritToMP5(trinketStats.spirit, 6000, player.spec));
-        trinketDescription.push("Effective MP5 at 7k int: " + convertSpiritToMP5(trinketStats.spirit, 7000, player.spec));
-        trinketDescription.push("Effective MP5 at 8k int: " + convertSpiritToMP5(trinketStats.spirit, 8000, player.spec));
-        trinketDescription.push("Effective MP5 at 9k int: " + convertSpiritToMP5(trinketStats.spirit, 9000, player.spec));
+        //trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
+        trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.spirit * 1.128 * 0.5 * 12));
+    }
+    if (trinketStats.mp5) {
+        trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.mp5 * 12));
     }
     
 
@@ -45,6 +72,10 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel) => {
     if (trinketData.description) {
         trinketDescription.push("");
         trinketDescription.push(trinketData.description);
+    }
+
+    if (getTrinketDropLoc(trinketID)) {
+        trinketDescription.push("Item Source: " + getTrinketDropLoc(trinketID));
     }
 
     return trinketDescription;

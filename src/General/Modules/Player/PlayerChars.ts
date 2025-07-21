@@ -1,6 +1,5 @@
 import Player from "./Player";
 import * as ls from "local-storage";
-import ClassicPlayer from "./ClassicPlayer";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -30,17 +29,15 @@ export function createPlayerChars(): PlayerChars {
       let index = 0;
       if (playerChars.length !== 0) {
         playerChars.forEach(function (player: any) {
-          if (false) {//player.gameType === "Classic" || player.gameType === "BurningCrusade") {
-            //charArray.push(new ClassicPlayer(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights));
-          }
-          else {
-            let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
-            if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
-            if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
+          let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
+          if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
+          if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
+          if (player.spec !== "Holy Paladin Classic") {
             specsAdded.push(player.spec);
             charArray.push(newChar);
+            index += 1;
           }
-          index += 1;
+
         });
       } else {
         charArray = [];
@@ -59,8 +56,8 @@ export function createPlayerChars(): PlayerChars {
 
       // Auto-add Classic Specs
       CONSTANTS.classicSpecs.forEach(spec => {
-        if (!(specsAdded.includes(spec)) && (spec.includes("Classic")) && (spec !== "Restoration Shaman Classic")) { // TODO: Remove as we add the other specs.
-          const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "");
+        if (!(specsAdded.includes(spec)) && (spec.includes("Classic"))) { // TODO: Remove as we add the other specs.
+          const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "").replace("Monk", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
           charArray.push(newChar);
         }
@@ -118,6 +115,28 @@ export function createPlayerChars(): PlayerChars {
         }
       }
     },
+
+    pickPlayerClass(gameType, playerClass) {
+      let index = 0;
+      for (let i = 0; i < this.allChar.length; i++) {
+        if (this.allChar[i].gameType === gameType && this.allChar[i].spec === playerClass) {
+          index = i;
+          break;
+        }
+      }
+      this.setActiveChar(index);
+    },
+
+    getCharOfClass(gameType, playerClass) {
+      let index = 0;
+      for (let i = 0; i < this.allChar.length; i++) {
+        if (this.allChar[i].gameType === gameType && this.allChar[i].spec === playerClass) {
+          index = i;
+          break;
+        }
+      }
+      return index;
+    },
   
     setLowestChar(gameType) {
       let index = 0;
@@ -136,9 +155,6 @@ export function createPlayerChars(): PlayerChars {
     },
   
     addChar(name, spec, region, realm, race, gameType) {
-      /*if (gameType === "Classic" || gameType === "BurningCrusade") {
-        this.allChar.push(new ClassicPlayer(name, spec, this.allChar.length, region, realm, race));
-      } */
 
       let newChar = new Player(name, spec, this.allChar.length, region, realm, race, "default", gameType);
       newChar.setPlayerAvatars();

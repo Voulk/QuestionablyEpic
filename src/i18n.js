@@ -35,11 +35,11 @@ i18n
       formatSeparator: ",",
     },
     react: {
-      wait: true,
+      //wait: true,
       bindI18n: "languageChanged loaded",
       bindStore: "added removed",
       nsMode: "default",
-      useSuspense: false,
+      useSuspense: true,
     },
   });
 

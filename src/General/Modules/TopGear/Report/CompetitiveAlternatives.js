@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/1. GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { reforgeIDs } from "Databases/ReforgeDB";
 
 function CompetitiveAlternatives(props) {
@@ -12,8 +12,8 @@ function CompetitiveAlternatives(props) {
 
   // const item = props.item
   const differentials = props.differentials;
-  const gameType = useSelector((state) => state.gameType);
-  const wowheadDom = (gameType === "Classic" ? "cata" : currentLanguage);
+  const gameType = props.gameType;
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage);
   const itemQuality = (item, gameType) => {
     if (gameType === "Retail") {
       const isLegendary = false; // item.effect.type === "spec legendary";
@@ -121,7 +121,7 @@ function CompetitiveAlternatives(props) {
                                     alt="img"
                                     width={40}
                                     height={40}
-                                    src={getGemIcon(gem)}
+                                    src={getGemIcon(gem, gameType)}
                                     style={{
                                       borderRadius: 4,
                                       borderWidth: item.vaultItem ? "2px" : "1px",
