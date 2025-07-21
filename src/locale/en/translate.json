@@ -420,6 +420,10 @@
           "title": "Gem Rarity",
           "tooltip": "Pick whether you'd like to use Rare or Epic gems."
         },
+        "metric": {
+          "title": "Scoring Metric",
+          "tooltip": "Pick whether to include DPS value in your score or not."
+        },
 
         "wristEnchant": {
           "title": "Wrist Enchant",
