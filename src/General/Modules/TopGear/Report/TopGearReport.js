@@ -174,13 +174,13 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
   
   topSet = result.itemSet;
   enchants = topSet.enchantBreakdown;
+  const retailGems = topSet.retailGemBreakdown ? JSON.parse((topSet.retailGemBreakdown)) : [];
   differentials = result.differentials;
   itemList = topSet.itemList;
   contentType = result.contentType;
   gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
   statList = topSet.setStats;
   const manaSources = {}
-
 
   // Setup Slots / Set IDs.
   let gemCount = 0;
@@ -195,7 +195,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     if (item.socket) {
       item.socketedGems = []
       for (var i = 0; i < item.socket; i++) {
-        item.socketedGems.push(enchants["Gems"].shift());
+        item.socketedGems.push(retailGems.shift());
         //console.log("PUshing gem to ite:")
       }
       

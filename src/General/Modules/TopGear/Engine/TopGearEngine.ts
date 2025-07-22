@@ -745,10 +745,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Check for Advanced gem setting and then run this instead of the above.
   if (getSetting(userSettings, "gemSettings") === ("Precise")) {
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+    
   }
   else {
     enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
+
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
     compileStats(bonus_stats, gemStats);
   }
@@ -1024,6 +1026,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);
   builtSet.report = report;
   
   //
