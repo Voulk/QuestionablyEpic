@@ -1,4 +1,4 @@
-import { autoAddItems, calcStatsAtLevel, getItemProp, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "General/Engine/ItemUtilities";
+import { autoAddItems, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypesBySpec, getValidArmorTypes } from "General/Engine/ItemUtilities";
 import Item from "General/Items/Item";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
@@ -150,7 +150,17 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   }
 
   // Add the new item to our characters item collection.
-  if (itemID !== 0 && itemSlot !== "") {
+  const acceptableArmorTypes = getValidArmorTypes(player.spec);
+  const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+  const itemData = getItem(itemID, "Classic")
+  const isSuitable = (itemData.slot === "Back" ||
+          (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
+          itemData.slot === "Holdable" ||
+          itemData.slot === "Offhand" ||
+          itemData.slot === "Shield" ||
+          (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
+
+  if (itemID !== 0 && itemSlot !== "" && isSuitable) {
     if (useChallengeMode && itemLevel > 463) itemLevel = 463; // Cap item level at 463 if cmode flag is enabled.
     let item = new Item(itemID, "", itemSlot, 0, "", 0, itemLevel, bonusIDS, "Classic");
     item.active = itemEquipped;

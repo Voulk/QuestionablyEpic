@@ -67,10 +67,11 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   const atonementOverheal = 0.12; // This is smart healing so you tend to get good value.
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.4;
+  let fillerCPM = 0;
 
   // Apply Evangelism mana cost reduction.
   ["Smite", "Holy Fire", "Penance"].forEach(spell => {
-    getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
+    getSpellEntry(castProfile, spell) ? getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06) : null;
   });
   const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
@@ -92,13 +93,13 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   let petRegen = 0;
   // Pet Regeneration
   // Note we are not interested in *damage* here - only mana. We'll handle damage later.
-  if (checkHasTalent(talents, "mindbender")) {
+  if (checkHasTalent(talents, "mindbender") && getSpellEntry(castProfile, "Mindbender")) {
     // Mindbender has a baseline 10 + 1 attacks per cast. The 1 is from its on-cast hit.
     const avgAttacks = 1 + Math.floor(10 * (statPercentages.haste)); // 9 is the average number of attacks per minute.
     const manaPerAttack = 0.0175 * 300000;
     petRegen = avgAttacks * manaPerAttack * getSpellEntry(castProfile, "Mindbender").cpm * fightLength;
   }
-  else {
+  else if (getSpellEntry(castProfile, "Shadowfiend")) {
     // Shadowfiend has a baseline 8 + 1 attacks. The 1 is from its on-cast hit.
     const avgAttacks = 1 + Math.floor(8 * (statPercentages.haste)); // 8 is the average number of attacks per minute.
     const manaPerAttack = 0.03 * 300000;
@@ -120,24 +121,24 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
       // Lower non-Spirit shell casts if we'll pause them during the cast
     })
 
-    // Handle our filler casts. 
-    // They'll mostly be Smite for us.
-    let fillerCost = getSpellEntry(castProfile, "Smite").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.85;
+
+    if (!userSettings.strictSeq) {
+      // Handle our filler casts. 
+      // They'll mostly be Smite for us.
+      let fillerCost = getSpellEntry(castProfile, "Smite").cost || 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+      const fillerWastage = 0.85;
+      let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
+      
+      const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+      const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
+      fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+      timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
 
 
-    let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
-    
-    const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
-    const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
-    const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
-    timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
-
-
-    let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
-    reportingData.manaRemaining = manaRemaining;
-    reportingData.manaPool = totalManaPool;
-
+      let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
+      reportingData.manaRemaining = manaRemaining;
+      reportingData.manaPool = totalManaPool;
+    }
 
     castProfile.forEach(spellProfile => {
         const fullSpell = specBaseline.spellDB[spellProfile.spell];

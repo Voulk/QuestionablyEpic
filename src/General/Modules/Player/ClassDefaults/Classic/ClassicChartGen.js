@@ -13,6 +13,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry, buildChartEntryClassic } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
 import { mistweaverMonkDefaults } from "./Monk/MistweaverMonkClassic";
+import { discPriestDefaults } from "./Priest/DisciplinePriestClassic";
 
 
 // Long term it would be really nice to just push all of this into the CastModel and have you call the chart data instead of having everything in ten places.
@@ -157,7 +158,9 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
     //
     let results = [];
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest"};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Discipline Priest", strictSeq: true, hasteBuff: {value: "Haste Aura"}};
+    const db = getTalentedSpellDB("Discipline Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: baseTalents, spec: "Discipline Priest"});
+
     const sequences = [
         {cat: "Base Spells", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
         {cat: "Base Spells", tag: "Prayer of Mending (3.5 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
@@ -199,10 +202,14 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
             
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        
         }
+        else if (newSeq.length > 1 || sequence.type === "Sim") {
+            // All multi-target based.
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));
+        }
         else {
             // All sequence based.
-            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
+            const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
+            results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, discPriestDefaults.scoreSet));
 
         };  
     }); 

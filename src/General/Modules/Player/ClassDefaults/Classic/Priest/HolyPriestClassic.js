@@ -113,19 +113,9 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const twistOfFateUptime = 0.35;
   const echoOverhealing = 0.24;
 
-  // Handle Chakras effect on our casts.
-  const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
-                        ((chakraUptime['blue'] * 2)) -
-                        4; // Tier Set    
-  getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
-  // With: 92019 - 
-  // Without: 90540 
+
   
-  // Apply Evangelism mana cost reduction.
-  ["Smite", "Holy Fire"].forEach(spell => {
-    getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
-  });
-  const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -134,6 +124,19 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   statPercentages.spellpower *= 1.1; // Inner Fire
 
   reportingData.statPercentages = statPercentages;
+
+    // Handle Chakras effect on our casts.
+  const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
+                        ((chakraUptime['blue'] * 2)) -
+                        4; // Tier Set    
+  getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+
+  
+    // Apply Evangelism mana cost reduction.
+  ["Smite", "Holy Fire"].forEach(spell => {
+    getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
+  });
+  const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
   // Calculate filler CPM
   const manaPool = getManaPool(statProfile, spec);
