@@ -1050,6 +1050,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4
+      else if (source === "ClassicPVP" && sources)  sourceCheck = sources.instanceId === -30;
       else if (source === "AllRep" && sources) sourceCheck = [-12, -6].includes(sources.instanceId);
       else if (source === "Rep & Professions" && sources) sourceCheck = [-12, -6, -4].includes(sources.instanceId);
       else if (!sources) sourceCheck = false;
@@ -1060,7 +1061,6 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!item.name.includes("Gladiator")) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { 
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
