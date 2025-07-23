@@ -14,6 +14,7 @@ import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampT
 import { buildChartEntry, buildChartEntryClassic } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
 import { mistweaverMonkDefaults } from "./Monk/MistweaverMonkClassic";
 import { discPriestDefaults } from "./Priest/DisciplinePriestClassic";
+import { holyPriestDefaults } from "./Priest/HolyPriestClassic";
 
 
 // Long term it would be really nice to just push all of this into the CastModel and have you call the chart data instead of having everything in ten places.
@@ -99,7 +100,6 @@ export const buildClassicMonkChartData = (activeStats, baseTalents) => {
             // All sequence based.
             const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
             results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, mistweaverMonkDefaults.scoreSet));
-
         };  
     }); 
 
@@ -110,7 +110,9 @@ export const buildClassicHolyChartData = (activeStats, baseTalents) => {
     //
     let results = [];
 
-    const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Priest"};
+    const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Priest", hasteBuff: {value: "Haste Aura"}, strictSeq: true};
+    const db = getTalentedSpellDB("Holy Priest", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: baseTalents, spec: "Holy Priest"});
+
     const sequences = [
         {cat: "Single Target Healing", tag: "Power Word: Shield", seq: ["Power Word: Shield"], preBuffs: []},
         {cat: "AoE Healing", tag: "Prayer of Mending (2 jumps)", seq: ["Prayer of Mending"], preBuffs: []},
@@ -118,6 +120,7 @@ export const buildClassicHolyChartData = (activeStats, baseTalents) => {
         {cat: "Single Target Healing", tag: "Flash Heal", seq: ["Flash Heal"], preBuffs: []},
         {cat: "Single Target Healing", tag: "Renew", seq: ["Renew"], preBuffs: []},
         {cat: "AoE Healing", tag: "Circle of Healing", seq: ["Circle of Healing"], preBuffs: []},
+        {cat: "AoE Healing", tag: "Divine Star", seq: ["Divine Star"], preBuffs: []},
 
         {cat: "AoE Healing", tag: "Holy Word: Sanctuary", seq: ["Holy Word: Sanctuary"], preBuffs: []},
         {cat: "Single Target Healing", tag: "Holy Word: Serenity", seq: ["Holy Word: Serenity"], preBuffs: []},
@@ -143,11 +146,14 @@ export const buildClassicHolyChartData = (activeStats, baseTalents) => {
             
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        
         }
+        else if (newSeq.length > 1 || sequence.type === "Sim") {
+            // All multi-target based.
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));
+        }
         else {
             // All sequence based.
-            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
-
+            const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
+            results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, holyPriestDefaults.scoreSet));
         };  
     }); 
 

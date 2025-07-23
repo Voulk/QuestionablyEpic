@@ -4,6 +4,7 @@ import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM, checkHasTalent } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { LteMobiledata } from "@mui/icons-material";
 
 
 export const holyPriestDefaults = {
@@ -43,9 +44,9 @@ export const holyPriestDefaults = {
     autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
 
-export function initializeHPriestSet(talents = holyTalents) {
-  const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
-
+export function initializeHPriestSet(talents = holyTalents, ignoreOverhealing = false) {
+  const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+  console.log("Initializing Holy Priest Set");
   const castProfile = [
     // Cooldowns
     {spell: "Circle of Healing", efficiency: 0.85},
@@ -94,8 +95,6 @@ export function initializeHPriestSet(talents = holyTalents) {
 // Instead we'll run a simulated CastProfile baseline.
 // Rejuv is our baseline spell
 export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSets = []) {
-  console.log("Scoring Holy Priest Set");
-  console.log(statProfile);
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
   const spec = "Holy Priest";
@@ -112,10 +111,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.35;
   const echoOverhealing = 0.24;
-
-
-  
-
+  let fillerCPM = 0;
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -125,45 +121,47 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
   reportingData.statPercentages = statPercentages;
 
-    // Handle Chakras effect on our casts.
-  const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
-                        ((chakraUptime['blue'] * 2)) -
-                        4; // Tier Set    
-  getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
-
   
+  if (!userSettings.strictSeq) {
+    // Handle Chakras effect on our casts.
+    const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
+                          ((chakraUptime['blue'] * 2)) -
+                          (tierSets.includes("Priest T14-4") ? 4 : 0); // Tier Set    
+    getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+
+    
     // Apply Evangelism mana cost reduction.
-  ["Smite", "Holy Fire"].forEach(spell => {
-    getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
-  });
-  const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    ["Smite", "Holy Fire"].forEach(spell => {
+      getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
+    });
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
-  // Calculate filler CPM
-  const manaPool = getManaPool(statProfile, spec);
-  const regen = (getManaRegen(statProfile, spec) + 
-                getAdditionalManaEffects(statProfile, spec).additionalMP5 +
-                (statProfile.mp5 || 0)) * 12 * fightLength;
-  let petRegen = 0;
-  // Pet Regeneration
-  // Note we are not interested in *damage* here - only mana. We'll handle damage later.
-  if (checkHasTalent(talents, "mindbender")) {
-    // Mindbender has a baseline 10 + 1 attacks per cast. The 1 is from its on-cast hit.
-    const avgAttacks = 1 + Math.floor(10 * (statPercentages.haste)); // 9 is the average number of attacks per minute.
-    const manaPerAttack = 0.0175 * 300000;
-    petRegen = avgAttacks * manaPerAttack * getSpellEntry(castProfile, "Mindbender").cpm * fightLength;
-  }
-  else {
-    // Shadowfiend has a baseline 8 + 1 attacks. The 1 is from its on-cast hit.
-    const avgAttacks = 1 + Math.floor(8 * (statPercentages.haste)); // 8 is the average number of attacks per minute.
-    const manaPerAttack = 0.03 * 300000;
-    petRegen = avgAttacks * manaPerAttack * getSpellEntry(castProfile, "Shadowfiend").cpm * fightLength;
-  }
-  reportingData.petRegen = petRegen;
+    // Calculate filler CPM
+    const manaPool = getManaPool(statProfile, spec);
+    const regen = (getManaRegen(statProfile, spec) + 
+                  getAdditionalManaEffects(statProfile, spec).additionalMP5 +
+                  (statProfile.mp5 || 0)) * 12 * fightLength;
+    let petRegen = 0;
+    // Pet Regeneration
+    // Note we are not interested in *damage* here - only mana. We'll handle damage later.
+    if (checkHasTalent(talents, "mindbender")) {
+      // Mindbender has a baseline 10 + 1 attacks per cast. The 1 is from its on-cast hit.
+      const avgAttacks = 1 + Math.floor(10 * (statPercentages.haste)); // 9 is the average number of attacks per minute.
+      const manaPerAttack = 0.0175 * 300000;
+      petRegen = avgAttacks * manaPerAttack * getSpellEntry(castProfile, "Mindbender").cpm * fightLength;
+    }
+    else {
+      // Shadowfiend has a baseline 8 + 1 attacks. The 1 is from its on-cast hit.
+      const avgAttacks = 1 + Math.floor(8 * (statPercentages.haste)); // 8 is the average number of attacks per minute.
+      const manaPerAttack = 0.03 * 300000;
+      petRegen = avgAttacks * manaPerAttack * getSpellEntry(castProfile, "Shadowfiend").cpm * fightLength;
+    }
+    reportingData.petRegen = petRegen;
 
-  // Hymn of Hope
+    // Hymn of Hope
 
 
-  const totalManaPool = manaPool + regen + petRegen;
+    const totalManaPool = manaPool + regen + petRegen;
 
 
     // Handle our filler casts. 
@@ -175,7 +173,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     
     const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
-    const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
     timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
 
 
@@ -183,7 +181,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     reportingData.manaRemaining = manaRemaining;
     reportingData.manaPool = totalManaPool;
 
-
+    }
     castProfile.forEach(spellProfile => {
         const fullSpell = specBaseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
