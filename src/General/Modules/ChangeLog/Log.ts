@@ -21,8 +21,8 @@ export const getVersion = (): string => {
 export const changeLog: entry[] = [
   {
     version: "11.1 / 5.5",
-    update: 99,
-    date: "July",
+    update: 1,
+    date: "July 21",
     changes: [ 
       "Heavy app-wide refactor.",
       "Brought back a revamped Welcome screen to help introduce new players to the app.",
