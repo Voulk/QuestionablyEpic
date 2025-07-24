@@ -75,6 +75,7 @@ export class Item {
     if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 2; // We'll just auto apply sockets to rings / necks now.
     if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
+    this.quality = getItemProp(id, "quality", gameType);
 
     if (gameType === "Classic") {
       const sockets = getItemProp(id, "sockets", gameType);
@@ -213,7 +214,8 @@ export class Item {
   // This could arguably be moved to ItemUtilities.
   getQualityColor() {
     const isLegendary = this.id === 2068200;
-    if (isLegendary || this.quality === 5) return "#ff8000";
+    if (this.quality === 6) return "#e6cc80"; // Artifact
+    else if (isLegendary || this.quality === 5) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
     else return "#1eff00";

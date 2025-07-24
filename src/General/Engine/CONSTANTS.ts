@@ -45,6 +45,8 @@ export const CONSTANTS = {
     qualityColors: {
         3: "#328CE3",
         4: "#a73fee",
+        5: "#ff8000", // Legendary
+        6: "#e6cc80", // Artifact
     }
 }
 

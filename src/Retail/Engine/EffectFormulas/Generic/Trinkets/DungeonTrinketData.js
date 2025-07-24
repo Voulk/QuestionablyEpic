@@ -1,7 +1,104 @@
-import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, forceGenericOnUseTrinket, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket } from "../../EffectUtilities";
 
 export const dungeonTrinketData = 
 [
+      { // 1:30 intellect on-use. 
+      name: "Sunblood Amethyst",
+      description: "",
+      effects: [
+        {
+          coefficient: 0.999862, 
+          table: -1,
+          efficiency: 0.75, // Amount of time standing in puddle.
+          duration: 15, 
+          cooldown: 90,
+        },
+      ],
+      runFunc: function(data, player, itemLevel, additionalData) {
+        let bonus_stats = {};
+    
+        if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * data[0].efficiency;
+        else bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+  
+        return bonus_stats;
+      }
+    },
+    { // 1:30 cooldown mastery on-use. 
+      name: "Lily of the Eternal Weave",
+      description: "",
+      effects: [
+        {
+          coefficient: 2.400612, 
+          table: -7,
+          duration: 15, 
+          cooldown: 90,
+        },
+      ],
+      runFunc: function(data, player, itemLevel, additionalData) {
+        let bonus_stats = {};
+    
+        if (additionalData.castModel.modelName.includes("Oracle")) {
+          bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "Lily of the Eternal Weave", itemLevel)
+        }
+        else if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120);
+        else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+  
+        return bonus_stats;
+      }
+    },
+    {
+      name: "First Class Healing Distributor",
+      description: "",
+      effects: [
+        {
+          coefficient: 0.427244, 
+          table: -7,
+          ppm: 3,
+          duration: 9,
+        },
+        { // 
+          coefficient: 22.20824, // Heal portion
+          table: -9,
+          secondaries: ['crit', 'versatility'],
+          efficiency: 0.55,
+          meteor: 0.15,
+        },
+      ],
+      runFunc: function(data, player, itemLevel, additionalData) {
+        let bonus_stats = {};
+
+        bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+        bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (data[1].meteor * 5 + 1);
+  
+  
+        return bonus_stats;
+      }
+  },
+  {
+      name: "So'leah's Secret Technique",
+      description: "",
+      effects: [
+        {
+          coefficient: 0.493954, 
+          table: -7,
+        },
+        { // 
+          coefficient: 0.098791, // Ally portion
+          table: -7,
+          stat: "allyStats",
+        },
+      ],
+      runFunc: function(data, player, itemLevel, additionalData) {
+        let bonus_stats = {};
+
+        const bestStat = player.getHighestStatWeight(additionalData.contentType);
+        bonus_stats[bestStat] = processedValue(data[0], itemLevel); // 
+        bonus_stats.allyStats = processedValue(data[1], itemLevel);
+  
+  
+        return bonus_stats;
+      }
+  },
   { // Sigil is a low end evaluation since its variance is very high and the reward is very average.
     name: "Sigil of Algari Concordance",
     description: "The summoned earthen does flat healing and gives an intellect buff for healers. QE Live uses an underestimation since the trinket variance is absurdly high.",

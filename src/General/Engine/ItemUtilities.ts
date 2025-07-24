@@ -1036,10 +1036,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (item.id === 228411) sourceCheck = true;
+      if (item.id === 228411 || item.id === 235499) sourceCheck = true;
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
-      else if (source === "S2 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
+      else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
 
 
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));

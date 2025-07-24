@@ -11,7 +11,7 @@ export const otherTrinketData = [
       { // Heal effect
         coefficient: 8.559967, 
         table: -9,
-        efficiency: 0.95,
+        efficiency: 0.9,
         ticks: 5, // Heals per Sprite proc.
         secondaries: ["crit", "haste", "versatility"], // Crit untested
         ppm: 10,
@@ -30,8 +30,8 @@ export const otherTrinketData = [
     description: "Fairly easy to keep at 5 stacks but scales incorrectly so expect its ranking to change. Appears to be a Delve trinket.",
     effects: [
       {
-        coefficient: 0.179758, 
-        table: -9,
+        coefficient: 0.04481, 
+        table: -9, // ??
         stat: "crit",
         stacks: 4.5,
       },
