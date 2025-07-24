@@ -145,6 +145,7 @@ export const CLASSICDRUIDSPELLDB = {
         spellData: {id: 740, icon: "spell_nature_tranquility", cat: "heal"},
         type: "heal",
         castTime: 8, 
+        cooldownData: {cooldown: 180},
         channel: true,
         cost: 27.1, 
         flat: 9037,
@@ -159,7 +160,7 @@ export const CLASSICDRUIDSPELLDB = {
         // TODO: Calculate average stack count and duration per player. On average half the raid will be hit per tick basically.
         type: "classic periodic",
         buffType: "heal",
-        buffDuration: 8 + 8,
+        buffDuration: 8,
         coeff: 0.142,
         flat: 787,
         targets: 12,
@@ -320,6 +321,43 @@ export const CLASSICDRUIDSPELLDB = {
         stat: "haste",
         value: 2, 
     }],
+    "Efflorescence": [
+    {
+        castTime: 0,
+        type: "classic periodic",
+        buffType: "heal",
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
+        buffDuration: 30,
+        coeff: 0.31,
+        flat: 3365,
+        expectedOverheal: 0.34,
+        targets: 3,
+        secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+    }],
+    "Ysera's Gift": [{
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "N/A"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0, 
+        flat: 400000 * 0.05,
+        expectedOverheal: 0.25,
+        secondaries: [],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+    "Wild Mushroom: Bloom": [{
+        spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "N/A"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.31, 
+        flat: 3365,
+        expectedOverheal: 0.3,
+        targets: 7, // Note that only bonus healing is split among targets.
+        secondaries: [],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+
 
 }
 

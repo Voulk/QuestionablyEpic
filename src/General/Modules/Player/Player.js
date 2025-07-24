@@ -32,11 +32,25 @@ export class Player {
     this.gameType = gameType;
     this.setupDefaults(specName);
     this.talents = [];
+
+    
     
     if (gameType === "Retail") {
-      
       this.gameType = "Retail";
       if (this.race === "Default" || this.race === "") this.race = classRaceDB[this.spec].races[0];
+    }
+    else {
+      if (this.race === "Default" || this.race === "") {
+        const defaultRaces = {
+          "Mistweaver Monk Classic": "Pandaren",
+          "Holy Priest Classic": "Pandaren",
+          "Discipline Priest Classic": "Worgen",
+          "Restoration Druid Classic": "Troll",
+          "Restoration Shaman Classic": "Troll",
+          "Holy Paladin Classic": "Blood Elf",
+        }
+        this.race = defaultRaces[this.spec] || "Pandaren";
+      }
     }
 
   }
@@ -90,6 +104,10 @@ export class Player {
   getRace = () => {
     return this.race;
   };
+
+  setRace = (newRace) => {
+    this.race = newRace;
+  }
 
   getStatWeight = (contentType, stat) => {
     const lcStat = stat.toLowerCase();
@@ -448,6 +466,14 @@ export class Player {
 
   getActiveModel = (contentType) => {
     if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]];
+    else {
+      //reportError(this, "Player", "Invalid Cast Model", this.getSpec());
+      return this.castModels[0];
+    }
+  };
+
+    getActiveProfile = (contentType) => {
+    if (this.castModels[this.activeModelID[contentType]]) return this.castModels[this.activeModelID[contentType]].profile;
     else {
       //reportError(this, "Player", "Invalid Cast Model", this.getSpec());
       return this.castModels[0];

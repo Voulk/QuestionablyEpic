@@ -69,19 +69,20 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
     1 handers: WepAvgDPS to = (WeaponDamMin + WeaponDamMax) / 2 / Weapon Swing. WepAvgDPS * 0.898882 + AttackPower / 14) * 6
 
     To make this easy, we will calculate the weapon portion before we run the sim since it is a constant and doesn't scale with 
-
     */
+    const isTwoHander = currentStats.weaponSwingSpeed > 2.8; // 2.8 is the default speed for a two-handed weapon.
+    const adjWeaponDamage = currentStats.averageDamage / currentStats.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75));
 
-    const damage = (currentStats.weaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
+    const damage = (adjWeaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
 
-    return damage* getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
+    return damage * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, spec, false);
 }
 
-export const getEnemyArmor = () => {
+export const getEnemyArmor = (armorReductions = 1) => {
     let enemyArmor = 24835;
     const playerLevel = 90;
 
-    const netArmor = 0.88 * enemyArmor;
+    const netArmor = 0.88 * armorReductions * enemyArmor;
 
     return (1-netArmor/(netArmor+(playerLevel*4037.5-317117.5)));
 }
@@ -161,6 +162,7 @@ export const getManaRegen = (currentStats, spec) => {
         "Discipline Priest": 0.5,
         "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,
+        "Mistweaver Monk": 0.5
     }
     return (spiritToMP5 * inCombatRegen[spec]);
 }
@@ -186,7 +188,7 @@ export const getManaPool = (currentStats, spec) => {
 // Innervate currently only works for druid but we could add a setting.
 
 // Not updated for MoP yet.
-export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
+export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") => {
     const baseMana = GLOBALCONST.baseMana[spec];
     let additionalManaPerSecond = 6000; //baseMana * 0.05;
     
@@ -225,21 +227,13 @@ export const getAdditionalManaEffects = (currentStats, spec, tierSets = []) => {
 
     }
     else if (spec.includes("Discipline Priest")) {
-        // Rapture
-        let rapture = (pool * 0.07 / 12 * 5); // 7% of total mana, every 12 seconds.
-        if (tierSets.includes("Priest T11-2")) rapture *= 1.1; // 100% bonus 10% of the time.
-        manaSources["Rapture"] = rapture;
-        additionalManaPerSecond += rapture;
+    }
 
-        // Archangel / Evang
-        const archangel = (pool * 0.01 / 30 * 5); // 1% of total mana, every 30s
-        manaSources["Archangel"] = archangel;
-        additionalManaPerSecond += archangel;
-
-        // Shadowfiend - 10 swings (check haste scaling)
-        const fiend = (pool * 0.03 * 13 / 360 * 5); // 3% of total mana, 10 x 1.3 times, once per fight.
-        manaSources["Shadowfiend"] = fiend;
-        additionalManaPerSecond += fiend;
+    if (playerRace === "Blood Elf") {
+        // Arcane Torrent
+        const arcaneTorrent = (baseMana * 0.02 / 120 * 5);
+        additionalManaPerSecond += arcaneTorrent;
+        manaSources["Arcane Torrent"] = arcaneTorrent;
     }
 
     manaSources.additionalMP5 = additionalManaPerSecond;

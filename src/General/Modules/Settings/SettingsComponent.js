@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RetailSettings(props) {
+export default function SettingsComponent(props) {
   const { t } = useTranslation();
   // const currentLanguage = i18n.language;
   const classes = useStyles();

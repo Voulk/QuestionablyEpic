@@ -10,6 +10,14 @@ type GemEntry = {
 
 export const classicGemDB: GemEntry[] = [
   // Mists of Pandaria Gems
+    { // Sha-Touched
+    id: 89882,
+    rarity: "legendary",
+    name: "Crystallized Horror",
+    icon: "inv_legendary_breathofblackprince_str",
+    stats: { intellect: 500 },
+    color: "sha",
+  },
   {
     id: 76694,
     rarity: "rare",
@@ -35,6 +43,14 @@ export const classicGemDB: GemEntry[] = [
     color: "orange",
   },
     {
+    id: 76672,
+    rarity: "rare",
+    name: "Artful Vermilion Onyx",
+    icon: "inv_misc_gem_x4_rare_cut_orange",
+    stats: { intellect: 80, mastery: 160 },
+    color: "orange",
+  },
+    {
     id: 76686,
     rarity: "rare",
     name: "Purified Imperial Amethyst",
@@ -43,7 +59,7 @@ export const classicGemDB: GemEntry[] = [
     color: "purple",
   },
 
-      {
+  {
     id: 76885,
     rarity: "rare",
     name: "Burning Primal Diamond",
@@ -52,6 +68,39 @@ export const classicGemDB: GemEntry[] = [
     color: "meta",
   },
 
+  // cogwheels
+  {
+    id: 77541,
+    rarity: "rare",
+    name: "Smooth Tinker's Gear",
+    icon: "inv_misc_enggizmos_30",
+    stats: { crit: 600 },
+    color: "cogwheel",
+  },
+  {
+    id: 77542,
+    rarity: "rare",
+    name: "Quick Tinker's Gear",
+    icon: "inv_misc_enggizmos_30",
+    stats: { haste: 600 },
+    color: "cogwheel",
+  },
+  {
+    id: 77547,
+    rarity: "rare",
+    name: "Fractured Tinker's Gear",
+    icon: "inv_misc_enggizmos_30",
+    stats: { mastery: 600 },
+    color: "cogwheel",
+  },
+  {
+    id: 77546,
+    rarity: "rare",
+    name: "Fractured Tinker's Gear",
+    icon: "inv_misc_enggizmos_30",
+    stats: { spirit: 600 },
+    color: "cogwheel",
+  },
 
   // Cataclysm Gems
   /*

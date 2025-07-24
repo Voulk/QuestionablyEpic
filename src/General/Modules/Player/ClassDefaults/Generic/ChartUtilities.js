@@ -1,3 +1,4 @@
+import { convertStatPercentages, runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"
 
 
 const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
@@ -42,8 +43,60 @@ const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, t
         // Artifical multipliers to make some sequences easier to design.
         data.healingDone *= sequence.multiplier;
     }
+    if (sequence.manaMod) {
+        // 
+        data.manaSpent *= sequence.manaMod;
+    }
+
     return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone / iterations), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, damage: Math.round(data.damageDone / iterations /*/ (data.execTime / iterations)*/) || "-", dps: Math.round(data.damageDone / iterations / (data.execTime / iterations)), spell: spellData, hpct: Math.round(data.healingDone / iterations / (data.execTime / iterations)), advancedReport: {}}
 
+}
+
+export const buildChartEntryClassic = (sequence, spellData, spell, activeStats, userSettings, playerData, scoreSet) => {
+    let data = {
+        healingDone: 0,
+        damageDone: 0,
+        manaSpent: 0,
+        execTime: 0,
+        spellValues: {
+
+        }
+    }
+
+    if (sequence.targets) {
+        userSettings = {...userSettings, enemyTargets: sequence.targets};
+    }
+
+    // runClassicSpell = (spellName, spell, statPercentages, spec, settings)
+    const result = scoreSet(playerData, activeStats, userSettings, [])
+    //const result = runCastSequence(newSeq, JSON.parse(JSON.stringify(activeStats)), {...testSettings, preBuffs: sequence.preBuffs}, talents);
+    data.healingDone = result.healing;
+    data.damageDone = result.damage;
+    data.manaSpent = spell[0].cost;
+    data.execTime = 1;
+
+
+    //console.log(data)
+    // After the sequence has run, check for a filter function.
+    // - If no filter, return result.
+    // - If filter, filter the healing first, then return. 
+    /*if (filterSpell) {
+        data.healingDone = Object.entries(data.spellValues)
+            .filter(([key]) => key.includes(filterSpell))
+            .reduce((sum, [, value]) => sum + value, 0); 
+        
+    }*/
+    if (sequence.multiplier) {
+        // Artifical multipliers to make some sequences easier to design.
+        data.healingDone *= sequence.multiplier;
+        data.damageDone *= sequence.multiplier;
+    }
+    if (sequence.manaMod) {
+        // 
+        data.manaSpent *= sequence.manaMod;
+    }
+
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(data.healingDone), hpm: Math.round(100*data.healingDone / data.manaSpent)/100, damage: Math.round(data.damageDone / data.execTime) || "-", dps: Math.round(data.damageDone / data.execTime), spell: spellData, hpct: Math.round(data.healingDone / data.execTime), advancedReport: {}}
 }
 
 // newSeq = sequence.seq;

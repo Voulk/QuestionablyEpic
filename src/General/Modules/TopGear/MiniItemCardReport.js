@@ -7,8 +7,10 @@ import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+
 
 const useStyles = makeStyles({
   root: {
@@ -177,7 +179,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.27)" }} // 52
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -197,7 +199,7 @@ export default function ItemCardReport(props) {
                       src={getItemIcon(item.id, gameType)}
                       style={{
                         borderRadius: 4,
-                        borderWidth: "2px",
+                        borderWidth: "1px",
                         borderStyle: "solid",
                         borderColor: itemQuality(itemLevel, item.id),
                       }}

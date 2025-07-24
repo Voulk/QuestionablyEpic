@@ -4,9 +4,10 @@ import { MenuItem, Dialog, DialogTitle, DialogContent, DialogActions, Button, Te
 interface DialogProps {
   isDialogOpen: boolean;
   setDialogOpen: (open: boolean) => void;
+  dialogText: string;
 }
 
-export default function GenericDialog({isDialogOpen, setDialogOpen} : DialogProps) {
+export default function GenericDialog({isDialogOpen, setDialogOpen, dialogText} : DialogProps) {
   const [textValue, setTextValue] = useState("Example Text");
 
   const handleOpen = () => setDialogOpen(true);
@@ -15,20 +16,20 @@ export default function GenericDialog({isDialogOpen, setDialogOpen} : DialogProp
   return (
     <>
       <Dialog open={isDialogOpen} onClose={handleClose} maxWidth="sm" fullWidth>
-        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogTitle>Export</DialogTitle>
         <DialogContent>
           <TextField
             multiline
             fullWidth
             minRows={4}
-            value={textValue}
+            value={dialogText}
             onChange={(e) => setTextValue(e.target.value)}
             variant="outlined"
             autoFocus
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => navigator.clipboard.writeText(textValue)}>Copy</Button>
+          <Button onClick={() => navigator.clipboard.writeText(dialogText)}>Copy</Button>
           <Button onClick={handleClose} color="primary">Close</Button>
         </DialogActions>
       </Dialog>

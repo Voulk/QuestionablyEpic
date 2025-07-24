@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./QEMainMenu.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -16,6 +16,9 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { styled } from "@mui/system";
 import GameTypeSwitch from "./GameTypeToggle";
 import { trackPageView } from "Analytics";
+import WelcomeDialog from "../Welcome/Welcome";
+import { useDispatch } from "react-redux";
+import { toggleGameType } from "Redux/Actions";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -63,7 +66,7 @@ export default function QEMainMenu(props: Props) {
     trackPageView(window.location.pathname + window.location.search);
   }, []);
 
-  const gameType = useSelector((state: RootState) => state.gameType);
+  const gameType = useSelector((state: any) => state.gameType);
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Warning                                            */
@@ -80,6 +83,8 @@ export default function QEMainMenu(props: Props) {
     glow: boolean;
   }
 
+
+
   const mainMenuOptions: MainMenuOption[] =
     gameType === "Retail"
       ? [
@@ -88,7 +93,7 @@ export default function QEMainMenu(props: Props) {
           { route: "/upgradefinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", localization: "MainMenu.EmbellishmentAnalysis", glow: false },
-          { route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", localization: "MainMenu.CyrcesCirclet", glow: false },
+          //{ route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", localization: "MainMenu.CyrcesCirclet", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", order: 4, localization: "MainMenu.QuickCompare", glow: false },
           // Tools
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
@@ -100,7 +105,7 @@ export default function QEMainMenu(props: Props) {
       : [ // Classic
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradefinder", disabled: false, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/upgradefinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", localization: "MainMenu.QuickCompare", glow: false },
@@ -162,6 +167,9 @@ export default function QEMainMenu(props: Props) {
   const characterCount = props.allChars.getAllChar(gameType).length;
   const characterCountAll = props.allChars.getAllChar("All").length;
   const patron = ["Diamond", "Gold", "Rolls Royce", "Sapphire"].includes(props.patronStatus);
+  const [welcomeOpen, setWelcomeOpen] = useState(ls.get("welcomeMessage") === null);
+  //const welcomeOpen = ls.get("welcomeMessage") === null /* && characterCountAll === 0 */ ? true : false;
+  const dispatch = useDispatch();
 
   let articles = [];
   if (props.allChars.allChar.length > 0 && props.articleList.length > 0) {
@@ -176,15 +184,31 @@ export default function QEMainMenu(props: Props) {
     return "right";
   };
 
+  const finishWelcome = (selectedGameType : gameTypes, selectedSpec : string) => {
+    /*
+    props.allChars.pickPlayerClass(selectedGameType, selectedSpec);
+    dispatch(toggleGameType(selectedGameType));
+    setWelcomeOpen(false);
+    ls.set("welcomeMessage", "true");
+    */
+
+    const newID = props.allChars.getCharOfClass(selectedSpec.includes("Classic") ? "Classic" : "Retail", selectedSpec);
+    props.allChars.setActiveChar(newID);
+    props.charUpdate(props.allChars);
+    dispatch(toggleGameType(selectedGameType));
+    setWelcomeOpen(false);
+    ls.set("welcomeMessage", "true");
+
+  }
+
   /* -------------------- Character Creation Dialog States -------------------- */
-  const welcomeOpen = ls.get("welcomeMessage") === null && characterCountAll === 0 ? true : false;
+  
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
   // const handleClose = () => {
   //   setOpen(false);
   // };
-
   return (
     <div style={{ height: "100%" }}>
       <Root>
@@ -215,7 +239,7 @@ export default function QEMainMenu(props: Props) {
             </Button>
           </Grid>
           <Grid item xs={12}>
-            <MessageOfTheDay />
+            <MessageOfTheDay gameType={gameType}/>
           </Grid>
 
           <Grid item xs={12}>
@@ -293,13 +317,13 @@ export default function QEMainMenu(props: Props) {
           ""
         )*/}
 
-        {/*<WelcomeDialog welcomeOpen={welcomeOpen} allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> */}
+        {<WelcomeDialog welcomeOpen={welcomeOpen} finishWelcome={finishWelcome} />}
       </Root>
 
       {/* ---------------------------------------------------------------------------------------------- */
       /*                                             Footer                                             */
       /* ----------------------------------------------------------------------------------------------  */}
-      <QEFooter />
+      <QEFooter gameType={gameType} />
     </div>
   );
 }

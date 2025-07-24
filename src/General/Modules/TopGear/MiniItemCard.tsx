@@ -12,12 +12,14 @@ import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu"
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
-import Item from "../Player/Item";
+import Item from "../../Items/Item";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+
 import socketImage from "Images/Resources/EmptySocket.png";
 import blueSocket from "Images/Resources/socketBlue.png";
 import redSocket from "Images/Resources/socketRed.png";
 import yellowSocket from "Images/Resources/socketYellow.png";
+import shaSocket from "Images/Resources/socketSha.png";
 
 
 const useStyles = makeStyles({
@@ -132,6 +134,7 @@ const GetSockets: React.FC<{ item: Item, gameType: gameTypes }> = ({ item, gameT
         else if (color === "meta") sock = socketImage;
         else if (color === "prismatic") sock = socketImage;
         else if (color === "cogwheel") sock = socketImage;
+        else if (color === "sha") sock = shaSocket;
         socket.push(
           <div style={{ marginRight: 4, display: "inline" }}>
             <img src={sock} width={15} height={15} alt="Socket" />

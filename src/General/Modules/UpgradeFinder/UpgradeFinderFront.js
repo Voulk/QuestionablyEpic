@@ -467,40 +467,13 @@ export default function UpgradeFinderFront(props) {
             </Paper>
           </Grid>
         ) : (
-          /* ---------------------------------------------------------------------------------------------- */
-          /*                                       Classic Dungeon Section                                  */
-          /* ---------------------------------------------------------------------------------------------- */
-
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
-              <div style={{ padding: 8 }}>
-                <Grid container justifyContent="center" spacing={1}>
-                  <Grid item xs={12}>
-                    <Typography color="primary" align="center" variant="h5">
-                      {t("Dungeon")}
-                    </Typography>
-                  </Grid>
-                </Grid>
-
-                <Grid item container justifyContent="center">
-                  <ToggleButtonGroup value={dungeonBC} exclusive onChange={handleContent} aria-label="contentToggle" size="large">
-                    <ToggleButton style={{ padding: "15px 30px" }} value="Normal" aria-label="dungeonLabel">
-                      <div style={{ display: "inline-flex" }}>
-                        <Typography variant="button">{t("RaidDifficulty.Normal")}</Typography>
-                      </div>
-                    </ToggleButton>
-
-                    <ToggleButton style={{ padding: "15px 30px" }} value="Heroic" aria-label="raidLabel">
-                      <div style={{ display: "inline-flex" }}>
-                        <Typography variant="button">{t("RaidDifficulty.Heroic")}</Typography>
-                      </div>
-                    </ToggleButton>
-                  </ToggleButtonGroup>
-                </Grid>
-              </div>
-            </Paper>
+          <Typography color="whitesmoke" align="center" style={{ marginTop: 16 }}>
+            {"Import your gear to run upgrade finder!"}
+          </Typography>
           </Grid>
         )}
+
         {/* Crafted Items */}
         {gameType === "Retail" ? (
           <Grid item xs={12}>

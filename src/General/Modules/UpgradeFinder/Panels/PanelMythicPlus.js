@@ -77,6 +77,7 @@ export default function MythicPlusGearContainer(props) {
                         <UFAccordion
                           key={encounterDB["-1"][gameType][key] + "-accordian" + i}
                           elevation={0}
+                          defaultExpanded={true}
                           style={{
                             backgroundColor: "rgba(255, 255, 255, 0.12)",
                           }}
@@ -180,9 +181,9 @@ export default function MythicPlusGearContainer(props) {
   };
 
   const contentGeneratorBC = () => {
-    return encounterDB[-1].bossOrder.map((key, i) => (
+    return encounterDB[-1][gameType].bossOrder.map((key, i) => (
       <UFAccordion
-        key={encounterDB[-1][key].name[currentLanguage] + "-accordian" + i}
+        key={encounterDB[-1][key].name + "-accordian" + i}
         elevation={0}
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.12)",
@@ -208,7 +209,7 @@ export default function MythicPlusGearContainer(props) {
           >
             <img style={{ height: 36, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB[123][key].name[currentLanguage]} />
             <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-            {encounterDB[123][key].name[currentLanguage]} -{" "}
+            {encounterDB[-1][key].name[currentLanguage]} -{" "}
             {[...filterClassicItemListBySource(itemDifferentials, -1, key)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
@@ -226,7 +227,7 @@ export default function MythicPlusGearContainer(props) {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          {true ? contentGenerator(gameType) : contentGeneratorBC()}
+          {true ? contentGenerator(gameType) : contentGeneratorBC(gameType)}
         </Grid>
       </Grid>
     </div>

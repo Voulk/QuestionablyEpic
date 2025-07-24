@@ -11,10 +11,9 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { exportWowheadGearList } from "./TopGearExports";
+import { exportWowheadGearList, exportReforgeLite } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
-import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getItemProp } from "General/Engine/ItemUtilities"
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox";
@@ -22,6 +21,9 @@ import { getDynamicAdvice } from "./DynamicAdvice";
 import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
+import SpellDataAccordion from "./SpellDataAccordion";
+import { getWHData } from "./WowheadGearPlannerExport";
+
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -94,6 +96,7 @@ function TopGearReport(props) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const handleDialogOpen = () => setDialogOpen(true);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [dialogText, setDialogText] = useState("");
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const location = useLocation();
@@ -105,11 +108,12 @@ function TopGearReport(props) {
       if (process.env.PUBLIC_URL.includes("live")) {
         window.history.replaceState('QE Live Report', 'Title', 'live/report/' + result.id);
         window.scrollTo(0, 0);
-        //apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else if (process.env.PUBLIC_URL.includes("ptr")) {
         window.history.replaceState('QE Live Report', 'Title', 'ptr/report/' + result.id);
         window.scrollTo(0, 0);
+        if (!result.player.spec.includes("Classic")) apiGetPlayerImage3(result.player.name, result.player.realm, result.player.region, setBackgroundImage)
       }
       else {
         // Call Error
@@ -129,7 +133,7 @@ function TopGearReport(props) {
 
 
   if (result !== null && checkResult(result)) {
-    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen);
+    return displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText);
   }
   else {
     return   (  <div
@@ -144,7 +148,7 @@ function TopGearReport(props) {
   }
 }
 
-function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen) {
+function displayReport(result, player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage, dialogOpen, setDialogOpen, dialogText, setDialogText) {
   const boxWidth = "60%";
 
   let resultValid = true;
@@ -155,6 +159,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
   let differentials = {};
   let itemList = {};
   let statList = {};
+
   
   if (result === null) {
     // They shouldn't be here. Send them back to the home page.
@@ -165,37 +170,59 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     //reportError("", "Top Gear Report", "Top Gear Report accessed without Report")
   }
   const gameType = player.spec.includes("Classic") ? "Classic" : "Retail";
-    const advice = getDynamicAdvice(result, player, result.contentType, gameType);
-    
-    topSet = result.itemSet;
-    enchants = topSet.enchantBreakdown;
-    differentials = result.differentials;
-    itemList = topSet.itemList;
-    contentType = result.contentType;
-    gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
-    statList = topSet.setStats;
-    const manaSources = {}
+  const advice = getDynamicAdvice(result, player, result.contentType, gameType);
+  
+  topSet = result.itemSet;
+  enchants = topSet.enchantBreakdown;
+  const retailGems = topSet.retailGemBreakdown ? JSON.parse((topSet.retailGemBreakdown)) : [];
+  differentials = result.differentials;
+  itemList = topSet.itemList;
+  contentType = result.contentType;
+  gemStats = gameType === "Classic" && "socketInformation" in topSet ? topSet.socketInformation : "";
+  statList = topSet.setStats;
+  const manaSources = {}
 
+  // Setup Slots / Set IDs.
+  let gemCount = 0;
+  itemList.forEach(item => {
+    item.slot = getItemProp(item.id, "slot", gameType)
+    item.setID = getItemProp(item.id, "itemSetId", gameType)
+    item.sources = getItemProp(item.id, "sources", gameType)
+    if (item.sources) item.source = item.sources[0];
+    item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
+    if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
 
-    // Setup Slots / Set IDs.
-    let gemCount = 0;
-    itemList.forEach(item => {
-      item.slot = getItemProp(item.id, "slot", gameType)
-      item.setID = getItemProp(item.id, "itemSetId", gameType)
-      item.sources = getItemProp(item.id, "sources", gameType)
-      if (item.sources) item.source = item.sources[0];
-      item.socketedGems = (topSet.socketedGems && item.id in topSet.socketedGems) ? topSet.socketedGems[item.id] : [];
-      if (item.id in topSet.reforges) item.flags.push(topSet.reforges[item.id])
-
-      if (item.socket) {
-        item.socketedGems = []
-        for (var i = 0; i < item.socket; i++) {
-          item.socketedGems.push(enchants["Gems"].shift());
-          //console.log("PUshing gem to ite:")
-        }
-        
+    if (item.socket) {
+      item.socketedGems = []
+      for (var i = 0; i < item.socket; i++) {
+        item.socketedGems.push(retailGems.shift());
+        //console.log("PUshing gem to ite:")
       }
-    })
+      
+    }
+  })
+
+  const handleExportMenuClick = (buttonClicked) => {
+    //alert("Exporting to " + buttonClicked, result.id);
+    if (buttonClicked === "ReforgeLite Export") {
+      setDialogOpen(true);
+      setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
+    }
+    else if (buttonClicked === "Wowhead BIS List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
+    }
+    else if (buttonClicked === "Wowhead Gear Planner") {
+      setDialogOpen(true);
+      setDialogText(getWHData(player, itemList, topSet.reforges, enchants));
+    }
+    else {
+      
+    }
+    
+    
+  
+  }
 
     //exportGearSet(itemList, player.spec);
 
@@ -238,7 +265,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
     info: player.model.includes("Beta") ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days.": "This is your best set of gear. You can see how close other sets are below!",
   }
 
-
+  //backgroundImage = "https://i.imgur.com/uA1E2iE.png" // Tester
   return (
     <div
       style={{
@@ -262,7 +289,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                 style={{
                   justifyContent: "center",
                   backgroundImage: `url("${backgroundImage}")`,
-                  backgroundColor: "#0F0E04",
+                  backgroundColor: "#262633",
                   backgroundSize: "cover",
                   backgroundPositionY: "-160px",
                   padding: 16,
@@ -279,7 +306,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                   </Grid>
 
                   <Grid item>
-                    <MenuDropdown />
+                    <MenuDropdown handleClicked={handleExportMenuClick}/>
                   </Grid>
                 </Grid>
                 </Grid>
@@ -405,10 +432,20 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                                     </Grid>
                                   ) : (
                                     <Grid item xs={12}>
+                                      <Grid container item direction="row" spacing={0}>
+                                      <Grid item xs={12}>
                                       <Typography variant="caption" wrap="nowrap" display="inline" align="left">
-                                        {player.region}-{player.realm}
+                                        {player.race} {player.region}-{player.realm}
                                       </Typography>
                                     </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography variant="caption" align="left">
+                                            {"Version: " + (result.version || "")}
+                                      </Typography>
+                                    </Grid>
+                                    </Grid>
+                                  </Grid>
+                                    
                                   )}
                                 </Grid>
                               </Grid>
@@ -429,14 +466,19 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
            <Grid item xs={12}><CompetitiveAlternatives differentials={differentials} player={player} gameType={gameType} /></Grid>
            <Grid item xs={12}>{(advice && advice.length > 0) ? <ListedInformationBox introText="Here are some notes on your set:" bulletPoints={advice} color="green" backgroundCol="#304434" title="Insights - Set Notes" /> : ""}</Grid>                     
           {gameType === "Classic" ? <Grid item xs={12}><ManaSourcesComponent manaSources={manaSources}/></Grid> : null}
-          <Grid item style={{ height: 60 }} xs={12} />
+          
 
+          {gameType === "Classic" ? <Grid item xs={12}>
+            <SpellDataAccordion spec={player.spec} statList={statList} talents={null} />
+          </Grid> : null}
+          <Grid item style={{ height: 60 }} xs={12} /> {/* This adds space to the bottom of the page to improve scrolling. */}
         </Grid>
       ) : (
         <Typography style={{ textAlign: "center", color: "white" }}>{t("TopGear.ErrorMessage")}</Typography>
       )}
 
       <GenericDialog 
+        dialogText={dialogText}
         isDialogOpen={dialogOpen}
         setDialogOpen={setDialogOpen}
       />

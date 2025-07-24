@@ -1,6 +1,8 @@
 import { runHeal } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { buffSpell } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
+const eminenceCon = 0.42 * 2 * 0.8;
+
 // Add onTick, onExpiry functions to spells.
 export const CLASSICMONKSPELLDB = {
     "Rest": [{ // This lets the sequence gen rest. The time param is flexible. 
@@ -9,15 +11,38 @@ export const CLASSICMONKSPELLDB = {
         castTime: 1.5,
         cost: 0,
     }],
+    "Mana Tea": [{ // This lets the sequence gen rest. The time param is flexible. 
+        spellData: {id: 0, icon: "ability_evoker_livingflame", cat: "N/A"},
+        type: "",
+        castTime: 0.5, // 0.5s per stack. Restores 5% of max mana per stack.
+        cost: 0,
+    }],
     "Surging Mist": [{
         // Regrowth direct heal portion
         spellData: {id: 116694, icon: "ability_monk_surgingmist", cat: "heal"},
         type: "heal",
         castTime: 1.5, 
+        chiGenerated: 1,
         cost: 7.65, 
         coeff: 1.8, // 0.806, 
         flat: 17242,
         expectedOverheal: 0.3,
+        masteryScalar: 1,
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0},
+    }],
+    "Expel Harm": [{ // Also has a damage effect.
+        spellData: {id: 115072, icon: "ability_monk_expelharm", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        chiGenerated: 1,
+        cost: 2.5, 
+        coeff: 0,
+        weaponScaling: 7, 
+        flat: 0,
+        expectedOverheal: 0.6,
+        masteryScalar: 1,
+        cooldownData: {cooldown: 15, charges: 1},
         secondaries: ['crit'],
         statMods: {crit: 0, critEffect: 0},
     }],
@@ -27,9 +52,12 @@ export const CLASSICMONKSPELLDB = {
         cost: 1.8, // Mana cost as a percent. 
         customGCD: 1,
         cooldownData: {cooldown: 8},
-        type: "buff",
+        chiGenerated: 1,
+        type: "classic periodic",
         buffType: "heal",
         coeff: 0.107,
+        flat: 2266,
+        masteryScalar: 0.15, // MULTIPLY BY TICK COUNT
         tickData: {tickRate: 2, canPartialTick: true},
         buffDuration: 18,
         targets: 3,
@@ -38,11 +66,12 @@ export const CLASSICMONKSPELLDB = {
     }],
     "Enveloping Mist": [{
         spellData: {id: 124682, icon: "spell_monk_envelopingmist", cat: "heal"},
-        type: "buff",
+        type: "classic periodic",
         buffType: "heal",
         castTime: 2,
         cost: 0,
         chiCost: 3,
+        masteryScalar: 0.2,
         coeff: 0.52 * 1.48, 
         tickData: {tickRate: 1, canPartialTick: true},
         buffDuration: 6,
@@ -60,18 +89,20 @@ export const CLASSICMONKSPELLDB = {
         buffDuration: 30,
         cooldownData: {cooldown: 45, charges: 1},
     },],
-    "Rushing Jade Wind": [{
-        spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "cooldown"},
-        castTime: 0,
-        customGCD: 1,
+    "Spinning Crane Kick": [{
+        spellData: {id: 101546, icon: "ability_monk_cranekick_new", cat: "cooldown"},
+        castTime: 2.25,
         cost: 7.15,
+        chiGenerated: 1,
+        damageType: "physical",
 
         type: "classic periodic",
         buffType: "damage",
         coeff: 0,
-        tickData: {tickRate: 0.75},
-        weaponScaling: 1.59, // Might have a second multiplier of 0.880503
-        buffDuration: 6,
+        tickData: {tickRate: 0.75, hasteScaling: false},
+        
+        weaponScaling: 1.59 * 1.10063, // Might have a second multiplier of 0.880503
+        buffDuration: 2.25,
         targets: 1, // Can hit everyone so TODO.
         expectedOverheal: 0.3,
         secondaries: ['crit']
@@ -79,24 +110,71 @@ export const CLASSICMONKSPELLDB = {
     {
         type: "classic periodic",
         buffType: "heal",
-        flat: 2809,
-        coeff: 0.8 * 0.1152,
-        tickData: {tickRate: 0.75},
+        flat: 2808, //2809,
+        coeff: 0.096, //0.1152 / 1.2,
+        tickData: {tickRate: 0.75, hasteScaling: false},
+        masteryScalar: 0.1,
+        buffDuration: 2.25,
+        targets: 6, // Can hit everyone so TODO.
+        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    }],
+    "Rushing Jade Wind": [{
+        spellData: {id: 116847, icon: "ability_monk_rushingjadewind", cat: "cooldown"},
+        castTime: 0,
+        customGCD: 1,
+        cost: 7.15,
+        chiGenerated: 1,
+
+        type: "classic periodic",
+        buffType: "damage",
+        damageType: "physical",
+        coeff: 0,
+        tickData: {tickRate: 0.75, hasteScaling: false},
+        cooldownData: {cooldown: 6, charges: 1},
+        
+        weaponScaling: 1.59 * 0.880503, // Might have a second multiplier of 0.880503
         buffDuration: 6,
         targets: 1, // Can hit everyone so TODO.
-        expectedOverheal: 0.3,
+        secondaries: ['crit']
+    },
+    {
+        type: "classic periodic",
+        buffType: "heal",
+        flat: 0.8 * 2808,
+        coeff: 0.8 * 0.096,
+        tickData: {tickRate: 0.75, hasteScaling: false},
+        masteryScalar: 0.1,
+        buffDuration: 6,
+        targets: 6, // Can hit everyone so TODO.
+        expectedOverheal: 0.33,
         secondaries: ['crit']
     }],
     "Crackling Jade Lightning": [{
         spellData: {id: 117952, icon: "ability_monk_cracklingjadelightning", cat: "damage"},
-        type: "damage",
         damageType: "magic",
+        type: "classic periodic",
+        buffType: "damage",
+        tickData: {tickRate: 1, hasteScaling: false},
         castTime: 6,
+        buffDuration: 6,
         channel: true,
         cost: 1.57 * 6,
         coeff: 0.386 * 2 * 1.25, // TotM
-        flat: 197,
-        damageToHeal: 0.84, // Note Armor
+        flat: 197 * 1.25,
+        damageToHeal: eminenceCon, // Note Armor
+        secondaries: ['crit'],
+    }],
+    "Melee": [{
+        spellData: {id: 0, icon: "ability_monk_tigerpalm", cat: "N/A"},
+        type: "damage",
+        damageType: "physical",
+        castTime: 0,
+        customGCD: 999,
+        cost: 0,
+        coeff: 0, // 
+        weaponScaling: 1 * 1.4,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     // Fistweaving Stuff
@@ -111,7 +189,8 @@ export const CLASSICMONKSPELLDB = {
         cost: 6,
         coeff: 0, // 
         weaponScaling: 1.5,
-        damageToHeal: 0.84,
+        chiGenerated: 1,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     },
     {
@@ -132,7 +211,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 1,
         coeff: 0, // 
         weaponScaling: 6,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     "Blackout Kick": [{
@@ -145,7 +224,7 @@ export const CLASSICMONKSPELLDB = {
         chiCost: 2,
         coeff: 0, // 
         weaponScaling: 7.12,
-        damageToHeal: 0.84,
+        damageToHeal: eminenceCon,
         secondaries: ['crit'],
     }],
     "Mana Tea": [{
@@ -169,7 +248,8 @@ export const CLASSICMONKSPELLDB = {
         cost: 7.7,
         coeff: 3.5 * 1.22,
         flat: 9579 * 1.22,
-        expectedOverheal: 0.35,
+        masteryScalar: 0.15,
+        expectedOverheal: 0.4,
         targets: 25,
         secondaries: ['crit'],
         cooldownData: {cooldown: 180, charges: 1},
@@ -182,6 +262,7 @@ export const CLASSICMONKSPELLDB = {
         cost: 0,
         chiCost: 2,
         coeff: 0.69,
+        masteryScalar: 0.25,
         flat: 7795,
         expectedOverheal: 0.25,
         targets: 1, // Hits anyone with ReM.
@@ -194,12 +275,16 @@ export const CLASSICMONKSPELLDB = {
         castTime: 1, 
         cost: 0, 
         coeff: 1 * 2, // Technically attack power
+        cooldownData: {cooldown: 30},
         flat: 1095,
-        expectedOverheal: 0.3,
+        masteryScalar: 0.15,
+        expectedOverheal: 0.45,
+        targets: 6,
         secondaries: ['crit'],
     },
     {
         type: "damage",
+        damageType: "magic",
         coeff: 1.21 * 2, // Technically attack power
         flat: 1325,
         secondaries: ['crit'],
@@ -213,6 +298,7 @@ export const CLASSICMONKSPELLDB = {
 
         type: "classic periodic",
         buffType: "damage",
+        damageType: "magic",
         flat: 114,
         coeff: 2 * 0.104,
         tickData: {tickRate: 2, hasteScaling: false},
@@ -224,6 +310,7 @@ export const CLASSICMONKSPELLDB = {
         buffType: "heal",
         flat: 114,
         coeff: 2.4 * 0.104,
+        masteryScalar: 0.25,
         tickData: {tickRate: 2, hasteScaling: false},
         buffDuration: 6,
         expectedOverheal: 0.3,
@@ -235,6 +322,7 @@ export const CLASSICMONKSPELLDB = {
         type: "damage",
         flat: 463,
         coeff: 2 * 0.423,
+        damageType: "magic",
         secondaries: ['crit'],
         targets: 1,
     },
@@ -242,6 +330,7 @@ export const CLASSICMONKSPELLDB = {
         type: "heal",
         flat: 294,
         coeff: 2 * 0.269,
+        masteryScalar: 0.15,
         targets: 5,
         secondaries: ['crit'],
         expectedOverheal: 0.4,
@@ -255,16 +344,65 @@ export const CLASSICMONKSPELLDB = {
         customGCD: 1,
         cost: 0, 
         coeff: 0.45 * 2, // Technically attack power
-        targets: 4,
         flat: 493,
+        masteryScalar: 0.25,
+        targets: 4,
+
         expectedOverheal: 0.3,
         secondaries: ['crit'],
     },
     {
         type: "damage",
+        damageType: "magic",
         coeff: 0.45 * 2 * 4, // Technically attack power
         flat: 493,
         targets: 1,
+        secondaries: ['crit'],
+    }],
+    "Invoke Xuen, the White Tiger": [{
+        spellData: {id: 123904, icon: "ability_monk_summontigerstatue", cat: "cooldown"},
+        castTime: 0,
+        customGCD: 1,
+        cost: 0,
+
+        type: "classic periodic",
+        buffType: "damage",
+        damageType: "magic",
+        coeff: 0.10519 * 0.9037, // This is close but ultimately not correct. It might even be weapon damage based.
+        flat: 1706 * 0.9037,
+        tickData: {tickRate: 1},
+        buffDuration: 45,
+        cooldownData: {cooldown: 180, charges: 1},
+        damageToHeal: eminenceCon, 
+        
+        targets: 1, // Can hit everyone so TODO.
+        maxTargets: 1,
+        secondaries: ['crit']
+    },
+    { // Lightning
+        type: "classic periodic",
+        buffType: "damage",
+        damageType: "magic",
+        flat: 322,
+        coeff: 0.2525 * 2,
+        tickData: {tickRate: 1, hasteScaling: false},
+        damageToHeal: eminenceCon,
+
+        buffDuration: 45,
+        targets: 1, // Can hit everyone so TODO.
+        maxTargets: 3,
+        secondaries: ['crit']
+    }],
+    "Mastery: Gift of the Serpent":[{
+        spellData: {id: 117907, icon: "tradeskill_inscription_jadeserpent", cat: "heal"},
+        type: "heal",
+        castTime: 0,
+        cost: 0,
+        chiCost: 2,
+        coeff: 0.3517 * 2,
+        flat: 9986,
+        expectedOverheal: 0.4, // Includes wastage
+        targets: 1, // 
         secondaries: ['crit'],
     }],
 
@@ -299,10 +437,10 @@ export const monkTalents = {
     }}, 
 
     // T3
-    rushingJadeWind: {points: 0, maxPoints: 1, icon: "ability_monk_rushingjadewind", id: 116847, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    rushingJadeWind: {points: 1, maxPoints: 1, icon: "ability_monk_rushingjadewind", id: 116847, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
-    invokeXuen: {points: 1, maxPoints: 1, icon: "ability_monk_summontigerstatue", id: 123904, select: true, tier: 3, runFunc: function (state, spellDB, points) {
+    invokeXuen: {points: 0, maxPoints: 1, icon: "ability_monk_summontigerstatue", id: 123904, select: true, tier: 3, runFunc: function (state, spellDB, points) {
         
     }}, 
     chiTorpedo: {points: 0, maxPoints: 1, icon: "ability_monk_quitornado", id: 115008, select: true, tier: 3, runFunc: function (state, spellDB, points) {

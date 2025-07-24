@@ -314,14 +314,18 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
-    { label: "463 Gear", value: 463, gameType: "Classic" },
-    { label: "476 Gear", value: 476, gameType: "Classic", source: "T14" },
-    { label: "489 Gear", value: 489, gameType: "Classic", source: "T14" },
-    { label: "502 Gear", value: 502, gameType: "Classic", source: "T14" },
+    { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
+    { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
+    { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
+    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
+    { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
+    { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
+    { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
+    //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
-    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine" },
-    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine" },
-    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons" },
+    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
+    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
+    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
@@ -573,10 +577,10 @@ export default function ItemBar(props) {
 
         spacing={1}
         sx={{
-          paddingTop: "30px",
+          paddingTop: "20px",
           paddingBottom: "10px",
       }}>
-        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+        <Grid item><Typography>{"Or auto add all pieces from a source!"}</Typography></Grid>
         <Grid item xs={12}>
         <Box
           sx={{
@@ -589,7 +593,14 @@ export default function ItemBar(props) {
         >
           {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
             return (
-              <Button key={option.label} variant="contained" sx={{ minWidth: 150 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>{option.label}</Button>
+              <Button key={option.label} variant="contained" sx={{ width: 230 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
+                <img
+                  src={option.icon ? process.env.PUBLIC_URL + "/Images/ExtraIcons/" + option.icon + ".jpg" : require("Images/Logos/RaidLogo.jpg")} 
+                  alt=""
+                  style={{ width: 20, height: 20, marginRight: 4, borderRadius: "50%", objectFit: "cover" }}
+                />
+                {option.label}
+              </Button>
             )
           })}
         </Box>

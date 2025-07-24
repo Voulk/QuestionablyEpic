@@ -32,9 +32,12 @@ export function createPlayerChars(): PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
-          specsAdded.push(player.spec);
-          charArray.push(newChar);
-          index += 1;
+          if (player.spec !== "Holy Paladin Classic") {
+            specsAdded.push(player.spec);
+            charArray.push(newChar);
+            index += 1;
+          }
+
         });
       } else {
         charArray = [];
@@ -53,7 +56,7 @@ export function createPlayerChars(): PlayerChars {
 
       // Auto-add Classic Specs
       CONSTANTS.classicSpecs.forEach(spec => {
-        if (!(specsAdded.includes(spec)) && (spec.includes("Classic")) && (spec !== "Restoration Shaman Classic")) { // TODO: Remove as we add the other specs.
+        if (!(specsAdded.includes(spec)) && (spec.includes("Classic"))) { // TODO: Remove as we add the other specs.
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "").replace("Monk", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
           charArray.push(newChar);
@@ -111,6 +114,28 @@ export function createPlayerChars(): PlayerChars {
           this.allChar[i] = player;
         }
       }
+    },
+
+    pickPlayerClass(gameType, playerClass) {
+      let index = 0;
+      for (let i = 0; i < this.allChar.length; i++) {
+        if (this.allChar[i].gameType === gameType && this.allChar[i].spec === playerClass) {
+          index = i;
+          break;
+        }
+      }
+      this.setActiveChar(index);
+    },
+
+    getCharOfClass(gameType, playerClass) {
+      let index = 0;
+      for (let i = 0; i < this.allChar.length; i++) {
+        if (this.allChar[i].gameType === gameType && this.allChar[i].spec === playerClass) {
+          index = i;
+          break;
+        }
+      }
+      return index;
     },
   
     setLowestChar(gameType) {

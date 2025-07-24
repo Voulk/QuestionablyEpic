@@ -39,7 +39,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { red } from "@mui/material/colors";
 import { classColours } from "General/Engine/ClassData";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
-import raceIcons from "General/Modules/IconFunctions/RaceIcons";
+import { getRaceIcon } from "General/Modules/IconFunctions/RaceIcons";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
 import LogDetailsTable from "./CharacterLogDetailsTable";
@@ -56,7 +56,7 @@ const specImages = {
   "Preservation Evoker": require("Images/EvokerSmall2.jpg"),
   "Restoration Druid": require("Images/DruidSmall.jpg"),
   "Restoration Shaman": require("Images/ShamanSmall.png"),
-  "Discipline Priest": require("Images/DiscSmall.jpg"),
+  "Discipline Priest": require("Images/DiscSmall.png"),
   "Holy Paladin": require("Images/PaladinSmall.png"),
   "Holy Priest": require("Images/HPriestSmall.jpg"),
   "Mistweaver Monk": require("Images/MistweaverSmall.jpg"),
@@ -66,7 +66,7 @@ const specImages = {
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
   "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
-  "Mistweaver Monk Classic": require("Images/MistweaverSmall.jpg"),
+  "Mistweaver Monk Classic": require("Images/classicon_monk.jpg"),
 };
 
 /* ------------------- Called when a character is clicked. ------------------ */
@@ -510,7 +510,7 @@ export default function CharCards(props) {
                                   return (
                                     <MenuItem divider={lastItem} key={"charCardRace" + i} value={key}>
                                       <div style={{ display: "inline-flex" }}>
-                                        {raceIcons(key)}
+                                        {getRaceIcon(key, "both")}
                                         {getTranslatedRaceName(key, currentLanguage)}
                                       </div>
                                     </MenuItem>

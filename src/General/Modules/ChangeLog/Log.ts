@@ -19,14 +19,52 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
-      {
+  {
+    version: "11.1 / 5.5",
+    update: 1,
+    date: "July 21",
+    changes: [ 
+      "Heavy app-wide refactor.",
+      "Brought back a revamped Welcome screen to help introduce new players to the app.",
+      "You can now swap character class at any time from the header instead of having to return to the main menu.",
+      "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
+      "Upgrade Finder: Currently Equipped items are now shown on the report.",
+      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
+      "Visual: Multiple improvements app-wide",
+      "War Within: Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
+      "Classic: Auto-add buttons are now based and labelled on gear source rather than item level.",
+      "Classic: The Trinket Analysis chart will now actively reforge secondary passives.",
+      "Classic: Competitive Alternatives now works for Resto Druid.",
+      "Classic: Added Upgrade Finder for all specs. ",
+      "Classic: Added a player race dropdown.",
+      "Classic: Spell information will now show on your Top Gear report based on the gear you're wearing."
+  ]},
+  {
+    version: "11.1.7 / 5.5.0",
+    update: 19,
+    date: "July 1",
+    changes: [ 
+      "Classic: Transitioned to prepatch. Support is light.",
+      "Updated Auto-add buttons to 684 item level.",
+      "Added a few missing items.",
+    ]},
+  {
+    version: "11.1.7 / 4.4.2",
+    update: 18,
+    date: "June 24",
+    changes: [ 
+      "Titan Disc Belt in-game buffs.",
+      "Cataclysm: Added Cloak of the Frigid Winds.",
+      "Some minor item tidy-up.",
+    ]},
+  {
     version: "11.1.7 / 4.4.2",
     update: 17,
     date: "June 17",
     changes: [ 
       "Added the Titan Disc Belt.",
     ]},
-    {
+  {
     version: "11.1.5 / 4.4.2",
     update: 16,
     date: "May 20",
@@ -43,17 +81,6 @@ export const changeLog: entry[] = [
       "Crafted items now use their own upgrade track, will upgrade with the 'upgrade all' button and can be upgraded via cog menu.",
       "Upgrade Finder: Added a 684 option to the dungeon track.",
     ]},
-  {
-    version: "11.1 / 4.4.2",
-    update: 99,
-    date: "May",
-    changes: [ 
-      "Heavy app-wide refactor.",
-      "Embellishments can now be added directly in the Item Bar in addition to the cog menu.",
-      "Top Gear: A variety of Export options are now available on reports including a Classic export to the ReforgeLite addon.",
-      "Upgrade Finder: Currently Equipped items now shown on the report.",
-      "Visual: Fixed a bug where Competitive Alternative tooltips would break if your app game type didn't match the report.",
-  ]},
   {
     version: "11.1.5 / 4.4.2",
     update: 14,

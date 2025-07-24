@@ -7,7 +7,7 @@ import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/Classi
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMonkSpellDB";
 
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
-import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/ClassicPriestSpellDB";
+import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
@@ -22,12 +22,12 @@ import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/
  */
 export const applyLoadoutEffects = (classicSpells, settings, state) => {
     const auraHealingBuff = { // 
-        "Restoration Druid": 0.1,
-        "Discipline Priest": 0, // Gets 15% intellect instead.
-        "Holy Paladin": 0.1,
+        "Restoration Druid": 0.15,
+        "Discipline Priest": 0, // 
+        "Holy Paladin": 0.05, // Holy Insight needs to be handled per-spell because it differs for spenders.
         "Holy Priest": 0,
-        "Restoration Shaman": 0.1, // Also gets 0.5s off Healing Wave / Greater Healing Wave
-        "Mistweaver Monk": 0.2, // Soon :)
+        "Restoration Shaman": 0, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Mistweaver Monk": 0.2, // Serpent Stance
     };
 
     const baseMana = {
@@ -83,14 +83,17 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
                 slice.coeff *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
                 slice.flat *= (1 + spellInfo.additiveScaling + (slice.additiveSlice || 0));
             }
-            slice.coeff *= (1 + auraHealingBuff[state.spec]);
-            slice.flat *= (1 + auraHealingBuff[state.spec]);
+            if (slice.type === "heal" || slice.buffType === "heal") {
+                slice.coeff *= (1 + auraHealingBuff[state.spec]);
+                slice.flat *= (1 + auraHealingBuff[state.spec]);
+                
+                if (slice.weaponScaling) slice.weaponScaling *= (1 + auraHealingBuff[state.spec]);
+            }
 
         });
     }
 
     if (state.spec === "Holy Paladin") state.holyPower = 1;
-
 
     return classicSpells;
 }

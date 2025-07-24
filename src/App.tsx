@@ -246,6 +246,12 @@ const App = () => {
     allChars.saveAllChar();
   };
 
+  // We can use this function if we want a player to be able to swap to the first available character of a given spec.
+  const handlePickPlayerSpec = (newPlayerClass: string) => {
+    const newID = allChars.getCharOfClass(newPlayerClass.includes("Classic") ? "Classic" : "Retail", newPlayerClass);
+    allChars.setActiveChar(newID);
+    updatePlayerChars(allChars);
+  }
 
   /* ---------------------------- Battletag Handler --------------------------- */
   const updatePlayerID = (id: string, battletag: string) => {
@@ -325,6 +331,7 @@ const App = () => {
                   logImportSnack={handleLogSnackOpen}
                   allChars={allChars}
                   isPTR={isPTR}
+                  handlePickPlayerSpec={handlePickPlayerSpec}
                 />
 
                 {/* --------------------------- Char Added Snackbar -------------------------- */}

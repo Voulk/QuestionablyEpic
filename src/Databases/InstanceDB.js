@@ -5,6 +5,11 @@ export const getSeasonalDungeons = () => {
   return CONSTANTS.currentDungeonIDs;
 }
 
+export const getMoPDungeons = () => {
+  //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
+  return [246, 316, 313, 312, 311, 303, 302, 324, 321];
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
@@ -15,13 +20,14 @@ export const instanceDB = {
   "1296": "Liberation of Undermine",
 
   "-4": "Crafted",
+  "-12": "Reptuation",
 
   // Classic specific
   "369": "Siege of Orgrimmer",
   "362": "Throne of Thunder",
   "330": "Heart of Fear",
-  "321": "Mogu'shan Vaults",
-  "324": "Terrace of Endless Spring",
+  "317": "Mogu'shan Vaults",
+  "320": "Terrace of Endless Spring",
   "-5": "Justice",
   "-6": "Valor",
   "-8": "Elemental Rune Twilight",
@@ -35,6 +41,13 @@ export const craftedDB = {
   5: "Inscription",
   6: "Alchemy",
   7: "Jewelcrafting",
+}
+
+export const reputationDB = {
+  1: "Klaxxi",
+  2: "Golden Lotus",
+  3: "Shado-Pan",
+  4: "August Celestials",
 }
 
 
@@ -101,11 +114,13 @@ export const retailInstanceDB = {
       1182: "The Necrotic Wake",
       1023: "Siege of Boralus",
       71: "Grim Batol",
-
+    },
     "Classic": {
       //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.
-      bossOrderMythicPlus: [316, 313, 312, 311, 303, 302, 324], // Dungeon Order
+      bossOrder: [],
+      bossOrderMythicPlus: [246, 316, 313, 312, 311, 303, 302, 324, 321], // Dungeon Order
       // TODO
+      246: "Scholomance",
       316: "Scarlet Monastery",
       313: "Temple of the Jade Serpent",
       312: "Shadowpan Monastery",
@@ -113,20 +128,49 @@ export const retailInstanceDB = {
       303: "Gate of the Setting Sun",
       302: "Stormstout Brewery",
       324: "Siege of Niuzao Temple",
-      99999: "Scholomance",
+      321: "Mogu'shan Palace",
+      
       },
-    }
   },
 }
 
+
 const classicInstanceDB = {
-  330: {
-    name: "Heart of Fear",
-    bossOrder: [745],
+  317: {
+    name: "Mogushan Vaults",
+    bossOrder: [679, 689, 682, 687, 726, 677],
     bosses: {
-      745: "Imperial Vizier Zor'lok",
+      679: "The Stone Guard",
+      689: "Feng the Accursed",
+      682: "Gara'jal the Spiritbinder",
+      687: "Spirit Kings",
+      726: "Elegon",
+      677: "Will of the Emperor",
     }
   },
+  330: {
+    name: "Heart of Fear",
+    bossOrder: [745, 744, 713, 741, 737, 743],
+    bosses: {
+      745: "Imperial Vizier Zor'lok",
+      744: "Blade Lord Ta'yak",
+      713: "Garalon",
+      741: "Wind Lord Mel'jarak",
+      737: "Amber-Shaper Un'sok",
+      743: "Grand Empress Shek'zeer",
+    }
+  },
+  320: {
+    name: "Terrace of Endless Spring",
+    bossOrder: [683, 742, 729, 709],
+    bosses: {
+      683: "Protectors of the Endless",
+      742: "Tsulong",
+      729: "Lei Shi",
+      709: "Sha of Fear",
+    }
+  },
+
 }
 
 export const encounterDB = {

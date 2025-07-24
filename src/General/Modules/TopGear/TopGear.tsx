@@ -173,7 +173,7 @@ export default function TopGear(props: any) {
   const [errorMessage, setErrorMessage] = useState("");
   const patronStatus: string = props.patronStatus;
 
-  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - (props.player.spec === "Restoration Druid Classic" ? 9 : 0); // TODO
+  const topGearCap = (patronCaps[patronStatus] ? patronCaps[patronStatus] : 30) - ((props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 9 : 0); // TODO
   const selectedItemsColor = patronColor[patronStatus];
 
   const upgradeItem = (item: Item, newItemLevel: number, socketFlag: boolean = false, vaultFlag: boolean = false) => {
@@ -427,16 +427,19 @@ export default function TopGear(props: any) {
         new: false,
         contentType: report.contentType,
         effectList: report.itemSet.effectList, 
+       
         itemSet: {itemList: [],
                   setStats: report.itemSet.setStats,
+                  metrics: report.itemSet.metrics,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
+                  retailGemBreakdown: report.itemSet.gemBreakdown,
                   socketedGems: report.itemSet.gems || [],
                   reforges: report.itemSet.reforges || {},
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                 },
-        player: {name: player.charName, realm: player.realm, region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
+        player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
         version: getVersion(),
       };
     
@@ -477,7 +480,7 @@ export default function TopGear(props: any) {
           addItem(item);
         }
       }
-  
+
       sendReport(shortReport);
       return shortReport;
 
@@ -541,7 +544,7 @@ export default function TopGear(props: any) {
         // Create Item Sets so that we only have to do it once. This happens off-worker but could be shipped to a worker too.
         const allItemSets = prepareTopGear(itemList, strippedPlayer, playerSettings, reforgeOn, reforgeFromList, reforgeToList);
         const workerPromises = []
-        const workerCount = props.player.spec === "Restoration Druid Classic" ? 4 : 1;
+        const workerCount = (props.player.spec === "Restoration Druid Classic" || props.player.spec === "Mistweaver Monk Classic") ? 4 : 1;
         const chunkSize = allItemSets.length / workerCount;
         //console.log("Created item sets: " + itemSets.length + " with chunk size: " + chunkSize );
         const t1 = performance.now();
@@ -569,11 +572,31 @@ export default function TopGear(props: any) {
             // Build Differentials
             let differentials = [];
             let primeSet = mergedResults[0];
+
+            let diffsAdded = 0;
+            let diffsChecked = 0;
+            let setsAdded: Set<String> = new Set<String>();
+            while (diffsAdded < CONSTRAINTS.Shared.topGearDifferentials && (diffsChecked + 1) < mergedResults.length) {
+                const differential = buildDifferential(mergedResults[diffsChecked + 1], primeSet, props.player, contentType)
+
+                if (differential.items.length > 0 || differential.gems.length > 0) {
+                  const diffIDs = differential.items.map((item: Item) => item.id).sort((a, b) => a - b).join(",")
+
+                  if (!setsAdded.has(diffIDs)) {
+                    setsAdded.add(diffIDs)
+                    differentials.push(differential);
+                    diffsAdded++;
+                  }
+
+                }
+                diffsChecked++;
+            }
+            /*  
             for (var i = 1; i < Math.min(CONSTRAINTS.Shared.topGearDifferentials+1, mergedResults.length); i++) {
               const differential = buildDifferential(mergedResults[i], primeSet, props.player, contentType);
               if (differential.items.length > 0 || differential.gems.length > 0) differentials.push(differential);
 
-            }
+            }*/
             //itemSets[0].printSet()
 
             let result = new TopGearResult(mergedResults[0], differentials, "Raid");
@@ -597,7 +620,7 @@ export default function TopGear(props: any) {
             history.push("/report/");
         })
         .catch(error => {
-            console.error("Error running TopGearBC:", error.message);
+            console.error("Error running TopGearBC:", error.stack);
         });
       } 
      else {
@@ -743,7 +766,7 @@ export default function TopGear(props: any) {
           slotList.map((key, index) => {
             return (
               <Grid item lg={12} xl={12} xs={12} key={index}>
-                <Typography color="primary" variant="h5">
+                <Typography color="primary" variant="h6">
                   {key.label}
                 </Typography>
                 <Divider style={{ marginBottom: 10, width: "42%" }} />
@@ -769,7 +792,7 @@ export default function TopGear(props: any) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "60px",
+          height: "66px",
           backgroundColor: "#424242",
           borderTopColor: "Goldenrod",
           borderTopWidth: "1px",
@@ -790,7 +813,7 @@ export default function TopGear(props: any) {
             alignItems: "center",
           }}
         >
-          <Typography align="center" style={{ padding: "2px 2px 2px 2px" }} color={selectedItemsColor}>
+          <Typography align="center" style={{ padding: "2px 2px 2px 2px", fontSize: "20px" }} color={selectedItemsColor}>
             {t("TopGear.SelectedItems") + ":" + " " + selectedItemCount + "/" + topGearCap}
           </Typography>
           <Typography variant="subtitle1" align="center" style={{ padding: "2px 2px 2px 2px", marginRight: "5px" }} color="primary">
@@ -800,7 +823,7 @@ export default function TopGear(props: any) {
             <Button 
               variant="contained" 
               color="primary" 
-              style={{ height: "64%", width: "180px" }} 
+              style={{ height: "64%", width: "180px", border: "2px solid black" }} 
               disabled={checkSlots(gameType).length > 0 || !btnActive}  //
               onClick={unleashTopGear}> 
               {t("TopGear.GoMsg")}
