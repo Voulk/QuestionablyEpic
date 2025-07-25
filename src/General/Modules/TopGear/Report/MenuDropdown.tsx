@@ -3,9 +3,10 @@ import { Button, Menu, MenuItem } from "@mui/material";
 
 interface HoverMenuProps {
   handleClicked: (value: string) => void;
+  gameType: gameTypes;
 }
 
-export default function HoverMenu({ handleClicked }: HoverMenuProps) {
+export default function HoverMenu({ handleClicked, gameType }: HoverMenuProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -17,6 +18,14 @@ export default function HoverMenu({ handleClicked }: HoverMenuProps) {
     handleClicked(value);
     setAnchorEl(null);
   };
+
+  const exportOptions = []
+
+  if (gameType === "Classic") {
+    exportOptions.push("ReforgeLite Export");
+    exportOptions.push("Wowhead Gear Planner");
+  }
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) exportOptions.push("Wowhead BIS List");
 
   return (
     <>
@@ -39,10 +48,11 @@ export default function HoverMenu({ handleClicked }: HoverMenuProps) {
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
-        <MenuItem onClick={() => handleClose("ReforgeLite Export")}>ReforgeLite Export</MenuItem>
-        <MenuItem onClick={() => handleClose("Wowhead BIS List")}>Wowhead BIS List</MenuItem>
-        <MenuItem onClick={() => handleClose("Wowhead Gear Planner")}>Wowhead Gear Planner</MenuItem>
-        <MenuItem onClick={() => handleClose("JSON")}>JSON</MenuItem>
+        {exportOptions.map((option) => (
+          <MenuItem key={option} onClick={() => handleClose(option)}>
+            {option}
+          </MenuItem>
+        ))}
       </Menu>
     </>
   );
