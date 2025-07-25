@@ -3,6 +3,26 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+    {  
+    name: "Diamantine Voidcore",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.699867, 
+        table: -1,
+        duration: 15,
+        ppm: 2.5 * (0.25 * 1.25 + 0.75),
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
   {  // Heartbeat flag??
     name: "Astral Antenna",
     description: "",
@@ -52,7 +72,7 @@ export const raidTrinketData = [
         table: -8,
         secondaries: ['versatility'],
         targets: 5,
-        efficiency: {Raid: 0.9, Dungeon: 0.9}, // 
+        efficiency: {Raid: 0.8, Dungeon: 0.9}, // 
         cooldown: 90,
       },
     ],

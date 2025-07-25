@@ -1,6 +1,47 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+    { 
+    name: "Voidglass Shards", // Shards of the Void
+    effects: [
+      {
+        coefficient: 55.44585, 
+        table: -9,
+        ppm: 2.5,
+        secondaries: ['haste', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
+      console.log("Voidglas S: " + bonus_stats.hps);
+
+      return bonus_stats;
+    },
+  },
+    { 
+    name: "Reshii Wraps",
+    effects: [
+      {
+        coefficient: 26.73886, 
+        table: -9,
+        ppm: 2,
+        efficiency: 0.95, // Converts to absorb so high efficiency.
+        secondaries: ['haste', 'crit', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player); 
+      console.log("Reshii Wraps: " + bonus_stats.hps);
+
+      return bonus_stats;
+    },
+  },
   { // Settings for number of Signetbearers in party? This is party only, not raid wide.
     name: "Neural Synapse Enhancer",
     effects: [

@@ -323,9 +323,9 @@ export default function ItemBar(props) {
     { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
-    { label: "Manaforge H", value: 700, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "Manaforge M", value: 722, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "S3 Mythic+", value: 715, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
+    { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "Manaforge M", value: 723, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "S3 Mythic+", value: 723, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
