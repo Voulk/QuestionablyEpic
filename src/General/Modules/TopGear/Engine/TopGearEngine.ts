@@ -699,11 +699,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   };
 
   // These are special variables the set includes. They are passed to effect formulas etc. This is a very flexible object.
-  let setVariables: {[key: string]: number | string | number[]} = {
+  let setVariables: {[key: string]: number | string | number[] | boolean} = {
     setSockets: 0,
     socketElement: "",
     socketList: [],
-    fireMult: 0,
+    reshiiBoots: false,
+    hasVoidcore: false,
     nerubianArmorPatch: 0,
   };
 
@@ -745,10 +746,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Check for Advanced gem setting and then run this instead of the above.
   if (getSetting(userSettings, "gemSettings") === ("Precise")) {
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
+    
   }
   else {
     enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
+
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
     compileStats(bonus_stats, gemStats);
   }
@@ -798,6 +801,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
     // The set has a Writhing Armor Banding so we'll double our other embellishment slot so long as it's Nerubian.
     setVariables.nerubianArmorPatch = 1;
+  }
+  if (effectList.filter(effect => effect.name === "Diamantine Voidcore").length > 0) {
+    // Having voidcore buffs the power of the Voidglass Shards effect.
+    setVariables.hasVoidcore = true;
+
   }
 
   // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
@@ -1024,6 +1032,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
+  builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);
   builtSet.report = report;
   
   //

@@ -81,8 +81,8 @@ const specImages: { [key: string]: string } = {
   "Restoration Druid Classic": require("Images/classicon_druid.jpg"),
   "Restoration Shaman Classic": require("Images/classicon_shaman.jpg"),
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
-  "Discipline Priest Classic": require("Images/DiscSmall.jpg"),
-  "Mistweaver Monk Classic": require("Images/MistweaverSmall.jpg"),
+  "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
+  "Mistweaver Monk Classic": require("Images/classicon_monk.jpg"),
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -342,7 +342,7 @@ export default function CharacterPanel(props: Props) {
                   ) : (
                     <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
+                      <Typography variant="body2">Import your gear via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>
@@ -401,7 +401,7 @@ export default function CharacterPanel(props: Props) {
                   ) : (
                     <Grid item>
                       {/* // TODO: Localize this */}
-                      <Typography variant="body2">Import your gear with a SimC string via the &ldquo;Import Gear&ldquo; button above.</Typography>
+                      <Typography variant="body2">Import your gear via the &ldquo;Import Gear&ldquo; button above.</Typography>
                     </Grid>
                   )}
                 </Grid>

@@ -32,9 +32,12 @@ export function createPlayerChars(): PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
-          specsAdded.push(player.spec);
-          charArray.push(newChar);
-          index += 1;
+          if (player.spec !== "Holy Paladin Classic") {
+            specsAdded.push(player.spec);
+            charArray.push(newChar);
+            index += 1;
+          }
+
         });
       } else {
         charArray = [];

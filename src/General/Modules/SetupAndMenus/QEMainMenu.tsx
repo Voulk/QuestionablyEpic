@@ -105,7 +105,7 @@ export default function QEMainMenu(props: Props) {
       : [ // Classic
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradefinder", disabled: false, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/upgradefinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", localization: "MainMenu.QuickCompare", glow: false },

@@ -44,7 +44,7 @@ export class Player {
         const defaultRaces = {
           "Mistweaver Monk Classic": "Pandaren",
           "Holy Priest Classic": "Pandaren",
-          "Discipline Priest Classic": "Pandaren",
+          "Discipline Priest Classic": "Worgen",
           "Restoration Druid Classic": "Troll",
           "Restoration Shaman Classic": "Troll",
           "Holy Paladin Classic": "Blood Elf",

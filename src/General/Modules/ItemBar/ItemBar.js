@@ -320,12 +320,12 @@ export default function ItemBar(props) {
     { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
     { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
     { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
+    { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
-    
 
-    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons", icon: "retailDungeonIcon" },
+    { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "Manaforge M", value: 723, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "S3 Mythic+", value: 723, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
@@ -580,7 +580,7 @@ export default function ItemBar(props) {
           paddingTop: "20px",
           paddingBottom: "10px",
       }}>
-        <Grid item><Typography>{"Or auto add all pieces in a category!"}</Typography></Grid>
+        <Grid item><Typography>{"Or auto add all pieces from a source!"}</Typography></Grid>
         <Grid item xs={12}>
         <Box
           sx={{

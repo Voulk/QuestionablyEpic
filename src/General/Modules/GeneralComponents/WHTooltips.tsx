@@ -24,15 +24,15 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
     return <>{children}</>;
   }
 
-  const baseWowheadLink = domain === "mop-classic" ? `https://www.wowhead.com/mop-classic/${type}=${id}` : `https://www.wowhead.com/${type}=${id}`;
-  const dataWowhead = `${type}=${id}&domain=${domain}`;
+  const baseWowheadLink = domain === "mop-classic" ? `https://www.wowhead.com/mop-classic/${type}=${id}` : `https://www.wowhead.com/ptr-2/${type}=${id}`;
+  const dataWowhead = `${type}=${id}&domain=${"ptr-2"}`;
 
   const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}${craftedStats ? "&crafted-stats=" + craftedStats.join(":") : ""}`;
   const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
 
   return (
     <a
-      href={baseWowheadLink + itemDataWowhead}
+      href={baseWowheadLink}
       data-wowhead={type === "item" ? itemDataWowhead : spellDataWowhead}
       target="_blank"
       rel="noopener noreferrer"

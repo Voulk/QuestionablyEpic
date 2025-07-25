@@ -3,6 +3,112 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+    {  
+    name: "Diamantine Voidcore",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.699867, 
+        table: -1,
+        duration: 15,
+        ppm: 2.5 * (0.25 * 1.25 + 0.75),
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
+  {  // Heartbeat flag??
+    name: "Astral Antenna",
+    description: "",
+    effects: [
+      {
+        coefficient: 1.558467, 
+        table: -7,
+        duration: 10,
+        ppm: 2.5,
+        stat: "crit",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
+    { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
+    name: "Nexus-King's Command",
+    description: "",
+    effects: [
+      { // Int Proc
+        coefficient: 1.079763, 
+        table: -1,
+        duration: 10,
+        cooldown: 32, // 30s ticking aura
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
+      { // 
+    name: "Loom'ithar's Living Silk",
+    description: "",
+    effects: [
+      { // Shield proc
+        coefficient: 479.0941,
+        table: -8,
+        secondaries: ['versatility'],
+        targets: 5,
+        efficiency: {Raid: 0.8, Dungeon: 0.9}, // 
+        cooldown: 90,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Araz's Ritual Forge",
+    description: "",
+    effects: [
+      {
+        coefficient: 2.879601,
+        table: -1,
+        duration: 30,
+        //multiplier: 0.725, // Assumes boss is around 50% health.
+        cooldown: 120,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) / 2;
+
+      return bonus_stats;
+    }
+  },
+
+
+
+  // Undermine
   { // Stacking mastery buff that turns into a healing buff when you reach full stacks.
     name: "Eye of Kezan",
     description: "Takes 2 minutes to be good and 3.5 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",

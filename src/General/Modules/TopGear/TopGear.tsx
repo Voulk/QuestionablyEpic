@@ -433,6 +433,7 @@ export default function TopGear(props: any) {
                   metrics: report.itemSet.metrics,
                   primGems: report.itemSet.primGems,
                   enchantBreakdown: report.itemSet.enchantBreakdown,
+                  retailGemBreakdown: report.itemSet.gemBreakdown,
                   socketedGems: report.itemSet.gems || [],
                   reforges: report.itemSet.reforges || {},
                   firstSocket: report.itemSet.firstSocket,
