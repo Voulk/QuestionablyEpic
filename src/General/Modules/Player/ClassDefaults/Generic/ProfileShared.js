@@ -73,6 +73,11 @@ export const getHasteClassic = (stats, hasteBuff = 1.05) => {
     return (1 + stats.haste / 425 / 100) * hasteBuff;
 }
 
+export const updateSpellCPM = (spellProfile, updatedCD) => {
+    //getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+    spellProfile.cpm = 60 / updatedCD * spellProfile.efficiency;
+}
+
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
     const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 

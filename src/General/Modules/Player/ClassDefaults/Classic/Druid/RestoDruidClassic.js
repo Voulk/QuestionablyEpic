@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
@@ -126,6 +126,9 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     if (tierSets.includes("Druid T14-4")) {
       // The CDR on Swiftmend is also a big deal for SotF. We should probably just move SotF code here. 
       getSpellEntry(castProfile, "Swiftmend").cpm = 3.5 * 1.2; 
+    }
+    else if (tierSets.includes("Druid PVP-2")) {
+      getSpellEntry(castProfile, "Swiftmend").cpm = 3.5 * 1.1; 
     }
 
 

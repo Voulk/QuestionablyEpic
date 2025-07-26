@@ -453,7 +453,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       });
   }
 
-   let adjusted_weights = {...castModel.baseStatWeights}
+   let adjusted_weights = {...castModel.defaultStatWeights}
 
    // Enchants
     if (true) {
