@@ -27,7 +27,8 @@ export const changeLog: entry[] = [
       "Bugfix: Retail gems will once again show on linked reports.",
       "Bugfix: Fixed a bug where retail tier sets wouldn't be correctly evaluated.",
       "Report export options are now game type specific.",
-      "MoP: Added a PVP auto-add button for conquest gear."
+      "MoP: Added a PVP auto-add button for conquest gear.",
+      "New trinket entries: Vision of the Predator, Jade Magistrate Figurine",
     ]},
   {
     version: "11.1.7 / 5.5",

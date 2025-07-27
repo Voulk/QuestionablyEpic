@@ -121,6 +121,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 13966,
         expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
+        cooldownData: {cooldown: 15, hasted: true}, 
         statMods: {crit: 0, critEffect: 0},
     }],
     "Wild Growth": [
@@ -502,7 +503,7 @@ const glyphs = {
 
     glyphOfWildGrowth: {points: 1, maxPoints: 1, icon: "ability_druid_flourish", id: 62970, select: true, tier: 5, runFunc: function (state, spellDB, points) {
         spellDB["Wild Growth"][0].targets += 1
-        spellDB["Wild Growth"][0].cooldown += 2
+        spellDB["Wild Growth"][0].cooldownData.cooldown += 2
     }}, 
     glyphOfEfflorescence: {points: 1, maxPoints: 1, icon: "inv_misc_herb_talandrasrose", id: 145529, select: true, tier: 5, runFunc: function (state, spellDB, points) {
 

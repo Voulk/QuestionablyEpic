@@ -95,6 +95,24 @@ const raidTrinketData: Effect[] = [
     }
   },
       {
+    name: "Jade Magistrate Figurine", 
+    effects: [
+      { 
+        value: {489: 3595},
+        stat: "crit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+      {
     name: "Vial of Ichorous Blood", 
     effects: [
       { 
@@ -231,6 +249,25 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = getGenericStatEffect(data[0], itemLevel);
       bonus_stats.intellect! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
+    }
+  },
+    {
+    name: "Vision of the Predator",
+    description: "Only procs off DPS spells so use caution equipping this on non-Discipline specs.",
+    effects: [
+      { 
+        value: {463: 3383}, 
+        ppm: getEffectPPM(0.15, 115, 1.5),
+        stat: "crit",
+        duration: 30,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.crit! *= dpsProcMult(player.spec); //
 
       return bonus_stats;
       //return ;
