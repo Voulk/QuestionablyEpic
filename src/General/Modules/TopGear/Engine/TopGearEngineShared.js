@@ -41,6 +41,8 @@ export const generateReportCode = () => {
   }
 
   export function buildDifferential(itemSet, primeSet, player, contentType) {
+    console.log("Running" + Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)));
+    console.log(player.getHPS(contentType))
     let doubleSlot = {};
     const primeList = primeSet.itemList;
     const diffList = itemSet.itemList;
@@ -48,7 +50,7 @@ export const generateReportCode = () => {
       items: [],
       gems: [],
       scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-      rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
+      rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore)))/* * player.getHPS(contentType))*/,
     };
   
     for (var x = 0; x < diffList.length; x++) {
