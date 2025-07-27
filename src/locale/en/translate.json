@@ -416,9 +416,9 @@
           "title": "Mana Profile",
           "tooltip": "Pick a more or less aggressive mana profile."
         },
-        "classicGemSettings": {
-          "title": "Gem Rarity",
-          "tooltip": "Pick whether you'd like to use Rare or Epic gems."
+        "classicGems": {
+          "title": "Gem Behavior",
+          "tooltip": "Most of the time matching gems is a good idea, but in niche scenarios it can be worth ignoring them. Don't change this setting unless you know what you're doing."
         },
         "metric": {
           "title": "Scoring Metric",
