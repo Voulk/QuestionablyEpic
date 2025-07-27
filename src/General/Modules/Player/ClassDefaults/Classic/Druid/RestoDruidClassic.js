@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
@@ -53,8 +53,8 @@ export function initializeDruidSet(talents = druidTalents) {
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", cpm: 3.5, bonus: 1.2},
-      {spell: "Wild Growth", cpm: 3.8},
+      {spell: "Swiftmend", efficiency: 0.8, bonus: 1.2},
+      {spell: "Wild Growth", efficiency: 0.8},
       {spell: "Rejuvenation", cpm: 4, fillerSpell: true, castOverride: 1.0},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
       {spell: "Regrowth", cpm: 2.4, freeCast: true}, // OOC regrowth casts
@@ -120,20 +120,37 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     }
 
     // Take care of any extras.
+    let newSwiftmendCD = druidBaseline.spellDB["Swiftmend"][0].cooldownData.cooldown;
     if (tierSets.includes("Druid T14-2")) {
       getSpellEntry(castProfile, "Rejuvenation").cost *= 0.9; // T14-2 - Rejuv cost reduction
     }
+
+    // Swiftmend sets
     if (tierSets.includes("Druid T14-4")) {
       // The CDR on Swiftmend is also a big deal for SotF. We should probably just move SotF code here. 
-      getSpellEntry(castProfile, "Swiftmend").cpm = 3.5 * 1.2; 
+      newSwiftmendCD -= 4;
+      updateSpellCPM(getSpellEntry(castProfile, "Swiftmend"), newSwiftmendCD);
+      //if (talents.soulOfTheForest.points === 1) updateSpellCPM(getSpellEntry(castProfile, "Wild Growth"), newCD);
     }
+    else if (tierSets.includes("Druid PVP-2")) {
+      newSwiftmendCD -= 2;
+      updateSpellCPM(getSpellEntry(castProfile, "Swiftmend"), newSwiftmendCD);
+      //if (talents.soulOfTheForest.points === 1) updateSpellCPM(getSpellEntry(castProfile, "Wild Growth"), newCD);
+    }
+    
+    if (talents.soulOfTheForest.points === 1) {
+      //
+      const wildGrowthPercentage = 0.8;
+      
+      updateSpellCPM(getSpellEntry(castProfile, "Wild Growth"), newSwiftmendCD);
+      //splitSpellCPM(castProfile, "Wild Growth", wildGrowthPercentage); // Split WG CPM
 
+      // Apply Haste bonus to our Wild Growth split.
+      getSpellEntry(castProfile, "Wild Growth").hasteBonus = 1;
+
+    }
 
     // Soul of the Forest
-    if (talents.soulOfTheForest.points === 1) {
-      const wildGrowthPercentage = 1;
-      getSpellEntry(druidBaseline.castProfile, "Wild Growth").hasteBonus = 1;
-    }
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -161,7 +178,15 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
         // Exception Cases
         
         // Regular cases
-        let spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Druid", userSettings);
+        let spellOutput = 0;
+        if (spellProfile.hasteBonus) {
+          spellOutput = runClassicSpell(spellName, spell, {...statPercentages, haste: statPercentages.haste * (1 + spellProfile.hasteBonus)}, "Restoration Druid", userSettings);
+          //console.log("Haste baseline: " + statPercentages.haste + " with bonus " + " = " + (statPercentages.haste * (1 + spellProfile.hasteBonus)));
+        }
+        else {
+          spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Druid", userSettings);
+        }
+        
 
 
         if (spellProfile.bonus) {
@@ -173,7 +198,6 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-
         score += (spellOutput * effectiveCPM);
 
         })
@@ -185,7 +209,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     // Handle HPS
     score += (60 * statProfile.hps || 0)
-    //printHealingBreakdownWithCPM(healingBreakdown, score, druidBaseline.castProfile);
+    //printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
 
     return {damage: 0, healing: score};
 }

@@ -31,6 +31,13 @@ export const itemSets: ItemSetData[] = [
       4: "Druid T14-4", 
     },
   },
+    {
+    id: 1105,
+    class: "Druid",
+    setBonuses: {
+      2: "Druid PVP-2", 
+    },
+  },
   {
     id: 1131,
     class: "Monk",

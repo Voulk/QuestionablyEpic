@@ -125,8 +125,6 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
       // Lower non-Spirit shell casts if we'll pause them during the cast
     })
 
-
-  
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
     let fillerCost = getSpellEntry(castProfile, "Smite").cost || 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;

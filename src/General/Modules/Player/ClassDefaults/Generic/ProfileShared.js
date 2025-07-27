@@ -73,6 +73,22 @@ export const getHasteClassic = (stats, hasteBuff = 1.05) => {
     return (1 + stats.haste / 425 / 100) * hasteBuff;
 }
 
+export const updateSpellCPM = (spellProfile, updatedCD) => {
+    //getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+    spellProfile.cpm = 60 / updatedCD * spellProfile.efficiency;
+}
+
+export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
+    // Split a spell's CPM into two entries.
+    const originalEntry = getSpellEntry(castProfile, spellName);
+    const clone = JSON.parse(JSON.stringify(originalEntry));
+
+    clone.cpm = originalEntry.cpm * (1 - splitPerc);
+    originalEntry.cpm = originalEntry.cpm * splitPerc;
+    
+    castProfile.push(clone);
+}
+
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
     const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
