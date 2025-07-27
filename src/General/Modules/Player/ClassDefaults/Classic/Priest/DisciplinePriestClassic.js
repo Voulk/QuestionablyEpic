@@ -41,7 +41,7 @@ export const discPriestDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["crit", "mastery", "spirit", "haste", "hit"],
+    autoReforgeOrder: ["crit", "spirit", "mastery", "haste", "hit"],
 
 }
 
