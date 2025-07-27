@@ -3,8 +3,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM, checkHasTalent } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
-import { LteMobiledata } from "@mui/icons-material";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM, checkHasTalent, updateSpellCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 
 export const holyPriestDefaults = {
@@ -127,8 +126,8 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     const adjustedCoHCD = specBaseline.spellDB["Circle of Healing"][0].cooldownData.cooldown -
                           ((chakraUptime['blue'] * 2)) -
                           (tierSets.includes("Priest T14-4") ? 4 : 0); // Tier Set    
-    getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
-
+    //getSpellEntry(castProfile, "Circle of Healing").cpm = 60 / adjustedCoHCD * getSpellEntry(castProfile, "Circle of Healing").efficiency;
+    updateSpellCPM(getSpellEntry(castProfile, "Circle of Healing"), adjustedCoHCD);
     
     // Apply Evangelism mana cost reduction.
     ["Smite", "Holy Fire"].forEach(spell => {

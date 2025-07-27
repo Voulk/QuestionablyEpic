@@ -306,7 +306,7 @@ function displayReport(result, player, contentType, currentLanguage, t, backgrou
                   </Grid>
 
                   <Grid item>
-                    <MenuDropdown handleClicked={handleExportMenuClick}/>
+                    <MenuDropdown handleClicked={handleExportMenuClick} gameType={gameType} />
                   </Grid>
                 </Grid>
                 </Grid>
