@@ -4,7 +4,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
@@ -53,7 +53,7 @@ export function initializeDruidSet(talents = druidTalents) {
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", efficiency: 0.9, bonus: 1.2},
+      {spell: "Swiftmend", efficiency: 0.8, bonus: 1.2},
       {spell: "Wild Growth", efficiency: 0.8},
       {spell: "Rejuvenation", cpm: 4, fillerSpell: true, castOverride: 1.0},
       {spell: "Regrowth", cpm: 0.8}, // Paid Regrowth casts
@@ -140,17 +140,17 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     
     if (talents.soulOfTheForest.points === 1) {
       //
-      const wildGrowthPercentage = 1;
+      const wildGrowthPercentage = 0.8;
       
       updateSpellCPM(getSpellEntry(castProfile, "Wild Growth"), newSwiftmendCD);
-      getSpellEntry(druidBaseline.castProfile, "Wild Growth").hasteBonus = 1;
+      //splitSpellCPM(castProfile, "Wild Growth", wildGrowthPercentage); // Split WG CPM
 
-      //console.log("Updating WG CPM to " + getSpellEntry(castProfile, "Wild Growth").cpm);
+      // Apply Haste bonus to our Wild Growth split.
+      getSpellEntry(castProfile, "Wild Growth").hasteBonus = 1;
+
     }
 
-
     // Soul of the Forest
-
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Druid");
@@ -181,6 +181,7 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
         let spellOutput = 0;
         if (spellProfile.hasteBonus) {
           spellOutput = runClassicSpell(spellName, spell, {...statPercentages, haste: statPercentages.haste * (1 + spellProfile.hasteBonus)}, "Restoration Druid", userSettings);
+          //console.log("Haste baseline: " + statPercentages.haste + " with bonus " + " = " + (statPercentages.haste * (1 + spellProfile.hasteBonus)));
         }
         else {
           spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Druid", userSettings);

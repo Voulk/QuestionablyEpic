@@ -131,10 +131,11 @@ const buildStatChart = (profile, playerData, testSettings) => {
       hps: 0,
     };
 
+
     const results = [];
     for (let i = 0; i < 5000; i += 20) {
         const init = profile.initializeSet(playerData.talents);
-        const score = profile.scoreSet(init, {...activeStats, 'haste': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
+        const score = profile.scoreSet(init, {...activeStats, 'crit': i}, testSettings, ["Druid T14-2", "Druid T14-4"]).healing;
         results.push(Math.round(score));
     }
     //console.log("==" + stat + "==")

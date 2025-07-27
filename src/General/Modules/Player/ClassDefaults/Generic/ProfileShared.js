@@ -78,6 +78,17 @@ export const updateSpellCPM = (spellProfile, updatedCD) => {
     spellProfile.cpm = 60 / updatedCD * spellProfile.efficiency;
 }
 
+export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
+    // Split a spell's CPM into two entries.
+    const originalEntry = getSpellEntry(castProfile, spellName);
+    const clone = JSON.parse(JSON.stringify(originalEntry));
+
+    clone.cpm = originalEntry.cpm * (1 - splitPerc);
+    originalEntry.cpm = originalEntry.cpm * splitPerc;
+    
+    castProfile.push(clone);
+}
+
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
     const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
 
