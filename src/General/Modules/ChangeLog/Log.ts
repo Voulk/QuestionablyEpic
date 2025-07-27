@@ -29,6 +29,7 @@ export const changeLog: entry[] = [
       "Report export options are now game type specific.",
       "MoP: Added a PVP auto-add button for conquest gear.",
       "New trinket entries: Vision of the Predator, Jade Magistrate Figurine",
+      "Bugfix: The Close Alternatives HPS number will now match the percentage.",
     ]},
   {
     version: "11.1.7 / 5.5",
