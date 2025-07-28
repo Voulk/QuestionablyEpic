@@ -83,7 +83,7 @@ export const PALADINSPELLDB = {
         type: "heal",
         castTime: 2,
         cost: 7,
-        coeff: 8.664, // 2.6 * 1.4,
+        coeff: 11.2632, // 2.6 * 1.4,
         expectedOverheal: 0.21,
         statMods: {'crit': 0, critEffect: 0},
         secondaries: ['crit', 'versatility', 'mastery']

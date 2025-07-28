@@ -62,6 +62,16 @@ const wowheadCodes = {
   2645: "[=retail-raid-tww-s2-mugzee]", // Mug'Zee
   2646: "[=retail-raid-tww-s2-gallywix]", // Chrome King Gallywix
 
+  2684: "[=retail-raid-tww-s3-plexus]", 
+  2686: "[=retail-raid-tww-s3-loomithar]", 
+  2685: "[=retail-raid-tww-s3-soulbinder]", 
+  2687: "[=retail-raid-tww-s3-forgeweaver]", 
+  2688: "[=retail-raid-tww-s3-soul-hunters]", 
+  2747: "[=retail-raid-tww-s3-fractillus]",
+  2690: "[=retail-raid-tww-s3-nexus-king]", 
+  2691: "[=retail-raid-tww-s3-dimensius]", 
+  
+
   // Dungeons
   1210: "[=retail-dun-darkflame-cleft]", // Darkflame Cleft
   1272: "[=retail-dun-cinderbrew-meadery]", // Cinderbrew Meadery
@@ -71,6 +81,13 @@ const wowheadCodes = {
   1178: "[=retail-dun-operation-mechagon-workshop]", // Workshop
   1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
   1187: "[=retail-dun-theater-pain]", // Theater of Pain
+
+  1194: "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
+  11941: "[=retail-dun-tazavesh-gambit]", // Tazavesh: The Gambit
+  1303: "[=retail-dun-echo-dome]", // 
+  1185: "[=retail-dun-halls-of-atonement]", // The Halls of Atonement
+  1270: "[=retail-dun-dawnbreaker]", // Dawnbreaker
+  1271: "[=retail-dun-ara-kara]", // Ara'kara
 
   // Classic
   // Dungeons
