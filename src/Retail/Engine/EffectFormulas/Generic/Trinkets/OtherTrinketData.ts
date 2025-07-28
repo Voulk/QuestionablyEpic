@@ -5,6 +5,59 @@ import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
     { 
+    name: "Chaotic Nethergate",
+    description: "",
+    effects: [
+      { // Damage effect
+        coefficient: 16.83968, 
+        table: -9,
+        ticks: 10,
+        targets: 1,
+        secondaries: ["crit", "versatility"], // Crit untested
+        cooldown: 120,
+        duration: 10,
+      },
+      { // Heal effect
+        coefficient: 7.016621, 
+        table: -9,
+        efficiency: 0.6,
+        targets: 8,
+        ticks: 10,
+        secondaries: ["crit", "versatility"], // Crit untested
+        cooldown: 120,
+        duration: 10,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Manaforged Aethercell",
+    description: "", // Check if procs can overlap.
+    effects: [
+      {
+        coefficient: 0.779299, 
+        table: -9,
+        duration: 15,
+        ppm: 2,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mastery = processedValue(data[0], itemLevel) / 2 * convertPPMToUptime(data[0].ppm!, data[0].duration!);
+
+      return bonus_stats;
+    }
+  },
+    { 
     name: "Twisted Mana Sprite",
     description: "",
     effects: [
@@ -26,14 +79,14 @@ export const otherTrinketData = [
     }
   },
     { 
-    name: "Essence-Hunter's Hourglass",
-    description: "Fairly easy to keep at 5 stacks but scales incorrectly so expect its ranking to change. Appears to be a Delve trinket.",
+    name: "Essence-Hunter's Eyeglass",
+    description: "",
     effects: [
       {
         coefficient: 0.04481, 
         table: -9, // ??
         stat: "crit",
-        stacks: 4.5,
+        stacks: 3,
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
