@@ -1,4 +1,4 @@
-import { autoAddItems, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypesBySpec, getValidArmorTypes } from "General/Engine/ItemUtilities";
+import { autoAddItems, calcStatsAtLevel, calcStatsAtLevelClassic, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypesBySpec, getValidArmorTypes } from "General/Engine/ItemUtilities";
 import Item from "General/Items/Item";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
@@ -89,6 +89,7 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   let bonusIDS = "";
   let suffix = 0;
   let suffixAllocation = 0;
+  let itemAllocations = {};
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -130,8 +131,8 @@ function processItem(line, player, contentType, useChallengeMode = false) {
 
   // Process Item Suffix
   
-  if (suffix && suffixAllocation) {
-    //itemBonusStats = getSuffixAllocation(suffix, suffixAllocation);
+  if (suffix && suffix in suffixDB) {
+    itemAllocations = suffixDB[suffix]//{intellect: 5259, crit: 3506, haste: 3506}//getSuffixAllocation(suffix, suffixAllocation);
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -166,6 +167,10 @@ function processItem(line, player, contentType, useChallengeMode = false) {
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;
     item.stats = compileStats(item.stats, itemBonusStats);
+
+    if (Object.keys(itemAllocations).length > 0) {
+      item.stats = calcStatsAtLevelClassic(itemID, itemLevel, itemAllocations);
+    }
     
     item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");

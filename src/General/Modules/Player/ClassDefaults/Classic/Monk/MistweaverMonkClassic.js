@@ -128,6 +128,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
   const statPercentages = convertStatPercentages({...statProfile, haste: statProfile.haste * 1.5}, hasteBuff, spec, playerRace);
+  statPercentages.hitChance = Math.min(1, 0.85 + (statProfile.spirit - 190) / 340 / 100); // Serpent converts at a 50% rate, but we get both hit and expertise.
   let masteryOrbsGenerated = 0;
   reportingData.statPercentages = statPercentages;
 
@@ -165,7 +166,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const averageRemCount = castProfile.filter(spell => spell.spell === "Renewing Mist")[0]['cpm'] * renewingMistDuration * 3 / 60;
 
     // Melee swings (proc Eminence)
-    const meleeWastage = 0.8;
+    const meleeWastage = 0.75;
     getSpellEntry(castProfile, "Melee").cpm = (60 / (isTwoHander ? statProfile.weaponSwingSpeed / 1.4 : statProfile.weaponSwingSpeed)) * meleeWastage * statPercentages.haste; 
     if (!isTwoHander) getSpellEntry(castProfile, "Melee").bonus = 1.7;
 
@@ -247,7 +248,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         if (spell.type === "damage" || spell.buffType === "damage") {
           // Beastslaying
-          const damage = (spellOutput * effectiveCPM);
+          let damage = (spellOutput * effectiveCPM);
+          if (["Melee", "Blackout Kick", "Tiger Palm", "Jab"].includes(spellName)) {
+            damage *= (statPercentages.hitChance);
+          }
           damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + damage;
           totalDamage += damage;
 
