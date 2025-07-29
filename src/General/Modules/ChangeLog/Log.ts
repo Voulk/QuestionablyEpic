@@ -27,6 +27,7 @@ export const changeLog: entry[] = [
       "Classic: Added Blacksmithing support.",
       "Classic: MoP items with suffixes should now import.",
       "Classic: Added a setting to ignore enchants.",
+      "Classic: Improved ReforgeLite export.",
     ]},
   {
     version: "11.1.7 / 5.5",
