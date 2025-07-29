@@ -126,7 +126,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
       // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
       else if (reforgeSetting === "Smart" && (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic")) {
 
-        const secondaryRank = ["spirit", "mastery", "crit", "hit"]
+        const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit", "hit"] : ["crit", "spirit", "mastery", "hit"];
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
         if (itemStats.includes("haste")) {
           
@@ -515,6 +515,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     else if (player.spec === "Discipline Priest Classic") {
       //setStats.intellect *= 1.15; // Spec passive.
     }
+    
     else if (player.spec === "Mistweaver Monk Classic") {
       // Monks require us to provide some information on our weapon too.
       const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
