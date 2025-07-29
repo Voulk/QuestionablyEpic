@@ -114,8 +114,8 @@ class ItemSet {
       } :
       {
         spellpower: 0,
-        intellect: 156, // Technically changes per race.
-        spirit: 173, // Technically changes per race.
+        intellect: 169, // Technically changes per race.
+        spirit: 188, // Technically changes per race.
         hps: 0,
         mp5: 0,
       }
