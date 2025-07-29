@@ -785,7 +785,7 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
  * - Note that crafted items appear to be bugged and the secondary penalty is taken almost at random. This will need to be investigated further later.
  */
 
-export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, statAllocations: any*/) {
+export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemAllocations: any = null) {
   let combat_mult = 0;
 
   let stats: Stats = {}; 
@@ -793,12 +793,12 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
   const slot = itemData.slot;
   // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
 
-  if (itemLevel === itemData.itemLevel) {
+  if (itemLevel === itemData.itemLevel && (itemAllocations === null)) {
     return itemData.stats;
   }
 
   // An item is using a custom item level, so we'll calculate its stats using a scaling formula.
-  const statAllocations = itemData.allocations;
+  const statAllocations = itemAllocations ? itemAllocations : itemData.allocations;
   let gemCount = 0;
   let penalties: Stats = {};
   if (itemData.sockets && itemData.sockets.gems.length > 0) {

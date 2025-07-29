@@ -251,7 +251,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
     const topGearGems = {};  // {itemID: [gems]}
 
-
+    //console.log(itemList.reduce((accumulator, item) => accumulator + item.classicSockets.sockets.length, 0) + " sockets to fill."); 
     const gemResults = [];
     const gemScores = {};
 
@@ -262,10 +262,11 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       });
       return score;
     }
-
+    
       // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
+        
         if (item.classicSockets.sockets.length > 0) {
           let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel" && gem !== "sha")).length; // Check for any already socketed gems.
           item.socketedGems = [];
@@ -282,7 +283,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
           if (pairedStrat >= pureReds || (gemSetting === "Prefer Match" && socketBonus)) {
             item.classicSockets.sockets.forEach(socket => {
               //if (socket === "meta") item.socketedGems.push(metaGemID);
-              if (socket === "red") item.socketedGems.push(redGemID);
+              if (socket === "red" || socket === "prismatic") item.socketedGems.push(redGemID);
               else if (socket === "yellow") { 
                 if (hasteGemsNeeded > 0) {
                   item.socketedGems.push(hasteGemID);
@@ -388,7 +389,6 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
 
     // Remove gems from items and add to dictionary instead.
     
-
     return {stats: compiledGems, gems: topGearGems};
 }
 
