@@ -437,6 +437,10 @@
           "title": "Glove Enchant",
           "tooltip": ""
         },
+        "includeEnchants": {
+          "title": "Include Enchants",
+          "tooltip": "Whether or not to include enchants."
+        },
 
         "numManaTides": {
           "title": "Mana Tide #",

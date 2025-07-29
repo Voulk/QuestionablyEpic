@@ -72,7 +72,17 @@ function setupPlayer(player, contentType, castModel) {
 // This function will build our sets for us. 
 export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn, reforgeFromOptions, reforgeToOptions) {
   let itemList = deepCopyFunction(rawItemList); // Here we duplicate the users items so that nothing is changed during the process. 
-   
+  
+  // Blacksmithing
+  if (getSetting(playerSettings, 'professionOne') === "Blacksmithing" || getSetting(playerSettings, 'professionTwo') === "Blacksmithing") {
+    const itemsToSocket = itemList.filter(item => item.slot === "Hands" || item.slot === "Wrist");
+
+    itemsToSocket.forEach(item => {
+      item.classicSockets.sockets.push('prismatic');
+    });
+
+  }
+
   // == Handle Reforging ==
   // The comprehensive way to Reforge is to test every variation. There are five for each item, ignoring DPS-centric stats.
   // You can't reforge to a stat already on an item. So your combinations are:
@@ -202,7 +212,7 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     }
     itemSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
     itemSets = pruneItems(itemSets);
-
+    
     return itemSets;
     
     // Build Differentials
@@ -234,8 +244,8 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
 
 function compileSetStats(itemSet) {
   let setStats = {spellpower: 0,
-    intellect: 156, // Technically changes per race.
-    spirit: 173, // Technically changes per race.
+    intellect: 169, // Technically changes per race.
+    spirit: 190, // Technically changes per race.
     mp5: 0,
     hps: 0,
     crit: 0,
@@ -302,8 +312,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     let builtSet = compileSetStats(itemSet);// itemSet.compileStats("Classic");
     let setStats = builtSet.setStats;
-
-   
 
     let hardScore = 0;
     const setBonuses = builtSet.sets;
@@ -456,7 +464,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
    let adjusted_weights = {...castModel.defaultStatWeights}
 
    // Enchants
-    if (true) {
+    if (getSetting(playerSettings, "includeEnchants") === "Yes") {
       const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
       enchant_stats = enchantInfo.enchantStats;
       enchants = enchantInfo.enchants;
