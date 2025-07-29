@@ -199,9 +199,9 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
         if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
         else if (item.source.instanceId === -1) {
           const instanceID = item.source.encounterId;
-          if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
+          if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
           else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-          else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
+          else if ([1194, 11941, 1185].includes(instanceID)) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
         }
         else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
       }
