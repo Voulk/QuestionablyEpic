@@ -86,7 +86,7 @@ export const otherTrinketData = [
         coefficient: 0.04481, 
         table: -9, // ??
         stat: "crit",
-        stacks: 2.8,
+        stacks: 2.6,
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
