@@ -34,6 +34,7 @@ export const buildEvokerChartData = (activeStats) => {
     const sequences = [
         {cat: "Base Spells", tag: "Spiritbloom R4", seq: ["Spiritbloom"], preBuffs: []},
         {cat: "Base Spells", tag: "Dream Breath R1", seq: ["Dream Breath"], preBuffs: []},
+        {cat: "Base Spells", tag: "Living Flame", seq: ["Living Flame"], preBuffs: []},
         {cat: "Base Spells", tag: "Emerald Blossom", seq: ["Emerald Blossom"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace", seq: ["Verdant Embrace"], preBuffs: []},
         {cat: "Base Spells", tag: "Temporal Anomaly", seq: ["Temporal Anomaly"], preBuffs: []}, 
@@ -42,7 +43,7 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Base Spells", tag: "Consume Flame", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame"},
         {cat: "Base Spells", tag: "Consume Flame (CoY)", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame", multiplier: 1.4},
         {cat: "Base Spells", tag: "Consume Flame (CoY + 4pc)", seq: ["Engulf"], preBuffs: ["Dream Breath"], filterSpell: "Consume Flame", multiplier: 1.4 * 1.4},
-
+        {cat: "Base Spells", tag: "Essence Bomb", seq: ["Essence Bomb"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Dream Breath", seq: ["Verdant Embrace", "Dream Breath"], preBuffs: []},
         {cat: "Base Spells", tag: "Verdant Embrace -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: []},
         
@@ -53,9 +54,10 @@ export const buildEvokerChartData = (activeStats) => {
         {cat: "Consumed Echo", tag: "E Reversion", seq: ["Reversion"], preBuffs: ["Echo"], iterations: 2000},
         {cat: "Consumed Echo", tag: "E Living Flame", seq: ["Living Flame"], preBuffs: ["Echo"]},
 
-        {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo 8", "Temporal Compression"]},
-        {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo 8"]},
-        {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo 8"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Spiritbloom", seq: ["Verdant Embrace", "Spiritbloom"], preBuffs: ["Echo"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Living Flame", seq: ["Verdant Embrace", "Living Flame"], preBuffs: ["Echo"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Engulf x2", seq: ["Verdant Embrace", "Engulf", "Engulf"], preBuffs: ["Echo"]},
+        {cat: "Lifebind Ramps", tag: "VE -> Emerald Communion", seq: ["Verdant Embrace", "Emerald Communion"], preBuffs: ["Echo"]},
 
         //{cat: "APLs", tag: "Blossom Auto", seq: ["Rest"], preBuffs: []},
         //{cat: "APLs", tag: "Reversion Auto", seq: ["Rest"], preBuffs: []},

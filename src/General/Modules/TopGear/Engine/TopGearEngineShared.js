@@ -48,7 +48,7 @@ export const generateReportCode = () => {
       items: [],
       gems: [],
       scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-      rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
+      rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore)))/* * player.getHPS(contentType))*/,
     };
   
     for (var x = 0; x < diffList.length; x++) {
@@ -208,7 +208,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     }
 
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
-    const yellowGemID = yellowOptions[statOrder.find(stat => ['haste', 'mastery', 'crit'].includes(stat))]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
+    const gemSetting = getSetting(playerSettings, "classicGems");
+    const bestSecondary = statOrder.find(stat => ['haste', 'crit', 'mastery'].includes(stat));
+    const yellowGemID = yellowOptions[bestSecondary]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
     const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
     const redGemID = 76694; // Pure int but look into hybrids
@@ -240,15 +242,16 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     // Add a check to see if it can get there with the oranges available.
 
     const socketScores = {red: adjusted_weights.intellect * gemBudget, 
+                          prismatic: adjusted_weights.intellect * gemBudget,
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
-                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.haste * gemBudget,
+                          yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights[bestSecondary] * gemBudget,
                         sha: adjusted_weights.intellect * 500 }
     //console.log("Haste gems needed: " + hasteGemsNeeded);
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
     // If running either: cycle through any mandatory yellows from Haste breakpoints.
     const topGearGems = {};  // {itemID: [gems]}
 
-
+    //console.log(itemList.reduce((accumulator, item) => accumulator + item.classicSockets.sockets.length, 0) + " sockets to fill."); 
     const gemResults = [];
     const gemScores = {};
 
@@ -259,10 +262,11 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       });
       return score;
     }
-
+    
       // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
+        
         if (item.classicSockets.sockets.length > 0) {
           let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel" && gem !== "sha")).length; // Check for any already socketed gems.
           item.socketedGems = [];
@@ -274,16 +278,12 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
           
           const pureReds = gemsToSocket * socketScores.red;
           const pairedStrat = item.classicSockets.sockets.reduce((accumulator, socket) => accumulator + socketScores[socket] || 0, 0) + socketBonus;
-
-          if (pureReds >= pairedStrat) {
-            item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
-            gemScores[index] = pureReds;
-          } 
-          else {
-            
+          //if (item.id === 87019) console.log("Item: " + JSON.stringify(item.classicSockets) + " | Pure Reds: " + pureReds + " | Paired Strategy: " + pairedStrat + " | Gems to socket: " + socketBonus + " " + JSON.stringify(socketScores));
+          
+          if (pairedStrat >= pureReds || (gemSetting === "Prefer Match" && socketBonus)) {
             item.classicSockets.sockets.forEach(socket => {
               //if (socket === "meta") item.socketedGems.push(metaGemID);
-              if (socket === "red") item.socketedGems.push(redGemID);
+              if (socket === "red" || socket === "prismatic") item.socketedGems.push(redGemID);
               else if (socket === "yellow") { 
                 if (hasteGemsNeeded > 0) {
                   item.socketedGems.push(hasteGemID);
@@ -295,6 +295,10 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
             })
             gemScores[index] = pairedStrat;
           }
+          else {
+            item.socketedGems.push(...Array(gemsToSocket).fill(redGemID));
+            gemScores[index] = pureReds;
+          } 
         }
       });
       // == Check yellow replacements ==
@@ -385,7 +389,6 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
 
     // Remove gems from items and add to dictionary instead.
     
-
     return {stats: compiledGems, gems: topGearGems};
 }
 

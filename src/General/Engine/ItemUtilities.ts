@@ -785,7 +785,7 @@ export function buildWepCombos(player: Player, active: boolean = false, equipped
  * - Note that crafted items appear to be bugged and the secondary penalty is taken almost at random. This will need to be investigated further later.
  */
 
-export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, statAllocations: any*/) {
+export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemAllocations: any = null) {
   let combat_mult = 0;
 
   let stats: Stats = {}; 
@@ -793,12 +793,12 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number/*, sta
   const slot = itemData.slot;
   // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
 
-  if (itemLevel === itemData.itemLevel) {
+  if (itemLevel === itemData.itemLevel && (itemAllocations === null)) {
     return itemData.stats;
   }
 
   // An item is using a custom item level, so we'll calculate its stats using a scaling formula.
-  const statAllocations = itemData.allocations;
+  const statAllocations = itemAllocations ? itemAllocations : itemData.allocations;
   let gemCount = 0;
   let penalties: Stats = {};
   if (itemData.sockets && itemData.sockets.gems.length > 0) {
@@ -1036,7 +1036,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (item.id === 228411 || item.id === 235499) sourceCheck = true;
+      if (item.id === 235499) sourceCheck = true;
       else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 620) sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
@@ -1206,7 +1206,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 100000 * player.getHPS(contentType);
+      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 120000 * player.getHPS(contentType);
     }
   }
 

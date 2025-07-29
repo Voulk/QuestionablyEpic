@@ -66,7 +66,8 @@ const initialState : RootState = {
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     professionTwo: {value: "Engineering", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
-
+    classicGems: {value: "Prefer Match", options: ["Prefer Match", "Prefer Optimal"], category: "topGear", type: "selector", gameType: "Classic"},
+    includeEnchants: {value: "Yes", options: ["Yes", "No"], category: "topGear", type: "selector", gameType: "Classic"},
     
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},

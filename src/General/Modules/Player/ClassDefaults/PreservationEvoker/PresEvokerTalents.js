@@ -234,7 +234,7 @@ export const applyLoadoutEffects = (evokerSpells, settings, talents, state, stat
     //applyChronowarden(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
     applyFlameshaper(evokerSpells, settings, talents, state, stats, EVOKERCONSTANTS);
    
-    if (true /*settings.t2_4*/) {
+    if (false /*settings.t2_4*/) {
         const insuranceHoT = {...evokerSpells["Insurance"][0]};
         insuranceHoT.buffDuration = 6;
 
@@ -431,6 +431,11 @@ export const applyFlameshaper = (evokerSpells, settings, talents, state, stats, 
         evokerSpells["Dream Breath"][1].coeff[2] *= 1.3;
         evokerSpells["Dream Breath"][1].coeff[3] *= 1.3;
         evokerSpells["Dream Breath"][2].coeff *= 1.3;
+    }
+
+    // Fulminous Roar
+    if (true) {
+        evokerSpells["Dream Breath"][2].tickData.tickRate *= 0.8;
     }
 
     // Red Hot
