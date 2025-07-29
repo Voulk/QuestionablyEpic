@@ -3,6 +3,7 @@
 
 // Sample ReforgeLite export:
 
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import Item from "General/Items/Item";
 import Player from "General/Modules/Player/Player";
 import { getTranslatedSlotName } from "locale/slotsLocale";
@@ -185,11 +186,13 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
                     [/ul][/td][td][url guide=27805]Siren Isle[/url][/td][/tr]`
                     )
     }
+    else if (item.id === 235499) results.push(`[tr][td]Cape[/td][td][item=235499][/td][td][=reshii-wraps-source][/td][/tr]`);
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
       else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
       else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
       else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
+      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && item.source.instanceId === CONSTANTS.currentRaidID && item.setID > 0) source = "[=retail-links-tier-" + item.slot.toLowerCase() + "]";
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
@@ -205,7 +208,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
 
     }
     
-    if (item.id !== 228411 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
+    if (item.id !== 228411 && item.id !== 235499 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
     else if (gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
     })
   results.push(`[/table][/center]`)

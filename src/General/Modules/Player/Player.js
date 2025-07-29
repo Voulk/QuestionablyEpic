@@ -253,13 +253,20 @@ export class Player {
     const slot = item.slot;
     const pClass = this.spec;
     const classTag = {
-      "Holy Priest": "Confessor's Unshakable",
+      /*"Holy Priest": "Confessor's Unshakable",
       "Discipline Priest": "Confessor's Unshakable",
       "Restoration Druid": "of Reclaiming Blight",
       "Restoration Shaman": "Gale Sovereign's",
       "Mistweaver Monk": "Ageless Serpent's",
       "Holy Paladin": "Aureate Sentry's",
-      "Preservation Evoker": "Opulent Treasurescale's",
+      "Preservation Evoker": "Opulent Treasurescale's",*/
+      "Preservation Evoker": "Spellweaver's Immaculate", 
+      "Holy Paladin": "of the Lucent Battalion", 
+      "Holy Priest": "Dying Star's", 
+      "Discipline Priest": "Dying Star's", 
+      "Restoration Shaman": "of Channeled Fury", 
+      "Mistweaver Monk": "of Fallen Storms", 
+      "Restoration Druid": "of the Mother Eagle"
     };
 
     const temp = getItemDB("Retail").filter(function (item) {
