@@ -23,5 +23,13 @@ export const suffixDB: Record<number, Record<string, number>> = {
     53: {stamina: 0.3193, intellect: 0.4106, spelldamage: 0.8501}, // Vision
     58: {stamina: 0.5259, spelldamage: 0.6153}, // Sun
 
+    129: {intellect: 5259, hit: 3506, crit: 3506},  // Stormrider
+    130: {intellect: 5259, crit: 3506, haste: 3506},  // Fireflash
+    131: {intellect: 5259, spirit: 3506, haste: 3506},  // Undertow
+    132: {intellect: 5259, spirit: 3506, mastery: 3506},  // Wavecrest
+    138: {intellect: 5259, haste: 3506, mastery: 3506},  // Feverflare
+
+    183: {intellect: 4638, hit: 3205, crit: 3205},  // Wildfire
+    
     //230: Feverflare
 }

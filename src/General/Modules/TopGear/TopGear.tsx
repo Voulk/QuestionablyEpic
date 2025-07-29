@@ -603,7 +603,9 @@ export default function TopGear(props: any) {
             result.itemsCompared = 999;
             result.id = generateReportCode();
 
+            // Blacksmithing Sockets
             
+
             const shortResult = shortenReport(result, props.player);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);

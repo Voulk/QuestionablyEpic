@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.1.7 / 5.5",
+    update: 3,
+    date: "July 28",
+    changes: [ 
+      "Classic: Added Blacksmithing support.",
+      "Classic: MoP items with suffixes should now import.",
+      "Classic: Added a setting to ignore enchants.",
+    ]},
   {
     version: "11.1.7 / 5.5",
     update: 2,
