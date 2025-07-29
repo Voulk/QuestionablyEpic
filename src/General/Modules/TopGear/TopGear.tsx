@@ -420,7 +420,6 @@ export default function TopGear(props: any) {
   };
 
   const shortenReport = (report: TopGearResult, player: Player) => {
-
     if (report) {
       const shortReport: ShortReport = {id: report.id, 
         differentials: report.differentials, 
@@ -603,8 +602,13 @@ export default function TopGear(props: any) {
             result.itemsCompared = 999;
             result.id = generateReportCode();
 
-            // Blacksmithing Sockets
+            // Fix Reforges
+            const reforges = result.itemSet.reforges || {};
             
+            result.itemSet.itemList.forEach((item: Item) => {
+              if (!reforges[item.id] && item.flags.length > 0 && item.flags[0].includes("Reforged")) reforges[item.id] = item.flags[0];
+              
+            });
 
             const shortResult = shortenReport(result, props.player);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.

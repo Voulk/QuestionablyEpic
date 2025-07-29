@@ -18,7 +18,7 @@ export const exportReforgeLite = (player: Player, itemSet: Item[], reforges: any
         items: itemSet.map(item => {
           const itemData = {
             id: item.id,
-            enchant: item.enchantID || 0,
+            //enchant: item.enchantID || 0,
             gems: item.socketedGems ? item.socketedGems : [],
           };
           if (reforges[item.id]) itemData.reforging = reforgeIDs[reforges[item.id]];
