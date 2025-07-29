@@ -185,7 +185,7 @@ describe("getValidWeaponTypes func", () => {
 
 describe("Classic Item Allocations func", () => {
   test("Mask of Screaming Secrets", () => {
-    const stats = calcStatsAtLevelClassic(86160, 496, "Chest"/*, statAllocations: any*/)
+    const stats = calcStatsAtLevelClassic(86160, 496/*, statAllocations: any*/)
     
 
     expect(stats.spirit).toEqual(735);

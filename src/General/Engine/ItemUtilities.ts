@@ -793,7 +793,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
   const slot = itemData.slot;
   // If an item matches its item level then just return that. We'll only use our scaling formula if required. We'd like to use it always but items are bugged.
 
-  if (itemLevel === itemData.itemLevel && !itemAllocations) {
+  if (itemLevel === itemData.itemLevel && itemAllocations !== null) {
     return itemData.stats;
   }
 
