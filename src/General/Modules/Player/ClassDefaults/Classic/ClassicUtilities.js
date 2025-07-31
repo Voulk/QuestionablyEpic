@@ -61,8 +61,8 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if ('cooldownData' in spellInfo && spellInfo.cooldownData.cooldown) spellInfo.cooldownData.activeCooldown = 0;
+       
         if (spellInfo.cost) spellInfo.cost = spellInfo.cost * baseMana[state.spec] / 100;
-
         if (settings.includeOverheal === "No") {
             value.forEach(spellSlice => {
                 if ('expectedOverheal' in spellSlice) spellSlice.expectedOverheal = 0;
