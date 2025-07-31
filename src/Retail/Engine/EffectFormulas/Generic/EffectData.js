@@ -25,7 +25,7 @@ export const effectData = [
     name: "Reshii Wraps",
     effects: [
       {
-        coefficient: 26.73886, 
+        coefficient: 75.3012, 
         table: -9,
         ppm: 2,
         efficiency: 0.95, // Converts to absorb so high efficiency.

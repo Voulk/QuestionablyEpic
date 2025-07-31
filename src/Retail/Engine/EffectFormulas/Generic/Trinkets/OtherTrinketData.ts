@@ -42,8 +42,8 @@ export const otherTrinketData = [
     description: "", // Check if procs can overlap.
     effects: [
       {
-        coefficient: 0.779299, 
-        table: -9,
+        coefficient: 2.090432, 
+        table: -7,
         duration: 15,
         ppm: 2,
         stat: "mastery",
@@ -83,8 +83,8 @@ export const otherTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 0.04481, 
-        table: -9, // ??
+        coefficient: 0.12025, 
+        table: -7, // 
         stat: "crit",
         stacks: 2.6,
       },
