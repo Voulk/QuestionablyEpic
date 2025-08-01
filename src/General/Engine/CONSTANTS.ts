@@ -40,7 +40,7 @@ export const CONSTANTS = {
     },
     seasonID: 25,
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
-    classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", /*"Restoration Shaman Classic",*/ "Mistweaver Monk Classic"],
+    classicSpecs: ["Restoration Druid Classic", /*"Holy Paladin Classic",*/  "Discipline Priest Classic", "Holy Priest Classic", /*"Restoration Shaman Classic",*/ "Mistweaver Monk Classic"],
 
     qualityColors: {
         3: "#328CE3",
