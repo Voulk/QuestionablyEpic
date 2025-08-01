@@ -28,7 +28,7 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     if (professions.includes("Inscription")) {
         enchantStats.intellect! += 520;
         enchantStats.crit! += 100;
-        enchants['Shoulder'] = "Inscription"
+        enchants['Shoulder'] = "Secret Crane Wing Inscription"
     }
     else {
         enchantStats.intellect! += 200;
