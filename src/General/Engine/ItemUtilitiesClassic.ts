@@ -8,7 +8,7 @@ export function filterClassicItemListBySource(itemList: any[], sourceInstance: n
     return temp;
   } 
 
-export const getEnchants = (playerSettings: any, professions: string[], offhandFlag: boolean) => {
+export const getEnchants = (playerSettings: any, professions: string[], offhandFlag: boolean, spec: string) => {
     const enchants = {};
     const enchantStats: Stats = {
         intellect: 0,
@@ -27,7 +27,7 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     // Shoulders
     if (professions.includes("Inscription")) {
         enchantStats.intellect! += 520;
-        enchantStats.haste! += 100;
+        enchantStats.crit! += 100;
         enchants['Shoulder'] = "Inscription"
     }
     else {
@@ -67,9 +67,17 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     }
 
     // Pants
-    enchantStats.spellpower! += 285;
-    enchantStats.spirit! += 165;
-    enchants['Legs'] = "Powerful Pearlescent Spellthread"
+    if (spec.includes("Mistweaver Monk")) {
+        enchantStats.spellpower! += 285;
+        enchantStats.crit! += 165;
+        enchants['Legs'] = "Greater Cerulean Spellthread"
+    }
+    else {
+        enchantStats.spellpower! += 285;
+        enchantStats.spirit! += 165;
+        enchants['Legs'] = "Greater Pearlescent Spellthread"
+    }
+
 
     // Boots
     enchantStats.mastery! += 140;
