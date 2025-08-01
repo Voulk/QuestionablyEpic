@@ -227,17 +227,19 @@ export const buildClassicPaladinChartData = (activeStats, baseTalents) => {
     //
     let results = [];
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Paladin"};
+    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, spec: "Holy Paladin", hasteBuff: {value: "Haste Aura"}, strictSeq: true};
+    const db = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: baseTalents, spec: "Holy Paladin"});
+
 
     const sequences = [
-        {cat: "Base Spells", tag: "Holy Shock", seq: ["Holy Shock"], preBuffs: ["Judgements of the Pure"]},
-        {cat: "Base Spells", tag: "Holy Light", seq: ["Holy Light"], preBuffs: ["Judgements of the Pure"]},
-        {cat: "Base Spells", tag: "Divine Light", seq: ["Divine Light"], preBuffs: ["Judgements of the Pure"]},
-        {cat: "Base Spells", tag: "Flash of Light", seq: ["Flash of Light"], preBuffs: ["Judgements of the Pure"]},
-        {cat: "Base Spells", tag: "Holy Radiance", seq: ["Holy Radiance"], preBuffs: ["Judgements of the Pure"]},
+        {cat: "Base Spells", tag: "Holy Shock", seq: ["Holy Shock"], preBuffs: []},
+        {cat: "Base Spells", tag: "Holy Light", seq: ["Holy Light"], preBuffs: []},
+        {cat: "Base Spells", tag: "Divine Light", seq: ["Divine Light"], preBuffs: []},
+        {cat: "Base Spells", tag: "Flash of Light", seq: ["Flash of Light"], preBuffs: []},
+        {cat: "Base Spells", tag: "Holy Radiance", seq: ["Holy Radiance"], preBuffs: []},
 
-        {cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: ["Judgements of the Pure"]},
-        {cat: "Spenders", tag: "Word of Glory", seq: ["Word of Glory"], preBuffs: ["Judgements of the Pure"]},
+        {cat: "Spenders", tag: "Light of Dawn", seq: ["Light of Dawn"], preBuffs: []},
+        {cat: "Spenders", tag: "Word of Glory", seq: ["Word of Glory"], preBuffs: []},
 /*
         {cat: "Package", tag: "Swiftmend, WG, Lifebloom, Rejuv filler", seq: [], preBuffs: [], details: {
             "Swiftmend": 4,
@@ -265,12 +267,14 @@ export const buildClassicPaladinChartData = (activeStats, baseTalents) => {
             })
             
             results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));        }
+        else if (newSeq.length > 1 || sequence.type === "Sim") {
+            // All multi-target based.
+            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, null, runCastSequence));
+        }
         else {
             // All sequence based.
-            const filterSpell = sequence.cat === "Consumed Echo" ? "Echo)" : sequence.cat === "Lifebind Ramps" ? "Lifebind" : null;
-            results.push(buildChartEntry(sequence, spellData, newSeq, activeStats, testSettings, baseTalents, filterSpell, runCastSequence));
-
-            
+            const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
+            results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, discPriestDefaults.scoreSet));
 
         };  
     }); 

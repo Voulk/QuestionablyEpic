@@ -33,11 +33,11 @@ const GLOBALCONST = {
     },
 
     baseMana: { // This doesn't vary by spec anymore. It could be merged into one value.
-        "Holy Paladin": 300000,
+        "Holy Paladin": 60000,
         "Restoration Druid": 300000,
         "Discipline Priest": 300000,
         "Holy Priest": 300000,
-        "Restoration Shaman": 300000,
+        "Restoration Shaman": 60000,
         "Mistweaver Monk": 300000,
     }
 

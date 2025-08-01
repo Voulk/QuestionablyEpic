@@ -112,79 +112,80 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
   
     const totalManaPool = manaPool + regen + petRegen;
   
+    if (!userSettings.strictSeq) {
 
-    // Handle our filler casts. 
-    // We'll probably rework this to be a package.
-    let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.85;
-  
+      // Handle our filler casts. 
+      // We'll probably rework this to be a package.
+      let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+      const fillerWastage = 0.85;
 
-    let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
-
-    // Standard package
-
+      
     
-    const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
-    const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
-    const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
-    timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
-  
-    let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
-    reportingData.manaRemaining = manaRemaining;
-    reportingData.manaPool = totalManaPool;
-  
-  
-      castProfile.forEach(spellProfile => {
-          const fullSpell = specBaseline.spellDB[spellProfile.spell];
-          const spellName = spellProfile.spell;
-  
-          fullSpell.forEach(spell => {
-  
-          // Exception Cases
-          
-          // Regular cases
-          if (spell.type === "buff" && spell.buffType === "special") return; 
-          let spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
-          let rawHeal = 0;
-  
-          if (spellProfile.bonus) {
-            spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
-          }
-  
-          const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
-  
-          castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
-          if (spell.type === "damage" || spell.buffType === "damage") {
-            damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-            totalDamage += (spellOutput * effectiveCPM); // 
-  
-          }
-          else {
-            healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-            totalHealing += (spellOutput * effectiveCPM);
-            rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
-          }
-  
-  
+      let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
 
-          if (rawHeal > 0) {
-              // Illuminated Healing
-              const illuminatedHealing = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
-              healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
-              totalHealing += illuminatedHealing;
+      // Standard package
+      const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+      const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
+      const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+      timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
+    
+      let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
+      reportingData.manaRemaining = manaRemaining;
+      reportingData.manaPool = totalManaPool;
+    
+    
+        castProfile.forEach(spellProfile => {
+            const fullSpell = specBaseline.spellDB[spellProfile.spell];
+            const spellName = spellProfile.spell;
+    
+            fullSpell.forEach(spell => {
+    
+            // Exception Cases
+            
+            // Regular cases
+            if (spell.type === "buff" && spell.buffType === "special") return; 
+            let spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
+            let rawHeal = 0;
+    
+            if (spellProfile.bonus) {
+              spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+            }
+    
+            const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+    
+            castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
+            if (spell.type === "damage" || spell.buffType === "damage") {
+              damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+              totalDamage += (spellOutput * effectiveCPM); // 
+    
+            }
+            else {
+              healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+              totalHealing += (spellOutput * effectiveCPM);
+              rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
+            }
+    
+    
 
-              // Beacon of Light
-              
-          }
-  
-          // Power Word: Shield on the other hand just has a straightforward crit multipler and can be handled like normal.
-  
-  
-          })
-  
-          // Filler mana
-  
-      })
+            if (rawHeal > 0) {
+                // Illuminated Healing
+                const illuminatedHealing = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
+                healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
+                totalHealing += illuminatedHealing;
+
+                // Beacon of Light
+                
+            }
+    
+            // Power Word: Shield on the other hand just has a straightforward crit multipler and can be handled like normal.
+    
+    
+            })
+    
+            // Filler mana
+    
+        })
+    }
   
       // Add any natural HPS we have on the set.
       totalHealing += (60 * statProfile.hps || 0)

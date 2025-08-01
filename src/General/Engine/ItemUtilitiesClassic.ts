@@ -8,7 +8,7 @@ export function filterClassicItemListBySource(itemList: any[], sourceInstance: n
     return temp;
   } 
 
-export const getEnchants = (playerSettings: any, professions: string[], offhandFlag: boolean) => {
+export const getEnchants = (playerSettings: any, professions: string[], offhandFlag: boolean, spec: string) => {
     const enchants = {};
     const enchantStats: Stats = {
         intellect: 0,
@@ -27,8 +27,8 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     // Shoulders
     if (professions.includes("Inscription")) {
         enchantStats.intellect! += 520;
-        enchantStats.haste! += 100;
-        enchants['Shoulder'] = "Inscription"
+        enchantStats.crit! += 100;
+        enchants['Shoulder'] = "Secret Crane Wing Inscription"
     }
     else {
         enchantStats.intellect! += 200;
@@ -47,7 +47,7 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
 
     // Wrist
     if (professions.includes("Leatherworking")) {
-        enchantStats.intellect! += 130;
+        enchantStats.intellect! += 500;
         enchants['Wrist'] = "Draconic Embossment";
     }
     else {
@@ -67,9 +67,17 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     }
 
     // Pants
-    enchantStats.spellpower! += 285;
-    enchantStats.spirit! += 165;
-    enchants['Legs'] = "Powerful Pearlescent Spellthread"
+    if (spec.includes("Mistweaver Monk")) {
+        enchantStats.spellpower! += 285;
+        enchantStats.crit! += 165;
+        enchants['Legs'] = "Greater Cerulean Spellthread"
+    }
+    else {
+        enchantStats.spellpower! += 285;
+        enchantStats.spirit! += 165;
+        enchants['Legs'] = "Greater Pearlescent Spellthread"
+    }
+
 
     // Boots
     enchantStats.mastery! += 140;
@@ -96,6 +104,9 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
 
     // Flasks and profession stuff.
     enchantStats.intellect! += 1000; // Flask
+    if (professions.includes("Alchemy")) {
+        enchantStats.intellect! += 320; // Alchemy
+    }
     /*if (professions.includes("Skinning")) {
         enchantStats.crit += 80;
     }

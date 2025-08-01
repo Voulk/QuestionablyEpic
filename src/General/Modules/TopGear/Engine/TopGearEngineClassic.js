@@ -465,7 +465,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
    // Enchants
     if (getSetting(playerSettings, "includeEnchants") === "Yes") {
-      const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
+      const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0), player.spec);
       enchant_stats = enchantInfo.enchantStats;
       enchants = enchantInfo.enchants;
     }
