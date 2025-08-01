@@ -50,6 +50,11 @@ export const reforgeIDs = {
   "Reforged: mastery -> haste": 167,
   "Reforged: crit -> haste": 145,
 
+  "Reforged: hit -> spirit": 115,
+  "Reforged: hit -> crit": 138,
+  "Reforged: hit -> haste": 137,
+  "Reforged: hit -> mastery": 140,
+
 }
 
 const wowheadCodes = {
