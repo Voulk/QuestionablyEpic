@@ -47,7 +47,7 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
 
     // Wrist
     if (professions.includes("Leatherworking")) {
-        enchantStats.intellect! += 130;
+        enchantStats.intellect! += 500;
         enchants['Wrist'] = "Draconic Embossment";
     }
     else {
@@ -104,6 +104,9 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
 
     // Flasks and profession stuff.
     enchantStats.intellect! += 1000; // Flask
+    if (professions.includes("Alchemy")) {
+        enchantStats.intellect! += 320; // Alchemy
+    }
     /*if (professions.includes("Skinning")) {
         enchantStats.crit += 80;
     }
