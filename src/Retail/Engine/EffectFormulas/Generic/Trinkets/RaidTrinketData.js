@@ -89,7 +89,7 @@ export const raidTrinketData = [
     description: "",
     effects: [
       {
-        coefficient: 2.879601,
+        coefficient: 2.879601 * 0.9,
         table: -1,
         duration: 30,
         //multiplier: 0.725, // Assumes boss is around 50% health.
@@ -114,7 +114,7 @@ export const raidTrinketData = [
     description: "Takes 2 minutes to be good and 3.5 to reach maximum power. Ignore the healing proc - it's not a significant part of the trinkets power. Weaker if fight duration is short or if damage is frontloaded.",
     effects: [
       { 
-        coefficient: 0.045686 * 0.95, 
+        coefficient: 0.045686 * 0.95 * 0.9, 
         table: -1,
         ppm: 5,
         maxStacks: 20,
@@ -176,7 +176,7 @@ export const raidTrinketData = [
     description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest.",
     effects: [
       {
-        coefficient: 2.736594, 
+        coefficient: 2.736594 * 0.9, 
         table: -7,
         duration: 15, 
         cooldown: 90,
@@ -202,7 +202,7 @@ export const raidTrinketData = [
     description: "Heavily overbudget crit trinket. Procs off several things that aren't spell casts which increases your average stack count by a lot.",
     effects: [
       {
-        coefficient: 0.276886, 
+        coefficient: 0.276886 * 0.9, 
         averageStacks: 1 + 15 / (1.5 / 1.2) / 2, // TODO
         table: -7,
         duration: 15, 
@@ -256,7 +256,7 @@ export const raidTrinketData = [
     setting: true,
     effects: [
       {  // Heal effect
-        coefficient: 9.28509, //10.31673, 
+        coefficient: 9.28509 * 0.85, //10.31673, 
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
