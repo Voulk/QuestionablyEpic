@@ -231,13 +231,13 @@ export const dungeonTrinketData =
     description: "The Chopper stays on your target and periodically gives them vers and an absorb. It has potential in theory but undertuned.",
     effects: [
       {
-        coefficient: 18.44994, 
+        coefficient: 18.44994 * 1.15, 
         table: -9,
         cooldown: 120,
         ppm: 3 + 0.5,
       },
       {
-        coefficient: 0.419281, 
+        coefficient: 0.419281 * 1.15, 
         table: -7,
         stat: "versatility",
         ppm: 3 + 0.5,
