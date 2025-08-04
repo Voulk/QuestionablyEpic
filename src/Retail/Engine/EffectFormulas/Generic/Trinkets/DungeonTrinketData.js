@@ -4,13 +4,13 @@ export const dungeonTrinketData =
 [
   {  
     name: "Azhiccaran Parapodia",
-    description: "Only procs off DPS spells which makes it a fairly weak choice outside of Mythic+ and Disc Priest even if your spec otherwise throws occasional DPS spells.",
+    description: "Very overtuned but only procs off DPS spells.",
     effects: [
       {
         coefficient: 0.594905, 
         table: -1,
         duration: 30,
-        ppm: 2.5,
+        ppm: 2,
         stat: "intellect",
       },
     ],

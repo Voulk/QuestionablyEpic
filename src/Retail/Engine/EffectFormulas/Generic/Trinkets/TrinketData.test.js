@@ -14,6 +14,14 @@ describe("Trinket Tests", () => {
 const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
     const ingameData = [
         {name: "Eye of Kezan", levels: {645: [298, 115947], 671: [379, 168875]}},
+        {name: "Araz's Ritual Forge", levels: {710: [36234]}},
+        {name: "Astral Antenna", levels: {710: [5952]}},
+        {name: "Diamantine Voidcore", levels: {710: [9785]}},
+        {name: "Loom'ithar's Living Silk", levels: {710: [4874246]}},
+        {name: "Nexus-King's Command", levels: {710: [15096]}},
+
+        {name: "Lily of the Eternal Weave", levels: {639: [6939]}},
+        {name: "Azhiccaran Parapodia", levels: {639: [4292]}},
         //{name: "Mister Pick-Me-Up", levels: {642: [82567], 668: [120510]}}
     ]
 
