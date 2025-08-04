@@ -14,8 +14,13 @@ export const effectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
+      let mult = 1;
+      if (additionalData.setVariables && additionalData.setVariables.hasVoidcore) { 
+        mult *= (3 * 0.6 + 0.4);
+      }
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * mult;
       console.log("Voidglas S: " + bonus_stats.hps);
 
       return bonus_stats;
@@ -37,6 +42,10 @@ export const effectData = [
       //console.log(processedValue(data[0], 571));
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player); 
+
+      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
+        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
+      }
       console.log("Reshii Wraps: " + bonus_stats.hps);
 
       return bonus_stats;

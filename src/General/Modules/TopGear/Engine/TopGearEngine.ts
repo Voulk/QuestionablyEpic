@@ -594,21 +594,6 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   bonus_stats.haste = (bonus_stats.haste || 0) + 232;
   bonus_stats.crit = (bonus_stats.crit || 0) + 232;
 
-  // Corruption
-  enchants["Head"] = "Void Ritual";
-  const voidRitualData =  { // 
-    coefficient: 0.032154, 
-    table: -1, // ????
-    uptime: 0.35, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
-    averageStacks: 10,
-  };
-  const statPerStack = processedValue(voidRitualData, 571)
-  const statAvg = statPerStack * voidRitualData.averageStacks * voidRitualData.uptime;
-  bonus_stats.haste = (bonus_stats.haste || 0) + statAvg;
-  bonus_stats.crit = (bonus_stats.crit || 0) + statAvg;
-  bonus_stats.mastery = (bonus_stats.mastery || 0) + statAvg;
-  bonus_stats.versatility = (bonus_stats.versatility || 0) + statAvg;
-
   return enchants;
 }
 
@@ -805,17 +790,24 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (effectList.filter(effect => effect.name === "Diamantine Voidcore").length > 0) {
     // Having voidcore buffs the power of the Voidglass Shards effect.
     setVariables.hasVoidcore = true;
-
   }
-
-  // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
-  // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
-  let fireMult = 0;
-  // Frostfire Belt, Flaring Cowl, Flame Licked
-  //if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
-  //else if (builtSet.checkHasItem(193494)) fireMult = 1;
-
-  //setVariables.fireMult = fireMult || 0;
+  if (effectList.filter(effect => effect.name === "Reshii Boots").length > 0) {
+    // Check Upgrade track I guess
+    console.log("Reshii Boots effect detected");
+    const boots = itemSet.itemList.filter(item => (item.effect && item.effect.name === "Reshii Boots"))[0];
+    const bootsPerc = {
+      "Veteran": 0.2,
+      "Champion": 0.3,
+      "Hero": 0.4,
+      "Myth": 0.5,
+    } 
+    if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
+    // These are fallbacks for if we can't find an upgrade track.
+    else if (boots.level >= 714) setVariables.reshiiBoots = 0.5;
+    else if (boots.level > 704) setVariables.reshiiBoots = 0.4;
+    else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
+    else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+  }
 
 
   for (var x = 0; x < effectList.length; x++) {

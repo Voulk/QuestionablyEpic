@@ -95,7 +95,7 @@ export const getCircletEffect = (gemNames: number[], itemLevel: number, addition
 
     if (gemIDs.includes(228639)) {
 
-      const masteryMult = 1 + ((additionalData.setStats.mastery ?? 0) + (bonus_stats.mastery ?? 0)) / 700 / 100 * 0.833;
+      const masteryMult = 1 + ((additionalData.setStats.mastery ?? 0) + (bonus_stats.mastery ?? 0)) / 700 / 100 * 0.833 * 0.5;
 
       // Multiply out the stats of our non-mastery gems. Remember to add our bonus stats to our set stats since the ring itself provides a lot of mastery.
       bonus_stats_all.forEach(output => {
