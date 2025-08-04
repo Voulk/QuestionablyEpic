@@ -2,6 +2,26 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, for
 
 export const dungeonTrinketData = 
 [
+  {  
+    name: "Azhiccaran Parapodia",
+    description: "Only procs off DPS spells which makes it a fairly weak choice outside of Mythic+ and Disc Priest even if your spec otherwise throws occasional DPS spells.",
+    effects: [
+      {
+        coefficient: 0.594905, 
+        table: -1,
+        duration: 30,
+        ppm: 2.5,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      return bonus_stats;
+    }
+  },
       { // 1:30 intellect on-use. 
       name: "Sunblood Amethyst",
       description: "",

@@ -108,8 +108,9 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10,  13, 15];
         case SPEC.HOLYPRIEST:
-          return [4, 10, 15, 19];
+        case "Holy Priest Classic":
         case SPEC.DISCPRIEST:
+        case "Discipline Priest Classic":  
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
           return [0, 1, 4, 5, 6, 7, 8, 11];
@@ -117,8 +118,7 @@ export function getValidWeaponTypes(spec: string, slot: string) {
           return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
           return [0, 1, 4, 5, 10, 11, 13, 15];
-        case "Holy Priest Classic":
-          return [4, 10, 15, 19];
+
         case "Mistweaver Monk Classic":
             return [0, 4, 6, 7, 10, 13];
         default:
