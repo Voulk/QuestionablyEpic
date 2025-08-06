@@ -7,7 +7,7 @@ export const getSeasonalDungeons = () => {
 
 export const getMoPDungeons = () => {
   //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
-  return [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271];
+    return [246, 316, 313, 312, 311, 303, 302, 324, 321];
 }
 
 export const instanceDB = {

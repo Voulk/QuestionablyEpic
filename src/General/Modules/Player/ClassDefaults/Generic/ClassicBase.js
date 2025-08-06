@@ -70,7 +70,7 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
 
     To make this easy, we will calculate the weapon portion before we run the sim since it is a constant and doesn't scale with 
     */
-    const isTwoHander = currentStats.weaponSwingSpeed > 2.8; // 2.8 is the default speed for a two-handed weapon.
+    const isTwoHander = currentStats.isTwohanded ?? false;; // 2.8 is the default speed for a two-handed weapon.
     const adjWeaponDamage = currentStats.averageDamage / currentStats.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75));
 
     const damage = (adjWeaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;

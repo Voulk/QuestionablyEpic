@@ -122,7 +122,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   let fillerCPM = 0;
   const talents = specBaseline.talents || monkTalents;
   const eminenceOverheal = 0.15;
-  const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+  const isTwoHander = statProfile.isTwoHanded ?? false;
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
