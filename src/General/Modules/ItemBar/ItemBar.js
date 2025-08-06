@@ -219,9 +219,11 @@ export default function ItemBar(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
+      setItemEffect({type: "", effectName: "", label: ""});
     } else {
       setItemID(val.value);
       setItemName(val.name);
+      setItemEffect({type: "", effectName: "", label: ""});
       if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
@@ -245,7 +247,10 @@ export default function ItemBar(props) {
   };
 
   const itemEffectChanged = (event) => {
-    setItemEffect(event.target.value);
+    const selectedLabel = event.target.value;
+    const selected = itemEffectOptions.find(opt => opt.label === selectedLabel);
+    setItemEffect(selected);
+
   };
 
   const [openAuto, setOpenAuto] = React.useState(false);
@@ -323,9 +328,9 @@ export default function ItemBar(props) {
     { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
-    { label: "Undermine H", value: 665, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "Undermine M", value: 678, gameType: "Retail", source: "Undermine", icon: "undermineIcon" },
-    { label: "S2 Mythic+", value: 678, gameType: "Retail", source: "S2 Dungeons", icon: "retailDungeonIcon" },
+    { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "Manaforge M", value: 723, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "S3 Mythic+", value: 723, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
@@ -521,9 +526,11 @@ export default function ItemBar(props) {
               disabled={false}
             >
               <InputLabel id="itemeffect">{t("QuickCompare.Effect")}</InputLabel>
-              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
+
+              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect.label} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
               {itemEffectOptions.map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
+
                     return (
                       <MenuItem divider={lastItem} key={key.label} label={key.label} value={key.label}>
                         {key.label}

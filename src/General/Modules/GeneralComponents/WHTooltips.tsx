@@ -32,7 +32,7 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
 
   return (
     <a
-      href={baseWowheadLink + itemDataWowhead}
+      href={baseWowheadLink}
       data-wowhead={type === "item" ? itemDataWowhead : spellDataWowhead}
       target="_blank"
       rel="noopener noreferrer"

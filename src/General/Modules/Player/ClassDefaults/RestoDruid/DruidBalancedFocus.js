@@ -29,11 +29,11 @@ export const druidBalancedStatWeights = (contentType) => {
   };
   statWeights.Dungeon = { // Balanced DPS / HPS focus.
     intellect: 1,
-    haste: 0.9,
-    crit: 0.72,
-    mastery: 0.7,
-    versatility: 0.74,
-    leech: 0.34,
+    haste: 1.365,
+    crit: 1.05,
+    mastery: 1.35,
+    versatility: 1.12,
+    leech: 0.4,
     defaults: true,
   };
 

@@ -45,7 +45,7 @@ export const EVOKERSPELLDB = {
         school: 'red',
         castTime: 2,
         cost: 2.0,
-        coeff: 1.98,
+        coeff: 1.98 * 1.3, // Could be 1.25
         expectedOverheal: 0.22,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -83,7 +83,7 @@ export const EVOKERSPELLDB = {
         empowered: true,
         cost: 4.2,
         cooldownData: {cooldown: 30, hasted: false}, 
-        coeff: 6.102 * 1.2,
+        coeff: 8.78,
         targets: [1, 2, 3, 4], // 
         expectedOverheal: 0.3,
         secondaries: ['crit', 'vers', 'mastery']
@@ -119,7 +119,7 @@ export const EVOKERSPELLDB = {
         buffDuration: [16, 12, 8, 4],
         tickData: {tickRate: 2, canPartialTick: true},
         tickRate: 2,
-        coeff: 0.384, 
+        coeff: 0.3072, 
         targets: 6, 
         expectedOverheal: 0.45,
         secondaries: ['crit', 'vers', 'mastery'] // Note that Haste for HoTs is included via reduced tick rate so doesn't need to be explicitly included.
@@ -136,7 +136,7 @@ export const EVOKERSPELLDB = {
         targets: 3,
         essence: 3,
         cost: 4.42,
-        coeff: 1.5,
+        coeff: 1.5 * 1.25,
         expectedOverheal: 0.4,
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -153,7 +153,7 @@ export const EVOKERSPELLDB = {
         targets: 1,
         essence: 2,
         cost: 1.7,
-        coeff: 1.2, // Aura
+        coeff: 2.4, // Aura
         expectedOverheal: 0.4,
         targets: 1, // 
         secondaries: ['crit', 'vers', 'mastery']
@@ -179,7 +179,7 @@ export const EVOKERSPELLDB = {
         school: "bronze",
         tickData: {tickRate: 2, canPartialTick: true},
         castTime: 0,
-        coeff: 0.342,
+        coeff: 0.342 * 1.5,
         cost: 2.0,
         cooldownData: {cooldown: 8, hasted: true}, 
         critExtension: {extension: 2, maxExtension: 3},
@@ -230,12 +230,12 @@ export const EVOKERSPELLDB = {
         type: "heal",
         school: "bronze",
         castTime: 1.5,
-        coeff: 1.4,
+        coeff: 5.6,
         cost: 7.5,
-        targets: 15,
+        targets: 18 / 2,
         expectedOverheal: 0.05,
         cooldownData: {cooldown: 15, hasted: true}, 
-        tags: ['sqrt'],
+        tags: ['newsqrt'],
         sqrtMin: 5,
         secondaries: ['vers', 'mastery']
     },
@@ -255,6 +255,7 @@ export const EVOKERSPELLDB = {
         }
     
     }],
+
     "Blessing of the Bronze": [{
         // Blessing of the Bronze is a short CD buff spell that buffs the raid. It can also be used as a generic Bronze spell for Temporal Compression.
         // While it's included for completeness, you really shouldn't use this. 
@@ -429,8 +430,8 @@ export const EVOKERSPELLDB = {
         school: 'red',
         castTime: 0,
         cost: 5.0,
-        coeff: 4.25,
-        expectedOverheal: 0.24,
+        coeff: 9.5,
+        expectedOverheal: 0.4,
         cooldownData: {cooldown: 27, hasted: true, charges: 2},
         secondaries: ['crit', 'vers', 'mastery']
     }],
@@ -460,6 +461,21 @@ export const EVOKERSPELLDB = {
         coeff: 0.8064, // Proc is 2.40
         buffDuration: 15,
         expectedOverheal: 0.5,
+        secondaries: ['crit', 'vers', 'mastery']
+    }],
+    "Essence Bomb": [
+    { // Tier Set "fake" spell.
+        spellData: {id: 1236792, icon: "ability_evoker_essenceburststacks", cat: "heal"},
+        name: "Essence Bomb",
+        type: "heal",
+        school: "arcane",
+        castTime: 0,
+        coeff: 2.5,
+        cost: 0,
+        targets: 5,
+        expectedOverheal: 0.4,
+        tags: ['newsqrt'],
+        sqrtMin: 5,
         secondaries: ['crit', 'vers', 'mastery']
     }]
 }
