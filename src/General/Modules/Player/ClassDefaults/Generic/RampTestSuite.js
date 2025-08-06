@@ -66,6 +66,7 @@ export function runClassicStatSuite(profile, metric = "healing") {
         stamina: 5000,
         weaponDamage: 821,
         weaponSwingSpeed: 2.6,
+        isTwohanded: false,
         mp5: 0,
         critMult: 2,
         hps: 0,

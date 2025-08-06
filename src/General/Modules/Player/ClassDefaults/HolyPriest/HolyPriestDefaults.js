@@ -46,7 +46,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1.44,
+        c120: 1.15,
         c180: 1,
 
         oneMinute: 1,
@@ -87,19 +87,19 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.78,
-    crit: 0.945,
-    mastery: 0.909,
-    versatility: 0.875,
-    leech: 0.32,
+    haste: 1.05,
+    crit: 1.27,
+    mastery: 1.25,
+    versatility: 1.13,
+    leech: 0.47,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.740,
-    crit: 0.754,
-    mastery: 0.51,
-    versatility: 0.72,
-    leech: 0.367,
+    haste: 1.24,
+    crit: 1.28,
+    mastery: 1.08,
+    versatility: 1.151,
+    leech: 0.37,
   };
 
   return statWeights[contentType];

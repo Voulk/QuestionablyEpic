@@ -275,9 +275,14 @@ export function killOrWipe(check) {
   }
 }
 
+function stripQueryParams(url) {
+  const index = url.indexOf('?');
+  return index === -1 ? url : url.slice(0, index);
+}
+
 export function warcraftLogReportID(string) {
   let reportID = "";
-  let stringNew = string;
+  let stringNew = stripQueryParams(string);
   // If String is longer than report length
 
   if (string.includes("#")) {
@@ -294,10 +299,8 @@ export function warcraftLogReportID(string) {
     } else {
       reportID = stringCheck;
     }
-  } else if (
+  } else if (stringNew.length === 16) {
     // If String is the Length of a Log (Very Unlikely to randomly put a 16 character string that isn't a log here)
-    stringNew.length === 16
-  ) {
     reportID = stringNew;
   } else if (stringNew === "") {
     reportID = "";

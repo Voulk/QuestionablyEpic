@@ -3,6 +3,7 @@
 
 // Sample ReforgeLite export:
 
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import Item from "General/Items/Item";
 import Player from "General/Modules/Player/Player";
 import { getTranslatedSlotName } from "locale/slotsLocale";
@@ -67,6 +68,16 @@ const wowheadCodes = {
   2645: "[=retail-raid-tww-s2-mugzee]", // Mug'Zee
   2646: "[=retail-raid-tww-s2-gallywix]", // Chrome King Gallywix
 
+  2684: "[=retail-raid-tww-s3-plexus]", 
+  2686: "[=retail-raid-tww-s3-loomithar]", 
+  2685: "[=retail-raid-tww-s3-soulbinder]", 
+  2687: "[=retail-raid-tww-s3-forgeweaver]", 
+  2688: "[=retail-raid-tww-s3-soul-hunters]", 
+  2747: "[=retail-raid-tww-s3-fractillus]",
+  2690: "[=retail-raid-tww-s3-nexus-king]", 
+  2691: "[=retail-raid-tww-s3-dimensius]", 
+  
+
   // Dungeons
   1210: "[=retail-dun-darkflame-cleft]", // Darkflame Cleft
   1272: "[=retail-dun-cinderbrew-meadery]", // Cinderbrew Meadery
@@ -76,6 +87,13 @@ const wowheadCodes = {
   1178: "[=retail-dun-operation-mechagon-workshop]", // Workshop
   1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
   1187: "[=retail-dun-theater-pain]", // Theater of Pain
+
+  1194: "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
+  11941: "[=retail-dun-tazavesh-gambit]", // Tazavesh: The Gambit
+  1303: "[=retail-dun-echo-dome]", // 
+  1185: "[=retail-dun-halls-of-atonement]", // The Halls of Atonement
+  1270: "[=retail-dun-dawnbreaker]", // Dawnbreaker
+  1271: "[=retail-dun-ara-kara]", // Ara'kara
 
   // Classic
   // Dungeons
@@ -173,27 +191,29 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
                     [/ul][/td][td][url guide=27805]Siren Isle[/url][/td][/tr]`
                     )
     }
+    else if (item.id === 235499) results.push(`[tr][td]Cape[/td][td][item=235499][/td][td][=reshii-wraps-source][/td][/tr]`);
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
       else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
       else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
       else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
+      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && item.source.instanceId === CONSTANTS.currentRaidID && item.setID > 0) source = "[=retail-links-tier-" + item.slot.toLowerCase() + "]";
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
         if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
         else if (item.source.instanceId === -1) {
           const instanceID = item.source.encounterId;
-          if ([1210, 1272, 1268, 1267, 1298].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
+          if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
           else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-          else if (instanceID === 1187) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
+          else if ([1194, 11941, 1185].includes(instanceID)) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
         }
         else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
       }
 
     }
     
-    if (item.id !== 228411 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
+    if (item.id !== 228411 && item.id !== 235499 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
     else if (gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
     })
   results.push(`[/table][/center]`)

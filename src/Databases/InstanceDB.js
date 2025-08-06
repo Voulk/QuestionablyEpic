@@ -7,7 +7,7 @@ export const getSeasonalDungeons = () => {
 
 export const getMoPDungeons = () => {
   //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
-  return [246, 316, 313, 312, 311, 303, 302, 324, 321];
+    return [246, 316, 313, 312, 311, 303, 302, 324, 321];
 }
 
 export const instanceDB = {
@@ -86,6 +86,22 @@ export const retailInstanceDB = {
         999: "BoE Trash Drops & Catalyst",
       }
     },
+    // Manaforge Omega
+    1302: {
+      name: "Manaforge Omega",
+      bossOrder: [2684, 2686, 2685, 2687, 2688, 2747, 2690, 2691, 999],
+      bosses: {
+        2684: "Plexus Sentinel", 
+        2686: "Loomithar", 
+        2685: "Soulbinder Naazindhri", 
+        2687: "Forgeweaver Araz", 
+        2688: "Soul Hunters", 
+        2747: "Fractillus",
+        2690: "Nexus King", 
+        2691: "Dimensius the All-Devouring", 
+        999: "BoE Trash Drops & Catalyst",
+      }
+    },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Dungeons                                            */
@@ -93,9 +109,14 @@ export const retailInstanceDB = {
   "-1": {
     "Retail": {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
-      bossOrderMythicPlus: [1178, 1012, 1187, 1298, 1210, 1267, 1272, 1268],
+      bossOrderMythicPlus: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
 
       // M+ season 2
+      1194: "Tazavesh Streets", // Tazavesh: Streets of Wonder
+      11941: "Tazavesh Gambit", // Tazavesh: The Gambit
+      1303: "Tazavesh Echo Dome", // Tazavesh: The Echo Dome
+      1185: "Halls of Atonement", // The Halls of Atonement
+
       1210: "Darkflame Cleft",
       1272: "Cinderbrew Meadery",
       1268: "The Rookery",

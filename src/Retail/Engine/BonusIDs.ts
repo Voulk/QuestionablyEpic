@@ -51655,82 +51655,66 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9294": {
     "id": 9294,
-    "tag": "|nUpgrade Level: Explorer 1/8",
     "quality": 2
   },
   "9295": {
     "id": 9295,
-    "tag": "|nUpgrade Level: Explorer 2/8",
     "quality": 2
   },
   "9296": {
     "id": 9296,
-    "tag": "|nUpgrade Level: Explorer 3/8",
     "quality": 3
   },
   "9297": {
     "id": 9297,
-    "tag": "|nUpgrade Level: Explorer 4/8",
     "quality": 3
   },
   "9298": {
     "id": 9298,
-    "tag": "|nUpgrade Level: Explorer 5/8",
     "quality": 3
   },
   "9299": {
     "id": 9299,
-    "tag": "|nUpgrade Level: Explorer 6/8",
     "quality": 3
   },
   "9300": {
     "id": 9300,
-    "tag": "|nUpgrade Level: Explorer 7/8",
     "quality": 3
   },
   "9301": {
     "id": 9301,
-    "tag": "|nUpgrade Level: Explorer 8/8",
     "quality": 3
   },
   "9302": {
     "id": 9302,
-    "tag": "|nUpgrade Level: Adventurer 1/8",
     "quality": 3
   },
   "9303": {
     "id": 9303,
-    "tag": "|nUpgrade Level: Adventurer 2/8",
     "quality": 3
   },
   "9304": {
     "id": 9304,
-    "tag": "|nUpgrade Level: Adventurer 3/8",
     "quality": 3
   },
   "9305": {
     "id": 9305,
-    "tag": "|nUpgrade Level: Adventurer 4/8",
     "quality": 3
   },
   "9306": {
     "id": 9306,
-    "tag": "|nUpgrade Level: Adventurer 5/8",
     "quality": 4
   },
   "9307": {
     "id": 9307,
-    "tag": "|nUpgrade Level: Adventurer 6/8",
     "quality": 4
   },
   "9308": {
     "id": 9308,
-    "tag": "|nUpgrade Level: Adventurer 7/8",
     "quality": 4
   },
   "9309": {
     "id": 9309,
-    "tag": "|nUpgrade Level: Adventurer 8/8",
     "quality": 4
   },
   "9310": {
@@ -51746,107 +51730,86 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9313": {
     "id": 9313,
-    "tag": "|nUpgrade Level: Veteran 1/8",
     "quality": 4
   },
   "9314": {
     "id": 9314,
-    "tag": "|nUpgrade Level: Veteran 2/8",
     "quality": 4
   },
   "9315": {
     "id": 9315,
-    "tag": "|nUpgrade Level: Veteran 3/8",
     "quality": 4
   },
   "9316": {
     "id": 9316,
-    "tag": "|nUpgrade Level: Veteran 4/8",
     "quality": 4
   },
   "9317": {
     "id": 9317,
-    "tag": "|nUpgrade Level: Veteran 5/8",
     "quality": 4
   },
   "9318": {
     "id": 9318,
-    "tag": "|nUpgrade Level: Veteran 6/8",
     "quality": 4
   },
   "9319": {
     "id": 9319,
-    "tag": "|nUpgrade Level: Veteran 7/8",
     "quality": 4
   },
   "9320": {
     "id": 9320,
-    "tag": "|nUpgrade Level: Veteran 8/8",
     "quality": 4
   },
   "9321": {
     "id": 9321,
-    "tag": "|nUpgrade Level: Champion 1/8",
     "quality": 4
   },
   "9322": {
     "id": 9322,
-    "tag": "|nUpgrade Level: Champion 2/8",
     "quality": 4
   },
   "9323": {
     "id": 9323,
-    "tag": "|nUpgrade Level: Champion 3/8",
     "quality": 4
   },
   "9324": {
     "id": 9324,
-    "tag": "|nUpgrade Level: Champion 4/8",
     "quality": 4
   },
   "9325": {
     "id": 9325,
-    "tag": "|nUpgrade Level: Champion 5/8",
     "quality": 4
   },
   "9327": {
     "id": 9327,
-    "tag": "|nUpgrade Level: Champion 6/8",
     "quality": 4
   },
   "9328": {
     "id": 9328,
-    "tag": "|nUpgrade Level: Champion 7/8",
     "quality": 4
   },
   "9329": {
     "id": 9329,
-    "tag": "|nUpgrade Level: Champion 8/8",
     "quality": 4
   },
   "9330": {
     "id": 9330,
-    "tag": "|nUpgrade Level: Hero 1/5",
     "quality": 4
   },
   "9331": {
     "id": 9331,
-    "tag": "|nUpgrade Level: Hero 2/5",
     "quality": 4
   },
   "9332": {
     "id": 9332,
-    "tag": "|nUpgrade Level: Hero 3/5",
     "quality": 4
   },
   "9333": {
     "id": 9333,
-    "tag": "|nUpgrade Level: Hero 4/5",
     "quality": 4
   },
   "9334": {
     "id": 9334,
-    "tag": "|nUpgrade Level: Hero 5/5",
     "quality": 4
   },
   "9335": {
@@ -52563,32 +52526,26 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9380": {
     "id": 9380,
-    "tag": "|nUpgrade Level: Myth 1/3",
     "quality": 4
   },
   "9381": {
     "id": 9381,
-    "tag": "|nUpgrade Level: Myth 2/3",
     "quality": 4
   },
   "9382": {
     "id": 9382,
-    "tag": "|nUpgrade Level: Myth 3/3",
     "quality": 4
   },
   "9383": {
     "id": 9383,
-    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9384": {
     "id": 9384,
-    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9385": {
     "id": 9385,
-    "tag": "Dragonflight Season 2",
     "quality": 4
   },
   "9399": {
@@ -54268,10 +54225,6 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "tag": "Elite"
   },
-  "9435": {
-    "id": 9435,
-    "quality": 4
-  },
   "9436": {
     "id": 9436,
     "socket": 1
@@ -54279,22 +54232,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "9438": {
     "id": 9438,
     "socket": 1
-  },
-  "9439": {
-    "id": 9439,
-    "quality": 4
-  },
-  "9440": {
-    "id": 9440,
-    "quality": 4
-  },
-  "9441": {
-    "id": 9441,
-    "quality": 4
-  },
-  "9442": {
-    "id": 9442,
-    "quality": 4
   },
   "9443": {
     "id": 9443,
@@ -54310,26 +54247,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9445,
     "ilevel": "3 @plvl 1 - 344 @plvl 344",
     "curveId": 960
-  },
-  "9447": {
-    "id": 9447,
-    "quality": 4
-  },
-  "9448": {
-    "id": 9448,
-    "quality": 4
-  },
-  "9449": {
-    "id": 9449,
-    "quality": 4
-  },
-  "9450": {
-    "id": 9450,
-    "quality": 4
-  },
-  "9451": {
-    "id": 9451,
-    "quality": 4
   },
   "9455": {
     "id": 9455,
@@ -55216,223 +55133,179 @@ export const bonus_IDs: {[key: string]: any} = {
   "9536": {
     "id": 9536,
     "quality": 3,
-    "tag": "Dragonflight Season 3",
     "level": 0
   },
   "9537": {
     "id": 9537,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9538": {
     "id": 9538,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9539": {
     "id": 9539,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9540": {
     "id": 9540,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9541": {
     "id": 9541,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9542": {
     "id": 9542,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9543": {
     "id": 9543,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9544": {
     "id": 9544,
-    "quality": 2,
-    "tag": "Dragonflight Season 3"
+    "quality": 2
   },
   "9545": {
     "id": 9545,
-    "quality": 2,
-    "tag": "Dragonflight Season 3"
+    "quality": 2
   },
   "9546": {
     "id": 9546,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9547": {
     "id": 9547,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9548": {
     "id": 9548,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9549": {
     "id": 9549,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9550": {
     "id": 9550,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9551": {
     "id": 9551,
-    "quality": 3,
-    "tag": "Dragonflight Season 3"
+    "quality": 3
   },
   "9552": {
     "id": 9552,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9553": {
     "id": 9553,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9554": {
     "id": 9554,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9555": {
     "id": 9555,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9556": {
     "id": 9556,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9557": {
     "id": 9557,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9558": {
     "id": 9558,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9559": {
     "id": 9559,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9560": {
     "id": 9560,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9561": {
     "id": 9561,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9562": {
     "id": 9562,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9563": {
     "id": 9563,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9564": {
     "id": 9564,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9565": {
     "id": 9565,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9566": {
     "id": 9566,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9567": {
     "id": 9567,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9568": {
     "id": 9568,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9569": {
     "id": 9569,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9570": {
     "id": 9570,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9571": {
     "id": 9571,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9572": {
     "id": 9572,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9573": {
     "id": 9573,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9574": {
     "id": 9574,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9575": {
     "id": 9575,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9576": {
     "id": 9576,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9577": {
     "id": 9577,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9578": {
     "id": 9578,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9581": {
     "id": 9581,
-    "quality": 4,
-    "tag": "Dragonflight Season 3"
+    "quality": 4
   },
   "9584": {
     "id": 9584,
@@ -57166,223 +57039,179 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10256": {
     "id": 10256,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10257": {
     "id": 10257,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10258": {
     "id": 10258,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10259": {
     "id": 10259,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10260": {
     "id": 10260,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10261": {
     "id": 10261,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10262": {
     "id": 10262,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10263": {
     "id": 10263,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10264": {
     "id": 10264,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10265": {
     "id": 10265,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10266": {
     "id": 10266,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10267": {
     "id": 10267,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10268": {
     "id": 10268,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10269": {
     "id": 10269,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10270": {
     "id": 10270,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10271": {
     "id": 10271,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10272": {
     "id": 10272,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10273": {
     "id": 10273,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10274": {
     "id": 10274,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10275": {
     "id": 10275,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10276": {
     "id": 10276,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10277": {
     "id": 10277,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10278": {
     "id": 10278,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10279": {
     "id": 10279,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10280": {
     "id": 10280,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10281": {
     "id": 10281,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10282": {
     "id": 10282,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10283": {
     "id": 10283,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10284": {
     "id": 10284,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10285": {
     "id": 10285,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10286": {
     "id": 10286,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10287": {
     "id": 10287,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10288": {
     "id": 10288,
-    "quality": 2,
-    "tag": "The War Within Season 1"
+    "quality": 2
   },
   "10289": {
     "id": 10289,
-    "quality": 2,
-    "tag": "The War Within Season 1"
+    "quality": 2
   },
   "10290": {
     "id": 10290,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10291": {
     "id": 10291,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10292": {
     "id": 10292,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10293": {
     "id": 10293,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10294": {
     "id": 10294,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10295": {
     "id": 10295,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10296": {
     "id": 10296,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10297": {
     "id": 10297,
-    "quality": 3,
-    "tag": "The War Within Season 1"
+    "quality": 3
   },
   "10298": {
     "id": 10298,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10299": {
     "id": 10299,
-    "quality": 4,
-    "tag": "The War Within Season 1"
+    "quality": 4
   },
   "10300": {
     "id": 10300,
@@ -57415,5990 +57244,140 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10305": {
     "id": 10305,
-    "upgrade": {
-      "group": 342,
-      "level": 1,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 1/8",
-      "bonusId": 10305,
-      "itemLevel": 467,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10306": {
     "id": 10306,
-    "upgrade": {
-      "group": 342,
-      "level": 2,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 2/8",
-      "bonusId": 10306,
-      "itemLevel": 470,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10307": {
     "id": 10307,
-    "upgrade": {
-      "group": 342,
-      "level": 3,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 3/8",
-      "bonusId": 10307,
-      "itemLevel": 473,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10308": {
     "id": 10308,
-    "upgrade": {
-      "group": 342,
-      "level": 4,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 4/8",
-      "bonusId": 10308,
-      "itemLevel": 476,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10309": {
     "id": 10309,
-    "upgrade": {
-      "group": 342,
-      "level": 5,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 5/8",
-      "bonusId": 10309,
-      "itemLevel": 480,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10310": {
     "id": 10310,
-    "upgrade": {
-      "group": 342,
-      "level": 6,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 6/8",
-      "bonusId": 10310,
-      "itemLevel": 483,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10311": {
     "id": 10311,
-    "upgrade": {
-      "group": 342,
-      "level": 7,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 7/8",
-      "bonusId": 10311,
-      "itemLevel": 486,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10312": {
     "id": 10312,
-    "upgrade": {
-      "group": 342,
-      "level": 8,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 8/8",
-      "bonusId": 10312,
-      "itemLevel": 489,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10313": {
     "id": 10313,
-    "upgrade": {
-      "group": 356,
-      "level": 1,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 1/8",
-      "bonusId": 10313,
-      "itemLevel": 493,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10314": {
     "id": 10314,
-    "upgrade": {
-      "group": 356,
-      "level": 2,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 2/8",
-      "bonusId": 10314,
-      "itemLevel": 496,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10315": {
     "id": 10315,
-    "upgrade": {
-      "group": 356,
-      "level": 3,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 3/8",
-      "bonusId": 10315,
-      "itemLevel": 499,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10316": {
     "id": 10316,
-    "upgrade": {
-      "group": 356,
-      "level": 4,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 4/8",
-      "bonusId": 10316,
-      "itemLevel": 502,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10317": {
     "id": 10317,
-    "upgrade": {
-      "group": 356,
-      "level": 5,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 5/8",
-      "bonusId": 10317,
-      "itemLevel": 506,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10318": {
     "id": 10318,
-    "upgrade": {
-      "group": 356,
-      "level": 6,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 6/8",
-      "bonusId": 10318,
-      "itemLevel": 509,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10319": {
     "id": 10319,
-    "upgrade": {
-      "group": 356,
-      "level": 7,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 7/8",
-      "bonusId": 10319,
-      "itemLevel": 512,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10320": {
     "id": 10320,
-    "upgrade": {
-      "group": 356,
-      "level": 8,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 8/8",
-      "bonusId": 10320,
-      "itemLevel": 515,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10321": {
     "id": 10321,
-    "upgrade": {
-      "group": 354,
-      "level": 1,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 1/8",
-      "bonusId": 10321,
-      "itemLevel": 454,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 2,
-    "tag": "Dragonflight Season 4"
+    "quality": 2
   },
   "10322": {
     "id": 10322,
-    "upgrade": {
-      "group": 354,
-      "level": 2,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 2/8",
-      "bonusId": 10322,
-      "itemLevel": 457,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 2,
-    "tag": "Dragonflight Season 4"
+    "quality": 2
   },
   "10323": {
     "id": 10323,
-    "upgrade": {
-      "group": 354,
-      "level": 3,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 3/8",
-      "bonusId": 10323,
-      "itemLevel": 460,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10324": {
     "id": 10324,
-    "upgrade": {
-      "group": 354,
-      "level": 4,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 4/8",
-      "bonusId": 10324,
-      "itemLevel": 463,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 25,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10325": {
     "id": 10325,
-    "upgrade": {
-      "group": 354,
-      "level": 5,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 5/8",
-      "bonusId": 10325,
-      "itemLevel": 467,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10326": {
     "id": 10326,
-    "upgrade": {
-      "group": 354,
-      "level": 6,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 6/8",
-      "bonusId": 10326,
-      "itemLevel": 470,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10327": {
     "id": 10327,
-    "upgrade": {
-      "group": 354,
-      "level": 7,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 7/8",
-      "bonusId": 10327,
-      "itemLevel": 473,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10328": {
     "id": 10328,
-    "upgrade": {
-      "group": 354,
-      "level": 8,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 8/8",
-      "bonusId": 10328,
-      "itemLevel": 476,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 40,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 3,
-    "tag": "Dragonflight Season 4"
+    "quality": 3
   },
   "10329": {
     "id": 10329,
-    "upgrade": {
-      "group": 357,
-      "level": 1,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 1/6",
-      "bonusId": 10329,
-      "itemLevel": 506,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10330": {
     "id": 10330,
-    "upgrade": {
-      "group": 357,
-      "level": 2,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 2/6",
-      "bonusId": 10330,
-      "itemLevel": 509,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4,
-    "tag": "Dragonflight Season 4",
     "level": 0
   },
   "10331": {
     "id": 10331,
-    "upgrade": {
-      "group": 357,
-      "level": 3,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 3/6",
-      "bonusId": 10331,
-      "itemLevel": 512,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10332": {
     "id": 10332,
-    "upgrade": {
-      "group": 357,
-      "level": 4,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 4/6",
-      "bonusId": 10332,
-      "itemLevel": 515,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 140,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 90,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 275,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 350,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10333": {
     "id": 10333,
-    "upgrade": {
-      "group": 357,
-      "level": 5,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 5/6",
-      "bonusId": 10333,
-      "itemLevel": 519,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10334": {
     "id": 10334,
-    "upgrade": {
-      "group": 357,
-      "level": 6,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 6/6",
-      "bonusId": 10334,
-      "itemLevel": 522,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10335": {
     "id": 10335,
-    "upgrade": {
-      "group": 358,
-      "level": 1,
-      "max": 4,
-      "name": "Myth",
-      "fullName": "Myth 1/4",
-      "bonusId": 10335,
-      "itemLevel": 519,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10336": {
     "id": 10336,
-    "upgrade": {
-      "group": 358,
-      "level": 2,
-      "max": 4,
-      "name": "Myth",
-      "fullName": "Myth 2/4",
-      "bonusId": 10336,
-      "itemLevel": 522,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10337": {
     "id": 10337,
-    "upgrade": {
-      "group": 358,
-      "level": 3,
-      "max": 4,
-      "name": "Myth",
-      "fullName": "Myth 3/4",
-      "bonusId": 10337,
-      "itemLevel": 525,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10338": {
     "id": 10338,
-    "upgrade": {
-      "group": 358,
-      "level": 4,
-      "max": 4,
-      "name": "Myth",
-      "fullName": "Myth 4/4",
-      "bonusId": 10338,
-      "itemLevel": 528,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 160,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 400,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10339": {
     "id": 10339,
@@ -63410,1547 +57389,35 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10341": {
     "id": 10341,
-    "upgrade": {
-      "group": 355,
-      "level": 1,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 1/8",
-      "bonusId": 10341,
-      "itemLevel": 480,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10342": {
     "id": 10342,
-    "upgrade": {
-      "group": 355,
-      "level": 2,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 2/8",
-      "bonusId": 10342,
-      "itemLevel": 483,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10343": {
     "id": 10343,
-    "upgrade": {
-      "group": 355,
-      "level": 3,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 3/8",
-      "bonusId": 10343,
-      "itemLevel": 486,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10344": {
     "id": 10344,
-    "upgrade": {
-      "group": 355,
-      "level": 4,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 4/8",
-      "bonusId": 10344,
-      "itemLevel": 489,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 65,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 125,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 250,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2806,
-              "amount": 15,
-              "name": "Whelpling's Awakened Crest",
-              "icon": "inv_10_gearupgrade_whelplingsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10345": {
     "id": 10345,
-    "upgrade": {
-      "group": 355,
-      "level": 5,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 5/8",
-      "bonusId": 10345,
-      "itemLevel": 493,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10346": {
     "id": 10346,
-    "upgrade": {
-      "group": 355,
-      "level": 6,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 6/8",
-      "bonusId": 10346,
-      "itemLevel": 496,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10347": {
     "id": 10347,
-    "upgrade": {
-      "group": 355,
-      "level": 7,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 7/8",
-      "bonusId": 10347,
-      "itemLevel": 499,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10348": {
     "id": 10348,
-    "upgrade": {
-      "group": 355,
-      "level": 8,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 8/8",
-      "bonusId": 10348,
-      "itemLevel": 502,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 120,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 225,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 300,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10349": {
     "id": 10349,
@@ -65133,2319 +57600,51 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10407": {
     "id": 10407,
-    "upgrade": {
-      "group": 360,
-      "level": 1,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 1/12",
-      "bonusId": 10407,
-      "itemLevel": 493,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10408": {
     "id": 10408,
-    "upgrade": {
-      "group": 360,
-      "level": 2,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 2/12",
-      "bonusId": 10408,
-      "itemLevel": 496,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10409": {
     "id": 10409,
-    "upgrade": {
-      "group": 360,
-      "level": 3,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 3/12",
-      "bonusId": 10409,
-      "itemLevel": 499,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10410": {
     "id": 10410,
-    "upgrade": {
-      "group": 360,
-      "level": 4,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 4/12",
-      "bonusId": 10410,
-      "itemLevel": 502,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10411": {
     "id": 10411,
-    "upgrade": {
-      "group": 360,
-      "level": 5,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 5/12",
-      "bonusId": 10411,
-      "itemLevel": 506,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10412": {
     "id": 10412,
-    "upgrade": {
-      "group": 360,
-      "level": 6,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 6/12",
-      "bonusId": 10412,
-      "itemLevel": 509,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10413": {
     "id": 10413,
-    "upgrade": {
-      "group": 360,
-      "level": 7,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 7/12",
-      "bonusId": 10413,
-      "itemLevel": 512,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10414": {
     "id": 10414,
-    "upgrade": {
-      "group": 360,
-      "level": 8,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 8/12",
-      "bonusId": 10414,
-      "itemLevel": 515,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10415": {
     "id": 10415,
-    "upgrade": {
-      "group": 360,
-      "level": 9,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 9/12",
-      "bonusId": 10415,
-      "itemLevel": 519,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10416": {
     "id": 10416,
-    "upgrade": {
-      "group": 360,
-      "level": 10,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 10/12",
-      "bonusId": 10416,
-      "itemLevel": 522,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10417": {
     "id": 10417,
-    "upgrade": {
-      "group": 360,
-      "level": 11,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 11/12",
-      "bonusId": 10417,
-      "itemLevel": 525,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10418": {
     "id": 10418,
-    "upgrade": {
-      "group": 360,
-      "level": 12,
-      "max": 12,
-      "name": "Awakened",
-      "fullName": "Awakened 12/12",
-      "bonusId": 10418,
-      "itemLevel": 528,
-      "seasonId": 23,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10421": {
     "id": 10421,
@@ -68244,2691 +58443,59 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10490": {
     "id": 10490,
-    "upgrade": {
-      "group": 382,
-      "level": 1,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 1/14",
-      "bonusId": 10490,
-      "itemLevel": 493,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10491": {
     "id": 10491,
-    "upgrade": {
-      "group": 382,
-      "level": 2,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 2/14",
-      "bonusId": 10491,
-      "itemLevel": 496,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10492": {
     "id": 10492,
-    "upgrade": {
-      "group": 382,
-      "level": 3,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 3/14",
-      "bonusId": 10492,
-      "itemLevel": 499,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10493": {
     "id": 10493,
-    "upgrade": {
-      "group": 382,
-      "level": 4,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 4/14",
-      "bonusId": 10493,
-      "itemLevel": 502,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10494": {
     "id": 10494,
-    "upgrade": {
-      "group": 382,
-      "level": 5,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 5/14",
-      "bonusId": 10494,
-      "itemLevel": 506,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10495": {
     "id": 10495,
-    "upgrade": {
-      "group": 382,
-      "level": 6,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 6/14",
-      "bonusId": 10495,
-      "itemLevel": 509,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10496": {
     "id": 10496,
-    "upgrade": {
-      "group": 382,
-      "level": 7,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 7/14",
-      "bonusId": 10496,
-      "itemLevel": 512,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10497": {
     "id": 10497,
-    "upgrade": {
-      "group": 382,
-      "level": 8,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 8/14",
-      "bonusId": 10497,
-      "itemLevel": 515,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10498": {
     "id": 10498,
-    "upgrade": {
-      "group": 382,
-      "level": 9,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 9/14",
-      "bonusId": 10498,
-      "itemLevel": 519,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10499": {
     "id": 10499,
-    "upgrade": {
-      "group": 382,
-      "level": 10,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 10/14",
-      "bonusId": 10499,
-      "itemLevel": 522,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10500": {
     "id": 10500,
-    "upgrade": {
-      "group": 382,
-      "level": 11,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 11/14",
-      "bonusId": 10500,
-      "itemLevel": 525,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10501": {
     "id": 10501,
-    "upgrade": {
-      "group": 382,
-      "level": 12,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 12/14",
-      "bonusId": 10501,
-      "itemLevel": 528,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10502": {
     "id": 10502,
-    "upgrade": {
-      "group": 382,
-      "level": 13,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 13/14",
-      "bonusId": 10502,
-      "itemLevel": 532,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10503": {
     "id": 10503,
-    "upgrade": {
-      "group": 382,
-      "level": 14,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 14/14",
-      "bonusId": 10503,
-      "itemLevel": 535,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "Dragonflight Season 4"
+    "quality": 4
   },
   "10504": {
     "id": 10504,
@@ -72105,2666 +59672,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "10884": {
     "id": 10884,
     "tag": "Awakened"
-  },
-  "10951": {
-    "id": 10951,
-    "upgrade": {
-      "group": 405,
-      "level": 1,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 1/14",
-      "bonusId": 10951,
-      "itemLevel": 493,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10952": {
-    "id": 10952,
-    "upgrade": {
-      "group": 405,
-      "level": 2,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 2/14",
-      "bonusId": 10952,
-      "itemLevel": 496,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10953": {
-    "id": 10953,
-    "upgrade": {
-      "group": 405,
-      "level": 3,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 3/14",
-      "bonusId": 10953,
-      "itemLevel": 499,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10954": {
-    "id": 10954,
-    "upgrade": {
-      "group": 405,
-      "level": 4,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 4/14",
-      "bonusId": 10954,
-      "itemLevel": 502,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 145,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 60,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 38,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 75,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 113,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2807,
-              "amount": 15,
-              "name": "Drake's Awakened Crest",
-              "icon": "inv_10_gearupgrade_drakesawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10955": {
-    "id": 10955,
-    "upgrade": {
-      "group": 405,
-      "level": 5,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 5/14",
-      "bonusId": 10955,
-      "itemLevel": 506,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10956": {
-    "id": 10956,
-    "upgrade": {
-      "group": 405,
-      "level": 6,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 6/14",
-      "bonusId": 10956,
-      "itemLevel": 509,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10957": {
-    "id": 10957,
-    "upgrade": {
-      "group": 405,
-      "level": 7,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 7/14",
-      "bonusId": 10957,
-      "itemLevel": 512,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10958": {
-    "id": 10958,
-    "upgrade": {
-      "group": 405,
-      "level": 8,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 8/14",
-      "bonusId": 10958,
-      "itemLevel": 515,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 170,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 70,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 45,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 88,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 138,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 175,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2809,
-              "amount": 15,
-              "name": "Wyrm's Awakened Crest",
-              "icon": "inv_10_gearupgrade_wyrmsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10959": {
-    "id": 10959,
-    "upgrade": {
-      "group": 405,
-      "level": 9,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 9/14",
-      "bonusId": 10959,
-      "itemLevel": 519,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10960": {
-    "id": 10960,
-    "upgrade": {
-      "group": 405,
-      "level": 10,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 10/14",
-      "bonusId": 10960,
-      "itemLevel": 522,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10961": {
-    "id": 10961,
-    "upgrade": {
-      "group": 405,
-      "level": 11,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 11/14",
-      "bonusId": 10961,
-      "itemLevel": 525,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10962": {
-    "id": 10962,
-    "upgrade": {
-      "group": 405,
-      "level": 12,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 12/14",
-      "bonusId": 10962,
-      "itemLevel": 528,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10963": {
-    "id": 10963,
-    "upgrade": {
-      "group": 405,
-      "level": 13,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 13/14",
-      "bonusId": 10963,
-      "itemLevel": 532,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
-  },
-  "10964": {
-    "id": 10964,
-    "upgrade": {
-      "group": 405,
-      "level": 14,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 14/14",
-      "bonusId": 10964,
-      "itemLevel": 535,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 190,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 80,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 50,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 100,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 150,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 2245,
-              "amount": 200,
-              "name": "Flightstones",
-              "icon": "flightstone-dragonflight"
-            },
-            {
-              "currencyId": 2812,
-              "amount": 15,
-              "name": "Aspect's Awakened Crest",
-              "icon": "inv_10_gearupgrade_aspectsawakenedcrest"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 2245,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 2807,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2809,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2812,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 2806,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    }
   },
   "10965": {
     "id": 10965,
@@ -79383,2594 +64290,66 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11942": {
     "id": 11942,
-    "upgrade": {
-      "group": 437,
-      "level": 1,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 1/8",
-      "bonusId": 11942,
-      "itemLevel": 597,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 2
   },
   "11943": {
     "id": 11943,
-    "upgrade": {
-      "group": 437,
-      "level": 2,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 2/8",
-      "bonusId": 11943,
-      "itemLevel": 600,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 2
   },
   "11944": {
     "id": 11944,
-    "upgrade": {
-      "group": 437,
-      "level": 3,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 3/8",
-      "bonusId": 11944,
-      "itemLevel": 603,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11945": {
     "id": 11945,
-    "upgrade": {
-      "group": 437,
-      "level": 4,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 4/8",
-      "bonusId": 11945,
-      "itemLevel": 606,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11946": {
     "id": 11946,
-    "upgrade": {
-      "group": 437,
-      "level": 5,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 5/8",
-      "bonusId": 11946,
-      "itemLevel": 610,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11947": {
     "id": 11947,
-    "upgrade": {
-      "group": 437,
-      "level": 6,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 6/8",
-      "bonusId": 11947,
-      "itemLevel": 613,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11948": {
     "id": 11948,
-    "upgrade": {
-      "group": 437,
-      "level": 7,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 7/8",
-      "bonusId": 11948,
-      "itemLevel": 616,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11949": {
     "id": 11949,
-    "upgrade": {
-      "group": 437,
-      "level": 8,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 8/8",
-      "bonusId": 11949,
-      "itemLevel": 619,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11950": {
     "id": 11950,
-    "upgrade": {
-      "group": 438,
-      "level": 8,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 8/8",
-      "bonusId": 11950,
-      "itemLevel": 632,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11951": {
     "id": 11951,
-    "upgrade": {
-      "group": 438,
-      "level": 1,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 1/8",
-      "bonusId": 11951,
-      "itemLevel": 610,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11952": {
     "id": 11952,
-    "upgrade": {
-      "group": 438,
-      "level": 2,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 2/8",
-      "bonusId": 11952,
-      "itemLevel": 613,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11953": {
     "id": 11953,
-    "upgrade": {
-      "group": 438,
-      "level": 3,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 3/8",
-      "bonusId": 11953,
-      "itemLevel": 616,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11954": {
     "id": 11954,
-    "upgrade": {
-      "group": 438,
-      "level": 4,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 4/8",
-      "bonusId": 11954,
-      "itemLevel": 619,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 3
   },
   "11955": {
     "id": 11955,
-    "upgrade": {
-      "group": 438,
-      "level": 5,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 5/8",
-      "bonusId": 11955,
-      "itemLevel": 623,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11956": {
     "id": 11956,
-    "upgrade": {
-      "group": 438,
-      "level": 6,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 6/8",
-      "bonusId": 11956,
-      "itemLevel": 626,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11957": {
     "id": 11957,
-    "upgrade": {
-      "group": 438,
-      "level": 7,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 7/8",
-      "bonusId": 11957,
-      "itemLevel": 629,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11964": {
@@ -81991,5547 +64370,115 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11969": {
     "id": 11969,
-    "upgrade": {
-      "group": 439,
-      "level": 1,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 1/8",
-      "bonusId": 11969,
-      "itemLevel": 623,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11970": {
     "id": 11970,
-    "upgrade": {
-      "group": 439,
-      "level": 2,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 2/8",
-      "bonusId": 11970,
-      "itemLevel": 626,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11971": {
     "id": 11971,
-    "upgrade": {
-      "group": 439,
-      "level": 3,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 3/8",
-      "bonusId": 11971,
-      "itemLevel": 629,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11972": {
     "id": 11972,
-    "upgrade": {
-      "group": 439,
-      "level": 4,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 4/8",
-      "bonusId": 11972,
-      "itemLevel": 632,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3107,
-              "amount": 15,
-              "name": "Weathered Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_weathered"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11973": {
     "id": 11973,
-    "upgrade": {
-      "group": 439,
-      "level": 5,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 5/8",
-      "bonusId": 11973,
-      "itemLevel": 636,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11974": {
     "id": 11974,
-    "upgrade": {
-      "group": 439,
-      "level": 6,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 6/8",
-      "bonusId": 11974,
-      "itemLevel": 639,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11975": {
     "id": 11975,
-    "upgrade": {
-      "group": 439,
-      "level": 7,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 7/8",
-      "bonusId": 11975,
-      "itemLevel": 642,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11976": {
     "id": 11976,
-    "upgrade": {
-      "group": 439,
-      "level": 8,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 8/8",
-      "bonusId": 11976,
-      "itemLevel": 645,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11977": {
     "id": 11977,
-    "upgrade": {
-      "group": 440,
-      "level": 1,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 1/8",
-      "bonusId": 11977,
-      "itemLevel": 636,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11978": {
     "id": 11978,
-    "upgrade": {
-      "group": 440,
-      "level": 2,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 2/8",
-      "bonusId": 11978,
-      "itemLevel": 639,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11979": {
     "id": 11979,
-    "upgrade": {
-      "group": 440,
-      "level": 3,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 3/8",
-      "bonusId": 11979,
-      "itemLevel": 642,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11980": {
     "id": 11980,
-    "upgrade": {
-      "group": 440,
-      "level": 4,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 4/8",
-      "bonusId": 11980,
-      "itemLevel": 645,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11981": {
     "id": 11981,
-    "upgrade": {
-      "group": 440,
-      "level": 5,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 5/8",
-      "bonusId": 11981,
-      "itemLevel": 649,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11982": {
     "id": 11982,
-    "upgrade": {
-      "group": 440,
-      "level": 6,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 6/8",
-      "bonusId": 11982,
-      "itemLevel": 652,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11983": {
     "id": 11983,
-    "upgrade": {
-      "group": 440,
-      "level": 7,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 7/8",
-      "bonusId": 11983,
-      "itemLevel": 655,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11984": {
     "id": 11984,
-    "upgrade": {
-      "group": 440,
-      "level": 8,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 8/8",
-      "bonusId": 11984,
-      "itemLevel": 658,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11985": {
     "id": 11985,
-    "upgrade": {
-      "group": 441,
-      "level": 1,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 1/8",
-      "bonusId": 11985,
-      "itemLevel": 649,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11986": {
     "id": 11986,
-    "upgrade": {
-      "group": 441,
-      "level": 2,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 2/8",
-      "bonusId": 11986,
-      "itemLevel": 652,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11987": {
     "id": 11987,
-    "upgrade": {
-      "group": 441,
-      "level": 3,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 3/8",
-      "bonusId": 11987,
-      "itemLevel": 655,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11988": {
     "id": 11988,
-    "upgrade": {
-      "group": 441,
-      "level": 4,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 4/8",
-      "bonusId": 11988,
-      "itemLevel": 658,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11989": {
     "id": 11989,
-    "upgrade": {
-      "group": 441,
-      "level": 5,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 5/8",
-      "bonusId": 11989,
-      "itemLevel": 662,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11990": {
     "id": 11990,
-    "upgrade": {
-      "group": 441,
-      "level": 6,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 6/8",
-      "bonusId": 11990,
-      "itemLevel": 665,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11991": {
     "id": 11991,
-    "upgrade": {
-      "group": 442,
-      "level": 1,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 1/8",
-      "bonusId": 11991,
-      "itemLevel": 662,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11992": {
     "id": 11992,
-    "upgrade": {
-      "group": 442,
-      "level": 2,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 2/8",
-      "bonusId": 11992,
-      "itemLevel": 665,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11993": {
     "id": 11993,
-    "upgrade": {
-      "group": 442,
-      "level": 3,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 3/8",
-      "bonusId": 11993,
-      "itemLevel": 668,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11994": {
     "id": 11994,
-    "upgrade": {
-      "group": 442,
-      "level": 4,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 4/8",
-      "bonusId": 11994,
-      "itemLevel": 671,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "11995": {
     "id": 11995,
-    "quality": 4,
-    "upgrade": {
-      "group": 442,
-      "level": 5,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 5/8",
-      "bonusId": 11995,
-      "itemLevel": 675,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    }
+    "quality": 4
   },
   "11996": {
     "id": 11996,
-    "quality": 4,
-    "upgrade": {
-      "group": 442,
-      "level": 6,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 6/8",
-      "bonusId": 11996,
-      "itemLevel": 678,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    }
+    "quality": 4
   },
   "11997": {
     "id": 11997,
@@ -87756,6 +64703,24 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12028,
     "quality": 4
   },
+  "12037": {
+    "id": 12037,
+    "quality": 2,
+    "base_level": 597,
+    "base_level_priority": 1000
+  },
+  "12038": {
+    "id": 12038,
+    "quality": 3,
+    "base_level": 610,
+    "base_level_priority": 1000
+  },
+  "12039": {
+    "id": 12039,
+    "quality": 4,
+    "base_level": 649,
+    "base_level_priority": 1000
+  },
   "12040": {
     "id": 12040,
     "base_level": 632,
@@ -87792,6 +64757,28 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12049,
     "ilevel": "15 @plvl 10 - 593 @plvl 593",
     "curveId": 79454
+  },
+  "12050": {
+    "id": 12050,
+    "base_level": 678,
+    "base_level_priority": 70,
+    "tag": "Starlight Crafted"
+  },
+  "12051": {
+    "id": 12051,
+    "base_level": 662,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "12052": {
+    "id": 12052,
+    "base_level": 691,
+    "base_level_priority": 65
+  },
+  "12053": {
+    "id": 12053,
+    "base_level": 707,
+    "base_level_priority": 65
   },
   "12055": {
     "id": 12055,
@@ -87893,2778 +64880,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "369 @plvl 55 - 554 @plvl 554",
     "curveId": 71410,
     "quality": 4
-  },
-  "12071": {
-    "id": 12071,
-    "upgrade": {
-      "group": 487,
-      "level": 1,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 1/14",
-      "bonusId": 12071,
-      "itemLevel": 636,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 73,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 60,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 113,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12072": {
-    "id": 12072,
-    "upgrade": {
-      "group": 487,
-      "level": 2,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 2/14",
-      "bonusId": 12072,
-      "itemLevel": 639,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 73,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 60,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 113,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12073": {
-    "id": 12073,
-    "upgrade": {
-      "group": 487,
-      "level": 3,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 3/14",
-      "bonusId": 12073,
-      "itemLevel": 642,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 73,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 60,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 113,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12074": {
-    "id": 12074,
-    "upgrade": {
-      "group": 487,
-      "level": 4,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 4/14",
-      "bonusId": 12074,
-      "itemLevel": 645,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 73,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 60,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 38,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 113,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3108,
-              "amount": 15,
-              "name": "Carved Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_carved"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12075": {
-    "id": 12075,
-    "upgrade": {
-      "group": 487,
-      "level": 5,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 5/14",
-      "bonusId": 12075,
-      "itemLevel": 649,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 135,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 70,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 88,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 138,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12076": {
-    "id": 12076,
-    "upgrade": {
-      "group": 487,
-      "level": 6,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 6/14",
-      "bonusId": 12076,
-      "itemLevel": 652,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 135,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 70,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 88,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 138,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12077": {
-    "id": 12077,
-    "upgrade": {
-      "group": 487,
-      "level": 7,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 7/14",
-      "bonusId": 12077,
-      "itemLevel": 655,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 135,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 70,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 88,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 138,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12078": {
-    "id": 12078,
-    "upgrade": {
-      "group": 487,
-      "level": 8,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 8/14",
-      "bonusId": 12078,
-      "itemLevel": 658,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 135,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 70,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 45,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 88,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 138,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3109,
-              "amount": 15,
-              "name": "Runed Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_runed"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12079": {
-    "id": 12079,
-    "upgrade": {
-      "group": 487,
-      "level": 9,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 9/14",
-      "bonusId": 12079,
-      "itemLevel": 662,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12080": {
-    "id": 12080,
-    "upgrade": {
-      "group": 487,
-      "level": 10,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 10/14",
-      "bonusId": 12080,
-      "itemLevel": 665,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12081": {
-    "id": 12081,
-    "upgrade": {
-      "group": 487,
-      "level": 11,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 11/14",
-      "bonusId": 12081,
-      "itemLevel": 668,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12082": {
-    "id": 12082,
-    "upgrade": {
-      "group": 487,
-      "level": 12,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 12/14",
-      "bonusId": 12082,
-      "itemLevel": 671,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12083": {
-    "id": 12083,
-    "upgrade": {
-      "group": 487,
-      "level": 13,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 13/14",
-      "bonusId": 12083,
-      "itemLevel": 675,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
-  },
-  "12084": {
-    "id": 12084,
-    "upgrade": {
-      "group": 487,
-      "level": 14,
-      "max": 14,
-      "name": "Awakened",
-      "fullName": "Awakened 14/14",
-      "bonusId": 12084,
-      "itemLevel": 678,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 95,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
-    "quality": 4,
-    "tag": "The War Within Season 2"
   },
   "12085": {
     "id": 12085,
@@ -90863,10 +65078,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 4/4",
     "quality": 4,
     "effect": {
-      "id": 203501,
+      "id": 207435,
       "index": 0,
       "spell": {
-        "id": 474563,
+        "id": 1225064,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91122,10 +65337,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 4/4",
     "quality": 4,
     "effect": {
-      "id": 203517,
+      "id": 207451,
       "index": 0,
       "spell": {
-        "id": 474587,
+        "id": 1225084,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91163,10 +65378,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 3/4",
     "quality": 3,
     "effect": {
-      "id": 203520,
+      "id": 207454,
       "index": 0,
       "spell": {
-        "id": 474595,
+        "id": 1225088,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91177,10 +65392,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 4/4",
     "quality": 4,
     "effect": {
-      "id": 203521,
+      "id": 207455,
       "index": 0,
       "spell": {
-        "id": 474596,
+        "id": 1225089,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91410,10 +65625,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12149,
     "tag": "Rank 1/4",
     "effect": {
-      "id": 203482,
+      "id": 207415,
       "index": 0,
       "spell": {
-        "id": 474605,
+        "id": 1224978,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91424,10 +65639,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 2/4",
     "quality": 2,
     "effect": {
-      "id": 203483,
+      "id": 207416,
       "index": 0,
       "spell": {
-        "id": 474615,
+        "id": 1224979,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91438,10 +65653,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 3/4",
     "quality": 3,
     "effect": {
-      "id": 203484,
+      "id": 207417,
       "index": 0,
       "spell": {
-        "id": 474616,
+        "id": 1224981,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91452,10 +65667,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Rank 4/4",
     "quality": 4,
     "effect": {
-      "id": 203485,
+      "id": 207418,
       "index": 0,
       "spell": {
-        "id": 474617,
+        "id": 1224982,
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
@@ -91814,6 +66029,114 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "name": "of the Savage"
   },
+  "12239": {
+    "id": 12239,
+    "item_conversion": 11
+  },
+  "12240": {
+    "id": 12240,
+    "item_conversion": 11
+  },
+  "12241": {
+    "id": 12241,
+    "item_conversion": 11
+  },
+  "12242": {
+    "id": 12242,
+    "item_conversion": 11
+  },
+  "12243": {
+    "id": 12243,
+    "item_conversion": 11
+  },
+  "12255": {
+    "id": 12255,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 5600,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.5600]"
+  },
+  "12256": {
+    "id": 12256,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 8000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.8000]"
+  },
+  "12257": {
+    "id": 12257,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 8000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.8000]"
+  },
+  "12258": {
+    "id": 12258,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 8000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.8000]"
+  },
+  "12259": {
+    "id": 12259,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 8000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.8000]"
+  },
+  "12260": {
+    "id": 12260,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 5600,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.5600]"
+  },
+  "12261": {
+    "id": 12261,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5600,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.5600]"
+  },
+  "12262": {
+    "id": 12262,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5600,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.5600]"
+  },
   "12263": {
     "id": 12263,
     "ilevel": "24 @plvl 1 - 623 @plvl 623",
@@ -91825,17 +66148,17 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 82895,
     "tag": "Timewarped"
   },
-  "12371": {
-    "id": 12371,
+  "12265": {
+    "id": 12265,
     "upgrade": {
-      "group": 441,
-      "level": 7,
+      "group": 513,
+      "level": 1,
       "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 7/8",
-      "bonusId": 12371,
-      "itemLevel": 668,
-      "seasonId": 25,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 12265,
+      "itemLevel": 642,
+      "seasonId": 30,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -91843,15 +66166,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 190,
+              "amount": 50,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91861,15 +66178,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 160,
+              "amount": 40,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91879,15 +66190,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 100,
+              "amount": 25,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91897,15 +66202,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 100,
+              "amount": 25,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91915,15 +66214,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 200,
+              "amount": 50,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91933,15 +66226,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 400,
+              "amount": 100,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91951,15 +66238,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 300,
+              "amount": 75,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         },
@@ -91969,15 +66250,9 @@ export const bonus_IDs: {[key: string]: any} = {
           "amounts": [
             {
               "currencyId": 3008,
-              "amount": 400,
+              "amount": 100,
               "name": "Valorstones",
               "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
             }
           ]
         }
@@ -91991,49 +66266,7165 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "type": "currency",
-          "id": 3107,
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3108,
+          "id": 3286,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3109,
+          "id": 3288,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3110,
+          "id": 3290,
           "scaling": 0,
           "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12266": {
+    "id": 12266,
+    "upgrade": {
+      "group": 513,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 12266,
+      "itemLevel": 645,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
         },
         {
           "type": "currency",
           "id": 3008,
           "scaling": 0.5,
           "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12267": {
+    "id": 12267,
+    "upgrade": {
+      "group": 513,
+      "level": 3,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 12267,
+      "itemLevel": 649,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12268": {
+    "id": 12268,
+    "upgrade": {
+      "group": 513,
+      "level": 4,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 12268,
+      "itemLevel": 652,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12269": {
+    "id": 12269,
+    "upgrade": {
+      "group": 513,
+      "level": 5,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 12269,
+      "itemLevel": 655,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12270": {
+    "id": 12270,
+    "upgrade": {
+      "group": 513,
+      "level": 6,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 12270,
+      "itemLevel": 658,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12271": {
+    "id": 12271,
+    "upgrade": {
+      "group": 513,
+      "level": 7,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 12271,
+      "itemLevel": 662,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12272": {
+    "id": 12272,
+    "upgrade": {
+      "group": 513,
+      "level": 8,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 12272,
+      "itemLevel": 665,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12274": {
+    "id": 12274,
+    "upgrade": {
+      "group": 514,
+      "level": 1,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 1/8",
+      "bonusId": 12274,
+      "itemLevel": 655,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12275": {
+    "id": 12275,
+    "upgrade": {
+      "group": 514,
+      "level": 2,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 2/8",
+      "bonusId": 12275,
+      "itemLevel": 658,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12276": {
+    "id": 12276,
+    "upgrade": {
+      "group": 514,
+      "level": 3,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 12276,
+      "itemLevel": 662,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12277": {
+    "id": 12277,
+    "upgrade": {
+      "group": 514,
+      "level": 4,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 12277,
+      "itemLevel": 665,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12278": {
+    "id": 12278,
+    "upgrade": {
+      "group": 514,
+      "level": 5,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 5/8",
+      "bonusId": 12278,
+      "itemLevel": 668,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
         }
       ]
     },
     "quality": 4
   },
-  "12372": {
-    "id": 12372,
+  "12279": {
+    "id": 12279,
     "upgrade": {
-      "group": 441,
+      "group": 514,
+      "level": 6,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 6/8",
+      "bonusId": 12279,
+      "itemLevel": 671,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12280": {
+    "id": 12280,
+    "upgrade": {
+      "group": 514,
+      "level": 7,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 7/8",
+      "bonusId": 12280,
+      "itemLevel": 675,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12281": {
+    "id": 12281,
+    "upgrade": {
+      "group": 514,
       "level": 8,
       "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 8/8",
-      "bonusId": 12372,
+      "name": "Adventurer",
+      "fullName": "Adventurer 8/8",
+      "bonusId": 12281,
+      "itemLevel": 678,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12282": {
+    "id": 12282,
+    "upgrade": {
+      "group": 515,
+      "level": 1,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 1/8",
+      "bonusId": 12282,
+      "itemLevel": 668,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12283": {
+    "id": 12283,
+    "upgrade": {
+      "group": 515,
+      "level": 2,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 2/8",
+      "bonusId": 12283,
       "itemLevel": 671,
-      "seasonId": 25,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12284": {
+    "id": 12284,
+    "upgrade": {
+      "group": 515,
+      "level": 3,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 3/8",
+      "bonusId": 12284,
+      "itemLevel": 675,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12285": {
+    "id": 12285,
+    "upgrade": {
+      "group": 515,
+      "level": 4,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 4/8",
+      "bonusId": 12285,
+      "itemLevel": 678,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3284,
+              "amount": 15,
+              "name": "Weathered Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_weathered"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12286": {
+    "id": 12286,
+    "upgrade": {
+      "group": 515,
+      "level": 5,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 12286,
+      "itemLevel": 681,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12287": {
+    "id": 12287,
+    "upgrade": {
+      "group": 515,
+      "level": 6,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 12287,
+      "itemLevel": 684,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12288": {
+    "id": 12288,
+    "upgrade": {
+      "group": 515,
+      "level": 7,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 7/8",
+      "bonusId": 12288,
+      "itemLevel": 688,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12289": {
+    "id": 12289,
+    "upgrade": {
+      "group": 515,
+      "level": 8,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 8/8",
+      "bonusId": 12289,
+      "itemLevel": 691,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12290": {
+    "id": 12290,
+    "upgrade": {
+      "group": 516,
+      "level": 1,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 1/8",
+      "bonusId": 12290,
+      "itemLevel": 681,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12291": {
+    "id": 12291,
+    "upgrade": {
+      "group": 516,
+      "level": 2,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 2/8",
+      "bonusId": 12291,
+      "itemLevel": 684,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12292": {
+    "id": 12292,
+    "upgrade": {
+      "group": 516,
+      "level": 3,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 3/8",
+      "bonusId": 12292,
+      "itemLevel": 688,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12293": {
+    "id": 12293,
+    "upgrade": {
+      "group": 516,
+      "level": 4,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 4/8",
+      "bonusId": 12293,
+      "itemLevel": 691,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3286,
+              "amount": 15,
+              "name": "Carved Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_carved"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12294": {
+    "id": 12294,
+    "upgrade": {
+      "group": 516,
+      "level": 5,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 5/8",
+      "bonusId": 12294,
+      "itemLevel": 694,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12295": {
+    "id": 12295,
+    "upgrade": {
+      "group": 516,
+      "level": 6,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 6/8",
+      "bonusId": 12295,
+      "itemLevel": 697,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12296": {
+    "id": 12296,
+    "upgrade": {
+      "group": 516,
+      "level": 7,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 12296,
+      "itemLevel": 701,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12297": {
+    "id": 12297,
+    "upgrade": {
+      "group": 516,
+      "level": 8,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 12297,
+      "itemLevel": 704,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12298": {
+    "id": 12298,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207403,
+      "index": 0,
+      "spell": {
+        "id": 1224959,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12299": {
+    "id": 12299,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207404,
+      "index": 0,
+      "spell": {
+        "id": 1224961,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12300": {
+    "id": 12300,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207405,
+      "index": 0,
+      "spell": {
+        "id": 1224962,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12301": {
+    "id": 12301,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207406,
+      "index": 0,
+      "spell": {
+        "id": 1224963,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12302": {
+    "id": 12302,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207407,
+      "index": 0,
+      "spell": {
+        "id": 1224964,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12303": {
+    "id": 12303,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207408,
+      "index": 0,
+      "spell": {
+        "id": 1224965,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12304": {
+    "id": 12304,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207409,
+      "index": 0,
+      "spell": {
+        "id": 1224967,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12305": {
+    "id": 12305,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207410,
+      "index": 0,
+      "spell": {
+        "id": 1224968,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12306": {
+    "id": 12306,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207411,
+      "index": 0,
+      "spell": {
+        "id": 1224970,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12307": {
+    "id": 12307,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207412,
+      "index": 0,
+      "spell": {
+        "id": 1224972,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12308": {
+    "id": 12308,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207413,
+      "index": 0,
+      "spell": {
+        "id": 1224973,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12309": {
+    "id": 12309,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207414,
+      "index": 0,
+      "spell": {
+        "id": 1224974,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12310": {
+    "id": 12310,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207419,
+      "index": 0,
+      "spell": {
+        "id": 1224983,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12311": {
+    "id": 12311,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207420,
+      "index": 0,
+      "spell": {
+        "id": 1224985,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12312": {
+    "id": 12312,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207421,
+      "index": 0,
+      "spell": {
+        "id": 1224988,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12313": {
+    "id": 12313,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207422,
+      "index": 0,
+      "spell": {
+        "id": 1224989,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12314": {
+    "id": 12314,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207423,
+      "index": 0,
+      "spell": {
+        "id": 1224990,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12315": {
+    "id": 12315,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207424,
+      "index": 0,
+      "spell": {
+        "id": 1224991,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12316": {
+    "id": 12316,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207425,
+      "index": 0,
+      "spell": {
+        "id": 1224993,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12317": {
+    "id": 12317,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207426,
+      "index": 0,
+      "spell": {
+        "id": 1224994,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12318": {
+    "id": 12318,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 203494,
+      "index": 0,
+      "spell": {
+        "id": 474599,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12319": {
+    "id": 12319,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 203495,
+      "index": 0,
+      "spell": {
+        "id": 474627,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12320": {
+    "id": 12320,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 203496,
+      "index": 0,
+      "spell": {
+        "id": 474628,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12321": {
+    "id": 12321,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 203497,
+      "index": 0,
+      "spell": {
+        "id": 474629,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12322": {
+    "id": 12322,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207432,
+      "index": 0,
+      "spell": {
+        "id": 1225061,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12323": {
+    "id": 12323,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207433,
+      "index": 0,
+      "spell": {
+        "id": 1225062,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12324": {
+    "id": 12324,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207434,
+      "index": 0,
+      "spell": {
+        "id": 1225063,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12325": {
+    "id": 12325,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207436,
+      "index": 0,
+      "spell": {
+        "id": 1225065,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12326": {
+    "id": 12326,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207437,
+      "index": 0,
+      "spell": {
+        "id": 1225066,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12327": {
+    "id": 12327,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207438,
+      "index": 0,
+      "spell": {
+        "id": 1225067,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12328": {
+    "id": 12328,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207439,
+      "index": 0,
+      "spell": {
+        "id": 1225068,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12329": {
+    "id": 12329,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207440,
+      "index": 0,
+      "spell": {
+        "id": 1225069,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12330": {
+    "id": 12330,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207441,
+      "index": 0,
+      "spell": {
+        "id": 1225070,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12331": {
+    "id": 12331,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207442,
+      "index": 0,
+      "spell": {
+        "id": 1225072,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12332": {
+    "id": 12332,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207443,
+      "index": 0,
+      "spell": {
+        "id": 1225073,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12333": {
+    "id": 12333,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207444,
+      "index": 0,
+      "spell": {
+        "id": 1225076,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12334": {
+    "id": 12334,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207445,
+      "index": 0,
+      "spell": {
+        "id": 1225077,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12335": {
+    "id": 12335,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207446,
+      "index": 0,
+      "spell": {
+        "id": 1225079,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12336": {
+    "id": 12336,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207447,
+      "index": 0,
+      "spell": {
+        "id": 1225080,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12337": {
+    "id": 12337,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207448,
+      "index": 0,
+      "spell": {
+        "id": 1225081,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12338": {
+    "id": 12338,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207449,
+      "index": 0,
+      "spell": {
+        "id": 1225082,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12339": {
+    "id": 12339,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207450,
+      "index": 0,
+      "spell": {
+        "id": 1225083,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12340": {
+    "id": 12340,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207452,
+      "index": 0,
+      "spell": {
+        "id": 1225085,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12341": {
+    "id": 12341,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207453,
+      "index": 0,
+      "spell": {
+        "id": 1225087,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12342": {
+    "id": 12342,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207456,
+      "index": 0,
+      "spell": {
+        "id": 1225090,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12343": {
+    "id": 12343,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207457,
+      "index": 0,
+      "spell": {
+        "id": 1225091,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12344": {
+    "id": 12344,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207458,
+      "index": 0,
+      "spell": {
+        "id": 1225092,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12345": {
+    "id": 12345,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207460,
+      "index": 0,
+      "spell": {
+        "id": 1225093,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12346": {
+    "id": 12346,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 207428,
+      "index": 0,
+      "spell": {
+        "id": 1224996,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12347": {
+    "id": 12347,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 207429,
+      "index": 0,
+      "spell": {
+        "id": 1224998,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12348": {
+    "id": 12348,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 207430,
+      "index": 0,
+      "spell": {
+        "id": 1225000,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12349": {
+    "id": 12349,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 207431,
+      "index": 0,
+      "spell": {
+        "id": 1225001,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12350": {
+    "id": 12350,
+    "upgrade": {
+      "group": 517,
+      "level": 1,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 1/6",
+      "bonusId": 12350,
+      "itemLevel": 694,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12351": {
+    "id": 12351,
+    "upgrade": {
+      "group": 517,
+      "level": 2,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 2/6",
+      "bonusId": 12351,
+      "itemLevel": 697,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12352": {
+    "id": 12352,
+    "upgrade": {
+      "group": 517,
+      "level": 3,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 3/6",
+      "bonusId": 12352,
+      "itemLevel": 701,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12353": {
+    "id": 12353,
+    "upgrade": {
+      "group": 517,
+      "level": 4,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 4/6",
+      "bonusId": 12353,
+      "itemLevel": 704,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3288,
+              "amount": 15,
+              "name": "Runed Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_runed"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12354": {
+    "id": 12354,
+    "upgrade": {
+      "group": 517,
+      "level": 5,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 5/6",
+      "bonusId": 12354,
+      "itemLevel": 707,
+      "seasonId": 30,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -92046,10 +73437,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92064,10 +73455,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92082,10 +73473,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92100,10 +73491,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92118,10 +73509,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92136,10 +73527,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92154,10 +73545,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         },
@@ -92172,10 +73563,10 @@ export const bonus_IDs: {[key: string]: any} = {
               "icon": "inv_valorstone_base"
             },
             {
-              "currencyId": 3110,
+              "currencyId": 3290,
               "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
             }
           ]
         }
@@ -92189,36 +73580,1455 @@ export const bonus_IDs: {[key: string]: any} = {
         },
         {
           "type": "currency",
-          "id": 3107,
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3108,
+          "id": 3286,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3109,
+          "id": 3288,
           "scaling": 0,
           "accountWide": false
         },
         {
           "type": "currency",
-          "id": 3110,
+          "id": 3290,
           "scaling": 0,
           "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12355": {
+    "id": 12355,
+    "upgrade": {
+      "group": 517,
+      "level": 6,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 6/6",
+      "bonusId": 12355,
+      "itemLevel": 710,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
         },
         {
           "type": "currency",
           "id": 3008,
           "scaling": 0.5,
           "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
         }
       ]
     },
+    "quality": 4
+  },
+  "12356": {
+    "id": 12356,
+    "upgrade": {
+      "group": 518,
+      "level": 1,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 1/6",
+      "bonusId": 12356,
+      "itemLevel": 707,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12357": {
+    "id": 12357,
+    "upgrade": {
+      "group": 518,
+      "level": 2,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 2/6",
+      "bonusId": 12357,
+      "itemLevel": 710,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12358": {
+    "id": 12358,
+    "upgrade": {
+      "group": 518,
+      "level": 3,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 3/6",
+      "bonusId": 12358,
+      "itemLevel": 714,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12359": {
+    "id": 12359,
+    "upgrade": {
+      "group": 518,
+      "level": 4,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 4/6",
+      "bonusId": 12359,
+      "itemLevel": 717,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12360": {
+    "id": 12360,
+    "upgrade": {
+      "group": 518,
+      "level": 5,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 5/6",
+      "bonusId": 12360,
+      "itemLevel": 720,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12361": {
+    "id": 12361,
+    "upgrade": {
+      "group": 518,
+      "level": 6,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 6/6",
+      "bonusId": 12361,
+      "itemLevel": 723,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12362": {
+    "id": 12362,
+    "ilevel": "15 @plvl 10 - 626 @plvl 626",
+    "curveId": 83241
+  },
+  "12363": {
+    "id": 12363,
+    "ilevel": "15 @plvl 10 - 629 @plvl 629",
+    "curveId": 83243
+  },
+  "12364": {
+    "id": 12364,
+    "ilevel": "15 @plvl 10 - 632 @plvl 632",
+    "curveId": 83244
+  },
+  "12365": {
+    "id": 12365,
+    "socket": 1
+  },
+  "12367": {
+    "id": 12367,
+    "quality": 3,
+    "base_level": 639,
+    "base_level_priority": 0
+  },
+  "12371": {
+    "id": 12371,
+    "quality": 4
+  },
+  "12372": {
+    "id": 12372,
     "quality": 4
   },
   "12373": {
@@ -92231,407 +75041,478 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12375": {
     "id": 12375,
-    "upgrade": {
-      "group": 442,
-      "level": 7,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 7/8",
-      "bonusId": 12375,
-      "itemLevel": 681,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
   },
   "12376": {
     "id": 12376,
-    "upgrade": {
-      "group": 442,
-      "level": 8,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 8/8",
-      "bonusId": 12376,
-      "itemLevel": 684,
-      "seasonId": 25,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3110,
-              "amount": 15,
-              "name": "Gilded Undermine Crest",
-              "icon": "inv_crestupgrade_undermine_gilded"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3107,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3108,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3109,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3110,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        }
-      ]
-    },
     "quality": 4
+  },
+  "12377": {
+    "id": 12377,
+    "ilevel": "19 @plvl 1 - 632 @plvl 632",
+    "curveId": 83868,
+    "tag": "Timewarped"
+  },
+  "12378": {
+    "id": 12378,
+    "ilevel": "24 @plvl 1 - 668 @plvl 668",
+    "curveId": 83939
+  },
+  "12379": {
+    "id": 12379,
+    "ilevel": "21 @plvl 1 - 632 @plvl 632",
+    "curveId": 83940,
+    "quality": 3
+  },
+  "12380": {
+    "id": 12380,
+    "ilevel": "21 @plvl 1 - 632 @plvl 632",
+    "curveId": 83940,
+    "quality": 3
+  },
+  "12396": {
+    "id": 12396,
+    "tag": "Rank 1"
+  },
+  "12397": {
+    "id": 12397,
+    "tag": "Rank 2"
+  },
+  "12398": {
+    "id": 12398,
+    "tag": "Rank 3"
+  },
+  "12399": {
+    "id": 12399,
+    "tag": "Rank 4"
+  },
+  "12400": {
+    "id": 12400,
+    "tag": "Rank 5"
+  },
+  "12401": {
+    "id": 12401,
+    "tag": "Rank 6"
+  },
+  "12402": {
+    "id": 12402,
+    "tag": "Rank 7"
   },
   "12504": {
     "id": 12504,
     "quality": 4
   },
+  "12505": {
+    "id": 12505,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": -2000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Crit [0.2000], -Infinity% Haste [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12506": {
+    "id": 12506,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": -2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.2000], -Infinity% Vers [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12507": {
+    "id": 12507,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": -2000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Crit [0.2000], -Infinity% Mastery [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12508": {
+    "id": 12508,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 2000,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": -2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Crit [0.2000], -Infinity% Vers [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12509": {
+    "id": 12509,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      },
+      {
+        "stat": 32,
+        "amount": -2000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Haste [0.2000], -Infinity% Crit [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12510": {
+    "id": 12510,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": -2000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Haste [0.2000], -Infinity% Mastery [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12511": {
+    "id": 12511,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 2000,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": -2000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Haste [0.2000], -Infinity% Vers [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12512": {
+    "id": 12512,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 32,
+        "amount": -2000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.2000], -Infinity% Crit [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12513": {
+    "id": 12513,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 2000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 36,
+        "amount": -2000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.2000], -Infinity% Haste [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12514": {
+    "id": 12514,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      },
+      {
+        "stat": 32,
+        "amount": -2000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Vers [0.2000], -Infinity% Crit [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12515": {
+    "id": 12515,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      },
+      {
+        "stat": 36,
+        "amount": -2000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Vers [0.2000], -Infinity% Haste [-0.2000]",
+    "tag": "Voidtouched"
+  },
+  "12516": {
+    "id": 12516,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 2000,
+        "name": "Vers"
+      },
+      {
+        "stat": 49,
+        "amount": -2000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Vers [0.2000], -Infinity% Mastery [-0.2000]",
+    "tag": "Voidtouched"
+  },
   "12517": {
     "id": 12517,
     "quality": 4
+  },
+  "12518": {
+    "id": 12518,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": -5000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Crit [0.5000], -Infinity% Haste [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12519": {
+    "id": 12519,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": -5000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Crit [0.5000], -Infinity% Mastery [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12520": {
+    "id": 12520,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 5000,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": -5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Crit [0.5000], -Infinity% Vers [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12521": {
+    "id": 12521,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      },
+      {
+        "stat": 32,
+        "amount": -5000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Haste [0.5000], -Infinity% Crit [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12522": {
+    "id": 12522,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": -5000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Haste [0.5000], -Infinity% Mastery [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12523": {
+    "id": 12523,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 5000,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": -5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Haste [0.5000], -Infinity% Vers [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12524": {
+    "id": 12524,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 32,
+        "amount": -5000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.5000], -Infinity% Crit [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12525": {
+    "id": 12525,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 36,
+        "amount": -5000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.5000], -Infinity% Haste [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12526": {
+    "id": 12526,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 5000,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": -5000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "Infinity% Mastery [0.5000], -Infinity% Vers [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12527": {
+    "id": 12527,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      },
+      {
+        "stat": 32,
+        "amount": -5000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "Infinity% Vers [0.5000], -Infinity% Crit [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12528": {
+    "id": 12528,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      },
+      {
+        "stat": 36,
+        "amount": -5000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "Infinity% Vers [0.5000], -Infinity% Haste [-0.5000]",
+    "tag": "Voidtouched"
+  },
+  "12529": {
+    "id": 12529,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 5000,
+        "name": "Vers"
+      },
+      {
+        "stat": 49,
+        "amount": -5000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "Infinity% Vers [0.5000], -Infinity% Mastery [-0.5000]",
+    "tag": "Voidtouched"
   },
   "12530": {
     "id": 12530,
@@ -92649,8 +75530,281 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12533,
     "quality": 4
   },
+  "12534": {
+    "id": 12534,
+    "upgrade": {
+      "group": 595,
+      "level": 1,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 1/8",
+      "bonusId": 12534,
+      "itemLevel": 655
+    },
+    "quality": 3
+  },
+  "12535": {
+    "id": 12535,
+    "upgrade": {
+      "group": 595,
+      "level": 2,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 2/8",
+      "bonusId": 12535,
+      "itemLevel": 658
+    },
+    "quality": 3
+  },
+  "12536": {
+    "id": 12536,
+    "upgrade": {
+      "group": 595,
+      "level": 3,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 3/8",
+      "bonusId": 12536,
+      "itemLevel": 662
+    },
+    "quality": 3
+  },
+  "12537": {
+    "id": 12537,
+    "upgrade": {
+      "group": 595,
+      "level": 4,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 4/8",
+      "bonusId": 12537,
+      "itemLevel": 665
+    },
+    "quality": 3,
+    "ilevel": "1 @plvl 1 - 664 @plvl 664",
+    "curveId": 87120
+  },
+  "12538": {
+    "id": 12538,
+    "upgrade": {
+      "group": 595,
+      "level": 5,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 5/8",
+      "bonusId": 12538,
+      "itemLevel": 668
+    },
+    "quality": 3
+  },
+  "12539": {
+    "id": 12539,
+    "upgrade": {
+      "group": 595,
+      "level": 6,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 6/8",
+      "bonusId": 12539,
+      "itemLevel": 671
+    },
+    "quality": 3
+  },
+  "12540": {
+    "id": 12540,
+    "upgrade": {
+      "group": 595,
+      "level": 7,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 7/8",
+      "bonusId": 12540,
+      "itemLevel": 675
+    },
+    "quality": 3
+  },
+  "12541": {
+    "id": 12541,
+    "upgrade": {
+      "group": 595,
+      "level": 8,
+      "max": 8,
+      "name": "Test",
+      "fullName": "Test 8/8",
+      "bonusId": 12541,
+      "itemLevel": 678
+    },
+    "quality": 3
+  },
   "12542": {
     "id": 12542,
     "quality": 2
+  },
+  "12674": {
+    "id": 12674,
+    "tag": "Voidtouched"
+  },
+  "12677": {
+    "id": 12677,
+    "tag": "Rank 3/4",
+    "quality": 4,
+    "effect": {
+      "id": 203501,
+      "index": 0,
+      "spell": {
+        "id": 474563,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12678": {
+    "id": 12678,
+    "tag": "Rank 3/4",
+    "quality": 4,
+    "effect": {
+      "id": 203517,
+      "index": 0,
+      "spell": {
+        "id": 474587,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12679": {
+    "id": 12679,
+    "tag": "Rank 2/4",
+    "quality": 3,
+    "effect": {
+      "id": 203520,
+      "index": 0,
+      "spell": {
+        "id": 474595,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12680": {
+    "id": 12680,
+    "tag": "Rank 2/4",
+    "quality": 4,
+    "effect": {
+      "id": 203521,
+      "index": 0,
+      "spell": {
+        "id": 474596,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12681": {
+    "id": 12681,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 203482,
+      "index": 0,
+      "spell": {
+        "id": 474605,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12682": {
+    "id": 12682,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 203483,
+      "index": 0,
+      "spell": {
+        "id": 474615,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    },
+    "quality": 2
+  },
+  "12683": {
+    "id": 12683,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 203484,
+      "index": 0,
+      "spell": {
+        "id": 474616,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12684": {
+    "id": 12684,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 203485,
+      "index": 0,
+      "spell": {
+        "id": 474617,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "12922": {
+    "id": 12922,
+    "socket": 1
+  },
+  "13501": {
+    "id": 13501,
+    "effect": {
+      "id": 215869,
+      "index": 0,
+      "spell": {
+        "id": 1254906,
+        "name": "Reshii Grace",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13502": {
+    "id": 13502,
+    "effect": {
+      "id": 215870,
+      "index": 0,
+      "spell": {
+        "id": 1254904,
+        "name": "Reshii Grace",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13503": {
+    "id": 13503,
+    "effect": {
+      "id": 215871,
+      "index": 0,
+      "spell": {
+        "id": 1254905,
+        "name": "Reshii Grace",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13504": {
+    "id": 13504,
+    "effect": {
+      "id": 215872,
+      "index": 0,
+      "spell": {
+        "id": 1235409,
+        "name": "Reshii Grace",
+        "icon": "trade_engineering"
+      }
+    }
   }
 }

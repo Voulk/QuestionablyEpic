@@ -520,6 +520,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       // Monks require us to provide some information on our weapon too.
       const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
       setStats.weaponSwingSpeed = weapon.stats.weaponSwingSpeed;
+      setStats.isTwoHanded = weapon.slot.includes("2H") ? true : false;
       //const isTwoHanded = setStats.weaponSwingSpeed > 2.8 ? true : false;
       setStats.weaponDamage = weapon.stats.averageDamage// / setStats.weaponSwingSpeed * (isTwoHanded ? 0.5 : 0.898882 * 0.75); // Average damage per second.
       //setStats.meleeWeaponDamage = weapon.stats.averageDamage / setStats.weaponSwingSpeed * (isTwoHanded ? 1 : 0.898882); // Average damage per second.

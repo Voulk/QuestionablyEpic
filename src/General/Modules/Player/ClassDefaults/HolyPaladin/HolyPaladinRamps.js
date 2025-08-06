@@ -18,7 +18,8 @@ export const PALADINCONSTANTS = {
     enemyTargets: 1,
 
     // Beacon Section
-    beaconAoEList: ["Light of Dawn", "Light's Hammer", "Glimmer of Light", "Dawnlight (Cleave)"], // Glimmer is handled manually to catch other sources of glimmer
+    beaconSingleTargetList: ["Holy Shock", "Word of Glory", "Eternal Flame", "Holy Light", "Flash of Light", "Avenging Crusader"],
+    beaconAoEList: ["Light of Dawn", "Light's Hammer"], // Glimmer is handled manually to catch other sources of glimmer
     beaconExclusionList: ["Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
                             "Judgment", "Greater Judgment", "Shield of the Righteous", "Barrier of Faith"],
     beaconOverhealing: 0.3,
@@ -280,9 +281,9 @@ export const runHeal = (state, spell, spellName, compile = true) => {
 
 
     // Beacons
-    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-    else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.1 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
+    if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.25 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.175 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+    else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.25 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
     
     // Compile healing and add report if necessary.
     if (compile) state.healingDone[spellName] = (state.healingDone[spellName] || 0) + healingVal;

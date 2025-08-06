@@ -4,6 +4,101 @@ import { randPropPoints } from "Retail/Engine/RandPropPointsBylevel";
 import { combat_ratings_mult_by_ilvl } from "Retail/Engine/CombatMultByLevel";
 
 export const otherTrinketData = [
+    { 
+    name: "Chaotic Nethergate",
+    description: "",
+    effects: [
+      { // Damage effect
+        coefficient: 16.83968, 
+        table: -9,
+        ticks: 10,
+        targets: 1,
+        secondaries: ["crit", "versatility"], // Crit untested
+        cooldown: 120,
+        duration: 10,
+      },
+      { // Heal effect
+        coefficient: 7.016621, 
+        table: -9,
+        efficiency: 0.6,
+        targets: 8,
+        ticks: 10,
+        secondaries: ["crit", "versatility"], // Crit untested
+        cooldown: 120,
+        duration: 10,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.dps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+      bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Manaforged Aethercell",
+    description: "", // Check if procs can overlap.
+    effects: [
+      {
+        coefficient: 2.090432, 
+        table: -7,
+        duration: 15,
+        ppm: 2,
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mastery = processedValue(data[0], itemLevel) / 2 * convertPPMToUptime(data[0].ppm!, data[0].duration!);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Twisted Mana Sprite",
+    description: "",
+    effects: [
+      { // Heal effect
+        coefficient: 8.559967, 
+        table: -9,
+        efficiency: 0.85,
+        ticks: 5, // Heals per Sprite proc.
+        secondaries: ["crit", "versatility"], // Crit untested
+        ppm: 10,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+      return bonus_stats;
+    }
+  },
+    { 
+    name: "Essence-Hunter's Eyeglass",
+    description: "",
+    effects: [
+      {
+        coefficient: 0.12025, 
+        table: -7, // 
+        stat: "crit",
+        stacks: 2.6,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].stacks!;
+
+      return bonus_stats;
+    }
+  },
+
+  // S2
   { 
     name: "Amorphous Relic",
     description: "Buffed 108%. They should have picked a higher number.",

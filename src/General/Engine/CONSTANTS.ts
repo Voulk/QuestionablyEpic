@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.8, // This is a heavy underestimation. Maybe add a setting.
-    allyDPSPerPoint: 0.8 / 60000 * 1500000,
+    allyStatWeight: 1.1, // This is a heavy underestimation. Maybe add a setting.
+    allyDPSPerPoint: 1.1 / 125000 * 3000000,
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,
@@ -16,8 +16,8 @@ export const CONSTANTS = {
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
     seasonalItemConversion: 10, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-    currentRaidID: 1296, // Undermine
-    currentDungeonIDs: [1178, 1012, 1187, 1298, 1210, 1267, 1272, 1268],
+    currentRaidID: 1302, // Undermine
+    currentDungeonIDs: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
     bossNPCIDs: {
         2639: 225821, // Vexie and the Geargrinders.
         2640: 229177, // Cauldron of Carnage
@@ -45,6 +45,8 @@ export const CONSTANTS = {
     qualityColors: {
         3: "#328CE3",
         4: "#a73fee",
+        5: "#ff8000", // Legendary
+        6: "#e6cc80", // Artifact
     }
 }
 

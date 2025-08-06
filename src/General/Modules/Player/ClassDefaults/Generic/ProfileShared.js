@@ -90,7 +90,7 @@ export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
 }
 
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
-    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+    const isTwoHander = statProfile.isTwoHanded ?? false;
 
     const stats = {
         spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.

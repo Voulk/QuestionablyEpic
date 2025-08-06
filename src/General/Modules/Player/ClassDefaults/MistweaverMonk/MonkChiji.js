@@ -42,7 +42,7 @@ export const chijiSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1.16,
         c90: 1,
-        c120: 1.8, // This is to match the results from our cast profile.
+        c120: 1.75, // This is to match the results from our cast profile.
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
@@ -70,10 +70,10 @@ export const chijiStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.21,
-    crit: 1.063,
-    mastery: 1.012,
-    versatility: 1.066,
+    haste: 1.31,
+    crit: 1.17,
+    mastery: 1.145,
+    versatility: 1.1,
     leech: 0.4,
   };
   statWeights.Dungeon = { // Unused

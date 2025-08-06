@@ -442,6 +442,18 @@ export const DISCSPELLS = {
         stat: "mastery",
         value: 2000, // Trinket values are replaced by the value on the specific version of the trinket.
     }],
+    "Lily of the Eternal Weave": [{
+        spellData: {id: 366155, icon: "ability_evoker_reversion", cat: "N/A"},
+        type: "buff",
+        castTime: 0,
+        offGCD: true,
+        cost: 0,
+        cooldownData: {cooldown: 90, hasted: false}, 
+        buffDuration: 15,
+        buffType: 'stats',
+        stat: "mastery",
+        value: 2000, // Trinket values are replaced by the value on the specific version of the trinket.
+    }],
 }
 
 export const baseTalents = {

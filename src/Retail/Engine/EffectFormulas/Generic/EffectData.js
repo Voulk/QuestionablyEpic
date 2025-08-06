@@ -1,6 +1,53 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+    { 
+    name: "Voidglass Shards", // Shards of the Void
+    effects: [
+      {
+        coefficient: 55.44585, 
+        table: -9,
+        ppm: 2.5,
+        secondaries: ['haste', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+      let mult = 1;
+      if (additionalData.setVariables && additionalData.setVariables.hasVoidcore) { 
+        mult *= (3 * 0.6 + 0.4);
+      }
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * mult;
+
+      return bonus_stats;
+    },
+  },
+    { 
+    name: "Reshii Wraps",
+    effects: [
+      {
+        coefficient: 75.3012, 
+        table: -9,
+        ppm: 2,
+        efficiency: 0.95, // Converts to absorb so high efficiency.
+        secondaries: ['haste', 'crit', 'versatility'], // Check Crit
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player); 
+
+      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
+        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
+      }
+
+      return bonus_stats;
+    },
+  },
   { // Settings for number of Signetbearers in party? This is party only, not raid wide.
     name: "Neural Synapse Enhancer",
     effects: [
