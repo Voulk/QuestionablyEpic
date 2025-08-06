@@ -64,9 +64,9 @@ export const otherTrinketData = [
       { // Heal effect
         coefficient: 8.559967, 
         table: -9,
-        efficiency: 0.9,
+        efficiency: 0.85,
         ticks: 5, // Heals per Sprite proc.
-        secondaries: ["crit", "haste", "versatility"], // Crit untested
+        secondaries: ["crit", "versatility"], // Crit untested
         ppm: 10,
       },
     ],

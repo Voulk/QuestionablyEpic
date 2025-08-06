@@ -19,7 +19,10 @@ export const dungeonTrinketData =
 
       bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
 
-      if (additionalData.contentType === "Dungeon" || player.spec === "Discipline Priest") {
+      if (player.spec === "Mistweaver Monk") {
+        bonus_stats.intellect *= 0.2;
+      }
+      else if (additionalData.contentType === "Dungeon" || player.spec === "Discipline Priest") {
 
       }
       else {

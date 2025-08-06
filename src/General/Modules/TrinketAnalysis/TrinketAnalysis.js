@@ -239,7 +239,7 @@ export default function TrinketAnalysis(props) {
     (key) =>
       key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
-  console.log(trinketDB)
+
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];

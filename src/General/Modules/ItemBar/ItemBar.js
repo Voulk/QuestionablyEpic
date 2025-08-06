@@ -194,6 +194,8 @@ export default function ItemBar(props) {
       if (item) {
         if (itemEffect.type !== "") {
           item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
+          console.log("Added item with effect: ")
+          console.log(itemEffect);
           if (itemEffect.type === "Embellishment") {
             item.uniqueTag = "embellishment";
           }
@@ -219,9 +221,11 @@ export default function ItemBar(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
+      setItemEffect({type: "", effectName: "", label: ""});
     } else {
       setItemID(val.value);
       setItemName(val.name);
+      setItemEffect({type: "", effectName: "", label: ""});
       if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
@@ -245,7 +249,10 @@ export default function ItemBar(props) {
   };
 
   const itemEffectChanged = (event) => {
-    setItemEffect(event.target.value);
+    const selectedLabel = event.target.value;
+    const selected = itemEffectOptions.find(opt => opt.label === selectedLabel);
+    setItemEffect(selected);
+
   };
 
   const [openAuto, setOpenAuto] = React.useState(false);
@@ -521,9 +528,11 @@ export default function ItemBar(props) {
               disabled={false}
             >
               <InputLabel id="itemeffect">{t("QuickCompare.Effect")}</InputLabel>
-              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
+
+              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect.label} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
               {itemEffectOptions.map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
+
                     return (
                       <MenuItem divider={lastItem} key={key.label} label={key.label} value={key.label}>
                         {key.label}

@@ -26,6 +26,7 @@ export const changeLog: entry[] = [
     changes: [ 
       "Added Support for Patch 11.2",
       "TWW: Log entry will now accept links with extra parameters attached to them.",
+      "TWW: Fixed a bug with manually adding embellishments in-app.",
       "Classic: Fixed a bug where specifically the Gladiator's Battle Staff would be treated as a 1H weapon instead of a 2H.",
     ]},
     {

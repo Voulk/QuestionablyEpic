@@ -19,9 +19,7 @@ export const effectData = [
         mult *= (3 * 0.6 + 0.4);
       }
 
-
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * mult;
-      console.log("Voidglas S: " + bonus_stats.hps);
 
       return bonus_stats;
     },
@@ -46,7 +44,6 @@ export const effectData = [
       if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
         bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
       }
-      console.log("Reshii Wraps: " + bonus_stats.hps);
 
       return bonus_stats;
     },
