@@ -535,11 +535,11 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684, "Runed Crafted": 664, "Gilded Crafted": 681 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 665, Adventurer: 678, Veteran: 691, Champion: 704, Hero: 710, Myth: 723 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 665, Adventurer: 678, Veteran: 691, Champion: 704, Hero: 710, Myth: 723};
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   
