@@ -61,7 +61,6 @@ export default function DelvesContainer(props) {
   ];
 
   const iconReturn = (slot, spec) => {
-    console.log(slot, spec);
     switch (spec) {
       case "Restoration Druid":
       case "Restoration Druid Classic":

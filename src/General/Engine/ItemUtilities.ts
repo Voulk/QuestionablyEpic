@@ -1099,7 +1099,6 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
             item_stats[trinketSecondary] = Math.round(item_stats[trinketSecondary] - reforgeValue);
             item_stats[playerStatPriorityList[0]] = reforgeValue;
 
-            console.log("Reforging " + trinketSecondary + " to " + playerStatPriorityList[0] + " for item: " + item.name);
           }
 
     }
