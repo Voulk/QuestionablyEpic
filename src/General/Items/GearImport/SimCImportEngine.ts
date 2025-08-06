@@ -299,6 +299,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let craftedIDs = []; // Used to append crafted stats to the wowhead tooltip.
   let enchantID = 0;
   let titanDisc = 0;
+  let itemSpecial = 0;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -367,6 +368,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
           let statName = stat["name"].toLowerCase();
           if (statName === "vers") statName = "versatility"; // Pain
           specialAllocations[statName] = stat["amount"];
+          if (protoItem.id === 235499) {
+            itemSpecial = parseInt(bonus_id);
+          }
 
         }
       });
@@ -573,6 +577,10 @@ export function processItem(line: string, player: Player, contentType: contentTy
     }
     if (item.flags.includes("DelveBelt") && titanDisc !== 0) {
       if (getTitanDiscName(titanDisc) !== "Unknown Effect") item.selectedOptions = [titanDisc]
+    }
+    if (protoItem.id === 235499) {
+      // Reshii Wraps
+      item.selectedOptions = [itemSpecial];
     }
 
     item.quality = protoItem.quality !== 0 ? protoItem.quality : (getItemProp(protoItem.id, "quality") || 4);

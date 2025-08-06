@@ -178,6 +178,7 @@ export default function TrinketAnalysis(props) {
       //1207, // Amirdrassil
       1273, // Palace
       1296, // Liberation of Undermine
+      1302, // Manaforge Omega
     ];
     const dungeonSources = [
       -1, // General Dungeons
@@ -319,7 +320,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection. The ? button on the trinket chart can give you extra information on options."  :
+  const trinketText = gameType === "Retail" ? "Some trinkets, like Twisted Mana Sprite, are bugged. All rankings could change slightly through the week."  :
                                               "";
 
   return (

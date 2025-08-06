@@ -2,7 +2,7 @@
 import SPEC from "../../Engine/SPECS";
 import { STATCONVERSION } from "../../Engine/STAT";
 import Item from "../../Items/Item";
-import { scoreItem, getItemDB } from "../../Engine/ItemUtilities";
+import { scoreItem, getItemDB, getItemAllocations, calcStatsAtLevel } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
@@ -15,6 +15,7 @@ import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { classRaceDB } from "Databases/ClassRaceDB";
+import { bonus_IDs } from "Retail/Engine/BonusIDs";
 
 export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -355,6 +356,19 @@ export class Player {
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
+
+    if (item.id === 235499) {
+      // Reshii Wraps
+      // Remove stats and re-add.
+      const alloc = getItemAllocations(item.id, [], "Retail");
+      console.log(bonus_IDs[selectedOption])
+      const bonusPayload = bonus_IDs[selectedOption]["rawStats"];
+      alloc[bonusPayload['stat']] = bonusPayload["amount"];
+      item.stats = calcStatsAtLevel(item.level, item.slot, alloc, "");
+      item.bonusIDS = selectedOption;
+
+      
+    }
     
   };
 
@@ -643,11 +657,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
 
       this.activeStats = {
-        intellect: 85000,
-        haste: 18500,
-        crit: 2050,
-        mastery: 14000,
-        versatility: 5500,
+        intellect: 120000,
+        haste: 22000,
+        crit: 2550,
+        mastery: 18000,
+        versatility: 7000,
         stamina: 1900,
       };
     } else if (spec === SPEC.HOLYPALADIN) {
@@ -668,11 +682,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 80000,
-        haste: 4250,
-        crit: 12000,
-        mastery: 3300,
-        versatility: 11000,
+        intellect: 120000,
+        haste: 14000,
+        crit: 18000,
+        mastery: 5200,
+        versatility: 14000,
         stamina: 1900,
       };
     } else if (spec === SPEC.DISCPRIEST) {
@@ -682,11 +696,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
 
       this.activeStats = {
-        intellect: 85000, 
-        haste: 17000,
-        crit: 10000,
-        mastery: 9800,
-        versatility: 2700,
+        intellect: 120000, 
+        haste: 12000,
+        crit: 21000,
+        mastery: 18000,
+        versatility: 2900,
         stamina: 1900,
         critMult: 2,
       };
@@ -696,10 +710,10 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 85000,
-        haste: 4200,
-        crit: 12000,
-        mastery: 9700,
+        intellect: 120000,
+        haste: 5500,
+        crit: 21000,
+        mastery: 19500,
         versatility: 6200,
         stamina: 1900,
       }
@@ -709,11 +723,11 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
-          intellect: 85000,
-          haste: 10000,
-          crit: 7000,
-          mastery: 17000,
-          versatility: 3400,
+          intellect: 120000,
+          haste: 10500,
+          crit: 14000,
+          mastery: 24000,
+          versatility: 3900,
           stamina: 30000,
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -725,10 +739,10 @@ export class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 90000,
-        haste: 15000,
-        crit: 10000,
-        mastery: 3400,
+        intellect: 120000,
+        haste: 22000,
+        crit: 16000,
+        mastery: 3600,
         versatility: 8000,
         stamina: 1900,
       };

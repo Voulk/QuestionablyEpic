@@ -127,6 +127,20 @@ export class Item {
         this.selectedOptions = this.customOptions[0].id;
         this.flags.push("DelveBelt")
       }
+      else if (this.id === 235499) {
+        // Reshii Wraps
+        this.customOptions = [
+          {label: "Chronomatic Fiber (Haste)", id: [12262]},
+          {label: "Dextrous Fiber (Versatility)", id: [12260]},
+          {label: "Energizing Fiber (Mastery)", id: [12255]},
+          {label: "Precise Fiber (Crit)", id: [12261]},
+          {label: "Pure Chronomatic Fiber (Haste)", id: [12258]},
+          {label: "Pure Dextrous Fiber (Versatility)", id: [12259]},
+          {label: "Pure Energizing Fiber (Mastery)", id: [12256]},
+          {label: "Pure Precise Fiber (Crit)", id: [12257]},
+        ]
+
+      }
 
       /*
       if (this.id === 178708) {
