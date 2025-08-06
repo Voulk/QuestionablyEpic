@@ -38,7 +38,7 @@ export const CONSTANTS = {
         1298: 15452, // Operation Floodgate
         1187: 12841, // Theater of Pain
     },
-    seasonID: 25,
+    seasonID: 30,
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Restoration Druid Classic", /*"Holy Paladin Classic",*/  "Discipline Priest Classic", "Holy Priest Classic", /*"Restoration Shaman Classic",*/ "Mistweaver Monk Classic"],
 

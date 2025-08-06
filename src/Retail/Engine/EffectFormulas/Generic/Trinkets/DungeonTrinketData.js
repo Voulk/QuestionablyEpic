@@ -4,7 +4,7 @@ export const dungeonTrinketData =
 [
   {  
     name: "Azhiccaran Parapodia",
-    description: "Very overtuned but only procs off DPS spells.",
+    description: "Very overtuned but only procs off DPS spells OR abilities. Make sure you keep at least a DoT up if available. Ranking might change as live data comes in.",
     effects: [
       {
         coefficient: 0.594905, 
@@ -19,11 +19,12 @@ export const dungeonTrinketData =
 
       bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
 
-      if (player.spec === "Mistweaver Monk") {
-        bonus_stats.intellect *= 0.2;
-      }
-      else if (additionalData.contentType === "Dungeon" || player.spec === "Discipline Priest") {
+      if (player.spec === "Discipline Priest") {
 
+      }
+      else if (additionalData.contentType === "Dungeon") {
+        // Dungeon uptime should look a lot better
+        bonus_stats.intellect *= 0.9;
       }
       else {
         bonus_stats.intellect *= 0.5;
