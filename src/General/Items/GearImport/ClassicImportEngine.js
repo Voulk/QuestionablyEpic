@@ -158,7 +158,6 @@ function processItem(line, player, contentType, useChallengeMode = false) {
           (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
           itemData.slot === "Holdable" ||
           itemData.slot === "Offhand" ||
-          itemData.slot === "Shield" ||
           (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
 
   if (itemID !== 0 && itemSlot !== "" && isSuitable) {

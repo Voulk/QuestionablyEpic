@@ -202,7 +202,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const manaDifference = upliftPackageCost - tigerPalmPackageCost; // 
 
     reportingData.upliftPackageCost = upliftPackageCost;
-    const packagesAvailable = manaRemaining / manaDifference; 
+    const packagesAvailable = manaRemaining / manaDifference * 0.8; 
     reportingData.packagesAvailable = packagesAvailable;
     getSpellEntry(castProfile, "Uplift").cpm += packagesAvailable; // Spend 80% of our mana on Uplift packages.
     getSpellEntry(castProfile, "Jab").cpm += packagesAvailable + tigerPalmPackagesAvailable; // Spend 80% of our mana on Uplift packages.
