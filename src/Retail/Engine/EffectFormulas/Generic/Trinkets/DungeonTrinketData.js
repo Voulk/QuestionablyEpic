@@ -12,6 +12,7 @@ export const dungeonTrinketData =
         duration: 30,
         ppm: 2,
         stat: "intellect",
+        canOverlap: true,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
