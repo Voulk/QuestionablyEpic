@@ -56,7 +56,12 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     trinketDescription.push("")
 
     trinketDescription.push("Effect Breakdown")
-    if (trinketEffects[0].ppm && trinketEffects[0].stat) {
+    if (trinketEffects[0].canOverlap) {
+        // Overlapping stack trinkets.
+        const avgStacks = Math.round(100*trinketStats[trinketEffects[0].stat] / processedValue(trinketEffects[0], itemLevel))/100;
+        trinketDescription.push("Average Stacks: " + avgStacks);
+    }
+    else if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.
         trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
     }

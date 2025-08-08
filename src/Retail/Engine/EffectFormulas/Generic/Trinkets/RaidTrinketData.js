@@ -33,6 +33,7 @@ export const raidTrinketData = [
         duration: 10,
         ppm: 2.5,
         stat: "crit",
+        canOverlap: true,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
