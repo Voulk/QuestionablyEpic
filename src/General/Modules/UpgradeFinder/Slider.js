@@ -34,6 +34,7 @@ export default function UpgradeFinderSlider(props) {
         marks={props.marks}
         max={props.max}
         onChangeCommitted={props.change}
+        value={props.value}
       />
     </Grid>
   );
