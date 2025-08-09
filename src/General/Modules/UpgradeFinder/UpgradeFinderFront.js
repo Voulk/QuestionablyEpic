@@ -244,7 +244,6 @@ export default function UpgradeFinderFront(props) {
   }
 
   const setCraftedLevel = (event, newLevel) => {
-    console.log(newLevel);
     setUfCraftedLevel(newLevel);
   }
 
