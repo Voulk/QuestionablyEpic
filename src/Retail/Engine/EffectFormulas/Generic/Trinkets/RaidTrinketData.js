@@ -5,7 +5,8 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 export const raidTrinketData = [
     {  
     name: "Diamantine Voidcore",
-    description: "",
+    description: "The ranking on the chart does not include the set, however top gear will take both into account.",
+    addonDescription: "A decent on-use that truly shines when combined with a special effect weapon from raid to complete the set.",
     effects: [
       {
         coefficient: 0.699867, 
@@ -25,7 +26,8 @@ export const raidTrinketData = [
   },
   {  // Heartbeat flag??
     name: "Astral Antenna",
-    description: "",
+    description: "Requires you pick up balls that'll float toward you. Assumes 100% pick up rate since they are quite hard to miss.",
+    addonDescription: "Requires you pick up balls that'll float toward you. They are quite hard to miss and you shouldn't need to play around them.",
     effects: [
       {
         coefficient: 1.558467, 
@@ -47,7 +49,7 @@ export const raidTrinketData = [
   },
     { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
     name: "Nexus-King's Command",
-    description: "",
+    description: "The absorb portion is only on the single spell that procs the shield. Can be better than the chart shows if you're good at min-maxing it but it's hard work for little gain.",
     effects: [
       { // Int Proc
         coefficient: 1.079763, 
@@ -67,7 +69,7 @@ export const raidTrinketData = [
   },
       { // 
     name: "Loom'ithar's Living Silk",
-    description: "",
+    description: "Average on HPS but invaluable utility in Mythic+.",
     effects: [
       { // Shield proc
         coefficient: 479.0941,
@@ -88,7 +90,7 @@ export const raidTrinketData = [
   },
     { 
     name: "Araz's Ritual Forge",
-    description: "",
+    description: "The health penalty is temporary and you can heal it back. Decent if you have powerful 2 minute cooldowns.",
     effects: [
       {
         coefficient: 2.879601 * 0.9,
@@ -175,7 +177,7 @@ export const raidTrinketData = [
   },
   { // 1:30 cooldown mastery on-use. 
     name: "House of Cards",
-    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest.",
+    description: "Good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest but a higher ilvl Lily of the Eternal Weave is better in Season 3.",
     effects: [
       {
         coefficient: 2.736594 * 0.9, 
@@ -254,7 +256,7 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "A surprisingly strong flat healing trinket with low overhealing. In Mythic+ the trinket heals for less but does absurb amounts of damage - particularly in groups with pets. Default overhealing: 15%.",
+    description: "A strong flat healing trinket with low overhealing. In Mythic+ the trinket heals for less but does absurb amounts of damage - particularly in groups with pets. Default overhealing: 15%.",
     setting: true,
     effects: [
       {  // Heal effect

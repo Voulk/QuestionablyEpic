@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.2 / 5.5",
+    update: 5,
+    date: "August 10",
+    changes: [ 
+      "Upgrade Finder Setup",
+      "Classic: Removed some items from the database that don't exist in-game.",
+      "Specs that aren't available yet will now display in red instead of not existing to make it clearer.",
+      "TWW: Added Descriptions to most 11.2 trinkets.",
+      "TWW: Fixed manually added Embellishments (for real).",
+    ]},
   {
     version: "11.2 / 5.5",
     update: 4,

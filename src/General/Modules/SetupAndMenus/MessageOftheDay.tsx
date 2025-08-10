@@ -7,7 +7,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
     "11.2 is now live! As usual, expect turbulence over the first week as they finish tuning."
   ] : 
   [
-    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin & Shaman will be along this week.",
+    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin & Shaman will be along very soon!",
   ]
 ;
   if (messageOfTheDay.length === 0) return;
