@@ -8,7 +8,7 @@ export const effectData = [
         coefficient: 55.44585, 
         table: -9,
         ppm: 2.5,
-        efficiency: 0.92, // High efficiency since it's an absorb.
+        efficiency: 0.9, // High efficiency since it's an absorb.
         secondaries: ['haste', 'versatility'], // Check Crit
       },
     ],
