@@ -69,6 +69,7 @@ export class Player {
   gameType = ""; // Currently the options are Retail or Classic
   activeModelID = { Raid: 0, Dungeon: 1 }; // Currently active Cast Model.
   savedPTRString = "";
+  enabled = true;
 
   // The players active stats from their character page. These are raw rather than being percentages.
   // They can either be pulled automatically from the entered log, or calculated from an entered SimC string.

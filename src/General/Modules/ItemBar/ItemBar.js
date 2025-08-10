@@ -193,7 +193,7 @@ export default function ItemBar(props) {
 
       if (item) {
         if (itemEffect.type !== "") {
-          item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
+          item.effect = {type: itemEffect.type, name: itemEffect.effectName, level: parseInt(itemLevel)};
           if (itemEffect.type === "Embellishment") {
             item.uniqueTag = "embellishment";
           }
