@@ -471,21 +471,21 @@ export default function bossHeaders(props, style, QEmodule) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-Magmorax.png");
   }
   // Echo of Neltharion
-  if (props === 2684 || props === 2523) {
+  /*if (props === 2684 || props === 2523) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-EchoofNeltharion.png");
-  }
+  }*/
   // Scalecommander Sarkareth
-  if (props === 2685 || props === 2520) {
+  /*if (props === 2685 || props === 2520) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-ScalecommanderSarkareth.png");
-  }
+  }*/
   // The Amalgamation Chamber
-  if (props === 2687 || props === 2529) {
+  /*if (props === 2687 || props === 2529) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheAmalgamationChamber.png");
-  }
+  }*/
   // Kazzara, the Hellforged
-  if (props === 2688 || props === 2522) {
+  /*if (props === 2688 || props === 2522) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-KazzaratheHellforged.png");
-  }
+  }*/
   // The Vigilant Steward, Zskarn
   if (props === 2689 || props === 2532) {
     source = require("Images/Bosses/Aberrus/UI-EJ-BOSS-TheVigilantStewardZskarn.png");
@@ -600,6 +600,17 @@ export default function bossHeaders(props, style, QEmodule) {
   else if (props === 2644) source = require("Images/Bosses/Undermine/ui-ej-boss-one armed bandit.png");
   else if (props === 2645) source = require("Images/Bosses/Undermine/ui-ej-boss-mugzee heads of security.png");
   else if (props === 2646) source = require("Images/Bosses/Undermine/ui-ej-boss-chrome king gallywix.png");
+  
+  // Manaforge Omega
+  else if (props === 2684) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-arcanomatrixwarden.png");
+  else if (props === 2686) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-loombeast.png");
+  else if (props === 2685) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-soulbindernaazindhri.png");
+  else if (props === 2687) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-highmanaforgeraraz.png");
+  else if (props === 2688) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-thesoulhunters.png");
+  else if (props === 2747) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-fractillus.png");
+  else if (props === 2690) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-nexuskingsalhadaar.png");
+  else if (props === 2691) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-dimensius.png");
+
 
 
   return <img style={{ ...style }} src={source} alt={props} />;
