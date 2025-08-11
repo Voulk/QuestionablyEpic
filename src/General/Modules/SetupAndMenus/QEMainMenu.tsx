@@ -90,7 +90,7 @@ export default function QEMainMenu(props: Props) {
       ? [
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradefinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/upgradefinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", localization: "MainMenu.EmbellishmentAnalysis", glow: false },
           //{ route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", localization: "MainMenu.CyrcesCirclet", glow: false },

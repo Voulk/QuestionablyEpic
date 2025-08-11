@@ -114,7 +114,7 @@ export const retailInstanceDB = {
       // M+ season 2
       1194: "Tazavesh Streets", // Tazavesh: Streets of Wonder
       11941: "Tazavesh Gambit", // Tazavesh: The Gambit
-      1303: "Tazavesh Echo Dome", // Tazavesh: The Echo Dome
+      1303: "Eco-Dome Al'dani", // 
       1185: "Halls of Atonement", // The Halls of Atonement
 
       1210: "Darkflame Cleft",
