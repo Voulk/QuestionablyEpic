@@ -92,6 +92,7 @@ import Motherlode from "Images/MythicPlus/Motherlode.png";
 import OperationFloodgate from "Images/MythicPlus/OperationFloodgate.png";
 import Priory from "Images/MythicPlus/Priory.png";
 import Rookery from "Images/MythicPlus/Rookery.png";
+import ecoDome from "Images/MythicPlus/EcoDome.png";
 
 
 export default function DungeonHeaderIcons(props) {
@@ -157,8 +158,11 @@ export default function DungeonHeaderIcons(props) {
     source = TtVM;
   }
   /* --------------------------------- Tazavesh the Veiled Market Part II --------------------------------- */
-  if (props === 13577 || props === -21) {
+  if (props === 13577 || props === -21 || props === 11941) {
     source = TtVM;
+  }
+    if (props === 1303) {
+    source = ecoDome;
   }
 
   /* ---------------------------------- Return to Karazhan Upper ---------------------------------- */
