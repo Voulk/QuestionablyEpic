@@ -17,6 +17,7 @@ import { UpgradeFinderStyles } from "./UpgradeFinderStyles";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import EquippedItems from "./CurrentlyEquippedPanel";
 import { trackPageView } from "Analytics";
+import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 
 function a11yProps(index) {
   return {
@@ -145,7 +146,10 @@ export default function UpgradeFinderReport(props) {
               </Typography>*/}
             </div>
           </Grid>
-          <Grid item sm container spacing={0} style={{ padding: "4px 0px 5px 0px" }}>
+          <Grid item xs={12}>
+            <InformationBox variant={"yellow"} title={"Tier Pieces"} information={"Remember that Tier Set pieces are very valuable but will now show as major upgrades unless they complete a set for you. Aim to obtain these anyway."}></InformationBox>
+          </Grid>
+          <Grid item sm xs={12} spacing={0} style={{ padding: "4px 0px 5px 0px" }}>
            <EquippedItems items={result.equippedItems} gameType={result.gameType} contentType={result.contentType} />
           </Grid>
           <Grid item xs={12}>
