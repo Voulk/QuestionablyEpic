@@ -32,8 +32,8 @@ describe("Shaman", () => {
     
     test("HPriest", () => {
         const player = new Player("Voulk", "Holy Priest", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("HPriest S1-2pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S1-2", player, contentType)))
-        console.log("HPriest S1-4pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S1-4", player, contentType)))
+        console.log("HPriest S3-2pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S3-2", player, contentType)))
+        console.log("HPriest S3-4pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S3-4", player, contentType)))
         console.log("HPriest S2-2pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S2-2", player, contentType)))
         console.log("HPriest S2-4pc: " + JSON.stringify(getHolyPriestSpecEffect("HPriest S2-4", player, contentType)))
     })
@@ -52,8 +52,11 @@ describe("Shaman", () => {
 
     test("Preservation Evoker", () => {
         const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-2", player, contentType)))
-        console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-4", player, contentType)))
+        console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S3-2", player, contentType)))
+        console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S3-4", player, contentType)))
+
+        console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-2", player, contentType)))
+        console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-4", player, contentType)))
 
         //console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
         //console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
