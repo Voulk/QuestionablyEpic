@@ -49,7 +49,7 @@ export const raidTrinketData = [
   },
     { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
     name: "Nexus-King's Command",
-    description: "The absorb portion is only on the single spell that procs the shield. Can be better than the chart shows if you're good at min-maxing it but it's hard work for little gain.",
+    description: "The absorb portion is only on the single spell that procs the shield. Is quite hard to play well but if you consume the debuff during your healing cooldowns then this is an excellent trinket.",
     effects: [
       { // Int Proc
         coefficient: 1.241728, 
