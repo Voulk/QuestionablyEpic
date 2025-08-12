@@ -310,7 +310,7 @@ export const otherTrinketData = [
       return bonus_stats;
     }
   },
-  { 
+  /*{ 
     name: "Concoction: Kiss of Death",
     description: "Assumes a 25s duration. You really don't want to play this close to the stun timer. Lines up with nothing.",
     effects: [
@@ -332,7 +332,7 @@ export const otherTrinketData = [
 
       return bonus_stats;
     }
-  },
+  },*/
   { 
     name: "Spelunker's Waning Candle",
     description: "",
