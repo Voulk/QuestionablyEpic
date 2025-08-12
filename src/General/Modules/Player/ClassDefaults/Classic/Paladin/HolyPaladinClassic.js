@@ -3,7 +3,7 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdown, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 
 
 
@@ -14,7 +14,18 @@ export const holyPaladinDefaults = {
     initializeSet: initializePaladinSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-
+        intellect: 21000,
+        spirit: 8000,
+        spellpower: 7907,
+        averageDamage: 5585,
+        weaponSwingSpeed: 3.4,
+        haste: 2500,
+        crit: 9000,
+        mastery: 9000,
+        stamina: 5000,
+        mp5: 0,
+        critMult: 2,
+        hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -54,17 +65,21 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       
       {spell: "Judgment", efficiency: 0.9},
       {spell: "Holy Shock", efficiency: 0.9},
+      {spell: "Light of Dawn", cpm: 0},
+      {spell: "Crusader Strike", efficiency: 0.5},
+      {spell: "Holy Radiance", cpm: 0, fillerSpell: true},
     ]
   
     const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
-
+    
 
     castProfile.forEach(spell => {
       if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = paladinSpells[spell.spell][0].castTime;
       spell.hpc = 0;
-      spell.cost = spell.freeCast ? 0 : paladinSpells[spell.spell][0].cost * 18635 / 100;
+      spell.cost = spell.freeCast ? 0 : paladinSpells[spell.spell][0].cost * 60000 / 100;
       spell.healing = 0;
+      spell.hopoGenerated = adjSpells[spell.spell][0].holyPower ? Math.max(0, adjSpells[spell.spell][0].holyPower) : 0;
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
 
@@ -92,7 +107,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
     let hopoGenerated = 0;
   
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
   
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -106,11 +121,19 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     const regen = (getManaRegen(statProfile, spec) + 
                   getAdditionalManaEffects(statProfile, spec).additionalMP5 +
                   (statProfile.mp5 || 0)) * 12 * fightLength;
-  
+    let additionalManaPerMinute = 0;
+    const totalManaPool = manaPool + regen;
     // Hymn of Hope
+    
+
+    // Seal Mana
+
+    // Divine Plea
+    const divinePleaMana = 1.35 * statPercentages.spirit * 3 * 0.5; // We get 0.5 Divine Plea casts per minute.
+    reportingData.divinePleaMana = divinePleaMana;
+    additionalManaPerMinute += divinePleaMana;
   
-  
-    const totalManaPool = manaPool + regen + petRegen;
+
   
     if (!userSettings.strictSeq) {
 
@@ -119,20 +142,36 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
       const fillerWastage = 0.85;
 
-      
+      // Selfless Healer: Mana
+      // We can model Selfless Healer as a flat mana reduction attached to Judgment. 
+      // The only time this isn't effective is if we are overcapping but this is poor play and the model will avoid it.
+      const shManaSaved = getSpellEntry(castProfile, "Judgment").cpm * getSpellEntry(castProfile, "Holy Radiance").cost * 0.35;
+      reportingData.shManaSaved = shManaSaved;
+      additionalManaPerMinute += shManaSaved; 
     
       let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
 
       // Standard package
-      const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
+      const fillerCPMMana = ((totalManaPool / fightLength + additionalManaPerMinute) - costPerMinute) / fillerCost * fillerWastage;
       const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
       const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
       timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
     
+      //reportingData.costPerMinute = castProfile;
       let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
       reportingData.manaRemaining = manaRemaining;
       reportingData.manaPool = totalManaPool;
-    
+
+      // Calculate HoPo
+      const hopoGenerated = castProfile.reduce((acc, spell) => acc + (spell.hopoGenerated ? spell.hopoGenerated * spell.cpm : 0), 0);
+      reportingData.hopoGenerated = hopoGenerated;
+
+      getSpellEntry(castProfile, "Light of Dawn").cpm += hopoGenerated / 3;
+
+      // Selfless Healer
+      const shAvgStacks = getSpellEntry(castProfile, "Judgment").cpm  / fillerCPM;
+      getSpellEntry(castProfile, "Holy Radiance").bonus = 1 + 0.2 * shAvgStacks;
+
     
         castProfile.forEach(spellProfile => {
             const fullSpell = specBaseline.spellDB[spellProfile.spell];
@@ -169,7 +208,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
             if (rawHeal > 0) {
                 // Illuminated Healing
-                const illuminatedHealing = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
+                const illuminatedHealing = rawHeal * (statPercentages.mastery);
                 healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
                 totalHealing += illuminatedHealing;
 
@@ -195,7 +234,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
         printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
         printHealingBreakdownWithCPM(damageBreakdown, totalDamage, castProfile);
         console.log("DPS: " + totalDamage / 60);
-        reportingData.timeAvailable = timeAvailable;
+        //reportingData.timeAvailable = timeAvailable;
         console.log(reportingData);
       }
   

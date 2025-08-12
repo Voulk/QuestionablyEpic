@@ -107,8 +107,8 @@ export const CLASSICPALADINSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 0, 
-        flat: 1720,
-        coeff: 0.152, // Adjust this per Holy Power. 
+        flat: 1720 * 3,
+        coeff: 0.152 * 3, // Adjust this per Holy Power. 
         additiveScaling: 0.5,
         targets: 6,
         expectedOverheal: 0.25,
@@ -224,7 +224,9 @@ const offspecTalents = {
 // Holy Paladin talents
 const specTalents = {
     // T1
-    selflessHealer: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
+    selflessHealer: {points: 1, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {
+        spellDB["Judgment"][0].holyPower = 1;
+    }}, 
     eternalFlame: {points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_3", id: 123040, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
     sacredShield: {points: 0, maxPoints: 1, icon: "ability_priest_flashoflight", id: 139139, select: true, tier: 1, runFunc: function (state, spellDB, points) {}}, 
 

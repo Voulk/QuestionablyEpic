@@ -12,7 +12,7 @@ export const holyPriestDefaults = {
     scoreSet: scoreHPriestSet,
     initializeSet: initializeHPriestSet,
     defaultStatProfile: { 
-        // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
+      // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
       intellect: 21000,
       spirit: 8000,
       spellpower: 7907,

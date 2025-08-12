@@ -70,10 +70,10 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Restoration Druid");
+        const data = getData("Holy Paladin");
 
         const spec = data.spec
-        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
+        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
         const revisedTalents = {...data.talents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
@@ -107,7 +107,7 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        buildStatChart(profile, playerData,  testSettings);
+        //buildStatChart(profile, playerData,  testSettings);
     })
 
     
