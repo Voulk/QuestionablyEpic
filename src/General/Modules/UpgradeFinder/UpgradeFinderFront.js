@@ -248,7 +248,7 @@ export default function UpgradeFinderFront(props) {
   }
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 11 && difficulty >= 0) setUfDungeonDifficulty(difficulty);
+    if (difficulty <= (mythicPlusLevels.length - 1) && difficulty >= 0) setUfDungeonDifficulty(difficulty);
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
