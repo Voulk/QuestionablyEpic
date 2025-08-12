@@ -7,7 +7,7 @@ export const dungeonTrinketData =
     description: "Very overtuned but only procs off DPS spells OR abilities. Make sure you keep at least a DoT up if available. Ranking might change as live data comes in.",
     effects: [
       {
-        coefficient: 0.594905, 
+        coefficient: 0.577109, 
         table: -1,
         duration: 30,
         ppm: 2,
@@ -39,9 +39,9 @@ export const dungeonTrinketData =
       description: "",
       effects: [
         {
-          coefficient: 0.999862, 
+          coefficient: 0.999862 * 1.15, 
           table: -1,
-          efficiency: 0.75, // Amount of time standing in puddle.
+          efficiency: 0.7, // Amount of time standing in puddle.
           duration: 15, 
           cooldown: 90,
         },

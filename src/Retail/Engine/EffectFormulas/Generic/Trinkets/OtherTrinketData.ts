@@ -9,8 +9,8 @@ export const otherTrinketData = [
     description: "",
     effects: [
       { // Damage effect
-        coefficient: 16.83968, 
-        table: -9,
+        coefficient: 50.818378, 
+        table: -8,
         ticks: 10,
         targets: 1,
         secondaries: ["crit", "versatility"], // Crit untested
@@ -18,8 +18,8 @@ export const otherTrinketData = [
         duration: 10,
       },
       { // Heal effect
-        coefficient: 7.016621, 
-        table: -9,
+        coefficient: 7.411182, 
+        table: -8,
         efficiency: 0.6,
         targets: 8,
         ticks: 10,
@@ -62,12 +62,12 @@ export const otherTrinketData = [
     description: "",
     effects: [
       { // Heal effect
-        coefficient: 8.559967, 
-        table: -9,
-        efficiency: 0.85,
+        coefficient: 22.6028, 
+        table: -8,
+        efficiency: 0.75,
         ticks: 5, // Heals per Sprite proc.
         secondaries: ["crit", "versatility"], // Crit untested
-        ppm: 10,
+        ppm: 10, // ??
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -133,8 +133,8 @@ export const otherTrinketData = [
     description: "Only procs off DPS spells.",
     effects: [
       {
-        coefficient: 0.419337, 
-        table: -9,
+        coefficient: 1.124851, 
+        table: -7,
         duration: 10,
         ppm: 3,
         stat: "mastery",
@@ -156,15 +156,15 @@ export const otherTrinketData = [
     name: "Abyssal Volt",
     effects: [
       {
-        coefficient: 0.746494, 
-        table: -9,
+        coefficient: 2.002434, 
+        table: -7,
         duration: 15,
         cooldown: 90,
         stat: "haste",
       },
       {
-        coefficient: 0.222657, 
-        table: -9,
+        coefficient: 0.597266, 
+        table: -7,
         duration: 10,
         cooldown: 90,
         stat: "allyStats",
@@ -185,8 +185,8 @@ export const otherTrinketData = [
     description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest. Fairly poor otherwise. Active bug so ranking might change.",
     effects: [
       {
-        coefficient: 0.894932, 
-        table: -9,
+        coefficient: 2.400612, 
+        table: -7,
         duration: 15, 
         cooldown: 90,
       },
