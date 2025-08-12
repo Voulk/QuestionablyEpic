@@ -58,8 +58,9 @@ export const evokerDefaultSpellData = (contentType) => {
         chilledClarityExtension: 32000,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
+          c30: 1.1,
           c60: 1,
-          c90: 1.35,
+          c90: 1.37,
           c120: 1.1,
           c180: 1,
 
@@ -77,6 +78,7 @@ export const evokerDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
+          c30: 1.1,
           c60: 1,
           c90: 1.15,
           c120: 1,

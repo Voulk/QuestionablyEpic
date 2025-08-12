@@ -51,6 +51,7 @@ export const chronoDefaultSpellData = (contentType) => {
         OneManaHealing: 11,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
+          c30: 1.05,
           c60: 1,
           c90: 1,
           c120: 1.15,
@@ -62,6 +63,7 @@ export const chronoDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
+          c30: 1.05,
           c60: 1,
           c90: 1.15,
           c120: 1,

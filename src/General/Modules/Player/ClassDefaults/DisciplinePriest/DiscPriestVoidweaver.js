@@ -18,8 +18,9 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 8.1,
       CastsPerMinute: 36,
       cooldownMult: {
+        c30: 1.4,
         c60: 1,
-        c90: 1.7,
+        c90: 1.9,
         c120: 1,
         c180: 1,
       },
@@ -30,6 +31,7 @@ export const discPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0,
       CastsPerMinute: 30,
       cooldownMult: {
+        c30: 1.15,
         c60: 1,
         c90: 1.1,
         c120: 1.1,

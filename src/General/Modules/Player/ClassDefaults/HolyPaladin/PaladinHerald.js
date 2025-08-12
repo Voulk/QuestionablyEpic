@@ -38,6 +38,7 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       chilledClarityExtension: 28000,
       CastsPerMinute: 27,
       cooldownMult: {
+        c30: 1.1,
         c60: 1,
         c90: 1,
         c120: 1.2,
@@ -56,6 +57,7 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
+        c30: 1.05,
         c60: 1,
         c90: 1,
         c120: 1.2,

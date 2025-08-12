@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "11.2 / 5.5",
+    update: 6,
+    date: "August 12",
+    changes: [ 
+      "Significant in-game trinket tuning to MANY items.",
+      "Setup Tier Set estimates",
+      "Fixed the Upgrade Finder slider."
+    ]},
     {
     version: "11.2 / 5.5",
     update: 5,

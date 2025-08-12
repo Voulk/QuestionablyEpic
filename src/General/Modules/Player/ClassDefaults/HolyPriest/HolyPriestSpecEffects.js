@@ -4,10 +4,24 @@ import { HOLYPRIESTSPELLDB } from "General/Modules/Player/ClassDefaults/HolyPrie
 export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
   let result = 0.0;
   let bonus_stats = {};
+  const tierEfficiency = 0.8;
+  const pomTierHeal = 15 * player.getStatMults(['crit', 'versatility', 'mastery', 'intellect']) * tierEfficiency; 
 
 
+  if (effectName === "HPriest S3-2") {
+    const pomBaseCPM = 9.5; // Perhaps we import
 
-  if (effectName === "HPriest S2-2") {
+    bonus_stats.hps = pomTierHeal * pomBaseCPM / 60;
+
+  }
+  else if (effectName === "HPriest S3-4") {
+    // TODO
+    const additionalPoMCasts = 0;
+    const pomBaseHealing = 0;
+
+    bonus_stats.hps = player.getHPS() * 0.0842;
+  }
+  else if (effectName === "HPriest S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');
     const expectedOverheal = 0.26;
     const insuranceHealing = 2.04736 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect']) * (1 - expectedOverheal)
