@@ -44,6 +44,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 6.8,
       CastsPerMinute: 28,
       cooldownMult: {
+        c30: 1,
         c60: 1,
         c90: 1,
         c120: 1.15,
@@ -62,6 +63,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 0.4,
       CastsPerMinute: 30,
       cooldownMult: {
+        c30: 1,
         c60: 1,
         c90: 1,
         c120: 1.2,

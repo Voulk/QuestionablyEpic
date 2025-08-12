@@ -15,7 +15,16 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   const healingRainCPM = 3.4;
   const riptidesActive = 4.9;
   // Tier Sets
-  if (effectName === "Shaman S2-2") {
+  if (effectName === "Shaman S3-2") {
+      bonus_stats.hps = player.getHPS() * 0.075;
+  }
+  else if (effectName === "Shaman S3-4") {
+    // 
+
+    bonus_stats.hps = bonus_stats.hps = player.getHPS() * 0.148;
+
+  }
+  else if (effectName === "Shaman S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');
     const insuranceHealing = 1.92 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;

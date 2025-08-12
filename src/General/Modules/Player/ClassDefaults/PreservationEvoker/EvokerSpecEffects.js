@@ -21,7 +21,17 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   const insuranceHealing = 0.80664 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
   let bonus_stats = {};
 
-  if (effectName === "Evoker S2-2") {
+  if (effectName === "Evoker S3-2") {
+    bonus_stats.hps = 0.02 * player.getHPS();
+  }
+  else if (effectName === "Evoker S3-4") {
+    // Just move this into the ramp file when you get a minute.
+    const bombsPerMinute = 8 * 2 * player.getStatPerc('haste') * (60 / 45);
+    const bombEfficiency = 0.4;
+    const oneBomb = 2.5 * 7.5 * player.getStatMults(['crit', 'versatility', 'intellect', 'mastery']) * bombEfficiency;
+    bonus_stats.hps = oneBomb * bombsPerMinute / 60;
+  }
+  else if (effectName === "Evoker S2-2") {
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Evoker S2-4") {
