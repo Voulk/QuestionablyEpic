@@ -38,7 +38,7 @@ export const timewalkingTrinketData = [
         name: "Living Flame",
         effects: [
           { // 
-            coefficient: 2.000788, 
+            coefficient: 2.000788 * 0.95, 
             table: -1,
             duration: 20,
             cooldown: 120,
@@ -175,7 +175,7 @@ export const timewalkingTrinketData = [
         name: "Eye of the Broodmother",
         effects: [
           { // 
-            coefficient: 0.10503,
+            coefficient: 0.10503 * 0.95,
             duration: 10,
             stacks: 5,
             table: -1,
