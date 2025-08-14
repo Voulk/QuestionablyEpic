@@ -150,7 +150,7 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [tabIndex, setTabIndex] = React.useState(0);
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves", "Timewalking"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
   const [levelCap, setLevelCap] = React.useState(723);
   const maxLevelMarks = [
@@ -192,11 +192,12 @@ export default function TrinketAnalysis(props) {
       -18, // PVP
       -17, // PVP
     ];
+    const timewalkingSources = [-12]
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("Delves") === true) {
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Timewalking") === true && sources.includes("Dungeons") === true && sources.includes("Delves") === true) {
       results = array;
     } else {
       results = array.filter((item) => {
@@ -206,6 +207,7 @@ export default function TrinketAnalysis(props) {
             ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
               (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
+              (timewalkingSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
               (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
