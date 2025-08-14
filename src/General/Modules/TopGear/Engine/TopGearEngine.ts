@@ -807,6 +807,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else if (boots.level > 704) setVariables.reshiiBoots = 0.4;
     else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
     else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+    
   }
 
 

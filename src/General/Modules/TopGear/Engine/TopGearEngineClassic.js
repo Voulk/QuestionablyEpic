@@ -691,9 +691,10 @@ function createSets(itemList, rawWepCombos, filter) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
-                                finger < finger2 &&
-                                (!splitItems.Finger[finger].name.includes("Planetary Band") || !splitItems.Finger[finger2].name.includes("Planetary Band"))) {
+                            // Check if fingers don't match, unless they aren't unique equipped for some reason.
+                            if (finger < finger2 && 
+                              ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id)
+                              || (splitItems.Finger[finger].id === 90434 || splitItems.Finger[finger2].id === 90434))) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 

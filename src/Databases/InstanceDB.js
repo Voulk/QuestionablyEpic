@@ -20,7 +20,8 @@ export const instanceDB = {
   "1296": "Liberation of Undermine",
 
   "-4": "Crafted",
-  "-12": "Reptuation",
+  "-12": "Reputation",
+  "-14": "Timewalking",
 
   // Classic specific
   "369": "Siege of Orgrimmer",
@@ -48,6 +49,16 @@ export const reputationDB = {
   2: "Golden Lotus",
   3: "Shado-Pan",
   4: "August Celestials",
+}
+
+export const timewalkingDB = {
+  1: "Vanilla",
+  2: "Burning Crusade",
+  3: "Wrath of the Lich King",
+  4: "Cataclysm",
+  5: "Mists of Pandaria",
+  6: "Warlords of Draenor",
+  7: "Legion",
 }
 
 

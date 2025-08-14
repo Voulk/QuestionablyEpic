@@ -1,6 +1,6 @@
 import { bonus_IDs } from "../../../Retail/Engine/BonusIDs";
 import { curveDB } from "../../../Retail/Engine/ItemCurves";
-import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../Engine/ItemUtilities";
+import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes, getValidArmorTypes, getValidWeaponTypesBySpec } from "../../Engine/ItemUtilities";
 import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
@@ -114,8 +114,14 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
         // this code is left in in case we need to res it in future.
         //processToken(line, player, contentType, type);
       } else {
-        const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault, autoUpgradeAll);
-        if (item) player.addActiveItem(item);
+        try {
+          const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault, autoUpgradeAll);
+          if (item) player.addActiveItem(item);
+        }
+        catch (e) {
+          console.error("Error processing SimC line: " + line);
+        }
+
       }
     }
   }
@@ -543,10 +549,19 @@ export function processItem(line: string, player: Player, contentType: contentTy
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   
+    const acceptableArmorTypes = getValidArmorTypes(player.spec);
+    const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+    const itemData = getItem(protoItem.id, "Retail")
+    const isSuitable = (itemData.slot === "Back" ||
+            (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
+            itemData.slot === "Holdable" ||
+            itemData.slot === "Offhand" ||
+            (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
+  
 
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
-  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "") {
+  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     
