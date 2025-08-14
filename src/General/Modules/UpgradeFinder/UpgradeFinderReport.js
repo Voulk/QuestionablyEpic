@@ -75,9 +75,6 @@ const addItemSources = (diffList, gameType) => {
 }
 
 export default function UpgradeFinderReport(props) {
-  //   useEffect(() => {
-  //     trackPageView(window.location.pathname + window.location.search);
-  //   }, []);
 
   const classes = UpgradeFinderStyles();
   const [tabValue, setTabValue] = React.useState(0);
@@ -107,7 +104,7 @@ export default function UpgradeFinderReport(props) {
     }
 
     if (result !== null/* && checkResult(result)*/) {
-
+      trackPageView(trackPageView("/live/upgradereport"));
       upgradeFinderResultsRetail(result, t, result.player, tabValue, handleTabChange, classes, gameType);
     }
     else {

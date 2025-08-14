@@ -70,7 +70,7 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Restoration Druid");
+        const data = getData("Discipline Priest");
 
         const spec = data.spec
         const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
@@ -107,7 +107,7 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        buildStatChart(profile, playerData,  testSettings);
+        //buildStatChart(profile, playerData,  testSettings);
     })
 
     
