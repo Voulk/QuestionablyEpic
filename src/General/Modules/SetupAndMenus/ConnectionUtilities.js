@@ -54,10 +54,10 @@ export async function apiSendTopGearSet(player, content, score, compared) {
   let name = player.charName;
   let contentType = content;
   let itemsCompared = compared;
+  //const isPTR = (window.location.href.includes("localhost") || window.location.href.includes("ptr"))
   let hardScore = Math.round(score);
   let fetchUrl = "https://questionablyepic.com/api/addTopGear.php?btag=" + encodeURIComponent(name) + "&content=" + contentType + "&itemscompared=" + itemsCompared + 
-                    "&hardscore=" + hardScore + "&pspec=" + encodeURIComponent(player.spec.replace(" ", ""));
-
+                    "&hardscore=" + hardScore + "&pspec=" + encodeURIComponent(player.spec.replace(/ /g, ""));
   fetch(fetchUrl)
     .then((res) => res.text())
     .then((response) => {

@@ -75,9 +75,9 @@ const addItemSources = (diffList, gameType) => {
 }
 
 export default function UpgradeFinderReport(props) {
-  //   useEffect(() => {
-  //     trackPageView(window.location.pathname + window.location.search);
-  //   }, []);
+  useEffect(() => {
+       trackPageView(trackPageView("/live/upgradereport"));
+     }, []);
 
   const classes = UpgradeFinderStyles();
   const [tabValue, setTabValue] = React.useState(0);

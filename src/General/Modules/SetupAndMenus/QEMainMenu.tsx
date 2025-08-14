@@ -19,6 +19,7 @@ import { trackPageView } from "Analytics";
 import WelcomeDialog from "../Welcome/Welcome";
 import { useDispatch } from "react-redux";
 import { toggleGameType } from "Redux/Actions";
+import ArticleCard from "../ArticleCards/ArcticleCard";
 
 const Root = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -297,14 +298,14 @@ export default function QEMainMenu(props: Props) {
           {props.allChars.getAllChar(gameType).length < 9 ? <AddNewChar allChars={props.allChars} charUpdate={props.charUpdate} charAddedSnack={props.charAddedSnack} /> : ""}
         </Grid>
 
-        {/*articles.length > 0 ? (
+        {articles.length > 0 ? (
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h5" align="center" style={{ padding: "25px 10px 5px 10px" }} color="primary">
                 {t("MainMenu.Articles.Header")}
                 {/* TODO: Voulk to Add Help Text */}
         {/* Help Text for Articles */}
-        {/* <Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
+        {<Tooltip title={t("MainMenu.Articles.HelpText")} placement="top-start">
                   <InfoOutlinedIcon style={{ color: "white", marginLeft: 4 }} fontSize="small" />
                 </Tooltip> }
               </Typography>
@@ -315,7 +316,7 @@ export default function QEMainMenu(props: Props) {
           </Grid>
         ) : (
           ""
-        )*/}
+        )}
 
         {<WelcomeDialog welcomeOpen={welcomeOpen} finishWelcome={finishWelcome} />}
       </Root>
