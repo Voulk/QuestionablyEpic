@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+{
+    version: "11.2 / 5.5",
+    update: 8,
+    date: "August 14",
+    changes: [ 
+      "Added a new Timewalking trinket chart filter. Added all Wrath of the Lich King timewalking trinkets to the chart.",
+      "Bugfix: SimC imports will now ignore Warband items that don't match your armor type.",
+      "Classic: Top Gear will now let you wear 2x Steaming Seal of Flame.",
+    ]},
     {
     version: "11.2 / 5.5",
     update: 7,
