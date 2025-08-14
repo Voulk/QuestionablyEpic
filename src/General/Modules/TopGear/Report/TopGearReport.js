@@ -23,6 +23,7 @@ import { getTranslatedClassName } from "locale/ClassNames";
 import { getManaRegen, getManaPool, getAdditionalManaEffects } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase"
 import SpellDataAccordion from "./SpellDataAccordion";
 import { getWHData } from "./WowheadGearPlannerExport";
+import { trackPageView } from "Analytics";
 
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -121,6 +122,7 @@ function TopGearReport(props) {
     }
 
     if (result !== null && checkResult(result)) {
+      trackPageView("/live/report");
       displayReport(result, result.player, contentType, currentLanguage, t, backgroundImage, setBackgroundImage);
     }
     else {

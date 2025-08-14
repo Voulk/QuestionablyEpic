@@ -610,6 +610,7 @@ export default function TopGear(props: any) {
               
             });
 
+            apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore);
             const shortResult = shortenReport(result, props.player);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);

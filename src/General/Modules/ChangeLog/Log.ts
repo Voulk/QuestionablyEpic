@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.2 / 5.5",
+    update: 7,
+    date: "August 13",
+    changes: [ 
+      "Removed some more unavailable MoP items.",
+      "Bugfix: You can now catalyze season 3 items.",
+      "Bugfix: Attached on-use flags to season 3 trinkets.",
+      "Made some updates to the MoP Disc profile.",
+    ]},
   {
     version: "11.2 / 5.5",
     update: 6,
