@@ -26,7 +26,8 @@ export const changeLog: entry[] = [
     changes: [ 
       "Removed some more unavailable MoP items.",
       "Bugfix: You can now catalyze season 3 items.",
-      "Bugfix: Attached on-use flags to season 3 trinkets."
+      "Bugfix: Attached on-use flags to season 3 trinkets.",
+      "Made some updates to the MoP Disc profile.",
     ]},
   {
     version: "11.2 / 5.5",

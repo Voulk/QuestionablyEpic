@@ -127,15 +127,21 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
 
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
-    let fillerCost = getSpellEntry(castProfile, "Smite").cost || 0 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.85;
+    let fillerCost = getSpellEntry(castProfile, "Smite").cost || 1 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    const fillerWastage = 0.9;
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
     
     const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
-    fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    console.log(fillerCPMMana, fillerCPMTime);
+    //fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    fillerCPM = (fillerCPMMana + fillerCPMTime) / 2
     timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
 
+    // Penances gained
+    const penanceCD = specBaseline.spellDB["Penance"][0].cooldownData.cooldown;
+    const percReduced = 0.5 / penanceCD;
+    getSpellEntry(castProfile, "Penance").cpm += (fillerCPM * percReduced); // Practically speaking there's likely to be gaps in gameplay. 
 
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
     reportingData.manaRemaining = manaRemaining;
@@ -158,12 +164,12 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
         if (spellProfile.bonus) {
           spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
         }
-        
+
         if (["Smite", "Holy Fire", "Penance"].includes(spellName)) {
           // Evangelism. 
           // This can probably be modelled with some extra depth.
           
-          spellOutput *= (1 + 0.04 * averageEvangStacks);
+          spellOutput *= (1 + 0.04 * averageEvangStacks) * 1.05; // Boss dmg taken increase.
         }
         if (checkHasTalent(talents, "twistOfFate")) spellOutput *= (1 + 0.15 * twistOfFateUptime);
 
@@ -175,7 +181,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
           totalDamage += (spellOutput * effectiveCPM); // Check how Atonement crits work.
 
           if (spell.damageToHeal) {
-            let heal = spellOutput * spell.damageToHeal * effectiveCPM * (1 - atonementOverheal) * (1 + masteryHeal);
+            let heal = spellOutput * spell.damageToHeal * effectiveCPM * (1 - atonementOverheal) * (1 + masteryHeal) * (0.25 * 18 / 40 + 1); // Archangel;
             if (checkHasTalent(talents, "twistOfFate")) heal *= (1 + 0.15 * twistOfFateUptime); // This is a double dip since it increases damage too.
             healingBreakdown["Atonement_" + spellName] = (healingBreakdown["Atonement_" + spellName] || 0) + heal;
             totalHealing += heal;
@@ -223,7 +229,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
       printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
       printHealingBreakdownWithCPM(damageBreakdown, totalDamage, castProfile);
       console.log("DPS: " + totalDamage / 60);
-      reportingData.timeAvailable = timeAvailable;
+      //reportingData.timeAvailable = timeAvailable;
       console.log(reportingData);
     }
 
@@ -239,7 +245,7 @@ export function initializeDiscSet(talents = discTalents, ignoreOverhealing = fal
     {spell: "Power Word: Shield", cpm: 4.8, freeCast: true}, // Rapture
     {spell: "Prayer of Healing", cpm: 3}, // TODO
     {spell: "Penance", efficiency: 0.85},
-    {spell: "Smite", cpm: 3, fillerSpell: true},
+    {spell: "Smite", cpm: 0, fillerSpell: true},
     {spell: "Holy Fire", efficiency: 0.85},
     {spell: "Flash Heal", cpm: 1},
     {spell: "Prayer of Mending", efficiency: 0.6},
