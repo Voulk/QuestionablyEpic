@@ -3,6 +3,54 @@ import { Player } from "General/Modules/Player/Player";
 
 export const timewalkingTrinketData = [
     {
+    name: "Energy Siphon",
+    effects: [
+      { // 
+        coefficient: 2.399108, 
+        table: -7,
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+        return bonus_stats;
+    }
+  },
+  {
+    name: "Scale of Fates",
+    effects: [
+      { // 
+        coefficient: 2.39909, 
+        table: -7,
+        duration: 20,
+        cooldown: 120,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        bonus_stats.haste = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+        return bonus_stats;
+    }
+  },
+  {
+        name: "Living Flame",
+        effects: [
+          { // 
+            coefficient: 2.000788, 
+            table: -1,
+            duration: 20,
+            cooldown: 120,
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+            bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+            return bonus_stats;
+        }
+  },
+    {
         name: "Memento of Tyrande",
         effects: [
             { // Mana proc chance.
