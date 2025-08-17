@@ -19,7 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
-{
+  {
+    version: "11.2 / 5.5",
+    update: 9,
+    date: "August 15",
+    changes: [ 
+      "Random stat BoEs now have stat selection in the item bar.",
+      "Bugfix: QE Live will no longer try and wear two different reforges of the same Steaming Seal of Flame item.",
+    ]},
+  {
     version: "11.2 / 5.5",
     update: 8,
     date: "August 14",
