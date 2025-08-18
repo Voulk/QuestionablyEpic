@@ -86,17 +86,16 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.675, 
         additiveScaling: 0.25,
         expectedOverheal: 0.3,
+        holyPower: 1,
         targets: 1,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     },
     { // Heals all allies for 50% of the original amount. Includes overhealing.
         type: "heal",
-        buffDuration: 3,
-        flat: 473,
-        coeff: 0.0504, // Estimated. Check it in Beta.
+        flat: 5664 * 0.5,
+        coeff: 0.675 * 0.5, // Estimated. Check it in Beta.
         additiveScaling: 0.25,
-        tickData: {tickRate: 1, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.35,
         targets: 6, // Has *some* scaling above 6. Check.
         secondaries: ['crit', 'mastery']

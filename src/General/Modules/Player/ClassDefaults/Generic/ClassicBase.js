@@ -207,11 +207,11 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
 
     if (spec.includes("Holy Paladin")) {
         // Divine Plea
-        additionalManaPerSecond += (pool * 0.12 / 120 * 5);
-        manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+        additionalManaPerSecond += (1.35 * currentStats.spirit * 3 / 120 * 5);
+        manaSources["Divine Plea"] = (1.35 * currentStats.spirit * 3 / 120 * 5);
 
         // Seal of Insight
-        manaSources["Seal of Insight"] = (937 * 8 / 60 * 5); // 8ppm
+        manaSources["Seal of Insight"] = (2400 * 8 / 60 * 5); // 8ppm
         additionalManaPerSecond += manaSources["Seal of Insight"]; 
 
         // Seal of Insight

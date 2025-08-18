@@ -107,7 +107,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
     let hopoGenerated = 0;
   
-    let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    
   
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -124,23 +124,32 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     let additionalManaPerMinute = 0;
     const totalManaPool = manaPool + regen;
     // Hymn of Hope
-    
+    reportingData.additionalMana = getAdditionalManaEffects(statProfile, spec).additionalMP5
 
     // Seal Mana
 
     // Divine Plea
-    const divinePleaMana = 1.35 * statPercentages.spirit * 3 * 0.5; // We get 0.5 Divine Plea casts per minute.
+    /*const divinePleaMana = 1.35 * statPercentages.spirit * 3 * 0.5; // We get 0.5 Divine Plea casts per minute.
     reportingData.divinePleaMana = divinePleaMana;
-    additionalManaPerMinute += divinePleaMana;
+    additionalManaPerMinute += divinePleaMana;*/
   
 
   
     if (!userSettings.strictSeq) {
 
+      // Apply haste scaling to our cast profile.
+      ["Judgment", "Crusader Strike", "Holy Shock"].forEach(spellName => {
+        const spellEntry = getSpellEntry(castProfile, spellName);
+        spellEntry.cpm = spellEntry.cpm * statPercentages.haste;
+      })
+
       // Handle our filler casts. 
       // We'll probably rework this to be a package.
       let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-      const fillerWastage = 0.85;
+      const fillerWastage = 0.9;
+
+      // Update Cost Per Minute with our more frequent hasted casts.
+      let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
       // Selfless Healer: Mana
       // We can model Selfless Healer as a flat mana reduction attached to Judgment. 
@@ -156,6 +165,9 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
       const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
       timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
+
+      reportingData.fillerCPMMana = fillerCPMMana;
+      reportingData.fillerCPMTime = fillerCPMTime;
     
       //reportingData.costPerMinute = castProfile;
       let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
@@ -171,6 +183,8 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       // Selfless Healer
       const shAvgStacks = getSpellEntry(castProfile, "Judgment").cpm  / fillerCPM;
       getSpellEntry(castProfile, "Holy Radiance").bonus = 1 + 0.2 * shAvgStacks;
+
+      reportingData.fillerCPM = fillerCPM;
 
     
         castProfile.forEach(spellProfile => {
@@ -203,14 +217,31 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
               totalHealing += (spellOutput * effectiveCPM);
               rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
             }
-    
+
+            // Beacon
+
     
 
             if (rawHeal > 0) {
-                // Illuminated Healing
-                const illuminatedHealing = rawHeal * (statPercentages.mastery);
-                healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
-                totalHealing += illuminatedHealing;
+
+              // Beacon
+              // Beacon healing does NOT proc Mastery
+              const beaconSpecialMods = {
+                "Holy Light": 1,
+                "Holy Radiance": 0.15,
+                "Light of Dawn": 0.15,
+                "Light's Hammer": 0.15,
+                "Holy Prism": 0.15,
+              }
+              const beaconMod = (spellName in beaconSpecialMods) ? beaconSpecialMods[spellName] : 0.5;
+              const beaconHealing = rawHeal * beaconMod * (1 - 0.15); // 15% Beacon Overheal
+              healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
+              totalHealing += beaconHealing;
+
+              // Illuminated Healing
+              const illuminatedHealing = rawHeal * (statPercentages.mastery);
+              healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
+              totalHealing += illuminatedHealing;
 
                 // Beacon of Light
                 
@@ -300,6 +331,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     //console.log("Rejuvs Per Min: " + ((totalManaPool / fightLength) - druidBaseline.costPerMinute) / fillerCost);
     const fillerCPM = ((totalManaPool / fightLength) - baseline.costPerMinute) / fillerCost * fillerWastage;
     console.log("Filler CPM: " + fillerCPM + " (Cost: " + fillerCost + ")" + " (Total Mana: " + totalManaPool + ")" + "Cost per min" + baseline.costPerMinute);
+    reportingData.fillerCPM = fillerCPM;
     // Evaluate Stats
     // Spellpower
   
