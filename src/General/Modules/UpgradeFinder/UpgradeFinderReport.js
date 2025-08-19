@@ -144,7 +144,7 @@ export default function UpgradeFinderReport(props) {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <InformationBox variant={"yellow"} title={"Tier Pieces"} information={"Remember that Tier Set pieces are very valuable but will now show as major upgrades unless they complete a set for you. Aim to obtain these anyway."}></InformationBox>
+            <InformationBox variant={"yellow"} title={"Tier Pieces"} information={"Remember that Tier Set pieces are very valuable but will NOT show as major upgrades unless they complete a set for you. Aim to obtain these anyway."}></InformationBox>
           </Grid>
           <Grid item sm xs={12} spacing={0} style={{ padding: "4px 0px 5px 0px" }}>
            <EquippedItems items={result.equippedItems} gameType={result.gameType} contentType={result.contentType} />
