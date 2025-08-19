@@ -59,7 +59,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 12607,
         coeff: 1.12, 
         additiveScaling: 0.25,
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
         onCastEnd: [{type: "Remove Buff", buffName: "Infusion of Light"}]
     }],
@@ -94,10 +94,10 @@ export const CLASSICPALADINSPELLDB = {
     { // Heals all allies for 50% of the original amount. Includes overhealing.
         type: "heal",
         flat: 5664 * 0.5,
-        coeff: 0.675 * 0.5, // Estimated. Check it in Beta.
+        coeff: 0.675 * 0.5, //
         additiveScaling: 0.25,
         expectedOverheal: 0.35,
-        targets: 6, // Has *some* scaling above 6. Check.
+        targets: 6, // Might be capped at 6 now?
         secondaries: ['crit', 'mastery']
     }],
     "Light of Dawn": [{
@@ -110,7 +110,7 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.152 * 3, // Adjust this per Holy Power. 
         additiveScaling: 0.5,
         targets: 6,
-        expectedOverheal: 0.25,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
@@ -122,7 +122,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 5538,
         coeff: 0.49, // Adjust this per Holy Power. 
         additiveScaling: 0.5,
-        expectedOverheal: 0.1,
+        expectedOverheal: 0.15,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
@@ -134,7 +134,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 5538,
         coeff: 0.49, // Adjust this per Holy Power. 
         additiveScaling: 0.5,
-        expectedOverheal: 0.1,
+        expectedOverheal: 0.15,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     },
@@ -146,7 +146,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 711,
         additiveScaling: 0.5,
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
-        expectedOverheal: 0.25,
+        expectedOverheal: 0.35,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0},
     }],
@@ -172,6 +172,32 @@ export const CLASSICPALADINSPELLDB = {
         cooldownData: {cooldown: 4.5, activeCooldown: 0},
         secondaries: ['crit'] 
     }],
+    "Light's Hammer": [{
+        // Ticks on cast. Probably need to create a generic case for this.
+        spellData: {id: 114165, icon: "spell_paladin_holyprism", cat: "cooldown"},
+        castTime: 0,
+        type: "classic periodic",
+        buffType: "heal",
+        cost: 0,
+        coeff: 0.321,
+        flat: 3630,
+        additiveScaling: 0.25,
+        buffDuration: 14,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        targets: 6,
+        secondaries: ['crit', 'mastery'],
+        cooldownData: {cooldown: 60, hasted: false},
+        expectedOverheal: 0.4,
+    },
+    {
+        type: "damage",
+        coeff: 0.321,
+        flat: 3630,
+        buffDuration: 14,
+        tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
+        targets: 1,
+        secondaries: ['crit'],
+    },],
     "Avenging Wrath": [{
         spellData: {id: 31884, icon: "spell_holy_avenginewrath", cat: "cooldown"},
         type: "buff",

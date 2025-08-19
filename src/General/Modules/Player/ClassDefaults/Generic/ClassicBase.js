@@ -211,12 +211,12 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
         manaSources["Divine Plea"] = (1.35 * currentStats.spirit * 3 / 120 * 5);
 
         // Seal of Insight
-        manaSources["Seal of Insight"] = (2400 * 8 / 60 * 5); // 8ppm
+        manaSources["Seal of Insight"] = (3600 * 8 / 60 * 5); // 8ppm
         additionalManaPerSecond += manaSources["Seal of Insight"]; 
 
         // Seal of Insight
-        manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5); // 1 use per minute
-        additionalManaPerSecond += manaSources["Seal of Insight"]; 
+        //manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5); // 1 use per minute
+        //additionalManaPerSecond += manaSources["Seal of Insight"]; 
         
     }
     else if (spec.includes("Restoration Druid")) {

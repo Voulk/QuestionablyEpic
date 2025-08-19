@@ -63,11 +63,12 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       {spell: "Holy Radiance", cpm: 5.6, fillerSpell: true, hastedCPM: true}, */
       
-      {spell: "Judgment", efficiency: 0.9},
-      {spell: "Holy Shock", efficiency: 0.9},
+      {spell: "Judgment", efficiency: 0.8},
+      {spell: "Holy Shock", efficiency: 0.85},
       {spell: "Light of Dawn", cpm: 0},
       {spell: "Crusader Strike", efficiency: 0.5},
       {spell: "Holy Radiance", cpm: 0, fillerSpell: true},
+      {spell: "Light's Hammer", efficiency: 0.8},
     ]
   
     const adjSpells = getTalentedSpellDB("Holy Paladin", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: paladinTalents, spec: "Holy Paladin"});
@@ -90,10 +91,11 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
   // We want our scoring function to be fairly fast to run. Stat weights are fastest but they're a little messy too.
   // We want to run a CastProfile for each spell but we can optimize that slightly.
   // Instead we'll run a simulated CastProfile baseline.
-  // Rejuv is our baseline spell
+  
+  // Paladin cooldowns:
   export function scorePaladinSet(specBaseline, statProfile, userSettings, tierSets = []) {
     console.log("Scoring Paladin Set");
-    const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
+    let castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
     const reporting = userSettings.reporting || false;
     const spec = "Holy Paladin";
     let totalHealing = 0;
@@ -133,8 +135,6 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     reportingData.divinePleaMana = divinePleaMana;
     additionalManaPerMinute += divinePleaMana;*/
   
-
-  
     if (!userSettings.strictSeq) {
 
       // Apply haste scaling to our cast profile.
@@ -162,7 +162,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       // Standard package
       const fillerCPMMana = ((totalManaPool / fightLength + additionalManaPerMinute) - costPerMinute) / fillerCost * fillerWastage;
-      const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
+      const fillerCPMTime = timeAvailable / (1.5 / (statPercentages.haste * 1.1)) * fillerWastage;
       const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
       timeAvailable -= fillerCPM * (2.5 / statPercentages.haste); // 
 
@@ -186,71 +186,109 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       reportingData.fillerCPM = fillerCPM;
 
-    
+      // Simulate Holy Avenger window
+      // Combine HA, Wings, Guardian, Divine Favor
+      // We can play with separating these or even averaging them too via settings.
+      // Avenging Wrath: 20% healing. 20s duration.
+      // Holy Avenger: triple HoPo gen, generators +30% while active. 18s duration. 2 minute CD.
+      // Guardian of Ancient Kings: 10% haste + 100% heal replication. 15s duration.
+      // Divine Favor: 20% spell casting haste + 20% crit chance. 20s duration.
+      const cdUptime = 18 / 180;
+      const cdWastage = 0.2;
+      const availableCDCasts = 18 / 1.5 * statPercentages.haste * 1.1 * 1.2 * (1 - cdWastage);
+      const lodCasts = availableCDCasts / 2;
+      const fillerCasts = availableCDCasts / 2;
+
+      castProfile.forEach(spellProfile => {
+        spellProfile.cpm *= (1 - cdUptime)
+      })
+
+      castProfile = castProfile.concat([
+        {spell: "Light of Dawn", cpm: lodCasts / 3, isCooldowns: true, bonus: 1.2, critBonus: 0.2}, 
+        {spell: "Holy Shock", cpm: fillerCasts / 3 / 3, isCooldowns: true, bonus: 1.3 * 1.2, critBonus: 0.2}, 
+        {spell: "Judgment", cpm: fillerCasts / 3 / 3, isCooldowns: true, bonus: 1.3 * 1.2, critBonus: 0.2}, 
+        {spell: "Holy Radiance", cpm: fillerCasts  / 3 / 3, isCooldowns: true, bonus: 1.3 * 1.2 * getSpellEntry(castProfile, "Holy Radiance").bonus || 1, critBonus: 0.2}, 
+      ])
+
         castProfile.forEach(spellProfile => {
             const fullSpell = specBaseline.spellDB[spellProfile.spell];
             const spellName = spellProfile.spell;
     
             fullSpell.forEach(spell => {
-    
-            // Exception Cases
-            
-            // Regular cases
-            if (spell.type === "buff" && spell.buffType === "special") return; 
-            let spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
-            let rawHeal = 0;
-    
-            if (spellProfile.bonus) {
-              spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
-            }
-    
-            const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
-    
-            castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
-            if (spell.type === "damage" || spell.buffType === "damage") {
-              damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-              totalDamage += (spellOutput * effectiveCPM); // 
-    
-            }
-            else {
-              healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-              totalHealing += (spellOutput * effectiveCPM);
-              rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
-            }
-
-            // Beacon
-
-    
-
-            if (rawHeal > 0) {
+      
+              // Exception Cases
+              
+              // Regular cases
+              if (spell.type === "buff" && spell.buffType === "special") return; 
+              let spellOutput = 0;
+              if (spellProfile.critBonus) {
+                const updatedCritMod = {crit: 0.2}
+                spellOutput = runClassicSpell(spellName, {...spell, statMods: updatedCritMod}, statPercentages, spec, userSettings);
+              }
+              else {
+                spellOutput = runClassicSpell(spellName, spell, statPercentages, spec, userSettings);
+              }
+              
+              let rawHeal = 0;
+      
+              if (spellProfile.bonus) {
+                spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+              }
+      
+              const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+      
+              castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
+              if (spell.type === "damage" || spell.buffType === "damage") {
+                damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+                totalDamage += (spellOutput * effectiveCPM); // 
+      
+              }
+              else {
+                healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+                totalHealing += (spellOutput * effectiveCPM);
+                rawHeal = spellOutput * effectiveCPM / (1 - spell.expectedOverheal); 
+              }
 
               // Beacon
-              // Beacon healing does NOT proc Mastery
-              const beaconSpecialMods = {
-                "Holy Light": 1,
-                "Holy Radiance": 0.15,
-                "Light of Dawn": 0.15,
-                "Light's Hammer": 0.15,
-                "Holy Prism": 0.15,
+
+      
+
+              if (rawHeal > 0) {
+
+                // Beacon
+                // Beacon healing does NOT proc Mastery
+                const beaconSpecialMods = {
+                  "Holy Light": 1,
+                  "Holy Radiance": 0.15,
+                  "Light of Dawn": 0.15,
+                  "Light's Hammer": 0.15,
+                  "Holy Prism": 0.15,
+                }
+                const beaconMod = (spellName in beaconSpecialMods) ? beaconSpecialMods[spellName] : 0.5;
+                const beaconHealing = rawHeal * beaconMod * (1 - 0.15); // 15% Beacon Overheal
+                healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
+                totalHealing += beaconHealing;
+
+                // Illuminated Healing
+                const illuminatedHealing = rawHeal * (statPercentages.mastery);
+                healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
+                totalHealing += illuminatedHealing;
+
+                // Guardian of Ancient Kings
+                // 100% healing replication. Does not proc mastery.
+                if (spellProfile.isCooldowns) {
+                  const guardianMod = 1;
+                  const guardianOverheal = 0.5;
+                  const guardianHealing = rawHeal * guardianMod * (1 - guardianOverheal); //
+                  healingBreakdown["Guardian of Ancient Kings"] = (healingBreakdown["Guardian of Ancient Kings"] || 0) + guardianHealing;
+                  totalHealing += guardianHealing;
+                }
+
+                  
               }
-              const beaconMod = (spellName in beaconSpecialMods) ? beaconSpecialMods[spellName] : 0.5;
-              const beaconHealing = rawHeal * beaconMod * (1 - 0.15); // 15% Beacon Overheal
-              healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
-              totalHealing += beaconHealing;
-
-              // Illuminated Healing
-              const illuminatedHealing = rawHeal * (statPercentages.mastery);
-              healingBreakdown["Illuminated Healing"] = (healingBreakdown["Illuminated Healing"] || 0) + illuminatedHealing;
-              totalHealing += illuminatedHealing;
-
-                // Beacon of Light
-                
-            }
-    
-            // Power Word: Shield on the other hand just has a straightforward crit multipler and can be handled like normal.
-    
-    
-            })
+      
+            
+              })
     
             // Filler mana
     
