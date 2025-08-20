@@ -1,7 +1,8 @@
-import React from "react";
+
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 // import { useTranslation } from "react-i18next";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { Tooltip, Typography } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { green } from "@mui/material/colors";
@@ -18,15 +19,19 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+
+
+
 export default function SourceToggle(props) {
   const sources = props.sources;
   const setSources = props.setSources;
   const classes = useStyles();
+  const matches = useMediaQuery("(max-width:750px)");
   // const { t } = useTranslation();
 
   // TODO: Localise Tooltips?
   return (
-    <ToggleButtonGroup value={sources} onChange={setSources} aria-label="contentToggle" size="small" style={{ padding: 8 }}>
+    <ToggleButtonGroup value={sources} onChange={setSources} aria-label="contentToggle" size="small" orientation={`${matches ? "vertical" : "horizontal"}`}  style={{ padding: 8, width: "100%" }}>
       <ToggleButton style={{ padding: 5 }} value="Raids" aria-label="dpsLabel" classes={{ selected: classes.selected }}>
         <Tooltip title={"Raids"} arrow>
           <div style={{ display: "inline-flex" }}>
