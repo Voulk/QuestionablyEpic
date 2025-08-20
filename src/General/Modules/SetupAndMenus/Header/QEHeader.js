@@ -1,5 +1,15 @@
 import React from "react";
-import { AppBar, Toolbar, Button, Typography, Tooltip, Grid } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Typography,
+  Tooltip,
+  Grid,
+  Drawer,
+  IconButton,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import logo from "Images/QeAssets/QELogo.png";
 import "../QEMainMenu.css";
 import LanguageSelector from "./LanguageButton";
@@ -72,6 +82,26 @@ export default function QEHeader(props) {
   const bgColor = props.isPTR ? "#000065" : "#353535"; // Not functional yet.
   //const hasAccount = props.pl && props.allChar;
   //const patronStatus = useSelector((state) => state.patronStatus);
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
+
+  const drawerWidth = 240;
+
+  const handleDrawerClose = () => {
+    setIsClosing(true);
+    setMobileOpen(false);
+  };
+
+  const handleDrawerTransitionEnd = () => {
+    setIsClosing(false);
+  };
+
+  const handleDrawerToggle = () => {
+    if (!isClosing) {
+      setMobileOpen(!mobileOpen);
+    }
+  };
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -88,31 +118,136 @@ export default function QEHeader(props) {
   // TODO: Implement profile.
   let playerName = props.playerTag || t("QeHeader.Login");
   let linkTarget = props.playerTag === "" ? "/login" : "/profile";
-  let patronStatus = props.patronStatus !== "" && props.patronStatus !== "Basic" ? props.patronStatus : "Standard";
+  let patronStatus =
+    props.patronStatus !== "" && props.patronStatus !== "Basic"
+      ? props.patronStatus
+      : "Standard";
 
+// creates a drawer for the settings on mobile to prevent page bloat
+  const drawer = (
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={1}
+      wrap={matches && gameType === "Retail" ? "wrap" : "nowrap"}
+      style={{ paddingLeft: 10, paddingRight: 10, paddingTop: 2 }}
+    >
+      <Grid item xs={6} sm="auto">
+        <HeaderClassSelect
+          gameType={gameType}
+          selectedSpec={props.allChars.allChar[props.allChars.activeChar].spec}
+          setSelectedSpec={props.handlePickPlayerSpec}
+        />
+      </Grid>
+      {/*(props.allChars && props.allChars.allChar.length) > 0 ? (
+                  <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
+                    <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
+                  </Grid>
+                ) : (
+                  ""
+                )*/}
+      {gameType === "Retail" ? (
+        <Grid item xs={6} sm="auto">
+          <ContentSwitch />
+        </Grid>
+      ) : (
+        ""
+      )}
+      {gameType === "Retail" ? (
+        <Grid item>
+          <QELogImport
+            logImportSnack={props.logImportSnack}
+            player={props.player}
+            allChars={props.allChars}
+          />
+        </Grid>
+      ) : (
+        ""
+      )}
+      <Grid item>
+        <SimCraftInput
+          colour="secondary"
+          variant="contained"
+          buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
+          player={props.player}
+          simcSnack={props.simcSnack}
+          allChars={props.allChars}
+        />
+      </Grid>
+      <Grid item>
+        <StyledButton
+          color={"secondary"}
+          variant="contained"
+          onClick={() =>
+            window.open(
+              "https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide",
+              "_blank"
+            )
+          }
+        >
+          {"Help"}
+        </StyledButton>
+      </Grid>
+      {/*<Grid item>
+                  <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
+                </Grid> */}
+      <Grid item>
+        <LanguageSelector />
+      </Grid>
+    </Grid>
+  );
 
   // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   return (
-    <div style={{  }}>
+    <div style={{}}>
       <AppBar position="fixed" color="inherit">
         <Toolbar className={classes.headerMargins}>
-          <Grid container direction="row" spacing={0} justifyContent="space-between" alignItems="center">
+          <Grid
+            container
+            direction="row"
+            spacing={0}
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <Grid item xs={12} sm={12} md={3} lg={3} xl={6} align="center">
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                         Logo Container                                          */
               /* ----------------------------------------------------------------------------------------------  */}
               <Grid container direction="row" alignItems="center">
-                <Grid item xs={12} sm={12} md="auto" lg={"auto"} xl="auto" align="center">
-                  <Grid container direction="row" alignItems="center">
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md="auto"
+                  lg={"auto"}
+                  xl="auto"
+                  align="center"
+                >
+                  <Grid container direction={{xs: 'column', sm: 'row'}} alignItems="center">
                     <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
                       <Link to={"/"}>
                         <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
-                          <img className={classes.qeLogo} src={logo} alt="QE Live" />
+                          <img
+                            className={classes.qeLogo}
+                            src={logo}
+                            alt="QE Live"
+                          />
                         </Tooltip>
                       </Link>
                     </Grid>
                     <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
-                      <Typography style={{ color: patronColor[patronStatus], paddingLeft: 10, paddingRight: 10 }} variant="body1" align="center" noWrap>
+                      <Typography
+                        style={{
+                          color: patronColor[patronStatus],
+                          paddingLeft: 10,
+                          paddingRight: 10,
+                        }}
+                        variant="body1"
+                        align="center"
+                        noWrap
+                      >
                         {patronStatus + " Edition"}
                       </Typography>
                     </Grid>
@@ -122,67 +257,70 @@ export default function QEHeader(props) {
             </Grid>
 
             {true ? (
-            <Grid item xs={12} sm={12} md={8} lg={6} xl={4} className={classes.headerButtons}>
-              {/* ---------------------------------------------------------------------------------------------- */
-              /*                                     Menu Buttons Container                                      */
-              /* ----------------------------------------------------------------------------------------------  */}
               <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                spacing={1}
-                wrap={matches && gameType === "Retail" ? "wrap" : "nowrap"}
-                style={{ paddingLeft: 10, paddingRight: 10 }}
+                item
+                xs={12}
+                sm={12}
+                md={8}
+                lg={6}
+                xl={4}
+                align="center"
+                className={classes.headerButtons}
               >
-                <Grid item xs={6} sm="auto">
-                  <HeaderClassSelect gameType={gameType} selectedSpec={props.allChars.allChar[props.allChars.activeChar].spec} setSelectedSpec={props.handlePickPlayerSpec}/>
-                </Grid>
-                {/*(props.allChars && props.allChars.allChar.length) > 0 ? (
-                  <Grid item xs={gameType === "Retail" ? 6 : "auto"} sm="auto">
-                    <CharacterHeaderButton player={props.pl} allChars={props.allChars} />
-                  </Grid>
-                ) : (
-                  ""
-                )*/}
-                {gameType === "Retail" ? (
-                  <Grid item xs={6} sm="auto">
-                    <ContentSwitch />
-                  </Grid>
-                ) : (
-                  ""
-                )}
-                {gameType === "Retail" ? (
-                  <Grid item>
-                    <QELogImport logImportSnack={props.logImportSnack} player={props.player} allChars={props.allChars} />
-                  </Grid>
-                ) : (
-                  ""
-                )}
-                <Grid item>
-                  <SimCraftInput
-                    colour="secondary"
-                    variant="contained"
-                    buttonLabel={t("SimCInput.SimCHeaderButtonLabel" + gameType)}
-                    player={props.player}
-                    simcSnack={props.simcSnack}
-                    allChars={props.allChars}
-                  />
-                </Grid>
-                <Grid item>
-                  <StyledButton color={"secondary"} variant="contained" onClick={() => window.open("https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide", "_blank")}>
-                    {"Help"}
-                  </StyledButton>
-                </Grid>
-                {/*<Grid item>
-                  <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
-                </Grid> */}
-                <Grid item>
-                  <LanguageSelector />
+                <IconButton
+                  color="inherit"
+                  width="100%"
+                  
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{display: { sm: "none" }, margin: "auto" }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                {/* ---------------------------------------------------------------------------------------------- */
+                /*                                     Menu Buttons Container                                      */
+                /* ----------------------------------------------------------------------------------------------  */}
+                <Drawer
+                  variant="temporary"
+                  anchor="top"
+                  open={mobileOpen}
+                  onTransitionEnd={handleDrawerTransitionEnd}
+                  onClose={handleDrawerClose}
+                  sx={{
+                    display: { xs: "block", sm: "none" },
+                    "& .MuiDrawer-paper": {
+                      boxSizing: "border-box",
+                      width: "100%",
+                      py: 2,
+                    },
+                  }}
+                  slotProps={{
+                    root: {
+                      keepMounted: true, // Better open performance on mobile.
+                    },
+                  }}
+                >
+                  {drawer}
+                </Drawer>
+                {/* Desktop uses the drawer, but it's always visible like in original design*/}
+                <Grid
+                  anchor="top"
+                  sx={{
+                    display: { xs: "none", sm: "block" },
+                    "& .MuiDrawer-paper": {
+                      boxSizing: "border-box",
+                      width: "100%",
+                    },
+                  }}
+                >
+                  {drawer}
                 </Grid>
               </Grid>
-            </Grid> ) : ""}
-          </Grid> 
+            ) : (
+              ""
+            )}
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
