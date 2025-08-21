@@ -30,7 +30,7 @@ export const raidTrinketData = [
     addonDescription: "Requires you pick up balls that'll float toward you. They are quite hard to miss and you shouldn't need to play around them.",
     effects: [
       {
-        coefficient: 1.558467, 
+        coefficient: 1.511713, 
         table: -7,
         duration: 10,
         ppm: 2.5,
@@ -49,21 +49,21 @@ export const raidTrinketData = [
   },
     { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
     name: "Nexus-King's Command",
-    description: "The absorb portion is only on the single spell that procs the shield. Can be better than the chart shows if you're good at min-maxing it but it's hard work for little gain.",
+    description: "The absorb portion is only on the single spell that procs the shield. Is quite hard to play well but if you consume the debuff during your healing cooldowns then this is an excellent trinket.",
     effects: [
       { // Int Proc
-        coefficient: 1.079763, 
+        coefficient: 1.241728, 
         table: -1,
-        duration: 10,
-        cooldown: 32, // 30s ticking aura
+        duration: 12,
+        cooldown: 30, // 30s ticking aura
         stat: "intellect",
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
-
+      //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel)
       return bonus_stats;
     }
   },
@@ -93,7 +93,7 @@ export const raidTrinketData = [
     description: "The health penalty is temporary and you can heal it back. Decent if you have powerful 2 minute cooldowns.",
     effects: [
       {
-        coefficient: 2.879601 * 0.9,
+        coefficient: 2.461964,
         table: -1,
         duration: 30,
         //multiplier: 0.725, // Assumes boss is around 50% health.

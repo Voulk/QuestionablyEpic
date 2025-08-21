@@ -12,9 +12,15 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Monk S2-2") {
+  if (effectName === "Monk S3-2") {
+    bonus_stats.hps = player.getHPS() * 0.1;
+  }
+  else if (effectName === "Monk S3-4") {
+    bonus_stats.hps = player.getHPS() * 0.07;
+  }
+  else if (effectName === "Monk S2-2") {
     const insuranceRPPM = 5 * player.getStatPerc('haste');
-    const insuranceHealing = 0.7889 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
+    const insuranceHealing = 0.7889 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect'])
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
   }
   else if (effectName === "Monk S2-4") {

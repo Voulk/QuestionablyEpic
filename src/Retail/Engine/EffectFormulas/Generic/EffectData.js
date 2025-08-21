@@ -21,7 +21,6 @@ export const effectData = [
       }
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * mult;
-      console.log(bonus_stats);
 
       return bonus_stats;
     },

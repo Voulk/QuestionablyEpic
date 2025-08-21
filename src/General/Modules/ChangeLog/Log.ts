@@ -19,6 +19,42 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "11.2 / 5.5",
+    update: 9,
+    date: "August 15",
+    changes: [ 
+      "Random stat BoEs now have stat selection in the item bar.",
+      "Bugfix: QE Live will no longer try and wear two different reforges of the same Steaming Seal of Flame item.",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 8,
+    date: "August 14",
+    changes: [ 
+      "Added a new Timewalking trinket chart filter. Added all Wrath of the Lich King timewalking trinkets to the chart.",
+      "Bugfix: SimC imports will now ignore Warband items that don't match your armor type.",
+      "Classic: Top Gear will now let you wear 2x Steaming Seal of Flame.",
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 7,
+    date: "August 13",
+    changes: [ 
+      "Removed some more unavailable MoP items.",
+      "Bugfix: You can now catalyze season 3 items.",
+      "Bugfix: Attached on-use flags to season 3 trinkets.",
+      "Made some updates to the MoP Disc profile.",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 6,
+    date: "August 12",
+    changes: [ 
+      "Significant in-game trinket tuning to MANY items.",
+      "Setup Tier Set estimates",
+      "Fixed the Upgrade Finder slider."
+    ]},
     {
     version: "11.2 / 5.5",
     update: 5,

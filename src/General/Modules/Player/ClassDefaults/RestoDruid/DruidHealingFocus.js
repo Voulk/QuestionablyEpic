@@ -47,6 +47,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 38, // This is an upper bound already.
       CastsPerMinute: 32, // ONLY tracks spells with a mana cost.
       cooldownMult: {
+        c30: 1.1,
         c60: 1.1,
         c90: 1.2,
         c120: 1,
@@ -60,6 +61,7 @@ export const druidDefaultSpecialQueries = (contentType) => {
       OneManaHealing: 1.2,
       CastsPerMinute: 30,
       cooldownMult: {
+        c30: 1.1,
         c60: 1,
         c90: 1.2,
         c120: 1,

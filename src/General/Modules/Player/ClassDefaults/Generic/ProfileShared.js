@@ -96,7 +96,7 @@ export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") 
         spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
         crit: 1 + getCritPercentage(statProfile, spec),
         haste: getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
-        mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
+        mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * STATCONVERSIONCLASSIC.MASTERYMULT[spec], 
         spirit: (statProfile.spirit),
         weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
         weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
@@ -139,8 +139,6 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
      
-    
-
     let spellOutput = 0;
     if (spellName === "Melee") {
         // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 

@@ -28,8 +28,8 @@ import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEf
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00327669230769231; // 0.00497669230769231;
-const DR_CONSTLEECH = 0.04922569230769231;
+const DR_CONST = 0.00307669230769231; // 0.00497669230769231;
+const DR_CONSTLEECH = 0.05122569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time: number) {
@@ -807,6 +807,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else if (boots.level > 704) setVariables.reshiiBoots = 0.4;
     else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
     else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+    
   }
 
 

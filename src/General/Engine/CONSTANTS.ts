@@ -15,7 +15,7 @@ export const CONSTANTS = {
         "mythicMax": 7,
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
-    seasonalItemConversion: 10, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
+    seasonalItemConversion: 11, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
     currentRaidID: 1302, // Undermine
     currentDungeonIDs: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
     bossNPCIDs: {

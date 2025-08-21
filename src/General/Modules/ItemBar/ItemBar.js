@@ -55,9 +55,10 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
   let item = "";
 
   const itemSlot = getItemProp(itemID, "slot", gameType);
-  const isCrafted = getItemProp(itemID, "crafted", gameType) || itemID === 228843;
+  const isCrafted = getItemProp(itemID, "crafted", gameType);
+  const isRandomStats = getItemProp(itemID, "randomStats", gameType)
 
-  if (isCrafted) {
+  if (isCrafted || isRandomStats) {
 
     // Item is a legendary and gets special handling.
     const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
@@ -65,10 +66,11 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     let craftedSocket = itemSocket || checkDefaultSocket(itemID);
     item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+
     //if (item.slot === "Neck") item.socket = 3;
 
     let bonusString = "";
-    if (itemID === 228843) {
+    if (isRandomStats) {
       let craftedStats = [];
       missiveStats.forEach(stat => {
         if (stat === "haste") craftedStats.push(36);
@@ -281,7 +283,7 @@ export default function ItemBar(props) {
     "Versatility (engineering)",
   ];
 
-  if (itemID === 228843) {
+  if (getItemProp(itemID, "randomStats", gameType)) {//itemID === 228843 || itemID === 238034) {
     craftedStatPossibilities = [
       "Haste / Versatility",
       "Haste / Mastery",
@@ -314,7 +316,7 @@ export default function ItemBar(props) {
     itemLevel: true,
     socket: gameType === "Retail" && CONSTANTS.socketSlots.includes(getItemProp(itemID, "slot", gameType)),
     tertiaries: !(isItemCrafted) && gameType === "Retail",
-    missives: isItemCrafted || itemID === 228843,
+    missives: isItemCrafted || getItemProp(itemID, "randomStats", gameType),
     specialEffect: itemEffectOptions.length > 0,
   }
 
