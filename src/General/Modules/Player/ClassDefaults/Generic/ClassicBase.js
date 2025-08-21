@@ -215,7 +215,7 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
         additionalManaPerSecond += manaSources["Seal of Insight"]; 
 
         // Seal of Insight
-        //manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5); // 1 use per minute
+        manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5);
         //additionalManaPerSecond += manaSources["Seal of Insight"]; 
         
     }

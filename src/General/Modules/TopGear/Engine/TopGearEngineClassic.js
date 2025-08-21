@@ -438,6 +438,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
     //console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
+    
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {
         if (item.flags.includes("ItemReforged")) {
@@ -470,7 +471,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       enchants = enchantInfo.enchants;
     }
     compileStats(setStats, enchant_stats);
-
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     let hasteNeeded = 0;
@@ -481,7 +481,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     compileStats(setStats, compiledGems.stats);
 
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    
+
 
     // -- Effects --
     let effectStats = [];
