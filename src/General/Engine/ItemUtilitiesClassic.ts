@@ -48,7 +48,7 @@ export const getEnchants = (playerSettings: any, professions: string[], offhandF
     // Wrist
     if (professions.includes("Leatherworking")) {
         enchantStats.intellect! += 500;
-        enchants['Wrist'] = "Draconic Embossment";
+        enchants['Wrist'] = "Fur Lining";
     }
     else {
         enchantStats.intellect! += 180;

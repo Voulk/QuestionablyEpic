@@ -61,7 +61,7 @@ const enchantIDs = {
     "Greater Haste": 104416, // Hands
     "Superior Intellect": 104403, // Back
     "Glorious Stats": 104335, // Chest
-    "Draconic Embossment": 124552, // Wrist 124552
+    "Fur Lining": 124552, // Wrist 124552
     "Super Intellect": 104389, // Wrist
     "Pandaren's Step": 104414, // Feet
     "Greater Crane Wing Inscription": 121195, // Shoulder
