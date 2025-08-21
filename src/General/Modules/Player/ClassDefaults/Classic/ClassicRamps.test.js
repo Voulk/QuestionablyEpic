@@ -70,7 +70,7 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Discipline Priest");
+        const data = getData("Holy Paladin");
 
         const spec = data.spec
         const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
