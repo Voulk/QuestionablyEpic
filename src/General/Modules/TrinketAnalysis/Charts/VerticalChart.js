@@ -10,6 +10,8 @@ import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
 
+const mobileWidthThreshold = 650;
+
 const getTooltip = (data, id) => {
   const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
   return tooltip;
@@ -69,8 +71,8 @@ const cleanZerosFromArray = (obj) => {
     }, {});
 };
 
-/** Check if the current device is mobile, current workaround for responsive design set at page load */
-const isMobile = typeof window !== 'undefined' && window.innerWidth <= 600;
+
+
 const truncateString = (str, num) => {
   if (str.length <= num) {
     return str;
@@ -89,7 +91,17 @@ function getInitials(str) {
 export default class VerticalChart extends PureComponent {
   constructor() {
     super();
-    this.state = { focusBar: null, mouseLeave: true };
+    this.state = { focusBar: null, mouseLeave: true, width: window.innerWidth, height: window.innerHeight };
+  }
+   
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   render() {
@@ -137,7 +149,7 @@ export default class VerticalChart extends PureComponent {
               {
               //use function to get the first letters of the item name per word removing spaces
               }
-              {isMobile ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(payload.value === 242392 ? "Diamantine Voidcore (No Set)" :   getTranslatedItemName(payload.value, currentLanguage), 32))}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(payload.value === 242392 ? "Diamantine Voidcore (No Set)" :   getTranslatedItemName(payload.value, currentLanguage), 32))}
             </text>
             <WowheadTooltip type="item" id={payload.value} level={722} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
@@ -176,17 +188,7 @@ export default class VerticalChart extends PureComponent {
           barCategoryGap="15%"
           data={cleanedArray}
           layout="vertical"
-          // margin={isMobile ? {
-          //   top: -10,
-          //   right: 40,
-          //   bottom: 10,
-          //   left: 50,
-          // } : {
-          //   top: -10,
-          //   right: 40,
-          //   bottom: 10,
-          //   left: 250,
-          // }}
+          
           
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
@@ -225,7 +227,7 @@ export default class VerticalChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" className="CustomizedYAxis" width={isMobile ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {itemLevels.map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}

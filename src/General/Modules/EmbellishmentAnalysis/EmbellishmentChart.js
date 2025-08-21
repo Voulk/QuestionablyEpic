@@ -10,6 +10,9 @@ import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
 
+
+const mobileWidthThreshold = 650;
+
 const getTooltip = (data, id) => {
   const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
   return tooltip;
@@ -32,6 +35,20 @@ const StyledTooltip = styled(({ className, ...props }) => (
     //border: "solid yellow 1px"
   }
 }));
+// function useWindowSize() {
+//   const [size, setSize] = useState([0, 0]);
+//   useLayoutEffect(() => {
+//     function updateSize() {
+//       setSize([window.innerWidth, window.innerHeight]);
+//     }
+//     window.addEventListener('resize', updateSize);
+//     updateSize();
+//     return () => window.removeEventListener('resize', updateSize);
+//   }, []);
+//   return size;
+// }
+
+
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
@@ -63,10 +80,29 @@ const truncateString = (str, num) => {
   }
   return str.slice(0, num) + "...";
 };
+function getInitials(str) {
+  return str
+    .split(' ')
+    .filter(word => word.length > 0)
+    .map(word => word[0].toUpperCase())
+    .join('');
+}
 export default class EmbelChart extends PureComponent {
   constructor() {
     super();
   }
+  state = {width: window.innerWidth, height: window.innerHeight};
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+
+
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
@@ -96,11 +132,11 @@ export default class EmbelChart extends PureComponent {
       const { x, y, payload } = props;
       return (
         <g transform={`translate(${x},${y})`}>
-          <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
+          <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right", flexShrink: 0 }}>
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)) : truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={522} domain={currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={522}  domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
@@ -139,8 +175,9 @@ export default class EmbelChart extends PureComponent {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 250,
+            left: this.state.width > mobileWidthThreshold ? 250 : 40,
           }}
+          
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
