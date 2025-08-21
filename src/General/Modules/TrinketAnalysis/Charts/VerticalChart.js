@@ -10,13 +10,15 @@ import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
 
+const mobileWidthThreshold = 650;
+
 const getTooltip = (data, id) => {
   const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
   return tooltip;
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <MuiTooltip {...props} classes={{ popper: className }} />
+  <MuiTooltip {...props} classes={{ popper: className }} enterTouchDelay={0} />
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -69,16 +71,37 @@ const cleanZerosFromArray = (obj) => {
     }, {});
 };
 
+
+
 const truncateString = (str, num) => {
   if (str.length <= num) {
     return str;
   }
   return str.slice(0, num) + "...";
 };
+
+/** Get the initials of a string */
+function getInitials(str) {
+  return str
+    .split(' ')
+    .filter(word => word.length > 0)
+    .map(word => word[0].toUpperCase())
+    .join('');
+}
 export default class VerticalChart extends PureComponent {
   constructor() {
     super();
-    this.state = { focusBar: null, mouseLeave: true };
+    this.state = { focusBar: null, mouseLeave: true, width: window.innerWidth, height: window.innerHeight };
+  }
+   
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   render() {
@@ -94,7 +117,6 @@ export default class VerticalChart extends PureComponent {
     //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
 
     const barColours = this.props.theme;
-
     let arr = [];
     let cleanedArray = [];
     Object.entries(data)
@@ -123,8 +145,11 @@ export default class VerticalChart extends PureComponent {
             justifyContent: "flex-end",
             flexWrap: 'wrap',
             }}>
-            <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(payload.value === 242392 ? "Diamantine Voidcore (No Set)" :getTranslatedItemName(payload.value, currentLanguage), 32)}
+            <text  is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
+              {
+              //use function to get the first letters of the item name per word removing spaces
+              }
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(payload.value === 242392 ? "Diamantine Voidcore (No Set)" :   getTranslatedItemName(payload.value, currentLanguage), 32))}
             </text>
             <WowheadTooltip type="item" id={payload.value} level={722} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
@@ -158,17 +183,13 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={800}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={1200}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
           layout="vertical"
-          margin={{
-            top: -10,
-            right: 40,
-            bottom: 10,
-            left: 250,
-          }}
+          
+          
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
               this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
@@ -206,7 +227,7 @@ export default class VerticalChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
           {itemLevels.map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}

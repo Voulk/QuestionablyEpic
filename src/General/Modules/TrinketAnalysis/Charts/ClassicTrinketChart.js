@@ -9,6 +9,8 @@ import "./VerticalChart.css";
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
+
+const mobileWidthThreshold = 650;
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
   return Object.keys(obj)
@@ -27,7 +29,7 @@ const getTooltip = (data, id) => {
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
+  <Tooltip {...props} classes={{ popper: className }} enterTouchDelay={0}/>
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -50,9 +52,26 @@ const truncateString = (str, num) => {
   }
   return str.slice(0, num) + "...";
 };
+function getInitials(str) {
+  return str
+    .split(' ')
+    .filter(word => word.length > 0)
+    .map(word => word[0].toUpperCase())
+    .join('');
+}
 export default class BCChart extends PureComponent {
   constructor() {
     super();
+    this.state = { width: window.innerWidth, height: window.innerHeight };
+  }
+    updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   getShortenedItemName = (name) => {
@@ -100,7 +119,7 @@ export default class BCChart extends PureComponent {
             flexWrap: 'wrap',
         }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 10)}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)) : ( truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32))}
             </text>
             <WowheadTooltip type="item" id={payload.value} domain={"mop-classic"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
@@ -141,7 +160,7 @@ export default class BCChart extends PureComponent {
             top: 20,
             right: 20,
             bottom: 20,
-            left: isMobile ? 140 : 250,
+            left: this.state.width < mobileWidthThreshold ? 65 : 250,
           }} 
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />

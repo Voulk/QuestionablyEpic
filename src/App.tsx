@@ -332,7 +332,9 @@ const App = () => {
                   allChars={allChars}
                   isPTR={isPTR}
                   handlePickPlayerSpec={handlePickPlayerSpec}
-                />
+                  />
+
+                <div style={{ paddingBottom: 64 }} />
 
                 {/* --------------------------- Char Added Snackbar -------------------------- */}
                 <QESnackbar open={charSnackState} onClose={handleCharSnackClose} severity="success" message="Snackbars.CharAddSuccess" />
