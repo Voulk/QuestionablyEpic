@@ -86,7 +86,7 @@ export default function QEHeader(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
 
-  const drawerWidth = 240;
+  
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -103,13 +103,7 @@ export default function QEHeader(props) {
     }
   };
 
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
+  
 
   const open = Boolean(anchorEl);
 
@@ -266,6 +260,7 @@ export default function QEHeader(props) {
                 xl={6}
                 align="center"
                 className={classes.headerButtons}
+                
               >
                 <IconButton
                   color="inherit"
@@ -311,6 +306,8 @@ export default function QEHeader(props) {
                     "& .MuiDrawer-paper": {
                       boxSizing: "border-box",
                       width: "100%",
+                    
+                      
                     },
                   }}
                 >
