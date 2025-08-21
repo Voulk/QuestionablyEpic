@@ -127,8 +127,8 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'), getGemID('mastery', 'crit'),
-      getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
+    return [metaGem, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
 
   }
   else {
@@ -530,12 +530,13 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, contentType: contentTypes) {
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
+
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  315; // 64 x 2.
   enchants["Finger"] = "+315 " + highestWeight;
 
@@ -559,7 +560,7 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   bonus_stats.intellect += 747;
   enchants["Legs"] = "Sunset Spellthread";
 
-  if (contentType === "Raid") {
+  if (false) {
     const dreamingData =  { // 
       coefficient: 40.32042, 
       table: -8,
@@ -695,12 +696,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
+  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
 
   // == Flask / Phials ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
     const bestStat = getHighestWeight(castModel);
+
+    if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
+      // We are in second DR already, try and swap.
+    }
     bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 2825;
     selectedChoice = bestStat;
   }
@@ -793,7 +798,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
   if (effectList.filter(effect => effect.name === "Reshii Boots").length > 0) {
     // Check Upgrade track I guess
-    console.log("Reshii Boots effect detected");
+    //console.log("Reshii Boots effect detected");
     const boots = itemSet.itemList.filter(item => (item.effect && item.effect.name === "Reshii Boots"))[0];
     const bootsPerc = {
       "Veteran": 0.2,

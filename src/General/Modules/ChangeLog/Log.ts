@@ -25,6 +25,8 @@ export const changeLog: entry[] = [
     date: "August 21",
     changes: [ 
       "Mists of Pandaria Paladin is now live!",
+      "Some minor updates to Resto Shaman gems.",
+      "Revamped weapon enchant code."
     ]},
   {
     version: "11.2 / 5.5",
