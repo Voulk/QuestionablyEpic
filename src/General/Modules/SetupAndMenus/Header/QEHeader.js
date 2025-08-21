@@ -211,22 +211,22 @@ export default function QEHeader(props) {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={6} align="center">
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4} align="center">
               {/* ---------------------------------------------------------------------------------------------- */
               /*                                         Logo Container                                          */
               /* ----------------------------------------------------------------------------------------------  */}
-              <Grid container direction="row" alignItems="center">
+              <Grid container direction="row" alignItems="center" >
                 <Grid
                   item
                   xs={12}
                   sm={12}
-                  md="auto"
-                  lg={"auto"}
+                  md={12}
+                  lg={12}
                   xl="auto"
                   align="center"
                 >
-                  <Grid container direction={{xs: 'column', sm: 'row'}} alignItems="center">
-                    <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
+                  <Grid container direction={{xs: 'column', md: 'row'}} alignItems="center">
+                    <Grid item xs={6} sm={12} md={12} lg={12} xl="auto">
                       <Link to={"/"}>
                         <Tooltip title={t("QeHeader.Tooltip.Home")} arrow>
                           <img
@@ -237,7 +237,7 @@ export default function QEHeader(props) {
                         </Tooltip>
                       </Link>
                     </Grid>
-                    <Grid item xs={6} sm={12} md={12} lg={6} xl="auto">
+                    <Grid item xs={6} sm={12} md={12} lg={12} xl="auto">
                       <Typography
                         style={{
                           color: patronColor[patronStatus],
@@ -261,9 +261,9 @@ export default function QEHeader(props) {
                 item
                 xs={12}
                 sm={12}
-                md={8}
-                lg={6}
-                xl={4}
+                md={12}
+                lg={8}
+                xl={6}
                 align="center"
                 className={classes.headerButtons}
               >

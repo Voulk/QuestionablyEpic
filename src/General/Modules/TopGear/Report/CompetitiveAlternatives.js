@@ -71,7 +71,7 @@ function CompetitiveAlternatives(props) {
             <Divider />
           </Grid>
           <Grid item xs={12}>
-            <Grid item container spacing={0}>
+            <Grid item container spacing={1}>
               {differentials.map((key, i) => (
                 <Grid item xs={12} sm={12} md={12} lg={6} xl={4} key={i}>
                   <Paper
@@ -82,13 +82,13 @@ function CompetitiveAlternatives(props) {
                       backgroundColor: "rgba(34, 34, 34, 0.52)",
                     }}
                   >
-                    <Grid item container direction="row" alignItems="center" xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Grid item container direction="column"  alignItems="center" xs={12} sm={12} md={12} lg={12} xl={12}>
                       <Grid item container xs={10} spacing={1}>
                         {key.items.map((item, i) => {
                           let itemArray = [];
                           itemArray = [item];
                           return itemArray.map((item) => (
-                            <Grid item key={i}>
+                            <Grid item key={i} >
                               <WowheadTooltip type="item" id={item.id} level={item.level} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} domain={wowheadDom} gems={getGemString(item)} forg={getReforgeID(item)}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
@@ -136,7 +136,7 @@ function CompetitiveAlternatives(props) {
                           ));
                         })}
                       </Grid>
-                      <Grid item container justifyContent="flex-end" xs={2}>
+                      <Grid item container justifyContent={{xs: "center", md: "flex-end"}} xs={4}>
                         <Grid item xs={12}>
                           <Typography
                             variant="caption" // h6 formerly
@@ -156,12 +156,13 @@ function CompetitiveAlternatives(props) {
                             variant="caption" // h6 formerly
                             wrap="nowrap"
                             display="inline"
-                            align="right"
+                            align="center"
                             style={{
                               color: "#F58114",
                               whiteSpace: "nowrap",
                               float: "right",
                               fontSize: 14,
+                              width: "100%",
                             }}
                           >
                             {(gameType === "Classic" ? Math.round(key.rawDifference / 60) : key.rawDifference) + " HPS (" + roundTo(key.scoreDifference, 2) + "%)"}
