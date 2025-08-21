@@ -35,7 +35,7 @@ describe("Test Paladin Spell Values", () => {
         ${"Holy Light"}               | ${(16690 + 17886) / 2}      | ${0}
         ${"Holy Shock"}               | ${(17850 + 18788) / 2}      | ${0}
         ${"Holy Radiance"}            | ${(11706 + 13122) / 2}      | ${0}
-        ${"Light of Dawn"}            | ${(3883 + 4160) / 2}        | ${0}
+        ${"Light of Dawn"}            | ${(3883 + 4160) / 2 * 3}        | ${0}
         ${"Word of Glory"}            | ${(12505 + 13403) / 2}      | ${0}
         
 

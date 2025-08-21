@@ -32,7 +32,7 @@ export function createPlayerChars(): PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
-          if (player.spec === "Holy Paladin Classic" || player.spec === "Restoration Shaman Classic") newChar.enabled = false;
+          if (player.spec === "Restoration Shaman Classic") newChar.enabled = false;
           specsAdded.push(player.spec);
           charArray.push(newChar);
           index += 1;
