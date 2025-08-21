@@ -54,60 +54,60 @@ export const tierSets = [
   /*                                       Holy Paladin Tier 11                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Reinforced Sapphirium Regalia" },
+    name: { en: "White Tiger Vestments" },
     spec: "Holy Paladin",
-    slots: [60359, 60362, 60360, 60363, 60361], // head, shoulder, chest, hands, legs
+    slots: [85344, 85346, 85345, 85348, 85347], // head, shoulder, chest, hands, legs
     twoSet: {
       effect: {
-        en: "(2) Increases the crit chance of your Holy Light by 5%.",
+        en: "(2) Reduces the mana cost of your Holy Radiance spell by 10%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Grants 540 Spirit for 6s after you cast Holy Shock.",
+        en: "(4) Reduces the cooldown of Holy Shock by 1 sec.",
       },
       hps: 300,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                       Holy Paladin Tier 8                                      */
+  /*                                       Holy Paladin Tier 15                                      */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Regalia of Immolation" },
+    name: { en: "Vestments of the Lightning Emperor" },
     spec: "Holy Paladin",
-    slots: [71093, 71095, 71091, 71092, 71094], // head, shoulder, chest, hands, legs
+    slots: [95285, 95286, 95287, 95288, 95289], // head, shoulder, chest, hands, legs
     twoSet: {
       effect: {
-        en: "(2) Healing with Holy Shock has a 40% chance to grant you 6% of your base mana.",
+        en: "(2) Increases the healing done by Daybreak by 50%.",
       },
       hps: 0,
     },
     fourSet: {
       effect: {
-        en: "Your Divine Light, Flash of Light, and Holy Light spells also heal an injured target within 15 yards for 10% of the amount healed.",
+        en: "(4) Increases the healing transferred to Beacon of Light by 20%.",
       },
       hps: 0,
     },
   },
 
   /* ---------------------------------------------------------------------------------------------- */
-  /*                                      Holy Paladin Tier 13                                       */
+  /*                                      Holy Paladin Tier 16                                       */
   /* ---------------------------------------------------------------------------------------------- */
   {
-    name: { en: "Regalia of Radiant Glory" },
+    name: { en: "Vestments of Winged Triumph" },
     spec: "Holy Paladin",
-    slots: [76767, 76769, 76765, 76766, 76768], // head, shoulder, chest, hands, legs
+    slots: [99124, 99125, 99134, 99135, 99133], // head, shoulder, chest, hands, legs
     twoSet: {
       effect: {
-        en: "(2) After using Divine Favor, the mana cost of your healing spells is reduced by 25% for 15 sec.",
+        en: "(2) Infusion of Light also increases the healing done by Holy Light, Divine Light and Holy Radiance by 25%.",
       },
       hps: 100,
     },
     fourSet: {
       effect: {
-        en: "(4) Increases the healing done by your Holy Radiance spell by 5%.",
+        en: "(4) Reduces the cooldown of Divine Favor by 60 seconds. While active it increases your mastery by 4500.",
       },
       hps: 0,
     },

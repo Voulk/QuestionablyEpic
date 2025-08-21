@@ -136,6 +136,11 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
   
     if (!userSettings.strictSeq) {
 
+      if (tierSets.includes("Paladin T31-4")) { 
+        // 1s off Holy Shock
+        updateSpellCPM(getSpellEntry(castProfile, "Holy Shock"), 7)
+      }
+
       // Apply haste scaling to our cast profile.
       ["Judgment", "Crusader Strike", "Holy Shock"].forEach(spellName => {
         const spellEntry = getSpellEntry(castProfile, spellName);
@@ -145,6 +150,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
       // Handle our filler casts. 
       // We'll probably rework this to be a package.
       let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+      if (tierSets.includes("Paladin T14-2")) fillerCost *= 0.9;
       const fillerWastage = 0.9;
 
       // Update Cost Per Minute with our more frequent hasted casts.
