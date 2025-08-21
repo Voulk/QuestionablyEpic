@@ -1,12 +1,3 @@
-.YAxisMobile .HideTextOnSmall {
-  display: none !important;
-}
-@media (max-width: 600px) {
-  .HideTextOnSmall {
-    display: none !important;
-  }
-}
-
 .ResponsiveContainer2 {
   color: #ffffff;
   font-size: 0.9rem;

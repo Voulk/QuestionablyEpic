@@ -19,7 +19,7 @@ const getTooltip = (data, id) => {
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <MuiTooltip {...props} classes={{ popper: className }} />
+  <MuiTooltip {...props} classes={{ popper: className }} enterTouchDelay={0}/>
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -132,7 +132,7 @@ export default class EmbelChart extends PureComponent {
       const { x, y, payload } = props;
       return (
         <g transform={`translate(${x},${y})`}>
-          <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right", flexShrink: 0 }}>
+          <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)) : truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
@@ -166,7 +166,7 @@ export default class EmbelChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.5}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%"  height={800}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -175,7 +175,7 @@ export default class EmbelChart extends PureComponent {
             top: 20,
             right: 40,
             bottom: 20,
-            left: this.state.width > mobileWidthThreshold ? 250 : 40,
+            left: this.state.width > mobileWidthThreshold ? 250 : 50,
           }}
           
         >
@@ -183,6 +183,7 @@ export default class EmbelChart extends PureComponent {
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
             labelStyle={{ color: "#ffffff" }}
+            
             contentStyle={{
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",

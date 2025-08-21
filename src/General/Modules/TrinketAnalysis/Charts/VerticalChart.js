@@ -18,7 +18,7 @@ const getTooltip = (data, id) => {
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <MuiTooltip {...props} classes={{ popper: className }} />
+  <MuiTooltip {...props} classes={{ popper: className }} enterTouchDelay={0} />
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -183,7 +183,7 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={800}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={1200}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
