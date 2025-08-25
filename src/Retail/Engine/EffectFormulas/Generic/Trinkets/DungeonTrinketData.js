@@ -111,11 +111,11 @@ export const dungeonTrinketData =
       description: "",
       effects: [
         {
-          coefficient: 0.493954, 
+          coefficient: 0.449941, 
           table: -7,
         },
         { // 
-          coefficient: 0.098791, // Ally portion
+          coefficient: 0.074857, // Ally portion
           table: -7,
           stat: "allyStats",
         },

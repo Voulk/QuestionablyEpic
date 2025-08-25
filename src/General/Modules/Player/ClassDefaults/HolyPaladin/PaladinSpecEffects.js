@@ -17,11 +17,13 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
 
   // These will be replaced by the CastProfile. This is a fairly rough estimate as a result.
   if (effectName === "Paladin S3-2") {
-    bonus_stats.hps = player.getHPS() * 0.06;
+    //bonus_stats.hps = player.getHPS() * 0.06;
+    bonus_stats.bonusHPS = 0.06;
 
   }
   else if (effectName === "Paladin S3-4") {
-    bonus_stats.hps = player.getHPS() * 0.11;
+    //bonus_stats.hps = player.getHPS() * 0.11;
+    bonus_stats.bonusHPS = 0.11;
   }
   else if (effectName === "Paladin S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');

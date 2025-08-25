@@ -38,7 +38,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...evokerTalents}, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
     const localSettings = {gracePeriodOverheal: 0.8};
-    const tier = playerData.tier;
+    const tier = playerData.effectList.filter(effect => effect.type === "set bonus").map(effect => effect.name);
+
     state.currentStats.crit += (15 * 700);
 
     const talents = {};
@@ -89,9 +90,9 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     // Assign echo usage
     const echoUsage = {
         "Spiritbloom": 0,
-        "Verdant Embrace": 0.6,
-        "Dream Breath": 0.2, 
-        "Reversion": 0.32,
+        "Verdant Embrace": 0.3,
+        "Dream Breath": 0.1, 
+        "Reversion": 0.6,
     }
 
     // Stasis
@@ -162,8 +163,16 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     healingBreakdown["Echo - Reversion (Golden Hour)"] = avgGoldenHour * echoUsage["Reversion"] * totalEchoPower;
 
-    // Tier Set
-
+    // Season 3 tier set
+    if (tier.includes("Evoker S3-4")) {
+        // Your standard bomb gen is to take two with you to the Engulf window then:
+        // Farm bursts with Echo -> Living Flame.
+        // You'll get 2 TAs, and 
+        const livingFlameEBChance = 0.4 + (getCrit(state.currentStats) - 1) * 0.4;
+        const bombLoss = 0.3;
+        const bombProcsPerEngulfSet = (2 + 10 * livingFlameEBChance * getHaste(state.currentStats)) * 2 * (1 - bombLoss);
+        castProfile.push({spell: "Essence Bomb", cpm: bombProcsPerEngulfSet * (60 / 45)});
+    }
 
 
     // Run healing
@@ -249,6 +258,6 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
     const totalHealing = sumValues(healingBreakdown);
 
-    //printHealingBreakdown(healingBreakdown, totalHealing);
+    printHealingBreakdown(healingBreakdown, totalHealing);
     return { hps: totalHealing / 60, hpm: 0 }
 }

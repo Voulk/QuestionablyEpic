@@ -694,7 +694,7 @@ function createSets(itemList, rawWepCombos, filter) {
                             // Check if fingers don't match, unless they aren't unique equipped for some reason.
                             if (finger < finger2 && 
                               ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
-                              (splitItems.Finger[finger].id === 90434 && splitItems.Finger[finger].uniqueHash !== splitItems.Finger[finger2].uniqueHash))) {
+                              ((splitItems.Finger[finger].id === 90434 || splitItems.Finger[finger].id === 89524) && splitItems.Finger[finger].uniqueHash !== splitItems.Finger[finger2].uniqueHash))) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 

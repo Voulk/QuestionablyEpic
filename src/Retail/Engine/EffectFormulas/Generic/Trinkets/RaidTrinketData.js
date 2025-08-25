@@ -390,7 +390,7 @@ export const raidTrinketData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType);
-          const intStacks = getSetting(additionalData.settings, "ovinaxAverageIntStacks")
+          const intStacks = 15; // Setting removed in season 3.
           const secStacks = 30 - intStacks;
           const processedData = {intellect: processedValue(data[0], itemLevel), secondary: processedValue(data[1], itemLevel)};
 

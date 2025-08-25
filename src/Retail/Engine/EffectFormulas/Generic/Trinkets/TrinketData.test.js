@@ -22,6 +22,7 @@ const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
 
         {name: "Lily of the Eternal Weave", levels: {639: [6939]}},
         {name: "Azhiccaran Parapodia", levels: {681: [6158]}},
+        {name: "So'leah's Secret Technique", levels: {694: [1624, 270]}},
         //{name: "Mister Pick-Me-Up", levels: {642: [82567], 668: [120510]}}
     ]
 

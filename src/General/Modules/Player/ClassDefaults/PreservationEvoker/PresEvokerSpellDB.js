@@ -473,7 +473,7 @@ export const EVOKERSPELLDB = {
         coeff: 2.5,
         cost: 0,
         targets: 5,
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.45,
         tags: ['newsqrt'],
         sqrtMin: 5,
         secondaries: ['crit', 'vers', 'mastery']
