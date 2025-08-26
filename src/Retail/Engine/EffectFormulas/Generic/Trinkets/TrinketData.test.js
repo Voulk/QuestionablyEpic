@@ -15,7 +15,7 @@ const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
     const ingameData = [
         {name: "Eye of Kezan", levels: {645: [298, 115947], 671: [379, 168875]}},
         {name: "Araz's Ritual Forge", levels: {714: [35728]}},
-        {name: "Astral Antenna", levels: {714: [5853]}},
+        {name: "Astral Antenna", levels: {714: [5677]}},
         {name: "Diamantine Voidcore", levels: {710: [9785]}},
         {name: "Loom'ithar's Living Silk", levels: {710: [4874246]}},
         {name: "Nexus-King's Command", levels: {717: [18531]}},

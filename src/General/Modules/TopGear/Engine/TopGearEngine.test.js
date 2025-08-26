@@ -119,6 +119,7 @@ describe("MergeBonusStats function", () => {
             mana: 0,
             dps: 0,
             allyStats: 0,
+            bonusHPS: 0,
         }
 
         expect(mergeBonusStats(bonusStatArray)).toEqual(expectedResult);
