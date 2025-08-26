@@ -33,6 +33,7 @@ const initialState : RootState = {
 
     // TWW Trinkets
     misterPickMeUpOverheal: { value: 20, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    antennaPickupRate: { value: 100, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     //fightTimer: { value: 400, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     dpsFlag: { value: false, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
     //syringeHealProcs: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },

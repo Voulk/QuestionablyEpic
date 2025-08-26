@@ -89,7 +89,7 @@ export const dungeonTrinketData =
           duration: 9,
         },
         { // 
-          coefficient: 22.20824, // Heal portion
+          coefficient: 22.20824 * 1.2, // Heal portion
           table: -9,
           secondaries: ['crit', 'versatility'],
           efficiency: 0.55,
