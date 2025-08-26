@@ -13,12 +13,10 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   const insuranceRPPM = 4 * player.getStatPerc('haste');
 
   if (effectName === "Druid S3-2") {
-
-    bonus_stats.hps = player.getHPS() * 0.1;
+    bonus_stats.bonusHPS = 0.1;
   }
   else if (effectName === "Druid S3-4") {
-
-    bonus_stats.hps =  player.getHPS() * 0.08;
+    bonus_stats.bonusHPS = 0.08;
 
   }
   else if (effectName === "Druid S2-2") {

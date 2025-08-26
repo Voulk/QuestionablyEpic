@@ -21,6 +21,18 @@ export const getVersion = (): string => {
 export const changeLog: entry[] = [
     {
     version: "11.2 / 5.5",
+    update: 11,
+    date: "August 25",
+    changes: [ 
+      "New Setting: Astral Antenna orb pick up rate.",
+      "Fixed a bug where Upgrade Finder values could be lower than in reality. Note that this doesn't change which items have been upgrades, it'll just push up how big an upgrade they are by 20% or so.",
+      "The Vault information box will now automatically appear if you have a vault item in the selection.",
+      "Manually added embellishments in-app will now show on item tooltips. Fixed a bug where Top Gear could pick more than two added this way.",
+      "Made some changes to the Evoker profile - particularly around Temporal Anomaly usage.",
+      "Added weekly trinket tuning."
+    ]},
+    {
+    version: "11.2 / 5.5",
     update: 10,
     date: "August 21",
     changes: [ 

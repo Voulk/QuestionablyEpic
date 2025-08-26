@@ -150,7 +150,7 @@ export default function TrinketAnalysis(props) {
 
   const { t } = useTranslation();
   const [tabIndex, setTabIndex] = React.useState(0);
-  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves", "Timewalking"]); //, "LegionTimewalking"
+  const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
   const [levelCap, setLevelCap] = React.useState(723);
   const maxLevelMarks = [
@@ -322,7 +322,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Some trinkets, like Twisted Mana Sprite, are bugged. All rankings could change slightly through the week. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+  const trinketText = gameType === "Retail" ? "Twisted Mana Sprite has a positive bug where its healing events are sometimes 10x higher than they should be. This bug is random and not included in its score. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
                                               "";
 
   return (

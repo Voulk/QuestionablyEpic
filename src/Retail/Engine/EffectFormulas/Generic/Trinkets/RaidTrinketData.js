@@ -27,10 +27,11 @@ export const raidTrinketData = [
   {  // Heartbeat flag??
     name: "Astral Antenna",
     description: "Requires you pick up balls that'll float toward you. Assumes 100% pick up rate since they are quite hard to miss.",
+    setting: true,
     addonDescription: "Requires you pick up balls that'll float toward you. They are quite hard to miss and you shouldn't need to play around them.",
     effects: [
       {
-        coefficient: 1.511713, 
+        coefficient: 1.511713 * 0.97, 
         table: -7,
         duration: 10,
         ppm: 2.5,
@@ -42,7 +43,8 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       //bonus_stats.crit = getDiminishedValue(data[0].stat, processedValue(data[0], itemLevel), additionalData.setStats['crit'])* data[0].ppm * data[0].duration / 60 * 0.95; // These stacks can overlap so there should be no proc munching.
-      bonus_stats.crit = runGenericPPMOverlapTrinket(data[0], itemLevel, additionalData.setStats);
+      const ballPickupRate = Math.min(100, getSetting(additionalData.settings, "antennaPickupRate") / 100, 1);
+      bonus_stats.crit = runGenericPPMOverlapTrinket(data[0], itemLevel, additionalData.setStats) * ballPickupRate;
 
       return bonus_stats;
     }
@@ -390,7 +392,7 @@ export const raidTrinketData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType);
-          const intStacks = getSetting(additionalData.settings, "ovinaxAverageIntStacks")
+          const intStacks = 15; // Setting removed in season 3.
           const secStacks = 30 - intStacks;
           const processedData = {intellect: processedValue(data[0], itemLevel), secondary: processedValue(data[1], itemLevel)};
 

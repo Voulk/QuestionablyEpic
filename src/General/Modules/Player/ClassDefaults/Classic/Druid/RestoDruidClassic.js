@@ -166,6 +166,8 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
+    
+
 
     getSpellEntry(castProfile, "Rejuvenation").cpm += fillerCPM;
 

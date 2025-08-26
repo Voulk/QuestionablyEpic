@@ -921,7 +921,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (castModel.modelType[contentType] === "CastModel") {
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
+
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
+
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs
@@ -935,6 +937,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
+    evalStats.bonusHPS = (setStats.bonusHPS || 0);
     //hardScore = setStats.hps || 0;
 
     evalStats.hps = (setStats.hps || 0);
@@ -1016,6 +1019,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
   }
 
+  if (evalStats.bonusHPS) {
+
+    hardScore *= (evalStats.bonusHPS + 1);
+
+  }
+
   addBaseStats(setStats); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
 
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
@@ -1024,7 +1033,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
   // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 1800;
+    hardScore -= 2800;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
@@ -1060,7 +1069,8 @@ export function mergeBonusStats(stats: any) {
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
     mana: mergeStat(stats, "mana"),
-    allyStats: mergeStat(stats, "allyStats")
+    allyStats: mergeStat(stats, "allyStats"),
+    bonusHPS: mergeStat(stats, "bonusHPS")
   };
 
   return val;
