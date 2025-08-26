@@ -37,8 +37,8 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 
                     talents: {...evokerTalents}, reporting: true, heroTree: "flameshaper", currentTarget: 0, currentStats: getCurrentStats(JSON.parse(JSON.stringify(playerData.stats)), [])};
-    const localSettings = {gracePeriodOverheal: 0.8};
-    const tier = playerData.effectList.filter(effect => effect.type === "set bonus").map(effect => effect.name);
+    const localSettings = {gracePeriodOverheal: 0.7};
+    const tier = playerData.effectList ? playerData.effectList.filter(effect => effect.type === "set bonus").map(effect => effect.name) : [];
 
     state.currentStats.crit += (15 * 700);
 
@@ -72,7 +72,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Verdant Embrace", cpm: 2}, // Combine with Dream Breath
         {spell: "Emerald Communion", cpm: buildCPM(evokerSpells, "Emerald Communion")},
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
-        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.9, hastedCPM: true},    
+        {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.8, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
         {spell: "Engulf", cpm: Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
         //{spell: "Chrono Flame", cpm: 0},     
@@ -169,7 +169,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         // Farm bursts with Echo -> Living Flame.
         // You'll get 2 TAs, and 
         const livingFlameEBChance = 0.4 + (getCrit(state.currentStats) - 1) * 0.4;
-        const bombLoss = 0.3;
+        const bombLoss = 0.35;
         const bombProcsPerEngulfSet = (2 + 10 * livingFlameEBChance * getHaste(state.currentStats)) * 2 * (1 - bombLoss);
         castProfile.push({spell: "Essence Bomb", cpm: bombProcsPerEngulfSet * (60 / 45)});
     }
@@ -232,7 +232,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
             }
 
             if (spellName === "Dream Breath") if (state.talents.callOfYsera) spellThroughput *= 1.4;
-            if ((spellName === "Dream Breath" || spellName === "Spiritbloom") && hasTier(playerData, "S1-2")) spellThroughput *= 1.4; // Tier Set
+            if ((spellName === "Dream Breath" || spellName === "Spiritbloom")) spellThroughput *= 1.2; // Tempo Charged
             if (spellName === "Judgment" && spell.name === "Greater Judgment") {
                 // Double Judgment healing for each Infusion we collected.
                 const percInfused = Math.min(1, totalInfusions / getCPM(castProfile, "Judgment"));

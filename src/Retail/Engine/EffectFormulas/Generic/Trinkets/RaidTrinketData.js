@@ -27,6 +27,7 @@ export const raidTrinketData = [
   {  // Heartbeat flag??
     name: "Astral Antenna",
     description: "Requires you pick up balls that'll float toward you. Assumes 100% pick up rate since they are quite hard to miss.",
+    setting: true,
     addonDescription: "Requires you pick up balls that'll float toward you. They are quite hard to miss and you shouldn't need to play around them.",
     effects: [
       {
