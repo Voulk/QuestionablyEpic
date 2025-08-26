@@ -1,4 +1,4 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
     { 
@@ -104,17 +104,23 @@ export const effectData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const statsPerStack = processedValue(data[0], itemLevel);
 
-      const totalPersonalStats = statsPerStack * data[0].averageStacks;
+      const includeJastorEffect = getSetting(additionalData.settings, "includeJastorEffect");
 
-      bonus_stats.versatility = totalPersonalStats / 4;
-      bonus_stats.haste = totalPersonalStats / 4;
-      bonus_stats.crit = totalPersonalStats / 4;
-      bonus_stats.mastery = totalPersonalStats / 4;
+      if (includeJastorEffect) {
+        const statsPerStack = processedValue(data[0], itemLevel);
 
-      bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
-      
+        const totalPersonalStats = statsPerStack * data[0].averageStacks;
+
+        bonus_stats.versatility = totalPersonalStats / 4;
+        bonus_stats.haste = totalPersonalStats / 4;
+        bonus_stats.crit = totalPersonalStats / 4;
+        bonus_stats.mastery = totalPersonalStats / 4;
+
+        bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
+      }
+
+    
       return bonus_stats;
     }
   },

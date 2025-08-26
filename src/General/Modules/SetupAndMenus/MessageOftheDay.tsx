@@ -4,10 +4,10 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "11.2 is now live! As usual, expect turbulence over the first week as they finish tuning."
+    "Weekly trinket tuning changes to Healing Distributor and Astral Antenna are now live."
   ] : 
   [
-    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin & Shaman will be along very soon!",
+    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",
   ]
 ;
   if (messageOfTheDay.length === 0) return;
