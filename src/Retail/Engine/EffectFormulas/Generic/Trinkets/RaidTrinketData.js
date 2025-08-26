@@ -43,7 +43,7 @@ export const raidTrinketData = [
       let bonus_stats = {};
 
       //bonus_stats.crit = getDiminishedValue(data[0].stat, processedValue(data[0], itemLevel), additionalData.setStats['crit'])* data[0].ppm * data[0].duration / 60 * 0.95; // These stacks can overlap so there should be no proc munching.
-      const ballPickupRate = Math.min(0, getSetting(additionalData.settings, "antennaPickupRate") / 100, 1);
+      const ballPickupRate = Math.min(100, getSetting(additionalData.settings, "antennaPickupRate") / 100, 1);
       bonus_stats.crit = runGenericPPMOverlapTrinket(data[0], itemLevel, additionalData.setStats) * ballPickupRate;
 
       return bonus_stats;
