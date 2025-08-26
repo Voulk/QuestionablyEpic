@@ -129,11 +129,21 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-        this.modelName = "Default";
+      if (modelID === "Farseer WW") {
+        this.modelName = "Farseer WW";
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+      }
+      else {
+        this.modelName = modelID;
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+      }
+
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {

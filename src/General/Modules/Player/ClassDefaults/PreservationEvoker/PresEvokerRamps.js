@@ -17,7 +17,7 @@ export const EVOKERCONSTANTS = {
     defaultEmpower: {"Dream Breath": 0, "Spiritbloom": 2, "Fire Breath": 0}, // Note that this is 0 indexed so 3 = a rank4 cast.
     auraHealingBuff: 1.05,
     auraDamageBuff: 1.15,
-    goldenHourHealing: 240000,
+    goldenHourHealing: 450000,
     enemyTargets: 1, 
     echoExceptionSpells: ['Echo', 'Dream Flight', 'Emerald Communion', 'Blessing of the Bronze', 'Fire Breath', 'Living Flame O', "Temporal Anomaly", 
                             'Disintegrate', 'Rewind', "Stasis", "StasisRelease"], // These are spells that do not consume or otherwise interact with our Echo buff.

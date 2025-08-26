@@ -14,6 +14,7 @@ const valueEssenceBurst = (player, contentType) => {
 export const getEvokerSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
 
+  const modelName = player.getActiveModel(contentType)?.modelName;
   const healingBonus = 1.04;
   const empowersCPM = 2 + 2 + 2.5; 
   const essenceBurst = valueEssenceBurst(player, contentType);
@@ -22,9 +23,9 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
   if (effectName === "Evoker S3-2") {
-    bonus_stats.hps = 0.02 * player.getHPS();
+    bonus_stats.bonusHPS = 0.02;
   }
-  else if (effectName === "Evoker S3-4") {
+  else if (modelName !== "Flameshaper" && effectName === "Evoker S3-4") {
     // Just move this into the ramp file when you get a minute.
     const bombsPerMinute = 8 * 2 * player.getStatPerc('haste') * (60 / 45);
     const bombEfficiency = 0.4;

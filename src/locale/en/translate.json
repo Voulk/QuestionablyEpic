@@ -409,6 +409,14 @@
           "title": "Lining Uptime",
           "tooltip": "Your expected uptime of Dusk / Dawnthread lining during moments where you are actually healing."
         },
+        "includeJastorEffect": {
+          "title": "Include Jastor Effect",
+          "tooltip": "Jastor Diamond has an occasional bug where it stops working for a while. You can use this setting to treat it as a normal ring."
+        },
+        "antennaPickupRate": {
+          "title": "Antenna Pickup Rate",
+          "tooltip": "The percentage of orbs you expect to pick up."
+        },
 
         
 

@@ -7,14 +7,13 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
 
   if (effectName === "DPriest S3-2") {
     // These need to be integrated into the proper ramp files.
-    bonus_stats.hps = player.getHPS() * 0.098;
+    bonus_stats.bonusHPS = 0.098;
 
   }
   else if (effectName === "DPriest S3-4") {
     // These need to be integrated into the proper ramp files.For :Oracle: Oracle the new tier set is around a 23% healing increase and for :Voidweaver: Voidweaver its around 35%. 
     // Both of these numbers are 2p and 4p combined compared to no tier set.
-
-    bonus_stats.hps = player.getHPS() * 0.14;
+    bonus_stats.bonusHPS = 0.14;
 
   }
   else if (effectName === "DPriest S2-2") {
