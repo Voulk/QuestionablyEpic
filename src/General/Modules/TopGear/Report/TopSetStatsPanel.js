@@ -55,11 +55,12 @@ export default function TopSetStatsPanel(props) {
         fontSize: "12px",
         textAlign: "left",
         minHeight: 90,
-        maxWidth: 400,
+        maxWidth: 300,
         backgroundColor: "rgba(44, 44, 44, 0.5)",
+        margin: "auto"
       }}
     >
-      <Grid container direction="column" spacing={1}>
+      <Grid container direction="column" spacing={1} width={{xs:"100%", sm:"300px"}} >
         {/* -------------------------------------- Stat Panel Title -------------------------------------- */}
         <Grid item xs={12}>
           <Typography variant="subtitle1" align="center" color="primary">
@@ -67,8 +68,8 @@ export default function TopSetStatsPanel(props) {
           </Typography>
           <Divider variant="middle" />
         </Grid>
-        <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }}>
-          <Grid container direction="row" spacing={0}>
+        <Grid item xs={12} style={{ padding: "4px 16px 16px 16px" }} >
+          <Grid container direction={{ xs: "column", sm: "row" }} spacing={0}>
             {/* --------------------------------- Map the stats for the Panel -------------------------------- */}
             {stats.map((stat, index) => (
               <Grid item xs={6} key={index}>

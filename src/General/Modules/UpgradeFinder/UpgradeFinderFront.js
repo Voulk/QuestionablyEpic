@@ -423,7 +423,7 @@ export default function UpgradeFinderFront(props) {
 
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }} >
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
@@ -480,7 +480,7 @@ export default function UpgradeFinderFront(props) {
           /* ---------------------------------------------------------------------------------------------- */
 
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ textAlign: "center", width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={12}>
@@ -520,7 +520,7 @@ export default function UpgradeFinderFront(props) {
         {/* Crafted Items */}
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>

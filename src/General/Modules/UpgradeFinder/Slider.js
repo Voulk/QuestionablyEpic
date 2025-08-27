@@ -21,7 +21,7 @@ export default function UpgradeFinderSlider(props) {
     return props.marks.findIndex((mark) => mark.value === value) + 1;
   }
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} padding={props.padding || 0} style={props.containerStyle} >
       <Slider
         className={classes.slider}
         style={props.style}
@@ -35,6 +35,8 @@ export default function UpgradeFinderSlider(props) {
         max={props.max}
         onChangeCommitted={props.change}
         value={props.value}
+        
+        
       />
     </Grid>
   );
