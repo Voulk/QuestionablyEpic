@@ -246,8 +246,9 @@ function displayReport(
       ? topSet.socketInformation
       : "";
   statList = topSet.setStats;
-  const manaSources = {};
 
+  const manaSources = {}
+  const hasVault = gameType === "Retail" && itemList.some(item => item.vaultItem);
   // Setup Slots / Set IDs.
   let gemCount = 0;
   itemList.forEach((item) => {
@@ -350,11 +351,14 @@ function displayReport(
       <div style={{ height: 90 }} />
       {resultValid ? (
         <Grid  item xs={12} spacing={1} style={{ paddingBottom: 1}}>
-          {gameType === "Vaults" ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals along with your future crafts. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
-            "Consider which items you might upgrade or craft this week, or upgrade them in QE Live before hitting go.", "Ask in your class discord for a second opinion if you are unsure."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> : ""}
-          {/*<Grid item xs={12}>
-          <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>
-          </Grid>*/}
+          {hasVault ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals along with your future crafts. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
+            "Consider which items you might upgrade or craft this week, or upgrade them in QE Live before hitting go.", "Ask in your class discord for a second opinion if you are unsure."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> 
+            : 
+          <Grid item xs={12}>
+            <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>
+          </Grid>
+          }
+
           <Grid item xs={12}>
             <Paper elevation={0} style={{ padding: 0 }}>
               <div

@@ -107,10 +107,11 @@ class ItemSet {
         mastery: 0,
         versatility: 0,
         leech: 0,
-        hps: 0,
+        hps: 0, // Items and effects that give HPS.
         dps: 0,
         mana: 0, // Evoker 2091
         allyStats: 0,
+        bonusHPS: 0, // Percent increases to score.
       } :
       {
         spellpower: 0,

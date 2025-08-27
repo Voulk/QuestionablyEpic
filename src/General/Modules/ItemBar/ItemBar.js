@@ -196,8 +196,14 @@ export default function ItemBar(props) {
       if (item) {
         if (itemEffect.type !== "") {
           item.effect = {type: itemEffect.type, name: itemEffect.effectName, level: parseInt(itemLevel)};
-          if (itemEffect.type === "Embellishment") {
+          if (itemEffect.type === "embellishment") {
             item.uniqueTag = "embellishment";
+            
+            if (itemEffect.effectName === "Darkmoon Sigil: Ascension") item.bonusIDS = (item.bonusIDS || "") + ":11300";
+            else if (itemEffect.effectName === "Darkmoon Sigil: Symbiosis") item.bonusIDS = (item.bonusIDS || "") + ":11302";
+            else if (itemEffect.effectName === "Writhing Armor Banding") item.bonusIDS = (item.bonusIDS || "") + ":11109";
+            else if (itemEffect.effectName === "Dawnthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11303";
+            else if (itemEffect.effectName === "Duskthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11304";
           }
         }
 

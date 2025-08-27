@@ -89,7 +89,7 @@ export const dungeonTrinketData =
           duration: 9,
         },
         { // 
-          coefficient: 22.20824, // Heal portion
+          coefficient: 22.20824 * 1.2, // Heal portion
           table: -9,
           secondaries: ['crit', 'versatility'],
           efficiency: 0.55,
@@ -111,11 +111,11 @@ export const dungeonTrinketData =
       description: "",
       effects: [
         {
-          coefficient: 0.493954, 
+          coefficient: 0.449941, 
           table: -7,
         },
         { // 
-          coefficient: 0.098791, // Ally portion
+          coefficient: 0.074857, // Ally portion
           table: -7,
           stat: "allyStats",
         },
