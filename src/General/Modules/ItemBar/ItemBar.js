@@ -197,7 +197,7 @@ export default function ItemBar(props) {
         if (itemEffect.type !== "") {
           item.effect = {type: itemEffect.type, name: itemEffect.effectName, level: parseInt(itemLevel)};
           if (itemEffect.type === "embellishment") {
-            item.uniqueTag = "embellishment";
+            item.uniqueEquip = "embellishment";
             
             if (itemEffect.effectName === "Darkmoon Sigil: Ascension") item.bonusIDS = (item.bonusIDS || "") + ":11300";
             else if (itemEffect.effectName === "Darkmoon Sigil: Symbiosis") item.bonusIDS = (item.bonusIDS || "") + ":11302";
@@ -217,6 +217,8 @@ export default function ItemBar(props) {
         setItemLevel("");
         setItemSocket(false);
         setItemTertiary("");
+
+        console.log(item);
       }
           
     };
