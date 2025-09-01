@@ -121,7 +121,9 @@ const PvPRating = [
 function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
+  const timestamp = now.toUTCString();
 
+  console.log(timestamp);
   const socketSetting = settings.topGearAutoGem.value || false;
   
   // Equipped items
