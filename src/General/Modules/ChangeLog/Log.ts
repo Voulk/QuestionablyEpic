@@ -19,6 +19,13 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "11.2 / 5.5",
+    update: 12,
+    date: "August 31",
+    changes: [ 
+      "Upgrade Finder reports now include the time the report was generated in addition to the date.",
+    ]},
     {
     version: "11.2 / 5.5",
     update: 11,
