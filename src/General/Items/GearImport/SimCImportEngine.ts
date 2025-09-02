@@ -80,7 +80,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     const linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     const vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
-    if (lines[0].includes("#")) {
+    if (lines[0].includes("#") && !lines[0].includes("Warcraft Logs")) {
       const playerName = lines[0].split("-")[0].replace("#", "").trim();
 
       if (playerName) {

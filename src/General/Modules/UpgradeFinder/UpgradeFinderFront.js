@@ -121,13 +121,14 @@ const PvPRating = [
 function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
+  const timestamp = now.toUTCString();
 
   const socketSetting = settings.topGearAutoGem.value || false;
   
   // Equipped items
   const equippedItems = player.activeItems.filter((item) => item.isEquipped);
   
-  const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
+  const report = { id: generateReportCode(), dateCreated: date, timeCreated: timestamp, playername: player.charName, realm: player.realm, region: player.region, 
                     autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings, 
                     equippedItems: equippedItems, gameType: player.gameType };
   return report;
@@ -423,7 +424,7 @@ export default function UpgradeFinderFront(props) {
 
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }} >
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
@@ -480,7 +481,7 @@ export default function UpgradeFinderFront(props) {
           /* ---------------------------------------------------------------------------------------------- */
 
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ textAlign: "center", width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={12}>
@@ -520,7 +521,7 @@ export default function UpgradeFinderFront(props) {
         {/* Crafted Items */}
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
