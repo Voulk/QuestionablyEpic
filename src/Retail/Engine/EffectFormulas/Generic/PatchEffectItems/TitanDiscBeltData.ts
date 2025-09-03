@@ -118,7 +118,9 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       
         let bonus_stats: Stats = {};
 
-        bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel, player, additionalData.contentType);
+        
+        bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
+
   
         return bonus_stats;
     }

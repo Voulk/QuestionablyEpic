@@ -266,6 +266,7 @@ export default function EmbellishmentAnalysis(props) {
 
           <Grid container spacing={1} justify="center">
             <Grid item xs={12}>
+              
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
                 {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
               </Paper>

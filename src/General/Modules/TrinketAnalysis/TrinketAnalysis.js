@@ -361,6 +361,7 @@ export default function TrinketAnalysis(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
+                  containerStyle={{ paddingRight: 8 }}
                   defaultValue={4}
                   step={null}
                   valueLabelDisplay="off"
@@ -376,7 +377,7 @@ export default function TrinketAnalysis(props) {
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                  <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
+                  <Grid container spacing={1} direction="row"  alignItems="center" >
                     {gameType === "Retail" ? (
                       <Grid item>
                         <div style={{ padding: "8px 0px 8px 8px" }}>
@@ -397,7 +398,7 @@ export default function TrinketAnalysis(props) {
                       ""
                     )}
                     {gameType === "Retail" ? (
-                      <Grid item>
+                      <Grid item >
                         <SourceToggle sources={sources} setSources={handleSource} />
                       </Grid>
                     ) : (
