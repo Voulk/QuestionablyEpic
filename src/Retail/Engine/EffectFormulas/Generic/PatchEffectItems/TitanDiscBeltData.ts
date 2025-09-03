@@ -73,7 +73,6 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       
         let bonus_stats: Stats = {};
 
-
         bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
   
         return bonus_stats;
@@ -95,9 +94,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      
         let bonus_stats: Stats = {};
-
 
         bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
   
@@ -120,8 +117,6 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       
         let bonus_stats: Stats = {};
-
-        
 
         bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel, player, additionalData.contentType);
   

@@ -366,6 +366,7 @@ export class Player {
       alloc[bonusPayload['stat']] = bonusPayload["amount"];
       item.stats = calcStatsAtLevel(item.level, item.slot, alloc, "");
       item.bonusIDS = selectedOption;
+      console.log(item.stats);
 
     }
     
