@@ -43,7 +43,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 export const printBeltData = (player: Player) => {
   const itemLevel = 691;
   titanBeltData.forEach(effect => {
-    const bonus_stats = effect.runFunc(effect.effects, player, itemLevel, {contentType: "Raid"});
+    const bonus_stats = effect.runFunc(effect.effects, player, itemLevel, {contentType: "Raid", setStats: {}});
     const score = getEstimatedHPS(bonus_stats, player, "Raid");
     console.log("Effect: " + effect.name + " | Stats: " + JSON.stringify(bonus_stats) + " | HPS: " + score);
   })

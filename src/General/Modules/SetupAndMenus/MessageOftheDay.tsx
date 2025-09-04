@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Weekly trinket tuning changes to Healing Distributor and Astral Antenna are now live."
+    "The D.I.S.C belt nerfs do not go live in-game until 11.2.5 which is predicted to be in October."
   ] : 
   [
     "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",
