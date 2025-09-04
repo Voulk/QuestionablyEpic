@@ -22,9 +22,16 @@ export const changeLog: entry[] = [
   {
     version: "11.2 / 5.5",
     update: 12,
-    date: "August 31",
+    date: "September 3",
     changes: [ 
       "Upgrade Finder reports now include the time the report was generated in addition to the date.",
+      "Added all other Timewalking trinkets to the chart and fixed Alchemy Stones filter.",
+      "Bugfix: Reshii Wraps clone functionality now correctly adds secondary stats.",
+      "Reworked how diminishing returns are calculated on stepped stat effects.",
+      "Improved some of the qualitative advice around the app.",
+      "Classic: Added the Celestial version of Jade Magistrate Figurine.",
+      "Classic: Renamed LFR to Celestial",
+      "Increased SimC length import limit. Go nuts.",
     ]},
     {
     version: "11.2 / 5.5",

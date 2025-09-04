@@ -60,6 +60,9 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
                 It doesn't have any stamina on it which loses you about 20k health and the proc is very rare.")
     
     }
+    if (gameType === "Retail") {
+        advice.push("Your choice of Weapon Enchant isn't too important and any secondary enchant is fine. Similarly it's acceptable to swap to Avoidance enchants for high Mythic+ dungeons.")
+    }
     
 
     return advice;

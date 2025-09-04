@@ -3,6 +3,63 @@ import { Player } from "General/Modules/Player/Player";
 
 export const timewalkingTrinketData = [
     {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                     Necromantic Focus                                          */
+      /* ---------------------------------------------------------------------------------------------- */
+      /* 
+      */
+      name: "Necromantic Focus",
+      effects: [
+        { // Small Proc
+          coefficient: 0.058876 * 0.8, // Nerfed
+          table: -7,
+        },
+  
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        let averageStacks = 0;
+        const spec = player.spec;
+  
+        if (spec === "Discipline Priest") averageStacks = 10;
+        else if (spec === "Holy Paladin") averageStacks = 8;
+        else if (spec === "Holy Priest" || spec === "Resto Druid" || spec === "Restoration Shaman") averageStacks = 1.5;
+        else if (spec === "Mistweaver Monk") averageStacks = 0;
+        else if (spec === "Preservation Evoker") {
+          averageStacks = 2;
+        }
+  
+
+        bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStacks;
+        return bonus_stats;
+  
+      }
+    },
+    {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                         Eye of Blazing Power                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      /* 
+      */
+      name: "Eye of Blazing Power",
+      effects: [
+        {  // Heal effect
+          coefficient: 118.3393,
+          table: -9,
+          secondaries: ['versatility', 'crit'],
+          efficiency: 0.85,
+          ppm: 60 / 50, // ICD: 45
+          holyMasteryFlag: true,
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
+  
+        return bonus_stats;
+      }
+    },
+    {
     name: "Energy Siphon",
     effects: [
       { // 

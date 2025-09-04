@@ -191,6 +191,7 @@ export default function TrinketAnalysis(props) {
       1205, // DF World Bosses
       -18, // PVP
       -17, // PVP
+      -4,
     ];
     const timewalkingSources = [-12]
 
@@ -232,7 +233,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [652, 658, 665, 671, 675, 678, 684, 691, 697, 704, 707, 710, 714, 723];
+  const allItemLevels = [671, 675, 678, 684, 691, 697, 704, 707, 710, 714, 720, 723]; 
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -272,8 +273,8 @@ export default function TrinketAnalysis(props) {
       
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
       let difficulty = "";
-      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1)) difficulty = "heroic";
-      else if (trinket.levelRange.length === 3 && pos === 0) difficulty = "lfr";
+      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1) && trinketName !== "Jade Magistrate Figurine") difficulty = "heroic";
+      else if ((trinket.levelRange.length === 3 || trinketName === "Jade Magistrate Figurine") && pos === 0) difficulty = "lfr";
       else difficulty = "normal";
       
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {

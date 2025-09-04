@@ -94,7 +94,7 @@ export default class BCChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          "LFR": map2.lfr,
+          "Celestial": map2.lfr,
           "Normal": map2.lfr ? (map2.normal - map2.lfr) : map2.normal,
           "Heroic": (map2.heroic - map2.normal) || 0,
           "lfrilvl": map2.lfrilvl || "",
@@ -191,7 +191,7 @@ export default class BCChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={"LFR"} fill={"#cc4dbf"} stackId="a" />   
+          <Bar dataKey={"Celestial"} fill={"#cc4dbf"} stackId="a" />   
           <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
           <Bar dataKey={"Heroic"} fill={"#33a02c"} stackId="a" />   
 

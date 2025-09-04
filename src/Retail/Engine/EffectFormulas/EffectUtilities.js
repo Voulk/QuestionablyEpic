@@ -6,6 +6,21 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getMastery } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 // This file contains utility formulas that might be useful for calculating Effect values.
 
+
+// Sometimes a trinket stacks over time and each of these stacks should calculate DR individually.
+// This function will return the average stat value. 
+export function getStagedDiminishedValue(statID, procValue, setStats, steps) {
+  let totalStats = 0;
+  for (let i = 1; i <= steps; i++) {
+    
+    const diminishedStats = getDiminishedValue(statID, procValue * i, setStats[statID] || 0);
+    totalStats += diminishedStats;
+  }
+
+  return totalStats / steps;
+
+}
+
 export function getDiminishedValue(statID, procValue, baseStat) {
   if (statID === "intellect" || statID === undefined || statID === "hps" || statID === "dps") return procValue;
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
