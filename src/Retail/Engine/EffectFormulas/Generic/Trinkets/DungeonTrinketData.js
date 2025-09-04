@@ -123,6 +123,8 @@ export const dungeonTrinketData =
       runFunc: function(data, player, itemLevel, additionalData) {
         let bonus_stats = {};
 
+        console.log(JSON.stringify(additionalData.selectedOptions));
+
         const bestStat = player.getHighestStatWeight(additionalData.contentType);
         bonus_stats[bestStat] = processedValue(data[0], itemLevel); // 
         bonus_stats.allyStats = processedValue(data[1], itemLevel);

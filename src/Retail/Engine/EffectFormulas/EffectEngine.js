@@ -27,7 +27,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
   let effectType = effect.type;
 
   // We'll send this to our effects along with everything else. They won't be used by each, but it's available. 
-  const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
+  const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables, selectedOptions: effect.selectedOptions || null};
 
   // ----- Retail Effect -----
   // Can either be a Spec Legendary, Trinket, or a special item effect like those found back in Crucible of Storms or the legendary BFA cloak.
