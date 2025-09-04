@@ -22,15 +22,14 @@ export const timewalkingTrinketData = [
         const spec = player.spec;
   
         if (spec === "Discipline Priest") averageStacks = 10;
-        else if (spec === "Holy Paladin") averageStacks = 8.7;
+        else if (spec === "Holy Paladin") averageStacks = 8;
         else if (spec === "Holy Priest" || spec === "Resto Druid" || spec === "Restoration Shaman") averageStacks = 1.5;
         else if (spec === "Mistweaver Monk") averageStacks = 0;
         else if (spec === "Preservation Evoker") {
-          const fireBreathCPM = 1.95;
-          averageStacks = 20 * 5 * player.getStatPerc('haste') * fireBreathCPM / 60; // duration x average stacks x cpm / 60
+          averageStacks = 2;
         }
   
-  
+
         bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStacks;
         return bonus_stats;
   

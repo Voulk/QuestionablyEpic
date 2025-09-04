@@ -146,7 +146,7 @@ function checkSimCValid(simCHeader: string[], length: number, playerClass: strin
     class: false,
     version: true, // Note that version is not actually checked right now. There's generally just not a lot of need unless there are breaking addon changes.
     level: true,
-    length: length < 700, // This really only prevents abuse cases since 600 is a very long regular SimC string.
+    length: length < 1000, // This really only prevents abuse cases since 600 is a very long regular SimC string.
     gameType: true,
   };
   let errorMessage = "";

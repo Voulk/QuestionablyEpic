@@ -4,7 +4,7 @@ export const dungeonTrinketData =
 [
   {  
     name: "Azhiccaran Parapodia",
-    description: "Very overtuned but only procs off DPS spells OR abilities. Make sure you keep at least a DoT up if available. Ranking might change as live data comes in.",
+    description: "Strong but only procs off DPS spells OR abilities. Make sure you keep at least a DoT up if available.",
     effects: [
       {
         coefficient: 0.577109, 
@@ -25,7 +25,7 @@ export const dungeonTrinketData =
       }
       else if (additionalData.contentType === "Dungeon") {
         // Dungeon uptime should look a lot better
-        bonus_stats.intellect *= 0.9;
+        bonus_stats.intellect *= 0.85;
       }
       else {
         bonus_stats.intellect *= 0.5;

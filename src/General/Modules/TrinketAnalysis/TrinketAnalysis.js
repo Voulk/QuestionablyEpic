@@ -273,8 +273,8 @@ export default function TrinketAnalysis(props) {
       
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
       let difficulty = "";
-      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1)) difficulty = "heroic";
-      else if (trinket.levelRange.length === 3 && pos === 0) difficulty = "lfr";
+      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1) && trinketName !== "Jade Magistrate Figurine") difficulty = "heroic";
+      else if ((trinket.levelRange.length === 3 || trinketName === "Jade Magistrate Figurine") && pos === 0) difficulty = "lfr";
       else difficulty = "normal";
       
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {

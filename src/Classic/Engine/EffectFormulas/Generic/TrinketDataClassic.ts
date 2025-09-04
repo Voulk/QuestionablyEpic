@@ -98,7 +98,7 @@ const raidTrinketData: Effect[] = [
     name: "Jade Magistrate Figurine", 
     effects: [
       { 
-        value: {489: 3595},
+        value: {476: 3185, 489: 3595},
         stat: "crit",
         duration: 15,
         cooldown: 60,

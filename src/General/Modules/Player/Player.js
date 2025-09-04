@@ -362,12 +362,10 @@ export class Player {
       // Reshii Wraps
       // Remove stats and re-add.
       const alloc = getItemAllocations(item.id, [], "Retail");
-      const bonusPayload = bonus_IDs[selectedOption]["rawStats"];
-      alloc[bonusPayload['stat']] = bonusPayload["amount"];
+      const bonusPayload = bonus_IDs[selectedOption]["rawStats"][0];
+      alloc[bonusPayload['name'].toLowerCase()] = bonusPayload["amount"];
       item.stats = calcStatsAtLevel(item.level, item.slot, alloc, "");
       item.bonusIDS = selectedOption;
-      console.log(item.stats);
-
     }
     
   };
