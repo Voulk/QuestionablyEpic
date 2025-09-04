@@ -1,5 +1,6 @@
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
-    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
+    getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericFlatProc, 
+    getStagedDiminishedValue} from "Retail/Engine/EffectFormulas/EffectUtilities";
     
 import { compileStats } from "General/Engine/ItemUtilities"
 import Player from "General/Modules/Player/Player";
@@ -42,7 +43,7 @@ function getEstimatedHPS(bonus_stats, player, contentType) {
 export const printBeltData = (player: Player) => {
   const itemLevel = 691;
   titanBeltData.forEach(effect => {
-    const bonus_stats = effect.runFunc(effect.effects, player, itemLevel, {contentType: "Raid"});
+    const bonus_stats = effect.runFunc(effect.effects, player, itemLevel, {contentType: "Raid", setStats: {}});
     const score = getEstimatedHPS(bonus_stats, player, "Raid");
     console.log("Effect: " + effect.name + " | Stats: " + JSON.stringify(bonus_stats) + " | HPS: " + score);
   })
@@ -73,7 +74,6 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       
         let bonus_stats: Stats = {};
 
-
         bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
   
         return bonus_stats;
@@ -95,9 +95,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-      
         let bonus_stats: Stats = {};
-
 
         bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
   
@@ -121,10 +119,8 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
       
         let bonus_stats: Stats = {};
 
-        
         bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
 
-  
         return bonus_stats;
     }
   },
@@ -135,11 +131,11 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236272,
     effects: [
       { 
-        coefficient: 0.273946 * 1.25,
+        coefficient: 0.342433,
         table: -7,
         ppm: 1.5,
         duration: 20,
-        uptime: 0.36,
+        uptime: 0.35,
       },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -148,8 +144,9 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
 
         //console.log("Value: " + processedValue(data[0], itemLevel) + "uptime: " +convertPPMToUptime(data[0].ppm, data[0].duration));
 
-        const uptime = data[0].uptime * 1.13;
-        const averageCritWhileActive = processedValue(data[0], itemLevel) * 5.5;
+        const uptime = data[0].uptime;
+        //const averageCritWhileActive1 = processedValue(data[0], itemLevel) * 5.5;
+        const averageCritWhileActive = getStagedDiminishedValue("crit", processedValue(data[0], itemLevel), additionalData.setStats, 10);
        
         bonus_stats.crit = averageCritWhileActive * uptime;
   
@@ -185,7 +182,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236275,
     effects: [
       { 
-        coefficient: 0.100341 * 1.5,
+        coefficient: 0.149715,
         table: -7,
         ppm: 1.5,
         duration: 30,
@@ -196,7 +193,9 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
         let bonus_stats: Stats = {};
 
         const uptime = Math.min(0.5, (1.5 / player.getStatPerc("Haste") * 20) / 60);
-        const averageVersWhileActive = processedValue(data[0], itemLevel) * 10.5;
+        //const averageVersWhileActive1 = processedValue(data[0], itemLevel) * 10.5;
+
+        const averageVersWhileActive = getStagedDiminishedValue("versatility", processedValue(data[0], itemLevel), additionalData.setStats, 20);
 
         bonus_stats.versatility = averageVersWhileActive * uptime;
   
