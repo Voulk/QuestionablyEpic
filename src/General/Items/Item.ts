@@ -141,6 +141,18 @@ export class Item {
         ]
 
       }
+      else if (this.id === 190958) {
+        // So'leah's Secret Technique
+        /*this.customOptions = [
+          {label: "Automatic", id: [0]},
+          {label: "Force Mastery", id: [1]},
+          {label: "Force Haste", id: [2]},
+          {label: "Force Crit", id: [3]},
+          {label: "Force Versatility", id: [4]},
+        ]
+
+        this.selectedOptions = this.customOptions[0].id;*/
+      }
 
       /*
       if (this.id === 178708) {

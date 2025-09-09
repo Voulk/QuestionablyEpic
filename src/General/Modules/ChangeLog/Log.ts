@@ -19,6 +19,13 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.2 / 5.5",
+    update: 12,
+    date: "September 8",
+    changes: [ 
+      "Bugfix: Reshii Wraps Versatility version will now clone correctly."
+    ]},
   {
     version: "11.2 / 5.5",
     update: 12,

@@ -323,7 +323,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Twisted Mana Sprite has a positive bug where its healing events are sometimes 10x higher than they should be. This bug is random and not included in its score. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
                                               "";
 
   return (

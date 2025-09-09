@@ -17,7 +17,7 @@ export const CONSTANTS = {
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
     seasonalItemConversion: 11, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
     currentRaidID: 1302, // Undermine
-    currentDungeonIDs: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
+    currentDungeonIDs: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
     bossNPCIDs: {
         2639: 225821, // Vexie and the Geargrinders.
         2640: 229177, // Cauldron of Carnage

@@ -166,6 +166,7 @@ class ItemSet {
       if (item.effect) {
         let effect = item.effect;
         effect.level = item.level;
+        if (item.selectedOptions) effect.selectedOptions = item.selectedOptions;
         this.effectList.push(effect);
       }
     }
