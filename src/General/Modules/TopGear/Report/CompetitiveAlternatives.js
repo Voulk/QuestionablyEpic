@@ -156,7 +156,7 @@ function CompetitiveAlternatives(props) {
                             variant="caption" // h6 formerly
                             wrap="nowrap"
                             display="inline"
-                            align="center"
+                            align="right"
                             style={{
                               color: "#F58114",
                               whiteSpace: "nowrap",

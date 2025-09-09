@@ -356,17 +356,19 @@ export class Player {
     newItem.selectedOptions = selectedOption;
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
-    if (newItem) this.activeItems = this.activeItems.concat(newItem);
+    
 
-    if (item.id === 235499) {
+    if (newItem.id === 235499) {
       // Reshii Wraps
       // Remove stats and re-add.
-      const alloc = getItemAllocations(item.id, [], "Retail");
+      const alloc = getItemAllocations(newItem.id, [], "Retail");
       const bonusPayload = bonus_IDs[selectedOption]["rawStats"][0];
-      alloc[bonusPayload['name'].toLowerCase()] = bonusPayload["amount"];
-      item.stats = calcStatsAtLevel(item.level, item.slot, alloc, "");
-      item.bonusIDS = selectedOption;
+      alloc[bonusPayload['name'].toLowerCase().replace("vers", "versatility")] = bonusPayload["amount"];
+      newItem.stats = calcStatsAtLevel(newItem.level, newItem.slot, alloc, "");
+      newItem.bonusIDS = selectedOption;
     }
+
+    if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
 

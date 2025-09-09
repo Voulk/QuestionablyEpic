@@ -88,6 +88,7 @@ const wowheadCodes = {
   1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
   1187: "[=retail-dun-theater-pain]", // Theater of Pain
 
+  "-20": "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   1194: "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   11941: "[=retail-dun-tazavesh-gambit]", // Tazavesh: The Gambit
   1303: "[=retail-dun-echo-dome]", // 

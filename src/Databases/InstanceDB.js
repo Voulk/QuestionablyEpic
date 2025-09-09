@@ -120,10 +120,10 @@ export const retailInstanceDB = {
   "-1": {
     "Retail": {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
-      bossOrderMythicPlus: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
+      bossOrderMythicPlus: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
 
       // M+ season 2
-      1194: "Tazavesh Streets", // Tazavesh: Streets of Wonder
+      "-20": "Tazavesh Streets", // Tazavesh: Streets of Wonder
       11941: "Tazavesh Gambit", // Tazavesh: The Gambit
       1303: "Eco-Dome Al'dani", // 
       1185: "Halls of Atonement", // The Halls of Atonement
