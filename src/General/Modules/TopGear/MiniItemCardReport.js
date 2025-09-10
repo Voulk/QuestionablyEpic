@@ -58,7 +58,7 @@ export default function ItemCardReport(props) {
   }
   else if (item.id === 190958) {
     // Soleahs
-    statString = "  Haste Version"// item.selectedOptions[0] || "";
+    //statString = "Haste Version"// item.selectedOptions[0] || "";
   }
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
