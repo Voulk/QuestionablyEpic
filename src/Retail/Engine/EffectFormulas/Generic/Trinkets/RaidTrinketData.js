@@ -78,7 +78,7 @@ export const raidTrinketData = [
         table: -8,
         secondaries: ['versatility'],
         targets: 5,
-        efficiency: {Raid: 0.67, Dungeon: 0.84}, // While absorbs are often consumed well in raid, this has quite heavy general usage problems.
+        efficiency: {Raid: 0.75, Dungeon: 0.84}, // While absorbs are often consumed well in raid, this has quite heavy general usage problems.
         cooldown: 90,
       },
     ],
