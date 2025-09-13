@@ -419,7 +419,8 @@ export default function TopGear(props: any) {
     // handleClickDelete();
   };
 
-  const shortenReport = (report: TopGearResult, player: Player) => {
+  const shortenReport = (report: TopGearResult, player: Player, itemList: Item[]) => {
+    const itemsAdded: String[] = []
     if (report) {
       const shortReport: ShortReport = {id: report.id, 
         differentials: report.differentials, 
@@ -443,7 +444,7 @@ export default function TopGear(props: any) {
       };
     
       
-      const addItem = (item: any) => {
+      const addItem = (item: any, isChosen: boolean) => {
         let newItem: ReportItem = {id: item.id, level: item.level, isEquipped: item.isEquipped, stats: item.stats};
         if ('leech' in item.stats && item.stats.leech > 0) newItem.leech = item.stats.leech;
         if (item.socket) newItem.socket = item.socket;
@@ -455,10 +456,11 @@ export default function TopGear(props: any) {
         if (item.bonusIDS) newItem.bonusIDS = item.bonusIDS;
         if (item.craftedStats) newItem.craftedStats = item.craftedStats;
         if (item.selectedOptions) newItem.selectedOptions = item.selectedOptions;
+        if (isChosen) newItem.isChosen = true;
   
         shortReport.itemSet.itemList.push(newItem)
+        itemsAdded.push(item.uniqueHash)
         }
-        
         
       for (var i = 0; i < report.itemSet.itemList.length; i++) {
         const item = report.itemSet.itemList[i];
@@ -467,18 +469,24 @@ export default function TopGear(props: any) {
           if (item.offhandID > 0) {
             const mainhandItem = player.getItemByHash(item.mainHandUniqueHash)[0];
             const offhandItem = player.getItemByHash(item.offHandUniqueHash)[0];
-            addItem(mainhandItem);
-            addItem(offhandItem)
+            addItem(mainhandItem, true);
+            addItem(offhandItem, true)
   
           } else {
             const mainhandItem = player.getItemByHash(item.uniqueHash)[0];
-            addItem(mainhandItem);
+            addItem(mainhandItem, true);
           }
         }
         else {
-          addItem(item);
+          addItem(item, true);
         }
       }
+
+      itemList.forEach((item) => {
+        if (itemsAdded.includes(item.uniqueHash)) return; // Already added.
+        addItem(item, false);
+      });
+
 
       sendReport(shortReport);
       return shortReport;
@@ -516,7 +524,7 @@ export default function TopGear(props: any) {
             // If top gear completes successfully, log a successful run, terminate the worker and then press on to the Report.
             apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore, result.itemsCompared);
             //props.setTopResult(result);
-            const shortResult = shortenReport(result, props.player);
+            const shortResult = shortenReport(result, props.player, itemList);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);
 
@@ -611,7 +619,7 @@ export default function TopGear(props: any) {
             });
 
             apiSendTopGearSet(props.player, contentType, result.itemSet.hardScore);
-            const shortResult = shortenReport(result, props.player);
+            const shortResult = shortenReport(result, props.player, itemList);
             if (shortResult) shortResult.new = true; // Check that shortReport didn't return null.
             props.setTopResult(shortResult);
             

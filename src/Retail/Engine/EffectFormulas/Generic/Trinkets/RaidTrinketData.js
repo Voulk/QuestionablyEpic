@@ -4,6 +4,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
     {  
+    id: 242392,
     name: "Diamantine Voidcore",
     description: "The ranking on the chart does not include the set, however top gear will take both into account.",
     addonDescription: "A decent on-use that truly shines when combined with a special effect weapon from raid to complete the set.",

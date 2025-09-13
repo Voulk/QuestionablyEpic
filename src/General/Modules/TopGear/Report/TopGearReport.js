@@ -239,7 +239,7 @@ function displayReport(
     ? JSON.parse(topSet.retailGemBreakdown)
     : [];
   differentials = result.differentials;
-  itemList = topSet.itemList;
+  const fullItemList = topSet.itemList;
   contentType = result.contentType;
   gemStats =
     gameType === "Classic" && "socketInformation" in topSet
@@ -248,10 +248,10 @@ function displayReport(
   statList = topSet.setStats;
 
   const manaSources = {}
-  const hasVault = gameType === "Retail" && itemList.some(item => item.vaultItem);
+  const hasVault = gameType === "Retail" && fullItemList.some(item => item.vaultItem);
   // Setup Slots / Set IDs.
   let gemCount = 0;
-  itemList.forEach((item) => {
+  fullItemList.forEach((item) => {
     item.slot = getItemProp(item.id, "slot", gameType);
     item.setID = getItemProp(item.id, "itemSetId", gameType);
     item.sources = getItemProp(item.id, "sources", gameType);
@@ -270,6 +270,12 @@ function displayReport(
       }
     }
   });
+
+  // fullItemList includes all items selected, itemList will filter that to only items that were chosen in the top set.
+  itemList = fullItemList.filter(item => item.isChosen);
+  if (itemList.length === 0) itemList = fullItemList; // Fallback for older reports that don't have non-chosen items on them. Can be removed on a patch launch.
+
+  console.log(fullItemList);
 
   const handleExportMenuClick = (buttonClicked) => {
     //alert("Exporting to " + buttonClicked, result.id);
@@ -481,7 +487,7 @@ function displayReport(
                       <Grid item xs={0} lg={4} height={500} display={{ xs: "none", lg: "block" }}>
                         <img
                           src={backgroundImage}
-                          alt="Background"
+                          alt="Background2"
                             style={{
                               objectFit: "cover",
                               width: "100%",
