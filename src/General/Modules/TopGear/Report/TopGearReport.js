@@ -479,7 +479,7 @@ function displayReport(
                         </Grid>
                       </Grid>
                       <Grid item xs={0} lg={4} height={500} display={{ xs: "none", lg: "block" }}>
-                        <img
+                        {backgroundImage ? <img
                           src={backgroundImage}
                           alt="Background"
                             style={{
@@ -488,7 +488,7 @@ function displayReport(
                               height: "150%",
                               transform: "translateY(-160px)",
                             }}
-                          />
+                          /> : null}
                         
                       </Grid>
 
