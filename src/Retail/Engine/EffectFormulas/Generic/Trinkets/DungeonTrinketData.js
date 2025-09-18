@@ -80,7 +80,7 @@ export const dungeonTrinketData =
     },
     {
       name: "First Class Healing Distributor",
-      description: "",
+      description: "A bits and pieces trinket that is fine overall but doesn't excel in any particular area and gets outscaled by stronger alternatives.",
       effects: [
         {
           coefficient: 0.427244, 
@@ -93,14 +93,16 @@ export const dungeonTrinketData =
           table: -9,
           secondaries: ['crit', 'versatility'],
           efficiency: 0.55,
-          meteor: 0.15,
+          meteor: 0.3,
+          avgTargetsHit: 3, // Real average will be much higher than this, but we're interested in its meteor effect here, so it's really an average where the cap per event is 5.
+          ppm: 3,
         },
       ],
       runFunc: function(data, player, itemLevel, additionalData) {
         let bonus_stats = {};
 
         bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
-        bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (data[1].meteor * 5 + 1);
+        bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (data[1].meteor * data[1].avgTargetsHit + 1);
   
   
         return bonus_stats;

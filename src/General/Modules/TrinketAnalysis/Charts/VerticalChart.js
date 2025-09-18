@@ -35,15 +35,15 @@ const StyledTooltip = styled(({ className, ...props }) => (
   }
 }));
 
-const getLevelDiff = (trinketName, db, ilvl, map2) => {
+const getLevelDiff = (trinketID, db, ilvl, map2) => {
   /* ---------- Check if item exists at item level. If not, return 0. --------- */
   let temp = db.filter(function (item) {
-    return item.name === trinketName;
+    return item.id === trinketID;
   });
 
   const item = temp[0];
   if (!item) {
-    console.error("Invalid Trinket " + trinketName);
+    console.error("Invalid Trinket " + trinketID);
   }
   const pos = item.levelRange.indexOf(ilvl);
   const previousLevel = item.levelRange[pos - 1];
@@ -123,19 +123,24 @@ export default class VerticalChart extends PureComponent {
       .map((key) => key[1])
       .map((map2) => {
         /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
-        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.name, db, ilvl, map2)]));
+        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.id, db, ilvl, map2)]));
         /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
         arr.push({
-          name: map2.id,
+          name: map2.id, // Name is being set here.
+          info: {name: map2.name, id: map2.id},
           ...x,
         });
       });
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
-
+    console.log(cleanedArray); 
     /* ----------------------- Y-Axis Label Customization ----------------------- */
-    const CustomizedYAxisTick = (props) => {
-      const { x, y, payload } = props;
+    const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
+      //const { x, y, payload } = props;
+      console.log(payload);
+      const row = payload?.payload ?? data?.[payload.index];
+      const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
+      console.log(row);
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -149,7 +154,7 @@ export default class VerticalChart extends PureComponent {
               {
               //use function to get the first letters of the item name per word removing spaces
               }
-              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(payload.value === 242392 ? "Diamantine Voidcore (No Set)" :   getTranslatedItemName(payload.value, currentLanguage), 32))}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(rowName, 32))}
             </text>
             <WowheadTooltip type="item" id={payload.value} level={722} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
@@ -189,7 +194,6 @@ export default class VerticalChart extends PureComponent {
           data={cleanedArray}
           layout="vertical"
           
-          
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
               this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
@@ -227,7 +231,12 @@ export default class VerticalChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} 
+              tick={<CustomizedYAxisTick
+                  data={data}
+                  currentLanguage={currentLanguage}
+                  isMobile={this.state.width < mobileWidthThreshold}
+                />} />
           {itemLevels.map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}

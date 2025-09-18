@@ -63,6 +63,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// On rare occasion we might want to "invent" an entry on the chart. 
+// Maybe an item has a bonus effect when part of a set, or maybe we want to show multiple variations of a trinket on the chart.
+// There isn't a good way to template these so most of the code will be unique for each entry.
+const mockUniqueItemCombo = (id, tag) => {
+  if (id === 242392 && tag === "mythicWeapon") {
+    // Calculate trinket effect
+
+    // Calculate Weapon
+
+    // Deduct weapon without set
+
+    // Score Set of stats
+  }
+
+}
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
@@ -313,6 +328,24 @@ export default function TrinketAnalysis(props) {
         trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
         activeTrinkets.push(trinketAtLevels);
     }
+  }
+  if (gameType === "Retail") {
+    // Add any additional entries
+
+    // Voidcore with Mythic Weapon
+    let trinketAtLevels = {
+      id: 242392,
+      name: "Diamantine Voidcore (Mythic Wep)",
+      flag: "Mythic Wep",
+    };
+
+    for (var x = 0; x < itemLevels.length; x++) {
+      //mockUniqueItemCombo(242392, "mythicWeapon")
+      trinketAtLevels["i" + itemLevels[x]] = 285000;
+    }
+    console.log(trinketAtLevels);
+    activeTrinkets.push(trinketAtLevels);
+    
   }
 
   if (gameType === "Classic") {

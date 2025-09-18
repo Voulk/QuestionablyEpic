@@ -126,6 +126,7 @@ declare interface statEffect extends effectData {
 declare type ClassicEffectData = 
   { // 
     value: { [key: number]: number }; // The value of the effect at each item level.
+    coefficient: number; // The effects coefficient.
     stat: string;
     ppm?: number;
     cooldown?: number;
