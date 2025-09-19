@@ -294,7 +294,6 @@ export function processedValue(data, itemLevel, efficiency = 1, roundType = "flo
   else if (roundType === "ceil") return Math.ceil(value);
   else if (roundType === "round") return Math.round(value);
   else return value;
-
 }
 
 export function getBestWeaponEnchant(player, contentType) {

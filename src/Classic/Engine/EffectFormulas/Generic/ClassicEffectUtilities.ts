@@ -1,13 +1,32 @@
 
 
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { randPropPointsClassic } from "Retail/Engine/RandPropPointsBylevelClassic";
+
+
+/**
+ * 
+ * @param {*} data 
+ * @param {*} itemLevel The item level to grab the effect value at.
+ * @param {*} efficiency An optional efficiency value. We can use this for stuff like trinkets that don't always get full value.
+ * @param {*} roundType Blizzard are inconsistent on whether they floor or round data. Most of the time they'll floor, but the function can support both via optional parameters.
+ * @returns A flat value representing the in-game effect number at whatever item level we're given.
+ */
+export const processedValue = (data: ClassicEffectData, itemLevel: number, efficiency: number = 1, roundType: "floor" | "ceil" | "round" = "round") => {
+  const value = data.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0] * efficiency;
+  if (roundType === "floor") return Math.floor(value);
+  else if (roundType === "ceil") return Math.ceil(value);
+  else if (roundType === "round") return Math.round(value);
+  else return value;
+}
 
 // A generic stat effect with a duration and a ppm.
 export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number): Stats => {
-    const trinketValue = data.duration * data.value[itemLevel] * data.ppm / 60
+    const trinketValue = data.value[itemLevel];
+    const trinketAverage = data.duration * trinketValue * data.ppm / 60
     const statType = data.stat;
     const bonus_stats: Stats = {};
-    bonus_stats[statType] = trinketValue;
+    bonus_stats[statType] = trinketAverage;
     return bonus_stats;
 }
   
