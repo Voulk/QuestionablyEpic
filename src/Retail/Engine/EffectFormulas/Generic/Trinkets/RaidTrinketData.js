@@ -4,6 +4,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
     {  
+    id: 242392,
     name: "Diamantine Voidcore",
     description: "The ranking on the chart does not include the set, however top gear will take both into account.",
     addonDescription: "A decent on-use that truly shines when combined with a special effect weapon from raid to complete the set.",
@@ -78,7 +79,7 @@ export const raidTrinketData = [
         table: -8,
         secondaries: ['versatility'],
         targets: 5,
-        efficiency: {Raid: 0.75, Dungeon: 0.84}, // While absorbs are often consumed well in raid, this has quite heavy general usage problems.
+        efficiency: {Raid: 0.85, Dungeon: 0.95}, // While absorbs are often consumed well in raid, this has quite heavy general usage problems.
         cooldown: 90,
       },
     ],

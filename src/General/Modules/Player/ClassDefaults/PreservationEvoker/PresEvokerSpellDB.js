@@ -98,7 +98,7 @@ export const EVOKERSPELLDB = {
         cost: 4.5,
         coeff: 0.768,
         cooldownData: {cooldown: 30, hasted: false}, 
-        expectedOverheal: 0.3, // 0.25
+        expectedOverheal: 0.3, 
         targets: 6, // 
         secondaries: ['crit', 'vers', 'mastery']
     },
