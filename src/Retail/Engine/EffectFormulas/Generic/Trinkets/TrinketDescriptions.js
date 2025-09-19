@@ -67,6 +67,9 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
         // We're dealing with a stat proc trinket.
         trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
     }
+    else if (trinketName === "Nexus-King's Command") {
+        trinketDescription.push("Expected Uptime: 40%");
+    }
 
     Object.keys(trinketStats).forEach((statName) => {    
         trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
