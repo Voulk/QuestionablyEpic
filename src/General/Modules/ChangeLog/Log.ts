@@ -19,6 +19,13 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.2 / 5.5",
+    update: 14,
+    date: "September 18",
+    changes: [ 
+      "Mists of Pandaria: Fixed a bug where certain socket bonuses weren't scored properly."
+    ]},
     {
     version: "11.2 / 5.5",
     update: 13,

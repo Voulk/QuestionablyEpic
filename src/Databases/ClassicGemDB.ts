@@ -32,7 +32,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Reckless Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, haste: 160 },
-    color: "orange",
+    color: "yellow", //"orange",
   },
   {
     id: 76660,
@@ -40,7 +40,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Potent Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, crit: 160 },
-    color: "orange",
+    color: "yellow", //"orange",
   },
     {
     id: 76672,
@@ -48,7 +48,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Artful Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, mastery: 160 },
-    color: "orange",
+    color: "yellow", //"orange",
   },
     {
     id: 76686,
@@ -56,7 +56,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Purified Imperial Amethyst",
     icon: "inv_misc_gem_x4_rare_cut_purple",
     stats: { intellect: 80, spirit: 160 },
-    color: "purple",
+    color: "blue", //"purple",
   },
 
   {
