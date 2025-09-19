@@ -133,14 +133,12 @@ export default class VerticalChart extends PureComponent {
       });
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
-    console.log(cleanedArray); 
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
       //const { x, y, payload } = props;
-      console.log(payload);
       const row = payload?.payload ?? data?.[payload.index];
       const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
-      console.log(row);
+      //console.log(row);
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -154,7 +152,7 @@ export default class VerticalChart extends PureComponent {
               {
               //use function to get the first letters of the item name per word removing spaces
               }
-              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : (truncateString(rowName, 32))}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : payload.value === 242392 ? "Diamantine Voidcore (No Set)" : (truncateString(rowName, 32))}
             </text>
             <WowheadTooltip type="item" id={payload.value} level={722} domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />

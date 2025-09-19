@@ -343,8 +343,7 @@ export default function TrinketAnalysis(props) {
       //mockUniqueItemCombo(242392, "mythicWeapon")
       trinketAtLevels["i" + itemLevels[x]] = 285000;
     }
-    console.log(trinketAtLevels);
-    activeTrinkets.push(trinketAtLevels);
+    //activeTrinkets.push(trinketAtLevels);
     
   }
 
