@@ -302,6 +302,26 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+    {
+    name: "Mithril Wristwatch",
+    description: "",
+    effects: [
+      { 
+        value: {489: 6476}, 
+        coefficient: 1.56840002537,
+        ppm: getEffectPPM(0.1, 55, 1.5),
+        stat: "spellpower",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.spellpower! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
+    }
+  },
 
 
   {
