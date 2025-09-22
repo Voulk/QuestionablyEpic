@@ -133,8 +133,8 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
   //return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player) => {
-  const itemLevel = getItemProp(id, "itemLevel", "Classic");
+const getClassicTrinketScore = (id, player, itemLevel) => {
+  //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
 
   item.softScore = scoreItem(item, player, "Raid", "Classic");
@@ -284,9 +284,11 @@ export default function TrinketAnalysis(props) {
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
-      const trinketScore = getClassicTrinketScore(trinket.id, props.player);
-      
+      const itemUpgradeExclusionList = [87572, 87573]
+      const trinketLevel = trinket.itemLevel + (itemUpgradeExclusionList.includes(trinket.id) ? 0 : 8);
+      const trinketScore = getClassicTrinketScore(trinket.id, props.player, trinketLevel);
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
+      
       let difficulty = "";
       if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1) && trinketName !== "Jade Magistrate Figurine") difficulty = "heroic";
       else if ((trinket.levelRange.length === 3 || trinketName === "Jade Magistrate Figurine") && pos === 0) difficulty = "lfr";
@@ -294,14 +296,15 @@ export default function TrinketAnalysis(props) {
       
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
+        
         existingTrinket[difficulty] = trinketScore;
-        existingTrinket[difficulty + "ilvl"] = trinket.itemLevel;
-        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
+        existingTrinket[difficulty + "ilvl"] = trinketLevel;
+        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
       }
       else {
         trinketAtLevels[difficulty] = trinketScore;
-        trinketAtLevels[difficulty + "ilvl"] = trinket.itemLevel;
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
+        trinketAtLevels[difficulty + "ilvl"] = trinketLevel;
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
         activeTrinkets.push(trinketAtLevels);
       }
       
@@ -356,7 +359,7 @@ export default function TrinketAnalysis(props) {
   }
 
   const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
-                                              "";
+                                              "Trinkets are modelled at their maximum item upgrade level.";
 
   return (
     <div className={classes.root}>

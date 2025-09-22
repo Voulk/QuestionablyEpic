@@ -56,7 +56,8 @@ const exportSlotIDs = {
 const enchantIDs = {
     "Jade Spirit": 104427,
     "Major Intellect": 104445, // Offhand
-    "Powerful Pearlescent Spellthread": 122393, // Legs
+    "Greater Pearlescent Spellthread": 122393, // Legs
+	"Greater Cerulean Spellthread": 122392, // Legs
     "Superior Mastery": 104420, // Hands
     "Greater Haste": 104416, // Hands
     "Superior Intellect": 104403, // Back

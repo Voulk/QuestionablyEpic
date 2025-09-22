@@ -1,6 +1,7 @@
 // It's very important you use the Caster tables for these.
 export const ItemDamageOneHand = 
     [
+      0,
       3.478846073,
       3.700769186,
       3.923076868,

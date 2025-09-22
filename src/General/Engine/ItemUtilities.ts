@@ -17,6 +17,8 @@ import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
 import { getSeasonalDungeons, getMoPDungeons } from "Databases/InstanceDB";
 import { classicGemDB } from "Databases/ClassicGemDB";
+import { ItemDamageTwoHand } from "Retail/Engine/ItemDamageTwoHand";
+import { ItemDamageOneHand } from "Retail/Engine/ItemDamageOneHand";
 
 
 
@@ -830,6 +832,17 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
     }
   }
 
+  if (itemData.slot === "2H Weapon") {
+    // Calculate Weapon Damage
+    stats["weaponSwingSpeed"] = itemData.stats.weaponSwingSpeed;
+    stats["averageDamage"] = itemData.stats.weaponSwingSpeed * ItemDamageTwoHand[itemLevel];
+  }
+  else if (itemData.slot === "1H Weapon") {
+    // Calculate Weapon Damage
+    stats["weaponSwingSpeed"] = itemData.stats.weaponSwingSpeed;
+    stats["averageDamage"] = itemData.stats.weaponSwingSpeed * ItemDamageOneHand[itemLevel];
+  }
+
   return stats;
 }
 
@@ -1063,7 +1076,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { 
-          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
+          const ilvlBoost = gameType === "Classic" && source !== "ClassicPVP" && item.itemLevel >= 463 ? 8 : 0;
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
