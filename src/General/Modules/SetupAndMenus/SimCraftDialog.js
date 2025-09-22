@@ -57,7 +57,7 @@ export default function SimCraftInput(props) {
 
   const handleSubmit = () => {
       if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault, autoUpgradeAll); // Add autoUpgradeVault here.
-      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, useChallengeMode);
+      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, autoUpgradeAll);
   };
 
   return (
