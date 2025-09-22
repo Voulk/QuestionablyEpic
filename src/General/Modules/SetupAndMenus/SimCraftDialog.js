@@ -35,7 +35,7 @@ export default function SimCraftInput(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const [autoUpgradeVault, setAutoUpgradeVault] = useState(true); // State for checkbox
   const [autoUpgradeAll, setAutoUpgradeAll] = useState(false); // State for checkbox
-  const [useChallengeMode, setChallengeMode] = useState(false); // State for checkbox
+  const [autoUpgradeClassic, setAutoUpgradeClassic] = useState(false); // State for checkbox
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const characterCount = props.allChars.getAllChar().length || 0;
@@ -118,15 +118,10 @@ export default function SimCraftInput(props) {
 
         </DialogContent>
         <DialogActions>
-        {gameType === "Retail" ? <FormControlLabel
+        <FormControlLabel
             control={<Checkbox checked={autoUpgradeAll} onChange={() => setAutoUpgradeAll(!autoUpgradeAll)} />}
             label="Upgrade ALL to Max Level"
-          /> : null}
-          {/*<FormControlLabel
-            control={<Checkbox checked={useChallengeMode} onChange={() => setChallengeMode(!useChallengeMode)} />}
-            label="Import at 463"
           />
-          */}
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"

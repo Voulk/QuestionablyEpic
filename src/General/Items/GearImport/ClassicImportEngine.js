@@ -90,6 +90,7 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   let suffix = 0;
   let suffixAllocation = 0;
   let itemAllocations = {};
+  let upgradeLevel = 0;
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -111,6 +112,7 @@ function processItem(line, player, contentType, useChallengeMode = false) {
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
     else if (info.includes("suffix=")) suffix = parseInt(info.split("=")[1]);
     else if (info.includes("unique=")) suffixAllocation = parseInt(info.split("=")[1]);
+    else if (info.includes("upgradeLevel=")) upgradeLevel = parseInt(info.split("=")[1]);
   }
 
   if (itemID === 63494 || itemID === 63497 || itemID === 63506 || itemID === 65373 || itemID === 65374 ||
@@ -130,9 +132,16 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   itemSlot = getItemProp(itemID, "slot", "Classic");
 
   // Process Item Suffix
-  
   if (suffix && suffix in suffixDB) {
     itemAllocations = suffixDB[suffix]//{intellect: 5259, crit: 3506, haste: 3506}//getSuffixAllocation(suffix, suffixAllocation);
+  }
+  if (upgradeLevel > 0) {
+    // Blue items gain 4 ilvl per upgrade.
+    // Epic items gain 8 ilvl per upgrade.
+    // We won't check if an item can be upgraded at all here because they are imports.
+    let baseRarity = getItemProp(itemID, "quality", "Classic");
+    itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
+    console.log("Upgraded item " + itemID + " to level " + itemLevel + " (upgrade level " + upgradeLevel + ")");
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
