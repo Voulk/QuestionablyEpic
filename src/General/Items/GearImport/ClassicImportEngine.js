@@ -150,7 +150,6 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     // We won't check if an item can be upgraded at all here because they are imports.
     let baseRarity = getItemProp(itemID, "quality", "Classic");
     itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
-    console.log("Upgraded item " + itemID + " to level " + itemLevel + " (upgrade level " + upgradeLevel + ")");
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
