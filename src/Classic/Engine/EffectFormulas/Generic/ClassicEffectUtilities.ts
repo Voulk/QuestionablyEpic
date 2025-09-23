@@ -22,7 +22,7 @@ export const processedValue = (data: ClassicEffectData, itemLevel: number, effic
 
 // A generic stat effect with a duration and a ppm.
 export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number): Stats => {
-    const trinketValue = data.value[itemLevel];
+    const trinketValue = data.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0];
     const trinketAverage = data.duration * trinketValue * data.ppm / 60
     const statType = data.stat;
     const bonus_stats: Stats = {};
@@ -81,9 +81,10 @@ export const getGenericHealingIncrease = (spec: string): number => {
   
 export const getGenericOnUseTrinket = (data: ClassicEffectData, itemLevel: number): Stats => {
     const bonus_stats: Stats = {};
-    const trinketValue = data.duration * data.value[itemLevel] / data.cooldown;
+    const trinketValue = data.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0];
+    const trinketAverage = data.duration * trinketValue / data.cooldown;
     const statType = data.stat;
-    bonus_stats[statType] = trinketValue;
+    bonus_stats[statType] = trinketAverage;
     return bonus_stats;
 
 }

@@ -3,7 +3,7 @@ import Item from "General/Items/Item";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
 
-export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers, useChallengeMode) {
+export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers, autoUpgradeItems = false) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -26,7 +26,7 @@ export function runClassicGearImport(simCInput, player, contentType, setErrorMes
       let line = lines[i];
       // If our line doesn't include an item ID, skip it.
       if (line.includes("id=")) {
-        processItem(line, player, contentType, useChallengeMode);
+        processItem(line, player, contentType, autoUpgradeItems);
       }
     }
 
@@ -71,7 +71,7 @@ function checkSimCValid(simCHeader, length, playerClass, setErrorMessage) {
 }
 
 
-function processItem(line, player, contentType, useChallengeMode = false) {
+function processItem(line, player, contentType, autoUpgradeItem = false) {
   // Split string.
   let infoArray = line.split(",");
   let itemID = -1;
@@ -90,6 +90,9 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   let suffix = 0;
   let suffixAllocation = 0;
   let itemAllocations = {};
+  let upgradeLevel = 0;
+
+
 
   // Build out our item information.
   // This is not the finest code in the land but it is effective at pulling the information we need.
@@ -111,6 +114,7 @@ function processItem(line, player, contentType, useChallengeMode = false) {
     else if (info.includes("crafted_stats=")) craftedStats = info.split("=")[1].split("/");
     else if (info.includes("suffix=")) suffix = parseInt(info.split("=")[1]);
     else if (info.includes("unique=")) suffixAllocation = parseInt(info.split("=")[1]);
+    else if (info.includes("upgradeLevel=")) upgradeLevel = parseInt(info.split("=")[1]);
   }
 
   if (itemID === 63494 || itemID === 63497 || itemID === 63506 || itemID === 65373 || itemID === 65374 ||
@@ -130,9 +134,22 @@ function processItem(line, player, contentType, useChallengeMode = false) {
   itemSlot = getItemProp(itemID, "slot", "Classic");
 
   // Process Item Suffix
-  
   if (suffix && suffix in suffixDB) {
     itemAllocations = suffixDB[suffix]//{intellect: 5259, crit: 3506, haste: 3506}//getSuffixAllocation(suffix, suffixAllocation);
+  }
+
+  // Handle auto upgrades
+  if (autoUpgradeItem) {
+    if (itemLevel >= 359) {
+      upgradeLevel = 2;
+    }
+  }
+  if (upgradeLevel > 0) {
+    // Blue items gain 4 ilvl per upgrade.
+    // Epic items gain 8 ilvl per upgrade.
+    // We won't check if an item can be upgraded at all here because they are imports.
+    let baseRarity = getItemProp(itemID, "quality", "Classic");
+    itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -161,7 +178,7 @@ function processItem(line, player, contentType, useChallengeMode = false) {
           (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
 
   if (itemID !== 0 && itemSlot !== "" && isSuitable) {
-    if (useChallengeMode && itemLevel > 463) itemLevel = 463; // Cap item level at 463 if cmode flag is enabled.
+    if (false && itemLevel > 463) itemLevel = 463; // Cap item level at 463 if cmode flag is enabled.
     let item = new Item(itemID, "", itemSlot, 0, "", 0, itemLevel, bonusIDS, "Classic");
     item.active = itemEquipped;
     item.isEquipped = itemEquipped;

@@ -1,7 +1,7 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
 
-import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket } from "./ClassicEffectUtilities";
+import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue } from "./ClassicEffectUtilities";
 
 
 type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
@@ -226,6 +226,26 @@ export const raidTrinketData: Effect[] = [
       return getGenericStatEffect(data[0], itemLevel);
     }
   },
+ {
+    name: "Thousand-Year Pickled Egg",
+    description: "Haste procs just aren't good for many specs and the miserly uptime doesn't help.",
+    effects: [
+      { 
+        value: {489: 0}, 
+        coefficient: 2.97199988365,
+        ppm: getEffectPPM(0.1, 55, 1.1),
+        stat: "haste",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
       {
     name: "Relic of Chi-Ji",
     effects: [
@@ -297,9 +317,29 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.mp5 = data[0].value[itemLevel] / 55 * 0.9 * 5;
+      bonus_stats.mp5 =  processedValue(data[0], itemLevel) / 55 * 0.9 * 5;
 
       return bonus_stats;
+    }
+  },
+    {
+    name: "Mithril Wristwatch",
+    description: "Realistically only playable if your spec naturally procs it anyway, or if it's inexpensive to do so.",
+    effects: [
+      { 
+        value: {489: 6476}, 
+        coefficient: 1.56840002537,
+        ppm: getEffectPPM(0.1, 55, 1.5),
+        stat: "spellpower",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.spellpower! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
     }
   },
 
