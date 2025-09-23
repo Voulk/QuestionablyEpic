@@ -417,6 +417,10 @@
           "title": "Antenna Pickup Rate",
           "tooltip": "The percentage of orbs you expect to pick up."
         },
+        "shatteredSoulUsage": {
+          "title": "Shattered Soul Efficiency",
+          "tooltip": "Set to 100 if you expect to get full Shattered Soul value on a fight. It works on Cosmic, Nature, Holy, Arcane and Shadow damage."
+        },
 
         
 

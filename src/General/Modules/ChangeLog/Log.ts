@@ -19,7 +19,18 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
-      {
+  {
+    version: "11.2 / 5.5.1",
+    update: 15,
+    date: "September 22",
+    changes: [ 
+      "Mists of Pandaria: Added full support for the Item Upgrade System.",
+      "MoP Trinket Chart: Items now appear at their maximum upgraded level.",
+      "New Checkbox: Import items at max level.",
+      "Added the Brewfest trinkets to the trinket table.",
+      "Fixed a bug with First Class Healing Distributors proc rate. Its rating rises slightly.",
+    ]},
+  {
     version: "11.2 / 5.5",
     update: 14,
     date: "September 18",

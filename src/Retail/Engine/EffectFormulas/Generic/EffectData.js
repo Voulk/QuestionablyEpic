@@ -1,6 +1,31 @@
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { 
+    name: "Band of the Shattered Soul",
+    effects: [
+      {
+        coefficient: 39.03619, 
+        table: -9,
+        ppm: 2,
+        efficiency: 0.95, // Converts to absorb so high efficiency.
+        secondaries: ['haste', 'versatility'], 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      const efficiency = Math.min(100, getSetting(additionalData.settings, "shatteredSoulUsage")) / 100;
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * efficiency;
+
+      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
+        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
+      }
+
+      return bonus_stats;
+    },
+  },
     { 
     name: "Voidglass Shards", // Shards of the Void
     effects: [

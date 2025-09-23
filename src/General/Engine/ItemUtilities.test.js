@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+
 import {
   getItemAllocations,
   getItemProp,
@@ -187,8 +186,22 @@ describe("Classic Item Allocations func", () => {
   test("Mask of Screaming Secrets", () => {
     const stats = calcStatsAtLevelClassic(86160, 496/*, statAllocations: any*/)
     
-
     expect(stats.spirit).toEqual(735);
+  });
+
+  test("Gustwalker Staff 2h Weapon Test", () => {
+    const stats = calcStatsAtLevelClassic(81288, 471/*, statAllocations: any*/)
+
+    expect(Math.round(stats.averageDamage)).toEqual(6017);
+    expect(Math.round(stats.spellpower)).toEqual(5551);
+});
+
+  test("Tihan 1h Weapon Test", () => {
+    const stats = calcStatsAtLevelClassic(86148, 506/*, statAllocations: any*/)
+
+    expect(Math.round(stats.spellpower)).toEqual(7689);
+    expect(Math.round(stats.averageDamage)).toEqual(4365);
+    
   });
 
 });
