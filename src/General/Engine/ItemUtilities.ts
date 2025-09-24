@@ -655,7 +655,8 @@ export function getItemAllocations(id: number, missiveStats: any[] = [], gameTyp
 }
 
 // Returns which secondary item category a given slot falls in.
-function getItemCat(slot: string) {
+function getItemCat(slot: string, gameType: gameTypes = "Retail") {
+  if (gameType === "Classic" && ["Offhand", "Shield", "Holdable"].includes(slot)) return 2;
   switch (slot) {
     case "Head":
     case "Chest":
@@ -808,7 +809,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
     penalties = itemData.socketPenalties;
   }
 
-  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
+  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot, "Classic")];
   //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
   combat_mult = 1;
