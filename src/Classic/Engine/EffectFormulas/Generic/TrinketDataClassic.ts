@@ -153,6 +153,26 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+    {
+    name: "Cutstitcher Medallion", 
+    description: "Heartwarmer Medallion is an Alliance version of the same trinket. Both are also identical to Scroll of Revered Ancestors. A middling effect but the trinket is available at a decent item level which helps its ranking.",
+    effects: [
+      { 
+        value: {489: 3595},
+        coefficient: 1.64999997616,
+        stat: "spirit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
 
   {
     name: "Zen Alchemist Stone",
@@ -183,7 +203,6 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       
       return getGenericStatEffect(data[0], itemLevel);
     }
@@ -202,7 +221,6 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       
       return getGenericStatEffect(data[0], itemLevel);
     }
@@ -340,6 +358,45 @@ export const raidTrinketData: Effect[] = [
 
       return bonus_stats;
       //return ;
+    }
+  },
+    {
+    name: "Static-Caster's Medallion", 
+    description: "Shock-Charger Medallion is the Alliance version of the same trinket. Can rate higher if you combine it with the most dangerous moments of each fight but requires expert usage to be playable.",
+    effects: [
+      { 
+        value: {496: 3838},
+        coefficient: 1.64999997616,
+        stat: "intellect",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Shock-Charger Medallion", 
+    effects: [
+      { 
+        value: {496: 3838},
+        coefficient: 1.64999997616,
+        stat: "intellect",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
     }
   },
 
