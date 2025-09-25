@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.2 / 5.5.1",
+    update: 16,
+    date: "September 25",
+    changes: [ 
+      "Mists of Pandaria: Added Dominance Offensive Trinkets.",
+      "Mists of Pandaria: Fixed a bug where Hit rating wasn't a Reforge candidate.",
+    ]},
   {
     version: "11.2 / 5.5.1",
     update: 15,
