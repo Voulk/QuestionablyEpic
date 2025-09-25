@@ -97,7 +97,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
 
   if (reforgingOn) {
     itemList.forEach(item => {
-      const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+      const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
       const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
 
       //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
