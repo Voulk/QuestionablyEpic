@@ -284,8 +284,8 @@ export default function TrinketAnalysis(props) {
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
-      const itemUpgradeExclusionList = [87572, 87573]
-      const trinketLevel = trinket.itemLevel + (itemUpgradeExclusionList.includes(trinket.id) ? 0 : 8);
+      const itemUpgradeExclusionList = ["Mithril Wristwatch", "Thousand-Year Pickled Egg"]
+      const trinketLevel = trinket.itemLevel + (itemUpgradeExclusionList.includes(trinket.name) ? 0 : 8);
       const trinketScore = getClassicTrinketScore(trinket.id, props.player, trinketLevel);
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
       
