@@ -431,7 +431,7 @@ export default function ItemBar(props) {
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 value={itemLevel}
                 label={t("QuickCompare.ItemLevel")}
-                disabled={(itemID === "" || gameType === "Classic") ? true : false}
+                disabled={(itemID === "") ? true : false}
                 onInput={(e) => {
                   e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}
