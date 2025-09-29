@@ -24,8 +24,9 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
         advice.push("Expected DPS: " + Math.round(topSet.metrics.damage / 60 * 0.7) + " - " + Math.round(topSet.metrics.damage / 60 * 1) + ". Your DPS is heavily dependent on how much time you spend casting DPS spells and will vary per fight.")
 
         //advice.push("Power Torrent is a very powerful weapon enchant but is expensive. It's ok to wear Heartsong until you have a good weapon.")
-        if (strippedPlayer.spec === "Mistweaver Monk Classic") advice.push("Mistweaver has a haste breakpoint at 3145 haste, however this is only a small upgrade over \
+        if (strippedPlayer.spec === "Mistweaver Monk Classic") advice.push("Mistweaver has a haste breakpoint at 3145 haste (in Tiger), however this is only a small upgrade over \
                     spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");
+        if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has haste breakpoints at 3043 (Rejuv, Tranq) and 5176 (Soul of the Forest + Wild Growth). Expect most sets to hit the first, and some to hit the second - often only with the T14 4pc bonus.");
     }
     if (topSet.enchantBreakdown["flask"]) {
         advice.push("Recommended Flask: " + topSet.enchantBreakdown["flask"] + ".");
