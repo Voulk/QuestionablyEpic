@@ -4,6 +4,14 @@ import Player from "General/Modules/Player/Player";
 import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue } from "./ClassicEffectUtilities";
 
 
+/* 
+== RPPM ==
+The SpellAuraOptions table takes a Spell ID and has a "SpellProcsPerMinuteID" which links to the SpellProcsPerMinute table which has the base proc
+rate in the BaseProcRate field. There's also a ProcTypeMask field which will have a value like 16384. 
+
+
+*/
+
 type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
 
 type Effect = {
@@ -77,6 +85,117 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Throne of Thunder
+    {
+    name: "Lightning-Imbued Chalice", 
+    effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 5.78,
+        stat: "hps",
+        duration: 4,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Unerring Vision of Lei Shen", 
+    effects: [ // Procs on DPS spells. Gives 100% crit chance for 4s. 
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 0.46,
+        stat: "crit",
+        duration: 4,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Cha-Ye's Essence of Brilliance", 
+    effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 0.85,
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+    {
+    name: "Stolen Relic of Zuldazar", 
+    effects: [ // Hasted rppm. Stacks to 6 then can be used to shield a target.
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 1.64,
+        stat: "HPS",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Inscribed Bag of Hydra-Spawn", 
+    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 1.64,
+        stat: "HPS",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Horridon's Last Grasp", 
+    effects: [ // Chance of X mana every 2s for 10s.
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 0.96,
+        stat: "MP5",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+
+  // 5.0 Trinkets
     {
     name: "Blossom of Pure Snow", 
     effects: [

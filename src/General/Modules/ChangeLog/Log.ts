@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.2 / 5.5.1",
+    update: 17,
+    date: "September 29",
+    changes: [ 
+      "Mists of Pandaria: PVP gear is no longer upgradable.",
+      "Mists of Pandaria: The Brewfest trinkets on the chart are no longer upgraded.",
+    ]},
     {
     version: "11.2 / 5.5.1",
     update: 16,

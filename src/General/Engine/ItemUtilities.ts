@@ -1077,7 +1077,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = gameType === "Classic" && item.itemLevel >= 463 ? 8 : 0;
+          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && source !== "ClassicPVP") ? 8 : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
