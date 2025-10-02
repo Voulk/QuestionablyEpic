@@ -1,9 +1,9 @@
 import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
-import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-
+import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
 export const restoShamanDefaults = {
     spec: "Restoration Shaman Classic",
@@ -12,7 +12,18 @@ export const restoShamanDefaults = {
     initializeSet: initializeShamanSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-
+      intellect: 21000,
+      spirit: 9000,
+      spellpower: 7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 3043,
+      crit: 8000,
+      mastery: 9000,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -48,34 +59,89 @@ export function initializeShamanSet() {
   }
     const castProfile = [
       //{spell: "Judgement", cpm: 1, hpc: 0},
-      {spell: "Rest", cpm: 3.4, hastedCPM: true},
+      //{spell: "Rest", cpm: 3.4, hastedCPM: true},
+      {spell: "Healing Rain", efficiency: 0.95 },
   
-      //{spell: "Divine Plea", cpm: 0.5, freeCast: true},
-  
-      // Test
-  
-      // Divine Favor
-      // Divine Favor has an ~1/6 uptime and increases crit chance and casting speed. We will average its benefit but it can be simulated too.
     ]
   
+
+    const playerData = { spec: "Restoration Shaman", spells: shamanSpells, settings: testSettings, talents: {...shamanTalents}, stats: activeStats }
+
+    const adjSpells = getTalentedSpellDB("Restoration Shaman", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: shamanTalents, spec: "Restoration Shaman"});
+    //console.log(JSON.stringify(adjSpells));
     castProfile.forEach(spell => {
+      if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = shamanSpells[spell.spell][0].castTime;
       spell.hpc = 0;
       spell.cost = spell.freeCast ? 0 : shamanSpells[spell.spell][0].cost * 18635 / 100;
       spell.healing = 0;
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
-    const playerData = { spec: "Restoration Shaman", spells: shamanSpells, settings: testSettings, talents: {...shamanTalents}, stats: activeStats }
-
-    const adjSpells = getTalentedSpellDB("Restoration Shaman", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: shamanTalents, spec: "Restoration Shaman"});
-    //console.log(JSON.stringify(adjSpells));
 
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute };
   }
   
   
-  export function scoreShamanSet(baseline, statProfile, player, userSettings, tierSets = []) {
-    let score = 0;
+  export function scoreShamanSet(baseline, statProfile, userSettings, tierSets = []) {
+    let score = 1;
+    const masteryEffectiveness = 0.4; // Can easily be converted to a setting.
+    const healingBreakdown = {};
+    const castBreakdown = {};
+    const fightLength = 6;
+    const talents = baseline.talents || shamanTalents;
+    const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
+
+    const hasteSetting = getSetting(userSettings, "hasteBuff");
+    const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+
+    const statPercentages = {
+      spellpower: statProfile.intellect + statProfile.spellpower,
+      crit: 1 + getCritPercentage(statProfile, "Restoration Shaman"),
+      haste: getHasteClassic(statProfile, hasteBuff),
+      mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness, // We'll +1 this when calculating spells.
+    }
+
+    console.log(castProfile);
+
+    castProfile.forEach(spellProfile => {
+        const fullSpell = baseline.spellDB[spellProfile.spell];
+        const spellName = spellProfile.spell;
+
+        fullSpell.forEach(spell => {
+
+        // Exception Cases
+        
+        // Regular cases
+        let spellOutput = 0;
+        if (spellProfile.hasteBonus) {
+          spellOutput = runClassicSpell(spellName, spell, {...statPercentages, haste: statPercentages.haste * (1 + spellProfile.hasteBonus)}, "Restoration Shaman", userSettings);
+          //console.log("Haste baseline: " + statPercentages.haste + " with bonus " + " = " + (statPercentages.haste * (1 + spellProfile.hasteBonus)));
+        }
+        else {
+          spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Shaman", userSettings);
+        }
+        
+
+
+        if (spellProfile.bonus) {
+          spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
+        }
+        
+        const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+
+
+        castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
+        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+        score += (spellOutput * effectiveCPM);
+
+        })
+
+        // Filler mana
+
+        
+    })
+
+    score += (60 * statProfile.hps || 0)
 
     return {damage: 0, healing: score};
   }
