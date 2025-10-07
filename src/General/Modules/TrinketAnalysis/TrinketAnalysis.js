@@ -248,7 +248,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 726, 730]; 
+  const allItemLevels = [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730]; 
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
