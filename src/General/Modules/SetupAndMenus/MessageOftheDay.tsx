@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "The D.I.S.C belt nerfs do not go live in-game until 11.2.5 which is predicted to be in October."
+    "The D.I.S.C belt nerfs & Turbo Boost item levels are LIVE!"
   ] : 
   [
     "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",

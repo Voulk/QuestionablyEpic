@@ -34,8 +34,8 @@ const getMenuItems = (item: any): MenuItemType[] => {
   //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
   //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
-  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 636, 639, 642, 645, 649, 652, 655, 658, 662, 664, 665, 668, 671, 675, 678, 681, 684, 688, 691, 694, 697, 701, 704, 707, 710, 714, 717, 720, 723 ];
-  const itemLevelCaps: { [key: string]: number } = { Explorer: 665, Adventurer: 678, Veteran: 691, Champion: 704, Hero: 710, Myth: 723, Circlet: 658, "Runed Crafted": 704, "Gilded Crafted": 720 };
+  const fullItemLevels = [567, 580, 584, 587, 590, 593, 597, 600, 603, 606, 610, 613, 616, 619, 623, 626, 629, 632, 636, 639, 642, 645, 649, 652, 655, 658, 662, 664, 665, 668, 671, 675, 678, 681, 684, 688, 691, 694, 697, 701, 704, 707, 710, 714, 717, 720, 723, 726, 730 ];
+  const itemLevelCaps: { [key: string]: number } = { Explorer: 671, Adventurer: 684, Veteran: 697, Champion: 710, Hero: 717, Myth: 730, Circlet: 658, "Runed Crafted": 710, "Gilded Crafted": 726 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {

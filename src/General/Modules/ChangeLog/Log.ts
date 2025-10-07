@@ -19,7 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
-      {
+  {
+    version: "11.2.5 / 5.5.1",
+    update: 18,
+    date: "October 7",
+    changes: [ 
+      "DISC belt nerfs are now in. All of the secondary powers got nerfed by 20%. The belt is still acceptable though replaced sooner.",
+      "Enabled longer upgrade tracks for all items. Updated Trinket chart to the new item levels.",
+  ]},
+  {
     version: "11.2 / 5.5.1",
     update: 17,
     date: "September 29",
