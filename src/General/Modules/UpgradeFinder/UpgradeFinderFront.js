@@ -161,12 +161,12 @@ const mythicPlusLevels = [
   { value: 697, label: "+8/9" },
   { value: 701, label: "+10" },
   { value: 704, label: "Vault" },
-  { value: 707, label: "" },
   { value: 710, label: "" },
-  { value: 714, label: "" },
   { value: 717, label: "" },
   { value: 720, label: "" },
   { value: 723, label: "" },
+  { value: 727, label: "" },
+  { value: 730, label: "" },
 
 ]
 

@@ -339,8 +339,8 @@ export default function ItemBar(props) {
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
     { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
-    { label: "Manaforge M", value: 723, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
-    { label: "S3 Mythic+", value: 723, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
+    { label: "Manaforge M", value: 730, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "S3 Mythic+", value: 730, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
   ]
 
   return (
