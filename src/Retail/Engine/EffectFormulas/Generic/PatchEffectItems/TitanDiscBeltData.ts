@@ -109,7 +109,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236273,
     effects: [
       { 
-        coefficient: 1.522123, //1.050392,
+        coefficient: 1.522123 * 0.8, //1.050392,
         table: -7,
         ppm: 1.5,
         duration: 20,
@@ -131,7 +131,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236272,
     effects: [
       { 
-        coefficient: 0.342433,
+        coefficient: 0.342433 * 0.8,
         table: -7,
         ppm: 1.5,
         duration: 20,
@@ -160,7 +160,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236961,
     effects: [
       { 
-        coefficient: 0.091581, //0.084812,
+        coefficient: 0.091581 * 0.8, //0.084812,
         table: -7,
       },
     ],
@@ -182,7 +182,7 @@ export const titanBeltData = [// Regular crafted 1800 secondaries.
     id: 1236275,
     effects: [
       { 
-        coefficient: 0.149715,
+        coefficient: 0.149715 * 0.8,
         table: -7,
         ppm: 1.5,
         duration: 30,
