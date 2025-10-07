@@ -55,8 +55,6 @@ const initialState : RootState = {
     flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
-    //circletOptions: { value: "Thunderlords / Mariners / Windsingers", options: ["Thunderlords / Mariners / Windsingers", "Skippers / Fathomdwellers / Stormbringers", "Skippers / Mariners / Stormbringers"], category: "topGear", type: "selector", gameType: "Retail" },
-
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "More Efficient", "More Burst Healing"], category: "topGear", type: "selector", gameType: "Classic"},
     metric: {value: "HPS", options: ["HPS", "HPS + DPS"], category: "topGear", type: "selector", gameType: "Classic"},
@@ -68,7 +66,7 @@ const initialState : RootState = {
     professionOne: {value: "Alchemy", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering", "Herbalism", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     professionTwo: {value: "Leatherworking", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering (NYI)", "Herbalism (NYI)", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
-    classicGems: {value: "Prefer Match", options: ["Prefer Match", "Prefer Optimal"], category: "topGear", type: "selector", gameType: "Classic"},
+    classicGems: {value: "Prefer Match", options: ["Prefer Match", "Prefer Optimal", "Keep Equipped Gems"], category: "topGear", type: "selector", gameType: "Classic"},
     includeEnchants: {value: "Yes", options: ["Yes", "No"], category: "topGear", type: "selector", gameType: "Classic"},
     
 

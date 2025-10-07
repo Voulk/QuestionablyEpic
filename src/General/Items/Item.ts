@@ -85,6 +85,7 @@ export class Item {
       const sockets = getItemProp(id, "sockets", gameType);
       this.classicSockets.sockets = sockets? sockets.gems : [];
       this.classicSockets.bonus = sockets ? sockets.bonus : {};
+      this.ingameEquipped = {gems: [], enchants: []};
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
 
