@@ -21,6 +21,10 @@ export class Item {
   specialAllocations?: {[key: string]: number} = {};
   primGems?: number[];
   craftedStats?: number[]; // An optional array for crafted stats on the item. 
+  ingameEquipped?: {
+    gems: number[],
+    enchants: number[],
+  }
 
   // Used for items where we might have multiple variations at the same item level. 
   // Single option items like Unbound Changeling would end up as a 1 length array but
