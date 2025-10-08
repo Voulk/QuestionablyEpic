@@ -312,6 +312,14 @@ export const classicGemDB: GemEntry[] = [
     stats: { intellect: 160 },
     color: "meta",
   },
+  {
+    id: 95345,
+    rarity: "legendary",
+    name: "Courageous Primal Diamond",
+    icon: "inv_legendary_chimeraoffear",
+    stats: { intellect: 324 },
+    color: "meta",
+  },
 
   // cogwheels
   {
