@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "The D.I.S.C belt nerfs & Turbo Boost item levels are LIVE!"
+    "Welcome to the QE Live Midnight Alpha. Please report any bugs but expect the app to be unstable until way closer to launch."
   ] : 
   [
     "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",
