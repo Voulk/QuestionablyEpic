@@ -17,9 +17,10 @@ export const CLASSICSHAMANSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
+        cooldownData: {cooldown: 10, charges: 1},
         buffDuration: 10,
         coeff: 0.165,
-        flat: 2191,
+        flat: 1823,
         expectedOverheal: 0.34,
         targets: 6,
         secondaries: ['crit', 'mastery'] 
@@ -31,7 +32,7 @@ export const CLASSICSHAMANSPELLDB = {
         castTime: 2.5, 
         cost: 4.5, 
         coeff: 0.6876, 
-        flat: 413,
+        flat: 7590,
         expectedOverheal: 0.15,
         targets: 4, // There is drop off per heal.
         secondaries: ['crit', 'mastery'],
@@ -44,8 +45,8 @@ export const CLASSICSHAMANSPELLDB = {
         buffType: "heal",
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
         buffDuration: 10,
-        coeff: 0.165,
-        flat: 2191,
+        coeff: 0.484,
+        flat: 5332,
         expectedOverheal: 0.4,
         targets: 12,
         secondaries: ['crit', 'mastery'] 
@@ -59,7 +60,7 @@ export const CLASSICSHAMANSPELLDB = {
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
         buffDuration: 15,
         coeff: 0.444,
-        flat: 2191,
+        flat: 0,
         expectedOverheal: 0.4,
         targets: 1,
         secondaries: ['crit', 'mastery'] 
@@ -69,7 +70,7 @@ export const CLASSICSHAMANSPELLDB = {
         type: "heal",
         castTime: 0, 
         cost: 12, 
-        flat: 638,
+        flat: 3735,
         coeff: 0.339, 
         expectedOverheal: 0.2,
         secondaries: ['crit', 'mastery'],
@@ -80,7 +81,7 @@ export const CLASSICSHAMANSPELLDB = {
         buffType: "heal",
         buffDuration: 18,
         coeff: 0.16, // 
-        flat: 133,
+        flat: 1764,
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.4,
         secondaries: ['crit', 'mastery'],

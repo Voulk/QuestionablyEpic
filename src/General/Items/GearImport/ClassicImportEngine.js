@@ -140,6 +140,8 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     itemAllocations = suffixDB[suffix]//{intellect: 5259, crit: 3506, haste: 3506}//getSuffixAllocation(suffix, suffixAllocation);
   }
 
+
+
   // Handle auto upgrades
   if (autoUpgradeItem) {
     if (itemLevel >= 359 && !(itemName.includes("Gladiator"))) {
@@ -194,6 +196,14 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
       // If an item has a Sha socket and two gems in it, then it's clearly upgraded and has the bonus prismatic socket.
       item.classicSockets.sockets = ["sha", "prismatic"];
     } 
+
+    if (gemIDs.length > 0) {
+      // Include the gems they are using on the item in case they dont want to overwrite them.
+      gemIDs.forEach((gemID) => {
+        item.ingameEquipped.gems.push(parseInt(gemID));
+      })
+      console.log(item.ingameEquipped);
+    }
     
     item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");

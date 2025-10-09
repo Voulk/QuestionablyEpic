@@ -21,6 +21,10 @@ export class Item {
   specialAllocations?: {[key: string]: number} = {};
   primGems?: number[];
   craftedStats?: number[]; // An optional array for crafted stats on the item. 
+  ingameEquipped?: {
+    gems: number[],
+    enchants: number[],
+  }
 
   // Used for items where we might have multiple variations at the same item level. 
   // Single option items like Unbound Changeling would end up as a 1 length array but
@@ -81,6 +85,7 @@ export class Item {
       const sockets = getItemProp(id, "sockets", gameType);
       this.classicSockets.sockets = sockets? sockets.gems : [];
       this.classicSockets.bonus = sockets ? sockets.bonus : {};
+      this.ingameEquipped = {gems: [], enchants: []};
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
 
