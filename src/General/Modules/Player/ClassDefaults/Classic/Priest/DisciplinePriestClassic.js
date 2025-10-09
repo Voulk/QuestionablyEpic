@@ -41,7 +41,7 @@ export const discPriestDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["crit", "spirit", "mastery", "haste", "hit"],
+    autoReforgeOrder: ["crit", "mastery", "spirit", "haste", "hit"],
 
 }
 
@@ -134,8 +134,8 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
     const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
 
-    //fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
-    fillerCPM = (fillerCPMMana + fillerCPMTime) / 2
+    fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    //fillerCPM = (fillerCPMMana + fillerCPMTime) / 2
     timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
 
     // Penances gained

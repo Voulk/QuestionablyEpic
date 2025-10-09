@@ -5,7 +5,7 @@
 import { getHealth } from "../Generic/RampBase";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMonkSpellDB";
-
+import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
@@ -160,6 +160,10 @@ export const getTalentedSpellDB = (spec, state) => {
     else if (spec.includes("Mistweaver Monk")) {
         spellDB = monkSpells;
         talents = monkTalents;
+    }
+    else if (spec.includes("Restoration Shaman")) {
+        spellDB = shamanSpells;
+        talents = shamanTalents;
     }
 
     const playerSpells = deepCopyFunction(spellDB);
