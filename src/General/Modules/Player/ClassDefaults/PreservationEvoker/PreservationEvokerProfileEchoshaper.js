@@ -74,7 +74,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
         {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.8, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
-        {spell: "Engulf", cpm: Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
+        {spell: "Engulf", cpm: Math.min(2, Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5) }, 
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     // Echo Breakdown
