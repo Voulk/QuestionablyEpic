@@ -1,7 +1,7 @@
 import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  getTimeUsed, updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
@@ -61,6 +61,14 @@ export function initializeShamanSet() {
       //{spell: "Judgement", cpm: 1, hpc: 0},
       //{spell: "Rest", cpm: 3.4, hastedCPM: true},
       {spell: "Healing Rain", efficiency: 0.95 },
+      {spell: "Healing Tide Totem", efficiency: 0.95 },
+      {spell: "Riptide", efficiency: 0.95 },
+      {spell: "Healing Stream Totem", efficiency: 0.90 },
+      {spell: "Unleash Life", efficiency: 0.90 },
+
+
+      // Dynamic filler spells
+      {spell: "Lightning Bolt", cpm: 0 },
   
     ]
   
@@ -73,7 +81,7 @@ export function initializeShamanSet() {
       if (spell.efficiency) spell.cpm = buildCPM(adjSpells, spell.spell, spell.efficiency)
       spell.castTime = shamanSpells[spell.spell][0].castTime;
       spell.hpc = 0;
-      spell.cost = spell.freeCast ? 0 : shamanSpells[spell.spell][0].cost * 18635 / 100;
+      spell.cost = spell.freeCast ? 0 : shamanSpells[spell.spell][0].cost * 60000 / 100;
       spell.healing = 0;
     })
     const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
@@ -90,6 +98,7 @@ export function initializeShamanSet() {
     const fightLength = 6;
     const talents = baseline.talents || shamanTalents;
     const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
+     const reportingData = {}
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -101,7 +110,28 @@ export function initializeShamanSet() {
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness, // We'll +1 this when calculating spells.
     }
 
-    console.log(castProfile);
+       // Calculate filler CPM
+    const manaPool = getManaPool(statProfile, "Restoration Shaman");
+    const regen = (getManaRegen(statProfile, "Restoration Shaman") + 
+                  getAdditionalManaEffects(statProfile, "Restoration Shaman").additionalMP5 +
+                  (statProfile.mp5 || 0)) * 12 * fightLength;
+
+    const totalManaPool = manaPool + regen;
+
+    const effectiveHealingRainCPM = getSpellEntry(castProfile, "Healing Rain").cpm / 2;
+    const unleashCPM = getSpellEntry(castProfile, "Unleash Life").cpm;
+    const unleashBreakdown = {"Healing Rain": 1}
+    reportingData.unleashBreakdown = unleashBreakdown;
+
+    // Calculate how much time we have left after our core spells above.
+    // We'll then spend that time casting a combo of Lightning Bolt for regen and Chain Heal / Greater Healing Wave etc with our filler.
+    // More haste = more time for packages. More spirit = a better ratio of healing to damage spells.
+    const timeSpent =  60 - getTimeUsed(castProfile, baseline.spellDB, statPercentages.haste);
+    reportingData.timeSpent = timeSpent;
+
+    const lbManaRegen = 6000 - getSpellEntry(castProfile, "Lightning Bolt").cost
+    reportingData.lbManaRegen = lbManaRegen;
+
 
     castProfile.forEach(spellProfile => {
         const fullSpell = baseline.spellDB[spellProfile.spell];
@@ -120,13 +150,13 @@ export function initializeShamanSet() {
         else {
           spellOutput = runClassicSpell(spellName, spell, statPercentages, "Restoration Shaman", userSettings);
         }
-        
 
-
-        if (spellProfile.bonus) {
-          spellOutput *= spellProfile.bonus; // Any bonuses we've ascribed in our profile.
-        }
+        let bonusMult = 1;
         
+        if (unleashBreakdown[spellName]) bonusMult *= 1+ (0.3 * unleashBreakdown[spellName]); // Unleash Life bonus
+        if (spellProfile.bonus) bonusMult *= spellProfile.bonus;
+        spellOutput *= bonusMult; // Any bonuses we've ascribed in our profile.
+
         const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 
 
@@ -142,6 +172,7 @@ export function initializeShamanSet() {
     })
 
     score += (60 * statProfile.hps || 0)
-
+    printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
+  console.log(reportingData);
     return {damage: 0, healing: score};
   }

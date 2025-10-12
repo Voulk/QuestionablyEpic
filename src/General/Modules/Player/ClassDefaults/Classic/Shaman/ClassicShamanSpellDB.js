@@ -43,6 +43,7 @@ export const CLASSICSHAMANSPELLDB = {
         castTime: 0,
         type: "classic periodic",
         buffType: "heal",
+        cooldownData: {cooldown: 180, charges: 1},
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
         buffDuration: 10,
         coeff: 0.484,
@@ -57,6 +58,7 @@ export const CLASSICSHAMANSPELLDB = {
         castTime: 0,
         type: "classic periodic",
         buffType: "heal",
+        cooldownData: {cooldown: 30, charges: 1},
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false, rolling: true}, 
         buffDuration: 15,
         coeff: 0.444,
@@ -96,6 +98,18 @@ export const CLASSICSHAMANSPELLDB = {
         flat: 1271,
         secondaries: ['crit'] 
     }],
+    "Unleash Life": [{ // 
+        spellData: {id: 61295, icon: "spell_nature_riptide", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 8.2, 
+        flat: 3154,
+        coeff: 0.286, 
+        expectedOverheal: 0.15,
+        cooldownData: {cooldown: 15, charges: 1},
+        secondaries: ['crit', 'mastery'],
+        cooldownData: {cooldown: 6, hasted: false}, 
+    }]
 
 }
 
