@@ -35,6 +35,9 @@ import {
 import SpellDataAccordion from "./SpellDataAccordion";
 import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
+import TopGearGemList from "./Panels/TopGearGemPanel";
+import ErrorBoundary from "./Panels/PanelErrorBoundary";
+
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -726,6 +729,12 @@ function displayReport(
               gameType={gameType}
             />
           </Grid>
+          {gameType === "Classic" ? (
+            <Grid item xs={12}>
+              <ErrorBoundary>
+                <TopGearGemList gemData={topSet.socketedGems} />
+              </ErrorBoundary>
+            </Grid>) : null}
           <Grid item xs={12}>
             {advice && advice.length > 0 ? (
               <ListedInformationBox

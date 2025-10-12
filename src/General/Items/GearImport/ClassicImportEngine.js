@@ -202,7 +202,7 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
       gemIDs.forEach((gemID) => {
         item.ingameEquipped.gems.push(parseInt(gemID));
       })
-      console.log(item.ingameEquipped);
+
     }
     
     item.suffix = suffix;
