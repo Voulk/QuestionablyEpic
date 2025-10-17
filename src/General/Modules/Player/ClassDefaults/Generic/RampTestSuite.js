@@ -60,7 +60,7 @@ export function runClassicStatSuite(profile, metric = "healing") {
         intellect: 17000,
         spirit: 2500,
         spellpower: 7200,
-        haste: 0,
+        haste: 2500,
         crit: 2500,
         mastery: 5500,
         stamina: 5000,

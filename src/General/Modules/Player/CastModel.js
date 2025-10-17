@@ -21,6 +21,7 @@ import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
 import { mistweaverMonkDefaults } from "./ClassDefaults/Classic/Monk/MistweaverMonkClassic";
+import { restoShamanDefaults } from "./ClassDefaults/Classic/Shaman/RestoShamanClassic";
 
 import { getRampData, genStatWeights } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestUtilities";
 
@@ -249,8 +250,8 @@ class CastModel {
     } 
     else if (spec === "Restoration Shaman Classic") {
       this.modelName = "Default";
-      spellList = {};
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.profile = restoShamanDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Mistweaver Monk Classic") {
       this.modelName = "Default";

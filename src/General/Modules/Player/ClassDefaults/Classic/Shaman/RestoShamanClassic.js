@@ -28,18 +28,18 @@ export const restoShamanDefaults = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 1.645,
-        crit: 0.785,
-        mastery: 0.398,
-        haste: 1.083,
-        spirit: 1.123,
-        mp5: 1.199,
-        hps: 0.7, // 
+        intellect: 1.11,
+        crit: 0.55,
+        mastery: 0.4,
+        haste: 0.541,
+        spirit: 0.37,
+        mp5: 0.473,
+        hps: 0.3, // 
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: [],
+    autoReforgeOrder: ["crit", "haste", "spirit", "mastery", "hit"],
 }
 
 
@@ -111,6 +111,7 @@ export function initializeShamanSet() {
       "Riptide": 5309,
     }
 
+
     // Conductivity Extensions. Advantages and disadvantages to doing this dynamically. Ultimately the fight is more likely to dictate
     // moving Healing Rain than your extensions alone.
     const conductivityExtensions = 2.5; 
@@ -119,7 +120,7 @@ export function initializeShamanSet() {
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
     const statPercentages = {
-      spellpower: statProfile.intellect + statProfile.spellpower,
+      spellpower: statProfile.intellect + statProfile.spellpower + 2873 * 1.1, // 
       crit: 1 + getCritPercentage(statProfile, "Restoration Shaman"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness, // We'll +1 this when calculating spells.
@@ -201,7 +202,7 @@ export function initializeShamanSet() {
     const packageCount = Math.floor(manaRemaining / packageCost);
     reportingData.packageCount = packageCount;
 
-
+    let healingEvents = 0;
     castProfile.forEach(spellProfile => {
         const fullSpell = baseline.spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
@@ -230,8 +231,6 @@ export function initializeShamanSet() {
         const effectiveCPM = spellProfile.cpm// spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 
 
-
-
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
         score += (spellOutput * effectiveCPM);
@@ -244,12 +243,30 @@ export function initializeShamanSet() {
         healingBreakdown["Ascendance"] = (healingBreakdown["Ascendance"] || 0) + (ascendanceHealing);
         score += ascendanceHealing;
 
+        // Earthliving
+        if (spell.type === "classic periodic" && spell.buffType === "heal") {
+            const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
+            let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+            const viableHealingEvents = (spell.targets || 1) * tickCount * effectiveCPM * (spell.specialCoeff || 0)
+            healingEvents += viableHealingEvents;
+            reportingData["Event Count_" + spellName] = viableHealingEvents;
+
+        }
+        else if (spell.type === "heal") healingEvents += (spell.targets || 1) * effectiveCPM * (spell.specialCoeff || 0);
+
+
+
         })
 
         // Filler mana
 
         
     })
+
+    const singleEarthliving = runClassicSpell("Earthliving Weapon", spellDB["Earthliving Weapon"][0], statPercentages, "Restoration Shaman", userSettings);
+    healingBreakdown["Earthliving"] = singleEarthliving * healingEvents * 0.2;
+    reportingData.healingEvents = healingEvents;
+    score += (singleEarthliving * healingEvents * 0.2);
 
     score += (60 * statProfile.hps || 0)
     printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
