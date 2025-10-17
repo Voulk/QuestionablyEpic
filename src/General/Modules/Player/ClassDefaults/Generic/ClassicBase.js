@@ -229,6 +229,16 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
     else if (spec.includes("Discipline Priest")) {
     }
 
+    else if (spec.includes("Restoration Shaman")) {
+        const manaTideMana = currentStats.spirit * 1.128 * 2 * (16/5) * 5 / 180; // Formula is left in its full form for clarity.
+        manaSources["Mana Tide Totem"] = manaTideMana;
+        additionalManaPerSecond += manaTideMana;
+
+        const waterShieldMana = 2138 / 5; // TODO
+        manaSources["Water Shield"] = waterShieldMana;
+        additionalManaPerSecond += waterShieldMana;
+    }
+
     if (playerRace === "Blood Elf") {
         // Arcane Torrent
         const arcaneTorrent = (baseMana * 0.02 / 120 * 5);

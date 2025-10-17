@@ -1,7 +1,7 @@
 import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  getTimeUsed, updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic, getSpellAttribute, getTimeUsed, updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
@@ -17,9 +17,9 @@ export const restoShamanDefaults = {
       spellpower: 7907,
       averageDamage: 5585,
       weaponSwingSpeed: 3.4,
-      haste: 3043,
+      haste: 5000,
       crit: 8000,
-      mastery: 9000,
+      mastery: 3000,
       stamina: 5000,
       mp5: 0,
       critMult: 2,
@@ -62,13 +62,15 @@ export function initializeShamanSet() {
       //{spell: "Rest", cpm: 3.4, hastedCPM: true},
       {spell: "Healing Rain", efficiency: 0.95 },
       {spell: "Healing Tide Totem", efficiency: 0.95 },
-      {spell: "Riptide", efficiency: 0.95 },
+      {spell: "Riptide", efficiency: 0.7 },
       {spell: "Healing Stream Totem", efficiency: 0.90 },
       {spell: "Unleash Life", efficiency: 0.90 },
 
 
-      // Dynamic filler spells
+      // Dynamic filler spells. We'll write these for each individual set.
       {spell: "Lightning Bolt", cpm: 0 },
+      {spell: "Chain Heal", cpm: 0 },
+      {spell: "Greater Healing Wave", cpm: 0 },
   
     ]
   
@@ -92,13 +94,26 @@ export function initializeShamanSet() {
   
   export function scoreShamanSet(baseline, statProfile, userSettings, tierSets = []) {
     let score = 1;
-    const masteryEffectiveness = 0.4; // Can easily be converted to a setting.
+    const masteryEffectiveness = 0.3; // Can easily be converted to a setting.
     const healingBreakdown = {};
     const castBreakdown = {};
     const fightLength = 6;
     const talents = baseline.talents || shamanTalents;
     const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
-     const reportingData = {}
+    const reportingData = {}
+    const spellDB = baseline.spellDB;
+    const resurgenceReturn = {
+      "Chain Heal": 2947,
+      "Greater Healing Wave": 8849,
+      "Healing Surge": 5309,
+      "Healing Wave": 8849,
+      "Unleash Life": 5309,
+      "Riptide": 5309,
+    }
+
+    // Conductivity Extensions. Advantages and disadvantages to doing this dynamically. Ultimately the fight is more likely to dictate
+    // moving Healing Rain than your extensions alone.
+    const conductivityExtensions = 2.5; 
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -110,6 +125,8 @@ export function initializeShamanSet() {
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness, // We'll +1 this when calculating spells.
     }
 
+    getSpellEntry(castProfile, "Healing Tide Totem").hasteBonus = 0.3;
+
        // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Shaman");
     const regen = (getManaRegen(statProfile, "Restoration Shaman") + 
@@ -117,9 +134,27 @@ export function initializeShamanSet() {
                   (statProfile.mp5 || 0)) * 12 * fightLength;
 
     const totalManaPool = manaPool + regen;
+    reportingData.totalManaPool = totalManaPool; // Doesn't include crit regen.
+
+    reportingData.prc = statPercentages;
+
+    // Mod Mana Costs (Resurgence)
+    Object.keys(resurgenceReturn).forEach(spellName => {
+      const spell = getSpellEntry(castProfile, spellName);
+      if (spell) {
+        let reduction = (statPercentages.crit - 1) * resurgenceReturn[spellName];
+        if (spellName === "Chain Heal") reduction *= 3; 
+        spell.cost -= reduction;
+        console.log(spellName + " cost reduced by " + reduction + " to " + spell.cost + " (original price: " + (spell.cost + reduction) + ")");
+      }
+    })
 
     const effectiveHealingRainCPM = getSpellEntry(castProfile, "Healing Rain").cpm / 2;
     const unleashCPM = getSpellEntry(castProfile, "Unleash Life").cpm;
+
+    getSpellEntry(castProfile, "Healing Rain").cpm = effectiveHealingRainCPM;
+    spellDB["Healing Rain"][0].buffDuration += conductivityExtensions * 4; // Extend the duration of healing rain.
+
     const unleashBreakdown = {"Healing Rain": 1}
     reportingData.unleashBreakdown = unleashBreakdown;
 
@@ -131,6 +166,40 @@ export function initializeShamanSet() {
 
     const lbManaRegen = 6000 - getSpellEntry(castProfile, "Lightning Bolt").cost
     reportingData.lbManaRegen = lbManaRegen;
+
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+    let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
+
+    // First, spend any excess mana.
+    const fillerRatio = {
+      "Chain Heal": 0.75,
+      "Greater Healing Wave": 0.25
+    }
+    const packageCost = (getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])
+    const pureHealingPackages = manaRemaining / packageCost;
+    // Next, spend the rest of the fights time available on a net 0 package that combines lightning bolt with Chain Heal / GHW.
+
+    // Resurgence
+
+    getSpellEntry(castProfile, "Chain Heal").cpm += pureHealingPackages * fillerRatio["Chain Heal"];
+    getSpellEntry(castProfile, "Greater Healing Wave").cpm = pureHealingPackages * fillerRatio["Greater Healing Wave"];
+    const timeRemaining = 60 - getTimeUsed(castProfile, spellDB, statPercentages.haste);
+    reportingData.timeRemaining = timeRemaining;
+
+    reportingData.chainHealCost = getSpellEntry(castProfile, "Chain Heal").cost;
+    const lightningBoltsPerChainHeal = getSpellEntry(castProfile, "Chain Heal").cost / lbManaRegen;
+    const dpsPackageLength = (lightningBoltsPerChainHeal * getSpellAttribute(spellDB["Lightning Bolt"], "castTime") + getSpellAttribute(spellDB["Chain Heal"], "castTime")) / statPercentages.haste;
+
+    getSpellEntry(castProfile, "Chain Heal").cpm += timeRemaining / dpsPackageLength;
+    getSpellEntry(castProfile, "Lightning Bolt").cpm += timeRemaining / dpsPackageLength * lightningBoltsPerChainHeal;
+
+    reportingData.dpsPackageLength = dpsPackageLength;
+    reportingData.lightningBoltsPerChainHeal = lightningBoltsPerChainHeal;
+    reportingData.costPerMinute = costPerMinute;
+    reportingData.manaRemaining = manaRemaining;
+
+    const packageCount = Math.floor(manaRemaining / packageCost);
+    reportingData.packageCount = packageCount;
 
 
     castProfile.forEach(spellProfile => {
@@ -156,13 +225,24 @@ export function initializeShamanSet() {
         if (unleashBreakdown[spellName]) bonusMult *= 1+ (0.3 * unleashBreakdown[spellName]); // Unleash Life bonus
         if (spellProfile.bonus) bonusMult *= spellProfile.bonus;
         spellOutput *= bonusMult; // Any bonuses we've ascribed in our profile.
+        if (bonusMult > 1) reportingData[spellName + " Bonus Mult"] = bonusMult;
 
-        const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+        const effectiveCPM = spellProfile.cpm// spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+
+
 
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
         healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
         score += (spellOutput * effectiveCPM);
+
+        // Ascendance
+        // Here we're using a flat Ascendance model. It's fairly likely you'd actually combine with Elemental Mastery.
+        const ascendanceUptime = 15 / 180; 
+        const ascendanceOverheal = 0.2;
+        const ascendanceHealing = spellOutput * ascendanceUptime * effectiveCPM * (1 - ascendanceOverheal);
+        healingBreakdown["Ascendance"] = (healingBreakdown["Ascendance"] || 0) + (ascendanceHealing);
+        score += ascendanceHealing;
 
         })
 
@@ -173,6 +253,6 @@ export function initializeShamanSet() {
 
     score += (60 * statProfile.hps || 0)
     printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
-  console.log(reportingData);
+    console.log(reportingData);
     return {damage: 0, healing: score};
   }
