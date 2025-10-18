@@ -128,6 +128,13 @@ export function initializeShamanSet() {
 
     getSpellEntry(castProfile, "Healing Tide Totem").hasteBonus = 0.3;
 
+    if (tierSets.includes("Shaman T14-2")) {
+      getSpellEntry(castProfile, "Greater Healing Wave").cost *= 0.9; // T14-2 - GHW cost reduction
+    }
+    if (tierSets.includes("Shaman T15-2")) {
+      getSpellEntry(castProfile, "Healing Stream Totem").bonus = 1.25; // T15-2 - HST bonus
+    }
+
        // Calculate filler CPM
     const manaPool = getManaPool(statProfile, "Restoration Shaman");
     const regen = (getManaRegen(statProfile, "Restoration Shaman") + 
@@ -139,7 +146,7 @@ export function initializeShamanSet() {
 
     reportingData.prc = statPercentages;
 
-    console.log(statPercentages);
+
 
     // Mod Mana Costs (Resurgence)
     Object.keys(resurgenceReturn).forEach(spellName => {
@@ -206,7 +213,7 @@ export function initializeShamanSet() {
 
     let healingEvents = 0;
     castProfile.forEach(spellProfile => {
-        const fullSpell = baseline.spellDB[spellProfile.spell];
+        const fullSpell = spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
 
         fullSpell.forEach(spell => {
