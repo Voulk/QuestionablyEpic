@@ -139,6 +139,8 @@ export function initializeShamanSet() {
 
     reportingData.prc = statPercentages;
 
+    console.log(statPercentages);
+
     // Mod Mana Costs (Resurgence)
     Object.keys(resurgenceReturn).forEach(spellName => {
       const spell = getSpellEntry(castProfile, spellName);
@@ -146,7 +148,7 @@ export function initializeShamanSet() {
         let reduction = (statPercentages.crit - 1) * resurgenceReturn[spellName];
         if (spellName === "Chain Heal") reduction *= 3; 
         spell.cost -= reduction;
-        console.log(spellName + " cost reduced by " + reduction + " to " + spell.cost + " (original price: " + (spell.cost + reduction) + ")");
+        //console.log(spellName + " cost reduced by " + reduction + " to " + spell.cost + " (original price: " + (spell.cost + reduction) + ")");
       }
     })
 
@@ -154,7 +156,7 @@ export function initializeShamanSet() {
     const unleashCPM = getSpellEntry(castProfile, "Unleash Life").cpm;
 
     getSpellEntry(castProfile, "Healing Rain").cpm = effectiveHealingRainCPM;
-    spellDB["Healing Rain"][0].buffDuration += conductivityExtensions * 4; // Extend the duration of healing rain.
+    spellDB["Healing Rain"][0].buffDuration = 10 + conductivityExtensions * 4; // Extend the duration of healing rain.
 
     const unleashBreakdown = {"Healing Rain": 1}
     reportingData.unleashBreakdown = unleashBreakdown;
@@ -269,7 +271,7 @@ export function initializeShamanSet() {
     score += (singleEarthliving * healingEvents * 0.2);
 
     score += (60 * statProfile.hps || 0)
-    printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
-    console.log(reportingData);
+    //printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
+    //console.log(reportingData);
     return {damage: 0, healing: score};
   }
