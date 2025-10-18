@@ -59,7 +59,7 @@ export function createPlayerChars(): PlayerChars {
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "").replace("Monk", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
 
-          if (spec === "Holy Paladin Classic" || spec === "Restoration Shaman Classic") newChar.enabled = false;
+          //if (spec === "Holy Paladin Classic" || spec === "Restoration Shaman Classic") newChar.enabled = false;
           charArray.push(newChar);
 
           

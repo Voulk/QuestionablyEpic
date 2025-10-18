@@ -47,7 +47,7 @@ export class Player {
           "Holy Priest Classic": "Pandaren",
           "Discipline Priest Classic": "Worgen",
           "Restoration Druid Classic": "Troll",
-          "Restoration Shaman Classic": "Troll",
+          "Restoration Shaman Classic": "Pandaren",
           "Holy Paladin Classic": "Blood Elf",
         }
         this.race = defaultRaces[this.spec] || "Pandaren";
