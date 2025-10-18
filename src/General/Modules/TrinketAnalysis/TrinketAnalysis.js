@@ -21,6 +21,7 @@ import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
+import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -241,6 +242,21 @@ export default function TrinketAnalysis(props) {
     setLevelCap(newItemLevel);
   }
 
+  const getReforgeInstructions = (player, stats) => { 
+    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    const trinketSecondary = Object.keys(stats).find(key => stats[key] !== 0);
+
+    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+          const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
+
+          if (trinketSecondaryPos !== 0) {
+            // Not best secondary, reforge.
+            return reforgeIDs[`Reforged: ${trinketSecondary} -> ${playerStatPriorityList[0]}`] || 0;
+          }
+    }
+    return 0;
+  }
+
   const handleSource = (event, newSources) => {
     if (newSources.length) {
       setSources(newSources);
@@ -274,6 +290,8 @@ export default function TrinketAnalysis(props) {
   for (var i = 0; i < finalDB.length; i++) {
     const trinket = finalDB[i];
     const trinketName = getItemProp(trinket.id, "name", gameType);
+    const trinketStats = getItemProp(trinket.id, "stats", gameType);
+
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
@@ -308,6 +326,12 @@ export default function TrinketAnalysis(props) {
         trinketAtLevels[difficulty + "ilvl"] = trinketLevel;
         trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
         trinketAtLevels.highestLevel = Math.max(trinketAtLevels.highestLevel, trinketLevel);
+        if (trinketStats.intellect === 0) {
+          // Trigger Reforge
+          const reforge = getReforgeInstructions(props.player, trinketStats);
+          if (reforge) trinketAtLevels.reforgeID = reforge;
+          
+        }
         activeTrinkets.push(trinketAtLevels);
       }
       

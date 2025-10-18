@@ -332,6 +332,24 @@ export const raidTrinketData: Effect[] = [
       return getGenericStatEffect(data[0], itemLevel);
     }
   },
+  {
+    name: "Light of the Cosmos",
+    effects: [
+      { 
+        value: {476: 2866, 489: 3236, 502: 3653}, 
+        coefficient: 1.48500001431,
+        ppm: getEffectPPM(0.15, 55, 1.25),
+        stat: "intellect",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.intellect! *= dpsPeriodicMult(player.spec); //
+
+      return bonus_stats;
+    }
+  },
         {
     name: "Empty Fruit Barrel",
     effects: [
