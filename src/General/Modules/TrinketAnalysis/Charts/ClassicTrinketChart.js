@@ -107,8 +107,11 @@ export default class BCChart extends PureComponent {
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
     /* ----------------------- Y-Axis Label Customization ----------------------- */
-    const CustomizedYAxisTick = (props) => {
-      const { x, y, payload } = props;
+    const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
+      const row = payload?.payload ?? data?.[payload.index];
+      const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
+      console.log(row);
+
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -121,7 +124,7 @@ export default class BCChart extends PureComponent {
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)) : ( truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32))}
             </text>
-            <WowheadTooltip type="item" id={payload.value} domain={"mop-classic"}>
+            <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} domain={"mop-classic"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
@@ -190,7 +193,12 @@ export default class BCChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 40 : 40} dataKey="name" stroke="#f5f5f5" interval={0} 
+              tick={<CustomizedYAxisTick
+                  data={data}
+                  currentLanguage={currentLanguage}
+                  isMobile={this.state.width < mobileWidthThreshold}
+          />} />
           <Bar dataKey={"Celestial"} fill={"#cc4dbf"} stackId="a" />   
           <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
           <Bar dataKey={"Heroic"} fill={"#33a02c"} stackId="a" />   

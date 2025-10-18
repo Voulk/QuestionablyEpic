@@ -136,7 +136,7 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 const getClassicTrinketScore = (id, player, itemLevel) => {
   //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-
+  //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -277,6 +277,7 @@ export default function TrinketAnalysis(props) {
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
+      highestLevel: 0,
     };
 
     if (gameType === "Classic") {
@@ -300,11 +301,13 @@ export default function TrinketAnalysis(props) {
         existingTrinket[difficulty] = trinketScore;
         existingTrinket[difficulty + "ilvl"] = trinketLevel;
         existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        existingTrinket.highestLevel = Math.max(existingTrinket.highestLevel, trinketLevel);
       }
       else {
         trinketAtLevels[difficulty] = trinketScore;
         trinketAtLevels[difficulty + "ilvl"] = trinketLevel;
         trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        trinketAtLevels.highestLevel = Math.max(trinketAtLevels.highestLevel, trinketLevel);
         activeTrinkets.push(trinketAtLevels);
       }
       

@@ -32,7 +32,7 @@ export const restoShamanDefaults = {
         crit: 0.55,
         mastery: 0.4,
         haste: 0.541,
-        spirit: 0.37,
+        spirit: 0.4,
         mp5: 0.473,
         hps: 0.3, // 
     },
