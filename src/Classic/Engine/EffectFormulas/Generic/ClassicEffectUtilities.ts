@@ -35,20 +35,20 @@ export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number)
 export const getGenericFlatProc = (effect: ClassicEffectData, itemLevel: number, spec: string, setStats: any = {}): number => {
 
     let efficiency = 1;
-    if ('efficiency' in effect) efficiency = effect.efficiency;
-    let value = effect.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0] * efficiency;
+    
+    let value = effect.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0];
     let mult = 1 * getGenericHealingIncrease(spec);
   
     if ('targets' in effect) mult *= effect.targets;
     if ('ticks' in effect) mult *= effect.ticks;
+    if ('efficiency' in effect) mult *= effect.efficiency;
     if ('secondaries' in effect) {
-      if (effect.secondaries?.includes("crit")) mult *= (1 + getCritPercentage(setStats.critRating || 0, spec.replace(" Classic", "")));
+      if (effect.secondaries?.includes("crit")) mult *= (1 + getCritPercentage(setStats || 0, spec.replace(" Classic", "")));
       if (effect.secondaries?.includes("haste")) mult *= getHaste(setStats, spec.replace(" Classic", ""));
     }
     if ('ppm' in effect) mult *= (effect.ppm/* * 1.13*/);
     //if ('holyMasteryFlag' in effect) mult *= addSpecMastery(spec, setStats);
     if ('spScaling' in effect)  value += (effect.spScaling[itemLevel] * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05));
-  
     if ('cooldown' in effect) return value * mult / effect.cooldown;
     else return value * mult / 60;
 }

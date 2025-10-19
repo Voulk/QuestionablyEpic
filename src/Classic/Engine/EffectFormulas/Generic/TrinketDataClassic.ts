@@ -99,6 +99,7 @@ export const raidTrinketData: Effect[] = [
       { 
         value: {0: 0},
         coefficient: 18.90800094604,
+        efficiency: 0.94,
         ppm: 5.78 / 6,
         stat: "hps",
         secondaries: ['haste', 'crit'],
