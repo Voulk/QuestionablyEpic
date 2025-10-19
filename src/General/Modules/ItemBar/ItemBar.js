@@ -332,10 +332,10 @@ export default function ItemBar(props) {
     { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
     { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
-    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
-    { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
-    { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
-    { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
+    { label: "T14 Normal", value: -1, gameType: "Classic", source: "T14", icon: "msvIcon" },
+    { label: "T14 Heroic", value: -1, gameType: "Classic", source: "T14+", icon: "terraceIcon" },
+    { label: "Throne Normal", value: -1, gameType: "Classic", source: "T15", icon: "conquestIcon" },
+    { label: "Throne Heroic", value: -1, gameType: "Classic", source: "T15+", icon: "conquestIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
     { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
