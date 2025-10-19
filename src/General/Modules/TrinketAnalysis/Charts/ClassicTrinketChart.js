@@ -47,7 +47,7 @@ const StyledTooltip = styled(({ className, ...props }) => (
 }));
 
 const truncateString = (str, num) => {
-  if (str.length <= num || window.innerWidth >= 1025) {
+  if (str.length <= num/* || window.innerWidth >= 1025*/) {
     return str;
   }
   return str.slice(0, num) + "...";
@@ -110,7 +110,6 @@ export default class BCChart extends PureComponent {
     const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
       const row = payload?.payload ?? data?.[payload.index];
       const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
-      console.log(row);
 
       return (
         <g transform={`translate(${x},${y})`}>
@@ -122,7 +121,7 @@ export default class BCChart extends PureComponent {
             flexWrap: 'wrap',
         }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)) : ( truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32))}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)) : ( truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 30))}
             </text>
             <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} forg={row.reforgeID || 0} domain={"mop-classic"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />

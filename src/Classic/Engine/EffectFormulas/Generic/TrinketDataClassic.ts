@@ -1,7 +1,8 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
 
-import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue } from "./ClassicEffectUtilities";
+import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 
 
 /* 
@@ -97,15 +98,16 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
       { 
         value: {0: 0},
-        coefficient: 0,
-        ppm: 5.78,
+        coefficient: 18.90800094604,
+        ppm: 5.78 / 6,
         stat: "hps",
-        duration: 4,
+        secondaries: ['haste', 'crit'],
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -183,12 +185,13 @@ export const raidTrinketData: Effect[] = [
     }
   },
   {
-    name: "Horridon's Last Grasp", 
+    name: "Horridon's Last Gasp", 
     effects: [ // Chance of X mana every 2s for 10s.
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 0.55900001526,
         ppm: 0.96,
+        secondaries: ['haste'],
         stat: "MP5",
         duration: 10,
       },
@@ -196,6 +199,9 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      const manaRestore = processedValue(data[0], itemLevel);
+      const manaPerProc = manaRestore * 5;
+      bonus_stats.mp5 = manaPerProc * data[0].ppm! * getHaste(additionalData.setStats, player.spec.replace(" Classic", "")) / 12;
 
       return bonus_stats;
     }
@@ -718,8 +724,7 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      //console.log(getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats));
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -743,9 +748,9 @@ export const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //Effect(data[0], itemLevel, player, additionalData.setStats);
       
-     // return bonus_stats;
+      return bonus_stats;
     }
   },
   {

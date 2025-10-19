@@ -1,6 +1,7 @@
 
 
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { randPropPointsClassic } from "Retail/Engine/RandPropPointsBylevelClassic";
 
 
@@ -31,18 +32,25 @@ export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number)
 }
   
 // A generic HPS or DPS effect.
-export const getGenericThroughputEffect = (data: ClassicEffectData, itemLevel: number, player: Player, setStats: any = {}): Stats => {
-    // Most classic trinkets just use a hard coded value but there are rare exceptions that also have spellpower scaling.
-    // Maybe we replace this by calling applyBuffs.
-    const trinketValue = data.value[itemLevel] + (data.spScaling ? (data.spScaling[itemLevel] * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05)) : 0); // TODO: Inner Fire
+export const getGenericFlatProc = (effect: ClassicEffectData, itemLevel: number, spec: string, setStats: any = {}): number => {
 
-    let trinketThroughput = trinketValue * data.ppm / 60 * data.efficiency * getGenericHealingIncrease(player.spec) * (1 + getCritPercentage(setStats, player.spec.replace(" Classic", "")));
-    if (data.targets) trinketThroughput *= data.targets;
-    
-    const statType = data.stat;
-    const bonus_stats: Stats = {};
-    bonus_stats[statType] = trinketThroughput;
-    return bonus_stats;
+    let efficiency = 1;
+    if ('efficiency' in effect) efficiency = effect.efficiency;
+    let value = effect.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0] * efficiency;
+    let mult = 1 * getGenericHealingIncrease(spec);
+  
+    if ('targets' in effect) mult *= effect.targets;
+    if ('ticks' in effect) mult *= effect.ticks;
+    if ('secondaries' in effect) {
+      if (effect.secondaries?.includes("crit")) mult *= (1 + getCritPercentage(setStats.critRating || 0, spec.replace(" Classic", "")));
+      if (effect.secondaries?.includes("haste")) mult *= getHaste(setStats, spec.replace(" Classic", ""));
+    }
+    if ('ppm' in effect) mult *= (effect.ppm/* * 1.13*/);
+    //if ('holyMasteryFlag' in effect) mult *= addSpecMastery(spec, setStats);
+    if ('spScaling' in effect)  value += (effect.spScaling[itemLevel] * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05));
+  
+    if ('cooldown' in effect) return value * mult / effect.cooldown;
+    else return value * mult / 60;
 }
   
 // Calculates an effects expected ppm given its ICD, proc chance, and our GCD or cast time.
