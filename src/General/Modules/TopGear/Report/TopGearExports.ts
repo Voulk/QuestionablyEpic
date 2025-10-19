@@ -145,8 +145,8 @@ const wowheadCodes = {
   827: '[icon name=achievement_boss_jinrokhthebreaker][/icon][npc=69465] [i](Throne of Thunder)[/i]', // Jin'rokh
   828: '[icon name=achievement_boss_ji-kun][/icon][npc=69712] [i](Throne of Thunder)[/i]', // Ji-kun
   829: '[icon name=achievement_boss_mogufemales][/icon][npc=68905] [i](Twin Empyreans, Throne of Thunder)[/i]', // Twin Empyreans
-  831: '[icon name=achievement_boss_leishen][/icon][npc=68397] [i](Throne of Thunder)[/i]', // Lei Shen
-  832: '[icon name=achievement_boss_ra_den][/icon][npc=69473] [i](Throne of Thunder)[/i]', // Ra-den
+  832: '[icon name=achievement_boss_leishen][/icon][npc=68397] [i](Throne of Thunder)[/i]', // Lei Shen
+  831: '[icon name=achievement_boss_ra_den][/icon][npc=69473] [i](Throne of Thunder)[/i]', // Ra-den
 
   // World Bosses (Pandaria)
   725: '[icon name=inv_mushanbeastmount][/icon][npc=62346] [i](World Boss)[/i]', // Saylis's Warband (Galleon)
