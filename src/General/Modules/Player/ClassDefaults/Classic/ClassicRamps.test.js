@@ -79,7 +79,7 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Restoration Shaman");
+        const data = getData("Restoration Druid");
 
         const spec = data.spec
         const testSuite = "Stat" //"TopGearProfile" //"Stat" //;

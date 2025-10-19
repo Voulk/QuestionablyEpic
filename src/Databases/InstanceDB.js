@@ -204,7 +204,7 @@ const classicInstanceDB = {
   },
   362: {
     name: "Throne of Thunder",
-    bossOrder: [683, 742, 729, 709],
+    bossOrder: [816, 817, 818, 819, 820, 821, 824, 825, 827, 828, 829, 831, 832],
     bosses: {
       816: "Council of Elders",
       817: "Iron Qon",

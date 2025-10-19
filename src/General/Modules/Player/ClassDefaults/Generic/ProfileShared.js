@@ -128,7 +128,7 @@ const getClassicRaceBonuses = (statPerc, race) => {
 
 
 // Classic
-export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
+export const runClassicSpell = (spellName, spell, statPercentages, spec, settings, flags = {}) => {
 
     const genericMult = 1;
     let targetCount = 1;
@@ -181,6 +181,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
       if (spell.tickData.tickOnCast) tickCount += 1;
+      if (flags["RampingHoTEffect"]) spellOutput = spellOutput * (1 + flags["RampingHoTEffect"] / 2 * (tickCount + 1));
       
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.

@@ -1063,6 +1063,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
       else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
       else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4

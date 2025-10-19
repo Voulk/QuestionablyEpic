@@ -332,6 +332,7 @@ export default function ItemBar(props) {
     { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
     { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
+    { label: "World Bosses", value: -1, gameType: "Classic", source: "World Bosses", icon: "conquestIcon" },
     { label: "T14 Normal", value: -1, gameType: "Classic", source: "T14", icon: "msvIcon" },
     { label: "T14 Heroic", value: -1, gameType: "Classic", source: "T14+", icon: "terraceIcon" },
     { label: "Throne Normal", value: -1, gameType: "Classic", source: "T15", icon: "conquestIcon" },
