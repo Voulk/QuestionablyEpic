@@ -48,7 +48,7 @@ export const getGenericFlatProc = (effect: ClassicEffectData, itemLevel: number,
     }
     if ('ppm' in effect) mult *= (effect.ppm/* * 1.13*/);
     //if ('holyMasteryFlag' in effect) mult *= addSpecMastery(spec, setStats);
-    if ('spScaling' in effect)  value += (effect.spScaling[itemLevel] * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05));
+    if ('spScaling' in effect)  value += (effect.spScaling * (setStats.spellpower * 1.1 + setStats.intellect * 1.05 * 1.05));
     if ('cooldown' in effect) return value * mult / effect.cooldown;
     else return value * mult / 60;
 }
@@ -81,11 +81,6 @@ export const getGenericHealingIncrease = (spec: string): number => {
     return 1;
   }
 
-  export const getDPSWeighting = (spec: string): number => {
-    const specMod = {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0};
-    
-    return specMod[spec];
-  }
   
 export const getGenericOnUseTrinket = (data: ClassicEffectData, itemLevel: number): Stats => {
     const bonus_stats: Stats = {};

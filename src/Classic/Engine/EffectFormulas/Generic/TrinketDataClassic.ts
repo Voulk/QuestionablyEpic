@@ -154,33 +154,36 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Hasted rppm. Stacks to 6 then can be used to shield a target.
       { 
         value: {0: 0},
-        coefficient: 0,
-        ppm: 1.64,
+        coefficient: 3.15199995041,
+        ppm: 2.89,
         stat: "HPS",
-        duration: 10,
+        secondaries: ['haste'],
+        efficiency: 0.97,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
   },
   {
     name: "Inscribed Bag of Hydra-Spawn", 
-    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted
+    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted. Need to check logs.
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 9.45600032806,
         ppm: 1.64,
         stat: "HPS",
-        duration: 10,
+        secondaries: ['haste'],
+        efficiency: 0.98,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -203,6 +206,24 @@ export const raidTrinketData: Effect[] = [
       const manaRestore = processedValue(data[0], itemLevel);
       const manaPerProc = manaRestore * 5;
       bonus_stats.mp5 = manaPerProc * data[0].ppm! * getHaste(additionalData.setStats, player.spec.replace(" Classic", "")) / 12;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Soothing Talisman of the Shado-Pan Assault",
+    effects: [
+      { // 
+        value: {463: 0}, 
+        coefficient: 10.05900001526,
+        cooldown: 180,
+        stat: "mp5",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mp5 = processedValue(data[0], itemLevel) / data[0].cooldown! * 5;
 
       return bonus_stats;
     }
