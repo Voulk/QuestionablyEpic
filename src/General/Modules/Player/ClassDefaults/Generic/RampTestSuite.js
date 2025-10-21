@@ -57,15 +57,16 @@ export function runClassicStatSuite(profile, metric = "healing") {
     const fightLength = 420;
 
     const activeStats = {
-        intellect: 10267,
-        spirit: 2000,
-        spellpower: 5151,
-        haste: 1100,
-        crit: 1100,
-        mastery: 1100,
+        intellect: 17000,
+        spirit: 2500,
+        spellpower: 7200,
+        haste: 2500,
+        crit: 2500,
+        mastery: 5500,
         stamina: 5000,
         weaponDamage: 821,
         weaponSwingSpeed: 2.6,
+        isTwohanded: false,
         mp5: 0,
         critMult: 2,
         hps: 0,

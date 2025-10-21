@@ -1,6 +1,31 @@
-import { convertPPMToUptime, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 export const effectData = [
+  { 
+    name: "Band of the Shattered Soul",
+    effects: [
+      {
+        coefficient: 39.03619, 
+        table: -9,
+        ppm: 2,
+        efficiency: 0.95, // Converts to absorb so high efficiency.
+        secondaries: ['haste', 'versatility'], 
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      //console.log(processedValue(data[0], 571));
+
+      const efficiency = Math.min(100, getSetting(additionalData.settings, "shatteredSoulUsage")) / 100;
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * efficiency;
+
+      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
+        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
+      }
+
+      return bonus_stats;
+    },
+  },
     { 
     name: "Voidglass Shards", // Shards of the Void
     effects: [
@@ -8,15 +33,19 @@ export const effectData = [
         coefficient: 55.44585, 
         table: -9,
         ppm: 2.5,
+        efficiency: 0.85, // High efficiency since it's an absorb. but you can lose some procs to self-healing or damage.
         secondaries: ['haste', 'versatility'], // Check Crit
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
+      let mult = 1;
+      if (additionalData.setVariables && additionalData.setVariables.hasVoidcore) { 
+        mult *= (3 * 0.6 + 0.4);
+      }
 
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)
-      console.log("Voidglas S: " + bonus_stats.hps);
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * mult;
 
       return bonus_stats;
     },
@@ -37,7 +66,10 @@ export const effectData = [
       //console.log(processedValue(data[0], 571));
 
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player); 
-      console.log("Reshii Wraps: " + bonus_stats.hps);
+
+      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
+        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
+      }
 
       return bonus_stats;
     },
@@ -97,17 +129,23 @@ export const effectData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      const statsPerStack = processedValue(data[0], itemLevel);
 
-      const totalPersonalStats = statsPerStack * data[0].averageStacks;
+      const includeJastorEffect = getSetting(additionalData.settings, "includeJastorEffect");
 
-      bonus_stats.versatility = totalPersonalStats / 4;
-      bonus_stats.haste = totalPersonalStats / 4;
-      bonus_stats.crit = totalPersonalStats / 4;
-      bonus_stats.mastery = totalPersonalStats / 4;
+      if (includeJastorEffect) {
+        const statsPerStack = processedValue(data[0], itemLevel);
 
-      bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
-      
+        const totalPersonalStats = statsPerStack * data[0].averageStacks;
+
+        bonus_stats.versatility = totalPersonalStats / 4;
+        bonus_stats.haste = totalPersonalStats / 4;
+        bonus_stats.crit = totalPersonalStats / 4;
+        bonus_stats.mastery = totalPersonalStats / 4;
+
+        bonus_stats.allyStats = statsPerStack * data[0].averageGifted;
+      }
+
+    
       return bonus_stats;
     }
   },

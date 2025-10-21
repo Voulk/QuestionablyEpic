@@ -56,12 +56,13 @@ const exportSlotIDs = {
 const enchantIDs = {
     "Jade Spirit": 104427,
     "Major Intellect": 104445, // Offhand
-    "Powerful Pearlescent Spellthread": 122393, // Legs
+    "Greater Pearlescent Spellthread": 122393, // Legs
+	"Greater Cerulean Spellthread": 122392, // Legs
     "Superior Mastery": 104420, // Hands
     "Greater Haste": 104416, // Hands
     "Superior Intellect": 104403, // Back
     "Glorious Stats": 104335, // Chest
-    "Draconic Embossment": 124552, // Wrist 124552
+    "Fur Lining": 124552, // Wrist 124552
     "Super Intellect": 104389, // Wrist
     "Pandaren's Step": 104414, // Feet
     "Greater Crane Wing Inscription": 121195, // Shoulder
@@ -72,7 +73,7 @@ const specIndexes = {
     "Holy Paladin Classic": 0,
     "Discipline Priest Classic": 0,
     "Holy Priest Classic": 1,
-    /*"Restoration Shaman Classic": 4,*/
+    "Restoration Shaman Classic": 4,
     "Mistweaver Monk Classic": 1
 }
 

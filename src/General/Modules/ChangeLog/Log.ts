@@ -19,6 +19,139 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.2 / 5.5.1",
+    update: 17,
+    date: "September 29",
+    changes: [ 
+      "Mists of Pandaria: PVP gear is no longer upgradable.",
+      "Mists of Pandaria: The Brewfest trinkets on the chart are no longer upgraded.",
+    ]},
+    {
+    version: "11.2 / 5.5.1",
+    update: 16,
+    date: "September 25",
+    changes: [ 
+      "Mists of Pandaria: Added Dominance Offensive Trinkets.",
+      "Mists of Pandaria: Fixed a bug where Hit rating wasn't a Reforge candidate.",
+    ]},
+  {
+    version: "11.2 / 5.5.1",
+    update: 15,
+    date: "September 22",
+    changes: [ 
+      "Mists of Pandaria: Added full support for the Item Upgrade System.",
+      "MoP Trinket Chart: Items now appear at their maximum upgraded level.",
+      "New Checkbox: Import items at max level.",
+      "Added the Brewfest trinkets to the trinket table.",
+      "Fixed a bug with First Class Healing Distributors proc rate. Its rating rises slightly.",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 14,
+    date: "September 18",
+    changes: [ 
+      "Mists of Pandaria: Fixed a bug where certain socket bonuses weren't scored properly."
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 13,
+    date: "September 8",
+    changes: [ 
+      "Bugfix: Reshii Wraps Versatility version will now clone correctly."
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 12,
+    date: "September 3",
+    changes: [ 
+      "Upgrade Finder reports now include the time the report was generated in addition to the date.",
+      "Added all other Timewalking trinkets to the chart and fixed Alchemy Stones filter.",
+      "Bugfix: Reshii Wraps clone functionality now correctly adds secondary stats.",
+      "Reworked how diminishing returns are calculated on stepped stat effects.",
+      "Improved some of the qualitative advice around the app.",
+      "Classic: Added the Celestial version of Jade Magistrate Figurine.",
+      "Classic: Renamed LFR to Celestial",
+      "Increased SimC length import limit. Go nuts.",
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 11,
+    date: "August 25",
+    changes: [ 
+      "New Setting: Astral Antenna orb pick up rate.",
+      "Fixed a bug where Upgrade Finder values could be lower than in reality. Note that this doesn't change which items have been upgrades, it'll just push up how big an upgrade they are by 20% or so.",
+      "The Vault information box will now automatically appear if you have a vault item in the selection.",
+      "Manually added embellishments in-app will now show on item tooltips. Fixed a bug where Top Gear could pick more than two added this way.",
+      "Made some changes to the Evoker profile - particularly around Temporal Anomaly usage.",
+      "Added weekly trinket tuning."
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 10,
+    date: "August 21",
+    changes: [ 
+      "Mists of Pandaria Paladin is now live!",
+      "Some minor updates to Resto Shaman gems.",
+      "Revamped weapon enchant code."
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 9,
+    date: "August 15",
+    changes: [ 
+      "Random stat BoEs now have stat selection in the item bar.",
+      "Bugfix: QE Live will no longer try and wear two different reforges of the same Steaming Seal of Flame item.",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 8,
+    date: "August 14",
+    changes: [ 
+      "Added a new Timewalking trinket chart filter. Added all Wrath of the Lich King timewalking trinkets to the chart.",
+      "Bugfix: SimC imports will now ignore Warband items that don't match your armor type.",
+      "Classic: Top Gear will now let you wear 2x Steaming Seal of Flame.",
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 7,
+    date: "August 13",
+    changes: [ 
+      "Removed some more unavailable MoP items.",
+      "Bugfix: You can now catalyze season 3 items.",
+      "Bugfix: Attached on-use flags to season 3 trinkets.",
+      "Made some updates to the MoP Disc profile.",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 6,
+    date: "August 12",
+    changes: [ 
+      "Significant in-game trinket tuning to MANY items.",
+      "Setup Tier Set estimates",
+      "Fixed the Upgrade Finder slider."
+    ]},
+    {
+    version: "11.2 / 5.5",
+    update: 5,
+    date: "August 10",
+    changes: [ 
+      "Upgrade Finder Setup",
+      "Classic: Removed some items from the database that don't exist in-game.",
+      "Specs that aren't available yet will now display in red instead of not existing to make it clearer.",
+      "TWW: Added Descriptions to most 11.2 trinkets.",
+      "TWW: Fixed manually added Embellishments (for real).",
+    ]},
+  {
+    version: "11.2 / 5.5",
+    update: 4,
+    date: "August 5",
+    changes: [ 
+      "Added Support for Patch 11.2",
+      "TWW: Log entry will now accept links with extra parameters attached to them.",
+      "TWW: Fixed a bug with manually adding embellishments in-app.",
+      "Classic: Fixed a bug where specifically the Gladiator's Battle Staff would be treated as a 1H weapon instead of a 2H.",
+    ]},
     {
     version: "11.1.7 / 5.5",
     update: 3,

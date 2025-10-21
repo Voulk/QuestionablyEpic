@@ -28,8 +28,8 @@ import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEf
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00327669230769231; // 0.00497669230769231;
-const DR_CONSTLEECH = 0.04922569230769231;
+const DR_CONST = 0.00306669230769231; // 0.00497669230769231;
+const DR_CONSTLEECH = 0.05122569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time: number) {
@@ -127,8 +127,8 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'), getGemID('mastery', 'crit'),
-      getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
+    return [metaGem, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
 
   }
   else {
@@ -530,12 +530,13 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, contentType: contentTypes) {
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
+
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  315; // 64 x 2.
   enchants["Finger"] = "+315 " + highestWeight;
 
@@ -559,7 +560,7 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   bonus_stats.intellect += 747;
   enchants["Legs"] = "Sunset Spellthread";
 
-  if (contentType === "Raid") {
+  if (false) {
     const dreamingData =  { // 
       coefficient: 40.32042, 
       table: -8,
@@ -593,21 +594,6 @@ function enchantItems(bonus_stats: Stats, setInt: number, castModel: any, conten
   // Algari Mana Oil
   bonus_stats.haste = (bonus_stats.haste || 0) + 232;
   bonus_stats.crit = (bonus_stats.crit || 0) + 232;
-
-  // Corruption
-  enchants["Head"] = "Void Ritual";
-  const voidRitualData =  { // 
-    coefficient: 0.032154, 
-    table: -1, // ????
-    uptime: 0.35, // TODO: Check if procs can munch each other. This is obviously very bad for an enchant that stacks.
-    averageStacks: 10,
-  };
-  const statPerStack = processedValue(voidRitualData, 571)
-  const statAvg = statPerStack * voidRitualData.averageStacks * voidRitualData.uptime;
-  bonus_stats.haste = (bonus_stats.haste || 0) + statAvg;
-  bonus_stats.crit = (bonus_stats.crit || 0) + statAvg;
-  bonus_stats.mastery = (bonus_stats.mastery || 0) + statAvg;
-  bonus_stats.versatility = (bonus_stats.versatility || 0) + statAvg;
 
   return enchants;
 }
@@ -710,12 +696,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats.intellect!, castModel, contentType);
+  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
 
   // == Flask / Phials ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
     const bestStat = getHighestWeight(castModel);
+
+    if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
+      // We are in second DR already, try and swap.
+    }
     bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 2825;
     selectedChoice = bestStat;
   }
@@ -805,17 +795,25 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (effectList.filter(effect => effect.name === "Diamantine Voidcore").length > 0) {
     // Having voidcore buffs the power of the Voidglass Shards effect.
     setVariables.hasVoidcore = true;
-
   }
-
-  // Special fire multiplier to make sure we're including sources of fire damage toward fire specific rings.
-  // Fire rings are no longer viable, but we're going to leave them in the code since there's a 100% chance they return in some Fated form.
-  let fireMult = 0;
-  // Frostfire Belt, Flaring Cowl, Flame Licked
-  //if (builtSet.checkHasItem(191623)) fireMult = convertPPMToUptime(3, 10);
-  //else if (builtSet.checkHasItem(193494)) fireMult = 1;
-
-  //setVariables.fireMult = fireMult || 0;
+  if (effectList.filter(effect => effect.name === "Reshii Boots").length > 0) {
+    // Check Upgrade track I guess
+    //console.log("Reshii Boots effect detected");
+    const boots = itemSet.itemList.filter(item => (item.effect && item.effect.name === "Reshii Boots"))[0];
+    const bootsPerc = {
+      "Veteran": 0.2,
+      "Champion": 0.3,
+      "Hero": 0.4,
+      "Myth": 0.5,
+    } 
+    if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
+    // These are fallbacks for if we can't find an upgrade track.
+    else if (boots.level >= 714) setVariables.reshiiBoots = 0.5;
+    else if (boots.level > 704) setVariables.reshiiBoots = 0.4;
+    else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
+    else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+    
+  }
 
 
   for (var x = 0; x < effectList.length; x++) {
@@ -923,7 +921,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (castModel.modelType[contentType] === "CastModel") {
     // Prep the set for a cast model.
     setStats = applyDiminishingReturns(setStats);
+
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
+
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs
@@ -937,6 +937,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
+    evalStats.bonusHPS = (setStats.bonusHPS || 0);
     //hardScore = setStats.hps || 0;
 
     evalStats.hps = (setStats.hps || 0);
@@ -1018,6 +1019,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
   }
 
+  if (evalStats.bonusHPS) {
+
+    hardScore *= (evalStats.bonusHPS + 1);
+
+  }
+
   addBaseStats(setStats); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
 
   if (player.spec === "Discipline Priest" && contentType === "Raid") setStats = compileStats(setStats, mergedEffectStats);
@@ -1026,7 +1033,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
   // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 1800;
+    hardScore -= 2800;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
@@ -1062,7 +1069,8 @@ export function mergeBonusStats(stats: any) {
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
     mana: mergeStat(stats, "mana"),
-    allyStats: mergeStat(stats, "allyStats")
+    allyStats: mergeStat(stats, "allyStats"),
+    bonusHPS: mergeStat(stats, "bonusHPS")
   };
 
   return val;

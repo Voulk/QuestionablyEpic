@@ -506,6 +506,12 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             spell.value = onUseData.value;
             spell.buffDuration = onUseData.duration;
         }
+        else if (settings.trinkets.filter(effect => effect.name === "Lily of the Eternal Weave").length > 0) {
+            const onUseData = getTrinketData("Lily of the Eternal Weave", settings.trinkets.filter(effect => effect.name === "Lily of the Eternal Weave")[0].level);
+            const spell = discSpells["Lily of the Eternal Weave"][0];
+            spell.value = onUseData.value;
+            spell.buffDuration = onUseData.duration;
+        }
 
         
         Object.keys(settings.trinkets).forEach((key) => {

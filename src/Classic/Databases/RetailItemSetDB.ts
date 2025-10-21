@@ -23,6 +23,66 @@ type ItemSetData = {
 } 
 
 export const itemSets: ItemSetData[] = [
+
+  // Season 3
+    {
+    id: [1929],
+    class: "Restoration Shaman",
+    setBonuses: {
+      2: "Shaman S3-2", // 
+      4: "Shaman S3-4"  // 
+    },
+  },
+  {
+    id: [1927],
+    class: "Holy Priest",
+    setBonuses: {
+      2: "HPriest S3-2", // 
+      4: "HPriest S3-4"  // 
+    },
+  },
+  {
+    id: [1927],
+    class: "Discipline Priest",
+    setBonuses: {
+      2: "DPriest S3-2", // 
+      4: "DPriest S3-4"  // 
+    },
+  },
+  {
+    id: [1925],
+    class: "Mistweaver Monk",
+    setBonuses: {
+      2: "Monk S3-2", // 
+      4: "Monk S3-4"  // 
+    },
+  },
+  {
+    id: [1922],
+    class: "Preservation Evoker",
+    setBonuses: {
+      2: "Evoker S3-2", // 
+      4: "Evoker S3-4"  // 
+    },
+  },
+  {
+    id: [1921],
+    class: "Restoration Druid",
+    setBonuses: {
+      2: "Druid S3-2", // 
+      4: "Druid S3-4"  // 
+    },
+  },
+  {
+    id: [1926],
+    class: "Holy Paladin",
+    setBonuses: {
+      2: "Paladin S3-2", // 
+      4: "Paladin S3-4"  // 
+    },
+  },
+
+  // Season 2
   {
     id: [1877],
     class: "Restoration Shaman",

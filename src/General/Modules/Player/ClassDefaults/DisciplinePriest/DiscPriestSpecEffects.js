@@ -5,7 +5,18 @@ import { DISCSPELLS } from "General/Modules/Player/ClassDefaults/DisciplinePries
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "DPriest S2-2") {
+  if (effectName === "DPriest S3-2") {
+    // These need to be integrated into the proper ramp files.
+    bonus_stats.bonusHPS = 0.098;
+
+  }
+  else if (effectName === "DPriest S3-4") {
+    // These need to be integrated into the proper ramp files.For :Oracle: Oracle the new tier set is around a 23% healing increase and for :Voidweaver: Voidweaver its around 35%. 
+    // Both of these numbers are 2p and 4p combined compared to no tier set.
+    bonus_stats.bonusHPS = 0.14;
+
+  }
+  else if (effectName === "DPriest S2-2") {
     const insuranceRPPM = 4 * player.getStatPerc('haste');
     const insuranceHealing = 1.5 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
@@ -20,7 +31,6 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     
     let insuranceUptime = (4 * player.getStatPerc('haste') + extraInsuranceHoTs) * 15 / 60 / 20;
     const healingIncrease = 0.15;
-    console.log("4PC HPS: ", bonus_stats.hps);
     bonus_stats.hps += player.getHPS() * insuranceUptime * healingIncrease;
 
   }

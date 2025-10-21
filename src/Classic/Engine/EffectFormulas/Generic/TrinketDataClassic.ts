@@ -1,8 +1,17 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
 
-import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket } from "./ClassicEffectUtilities";
+import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 
+
+/* 
+== RPPM ==
+The SpellAuraOptions table takes a Spell ID and has a "SpellProcsPerMinuteID" which links to the SpellProcsPerMinute table which has the base proc
+rate in the BaseProcRate field. There's also a ProcTypeMask field which will have a value like 16384. 
+
+
+*/
 
 type TrinketRunFunc = (data: ClassicEffectData[], player: any, itemLevel: number, additionalData: any) => Record<string, number>;
 
@@ -43,7 +52,13 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 const dpsProcMult = (spec: string) => {
   if (spec.includes("Discipline Priest")) return 1;
+  else if (spec.includes("Restoration Shaman")) return 0.9;
   else return 0.1; 
+}
+
+const dpsPeriodicMult = (spec: string) => {
+  if (spec.includes("Restoration Shaman")) return 0.9;
+  return 0.1; 
 }
 
 
@@ -52,7 +67,7 @@ Phase One: Bell of Enraging Resonance, Jar of Ancient Remedies, Fall of Mortalit
 Phase Two: 
 Phase Three: 
 */
-const raidTrinketData: Effect[] = [
+export const raidTrinketData: Effect[] = [
     {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                             TrinketName                                        */
@@ -63,6 +78,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         stat: "haste",
+        coefficient: 0,
         value: {100: 0, 200: 0}, 
         cooldown: 120,
         duration: 20,
@@ -76,11 +92,150 @@ const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Throne of Thunder
+    {
+    name: "Lightning-Imbued Chalice", 
+    effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
+      { 
+        value: {0: 0},
+        coefficient: 18.90800094604,
+        efficiency: 0.94,
+        ppm: 5.78 / 6,
+        stat: "hps",
+        secondaries: ['haste', 'crit'],
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Unerring Vision of Lei Shen", 
+    effects: [ // Procs on DPS spells. Gives 100% crit chance for 4s. 
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 0.46,
+        stat: "crit",
+        duration: 4,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Cha-Ye's Essence of Brilliance", 
+    effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
+      { 
+        value: {0: 0},
+        coefficient: 0,
+        ppm: 0.85,
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+
+      return bonus_stats;
+    }
+  },
+    {
+    name: "Stolen Relic of Zuldazar", 
+    effects: [ // Hasted rppm. Stacks to 6 then can be used to shield a target.
+      { 
+        value: {0: 0},
+        coefficient: 3.15199995041,
+        ppm: 2.89,
+        stat: "HPS",
+        secondaries: ['haste'],
+        efficiency: 0.97,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Inscribed Bag of Hydra-Spawn", 
+    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted. Need to check logs.
+      { 
+        value: {0: 0},
+        coefficient: 9.45600032806,
+        ppm: 1.64,
+        stat: "HPS",
+        secondaries: ['haste'],
+        efficiency: 0.98,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Horridon's Last Gasp", 
+    effects: [ // Chance of X mana every 2s for 10s.
+      { 
+        value: {0: 0},
+        coefficient: 0.55900001526,
+        ppm: 0.96,
+        secondaries: ['haste'],
+        stat: "MP5",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      const manaRestore = processedValue(data[0], itemLevel);
+      const manaPerProc = manaRestore * 5;
+      bonus_stats.mp5 = manaPerProc * data[0].ppm! * getHaste(additionalData.setStats, player.spec.replace(" Classic", "")) / 12;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Soothing Talisman of the Shado-Pan Assault",
+    effects: [
+      { // 
+        value: {463: 0}, 
+        coefficient: 10.05900001526,
+        cooldown: 180,
+        stat: "mp5",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mp5 = processedValue(data[0], itemLevel) / data[0].cooldown! * 5;
+
+      return bonus_stats;
+    }
+  },
+
+  // 5.0 Trinkets
     {
     name: "Blossom of Pure Snow", 
     effects: [
       { 
         value: {489: 3595},
+        coefficient: 1.64999997616,
         stat: "crit",
         duration: 15,
         cooldown: 60,
@@ -98,7 +253,8 @@ const raidTrinketData: Effect[] = [
     name: "Jade Magistrate Figurine", 
     effects: [
       { 
-        value: {489: 3595},
+        value: {476: 3185, 489: 3595},
+        coefficient: 1.64999997616,
         stat: "crit",
         duration: 15,
         cooldown: 60,
@@ -117,6 +273,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {450: 3757, 463: 4241},
+        coefficient: 2.48000001907,
         stat: "spirit",
         duration: 20,
         cooldown: 120,
@@ -135,6 +292,27 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {489: 3595},
+        coefficient: 1.64999997616,
+        stat: "spirit",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+    {
+    name: "Cutstitcher Medallion", 
+    description: "Heartwarmer Medallion is an Alliance version of the same trinket. Both are also identical to Scroll of Revered Ancestors. A middling effect but the trinket is available at a decent item level which helps its ranking.",
+    effects: [
+      { 
+        value: {489: 3595},
+        coefficient: 1.64999997616,
         stat: "spirit",
         duration: 15,
         cooldown: 60,
@@ -154,6 +332,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // Zen Alchemist Stone
         value: {458: 4353, 200: 0}, 
+        coefficient: 2.66700005531,
         ppm: getEffectPPM(0.25, 55, 1.25),
         stat: "intellect",
         duration: 15,
@@ -168,6 +347,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {476: 2866, 489: 3236, 502: 3653}, 
+        coefficient: 1.48500001431,
         ppm: getEffectPPM(0.15, 55, 1.25),
         stat: "intellect",
         duration: 20,
@@ -176,9 +356,26 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       
       return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+  {
+    name: "Light of the Cosmos",
+    effects: [
+      { 
+        value: {476: 2866, 489: 3236, 502: 3653}, 
+        coefficient: 1.48500001431,
+        ppm: getEffectPPM(0.15, 55, 1.25),
+        stat: "intellect",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.intellect! *= dpsPeriodicMult(player.spec); //
+
+      return bonus_stats;
     }
   },
         {
@@ -186,6 +383,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {463: 3386}, 
+        coefficient: 1.98,
         ppm: getEffectPPM(0.1, 30, 1.25),
         stat: "intellect",
         duration: 10,
@@ -194,7 +392,6 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
       
       return getGenericStatEffect(data[0], itemLevel);
     }
@@ -204,9 +401,30 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {483: 6121, 496: 6908, 509: 7796}, 
+        coefficient: 2.97000002861,
         ppm: getEffectPPM(0.15, 115, 1.25),
         stat: "spirit",
         duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      //bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      
+      return getGenericStatEffect(data[0], itemLevel);
+    }
+  },
+ {
+    name: "Thousand-Year Pickled Egg",
+    description: "Haste procs just aren't good for many specs and the miserly uptime doesn't help.",
+    effects: [
+      { 
+        value: {489: 0}, 
+        coefficient: 2.97199988365,
+        ppm: getEffectPPM(0.1, 55, 1.1),
+        stat: "haste",
+        duration: 10,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
@@ -222,6 +440,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {476: 3027}, 
+        coefficient: 1.56840002537,
         ppm: getEffectPPM(0.2, 55, 1.1),
         stat: "spirit",
         duration: 20,
@@ -241,6 +460,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {476: 3027}, 
+        coefficient: 1.56840002537,
         ppm: getEffectPPM(0.2, 55, 1.5),
         stat: "intellect",
         duration: 15,
@@ -255,11 +475,32 @@ const raidTrinketData: Effect[] = [
     }
   },
     {
+    name: "Essence of Terror",
+    description: "Only procs off DPS spells so it's only evaluated for Discipline Priest and Resto Shaman. Realistically you should let DPS players take this first anyway.",
+    effects: [
+      { 
+        value: {476: 0}, 
+        coefficient: 2.97000002861,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+        stat: "haste",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.haste! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
+    }
+  },
+    {
     name: "Vision of the Predator",
     description: "Only procs off DPS spells so use caution equipping this on non-Discipline specs.",
     effects: [
       { 
         value: {463: 3383}, 
+        coefficient: 1.98000001907,
         ppm: getEffectPPM(0.15, 115, 1.5),
         stat: "crit",
         duration: 30,
@@ -278,13 +519,73 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {463: 5082}, 
+        coefficient: 2.97199988365,
         stat: "mp5",
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.mp5 = data[0].value[itemLevel] / 55 * 0.9 * 5;
+      bonus_stats.mp5 =  processedValue(data[0], itemLevel) / 55 * 0.9 * 5;
+
+      return bonus_stats;
+    }
+  },
+    {
+    name: "Mithril Wristwatch",
+    description: "Realistically only playable if your spec naturally procs it anyway, or if it's inexpensive to do so.",
+    effects: [
+      { 
+        value: {489: 6476}, 
+        coefficient: 1.56840002537,
+        ppm: getEffectPPM(0.1, 55, 1.5),
+        stat: "spellpower",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.spellpower! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
+    }
+  },
+    {
+    name: "Static-Caster's Medallion", 
+    description: "Shock-Charger Medallion is the Alliance version of the same trinket. Can rate higher if you combine it with the most dangerous moments of each fight but requires expert usage to be playable.",
+    effects: [
+      { 
+        value: {496: 3838},
+        coefficient: 1.64999997616,
+        stat: "intellect",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Shock-Charger Medallion", 
+    effects: [
+      { 
+        value: {496: 3838},
+        coefficient: 1.64999997616,
+        stat: "intellect",
+        duration: 15,
+        cooldown: 60,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
 
       return bonus_stats;
     }
@@ -296,6 +597,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // Same effect as Bottled Wishes.
         value: {397: 2290},
+        coefficient: 0,
         stat: "spellpower",
         duration: 15,
         cooldown: 90,
@@ -314,6 +616,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {397: 2290},
+        coefficient: 0,
         stat: "spellpower",
         duration: 15,
         cooldown: 90,
@@ -332,6 +635,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {384: 2573, 397: 2904, 410: 3278}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.15, 115, 1.5),
         stat: "haste",
         duration: 20,
@@ -347,6 +651,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // DPS SPELLS ONLY
       { 
         value: {397: 2904, 410: 3278}, // Spirit effect
+        coefficient: 0,
         stat: "crit",
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         duration: 20,
@@ -365,6 +670,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // DPS SPELLS ONLY
       { 
         value: {390: 78, 403: 88, 416: 99}, //
+        coefficient: 0,
         stat: "intellect",
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         duration: 20,
@@ -385,6 +691,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // DPS SPELLS ONLY
       { 
         value: {384: 2573, 397: 2904, 410: 3278}, // Spirit effect
+        coefficient: 0,
         stat: "haste",
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
         duration: 20,
@@ -403,6 +710,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // Healing Spells
       { 
         value: {390: 78, 403: 88, 416: 99}, // Spirit effect
+        coefficient: 0,
         stat: "spirit",
         duration: 20,
         maxStacks: 10,
@@ -426,6 +734,7 @@ const raidTrinketData: Effect[] = [
     effects: [ // Healing Spells
       { 
         value: {384: (9203+10696)/2, 397: (10388+12073)/2, 410: (11726+13627)/2},
+        coefficient: 0,
         spScaling: {384: 1.107, 397: 1.25, 410: 1.411},
         stat: "hps",
         secondaries: ["crit"],
@@ -437,8 +746,7 @@ const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      //console.log(getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats));
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -453,6 +761,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // Confirmed no Paladin mastery scaling, wings appears to work, everything else up in the air. Appears to scale with something. Can hit pets.
         value: {378: (13984 + 16251) / 2, 391: (18373 + 15810) / 2}, 
+        coefficient: 0,
         secondaries: ["crit"],
         efficiency: 0.72 * 0.9, // 20% overheal, 10% lost to pets.
         stat: "hps",
@@ -461,9 +770,9 @@ const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //Effect(data[0], itemLevel, player, additionalData.setStats);
       
-     // return bonus_stats;
+      return bonus_stats;
     }
   },
   {
@@ -471,6 +780,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {378: 110, 391: 125}, 
+        coefficient: 0,
         maxStacks: 10,
         stat: "mp5",
         expectedCasts: {"Restoration Druid Classic": 13.4, "Holy Paladin Classic": 10, "Discipline Priest Classic": 10, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
@@ -507,6 +817,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {378: 39, 391: 44}, 
+        coefficient: 0,
         stat: "mastery",
       },
     ],
@@ -523,6 +834,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {378: 1149}, // 391 version not available
+        coefficient: 0,
         stat: "intellect",
         duration: 25,
         cooldown: 90,
@@ -543,6 +855,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { // 
         value: {372: 2178, 359: 1926}, 
+        coefficient: 0,
         stat: "spirit",
         ppm: getEffectPPM(0.1, 75, 1.5),
         duration: 15,
@@ -562,9 +875,11 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {379: 205}, // TODO: Check it's not 205 for Nat / Holy spells.
+        coefficient: 0,
       },
       {
         value: {379: 1935},
+        coefficient: 0,
         duration: 10,
         cooldown: 60,
       }
@@ -582,11 +897,13 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {359: 103, 372: 116}, // Spirit effect
+        coefficient: 0,
         stacks: 5,
         uptime: 0.75,
       },
       {
         value: {359: 6420, 372: 7260}, // Instant mana effect
+        coefficient: 0,
         cooldown: 120,
       }
     ],
@@ -602,6 +919,7 @@ const raidTrinketData: Effect[] = [
     effects: [
       { 
         value: {359: 1926, 372: 2178}, // Spirit effect
+        coefficient: 0,
         stat: "mastery",
         ppm: getEffectPPM(0.1, 100, 1.5),
         specMod: {"Discipline Priest Classic": 1, "Restoration Druid Classic": 0, "Holy Paladin Classic": 0, "Restoration Shaman Classic": 0, "Holy Priest Classic": 0},
@@ -631,6 +949,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {378: 1149}, 
+        coefficient: 0,
         table: -1,
         ppm: getEffectPPM(0.15, 50, 1.5),
         stat: "mastery",
@@ -647,6 +966,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {346: 1710, 316: 1290}, 
+        coefficient: 0,
         table: -1,
         ppm: getEffectPPM(0.1, 75, 1.5),
         stat: "spellpower",
@@ -664,6 +984,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {316: 1290, 346: 1710}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.35, 75 + 3, 1.5),
         stat: "spirit",
         duration: 15,
@@ -680,6 +1001,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {308: 765, 346: 1425}, 
+        coefficient: 0,
         cooldown: 120,
         stat: "spellpower",
         duration: 20,
@@ -696,6 +1018,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {316: 1290, 346: 1710}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.1, 75, 1.5),
         stat: "haste",
         duration: 15,
@@ -711,6 +1034,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {308: 918, 346: 1710}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.1, 75, 1.5),
         stat: "haste", // Change to ProcIntellect
         duration: 15,
@@ -728,6 +1052,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {333: 1512, 346: 1710}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.1, 100, 1.5),
         stat: "spirit", // Change to ProcIntellect
         duration: 15,
@@ -745,6 +1070,7 @@ const dungeonTrinketData: Effect[] = [
     effects: [
       { // 
         value: {333: 15, 346: 17}, 
+        coefficient: 0,
         stacks: 20,
         stat: "spellpower", 
         duration: 15,
@@ -767,7 +1093,7 @@ const otherTrinketData: Effect[] = [
     effects: [
       { // 
         value: {359: 1926}, 
-        table: -1,
+        coefficient: 0,
         cooldown: 120,
         stat: "spirit",
         duration: 20,
@@ -784,6 +1110,7 @@ const otherTrinketData: Effect[] = [
     effects: [
       { // 
         value: {359: 1926}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.1, 50+5, 1.5),
         stat: "spellpower", // Change to ProcIntellect
         duration: 10,
@@ -801,6 +1128,7 @@ const otherTrinketData: Effect[] = [
     effects: [
       { // 
         value: {325: 918}, 
+        coefficient: 0,
         ppm: getEffectPPM(0.1, 100, 1.5),
         stat: "mastery", // Change to ProcIntellect
         duration: 20,
@@ -818,6 +1146,7 @@ const otherTrinketData: Effect[] = [
     effects: [
       { // 
         value: {359: 80}, 
+        coefficient: 0,
         stat: "spirit",
 
       },
@@ -835,6 +1164,7 @@ const otherTrinketData: Effect[] = [
     effects: [
       { // 
         value: {359: 4200}, 
+        coefficient: 0,
         stat: "mp5",
       },
     ],
@@ -847,8 +1177,6 @@ const otherTrinketData: Effect[] = [
   {
     name: "Vibrant Alchemist Stone",
     effects: [
-      { 
-      },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};

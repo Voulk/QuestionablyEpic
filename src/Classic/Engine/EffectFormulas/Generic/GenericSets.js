@@ -8,7 +8,6 @@ export const getGenericSet = (effectName, player, setStats) => {
     let name = effectName;
 
     if (effectName === "PVP 2pc") {
-        console.log("READING PVP BONUS FINE");
         bonus_stats.intellect = 70;
     }
 

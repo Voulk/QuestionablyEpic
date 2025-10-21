@@ -203,8 +203,8 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     }*/
     const yellowOptions = {
       haste: 76668,
-      crit: 76660,
-      mastery: 76672
+      crit: 76697, //76660,
+      mastery: 76700, //76672
     }
 
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
@@ -212,9 +212,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     const bestSecondary = statOrder.find(stat => ['haste', 'crit', 'mastery'].includes(stat));
     const yellowGemID = yellowOptions[bestSecondary]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
-    const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
-    const redGemID = 76694; // Pure int but look into hybrids
-    const blueGemID = 76686;
+    const metaGemID = 95345; //76885; //
+    const redGemID = 76660; //76672;// 76694; // Pure int but look into hybrids
+    const blueGemID = 76645; //76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
     //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
     const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;
@@ -262,7 +262,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       });
       return score;
     }
-    
+
+    if (gemSetting === "Keep Equipped Gems") {
+      itemList.forEach((item, index) => {
+        if (item.ingameEquipped)item.socketedGems = item.ingameEquipped.gems || [];
+      });
+    }
+    else {
       // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
@@ -301,50 +307,16 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
           } 
         }
       });
-      // == Check yellow replacements ==
-      // Potentially can kill this entirely in MoP.
-
-      /*itemList.forEach((item, index) => {
-        const sockets = item.classicSockets.sockets;
-        let itemIndex = 0;
-        sockets.forEach((socket, socketIndex) => {
-          if (gemIDS[item.socketedGems[socketIndex]] === "yellow" || sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
-          else {
-            let score = 0;
-            // The socket isn't yellow, try and make it orange.
-            const originalScore = gemScores[index];
-            const newSockets = [...item.socketedGems];
-            newSockets[socketIndex] = yellowGemID;
-            
-            // We've made the socket yellow. Let's score it.
-            let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
-
-            // Check if adding the yellow socket gives us a bonus.
-            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index] || sockets[index] === "prismatic");
-
-            if (socketBonus && item.classicSockets.bonus) {
-              newScore += scoreSocketBonus(item.classicSockets.bonus);
-            }
-
-            score = originalScore - newScore;
-
-            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score, itemName: item.name, originalScore: originalScore, newScore: newScore});
-            itemIndex++;
-          }
-        })
-        
-      });
-      gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
-      for (let i = 0; i < mandatoryYellows; i++) {
-        //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
-        itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
-      } */
+    }
+    
 
     // Lastly, we need to actually add the stats from socketed gems.
     const socketedGemStats = [];
     itemList.forEach(item => {
       item.socketedGems.forEach(gemID => {
-        socketedGemStats.push(classicGemDB.filter(gem => gem.id === gemID)[0].stats);
+        const gem = classicGemDB.filter(gem => gem.id === gemID);
+        const gemStats = gem[0] ? gem[0].stats : {};
+        socketedGemStats.push(gemStats);
       });
 
       if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {

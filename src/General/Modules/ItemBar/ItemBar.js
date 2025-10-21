@@ -55,9 +55,10 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
   let item = "";
 
   const itemSlot = getItemProp(itemID, "slot", gameType);
-  const isCrafted = getItemProp(itemID, "crafted", gameType) || itemID === 228843;
+  const isCrafted = getItemProp(itemID, "crafted", gameType);
+  const isRandomStats = getItemProp(itemID, "randomStats", gameType)
 
-  if (isCrafted) {
+  if (isCrafted || isRandomStats) {
 
     // Item is a legendary and gets special handling.
     const missiveStats = missives.toLowerCase().replace(" (engineering)", "").replace(/ /g, "").split("/");
@@ -65,10 +66,11 @@ export const createItem = (itemID, itemName, itemLevel, itemSocket, itemTertiary
     let craftedSocket = itemSocket || checkDefaultSocket(itemID);
     item = new Item(itemID, itemName, itemSlot, craftedSocket, itemTertiary, 0, itemLevel, "");
     item.stats = calcStatsAtLevel(item.level, itemSlot, itemAllocations, "");
+
     //if (item.slot === "Neck") item.socket = 3;
 
     let bonusString = "";
-    if (itemID === 228843) {
+    if (isRandomStats) {
       let craftedStats = [];
       missiveStats.forEach(stat => {
         if (stat === "haste") craftedStats.push(36);
@@ -193,9 +195,15 @@ export default function ItemBar(props) {
 
       if (item) {
         if (itemEffect.type !== "") {
-          item.effect = {itemEffect: itemEffect.type, effectName: itemEffect.effectName, itemLevel: itemLevel};
-          if (itemEffect.type === "Embellishment") {
-            item.uniqueTag = "embellishment";
+          item.effect = {type: itemEffect.type, name: itemEffect.effectName, level: parseInt(itemLevel)};
+          if (itemEffect.type === "embellishment") {
+            item.uniqueEquip = "embellishment";
+            
+            if (itemEffect.effectName === "Darkmoon Sigil: Ascension") item.bonusIDS = (item.bonusIDS || "") + ":11300";
+            else if (itemEffect.effectName === "Darkmoon Sigil: Symbiosis") item.bonusIDS = (item.bonusIDS || "") + ":11302";
+            else if (itemEffect.effectName === "Writhing Armor Banding") item.bonusIDS = (item.bonusIDS || "") + ":11109";
+            else if (itemEffect.effectName === "Dawnthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11303";
+            else if (itemEffect.effectName === "Duskthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11304";
           }
         }
 
@@ -209,6 +217,8 @@ export default function ItemBar(props) {
         setItemLevel("");
         setItemSocket(false);
         setItemTertiary("");
+
+        console.log(item);
       }
           
     };
@@ -219,9 +229,11 @@ export default function ItemBar(props) {
     if (val === null) {
       setItemID("");
       setItemName("");
+      setItemEffect({type: "", effectName: "", label: ""});
     } else {
       setItemID(val.value);
       setItemName(val.name);
+      setItemEffect({type: "", effectName: "", label: ""});
       if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
@@ -245,7 +257,10 @@ export default function ItemBar(props) {
   };
 
   const itemEffectChanged = (event) => {
-    setItemEffect(event.target.value);
+    const selectedLabel = event.target.value;
+    const selected = itemEffectOptions.find(opt => opt.label === selectedLabel);
+    setItemEffect(selected);
+
   };
 
   const [openAuto, setOpenAuto] = React.useState(false);
@@ -276,7 +291,7 @@ export default function ItemBar(props) {
     "Versatility (engineering)",
   ];
 
-  if (itemID === 228843) {
+  if (getItemProp(itemID, "randomStats", gameType)) {//itemID === 228843 || itemID === 238034) {
     craftedStatPossibilities = [
       "Haste / Versatility",
       "Haste / Mastery",
@@ -309,7 +324,7 @@ export default function ItemBar(props) {
     itemLevel: true,
     socket: gameType === "Retail" && CONSTANTS.socketSlots.includes(getItemProp(itemID, "slot", gameType)),
     tertiaries: !(isItemCrafted) && gameType === "Retail",
-    missives: isItemCrafted || itemID === 228843,
+    missives: isItemCrafted || getItemProp(itemID, "randomStats", gameType),
     specialEffect: itemEffectOptions.length > 0,
   }
 
@@ -317,10 +332,11 @@ export default function ItemBar(props) {
     { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
     { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
-    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
-    { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
-    { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
-    { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
+    { label: "World Bosses", value: -1, gameType: "Classic", source: "World Bosses", icon: "conquestIcon" },
+    { label: "T14 Normal", value: -1, gameType: "Classic", source: "T14", icon: "msvIcon" },
+    { label: "T14 Heroic", value: -1, gameType: "Classic", source: "T14+", icon: "terraceIcon" },
+    { label: "Throne Normal", value: -1, gameType: "Classic", source: "T15", icon: "conquestIcon" },
+    { label: "Throne Heroic", value: -1, gameType: "Classic", source: "T15+", icon: "conquestIcon" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
     { label: "Manaforge H", value: 710, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
@@ -416,7 +432,7 @@ export default function ItemBar(props) {
                 onChange={(e) => itemLevelChanged(e.target.value)}
                 value={itemLevel}
                 label={t("QuickCompare.ItemLevel")}
-                disabled={(itemID === "" || gameType === "Classic") ? true : false}
+                disabled={(itemID === "") ? true : false}
                 onInput={(e) => {
                   e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 3);
                 }}
@@ -521,9 +537,11 @@ export default function ItemBar(props) {
               disabled={false}
             >
               <InputLabel id="itemeffect">{t("QuickCompare.Effect")}</InputLabel>
-              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
+
+              <Select key={"EffectSelect"} labelId="itemEffect" value={itemEffect.label} onChange={itemEffectChanged} label={t("QuickCompare.Effect")}>
               {itemEffectOptions.map((key, i, arr) => {
                     let lastItem = i + 1 === arr.length ? false : true;
+
                     return (
                       <MenuItem divider={lastItem} key={key.label} label={key.label} value={key.label}>
                         {key.label}

@@ -90,13 +90,13 @@ export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
 }
 
 export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
-    const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+    const isTwoHander = statProfile.isTwoHanded ?? false;
 
     const stats = {
         spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
         crit: 1 + getCritPercentage(statProfile, spec),
         haste: getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
-        mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Monks mastery coefficient.
+        mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * STATCONVERSIONCLASSIC.MASTERYMULT[spec], 
         spirit: (statProfile.spirit),
         weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
         weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
@@ -128,7 +128,7 @@ const getClassicRaceBonuses = (statPerc, race) => {
 
 
 // Classic
-export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
+export const runClassicSpell = (spellName, spell, statPercentages, spec, settings, flags = {}) => {
 
     const genericMult = 1;
     let targetCount = 1;
@@ -139,8 +139,6 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
      
-    
-
     let spellOutput = 0;
     if (spellName === "Melee") {
         // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 
@@ -183,6 +181,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
       if (spell.tickData.tickOnCast) tickCount += 1;
+      if (flags["RampingHoTEffect"]) spellOutput = spellOutput * (1 + flags["RampingHoTEffect"] / 2 * (tickCount + 1));
       
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.

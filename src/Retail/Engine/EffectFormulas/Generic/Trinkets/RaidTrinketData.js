@@ -1,11 +1,13 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket, forceGenericOnUseTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
     {  
+    id: 242392,
     name: "Diamantine Voidcore",
-    description: "",
+    description: "The ranking on the chart does not include the set, however top gear will take both into account.",
+    addonDescription: "A decent on-use that truly shines when combined with a special effect weapon from raid to complete the set.",
     effects: [
       {
         coefficient: 0.699867, 
@@ -25,54 +27,59 @@ export const raidTrinketData = [
   },
   {  // Heartbeat flag??
     name: "Astral Antenna",
-    description: "",
+    description: "Requires you pick up balls that'll float toward you. Assumes 100% pick up rate since they are quite hard to miss.",
+    setting: true,
+    addonDescription: "Requires you pick up balls that'll float toward you. They are quite hard to miss and you shouldn't need to play around them.",
     effects: [
       {
-        coefficient: 1.558467, 
+        coefficient: 1.511713 * 0.97, 
         table: -7,
         duration: 10,
         ppm: 2.5,
         stat: "crit",
+        canOverlap: true,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.crit = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+      //bonus_stats.crit = getDiminishedValue(data[0].stat, processedValue(data[0], itemLevel), additionalData.setStats['crit'])* data[0].ppm * data[0].duration / 60 * 0.95; // These stacks can overlap so there should be no proc munching.
+      const ballPickupRate = Math.min(100, getSetting(additionalData.settings, "antennaPickupRate") / 100, 1);
+      bonus_stats.crit = runGenericPPMOverlapTrinket(data[0], itemLevel, additionalData.setStats) * ballPickupRate;
 
       return bonus_stats;
     }
   },
     { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
     name: "Nexus-King's Command",
-    description: "",
+    description: "The absorb portion is only on the single spell that procs the shield. Is quite hard to play well but if you consume the debuff during your healing cooldowns then this is an excellent trinket.",
     effects: [
       { // Int Proc
-        coefficient: 1.079763, 
+        coefficient: 1.241728, 
         table: -1,
-        duration: 10,
-        cooldown: 32, // 30s ticking aura
+        duration: 12,
+        cooldown: 30, // 30s ticking aura
         stat: "intellect",
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
-
+      //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+      bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel)
       return bonus_stats;
     }
   },
       { // 
     name: "Loom'ithar's Living Silk",
-    description: "",
+    description: "Average on HPS but invaluable utility in Mythic+.",
     effects: [
       { // Shield proc
         coefficient: 479.0941,
         table: -8,
         secondaries: ['versatility'],
         targets: 5,
-        efficiency: {Raid: 0.8, Dungeon: 0.9}, // 
+        efficiency: {Raid: 0.85, Dungeon: 0.95}, // While absorbs are often consumed well in raid, this has quite heavy general usage problems.
         cooldown: 90,
       },
     ],
@@ -86,10 +93,10 @@ export const raidTrinketData = [
   },
     { 
     name: "Araz's Ritual Forge",
-    description: "",
+    description: "The health penalty is temporary and you can heal it back. Decent if you have powerful 2 minute cooldowns.",
     effects: [
       {
-        coefficient: 2.879601 * 0.9,
+        coefficient: 2.461964,
         table: -1,
         duration: 30,
         //multiplier: 0.725, // Assumes boss is around 50% health.
@@ -173,7 +180,7 @@ export const raidTrinketData = [
   },
   { // 1:30 cooldown mastery on-use. 
     name: "House of Cards",
-    description: "Very good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest.",
+    description: "Good if your spec has powerful 90s cooldowns like Preservation Evoker and Disc Priest but a higher ilvl Lily of the Eternal Weave is better in Season 3.",
     effects: [
       {
         coefficient: 2.736594 * 0.9, 
@@ -189,7 +196,7 @@ export const raidTrinketData = [
       const variance = data[0].mult; // House of Cards variance is -10% to +15%. Every time you use the trinket the floor by 3.3% up to 3 times, which we'll average at 2.
 
       if (additionalData.castModel.modelName.includes("Oracle")) {
-        bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "House of Cards", itemLevel)
+        bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "House of Cards", itemLevel) * 0.7; // Expected additional overhealing.
       }
       else if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * variance;
       else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * variance;
@@ -252,7 +259,7 @@ export const raidTrinketData = [
   },
   { // Coagulum at home
     name: "Mister Pick-Me-Up",
-    description: "A surprisingly strong flat healing trinket with low overhealing. In Mythic+ the trinket heals for less but does absurb amounts of damage - particularly in groups with pets. Default overhealing: 15%.",
+    description: "A strong flat healing trinket with low overhealing. In Mythic+ the trinket heals for less but does absurb amounts of damage - particularly in groups with pets. Default overhealing: 15%.",
     setting: true,
     effects: [
       {  // Heal effect
@@ -260,7 +267,7 @@ export const raidTrinketData = [
         table: -9,
         secondaries: ['versatility', 'crit', 'haste'], // Secondaries confirmed.
         targets: 5 * 3, // Lasts 6 seconds and heals 5 people per tick.
-        efficiency: {Raid: 0.85, Dungeon: 0.6},
+        efficiency: {Raid: 0.8, Dungeon: 0.55},
         ppm: 2.5, // Incorrect flagging. Needs to be double checked.
         holyMasteryFlag: true,
       },
@@ -386,7 +393,7 @@ export const raidTrinketData = [
         runFunc: function(data, player, itemLevel, additionalData) {
           let bonus_stats = {};
           const bestStat = player.getHighestStatWeight(additionalData.contentType);
-          const intStacks = getSetting(additionalData.settings, "ovinaxAverageIntStacks")
+          const intStacks = 15; // Setting removed in season 3.
           const secStacks = 30 - intStacks;
           const processedData = {intellect: processedValue(data[0], itemLevel), secondary: processedValue(data[1], itemLevel)};
 

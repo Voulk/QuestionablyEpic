@@ -67,7 +67,7 @@ export const shamanDefaultSpellData = (contentType) => {
         cooldownMult: {
           c60: 1,
           c90: 1,
-          c120: 1.2,
+          c120: 1.25,
           c180: 1.1,
   
           oneMinute: 1.1,
@@ -109,18 +109,18 @@ export const shamanDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.85,
-      crit: 1.05,
-      mastery: 0.7,
-      versatility: 0.95,
+      haste: 1.335,
+      crit: 1.31,
+      mastery: 0.85,
+      versatility: 1.143,
       leech: 0.48,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.83,
-      crit: 1.03,
-      mastery: 0.5,
-      versatility: 0.97,
+      haste: 1.224,
+      crit: 1.276,
+      mastery: 0.85,
+      versatility: 1.234,
       leech: 0.34,
     };
   

@@ -1,3 +1,4 @@
+// Yu'lon build. Chi-Ji has its own profile.
 export const monkDefaultSpellData = (contentType) => {
   let spellList = {};
   if (contentType === "Raid") {
@@ -100,19 +101,19 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.25,
-    crit: 1.157,
-    mastery: 0.453,
-    versatility: 1.076,
-    leech: 0.4,
+    haste: 1.33,
+    crit: 1.274,
+    mastery: 0.64,
+    versatility: 1.164,
+    leech: 0.55,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.1,
-    crit: 1.01,
-    mastery: 0.93,
-    versatility: 1.0,
-    leech: 0.38,
+    haste: 1.31,
+    crit: 1.21,
+    mastery: 1.1,
+    versatility: 1.12,
+    leech: 0.4,
   };
 
   return statWeights[contentType];

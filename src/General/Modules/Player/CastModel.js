@@ -21,6 +21,7 @@ import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
 import { mistweaverMonkDefaults } from "./ClassDefaults/Classic/Monk/MistweaverMonkClassic";
+import { restoShamanDefaults } from "./ClassDefaults/Classic/Shaman/RestoShamanClassic";
 
 import { getRampData, genStatWeights } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestUtilities";
 
@@ -79,8 +80,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 3250000,
-      rawhps: 475000,
+      hps: 5300000,
+      rawhps: 655000,
       dps: 12000,
       fightLength: 400,
       reportID: "Default",
@@ -129,11 +130,21 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-        this.modelName = "Default";
+      if (modelID === "Farseer WW") {
+        this.modelName = "Farseer WW";
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+      }
+      else {
+        this.modelName = modelID;
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+      }
+
 
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
@@ -239,8 +250,8 @@ class CastModel {
     } 
     else if (spec === "Restoration Shaman Classic") {
       this.modelName = "Default";
-      spellList = {};
-      this.baseStatWeights = druidDefaultStatWeights(contentType);
+      this.profile = restoShamanDefaults;
+      this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Mistweaver Monk Classic") {
       this.modelName = "Default";

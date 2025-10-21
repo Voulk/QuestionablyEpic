@@ -10,13 +10,16 @@ import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
 
+
+const mobileWidthThreshold = 650;
+
 const getTooltip = (data, id) => {
   const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
   return tooltip;
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <MuiTooltip {...props} classes={{ popper: className }} />
+  <MuiTooltip {...props} classes={{ popper: className }} enterTouchDelay={0}/>
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -32,13 +35,27 @@ const StyledTooltip = styled(({ className, ...props }) => (
     //border: "solid yellow 1px"
   }
 }));
+// function useWindowSize() {
+//   const [size, setSize] = useState([0, 0]);
+//   useLayoutEffect(() => {
+//     function updateSize() {
+//       setSize([window.innerWidth, window.innerHeight]);
+//     }
+//     window.addEventListener('resize', updateSize);
+//     updateSize();
+//     return () => window.removeEventListener('resize', updateSize);
+//   }, []);
+//   return size;
+// }
+
+
 
 const getRankDiff = (rank, map2, prevRank) => {
   /* ----------- Return gem score - the previous gem ranks score. ---------- */
   if (rank > 0) {
     // added a or 0 to handle NANs
     return map2["r" + rank] - map2["r" + prevRank] || 0;
-  } else if (rank == 600) {
+  } else if (rank == 675) {
     return map2["r" + rank];
   } else {
     return 0;
@@ -63,10 +80,29 @@ const truncateString = (str, num) => {
   }
   return str.slice(0, num) + "...";
 };
+function getInitials(str) {
+  return str
+    .split(' ')
+    .filter(word => word.length > 0)
+    .map(word => word[0].toUpperCase())
+    .join('');
+}
 export default class EmbelChart extends PureComponent {
   constructor() {
     super();
   }
+  state = {width: window.innerWidth, height: window.innerHeight};
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+
+
   render() {
     const currentLanguage = i18n.language;
     const data = this.props.data;
@@ -82,11 +118,10 @@ export default class EmbelChart extends PureComponent {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
           // 600, 606, 612, 618, 624, 630, 636 [619, 636, 642, 662, 675 ];
           name: map2.id,
-          619: map2.r619,
-          636: getRankDiff(636, map2, 619),
-          642: getRankDiff(642, map2, 636),
-          662: getRankDiff(662, map2, 642),
-          675: getRankDiff(675, map2, 662),
+          675: map2.r675,
+          691: getRankDiff(691, map2, 675),
+          704: getRankDiff(704, map2, 691),
+          720: getRankDiff(720, map2, 704),
         });
       });
 
@@ -99,9 +134,9 @@ export default class EmbelChart extends PureComponent {
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)) : truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={522} domain={currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={522}  domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
@@ -131,7 +166,7 @@ export default class EmbelChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" aspect={1.5}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%"  height={800}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -140,13 +175,15 @@ export default class EmbelChart extends PureComponent {
             top: 20,
             right: 40,
             bottom: 20,
-            left: 250,
+            left: this.state.width > mobileWidthThreshold ? 250 : 50,
           }}
+          
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
             labelStyle={{ color: "#ffffff" }}
+            
             contentStyle={{
               backgroundColor: "#1b1b1b",
               border: "1px solid rgba(255, 255, 255, 0.12)",
@@ -172,7 +209,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[619, 636, 642, 662, 675 ].map((key, i) => (
+          {[675,  691, 704, 720].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

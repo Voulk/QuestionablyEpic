@@ -7,7 +7,7 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } 
 import { correctCasing, getItemProp } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 
-import { encounterDB } from "Databases/InstanceDB"
+import { encounterDB, timewalkingDB } from "Databases/InstanceDB"
 
 const trinketCategories = {
     //RAIDDROPS: "Raid Drops",
@@ -31,8 +31,10 @@ const getTrinketDropLoc = (trinketID) => {
         const instanceId = sources[0].instanceId;
         if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
         else if (instanceId === 1296) dropLoc = " Undermine (Raid) - " + encounterDB[1296].bosses[sources[0].encounterId];
+        else if (instanceId === 1302) dropLoc = " Manaforge Omega (Raid) - " + encounterDB[1302].bosses[sources[0].encounterId];
         else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
         else if (instanceId === -4) dropLoc = " Crafted";
+        else if (instanceId === -12) dropLoc = timewalkingDB[sources[0].encounterId] + " Timewalking";
         else if (instanceId === -69) dropLoc = " Delves";
         //dropLoc = instanceDB[sources[0].instanceId.toString()]
     }
@@ -56,9 +58,17 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     trinketDescription.push("")
 
     trinketDescription.push("Effect Breakdown")
-    if (trinketEffects[0].ppm && trinketEffects[0].stat) {
+    if (trinketEffects[0].canOverlap) {
+        // Overlapping stack trinkets.
+        const avgStacks = Math.round(100*trinketStats[trinketEffects[0].stat] / processedValue(trinketEffects[0], itemLevel))/100;
+        trinketDescription.push("Average Stacks: " + avgStacks);
+    }
+    else if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.
         trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
+    }
+    else if (trinketName === "Nexus-King's Command") {
+        trinketDescription.push("Expected Uptime: 40%");
     }
 
     Object.keys(trinketStats).forEach((statName) => {    

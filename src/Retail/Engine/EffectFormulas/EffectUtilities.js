@@ -6,6 +6,21 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getMastery } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 // This file contains utility formulas that might be useful for calculating Effect values.
 
+
+// Sometimes a trinket stacks over time and each of these stacks should calculate DR individually.
+// This function will return the average stat value. 
+export function getStagedDiminishedValue(statID, procValue, setStats, steps) {
+  let totalStats = 0;
+  for (let i = 1; i <= steps; i++) {
+    
+    const diminishedStats = getDiminishedValue(statID, procValue * i, setStats[statID] || 0);
+    totalStats += diminishedStats;
+  }
+
+  return totalStats / steps;
+
+}
+
 export function getDiminishedValue(statID, procValue, baseStat) {
   if (statID === "intellect" || statID === undefined || statID === "hps" || statID === "dps") return procValue;
   const DRBreakpoints = STATDIMINISHINGRETURNS[statID.toUpperCase()];
@@ -49,6 +64,17 @@ export function runGenericPPMTrinket(effect, itemLevel, setStats = {}) {
     return diminishedValue * uptime;
 }
 
+// Some trinkets don't proc munch and instead can overlap their procs.
+// Note that this implementation doesn't handle how multiple stacks might be afflicted by heavier diminishing returns.
+export function runGenericPPMOverlapTrinket(effect, itemLevel, setStats = {}) {
+  const rawValue = processedValue(effect, itemLevel);
+  const diminishedValue = effect.stat === "allyStats" ? rawValue : getDiminishedValue(effect.stat, rawValue, setStats[effect.stat] || 0);
+  const uptime = effect.ppm * effect.duration / 60;
+
+  return diminishedValue * uptime;
+
+}
+
 // This is specifically for effects that can roll any secondary.
 export function runGenericRandomPPMTrinket(effect, itemLevel, setStats = {}) {
   const bonus_stats = {};
@@ -72,15 +98,19 @@ export function runGenericPPMTrinketHasted(effect, itemLevel, hastePerc, setStat
 
 // Other trinkets are generic on-use stat trinkets. These usually don't need anything special either and can be genericized. 
 // TODO.
-export function runGenericOnUseTrinket(effect, itemLevel, castModel) {
-  const value = processedValue(effect, itemLevel) * effect.duration / effect.cooldown 
+export function runGenericOnUseTrinket(effect, itemLevel, castModel, setStats = {}) {
+  const trinketUseValue = processedValue(effect, itemLevel);
+  const diminishedUseValue = getDiminishedValue(effect.stat, trinketUseValue, setStats[effect.stat] || 0);
+  const value = diminishedUseValue * effect.duration / effect.cooldown 
                   * (castModel ? (castModel.getSpecialQuery("c" + effect.cooldown, "cooldownMult") || 1) : 1);
 
   return value;
 }
 
-export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD) {
-  const value = processedValue(effect, itemLevel) * effect.duration / forcedCD
+export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD, setStats = {}) {
+  const trinketUseValue = processedValue(effect, itemLevel);
+  const diminishedUseValue = getDiminishedValue(effect.stat, trinketUseValue, setStats[effect.stat] || 0);
+  const value = diminishedUseValue * effect.duration / forcedCD
                 * (castModel ? (castModel.getSpecialQuery("c" + forcedCD, "cooldownMult") || 1) : 1);
   return value;
 }
@@ -264,7 +294,6 @@ export function processedValue(data, itemLevel, efficiency = 1, roundType = "flo
   else if (roundType === "ceil") return Math.ceil(value);
   else if (roundType === "round") return Math.round(value);
   else return value;
-
 }
 
 export function getBestWeaponEnchant(player, contentType) {

@@ -9,6 +9,8 @@ import "./VerticalChart.css";
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 
+
+const mobileWidthThreshold = 650;
 /* ------------------------ Cleans Zeros from Objects ----------------------- */
 const cleanZerosFromArray = (obj) => {
   return Object.keys(obj)
@@ -27,7 +29,7 @@ const getTooltip = (data, id) => {
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
+  <Tooltip {...props} classes={{ popper: className }} enterTouchDelay={0}/>
 ))(({ theme }) => ({
   zIndex: theme.zIndex.tooltip + 1,
   //margin: 4,
@@ -45,14 +47,31 @@ const StyledTooltip = styled(({ className, ...props }) => (
 }));
 
 const truncateString = (str, num) => {
-  if (str.length <= num || window.innerWidth >= 1025) {
+  if (str.length <= num/* || window.innerWidth >= 1025*/) {
     return str;
   }
   return str.slice(0, num) + "...";
 };
+function getInitials(str) {
+  return str
+    .split(' ')
+    .filter(word => word.length > 0)
+    .map(word => word[0].toUpperCase())
+    .join('');
+}
 export default class BCChart extends PureComponent {
   constructor() {
     super();
+    this.state = { width: window.innerWidth, height: window.innerHeight };
+  }
+    updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   getShortenedItemName = (name) => {
@@ -75,7 +94,7 @@ export default class BCChart extends PureComponent {
         arr.push({
           name: map2.id,
           //i161: map2.i161,
-          "LFR": map2.lfr,
+          "Celestial": map2.lfr,
           "Normal": map2.lfr ? (map2.normal - map2.lfr) : map2.normal,
           "Heroic": (map2.heroic - map2.normal) || 0,
           "lfrilvl": map2.lfrilvl || "",
@@ -88,8 +107,10 @@ export default class BCChart extends PureComponent {
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
 
     /* ----------------------- Y-Axis Label Customization ----------------------- */
-    const CustomizedYAxisTick = (props) => {
-      const { x, y, payload } = props;
+    const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
+      const row = payload?.payload ?? data?.[payload.index];
+      const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
+
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -100,9 +121,9 @@ export default class BCChart extends PureComponent {
             flexWrap: 'wrap',
         }}>
             <text is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
-              {truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 10)}
+              {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 32)) : ( truncateString(getTranslatedItemName(payload.value, currentLanguage, "", "Classic"), 30))}
             </text>
-            <WowheadTooltip type="item" id={payload.value} domain={"mop-classic"}>
+            <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} forg={row.reforgeID || 0} domain={"mop-classic"}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, "Classic")} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
@@ -141,7 +162,7 @@ export default class BCChart extends PureComponent {
             top: 20,
             right: 20,
             bottom: 20,
-            left: isMobile ? 140 : 250,
+            left: this.state.width < mobileWidthThreshold ? 65 : 250,
           }} 
         >
           <XAxis type="number" stroke="#f5f5f5" axisLine={false} />
@@ -171,8 +192,13 @@ export default class BCChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" width={40} dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          <Bar dataKey={"LFR"} fill={"#cc4dbf"} stackId="a" />   
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 40 : 40} dataKey="name" stroke="#f5f5f5" interval={0} 
+              tick={<CustomizedYAxisTick
+                  data={data}
+                  currentLanguage={currentLanguage}
+                  isMobile={this.state.width < mobileWidthThreshold}
+          />} />
+          <Bar dataKey={"Celestial"} fill={"#cc4dbf"} stackId="a" />   
           <Bar dataKey={"Normal"} fill={"#1f78b4"} stackId="a" /> 
           <Bar dataKey={"Heroic"} fill={"#33a02c"} stackId="a" />   
 

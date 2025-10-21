@@ -122,6 +122,7 @@ describe("Test Curve IDs", () => {
 
 describe("Test TWW Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const mailPlayer = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
@@ -133,7 +134,7 @@ describe("Test TWW Items", () => {
 
     test("World Quest Item", () => {
         const line = "shoulder=,id=224687,bonus_id=10297/6652/1701/1643/10254";
-        const item = processItem(line, player, contentType, type, settings)
+        const item = processItem(line, mailPlayer, contentType, type, settings)
         expect(item.stats.mastery).toEqual(600);
         expect(item.stats.haste).toEqual(450);
         expect(item.level).toEqual(571)
@@ -141,7 +142,7 @@ describe("Test TWW Items", () => {
 
     test("Dungeon Drop while leveling", () => {
         const line = "hands=,id=221162,bonus_id=10385/10387/6652,drop_level=77";
-        const item = processItem(line, player, contentType, type, settings)
+        const item = processItem(line, mailPlayer, contentType, type, settings)
         expect(item.stats.versatility).toEqual(594);
         expect(item.stats.haste).toEqual(351);
         expect(item.level).toEqual(535)
@@ -151,7 +152,7 @@ describe("Test TWW Items", () => {
 })
 
 describe("Test Regular Items", () => {
-    const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
@@ -202,14 +203,16 @@ describe("Test Upgrade Track", () => {
 
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
+    const mailPlayer = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
     const contentType = "Raid";
     const type = "Regular";
 
     
 
     test("Blue Crafted Belt", () => {
+        
         const line = "waist=,id=219485,bonus_id=11297/11298/9627/11142/10876,crafted_stats=32/49,crafting_quality=5";
-        const item = processItem(line, player, contentType, type, settings)
+        const item = processItem(line, mailPlayer, contentType, type, settings)
         expect(item.level).toEqual(590);
         expect(item.stats.mastery).toEqual(591);
         expect(item.socket).toEqual(0);
@@ -227,7 +230,7 @@ describe("Test Crafted Items", () => {
 
     test("Obsidian Seared Hexblade", () => {
         const line = "main_hand=,id=190511,enchant_id=6628,bonus_id=8836/8840/8902/8801/8845/8791/8175/8960,crafted_stats=40/36";
-        const item = processItem(line, player, contentType, type, settings)
+        const item = processItem(line, mailPlayer, contentType, type, settings)
         expect(item.level).toEqual(402);
         //expect(item.stats.crit).toEqual(176);
         expect(item.socket).toEqual(0);

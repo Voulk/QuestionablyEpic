@@ -117,7 +117,7 @@ export default function RaidGearContainer(props) {
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
                   {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.liberationOfUndermineHeader} label={getTranslatedRaidName(CONSTANTS.currentRaidID)} {...a11yProps(0)} />
+                  <Tab className={classes.manaforgeOmegaHeader} label={getTranslatedRaidName(CONSTANTS.currentRaidID)} {...a11yProps(0)} />
                   {/* ------------------------------------------  ------------------------------------------ 
                   <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />*/}
                   {/* ------------------------------------------  ------------------------------------------ 

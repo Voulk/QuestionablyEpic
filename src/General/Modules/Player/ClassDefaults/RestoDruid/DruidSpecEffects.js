@@ -12,7 +12,14 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   const healingMult = 1.06 * 1.04 // Class talents
   const insuranceRPPM = 4 * player.getStatPerc('haste');
 
-  if (effectName === "Druid S2-2") {
+  if (effectName === "Druid S3-2") {
+    bonus_stats.bonusHPS = 0.1;
+  }
+  else if (effectName === "Druid S3-4") {
+    bonus_stats.bonusHPS = 0.08;
+
+  }
+  else if (effectName === "Druid S2-2") {
     
     const insuranceHealing = 1.6 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
@@ -28,7 +35,6 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     }
 
     bonus_stats.hps = (insuranceRPPM + lifebloomInsurancePPM) * healingOneRejuv / 60;
-
 
   }
   else if (effectName === "Druid S1-2") {

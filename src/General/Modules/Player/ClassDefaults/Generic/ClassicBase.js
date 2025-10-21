@@ -33,11 +33,11 @@ const GLOBALCONST = {
     },
 
     baseMana: { // This doesn't vary by spec anymore. It could be merged into one value.
-        "Holy Paladin": 300000,
+        "Holy Paladin": 60000,
         "Restoration Druid": 300000,
         "Discipline Priest": 300000,
         "Holy Priest": 300000,
-        "Restoration Shaman": 300000,
+        "Restoration Shaman": 60000,
         "Mistweaver Monk": 300000,
     }
 
@@ -70,7 +70,7 @@ export const getWeaponScaling = (spell, currentStats, spec) => {
 
     To make this easy, we will calculate the weapon portion before we run the sim since it is a constant and doesn't scale with 
     */
-    const isTwoHander = currentStats.weaponSwingSpeed > 2.8; // 2.8 is the default speed for a two-handed weapon.
+    const isTwoHander = currentStats.isTwohanded ?? false;; // 2.8 is the default speed for a two-handed weapon.
     const adjWeaponDamage = currentStats.averageDamage / currentStats.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75));
 
     const damage = (adjWeaponDamage + currentStats.attackPower / 14) * spell.weaponScaling;
@@ -207,16 +207,16 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
 
     if (spec.includes("Holy Paladin")) {
         // Divine Plea
-        additionalManaPerSecond += (pool * 0.12 / 120 * 5);
-        manaSources["Divine Plea"] = (pool * 0.12 / 120 * 5);
+        additionalManaPerSecond += (1.35 * currentStats.spirit * 3 / 120 * 5);
+        manaSources["Divine Plea"] = (1.35 * currentStats.spirit * 3 / 120 * 5);
 
         // Seal of Insight
-        manaSources["Seal of Insight"] = (937 * 8 / 60 * 5); // 8ppm
+        manaSources["Seal of Insight"] = (3600 * 8 / 60 * 5); // 8ppm
         additionalManaPerSecond += manaSources["Seal of Insight"]; 
 
         // Seal of Insight
-        manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5); // 1 use per minute
-        additionalManaPerSecond += manaSources["Seal of Insight"]; 
+        manaSources["Glyph of Lay on Hands"] = (pool * 0.1 / 360 * 5);
+        //additionalManaPerSecond += manaSources["Seal of Insight"]; 
         
     }
     else if (spec.includes("Restoration Druid")) {
@@ -227,6 +227,16 @@ export const getAdditionalManaEffects = (currentStats, spec, playerRace = "") =>
 
     }
     else if (spec.includes("Discipline Priest")) {
+    }
+
+    else if (spec.includes("Restoration Shaman")) {
+        const manaTideMana = currentStats.spirit * 1.128 * 2 * (16/5) * 5 / 180; // Formula is left in its full form for clarity.
+        manaSources["Mana Tide Totem"] = manaTideMana;
+        additionalManaPerSecond += manaTideMana;
+
+        const waterShieldMana = 2138 / 5; // TODO
+        manaSources["Water Shield"] = waterShieldMana;
+        additionalManaPerSecond += waterShieldMana;
     }
 
     if (playerRace === "Blood Elf") {

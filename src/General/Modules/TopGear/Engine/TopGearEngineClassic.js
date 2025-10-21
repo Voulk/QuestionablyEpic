@@ -15,7 +15,7 @@ import { applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/Cla
 // we can run our full algorithm on far fewer items. The net benefit to the player is being able to include more items, with a quicker return.
 // This does run into some problems when it comes to set bonuses and could be re-evaluated at the time. The likely strat is to auto-include anything with a bonus, or to run
 // our set bonus algorithm before we sort and slice. There are no current set bonuses that are relevant to raid / dungeon so left as a thought experiment for now.
-const softSlice = 6000; //1500;
+const softSlice = 8000; //1500;
 
 
 // block for `time` ms, then return the number of loops we could run in that time:
@@ -97,7 +97,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
 
   if (reforgingOn) {
     itemList.forEach(item => {
-      const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste"].includes(key));
+      const itemStats = Object.keys(item.stats).filter(key => ["spirit", "mastery", "crit", "haste", "hit"].includes(key));
       const itemReforgeOptions = reforgeToOptions.filter(stat => !itemStats.includes(stat));
 
       //console.log("Item has stats: " + itemStats + " and reforge options: " + itemReforgeOptions);
@@ -438,6 +438,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     }
     //console.log(JSON.stringify(castModel));
     // If we can't, optimize all pieces.
+    
     if (getSetting(playerSettings, "reforgeSetting") === "Smart") {
       itemSet.itemList.forEach((item, index) => {
         if (item.flags.includes("ItemReforged")) {
@@ -465,12 +466,11 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
 
    // Enchants
     if (getSetting(playerSettings, "includeEnchants") === "Yes") {
-      const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0));
+      const enchantInfo = getEnchants(playerSettings, professions, (itemSet.itemList.filter(item => item.slot === "Offhand" || item.slot === "Shield").length > 0), player.spec);
       enchant_stats = enchantInfo.enchantStats;
       enchants = enchantInfo.enchants;
     }
     compileStats(setStats, enchant_stats);
-
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     let hasteNeeded = 0;
@@ -481,7 +481,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     compileStats(setStats, compiledGems.stats);
 
     compileStats(setStats, bonus_stats); // Add the base stats on our gear together with enchants & gems.
-    
+
 
     // -- Effects --
     let effectStats = [];
@@ -520,6 +520,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       // Monks require us to provide some information on our weapon too.
       const weapon = itemSet.itemList.find(item => item.slot.includes("Weapon"));
       setStats.weaponSwingSpeed = weapon.stats.weaponSwingSpeed;
+      setStats.isTwoHanded = weapon.slot.includes("2H") ? true : false;
       //const isTwoHanded = setStats.weaponSwingSpeed > 2.8 ? true : false;
       setStats.weaponDamage = weapon.stats.averageDamage// / setStats.weaponSwingSpeed * (isTwoHanded ? 0.5 : 0.898882 * 0.75); // Average damage per second.
       //setStats.meleeWeaponDamage = weapon.stats.averageDamage / setStats.weaponSwingSpeed * (isTwoHanded ? 1 : 0.898882); // Average damage per second.
@@ -690,9 +691,12 @@ function createSets(itemList, rawWepCombos, filter) {
                           for (var finger2 = 1; finger2 < slotLengths.Finger; finger2++) {
                             softScore.finger2 = splitItems.Finger[finger2].softScore;
 
-                            if (splitItems.Finger[finger].id !== splitItems.Finger[finger2].id &&
-                                finger < finger2 &&
-                                (!splitItems.Finger[finger].name.includes("Planetary Band") || !splitItems.Finger[finger2].name.includes("Planetary Band"))) {
+                            // Check if fingers don't match, unless they aren't unique equipped for some reason.
+                            if (finger < finger2 && 
+                              ((splitItems.Finger[finger].id !== splitItems.Finger[finger2].id) ||
+
+                              ((splitItems.Finger[finger].id === 90434 || splitItems.Finger[finger].id === 89524) 
+                              && splitItems.Finger[finger].uniqueHash !== splitItems.Finger[finger2].uniqueHash))) {
                               for (var trinket = 0; trinket < slotLengths.Trinket - 1; trinket++) {
                                 softScore.trinket = splitItems.Trinket[trinket].softScore;
 

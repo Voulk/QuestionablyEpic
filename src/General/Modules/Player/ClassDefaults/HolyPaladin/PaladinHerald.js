@@ -38,6 +38,7 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       chilledClarityExtension: 28000,
       CastsPerMinute: 27,
       cooldownMult: {
+        c30: 1.1,
         c60: 1,
         c90: 1,
         c120: 1.2,
@@ -56,6 +57,7 @@ export const paladinMeleeSpecialQueries = (contentType) => {
       OneManaHealing: 0.7,
       CastsPerMinute: 30,
       cooldownMult: {
+        c30: 1.05,
         c60: 1,
         c90: 1,
         c120: 1.2,
@@ -81,20 +83,20 @@ export const paladinMeleeStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.02,
-    crit: 0.9,
-    mastery: 0.98,
-    versatility: 0.878,
-    leech: 0.42,
+    haste: 1.26,
+    crit: 1.21,
+    mastery: 1.264,
+    versatility: 1.14,
+    leech: 0.6,
     defaults: true,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.00,
-    crit: 0.956,
-    mastery: 0.7,
-    versatility: 0.923,
-    leech: 0.32,
+    haste: 1.28,
+    crit: 1.242,
+    mastery: 1.07,
+    versatility: 1.229,
+    leech: 0.4,
     defaults: true,
   };
 

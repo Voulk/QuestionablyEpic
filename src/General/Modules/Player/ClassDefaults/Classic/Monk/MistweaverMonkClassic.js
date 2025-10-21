@@ -122,7 +122,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   let fillerCPM = 0;
   const talents = specBaseline.talents || monkTalents;
   const eminenceOverheal = 0.15;
-  const isTwoHander = statProfile.weaponSwingSpeed > 2.8;
+  const isTwoHander = statProfile.isTwoHanded ?? false;
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -202,7 +202,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const manaDifference = upliftPackageCost - tigerPalmPackageCost; // 
 
     reportingData.upliftPackageCost = upliftPackageCost;
-    const packagesAvailable = manaRemaining / manaDifference; 
+    const packagesAvailable = manaRemaining / manaDifference * 0.8; 
     reportingData.packagesAvailable = packagesAvailable;
     getSpellEntry(castProfile, "Uplift").cpm += packagesAvailable; // Spend 80% of our mana on Uplift packages.
     getSpellEntry(castProfile, "Jab").cpm += packagesAvailable + tigerPalmPackagesAvailable; // Spend 80% of our mana on Uplift packages.

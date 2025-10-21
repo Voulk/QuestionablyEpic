@@ -5,11 +5,13 @@ import { paladinShockProfile } from "General/Modules/Player/ClassDefaults/Classi
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents as paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents as druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents} from "./Monk/ClassicMonkSpellDB";
+import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyTalents } from "./Priest/ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
+import { restoShamanDefaults } from "General/Modules/Player/ClassDefaults/Classic/Shaman/RestoShamanClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
 import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic"
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
@@ -58,6 +60,13 @@ const getData = (spec) => {
             defaults: holyPriestDefaults
         }
     }
+    else if (spec === "Restoration Shaman"){
+        return {
+            spec: "Restoration Shaman",
+            talents: shamanTalents,
+            defaults: restoShamanDefaults
+        }
+    }
     else {
         throw new Error("Unknown spec: " + spec);
     }
@@ -77,7 +86,7 @@ describe("Test APL", () => {
         const revisedTalents = {...data.talents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: discSpells, settings: testSettings, talents: {...revisedTalents}, stats: data.defaults.defaultStatProfile }
+        const playerData = { spec: spec, spells: shamanSpells, settings: testSettings, talents: {...revisedTalents}, stats: data.defaults.defaultStatProfile }
         const profile = data.defaults;
 
         if (testSuite === "APL") {
@@ -107,7 +116,7 @@ describe("Test APL", () => {
 
 
         expect(true).toEqual(true);
-        buildStatChart(profile, playerData,  testSettings);
+        //buildStatChart(profile, playerData,  testSettings);
     })
 
     

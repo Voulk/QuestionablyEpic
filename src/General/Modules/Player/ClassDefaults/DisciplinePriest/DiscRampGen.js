@@ -219,6 +219,8 @@ export const buildEvangRamp = (applicators, trinketList, playstyle, talents, spe
     else if (specialSpells.includes("Mindbender")) sequence.push("Mindbender");
 
     if (trinketList.includes("House of Cards")) sequence.push("House of Cards");
+    else if (trinketList.includes("Lily of the Eternal Weave")) sequence.push("Lily of the Eternal Weave");
+    
     sequence.push('Mind Blast');
     // Premonition
     sequence.push('Smite');

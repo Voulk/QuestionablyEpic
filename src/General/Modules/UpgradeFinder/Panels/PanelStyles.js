@@ -137,6 +137,10 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("../../../../Images/Bosses/Undermine/LiberationOfUndermineLong.png")})`,
       ...commonStyles,
     },
+    manaforgeOmegaHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/ManaforgeOmega/ManaforgeOmegaLong.png")})`,
+      ...commonStyles,
+    },
   };
 });
 

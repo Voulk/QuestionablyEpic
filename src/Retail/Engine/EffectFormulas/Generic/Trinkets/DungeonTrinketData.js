@@ -2,14 +2,46 @@ import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, for
 
 export const dungeonTrinketData = 
 [
+  {  
+    name: "Azhiccaran Parapodia",
+    description: "Strong but only procs off DPS spells OR abilities. Make sure you keep at least a DoT up if available.",
+    effects: [
+      {
+        coefficient: 0.577109, 
+        table: -1,
+        duration: 30,
+        ppm: 2,
+        stat: "intellect",
+        canOverlap: true,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].ppm * data[0].duration / 60; // These stacks can overlap so there should be no proc munching.
+
+      if (player.spec === "Discipline Priest") {
+
+      }
+      else if (additionalData.contentType === "Dungeon") {
+        // Dungeon uptime should look a lot better
+        bonus_stats.intellect *= 0.85;
+      }
+      else {
+        bonus_stats.intellect *= 0.5;
+      }
+
+      return bonus_stats;
+    }
+  },
       { // 1:30 intellect on-use. 
       name: "Sunblood Amethyst",
       description: "",
       effects: [
         {
-          coefficient: 0.999862, 
+          coefficient: 0.999862 * 1.15, 
           table: -1,
-          efficiency: 0.75, // Amount of time standing in puddle.
+          efficiency: 0.7, // Amount of time standing in puddle.
           duration: 15, 
           cooldown: 90,
         },
@@ -17,8 +49,8 @@ export const dungeonTrinketData =
       runFunc: function(data, player, itemLevel, additionalData) {
         let bonus_stats = {};
     
-        if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120) * data[0].efficiency;
-        else bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel) * data[0].efficiency;
+        if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120, additionalData.setStats) * data[0].efficiency;
+        else bonus_stats.intellect = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, additionalData.setStats) * data[0].efficiency;
   
         return bonus_stats;
       }
@@ -38,17 +70,17 @@ export const dungeonTrinketData =
         let bonus_stats = {};
     
         if (additionalData.castModel.modelName.includes("Oracle")) {
-          bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "Lily of the Eternal Weave", itemLevel)
+          bonus_stats.hps = additionalData.castModel.modelOnUseTrinket(additionalData.setStats, "Lily of the Eternal Weave", itemLevel) * 0.9; // Expected additional overhealing.
         }
-        else if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120);
-        else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
-  
+        else if ((player.spec === "Holy Priest" || player.spec === "Restoration Druid" || player.spec === "Mistweaver Monk") && getSetting(additionalData.settings, "delayOnUseTrinkets")) bonus_stats.mastery = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 120, additionalData.setStats);
+        else bonus_stats.mastery = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, additionalData.setStats);
+
         return bonus_stats;
       }
     },
     {
       name: "First Class Healing Distributor",
-      description: "",
+      description: "A bits and pieces trinket that is fine overall but doesn't excel in any particular area and gets outscaled by stronger alternatives.",
       effects: [
         {
           coefficient: 0.427244, 
@@ -57,18 +89,20 @@ export const dungeonTrinketData =
           duration: 9,
         },
         { // 
-          coefficient: 22.20824, // Heal portion
+          coefficient: 22.20824 * 1.2, // Heal portion
           table: -9,
           secondaries: ['crit', 'versatility'],
           efficiency: 0.55,
-          meteor: 0.15,
+          meteor: 0.3,
+          avgTargetsHit: 3, // Real average will be much higher than this, but we're interested in its meteor effect here, so it's really an average where the cap per event is 5.
+          ppm: 3,
         },
       ],
       runFunc: function(data, player, itemLevel, additionalData) {
         let bonus_stats = {};
 
         bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
-        bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (data[1].meteor * 5 + 1);
+        bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType) * (data[1].meteor * data[1].avgTargetsHit + 1);
   
   
         return bonus_stats;
@@ -79,17 +113,19 @@ export const dungeonTrinketData =
       description: "",
       effects: [
         {
-          coefficient: 0.493954, 
+          coefficient: 0.449941, 
           table: -7,
         },
         { // 
-          coefficient: 0.098791, // Ally portion
+          coefficient: 0.074857, // Ally portion
           table: -7,
           stat: "allyStats",
         },
       ],
       runFunc: function(data, player, itemLevel, additionalData) {
         let bonus_stats = {};
+
+        //console.log(JSON.stringify(additionalData.selectedOptions));
 
         const bestStat = player.getHighestStatWeight(additionalData.contentType);
         bonus_stats[bestStat] = processedValue(data[0], itemLevel); // 
@@ -219,7 +255,7 @@ export const dungeonTrinketData =
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+      bonus_stats.crit = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, additionalData.setStats);
       bonus_stats.hps = runGenericFlatProc(data[1], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
@@ -460,7 +496,7 @@ export const dungeonTrinketData =
           }
           else {*/
           const bestStat = player.getHighestStatWeight(additionalData.contentType)
-          bonus_stats[bestStat] = runGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel);
+          bonus_stats[bestStat] = runGenericOnUseTrinket({...data[0], stat: bestStat}, itemLevel, additionalData.castModel, additionalData.setStats);
           //}
 
 

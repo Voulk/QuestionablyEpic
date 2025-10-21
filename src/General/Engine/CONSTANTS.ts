@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.8, // This is a heavy underestimation. Maybe add a setting.
-    allyDPSPerPoint: 0.8 / 60000 * 1500000,
+    allyStatWeight: 1.1, // This is a heavy underestimation. Maybe add a setting.
+    allyDPSPerPoint: 1.1 / 125000 * 3000000,
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,
@@ -15,9 +15,9 @@ export const CONSTANTS = {
         "mythicMax": 7,
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
-    seasonalItemConversion: 10, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
+    seasonalItemConversion: 11, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
     currentRaidID: 1302, // Undermine
-    currentDungeonIDs: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
+    currentDungeonIDs: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
     bossNPCIDs: {
         2639: 225821, // Vexie and the Geargrinders.
         2640: 229177, // Cauldron of Carnage
@@ -38,9 +38,9 @@ export const CONSTANTS = {
         1298: 15452, // Operation Floodgate
         1187: 12841, // Theater of Pain
     },
-    seasonID: 25,
+    seasonID: 30,
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
-    classicSpecs: ["Restoration Druid Classic", /*"Holy Paladin Classic",*/  "Discipline Priest Classic", "Holy Priest Classic", /*"Restoration Shaman Classic",*/ "Mistweaver Monk Classic"],
+    classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic", "Mistweaver Monk Classic"],
 
     qualityColors: {
         3: "#328CE3",

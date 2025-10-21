@@ -409,6 +409,18 @@
           "title": "Lining Uptime",
           "tooltip": "Your expected uptime of Dusk / Dawnthread lining during moments where you are actually healing."
         },
+        "includeJastorEffect": {
+          "title": "Include Jastor Effect",
+          "tooltip": "Jastor Diamond has an occasional bug where it stops working for a while. You can use this setting to treat it as a normal ring."
+        },
+        "antennaPickupRate": {
+          "title": "Antenna Pickup Rate",
+          "tooltip": "The percentage of orbs you expect to pick up."
+        },
+        "shatteredSoulUsage": {
+          "title": "Shattered Soul Efficiency",
+          "tooltip": "Set to 100 if you expect to get full Shattered Soul value on a fight. It works on Cosmic, Nature, Holy, Arcane and Shadow damage."
+        },
 
         
 
@@ -529,7 +541,7 @@
     "TopGear": {
       "BackToGearSelection": "Back to Gear Selection",
       "CompetitiveAlternative": "Close Alternatives",
-      "CompetitiveAlternativeHelp": "This is how close other sets are to your best (pictured above). Anything close in score can be considered a sidegrade.",
+      "CompetitiveAlternativeHelp": "This is how close other sets are to your best (pictured above). Anything close in score can be considered a sidegrade. Make sure you consider any stamina differences since having more health is always good.",
       "ErrorMessage": "So sorry, seems you've run into an error. This is usually caused by not being able to create any valid sets. Check that you have an intellect weapon selected, two or more rings and two or more trinkets. If multiple legendaries are selected then there must be a valid alternative for each.",
       "GoMsg": "Go!",
       "HelpTextClassic": "Top Gear lets you compare every possible combination of your selected gear at once!",

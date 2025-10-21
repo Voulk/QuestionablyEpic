@@ -7,7 +7,7 @@ export const getSeasonalDungeons = () => {
 
 export const getMoPDungeons = () => {
   //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
-  return [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271];
+    return [246, 316, 313, 312, 311, 303, 302, 324, 321];
 }
 
 export const instanceDB = {
@@ -20,7 +20,8 @@ export const instanceDB = {
   "1296": "Liberation of Undermine",
 
   "-4": "Crafted",
-  "-12": "Reptuation",
+  "-12": "Reputation",
+  "-14": "Timewalking",
 
   // Classic specific
   "369": "Siege of Orgrimmer",
@@ -48,6 +49,16 @@ export const reputationDB = {
   2: "Golden Lotus",
   3: "Shado-Pan",
   4: "August Celestials",
+}
+
+export const timewalkingDB = {
+  1: "Vanilla",
+  2: "Burning Crusade",
+  3: "Wrath of the Lich King",
+  4: "Cataclysm",
+  5: "Mists of Pandaria",
+  6: "Warlords of Draenor",
+  7: "Legion",
 }
 
 
@@ -109,12 +120,12 @@ export const retailInstanceDB = {
   "-1": {
     "Retail": {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
-      bossOrderMythicPlus: [1194, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
+      bossOrderMythicPlus: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
 
       // M+ season 2
-      1194: "Tazavesh Streets", // Tazavesh: Streets of Wonder
+      "-20": "Tazavesh Streets", // Tazavesh: Streets of Wonder
       11941: "Tazavesh Gambit", // Tazavesh: The Gambit
-      1303: "Tazavesh Echo Dome", // Tazavesh: The Echo Dome
+      1303: "Eco-Dome Al'dani", // 
       1185: "Halls of Atonement", // The Halls of Atonement
 
       1210: "Darkflame Cleft",
@@ -189,6 +200,25 @@ const classicInstanceDB = {
       742: "Tsulong",
       729: "Lei Shi",
       709: "Sha of Fear",
+    }
+  },
+  362: {
+    name: "Throne of Thunder",
+    bossOrder: [816, 817, 818, 819, 820, 821, 824, 825, 827, 828, 829, 831, 832],
+    bosses: {
+      816: "Council of Elders",
+      817: "Iron Qon",
+      818: "Durumu the Forgotten",
+      819: "Horridon",
+      820: "Primordius",
+      821: "Megaera",
+      824: "Dark Animus",
+      825: "Tortos",
+      827: "Jin'rokh the Breaker",
+      828: "Ji-Kun",
+      829: "Twin Empyreans",
+      831: "Ra-den",
+      832: "Lei Shen",
     }
   },
 

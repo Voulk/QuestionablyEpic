@@ -17,6 +17,8 @@ import { nameDB } from "Databases/ItemNameDB";
 import Player from "General/Modules/Player/Player";
 import { getSeasonalDungeons, getMoPDungeons } from "Databases/InstanceDB";
 import { classicGemDB } from "Databases/ClassicGemDB";
+import { ItemDamageTwoHand } from "Retail/Engine/ItemDamageTwoHand";
+import { ItemDamageOneHand } from "Retail/Engine/ItemDamageOneHand";
 
 
 
@@ -108,8 +110,9 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case SPEC.RESTOSHAMAN:
           return [0, 1, 4, 5, 10,  13, 15];
         case SPEC.HOLYPRIEST:
-          return [4, 10, 15, 19];
+        case "Holy Priest Classic":
         case SPEC.DISCPRIEST:
+        case "Discipline Priest Classic":  
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
           return [0, 1, 4, 5, 6, 7, 8, 11];
@@ -117,8 +120,7 @@ export function getValidWeaponTypes(spec: string, slot: string) {
           return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
           return [0, 1, 4, 5, 10, 11, 13, 15];
-        case "Holy Priest Classic":
-          return [4, 10, 15, 19];
+
         case "Mistweaver Monk Classic":
             return [0, 4, 6, 7, 10, 13];
         default:
@@ -341,7 +343,7 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.HOLYPALADIN:
       return [0, 1, 4, 5, 6, 7, 8];
     case SPEC.PRESEVOKER:
-      return [0, 4, 5, 7, 10, 13, 15];
+      return [0, 4, 5, 7, 8, 10, 13, 15];
     case SPEC.RESTOSHAMAN:
       return [0, 1, 4, 5, 10, 13, 15];
     case SPEC.HOLYPRIEST:
@@ -653,7 +655,8 @@ export function getItemAllocations(id: number, missiveStats: any[] = [], gameTyp
 }
 
 // Returns which secondary item category a given slot falls in.
-function getItemCat(slot: string) {
+function getItemCat(slot: string, gameType: gameTypes = "Retail") {
+  if (gameType === "Classic" && ["Offhand", "Shield", "Holdable"].includes(slot)) return 2;
   switch (slot) {
     case "Head":
     case "Chest":
@@ -806,7 +809,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
     penalties = itemData.socketPenalties;
   }
 
-  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot)];
+  let rand_prop = randPropPointsClassic[itemLevel]["slotValues"][getItemCat(slot, "Classic")];
   //if (slot == "Finger" || slot == "Neck") combat_mult = combat_ratings_mult_by_ilvl_jewl[itemLevel];
   //else combat_mult = combat_ratings_mult_by_ilvl[itemLevel];
   combat_mult = 1;
@@ -828,6 +831,17 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
     else if (key === "stamina") {
       // todo
     }
+  }
+
+  if (itemData.slot === "2H Weapon") {
+    // Calculate Weapon Damage
+    stats["weaponSwingSpeed"] = itemData.stats.weaponSwingSpeed;
+    stats["averageDamage"] = itemData.stats.weaponSwingSpeed * ItemDamageTwoHand[itemLevel];
+  }
+  else if (itemData.slot === "1H Weapon") {
+    // Calculate Weapon Damage
+    stats["weaponSwingSpeed"] = itemData.stats.weaponSwingSpeed;
+    stats["averageDamage"] = itemData.stats.weaponSwingSpeed * ItemDamageOneHand[itemLevel];
   }
 
   return stats;
@@ -1045,8 +1059,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
       else if (source === "Terrace" && sources) sourceCheck = sources.instanceId === 320;
-      else if (source === "T14" && sources) sourceCheck = ([317, 330].includes(sources.instanceId));
+      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 0);
       else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
+      else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4
@@ -1063,7 +1080,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { 
-          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel : itemLevel, "", gameType);
+          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && ["T14", "T14+"].includes(source)) ? 8 : 0;
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
@@ -1099,7 +1117,6 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
             item_stats[trinketSecondary] = Math.round(item_stats[trinketSecondary] - reforgeValue);
             item_stats[playerStatPriorityList[0]] = reforgeValue;
 
-            console.log("Reforging " + trinketSecondary + " to " + playerStatPriorityList[0] + " for item: " + item.name);
           }
 
     }
@@ -1204,8 +1221,8 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
-      // TODO: Factor out the secondary increase when S4 gear is properly applied.
-      score += statSum * player.getStatWeight(contentType, stat) * 1.3 / 120000 * player.getHPS(contentType);
+      const weight = player.getStatWeight(contentType, stat);
+      score += statSum * weight / 120000 * player.getHPS(contentType);
     }
   }
 

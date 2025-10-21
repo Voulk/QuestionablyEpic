@@ -24,20 +24,20 @@ export const chronoDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.74, 
-      crit: 1.0, 
-      mastery: 1.12, 
-      versatility: 0.885, 
-      leech: 0.44,
+      haste: 1.014, 
+      crit: 1.33, 
+      mastery: 1.44, 
+      versatility: 1.15, 
+      leech: 0.6,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.98,
-      crit: 0.94,
-      mastery: 1.02,
-      versatility: 0.86,
-      leech: 0.42,
+      haste: 1.35,
+      crit: 1.14,
+      mastery: 1.32,
+      versatility: 1.15,
+      leech: 0.45,
       defaults: true,
     };
   
@@ -51,6 +51,7 @@ export const chronoDefaultSpellData = (contentType) => {
         OneManaHealing: 11,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
+          c30: 1.05,
           c60: 1,
           c90: 1,
           c120: 1.15,
@@ -62,6 +63,7 @@ export const chronoDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
+          c30: 1.05,
           c60: 1,
           c90: 1.15,
           c120: 1,

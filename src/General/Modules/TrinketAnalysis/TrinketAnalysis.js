@@ -21,6 +21,7 @@ import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
+import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -63,6 +64,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// On rare occasion we might want to "invent" an entry on the chart. 
+// Maybe an item has a bonus effect when part of a set, or maybe we want to show multiple variations of a trinket on the chart.
+// There isn't a good way to template these so most of the code will be unique for each entry.
+const mockUniqueItemCombo = (id, tag) => {
+  if (id === 242392 && tag === "mythicWeapon") {
+    // Calculate trinket effect
+
+    // Calculate Weapon
+
+    // Deduct weapon without set
+
+    // Score Set of stats
+  }
+
+}
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
@@ -118,10 +134,10 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
   //return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player) => {
-  const itemLevel = getItemProp(id, "itemLevel", "Classic");
+const getClassicTrinketScore = (id, player, itemLevel) => {
+  //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-
+  //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -178,6 +194,7 @@ export default function TrinketAnalysis(props) {
       //1207, // Amirdrassil
       1273, // Palace
       1296, // Liberation of Undermine
+      1302, // Manaforge Omega
     ];
     const dungeonSources = [
       -1, // General Dungeons
@@ -190,12 +207,14 @@ export default function TrinketAnalysis(props) {
       1205, // DF World Bosses
       -18, // PVP
       -17, // PVP
+      -4,
     ];
+    const timewalkingSources = [-12]
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
     /* ---------------------------------------------------------------------------------------------- */
-    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Dungeons") === true && sources.includes("Delves") === true) {
+    if (sources.includes("The Rest") === true && sources.includes("Raids") === true && sources.includes("Timewalking") === true && sources.includes("Dungeons") === true && sources.includes("Delves") === true) {
       results = array;
     } else {
       results = array.filter((item) => {
@@ -205,6 +224,7 @@ export default function TrinketAnalysis(props) {
             ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
               (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
               (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
+              (timewalkingSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
               (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
@@ -222,6 +242,21 @@ export default function TrinketAnalysis(props) {
     setLevelCap(newItemLevel);
   }
 
+  const getReforgeInstructions = (player, stats) => { 
+    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    const trinketSecondary = Object.keys(stats).find(key => stats[key] !== 0);
+
+    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+          const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
+
+          if (trinketSecondaryPos !== 0) {
+            // Not best secondary, reforge.
+            return reforgeIDs[`Reforged: ${trinketSecondary} -> ${playerStatPriorityList[0]}`] || 0;
+          }
+    }
+    return 0;
+  }
+
   const handleSource = (event, newSources) => {
     if (newSources.length) {
       setSources(newSources);
@@ -229,7 +264,7 @@ export default function TrinketAnalysis(props) {
   };
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [652, 658, 665, 675, 678, 684, 691, 697, 704, 707, 710, 714, 723];
+  const allItemLevels = [671, 675, 678, 684, 691, 697, 704, 707, 710, 714, 720, 723]; 
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -238,7 +273,7 @@ export default function TrinketAnalysis(props) {
     (key) =>
       key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
   const filteredTrinketDB = sourceHandler(trinketDB, sources, props.player.spec);
-  console.log(trinketDB)
+
   const itemCardData = setupItemCardData(trinketDB, contentType, props.player, playerSettings);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
@@ -255,9 +290,12 @@ export default function TrinketAnalysis(props) {
   for (var i = 0; i < finalDB.length; i++) {
     const trinket = finalDB[i];
     const trinketName = getItemProp(trinket.id, "name", gameType);
+    const trinketStats = getItemProp(trinket.id, "stats", gameType);
+
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
+      highestLevel: 0,
     };
 
     if (gameType === "Classic") {
@@ -265,24 +303,35 @@ export default function TrinketAnalysis(props) {
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
-      const trinketScore = getClassicTrinketScore(trinket.id, props.player);
-      
+      const itemUpgradeExclusionList = ["Mithril Wristwatch", "Thousand-Year Pickled Egg"]
+      const trinketLevel = trinket.itemLevel// + (itemUpgradeExclusionList.includes(trinket.name) ? 0 : 8);
+      const trinketScore = getClassicTrinketScore(trinket.id, props.player, trinketLevel);
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
+      
       let difficulty = "";
-      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1)) difficulty = "heroic";
-      else if (trinket.levelRange.length === 3 && pos === 0) difficulty = "lfr";
+      if (trinket.levelRange.length > 1 && trinket.levelRange.length === (pos + 1) && trinketName !== "Jade Magistrate Figurine") difficulty = "heroic";
+      else if ((trinket.levelRange.length === 3 || trinketName === "Jade Magistrate Figurine") && pos === 0) difficulty = "lfr";
       else difficulty = "normal";
       
       if (activeTrinkets.filter((key) => key.name === trinketName).length > 0) {
         const existingTrinket = activeTrinkets.filter((key) => key.name === trinketName)[0]
+        
         existingTrinket[difficulty] = trinketScore;
-        existingTrinket[difficulty + "ilvl"] = trinket.itemLevel;
-        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
+        existingTrinket[difficulty + "ilvl"] = trinketLevel;
+        existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        existingTrinket.highestLevel = Math.max(existingTrinket.highestLevel, trinketLevel);
       }
       else {
         trinketAtLevels[difficulty] = trinketScore;
-        trinketAtLevels[difficulty + "ilvl"] = trinket.itemLevel;
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.itemLevel, trinket.id);
+        trinketAtLevels[difficulty + "ilvl"] = trinketLevel;
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        trinketAtLevels.highestLevel = Math.max(trinketAtLevels.highestLevel, trinketLevel);
+        if (trinketStats.intellect === 0) {
+          // Trigger Reforge
+          const reforge = getReforgeInstructions(props.player, trinketStats);
+          if (reforge) trinketAtLevels.reforgeID = reforge;
+          
+        }
         activeTrinkets.push(trinketAtLevels);
       }
       
@@ -310,6 +359,23 @@ export default function TrinketAnalysis(props) {
         activeTrinkets.push(trinketAtLevels);
     }
   }
+  if (gameType === "Retail") {
+    // Add any additional entries
+
+    // Voidcore with Mythic Weapon
+    let trinketAtLevels = {
+      id: 242392,
+      name: "Diamantine Voidcore (Mythic Wep)",
+      flag: "Mythic Wep",
+    };
+
+    for (var x = 0; x < itemLevels.length; x++) {
+      //mockUniqueItemCombo(242392, "mythicWeapon")
+      trinketAtLevels["i" + itemLevels[x]] = 285000;
+    }
+    //activeTrinkets.push(trinketAtLevels);
+    
+  }
 
   if (gameType === "Classic") {
     // Sort. We'll need to use the retail "highest level" code here.
@@ -319,8 +385,8 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "For Dinar advice, cross reference with your favorite guide. Dinars are at least partially a longer-term decision and taking your best immediate upgrade is not guaranteed to be your best overall selection. The ? button on the trinket chart can give you extra information on options."  :
-                                              "";
+  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+                                              "Trinkets are modelled at their maximum item upgrade level.";
 
   return (
     <div className={classes.root}>
@@ -357,6 +423,7 @@ export default function TrinketAnalysis(props) {
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
+                  containerStyle={{ paddingRight: 8 }}
                   defaultValue={4}
                   step={null}
                   valueLabelDisplay="off"
@@ -372,7 +439,7 @@ export default function TrinketAnalysis(props) {
 
               <Grid item xs={12}>
                 <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                  <Grid container spacing={1} direction="row" justifyContent="flex-end" alignItems="center">
+                  <Grid container spacing={1} direction="row"  alignItems="center" >
                     {gameType === "Retail" ? (
                       <Grid item>
                         <div style={{ padding: "8px 0px 8px 8px" }}>
@@ -393,7 +460,7 @@ export default function TrinketAnalysis(props) {
                       ""
                     )}
                     {gameType === "Retail" ? (
-                      <Grid item>
+                      <Grid item >
                         <SourceToggle sources={sources} setSources={handleSource} />
                       </Grid>
                     ) : (

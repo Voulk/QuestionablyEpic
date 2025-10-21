@@ -83,6 +83,14 @@ export default function ItemCard(props) {
     204465: "Small value proc at the cost of a lot of stamina. I'd recommend this for farm content only.",
     203963: "Beacon isn't as good as it used to be and faces tough competition from other damage trinkets. Not one you're likely to use.",
     203714: "Niche use in high Mythic+ for countering single target burst damage.",
+
+    242395: "A powerful trinket that spawns orbs that give you crit. The orbs float toward you but 100% collection rate is not guaranteed. Setting available.",
+    237730: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
+    237728: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
+    237735: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
+    242405: "Absorb portion not currently included while we wait to test it in-game",
+
+    210816: "Decent average stats but very high variance which isn't ideal. There are usually other items you'd rather craft even if Alchemist Stone is your largest immediate upgrade because there are other farmable trinkets of comparable strength that are more reliable."
   }
   // Add tier set check too and report a generic message for those. 
 
@@ -132,6 +140,9 @@ export default function ItemCard(props) {
     }
     if (item.source.instanceId === 1296 && item.source.encounterId > 0) {
       return encounterDB[1296].bosses[item.source.encounterId];
+    }
+    if (item.source.instanceId === 1302 && item.source.encounterId > 0) {
+      return encounterDB[1302].bosses[item.source.encounterId];
     }
     /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {

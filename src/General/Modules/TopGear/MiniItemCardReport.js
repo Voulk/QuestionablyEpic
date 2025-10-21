@@ -56,6 +56,10 @@ export default function ItemCardReport(props) {
   if (item.flags.includes("DelveBelt")) {
     statString = getTitanDiscName(item.selectedOptions[0]) //item.customOptions.find(option => option.id === item.selectedOptions).label;
   }
+  else if (item.id === 190958) {
+    // Soleahs
+    //statString = "Haste Version"// item.selectedOptions[0] || "";
+  }
   const itemLevel = item.level || item.ilvl;
   const isLegendary = false; // "effect" in item && (item.effect.type === "spec legendary" || item.effect.type === "unity");
   const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage) ;
@@ -233,7 +237,7 @@ export default function ItemCardReport(props) {
                 <Grid container spacing={0}>
                   <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
                     <Grid item>
-                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
+                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "3px" }}>
                       {socket} {statString}
                       </Typography>
                     </Grid>

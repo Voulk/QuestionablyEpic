@@ -19,7 +19,7 @@ export const evokerDefaultSpellData = (contentType) => {
 
   export const runFlameshaperCastModel = (itemSet, setStats, castModel, effectList) => {
     const settings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: false};
-    const playerData = { spec: "Preservation Evoker", settings: settings, stats: setStats, tier: ["S1-2", "S1-4"] }
+    const playerData = { spec: "Preservation Evoker", settings: settings, stats: setStats, tier: ["S1-2", "S1-4"], effectList: effectList }
     const result = runPreservationEvokerCastProfileEchoshaper(playerData);
 
     return result;
@@ -30,11 +30,11 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.87, 
-      crit: 0.94, 
-      mastery: 1.04, 
-      versatility: 0.82, 
-      leech: 0.5,
+      haste: 1.27, 
+      crit: 1.3, 
+      mastery: 1.45, 
+      versatility: 1.10, 
+      leech: 0.55,
       defaults: true,
     };
     statWeights.Dungeon = {
@@ -43,7 +43,7 @@ export const evokerDefaultSpellData = (contentType) => {
       crit: 0.735,
       mastery: 0.74,
       versatility: 0.68,
-      leech: 0.42,
+      leech: 0.48,
       defaults: true,
     };
   
@@ -58,9 +58,10 @@ export const evokerDefaultSpellData = (contentType) => {
         chilledClarityExtension: 32000,
         CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
         cooldownMult: {
+          c30: 1.1,
           c60: 1,
-          c90: 1.25,
-          c120: 1.15,
+          c90: 1.37,
+          c120: 1.1,
           c180: 1,
 
           oneMinute: 1, 
@@ -77,6 +78,7 @@ export const evokerDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
+          c30: 1.1,
           c60: 1,
           c90: 1.15,
           c120: 1,

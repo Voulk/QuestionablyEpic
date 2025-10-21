@@ -89,11 +89,23 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "Grey",
     padding: "0px",
     marginRight: "0px",
+    //backgroundColor: "#222222",
+    transition: "background-color 120ms ease-in-out, opacity 120ms ease-in-out",
   },
   activeChar: {
     borderColor: "Goldenrod",
     borderWidth: "2px",
     backgroundColor: "#494a3d",
+  },
+
+  // When CardActionArea is disabled, paint the child Card (.root) red.
+  actionAreaRoot: {
+    "&.Mui-disabled $root": {
+      backgroundColor: "#603838",
+      color: "#FFFFFF",
+      opacity: 0.9,
+      borderColor: "#FF0000", // helpful if using variant="outlined"
+    },
   },
 
   details: {
@@ -157,7 +169,7 @@ function a11yProps(index) {
 
 const CharTab = withStyles((theme) => ({
   root: {
-    backgroundColor: "#222222",
+    //backgroundColor: "#222222",
 
     "&:hover": {
       // color: '#40a9ff',
@@ -173,6 +185,11 @@ const CharTab = withStyles((theme) => ({
     // },
   },
   selected: {},
+  disabled: {
+    backgroundColor: "#FF0000",
+    color: "#FFFFFF",
+    opacity: 0.7, // optional
+  },
 }))((props) => <Tab {...props} />);
 
 export default function CharCards(props) {
@@ -321,6 +338,7 @@ export default function CharCards(props) {
 
   /* ---------------------------- Spec for the card --------------------------- */
   const spec = props.cardType === "Char" ? props.char.spec : "";
+  const isEnabled = props.char.enabled === true || props.char.enabled === undefined;
 
   const gameType = useSelector((state) => state.gameType);
   const serverList = gameType === "Retail" ? serverDB : serverDBBurningCrusade;
@@ -355,7 +373,12 @@ export default function CharCards(props) {
           </Tooltip>
         ) : ""}
 
-        <CardActionArea onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)} onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}>
+        <CardActionArea
+          disabled={!isEnabled}
+          classes={{ root: classes.actionAreaRoot }}
+          onClick={(e) => charClicked(props.char, props.cardType, props.allChars, props.charUpdate, e)}
+          onContextMenu={gameType === "Retail" ? (e) => handleClickOpen(e) : null}
+        >
           <Card className={rootClassName} variant="outlined">
             <Avatar src={props.char.charAvatarURL === "" ? specImages[props.char.spec] : props.char.charAvatarURL} variant="square" alt="" className={classes.large} />
             <Divider orientation="vertical" flexItem />

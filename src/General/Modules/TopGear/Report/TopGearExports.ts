@@ -51,6 +51,11 @@ export const reforgeIDs = {
   "Reforged: mastery -> haste": 167,
   "Reforged: crit -> haste": 145,
 
+  "Reforged: hit -> spirit": 115,
+  "Reforged: hit -> crit": 138,
+  "Reforged: hit -> haste": 137,
+  "Reforged: hit -> mastery": 140,
+
 }
 
 const wowheadCodes = {
@@ -83,6 +88,7 @@ const wowheadCodes = {
   1298: "[=retail-dun-operation-floodgate]", // Operation Floodgate
   1187: "[=retail-dun-theater-pain]", // Theater of Pain
 
+  "-20": "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   1194: "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   11941: "[=retail-dun-tazavesh-gambit]", // Tazavesh: The Gambit
   1303: "[=retail-dun-echo-dome]", // 
@@ -128,8 +134,23 @@ const wowheadCodes = {
 
   9997: '[icon name=achievement_raid_terraceofendlessspring02][/icon][npc=62442] [i](Terrace of Endless Spring)[/i][br][icon name=achievement_raid_terraceofendlessspring03][/icon][npc=62983] [i](Terrace of Endless Spring)[/i]', // Shared loot between Tsulon and Lei Shi
 
+  816: '[icon name=achievement_raid_thunder_king][/icon][npc=69134] [i](Council of Elders, Throne of Thunder)[/i]', // Council of Elders
+  817: '[icon name=achievement_boss_councilofelders][/icon][npc=68078] [i](Throne of Thunder)[/i]', // Iron Qon
+  818: '[icon name=achievement_boss_durumu][/icon][npc=68036] [i](Throne of Thunder)[/i]', // Durumu
+  819: '[icon name=achievement_boss_horridon][/icon][npc=68476] [i](Throne of Thunder)[/i]', // Horridon
+  820: '[icon name=achievement_boss_primordius][/icon][npc=69017] [i](Throne of Thunder)[/i]', // Primordius
+  821: '[icon name=achievement_boss_megaera][/icon][npc=70212] [i](Megaera, Throne of Thunder)[/i]', // Meg
+  824: '[icon name=achievement_boss_darkanimus][/icon][npc=69427] [i](Throne of Thunder)[/i]', // Dark Animus
+  825: '[icon name=achievement_boss_tortos][/icon][npc=67977] [i](Throne of Thunder)[/i]', // Tortos
+  827: '[icon name=achievement_boss_jinrokhthebreaker][/icon][npc=69465] [i](Throne of Thunder)[/i]', // Jin'rokh
+  828: '[icon name=achievement_boss_ji-kun][/icon][npc=69712] [i](Throne of Thunder)[/i]', // Ji-kun
+  829: '[icon name=achievement_boss_mogufemales][/icon][npc=68905] [i](Twin Empyreans, Throne of Thunder)[/i]', // Twin Empyreans
+  832: '[icon name=achievement_boss_leishen][/icon][npc=68397] [i](Throne of Thunder)[/i]', // Lei Shen
+  831: '[icon name=achievement_boss_ra_den][/icon][npc=69473] [i](Throne of Thunder)[/i]', // Ra-den
+
   // World Bosses (Pandaria)
   725: '[icon name=inv_mushanbeastmount][/icon][npc=62346] [i](World Boss)[/i]', // Saylis's Warband (Galleon)
+  826: '[icon name=ability_hunter_pet_devilsaur][/icon][npc=69161] [i](World Boss)[/i]', // Oondasta
 
 
   1: "[skill=197] [i](BoE)[/i]", // Tailoring

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Paper, Grid, Typography, Button, TextField, MenuItem } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -121,13 +121,14 @@ const PvPRating = [
 function shortenReport(player, contentType, result, ufSettings, settings) {
   const now = new Date();
   const date = now.getUTCFullYear() + " - " + (now.getUTCMonth() + 1) + " - " + now.getUTCDate();
+  const timestamp = now.toUTCString();
 
   const socketSetting = settings.topGearAutoGem.value || false;
   
   // Equipped items
   const equippedItems = player.activeItems.filter((item) => item.isEquipped);
   
-  const report = { id: generateReportCode(), dateCreated: date, playername: player.charName, realm: player.realm, region: player.region, 
+  const report = { id: generateReportCode(), dateCreated: date, timeCreated: timestamp, playername: player.charName, realm: player.realm, region: player.region, 
                     autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings, 
                     equippedItems: equippedItems, gameType: player.gameType };
   return report;
@@ -152,21 +153,35 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 636, label: "M0" },
-  { value: 639, label: "+2/3" },
-  { value: 642, label: "+4" },
-  { value: 645, label: "+5" },
-  { value: 649, label: "+6/7" },
-  { value: 652, label: "+8/9" },
-  { value: 655, label: "+10" },
-  { value: 658, label: "Vault" },
-  { value: 665, label: "" },
-  { value: 671, label: "" },
-  { value: 678, label: "" },
-  { value: 684, label: "" },
-
+  { value: 681, label: "M0" },
+  { value: 684, label: "+2/3" },
+  { value: 688, label: "+4" },
+  { value: 691, label: "+5" },
+  { value: 694, label: "+6/7" },
+  { value: 697, label: "+8/9" },
+  { value: 701, label: "+10" },
+  { value: 704, label: "Vault" },
+  { value: 707, label: "" },
+  { value: 710, label: "" },
+  { value: 714, label: "" },
+  { value: 717, label: "" },
+  { value: 720, label: "" },
+  { value: 723, label: "" },
 
 ]
+
+const getSessionStorageOrDefault = (key, defaultValue) => {
+  const stored = sessionStorage.getItem(key);
+  if (!stored) {
+    return defaultValue;
+  }
+
+  return JSON.parse(stored);
+};
+
+const setSessionStorage = (key, value) => {
+  sessionStorage.setItem(key, JSON.stringify(value));
+}
 
 export default function UpgradeFinderFront(props) {
   const classes = useStyles();
@@ -176,42 +191,72 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
+  const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => getSessionStorageOrDefault("ufRaidDifficulty", [5,7]));
+  const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => getSessionStorageOrDefault("ufDungeonDifficulty", gameType === "Retail" ? 6 : 1));
+  const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
+  const [ufCraftedLevel, setUfCraftedLevel] = useState(() => getSessionStorageOrDefault("ufCraftedLevel", 3));
+  const [ufCraftedStats, setUfCraftedStats] = useState(() => getSessionStorageOrDefault("ufCraftedStats", "Crit / Haste"));
 
-  const [ufSettings, setUFSettings] = React.useState({ raid: [5, 7], dungeon: gameType === "Retail" ? 6 : 1, pvp: 0, craftedLevel: 5, craftedStats: "Crit / Haste" });
+  const ufSettings = {
+      raid: ufRaidDifficulty,
+      dungeon: ufDungeonDifficulty,
+      pvp: ufPvPRank,
+      craftedLevel: ufCraftedLevel,
+      craftedStats: ufCraftedStats
+  };
+
+  useEffect(() => {
+    setSessionStorage("ufRaidDifficulty", ufRaidDifficulty);
+  }, [JSON.stringify(ufRaidDifficulty)]);
+
+  useEffect(() => {
+    setSessionStorage("ufDungeonDifficulty", ufDungeonDifficulty);
+  }, [ufDungeonDifficulty]);
+
+  useEffect(() => {
+    setSessionStorage("ufPvPRank", ufPvPRank);
+  }, [ufPvPRank]);
+
+  useEffect(() => {
+    setSessionStorage("ufCraftedLevel", ufCraftedLevel);
+  }, [ufCraftedLevel]);
+
+  useEffect(() => {
+    setSessionStorage("ufCraftedStats", ufCraftedStats);
+  }, [ufCraftedStats]);
 
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
   }, []);
 
-
   const setRaidDifficulty = (difficulty) => {
-    let currDiff = ufSettings.raid;
+    let currDiff = ufRaidDifficulty;
     let difficultyIndex = currDiff.indexOf(difficulty);
     if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
     else {
       currDiff.push(difficulty);
       if (currDiff.length > 2) currDiff.splice(0, 1);
-  }
-    setUFSettings({ ...ufSettings, raid: currDiff });
+    }
+    setUfRaidDifficulty(currDiff);
   };
 
   const changeCraftedStats = (event) => {
-    setUFSettings({ ...ufSettings, craftedStats: event.target.value });
+    setUfCraftedStats(event.target.value);
   }
 
   const setCraftedLevel = (event, newLevel) => {
-    setUFSettings({ ...ufSettings, craftedLevel: newLevel });
+    setUfCraftedLevel(newLevel);
   }
 
   const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= 11 && difficulty >= 0) setUFSettings({ ...ufSettings, dungeon: difficulty });
+    if (difficulty <= (mythicPlusLevels.length - 1) && difficulty >= 0) setUfDungeonDifficulty(difficulty);
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
     if (difficulty === "Heroic") {
-      setUFSettings({ ...ufSettings, dungeon: 1 });
+      setUfDungeonDifficulty(1);
     } else {
-      setUFSettings({ ...ufSettings, dungeon: 0 });
+      setUfDungeonDifficulty(0);
     }
   };
 
@@ -254,7 +299,7 @@ export default function UpgradeFinderFront(props) {
         break;
     }
 
-    if (newRank <= 8 && newRank >= 0) setUFSettings({ ...ufSettings, pvp: newRank });
+    if (newRank <= 8 && newRank >= 0) setUfPvPRank(newRank);
   };
 
   const player = props.player;
@@ -348,7 +393,7 @@ export default function UpgradeFinderFront(props) {
   };
 
   const getUpgradeFinderReady = (player) => {
-    return getSimCStatus(player) === "Good" && (ufSettings.raid.length > 0 || gameType == "Classic");
+    return getSimCStatus(player) === "Good" && (ufRaidDifficulty.length > 0 || gameType == "Classic");
   };
 
   return (
@@ -379,7 +424,7 @@ export default function UpgradeFinderFront(props) {
 
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }} >
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
@@ -407,7 +452,7 @@ export default function UpgradeFinderFront(props) {
                             }}
                             value="check"
                             fullWidth
-                            selected={ufSettings.raid.includes(i)}
+                            selected={ufRaidDifficulty.includes(i)}
                             style={{ height: 40 }}
                             onChange={() => {
                               toggleSelected(key);
@@ -436,7 +481,7 @@ export default function UpgradeFinderFront(props) {
           /* ---------------------------------------------------------------------------------------------- */
 
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ textAlign: "center", width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ textAlign: "center", width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
               <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={12}>
@@ -452,15 +497,14 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
               </Grid>
-
                 <UpgradeFinderSlider
                   className={classes.slider}
                   style={{ color: "#52af77" }}
-                  defaultValue={6}
+                  value={ufDungeonDifficulty}
                   step={null}
                   valueLabelDisplay="off"
                   marks={marks}
-                  max={11}
+                  max={mythicPlusLevels.length - 1}
                   change={setDungeonDifficulty}
                 />
               </div>
@@ -477,7 +521,7 @@ export default function UpgradeFinderFront(props) {
         {/* Crafted Items */}
         {gameType === "Retail" ? (
           <Grid item xs={12}>
-            <Paper elevation={3} style={{ width: "80%", margin: "auto" }}>
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
                 <Grid container justifyContent="center" spacing={1}>
                   <Grid item xs={12}>
@@ -498,7 +542,7 @@ export default function UpgradeFinderFront(props) {
                 <TextField
                   select
                   label="Secondaries"
-                  value={ufSettings.craftedStats} // Provide value and onChange handler as per your requirement
+                  value={ufCraftedStats} // Provide value and onChange handler as per your requirement
                   onChange={changeCraftedStats} // Provide your handleChange function
                   variant="outlined"
                   fullWidth
@@ -513,11 +557,11 @@ export default function UpgradeFinderFront(props) {
               <UpgradeFinderSlider
                 className={classes.slider}
                 style={{ color: "#af5050" }}
-                defaultValue={5}
+                value={ufCraftedLevel}
                 step={null}
                 valueLabelDisplay="off"
                 marks={craftedItemLevels}
-                max={5}
+                max={craftedItemLevels.length - 1}
                 change={setCraftedLevel}
               />
             </Grid>

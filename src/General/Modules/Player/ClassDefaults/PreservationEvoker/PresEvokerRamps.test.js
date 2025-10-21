@@ -15,10 +15,10 @@ describe("Test APL", () => {
         const exhilUptime = 0.7;
 
         let activeStats = {
-            intellect: 76000 * 1.05 * 1.05,
+            intellect: 110000 * 1.05 * 1.05,
             haste: 13200,
-            crit: 9500,
-            mastery: 19000 + (2 * 700),
+            crit: 8000,
+            mastery: 25000 + (2 * 700),
             versatility: 8500 + (3 * 780),
             stamina: 29000,
             critMult: 2 + (0.6 * exhilUptime),
@@ -29,7 +29,7 @@ describe("Test APL", () => {
         const baseSpells = EVOKERSPELLDB;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
 
-        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S2-2", "Evoker S2-4"] }
+        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S3-2", "Evoker S3-4"] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
         const iterations = 1;
@@ -40,8 +40,8 @@ describe("Test APL", () => {
         }
 
         baseline = baseline / iterations
-        
-        //runStats(playerData, profile);
+        console.log("Baseline HPS: " + baseline);
+        runStats(playerData, profile);
         
     })
 
@@ -55,11 +55,11 @@ const runStats = (playerData, profile) => {
     const exhilUptime = 0.7;
 
     const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
-        intellect: 76000 * 1.05,
-        haste: 9500,
-        crit: 9500,
-        mastery: 9500 + (2 * 700),
-        versatility: 9500 + (3 * 780),
+        intellect: 120000 * 1.05,
+        haste: 12000,
+        crit: 12000,
+        mastery: 12000 + (2 * 700),
+        versatility: 12000 + (3 * 780),
         stamina: 29000,
         critMult: 2 + (0.6 * exhilUptime),
     }

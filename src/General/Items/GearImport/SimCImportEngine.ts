@@ -1,6 +1,6 @@
 import { bonus_IDs } from "../../../Retail/Engine/BonusIDs";
 import { curveDB } from "../../../Retail/Engine/ItemCurves";
-import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes } from "../../Engine/ItemUtilities";
+import { compileStats, checkDefaultSocket, calcStatsAtLevel, getItemProp, getItem, getItemAllocations, scoreItem, correctCasing, getValidWeaponTypes, getValidArmorTypes, getValidWeaponTypesBySpec } from "../../Engine/ItemUtilities";
 import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
@@ -80,7 +80,7 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     const linkedItems = lines.indexOf("### Linked gear") !== -1 ? lines.indexOf("### Linked gear") : lines.length;
     const vaultItems = lines.indexOf("### Weekly Reward Choices") !== -1 ? lines.indexOf("### Weekly Reward Choices") : linkedItems;
 
-    if (lines[0].includes("#")) {
+    if (lines[0].includes("#") && !lines[0].includes("Warcraft Logs")) {
       const playerName = lines[0].split("-")[0].replace("#", "").trim();
 
       if (playerName) {
@@ -114,8 +114,14 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
         // this code is left in in case we need to res it in future.
         //processToken(line, player, contentType, type);
       } else {
-        const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault, autoUpgradeAll);
-        if (item) player.addActiveItem(item);
+        try {
+          const item = processItem(line, player, contentType, type, playerSettings, autoUpgradeVault, autoUpgradeAll);
+          if (item) player.addActiveItem(item);
+        }
+        catch (e) {
+          console.error("Error processing SimC line: " + line);
+        }
+
       }
     }
   }
@@ -140,7 +146,7 @@ function checkSimCValid(simCHeader: string[], length: number, playerClass: strin
     class: false,
     version: true, // Note that version is not actually checked right now. There's generally just not a lot of need unless there are breaking addon changes.
     level: true,
-    length: length < 700, // This really only prevents abuse cases since 600 is a very long regular SimC string.
+    length: length < 1000, // This really only prevents abuse cases since 600 is a very long regular SimC string.
     gameType: true,
   };
   let errorMessage = "";
@@ -299,6 +305,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let craftedIDs = []; // Used to append crafted stats to the wowhead tooltip.
   let enchantID = 0;
   let titanDisc = 0;
+  let itemSpecial = 0;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -367,6 +374,9 @@ export function processItem(line: string, player: Player, contentType: contentTy
           let statName = stat["name"].toLowerCase();
           if (statName === "vers") statName = "versatility"; // Pain
           specialAllocations[statName] = stat["amount"];
+          if (protoItem.id === 235499) {
+            itemSpecial = parseInt(bonus_id);
+          }
 
         }
       });
@@ -531,18 +541,27 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684, "Runed Crafted": 664, "Gilded Crafted": 681 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 665, Adventurer: 678, Veteran: 691, Champion: 704, Hero: 710, Myth: 723 };
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 619, Adventurer: 632, Veteran: 645, Champion: 658, Hero: 671, Myth: 684 };
+    const itemLevelCaps: { [key: string]: number } = { Explorer: 665, Adventurer: 678, Veteran: 691, Champion: 704, Hero: 710, Myth: 723};
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
   }
+  
+    const acceptableArmorTypes = getValidArmorTypes(player.spec);
+    const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+    const itemData = getItem(protoItem.id, "Retail")
+    const isSuitable = (itemData.slot === "Back" ||
+            (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
+            itemData.slot === "Holdable" ||
+            itemData.slot === "Offhand" ||
+            (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
   
 
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
-  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "") {
+  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     
@@ -573,6 +592,10 @@ export function processItem(line: string, player: Player, contentType: contentTy
     }
     if (item.flags.includes("DelveBelt") && titanDisc !== 0) {
       if (getTitanDiscName(titanDisc) !== "Unknown Effect") item.selectedOptions = [titanDisc]
+    }
+    if (protoItem.id === 235499) {
+      // Reshii Wraps
+      item.selectedOptions = [itemSpecial];
     }
 
     item.quality = protoItem.quality !== 0 ? protoItem.quality : (getItemProp(protoItem.id, "quality") || 4);
