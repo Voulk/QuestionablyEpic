@@ -1050,11 +1050,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (item.id === 235499) sourceCheck = true;
-      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650) sourceCheck = true;
+      if (item.id === 235499 && source !== "S3 Dinar") sourceCheck = true;
+      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
       else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "S3 Dinar" && sources) {
+        sourceCheck = (sources.instanceId === 1302 && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
+      }
 
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
@@ -1075,10 +1078,12 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
+        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396].includes(item.id)))
         && sourceCheck) { 
           const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && source !== "ClassicPVP") ? 8 : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+
+          if (source === "S3 Dinar") newItem.exclusiveItem = true;
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);

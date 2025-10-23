@@ -53,6 +53,17 @@ const useStyles = makeStyles({
     minWidth: 200,
     borderStyle: "dashed",
   },
+  exclusive: {
+    borderColor: "#CC7102",
+    minWidth: 200,
+    borderStyle: "dashed",
+  },
+  selectedExclusive: {
+    borderColor: "Goldenrod",
+    backgroundColor: "#685A4A",
+    minWidth: 200,
+    borderStyle: "dashed",
+  },
   offspec: {
     borderColor: "red",
     backgroundColor: "#544444",
@@ -64,12 +75,13 @@ const useStyles = makeStyles({
 
 // This can probably be cleaned up a lot.
 // It adds colored tags to the item card, separated by a / where applicable.
-const GetItemTags: React.FC<{ showTags: any; isVault: boolean, t: any }> = ({ showTags, isVault, t }) => {
+const getItemTags: React.FC<{ showTags: any; isVault: boolean, isExclusive: boolean, t: any }> = ({ showTags, isVault, isExclusive, t }) => {
   return (
     <div style={{ display: "flex" }}>
       {showTags.tertiary ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null}
       {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
       {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
+      {isExclusive ? <div style={{ fontSize: 10, lineHeight: 1, color: "orange" }}>{t("itemTags.exclusive")}</div> : ""}
       {(showTags.tertiary && showTags.tier) || (isVault && showTags.tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
       {showTags.tier ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null}
       {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
@@ -192,7 +204,7 @@ export default function ItemCard(props: ItemCardProps) {
   const reforge = item.checkHasFlag("Reforged") ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Reforged")}</div> : null;
   */
   //let socket = [];
-  const className = item.flags.includes('offspecWeapon') ? 'offspec' : item.active && item.vaultItem ? 'selectedVault' : item.active ? 'selected' : item.vaultItem ? 'vault' : 'root';
+  const className = (item.active && item.exclusiveItem) ? 'selectedExclusive' : item.exclusiveItem ? 'exclusive' : item.flags.includes('offspecWeapon') ? 'offspec' : item.active && item.vaultItem ? 'selectedVault' : item.active ? 'selected' : item.vaultItem ? 'vault' : 'root';
 
 
   // Onyx Annulet
@@ -221,6 +233,7 @@ export default function ItemCard(props: ItemCardProps) {
 
   let itemName = "";
   let isVault = item.vaultItem;
+  let isExclusive = item.exclusiveItem;
 
   if (item.offhandID > 0) {
     itemName = getTranslatedItemName(item.id, currentLanguage, "", gameType) + " & " + getTranslatedItemName(item.offhandID, currentLanguage, "", gameType);
@@ -300,7 +313,7 @@ export default function ItemCard(props: ItemCardProps) {
                         >
                           {itemName}
                         </div>
-                        <GetItemTags showTags={showTags} isVault={isVault} t={t} />
+                        {getItemTags({ showTags, isVault, isExclusive, t })}
                       </Typography>
                     </Grid>
                     <Grid

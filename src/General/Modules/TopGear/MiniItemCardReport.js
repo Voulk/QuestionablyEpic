@@ -31,6 +31,12 @@ const useStyles = makeStyles({
     minWidth: 210,
     borderStyle: "dashed",
   },
+  exclusive: {
+    borderColor: "#CC7102",
+    backgroundColor: "#685A4A",
+    minWidth: 210,
+    borderStyle: "dashed",
+  },
   notequipped: {
     borderColor: "#CECE02",
     backgroundColor: "#3E4651",
@@ -101,6 +107,7 @@ export default function ItemCardReport(props) {
 
   let itemName = "";
   let isVault = item.vaultItem;
+  let isExclusive = item.exclusiveItem;
 
   let socket = [];
 
@@ -182,7 +189,7 @@ export default function ItemCardReport(props) {
   return (
     <Grid item xs={12}>
       <Card
-        className={isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
+        className={isExclusive? classes.exclusive : isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
         style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
       >
@@ -221,8 +228,9 @@ export default function ItemCardReport(props) {
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
                       <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: "normal" }}>{itemName}</div>
-                      <div style={{ display: "flex" }}>
+                      <div style={{ display: "flex", gap: 4 }}>
                         {tertiary}
+                        {isExclusive ? <div style={{ fontSize: 10, lineHeight: 1, color: "#CC7102" }}>{t("itemTags.exclusive")}</div> : ""}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
                         {(tertiary && tier) || (isVault && tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
