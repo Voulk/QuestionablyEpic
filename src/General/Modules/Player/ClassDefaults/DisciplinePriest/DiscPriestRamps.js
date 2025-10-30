@@ -23,7 +23,7 @@ export const DISCCONSTANTS = {
     masteryMod: 1.35,
     masteryEfficiency: 1,
 
-    atonementBaseTransfer: 0.28,
+    atonementBaseTransfer: 0.38,
     auraHealingBuff: 0.97, 
     auraDamageBuff: {
         periodic: 1,

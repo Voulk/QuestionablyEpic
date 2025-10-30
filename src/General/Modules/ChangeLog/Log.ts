@@ -30,8 +30,17 @@ export const changeLog: entry[] = [
       "Added a warning when a SimC is imported that is missing items (this is often due to wearing the wrong armor type accidentally).",
       "Items in your bag that are significantly lower level will no longer import. This should make item selection way nicer for item hoarders (like me).",
       "Minor tidyup and visual improvements."
-    ]},
-      {
+    ]
+  },
+  {
+    version: "11.2.5 / 5.5.1",
+    update: 18,
+    date: "October 7",
+    changes: [ 
+      "DISC belt nerfs are now in. All of the secondary powers got nerfed by 20%. The belt is still acceptable though replaced sooner.",
+      "Enabled longer upgrade tracks for all items. Updated Trinket chart to the new item levels.",
+  ]},
+  {
     version: "11.2 / 5.5.1",
     update: 17,
     date: "September 29",

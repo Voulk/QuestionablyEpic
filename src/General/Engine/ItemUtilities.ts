@@ -818,7 +818,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
+    if (["haste", "crit", "mastery", "spirit", "hit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
