@@ -122,6 +122,7 @@ export default function CharacterPanel(props: Props) {
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
   const [playerRace, setPlayerRace] = useState(props.player.getRace());
 
+
   useEffect(() => {
     async function setImg() {
       const img = currentCharacter.charAvatarURL === "" ? specImages[currentCharacter.spec] : currentCharacter.charAvatarURL;
@@ -272,6 +273,15 @@ export default function CharacterPanel(props: Props) {
                               <Typography style={{ fontSize: 11, lineHeight: 1 }}>{getTranslatedStats(capitalizeFirstLetter(key), currentLanguage) + ": " + playerStats[key]}</Typography>
                             </Grid>
                           ))}
+                      </Grid>
+                    ) : (
+                      ""
+                    )}
+                    {(simcStatus === "Invalid" && gameType === "Retail") ? (
+                      <Grid container spacing={1}>
+                        <Grid item xs={4} sm="auto">
+                          <Typography style={{ fontSize: 13, lineHeight: 1, color: "#FF4949" }}>{"Make sure you equip a valid item of your armor type in every slot!"}</Typography>
+                        </Grid> 
                       </Grid>
                     ) : (
                       ""

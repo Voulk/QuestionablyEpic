@@ -94,6 +94,9 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
     player.savedPTRString = simCInput;
 
+
+
+
     allPlayers.updatePlayerChar(player);
     allPlayers.saveAllChar();
 
@@ -125,6 +128,20 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
       }
     }
   }
+
+  // Filter low level items. This is honestly just for people who store 1000 items in their bags. 
+  // Step 1: Find the highest level per slot
+  const maxLevels = player.activeItems.reduce((acc, item) => {
+    acc[item.slot] = Math.max(acc[item.slot] ?? 0, item.level);
+    return acc;
+  }, {});
+
+  // Step 2: Filter items that are within 40 levels of that max
+  player.activeItems = player.activeItems.filter(item => 
+    (item.level >= maxLevels[item.slot] - 40)
+  );
+
+
   player.updatePlayerStats();
   
 }

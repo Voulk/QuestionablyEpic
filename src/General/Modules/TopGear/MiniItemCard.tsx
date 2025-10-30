@@ -77,7 +77,7 @@ const useStyles = makeStyles({
 // It adds colored tags to the item card, separated by a / where applicable.
 const getItemTags: React.FC<{ showTags: any; isVault: boolean, isExclusive: boolean, t: any }> = ({ showTags, isVault, isExclusive, t }) => {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", gap: 4 }}>
       {showTags.tertiary ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null}
       {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
       {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
@@ -309,6 +309,7 @@ export default function ItemCard(props: ItemCardProps) {
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
                             fontSize: itemName.length > 28 ? "11px" : "14px",
+                            
                           }}
                         >
                           {itemName}
