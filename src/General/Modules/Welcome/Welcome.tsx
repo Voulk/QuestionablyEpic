@@ -39,7 +39,7 @@ export default function WelcomeDialog({ welcomeOpen, finishWelcome }: WelcomeDia
   const [selectedClass, setSelectedClass] = useState("Restoration Druid");
   const [selectedGameType, setSelectedGameType] = useState<gameTypes>("Retail");
 
-  const classNames = {"Retail": CONSTANTS.specs, "Classic": CONSTANTS.classicSpecs.filter(spec => (spec !== "Restoration Shaman Classic"))};
+  const classNames = {"Retail": CONSTANTS.specs, "Classic": CONSTANTS.classicSpecs};
 
   const classList = selectedGameType === "Retail" ? classNames["Retail"] : classNames["Classic"];
 

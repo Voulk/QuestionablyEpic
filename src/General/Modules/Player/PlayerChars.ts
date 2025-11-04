@@ -32,7 +32,7 @@ export function createPlayerChars(): PlayerChars {
           let newChar = new Player(player.charName, player.spec, index, player.region, player.realm, player.race, player.statWeights, player.gameType);
           if (player.activeModelID) newChar.initializeModels(player.activeModelID.Raid, player.activeModelID.Dungeon);
           if (player.savedPTRString) newChar.savedPTRString = player.savedPTRString;
-          if (player.spec === "Restoration Shaman Classic") newChar.enabled = false;
+          //if (player.spec === "Restoration Shaman Classic") newChar.enabled = false;
           specsAdded.push(player.spec);
           charArray.push(newChar);
           index += 1;
@@ -59,7 +59,7 @@ export function createPlayerChars(): PlayerChars {
           const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Classic", "").replace("Monk", "");
           let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Classic");
 
-          if (spec === "Holy Paladin Classic" || spec === "Restoration Shaman Classic") newChar.enabled = false;
+          //if (spec === "Holy Paladin Classic" || spec === "Restoration Shaman Classic") newChar.enabled = false;
           charArray.push(newChar);
 
           

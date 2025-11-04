@@ -88,7 +88,7 @@ export default function ItemCard(props) {
     237730: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
     237728: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
     237735: "An absurdly powerful weapon that gets even better when paired with the Diamantine Voidcore set. Generally speaking Mythic set > Mythic Crafted Weapon > Heroic set.",
-    242405: "Absorb portion not currently included while we wait to test it in-game",
+    242405: "Note that there is a setting for the absorb portion but it defaults to 0. Generally gets good use on most raid fights; Mythic+ and delves are less consistent.",
 
     210816: "Decent average stats but very high variance which isn't ideal. There are usually other items you'd rather craft even if Alchemist Stone is your largest immediate upgrade because there are other farmable trinkets of comparable strength that are more reliable."
   }

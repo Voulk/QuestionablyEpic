@@ -60,6 +60,7 @@ interface ReportItem {
   leech?: number; // Could just be folded into stats.
   socket?: number;
   vaultItem?: boolean;
+  exclusiveItem?: boolean;
   quality?: number;
   effect?: any;
 }
@@ -450,6 +451,7 @@ export default function TopGear(props: any) {
         if (item.socket) newItem.socket = item.socket;
         //if (item.socketedGems) newItem.socketedGems = item.socketedGems;
         if (item.vaultItem) newItem.vaultItem = item.vaultItem;
+        if (item.exclusiveItem) newItem.exclusiveItem = item.exclusiveItem;
         if (item.quality) newItem.quality = item.quality;
         if (item.effect) newItem.effect = item.effect;
         if (item.flags) newItem.flags = item.flags;

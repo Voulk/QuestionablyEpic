@@ -155,7 +155,8 @@ class ItemSet {
       }
       
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
-      if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1
+      if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1;
+      if (item.exclusiveItem) this.uniques['exclusive'] = (this.uniques['exclusive'] || 0) + 1;
 
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
@@ -197,6 +198,9 @@ class ItemSet {
       return false;
     } 
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
+      return false;
+    }
+    else if (this.uniques["exclusive"] && this.uniques["exclusive"] > 1) {
       return false;
     }
     else if (this.uniques["alchstone"] && this.uniques["alchstone"] > 1) {

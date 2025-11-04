@@ -808,8 +808,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     } 
     if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
     // These are fallbacks for if we can't find an upgrade track.
-    else if (boots.level >= 714) setVariables.reshiiBoots = 0.5;
-    else if (boots.level > 704) setVariables.reshiiBoots = 0.4;
+    else if (boots.level >= 720) setVariables.reshiiBoots = 0.5;
+    else if (boots.level > 710) setVariables.reshiiBoots = 0.4;
     else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
     else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
     

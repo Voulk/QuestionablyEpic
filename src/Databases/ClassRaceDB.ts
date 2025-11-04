@@ -152,7 +152,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
 
   /* --------------------------------------- Classic -------------------------------------- */
   "Restoration Shaman Classic": {
-    races: ["Draenei", "Orc", "Tauren", "Troll", "Dwarf", "Goblin"],
+    races: ["Draenei", "Orc", "Pandaren", "Tauren", "Troll", "Dwarf", "Goblin"],
     gameType: "Classic",
   },
 
