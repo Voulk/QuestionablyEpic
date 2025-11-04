@@ -22,6 +22,7 @@ import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
+import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -385,7 +386,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
                                               "Trinkets are modelled at their maximum item upgrade level.";
 
   return (
@@ -503,8 +504,9 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-
+          
       <div id="qelivead2"></div>
+      {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
     </div>
   );
