@@ -744,12 +744,12 @@ function displayReport(
             />
           </Grid>
           {gameType === "Classic" ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: 8 }}>
               <ErrorBoundary>
                 <TopGearGemList gemData={topSet.socketedGems} />
               </ErrorBoundary>
             </Grid>) : null}
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginTop: 8 }}>
             {advice && advice.length > 0 ? (
               <ListedInformationBox
                 introText="Here are some notes on your set:"
@@ -763,12 +763,12 @@ function displayReport(
             )}
           </Grid>
           {gameType === "Classic" ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: 8 }}>
               <ManaSourcesComponent manaSources={manaSources} />
             </Grid>
           ) : null}
           {gameType === "Classic" ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: 8 }}>
               <SpellDataAccordion
                 spec={player.spec}
                 statList={statList}
