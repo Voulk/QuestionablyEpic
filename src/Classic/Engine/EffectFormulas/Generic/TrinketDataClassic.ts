@@ -51,7 +51,13 @@ export function getTrinketEffectClassic(effectName: string, player: Player, item
 
 const dpsProcMult = (spec: string) => {
   if (spec.includes("Discipline Priest")) return 1;
+  else if (spec.includes("Restoration Shaman")) return 0.9;
   else return 0.1; 
+}
+
+const dpsPeriodicMult = (spec: string) => {
+  if (spec.includes("Restoration Shaman")) return 0.9;
+  return 0.1; 
 }
 
 
@@ -326,6 +332,24 @@ export const raidTrinketData: Effect[] = [
       return getGenericStatEffect(data[0], itemLevel);
     }
   },
+  {
+    name: "Light of the Cosmos",
+    effects: [
+      { 
+        value: {476: 2866, 489: 3236, 502: 3653}, 
+        coefficient: 1.48500001431,
+        ppm: getEffectPPM(0.15, 55, 1.25),
+        stat: "intellect",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.intellect! *= dpsPeriodicMult(player.spec); //
+
+      return bonus_stats;
+    }
+  },
         {
     name: "Empty Fruit Barrel",
     effects: [
@@ -417,6 +441,26 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = getGenericStatEffect(data[0], itemLevel);
       bonus_stats.intellect! *= dpsProcMult(player.spec); //
+
+      return bonus_stats;
+      //return ;
+    }
+  },
+    {
+    name: "Essence of Terror",
+    description: "Only procs off DPS spells so it's only evaluated for Discipline Priest and Resto Shaman. Realistically you should let DPS players take this first anyway.",
+    effects: [
+      { 
+        value: {476: 0}, 
+        coefficient: 2.97000002861,
+        ppm: getEffectPPM(0.15, 115, 1.5),
+        stat: "haste",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.haste! *= dpsProcMult(player.spec); //
 
       return bonus_stats;
       //return ;

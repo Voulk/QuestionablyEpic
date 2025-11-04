@@ -126,7 +126,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
       // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
       else if (reforgeSetting === "Smart" && (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic")) {
 
-        const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit", "hit"] : ["crit", "spirit", "mastery", "hit"];
+        const secondaryRank = player.spec.includes("Restoration Druid") ? ["mastery", "spirit", "crit", "hit"] : ["crit", "spirit", "mastery", "hit"];
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
         if (itemStats.includes("haste")) {
           
@@ -158,9 +158,11 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           else {
             // We do not have a tie, pick the secondary with the highest value to maximize Haste.
             // While hit is included here, a hit reforge should be taken care of in the initial if statement.
-            fromStat = Object.keys(item.stats)
+            /*fromStat = Object.keys(item.stats)
                         .filter(key => ['hit', 'crit', 'mastery', 'spirit'].includes(key))
-                        .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);
+                        .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);*/
+
+            fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           }
           
           const newItem = JSON.parse(JSON.stringify(item));

@@ -26,7 +26,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         "Discipline Priest": 0, // 
         "Holy Paladin": 0.05, // Holy Insight needs to be handled per-spell because it differs for spenders. Seal of Insight can be handled here.
         "Holy Priest": 0,
-        "Restoration Shaman": 0, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Restoration Shaman": 0.25, //
         "Mistweaver Monk": 0.2, // Serpent Stance
     };
 

@@ -21,6 +21,8 @@ import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
+import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
+import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -136,7 +138,7 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
 const getClassicTrinketScore = (id, player, itemLevel) => {
   //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-
+  //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
   item.softScore = scoreItem(item, player, "Raid", "Classic");
 
   return item.softScore;
@@ -241,6 +243,21 @@ export default function TrinketAnalysis(props) {
     setLevelCap(newItemLevel);
   }
 
+  const getReforgeInstructions = (player, stats) => { 
+    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    const trinketSecondary = Object.keys(stats).find(key => stats[key] !== 0);
+
+    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+          const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
+
+          if (trinketSecondaryPos !== 0) {
+            // Not best secondary, reforge.
+            return reforgeIDs[`Reforged: ${trinketSecondary} -> ${playerStatPriorityList[0]}`] || 0;
+          }
+    }
+    return 0;
+  }
+
   const handleSource = (event, newSources) => {
     if (newSources.length) {
       setSources(newSources);
@@ -274,9 +291,12 @@ export default function TrinketAnalysis(props) {
   for (var i = 0; i < finalDB.length; i++) {
     const trinket = finalDB[i];
     const trinketName = getItemProp(trinket.id, "name", gameType);
+    const trinketStats = getItemProp(trinket.id, "stats", gameType);
+
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
+      highestLevel: 0,
     };
 
     if (gameType === "Classic") {
@@ -300,11 +320,19 @@ export default function TrinketAnalysis(props) {
         existingTrinket[difficulty] = trinketScore;
         existingTrinket[difficulty + "ilvl"] = trinketLevel;
         existingTrinket["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        existingTrinket.highestLevel = Math.max(existingTrinket.highestLevel, trinketLevel);
       }
       else {
         trinketAtLevels[difficulty] = trinketScore;
         trinketAtLevels[difficulty + "ilvl"] = trinketLevel;
         trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinketLevel, trinket.id);
+        trinketAtLevels.highestLevel = Math.max(trinketAtLevels.highestLevel, trinketLevel);
+        if (trinketStats.intellect === 0) {
+          // Trigger Reforge
+          const reforge = getReforgeInstructions(props.player, trinketStats);
+          if (reforge) trinketAtLevels.reforgeID = reforge;
+          
+        }
         activeTrinkets.push(trinketAtLevels);
       }
       
@@ -358,7 +386,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
                                               "Trinkets are modelled at their maximum item upgrade level.";
 
   return (
@@ -476,8 +504,9 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-
+          
       <div id="qelivead2"></div>
+      {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
     </div>
   );
