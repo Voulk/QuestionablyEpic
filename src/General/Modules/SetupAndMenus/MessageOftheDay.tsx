@@ -7,7 +7,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
     "The D.I.S.C belt nerfs & Turbo Boost item levels are LIVE!"
   ] : 
   [
-    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",
+    "All specs are now released! Please report any bugs you find to the QE Live Discord. Paladin now live.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

@@ -102,6 +102,7 @@ export function initializeShamanSet() {
     const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
     const reportingData = {}
     const spellDB = baseline.spellDB;
+    let tidalWavesPercentage = 0.3;
     const resurgenceReturn = {
       "Chain Heal": 2947,
       "Greater Healing Wave": 8849,
@@ -130,6 +131,9 @@ export function initializeShamanSet() {
 
     if (tierSets.includes("Shaman T14-2")) {
       getSpellEntry(castProfile, "Greater Healing Wave").cost *= 0.9; // T14-2 - GHW cost reduction
+    }
+    if (tierSets.includes("Shaman T14-4")) {
+      tidalWavesPercentage += 0.05;
     }
     if (tierSets.includes("Shaman T15-2")) {
       getSpellEntry(castProfile, "Healing Stream Totem").bonus = 1.25; // T15-2 - HST bonus
