@@ -277,7 +277,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
           let gemsToSocket = item.classicSockets.sockets.filter(gem => (gem !== "meta" && gem !== "cogwheel" && gem !== "sha")).length; // Check for any already socketed gems.
           item.socketedGems = [];
           if (item.slot === "Head") item.socketedGems.push(metaGemID);
+          //if (item.classicSockets.sockets.includes("sha")) item.socketedGems.push(shaGemID);
           if (item.classicSockets.sockets[0] === "sha") item.socketedGems.push(shaGemID);
+
 
           // TODO: Scoring function is working, but it won't check for gems we placed earlier.
           const socketBonus = item.classicSockets.bonus ? scoreSocketBonus(item.classicSockets.bonus) : 0;
