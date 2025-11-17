@@ -21,7 +21,8 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "heal"
         },
         {
             "coeff": 0.2464,
@@ -32,7 +33,7 @@
                 "versatility",
                 "mastery"
             ],
-            "type": "buff",
+            "spellType": "buff",
             "buffType": "heal",
             "buffDuration": 18.0,
             "tickData": {
@@ -68,6 +69,10 @@
             },
             "castTime": 2.0,
             "cost": 4.32,
+            "cooldownData": {
+                "cooldown": 18.0,
+                "hasted": false
+            },
             "coeff": 0.3411,
             "aura": 1,
             "expectedOverheal": 0.25,
@@ -75,7 +80,15 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 18.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
         }
     ],
     "Healing Tide Totem": [
@@ -87,6 +100,10 @@
             },
             "castTime": 0.0,
             "cost": 1.12,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            },
             "coeff": 3.5,
             "aura": 1,
             "expectedOverheal": 0.25,
@@ -94,7 +111,15 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 10.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            }
         }
     ],
     "Chain Heal": [
@@ -113,7 +138,8 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "heal"
         }
     ],
     "Earth Shield": [
@@ -135,7 +161,16 @@
                 "spellName": "Chain Lightning"
             },
             "castTime": 2.0,
-            "cost": 0.2
+            "cost": 0.2,
+            "coeff": 0.7303,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
         }
     ],
     "Healing Wave": [
@@ -154,7 +189,8 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "heal"
         }
     ],
     "Unleash Life": [
@@ -179,7 +215,8 @@
                 "crit",
                 "versatility",
                 "mastery"
-            ]
+            ],
+            "spellType": "heal"
         }
     ]
 }
