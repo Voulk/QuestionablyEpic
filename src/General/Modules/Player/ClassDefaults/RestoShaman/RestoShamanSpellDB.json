@@ -119,7 +119,8 @@
                 "tickRate": 2.0,
                 "canPartialTick": true,
                 "tickOnCast": true
-            }
+            },
+            "AoEScaling": "sqrt"
         }
     ],
     "Chain Heal": [

@@ -3,6 +3,7 @@ import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks, e
 import { getEssenceBuff, triggerTemporal } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
+import { getSqrt } from "./sqrtScripts";    
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
@@ -545,17 +546,6 @@ export const getHealth = (stats, talents = {}) => {
 }
 
 
-// The formula for sqrt abilties is a bit of a pain.
-// They often do full healing up to the first X targets hit, and then are reduced via a square root formula after that.
-// The formula after you reach your sqrt cap is 1/TargetNumber. So the first target hit after the minimum gets sqrt(1/1), the second gets sqrt(1/2) and so on.
-export const getSqrt = (targets, sqrtMin) => {
-    const effectiveSqrtTargets = targets - sqrtMin;
-    let totalMult = sqrtMin;
-    for (let i = 1; i <= effectiveSqrtTargets; i++) { totalMult += Math.sqrt(1 / i) }
-
-    return totalMult;
-    //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
-}
 
 // Use flat if possible from now on. flatHeal and flatDamage are an old standard.
 const getSpellFlat = (spell, flatBonus = 0) => {
