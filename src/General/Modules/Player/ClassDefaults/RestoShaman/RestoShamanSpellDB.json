@@ -1,0 +1,185 @@
+{
+    "Riptide": [
+        {
+            "displayInfo": {
+                "id": 61295,
+                "icon": "spell_nature_riptide",
+                "spellName": "Riptide"
+            },
+            "castTime": 0.0,
+            "cost": 1.6,
+            "cooldownData": {
+                "cooldown": 6.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 2.9702,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        },
+        {
+            "coeff": 0.2464,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "type": "buff",
+            "buffType": "heal",
+            "buffDuration": 18.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Healing Stream Totem": [
+        {
+            "displayInfo": {
+                "id": 5394,
+                "icon": "inv_spear_04",
+                "spellName": "Healing Stream Totem"
+            },
+            "castTime": 0.0,
+            "cost": 1.8,
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false,
+                "charges": 0,
+                "maxCharges": 0
+            }
+        }
+    ],
+    "Healing Rain": [
+        {
+            "displayInfo": {
+                "id": 73920,
+                "icon": "spell_nature_giftofthewaterspirit",
+                "spellName": "Healing Rain"
+            },
+            "castTime": 2.0,
+            "cost": 4.32,
+            "coeff": 0.3411,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        }
+    ],
+    "Healing Tide Totem": [
+        {
+            "displayInfo": {
+                "id": 108280,
+                "icon": "ability_shaman_healingtide",
+                "spellName": "Healing Tide Totem"
+            },
+            "castTime": 0.0,
+            "cost": 1.12,
+            "coeff": 3.5,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        }
+    ],
+    "Chain Heal": [
+        {
+            "displayInfo": {
+                "id": 1064,
+                "icon": "inv_1115_shaman_chainheal",
+                "spellName": "Chain Heal"
+            },
+            "castTime": 2.0,
+            "cost": 5.0,
+            "coeff": 2.31,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        }
+    ],
+    "Earth Shield": [
+        {
+            "displayInfo": {
+                "id": 974,
+                "icon": "spell_nature_skinofearth",
+                "spellName": "Earth Shield"
+            },
+            "castTime": 0.0,
+            "cost": 2.0
+        }
+    ],
+    "Chain Lightning": [
+        {
+            "displayInfo": {
+                "id": 188443,
+                "icon": "spell_nature_chainlightning",
+                "spellName": "Chain Lightning"
+            },
+            "castTime": 2.0,
+            "cost": 0.2
+        }
+    ],
+    "Healing Wave": [
+        {
+            "displayInfo": {
+                "id": 77472,
+                "icon": "spell_nature_healingwavelesser",
+                "spellName": "Healing Wave"
+            },
+            "castTime": 2.0,
+            "cost": 2.5,
+            "coeff": 7.3382,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        }
+    ],
+    "Unleash Life": [
+        {
+            "displayInfo": {
+                "id": 73685,
+                "icon": "spell_shaman_unleashweapon_life",
+                "spellName": "Unleash Life"
+            },
+            "castTime": 0.0,
+            "cost": 0.8,
+            "cooldownData": {
+                "cooldown": 20.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 4.1496,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ]
+        }
+    ]
+}
