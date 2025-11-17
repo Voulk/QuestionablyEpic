@@ -15,7 +15,7 @@
                 "maxCharges": 1
             },
             "coeff": 2.9702,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -26,7 +26,7 @@
         },
         {
             "coeff": 0.2464,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -74,7 +74,7 @@
                 "hasted": false
             },
             "coeff": 0.3411,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -105,7 +105,7 @@
                 "hasted": false
             },
             "coeff": 3.5,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -133,7 +133,7 @@
             "castTime": 2.0,
             "cost": 5.0,
             "coeff": 2.31,
-            "aura": 1,
+            "aura": 1.34,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -164,7 +164,7 @@
             "castTime": 2.0,
             "cost": 0.2,
             "coeff": 0.7303,
-            "aura": 1,
+            "aura": 3.75,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -184,7 +184,7 @@
             "castTime": 2.0,
             "cost": 2.5,
             "coeff": 7.3382,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -210,7 +210,7 @@
                 "maxCharges": 1
             },
             "coeff": 4.1496,
-            "aura": 1,
+            "aura": 1.55,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
