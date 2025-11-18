@@ -4,9 +4,10 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell,  getHasteClassic, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
-import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+//import {  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
+import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",

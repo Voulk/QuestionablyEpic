@@ -5,7 +5,7 @@ import { applyLoadoutEffects, baseTalents } from "./MistweaverTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 import { MONKSPELLS as spellDB } from "./MistweaverSpellDB";
-import { getTrinketData, printHealingBreakdown, hasTier, getCPM, getSpellEntry, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { getTrinketData, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 const getKickCPM = (playerSpells) => {

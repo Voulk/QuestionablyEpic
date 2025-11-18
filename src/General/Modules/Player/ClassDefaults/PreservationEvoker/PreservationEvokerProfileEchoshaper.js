@@ -6,7 +6,7 @@ import { STATCONVERSION } from "General/Engine/STAT";
 
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 
-import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)

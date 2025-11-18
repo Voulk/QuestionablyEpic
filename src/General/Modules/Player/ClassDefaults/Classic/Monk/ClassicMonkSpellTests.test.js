@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializeMonkSet } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 import { getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";

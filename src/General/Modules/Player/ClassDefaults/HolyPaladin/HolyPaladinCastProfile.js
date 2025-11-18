@@ -3,7 +3,8 @@ import { getCurrentStats, getCrit, getHaste, applyTalents, hasTalent, deepCopyFu
 import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
-import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, getSpellEntry } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)

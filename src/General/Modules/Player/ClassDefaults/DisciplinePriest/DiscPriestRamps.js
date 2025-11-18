@@ -9,7 +9,7 @@ import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScript
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "General/Modules/Player/ClassDefaults/Generic/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { printHealingBreakdown, getTrinketData } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, getTrinketData } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {
