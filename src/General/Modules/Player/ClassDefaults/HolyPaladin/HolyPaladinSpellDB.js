@@ -43,7 +43,7 @@ export const PALADINSPELLDB = {
         cooldownData: {cooldown: 9.5, hasted: true, charges: 1, maxCharges: 2, activeCooldown: 0},
         expectedOverheal: 0.17,
         holyPower: 1,
-        statMods: {'crit': 0, critEffect: 0},
+        statMods: {'crit': 0, 'critEffect': 0},
         secondaries: ['crit', 'versatility', 'mastery']
     },
     { // Infusion of Light

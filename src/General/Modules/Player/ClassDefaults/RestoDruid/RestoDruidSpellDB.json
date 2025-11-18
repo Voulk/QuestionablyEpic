@@ -133,5 +133,100 @@
                 "tickOnCast": false
             }
         }
+    ],
+    "Regrowth": [
+        {
+            "displayInfo": {
+                "id": 8936,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth"
+            },
+            "castTime": 1.5,
+            "cost": 2.8,
+            "coeff": 4.704,
+            "aura": 1.5616,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "coeff": 0.1512,
+            "aura": 1.5616,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Swiftmend": [
+        {
+            "displayInfo": {
+                "id": 18562,
+                "icon": "inv_relics_idolofrejuvenation",
+                "spellName": "Swiftmend"
+            },
+            "castTime": 0.0,
+            "cost": 1.4,
+            "cooldownData": {
+                "cooldown": 15.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 8.5,
+            "aura": 1.1520000000000001,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Wrath": [
+        {
+            "displayInfo": {
+                "id": 5176,
+                "icon": "spell_nature_wrathv2",
+                "spellName": "Wrath"
+            },
+            "castTime": 1.5,
+            "cost": 0.2,
+            "coeff": 0.6122,
+            "aura": 3.5475,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Moonfire": [
+        {
+            "displayInfo": {
+                "id": 8921,
+                "icon": "spell_nature_starfall",
+                "spellName": "Moonfire"
+            },
+            "castTime": 0.0,
+            "cost": 1.2
+        }
     ]
 }

@@ -87,7 +87,7 @@
             "tickData": {
                 "tickRate": 2.0,
                 "canPartialTick": true,
-                "tickOnCast": false
+                "tickOnCast": true
             }
         }
     ],
@@ -133,7 +133,7 @@
             "castTime": 2.0,
             "cost": 5.0,
             "coeff": 2.31,
-            "aura": 1.34,
+            "aura": 2.0770000000000004,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -164,7 +164,7 @@
             "castTime": 2.0,
             "cost": 0.2,
             "coeff": 0.7303,
-            "aura": 3.75,
+            "aura": 4.5,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -218,6 +218,148 @@
                 "mastery"
             ],
             "spellType": "heal"
+        }
+    ],
+    "Surging Totem": [
+        {
+            "displayInfo": {
+                "id": 444995,
+                "icon": "inv_ability_totemicshaman_surgingtotem",
+                "spellName": "Surging Totem"
+            },
+            "castTime": 0.0,
+            "cost": 6.5,
+            "cooldownData": {
+                "cooldown": 25.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Earthliving Weapon": [
+        {
+            "displayInfo": {
+                "id": 382024,
+                "icon": "spell_shaman_giftearthmother",
+                "spellName": "Earthliving Weapon"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 0.315,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Healing Surge (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447415,
+                "icon": "spell_nature_healingway",
+                "spellName": "Healing Surge (Ancestor)"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 2.414,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Healing Wave (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 1223391,
+                "icon": "spell_nature_healingwavelesser",
+                "spellName": "Healing Wave (Ancestor)"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 2.89,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Chain Heal (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447433,
+                "icon": "spell_nature_healingwavegreater",
+                "spellName": "Chain Heal (Ancestor)"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 1.87,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Chain Lightning (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447425,
+                "icon": "spell_nature_chainlightning",
+                "spellName": "Chain Lightning (Ancestor)"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 3.8258,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Lava Burst (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447419,
+                "icon": "spell_shaman_lavaburst",
+                "spellName": "Lava Burst (Ancestor)"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 1.7399,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
         }
     ]
 }
