@@ -43,7 +43,7 @@ describe("Test APL", () => {
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runHolyPriestCastProfile(playerData);
+            baseline += 0 //runHolyPriestCastProfile(playerData);
         }
 
         

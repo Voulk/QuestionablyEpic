@@ -21,7 +21,7 @@ import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaul
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
 import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDBWarWithin";
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
+import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDBTWW";
 
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";

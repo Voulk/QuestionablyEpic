@@ -1,0 +1,137 @@
+{
+    "Rejuvenation": [
+        {
+            "displayInfo": {
+                "id": 774,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation"
+            },
+            "castTime": 0.0,
+            "cost": 2.1,
+            "coeff": 0.2588,
+            "aura": 2.688,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            }
+        }
+    ],
+    "Wild Growth": [
+        {
+            "displayInfo": {
+                "id": 48438,
+                "icon": "ability_druid_flourish",
+                "spellName": "Wild Growth"
+            },
+            "castTime": 1.5,
+            "cost": 3.8,
+            "coeff": 0.1975,
+            "aura": 1.8432,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 7.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Lifebloom": [
+        {
+            "displayInfo": {
+                "id": 33763,
+                "icon": "inv_misc_herb_felblossom",
+                "spellName": "Lifebloom"
+            },
+            "castTime": 0.0,
+            "cost": 1.6,
+            "coeff": 0.22,
+            "aura": 1.28,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 15.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Tranquility": [
+        {
+            "displayInfo": {
+                "id": 740,
+                "icon": "spell_nature_tranquility",
+                "spellName": "Tranquility"
+            },
+            "castTime": 0.0,
+            "cost": 3.68,
+            "coeff": 7.6,
+            "aura": 1.28,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": false,
+                "tickOnCast": true
+            }
+        }
+    ],
+    "Efflorescence": [
+        {
+            "displayInfo": {
+                "id": 145205,
+                "icon": "inv_misc_herb_talandrasrose",
+                "spellName": "Efflorescence"
+            },
+            "castTime": 0.0,
+            "cost": 3.4,
+            "coeff": 0.48,
+            "aura": 1.28,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 30.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ]
+}

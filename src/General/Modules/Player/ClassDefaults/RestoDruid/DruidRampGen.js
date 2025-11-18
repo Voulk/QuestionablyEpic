@@ -1,6 +1,6 @@
 
 import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
-import { DRUIDSPELLDB as SPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDB";
+import { DRUIDSPELLDB as SPELLDB, baseTalents, druidTalents } from "./RestoDruidSpellDBTWW";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";

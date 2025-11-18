@@ -1,4 +1,5 @@
-import { getHealth, getHaste, getSqrt } from "../Generic/RampBase";
+import { getHealth, getHaste} from "../Generic/RampBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { addBuff } from "../Generic/BuffBase";
 import { runHeal } from "./PresEvokerRamps"
 

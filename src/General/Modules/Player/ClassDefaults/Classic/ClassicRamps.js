@@ -1,11 +1,10 @@
 // 
-import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { CLASSICDRUIDSPELLDB } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICPALADINSPELLDB } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB } from "./Priest/ClassicPriestSpellDB";
 import { CLASSICSHAMANSPELLDB } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
-import { runRampTidyUp, getSqrt, addReport,  getHaste, getStatMult, GLOBALCONST, 
+import { runRampTidyUp, addReport,  getHaste, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats, getWeaponScaling, getEnemyArmor } from "../Generic/ClassicBase"
@@ -98,7 +97,7 @@ export const runHeal = (state, spell, spellName, compile = true) => {
     let masteryFlag = true;
     
     let healingMult = getHealingMult(state, state.t, spellName, state.talents); 
-    let targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
+    let targetMult = (spell.targets) || 1;
     
     if (state.spec === "Holy Paladin") masteryFlag = false; // We'll handle this separately.
 
