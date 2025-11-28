@@ -7,7 +7,7 @@ import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getSt
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
-import { applyLoadoutEffects } from "./PresEvokerTalents";
+import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
 
 export const EVOKERCONSTANTS = {
     

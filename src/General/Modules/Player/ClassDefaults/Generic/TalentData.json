@@ -1,378 +1,337 @@
 {
-    "Natural Convergence": [
-        -20.0,
-        -20.0,
-        -20.0
-    ],
-    "Heavy Wingbeats": [
-        -120000.0
-    ],
-    "Forger of Mountains": [
-        -30000.0,
-        200.0
-    ],
-    "Innate Magic": [
-        5.0
-    ],
-    "Obsidian Bulwark": [
-        1.0
-    ],
-    "Enkindled": [
+    "Fire and Ice": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
         3.0,
         3.0
     ],
-    "Scarlet Adaptation": [
-        20.0
-    ],
-    "Inner Radiance": [
-        30.0
-    ],
-    "Recall": [
-        3.0
-    ],
-    "Clobbering Sweep": [
-        -120000.0
-    ],
-    "Tailwind": [
+    "Elemental Orbit": [
         0.0
     ],
-    "Ancient Flame": [
-        1.0
-    ],
-    "Instinctive Arcana": [
-        2.0
-    ],
-    "Attuned to the Dream": [
-        2.0,
-        2.0,
-        2.0
-    ],
-    "Protracted Talons": [
-        1.0
-    ],
-    "Inherent Resistance": [
-        -2.0
-    ],
-    "Draconic Legacy": [
-        6.0
-    ],
-    "Extended Flight": [
-        4000.0
-    ],
-    "Bountiful Bloom": [
-        2.0
-    ],
-    "Regenerative Magic": [
-        2.0
-    ],
-    "Blast Furnace": [
-        4.0
-    ],
-    "Exuberance": [
-        10.0
-    ],
-    "Renewing Blaze": [
-        100.0
-    ],
-    "Walloping Blow": [
-        15.0,
-        15.0
-    ],
-    "Panacea": [
-        2.0
-    ],
-    "Stretch Time": [
-        0.0
-    ],
-    "Unravel": [
-        0.0
-    ],
-    "Foci of Life": [
-        -4000.0
-    ],
-    "Lush Growth": [
+    "Brimming with Life": [
         5.0,
-        5.0
-    ],
-    "Strike from Above": [
-        20.0
-    ],
-    "Leaping Flames": [
-        0.0
-    ],
-    "Overawe": [
-        20.0,
-        406971.0,
-        -30000.0
-    ],
-    "Aerial Mastery": [
-        1.0
-    ],
-    "Twin Guardian": [
-        30.0
-    ],
-    "Potent Mana": [
-        3.0,
-        3.0
-    ],
-    "Terror of the Skies": [
-        0.0
-    ],
-    "Temporal Compression": [
-        10.0,
-        5.0
-    ],
-    "Essence Burst": [
-        20.0,
-        15.0
-    ],
-    "Lifebind": [
-        60.0
-    ],
-    "Essence Attunement": [
-        1.0
-    ],
-    "Unshakable": [
-        10.0,
-        10.0
-    ],
-    "Fluttering Seedlings": [
-        2.0,
-        40.0
-    ],
-    "Font of Magic": [
-        382266.0,
-        382614.0,
-        382731.0
-    ],
-    "Golden Hour": [
-        15.0,
-        5.0
-    ],
-    "Delay Harm": [
-        15.0
-    ],
-    "Just in Time": [
-        1.0,
-        -10000.0
-    ],
-    "Empath": [
-        0.0
-    ],
-    "Spiritual Clarity": [
-        -10000.0
-    ],
-    "Exhilarating Burst": [
-        30.0
-    ],
-    "Field of Dreams": [
-        100.0
-    ],
-    "Power Nexus": [
-        1.0
-    ],
-    "Time Lord": [
         50.0
     ],
-    "Flow State": [
-        10.0
+    "Spiritual Awakening": [
+        3.0
     ],
-    "Resonating Sphere": [
+    "Enhanced Imbues": [
         30.0,
-        5.0
-    ],
-    "Nozdormu's Teachings": [
-        5.0
-    ],
-    "Call of Ysera": [
+        15.0,
+        20.0,
+        30.0,
+        30.0,
+        20.0,
+        20.0,
         20.0,
         30.0,
         20.0
     ],
-    "Grace Period": [
-        10.0
+    "Refreshing Waters": [
+        25.0
     ],
-    "Spark of Insight": [
-        30.0
+    "Nature's Fury": [
+        2.0,
+        2.0
     ],
-    "Ouroboros": [
-        -10.0
-    ],
-    "Life-Giver's Flame": [
-        80.0,
-        5.0,
-        5.0
-    ],
-    "Inner Flame": [
-        0.0,
-        20.0,
-        15.0
-    ],
-    "Temporal Artificer": [
-        -120000.0
-    ],
-    "Energy Loop": [
-        0.0,
-        35.0
-    ],
-    "Time of Need": [
-        30.0,
-        60.0
-    ],
-    "Renewing Breath": [
+    "Totemic Focus": [
+        10000.0,
+        3000.0,
         15.0,
-        15.0
+        0.0
     ],
-    "Lifeforce Mender": [
+    "Mana Spring": [
+        4.0,
+        0.0
+    ],
+    "Therazane's Resilience": [
+        15.0,
+        -99.0,
+        -99.0,
+        15.0,
+        15.0,
+        -99.0,
+        -99.0
+    ],
+    "Reactive Warding": [
         1.0,
+        -1000.0
+    ],
+    "Totemic Surge": [
+        -5000.0,
+        -5000.0
+    ],
+    "Instinctive Imbuements": [
+        3.0,
+        3.0
+    ],
+    "Soothing Rain": [
+        10.0,
+        -500.0
+    ],
+    "Acid Rain": [
         1.0
     ],
-    "Timeless Magic": [
-        15.0,
-        -15.0,
+    "Water Totem Mastery": [
+        -5000.0
+    ],
+    "Overflowing Shores": [
+        2.0,
+        2.0,
+        5.0
+    ],
+    "Ancestral Vigor": [
+        0.0,
+        5.0
+    ],
+    "First Ascendant": [
+        -60000.0
+    ],
+    "Preeminence": [
+        3000.0,
+        25.0,
+        25.0
+    ],
+    "Resurgence": [
+        100.0
+    ],
+    "Living Stream": [
+        100.0
+    ],
+    "Current Control": [
         -15.0
     ],
-    "Titan's Gift": [
-        35.0,
-        35.0
-    ],
-    "Lifespark": [
-        100.0,
-        50.0
-    ],
-    "Twin Echoes": [
-        25.0,
-        100.0
-    ],
-    "Tempo Charged": [
+    "White Water": [
         15.0,
-        15.0
-    ],
-    "Merithra's Blessing": [
-        125.0,
-        100.0
-    ],
-    "Legacy of the Lifebinder": [
-        1.0,
-        1.0
-    ],
-    "Trailblazer": [
-        40.0
-    ],
-    "Shape of Flame": [
-        1.0
-    ],
-    "Ashes in Motion": [
-        -5000.0
-    ],
-    "Enkindle": [
-        20.0
-    ],
-    "Expanded Lungs": [
-        30.0
-    ],
-    "Essence Well": [
-        50.0
-    ],
-    "Conduit of Flame": [
-        15.0,
-        50.0
-    ],
-    "Burning Adrenaline": [
-        -20.0
-    ],
-    "Fulminous Roar": [
-        -20.0
-    ],
-    "Twin Flame": [
-        0.0
-    ],
-    "Titanic Precision": [
-        1.0,
-        50.0
-    ],
-    "Deep Exhalation": [
-        4.0,
-        6000.0
-    ],
-    "Lifecinders": [
-        1.0,
-        50.0
-    ],
-    "Draconic Instincts": [
-        30.0
-    ],
-    "Fire Torrent": [
-        2.0
-    ],
-    "Consume Flame": [
-        2000.0,
-        2000.0,
-        10000.0,
-        150.0,
-        4000.0,
         200.0
     ],
-    "Chrono Flame": [
-        15.0,
-        5.0,
-        25.0,
-        431443.0
+    "Calm Waters": [
+        -15.0
     ],
-    "Warp": [
-        -5000.0
+    "Quickstream": [
+        -13.0
     ],
-    "Temporal Burst": [
-        1.0,
-        20.0
+    "Rip Current": [
+        -1000.0
     ],
-    "Chronoboon": [
-        -30000.0
+    "Crashing Waves": [
+        12.0
     ],
-    "Reverberations": [
-        30.0,
-        50.0
-    ],
-    "Temporality": [
-        -20.0
-    ],
-    "Motes of Acceleration": [
-        100.0
-    ],
-    "Nozdormu Adept": [
-        -15.0,
-        -4000.0,
-        -2000.0,
-        1.0
-    ],
-    "Energy Cycles": [
-        6.0
-    ],
-    "Primacy": [
-        3.0,
-        9.0
-    ],
-    "Double-time": [
-        2.0,
-        50.0,
+    "Torrent": [
+        20.0,
         10.0
     ],
-    "Time Convergence": [
-        45.0,
-        1.0
+    "Earthweaver": [
+        40.0
     ],
-    "Instability Matrix": [
-        6.0
-    ],
-    "Overclock": [
-        40.0,
-        0.0
-    ],
-    "Golden Opportunity": [
-        10.0,
+    "Deluge": [
+        15.0,
         15.0
     ],
-    "Afterimage": [
-        3.0
+    "Earthen Accord": [
+        30.0,
+        20.0
+    ],
+    "Echo of the Elements": [
+        1.0,
+        1.0
+    ],
+    "Improved Earthliving Weapon": [
+        150.0,
+        0.0
+    ],
+    "Ancestral Reach": [
+        1.0,
+        8.0
+    ],
+    "Flow of the Tides": [
+        30.0,
+        1.0
+    ],
+    "Primal Tide Core": [
+        4.0
+    ],
+    "Earthen Harmony": [
+        150.0,
+        50.0,
+        -3.0
+    ],
+    "Water Expulsion": [
+        20.0
+    ],
+    "Ancestral Awakening": [
+        15.0,
+        30.0,
+        60.0
+    ],
+    "Tidewaters": [
+        1.0
+    ],
+    "Undercurrent": [
+        0.5,
+        5.0,
+        0.5
+    ],
+    "Spouting Spirits": [
+        -5.0,
+        1.0,
+        5.0
+    ],
+    "Wavespeaker's Blessing": [
+        6000.0,
+        15.0
+    ],
+    "Double Dip": [
+        1.0
+    ],
+    "Whispering Waves": [
+        15.0
+    ],
+    "Coalescing Water": [
+        -10.0
+    ],
+    "Deeply Rooted Elements": [
+        6000.0,
+        11.60000038147,
+        6.0,
+        7.0
+    ],
+    "Stormstream Totem": [
+        0.0
+    ],
+    "Call of the Ancestors": [
+        12.0
+    ],
+    "Latent Wisdom": [
+        25.0
+    ],
+    "Ancient Fellowship": [
+        20.0,
+        30.0,
+        6.0
+    ],
+    "Heed My Call": [
+        4000.0,
+        4.0
+    ],
+    "Routine Communication": [
+        15.0,
+        8.0,
+        6.0,
+        40.0,
+        4.0,
+        50.0,
+        6.0
+    ],
+    "Elemental Reverb": [
+        1.0,
+        10.0,
+        20.0,
+        20.0,
+        1.0
+    ],
+    "Ancestral Influence": [
+        1.0
+    ],
+    "Totemic Rebound": [
+        2.0
+    ],
+    "Amplification Core": [
+        0.0
+    ],
+    "Oversurge": [
+        150.0,
+        50.0
+    ],
+    "Lively Totems": [
+        0.0,
+        0.0,
+        5.0
+    ],
+    "Totemic Momentum": [
+        200.0,
+        10.0,
+        -3000.0
+    ],
+    "Offering from Beyond": [
+        -3000.0,
+        -2000.0
+    ],
+    "Primordial Capacity": [
+        25.0,
+        10.0
+    ],
+    "Windspeaker": [
+        -10.0,
+        -10.0
+    ],
+    "Wind Barrier": [
+        6.0
+    ],
+    "Splitstream": [
+        80.0,
+        25.0,
+        100.0
+    ],
+    "Elemental Attunement": [
+        2.0
+    ],
+    "Natural Harmony": [
+        -15000.0,
+        10.0,
+        50.0
+    ],
+    "Earthen Communion": [
+        3.0,
+        3.0,
+        25.0,
+        -3.0,
+        -3.0
+    ],
+    "Maelstrom Supremacy": [
+        25.0,
+        25.0
+    ],
+    "Final Calling": [
+        0.0
+    ],
+    "Mystic Knowledge": [
+        20.0
+    ],
+    "Imbuement Mastery": [
+        5.0,
+        8.0,
+        3000.0,
+        1.0,
+        300.0
+    ],
+    "Pulse Capacitor": [
+        18.0,
+        25.0,
+        18.0
+    ],
+    "Supportive Imbuements": [
+        25.0,
+        100.0
+    ],
+    "Totemic Coordination": [
+        15.0,
+        30.0,
+        25.0
+    ],
+    "Earthsurge": [
+        125.0,
+        40.0,
+        15.0
+    ],
+    "Primal Catalyst": [
+        150.0,
+        20.0
+    ],
+    "Whirling Elements": [
+        0.0
     ]
 }
