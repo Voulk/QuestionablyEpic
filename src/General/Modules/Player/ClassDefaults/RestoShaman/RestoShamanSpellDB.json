@@ -57,6 +57,22 @@
                 "hasted": false,
                 "charges": 0,
                 "maxCharges": 0
+            },
+            "coeff": 0.6768,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 15.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
             }
         }
     ],
@@ -233,6 +249,42 @@
                 "cooldown": 25.0,
                 "hasted": false
             }
+        }
+    ],
+    "Stormstream Totem": [
+        {
+            "displayInfo": {
+                "id": 1267068,
+                "icon": "ability_shaman_manatidetotem",
+                "spellName": "Stormstream Totem"
+            },
+            "castTime": 0.0,
+            "cost": 1.8,
+            "coeff": 0.87984,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal",
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 9.0,
+            "aura": 1.55,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Earthliving Weapon": [
