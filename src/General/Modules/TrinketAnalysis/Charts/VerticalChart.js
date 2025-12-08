@@ -106,6 +106,7 @@ export default class VerticalChart extends PureComponent {
 
   render() {
     const currentLanguage = i18n.language;
+    const gameType = this.props.gameType;
     const data = this.props.data;
     const db = this.props.db;
     const itemLevels = this.props.itemLevels;
@@ -134,7 +135,7 @@ export default class VerticalChart extends PureComponent {
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
     /* ----------------------- Y-Axis Label Customization ----------------------- */
-    const CustomizedYAxisTick = ({ x, y, payload, data, currentLanguage, isMobile }) => {
+    const CustomizedYAxisTick = ({ x, y, payload, data, gameType, isMobile }) => {
       //const { x, y, payload } = props;
       const row = payload?.payload ?? data?.[payload.index];
       const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
@@ -150,12 +151,12 @@ export default class VerticalChart extends PureComponent {
             }}>
             <text  is="Text" x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {
-              //use function to get the first letters of the item name per word removing spaces
+              // Use function to get the first letters of the item name per word removing spaces
               }
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : payload.value === 242392 ? "Diamantine Voidcore (No Set)" : (truncateString(rowName, 32))}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={722} domain={currentLanguage}>
-              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+            <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
+              <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, gameType)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
@@ -186,7 +187,7 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={1200}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={gameType === "Retail" ? 1000 : 700}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}
@@ -232,7 +233,7 @@ export default class VerticalChart extends PureComponent {
           <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} 
               tick={<CustomizedYAxisTick
                   data={data}
-                  currentLanguage={currentLanguage}
+                  gameType={gameType}
                   isMobile={this.state.width < mobileWidthThreshold}
                 />} />
           {itemLevels.map((key, i) => (
