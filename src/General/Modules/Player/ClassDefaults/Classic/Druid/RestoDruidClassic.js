@@ -27,19 +27,18 @@ export const restoDruidDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
-
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.11,
-        crit: 0.348,
-        mastery: 0.427,
-        haste: 0.25,
-        mp5: 0.614,
-        spirit: 0.431,
+        crit: 0.452,
+        mastery: 0.538,
+        haste: 0.331,
+        mp5: 0.683,
+        spirit: 0.519,
         hit: 0,
-        hps: 0.458, // 
+        hps: 0.304, // 
     },
     specialQueries: {
         // Any special information we need to pull.

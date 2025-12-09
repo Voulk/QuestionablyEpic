@@ -95,11 +95,13 @@ export const raidTrinketData: Effect[] = [
   // Throne of Thunder
     {
     name: "Lightning-Imbued Chalice", 
-    effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
+    effects: [ 
+      // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Scales with spec passives, and scales with sp.
       { 
         value: {0: 0},
-        coefficient: 18.90800094604,
-        efficiency: 0.94,
+        coefficient: 18.90800094604, // Confirmed in game
+        spScaling: 1.25,
+        efficiency: 0.65,
         ppm: 5.78 / 6,
         stat: "hps",
         secondaries: ['haste', 'crit'],
