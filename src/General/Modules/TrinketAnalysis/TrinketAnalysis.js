@@ -358,12 +358,13 @@ export default function TrinketAnalysis(props) {
             if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
               // Classic items can exist in multiple item levels in the database but we want to compile them into one entry.
               trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x]);
+              
             }
           }
           
         }
         if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
-        else trinketAtLevels["tooltip"] = []
+        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
   }

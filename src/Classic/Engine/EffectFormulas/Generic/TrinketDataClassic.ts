@@ -136,16 +136,16 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 2.47499990463,
         ppm: 0.85,
         stat: "intellect",
+        secondaries: ['crit'],
         duration: 10,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats: Stats = {};
-
-
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
       return bonus_stats;
     }
   },
