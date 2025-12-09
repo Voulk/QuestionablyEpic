@@ -81,6 +81,12 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
 
   reportingData.statPercentages = statPercentages;
 
+  if (tierSets.includes("Priest T15-2")) {
+    // 10% increase to PoM healing per jump.
+    getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
+  }
+
+
   if (!userSettings.strictSeq) {
 
     // Calculate filler CPM
@@ -142,6 +148,10 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
     const penanceCD = specBaseline.spellDB["Penance"][0].cooldownData.cooldown;
     const percReduced = 0.5 / penanceCD;
     getSpellEntry(castProfile, "Penance").cpm += (fillerCPM * percReduced); // Practically speaking there's likely to be gaps in gameplay. 
+
+    if (tierSets.includes("Priest T15-4")) {
+      castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Penance").cpm * 0.4})
+    }
 
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
     reportingData.manaRemaining = manaRemaining;
@@ -248,7 +258,7 @@ export function initializeDiscSet(talents = discTalents, ignoreOverhealing = fal
     {spell: "Smite", cpm: 0, fillerSpell: true},
     {spell: "Holy Fire", efficiency: 0.85},
     {spell: "Flash Heal", cpm: 1},
-    {spell: "Prayer of Mending", efficiency: 0.6},
+    {spell: "Prayer of Mending", efficiency: 0.8, bonus: 1},
   ]
 
   // 

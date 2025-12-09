@@ -52,7 +52,7 @@ export function initializeHPriestSet(talents = holyTalents, ignoreOverhealing = 
     {spell: "Holy Word: Sanctuary", efficiency: 0.9},
     {spell: "Holy Word: Serenity", efficiency: 0.1},
     {spell: "Divine Hymn", efficiency: 0.9},
-    {spell: "Prayer of Mending", efficiency: 0.9},
+    {spell: "Prayer of Mending", efficiency: 0.9, bonus: 1},
     //{spell: "Sequence", sequence: ["Spirit Shell", "Prayer of Healing", "Prayer of Healing", "Prayer of Healing"], cooldown: 60},
     
     // Filler Spells
@@ -120,6 +120,11 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
   reportingData.statPercentages = statPercentages;
 
+  if (tierSets.includes("Priest T15-2")) {
+    // 10% increase to PoM healing per jump.
+    getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
+  }
+
   
   if (!userSettings.strictSeq) {
     // Handle Chakras effect on our casts.
@@ -162,6 +167,9 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
     const totalManaPool = manaPool + regen + petRegen;
 
+    if (tierSets.includes("Priest T15-4")) {
+      castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Circle of Healing").cpm * 0.4})
+    }
 
     // Handle our filler casts. 
     // They'll mostly be Smite for us.

@@ -20,6 +20,15 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
+    version: "11.2.7 / 5.5.3",
+    update: 20,
+    date: "December 9",
+    changes: [ 
+      "Mists of Pandaria: Added Throne of Thunder content including trinkets, tier sets, the new meta gem and more.",
+      "Mists of Pandaria: The trinket chart is now based on item level instead of normal / heroic alone. This better supports item level upgrades."
+    ]
+  },
+  {
     version: "11.2.5 / 5.5.1",
     update: 19,
     date: "October 30",
