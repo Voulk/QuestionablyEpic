@@ -203,8 +203,8 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     }*/
     const yellowOptions = {
       haste: 76668,
-      crit: 76660,
-      mastery: 76672
+      crit: 76697, //76660,
+      mastery: 76700, //76672
     }
 
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
@@ -212,9 +212,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     const bestSecondary = statOrder.find(stat => ['haste', 'crit', 'mastery'].includes(stat));
     const yellowGemID = yellowOptions[bestSecondary]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
-    const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
-    const redGemID = 76694; // Pure int but look into hybrids
-    const blueGemID = 76686;
+    const metaGemID = 95345; //76885; //
+    const redGemID = 76660; //76672;// 76694; // Pure int but look into hybrids
+    const blueGemID = 76645; //76686;
     const shaGemID = 89882; // Sha gem, 500 intellect
     //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
     const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;

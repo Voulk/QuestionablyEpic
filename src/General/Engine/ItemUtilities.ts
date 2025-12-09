@@ -1024,7 +1024,7 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "", maxChecked = false) {
   let itemDB = getItemDB(gameType);
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
@@ -1062,8 +1062,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
       else if (source === "Terrace" && sources) sourceCheck = sources.instanceId === 320;
-      else if (source === "T14" && sources) sourceCheck = ([317, 330].includes(sources.instanceId));
+      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 0);
       else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
+      else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4
@@ -1082,7 +1085,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
         ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && source !== "ClassicPVP") ? 8 : 0;
+          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
           if (source === "S3 Dinar") newItem.exclusiveItem = true;

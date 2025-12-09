@@ -202,6 +202,25 @@ const classicInstanceDB = {
       709: "Sha of Fear",
     }
   },
+  362: {
+    name: "Throne of Thunder",
+    bossOrder: [816, 817, 818, 819, 820, 821, 824, 825, 827, 828, 829, 831, 832],
+    bosses: {
+      816: "Council of Elders",
+      817: "Iron Qon",
+      818: "Durumu the Forgotten",
+      819: "Horridon",
+      820: "Primordius",
+      821: "Megaera",
+      824: "Dark Animus",
+      825: "Tortos",
+      827: "Jin'rokh the Breaker",
+      828: "Ji-Kun",
+      829: "Twin Empyreans",
+      831: "Ra-den",
+      832: "Lei Shen",
+    }
+  },
 
 }
 

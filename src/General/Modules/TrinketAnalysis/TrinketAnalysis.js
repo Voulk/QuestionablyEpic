@@ -264,12 +264,13 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
+  const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730]; 
+  const allItemLevels = gameType === "Retail" ? [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730] : [458, 463, 476, 483, 489, 496, 502, 509, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
-  const gameType = useSelector((state) => state.gameType);
+  
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
       key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
@@ -296,16 +297,16 @@ export default function TrinketAnalysis(props) {
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
-      highestLevel: 0,
+      highestLevel: getItemProp(trinket.id, "levelRange", gameType).at(-1) || 0,
     };
 
-    if (gameType === "Classic") {
+    if (false && gameType === "Classic") {
       /*const difficulties = ["10N", "10H", "25N", "25H"]
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
       }*/
       const itemUpgradeExclusionList = ["Mithril Wristwatch", "Thousand-Year Pickled Egg"]
-      const trinketLevel = trinket.itemLevel + (itemUpgradeExclusionList.includes(trinket.name) ? 0 : 8);
+      const trinketLevel = trinket.itemLevel// + (itemUpgradeExclusionList.includes(trinket.name) ? 0 : 8);
       const trinketScore = getClassicTrinketScore(trinket.id, props.player, trinketLevel);
       const pos = trinket.levelRange.indexOf(trinket.itemLevel);
       
@@ -353,13 +354,22 @@ export default function TrinketAnalysis(props) {
 
     } else {
         for (var x = 0; x < itemLevels.length; x++) {
-
-          trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
+          if (gameType === "Retail") trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
+          else {
+            if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
+              // Classic items can exist in multiple item levels in the database but we want to compile them into one entry.
+              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x]);
+              
+            }
+          }
+          
         }
-        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
-        activeTrinkets.push(trinketAtLevels);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
+        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
   }
+
   if (gameType === "Retail") {
     // Add any additional entries
 
@@ -378,7 +388,7 @@ export default function TrinketAnalysis(props) {
     
   }
 
-  if (gameType === "Classic") {
+  if (gameType === "Classicc") {
     // Sort. We'll need to use the retail "highest level" code here.
     const getHighestClassicScore = (trinket) => {return trinket.heroic || trinket.normal || 0}
     activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
@@ -467,9 +477,9 @@ export default function TrinketAnalysis(props) {
                     ) : (
                       ""
                     )}
-                    {gameType === "Retail" ? (
+                    {true ? (
                       <Grid item xs={12}>
-                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} />
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} gameType={gameType} />
                       </Grid>
                     ) : (
                       <Grid item xs={12}>

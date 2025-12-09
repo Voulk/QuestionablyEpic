@@ -63,7 +63,7 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Surging Mist", cpm: 1},
-      {spell: "Renewing Mist", efficiency: 0.95 },
+      {spell: "Renewing Mist", efficiency: 0.95, bonus: 1 },
       {spell: "Chi Burst", efficiency: 0.8 },
       {spell: "Revival", efficiency: 0.8 },
       {spell: "Expel Harm", efficiency: 0.75 },
@@ -174,6 +174,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     // 9 Rems out at an average remaining duration of 9 = 81 seconds of Renewing Mist gained.
     const freeRenewingMistSeconds = averageRemCount * renewingMistDuration / 2 * 0.9; // Slightly lossy
     getSpellEntry(castProfile, "Renewing Mist").cpm += freeRenewingMistSeconds / renewingMistDuration / 3;
+
+    if (tierSets.includes("Monk T15-2")) {
+        getSpellEntry(castProfile, "Renewing Mist").bonus *= 1.15; // 
+    }
 
     specBaseline.spellDB["Uplift"][0].targets = averageRemCount + freeRenewingMistSeconds / renewingMistDuration; // Set our Uplift target count based on our average Renewing Mist count.
     //getSpellEntry(castProfile, "Uplift").bonus = averageRemCount; // This effectively acts as our Uplift target count.

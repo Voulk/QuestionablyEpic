@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import makeStyles from "@mui/styles/makeStyles";
-import { InputLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover, Box } from "@mui/material";
+import { InputLabel, Checkbox, FormControlLabel, MenuItem, FormControl, Select, Button, Grid, Paper, Typography, Divider, Snackbar, TextField, Popover, Box } from "@mui/material";
 import { Autocomplete } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import "../SetupAndMenus/QEMainMenu.css";
@@ -111,13 +111,14 @@ export default function ItemBar(props) {
   const classes = useStyles();
   /* ------------------------------ Popover Props ----------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
+  const [maxChecked, setMaxChecked] = useState(false);
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
 
   const autoFillItems = (itemLevel, player, gameType, source = "") => {
 
-    autoAddItems(player, gameType, itemLevel, source);
+    autoAddItems(player, gameType, itemLevel, source, maxChecked);
     props.setItemList([...player.getActiveItems(activeSlot)]);
   }
 
@@ -172,6 +173,10 @@ export default function ItemBar(props) {
 
   const handleClosePop = () => {
     setAnchorEl(null);
+  };
+
+  const handleMaxChange = (event) => {
+    setMaxChecked(event.target.checked);
   };
 
   const handleClose = (event, reason) => {
@@ -329,13 +334,14 @@ export default function ItemBar(props) {
   }
 
   const autoAddOptions = [
-    { label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
+    //{ label: "Heroic Dungeons", value: -1, gameType: "Classic", source: "MoP Dungeons", icon: "classicDungeonIcon"}, // 
     { label: "Celestial Vendor", value: -1, gameType: "Classic", source: "Celestial Vendor", icon: "celestialVendor" }, // Images/Logos/CraftingIcon.jpg
     { label: "Rep & Professions", value: -1, gameType: "Classic", source: "Rep & Professions", icon: "CraftingIcon" },
-    { label: "Mogushan Vaults", value: -1, gameType: "Classic", source: "Mogushan Vaults", icon: "msvIcon" },
-    { label: "Heart of Fear", value: -1, gameType: "Classic", source: "Heart of Fear", icon: "heartIcon" },
-    { label: "Terrace", value: -1, gameType: "Classic", source: "Terrace", icon: "terraceIcon" },
-    { label: "Conquest", value: -1, gameType: "Classic", source: "ClassicPVP", icon: "conquestIcon" },
+    { label: "World Bosses", value: -1, gameType: "Classic", source: "World Bosses", icon: "conquestIcon" },
+    //{ label: "T14 Normal", value: -1, gameType: "Classic", source: "T14", icon: "msvIcon" },
+    //{ label: "T14 Heroic", value: -1, gameType: "Classic", source: "T14+", icon: "terraceIcon" },
+    { label: "Throne Normal", value: -1, gameType: "Classic", source: "T15", icon: "totNormal" },
+    { label: "Throne Heroic", value: -1, gameType: "Classic", source: "T15+", icon: "totHeroic" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
     { label: "Manaforge H", value: 717, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
@@ -589,42 +595,61 @@ export default function ItemBar(props) {
         </Snackbar>
       </Grid>
       <Grid 
-        container
-        justifyContent="center"
-        alignItems="center"
-        direction="column"
+    container
+    justifyContent="center"
+    alignItems="center"
+    direction="column"
 
-        spacing={1}
+    spacing={1}
+    sx={{
+      paddingTop: "15px",
+      paddingBottom: "8px",
+    }}>
+      <Grid item><Typography>{"Or auto add all pieces from a source!"}</Typography></Grid>
+      <Grid item xs={12}>
+      <Box
         sx={{
-          paddingTop: "20px",
-          paddingBottom: "10px",
-      }}>
-        <Grid item><Typography>{"Or auto add all pieces from a source!"}</Typography></Grid>
-        <Grid item xs={12}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 1, 
-            mt: 1,
-          }}
-        >
-          {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
-            return (
-              <Button key={option.label} variant="contained" sx={{ width: 230 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
-                <img
-                  src={option.icon ? process.env.PUBLIC_URL + "/Images/ExtraIcons/" + option.icon + ".jpg" : require("Images/Logos/RaidLogo.jpg")} 
-                  alt=""
-                  style={{ width: 20, height: 20, marginRight: 4, borderRadius: "50%", objectFit: "cover" }}
-                />
-                {option.label}
-              </Button>
-            )
-          })}
-        </Box>
-        </Grid>
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 1, 
+          mt: 1,
+        }}
+      >
+        {autoAddOptions.filter(option => option.gameType === gameType).map((option) => {
+          return (
+            <Button key={option.label} variant="outlined" sx={{ width: 230 }} color="primary" onClick={() => autoFillItems(option.value, props.player, option.gameType, option.source)}>
+              <img
+                src={option.icon ? process.env.PUBLIC_URL + "/Images/ExtraIcons/" + option.icon + ".jpg" : require("Images/Logos/RaidLogo.jpg")} 
+                alt=""
+                style={{ width: 20, height: 20, marginRight: 4, borderRadius: "50%", objectFit: "cover" }}
+              />
+              {option.label}
+            </Button>
+          )
+        })}
+      </Box>
       </Grid>
+      
+      {gameType === "Classic" && (
+      <Grid item>
+          <FormControlLabel
+              control={
+                  <Checkbox 
+                      checked={maxChecked} 
+                      onChange={handleMaxChange} 
+                      name="maxCheckbox" 
+                      color="primary"
+                      size="small" 
+                  />
+              }
+              // 
+              label={<Typography variant="body2">{"Upgrade to Max"}</Typography>}
+          />
+      </Grid>
+      )}
+      {/* --------------------------- */}
+</Grid>
     </Paper>
   );
 }

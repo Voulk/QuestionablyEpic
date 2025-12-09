@@ -191,7 +191,8 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       // Daybreak
       const daybreakCastEfficiency = Math.min(2, fillerCPM / (getSpellEntry(castProfile, "Holy Shock").cpm));
-      getSpellEntry(castProfile, "Holy Shock").bonus = (getSpellEntry(castProfile, "Holy Shock").bonus || 1) * (1 + 0.75 * daybreakCastEfficiency);
+      let daybreakBonus = tierSets.includes("Paladin T15-2") ? 1.5 : 1;
+      getSpellEntry(castProfile, "Holy Shock").bonus = (getSpellEntry(castProfile, "Holy Shock").bonus || 1) * (1 + 0.75 * daybreakCastEfficiency * daybreakBonus);
       reportingData.daybreakCastEfficiencyFull = (1 + 0.75 * daybreakCastEfficiency);
 
       reportingData.fillerCPM = fillerCPM;
@@ -300,7 +301,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
                   "Holy Prism": 0.15,
                 }
                 const beaconMod = (spellName in beaconSpecialMods) ? beaconSpecialMods[spellName] : 0.5;
-                const beaconHealing = rawHeal * beaconMod * (1 - 0.15); // 15% Beacon Overheal
+                const beaconHealing = rawHeal * beaconMod * (1 - 0.15) * (tierSets.includes("Paladin T15-4") ? 1.2 : 1); // 15% Beacon Overheal
                 healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
                 totalHealing += beaconHealing;
 
