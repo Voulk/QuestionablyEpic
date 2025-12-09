@@ -40,6 +40,7 @@ export const restoShamanDefaults = {
         // Any special information we need to pull.
     },
     autoReforgeOrder: ["crit", "haste", "spirit", "mastery", "hit"],
+    reforgeDefault: "",
 }
 
 
@@ -102,6 +103,7 @@ export function initializeShamanSet() {
     const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
     const reportingData = {}
     const spellDB = baseline.spellDB;
+    let tidalWavesPercentage = 0.3;
     const resurgenceReturn = {
       "Chain Heal": 2947,
       "Greater Healing Wave": 8849,
@@ -130,6 +132,9 @@ export function initializeShamanSet() {
 
     if (tierSets.includes("Shaman T14-2")) {
       getSpellEntry(castProfile, "Greater Healing Wave").cost *= 0.9; // T14-2 - GHW cost reduction
+    }
+    if (tierSets.includes("Shaman T14-4")) {
+      tidalWavesPercentage += 0.05;
     }
     if (tierSets.includes("Shaman T15-2")) {
       getSpellEntry(castProfile, "Healing Stream Totem").bonus = 1.25; // T15-2 - HST bonus
@@ -210,6 +215,9 @@ export function initializeShamanSet() {
 
     const packageCount = Math.floor(manaRemaining / packageCost);
     reportingData.packageCount = packageCount;
+
+    // Include Chain Heal falloff
+    getSpellEntry(castProfile, "Chain Heal").bonus *= 0.738 // For four bounces. We should probably just turn this into a function.
 
     let healingEvents = 0;
     castProfile.forEach(spellProfile => {

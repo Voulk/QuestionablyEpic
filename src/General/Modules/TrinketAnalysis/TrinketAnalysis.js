@@ -22,6 +22,7 @@ import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
+import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -168,13 +169,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(723);
+  const [levelCap, setLevelCap] = React.useState(730);
   const maxLevelMarks = [
-    { value: 0, label: "678" },
-    { value: 1, label: "691" },
-    { value: 2, label: "704" },
-    { value: 3, label: "710" },
-    { value: 4, label: "723" },
+    { value: 0, label: "684" },
+    { value: 1, label: "697" },
+    { value: 2, label: "710" },
+    { value: 3, label: "717" },
+    { value: 4, label: "730" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -265,7 +266,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [671, 675, 678, 684, 691, 697, 704, 707, 710, 714, 720, 723] : [458, 463, 476, 483, 489, 496, 502, 509, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730] : [458, 463, 476, 483, 489, 496, 502, 509, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -394,8 +395,8 @@ export default function TrinketAnalysis(props) {
   } else {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
-  console.log(activeTrinkets);
-  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
+
+  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
                                               "Trinkets are modelled at their maximum item upgrade level.";
 
   return (
@@ -513,8 +514,9 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-
+          
       <div id="qelivead2"></div>
+      {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
     </div>
   );

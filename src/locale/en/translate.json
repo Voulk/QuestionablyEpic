@@ -593,7 +593,8 @@
     "Yes": "Yes",
     "itemTags": {
       "effect": "Effect",
-      "greatvault": "Great Vault"
+      "greatvault": "Great Vault",
+      "exclusive": "Dinar "
     }
   }
 }

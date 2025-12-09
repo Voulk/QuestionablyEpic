@@ -239,7 +239,7 @@ class CastModel {
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Holy Paladin Classic") {
-      this.modelName = "Default";
+      this.modelName = "Default (Beta)";
       this.profile = holyPaladinDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
@@ -249,7 +249,7 @@ class CastModel {
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 
     else if (spec === "Restoration Shaman Classic") {
-      this.modelName = "Default";
+      this.modelName = "Default (Beta)";
       this.profile = restoShamanDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
     } 

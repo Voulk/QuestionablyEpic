@@ -57,7 +57,7 @@ export const effectData = [
         coefficient: 75.3012, 
         table: -9,
         ppm: 2,
-        efficiency: 0.95, // Converts to absorb so high efficiency.
+        efficiency: 0.98, // Converts to absorb so high efficiency.
         secondaries: ['haste', 'crit', 'versatility'], // Check Crit
       },
     ],
@@ -74,7 +74,7 @@ export const effectData = [
       return bonus_stats;
     },
   },
-  { // Settings for number of Signetbearers in party? This is party only, not raid wide.
+  { // 
     name: "Neural Synapse Enhancer",
     effects: [
       {
