@@ -1024,7 +1024,7 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "", maxChecked = false) {
   let itemDB = getItemDB(gameType);
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
@@ -1080,7 +1080,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && ["T14", "T14+"].includes(source)) ? 8 : 0;
+          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
       if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);

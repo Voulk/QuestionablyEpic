@@ -111,13 +111,14 @@ export default function ItemBar(props) {
   const classes = useStyles();
   /* ------------------------------ Popover Props ----------------------------- */
   const [anchorEl, setAnchorEl] = useState(null);
+  const [maxChecked, setMaxChecked] = useState(false);
   const openPop = Boolean(anchorEl);
   const idPop = openPop ? "simple-popover" : undefined;
   const gameType = useSelector((state) => state.gameType);
 
   const autoFillItems = (itemLevel, player, gameType, source = "") => {
 
-    autoAddItems(player, gameType, itemLevel, source);
+    autoAddItems(player, gameType, itemLevel, source, maxChecked);
     props.setItemList([...player.getActiveItems(activeSlot)]);
   }
 
@@ -172,6 +173,10 @@ export default function ItemBar(props) {
 
   const handleClosePop = () => {
     setAnchorEl(null);
+  };
+
+  const handleMaxChange = (event) => {
+    setMaxChecked(event.target.checked);
   };
 
   const handleClose = (event, reason) => {
@@ -624,23 +629,23 @@ export default function ItemBar(props) {
       </Box>
       </Grid>
       
-      {/* --- NEW CHECKBOX ELEMENT --- */}
+      {gameType === "Classic" && (
       <Grid item>
           <FormControlLabel
               control={
                   <Checkbox 
-                      // You'll need to define state and an onChange handler for the Checkbox
-                      checked={null} 
-                      onChange={null} 
-                      name="checkboxName" 
+                      checked={maxChecked} 
+                      onChange={handleMaxChange} 
+                      name="maxCheckbox" 
                       color="primary"
-                      size="small" // Makes the checkbox itself smaller
+                      size="small" 
                   />
               }
-              // The label text appears to the right by default
+              // 
               label={<Typography variant="body2">{"Upgrade to Max"}</Typography>}
           />
       </Grid>
+      )}
       {/* --------------------------- */}
 </Grid>
     </Paper>
