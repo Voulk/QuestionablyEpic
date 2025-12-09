@@ -1,7 +1,8 @@
 import CastModel from "General/Modules/Player/CastModel";
 import Player from "General/Modules/Player/Player";
 
-import { getGenericStatEffect, getGenericThroughputEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue } from "./ClassicEffectUtilities";
+import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
+import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 
 
 /* 
@@ -94,18 +95,22 @@ export const raidTrinketData: Effect[] = [
   // Throne of Thunder
     {
     name: "Lightning-Imbued Chalice", 
-    effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
+    effects: [ 
+      // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Scales with spec passives, and scales with sp.
       { 
         value: {0: 0},
-        coefficient: 0,
-        ppm: 5.78,
+        coefficient: 18.90800094604, // Confirmed in game
+        spScaling: 1.25,
+        efficiency: 0.65,
+        ppm: 5.78 / 6,
         stat: "hps",
-        duration: 4,
+        secondaries: ['haste', 'crit'],
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -133,16 +138,16 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 2.47499990463,
         ppm: 0.85,
         stat: "intellect",
+        secondaries: ['crit'],
         duration: 10,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats: Stats = {};
-
-
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
       return bonus_stats;
     }
   },
@@ -151,44 +156,48 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Hasted rppm. Stacks to 6 then can be used to shield a target.
       { 
         value: {0: 0},
-        coefficient: 0,
-        ppm: 1.64,
+        coefficient: 3.15199995041,
+        ppm: 2.89,
         stat: "HPS",
-        duration: 10,
+        secondaries: ['haste'],
+        efficiency: 0.97,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
   },
   {
     name: "Inscribed Bag of Hydra-Spawn", 
-    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted
+    effects: [ // RPPM shield proc. Possibly a weird cooldown as well? Hasted. Need to check logs.
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 9.45600032806,
         ppm: 1.64,
         stat: "HPS",
-        duration: 10,
+        secondaries: ['haste'],
+        efficiency: 0.98,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      bonus_stats.hps = getGenericFlatProc(data[0], itemLevel, player.spec, additionalData.setStats);
 
       return bonus_stats;
     }
   },
   {
-    name: "Horridon's Last Grasp", 
+    name: "Horridon's Last Gasp", 
     effects: [ // Chance of X mana every 2s for 10s.
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 0.55900001526,
         ppm: 0.96,
+        secondaries: ['haste'],
         stat: "MP5",
         duration: 10,
       },
@@ -196,6 +205,27 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
+      const manaRestore = processedValue(data[0], itemLevel);
+      const manaPerProc = manaRestore * 5;
+      bonus_stats.mp5 = manaPerProc * data[0].ppm! * getHaste(additionalData.setStats, player.spec.replace(" Classic", "")) / 12;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Soothing Talisman of the Shado-Pan Assault",
+    effects: [
+      { // 
+        value: {463: 0}, 
+        coefficient: 10.05900001526,
+        cooldown: 180,
+        stat: "mp5",
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.mp5 = processedValue(data[0], itemLevel) / data[0].cooldown! * 5;
 
       return bonus_stats;
     }
@@ -718,8 +748,7 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
 
-      //console.log(getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats));
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
 
       return bonus_stats;
     }
@@ -743,9 +772,9 @@ export const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = {};
-      return getGenericThroughputEffect(data[0], itemLevel, player, additionalData.setStats);
+      //Effect(data[0], itemLevel, player, additionalData.setStats);
       
-     // return bonus_stats;
+      return bonus_stats;
     }
   },
   {

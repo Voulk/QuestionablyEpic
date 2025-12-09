@@ -32,8 +32,8 @@ export const CLASSICPRIESTSPELLDB = {
         chakraType: "blue",
         castTime: 2.5, 
         cost: 4.5, 
-        coeff: 0.838, 
-        flat: 8688,
+        coeff: 0.838 * 1.15, 
+        flat: 8688 * 1.15,
         expectedOverheal: 0.27,
         targets: 5,
         secondaries: ['crit', 'hmastery', 'mastery'],
@@ -85,7 +85,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "classic periodic",
         buffType: "heal",
         chakraType: "yellow",
-        buffDuration: 12,
+        buffDuration: 15,
         coeff: 0.207, 
         flat: 2152,
         tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
@@ -216,7 +216,7 @@ export const CLASSICPRIESTSPELLDB = {
         type: "heal",
         castTime: 0, 
         healType: "direct",
-        chakraType: "blue",
+        chakraType: "yellow",
         cost: 3.5, 
         coeff: 0.571 * 1.25,
         flat: 3299 * 1.7948 * 1.25, // Yeah I know. This is just kind of how it is. 25% aura attached to Divine Fury & 25% on Spiritual Healing.
@@ -248,6 +248,18 @@ export const CLASSICPRIESTSPELLDB = {
         flat: 4717,
         targets: 1 * 2,
         secondaries: ['crit'],
+    }],
+    "Golden Apparition": [{
+        spellData: {id: 138302, icon: "priest_spell_leapoffaith_b", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        healType: "direct",
+        cost: 0, 
+        coeff: 0, 
+        flat: 100000,
+        additiveScaling: 0.25,
+        expectedOverheal: 0.15,
+        secondaries: ['crit', 'mastery'],
     }],
 
 
@@ -381,6 +393,16 @@ const discTalents = {
 }
 
 const holyTalents = {
+
+    holyAura: {points: 1, maxPoints: 1, icon: "spell_holy_powerwordshield", id: 9999, select: false, tier: 9, runFunc: function (state, spellDB, points) {
+        spellDB["Divine Star"][0].coeff *= 0.85;
+        spellDB["Divine Star"][0].flat *= 0.75;
+
+        spellDB["Divine Hymn"][0].coeff *= 0.5;
+        spellDB["Divine Hymn"][0].flat *= 0.5;
+
+    }},
+
     // Row 2
     fromDarknessComesLight: {points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", id: 109186, select: true, tier: 1, runFunc: function (state, spellDB, points) {
         

@@ -753,7 +753,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 0));
 
-      this.activeStats = {
+      /*this.activeStats = {
         intellect: 6000,
         spellpower: 3500,
         haste: 1200,
@@ -761,7 +761,8 @@ export class Player {
         mastery: 1500,
         spirit: 3000,
         stamina: 1900,
-      }
+      }*/
+      this.activeStats = this.castModels[0].profile.defaultStatProfile;
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);
