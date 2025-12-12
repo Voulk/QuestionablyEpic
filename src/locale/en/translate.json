@@ -432,6 +432,14 @@
           "title": "Gem Behavior",
           "tooltip": "Most of the time matching gems is a good idea, but in niche scenarios it can be worth ignoring them. Don't change this setting unless you know what you're doing."
         },
+        "classicGemTypes": {
+          "title": "Gem Types",
+          "tooltip": "Choose whether to focus on Intellect or Secondary stats for your gems. Generally secondary gems will take over as you equip more Throne of Thunder gear."
+        },
+        "classicMetaGem": {
+          "title": "Meta Gem",
+          "tooltip": "The legendary meta gem is always better, but it'll take a while to acquire it so we'll default to a regular one for now."
+        },
         "metric": {
           "title": "Scoring Metric",
           "tooltip": "Pick whether to include DPS value in your score or not."

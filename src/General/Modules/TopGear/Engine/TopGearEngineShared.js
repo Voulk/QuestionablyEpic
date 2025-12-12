@@ -201,10 +201,31 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       71850: 'yellow', // int / haste
       71868: 'blue',
     }*/
-    const yellowOptions = {
+    const gemTypeSetting = getSetting(playerSettings, "classicGemTypes");
+    const yellowOptions = gemTypeSetting === "Intellect Focus" ? 
+    {
       haste: 76668,
+      crit: 76660,
+      mastery: 76672,
+    } :
+    { // Pure secondary gems
+      haste: 76699,
       crit: 76697, //76660,
       mastery: 76700, //76672
+    }
+
+    // These are all secondary X + spirit gems.
+    // If set to int gems then all can just use int + spirit.
+    const blueOptions = {
+      haste: 76651,
+      crit: 76640,
+      mastery: 76645,
+    }
+    // Similar to blue options, this is just for when we are not going with the intellect option.
+    const redOptions = {
+      haste: 76668,
+      crit: 76660,
+      mastery: 76672,
     }
 
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
@@ -212,9 +233,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     const bestSecondary = statOrder.find(stat => ['haste', 'crit', 'mastery'].includes(stat));
     const yellowGemID = yellowOptions[bestSecondary]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
-    const metaGemID = 95345; //76885; //
-    const redGemID = 76660; //76672;// 76694; // Pure int but look into hybrids
-    const blueGemID = 76645; //76686;
+    const metaGemID = getSetting(playerSettings, "classicMetaGem") === "Burning Primal Diamond" ? 76885 : 95345; //
+    const redGemID = gemTypeSetting === "Intellect Focus" ? 76694 : redOptions[bestSecondary]; 
+    const blueGemID = gemTypeSetting === "Intellect Focus" ? 76686 : blueOptions[bestSecondary]; 
     const shaGemID = 89882; // Sha gem, 500 intellect
     //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
     const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;
@@ -237,14 +258,18 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       }
     }
     
-   // (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) ? Math.ceil((hasteNeeded - cogwheelCount * 600) / 160) : 0; // 160 haste per gem
-  // Maybe do at the end so we can include socket bonuses?
-    // Add a check to see if it can get there with the oranges available.
 
-    const socketScores = {red: adjusted_weights.intellect * gemBudget, 
+    const socketScores = gemTypeSetting === "Intellect Focused" ? {red: adjusted_weights.intellect * gemBudget, 
                           prismatic: adjusted_weights.intellect * gemBudget,
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
                           yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights[bestSecondary] * gemBudget,
+                          sha: adjusted_weights.intellect * 500 }
+                        :
+                        // Secondary Focus
+                        {red: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights[bestSecondary] * gemBudget, 
+                          prismatic: adjusted_weights[bestSecondary] * gemBudget * 2,
+                          blue: adjusted_weights[bestSecondary] * gemBudget + adjusted_weights.spirit * gemBudget, 
+                          yellow: adjusted_weights[bestSecondary] * gemBudget * 2,
                         sha: adjusted_weights.intellect * 500 }
     //console.log("Haste gems needed: " + hasteGemsNeeded);
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.

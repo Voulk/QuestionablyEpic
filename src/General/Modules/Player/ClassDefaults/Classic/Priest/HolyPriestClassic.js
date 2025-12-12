@@ -29,13 +29,13 @@ export const holyPriestDefaults = {
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
       spellpower: 1,
-      intellect: 2.062,
-      crit: 0.656,
-      mastery: 0.634,
-      haste: 0.588,
-      spirit: 1.481,
-      mp5: 1.296,
-      hps: 1.027
+      intellect: 1.138,
+      crit: 0.445,
+      mastery: 0.543,
+      haste: 0,
+      spirit: 0.55,
+      mp5: 0.8,
+      hps: 0.334
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -174,7 +174,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
     let fillerCost = getSpellEntry(castProfile, "Prayer of Healing").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.8;
+    const fillerWastage = 0.65;
 
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
     

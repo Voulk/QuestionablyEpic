@@ -67,6 +67,8 @@ const initialState : RootState = {
     professionTwo: {value: "Leatherworking", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering (NYI)", "Herbalism (NYI)", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
     classicGems: {value: "Prefer Match", options: ["Prefer Match", "Prefer Optimal", "Keep Equipped Gems"], category: "topGear", type: "selector", gameType: "Classic"},
+    classicGemTypes: {value: "Intellect Focus", options: ["Intellect Focus", "Secondary Focus"], category: "topGear", type: "selector", gameType: "Classic"},
+    classicMetaGem: {value: "Burning Primal Diamond", options: ["Burning Primal Diamond", "Courageous Primal Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
     includeEnchants: {value: "Yes", options: ["Yes", "No"], category: "topGear", type: "selector", gameType: "Classic"},
     
 

@@ -30,13 +30,13 @@ export const discPriestDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO
         spellpower: 1,
         intellect: 1.11,
-        crit: 0.43,
-        mastery: 0.347,
-        haste: 0.25,
+        crit: 0.5461,
+        mastery: 0.44,
+        haste: 0.305,
         mp5: 0.614,
-        spirit: 0.402,
+        spirit: 0.5,
         hit: 0,
-        hps: 0.458, // 
+        hps: 0.314, // 
     },
     specialQueries: {
         // Any special information we need to pull.

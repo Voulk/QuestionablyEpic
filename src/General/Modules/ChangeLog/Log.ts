@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "11.2.7 / 5.5.3",
+    update: 21,
+    date: "December 12",
+    changes: [ 
+      "Mists of Pandaria: Added settings for Meta and Int / Secondary focused gem choices. Moved default back to Intellect focused.",
+      "Mists of Pandaria: Updated default profiles for a few specs like Discipline Priest and Holy Priest."
+    ]
+  },
   {
     version: "11.2.7 / 5.5.3",
     update: 20,
