@@ -31,12 +31,12 @@ export const holyPaladinDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.107,
-        crit: 0.341,
-        mastery: 0.493,
-        haste: 0.25,
-        spirit: 0.497,
-        mp5: 0.678,
-        hps: 0.553
+        crit: 0.442,
+        mastery: 0.6,
+        haste: 0.31,
+        spirit: 0.57,
+        mp5: 0.82,
+        hps: 0.34,
     },
     specialQueries: {
         // Any special information we need to pull.
