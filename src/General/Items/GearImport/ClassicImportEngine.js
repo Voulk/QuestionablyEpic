@@ -153,7 +153,9 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     // Epic items gain 8 ilvl per upgrade.
     // We won't check if an item can be upgraded at all here because they are imports.
     let baseRarity = getItemProp(itemID, "quality", "Classic");
-    itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
+
+    if (itemLevel > 520) itemLevel += 3 * upgradeLevel;
+    else itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
