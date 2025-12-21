@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "11.2.7 / 5.5.3",
+    update: 22,
+    date: "December 20",
+    changes: [ 
+      "Bugfix: Socket bonuses should now be included in advanced gem configurations too.",
+      "Bugfix: Fixed some items that would import at the wrong upgrade level with auto-upgrade on.",
+    ]
+  },
     {
     version: "11.2.7 / 5.5.3",
     update: 21,
