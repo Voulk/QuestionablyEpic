@@ -182,6 +182,20 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
+const checkColorMatch = (gemColor, socketColor) => {
+  if (socketColor === "red") return ["red", "orange", "purple"].includes(gemColor);
+  else if (socketColor === "yellow") return ["yellow", "orange", "green"].includes(gemColor);
+  else if (socketColor === "blue") return ["blue", "green", "purple"].includes(gemColor);
+  return false;
+}
+
+// Takes an array of socketed gems and an array of sockets. Checks if they all match. 
+const checkSocketMatch = (socketedGems, sockets, gemIDs) => {
+  return socketedGems.map(i => gemIDs[i]).every((element, index) => 
+    (element === sockets[index] || sockets[index] === "prismatic") || checkColorMatch(element, sockets[index]));
+  // item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))
+}
+
 export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder, hasteNeeded = 0) => {
 
     //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
@@ -344,7 +358,7 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
         socketedGemStats.push(gemStats);
       });
 
-      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {
+      if (checkSocketMatch(item.socketedGems, item.classicSockets.sockets, gemIDS)) {
         // Socket bonus
         if (item.classicSockets.bonus) socketedGemStats.push(item.classicSockets.bonus);
       }
