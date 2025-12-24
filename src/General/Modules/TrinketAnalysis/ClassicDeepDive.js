@@ -58,6 +58,11 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel, trinke
     if (trinketStats.spirit) {
         //trinketDescription.push("Effective MP5 at 5k int: " + convertSpiritToMP5(trinketStats.spirit, 5000, player.spec));
         trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.spirit * 1.128 * 0.5 * 12));
+
+        if (player.spec.includes("Restoration Druid")) {
+            // Handle Innervate
+            trinketDescription.push("Innervate Mana Per Minute: " + Math.round(trinketStats.spirit * 0.5 * 10 / 3));
+        }
     }
     if (trinketStats.mp5) {
         trinketDescription.push("Mana Per Minute: " + Math.round(trinketStats.mp5 * 12));

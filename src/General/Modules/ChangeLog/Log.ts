@@ -21,6 +21,15 @@ export const getVersion = (): string => {
 export const changeLog: entry[] = [
       {
     version: "11.2.7 / 5.5.3",
+    update: 23,
+    date: "December 24",
+    changes: [ 
+      "Bugfix: Added some missing trinket item levels to the chart.",
+      "Trinket chart now shows innervate mana gain for Resto Druid. No change to valuations, just better information.",
+    ]
+  },
+      {
+    version: "11.2.7 / 5.5.3",
     update: 22,
     date: "December 20",
     changes: [ 
