@@ -249,7 +249,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
     return {damage: totalDamage, healing: totalHealing};
 }
 
-export function initializeDiscSet(talents = discTalents, ignoreOverhealing = false) {
+export function initializeDiscSet(userSettings, talents = discTalents, ignoreOverhealing = false) {
   const testSettings = {spec: "Discipline Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   const discCastProfile = [
     {spell: "Power Word: Shield", cpm: 4.8, freeCast: true}, // Rapture

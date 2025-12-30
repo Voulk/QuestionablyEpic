@@ -198,6 +198,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 2425,
         coeff: 0.224, 
         expectedOverheal: 0.2,
+        cooldownData: {cooldown: 20},
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
     },
@@ -209,7 +210,7 @@ export const CLASSICDRUIDSPELLDB = {
         coeff: 0.323, // The coefficient for a single Healing Touch cast. Data differs from wowhead so check this.
         flat: 3490,
         tickData: {tickRate: 2.5, canPartialTick: false, tickOnCast: false}, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
     },
@@ -222,7 +223,7 @@ export const CLASSICDRUIDSPELLDB = {
         flat: 512,
         targets: 3,
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
-        expectedOverheal: 0.2,
+        expectedOverheal: 0.4,
         secondaries: ['crit', 'mastery'],
         statMods: {crit: 0, critEffect: 0}
     },

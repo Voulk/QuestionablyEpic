@@ -45,7 +45,7 @@ export const holyPaladinDefaults = {
 }
 
 
-export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing = false) {
+export function initializePaladinSet(userSettings, talents = paladinTalents, ignoreOverhealing = false) {
     console.log("Initializing Paladin Set")
     const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   

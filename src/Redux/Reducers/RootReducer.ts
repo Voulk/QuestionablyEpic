@@ -70,6 +70,8 @@ const initialState : RootState = {
     classicGemTypes: {value: "Intellect Focus", options: ["Intellect Focus", "Secondary Focus"], category: "topGear", type: "selector", gameType: "Classic"},
     classicMetaGem: {value: "Burning Primal Diamond", options: ["Burning Primal Diamond", "Courageous Primal Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
     includeEnchants: {value: "Yes", options: ["Yes", "No"], category: "topGear", type: "selector", gameType: "Classic"},
+
+    druidLevelSixtyTalent: {value: "Soul of the Forest", options: ["Soul of the Forest", "Force of Nature", "Incarnation"], category: "specSpecific", type: "selector", gameType: "Classic", spec: "Restoration Druid Classic"},
     
 
   }, // "whisperingIncarnateIcon": "Alone", "enemyTargets": 1},

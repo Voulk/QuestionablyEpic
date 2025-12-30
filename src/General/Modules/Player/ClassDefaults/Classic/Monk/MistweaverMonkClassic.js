@@ -57,7 +57,7 @@ export const mistweaverMonkDefaults = {
 }
 
 // --------------- Monk --------------
-export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = false) {
+export function initializeMonkSet(userSettings, talents = monkTalents, ignoreOverhealing = false) {
     const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   
     let castProfile = [

@@ -43,7 +43,7 @@ export const holyPriestDefaults = {
     autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
 
-export function initializeHPriestSet(talents = holyTalents, ignoreOverhealing = false) {
+export function initializeHPriestSet(userSettings, talents = holyTalents, ignoreOverhealing = false) {
   const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
   console.log("Initializing Holy Priest Set");
   const castProfile = [

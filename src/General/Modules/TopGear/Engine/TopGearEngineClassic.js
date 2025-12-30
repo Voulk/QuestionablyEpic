@@ -205,7 +205,7 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = newModel.initializeSet();
+    const baseline = newModel.initializeSet(playerSettings);
 
     count = itemSets.length;
 
@@ -476,8 +476,16 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     let hasteNeeded = 0;
-    if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
-    else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
+    if (player.spec === "Restoration Druid Classic") {
+      // Check which haste bracket we're in and try and push to the next one.
+      if (setStats.haste >= 4856 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
+      else if (setStats.haste > 6332) hasteNeeded = Math.max(0, 6652 - setStats.haste);
+      else hasteNeeded = Math.max(0, 3043 - setStats.haste);
+    }
+    else if (player.spec === "Mistweaver Monk Classic") {
+      if (setStats.haste > 5820) hasteNeeded = Math.max(0, 6140 - setStats.haste); // Try and get second breakpoint
+      else hasteNeeded = Math.max(0, 3145 - setStats.haste);
+    }
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, castModel.autoReforgeOrder, hasteNeeded)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
@@ -511,7 +519,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
-
 
     }
     else if (player.spec === "Discipline Priest Classic") {

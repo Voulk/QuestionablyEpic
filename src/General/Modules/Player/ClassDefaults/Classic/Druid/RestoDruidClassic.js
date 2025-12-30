@@ -47,9 +47,21 @@ export const restoDruidDefaults = {
 }
 
 // --------------- Druid --------------
-export function initializeDruidSet(talents = druidTalents) {
-    const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
-  
+export function initializeDruidSet(userSettings, talents = druidTalents) {
+    const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+
+
+    const levelSixtyTalent = userSettings.druidLevelSixtyTalent.value || "Soul of the Forest";
+    if (levelSixtyTalent === "Soul of the Forest") {
+      talents.soulOfTheForest.points = 1; talents.forceOfNature.points = 0; talents.incarnation.points = 0;
+    }
+    else if (levelSixtyTalent === "Force of Nature") {
+      talents.forceOfNature.points = 1; talents.soulOfTheForest.points = 0; talents.incarnation.points = 0;
+    }
+    else if (levelSixtyTalent === "Incarnation") {
+      talents.incarnation.points = 1; talents.soulOfTheForest.points = 0; talents.forceOfNature.points = 0;
+    }
+
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Swiftmend", efficiency: 0.8, bonus: 1.2},
@@ -75,6 +87,9 @@ export function initializeDruidSet(talents = druidTalents) {
         {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
       ])
     }
+    else if (talents.forceOfNature.points === 1) {
+      castProfile.push({spell: "Force of Nature", efficiency: 0.85 }); // Force of Nature
+    }
 
     if (talents.yserasGift.points === 1) {
       castProfile.push({spell: "Ysera's Gift", cpm: 12, freeCast: true, castOverride: 0}); // Ysera's Gift
@@ -91,8 +106,6 @@ export function initializeDruidSet(talents = druidTalents) {
     })
 
     const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
-
-    //console.log(JSON.stringify(adjSpells));
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents };
   }
   
@@ -138,7 +151,13 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     }
     if (tierSets.includes("Druid T15-2")) {
       getSpellEntry(castProfile, "Efflorescence").bonus *= 1.33; // 
+      druidBaseline.spellDB["Force of Nature"][2].targets = 4;
     }
+    else {
+      // Safely reset FoN targets to 3.
+      druidBaseline.spellDB["Force of Nature"][2].targets = 3;
+    }
+
     if (tierSets.includes("Druid T15-4")) {
       getSpellEntry(castProfile, "Rejuvenation").flags = {"RampingHoTEffect": 0.06}; // 
     }
