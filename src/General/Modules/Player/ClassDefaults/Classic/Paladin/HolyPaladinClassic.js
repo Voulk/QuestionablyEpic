@@ -41,7 +41,7 @@ export const holyPaladinDefaults = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["mastery", "spirit", "crit", 'haste', 'hit'],
+    autoReforgeOrder: ["mastery", "crit", "spirit", 'haste', 'hit'],
 }
 
 

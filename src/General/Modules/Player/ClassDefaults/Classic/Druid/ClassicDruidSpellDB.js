@@ -332,9 +332,9 @@ export const CLASSICDRUIDSPELLDB = {
         buffDuration: 30,
         coeff: 0.31,
         flat: 3365,
-        expectedOverheal: 0.34,
+        expectedOverheal: 0.3,
         targets: 3,
-        secondaries: ['crit', 'mastery'] // Rejuv also scales with haste, but this is handled elsewhere.
+        secondaries: ['crit', 'mastery'] // Scales with haste too
     }],
     "Ysera's Gift": [{
         spellData: {id: 18562, icon: "inv_relics_idolofrejuvenation", cat: "N/A"},
