@@ -109,6 +109,7 @@ export function initializeMonkSet(userSettings, talents = monkTalents, ignoreOve
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
+  console.log(JSON.stringify(userSettings));
   const spec = "Mistweaver Monk";
   const playerRace = userSettings.playerRace || "Pandaren"; // Default to Human if not set.
   let totalHealing = 0;
@@ -126,6 +127,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+  const metaGem = getSetting(userSettings, "classicMetaGem");
+  let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
   const statPercentages = convertStatPercentages({...statProfile, haste: statProfile.haste * 1.5}, hasteBuff, spec, playerRace);
   statPercentages.hitChance = Math.min(1, 0.85 + (statProfile.spirit - 190) / 340 / 100); // Serpent converts at a 50% rate, but we get both hit and expertise.
@@ -151,7 +154,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
   
 
-  let costPerMinute = specBaseline.costPerMinute;
+  let costPerMinute = specBaseline.costPerMinute * (1 - freeCastsUptime);
 
   if (enemyTargets > 1) {
     
@@ -194,7 +197,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     
     // Spend all available time on our efficient Jab -> TP rotation. There's no way to go oom so we won't check our mana.
     // It's not mana positive but it basically is. 
-    const tigerPalmPackageCost = getSpellEntry(castProfile, "Jab")['cost'] - (manaTeaEffectiveReturn / 4) - muscleMemoryReturn; // Cost of Jab -> Tiger Palm
+    const tigerPalmPackageCost = (getSpellEntry(castProfile, "Jab")['cost'] - (manaTeaEffectiveReturn / 4) - muscleMemoryReturn) * (1 - freeCastsUptime); // Cost of Jab -> Tiger Palm
     let tigerPalmPackagesAvailable = timeAvailable / 2; // Each combo takes 2s.
 
     // Next, replace casts with Jab -> Jab -> Uplift packages as mana allows.
@@ -202,7 +205,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     // and you could add others here that instead try and maximize DPS or pure HPS. The default model is a bit of a hybrid.
     
 
-    const upliftPackageCost = getSpellEntry(castProfile, "Jab")['cost'] * 2 - (manaTeaEffectiveReturn / 2); // Cost of Jab -> Jab -> Uplift
+    const upliftPackageCost = (getSpellEntry(castProfile, "Jab")['cost'] * 2 - (manaTeaEffectiveReturn / 2)) * (1 - freeCastsUptime); // Cost of Jab -> Jab -> Uplift
     const manaDifference = upliftPackageCost - tigerPalmPackageCost; // 
 
     reportingData.upliftPackageCost = upliftPackageCost;

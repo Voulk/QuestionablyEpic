@@ -109,6 +109,8 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
     const talents = specBaseline.talents || paladinTalents;
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
     let hopoGenerated = 0;
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
   
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -149,12 +151,12 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
 
       // Handle our filler casts. 
       // We'll probably rework this to be a package.
-      let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+      let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost * (1 - freeCastsUptime); //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
       if (tierSets.includes("Paladin T14-2")) fillerCost *= 0.9;
-      const fillerWastage = 0.9;
+      const fillerWastage = 0.8;
 
       // Update Cost Per Minute with our more frequent hasted casts.
-      let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+      let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
 
       // Selfless Healer: Mana
       // We can model Selfless Healer as a flat mana reduction attached to Judgment. 

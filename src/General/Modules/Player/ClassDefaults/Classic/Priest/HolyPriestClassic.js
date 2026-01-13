@@ -111,7 +111,8 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const twistOfFateUptime = 0.35;
   const echoOverhealing = 0.24;
   let fillerCPM = 0;
-
+  const metaGem = getSetting(userSettings, "classicMetaGem");
+  let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
@@ -138,7 +139,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     ["Smite", "Holy Fire"].forEach(spell => {
       getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
     });
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, spec);
@@ -173,7 +174,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
-    let fillerCost = getSpellEntry(castProfile, "Prayer of Healing").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    let fillerCost = getSpellEntry(castProfile, "Prayer of Healing").cost * (1 - freeCastsUptime) //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
     const fillerWastage = 0.65;
 
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);

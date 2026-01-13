@@ -115,6 +115,8 @@ export function initializeShamanSet(userSettings) {
       "Unleash Life": 5309,
       "Riptide": 5309,
     }
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
 
     // Conductivity Extensions. Advantages and disadvantages to doing this dynamically. Ultimately the fight is more likely to dictate
@@ -185,7 +187,7 @@ export function initializeShamanSet(userSettings) {
     const lbManaRegen = 6000 - getSpellEntry(castProfile, "Lightning Bolt").cost
     reportingData.lbManaRegen = lbManaRegen;
 
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+    const costPerMinute = (castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0) * (1 - freeCastsUptime));
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
 
     // First, spend any excess mana.
@@ -193,7 +195,7 @@ export function initializeShamanSet(userSettings) {
       "Chain Heal": 0.75,
       "Greater Healing Wave": 0.25
     }
-    const packageCost = (getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])
+    const packageCost = ((getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])) * (1 - freeCastsUptime);
     const pureHealingPackages = manaRemaining / packageCost;
     // Next, spend the rest of the fights time available on a net 0 package that combines lightning bolt with Chain Heal / GHW.
 

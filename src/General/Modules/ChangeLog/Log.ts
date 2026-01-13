@@ -25,6 +25,7 @@ export const changeLog: entry[] = [
     date: "December 24",
     changes: [ 
       "Classic: New Level 60 talent option for Resto Druid",
+      "Classic: Added legendary meta gem support.",
       "Bugfix: Added some missing trinket item levels to the chart.",
       "Bugfix: Resto Shaman damage metrics will now report correctly.",
       "Trinket chart now shows innervate mana gain for Resto Druid. No change to valuations, just better information.",

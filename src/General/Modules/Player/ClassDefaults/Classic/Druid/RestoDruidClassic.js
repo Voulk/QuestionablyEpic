@@ -124,6 +124,9 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
+
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
@@ -184,9 +187,9 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const totalManaPool = manaPool + regen;
 
-    let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] * (1-freeCastsUptime); 
     const fillerWastage = 0.9;
-    let costPerMinute = druidBaseline.costPerMinute;
+    let costPerMinute = druidBaseline.costPerMinute * (1-freeCastsUptime);
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 

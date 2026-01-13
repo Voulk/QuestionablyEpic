@@ -43,7 +43,7 @@ export const buildClassicChartData = (activeStats, spec) => {
 export const buildClassicMonkChartData = (activeStats, baseTalents) => {
     //
     let results = [];
-    const testSettings = {masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: true, advancedReporting: false, spec: "Mistweaver Monk", strictSeq: true, hasteBuff: {value: "Haste Aura"}};
+    const testSettings = {metaGem: {value: "Burning Primal Diamond"}, masteryEfficiency: 0.7, includeOverheal: "Yes", reporting: true, advancedReporting: false, spec: "Mistweaver Monk", strictSeq: true, hasteBuff: {value: "Haste Aura"}};
     const db = getTalentedSpellDB("Mistweaver Monk", {activeBuffs: [], currentStats: {}, settings: testSettings, reporting: false, talents: baseTalents, spec: "Mistweaver Monk"});
     activeStats.armorReduction = 0.7;
 
