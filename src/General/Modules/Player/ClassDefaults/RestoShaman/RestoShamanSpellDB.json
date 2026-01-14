@@ -14,8 +14,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 2.9702,
-            "aura": 1.55,
+            "coeff": 4.3663,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -25,8 +25,8 @@
             "spellType": "heal"
         },
         {
-            "coeff": 0.2464,
-            "aura": 1.55,
+            "coeff": 0.3622,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -59,7 +59,7 @@
                 "maxCharges": 0
             },
             "coeff": 0.6768,
-            "aura": 1.55,
+            "aura": 1.65,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -89,8 +89,8 @@
                 "cooldown": 18.0,
                 "hasted": false
             },
-            "coeff": 0.3411,
-            "aura": 1.55,
+            "coeff": 0.4775,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -120,8 +120,8 @@
                 "cooldown": 180.0,
                 "hasted": false
             },
-            "coeff": 3.5,
-            "aura": 1.55,
+            "coeff": 5.145,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -147,9 +147,9 @@
                 "spellName": "Chain Heal"
             },
             "castTime": 2.0,
-            "cost": 5.0,
+            "cost": 4.5,
             "coeff": 2.31,
-            "aura": 2.0770000000000004,
+            "aura": 2.26,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -199,8 +199,8 @@
             },
             "castTime": 2.0,
             "cost": 2.5,
-            "coeff": 7.3382,
-            "aura": 1.55,
+            "coeff": 12.4053,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -225,8 +225,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 4.1496,
-            "aura": 1.55,
+            "coeff": 6.0999,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -255,13 +255,13 @@
         {
             "displayInfo": {
                 "id": 1267068,
-                "icon": "ability_shaman_manatidetotem",
+                "icon": false,
                 "spellName": "Stormstream Totem"
             },
             "castTime": 0.0,
             "cost": 1.8,
-            "coeff": 0.87984,
-            "aura": 1.55,
+            "coeff": 1.2933700000000001,
+            "aura": 1.65,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -276,8 +276,8 @@
             }
         },
         {
-            "coeff": 9.0,
-            "aura": 1.55,
+            "coeff": 13.23,
+            "aura": 1.65,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -296,8 +296,8 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 0.315,
-            "aura": 1.55,
+            "coeff": 0.4631,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -323,8 +323,8 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 2.414,
-            "aura": 1.55,
+            "coeff": 2.1291,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -343,8 +343,8 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 2.89,
-            "aura": 1.55,
+            "coeff": 2.549,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -363,8 +363,8 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 1.87,
-            "aura": 1.55,
+            "coeff": 1.6493,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",

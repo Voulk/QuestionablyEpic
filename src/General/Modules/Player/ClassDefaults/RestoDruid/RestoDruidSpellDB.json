@@ -8,8 +8,8 @@
             },
             "castTime": 0.0,
             "cost": 2.1,
-            "coeff": 0.2588,
-            "aura": 2.688,
+            "coeff": 0.6629,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -35,8 +35,8 @@
             },
             "castTime": 1.5,
             "cost": 3.8,
-            "coeff": 0.1975,
-            "aura": 1.8432,
+            "coeff": 0.241,
+            "aura": 1.44,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -62,8 +62,8 @@
             },
             "castTime": 0.0,
             "cost": 1.6,
-            "coeff": 0.22,
-            "aura": 1.28,
+            "coeff": 0.2684,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -89,8 +89,8 @@
             },
             "castTime": 0.0,
             "cost": 3.68,
-            "coeff": 7.6,
-            "aura": 1.28,
+            "coeff": 9.272,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -101,7 +101,7 @@
             "buffType": "heal",
             "buffDuration": 6.0,
             "tickData": {
-                "tickRate": 1.0,
+                "tickRate": 0.0,
                 "canPartialTick": false,
                 "tickOnCast": true
             }
@@ -116,8 +116,8 @@
             },
             "castTime": 0.0,
             "cost": 3.4,
-            "coeff": 0.48,
-            "aura": 1.28,
+            "coeff": 0.5856,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -143,8 +143,8 @@
             },
             "castTime": 1.5,
             "cost": 2.8,
-            "coeff": 4.704,
-            "aura": 1.5616,
+            "coeff": 7.0004,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -154,8 +154,8 @@
             "spellType": "heal"
         },
         {
-            "coeff": 0.1512,
-            "aura": 1.5616,
+            "coeff": 0.225,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -187,8 +187,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 8.5,
-            "aura": 1.1520000000000001,
+            "coeff": 10.37,
+            "aura": 0.9,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
