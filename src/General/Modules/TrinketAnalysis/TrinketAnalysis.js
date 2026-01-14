@@ -266,7 +266,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730] : [458, 463, 476, 483, 489, 496, 502, 509, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -397,7 +397,7 @@ export default function TrinketAnalysis(props) {
   }
 
   const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
-                                              "Trinkets are modelled at their maximum item upgrade level.";
+                                              "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (
     <div className={classes.root}>

@@ -23,7 +23,7 @@ describe("Test Disc Priest Spell Values", () => {
     }
 
 
-    const init = initializeDiscSet(compiledDiscTalents, true);
+    const init = initializeDiscSet(userSettings, compiledDiscTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.

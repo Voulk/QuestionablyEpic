@@ -4,10 +4,10 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "The D.I.S.C belt nerfs & Turbo Boost item levels are LIVE!"
+    "Prepatch support next week will be limited as usual. Full support will return for Midnight."
   ] : 
   [
-    "All specs are now released! Please report any bugs you find to the QE Live Discord. Paladin now live.",
+    "Please report any bugs you find to the QE Live Discord.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

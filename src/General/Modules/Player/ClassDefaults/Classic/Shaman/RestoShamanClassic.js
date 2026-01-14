@@ -44,7 +44,7 @@ export const restoShamanDefaults = {
 }
 
 
-export function initializeShamanSet() {
+export function initializeShamanSet(userSettings) {
     console.log("Initializing Shaman Set")
     const testSettings = {spec: "Restoration Shaman Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
@@ -94,8 +94,11 @@ export function initializeShamanSet() {
   
   
   export function scoreShamanSet(baseline, statProfile, userSettings, tierSets = []) {
-    let score = 1;
+    let totalHealing = 0;
+    let totalDamage = 0;
     const masteryEffectiveness = 0.3; // Can easily be converted to a setting.
+    const reporting = userSettings.reporting || false;
+    const damageBreakdown = {};
     const healingBreakdown = {};
     const castBreakdown = {};
     const fightLength = 6;
@@ -112,6 +115,8 @@ export function initializeShamanSet() {
       "Unleash Life": 5309,
       "Riptide": 5309,
     }
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
 
     // Conductivity Extensions. Advantages and disadvantages to doing this dynamically. Ultimately the fight is more likely to dictate
@@ -182,7 +187,7 @@ export function initializeShamanSet() {
     const lbManaRegen = 6000 - getSpellEntry(castProfile, "Lightning Bolt").cost
     reportingData.lbManaRegen = lbManaRegen;
 
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0);
+    const costPerMinute = (castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0) * (1 - freeCastsUptime));
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
 
     // First, spend any excess mana.
@@ -190,7 +195,7 @@ export function initializeShamanSet() {
       "Chain Heal": 0.75,
       "Greater Healing Wave": 0.25
     }
-    const packageCost = (getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])
+    const packageCost = ((getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])) * (1 - freeCastsUptime);
     const pureHealingPackages = manaRemaining / packageCost;
     // Next, spend the rest of the fights time available on a net 0 package that combines lightning bolt with Chain Heal / GHW.
 
@@ -249,30 +254,38 @@ export function initializeShamanSet() {
 
 
         castBreakdown[spellProfile.spell] = (castBreakdown[spellProfile.spell] || 0) + (effectiveCPM);
-        healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
-        score += (spellOutput * effectiveCPM);
-
-        // Ascendance
-        // Here we're using a flat Ascendance model. It's fairly likely you'd actually combine with Elemental Mastery.
-        const ascendanceUptime = 15 / 180; 
-        const ascendanceOverheal = 0.2;
-        const ascendanceHealing = spellOutput * ascendanceUptime * effectiveCPM * (1 - ascendanceOverheal);
-        healingBreakdown["Ascendance"] = (healingBreakdown["Ascendance"] || 0) + (ascendanceHealing);
-        score += ascendanceHealing;
-
-        // Earthliving
-        if (spell.type === "classic periodic" && spell.buffType === "heal") {
-            const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
-            let tickCount = Math.round(spell.buffDuration / (adjTickRate));
-            const viableHealingEvents = (spell.targets || 1) * tickCount * effectiveCPM * (spell.specialCoeff || 0)
-            healingEvents += viableHealingEvents;
-            reportingData["Event Count_" + spellName] = viableHealingEvents;
-
-        }
-        else if (spell.type === "heal") healingEvents += (spell.targets || 1) * effectiveCPM * (spell.specialCoeff || 0);
 
 
+         if (spell.type === "damage" || spell.buffType === "damage") {
+          // Damage spells
+          damageBreakdown[spellProfile.spell] = (damageBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          totalDamage += (spellOutput * effectiveCPM);
 
+         }
+         else {
+          // Healing
+          healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
+          totalHealing += (spellOutput * effectiveCPM);
+
+          // Ascendance
+          // Here we're using a flat Ascendance model. It's fairly likely you'd actually combine with Elemental Mastery.
+          const ascendanceUptime = 15 / 180; 
+          const ascendanceOverheal = 0.2;
+          const ascendanceHealing = spellOutput * ascendanceUptime * effectiveCPM * (1 - ascendanceOverheal);
+          healingBreakdown["Ascendance"] = (healingBreakdown["Ascendance"] || 0) + (ascendanceHealing);
+          totalHealing += ascendanceHealing;
+
+          // Earthliving
+          if (spell.type === "classic periodic" && spell.buffType === "heal") {
+              const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
+              let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+              const viableHealingEvents = (spell.targets || 1) * tickCount * effectiveCPM * (spell.specialCoeff || 0)
+              healingEvents += viableHealingEvents;
+              reportingData["Event Count_" + spellName] = viableHealingEvents;
+
+          }
+          else if (spell.type === "heal") healingEvents += (spell.targets || 1) * effectiveCPM * (spell.specialCoeff || 0);
+         }
         })
 
         // Filler mana
@@ -283,10 +296,14 @@ export function initializeShamanSet() {
     const singleEarthliving = runClassicSpell("Earthliving Weapon", spellDB["Earthliving Weapon"][0], statPercentages, "Restoration Shaman", userSettings);
     healingBreakdown["Earthliving"] = singleEarthliving * healingEvents * 0.2;
     reportingData.healingEvents = healingEvents;
-    score += (singleEarthliving * healingEvents * 0.2);
+    totalHealing += (singleEarthliving * healingEvents * 0.2);
 
-    score += (60 * statProfile.hps || 0)
-    //printHealingBreakdownWithCPM(healingBreakdown, score, castProfile);
-    //console.log(reportingData);
-    return {damage: 0, healing: score};
+    totalHealing += (60 * statProfile.hps || 0)
+
+    if (reporting) {
+      printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+      console.log(reportingData);
+    }
+
+    return {damage: totalDamage, healing: totalHealing};
   }
