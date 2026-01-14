@@ -14,7 +14,7 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 4.3663,
+            "coeff": 4.8029,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -25,7 +25,7 @@
             "spellType": "heal"
         },
         {
-            "coeff": 0.3622,
+            "coeff": 0.3984,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -89,7 +89,7 @@
                 "cooldown": 18.0,
                 "hasted": false
             },
-            "coeff": 0.4775,
+            "coeff": 0.6208,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -149,7 +149,7 @@
             "castTime": 2.0,
             "cost": 4.5,
             "coeff": 2.31,
-            "aura": 2.26,
+            "aura": 2.49,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -199,7 +199,7 @@
             },
             "castTime": 2.0,
             "cost": 2.5,
-            "coeff": 12.4053,
+            "coeff": 13.6458,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -260,7 +260,7 @@
             },
             "castTime": 0.0,
             "cost": 1.8,
-            "coeff": 1.2933700000000001,
+            "coeff": 1.0943900000000002,
             "aura": 1.65,
             "expectedOverheal": 0.25,
             "secondaries": [
