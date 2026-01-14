@@ -235,7 +235,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
 
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-        talents: talents, reporting: true, heroSpec: "Keeper of the Grove", currentTarget: 0};
+        talents: talents, reporting: true, heroSpec: "Keeper of the Grove", currentTarget: 0, spec: "Restoration Druid"};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)

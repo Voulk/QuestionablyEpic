@@ -95,6 +95,15 @@ export const DRUIDSPELLDB = {
         flags: {targeted: true},
         secondaries: ['crit', 'versatility']
     }],
+     "Tranquility": [{
+        // Two portions: extends active HoTs, and then increases tick rate.
+        spellData: {id: 740, icon: "spell_nature_tranquility", cat: "cooldown"},
+        type: "buffExtension",
+        castTime: 0, 
+        cost: 0, 
+        extensionList: ["Rejuvenation", "Regrowth", "Wild Growth", "Cenarion Ward", "Spring Blossoms", "Lifebloom"],
+        extensionDuration: 6,
+     }],
     "Flourish": [{
         // Two portions: extends active HoTs, and then increases tick rate.
         spellData: {id: 197721, icon: "spell_druid_wildburst", cat: "cooldown"},
