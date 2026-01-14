@@ -23,7 +23,7 @@ describe("Test Druid Spell Values", () => {
     }
 
 
-    const init = initializeDruidSet(druidTalents, true);
+    const init = initializeDruidSet(userSettings, druidTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.

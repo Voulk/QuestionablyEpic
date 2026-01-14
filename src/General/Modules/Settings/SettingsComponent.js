@@ -29,10 +29,11 @@ export default function SettingsComponent(props) {
 
   const playerSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
+  const playerSpec = props.player.spec;
 
   const dispatch = useDispatch();
 
-  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants"];
+  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants", "specSpecific"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
   /* ---------------------------------------------------------------------------------------------- */
@@ -45,7 +46,7 @@ export default function SettingsComponent(props) {
     dispatch(togglePlayerSettings(newPlayerSettings));
   };
 
-  const mapByCategory = (data, gameType) => {
+  const mapByCategory = (data, gameType, spec) => {
     // Initialize an empty object to store the result
     const result = {};
 
@@ -60,7 +61,7 @@ export default function SettingsComponent(props) {
       }
 
       // Push the current key into the array corresponding to its category in the result object
-      if (data[key].gameType === gameType) result[category].push(key);
+      if (data[key].gameType === gameType && (data[key].spec === undefined || data[key].spec === spec)) result[category].push(key);
       
     }
 
@@ -69,7 +70,7 @@ export default function SettingsComponent(props) {
   };
 
   // map the playerSettings into categories for mapping
-  const mappedKeys = mapByCategory(playerSettings, gameType);
+  const mappedKeys = mapByCategory(playerSettings, gameType, playerSpec);
 
   return (
     <Grid container spacing={1} direction="row">

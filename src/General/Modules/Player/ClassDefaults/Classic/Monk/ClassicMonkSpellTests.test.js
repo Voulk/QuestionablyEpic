@@ -39,7 +39,7 @@ describe("Test Mistweaver Spell Values", () => {
         hps: 0,
     }
 
-    const init = initializeMonkSet(monkTalents, true);
+    const init = initializeMonkSet(userSettings, monkTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, "Mistweaver Monk");
     const statPercentagesOneHanded = convertStatPercentages(oneHandedStats, 1, "Mistweaver Monk");
     const armor = getEnemyArmor(statPercentages.armorReduction);

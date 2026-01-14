@@ -283,6 +283,7 @@
         "upgradeFinder": "Upgrade Finder",
         "embellishments": "Embellishments",
         "enchants": "Enchants",
+        "specSpecific": "Spec Specific",
 
         "enchantItems": {
           "title": "Enchant Items",
@@ -485,6 +486,10 @@
         "hasteBuff": {
           "title": "Haste Buffs",
           "tooltip": "Pick which haste buffs you have active to in raid. Haste Aura is provided my Moonkin, Shadow Priest and Shaman and applies to the entire raid. Dark Intent is 3% but only applies to one target."
+        },
+        "druidLevelSixtyTalent": {
+          "title": "Druid L60 Talent",
+          "tooltip": "Pick which level 60 talent you'd like to optimize for."
         }
 
         
