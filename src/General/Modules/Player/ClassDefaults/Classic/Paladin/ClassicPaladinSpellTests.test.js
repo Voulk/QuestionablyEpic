@@ -23,7 +23,7 @@ describe("Test Paladin Spell Values", () => {
     }
 
 
-    const init = initializePaladinSet(paladinTalents, true);
+    const init = initializePaladinSet(userSettings, paladinTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.

@@ -51,7 +51,7 @@ export function initializeDruidSet(userSettings, talents = druidTalents) {
     const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
 
 
-    const levelSixtyTalent = userSettings.druidLevelSixtyTalent.value || "Soul of the Forest";
+    const levelSixtyTalent = userSettings.druidLevelSixtyTalent ? userSettings.druidLevelSixtyTalent.value : "Soul of the Forest";
     if (levelSixtyTalent === "Soul of the Forest") {
       talents.soulOfTheForest.points = 1; talents.forceOfNature.points = 0; talents.incarnation.points = 0;
     }
