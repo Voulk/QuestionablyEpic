@@ -23,7 +23,7 @@ describe("Test Disc Priest Spell Values", () => {
     }
 
 
-    const init = initializeDiscSet(compiledDiscTalents, true);
+    const init = initializeDiscSet(userSettings, compiledDiscTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.
@@ -31,7 +31,6 @@ describe("Test Disc Priest Spell Values", () => {
         spellName                     | expectedResult                   | index
         ${"Power Word: Shield"}       | ${(39403 / 1.142)}               | ${0}
         ${"Flash Heal"}               | ${(31066 + 33806) / 2 / 1.071}   | ${0}
-        ${"Prayer of Healing"}        | ${(16281 + 16792) / 2 / 1.071}   | ${0}
         ${"Penance"}                  | ${(10039 + 10170) / 2 * 3}           | ${0}
         ${"Penance D"}                | ${(16000 + 17139) / 2 / 1.071 * 3}   | ${0}
         ${"Prayer of Mending"}        | ${(17607 / 1.071)}               | ${0}

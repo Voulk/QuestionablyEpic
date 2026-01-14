@@ -16,18 +16,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 4,
     "tag": "Pristine"
   },
-  "3": {
-    "id": 3,
-    "rawStats": [
-      {
-        "stat": 71,
-        "amount": 5263,
-        "name": "StrAgiInt"
-      }
-    ],
-    "stats": "100% StrAgiInt [0.5263]",
-    "name": "of Power"
-  },
   "15": {
     "id": 15,
     "quality": 4,
@@ -7460,11 +7448,6 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Vers [0.7012]",
     "name": "of the Adaptable"
-  },
-  "497": {
-    "id": 497,
-    "name": "of the Merciless",
-    "level": 50
   },
   "498": {
     "id": 498,
@@ -65896,6 +65879,18 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12175": {
+    "id": 12175,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 73,
+        "amount": 2045,
+        "name": "AgiInt"
+      }
+    ],
+    "stats": "100% AgiInt [0.2045]"
+  },
   "12180": {
     "id": 12180,
     "ilevel": "356 @plvl 55 - 551 @plvl 551",
@@ -66028,6 +66023,79 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     },
     "name": "of the Savage"
+  },
+  "12223": {
+    "id": 12223,
+    "effect": {
+      "id": 206749,
+      "index": 0
+    }
+  },
+  "12224": {
+    "id": 12224,
+    "effect": {
+      "id": 206750,
+      "index": 0
+    }
+  },
+  "12225": {
+    "id": 12225,
+    "effect": {
+      "id": 206751,
+      "index": 0
+    }
+  },
+  "12226": {
+    "id": 12226,
+    "effect": {
+      "id": 206752,
+      "index": 0
+    }
+  },
+  "12227": {
+    "id": 12227,
+    "effect": {
+      "id": 206753,
+      "index": 0,
+      "spell": {
+        "id": 1223471,
+        "name": "Treatise of the Council's Wisdom",
+        "icon": "inv_10_inscription2_scroll3_color4"
+      }
+    }
+  },
+  "12228": {
+    "id": 12228,
+    "effect": {
+      "id": 206754,
+      "index": 0
+    }
+  },
+  "12235": {
+    "id": 12235,
+    "effect": {
+      "id": 206760,
+      "index": 0
+    }
+  },
+  "12236": {
+    "id": 12236,
+    "effect": {
+      "id": 206761,
+      "index": 0
+    }
+  },
+  "12237": {
+    "id": 12237,
+    "effect": {
+      "id": 206762,
+      "index": 0,
+      "spell": {
+        "id": 1223600,
+        "name": "Skrog Tooth",
+        "icon": "inv_10_worlddroplevelingoptionalreagent_archaeology_trolltooth_color3"
+      }
+    }
   },
   "12239": {
     "id": 12239,
@@ -67347,6 +67415,13 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3
+  },
+  "12273": {
+    "id": 12273,
+    "effect": {
+      "id": 207254,
+      "index": 0
+    }
   },
   "12274": {
     "id": 12274,
@@ -72627,9 +72702,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 1,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 1/6",
+      "fullName": "Hero 1/8",
       "bonusId": 12350,
       "itemLevel": 694,
       "seasonId": 30,
@@ -72825,9 +72900,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 2,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 2/6",
+      "fullName": "Hero 2/8",
       "bonusId": 12351,
       "itemLevel": 697,
       "seasonId": 30,
@@ -73023,9 +73098,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 3,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 3/6",
+      "fullName": "Hero 3/8",
       "bonusId": 12352,
       "itemLevel": 701,
       "seasonId": 30,
@@ -73221,9 +73296,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 4,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 4/6",
+      "fullName": "Hero 4/8",
       "bonusId": 12353,
       "itemLevel": 704,
       "seasonId": 30,
@@ -73419,9 +73494,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 5,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 5/6",
+      "fullName": "Hero 5/8",
       "bonusId": 12354,
       "itemLevel": 707,
       "seasonId": 30,
@@ -73617,9 +73692,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 517,
       "level": 6,
-      "max": 6,
+      "max": 8,
       "name": "Hero",
-      "fullName": "Hero 6/6",
+      "fullName": "Hero 6/8",
       "bonusId": 12355,
       "itemLevel": 710,
       "seasonId": 30,
@@ -73815,9 +73890,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 1,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 1/6",
+      "fullName": "Myth 1/8",
       "bonusId": 12356,
       "itemLevel": 707,
       "seasonId": 30,
@@ -74013,9 +74088,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 2,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 2/6",
+      "fullName": "Myth 2/8",
       "bonusId": 12357,
       "itemLevel": 710,
       "seasonId": 30,
@@ -74211,9 +74286,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 3,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 3/6",
+      "fullName": "Myth 3/8",
       "bonusId": 12358,
       "itemLevel": 714,
       "seasonId": 30,
@@ -74409,9 +74484,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 4,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 4/6",
+      "fullName": "Myth 4/8",
       "bonusId": 12359,
       "itemLevel": 717,
       "seasonId": 30,
@@ -74607,9 +74682,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 5,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 5/6",
+      "fullName": "Myth 5/8",
       "bonusId": 12360,
       "itemLevel": 720,
       "seasonId": 30,
@@ -74805,9 +74880,9 @@ export const bonus_IDs: {[key: string]: any} = {
     "upgrade": {
       "group": 518,
       "level": 6,
-      "max": 6,
+      "max": 8,
       "name": "Myth",
-      "fullName": "Myth 6/6",
+      "fullName": "Myth 6/8",
       "bonusId": 12361,
       "itemLevel": 723,
       "seasonId": 30,
@@ -75097,6 +75172,657 @@ export const bonus_IDs: {[key: string]: any} = {
   "12402": {
     "id": 12402,
     "tag": "Rank 7"
+  },
+  "12409": {
+    "id": 12409,
+    "effect": {
+      "id": 210070,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12410": {
+    "id": 12410,
+    "effect": {
+      "id": 210081,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12411": {
+    "id": 12411,
+    "effect": {
+      "id": 210082,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12412": {
+    "id": 12412,
+    "effect": {
+      "id": 210083,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12413": {
+    "id": 12413,
+    "effect": {
+      "id": 210084,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12414": {
+    "id": 12414,
+    "effect": {
+      "id": 210085,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12415": {
+    "id": 12415,
+    "effect": {
+      "id": 210086,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12416": {
+    "id": 12416,
+    "effect": {
+      "id": 210087,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12417": {
+    "id": 12417,
+    "effect": {
+      "id": 210088,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12418": {
+    "id": 12418,
+    "effect": {
+      "id": 210089,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12419": {
+    "id": 12419,
+    "effect": {
+      "id": 210090,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12420": {
+    "id": 12420,
+    "effect": {
+      "id": 210091,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12421": {
+    "id": 12421,
+    "effect": {
+      "id": 210092,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12422": {
+    "id": 12422,
+    "effect": {
+      "id": 210093,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12423": {
+    "id": 12423,
+    "effect": {
+      "id": 210094,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12424": {
+    "id": 12424,
+    "effect": {
+      "id": 210095,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12425": {
+    "id": 12425,
+    "effect": {
+      "id": 210096,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12426": {
+    "id": 12426,
+    "effect": {
+      "id": 210097,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12427": {
+    "id": 12427,
+    "effect": {
+      "id": 210098,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12428": {
+    "id": 12428,
+    "effect": {
+      "id": 210099,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12429": {
+    "id": 12429,
+    "effect": {
+      "id": 210100,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12430": {
+    "id": 12430,
+    "effect": {
+      "id": 210101,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12431": {
+    "id": 12431,
+    "effect": {
+      "id": 210102,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12432": {
+    "id": 12432,
+    "effect": {
+      "id": 210103,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12433": {
+    "id": 12433,
+    "effect": {
+      "id": 210104,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12434": {
+    "id": 12434,
+    "effect": {
+      "id": 210105,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12435": {
+    "id": 12435,
+    "effect": {
+      "id": 210106,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12436": {
+    "id": 12436,
+    "effect": {
+      "id": 210107,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12437": {
+    "id": 12437,
+    "effect": {
+      "id": 210108,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12438": {
+    "id": 12438,
+    "effect": {
+      "id": 210109,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12439": {
+    "id": 12439,
+    "effect": {
+      "id": 210110,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12440": {
+    "id": 12440,
+    "effect": {
+      "id": 210111,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12441": {
+    "id": 12441,
+    "effect": {
+      "id": 210112,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12442": {
+    "id": 12442,
+    "effect": {
+      "id": 210113,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12443": {
+    "id": 12443,
+    "effect": {
+      "id": 210114,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12444": {
+    "id": 12444,
+    "effect": {
+      "id": 210115,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12445": {
+    "id": 12445,
+    "effect": {
+      "id": 210116,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12446": {
+    "id": 12446,
+    "effect": {
+      "id": 210117,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12447": {
+    "id": 12447,
+    "effect": {
+      "id": 210118,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12448": {
+    "id": 12448,
+    "effect": {
+      "id": 210119,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12449": {
+    "id": 12449,
+    "effect": {
+      "id": 210120,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12450": {
+    "id": 12450,
+    "effect": {
+      "id": 210121,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12451": {
+    "id": 12451,
+    "effect": {
+      "id": 210122,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12452": {
+    "id": 12452,
+    "effect": {
+      "id": 210123,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12453": {
+    "id": 12453,
+    "effect": {
+      "id": 210124,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12454": {
+    "id": 12454,
+    "effect": {
+      "id": 210125,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12455": {
+    "id": 12455,
+    "effect": {
+      "id": 210126,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12456": {
+    "id": 12456,
+    "effect": {
+      "id": 210127,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12457": {
+    "id": 12457,
+    "effect": {
+      "id": 210128,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12458": {
+    "id": 12458,
+    "effect": {
+      "id": 210129,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12459": {
+    "id": 12459,
+    "effect": {
+      "id": 210130,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12460": {
+    "id": 12460,
+    "effect": {
+      "id": 210131,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12461": {
+    "id": 12461,
+    "effect": {
+      "id": 210132,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12462": {
+    "id": 12462,
+    "effect": {
+      "id": 210133,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12463": {
+    "id": 12463,
+    "effect": {
+      "id": 210134,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12464": {
+    "id": 12464,
+    "effect": {
+      "id": 210135,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12465": {
+    "id": 12465,
+    "effect": {
+      "id": 210136,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12466": {
+    "id": 12466,
+    "effect": {
+      "id": 210137,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12467": {
+    "id": 12467,
+    "effect": {
+      "id": 210138,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12468": {
+    "id": 12468,
+    "effect": {
+      "id": 210139,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12469": {
+    "id": 12469,
+    "effect": {
+      "id": 210140,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12470": {
+    "id": 12470,
+    "effect": {
+      "id": 210141,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12471": {
+    "id": 12471,
+    "effect": {
+      "id": 210142,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12472": {
+    "id": 12472,
+    "effect": {
+      "id": 210143,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12473": {
+    "id": 12473,
+    "effect": {
+      "id": 210144,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12474": {
+    "id": 12474,
+    "effect": {
+      "id": 210145,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12475": {
+    "id": 12475,
+    "effect": {
+      "id": 210146,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12476": {
+    "id": 12476,
+    "effect": {
+      "id": 210147,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12477": {
+    "id": 12477,
+    "effect": {
+      "id": 210148,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12478": {
+    "id": 12478,
+    "effect": {
+      "id": 210149,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12479": {
+    "id": 12479,
+    "effect": {
+      "id": 210150,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12480": {
+    "id": 12480,
+    "effect": {
+      "id": 210151,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12481": {
+    "id": 12481,
+    "effect": {
+      "id": 210152,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12482": {
+    "id": 12482,
+    "effect": {
+      "id": 210153,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12483": {
+    "id": 12483,
+    "effect": {
+      "id": 210154,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12484": {
+    "id": 12484,
+    "effect": {
+      "id": 210155,
+      "index": 0
+    },
+    "quality": 1
+  },
+  "12485": {
+    "id": 12485,
+    "effect": {
+      "id": 210156,
+      "index": 0
+    },
+    "quality": 2
+  },
+  "12486": {
+    "id": 12486,
+    "effect": {
+      "id": 210157,
+      "index": 0
+    },
+    "quality": 3
+  },
+  "12487": {
+    "id": 12487,
+    "effect": {
+      "id": 210158,
+      "index": 0
+    },
+    "quality": 4
+  },
+  "12488": {
+    "id": 12488,
+    "effect": {
+      "id": 210159,
+      "index": 0
+    },
+    "quality": 5
+  },
+  "12489": {
+    "id": 12489,
+    "rawStats": [
+      {
+        "stat": 71,
+        "amount": 5259,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "100% StrAgiInt [0.5259]"
   },
   "12504": {
     "id": 12504,
@@ -75580,9 +76306,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12537,
       "itemLevel": 665
     },
-    "quality": 3,
-    "ilevel": "1 @plvl 1 - 664 @plvl 664",
-    "curveId": 87120
+    "quality": 3
   },
   "12538": {
     "id": 12538,
@@ -75639,6 +76363,1053 @@ export const bonus_IDs: {[key: string]: any} = {
   "12542": {
     "id": 12542,
     "quality": 2
+  },
+  "12543": {
+    "id": 12543,
+    "rawStats": [
+      {
+        "stat": 63,
+        "amount": 6000,
+        "name": "Avoidance"
+      }
+    ],
+    "stats": "100% Avoidance [0.6000]"
+  },
+  "12544": {
+    "id": 12544,
+    "rawStats": [
+      {
+        "stat": 62,
+        "amount": 6000,
+        "name": "Leech"
+      }
+    ],
+    "stats": "100% Leech [0.6000]"
+  },
+  "12545": {
+    "id": 12545,
+    "rawStats": [
+      {
+        "stat": 61,
+        "amount": 5973,
+        "name": "RunSpeed"
+      }
+    ],
+    "stats": "100% RunSpeed [0.5973]"
+  },
+  "12546": {
+    "id": 12546,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 3000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.3000]"
+  },
+  "12547": {
+    "id": 12547,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.3000]"
+  },
+  "12548": {
+    "id": 12548,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.3000]"
+  },
+  "12549": {
+    "id": 12549,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2045,
+        "name": "Sta"
+      },
+      {
+        "stat": 74,
+        "amount": 2045,
+        "name": "StrInt"
+      }
+    ],
+    "stats": "50% Sta [0.2045], 50% StrInt [0.2045]",
+    "quality": 3
+  },
+  "12550": {
+    "id": 12550,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2245,
+        "name": "Sta"
+      },
+      {
+        "stat": 74,
+        "amount": 2245,
+        "name": "StrInt"
+      }
+    ],
+    "stats": "50% Sta [0.2245], 50% StrInt [0.2245]"
+  },
+  "12551": {
+    "id": 12551,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.3000]"
+  },
+  "12552": {
+    "id": 12552,
+    "quality": 3
+  },
+  "12553": {
+    "id": 12553,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2045,
+        "name": "Sta"
+      },
+      {
+        "stat": 5,
+        "amount": 2045,
+        "name": "Int"
+      }
+    ],
+    "stats": "50% Sta [0.2045], 50% Int [0.2045]"
+  },
+  "12554": {
+    "id": 12554,
+    "quality": 4
+  },
+  "12555": {
+    "id": 12555,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2245,
+        "name": "Sta"
+      },
+      {
+        "stat": 5,
+        "amount": 2245,
+        "name": "Int"
+      }
+    ],
+    "stats": "50% Sta [0.2245], 50% Int [0.2245]"
+  },
+  "12556": {
+    "id": 12556,
+    "quality": 3,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2045,
+        "name": "Sta"
+      },
+      {
+        "stat": 71,
+        "amount": 2045,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "50% Sta [0.2045], 50% StrAgiInt [0.2045]"
+  },
+  "12557": {
+    "id": 12557,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 2245,
+        "name": "Sta"
+      },
+      {
+        "stat": 71,
+        "amount": 2245,
+        "name": "StrAgiInt"
+      }
+    ],
+    "stats": "50% Sta [0.2245], 50% StrAgiInt [0.2245]"
+  },
+  "12558": {
+    "id": 12558,
+    "quality": 6
+  },
+  "12559": {
+    "id": 12559,
+    "quality": 6
+  },
+  "12560": {
+    "id": 12560,
+    "quality": 6
+  },
+  "12561": {
+    "id": 12561,
+    "quality": 6
+  },
+  "12562": {
+    "id": 12562,
+    "quality": 6
+  },
+  "12563": {
+    "id": 12563,
+    "quality": 6
+  },
+  "12564": {
+    "id": 12564,
+    "quality": 6
+  },
+  "12565": {
+    "id": 12565,
+    "quality": 6
+  },
+  "12566": {
+    "id": 12566,
+    "quality": 6
+  },
+  "12567": {
+    "id": 12567,
+    "quality": 6
+  },
+  "12568": {
+    "id": 12568,
+    "quality": 6
+  },
+  "12569": {
+    "id": 12569,
+    "quality": 6
+  },
+  "12570": {
+    "id": 12570,
+    "quality": 6
+  },
+  "12571": {
+    "id": 12571,
+    "quality": 6
+  },
+  "12572": {
+    "id": 12572,
+    "quality": 6
+  },
+  "12573": {
+    "id": 12573,
+    "quality": 6
+  },
+  "12574": {
+    "id": 12574,
+    "quality": 6
+  },
+  "12575": {
+    "id": 12575,
+    "quality": 6
+  },
+  "12576": {
+    "id": 12576,
+    "quality": 6
+  },
+  "12577": {
+    "id": 12577,
+    "quality": 6
+  },
+  "12578": {
+    "id": 12578,
+    "quality": 6
+  },
+  "12579": {
+    "id": 12579,
+    "quality": 6
+  },
+  "12580": {
+    "id": 12580,
+    "quality": 6
+  },
+  "12581": {
+    "id": 12581,
+    "quality": 6
+  },
+  "12582": {
+    "id": 12582,
+    "quality": 6
+  },
+  "12583": {
+    "id": 12583,
+    "quality": 6
+  },
+  "12584": {
+    "id": 12584,
+    "quality": 6
+  },
+  "12585": {
+    "id": 12585,
+    "quality": 6
+  },
+  "12586": {
+    "id": 12586,
+    "quality": 6
+  },
+  "12587": {
+    "id": 12587,
+    "quality": 6
+  },
+  "12588": {
+    "id": 12588,
+    "quality": 6
+  },
+  "12589": {
+    "id": 12589,
+    "quality": 6
+  },
+  "12590": {
+    "id": 12590,
+    "quality": 6
+  },
+  "12591": {
+    "id": 12591,
+    "quality": 6
+  },
+  "12592": {
+    "id": 12592,
+    "quality": 6
+  },
+  "12593": {
+    "id": 12593,
+    "quality": 6
+  },
+  "12594": {
+    "id": 12594,
+    "quality": 6
+  },
+  "12595": {
+    "id": 12595,
+    "quality": 6
+  },
+  "12596": {
+    "id": 12596,
+    "quality": 6
+  },
+  "12597": {
+    "id": 12597,
+    "quality": 6
+  },
+  "12598": {
+    "id": 12598,
+    "quality": 6
+  },
+  "12599": {
+    "id": 12599,
+    "quality": 6
+  },
+  "12600": {
+    "id": 12600,
+    "quality": 6
+  },
+  "12601": {
+    "id": 12601,
+    "quality": 6
+  },
+  "12602": {
+    "id": 12602,
+    "quality": 6
+  },
+  "12603": {
+    "id": 12603,
+    "quality": 6
+  },
+  "12604": {
+    "id": 12604,
+    "quality": 6
+  },
+  "12605": {
+    "id": 12605,
+    "quality": 6
+  },
+  "12606": {
+    "id": 12606,
+    "quality": 6
+  },
+  "12607": {
+    "id": 12607,
+    "quality": 6
+  },
+  "12608": {
+    "id": 12608,
+    "quality": 6
+  },
+  "12609": {
+    "id": 12609,
+    "quality": 6
+  },
+  "12610": {
+    "id": 12610,
+    "quality": 6
+  },
+  "12613": {
+    "id": 12613,
+    "ilevel": "1 @plvl 1 - 571 @plvl 571",
+    "curveId": 87394
+  },
+  "12614": {
+    "id": 12614,
+    "ilevel": "1 @plvl 1 - 571 @plvl 571",
+    "curveId": 87590
+  },
+  "12615": {
+    "id": 12615,
+    "ilevel": "13 @plvl 1 - 571 @plvl 571",
+    "curveId": 87655,
+    "quality": 2
+  },
+  "12616": {
+    "id": 12616,
+    "ilevel": "18 @plvl 1 - 578 @plvl 578",
+    "curveId": 87662,
+    "quality": 3
+  },
+  "12617": {
+    "id": 12617,
+    "quality": 4,
+    "ilevel": "24 @plvl 1 - 584 @plvl 584",
+    "curveId": 89644,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 1000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [0.1000]"
+  },
+  "12618": {
+    "id": 12618,
+    "effect": {
+      "id": 212295,
+      "index": 0,
+      "spell": {
+        "id": 1234416,
+        "name": "Volatile Magics",
+        "icon": "inv_misc_gem_pearl_07"
+      }
+    }
+  },
+  "12619": {
+    "id": 12619,
+    "effect": {
+      "id": 212371,
+      "index": 0,
+      "spell": {
+        "id": 1234415,
+        "name": "Volatile Magics",
+        "icon": "inv_misc_gem_pearl_07"
+      }
+    },
+    "quality": 3
+  },
+  "12620": {
+    "id": 12620,
+    "effect": {
+      "id": 212364,
+      "index": 0,
+      "spell": {
+        "id": 1234414,
+        "name": "Volatile Magics",
+        "icon": "inv_misc_gem_pearl_07"
+      }
+    },
+    "quality": 4
+  },
+  "12621": {
+    "id": 12621,
+    "effect": {
+      "id": 212382,
+      "index": 0,
+      "spell": {
+        "id": 1234413,
+        "name": "Volatile Magics",
+        "icon": "inv_misc_gem_pearl_07"
+      }
+    },
+    "quality": 5
+  },
+  "12622": {
+    "id": 12622,
+    "effect": {
+      "id": 212387,
+      "index": 0,
+      "spell": {
+        "id": 1234426,
+        "name": "Arcane Aegis",
+        "icon": "inv_weapon_shortblade_84"
+      }
+    },
+    "quality": 5
+  },
+  "12623": {
+    "id": 12623,
+    "effect": {
+      "id": 212369,
+      "index": 0,
+      "spell": {
+        "id": 1234424,
+        "name": "Arcane Aegis",
+        "icon": "inv_weapon_shortblade_84"
+      }
+    },
+    "quality": 4
+  },
+  "12624": {
+    "id": 12624,
+    "effect": {
+      "id": 212376,
+      "index": 0,
+      "spell": {
+        "id": 1234425,
+        "name": "Arcane Aegis",
+        "icon": "inv_weapon_shortblade_84"
+      }
+    },
+    "quality": 3
+  },
+  "12625": {
+    "id": 12625,
+    "effect": {
+      "id": 212387,
+      "index": 0,
+      "spell": {
+        "id": 1234426,
+        "name": "Arcane Aegis",
+        "icon": "inv_weapon_shortblade_84"
+      }
+    }
+  },
+  "12626": {
+    "id": 12626,
+    "effect": {
+      "id": 212384,
+      "index": 0,
+      "spell": {
+        "id": 1234398,
+        "name": "Terror from Below",
+        "icon": "spell_mage_cometstorm"
+      }
+    },
+    "quality": 5
+  },
+  "12627": {
+    "id": 12627,
+    "effect": {
+      "id": 212366,
+      "index": 0,
+      "spell": {
+        "id": 1234399,
+        "name": "Terror from Below",
+        "icon": "spell_mage_cometstorm"
+      }
+    },
+    "quality": 4
+  },
+  "12628": {
+    "id": 12628,
+    "effect": {
+      "id": 212373,
+      "index": 0,
+      "spell": {
+        "id": 1234400,
+        "name": "Terror from Below",
+        "icon": "spell_mage_cometstorm"
+      }
+    },
+    "quality": 3
+  },
+  "12629": {
+    "id": 12629,
+    "effect": {
+      "id": 212293,
+      "index": 0,
+      "spell": {
+        "id": 1234401,
+        "name": "Terror from Below",
+        "icon": "spell_mage_cometstorm"
+      }
+    }
+  },
+  "12630": {
+    "id": 12630,
+    "effect": {
+      "id": 212385,
+      "index": 0,
+      "spell": {
+        "id": 1234433,
+        "name": "Highmountain Fortitude",
+        "icon": "inv_misc_bone_skull_02"
+      }
+    },
+    "quality": 5
+  },
+  "12631": {
+    "id": 12631,
+    "effect": {
+      "id": 212367,
+      "index": 0,
+      "spell": {
+        "id": 1234434,
+        "name": "Highmountain Fortitude",
+        "icon": "inv_misc_bone_skull_02"
+      }
+    },
+    "quality": 4
+  },
+  "12632": {
+    "id": 12632,
+    "effect": {
+      "id": 212374,
+      "index": 0,
+      "spell": {
+        "id": 1234435,
+        "name": "Highmountain Fortitude",
+        "icon": "inv_misc_bone_skull_02"
+      }
+    },
+    "quality": 3
+  },
+  "12633": {
+    "id": 12633,
+    "effect": {
+      "id": 212292,
+      "index": 0,
+      "spell": {
+        "id": 1234286,
+        "name": "Highmountain Fortitude",
+        "icon": "inv_misc_bone_skull_02"
+      }
+    }
+  },
+  "12634": {
+    "id": 12634,
+    "effect": {
+      "id": 212383,
+      "index": 0,
+      "spell": {
+        "id": 1234363,
+        "name": "Touch of Malice",
+        "icon": "inv_misc_herb_felweed"
+      }
+    },
+    "quality": 5
+  },
+  "12635": {
+    "id": 12635,
+    "effect": {
+      "id": 212365,
+      "index": 0,
+      "spell": {
+        "id": 1234364,
+        "name": "Touch of Malice",
+        "icon": "inv_misc_herb_felweed"
+      }
+    },
+    "quality": 4
+  },
+  "12636": {
+    "id": 12636,
+    "effect": {
+      "id": 212372,
+      "index": 0,
+      "spell": {
+        "id": 1234365,
+        "name": "Touch of Malice",
+        "icon": "inv_misc_herb_felweed"
+      }
+    },
+    "quality": 3
+  },
+  "12637": {
+    "id": 12637,
+    "effect": {
+      "id": 212294,
+      "index": 0,
+      "spell": {
+        "id": 1234366,
+        "name": "Touch of Malice",
+        "icon": "inv_misc_herb_felweed"
+      }
+    }
+  },
+  "12638": {
+    "id": 12638,
+    "effect": {
+      "id": 212386,
+      "index": 0,
+      "spell": {
+        "id": 1234428,
+        "name": "Souls of the Caw",
+        "icon": "trade_archaeology_fossil_dinosaurbone"
+      }
+    },
+    "quality": 5
+  },
+  "12639": {
+    "id": 12639,
+    "effect": {
+      "id": 212368,
+      "index": 0,
+      "spell": {
+        "id": 1234429,
+        "name": "Souls of the Caw",
+        "icon": "trade_archaeology_fossil_dinosaurbone"
+      }
+    },
+    "quality": 4
+  },
+  "12640": {
+    "id": 12640,
+    "effect": {
+      "id": 212375,
+      "index": 0,
+      "spell": {
+        "id": 1234430,
+        "name": "Souls of the Caw",
+        "icon": "trade_archaeology_fossil_dinosaurbone"
+      }
+    },
+    "quality": 3
+  },
+  "12641": {
+    "id": 12641,
+    "effect": {
+      "id": 212291,
+      "index": 0,
+      "spell": {
+        "id": 1234431,
+        "name": "Souls of the Caw",
+        "icon": "trade_archaeology_fossil_dinosaurbone"
+      }
+    }
+  },
+  "12642": {
+    "id": 12642,
+    "effect": {
+      "id": 212388,
+      "index": 0,
+      "spell": {
+        "id": 1234418,
+        "name": "Temporal Retaliation",
+        "icon": "inv_stone_weightstone_08"
+      }
+    },
+    "quality": 5
+  },
+  "12643": {
+    "id": 12643,
+    "effect": {
+      "id": 212370,
+      "index": 0,
+      "spell": {
+        "id": 1234419,
+        "name": "Temporal Retaliation",
+        "icon": "inv_stone_weightstone_08"
+      }
+    },
+    "quality": 4
+  },
+  "12644": {
+    "id": 12644,
+    "effect": {
+      "id": 212377,
+      "index": 0,
+      "spell": {
+        "id": 1234420,
+        "name": "Temporal Retaliation",
+        "icon": "inv_stone_weightstone_08"
+      }
+    },
+    "quality": 3
+  },
+  "12645": {
+    "id": 12645,
+    "effect": {
+      "id": 212289,
+      "index": 0,
+      "spell": {
+        "id": 1234421,
+        "name": "Temporal Retaliation",
+        "icon": "inv_stone_weightstone_08"
+      }
+    }
+  },
+  "12646": {
+    "id": 12646,
+    "effect": {
+      "id": 212706,
+      "index": 0,
+      "spell": {
+        "id": 1234373,
+        "name": "Storm Surger",
+        "icon": "creatureportrait_infernal_ball_02"
+      }
+    },
+    "quality": 5
+  },
+  "12647": {
+    "id": 12647,
+    "effect": {
+      "id": 212704,
+      "index": 0,
+      "spell": {
+        "id": 1234374,
+        "name": "Storm Surger",
+        "icon": "creatureportrait_infernal_ball_02"
+      }
+    },
+    "quality": 4
+  },
+  "12648": {
+    "id": 12648,
+    "effect": {
+      "id": 212707,
+      "index": 0,
+      "spell": {
+        "id": 1234375,
+        "name": "Storm Surger",
+        "icon": "creatureportrait_infernal_ball_02"
+      }
+    },
+    "quality": 3
+  },
+  "12649": {
+    "id": 12649,
+    "effect": {
+      "id": 212705,
+      "index": 0,
+      "spell": {
+        "id": 1234376,
+        "name": "Storm Surger",
+        "icon": "creatureportrait_infernal_ball_02"
+      }
+    }
+  },
+  "12650": {
+    "id": 12650,
+    "effect": {
+      "id": 212710,
+      "index": 0,
+      "spell": {
+        "id": 1234368,
+        "name": "Arcane Ward",
+        "icon": "ability_bossdarkvindicator_auraofmalice"
+      }
+    },
+    "quality": 5
+  },
+  "12651": {
+    "id": 12651,
+    "effect": {
+      "id": 212708,
+      "index": 0,
+      "spell": {
+        "id": 1234369,
+        "name": "Arcane Ward",
+        "icon": "ability_bossdarkvindicator_auraofmalice"
+      }
+    },
+    "quality": 4
+  },
+  "12652": {
+    "id": 12652,
+    "effect": {
+      "id": 212711,
+      "index": 0,
+      "spell": {
+        "id": 1234370,
+        "name": "Arcane Ward",
+        "icon": "ability_bossdarkvindicator_auraofmalice"
+      }
+    },
+    "quality": 3
+  },
+  "12653": {
+    "id": 12653,
+    "effect": {
+      "id": 212709,
+      "index": 0,
+      "spell": {
+        "id": 1234371,
+        "name": "Arcane Ward",
+        "icon": "ability_bossdarkvindicator_auraofmalice"
+      }
+    }
+  },
+  "12654": {
+    "id": 12654,
+    "effect": {
+      "id": 224301,
+      "index": 0,
+      "spell": {
+        "id": 1258768,
+        "name": "Brewing Storm",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 5
+  },
+  "12655": {
+    "id": 12655,
+    "effect": {
+      "id": 224300,
+      "index": 0,
+      "spell": {
+        "id": 1258769,
+        "name": "Brewing Storm",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 4
+  },
+  "12656": {
+    "id": 12656,
+    "effect": {
+      "id": 224299,
+      "index": 0,
+      "spell": {
+        "id": 1258770,
+        "name": "Brewing Storm",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 3
+  },
+  "12657": {
+    "id": 12657,
+    "effect": {
+      "id": 224298,
+      "index": 0,
+      "spell": {
+        "id": 1258771,
+        "name": "Brewing Storm",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "12658": {
+    "id": 12658,
+    "effect": {
+      "id": 215532,
+      "index": 0,
+      "spell": {
+        "id": 1253870,
+        "name": "Light's Vengeance",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 5
+  },
+  "12659": {
+    "id": 12659,
+    "effect": {
+      "id": 215531,
+      "index": 0,
+      "spell": {
+        "id": 1253869,
+        "name": "Light's Vengeance",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 4
+  },
+  "12660": {
+    "id": 12660,
+    "effect": {
+      "id": 215530,
+      "index": 0,
+      "spell": {
+        "id": 1253868,
+        "name": "Light's Vengeance",
+        "icon": "trade_engineering"
+      }
+    },
+    "quality": 3
+  },
+  "12661": {
+    "id": 12661,
+    "effect": {
+      "id": 215529,
+      "index": 0,
+      "spell": {
+        "id": 1253867,
+        "name": "Light's Vengeance",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "12662": {
+    "id": 12662,
+    "effect": {
+      "id": 215497,
+      "index": 0,
+      "spell": {
+        "id": 1234358,
+        "name": "I Am My Scars!",
+        "icon": "tooltip_crystallizedfel"
+      }
+    },
+    "quality": 5
+  },
+  "12663": {
+    "id": 12663,
+    "effect": {
+      "id": 215507,
+      "index": 1,
+      "spell": {
+        "id": 1234359,
+        "name": "I Am My Scars!",
+        "icon": "tooltip_crystallizedfel"
+      }
+    },
+    "quality": 4
+  },
+  "12664": {
+    "id": 12664,
+    "effect": {
+      "id": 215506,
+      "index": 1,
+      "spell": {
+        "id": 1234360,
+        "name": "I Am My Scars!",
+        "icon": "tooltip_crystallizedfel"
+      }
+    },
+    "quality": 3
+  },
+  "12665": {
+    "id": 12665,
+    "effect": {
+      "id": 215505,
+      "index": 0,
+      "spell": {
+        "id": 1234361,
+        "name": "I Am My Scars!",
+        "icon": "tooltip_crystallizedfel"
+      }
+    }
   },
   "12674": {
     "id": 12674,
@@ -75755,9 +77526,1347 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12694": {
+    "id": 12694,
+    "quality": 4
+  },
+  "12695": {
+    "id": 12695,
+    "quality": 4
+  },
+  "12696": {
+    "id": 12696,
+    "quality": 4
+  },
+  "12697": {
+    "id": 12697,
+    "quality": 4
+  },
+  "12706": {
+    "id": 12706,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 750,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 750,
+        "name": "Vers"
+      },
+      {
+        "stat": 36,
+        "amount": 750,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 750,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "25% Crit [0.0750], 25% Vers [0.0750], 25% Haste [0.0750], 25% Mastery [0.0750]"
+  },
+  "12707": {
+    "id": 12707,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 1500,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.1500]"
+  },
+  "12708": {
+    "id": 12708,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 1500,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.1500]"
+  },
+  "12709": {
+    "id": 12709,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 1500,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.1500]"
+  },
+  "12710": {
+    "id": 12710,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 1500,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.1500]"
+  },
+  "12711": {
+    "id": 12711,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3000,
+        "name": "Crit"
+      }
+    ],
+    "stats": "100% Crit [0.3000]"
+  },
+  "12712": {
+    "id": 12712,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3000,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "100% Mastery [0.3000]"
+  },
+  "12713": {
+    "id": 12713,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3000,
+        "name": "Haste"
+      }
+    ],
+    "stats": "100% Haste [0.3000]"
+  },
+  "12714": {
+    "id": 12714,
+    "rawStats": [
+      {
+        "stat": 40,
+        "amount": 3000,
+        "name": "Vers"
+      }
+    ],
+    "stats": "100% Vers [0.3000]"
+  },
   "12922": {
     "id": 12922,
     "socket": 1
+  },
+  "13251": {
+    "id": 13251,
+    "tag": "Legion Remix"
+  },
+  "13253": {
+    "id": 13253,
+    "quality": 6
+  },
+  "13254": {
+    "id": 13254,
+    "quality": 6
+  },
+  "13255": {
+    "id": 13255,
+    "quality": 6
+  },
+  "13256": {
+    "id": 13256,
+    "quality": 6
+  },
+  "13257": {
+    "id": 13257,
+    "quality": 6
+  },
+  "13258": {
+    "id": 13258,
+    "quality": 6
+  },
+  "13259": {
+    "id": 13259,
+    "quality": 6
+  },
+  "13260": {
+    "id": 13260,
+    "quality": 6
+  },
+  "13261": {
+    "id": 13261,
+    "quality": 6
+  },
+  "13262": {
+    "id": 13262,
+    "quality": 6
+  },
+  "13263": {
+    "id": 13263,
+    "quality": 6
+  },
+  "13264": {
+    "id": 13264,
+    "quality": 6
+  },
+  "13265": {
+    "id": 13265,
+    "quality": 6
+  },
+  "13266": {
+    "id": 13266,
+    "quality": 6
+  },
+  "13267": {
+    "id": 13267,
+    "quality": 6
+  },
+  "13268": {
+    "id": 13268,
+    "quality": 6
+  },
+  "13269": {
+    "id": 13269,
+    "quality": 6
+  },
+  "13270": {
+    "id": 13270,
+    "quality": 6
+  },
+  "13271": {
+    "id": 13271,
+    "quality": 6
+  },
+  "13272": {
+    "id": 13272,
+    "quality": 6
+  },
+  "13273": {
+    "id": 13273,
+    "quality": 6
+  },
+  "13274": {
+    "id": 13274,
+    "quality": 6
+  },
+  "13275": {
+    "id": 13275,
+    "quality": 6
+  },
+  "13276": {
+    "id": 13276,
+    "quality": 6
+  },
+  "13277": {
+    "id": 13277,
+    "quality": 6
+  },
+  "13278": {
+    "id": 13278,
+    "quality": 6
+  },
+  "13279": {
+    "id": 13279,
+    "quality": 6
+  },
+  "13280": {
+    "id": 13280,
+    "quality": 6
+  },
+  "13281": {
+    "id": 13281,
+    "quality": 6
+  },
+  "13282": {
+    "id": 13282,
+    "quality": 6
+  },
+  "13283": {
+    "id": 13283,
+    "quality": 6
+  },
+  "13284": {
+    "id": 13284,
+    "quality": 6
+  },
+  "13285": {
+    "id": 13285,
+    "quality": 6
+  },
+  "13286": {
+    "id": 13286,
+    "quality": 6
+  },
+  "13287": {
+    "id": 13287,
+    "quality": 6
+  },
+  "13288": {
+    "id": 13288,
+    "quality": 6
+  },
+  "13289": {
+    "id": 13289,
+    "quality": 6
+  },
+  "13290": {
+    "id": 13290,
+    "quality": 6
+  },
+  "13291": {
+    "id": 13291,
+    "quality": 6
+  },
+  "13292": {
+    "id": 13292,
+    "quality": 6
+  },
+  "13293": {
+    "id": 13293,
+    "quality": 6
+  },
+  "13294": {
+    "id": 13294,
+    "quality": 6
+  },
+  "13295": {
+    "id": 13295,
+    "quality": 6
+  },
+  "13296": {
+    "id": 13296,
+    "quality": 6
+  },
+  "13297": {
+    "id": 13297,
+    "quality": 6
+  },
+  "13298": {
+    "id": 13298,
+    "quality": 6
+  },
+  "13299": {
+    "id": 13299,
+    "quality": 6
+  },
+  "13300": {
+    "id": 13300,
+    "quality": 6
+  },
+  "13301": {
+    "id": 13301,
+    "quality": 6
+  },
+  "13302": {
+    "id": 13302,
+    "quality": 6
+  },
+  "13303": {
+    "id": 13303,
+    "quality": 6
+  },
+  "13304": {
+    "id": 13304,
+    "quality": 6
+  },
+  "13305": {
+    "id": 13305,
+    "quality": 6
+  },
+  "13306": {
+    "id": 13306,
+    "quality": 6
+  },
+  "13307": {
+    "id": 13307,
+    "quality": 6
+  },
+  "13308": {
+    "id": 13308,
+    "quality": 6
+  },
+  "13309": {
+    "id": 13309,
+    "quality": 6
+  },
+  "13310": {
+    "id": 13310,
+    "quality": 6
+  },
+  "13311": {
+    "id": 13311,
+    "quality": 6
+  },
+  "13312": {
+    "id": 13312,
+    "quality": 6
+  },
+  "13313": {
+    "id": 13313,
+    "quality": 6
+  },
+  "13314": {
+    "id": 13314,
+    "quality": 6
+  },
+  "13315": {
+    "id": 13315,
+    "quality": 6
+  },
+  "13316": {
+    "id": 13316,
+    "quality": 6
+  },
+  "13317": {
+    "id": 13317,
+    "quality": 6
+  },
+  "13318": {
+    "id": 13318,
+    "quality": 6
+  },
+  "13319": {
+    "id": 13319,
+    "quality": 6
+  },
+  "13320": {
+    "id": 13320,
+    "quality": 6
+  },
+  "13321": {
+    "id": 13321,
+    "quality": 6
+  },
+  "13322": {
+    "id": 13322,
+    "quality": 6
+  },
+  "13323": {
+    "id": 13323,
+    "quality": 6
+  },
+  "13324": {
+    "id": 13324,
+    "quality": 6
+  },
+  "13325": {
+    "id": 13325,
+    "quality": 6
+  },
+  "13326": {
+    "id": 13326,
+    "quality": 6
+  },
+  "13327": {
+    "id": 13327,
+    "quality": 6
+  },
+  "13328": {
+    "id": 13328,
+    "quality": 6
+  },
+  "13329": {
+    "id": 13329,
+    "quality": 6
+  },
+  "13330": {
+    "id": 13330,
+    "quality": 6
+  },
+  "13331": {
+    "id": 13331,
+    "quality": 6
+  },
+  "13357": {
+    "id": 13357,
+    "quality": 4
+  },
+  "13360": {
+    "id": 13360,
+    "effect": {
+      "id": 214272,
+      "index": 0,
+      "spell": {
+        "id": 1250717,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13361": {
+    "id": 13361,
+    "effect": {
+      "id": 214327,
+      "index": 0,
+      "spell": {
+        "id": 1250753,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13362": {
+    "id": 13362,
+    "effect": {
+      "id": 214328,
+      "index": 0,
+      "spell": {
+        "id": 1250750,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13363": {
+    "id": 13363,
+    "effect": {
+      "id": 214329,
+      "index": 0,
+      "spell": {
+        "id": 1250757,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13364": {
+    "id": 13364,
+    "effect": {
+      "id": 214331,
+      "index": 0,
+      "spell": {
+        "id": 1250751,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13365": {
+    "id": 13365,
+    "effect": {
+      "id": 214332,
+      "index": 0,
+      "spell": {
+        "id": 1250760,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13435": {
+    "id": 13435,
+    "effect": {
+      "id": 214333,
+      "index": 0,
+      "spell": {
+        "id": 1250552,
+        "name": "Infinite Power",
+        "icon": "achievement_legionpvp3tier3"
+      }
+    }
+  },
+  "13443": {
+    "id": 13443,
+    "upgrade": {
+      "group": 517,
+      "level": 7,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 7/8",
+      "bonusId": 13443,
+      "itemLevel": 714,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "13444": {
+    "id": 13444,
+    "upgrade": {
+      "group": 517,
+      "level": 8,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 8/8",
+      "bonusId": 13444,
+      "itemLevel": 717,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "13445": {
+    "id": 13445,
+    "upgrade": {
+      "group": 518,
+      "level": 7,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 7/8",
+      "bonusId": 13445,
+      "itemLevel": 727,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "13446": {
+    "id": 13446,
+    "upgrade": {
+      "group": 518,
+      "level": 8,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 8/8",
+      "bonusId": 13446,
+      "itemLevel": 730,
+      "seasonId": 30,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3290,
+              "amount": 15,
+              "name": "Gilded Ethereal Crest",
+              "icon": "inv_crestupgrade_ethereal_gilded"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3284,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3286,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3288,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3290,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "13468": {
+    "id": 13468,
+    "level": 7
+  },
+  "13469": {
+    "id": 13469,
+    "level": 3
   },
   "13501": {
     "id": 13501,
@@ -75806,5 +78915,22 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "trade_engineering"
       }
     }
+  },
+  "13524": {
+    "id": 13524,
+    "quality": 4,
+    "rawStats": [
+      {
+        "stat": 7,
+        "amount": 1000,
+        "name": "Sta"
+      }
+    ],
+    "stats": "100% Sta [0.1000]"
+  },
+  "13572": {
+    "id": 13572,
+    "ilevel": "1 @plvl 1 - 655 @plvl 655",
+    "curveId": 92770
   }
 }

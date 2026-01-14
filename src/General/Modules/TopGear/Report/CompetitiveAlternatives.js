@@ -98,9 +98,9 @@ function CompetitiveAlternatives(props) {
                                     src={getItemIcon(item.id, gameType)}
                                     style={{
                                       borderRadius: 4,
-                                      borderWidth: item.vaultItem ? "2px" : "1px",
-                                      borderStyle: item.vaultItem ? "dashed" : "solid",
-                                      borderColor: item.vaultItem ? "#0288d1" : itemQuality(item, gameType),
+                                      borderWidth: (item.vaultItem || item.exclusiveItem) ? "2px" : "1px",
+                                      borderStyle: (item.vaultItem || item.exclusiveItem) ? "dashed" : "solid",
+                                      borderColor: item.exclusiveItem ? "#CC7102" : item.vaultItem ? "#0288d1" : itemQuality(item, gameType),
                                     }}
                                   />
                                   <div className="bottom-right-ItemCards"> {item.level} </div>

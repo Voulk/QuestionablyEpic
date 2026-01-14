@@ -21,6 +21,10 @@ export class Item {
   specialAllocations?: {[key: string]: number} = {};
   primGems?: number[];
   craftedStats?: number[]; // An optional array for crafted stats on the item. 
+  ingameEquipped?: {
+    gems: number[],
+    enchants: number[],
+  }
 
   // Used for items where we might have multiple variations at the same item level. 
   // Single option items like Unbound Changeling would end up as a 1 length array but
@@ -34,6 +38,7 @@ export class Item {
   active: boolean = false; // An active item is selected for inclusion in Top Gear.
   
   vaultItem: boolean = false; // If true, the item is in a vault and so gains a special Vault color and restriction.
+  exclusiveItem: boolean = false; // If true, the item is exclusive and shouldn't be picked alongside other exclusive items.
   isEquipped: boolean = false; // If true, the item is currently equipped to the character. This is just used to color differences 
   source = {};
   onUse: boolean = false; // True if the item is an on-use trinket. Can be converted to a tag.
@@ -81,6 +86,7 @@ export class Item {
       const sockets = getItemProp(id, "sockets", gameType);
       this.classicSockets.sockets = sockets? sockets.gems : [];
       this.classicSockets.bonus = sockets ? sockets.bonus : {};
+      this.ingameEquipped = {gems: [], enchants: []};
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
 

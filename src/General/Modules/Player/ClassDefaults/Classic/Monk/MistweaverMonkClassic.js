@@ -42,13 +42,13 @@ export const mistweaverMonkDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.1,
-        crit: 0.45,
-        mastery: 0.2,
-        haste: 0.3,
-        mp5: 0.37 * 1.8,
-        spirit: 0.32,
+        crit: 0.572,
+        mastery: 0.254,
+        haste: 0.371,
+        mp5: 0.7,
+        spirit: 0.4,
         hit: 0,
-        hps: 0.7, // 
+        hps: 0.314, // 
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -57,13 +57,13 @@ export const mistweaverMonkDefaults = {
 }
 
 // --------------- Monk --------------
-export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = false) {
+export function initializeMonkSet(userSettings, talents = monkTalents, ignoreOverhealing = false) {
     const testSettings = {spec: "Mistweaver Monk Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Surging Mist", cpm: 1},
-      {spell: "Renewing Mist", efficiency: 0.95 },
+      {spell: "Renewing Mist", efficiency: 0.95, bonus: 1 },
       {spell: "Chi Burst", efficiency: 0.8 },
       {spell: "Revival", efficiency: 0.8 },
       {spell: "Expel Harm", efficiency: 0.75 },
@@ -109,6 +109,7 @@ export function initializeMonkSet(talents = monkTalents, ignoreOverhealing = fal
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
+  console.log(JSON.stringify(userSettings));
   const spec = "Mistweaver Monk";
   const playerRace = userSettings.playerRace || "Pandaren"; // Default to Human if not set.
   let totalHealing = 0;
@@ -126,6 +127,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+  const metaGem = getSetting(userSettings, "classicMetaGem");
+  let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
   const statPercentages = convertStatPercentages({...statProfile, haste: statProfile.haste * 1.5}, hasteBuff, spec, playerRace);
   statPercentages.hitChance = Math.min(1, 0.85 + (statProfile.spirit - 190) / 340 / 100); // Serpent converts at a 50% rate, but we get both hit and expertise.
@@ -151,7 +154,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
   
 
-  let costPerMinute = specBaseline.costPerMinute;
+  let costPerMinute = specBaseline.costPerMinute * (1 - freeCastsUptime);
 
   if (enemyTargets > 1) {
     
@@ -175,6 +178,10 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     const freeRenewingMistSeconds = averageRemCount * renewingMistDuration / 2 * 0.9; // Slightly lossy
     getSpellEntry(castProfile, "Renewing Mist").cpm += freeRenewingMistSeconds / renewingMistDuration / 3;
 
+    if (tierSets.includes("Monk T15-2")) {
+        getSpellEntry(castProfile, "Renewing Mist").bonus *= 1.15; // 
+    }
+
     specBaseline.spellDB["Uplift"][0].targets = averageRemCount + freeRenewingMistSeconds / renewingMistDuration; // Set our Uplift target count based on our average Renewing Mist count.
     //getSpellEntry(castProfile, "Uplift").bonus = averageRemCount; // This effectively acts as our Uplift target count.
     reportingData.upliftTargets = specBaseline.spellDB["Uplift"][0].targets;
@@ -190,7 +197,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     
     // Spend all available time on our efficient Jab -> TP rotation. There's no way to go oom so we won't check our mana.
     // It's not mana positive but it basically is. 
-    const tigerPalmPackageCost = getSpellEntry(castProfile, "Jab")['cost'] - (manaTeaEffectiveReturn / 4) - muscleMemoryReturn; // Cost of Jab -> Tiger Palm
+    const tigerPalmPackageCost = (getSpellEntry(castProfile, "Jab")['cost'] - (manaTeaEffectiveReturn / 4) - muscleMemoryReturn) * (1 - freeCastsUptime); // Cost of Jab -> Tiger Palm
     let tigerPalmPackagesAvailable = timeAvailable / 2; // Each combo takes 2s.
 
     // Next, replace casts with Jab -> Jab -> Uplift packages as mana allows.
@@ -198,7 +205,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
     // and you could add others here that instead try and maximize DPS or pure HPS. The default model is a bit of a hybrid.
     
 
-    const upliftPackageCost = getSpellEntry(castProfile, "Jab")['cost'] * 2 - (manaTeaEffectiveReturn / 2); // Cost of Jab -> Jab -> Uplift
+    const upliftPackageCost = (getSpellEntry(castProfile, "Jab")['cost'] * 2 - (manaTeaEffectiveReturn / 2)) * (1 - freeCastsUptime); // Cost of Jab -> Jab -> Uplift
     const manaDifference = upliftPackageCost - tigerPalmPackageCost; // 
 
     reportingData.upliftPackageCost = upliftPackageCost;

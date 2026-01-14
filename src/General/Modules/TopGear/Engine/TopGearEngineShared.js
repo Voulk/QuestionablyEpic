@@ -182,6 +182,20 @@ export const deepCopyFunction = (inObject) => {
     return outObject;
 };
 
+const checkColorMatch = (gemColor, socketColor) => {
+  if (socketColor === "red") return ["red", "orange", "purple"].includes(gemColor);
+  else if (socketColor === "yellow") return ["yellow", "orange", "green"].includes(gemColor);
+  else if (socketColor === "blue") return ["blue", "green", "purple"].includes(gemColor);
+  return false;
+}
+
+// Takes an array of socketed gems and an array of sockets. Checks if they all match. 
+const checkSocketMatch = (socketedGems, sockets, gemIDs) => {
+  return socketedGems.map(i => gemIDs[i]).every((element, index) => 
+    (element === sockets[index] || sockets[index] === "prismatic") || checkColorMatch(element, sockets[index]));
+  // item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))
+}
+
 export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder, hasteNeeded = 0) => {
 
     //const useEpicGems = getSetting(playerSettings, "classicGemSettings") === "Epic";
@@ -201,10 +215,31 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       71850: 'yellow', // int / haste
       71868: 'blue',
     }*/
-    const yellowOptions = {
+    const gemTypeSetting = getSetting(playerSettings, "classicGemTypes");
+    const yellowOptions = gemTypeSetting === "Intellect Focus" ? 
+    {
       haste: 76668,
       crit: 76660,
-      mastery: 76672
+      mastery: 76672,
+    } :
+    { // Pure secondary gems
+      haste: 76699,
+      crit: 76697, //76660,
+      mastery: 76700, //76672
+    }
+
+    // These are all secondary X + spirit gems.
+    // If set to int gems then all can just use int + spirit.
+    const blueOptions = {
+      haste: 76651,
+      crit: 76640,
+      mastery: 76645,
+    }
+    // Similar to blue options, this is just for when we are not going with the intellect option.
+    const redOptions = {
+      haste: 76668,
+      crit: 76660,
+      mastery: 76672,
     }
 
     const gemIDS = Object.fromEntries(classicGemDB.map(gem => [gem.id, gem.color]));
@@ -212,9 +247,9 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
     const bestSecondary = statOrder.find(stat => ['haste', 'crit', 'mastery'].includes(stat));
     const yellowGemID = yellowOptions[bestSecondary]; // Int / haste but options available. Haste = 76668. Crit = 76660, Mast = 76672
     const hasteGemID = 76668;
-    const metaGemID = 76885; // Meta choice is basically between 432 spirit & 216 intellect.
-    const redGemID = 76694; // Pure int but look into hybrids
-    const blueGemID = 76686;
+    const metaGemID = getSetting(playerSettings, "classicMetaGem") === "Burning Primal Diamond" ? 76885 : 95345; //
+    const redGemID = gemTypeSetting === "Intellect Focus" ? 76694 : redOptions[bestSecondary]; 
+    const blueGemID = gemTypeSetting === "Intellect Focus" ? 76686 : blueOptions[bestSecondary]; 
     const shaGemID = 89882; // Sha gem, 500 intellect
     //let hasteGemsNeeded = hasteNeeded > 0 ? Math.ceil(hasteNeeded / 160) : 0; // 160 haste per gem
     const orangeGemCount = itemList.filter(item => item.classicSockets.sockets.includes("yellow")).length;
@@ -237,14 +272,18 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       }
     }
     
-   // (hasteNeeded > 0 && (orangeGemCount * 160 + cogwheelCount * 600) >= hasteNeeded) ? Math.ceil((hasteNeeded - cogwheelCount * 600) / 160) : 0; // 160 haste per gem
-  // Maybe do at the end so we can include socket bonuses?
-    // Add a check to see if it can get there with the oranges available.
 
-    const socketScores = {red: adjusted_weights.intellect * gemBudget, 
+    const socketScores = gemTypeSetting === "Intellect Focused" ? {red: adjusted_weights.intellect * gemBudget, 
                           prismatic: adjusted_weights.intellect * gemBudget,
                           blue: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights.spirit * gemBudget, 
                           yellow: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights[bestSecondary] * gemBudget,
+                          sha: adjusted_weights.intellect * 500 }
+                        :
+                        // Secondary Focus
+                        {red: adjusted_weights.intellect * gemBudget / 2 + adjusted_weights[bestSecondary] * gemBudget, 
+                          prismatic: adjusted_weights[bestSecondary] * gemBudget * 2,
+                          blue: adjusted_weights[bestSecondary] * gemBudget + adjusted_weights.spirit * gemBudget, 
+                          yellow: adjusted_weights[bestSecondary] * gemBudget * 2,
                         sha: adjusted_weights.intellect * 500 }
     //console.log("Haste gems needed: " + hasteGemsNeeded);
     // If running Ember: Next, cycle through socket bonuses and maximize value from two yellow gems.
@@ -262,7 +301,13 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
       });
       return score;
     }
-    
+
+    if (gemSetting === "Keep Equipped Gems") {
+      itemList.forEach((item, index) => {
+        if (item.ingameEquipped)item.socketedGems = item.ingameEquipped.gems || [];
+      });
+    }
+    else {
       // First, optimize gems in general. Afterwards we will look at lowest cost of replacing them with oranges.
       itemList.forEach((item, index) => {
         // { score: 0, itemIDs: []}
@@ -301,53 +346,19 @@ export const setupGems = (itemList, adjusted_weights, playerSettings, statOrder,
           } 
         }
       });
-      // == Check yellow replacements ==
-      // Potentially can kill this entirely in MoP.
-
-      /*itemList.forEach((item, index) => {
-        const sockets = item.classicSockets.sockets;
-        let itemIndex = 0;
-        sockets.forEach((socket, socketIndex) => {
-          if (gemIDS[item.socketedGems[socketIndex]] === "yellow" || sockets[socketIndex] === "meta"|| sockets[socketIndex] === "cogwheel") {}// do nothing
-          else {
-            let score = 0;
-            // The socket isn't yellow, try and make it orange.
-            const originalScore = gemScores[index];
-            const newSockets = [...item.socketedGems];
-            newSockets[socketIndex] = yellowGemID;
-            
-            // We've made the socket yellow. Let's score it.
-            let newScore = newSockets.reduce((accumulator, socket) => accumulator + socketScores[gemIDS[socket]] || 0, 0);
-
-            // Check if adding the yellow socket gives us a bonus.
-            const socketBonus = newSockets.map(i => gemIDS[i]).every((element, index) => element === sockets[index] || sockets[index] === "prismatic");
-
-            if (socketBonus && item.classicSockets.bonus) {
-              newScore += scoreSocketBonus(item.classicSockets.bonus);
-            }
-
-            score = originalScore - newScore;
-
-            gemResults.push({itemIndex: index, socketIndex: socketIndex, score: score, itemName: item.name, originalScore: originalScore, newScore: newScore});
-            itemIndex++;
-          }
-        })
-        
-      });
-      gemResults.sort((a, b) => (a.score > b.score ? 1 : -1));
-      for (let i = 0; i < mandatoryYellows; i++) {
-        //console.log("Replacing " + itemList[gemResults[i].itemIndex].name + " socket " + gemResults[i].socketIndex + " with a yellow gem.")
-        itemList[gemResults[i].itemIndex].socketedGems[gemResults[i].socketIndex] = yellowGemID;
-      } */
+    }
+    
 
     // Lastly, we need to actually add the stats from socketed gems.
     const socketedGemStats = [];
     itemList.forEach(item => {
       item.socketedGems.forEach(gemID => {
-        socketedGemStats.push(classicGemDB.filter(gem => gem.id === gemID)[0].stats);
+        const gem = classicGemDB.filter(gem => gem.id === gemID);
+        const gemStats = gem[0] ? gem[0].stats : {};
+        socketedGemStats.push(gemStats);
       });
 
-      if (item.socketedGems.map(i => gemIDS[i]).every((element, index) => (element === item.classicSockets.sockets[index] || item.classicSockets.sockets[index] === "prismatic"))) {
+      if (checkSocketMatch(item.socketedGems, item.classicSockets.sockets, gemIDS)) {
         // Socket bonus
         if (item.classicSockets.bonus) socketedGemStats.push(item.classicSockets.bonus);
       }

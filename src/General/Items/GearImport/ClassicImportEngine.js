@@ -140,6 +140,8 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     itemAllocations = suffixDB[suffix]//{intellect: 5259, crit: 3506, haste: 3506}//getSuffixAllocation(suffix, suffixAllocation);
   }
 
+
+
   // Handle auto upgrades
   if (autoUpgradeItem) {
     if (itemLevel >= 359 && !(itemName.includes("Gladiator"))) {
@@ -151,7 +153,9 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     // Epic items gain 8 ilvl per upgrade.
     // We won't check if an item can be upgraded at all here because they are imports.
     let baseRarity = getItemProp(itemID, "quality", "Classic");
-    itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
+
+    if (itemLevel > 520 && itemLevel !== 528 && itemLevel !== 541 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += 3 * upgradeLevel;
+    else if (itemLevel < 520 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
@@ -194,6 +198,14 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
       // If an item has a Sha socket and two gems in it, then it's clearly upgraded and has the bonus prismatic socket.
       item.classicSockets.sockets = ["sha", "prismatic"];
     } 
+
+    if (gemIDs.length > 0) {
+      // Include the gems they are using on the item in case they dont want to overwrite them.
+      gemIDs.forEach((gemID) => {
+        item.ingameEquipped.gems.push(parseInt(gemID));
+      })
+
+    }
     
     item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");

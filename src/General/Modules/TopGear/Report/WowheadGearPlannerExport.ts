@@ -73,7 +73,7 @@ const specIndexes = {
     "Holy Paladin Classic": 0,
     "Discipline Priest Classic": 0,
     "Holy Priest Classic": 1,
-    /*"Restoration Shaman Classic": 4,*/
+    "Restoration Shaman Classic": 4,
     "Mistweaver Monk Classic": 1
 }
 

@@ -66,14 +66,17 @@ const getClassicRaceBonuses = (statPerc, race) => {
 
 
 // Classic
-export const runClassicSpell = (spellName, spell, statPercentages, spec, settings) => {
+export const runClassicSpell = (spellName, spell, statPercentages, spec, settings, flags = {}) => {
 
     const genericMult = 1;
     let targetCount = 1;
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
-    let adjCritChance = (spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1; 
+    let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
+    const critSize = (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond") ? 2.03 : 2; // 3% increased crit damage / healing;
+    const critMult = ((1-adjCritChance) + adjCritChance * critSize)
+
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
      
@@ -81,19 +84,19 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     if (spellName === "Melee") {
         // Melee attacks are a bit special and don't share penalties with our special melee-based spells. 
         spellOutput = (statPercentages.weaponDamageMelee + statPercentages.attackpower / 14 * statPercentages.weaponSwingSpeed)
-                        * adjCritChance * genericMult * targetCount;
+                        * critMult * genericMult * targetCount;
     }
     else if (spell.weaponScaling) {
         // Some monk spells scale with weapon damage instead of regular spell power. We hate these.
         
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
-                        * adjCritChance * genericMult * targetCount;
+                        * critMult * genericMult * targetCount;
     }
     else {
         // Most other spells follow a uniform formula.
         const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest") && !(spec.includes("Holy Paladin"))) ? (1 + statPercentages.mastery) : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
-                            adjCritChance * // Multiply by secondary stats & any generic multipliers. 
+                            critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             genericMult *
                             targetCount
@@ -119,6 +122,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
       let tickCount = Math.round(spell.buffDuration / (adjTickRate));
 
       if (spell.tickData.tickOnCast) tickCount += 1;
+      if (flags["RampingHoTEffect"]) spellOutput = spellOutput * (1 + flags["RampingHoTEffect"] / 2 * (tickCount + 1));
       
       // Take care of any HoTs that don't have obvious breakpoints.
       // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.

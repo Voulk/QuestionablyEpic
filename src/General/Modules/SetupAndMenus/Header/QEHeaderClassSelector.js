@@ -26,7 +26,7 @@ const classNames = {"Retail": [
     "Holy Priest Classic",
     "Discipline Priest Classic",
     //"Restoration Shaman Classic",
-    //"Holy Paladin Classic",
+    "Holy Paladin Classic",
     "Mistweaver Monk Classic",
   ]};
 

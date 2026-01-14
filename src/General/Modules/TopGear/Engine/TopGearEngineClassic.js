@@ -126,7 +126,7 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
       // V2 of smart reforge. This will more aggressively pursue haste breakpoints. 
       else if (reforgeSetting === "Smart" && (player.spec === "Restoration Druid Classic" || player.spec === "Mistweaver Monk Classic")) {
 
-        const secondaryRank = player.spec === "Restoration Druid" ? ["spirit", "mastery", "crit", "hit"] : ["crit", "spirit", "mastery", "hit"];
+        const secondaryRank = player.spec.includes("Restoration Druid") ? ["mastery", "spirit", "crit", "hit"] : ["crit", "spirit", "mastery", "hit"];
         // Convert non-haste stats to haste, and haste to crit/mastery/spirit.
         if (itemStats.includes("haste")) {
           
@@ -158,9 +158,11 @@ export function prepareTopGear(rawItemList, player, playerSettings, reforgingOn,
           else {
             // We do not have a tie, pick the secondary with the highest value to maximize Haste.
             // While hit is included here, a hit reforge should be taken care of in the initial if statement.
-            fromStat = Object.keys(item.stats)
+            /*fromStat = Object.keys(item.stats)
                         .filter(key => ['hit', 'crit', 'mastery', 'spirit'].includes(key))
-                        .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);
+                        .reduce((a, b) => (item.stats[a] > item.stats[b]) ? a : b);*/
+
+            fromStat = secondaryRank.slice().reverse().find(value => itemStats.includes(value));
           }
           
           const newItem = JSON.parse(JSON.stringify(item));
@@ -203,7 +205,7 @@ export function runTopGearClassic(itemSets, player, contentType, baseHPS, curren
     //console.log("Item Count: " + itemList.length);
     //console.log("Sets (Post-Reforge): " + itemSets.length);
     const professions = [getSetting(playerSettings, "professionOne"), getSetting(playerSettings, "professionTwo")];
-    const baseline = newModel.initializeSet();
+    const baseline = newModel.initializeSet(playerSettings);
 
     count = itemSets.length;
 
@@ -474,8 +476,16 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     // -- GEMS & ENCHANTS --
     // We could precalculate enchants and auto-fill them each time to save time. Make an exception for like gloves enchant. 
     let hasteNeeded = 0;
-    if (player.spec === "Restoration Druid Classic") hasteNeeded = Math.max(0, 3043 - setStats.haste);
-    else if (player.spec === "Mistweaver Monk Classic")hasteNeeded = Math.max(0, 3145 - setStats.haste);
+    if (player.spec === "Restoration Druid Classic") {
+      // Check which haste bracket we're in and try and push to the next one.
+      if (setStats.haste >= 4856 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
+      else if (setStats.haste > 6332) hasteNeeded = Math.max(0, 6652 - setStats.haste);
+      else hasteNeeded = Math.max(0, 3043 - setStats.haste);
+    }
+    else if (player.spec === "Mistweaver Monk Classic") {
+      if (setStats.haste > 5820) hasteNeeded = Math.max(0, 6140 - setStats.haste); // Try and get second breakpoint
+      else hasteNeeded = Math.max(0, 3145 - setStats.haste);
+    }
     const compiledGems = setupGems(builtSet.itemList, adjusted_weights, playerSettings, castModel.autoReforgeOrder, hasteNeeded)
     builtSet.gems = compiledGems.gems;
     compileStats(setStats, compiledGems.stats);
@@ -509,7 +519,6 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     
     if (player.spec === "Restoration Druid Classic") {
       setStats.intellect *= 1.06;
-
 
     }
     else if (player.spec === "Discipline Priest Classic") {

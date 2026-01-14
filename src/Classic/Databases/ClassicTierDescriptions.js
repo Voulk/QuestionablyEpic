@@ -272,4 +272,57 @@ export const tierSets = [
     },
   },
 
+  // Resto Shaman
+  {
+    name: { en: "Vestments of the Firebird" },
+    spec: "Restoration Shaman",
+    slots: [85349, 85350, 85351, 85352, 85353],
+    twoSet: {
+      effect: {
+        en: "(2) Reduces the mana cost of your Greater Healing Wave spell by 10%.",
+      },
+      hps: 100,
+    },
+    fourSet: {
+      effect: {
+        en: "(4) Your Tidal Waves ability grants an additional 5% cast time reduction to Healing Wave and Greater Healing Wave, and an additional 5% critical chance to Healing Surge.",
+      },
+      hps: 300,
+    },
+  },
+  {
+    name: { en: "Vestments of the Witch Doctor" },
+    spec: "Restoration Shaman",
+    slots: [95310, 95311, 95312, 95313, 95314],
+    twoSet: {
+      effect: {
+        en: "(2) Your Healing Stream Totem now heals an additional target for 25% of its normal amount.",
+      },
+      hps: 100,
+    },
+    fourSet: {
+      effect: {
+        en: "(4) Your Ancestral Awakening now has a 50% chance to trigger on non-critical heals.",
+      },
+      hps: 300,
+    },
+  },
+    {
+    name: { en: "Celestial Harmony Vestment" },
+    spec: "Restoration Shaman",
+    slots: [99099, 99100, 99107, 99108, 99109],
+    twoSet: {
+      effect: {
+        en: "(2) When Earth Shield heals a target, the target will gain 300% of the amount healed as an absorb.",
+      },
+      hps: 100,
+    },
+    fourSet: {
+      effect: {
+        en: "(4) Spiritwalker's Grace will also summon a spiritual version of yourself that will mimic all cast time targeted healing spells for 15 sec.",
+      },
+      hps: 300,
+    },
+  },
+
 ];

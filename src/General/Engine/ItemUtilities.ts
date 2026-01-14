@@ -1024,7 +1024,7 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "", maxChecked = false) {
   let itemDB = getItemDB(gameType);
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
@@ -1050,17 +1050,23 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (item.id === 235499) sourceCheck = true;
-      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650) sourceCheck = true;
+      if (item.id === 235499 && source !== "S3 Dinar") sourceCheck = true;
+      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
       else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "S3 Dinar" && sources) {
+        sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
+      }
 
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
       else if (source === "Terrace" && sources) sourceCheck = sources.instanceId === 320;
-      else if (source === "T14" && sources) sourceCheck = ([317, 330].includes(sources.instanceId));
+      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 0);
       else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
+      else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
       else if (source === "Professions" && sources) sourceCheck = sources.instanceId === -4
@@ -1075,12 +1081,22 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
+        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
+          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
+        ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && source !== "ClassicPVP") ? 8 : 0;
+          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
 
-      if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
+          if (source === "S3 Dinar") newItem.exclusiveItem = true;
+          if ([243308, 243307, 243306, 243305].includes(item.id)) {
+            // Special boots stuff
+            if (newItem.level === 730) newItem.bonusIDS += "13503";
+            else newItem.bonusIDS += "13504";
+          }
+          if (gameType === "Retail") newItem.quality = 4;
+
+      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
 

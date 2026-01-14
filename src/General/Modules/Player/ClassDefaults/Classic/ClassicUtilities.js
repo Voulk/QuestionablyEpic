@@ -5,7 +5,7 @@
 import { getHealth } from "../Generic/RampBase";
 import { CLASSICDRUIDSPELLDB as druidSpells, druidTalents } from "./Druid/ClassicDruidSpellDB";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMonkSpellDB";
-
+import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
 import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
@@ -26,7 +26,7 @@ export const applyLoadoutEffects = (classicSpells, settings, state) => {
         "Discipline Priest": 0, // 
         "Holy Paladin": 0.05, // Holy Insight needs to be handled per-spell because it differs for spenders. Seal of Insight can be handled here.
         "Holy Priest": 0,
-        "Restoration Shaman": 0, // Also gets 0.5s off Healing Wave / Greater Healing Wave
+        "Restoration Shaman": 0.25, //
         "Mistweaver Monk": 0.2, // Serpent Stance
     };
 
@@ -160,6 +160,10 @@ export const getTalentedSpellDB = (spec, state) => {
     else if (spec.includes("Mistweaver Monk")) {
         spellDB = monkSpells;
         talents = monkTalents;
+    }
+    else if (spec.includes("Restoration Shaman")) {
+        spellDB = shamanSpells;
+        talents = shamanTalents;
     }
 
     const playerSpells = deepCopyFunction(spellDB);

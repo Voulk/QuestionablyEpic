@@ -35,6 +35,9 @@ import {
 import SpellDataAccordion from "./SpellDataAccordion";
 import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
+import TopGearGemList from "./Panels/TopGearGemPanel";
+import ErrorBoundary from "./Panels/PanelErrorBoundary";
+
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -249,6 +252,8 @@ function displayReport(
 
   const manaSources = {}
   const hasVault = gameType === "Retail" && fullItemList.some(item => item.vaultItem);
+  const hasDinar = gameType === "Retail" && fullItemList.some(item => item.exclusiveItem);
+
   // Setup Slots / Set IDs.
   let gemCount = 0;
   fullItemList.forEach((item) => {
@@ -357,8 +362,20 @@ function displayReport(
       <div style={{ height: 90 }} />
       {resultValid ? (
         <Grid  item xs={12} spacing={1} style={{ paddingBottom: 1}}>
-          {hasVault ? <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals along with your future crafts. While QE Live will help with short term, consider the following when picking a vault:"} bulletPoints={["Tier Pieces can be very good choices early on.", "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
-            "Consider which items you might upgrade or craft this week, or upgrade them in QE Live before hitting go.", "Ask in your class discord for a second opinion if you are unsure."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> 
+          {hasDinar ? (
+          <ListedInformationBox introText={"Your dinar choices are a great way to get rare items. Make sure you consider the following along with your result:"} 
+          bulletPoints={["Aim for the Myth-track pieces if possible. Some great items like Mythic Spire and Loom'ithar's Living Silk are available off early bosses that pug groups can kill.", 
+            "If you Mythic+ a lot, consider Loom'ithar's Living Silk mandatory if you don't already have it. It's a fantastic problem solver.", 
+            "When comparing sets in QE Live, make sure you provided embellishment alternatives in slots.", 
+            "Ask in your class discord for a second opinion if you are unsure."]} 
+            color={"#CC7102"} title={"Dinar Advice - READ THIS"} /> )
+            :  
+          hasVault ? (
+          <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals along with your future crafts. While QE Live will help with short term, consider the following when picking a vault:"} 
+            bulletPoints={["Tier Pieces can be very good choices early on.", 
+              "Key effect items like strong trinkets can be excellent pick ups since competition for them can be fierce.", 
+              "Consider which items you might upgrade or craft this week, or upgrade them in QE Live before hitting go.", 
+              "Ask in your class discord for a second opinion if you are unsure."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> )
             : 
           <Grid item xs={12}>
             <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>
@@ -726,7 +743,13 @@ function displayReport(
               gameType={gameType}
             />
           </Grid>
-          <Grid item xs={12}>
+          {gameType === "Classic" ? (
+            <Grid item xs={12} style={{ marginTop: 8 }}>
+              <ErrorBoundary>
+                <TopGearGemList gemData={topSet.socketedGems} />
+              </ErrorBoundary>
+            </Grid>) : null}
+          <Grid item xs={12} style={{ marginTop: 8 }}>
             {advice && advice.length > 0 ? (
               <ListedInformationBox
                 introText="Here are some notes on your set:"
@@ -740,12 +763,12 @@ function displayReport(
             )}
           </Grid>
           {gameType === "Classic" ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: 8 }}>
               <ManaSourcesComponent manaSources={manaSources} />
             </Grid>
           ) : null}
           {gameType === "Classic" ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: 8 }}>
               <SpellDataAccordion
                 spec={player.spec}
                 statList={statList}
