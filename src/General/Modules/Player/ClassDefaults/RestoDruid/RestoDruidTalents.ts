@@ -388,17 +388,17 @@ const specTalents: TalentTree = {
     }},
 
     /* Lifebloom stacks every X sec, stacking up to ${Y+1} times. */
-    "Everbloom1": {id: 392167, values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
-    "Everbloom2": {id: 1244331, values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Everbloom2": {id: 1244331, values: [2.0, 15.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
-    "Everbloom3": {id: 1244470, values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Everbloom3": {id: 1244470, values: [5.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 }

@@ -8,7 +8,7 @@
             },
             "castTime": 0.0,
             "cost": 2.1,
-            "coeff": 0.6629,
+            "coeff": 0.73,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -35,7 +35,7 @@
             },
             "castTime": 1.5,
             "cost": 3.8,
-            "coeff": 0.241,
+            "coeff": 0.265,
             "aura": 1.44,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -101,7 +101,7 @@
             "buffType": "heal",
             "buffDuration": 6.0,
             "tickData": {
-                "tickRate": 0.0,
+                "tickRate": 1.0,
                 "canPartialTick": false,
                 "tickOnCast": true
             }
@@ -143,7 +143,7 @@
             },
             "castTime": 1.5,
             "cost": 2.8,
-            "coeff": 7.0004,
+            "coeff": 6.3,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [

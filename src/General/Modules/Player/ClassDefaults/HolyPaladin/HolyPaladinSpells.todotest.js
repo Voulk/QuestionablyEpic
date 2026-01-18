@@ -1,4 +1,4 @@
-import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDB";
+import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDBTWW";
 import { getSpellRaw } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import each from "jest-each";
 
