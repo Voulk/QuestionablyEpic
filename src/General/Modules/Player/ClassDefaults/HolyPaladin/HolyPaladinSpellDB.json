@@ -13,7 +13,16 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            }
+            },
+            "coeff": 5.3256,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Light of Dawn": [
@@ -25,6 +34,9 @@
             },
             "castTime": 0.0,
             "cost": 0.6,
+            "additionalCosts": {
+                "holyPower": 3
+            },
             "coeff": 2.7821,
             "aura": 1.0,
             "expectedOverheal": 0.25,
@@ -36,21 +48,6 @@
             "spellType": "heal"
         }
     ],
-    "Aura Mastery": [
-        {
-            "displayInfo": {
-                "id": 31821,
-                "icon": "spell_holy_auramastery",
-                "spellName": "Aura Mastery"
-            },
-            "castTime": 0.0,
-            "cost": 0.0,
-            "cooldownData": {
-                "cooldown": 180.0,
-                "hasted": false
-            }
-        }
-    ],
     "Eternal Flame": [
         {
             "displayInfo": {
@@ -60,6 +57,9 @@
             },
             "castTime": 0.0,
             "cost": 0.6,
+            "additionalCosts": {
+                "holyPower": 3
+            },
             "coeff": 0.1368,
             "aura": 1.49,
             "expectedOverheal": 0.25,
@@ -89,23 +89,173 @@
             "spellType": "heal"
         }
     ],
-    "Hammer of Wrath": [
+    "Word of Glory": [
         {
             "displayInfo": {
-                "id": 24275,
-                "icon": "inv12_ability_paladin_hammerofwrath",
-                "spellName": "Hammer of Wrath"
+                "id": 85673,
+                "icon": "inv_helmet_96",
+                "spellName": "Word of Glory"
             },
             "castTime": 0.0,
             "cost": 0.6,
+            "additionalCosts": {
+                "holyPower": 3
+            },
+            "coeff": 4.158,
+            "aura": 2.8600000000000003,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Aura Mastery": [
+        {
+            "displayInfo": {
+                "id": 31821,
+                "icon": "spell_holy_auramastery",
+                "spellName": "Aura Mastery"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
             "cooldownData": {
-                "cooldown": 7.5,
-                "hasted": false,
-                "charges": 1,
-                "maxCharges": 1
+                "cooldown": 180.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Flash of Light": [
+        {
+            "displayInfo": {
+                "id": 19750,
+                "icon": "spell_holy_flashheal",
+                "spellName": "Flash of Light"
+            },
+            "castTime": 1.5,
+            "cost": 0.6,
+            "coeff": 3.156,
+            "aura": 1.11,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 1.0
+        }
+    ],
+    "Holy Light": [
+        {
+            "displayInfo": {
+                "id": 82326,
+                "icon": "spell_holy_surgeoflight",
+                "spellName": "Holy Light"
+            },
+            "castTime": 2.0,
+            "cost": 7.0,
+            "coeff": 25.9875,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 1.0
+        }
+    ],
+    "Divine Toll": [
+        {
+            "displayInfo": {
+                "id": 375576,
+                "icon": "inv_ability_paladin_divinetoll",
+                "spellName": "Divine Toll"
+            },
+            "castTime": 0.0,
+            "cost": 3.0,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false
             },
             "coeff": 0.0,
-            "aura": 1.44,
+            "aura": 1.2,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "energize"
+        }
+    ],
+    "Holy Prism": [
+        {
+            "displayInfo": {
+                "id": 114165,
+                "icon": "spell_paladin_holyprism",
+                "spellName": "Holy Prism"
+            },
+            "castTime": 0.0,
+            "cost": 2.6,
+            "cooldownData": {
+                "cooldown": 45.0,
+                "hasted": false
+            }
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 3.0
+        }
+    ],
+    "Holy Bulwark": [
+        {
+            "displayInfo": {
+                "id": 432459,
+                "icon": "inv_ability_lightsmithpaladin_holybulwark",
+                "spellName": "Holy Bulwark"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false,
+                "charges": 2,
+                "maxCharges": 2
+            }
+        }
+    ],
+    "Shield of the Righteous": [
+        {
+            "displayInfo": {
+                "id": 415091,
+                "icon": "ability_paladin_shieldofvengeance",
+                "spellName": "Shield of the Righteous"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "additionalCosts": {
+                "holyPower": 3
+            },
+            "cooldownData": {
+                "cooldown": 1.0,
+                "hasted": false
+            },
+            "coeff": 0.0,
+            "aura": 1.2,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -115,42 +265,9 @@
             "spellType": "damage"
         },
         {
-            "coeff": 0.0,
-            "aura": 1.44,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "damage"
-        }
-    ],
-    "Consecration": [
-        {
-            "displayInfo": {
-                "id": 26573,
-                "icon": "spell_holy_innerfire",
-                "spellName": "Consecration"
-            },
-            "castTime": 0.0,
-            "cost": 0.0,
-            "coeff": 0.0,
-            "aura": 1,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "buff",
-            "buffType": "heal",
-            "buffDuration": 12.0,
-            "tickData": {
-                "tickRate": 1.0,
-                "canPartialTick": true,
-                "tickOnCast": false
-            }
+            "spellType": "energize",
+            "resourceGiven": "mana",
+            "resourceAmount": 0.5
         }
     ],
     "Judgment": [
@@ -190,6 +307,48 @@
             "spellType": "damage"
         }
     ],
+    "Hammer of Wrath": [
+        {
+            "displayInfo": {
+                "id": 24275,
+                "icon": "inv12_ability_paladin_hammerofwrath",
+                "spellName": "Hammer of Wrath"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "cooldownData": {
+                "cooldown": 7.5,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.0,
+            "aura": 1.44,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 1.0
+        },
+        {
+            "coeff": 0.0,
+            "aura": 1.44,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
     "Crusader Strike": [
         {
             "displayInfo": {
@@ -214,26 +373,38 @@
                 "mastery"
             ],
             "spellType": "damage"
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 1.0
         }
     ],
-    "Word of Glory": [
+    "Consecration": [
         {
             "displayInfo": {
-                "id": 85673,
-                "icon": "inv_helmet_96",
-                "spellName": "Word of Glory"
+                "id": 26573,
+                "icon": "spell_holy_innerfire",
+                "spellName": "Consecration"
             },
             "castTime": 0.0,
-            "cost": 0.6,
-            "coeff": 4.158,
-            "aura": 2.8600000000000003,
+            "cost": 0.0,
+            "coeff": 0.0,
+            "aura": 1,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
         }
     ]
 }

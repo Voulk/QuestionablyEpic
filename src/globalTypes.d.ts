@@ -39,7 +39,7 @@ interface TalentTemplate {
     select: boolean;
     tier: number;
     heroTree?: string;
-    runFunc: (state: any, spellDB: SpellDB, talentData: TalentTemplate,points: number) => void;
+    runFunc: (state: any, spellDB: SpellDB, talentData: number[], points: number) => void;
 }
 
 interface TalentTree {
