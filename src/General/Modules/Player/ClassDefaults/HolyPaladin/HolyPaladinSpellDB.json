@@ -23,6 +23,11 @@
                 "mastery"
             ],
             "spellType": "heal"
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "holyPower",
+            "resourceAmount": 1.0
         }
     ],
     "Light of Dawn": [
@@ -259,8 +264,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         },
@@ -290,8 +294,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         },
@@ -301,8 +304,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         }
@@ -327,8 +329,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         },
@@ -343,8 +344,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         }
@@ -369,8 +369,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         },
