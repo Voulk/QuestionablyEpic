@@ -35,10 +35,11 @@ interface TalentTemplate {
     maxPoints: number;
     icon: string;
     id: number;
+    values: number[];
     select: boolean;
     tier: number;
     heroTree?: string;
-    runFunc: (state: any, spellDB: SpellDB, points: number) => void;
+    runFunc: (state: any, spellDB: SpellDB, talentData: TalentTemplate,points: number) => void;
 }
 
 interface TalentTree {

@@ -4,3 +4,4 @@
     
     db[spellName] = db[spellName] || {};
 }*/
+
