@@ -1,4 +1,5 @@
 
+import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTime } from "General/Modules/Player/ClassDefaults/Generic/TalentBase"
 
 const classTalents: TalentTree = {
     /* Increases all Fire and Frost damage you deal by X%. */
@@ -79,7 +80,8 @@ const classTalents: TalentTree = {
 const specTalents: TalentTree = {
     /* Increases the healing done by $?a455630[Surging Totem by X%.][Healing Rain by X% and reduces its cast time by ${Y/-1000}.1 sec.] */
     "Soothing Rain": {id: 1252874, values: [10.0, -500.0],  points: 0, maxPoints: 1, icon: "spell_shadow_soulleech_2", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Healing Rain"], talentValues[0] / 100)
+        modCastTime(spellDB["Healing Rain"], talentValues[1] / 1000)
     }},
 
     /* Deal ${$378597s1*X} Nature damage every $378463t1 sec to up to $378597s2 enemies inside of your Healing Rain. */
@@ -256,17 +258,17 @@ const specTalents: TalentTree = {
     }},
 
     /* Riptide has a X% chance to upgrade your next Healing Stream Totem to Stormstream Totem which heals for Y% more, heals Z additional $Lally:allies; at $s4% effectiveness, and heals $s5 injured allies for $1268684s1 healing when used. */
-    "Stormstream Totem1": {id: 1267016,  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem1": {id: 1267016, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
     /* Healing Stream and Stormstream Totem healing increased by X%. */
-    "Stormstream Totem2": {id: 1267093,  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem2": {id: 1267093,  values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
     /* Casting $?s443454[Ancestral][Nature's] Swiftness grants a use of Stormstream Totem and Stormstream Totem no longer consumes a charge of Healing Stream Totem when used. */
-    "Stormstream Totem3": {id: 1267120,  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem3": {id: 1267120, values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 }
