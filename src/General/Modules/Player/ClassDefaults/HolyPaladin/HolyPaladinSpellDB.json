@@ -1,0 +1,239 @@
+{
+    "Holy Shock": [
+        {
+            "displayInfo": {
+                "id": 20473,
+                "icon": "spell_holy_searinglight",
+                "spellName": "Holy Shock"
+            },
+            "castTime": 0.0,
+            "cost": 2.8,
+            "cooldownData": {
+                "cooldown": 6.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            }
+        }
+    ],
+    "Light of Dawn": [
+        {
+            "displayInfo": {
+                "id": 85222,
+                "icon": "spell_paladin_lightofdawn",
+                "spellName": "Light of Dawn"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "coeff": 2.7821,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Aura Mastery": [
+        {
+            "displayInfo": {
+                "id": 31821,
+                "icon": "spell_holy_auramastery",
+                "spellName": "Aura Mastery"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Eternal Flame": [
+        {
+            "displayInfo": {
+                "id": 156322,
+                "icon": "inv_torch_thrown",
+                "spellName": "Eternal Flame"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "coeff": 0.1368,
+            "aura": 1.49,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 16.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 3.78,
+            "aura": 3.4,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Hammer of Wrath": [
+        {
+            "displayInfo": {
+                "id": 24275,
+                "icon": "inv12_ability_paladin_hammerofwrath",
+                "spellName": "Hammer of Wrath"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "cooldownData": {
+                "cooldown": 7.5,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.0,
+            "aura": 1.44,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.0,
+            "aura": 1.44,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Consecration": [
+        {
+            "displayInfo": {
+                "id": 26573,
+                "icon": "spell_holy_innerfire",
+                "spellName": "Consecration"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 0.0,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Judgment": [
+        {
+            "displayInfo": {
+                "id": 20271,
+                "icon": "spell_holy_righteousfury",
+                "spellName": "Judgment"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "cooldownData": {
+                "cooldown": 11.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.6716,
+            "aura": 2.4,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.5037,
+            "aura": 2.4,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Crusader Strike": [
+        {
+            "displayInfo": {
+                "id": 35395,
+                "icon": "spell_holy_crusaderstrike",
+                "spellName": "Crusader Strike"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "cooldownData": {
+                "cooldown": 6.0,
+                "hasted": false,
+                "charges": 2,
+                "maxCharges": 2
+            },
+            "coeff": 0.0,
+            "aura": 2.124,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Word of Glory": [
+        {
+            "displayInfo": {
+                "id": 85673,
+                "icon": "inv_helmet_96",
+                "spellName": "Word of Glory"
+            },
+            "castTime": 0.0,
+            "cost": 0.6,
+            "coeff": 4.158,
+            "aura": 2.8600000000000003,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ]
+}

@@ -337,17 +337,17 @@ const specTalents: TalentTree = {
     }},
 
     /* While in combat, apply a Beacon of the Savior to the lowest health ally within X yds that causes your direct healing on others to also heal that ally for Y% of the amount healed.    Beacon of the Savior transfers to the lowest health ally within X yds if it heals a target past maximum health or if an ally drops below $1270083s4% health. */
-    "Beacon of the Savior1": {id: 1244878, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Beacon of the Savior1": {id: 1244878, values: [30.0, 10.0, 0.0, 0.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Beacon of the Savior transfers an additional X% of the amount healed and allies with Beacon of the Savior receive Y% more healing from you. */
-    "Beacon of the Savior2": {id: 1245367,  values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Beacon of the Savior2": {id: 1245367,  values: [10.0, 10.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Every $t1 sec or when Beacon of the Savior transfers to a new injured target, they are granted an absorb shield that prevents the next $1245369s1 damage and reduces damage taken by $1245369s2% for $1245369d. */
-    "Beacon of the Savior3": {id: 1245368,  values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Beacon of the Savior3": {id: 1245368,  values: [0.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_paladin_beaconofthesavior", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 }
