@@ -58,6 +58,12 @@ function getPlayerRace(lines: string[]) {
   return playerRace;
 }
 
+
+// Item levels are way too complicated to not have a specific function for now.
+export function getItemLevel(line: string) {
+
+}
+
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
                             closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, 
                             allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
