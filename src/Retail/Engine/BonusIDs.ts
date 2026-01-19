@@ -16,6 +16,21 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 4,
     "tag": "Pristine"
   },
+  "3": {
+    "id": 3,
+    "itemLevel": {
+      "amount": 30,
+      "priority": 0,
+      "squishEra": 1
+    },
+    "levelOffset": {
+      "amount": 15,
+      "squishEra": 1
+    },
+    "levelOffsetSecondary": {
+      "amount": 10
+    }
+  },
   "15": {
     "id": 15,
     "quality": 4,
@@ -7449,6 +7464,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "stats": "100% Vers [0.7012]",
     "name": "of the Adaptable"
   },
+  "497": {
+    "id": 497,
+    "itemLevel": {
+      "amount": 25,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
   "498": {
     "id": 498,
     "tag": "Cooking Ingredient"
@@ -7609,6 +7632,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 524,
     "tag": "Heroic"
   },
+  "525": {
+    "id": 525,
+    "serverside": true
+  },
   "526": {
     "id": 526,
     "level": 1,
@@ -7618,6 +7645,70 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 527,
     "level": 2,
     "tag": "Stage 3 of 6"
+  },
+  "529": {
+    "id": 529,
+    "serverside": true
+  },
+  "530": {
+    "id": 530,
+    "serverside": true
+  },
+  "531": {
+    "id": 531,
+    "serverside": true
+  },
+  "532": {
+    "id": 532,
+    "serverside": true
+  },
+  "533": {
+    "id": 533,
+    "serverside": true
+  },
+  "534": {
+    "id": 534,
+    "serverside": true
+  },
+  "535": {
+    "id": 535,
+    "serverside": true
+  },
+  "536": {
+    "id": 536,
+    "serverside": true
+  },
+  "537": {
+    "id": 537,
+    "serverside": true
+  },
+  "538": {
+    "id": 538,
+    "serverside": true
+  },
+  "539": {
+    "id": 539,
+    "serverside": true
+  },
+  "540": {
+    "id": 540,
+    "serverside": true
+  },
+  "541": {
+    "id": 541,
+    "serverside": true
+  },
+  "542": {
+    "id": 542,
+    "serverside": true
+  },
+  "543": {
+    "id": 543,
+    "serverside": true
+  },
+  "544": {
+    "id": 544,
+    "serverside": true
   },
   "545": {
     "id": 545,
@@ -7633,6 +7724,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 547,
     "level": 1,
     "tag": "Warforged"
+  },
+  "548": {
+    "id": 548,
+    "serverside": true
+  },
+  "549": {
+    "id": 549,
+    "serverside": true
   },
   "550": {
     "id": 550,
@@ -7655,6 +7754,30 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Int [0.5259]"
+  },
+  "552": {
+    "id": 552,
+    "serverside": true
+  },
+  "553": {
+    "id": 553,
+    "serverside": true
+  },
+  "554": {
+    "id": 554,
+    "serverside": true
+  },
+  "555": {
+    "id": 555,
+    "serverside": true
+  },
+  "556": {
+    "id": 556,
+    "serverside": true
+  },
+  "557": {
+    "id": 557,
+    "serverside": true
   },
   "558": {
     "id": 558,
@@ -7722,6 +7845,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 572,
     "socket": 1
   },
+  "573": {
+    "id": 573,
+    "serverside": true
+  },
   "575": {
     "id": 575,
     "quality": 4,
@@ -7737,9 +7864,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 3,
     "level": 2
   },
+  "579": {
+    "id": 579,
+    "serverside": true
+  },
   "580": {
     "id": 580,
-    "name": "Elite"
+    "name": "Elite",
+    "serverside": true
   },
   "581": {
     "id": 581,
@@ -7747,12 +7879,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "582": {
     "id": 582,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "583": {
     "id": 583,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "584": {
@@ -7831,6 +7963,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Obliterum: 0/10",
     "quality": 3
   },
+  "600": {
+    "id": 600,
+    "serverside": true
+  },
+  "601": {
+    "id": 601,
+    "serverside": true
+  },
   "602": {
     "id": 602,
     "tag": "Timewalker",
@@ -7900,6 +8040,22 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 609,
     "level": 0
   },
+  "611": {
+    "id": 611,
+    "serverside": true
+  },
+  "612": {
+    "id": 612,
+    "serverside": true
+  },
+  "613": {
+    "id": 613,
+    "serverside": true
+  },
+  "614": {
+    "id": 614,
+    "serverside": true
+  },
   "615": {
     "id": 615,
     "ilevel": "5 @plvl 1 - 50 @plvl 50",
@@ -7927,6 +8083,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 6,
     "tag": "Stage 6 of 6",
     "quality": 4
+  },
+  "621": {
+    "id": 621,
+    "serverside": true
   },
   "622": {
     "id": 622,
@@ -8013,6 +8173,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Mythic",
     "quality": 4
   },
+  "643": {
+    "id": 643,
+    "serverside": true
+  },
   "644": {
     "id": 644,
     "level": 4,
@@ -8029,6 +8193,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 6,
     "tag": "Warforged"
   },
+  "647": {
+    "id": 647,
+    "serverside": true
+  },
   "648": {
     "id": 648,
     "level": 5,
@@ -8037,15 +8205,21 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "649": {
     "id": 649,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "650": {
     "id": 650,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 53,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "651": {
     "id": 651,
@@ -8177,11 +8351,19 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 682,
     "level": 24
   },
+  "689": {
+    "id": 689,
+    "serverside": true
+  },
   "692": {
     "id": 692,
     "ilevel": "5 @plvl 1 - 50 @plvl 50",
     "curveId": 1617,
     "tag": "Timewarped"
+  },
+  "693": {
+    "id": 693,
+    "serverside": true
   },
   "694": {
     "id": 694,
@@ -8337,7 +8519,8 @@ export const bonus_IDs: {[key: string]: any} = {
   "768": {
     "id": 768,
     "ilevel": "36 @plvl 32 - 50 @plvl 50",
-    "curveId": 1688
+    "curveId": 1688,
+    "serverside": true
   },
   "769": {
     "id": 769,
@@ -10323,20 +10506,31 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "1723": {
     "id": 1723,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 1746
+    "dropLevelCurve": {
+      "curveId": 98296,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "1724": {
     "id": 1724,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 1748,
-    "quality": 3
+    "quality": 3,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "1725": {
     "id": 1725,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "1726": {
     "id": 1726,
@@ -11241,11 +11435,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "1798": {
     "id": 1798,
+    "serverside": true,
     "tag": "Heroic",
     "previewlevel": 705
   },
   "1799": {
     "id": 1799,
+    "serverside": true,
     "tag": "Mythic",
     "previewlevel": 720
   },
@@ -11255,6 +11451,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "1801": {
     "id": 1801,
+    "serverside": true,
     "previewlevel": 690
   },
   "1805": {
@@ -11283,6 +11480,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 140,
     "quality": 3
   },
+  "1811": {
+    "id": 1811,
+    "serverside": true
+  },
   "1812": {
     "id": 1812,
     "ilevel": "44 @plvl 39 - 49 @plvl 49",
@@ -11292,8 +11493,17 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 1813,
     "quality": 4
   },
+  "1814": {
+    "id": 1814,
+    "serverside": true
+  },
+  "1815": {
+    "id": 1815,
+    "serverside": true
+  },
   "1816": {
     "id": 1816,
+    "serverside": true,
     "tag": "Stage 1 of 6"
   },
   "1817": {
@@ -13390,6 +13600,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 2,
     "quality": 4
   },
+  "3341": {
+    "id": 3341,
+    "serverside": true
+  },
   "3342": {
     "id": 3342,
     "ilevel": "44 @plvl 39 - 47 @plvl 47",
@@ -14035,6 +14249,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 4,
     "quality": 4
   },
+  "3385": {
+    "id": 3385,
+    "serverside": true
+  },
+  "3386": {
+    "id": 3386,
+    "serverside": true
+  },
   "3387": {
     "id": 3387,
     "ilevel": "5 @plvl 1 - 45 @plvl 45",
@@ -14051,6 +14273,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "5 @plvl 1 - 46 @plvl 46",
     "curveId": 2210,
     "tag": "Warforged"
+  },
+  "3390": {
+    "id": 3390,
+    "serverside": true
+  },
+  "3392": {
+    "id": 3392,
+    "serverside": true
   },
   "3393": {
     "id": 3393,
@@ -14254,6 +14484,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "previewlevel": 840,
     "quality": 4
   },
+  "3429": {
+    "id": 3429,
+    "serverside": true
+  },
   "3432": {
     "id": 3432,
     "quality": 4,
@@ -14265,17 +14499,20 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3438": {
     "id": 3438,
+    "serverside": true,
     "level": 8,
     "quality": 4
   },
   "3439": {
     "id": 3439,
+    "serverside": true,
     "tag": "Heroic",
     "level": 11,
     "quality": 4
   },
   "3440": {
     "id": 3440,
+    "serverside": true,
     "tag": "Mythic",
     "level": 14,
     "quality": 4
@@ -14350,7 +14587,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3455": {
     "id": 3455,
-    "level": 2
+    "serverside": true
   },
   "3457": {
     "id": 3457,
@@ -14359,8 +14596,15 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3458": {
     "id": 3458,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968
+    "itemLevel": {
+      "amount": 56,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "3459": {
+    "id": 3459,
+    "serverside": true
   },
   "3460": {
     "id": 3460,
@@ -14391,6 +14635,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 3465,
     "previewlevel": 885,
     "quality": 4
+  },
+  "3466": {
+    "id": 3466,
+    "serverside": true
   },
   "3467": {
     "id": 3467,
@@ -14702,6 +14950,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 3522,
     "socket": 1
   },
+  "3524": {
+    "id": 3524,
+    "serverside": true
+  },
   "3526": {
     "id": 3526,
     "level": 16,
@@ -14717,8 +14969,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3530": {
     "id": 3530,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "3531": {
     "id": 3531,
@@ -14749,6 +15004,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "tag": "Mythic 15",
     "previewlevel": 910,
     "quality": 4
+  },
+  "3541": {
+    "id": 3541,
+    "serverside": true
+  },
+  "3542": {
+    "id": 3542,
+    "serverside": true
+  },
+  "3543": {
+    "id": 3543,
+    "serverside": true
   },
   "3561": {
     "id": 3561,
@@ -14799,8 +15066,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3570": {
     "id": 3570,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "3571": {
     "id": 3571,
@@ -14908,7 +15178,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3592": {
     "id": 3592,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "3593": {
@@ -14983,6 +15253,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 10,
     "tag": "Primal Obliterum: 10/10"
   },
+  "3609": {
+    "id": 3609,
+    "serverside": true
+  },
   "3610": {
     "id": 3610,
     "previewlevel": 870,
@@ -15012,17 +15286,17 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3615": {
     "id": 3615,
-    "ilevel": "2 @plvl 1 - 343 @plvl 343",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 959
   },
   "3616": {
     "id": 3616,
-    "ilevel": "4 @plvl 1 - 345 @plvl 345",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 961
   },
   "3617": {
     "id": 3617,
-    "ilevel": "3 @plvl 1 - 344 @plvl 344",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 960
   },
   "3618": {
@@ -15115,8 +15389,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3630": {
     "id": 3630,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "3631": {
     "id": 3631,
@@ -15847,11 +16124,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 3776,
     "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
-  },
-  "3777": {
-    "id": 3777,
-    "ilevel": "42 @plvl 0 - 42 @plvl 42",
-    "curveId": 17258
   },
   "3778": {
     "id": 3778,
@@ -16868,6 +17140,66 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 3982,
     "ilevel": "50 @plvl 1 - 50 @plvl 50",
     "curveId": 5393
+  },
+  "3983": {
+    "id": 3983,
+    "serverside": true
+  },
+  "3984": {
+    "id": 3984,
+    "serverside": true
+  },
+  "3985": {
+    "id": 3985,
+    "serverside": true
+  },
+  "3986": {
+    "id": 3986,
+    "serverside": true
+  },
+  "3987": {
+    "id": 3987,
+    "serverside": true
+  },
+  "3988": {
+    "id": 3988,
+    "serverside": true
+  },
+  "3989": {
+    "id": 3989,
+    "serverside": true
+  },
+  "3990": {
+    "id": 3990,
+    "serverside": true
+  },
+  "3991": {
+    "id": 3991,
+    "serverside": true
+  },
+  "3992": {
+    "id": 3992,
+    "serverside": true
+  },
+  "3993": {
+    "id": 3993,
+    "serverside": true
+  },
+  "3994": {
+    "id": 3994,
+    "serverside": true
+  },
+  "3995": {
+    "id": 3995,
+    "serverside": true
+  },
+  "3996": {
+    "id": 3996,
+    "serverside": true
+  },
+  "3997": {
+    "id": 3997,
+    "serverside": true
   },
   "3998": {
     "id": 3998,
@@ -17954,16 +18286,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
-  "4212": {
-    "id": 4212,
-    "ilevel": "46 @plvl 0 - 46 @plvl 46",
-    "curveId": 17256
-  },
   "4213": {
     "id": 4213,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "4214": {
     "id": 4214,
@@ -18843,6 +19173,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 5449
   },
+  "4777": {
+    "id": 4777,
+    "serverside": true
+  },
   "4778": {
     "id": 4778,
     "tag": "Heroic"
@@ -18853,7 +19187,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4780": {
     "id": 4780,
-    "tag": "Mythic 2"
+    "tag": "Mythic 2",
+    "serverside": true
   },
   "4781": {
     "id": 4781,
@@ -18902,24 +19237,16 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4790": {
     "id": 4790,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
-  },
-  "4791": {
-    "id": 4791,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "4792": {
-    "id": 4792,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "4793": {
     "id": 4793,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "4794": {
@@ -18943,6 +19270,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 4797,
     "level": -30
   },
+  "4798": {
+    "id": 4798,
+    "serverside": true
+  },
   "4799": {
     "id": 4799,
     "tag": "Heroic"
@@ -18958,6 +19289,10 @@ export const bonus_IDs: {[key: string]: any} = {
   "4802": {
     "id": 4802,
     "socket": 1
+  },
+  "4803": {
+    "id": 4803,
+    "serverside": true
   },
   "4804": {
     "id": 4804,
@@ -18994,12 +19329,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
     "curveId": 6695
   },
-  "4811": {
-    "id": 4811,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
   "4812": {
     "id": 4812,
     "ilevel": "10 @plvl 1 - 371 @plvl 371",
@@ -19017,17 +19346,15 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 6240,
     "quality": 4
   },
-  "4815": {
-    "id": 4815,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
   "4816": {
     "id": 4816,
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244,
     "quality": 4
+  },
+  "4817": {
+    "id": 4817,
+    "serverside": true
   },
   "4818": {
     "id": 4818,
@@ -19047,6 +19374,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "50 @plvl 44 - 57 @plvl 57",
     "curveId": 6226
   },
+  "4822": {
+    "id": 4822,
+    "serverside": true
+  },
   "4823": {
     "id": 4823,
     "tag": "Heroic"
@@ -19064,6 +19395,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "level": 8,
     "quality": 3
   },
+  "4927": {
+    "id": 4927,
+    "serverside": true
+  },
   "4928": {
     "id": 4928,
     "level": 10,
@@ -19080,6 +19415,22 @@ export const bonus_IDs: {[key: string]: any} = {
   "4931": {
     "id": 4931,
     "level": 0
+  },
+  "4932": {
+    "id": 4932,
+    "serverside": true
+  },
+  "4933": {
+    "id": 4933,
+    "serverside": true
+  },
+  "4934": {
+    "id": 4934,
+    "serverside": true
+  },
+  "4935": {
+    "id": 4935,
+    "serverside": true
   },
   "4936": {
     "id": 4936,
@@ -19156,6 +19507,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4982": {
     "id": 4982,
+    "serverside": true,
     "quality": 4
   },
   "4983": {
@@ -19168,26 +19520,31 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4985": {
     "id": 4985,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "4986": {
     "id": 4986,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "4987": {
     "id": 4987,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "4988": {
     "id": 4988,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "4989": {
     "id": 4989,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
@@ -19203,95 +19560,114 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4992": {
     "id": 4992,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 144
   },
   "4993": {
     "id": 4993,
+    "serverside": true,
     "quality": 4
   },
   "4994": {
     "id": 4994,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 144
   },
   "4995": {
     "id": 4995,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "4996": {
     "id": 4996,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 144
   },
   "4997": {
     "id": 4997,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "4998": {
     "id": 4998,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 144
   },
   "4999": {
     "id": 4999,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5000": {
     "id": 5000,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 144
   },
   "5001": {
     "id": 5001,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5002": {
     "id": 5002,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "serverside": true
   },
   "5003": {
     "id": 5003,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 144
   },
   "5004": {
     "id": 5004,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5005": {
     "id": 5005,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "serverside": true
   },
   "5006": {
     "id": 5006,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "serverside": true
   },
   "5007": {
     "id": 5007,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "serverside": true
   },
   "5008": {
     "id": 5008,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "serverside": true
   },
   "5009": {
     "id": 5009,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "serverside": true
   },
   "5010": {
     "id": 5010,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "serverside": true
   },
   "5011": {
     "id": 5011,
@@ -19536,233 +19912,275 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5065": {
     "id": 5065,
+    "serverside": true,
     "quality": 4
   },
   "5066": {
     "id": 5066,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 169
   },
   "5067": {
     "id": 5067,
+    "serverside": true,
     "quality": 4
   },
   "5068": {
     "id": 5068,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5069": {
     "id": 5069,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 169
   },
   "5070": {
     "id": 5070,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5071": {
     "id": 5071,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5072": {
     "id": 5072,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 172
   },
   "5073": {
     "id": 5073,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5074": {
     "id": 5074,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5075": {
     "id": 5075,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 172
   },
   "5076": {
     "id": 5076,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5077": {
     "id": 5077,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5078": {
     "id": 5078,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 175
   },
   "5079": {
     "id": 5079,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5080": {
     "id": 5080,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5081": {
     "id": 5081,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 175
   },
   "5082": {
     "id": 5082,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5083": {
     "id": 5083,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 170
   },
   "5084": {
     "id": 5084,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 145
   },
   "5085": {
     "id": 5085,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 145
   },
   "5086": {
     "id": 5086,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 145
   },
   "5087": {
     "id": 5087,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 145
   },
   "5088": {
     "id": 5088,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 145
   },
   "5089": {
     "id": 5089,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 145
   },
   "5090": {
     "id": 5090,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 176
   },
   "5091": {
     "id": 5091,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 176
   },
   "5092": {
     "id": 5092,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 171
   },
   "5093": {
     "id": 5093,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 170
   },
   "5094": {
     "id": 5094,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 171
   },
   "5095": {
     "id": 5095,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 168
   },
   "5096": {
     "id": 5096,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 143
   },
   "5097": {
     "id": 5097,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 143
   },
   "5098": {
     "id": 5098,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 143
   },
   "5099": {
     "id": 5099,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 143
   },
   "5100": {
     "id": 5100,
+    "serverside": true,
     "quality": 4,
     "azerite_tier_unlock_id": 143
   },
   "5101": {
     "id": 5101,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 143
   },
   "5102": {
     "id": 5102,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 174
   },
   "5103": {
     "id": 5103,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 174
   },
   "5104": {
     "id": 5104,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 173
   },
   "5105": {
     "id": 5105,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 168
   },
   "5106": {
     "id": 5106,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 173
@@ -19842,6 +20260,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5123,
     "quality": 3
   },
+  "5124": {
+    "id": 5124,
+    "serverside": true
+  },
+  "5128": {
+    "id": 5128,
+    "serverside": true
+  },
+  "5129": {
+    "id": 5129,
+    "serverside": true
+  },
   "5130": {
     "id": 5130,
     "ilevel": "5 @plvl 1 - 60 @plvl 60",
@@ -19901,91 +20331,117 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 4,
     "azerite_tier_unlock_id": 184
   },
+  "5141": {
+    "id": 5141,
+    "serverside": true
+  },
+  "5142": {
+    "id": 5142,
+    "serverside": true
+  },
   "5173": {
     "id": 5173,
+    "serverside": true,
     "quality": 4
   },
   "5178": {
     "id": 5178,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5179": {
     "id": 5179,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5183": {
     "id": 5183,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5184": {
     "id": 5184,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5188": {
     "id": 5188,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5189": {
     "id": 5189,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5193": {
     "id": 5193,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5194": {
     "id": 5194,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5198": {
     "id": 5198,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5199": {
     "id": 5199,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5203": {
     "id": 5203,
+    "serverside": true,
     "quality": 4
   },
   "5208": {
     "id": 5208,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5213": {
     "id": 5213,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5218": {
     "id": 5218,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5223": {
     "id": 5223,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5228": {
     "id": 5228,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5243": {
     "id": 5243,
+    "serverside": true,
     "quality": 4
   },
   "5246": {
@@ -20028,6 +20484,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5257,
     "quality": 4
   },
+  "5260": {
+    "id": 5260,
+    "serverside": true
+  },
   "5261": {
     "id": 5261,
     "ilevel": "40 @plvl 0 - 40 @plvl 40",
@@ -20041,233 +20501,281 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5263": {
     "id": 5263,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 145
   },
   "5264": {
     "id": 5264,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 144
   },
   "5265": {
     "id": 5265,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 143
   },
   "5266": {
     "id": 5266,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 170
   },
   "5267": {
     "id": 5267,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 169
   },
   "5268": {
     "id": 5268,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 168
   },
   "5269": {
     "id": 5269,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 170
   },
   "5270": {
     "id": 5270,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 169
   },
   "5271": {
     "id": 5271,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 168
   },
   "5272": {
     "id": 5272,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 171
   },
   "5273": {
     "id": 5273,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 172
   },
   "5274": {
     "id": 5274,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 173
   },
   "5275": {
     "id": 5275,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 171
   },
   "5276": {
     "id": 5276,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 172
   },
   "5277": {
     "id": 5277,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 173
   },
   "5278": {
     "id": 5278,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5279": {
     "id": 5279,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5280": {
     "id": 5280,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5281": {
     "id": 5281,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5282": {
     "id": 5282,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5283": {
     "id": 5283,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5284": {
     "id": 5284,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 170
   },
   "5285": {
     "id": 5285,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 169
   },
   "5286": {
     "id": 5286,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I",
     "azerite_tier_unlock_id": 168
   },
   "5287": {
     "id": 5287,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5288": {
     "id": 5288,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 171
   },
   "5289": {
     "id": 5289,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 172
   },
   "5290": {
     "id": 5290,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I",
     "azerite_tier_unlock_id": 173
   },
   "5291": {
     "id": 5291,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5292": {
     "id": 5292,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 171
   },
   "5293": {
     "id": 5293,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 172
   },
   "5294": {
     "id": 5294,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I",
     "azerite_tier_unlock_id": 173
   },
   "5295": {
     "id": 5295,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5296": {
     "id": 5296,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 176
   },
   "5297": {
     "id": 5297,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 175
   },
   "5298": {
     "id": 5298,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist",
     "azerite_tier_unlock_id": 174
   },
   "5299": {
     "id": 5299,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5300": {
     "id": 5300,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 176
   },
   "5301": {
     "id": 5301,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 175
   },
   "5302": {
     "id": 5302,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite",
     "azerite_tier_unlock_id": 174
+  },
+  "5303": {
+    "id": 5303,
+    "serverside": true
+  },
+  "5304": {
+    "id": 5304,
+    "serverside": true
   },
   "5306": {
     "id": 5306,
@@ -20539,30 +21047,36 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5366": {
     "id": 5366,
+    "serverside": true,
     "quality": 4
   },
   "5367": {
     "id": 5367,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5368": {
     "id": 5368,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5369": {
     "id": 5369,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5370": {
     "id": 5370,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5371": {
     "id": 5371,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
@@ -20571,6 +21085,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "5 @plvl 1 - 60 @plvl 60",
     "curveId": 8796,
     "tag": "Timewarped"
+  },
+  "5373": {
+    "id": 5373,
+    "serverside": true
+  },
+  "5374": {
+    "id": 5374,
+    "serverside": true
   },
   "5375": {
     "id": 5375,
@@ -20873,6 +21395,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5449": {
     "id": 5449,
+    "serverside": true,
     "quality": 4
   },
   "5450": {
@@ -20885,55 +21408,66 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5452": {
     "id": 5452,
+    "serverside": true,
     "quality": 4
   },
   "5453": {
     "id": 5453,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5454": {
     "id": 5454,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5455": {
     "id": 5455,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5456": {
     "id": 5456,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5457": {
     "id": 5457,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
   "5458": {
     "id": 5458,
+    "serverside": true,
     "quality": 4,
     "tag": "Combatant I"
   },
   "5459": {
     "id": 5459,
+    "serverside": true,
     "quality": 4,
     "tag": "Challenger I"
   },
   "5460": {
     "id": 5460,
+    "serverside": true,
     "quality": 4,
     "tag": "Rival I"
   },
   "5461": {
     "id": 5461,
+    "serverside": true,
     "quality": 4,
     "tag": "Duelist"
   },
   "5462": {
     "id": 5462,
+    "serverside": true,
     "quality": 4,
     "tag": "Elite"
   },
@@ -22506,7 +23040,8 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5729,
     "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086,
-    "quality": 4
+    "quality": 4,
+    "serverside": true
   },
   "5730": {
     "id": 5730,
@@ -22837,25 +23372,41 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Indestructible [0.3000]"
   },
+  "5804": {
+    "id": 5804,
+    "serverside": true
+  },
   "5805": {
     "id": 5805,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "5806": {
     "id": 5806,
-    "ilevel": "3 @plvl 1 - 344 @plvl 344",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 960
   },
   "5807": {
     "id": 5807,
-    "ilevel": "2 @plvl 1 - 343 @plvl 343",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 959
   },
   "5808": {
     "id": 5808,
-    "ilevel": "4 @plvl 1 - 345 @plvl 345",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 961
+  },
+  "5809": {
+    "id": 5809,
+    "serverside": true
+  },
+  "5810": {
+    "id": 5810,
+    "serverside": true
+  },
+  "5811": {
+    "id": 5811,
+    "serverside": true
   },
   "5814": {
     "id": 5814,
@@ -22865,6 +23416,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5817,
     "ilevel": "16 @plvl 1 - 189 @plvl 189",
     "curveId": 1690
+  },
+  "5818": {
+    "id": 5818,
+    "serverside": true
   },
   "5821": {
     "id": 5821,
@@ -24635,7 +25190,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Rcor [0.0012]",
-    "level": 2,
     "effect": {
       "id": 116854,
       "index": 0,
@@ -24657,7 +25211,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Rcor [0.0012]",
-    "level": 4,
     "effect": {
       "id": 116854,
       "index": 0,
@@ -24679,7 +25232,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Rcor [0.0020]",
-    "level": 6,
     "effect": {
       "id": 116854,
       "index": 0,
@@ -24692,7 +25244,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6276": {
     "id": 6276,
-    "level": 8,
     "tag": "Rank 5",
     "rawStats": [
       {
@@ -24715,7 +25266,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6277": {
     "id": 6277,
     "tag": "Rank 6",
-    "level": 10,
     "rawStats": [
       {
         "stat": 23,
@@ -24737,7 +25287,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6278": {
     "id": 6278,
     "tag": "Rank 7",
-    "level": 12,
     "rawStats": [
       {
         "stat": 23,
@@ -24759,7 +25308,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6279": {
     "id": 6279,
     "tag": "Rank 8",
-    "level": 14,
     "rawStats": [
       {
         "stat": 23,
@@ -24781,7 +25329,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6280": {
     "id": 6280,
     "tag": "Rank 9",
-    "level": 16,
     "rawStats": [
       {
         "stat": 23,
@@ -24802,7 +25349,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6281": {
     "id": 6281,
-    "level": 18,
     "tag": "Rank 10",
     "rawStats": [
       {
@@ -24825,7 +25371,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6282": {
     "id": 6282,
     "tag": "Rank 11",
-    "level": 20,
     "rawStats": [
       {
         "stat": 23,
@@ -24847,7 +25392,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6283": {
     "id": 6283,
     "tag": "Rank 12",
-    "level": 22,
     "rawStats": [
       {
         "stat": 23,
@@ -24869,7 +25413,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6284": {
     "id": 6284,
     "tag": "Rank 13",
-    "level": 24,
     "rawStats": [
       {
         "stat": 23,
@@ -24891,7 +25434,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "6285": {
     "id": 6285,
     "tag": "Rank 14",
-    "level": 26,
     "rawStats": [
       {
         "stat": 23,
@@ -24912,7 +25454,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6286": {
     "id": 6286,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -24932,6 +25473,58 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "6288": {
+    "id": 6288,
+    "serverside": true
+  },
+  "6289": {
+    "id": 6289,
+    "serverside": true
+  },
+  "6290": {
+    "id": 6290,
+    "serverside": true
+  },
+  "6291": {
+    "id": 6291,
+    "serverside": true
+  },
+  "6292": {
+    "id": 6292,
+    "serverside": true
+  },
+  "6293": {
+    "id": 6293,
+    "serverside": true
+  },
+  "6294": {
+    "id": 6294,
+    "serverside": true
+  },
+  "6295": {
+    "id": 6295,
+    "serverside": true
+  },
+  "6296": {
+    "id": 6296,
+    "serverside": true
+  },
+  "6297": {
+    "id": 6297,
+    "serverside": true
+  },
+  "6298": {
+    "id": 6298,
+    "serverside": true
+  },
+  "6299": {
+    "id": 6299,
+    "serverside": true
+  },
+  "6300": {
+    "id": 6300,
+    "serverside": true
+  },
   "6301": {
     "id": 6301,
     "tag": "Pearled"
@@ -24939,6 +25532,18 @@ export const bonus_IDs: {[key: string]: any} = {
   "6304": {
     "id": 6304,
     "tag": "Pearled"
+  },
+  "6305": {
+    "id": 6305,
+    "serverside": true
+  },
+  "6306": {
+    "id": 6306,
+    "serverside": true
+  },
+  "6307": {
+    "id": 6307,
+    "serverside": true
   },
   "6310": {
     "id": 6310,
@@ -24999,6 +25604,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 4,
     "tag": "Titanforged"
   },
+  "6321": {
+    "id": 6321,
+    "serverside": true
+  },
   "6324": {
     "id": 6324,
     "quality": 4
@@ -25047,6 +25656,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6344,
     "quality": 4,
     "tag": "Elite"
+  },
+  "6346": {
+    "id": 6346,
+    "serverside": true
+  },
+  "6348": {
+    "id": 6348,
+    "serverside": true
+  },
+  "6349": {
+    "id": 6349,
+    "serverside": true
   },
   "6350": {
     "id": 6350,
@@ -25105,6 +25726,10 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Haste [0.0100]"
   },
+  "6359": {
+    "id": 6359,
+    "serverside": true
+  },
   "6360": {
     "id": 6360,
     "quality": 4
@@ -25113,6 +25738,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6361,
     "quality": 4,
     "tag": "Combatant I"
+  },
+  "6362": {
+    "id": 6362,
+    "serverside": true
   },
   "6363": {
     "id": 6363,
@@ -25215,9 +25844,21 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6385,
     "quality": 3
   },
+  "6386": {
+    "id": 6386,
+    "serverside": true
+  },
   "6387": {
     "id": 6387,
     "quality": 4
+  },
+  "6388": {
+    "id": 6388,
+    "serverside": true
+  },
+  "6389": {
+    "id": 6389,
+    "serverside": true
   },
   "6390": {
     "id": 6390,
@@ -25581,6 +26222,18 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Indestructible [0.3000]"
   },
+  "6412": {
+    "id": 6412,
+    "serverside": true
+  },
+  "6413": {
+    "id": 6413,
+    "serverside": true
+  },
+  "6414": {
+    "id": 6414,
+    "serverside": true
+  },
   "6415": {
     "id": 6415,
     "tag": "25 Corruption"
@@ -25682,7 +26335,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Poison",
         "icon": "spell_nature_corrosivebreath"
       }
-    }
+    },
+    "serverside": true
   },
   "6435": {
     "id": 6435,
@@ -25863,7 +26517,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0005]"
+    "stats": "100% Cor [0.0005]",
+    "serverside": true
   },
   "6451": {
     "id": 6451,
@@ -25874,7 +26529,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0006]"
+    "stats": "100% Cor [0.0006]",
+    "serverside": true
   },
   "6452": {
     "id": 6452,
@@ -25885,7 +26541,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0007]"
+    "stats": "100% Cor [0.0007]",
+    "serverside": true
   },
   "6453": {
     "id": 6453,
@@ -25896,7 +26553,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0008]"
+    "stats": "100% Cor [0.0008]",
+    "serverside": true
   },
   "6454": {
     "id": 6454,
@@ -25907,7 +26565,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0009]"
+    "stats": "100% Cor [0.0009]",
+    "serverside": true
   },
   "6455": {
     "id": 6455,
@@ -25918,7 +26577,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0010]"
+    "stats": "100% Cor [0.0010]",
+    "serverside": true
   },
   "6456": {
     "id": 6456,
@@ -25929,7 +26589,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0011]"
+    "stats": "100% Cor [0.0011]",
+    "serverside": true
   },
   "6457": {
     "id": 6457,
@@ -25940,7 +26601,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0012]"
+    "stats": "100% Cor [0.0012]",
+    "serverside": true
   },
   "6458": {
     "id": 6458,
@@ -25951,7 +26613,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0013]"
+    "stats": "100% Cor [0.0013]",
+    "serverside": true
   },
   "6459": {
     "id": 6459,
@@ -25962,7 +26625,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0014]"
+    "stats": "100% Cor [0.0014]",
+    "serverside": true
   },
   "6460": {
     "id": 6460,
@@ -25973,7 +26637,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6461": {
     "id": 6461,
@@ -25984,7 +26649,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0016]"
+    "stats": "100% Cor [0.0016]",
+    "serverside": true
   },
   "6462": {
     "id": 6462,
@@ -25995,7 +26661,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6463": {
     "id": 6463,
@@ -26006,7 +26673,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0018]"
+    "stats": "100% Cor [0.0018]",
+    "serverside": true
   },
   "6464": {
     "id": 6464,
@@ -26017,7 +26685,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0019]"
+    "stats": "100% Cor [0.0019]",
+    "serverside": true
   },
   "6465": {
     "id": 6465,
@@ -26028,7 +26697,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6466": {
     "id": 6466,
@@ -26039,7 +26709,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0021]"
+    "stats": "100% Cor [0.0021]",
+    "serverside": true
   },
   "6467": {
     "id": 6467,
@@ -26050,7 +26721,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0022]"
+    "stats": "100% Cor [0.0022]",
+    "serverside": true
   },
   "6468": {
     "id": 6468,
@@ -26061,7 +26733,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0023]"
+    "stats": "100% Cor [0.0023]",
+    "serverside": true
   },
   "6469": {
     "id": 6469,
@@ -26072,7 +26745,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0024]"
+    "stats": "100% Cor [0.0024]",
+    "serverside": true
   },
   "6470": {
     "id": 6470,
@@ -26083,7 +26757,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6471": {
     "id": 6471,
@@ -26378,13 +27053,21 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6499": {
     "id": 6499,
-    "ilevel": "1 @plvl 1 - 332 @plvl 332",
-    "curveId": 16570
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6500": {
     "id": 6500,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 1,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6501": {
     "id": 6501,
@@ -26434,9 +27117,21 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6512,
     "azerite_tier_unlock_id": 275
   },
+  "6513": {
+    "id": 6513,
+    "serverside": true
+  },
   "6514": {
     "id": 6514,
     "socket": 1
+  },
+  "6515": {
+    "id": 6515,
+    "serverside": true
+  },
+  "6516": {
+    "id": 6516,
+    "serverside": true
   },
   "6517": {
     "id": 6517,
@@ -26488,7 +27183,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6528": {
     "id": 6528,
-    "tag": "Mythic 11"
+    "tag": "Mythic 11",
+    "serverside": true
   },
   "6529": {
     "id": 6529,
@@ -26496,7 +27192,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6530": {
     "id": 6530,
-    "tag": "Mythic 12"
+    "tag": "Mythic 12",
+    "serverside": true
   },
   "6531": {
     "id": 6531,
@@ -26504,7 +27201,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6532": {
     "id": 6532,
-    "tag": "Mythic 13"
+    "tag": "Mythic 13",
+    "serverside": true
   },
   "6533": {
     "id": 6533,
@@ -26512,7 +27210,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6534": {
     "id": 6534,
-    "tag": "Mythic 14"
+    "tag": "Mythic 14",
+    "serverside": true
   },
   "6535": {
     "id": 6535,
@@ -26520,7 +27219,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6536": {
     "id": 6536,
-    "tag": "Mythic 15"
+    "tag": "Mythic 15",
+    "serverside": true
   },
   "6537": {
     "id": 6537,
@@ -26540,7 +27240,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0025]"
+    "stats": "100% Cor [0.0025]",
+    "serverside": true
   },
   "6538": {
     "id": 6538,
@@ -26560,7 +27261,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0050]"
+    "stats": "100% Cor [0.0050]",
+    "serverside": true
   },
   "6539": {
     "id": 6539,
@@ -26580,7 +27282,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0075]"
+    "stats": "100% Cor [0.0075]",
+    "serverside": true
   },
   "6540": {
     "id": 6540,
@@ -26600,7 +27303,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6541": {
     "id": 6541,
@@ -26620,7 +27324,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6542": {
     "id": 6542,
@@ -26640,7 +27345,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0066]"
+    "stats": "100% Cor [0.0066]",
+    "serverside": true
   },
   "6543": {
     "id": 6543,
@@ -26660,7 +27366,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0010]"
+    "stats": "100% Cor [0.0010]",
+    "serverside": true
   },
   "6544": {
     "id": 6544,
@@ -26680,7 +27387,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6545": {
     "id": 6545,
@@ -26700,7 +27408,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0066]"
+    "stats": "100% Cor [0.0066]",
+    "serverside": true
   },
   "6546": {
     "id": 6546,
@@ -26720,7 +27429,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6547": {
     "id": 6547,
@@ -26740,7 +27450,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0012]"
+    "stats": "100% Cor [0.0012]",
+    "serverside": true
   },
   "6548": {
     "id": 6548,
@@ -26760,7 +27471,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0030]"
+    "stats": "100% Cor [0.0030]",
+    "serverside": true
   },
   "6549": {
     "id": 6549,
@@ -26780,7 +27492,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0025]"
+    "stats": "100% Cor [0.0025]",
+    "serverside": true
   },
   "6550": {
     "id": 6550,
@@ -26800,7 +27513,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6551": {
     "id": 6551,
@@ -26820,7 +27534,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0060]"
+    "stats": "100% Cor [0.0060]",
+    "serverside": true
   },
   "6552": {
     "id": 6552,
@@ -26840,7 +27555,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6553": {
     "id": 6553,
@@ -26860,7 +27576,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0050]"
+    "stats": "100% Cor [0.0050]",
+    "serverside": true
   },
   "6554": {
     "id": 6554,
@@ -26880,7 +27597,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0075]"
+    "stats": "100% Cor [0.0075]",
+    "serverside": true
   },
   "6555": {
     "id": 6555,
@@ -26900,7 +27618,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6556": {
     "id": 6556,
@@ -26920,7 +27639,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6557": {
     "id": 6557,
@@ -26940,7 +27660,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6558": {
     "id": 6558,
@@ -26960,7 +27681,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6559": {
     "id": 6559,
@@ -26980,7 +27702,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6560": {
     "id": 6560,
@@ -27000,7 +27723,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6561": {
     "id": 6561,
@@ -27020,7 +27744,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6562": {
     "id": 6562,
@@ -27040,7 +27765,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6563": {
     "id": 6563,
@@ -27060,7 +27786,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6564": {
     "id": 6564,
@@ -27080,7 +27807,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6565": {
     "id": 6565,
@@ -27100,7 +27828,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6566": {
     "id": 6566,
@@ -27120,7 +27849,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6567": {
     "id": 6567,
@@ -27140,7 +27870,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0035]"
+    "stats": "100% Cor [0.0035]",
+    "serverside": true
   },
   "6568": {
     "id": 6568,
@@ -27160,7 +27891,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0025]"
+    "stats": "100% Cor [0.0025]",
+    "serverside": true
   },
   "6569": {
     "id": 6569,
@@ -27180,7 +27912,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0025]"
+    "stats": "100% Cor [0.0025]",
+    "serverside": true
   },
   "6570": {
     "id": 6570,
@@ -27200,7 +27933,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0020]"
+    "stats": "100% Cor [0.0020]",
+    "serverside": true
   },
   "6571": {
     "id": 6571,
@@ -27220,7 +27954,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0030]"
+    "stats": "100% Cor [0.0030]",
+    "serverside": true
   },
   "6572": {
     "id": 6572,
@@ -27240,7 +27975,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0050]"
+    "stats": "100% Cor [0.0050]",
+    "serverside": true
   },
   "6573": {
     "id": 6573,
@@ -27260,11 +27996,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0015]"
+    "stats": "100% Cor [0.0015]",
+    "serverside": true
   },
   "6577": {
     "id": 6577,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27284,9 +28020,12 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "6579": {
+    "id": 6579,
+    "serverside": true
+  },
   "6580": {
     "id": 6580,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27308,7 +28047,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6581": {
     "id": 6581,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27330,7 +28068,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6582": {
     "id": 6582,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27352,7 +28089,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6583": {
     "id": 6583,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27374,7 +28110,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6584": {
     "id": 6584,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27396,7 +28131,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6585": {
     "id": 6585,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27418,7 +28152,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6586": {
     "id": 6586,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27440,7 +28173,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6587": {
     "id": 6587,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27462,7 +28194,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6588": {
     "id": 6588,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27484,7 +28215,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6589": {
     "id": 6589,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27506,7 +28236,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6590": {
     "id": 6590,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27528,7 +28257,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6591": {
     "id": 6591,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27550,7 +28278,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6592": {
     "id": 6592,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27572,7 +28299,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6593": {
     "id": 6593,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27594,7 +28320,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6594": {
     "id": 6594,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27616,7 +28341,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6595": {
     "id": 6595,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27638,7 +28362,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6596": {
     "id": 6596,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27660,7 +28383,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6597": {
     "id": 6597,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27682,7 +28404,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6598": {
     "id": 6598,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27704,7 +28425,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6599": {
     "id": 6599,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27726,7 +28446,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6600": {
     "id": 6600,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27748,7 +28467,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6601": {
     "id": 6601,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27770,7 +28488,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6602": {
     "id": 6602,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27792,7 +28509,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6603": {
     "id": 6603,
-    "level": 30,
     "tag": "Rank 15",
     "rawStats": [
       {
@@ -27812,17 +28528,24 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "6604": {
+    "id": 6604,
+    "serverside": true
+  },
   "6605": {
     "id": 6605,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "serverside": true
   },
   "6606": {
     "id": 6606,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "serverside": true
   },
   "6607": {
     "id": 6607,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "serverside": true
   },
   "6608": {
     "id": 6608,
@@ -27837,7 +28560,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0017]"
+    "stats": "100% Cor [0.0017]",
+    "serverside": true
   },
   "6613": {
     "id": 6613,
@@ -27848,7 +28572,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0028]"
+    "stats": "100% Cor [0.0028]",
+    "serverside": true
   },
   "6614": {
     "id": 6614,
@@ -27859,7 +28584,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Cor"
       }
     ],
-    "stats": "100% Cor [0.0045]"
+    "stats": "100% Cor [0.0045]",
+    "serverside": true
   },
   "6616": {
     "id": 6616,
@@ -27961,6 +28687,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6643,
     "tag": "Elite"
   },
+  "6644": {
+    "id": 6644,
+    "serverside": true
+  },
+  "6645": {
+    "id": 6645,
+    "serverside": true
+  },
   "6646": {
     "id": 6646,
     "quality": 4
@@ -27989,6 +28723,10 @@ export const bonus_IDs: {[key: string]: any} = {
       40
     ]
   },
+  "6652": {
+    "id": 6652,
+    "serverside": true
+  },
   "6653": {
     "id": 6653,
     "effect": {
@@ -27998,58 +28736,56 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6654": {
     "id": 6654,
-    "ilevel": "5 @plvl 1 - 357 @plvl 357",
-    "curveId": 16520
-  },
-  "6655": {
-    "id": 6655,
-    "ilevel": "5 @plvl 1 - 357 @plvl 357",
-    "curveId": 16522
+    "dropLevelCurve": {
+      "curveId": 16520,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6656": {
     "id": 6656,
-    "ilevel": "1 @plvl 1 - 322 @plvl 322",
-    "curveId": 16525
-  },
-  "6657": {
-    "id": 6657,
-    "ilevel": "1 @plvl 1 - 322 @plvl 322",
-    "curveId": 16526
+    "quality": 0,
+    "dropLevelCurve": {
+      "curveId": 16520,
+      "offset": -6,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6658": {
     "id": 6658,
-    "ilevel": "10 @plvl 1 - 362 @plvl 362",
-    "curveId": 16527
-  },
-  "6659": {
-    "id": 6659,
-    "ilevel": "10 @plvl 1 - 362 @plvl 362",
-    "curveId": 16528
+    "quality": 3,
+    "dropLevelCurve": {
+      "curveId": 16520,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6660": {
     "id": 6660,
-    "ilevel": "15 @plvl 1 - 367 @plvl 367",
-    "curveId": 16529
-  },
-  "6661": {
-    "id": 6661,
-    "ilevel": "15 @plvl 1 - 367 @plvl 367",
-    "curveId": 16530
+    "quality": 4,
+    "dropLevelCurve": {
+      "curveId": 16520,
+      "offset": 6,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6662": {
     "id": 6662,
     "ilevel": "75 @plvl 1 - 75 @plvl 75",
     "curveId": 16559
   },
-  "6663": {
-    "id": 6663,
-    "ilevel": "1 @plvl 1 - 332 @plvl 332",
-    "curveId": 16569
-  },
   "6664": {
     "id": 6664,
-    "ilevel": "1 @plvl 1 - 332 @plvl 332",
-    "curveId": 16570
+    "dropLevelCurve": {
+      "curveId": 16520,
+      "offset": -3,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6665": {
     "id": 6665,
@@ -28167,13 +28903,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6682": {
     "id": 6682,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "6683": {
     "id": 6683,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 6,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 4
   },
   "6684": {
     "id": 6684,
@@ -28210,18 +28956,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 0
     }
   },
-  "6691": {
-    "id": 6691,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242
-  },
   "6694": {
     "id": 6694,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244
-  },
-  "6695": {
-    "id": 6695,
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244
   },
@@ -28229,18 +28965,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6696,
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244
-  },
-  "6697": {
-    "id": 6697,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "6700": {
-    "id": 6700,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
   },
   "6703": {
     "id": 6703,
@@ -28265,15 +28989,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6709": {
     "id": 6709,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 5451,
-    "quality": 2
+    "quality": 2,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6710": {
     "id": 6710,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 5449,
-    "quality": 3
+    "quality": 3,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6711": {
     "id": 6711,
@@ -28282,14 +29014,34 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6712": {
     "id": 6712,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 5448,
-    "quality": 4
+    "quality": 4,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 6,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6713": {
     "id": 6713,
-    "ilevel": "2 @plvl 1 - 150 @plvl 150",
-    "curveId": 16709
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": -3,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "6716": {
+    "id": 6716,
+    "serverside": true
+  },
+  "6717": {
+    "id": 6717,
+    "serverside": true
+  },
+  "6718": {
+    "id": 6718,
+    "serverside": true
   },
   "6720": {
     "id": 6720,
@@ -28449,32 +29201,32 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6751": {
     "id": 6751,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6752": {
     "id": 6752,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6753": {
     "id": 6753,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6754": {
     "id": 6754,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6755": {
     "id": 6755,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6756": {
     "id": 6756,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "6757": {
@@ -28482,6 +29234,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 5448,
     "quality": 4
+  },
+  "6758": {
+    "id": 6758,
+    "serverside": true
   },
   "6759": {
     "id": 6759,
@@ -28536,6 +29292,118 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 17263
   },
+  "6773": {
+    "id": 6773,
+    "serverside": true
+  },
+  "6774": {
+    "id": 6774,
+    "serverside": true
+  },
+  "6775": {
+    "id": 6775,
+    "serverside": true
+  },
+  "6776": {
+    "id": 6776,
+    "serverside": true
+  },
+  "6777": {
+    "id": 6777,
+    "serverside": true
+  },
+  "6778": {
+    "id": 6778,
+    "serverside": true
+  },
+  "6780": {
+    "id": 6780,
+    "serverside": true
+  },
+  "6781": {
+    "id": 6781,
+    "serverside": true
+  },
+  "6782": {
+    "id": 6782,
+    "serverside": true
+  },
+  "6783": {
+    "id": 6783,
+    "serverside": true
+  },
+  "6784": {
+    "id": 6784,
+    "serverside": true
+  },
+  "6785": {
+    "id": 6785,
+    "serverside": true
+  },
+  "6786": {
+    "id": 6786,
+    "serverside": true
+  },
+  "6787": {
+    "id": 6787,
+    "serverside": true
+  },
+  "6788": {
+    "id": 6788,
+    "serverside": true
+  },
+  "6789": {
+    "id": 6789,
+    "serverside": true
+  },
+  "6790": {
+    "id": 6790,
+    "serverside": true
+  },
+  "6791": {
+    "id": 6791,
+    "serverside": true
+  },
+  "6792": {
+    "id": 6792,
+    "serverside": true
+  },
+  "6793": {
+    "id": 6793,
+    "serverside": true
+  },
+  "6794": {
+    "id": 6794,
+    "serverside": true
+  },
+  "6795": {
+    "id": 6795,
+    "serverside": true
+  },
+  "6796": {
+    "id": 6796,
+    "serverside": true
+  },
+  "6797": {
+    "id": 6797,
+    "serverside": true
+  },
+  "6798": {
+    "id": 6798,
+    "serverside": true
+  },
+  "6799": {
+    "id": 6799,
+    "serverside": true
+  },
+  "6800": {
+    "id": 6800,
+    "serverside": true
+  },
+  "6801": {
+    "id": 6801,
+    "serverside": true
+  },
   "6802": {
     "id": 6802,
     "ilevel": "5 @plvl 1 - 178 @plvl 178",
@@ -28551,13 +29419,19 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "47 @plvl 1 - 220 @plvl 220",
     "curveId": 17289
   },
+  "6805": {
+    "id": 6805,
+    "serverside": true
+  },
   "6806": {
     "id": 6806,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "serverside": true
   },
   "6807": {
     "id": 6807,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "serverside": true
   },
   "6808": {
     "id": 6808,
@@ -28565,7 +29439,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6809": {
     "id": 6809,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "serverside": true
   },
   "6810": {
     "id": 6810,
@@ -28581,8 +29456,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6813": {
     "id": 6813,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 1,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6815": {
     "id": 6815,
@@ -28621,8 +29500,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6822": {
     "id": 6822,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 5449
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "6823": {
     "id": 6823,
@@ -28642,7 +29525,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6825": {
     "id": 6825,
-    "ilevel": "5 @plvl 1 - 357 @plvl 357",
+    "ilevel": "5 @plvl 0 - 61 @plvl 72",
     "curveId": 16520
   },
   "6826": {
@@ -30638,6 +31521,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7022,
     "tag": "Heroic"
   },
+  "7023": {
+    "id": 7023,
+    "serverside": true
+  },
   "7024": {
     "id": 7024,
     "tag": "Mythic"
@@ -32501,6 +33388,62 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "85 @plvl 48 - 154 @plvl 154",
     "curveId": 21132
   },
+  "7145": {
+    "id": 7145,
+    "serverside": true
+  },
+  "7146": {
+    "id": 7146,
+    "serverside": true
+  },
+  "7147": {
+    "id": 7147,
+    "serverside": true
+  },
+  "7148": {
+    "id": 7148,
+    "serverside": true
+  },
+  "7149": {
+    "id": 7149,
+    "serverside": true
+  },
+  "7150": {
+    "id": 7150,
+    "serverside": true
+  },
+  "7151": {
+    "id": 7151,
+    "serverside": true
+  },
+  "7152": {
+    "id": 7152,
+    "serverside": true
+  },
+  "7153": {
+    "id": 7153,
+    "serverside": true
+  },
+  "7154": {
+    "id": 7154,
+    "serverside": true
+  },
+  "7155": {
+    "id": 7155,
+    "serverside": true
+  },
+  "7156": {
+    "id": 7156,
+    "serverside": true
+  },
+  "7157": {
+    "id": 7157,
+    "serverside": true
+  },
+  "7158": {
+    "id": 7158,
+    "serverside": true
+  },
   "7159": {
     "id": 7159,
     "effect": {
@@ -32567,51 +33510,29 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7164": {
     "id": 7164,
-    "ilevel": "8 @plvl 1 - 61 @plvl 61",
-    "curveId": 21758
+    "itemLevel": {
+      "amount": 41,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7165": {
     "id": 7165,
-    "ilevel": "9 @plvl 1 - 61 @plvl 61",
-    "curveId": 21762
-  },
-  "7166": {
-    "id": 7166,
-    "ilevel": "6 @plvl 1 - 60 @plvl 60",
-    "curveId": 21760
-  },
-  "7167": {
-    "id": 7167,
-    "ilevel": "9 @plvl 1 - 61 @plvl 61",
-    "curveId": 21762,
-    "quality": 4
+    "itemLevel": {
+      "amount": 41,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7168": {
     "id": 7168,
-    "ilevel": "5 @plvl 1 - 60 @plvl 60",
-    "curveId": 21757
-  },
-  "7169": {
-    "id": 7169,
-    "ilevel": "8 @plvl 1 - 61 @plvl 61",
-    "curveId": 21758,
-    "quality": 4
-  },
-  "7170": {
-    "id": 7170,
-    "ilevel": "10 @plvl 1 - 61 @plvl 61",
-    "curveId": 21763
-  },
-  "7171": {
-    "id": 7171,
-    "ilevel": "6 @plvl 1 - 61 @plvl 61",
-    "curveId": 21761
-  },
-  "7172": {
-    "id": 7172,
-    "ilevel": "10 @plvl 1 - 61 @plvl 61",
-    "curveId": 21763,
-    "quality": 4
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7173": {
     "id": 7173,
@@ -32626,33 +33547,56 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7175": {
     "id": 7175,
-    "base_level": 29,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 18,
+      "priority": 1,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7176": {
     "id": 7176,
-    "base_level": 65,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 28,
+      "priority": 1,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7177": {
     "id": 7177,
-    "base_level": 94,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7178": {
     "id": 7178,
-    "base_level": 127,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7179": {
     "id": 7179,
-    "base_level": 163,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "7180": {
     "id": 7180,
-    "base_level": 55,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 55,
+      "priority": 1,
+      "squishEra": 1
+    }
   },
   "7181": {
     "id": 7181,
@@ -32692,15 +33636,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7186": {
     "id": 7186,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "serverside": true
   },
   "7187": {
     "id": 7187,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "serverside": true
   },
   "7188": {
     "id": 7188,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "serverside": true
+  },
+  "7189": {
+    "id": 7189,
+    "serverside": true
   },
   "7190": {
     "id": 7190,
@@ -32713,11 +33664,13 @@ export const bonus_IDs: {[key: string]: any} = {
     "quality": 3,
     "tag": "Timewarped"
   },
-  "7192": {
-    "id": 7192,
-    "ilevel": "1 @plvl 1 - 174 @plvl 174",
-    "curveId": 16667,
-    "quality": 3
+  "7193": {
+    "id": 7193,
+    "serverside": true
+  },
+  "7194": {
+    "id": 7194,
+    "serverside": true
   },
   "7195": {
     "id": 7195,
@@ -32726,7 +33679,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7195,
-      "itemLevel": 155
+      "itemLevel": 36
     }
   },
   "7196": {
@@ -32736,7 +33689,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7196,
-      "itemLevel": 164,
+      "itemLevel": 38,
       "currency": {
         "amount": 25,
         "name": "Reservoir Anima",
@@ -32752,7 +33705,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7197,
-      "itemLevel": 171,
+      "itemLevel": 39,
       "currency": {
         "amount": 50,
         "name": "Reservoir Anima",
@@ -32768,7 +33721,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7198,
-      "itemLevel": 177,
+      "itemLevel": 40,
       "currency": {
         "amount": 75,
         "name": "Reservoir Anima",
@@ -32784,7 +33737,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7199,
-      "itemLevel": 184,
+      "itemLevel": 41,
       "currency": {
         "amount": 100,
         "name": "Reservoir Anima",
@@ -32800,7 +33753,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7200,
-      "itemLevel": 190,
+      "itemLevel": 43,
       "currency": {
         "amount": 125,
         "name": "Reservoir Anima",
@@ -32816,7 +33769,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7201,
-      "itemLevel": 197,
+      "itemLevel": 44,
       "currency": {
         "amount": 150,
         "name": "Reservoir Anima",
@@ -32827,58 +33780,73 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7202": {
     "id": 7202,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 33,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7203": {
     "id": 7203,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "serverside": true
   },
   "7204": {
     "id": 7204,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "serverside": true
   },
   "7205": {
     "id": 7205,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "serverside": true
   },
   "7206": {
     "id": 7206,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "serverside": true
   },
   "7207": {
     "id": 7207,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "serverside": true
   },
   "7208": {
     "id": 7208,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "serverside": true
   },
   "7209": {
     "id": 7209,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "serverside": true
   },
   "7210": {
     "id": 7210,
-    "tag": "Mythic 11"
+    "tag": "Mythic 11",
+    "serverside": true
   },
   "7211": {
     "id": 7211,
-    "tag": "Mythic 12"
+    "tag": "Mythic 12",
+    "serverside": true
   },
   "7212": {
     "id": 7212,
-    "tag": "Mythic 13"
+    "tag": "Mythic 13",
+    "serverside": true
   },
   "7213": {
     "id": 7213,
-    "tag": "Mythic 14"
+    "tag": "Mythic 14",
+    "serverside": true
   },
   "7214": {
     "id": 7214,
-    "tag": "Mythic 15"
+    "tag": "Mythic 15",
+    "serverside": true
   },
   "7215": {
     "id": 7215,
@@ -32933,7 +33901,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7220": {
     "id": 7220,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "7222": {
@@ -32953,7 +33921,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7225": {
     "id": 7225,
-    "tag": "Unranked"
+    "tag": "Unranked",
+    "serverside": true
   },
   "7226": {
     "id": 7226,
@@ -32974,6 +33943,34 @@ export const bonus_IDs: {[key: string]: any} = {
   "7230": {
     "id": 7230,
     "tag": "Elite"
+  },
+  "7231": {
+    "id": 7231,
+    "serverside": true
+  },
+  "7232": {
+    "id": 7232,
+    "serverside": true
+  },
+  "7233": {
+    "id": 7233,
+    "serverside": true
+  },
+  "7234": {
+    "id": 7234,
+    "serverside": true
+  },
+  "7235": {
+    "id": 7235,
+    "serverside": true
+  },
+  "7236": {
+    "id": 7236,
+    "serverside": true
+  },
+  "7237": {
+    "id": 7237,
+    "serverside": true
   },
   "7238": {
     "id": 7238,
@@ -33023,9 +34020,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7250": {
     "id": 7250,
-    "quality": 4,
-    "ilevel": "233 @plvl 50 - 233 @plvl 233",
-    "curveId": 24868
+    "quality": 4
+  },
+  "7251": {
+    "id": 7251,
+    "serverside": true
+  },
+  "7252": {
+    "id": 7252,
+    "serverside": true
+  },
+  "7253": {
+    "id": 7253,
+    "serverside": true
+  },
+  "7254": {
+    "id": 7254,
+    "serverside": true
+  },
+  "7255": {
+    "id": 7255,
+    "serverside": true
   },
   "7305": {
     "id": 7305,
@@ -33195,20 +34210,409 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7346,
     "tag": "Elite"
   },
+  "7347": {
+    "id": 7347,
+    "serverside": true
+  },
+  "7348": {
+    "id": 7348,
+    "serverside": true
+  },
+  "7349": {
+    "id": 7349,
+    "serverside": true
+  },
+  "7350": {
+    "id": 7350,
+    "serverside": true
+  },
+  "7351": {
+    "id": 7351,
+    "serverside": true
+  },
+  "7352": {
+    "id": 7352,
+    "serverside": true
+  },
+  "7353": {
+    "id": 7353,
+    "serverside": true
+  },
+  "7354": {
+    "id": 7354,
+    "serverside": true
+  },
   "7357": {
     "id": 7357,
     "effect": {
       "id": 138395,
       "index": 2
-    }
+    },
+    "serverside": true
+  },
+  "7358": {
+    "id": 7358,
+    "serverside": true
   },
   "7359": {
     "id": 7359,
     "tag": "Mythic"
   },
+  "7360": {
+    "id": 7360,
+    "serverside": true
+  },
+  "7361": {
+    "id": 7361,
+    "serverside": true
+  },
+  "7362": {
+    "id": 7362,
+    "serverside": true
+  },
+  "7363": {
+    "id": 7363,
+    "serverside": true
+  },
+  "7364": {
+    "id": 7364,
+    "serverside": true
+  },
+  "7365": {
+    "id": 7365,
+    "serverside": true
+  },
+  "7366": {
+    "id": 7366,
+    "serverside": true
+  },
+  "7367": {
+    "id": 7367,
+    "serverside": true
+  },
+  "7368": {
+    "id": 7368,
+    "serverside": true
+  },
+  "7369": {
+    "id": 7369,
+    "serverside": true
+  },
+  "7370": {
+    "id": 7370,
+    "serverside": true
+  },
+  "7371": {
+    "id": 7371,
+    "serverside": true
+  },
+  "7372": {
+    "id": 7372,
+    "serverside": true
+  },
+  "7373": {
+    "id": 7373,
+    "serverside": true
+  },
+  "7374": {
+    "id": 7374,
+    "serverside": true
+  },
+  "7375": {
+    "id": 7375,
+    "serverside": true
+  },
+  "7376": {
+    "id": 7376,
+    "serverside": true
+  },
+  "7377": {
+    "id": 7377,
+    "serverside": true
+  },
+  "7378": {
+    "id": 7378,
+    "serverside": true
+  },
+  "7379": {
+    "id": 7379,
+    "serverside": true
+  },
+  "7380": {
+    "id": 7380,
+    "serverside": true
+  },
+  "7381": {
+    "id": 7381,
+    "serverside": true
+  },
+  "7382": {
+    "id": 7382,
+    "serverside": true
+  },
+  "7383": {
+    "id": 7383,
+    "serverside": true
+  },
+  "7384": {
+    "id": 7384,
+    "serverside": true
+  },
+  "7385": {
+    "id": 7385,
+    "serverside": true
+  },
+  "7386": {
+    "id": 7386,
+    "serverside": true
+  },
+  "7387": {
+    "id": 7387,
+    "serverside": true
+  },
+  "7388": {
+    "id": 7388,
+    "serverside": true
+  },
+  "7389": {
+    "id": 7389,
+    "serverside": true
+  },
+  "7390": {
+    "id": 7390,
+    "serverside": true
+  },
+  "7391": {
+    "id": 7391,
+    "serverside": true
+  },
+  "7392": {
+    "id": 7392,
+    "serverside": true
+  },
+  "7393": {
+    "id": 7393,
+    "serverside": true
+  },
+  "7394": {
+    "id": 7394,
+    "serverside": true
+  },
+  "7395": {
+    "id": 7395,
+    "serverside": true
+  },
+  "7396": {
+    "id": 7396,
+    "serverside": true
+  },
+  "7397": {
+    "id": 7397,
+    "serverside": true
+  },
+  "7398": {
+    "id": 7398,
+    "serverside": true
+  },
+  "7399": {
+    "id": 7399,
+    "serverside": true
+  },
+  "7400": {
+    "id": 7400,
+    "serverside": true
+  },
+  "7401": {
+    "id": 7401,
+    "serverside": true
+  },
+  "7402": {
+    "id": 7402,
+    "serverside": true
+  },
+  "7403": {
+    "id": 7403,
+    "serverside": true
+  },
+  "7404": {
+    "id": 7404,
+    "serverside": true
+  },
+  "7405": {
+    "id": 7405,
+    "serverside": true
+  },
+  "7406": {
+    "id": 7406,
+    "serverside": true
+  },
+  "7407": {
+    "id": 7407,
+    "serverside": true
+  },
+  "7408": {
+    "id": 7408,
+    "serverside": true
+  },
+  "7409": {
+    "id": 7409,
+    "serverside": true
+  },
+  "7410": {
+    "id": 7410,
+    "serverside": true
+  },
+  "7411": {
+    "id": 7411,
+    "serverside": true
+  },
+  "7412": {
+    "id": 7412,
+    "serverside": true
+  },
+  "7413": {
+    "id": 7413,
+    "serverside": true
+  },
+  "7414": {
+    "id": 7414,
+    "serverside": true
+  },
+  "7415": {
+    "id": 7415,
+    "serverside": true
+  },
+  "7416": {
+    "id": 7416,
+    "serverside": true
+  },
+  "7417": {
+    "id": 7417,
+    "serverside": true
+  },
+  "7418": {
+    "id": 7418,
+    "serverside": true
+  },
+  "7419": {
+    "id": 7419,
+    "serverside": true
+  },
+  "7420": {
+    "id": 7420,
+    "serverside": true
+  },
+  "7421": {
+    "id": 7421,
+    "serverside": true
+  },
+  "7422": {
+    "id": 7422,
+    "serverside": true
+  },
+  "7423": {
+    "id": 7423,
+    "serverside": true
+  },
+  "7424": {
+    "id": 7424,
+    "serverside": true
+  },
+  "7425": {
+    "id": 7425,
+    "serverside": true
+  },
+  "7426": {
+    "id": 7426,
+    "serverside": true
+  },
+  "7427": {
+    "id": 7427,
+    "serverside": true
+  },
+  "7428": {
+    "id": 7428,
+    "serverside": true
+  },
+  "7429": {
+    "id": 7429,
+    "serverside": true
+  },
+  "7430": {
+    "id": 7430,
+    "serverside": true
+  },
+  "7431": {
+    "id": 7431,
+    "serverside": true
+  },
+  "7432": {
+    "id": 7432,
+    "serverside": true
+  },
+  "7433": {
+    "id": 7433,
+    "serverside": true
+  },
+  "7434": {
+    "id": 7434,
+    "serverside": true
+  },
+  "7435": {
+    "id": 7435,
+    "serverside": true
+  },
+  "7436": {
+    "id": 7436,
+    "serverside": true
+  },
+  "7437": {
+    "id": 7437,
+    "serverside": true
+  },
+  "7438": {
+    "id": 7438,
+    "serverside": true
+  },
+  "7439": {
+    "id": 7439,
+    "serverside": true
+  },
+  "7440": {
+    "id": 7440,
+    "serverside": true
+  },
+  "7441": {
+    "id": 7441,
+    "serverside": true
+  },
+  "7442": {
+    "id": 7442,
+    "serverside": true
+  },
+  "7443": {
+    "id": 7443,
+    "serverside": true
+  },
+  "7444": {
+    "id": 7444,
+    "serverside": true
+  },
+  "7445": {
+    "id": 7445,
+    "serverside": true
+  },
   "7448": {
     "id": 7448,
     "tag": "5 Corruption"
+  },
+  "7450": {
+    "id": 7450,
+    "serverside": true
+  },
+  "7451": {
+    "id": 7451,
+    "serverside": true
   },
   "7452": {
     "id": 7452,
@@ -33254,7 +34658,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 3,
       "bonusId": 7462,
-      "itemLevel": 150
+      "itemLevel": 35
     }
   },
   "7463": {
@@ -33264,7 +34668,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 3,
       "bonusId": 7463,
-      "itemLevel": 213
+      "itemLevel": 47
     }
   },
   "7464": {
@@ -33529,7 +34933,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7479,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7480": {
@@ -33539,7 +34943,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7480,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -33555,7 +34959,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7481,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -33571,7 +34975,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7482,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 275,
         "name": "Honor",
@@ -33587,7 +34991,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7483,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -33603,7 +35007,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7484,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -33619,7 +35023,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7485,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -33635,7 +35039,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7486,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7487": {
@@ -33645,7 +35049,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7487,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -33661,7 +35065,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7488,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -33677,7 +35081,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7489,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -33693,7 +35097,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7490,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 400,
         "name": "Honor",
@@ -33709,7 +35113,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7491,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -33725,7 +35129,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7492,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -33741,7 +35145,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7493,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7494": {
@@ -33751,7 +35155,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7494,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -33767,7 +35171,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7495,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -33783,7 +35187,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7496,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -33799,7 +35203,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7497,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -33815,7 +35219,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7498,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -33831,7 +35235,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7499,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -33847,7 +35251,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7500,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7501": {
@@ -33857,7 +35261,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7501,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -33873,7 +35277,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7502,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -33889,7 +35293,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7503,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -33905,7 +35309,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7504,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 1000,
         "name": "Honor",
@@ -33921,7 +35325,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7505,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 1150,
         "name": "Honor",
@@ -33937,7 +35341,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7506,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 1300,
         "name": "Honor",
@@ -33953,7 +35357,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7507,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7508": {
@@ -33963,7 +35367,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7508,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 175,
         "name": "Honor",
@@ -33979,7 +35383,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7509,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -33995,7 +35399,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7510,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -34011,7 +35415,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7511,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -34027,7 +35431,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7512,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -34043,7 +35447,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7513,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -34059,7 +35463,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7514,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7515": {
@@ -34069,7 +35473,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7515,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -34085,7 +35489,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7516,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -34101,7 +35505,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7517,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -34117,7 +35521,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7518,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -34133,7 +35537,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7519,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -34149,7 +35553,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7520,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 950,
         "name": "Honor",
@@ -34165,7 +35569,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 7521,
-      "itemLevel": 203
+      "itemLevel": 45
     }
   },
   "7522": {
@@ -34175,7 +35579,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 7522,
-      "itemLevel": 210,
+      "itemLevel": 46,
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -34191,7 +35595,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 7523,
-      "itemLevel": 216,
+      "itemLevel": 47,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -34207,7 +35611,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 7524,
-      "itemLevel": 223,
+      "itemLevel": 48,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -34223,7 +35627,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 7525,
-      "itemLevel": 229,
+      "itemLevel": 50,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -34239,7 +35643,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 7526,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -34255,7 +35659,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 7527,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -34272,7 +35676,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7528,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7529": {
@@ -34283,7 +35687,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7529,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -34300,7 +35704,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7530,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -34317,7 +35721,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7531,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 825,
         "name": "Honor",
@@ -34334,7 +35738,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7532,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -34351,7 +35755,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7533,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -34368,7 +35772,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7534,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7535": {
@@ -34379,7 +35783,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7535,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -34396,7 +35800,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7536,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -34413,7 +35817,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7537,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -34430,7 +35834,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7538,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 1475,
         "name": "Honor",
@@ -34447,7 +35851,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7539,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -34464,7 +35868,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7540,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7541": {
@@ -34475,7 +35879,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7541,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -34492,7 +35896,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7542,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -34509,7 +35913,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7543,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -34526,7 +35930,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7544,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -34543,7 +35947,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7545,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -34560,7 +35964,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7546,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7547": {
@@ -34571,7 +35975,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7547,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 1700,
         "name": "Honor",
@@ -34588,7 +35992,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7548,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 2150,
         "name": "Honor",
@@ -34605,7 +36009,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7549,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -34622,7 +36026,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7550,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 3650,
         "name": "Honor",
@@ -34639,7 +36043,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7551,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 3050,
         "name": "Honor",
@@ -34656,7 +36060,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7552,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7553": {
@@ -34667,7 +36071,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7553,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 425,
         "name": "Honor",
@@ -34684,7 +36088,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7554,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -34701,7 +36105,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7555,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 700,
         "name": "Honor",
@@ -34718,7 +36122,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7556,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -34735,7 +36139,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7557,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -34752,7 +36156,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7558,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7559": {
@@ -34763,7 +36167,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7559,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 1275,
         "name": "Honor",
@@ -34780,7 +36184,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7560,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1600,
         "name": "Honor",
@@ -34797,7 +36201,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7561,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 2050,
         "name": "Honor",
@@ -34814,7 +36218,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7562,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -34831,7 +36235,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7563,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 2275,
         "name": "Honor",
@@ -34848,7 +36252,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 7564,
-      "itemLevel": 249
+      "itemLevel": 53
     }
   },
   "7565": {
@@ -34859,7 +36263,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 7565,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -34876,7 +36280,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 7566,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -34893,7 +36297,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 7567,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -34910,7 +36314,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 7568,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -34927,7 +36331,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 7569,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -35008,6 +36412,14 @@ export const bonus_IDs: {[key: string]: any} = {
       "base": "Deathspike"
     }
   },
+  "7574": {
+    "id": 7574,
+    "serverside": true
+  },
+  "7575": {
+    "id": 7575,
+    "serverside": true
+  },
   "7576": {
     "id": 7576,
     "socket": 1
@@ -35032,9 +36444,409 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "7578": {
+    "id": 7578,
+    "serverside": true
+  },
+  "7579": {
+    "id": 7579,
+    "serverside": true
+  },
   "7580": {
     "id": 7580,
     "socket": 1
+  },
+  "7581": {
+    "id": 7581,
+    "serverside": true
+  },
+  "7582": {
+    "id": 7582,
+    "serverside": true
+  },
+  "7583": {
+    "id": 7583,
+    "serverside": true
+  },
+  "7584": {
+    "id": 7584,
+    "serverside": true
+  },
+  "7585": {
+    "id": 7585,
+    "serverside": true
+  },
+  "7586": {
+    "id": 7586,
+    "serverside": true
+  },
+  "7587": {
+    "id": 7587,
+    "serverside": true
+  },
+  "7588": {
+    "id": 7588,
+    "serverside": true
+  },
+  "7589": {
+    "id": 7589,
+    "serverside": true
+  },
+  "7590": {
+    "id": 7590,
+    "serverside": true
+  },
+  "7591": {
+    "id": 7591,
+    "serverside": true
+  },
+  "7592": {
+    "id": 7592,
+    "serverside": true
+  },
+  "7593": {
+    "id": 7593,
+    "serverside": true
+  },
+  "7594": {
+    "id": 7594,
+    "serverside": true
+  },
+  "7595": {
+    "id": 7595,
+    "serverside": true
+  },
+  "7596": {
+    "id": 7596,
+    "serverside": true
+  },
+  "7597": {
+    "id": 7597,
+    "serverside": true
+  },
+  "7598": {
+    "id": 7598,
+    "serverside": true
+  },
+  "7599": {
+    "id": 7599,
+    "serverside": true
+  },
+  "7600": {
+    "id": 7600,
+    "serverside": true
+  },
+  "7601": {
+    "id": 7601,
+    "serverside": true
+  },
+  "7602": {
+    "id": 7602,
+    "serverside": true
+  },
+  "7603": {
+    "id": 7603,
+    "serverside": true
+  },
+  "7604": {
+    "id": 7604,
+    "serverside": true
+  },
+  "7605": {
+    "id": 7605,
+    "serverside": true
+  },
+  "7606": {
+    "id": 7606,
+    "serverside": true
+  },
+  "7607": {
+    "id": 7607,
+    "serverside": true
+  },
+  "7608": {
+    "id": 7608,
+    "serverside": true
+  },
+  "7609": {
+    "id": 7609,
+    "serverside": true
+  },
+  "7610": {
+    "id": 7610,
+    "serverside": true
+  },
+  "7611": {
+    "id": 7611,
+    "serverside": true
+  },
+  "7612": {
+    "id": 7612,
+    "serverside": true
+  },
+  "7613": {
+    "id": 7613,
+    "serverside": true
+  },
+  "7614": {
+    "id": 7614,
+    "serverside": true
+  },
+  "7615": {
+    "id": 7615,
+    "serverside": true
+  },
+  "7616": {
+    "id": 7616,
+    "serverside": true
+  },
+  "7617": {
+    "id": 7617,
+    "serverside": true
+  },
+  "7618": {
+    "id": 7618,
+    "serverside": true
+  },
+  "7619": {
+    "id": 7619,
+    "serverside": true
+  },
+  "7620": {
+    "id": 7620,
+    "serverside": true
+  },
+  "7621": {
+    "id": 7621,
+    "serverside": true
+  },
+  "7622": {
+    "id": 7622,
+    "serverside": true
+  },
+  "7623": {
+    "id": 7623,
+    "serverside": true
+  },
+  "7624": {
+    "id": 7624,
+    "serverside": true
+  },
+  "7625": {
+    "id": 7625,
+    "serverside": true
+  },
+  "7626": {
+    "id": 7626,
+    "serverside": true
+  },
+  "7627": {
+    "id": 7627,
+    "serverside": true
+  },
+  "7628": {
+    "id": 7628,
+    "serverside": true
+  },
+  "7629": {
+    "id": 7629,
+    "serverside": true
+  },
+  "7630": {
+    "id": 7630,
+    "serverside": true
+  },
+  "7631": {
+    "id": 7631,
+    "serverside": true
+  },
+  "7632": {
+    "id": 7632,
+    "serverside": true
+  },
+  "7633": {
+    "id": 7633,
+    "serverside": true
+  },
+  "7634": {
+    "id": 7634,
+    "serverside": true
+  },
+  "7635": {
+    "id": 7635,
+    "serverside": true
+  },
+  "7636": {
+    "id": 7636,
+    "serverside": true
+  },
+  "7637": {
+    "id": 7637,
+    "serverside": true
+  },
+  "7638": {
+    "id": 7638,
+    "serverside": true
+  },
+  "7639": {
+    "id": 7639,
+    "serverside": true
+  },
+  "7640": {
+    "id": 7640,
+    "serverside": true
+  },
+  "7641": {
+    "id": 7641,
+    "serverside": true
+  },
+  "7642": {
+    "id": 7642,
+    "serverside": true
+  },
+  "7643": {
+    "id": 7643,
+    "serverside": true
+  },
+  "7644": {
+    "id": 7644,
+    "serverside": true
+  },
+  "7645": {
+    "id": 7645,
+    "serverside": true
+  },
+  "7646": {
+    "id": 7646,
+    "serverside": true
+  },
+  "7647": {
+    "id": 7647,
+    "serverside": true
+  },
+  "7648": {
+    "id": 7648,
+    "serverside": true
+  },
+  "7649": {
+    "id": 7649,
+    "serverside": true
+  },
+  "7650": {
+    "id": 7650,
+    "serverside": true
+  },
+  "7651": {
+    "id": 7651,
+    "serverside": true
+  },
+  "7652": {
+    "id": 7652,
+    "serverside": true
+  },
+  "7653": {
+    "id": 7653,
+    "serverside": true
+  },
+  "7654": {
+    "id": 7654,
+    "serverside": true
+  },
+  "7655": {
+    "id": 7655,
+    "serverside": true
+  },
+  "7656": {
+    "id": 7656,
+    "serverside": true
+  },
+  "7657": {
+    "id": 7657,
+    "serverside": true
+  },
+  "7658": {
+    "id": 7658,
+    "serverside": true
+  },
+  "7659": {
+    "id": 7659,
+    "serverside": true
+  },
+  "7660": {
+    "id": 7660,
+    "serverside": true
+  },
+  "7661": {
+    "id": 7661,
+    "serverside": true
+  },
+  "7662": {
+    "id": 7662,
+    "serverside": true
+  },
+  "7663": {
+    "id": 7663,
+    "serverside": true
+  },
+  "7664": {
+    "id": 7664,
+    "serverside": true
+  },
+  "7665": {
+    "id": 7665,
+    "serverside": true
+  },
+  "7666": {
+    "id": 7666,
+    "serverside": true
+  },
+  "7667": {
+    "id": 7667,
+    "serverside": true
+  },
+  "7668": {
+    "id": 7668,
+    "serverside": true
+  },
+  "7669": {
+    "id": 7669,
+    "serverside": true
+  },
+  "7670": {
+    "id": 7670,
+    "serverside": true
+  },
+  "7671": {
+    "id": 7671,
+    "serverside": true
+  },
+  "7672": {
+    "id": 7672,
+    "serverside": true
+  },
+  "7673": {
+    "id": 7673,
+    "serverside": true
+  },
+  "7674": {
+    "id": 7674,
+    "serverside": true
+  },
+  "7675": {
+    "id": 7675,
+    "serverside": true
+  },
+  "7676": {
+    "id": 7676,
+    "serverside": true
+  },
+  "7677": {
+    "id": 7677,
+    "serverside": true
+  },
+  "7678": {
+    "id": 7678,
+    "serverside": true
   },
   "7679": {
     "id": 7679,
@@ -35100,7 +36912,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 6,
       "bonusId": 7692,
-      "itemLevel": 200
+      "itemLevel": 44
     }
   },
   "7693": {
@@ -35110,7 +36922,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 6,
       "bonusId": 7693,
-      "itemLevel": 207,
+      "itemLevel": 46,
       "currency": {
         "amount": 250,
         "name": "Cataloged Research",
@@ -35126,7 +36938,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 6,
       "bonusId": 7694,
-      "itemLevel": 213,
+      "itemLevel": 47,
       "currency": {
         "amount": 750,
         "name": "Cataloged Research",
@@ -35142,7 +36954,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 6,
       "bonusId": 7695,
-      "itemLevel": 220,
+      "itemLevel": 48,
       "currency": {
         "amount": 1250,
         "name": "Cataloged Research",
@@ -35158,7 +36970,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 6,
       "bonusId": 7696,
-      "itemLevel": 226,
+      "itemLevel": 49,
       "currency": {
         "amount": 2000,
         "name": "Cataloged Research",
@@ -35174,7 +36986,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 6,
       "bonusId": 7697,
-      "itemLevel": 233,
+      "itemLevel": 50,
       "currency": {
         "amount": 3000,
         "name": "Cataloged Research",
@@ -35771,6 +37583,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "7731": {
+    "id": 7731,
+    "serverside": true
+  },
   "7732": {
     "id": 7732,
     "tag": "Priceless"
@@ -35807,7 +37623,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Render Tribute",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7736": {
     "id": 7736,
@@ -35841,7 +37658,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Harsh Tutelage",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7739": {
     "id": 7739,
@@ -35875,7 +37693,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Harsh Tutelage",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7742": {
     "id": 7742,
@@ -35909,7 +37728,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Harsh Tutelage",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7745": {
     "id": 7745,
@@ -35943,7 +37763,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Harsh Tutelage",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7748": {
     "id": 7748,
@@ -35955,11 +37776,28 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Harsh Tutelage",
         "icon": "inv_sword_2h_mawraid_d_01"
       }
-    }
+    },
+    "serverside": true
   },
   "7749": {
     "id": 7749,
     "tag": "Mythic"
+  },
+  "7752": {
+    "id": 7752,
+    "serverside": true
+  },
+  "7753": {
+    "id": 7753,
+    "serverside": true
+  },
+  "7754": {
+    "id": 7754,
+    "serverside": true
+  },
+  "7755": {
+    "id": 7755,
+    "serverside": true
   },
   "7756": {
     "id": 7756,
@@ -35972,7 +37810,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7759,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -35988,7 +37826,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7760,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36004,7 +37842,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7761,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36020,7 +37858,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7762,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36036,7 +37874,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7763,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36052,7 +37890,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7764,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36068,7 +37906,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7765,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36084,7 +37922,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7766,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36100,7 +37938,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7767,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36116,7 +37954,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7768,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36132,7 +37970,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7769,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36148,7 +37986,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7770,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -36164,7 +38002,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7773,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36180,7 +38018,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7774,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36196,7 +38034,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7775,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36212,7 +38050,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7776,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36228,7 +38066,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7777,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36244,7 +38082,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7778,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36260,7 +38098,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7779,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36276,7 +38114,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7780,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36292,7 +38130,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7781,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36308,7 +38146,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7782,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36324,7 +38162,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7783,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36340,7 +38178,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7784,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -36356,7 +38194,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7787,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36372,7 +38210,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7788,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36388,7 +38226,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7789,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36404,7 +38242,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7790,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36420,7 +38258,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7791,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36436,7 +38274,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7792,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36452,7 +38290,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7793,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36468,7 +38306,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7794,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36484,7 +38322,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7795,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36500,7 +38338,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7796,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36516,7 +38354,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7797,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36532,7 +38370,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7798,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36548,7 +38386,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7801,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36564,7 +38402,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7802,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36580,7 +38418,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7803,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36596,7 +38434,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7804,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36612,7 +38450,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7805,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36628,7 +38466,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7806,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36644,7 +38482,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7807,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36660,7 +38498,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7808,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36676,7 +38514,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7809,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36692,7 +38530,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7810,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36708,7 +38546,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7811,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36724,7 +38562,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7812,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -36740,7 +38578,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7815,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36756,7 +38594,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7816,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36772,7 +38610,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7817,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36788,7 +38626,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7818,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36804,7 +38642,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7819,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36820,7 +38658,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7820,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36836,7 +38674,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7821,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36852,7 +38690,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7822,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36868,7 +38706,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7823,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36884,7 +38722,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7824,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36900,7 +38738,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7825,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36916,7 +38754,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7826,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -36932,7 +38770,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7829,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36948,7 +38786,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7830,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36964,7 +38802,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7831,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36980,7 +38818,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7832,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -36996,7 +38834,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7833,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37012,7 +38850,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7834,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37028,7 +38866,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7835,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37044,7 +38882,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7836,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37060,7 +38898,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7837,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37076,7 +38914,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7838,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37092,7 +38930,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7839,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37108,7 +38946,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7840,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -37124,7 +38962,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 7843,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37140,7 +38978,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 7844,
-      "itemLevel": 239,
+      "itemLevel": 51,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37156,7 +38994,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 7845,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37172,7 +39010,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 7846,
-      "itemLevel": 246,
+      "itemLevel": 53,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37188,7 +39026,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 7847,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37204,7 +39042,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 7848,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37220,7 +39058,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 7849,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37236,7 +39074,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 7850,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37252,7 +39090,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 7851,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37268,7 +39106,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 7852,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37284,7 +39122,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 7853,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37300,7 +39138,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 7854,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -37406,6 +39244,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "item_limit_category": 481,
     "quality": 4
   },
+  "7882": {
+    "id": 7882,
+    "serverside": true
+  },
   "7883": {
     "id": 7883,
     "ilevel": "5 @plvl 1 - 220 @plvl 220",
@@ -37459,12 +39301,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "7890": {
-    "id": 7890,
-    "ilevel": "27 @plvl 1 - 200 @plvl 200",
-    "curveId": 16668,
-    "quality": 4
-  },
   "7891": {
     "id": 7891,
     "effect": {
@@ -37497,7 +39333,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7893,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -37514,7 +39350,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7894,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -37531,7 +39367,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7895,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -37548,7 +39384,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7896,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 600,
         "name": "Honor",
@@ -37565,7 +39401,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7897,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -37582,7 +39418,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7898,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 975,
         "name": "Honor",
@@ -37599,7 +39435,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7899,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -37616,7 +39452,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7900,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -37633,7 +39469,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7901,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -37650,7 +39486,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7902,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 1550,
         "name": "Honor",
@@ -37667,7 +39503,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7903,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 1850,
         "name": "Honor",
@@ -37684,7 +39520,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7904,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 2450,
         "name": "Honor",
@@ -37701,7 +39537,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7905,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -37718,7 +39554,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7906,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -37735,7 +39571,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7907,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 625,
         "name": "Honor",
@@ -37752,7 +39588,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7908,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 1175,
         "name": "Honor",
@@ -37769,7 +39605,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7909,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -37786,7 +39622,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7910,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -37803,7 +39639,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 7911,
-      "itemLevel": 252,
+      "itemLevel": 54,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -37820,7 +39656,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 7912,
-      "itemLevel": 259,
+      "itemLevel": 55,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -37837,7 +39673,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 7913,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -37889,22 +39725,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7920": {
     "id": 7920,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "7921": {
     "id": 7921,
-    "ilevel": "2 @plvl 1 - 343 @plvl 343",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 959
   },
   "7922": {
     "id": 7922,
-    "ilevel": "4 @plvl 1 - 345 @plvl 345",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 961
   },
   "7923": {
     "id": 7923,
-    "ilevel": "3 @plvl 1 - 344 @plvl 344",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 960
   },
   "7924": {
@@ -37972,6 +39808,14 @@ export const bonus_IDs: {[key: string]: any} = {
   "7935": {
     "id": 7935,
     "socket": 1
+  },
+  "7936": {
+    "id": 7936,
+    "serverside": true
+  },
+  "7937": {
+    "id": 7937,
+    "serverside": true
   },
   "7938": {
     "id": 7938,
@@ -38154,7 +39998,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 3,
       "bonusId": 7959,
-      "itemLevel": 239
+      "itemLevel": 51
     }
   },
   "7960": {
@@ -38173,81 +40017,49 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7962,
     "level": 3
   },
-  "7963": {
-    "id": 7963,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
+  "7974": {
+    "id": 7974,
+    "serverside": true
   },
-  "7964": {
-    "id": 7964,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
+  "7975": {
+    "id": 7975,
+    "serverside": true
   },
-  "7965": {
-    "id": 7965,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
+  "7976": {
+    "id": 7976,
+    "serverside": true
   },
-  "7966": {
-    "id": 7966,
-    "ilevel": "1 @plvl 1 - 322 @plvl 322",
-    "curveId": 16525
-  },
-  "7967": {
-    "id": 7967,
-    "ilevel": "1 @plvl 1 - 322 @plvl 322",
-    "curveId": 16526
-  },
-  "7968": {
-    "id": 7968,
-    "ilevel": "5 @plvl 1 - 357 @plvl 357",
-    "curveId": 16520
-  },
-  "7969": {
-    "id": 7969,
-    "ilevel": "5 @plvl 1 - 357 @plvl 357",
-    "curveId": 16522
-  },
-  "7970": {
-    "id": 7970,
-    "ilevel": "10 @plvl 1 - 362 @plvl 362",
-    "curveId": 16527,
-    "quality": 3
-  },
-  "7971": {
-    "id": 7971,
-    "ilevel": "10 @plvl 1 - 362 @plvl 362",
-    "curveId": 16528,
-    "quality": 3
-  },
-  "7972": {
-    "id": 7972,
-    "ilevel": "15 @plvl 1 - 367 @plvl 367",
-    "curveId": 16529
-  },
-  "7973": {
-    "id": 7973,
-    "ilevel": "15 @plvl 1 - 367 @plvl 367",
-    "curveId": 16530
+  "7977": {
+    "id": 7977,
+    "serverside": true
   },
   "7978": {
     "id": 7978,
     "ilevel": "5 @plvl 1 - 366 @plvl 366",
     "curveId": 5451
   },
+  "7979": {
+    "id": 7979,
+    "serverside": true
+  },
   "7980": {
     "id": 7980,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "serverside": true
   },
   "7981": {
     "id": 7981,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "serverside": true
   },
   "7982": {
     "id": 7982,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "serverside": true
+  },
+  "7983": {
+    "id": 7983,
+    "serverside": true
   },
   "7985": {
     "id": 7985,
@@ -40093,6 +41905,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8108,
     "quality": 3
   },
+  "8110": {
+    "id": 8110,
+    "serverside": true
+  },
+  "8116": {
+    "id": 8116,
+    "serverside": true
+  },
+  "8117": {
+    "id": 8117,
+    "serverside": true
+  },
   "8118": {
     "id": 8118,
     "item_conversion": 2
@@ -40313,9 +42137,37 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8133,
     "item_conversion": 2
   },
+  "8134": {
+    "id": 8134,
+    "serverside": true
+  },
+  "8135": {
+    "id": 8135,
+    "serverside": true
+  },
   "8136": {
     "id": 8136,
     "item_conversion": 2
+  },
+  "8137": {
+    "id": 8137,
+    "serverside": true
+  },
+  "8138": {
+    "id": 8138,
+    "serverside": true
+  },
+  "8139": {
+    "id": 8139,
+    "serverside": true
+  },
+  "8140": {
+    "id": 8140,
+    "serverside": true
+  },
+  "8141": {
+    "id": 8141,
+    "serverside": true
   },
   "8142": {
     "id": 8142,
@@ -40359,14 +42211,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8171": {
     "id": 8171,
-    "ilevel": "21 @plvl 1 - 359 @plvl 359",
-    "curveId": 56365,
-    "quality": 3
+    "tag": "Timewarped"
   },
   "8172": {
     "id": 8172,
-    "ilevel": "21 @plvl 1 - 346 @plvl 346",
-    "curveId": 56366,
     "tag": "Timewarped"
   },
   "8173": {
@@ -40620,7 +42468,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8189,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40636,7 +42484,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8190,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40652,7 +42500,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8191,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40668,7 +42516,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8192,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40684,7 +42532,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8193,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40700,7 +42548,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8194,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40716,7 +42564,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8195,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40732,7 +42580,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8196,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40748,7 +42596,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8197,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40764,7 +42612,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8198,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40780,7 +42628,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8199,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40796,7 +42644,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8200,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -40812,7 +42660,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8203,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40828,7 +42676,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8204,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40844,7 +42692,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8205,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40860,7 +42708,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8206,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40876,7 +42724,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8207,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40892,7 +42740,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8208,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40908,7 +42756,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8209,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40924,7 +42772,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8210,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40940,7 +42788,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8211,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40956,7 +42804,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8212,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40972,7 +42820,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8213,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -40988,7 +42836,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8214,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -41004,7 +42852,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8217,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41020,7 +42868,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8218,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41036,7 +42884,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8219,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41052,7 +42900,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8220,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41068,7 +42916,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8221,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41084,7 +42932,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8222,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41100,7 +42948,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8223,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41116,7 +42964,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8224,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41132,7 +42980,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8225,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41148,7 +42996,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8226,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41164,7 +43012,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8227,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41180,7 +43028,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8228,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41196,7 +43044,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8231,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41212,7 +43060,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8232,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41228,7 +43076,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8233,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41244,7 +43092,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8234,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41260,7 +43108,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8235,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41276,7 +43124,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8236,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41292,7 +43140,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8237,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41308,7 +43156,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8238,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41324,7 +43172,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8239,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41340,7 +43188,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8240,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41356,7 +43204,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8241,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41372,7 +43220,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8242,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -41388,7 +43236,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8245,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41404,7 +43252,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8246,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41420,7 +43268,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8247,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41436,7 +43284,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8248,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41452,7 +43300,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8249,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41468,7 +43316,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8250,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41484,7 +43332,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8251,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41500,7 +43348,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8252,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41516,7 +43364,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8253,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41532,7 +43380,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8254,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41548,7 +43396,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8255,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41564,7 +43412,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8256,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -41580,7 +43428,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8259,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41596,7 +43444,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8260,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41612,7 +43460,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8261,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41628,7 +43476,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8262,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41644,7 +43492,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8263,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41660,7 +43508,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8264,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41676,7 +43524,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8265,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41692,7 +43540,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8266,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41708,7 +43556,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8267,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41724,7 +43572,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8268,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41740,7 +43588,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8269,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41756,7 +43604,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8270,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -41772,7 +43620,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 12,
       "bonusId": 8273,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41788,7 +43636,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 12,
       "bonusId": 8274,
-      "itemLevel": 265,
+      "itemLevel": 56,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41804,7 +43652,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 12,
       "bonusId": 8275,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41820,7 +43668,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 12,
       "bonusId": 8276,
-      "itemLevel": 272,
+      "itemLevel": 57,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41836,7 +43684,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 12,
       "bonusId": 8277,
-      "itemLevel": 275,
+      "itemLevel": 58,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41852,7 +43700,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 12,
       "bonusId": 8278,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41868,7 +43716,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 12,
       "bonusId": 8279,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41884,7 +43732,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 12,
       "bonusId": 8280,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41900,7 +43748,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 12,
       "bonusId": 8281,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41916,7 +43764,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 10,
       "max": 12,
       "bonusId": 8282,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41932,7 +43780,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 11,
       "max": 12,
       "bonusId": 8283,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41948,7 +43796,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 12,
       "max": 12,
       "bonusId": 8284,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -41956,6 +43804,14 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "pvecurrency-valor"
       }
     }
+  },
+  "8287": {
+    "id": 8287,
+    "serverside": true
+  },
+  "8288": {
+    "id": 8288,
+    "serverside": true
   },
   "8289": {
     "id": 8289,
@@ -41968,7 +43824,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8290,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8291": {
@@ -41978,7 +43834,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8291,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -41994,7 +43850,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8292,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -42010,7 +43866,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8293,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 275,
         "name": "Honor",
@@ -42026,7 +43882,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8294,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -42042,7 +43898,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8295,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -42058,7 +43914,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8296,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -42074,7 +43930,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8297,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8298": {
@@ -42084,7 +43940,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8298,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -42100,7 +43956,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8299,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -42116,7 +43972,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8300,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -42132,7 +43988,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8301,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 400,
         "name": "Honor",
@@ -42148,7 +44004,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8302,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -42164,7 +44020,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8303,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -42180,7 +44036,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8304,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8305": {
@@ -42190,7 +44046,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8305,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -42206,7 +44062,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8306,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -42222,7 +44078,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8307,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -42238,7 +44094,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8308,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -42254,7 +44110,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8309,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -42270,7 +44126,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8310,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -42286,7 +44142,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8311,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8312": {
@@ -42296,7 +44152,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8312,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -42312,7 +44168,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8313,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -42328,7 +44184,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8314,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -42344,7 +44200,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8315,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 1000,
         "name": "Honor",
@@ -42360,7 +44216,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8316,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 1150,
         "name": "Honor",
@@ -42376,7 +44232,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8317,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 1300,
         "name": "Honor",
@@ -42392,7 +44248,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8318,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8319": {
@@ -42402,7 +44258,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8319,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 175,
         "name": "Honor",
@@ -42418,7 +44274,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8320,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -42434,7 +44290,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8321,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -42450,7 +44306,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8322,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -42466,7 +44322,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8323,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -42482,7 +44338,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8324,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -42498,7 +44354,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8325,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8326": {
@@ -42508,7 +44364,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8326,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -42524,7 +44380,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8327,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -42540,7 +44396,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8328,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -42556,7 +44412,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8329,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -42572,7 +44428,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8330,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -42588,7 +44444,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8331,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 950,
         "name": "Honor",
@@ -42604,7 +44460,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 7,
       "bonusId": 8332,
-      "itemLevel": 229
+      "itemLevel": 50
     }
   },
   "8333": {
@@ -42614,7 +44470,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 7,
       "bonusId": 8333,
-      "itemLevel": 236,
+      "itemLevel": 51,
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -42630,7 +44486,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 7,
       "bonusId": 8334,
-      "itemLevel": 242,
+      "itemLevel": 52,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -42646,7 +44502,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 7,
       "bonusId": 8335,
-      "itemLevel": 249,
+      "itemLevel": 53,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -42662,7 +44518,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 7,
       "bonusId": 8336,
-      "itemLevel": 255,
+      "itemLevel": 54,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -42678,7 +44534,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 7,
       "bonusId": 8337,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -42694,7 +44550,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 7,
       "bonusId": 8338,
-      "itemLevel": 268,
+      "itemLevel": 57,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -42711,7 +44567,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8339,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8340": {
@@ -42722,7 +44578,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8340,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -42739,7 +44595,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8341,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -42756,7 +44612,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8342,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 825,
         "name": "Honor",
@@ -42773,7 +44629,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8343,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -42790,7 +44646,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8344,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -42807,7 +44663,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8345,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8346": {
@@ -42818,7 +44674,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8346,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -42835,7 +44691,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8347,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -42852,7 +44708,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8348,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -42869,7 +44725,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8349,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 1475,
         "name": "Honor",
@@ -42886,7 +44742,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8350,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -42903,7 +44759,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8351,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8352": {
@@ -42914,7 +44770,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8352,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -42931,7 +44787,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8353,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -42948,7 +44804,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8354,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -42965,7 +44821,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8355,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -42982,7 +44838,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8356,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -42999,7 +44855,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8357,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8358": {
@@ -43010,7 +44866,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8358,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 1700,
         "name": "Honor",
@@ -43027,7 +44883,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8359,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 2150,
         "name": "Honor",
@@ -43044,7 +44900,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8360,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -43061,7 +44917,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8361,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 3650,
         "name": "Honor",
@@ -43078,7 +44934,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8362,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 3050,
         "name": "Honor",
@@ -43095,7 +44951,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8363,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8364": {
@@ -43106,7 +44962,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8364,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 425,
         "name": "Honor",
@@ -43123,7 +44979,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8365,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -43140,7 +44996,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8366,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 700,
         "name": "Honor",
@@ -43157,7 +45013,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8367,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -43174,7 +45030,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8368,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -43191,7 +45047,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8369,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8370": {
@@ -43202,7 +45058,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8370,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 1275,
         "name": "Honor",
@@ -43219,7 +45075,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8371,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 1600,
         "name": "Honor",
@@ -43236,7 +45092,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8372,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 2050,
         "name": "Honor",
@@ -43253,7 +45109,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8373,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -43270,7 +45126,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8374,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 2275,
         "name": "Honor",
@@ -43287,7 +45143,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 9,
       "bonusId": 8375,
-      "itemLevel": 275
+      "itemLevel": 58
     }
   },
   "8376": {
@@ -43298,7 +45154,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 9,
       "bonusId": 8376,
-      "itemLevel": 282,
+      "itemLevel": 59,
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -43315,7 +45171,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 5,
       "max": 9,
       "bonusId": 8377,
-      "itemLevel": 288,
+      "itemLevel": 60,
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -43332,7 +45188,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 7,
       "max": 9,
       "bonusId": 8378,
-      "itemLevel": 294,
+      "itemLevel": 61,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -43349,7 +45205,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 9,
       "max": 9,
       "bonusId": 8379,
-      "itemLevel": 301,
+      "itemLevel": 63,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -43366,7 +45222,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 8,
       "max": 9,
       "bonusId": 8380,
-      "itemLevel": 298,
+      "itemLevel": 62,
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -43383,7 +45239,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8381,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -43400,7 +45256,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8382,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -43417,7 +45273,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8383,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -43434,7 +45290,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8384,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 600,
         "name": "Honor",
@@ -43451,7 +45307,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8385,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -43468,7 +45324,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8386,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 975,
         "name": "Honor",
@@ -43485,7 +45341,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8387,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -43502,7 +45358,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8388,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -43519,7 +45375,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8389,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -43536,7 +45392,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8390,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 1550,
         "name": "Honor",
@@ -43553,7 +45409,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8391,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 1850,
         "name": "Honor",
@@ -43570,7 +45426,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8392,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 2450,
         "name": "Honor",
@@ -43587,7 +45443,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8393,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -43604,7 +45460,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8394,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -43621,7 +45477,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8395,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 625,
         "name": "Honor",
@@ -43638,7 +45494,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8396,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 1175,
         "name": "Honor",
@@ -43655,7 +45511,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8397,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -43672,7 +45528,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8398,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -43689,7 +45545,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 9,
       "bonusId": 8399,
-      "itemLevel": 278,
+      "itemLevel": 58,
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -43706,7 +45562,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 4,
       "max": 9,
       "bonusId": 8400,
-      "itemLevel": 285,
+      "itemLevel": 60,
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -43723,7 +45579,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 6,
       "max": 9,
       "bonusId": 8401,
-      "itemLevel": 291,
+      "itemLevel": 61,
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -44752,19 +46608,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8756": {
     "id": 8756,
-    "tag": "Fated Raid Finder"
+    "tag": "Fated Raid Finder",
+    "serverside": true
   },
   "8757": {
     "id": 8757,
+    "serverside": true,
     "tag": "Fated"
   },
   "8758": {
     "id": 8758,
-    "tag": "Fated Heroic"
+    "tag": "Fated Heroic",
+    "serverside": true
   },
   "8759": {
     "id": 8759,
-    "tag": "Fated Mythic"
+    "tag": "Fated Mythic",
+    "serverside": true
   },
   "8760": {
     "id": 8760,
@@ -44775,19 +46635,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8761": {
     "id": 8761,
+    "serverside": true,
     "tag": "Fated"
   },
   "8762": {
     "id": 8762,
-    "tag": "Fated Mythic"
+    "tag": "Fated Mythic",
+    "serverside": true
   },
   "8763": {
     "id": 8763,
-    "tag": "Fated Raid Finder"
+    "tag": "Fated Raid Finder",
+    "serverside": true
   },
   "8764": {
     "id": 8764,
-    "tag": "Fated Heroic"
+    "tag": "Fated Heroic",
+    "serverside": true
   },
   "8766": {
     "id": 8766,
@@ -44795,76 +46659,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8767": {
     "id": 8767,
-    "quality": 4
-  },
-  "8768": {
-    "id": 8768,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
-  },
-  "8769": {
-    "id": 8769,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "8770": {
-    "id": 8770,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
-  "8771": {
-    "id": 8771,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
-  },
-  "8772": {
-    "id": 8772,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "8773": {
-    "id": 8773,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
-  "8774": {
-    "id": 8774,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "8775": {
-    "id": 8775,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
-  "8776": {
-    "id": 8776,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "8777": {
-    "id": 8777,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
-  "8778": {
-    "id": 8778,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 6242,
-    "quality": 3
-  },
-  "8779": {
-    "id": 8779,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
     "quality": 4
   },
   "8780": {
@@ -44879,10 +46673,21 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8782,
     "socket": 3
   },
+  "8783": {
+    "id": 8783,
+    "serverside": true
+  },
+  "8784": {
+    "id": 8784,
+    "serverside": true
+  },
   "8785": {
     "id": 8785,
-    "base_level": 400,
-    "base_level_priority": 500
+    "itemLevel": {
+      "amount": 400,
+      "priority": 500,
+      "squishEra": 1
+    }
   },
   "8790": {
     "id": 8790,
@@ -44952,47 +46757,117 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8798": {
     "id": 8798,
-    "level": 0
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 1
+    }
   },
   "8799": {
     "id": 8799,
-    "level": 2
+    "levelOffset": {
+      "amount": 2,
+      "squishEra": 1
+    }
   },
   "8800": {
     "id": 8800,
-    "level": 4
+    "levelOffset": {
+      "amount": 4,
+      "squishEra": 1
+    }
   },
   "8801": {
     "id": 8801,
-    "level": 7
+    "levelOffset": {
+      "amount": 7,
+      "squishEra": 1
+    }
   },
   "8802": {
     "id": 8802,
-    "level": 10
+    "levelOffset": {
+      "amount": 10,
+      "squishEra": 1
+    }
   },
   "8803": {
     "id": 8803,
-    "level": 0
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 1
+    }
   },
   "8804": {
     "id": 8804,
-    "level": 6
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 1
+    }
   },
   "8805": {
     "id": 8805,
-    "level": 12
+    "levelOffset": {
+      "amount": 12,
+      "squishEra": 1
+    }
   },
   "8806": {
     "id": 8806,
-    "level": 19
+    "levelOffset": {
+      "amount": 19,
+      "squishEra": 1
+    }
   },
   "8807": {
     "id": 8807,
-    "level": 26
+    "levelOffset": {
+      "amount": 26,
+      "squishEra": 1
+    }
   },
   "8810": {
     "id": 8810,
     "socket": 1
+  },
+  "8811": {
+    "id": 8811,
+    "serverside": true
+  },
+  "8812": {
+    "id": 8812,
+    "serverside": true
+  },
+  "8813": {
+    "id": 8813,
+    "serverside": true
+  },
+  "8814": {
+    "id": 8814,
+    "serverside": true
+  },
+  "8815": {
+    "id": 8815,
+    "serverside": true
+  },
+  "8816": {
+    "id": 8816,
+    "serverside": true
+  },
+  "8817": {
+    "id": 8817,
+    "serverside": true
+  },
+  "8818": {
+    "id": 8818,
+    "serverside": true
+  },
+  "8819": {
+    "id": 8819,
+    "serverside": true
+  },
+  "8820": {
+    "id": 8820,
+    "serverside": true
   },
   "8821": {
     "id": 8821,
@@ -45059,69 +46934,51 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8836": {
     "id": 8836,
-    "base_level": 382,
-    "base_level_priority": 100
+    "serverside": true
   },
-  "8837": {
-    "id": 8837,
-    "base_level": 306,
-    "base_level_priority": 100
+  "8838": {
+    "id": 8838,
+    "serverside": true
   },
-  "8839": {
-    "id": 8839,
-    "base_level": 333,
-    "base_level_priority": 100
-  },
-  "8841": {
-    "id": 8841,
-    "base_level": 320,
-    "base_level_priority": 100
-  },
-  "8843": {
-    "id": 8843,
-    "base_level": 346,
-    "base_level_priority": 100
-  },
-  "8844": {
-    "id": 8844,
-    "base_level": 372,
-    "base_level_priority": 100
+  "8840": {
+    "id": 8840,
+    "serverside": true
   },
   "8845": {
     "id": 8845,
-    "base_level": 395,
-    "base_level_priority": 85
+    "serverside": true
   },
   "8846": {
     "id": 8846,
-    "base_level": 408,
-    "base_level_priority": 85
+    "serverside": true
   },
   "8847": {
     "id": 8847,
-    "base_level": 330,
-    "base_level_priority": 1
+    "serverside": true
   },
   "8848": {
     "id": 8848,
-    "base_level": 356,
-    "base_level_priority": 1
+    "serverside": true
   },
   "8849": {
     "id": 8849,
-    "base_level": 343,
-    "base_level_priority": 1
+    "serverside": true
   },
   "8850": {
     "id": 8850,
-    "base_level": 369,
-    "base_level_priority": 1,
-    "quality": 4
+    "serverside": true
   },
-  "8851": {
-    "id": 8851,
-    "base_level": 330,
-    "base_level_priority": 100
+  "8852": {
+    "id": 8852,
+    "serverside": true
+  },
+  "8853": {
+    "id": 8853,
+    "serverside": true
+  },
+  "8854": {
+    "id": 8854,
+    "serverside": true
   },
   "8856": {
     "id": 8856,
@@ -45457,8 +47314,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8903": {
     "id": 8903,
-    "base_level": 1,
-    "base_level_priority": 99
+    "itemLevel": {
+      "amount": 1,
+      "priority": 99,
+      "squishEra": 1
+    }
   },
   "8912": {
     "id": 8912,
@@ -45545,7 +47405,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 1/2",
       "bonusId": 8930,
-      "itemLevel": 262,
+      "itemLevel": 56,
       "costs": [
         {
           "mask_inv_type": 8192,
@@ -45579,6 +47439,10 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "pvecurrency-valor"
       }
     }
+  },
+  "8931": {
+    "id": 8931,
+    "serverside": true
   },
   "8932": {
     "id": 8932,
@@ -45635,15 +47499,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8938": {
     "id": 8938,
+    "serverside": true,
     "tag": "Fated"
   },
   "8939": {
     "id": 8939,
+    "serverside": true,
     "tag": "Fated Heroic"
   },
   "8940": {
     "id": 8940,
+    "serverside": true,
     "tag": "Fated Mythic"
+  },
+  "8943": {
+    "id": 8943,
+    "serverside": true
   },
   "8948": {
     "id": 8948,
@@ -45705,1413 +47576,13 @@ export const bonus_IDs: {[key: string]: any} = {
       78
     ]
   },
+  "8959": {
+    "id": 8959,
+    "serverside": true
+  },
   "8960": {
     "id": 8960,
     "item_limit_category": 512
-  },
-  "8961": {
-    "id": 8961,
-    "upgrade": {
-      "group": 276,
-      "level": 1,
-      "max": 13,
-      "bonusId": 8961,
-      "itemLevel": 376,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8962": {
-    "id": 8962,
-    "upgrade": {
-      "group": 276,
-      "level": 2,
-      "max": 13,
-      "bonusId": 8962,
-      "itemLevel": 379,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8963": {
-    "id": 8963,
-    "upgrade": {
-      "group": 276,
-      "level": 3,
-      "max": 13,
-      "bonusId": 8963,
-      "itemLevel": 382,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8964": {
-    "id": 8964,
-    "upgrade": {
-      "group": 276,
-      "level": 4,
-      "max": 13,
-      "bonusId": 8964,
-      "itemLevel": 385,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8965": {
-    "id": 8965,
-    "upgrade": {
-      "group": 276,
-      "level": 5,
-      "max": 13,
-      "bonusId": 8965,
-      "itemLevel": 389,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8966": {
-    "id": 8966,
-    "upgrade": {
-      "group": 276,
-      "level": 6,
-      "max": 13,
-      "bonusId": 8966,
-      "itemLevel": 392,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8967": {
-    "id": 8967,
-    "upgrade": {
-      "group": 276,
-      "level": 7,
-      "max": 13,
-      "bonusId": 8967,
-      "itemLevel": 395,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8968": {
-    "id": 8968,
-    "upgrade": {
-      "group": 276,
-      "level": 8,
-      "max": 13,
-      "bonusId": 8968,
-      "itemLevel": 398,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8969": {
-    "id": 8969,
-    "upgrade": {
-      "group": 276,
-      "level": 9,
-      "max": 13,
-      "bonusId": 8969,
-      "itemLevel": 402,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8970": {
-    "id": 8970,
-    "upgrade": {
-      "group": 276,
-      "level": 10,
-      "max": 13,
-      "bonusId": 8970,
-      "itemLevel": 405,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8971": {
-    "id": 8971,
-    "upgrade": {
-      "group": 276,
-      "level": 11,
-      "max": 13,
-      "bonusId": 8971,
-      "itemLevel": 408,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8972": {
-    "id": 8972,
-    "upgrade": {
-      "group": 276,
-      "level": 12,
-      "max": 13,
-      "bonusId": 8972,
-      "itemLevel": 411,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8973": {
-    "id": 8973,
-    "upgrade": {
-      "group": 276,
-      "level": 13,
-      "max": 13,
-      "bonusId": 8973,
-      "itemLevel": 415,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 475,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 400,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 250,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 500,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 750,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1191,
-              "amount": 1000,
-              "name": "Valor",
-              "icon": "pvecurrency-valor"
-            }
-          ]
-        }
-      ]
-    }
   },
   "8975": {
     "id": 8975,
@@ -47123,11 +47594,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Indestructible [0.3000]"
-  },
-  "8979": {
-    "id": 8979,
-    "ilevel": "5 @plvl 1 - 392 @plvl 392",
-    "curveId": 56397
   },
   "8980": {
     "id": 8980,
@@ -47143,612 +47609,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8982,
     "ilevel": "395 @plvl 45 - 395 @plvl 395",
     "curveId": 56681
-  },
-  "8984": {
-    "id": 8984,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 6244,
-    "quality": 4
-  },
-  "8985": {
-    "id": 8985,
-    "upgrade": {
-      "group": 278,
-      "level": 1,
-      "max": 5,
-      "bonusId": 8985,
-      "itemLevel": 340,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8986": {
-    "id": 8986,
-    "upgrade": {
-      "group": 278,
-      "level": 2,
-      "max": 5,
-      "bonusId": 8986,
-      "itemLevel": 346,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8987": {
-    "id": 8987,
-    "upgrade": {
-      "group": 278,
-      "level": 3,
-      "max": 5,
-      "bonusId": 8987,
-      "itemLevel": 353,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8988": {
-    "id": 8988,
-    "upgrade": {
-      "group": 278,
-      "level": 4,
-      "max": 5,
-      "bonusId": 8988,
-      "itemLevel": 359,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "8989": {
-    "id": 8989,
-    "upgrade": {
-      "group": 278,
-      "level": 5,
-      "max": 5,
-      "bonusId": 8989,
-      "itemLevel": 366,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
   },
   "8991": {
     "id": 8991,
@@ -47781,882 +47641,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8998": {
     "id": 8998,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
-  },
-  "8999": {
-    "id": 8999,
-    "upgrade": {
-      "group": 277,
-      "level": 1,
-      "max": 9,
-      "bonusId": 8999,
-      "itemLevel": 382,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Unranked"
-  },
-  "9000": {
-    "id": 9000,
-    "upgrade": {
-      "group": 277,
-      "level": 2,
-      "max": 9,
-      "bonusId": 9000,
-      "itemLevel": 385,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Combatant I"
-  },
-  "9001": {
-    "id": 9001,
-    "upgrade": {
-      "group": 277,
-      "level": 3,
-      "max": 9,
-      "bonusId": 9001,
-      "itemLevel": 389,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Combatant II"
-  },
-  "9002": {
-    "id": 9002,
-    "upgrade": {
-      "group": 277,
-      "level": 4,
-      "max": 9,
-      "bonusId": 9002,
-      "itemLevel": 392,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Challenger I"
-  },
-  "9003": {
-    "id": 9003,
-    "upgrade": {
-      "group": 277,
-      "level": 5,
-      "max": 9,
-      "bonusId": 9003,
-      "itemLevel": 395,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Challenger II"
-  },
-  "9004": {
-    "id": 9004,
-    "upgrade": {
-      "group": 277,
-      "level": 6,
-      "max": 9,
-      "bonusId": 9004,
-      "itemLevel": 398,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Rival I"
-  },
-  "9005": {
-    "id": 9005,
-    "upgrade": {
-      "group": 277,
-      "level": 7,
-      "max": 9,
-      "bonusId": 9005,
-      "itemLevel": 402,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Rival II"
-  },
-  "9006": {
-    "id": 9006,
-    "upgrade": {
-      "group": 277,
-      "level": 8,
-      "max": 9,
-      "bonusId": 9006,
-      "itemLevel": 405,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Duelist"
+    "quality": 3,
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9007": {
     "id": 9007,
@@ -48664,121 +47655,15 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 60485,
     "quality": 3
   },
-  "9008": {
-    "id": 9008,
-    "upgrade": {
-      "group": 277,
-      "level": 9,
-      "max": 9,
-      "bonusId": 9008,
-      "itemLevel": 408,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Elite"
-  },
   "9010": {
     "id": 9010,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9011": {
     "id": 9011,
@@ -48788,10 +47673,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9012": {
     "id": 9012,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Heroic",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 41,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9013": {
     "id": 9013,
@@ -48801,17 +47689,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9014": {
     "id": 9014,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9015": {
     "id": 9015,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Mythic",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9016": {
     "id": 9016,
@@ -48822,17 +47716,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9017": {
     "id": 9017,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Warforged",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9018": {
     "id": 9018,
-    "ilevel": "16 @plvl 1 - 377 @plvl 377",
-    "curveId": 60943,
     "tag": "Warforged",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9019": {
     "id": 9019,
@@ -48842,17 +47742,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9020": {
     "id": 9020,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9021": {
     "id": 9021,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Mythic",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 51,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9022": {
     "id": 9022,
@@ -48862,17 +47768,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9023": {
     "id": 9023,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 53,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9024": {
     "id": 9024,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Mythic",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 56,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9025": {
     "id": 9025,
@@ -48882,635 +47794,925 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9026": {
     "id": 9026,
-    "ilevel": "14 @plvl 1 - 375 @plvl 375",
-    "curveId": 60488,
     "tag": "Mythic",
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 66,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9027": {
     "id": 9027,
-    "ilevel": "12 @plvl 1 - 373 @plvl 373",
-    "curveId": 60486,
     "tag": "Heroic",
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 63,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "9028": {
+    "id": 9028,
+    "serverside": true
   },
   "9029": {
     "id": 9029,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9031": {
     "id": 9031,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 40,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9032": {
     "id": 9032,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973
+    "itemLevel": {
+      "amount": 42,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9033": {
     "id": 9033,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9034": {
     "id": 9034,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9035": {
     "id": 9035,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 40,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9036": {
     "id": 9036,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 42,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9037": {
     "id": 9037,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9038": {
     "id": 9038,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9039": {
     "id": 9039,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 39,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9040": {
     "id": 9040,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 40,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9041": {
     "id": 9041,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 41,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9042": {
     "id": 9042,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 42,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9043": {
     "id": 9043,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9044": {
     "id": 9044,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 42,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9045": {
     "id": 9045,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9046": {
     "id": 9046,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9047": {
     "id": 9047,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9048": {
     "id": 9048,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9049": {
     "id": 9049,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60978,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9050": {
     "id": 9050,
-    "ilevel": "34 @plvl 1 - 395 @plvl 395",
-    "curveId": 60979,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9051": {
     "id": 9051,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9052": {
     "id": 9052,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9053": {
     "id": 9053,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9054": {
     "id": 9054,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9055": {
     "id": 9055,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9056": {
     "id": 9056,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9057": {
     "id": 9057,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9058": {
     "id": 9058,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9059": {
     "id": 9059,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9060": {
     "id": 9060,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9062": {
     "id": 9062,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9063": {
     "id": 9063,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9064": {
     "id": 9064,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9065": {
     "id": 9065,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 45,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9066": {
     "id": 9066,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9067": {
     "id": 9067,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9068": {
     "id": 9068,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9069": {
     "id": 9069,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9070": {
     "id": 9070,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9071": {
     "id": 9071,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9072": {
     "id": 9072,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9073": {
     "id": 9073,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9074": {
     "id": 9074,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9075": {
     "id": 9075,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9076": {
     "id": 9076,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9077": {
     "id": 9077,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 51,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9078": {
     "id": 9078,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9079": {
     "id": 9079,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 51,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9080": {
     "id": 9080,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 52,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9081": {
     "id": 9081,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 53,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9082": {
     "id": 9082,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 53,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9083": {
     "id": 9083,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 54,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9084": {
     "id": 9084,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 55,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9085": {
     "id": 9085,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 56,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9086": {
     "id": 9086,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 55,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9087": {
     "id": 9087,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 56,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9088": {
     "id": 9088,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 57,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9089": {
     "id": 9089,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9090": {
     "id": 9090,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 57,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9091": {
     "id": 9091,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9092": {
     "id": 9092,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 59,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9093": {
     "id": 9093,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9094": {
     "id": 9094,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 59,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9095": {
     "id": 9095,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60978,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9096": {
     "id": 9096,
-    "ilevel": "34 @plvl 1 - 395 @plvl 395",
-    "curveId": 60979,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 61,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9097": {
     "id": 9097,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9098": {
     "id": 9098,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9099": {
     "id": 9099,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 59,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9100": {
     "id": 9100,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9101": {
     "id": 9101,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 61,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9102": {
     "id": 9102,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9103": {
     "id": 9103,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 61,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9104": {
     "id": 9104,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9105": {
     "id": 9105,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 63,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9106": {
     "id": 9106,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9107": {
     "id": 9107,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 63,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9108": {
     "id": 9108,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 64,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9109": {
     "id": 9109,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 65,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9110": {
     "id": 9110,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 64,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9111": {
     "id": 9111,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60978,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 65,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9112": {
     "id": 9112,
-    "ilevel": "34 @plvl 1 - 395 @plvl 395",
-    "curveId": 60979,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 66,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9113": {
     "id": 9113,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 67,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9114": {
     "id": 9114,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 68,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9115": {
     "id": 9115,
-    "ilevel": "20 @plvl 1 - 381 @plvl 381",
-    "curveId": 60966,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 69,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9116": {
     "id": 9116,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60967,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9117": {
     "id": 9117,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60968,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 71,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9118": {
     "id": 9118,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9119": {
     "id": 9119,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 71,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9120": {
     "id": 9120,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60971,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 72,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9121": {
     "id": 9121,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 73,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9122": {
     "id": 9122,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
     "quality": 4,
-    "tag": "Raid Finder"
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 72,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9123": {
     "id": 9123,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60974,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 73,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9124": {
     "id": 9124,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 74,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9125": {
     "id": 9125,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
     "quality": 4,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 75,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9128": {
     "id": 9128,
-    "base_level": 333,
-    "base_level_priority": 100
-  },
-  "9129": {
-    "id": 9129,
-    "quality": 3
+    "serverside": true
   },
   "9131": {
     "id": 9131,
@@ -49567,6 +48769,10 @@ export const bonus_IDs: {[key: string]: any} = {
   "9136": {
     "id": 9136,
     "quality": 4
+  },
+  "9137": {
+    "id": 9137,
+    "serverside": true
   },
   "9138": {
     "id": 9138,
@@ -50439,6 +49645,38 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "9214": {
+    "id": 9214,
+    "serverside": true
+  },
+  "9215": {
+    "id": 9215,
+    "serverside": true
+  },
+  "9216": {
+    "id": 9216,
+    "serverside": true
+  },
+  "9217": {
+    "id": 9217,
+    "serverside": true
+  },
+  "9218": {
+    "id": 9218,
+    "serverside": true
+  },
+  "9219": {
+    "id": 9219,
+    "serverside": true
+  },
+  "9220": {
+    "id": 9220,
+    "serverside": true
+  },
+  "9221": {
+    "id": 9221,
+    "serverside": true
+  },
   "9222": {
     "id": 9222,
     "item_conversion": 6
@@ -50472,8 +49710,15 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9234": {
     "id": 9234,
-    "base_level": 424,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 424,
+      "priority": 1,
+      "squishEra": 1
+    }
+  },
+  "9235": {
+    "id": 9235,
+    "serverside": true
   },
   "9236": {
     "id": 9236,
@@ -50820,63 +50065,93 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9263": {
     "id": 9263,
-    "ilevel": "18 @plvl 1 - 379 @plvl 379",
-    "curveId": 60965,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 38,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9264": {
     "id": 9264,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 40,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9265": {
     "id": 9265,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9266": {
     "id": 9266,
-    "ilevel": "26 @plvl 1 - 387 @plvl 387",
-    "curveId": 60973,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 42,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9267": {
     "id": 9267,
-    "ilevel": "28 @plvl 1 - 389 @plvl 389",
-    "curveId": 60972,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9268": {
     "id": 9268,
-    "ilevel": "36 @plvl 1 - 397 @plvl 397",
-    "curveId": 60980,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 47,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9269": {
     "id": 9269,
-    "ilevel": "24 @plvl 1 - 385 @plvl 385",
-    "curveId": 60970,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9270": {
     "id": 9270,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60975,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9271": {
     "id": 9271,
-    "ilevel": "32 @plvl 1 - 393 @plvl 393",
-    "curveId": 60976,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9272": {
     "id": 9272,
-    "ilevel": "22 @plvl 1 - 383 @plvl 383",
-    "curveId": 60969,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9274": {
     "id": 9274,
@@ -50885,7 +50160,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9274,
-      "itemLevel": 366,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -50969,7 +50244,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 2,
       "bonusId": 9275,
-      "itemLevel": 385,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51047,6 +50322,10 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "tag": "Primal Infused"
   },
+  "9276": {
+    "id": 9276,
+    "serverside": true
+  },
   "9277": {
     "id": 9277,
     "upgrade": {
@@ -51054,7 +50333,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 2,
       "bonusId": 9277,
-      "itemLevel": 385,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51139,7 +50418,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9278,
-      "itemLevel": 350,
+      "itemLevel": 70,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51223,7 +50502,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9279,
-      "itemLevel": 353,
+      "itemLevel": 70,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51307,7 +50586,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9280,
-      "itemLevel": 356,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51391,7 +50670,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9281,
-      "itemLevel": 359,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51475,7 +50754,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9282,
-      "itemLevel": 363,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51559,7 +50838,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9283,
-      "itemLevel": 206,
+      "itemLevel": 45,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51636,176 +50915,22 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     }
   },
-  "9294": {
-    "id": 9294,
-    "quality": 2
-  },
-  "9295": {
-    "id": 9295,
-    "quality": 2
-  },
-  "9296": {
-    "id": 9296,
-    "quality": 3
-  },
-  "9297": {
-    "id": 9297,
-    "quality": 3
-  },
-  "9298": {
-    "id": 9298,
-    "quality": 3
-  },
-  "9299": {
-    "id": 9299,
-    "quality": 3
-  },
-  "9300": {
-    "id": 9300,
-    "quality": 3
-  },
-  "9301": {
-    "id": 9301,
-    "quality": 3
-  },
-  "9302": {
-    "id": 9302,
-    "quality": 3
-  },
-  "9303": {
-    "id": 9303,
-    "quality": 3
-  },
-  "9304": {
-    "id": 9304,
-    "quality": 3
-  },
-  "9305": {
-    "id": 9305,
-    "quality": 3
-  },
-  "9306": {
-    "id": 9306,
-    "quality": 4
-  },
-  "9307": {
-    "id": 9307,
-    "quality": 4
-  },
-  "9308": {
-    "id": 9308,
-    "quality": 4
-  },
-  "9309": {
-    "id": 9309,
-    "quality": 4
-  },
   "9310": {
     "id": 9310,
-    "ilevel": "30 @plvl 1 - 391 @plvl 391",
-    "curveId": 60977,
-    "quality": 5
+    "quality": 5,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
-  "9311": {
-    "id": 9311,
-    "base_level": 366,
-    "base_level_priority": 100
+  "9338": {
+    "id": 9338,
+    "serverside": true
   },
-  "9313": {
-    "id": 9313,
-    "quality": 4
-  },
-  "9314": {
-    "id": 9314,
-    "quality": 4
-  },
-  "9315": {
-    "id": 9315,
-    "quality": 4
-  },
-  "9316": {
-    "id": 9316,
-    "quality": 4
-  },
-  "9317": {
-    "id": 9317,
-    "quality": 4
-  },
-  "9318": {
-    "id": 9318,
-    "quality": 4
-  },
-  "9319": {
-    "id": 9319,
-    "quality": 4
-  },
-  "9320": {
-    "id": 9320,
-    "quality": 4
-  },
-  "9321": {
-    "id": 9321,
-    "quality": 4
-  },
-  "9322": {
-    "id": 9322,
-    "quality": 4
-  },
-  "9323": {
-    "id": 9323,
-    "quality": 4
-  },
-  "9324": {
-    "id": 9324,
-    "quality": 4
-  },
-  "9325": {
-    "id": 9325,
-    "quality": 4
-  },
-  "9327": {
-    "id": 9327,
-    "quality": 4
-  },
-  "9328": {
-    "id": 9328,
-    "quality": 4
-  },
-  "9329": {
-    "id": 9329,
-    "quality": 4
-  },
-  "9330": {
-    "id": 9330,
-    "quality": 4
-  },
-  "9331": {
-    "id": 9331,
-    "quality": 4
-  },
-  "9332": {
-    "id": 9332,
-    "quality": 4
-  },
-  "9333": {
-    "id": 9333,
-    "quality": 4
-  },
-  "9334": {
-    "id": 9334,
-    "quality": 4
-  },
-  "9335": {
-    "id": 9335,
-    "quality": 4
-  },
-  "9336": {
-    "id": 9336,
-    "quality": 4
-  },
-  "9337": {
-    "id": 9337,
-    "quality": 4
+  "9339": {
+    "id": 9339,
+    "serverside": true
   },
   "9340": {
     "id": 9340,
@@ -51814,7 +50939,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 3,
       "bonusId": 9340,
-      "itemLevel": 359,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51898,7 +51023,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 3,
       "bonusId": 9341,
-      "itemLevel": 372,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -51982,7 +51107,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 3,
       "bonusId": 9342,
-      "itemLevel": 376,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52066,7 +51191,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 3,
       "bonusId": 9343,
-      "itemLevel": 385,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52151,7 +51276,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 3,
       "max": 3,
       "bonusId": 9344,
-      "itemLevel": 395,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52236,7 +51361,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 3,
       "bonusId": 9345,
-      "itemLevel": 385,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 8471104,
@@ -52316,8 +51441,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9351": {
     "id": 9351,
-    "base_level": 408,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 408,
+      "priority": 100,
+      "squishEra": 1
+    }
   },
   "9352": {
     "id": 9352,
@@ -52347,38 +51475,53 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9354": {
     "id": 9354,
-    "ilevel": "1 @plvl 1 - 342 @plvl 342",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 956
   },
   "9355": {
     "id": 9355,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9356": {
     "id": 9356,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9357": {
     "id": 9357,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 44,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9358": {
     "id": 9358,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 50,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9359": {
     "id": 9359,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 53,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9360": {
     "id": 9360,
@@ -52389,15 +51532,21 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9362": {
     "id": 9362,
-    "ilevel": "15 @plvl 1 - 376 @plvl 376",
-    "curveId": 1749,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9363": {
     "id": 9363,
-    "ilevel": "10 @plvl 1 - 371 @plvl 371",
-    "curveId": 1748,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "9364": {
     "id": 9364,
@@ -52414,20 +51563,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9365": {
     "id": 9365,
-    "base_level": 382,
-    "base_level_priority": 90,
     "tag": "Ingenuity Crafted"
   },
   "9366": {
     "id": 9366,
-    "base_level": 411,
-    "base_level_priority": 70,
     "tag": "Shadowflame Crafted"
   },
   "9367": {
     "id": 9367,
-    "base_level": 411,
-    "base_level_priority": 0
+    "itemLevel": {
+      "amount": 411,
+      "priority": 0,
+      "squishEra": 1
+    }
   },
   "9368": {
     "id": 9368,
@@ -52439,40 +51587,41 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9370": {
     "id": 9370,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
-  },
-  "9371": {
-    "id": 9371,
-    "base_level": 382,
-    "base_level_priority": 1,
-    "quality": 3
   },
   "9372": {
     "id": 9372,
-    "base_level": 395,
-    "base_level_priority": 1,
+    "itemLevel": {
+      "amount": 395,
+      "priority": 1,
+      "squishEra": 1
+    },
     "quality": 4
   },
   "9373": {
     "id": 9373,
-    "base_level": 424,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 424,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "9374": {
     "id": 9374,
-    "base_level": 421,
-    "base_level_priority": 65
+    "serverside": true
   },
   "9375": {
     "id": 9375,
-    "base_level": 434,
-    "base_level_priority": 65
+    "serverside": true
   },
   "9376": {
     "id": 9376,
-    "base_level": 434,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 434,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "9377": {
     "id": 9377,
@@ -52481,7 +51630,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9377,
-      "itemLevel": 389
+      "itemLevel": 72
     }
   },
   "9378": {
@@ -52491,7 +51640,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 2,
       "bonusId": 9378,
-      "itemLevel": 398
+      "itemLevel": 72
     },
     "tag": "Primal Empowered"
   },
@@ -52506,30 +51655,6 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_shadowflame_buff"
       }
     }
-  },
-  "9380": {
-    "id": 9380,
-    "quality": 4
-  },
-  "9381": {
-    "id": 9381,
-    "quality": 4
-  },
-  "9382": {
-    "id": 9382,
-    "quality": 4
-  },
-  "9383": {
-    "id": 9383,
-    "quality": 4
-  },
-  "9384": {
-    "id": 9384,
-    "quality": 4
-  },
-  "9385": {
-    "id": 9385,
-    "quality": 4
   },
   "9399": {
     "id": 9399,
@@ -52557,42 +51682,59 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9401": {
     "id": 9401,
-    "level": 0
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 1
+    }
   },
   "9402": {
     "id": 9402,
-    "level": 3
+    "levelOffset": {
+      "amount": 3,
+      "squishEra": 1
+    }
   },
   "9403": {
     "id": 9403,
-    "level": 6
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 1
+    }
   },
   "9404": {
     "id": 9404,
-    "level": 9
+    "levelOffset": {
+      "amount": 9,
+      "squishEra": 1
+    }
   },
   "9405": {
     "id": 9405,
-    "level": 13
+    "levelOffset": {
+      "amount": 13,
+      "squishEra": 1
+    }
   },
   "9406": {
     "id": 9406,
-    "ilevel": "21 @plvl 1 - 372 @plvl 372",
-    "curveId": 64771,
     "tag": "Timewarped"
   },
   "9407": {
     "id": 9407,
-    "ilevel": "21 @plvl 1 - 385 @plvl 385",
-    "curveId": 64774,
-    "quality": 3
+    "tag": "Timewarped"
+  },
+  "9408": {
+    "id": 9408,
+    "serverside": true
   },
   "9409": {
     "id": 9409,
+    "serverside": true,
     "tag": "Heroic|n"
   },
   "9410": {
     "id": 9410,
+    "serverside": true,
     "tag": "Mythic|n"
   },
   "9411": {
@@ -52615,6 +51757,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9413,
     "socket": 1
   },
+  "9414": {
+    "id": 9414,
+    "serverside": true
+  },
+  "9415": {
+    "id": 9415,
+    "serverside": true
+  },
   "9416": {
     "id": 9416,
     "effect": {
@@ -52627,1587 +51777,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "9421": {
-    "id": 9421,
-    "upgrade": {
-      "group": 299,
-      "level": 1,
-      "max": 5,
-      "bonusId": 9421,
-      "itemLevel": 366,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "9422": {
-    "id": 9422,
-    "upgrade": {
-      "group": 299,
-      "level": 2,
-      "max": 5,
-      "bonusId": 9422,
-      "itemLevel": 372,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "9423": {
-    "id": 9423,
-    "upgrade": {
-      "group": 299,
-      "level": 3,
-      "max": 5,
-      "bonusId": 9423,
-      "itemLevel": 379,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "9424": {
-    "id": 9424,
-    "upgrade": {
-      "group": 299,
-      "level": 4,
-      "max": 5,
-      "bonusId": 9424,
-      "itemLevel": 385,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "9425": {
-    "id": 9425,
-    "upgrade": {
-      "group": 299,
-      "level": 5,
-      "max": 5,
-      "bonusId": 9425,
-      "itemLevel": 392,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 550,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1050,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 425,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "9426": {
-    "id": 9426,
-    "upgrade": {
-      "group": 298,
-      "level": 1,
-      "max": 9,
-      "bonusId": 9426,
-      "itemLevel": 408,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Unranked"
-  },
-  "9427": {
-    "id": 9427,
-    "upgrade": {
-      "group": 298,
-      "level": 2,
-      "max": 9,
-      "bonusId": 9427,
-      "itemLevel": 411,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Combatant I"
-  },
-  "9428": {
-    "id": 9428,
-    "upgrade": {
-      "group": 298,
-      "level": 3,
-      "max": 9,
-      "bonusId": 9428,
-      "itemLevel": 415,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Combatant II"
-  },
-  "9429": {
-    "id": 9429,
-    "upgrade": {
-      "group": 298,
-      "level": 4,
-      "max": 9,
-      "bonusId": 9429,
-      "itemLevel": 418,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Challenger I"
-  },
-  "9430": {
-    "id": 9430,
-    "upgrade": {
-      "group": 298,
-      "level": 5,
-      "max": 9,
-      "bonusId": 9430,
-      "itemLevel": 421,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Challenger II"
-  },
-  "9431": {
-    "id": 9431,
-    "upgrade": {
-      "group": 298,
-      "level": 6,
-      "max": 9,
-      "bonusId": 9431,
-      "itemLevel": 424,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Rival I"
-  },
-  "9432": {
-    "id": 9432,
-    "upgrade": {
-      "group": 298,
-      "level": 7,
-      "max": 9,
-      "bonusId": 9432,
-      "itemLevel": 428,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Rival II"
-  },
-  "9433": {
-    "id": 9433,
-    "upgrade": {
-      "group": 298,
-      "level": 8,
-      "max": 9,
-      "bonusId": 9433,
-      "itemLevel": 431,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Duelist"
-  },
-  "9434": {
-    "id": 9434,
-    "upgrade": {
-      "group": 298,
-      "level": 9,
-      "max": 9,
-      "bonusId": 9434,
-      "itemLevel": 434,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 8,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 950,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 72196,
-          "flags": 4,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 700,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 600,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1175,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 1775,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 1792,
-              "amount": 2375,
-              "name": "Honor",
-              "icon": "achievement_legionpvptier4"
-            }
-          ]
-        }
-      ]
-    },
-    "tag": "Elite"
-  },
   "9436": {
     "id": 9436,
     "socket": 1
@@ -54218,17 +51787,17 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9443": {
     "id": 9443,
-    "ilevel": "2 @plvl 1 - 343 @plvl 343",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 959
   },
   "9444": {
     "id": 9444,
-    "ilevel": "4 @plvl 1 - 345 @plvl 345",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 961
   },
   "9445": {
     "id": 9445,
-    "ilevel": "3 @plvl 1 - 344 @plvl 344",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 960
   },
   "9455": {
@@ -54311,6 +51880,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9476,
     "level": -410
   },
+  "9477": {
+    "id": 9477,
+    "serverside": true
+  },
   "9480": {
     "id": 9480,
     "upgrade": {
@@ -54318,7 +51891,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9480,
-      "itemLevel": 392,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54402,7 +51975,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 2,
       "bonusId": 9481,
-      "itemLevel": 411,
+      "itemLevel": 73,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54486,7 +52059,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9484,
-      "itemLevel": 376,
+      "itemLevel": 71,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54570,7 +52143,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9485,
-      "itemLevel": 379,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54654,7 +52227,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9486,
-      "itemLevel": 382,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54738,7 +52311,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9487,
-      "itemLevel": 385,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54822,7 +52395,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9488,
-      "itemLevel": 389,
+      "itemLevel": 72,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54906,7 +52479,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 1,
       "max": 2,
       "bonusId": 9489,
-      "itemLevel": 206,
+      "itemLevel": 45,
       "costs": [
         {
           "mask_inv_type": 9480,
@@ -54983,10 +52556,9 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     }
   },
-  "9492": {
-    "id": 9492,
-    "ilevel": "21 @plvl 1 - 385 @plvl 385",
-    "curveId": 66349
+  "9495": {
+    "id": 9495,
+    "serverside": true
   },
   "9496": {
     "id": 9496,
@@ -54998,25 +52570,23 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9498": {
     "id": 9498,
-    "base_level": 450,
-    "base_level_priority": 70,
     "tag": "Dream Crafted"
   },
   "9499": {
     "id": 9499,
-    "base_level": 463,
-    "base_level_priority": 65
+    "serverside": true
   },
   "9500": {
     "id": 9500,
-    "base_level": 473,
-    "base_level_priority": 65
+    "serverside": true
   },
   "9502": {
     "id": 9502,
-    "base_level": 434,
-    "base_level_priority": 1,
-    "quality": 4
+    "serverside": true
+  },
+  "9504": {
+    "id": 9504,
+    "serverside": true
   },
   "9505": {
     "id": 9505,
@@ -55038,9 +52608,25 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9509,
     "item_conversion": 7
   },
+  "9510": {
+    "id": 9510,
+    "serverside": true
+  },
   "9516": {
     "id": 9516,
     "socket": 1
+  },
+  "9517": {
+    "id": 9517,
+    "serverside": true
+  },
+  "9518": {
+    "id": 9518,
+    "serverside": true
+  },
+  "9519": {
+    "id": 9519,
+    "serverside": true
   },
   "9520": {
     "id": 9520,
@@ -55075,14 +52661,17 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9526,
     "tag": "Divergent"
   },
-  "9527": {
-    "id": 9527,
-    "base_level": 399,
-    "base_level_priority": 100
-  },
   "9529": {
     "id": 9529,
     "tag": "Divergent"
+  },
+  "9530": {
+    "id": 9530,
+    "serverside": true
+  },
+  "9531": {
+    "id": 9531,
+    "serverside": true
   },
   "9532": {
     "id": 9532,
@@ -55098,197 +52687,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9533": {
     "id": 9533,
-    "ilevel": "21 @plvl 1 - 411 @plvl 411",
-    "curveId": 69326,
     "tag": "Timewarped"
   },
   "9534": {
     "id": 9534,
-    "ilevel": "21 @plvl 1 - 428 @plvl 428",
-    "curveId": 69336,
-    "quality": 3
-  },
-  "9535": {
-    "id": 9535,
-    "ilevel": "21 @plvl 1 - 428 @plvl 428",
-    "curveId": 69337
-  },
-  "9536": {
-    "id": 9536,
-    "quality": 3,
-    "level": 0
-  },
-  "9537": {
-    "id": 9537,
-    "quality": 3
-  },
-  "9538": {
-    "id": 9538,
-    "quality": 3
-  },
-  "9539": {
-    "id": 9539,
-    "quality": 3
-  },
-  "9540": {
-    "id": 9540,
-    "quality": 4
-  },
-  "9541": {
-    "id": 9541,
-    "quality": 4
-  },
-  "9542": {
-    "id": 9542,
-    "quality": 4
-  },
-  "9543": {
-    "id": 9543,
-    "quality": 4
-  },
-  "9544": {
-    "id": 9544,
-    "quality": 2
-  },
-  "9545": {
-    "id": 9545,
-    "quality": 2
-  },
-  "9546": {
-    "id": 9546,
-    "quality": 3
-  },
-  "9547": {
-    "id": 9547,
-    "quality": 3
-  },
-  "9548": {
-    "id": 9548,
-    "quality": 3
-  },
-  "9549": {
-    "id": 9549,
-    "quality": 3
-  },
-  "9550": {
-    "id": 9550,
-    "quality": 3
-  },
-  "9551": {
-    "id": 9551,
-    "quality": 3
-  },
-  "9552": {
-    "id": 9552,
-    "quality": 4
-  },
-  "9553": {
-    "id": 9553,
-    "quality": 4
-  },
-  "9554": {
-    "id": 9554,
-    "quality": 4
-  },
-  "9555": {
-    "id": 9555,
-    "quality": 4
-  },
-  "9556": {
-    "id": 9556,
-    "quality": 4
-  },
-  "9557": {
-    "id": 9557,
-    "quality": 4
-  },
-  "9558": {
-    "id": 9558,
-    "quality": 4
-  },
-  "9559": {
-    "id": 9559,
-    "quality": 4
-  },
-  "9560": {
-    "id": 9560,
-    "quality": 4
-  },
-  "9561": {
-    "id": 9561,
-    "quality": 4
-  },
-  "9562": {
-    "id": 9562,
-    "quality": 4
-  },
-  "9563": {
-    "id": 9563,
-    "quality": 4
-  },
-  "9564": {
-    "id": 9564,
-    "quality": 4
-  },
-  "9565": {
-    "id": 9565,
-    "quality": 4
-  },
-  "9566": {
-    "id": 9566,
-    "quality": 4
-  },
-  "9567": {
-    "id": 9567,
-    "quality": 4
-  },
-  "9568": {
-    "id": 9568,
-    "quality": 4
-  },
-  "9569": {
-    "id": 9569,
-    "quality": 4
-  },
-  "9570": {
-    "id": 9570,
-    "quality": 4
-  },
-  "9571": {
-    "id": 9571,
-    "quality": 4
-  },
-  "9572": {
-    "id": 9572,
-    "quality": 4
-  },
-  "9573": {
-    "id": 9573,
-    "quality": 4
-  },
-  "9574": {
-    "id": 9574,
-    "quality": 4
-  },
-  "9575": {
-    "id": 9575,
-    "quality": 4
-  },
-  "9576": {
-    "id": 9576,
-    "quality": 4
-  },
-  "9577": {
-    "id": 9577,
-    "quality": 4
-  },
-  "9578": {
-    "id": 9578,
-    "quality": 4
-  },
-  "9581": {
-    "id": 9581,
-    "quality": 4
+    "tag": "Timewarped"
   },
   "9584": {
     "id": 9584,
@@ -55298,6 +52701,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9598,
     "ilevel": "13 @plvl 10 - 342 @plvl 342",
     "curveId": 69884
+  },
+  "9599": {
+    "id": 9599,
+    "serverside": true
+  },
+  "9600": {
+    "id": 9600,
+    "serverside": true
   },
   "9601": {
     "id": 9601,
@@ -55384,43 +52795,73 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9623": {
     "id": 9623,
-    "level": 0
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 2
+    }
   },
   "9624": {
     "id": 9624,
-    "level": 3
+    "levelOffset": {
+      "amount": 3,
+      "squishEra": 2
+    }
   },
   "9625": {
     "id": 9625,
-    "level": 6
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 2
+    }
   },
   "9626": {
     "id": 9626,
-    "level": 9
+    "levelOffset": {
+      "amount": 9,
+      "squishEra": 2
+    }
   },
   "9627": {
     "id": 9627,
-    "level": 13
+    "levelOffset": {
+      "amount": 13,
+      "squishEra": 2
+    }
   },
   "9628": {
     "id": 9628,
-    "level": 0
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 2
+    }
   },
   "9629": {
     "id": 9629,
-    "level": 6
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 2
+    }
   },
   "9630": {
     "id": 9630,
-    "level": 12
+    "levelOffset": {
+      "amount": 12,
+      "squishEra": 2
+    }
   },
   "9631": {
     "id": 9631,
-    "level": 19
+    "levelOffset": {
+      "amount": 19,
+      "squishEra": 2
+    }
   },
   "9632": {
     "id": 9632,
-    "level": 26
+    "levelOffset": {
+      "amount": 26,
+      "squishEra": 2
+    }
   },
   "9634": {
     "id": 9634,
@@ -55442,6 +52883,42 @@ export const bonus_IDs: {[key: string]: any} = {
   "9639": {
     "id": 9639,
     "tag": "Mythic+"
+  },
+  "9804": {
+    "id": 9804,
+    "serverside": true
+  },
+  "9805": {
+    "id": 9805,
+    "serverside": true
+  },
+  "9806": {
+    "id": 9806,
+    "serverside": true
+  },
+  "9807": {
+    "id": 9807,
+    "serverside": true
+  },
+  "9808": {
+    "id": 9808,
+    "serverside": true
+  },
+  "9809": {
+    "id": 9809,
+    "serverside": true
+  },
+  "9810": {
+    "id": 9810,
+    "serverside": true
+  },
+  "9811": {
+    "id": 9811,
+    "serverside": true
+  },
+  "9812": {
+    "id": 9812,
+    "serverside": true
   },
   "9834": {
     "id": 9834,
@@ -56969,8 +54446,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10222": {
     "id": 10222,
-    "base_level": 593,
-    "base_level_priority": 70,
+    "itemLevel": {
+      "amount": 593,
+      "priority": 70,
+      "squishEra": 1
+    },
     "tag": "Omen Crafted"
   },
   "10236": {
@@ -56997,20 +54477,21 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10244": {
+    "id": 10244,
+    "serverside": true
+  },
+  "10245": {
+    "id": 10245,
+    "serverside": true
+  },
   "10247": {
     "id": 10247,
     "tag": "Shadowflame Suffused"
   },
   "10249": {
     "id": 10249,
-    "base_level": 489,
-    "base_level_priority": 70,
     "tag": "Awakened Crafted"
-  },
-  "10250": {
-    "id": 10250,
-    "base_level": 438,
-    "base_level_priority": 100
   },
   "10254": {
     "id": 10254,
@@ -57225,188 +54706,17 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "0 @plvl 0 - 463 @plvl 463",
     "curveId": 71353
   },
-  "10305": {
-    "id": 10305,
-    "quality": 3
-  },
-  "10306": {
-    "id": 10306,
-    "quality": 3
-  },
-  "10307": {
-    "id": 10307,
-    "quality": 3
-  },
-  "10308": {
-    "id": 10308,
-    "quality": 3
-  },
-  "10309": {
-    "id": 10309,
-    "quality": 4
-  },
-  "10310": {
-    "id": 10310,
-    "quality": 4
-  },
-  "10311": {
-    "id": 10311,
-    "quality": 4
-  },
-  "10312": {
-    "id": 10312,
-    "quality": 4
-  },
-  "10313": {
-    "id": 10313,
-    "quality": 4
-  },
-  "10314": {
-    "id": 10314,
-    "quality": 4
-  },
-  "10315": {
-    "id": 10315,
-    "quality": 4
-  },
-  "10316": {
-    "id": 10316,
-    "quality": 4
-  },
-  "10317": {
-    "id": 10317,
-    "quality": 4
-  },
-  "10318": {
-    "id": 10318,
-    "quality": 4
-  },
-  "10319": {
-    "id": 10319,
-    "quality": 4
-  },
-  "10320": {
-    "id": 10320,
-    "quality": 4
-  },
-  "10321": {
-    "id": 10321,
-    "quality": 2
-  },
-  "10322": {
-    "id": 10322,
-    "quality": 2
-  },
-  "10323": {
-    "id": 10323,
-    "quality": 3
-  },
-  "10324": {
-    "id": 10324,
-    "quality": 3
-  },
-  "10325": {
-    "id": 10325,
-    "quality": 3
-  },
-  "10326": {
-    "id": 10326,
-    "quality": 3
-  },
-  "10327": {
-    "id": 10327,
-    "quality": 3
-  },
-  "10328": {
-    "id": 10328,
-    "quality": 3
-  },
-  "10329": {
-    "id": 10329,
-    "quality": 4
-  },
-  "10330": {
-    "id": 10330,
-    "quality": 4,
-    "level": 0
-  },
-  "10331": {
-    "id": 10331,
-    "quality": 4
-  },
-  "10332": {
-    "id": 10332,
-    "quality": 4
-  },
-  "10333": {
-    "id": 10333,
-    "quality": 4
-  },
-  "10334": {
-    "id": 10334,
-    "quality": 4
-  },
-  "10335": {
-    "id": 10335,
-    "quality": 4
-  },
-  "10336": {
-    "id": 10336,
-    "quality": 4
-  },
-  "10337": {
-    "id": 10337,
-    "quality": 4
-  },
-  "10338": {
-    "id": 10338,
-    "quality": 4
-  },
-  "10339": {
-    "id": 10339,
-    "quality": 4
-  },
-  "10340": {
-    "id": 10340,
-    "quality": 4
-  },
-  "10341": {
-    "id": 10341,
-    "quality": 4
-  },
-  "10342": {
-    "id": 10342,
-    "quality": 4
-  },
-  "10343": {
-    "id": 10343,
-    "quality": 4
-  },
-  "10344": {
-    "id": 10344,
-    "quality": 4
-  },
-  "10345": {
-    "id": 10345,
-    "quality": 4
-  },
-  "10346": {
-    "id": 10346,
-    "quality": 4
-  },
-  "10347": {
-    "id": 10347,
-    "quality": 4
-  },
-  "10348": {
-    "id": 10348,
-    "quality": 4
-  },
   "10349": {
     "id": 10349,
     "tag": "Beginner Crafted",
-    "base_level": 564,
-    "base_level_priority": 70
+    "itemLevel": {
+      "amount": 564,
+      "priority": 70,
+      "squishEra": 1
+    },
+    "quality": 7,
+    "ilevel": "0 @plvl 0 - 450 @plvl 450",
+    "curveId": 71196
   },
   "10350": {
     "id": 10350,
@@ -57415,31 +54725,34 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10353": {
     "id": 10353,
+    "serverside": true,
     "tag": "Raid Finder"
+  },
+  "10354": {
+    "id": 10354,
+    "serverside": true
   },
   "10355": {
     "id": 10355,
+    "serverside": true,
     "tag": "Heroic"
   },
   "10356": {
     "id": 10356,
+    "serverside": true,
     "tag": "Mythic"
   },
   "10357": {
     "id": 10357,
-    "base_level": 473,
-    "base_level_priority": 1,
-    "quality": 4
+    "serverside": true
   },
   "10358": {
     "id": 10358,
-    "base_level": 502,
-    "base_level_priority": 65
+    "serverside": true
   },
   "10359": {
     "id": 10359,
-    "base_level": 512,
-    "base_level_priority": 65
+    "serverside": true
   },
   "10360": {
     "id": 10360,
@@ -57485,6 +54798,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 71415,
     "quality": 4
   },
+  "10374": {
+    "id": 10374,
+    "serverside": true
+  },
+  "10375": {
+    "id": 10375,
+    "serverside": true
+  },
   "10376": {
     "id": 10376,
     "item_conversion": 8
@@ -57520,13 +54841,25 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10382": {
     "id": 10382,
-    "ilevel": "356 @plvl 55 - 551 @plvl 551",
-    "curveId": 71408
+    "dropLevelCurve": {
+      "curveId": 71408,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 1
+    }
   },
   "10385": {
     "id": 10385,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409
+  },
+  "10386": {
+    "id": 10386,
+    "serverside": true
+  },
+  "10387": {
+    "id": 10387,
+    "serverside": true
   },
   "10388": {
     "id": 10388,
@@ -57552,6 +54885,26 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_sword_1h_kultirasquest_b_01"
       }
     }
+  },
+  "10392": {
+    "id": 10392,
+    "serverside": true
+  },
+  "10393": {
+    "id": 10393,
+    "serverside": true
+  },
+  "10394": {
+    "id": 10394,
+    "serverside": true
+  },
+  "10395": {
+    "id": 10395,
+    "serverside": true
+  },
+  "10396": {
+    "id": 10396,
+    "serverside": true
   },
   "10397": {
     "id": 10397,
@@ -57581,63 +54934,21 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "10407": {
-    "id": 10407,
-    "quality": 4
+  "10419": {
+    "id": 10419,
+    "serverside": true
   },
-  "10408": {
-    "id": 10408,
-    "quality": 4
-  },
-  "10409": {
-    "id": 10409,
-    "quality": 4
-  },
-  "10410": {
-    "id": 10410,
-    "quality": 4
-  },
-  "10411": {
-    "id": 10411,
-    "quality": 4
-  },
-  "10412": {
-    "id": 10412,
-    "quality": 4
-  },
-  "10413": {
-    "id": 10413,
-    "quality": 4
-  },
-  "10414": {
-    "id": 10414,
-    "quality": 4
-  },
-  "10415": {
-    "id": 10415,
-    "quality": 4
-  },
-  "10416": {
-    "id": 10416,
-    "quality": 4
-  },
-  "10417": {
-    "id": 10417,
-    "quality": 4
-  },
-  "10418": {
-    "id": 10418,
-    "quality": 4
+  "10420": {
+    "id": 10420,
+    "serverside": true
   },
   "10421": {
     "id": 10421,
-    "base_level": 593,
-    "base_level_priority": 100
-  },
-  "10426": {
-    "id": 10426,
-    "ilevel": "5 @plvl 1 - 441 @plvl 441",
-    "curveId": 71965
+    "itemLevel": {
+      "amount": 593,
+      "priority": 100,
+      "squishEra": 1
+    }
   },
   "10427": {
     "id": 10427,
@@ -58113,8 +55424,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10465": {
     "id": 10465,
-    "ilevel": "5 @plvl 1 - 454 @plvl 454",
-    "curveId": 72045
+    "tag": "Timewarped"
   },
   "10466": {
     "id": 10466,
@@ -58424,62 +55734,6 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "10490": {
-    "id": 10490,
-    "quality": 4
-  },
-  "10491": {
-    "id": 10491,
-    "quality": 4
-  },
-  "10492": {
-    "id": 10492,
-    "quality": 4
-  },
-  "10493": {
-    "id": 10493,
-    "quality": 4
-  },
-  "10494": {
-    "id": 10494,
-    "quality": 4
-  },
-  "10495": {
-    "id": 10495,
-    "quality": 4
-  },
-  "10496": {
-    "id": 10496,
-    "quality": 4
-  },
-  "10497": {
-    "id": 10497,
-    "quality": 4
-  },
-  "10498": {
-    "id": 10498,
-    "quality": 4
-  },
-  "10499": {
-    "id": 10499,
-    "quality": 4
-  },
-  "10500": {
-    "id": 10500,
-    "quality": 4
-  },
-  "10501": {
-    "id": 10501,
-    "quality": 4
-  },
-  "10502": {
-    "id": 10502,
-    "quality": 4
-  },
-  "10503": {
-    "id": 10503,
-    "quality": 4
-  },
   "10504": {
     "id": 10504,
     "quality": 1,
@@ -58779,6 +56033,14 @@ export const bonus_IDs: {[key: string]: any} = {
   "10531": {
     "id": 10531,
     "socket": 1
+  },
+  "10532": {
+    "id": 10532,
+    "serverside": true
+  },
+  "10533": {
+    "id": 10533,
+    "serverside": true
   },
   "10589": {
     "id": 10589,
@@ -59341,18 +56603,39 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10827": {
     "id": 10827,
-    "base_level": 538,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 538,
+      "priority": 100,
+      "squishEra": 1
+    }
   },
   "10828": {
     "id": 10828,
-    "base_level": 564,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 106,
+      "priority": 100,
+      "squishEra": 2
+    }
   },
   "10829": {
     "id": 10829,
-    "base_level": 590,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 590,
+      "priority": 100,
+      "squishEra": 1
+    }
+  },
+  "10832": {
+    "id": 10832,
+    "serverside": true
+  },
+  "10833": {
+    "id": 10833,
+    "serverside": true
+  },
+  "10834": {
+    "id": 10834,
+    "serverside": true
   },
   "10835": {
     "id": 10835,
@@ -59361,6 +56644,10 @@ export const bonus_IDs: {[key: string]: any} = {
   "10836": {
     "id": 10836,
     "socket": 2
+  },
+  "10837": {
+    "id": 10837,
+    "serverside": true
   },
   "10838": {
     "id": 10838,
@@ -59381,20 +56668,29 @@ export const bonus_IDs: {[key: string]: any} = {
   "10840": {
     "id": 10840,
     "quality": 2,
-    "base_level": 545,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 545,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "10841": {
     "id": 10841,
     "quality": 3,
-    "base_level": 558,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 558,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "10842": {
     "id": 10842,
     "quality": 4,
-    "base_level": 597,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 597,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "10843": {
     "id": 10843,
@@ -59410,8 +56706,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10845": {
     "id": 10845,
-    "ilevel": "21 @plvl 1 - 450 @plvl 450",
-    "curveId": 73310,
     "tag": "Timewarped"
   },
   "10846": {
@@ -59582,21 +56876,17 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "10861": {
-    "id": 10861,
-    "ilevel": "21 @plvl 1 - 467 @plvl 467",
-    "curveId": 73480,
-    "quality": 3
-  },
   "10862": {
     "id": 10862,
-    "ilevel": "21 @plvl 1 - 467 @plvl 467",
-    "curveId": 73480,
-    "quality": 3
+    "tag": "Timewarped"
   },
   "10863": {
     "id": 10863,
     "tag": "Mythic+"
+  },
+  "10864": {
+    "id": 10864,
+    "serverside": true
   },
   "10870": {
     "id": 10870,
@@ -59617,6 +56907,18 @@ export const bonus_IDs: {[key: string]: any} = {
   "10874": {
     "id": 10874,
     "item_conversion": 9
+  },
+  "10875": {
+    "id": 10875,
+    "serverside": true
+  },
+  "10876": {
+    "id": 10876,
+    "serverside": true
+  },
+  "10877": {
+    "id": 10877,
+    "serverside": true
   },
   "10878": {
     "id": 10878,
@@ -59644,13 +56946,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10882": {
     "id": 10882,
-    "ilevel": "5 @plvl 1 - 493 @plvl 493",
-    "curveId": 73505
-  },
-  "10883": {
-    "id": 10883,
-    "ilevel": "5 @plvl 1 - 480 @plvl 480",
-    "curveId": 73506
+    "tag": "Timewarped"
   },
   "10884": {
     "id": 10884,
@@ -60093,7 +57389,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11083": {
     "id": 11083,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
+    "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
   "11085": {
@@ -60478,19 +57774,28 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11142": {
     "id": 11142,
-    "base_level": 577,
-    "base_level_priority": 1,
+    "itemLevel": {
+      "amount": 577,
+      "priority": 1,
+      "squishEra": 1
+    },
     "quality": 4
   },
   "11143": {
     "id": 11143,
-    "base_level": 606,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 606,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "11144": {
     "id": 11144,
-    "base_level": 623,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 623,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "11145": {
     "id": 11145,
@@ -60813,11 +58118,6 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_misc_enggizmos_24"
       }
     }
-  },
-  "11227": {
-    "id": 11227,
-    "ilevel": "5 @plvl 1 - 366 @plvl 366",
-    "curveId": 6243
   },
   "11228": {
     "id": 11228,
@@ -61605,13 +58905,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11295": {
     "id": 11295,
-    "base_level": 515,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 515,
+      "priority": 100,
+      "squishEra": 1
+    }
   },
   "11297": {
     "id": 11297,
-    "base_level": 545,
-    "base_level_priority": 100
+    "itemLevel": {
+      "amount": 545,
+      "priority": 100,
+      "squishEra": 1
+    }
   },
   "11299": {
     "id": 11299,
@@ -61768,8 +59074,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11318": {
     "id": 11318,
-    "base_level": 545,
-    "base_level_priority": 3000
+    "itemLevel": {
+      "amount": 545,
+      "priority": 3000,
+      "squishEra": 1
+    }
   },
   "11319": {
     "id": 11319,
@@ -61816,18 +59125,28 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11330": {
     "id": 11330,
-    "base_level": 545,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 545,
+      "priority": 1,
+      "squishEra": 1
+    }
   },
   "11331": {
     "id": 11331,
-    "base_level": 561,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 561,
+      "priority": 1,
+      "squishEra": 1
+    }
   },
   "11332": {
     "id": 11332,
-    "base_level": 350,
-    "base_level_priority": 1
+    "itemLevel": {
+      "amount": 68,
+      "priority": 0,
+      "squishEra": 0
+    },
+    "quality": 3
   },
   "11334": {
     "id": 11334,
@@ -61856,8 +59175,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "11338": {
     "id": 11338,
     "quality": 3,
-    "base_level": 554,
-    "base_level_priority": 0
+    "itemLevel": {
+      "amount": 554,
+      "priority": 0,
+      "squishEra": 1
+    }
   },
   "11341": {
     "id": 11341,
@@ -64335,6 +61657,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 11957,
     "quality": 4
   },
+  "11963": {
+    "id": 11963,
+    "serverside": true
+  },
   "11964": {
     "id": 11964,
     "item_conversion": 10
@@ -64350,6 +61676,10 @@ export const bonus_IDs: {[key: string]: any} = {
   "11967": {
     "id": 11967,
     "item_conversion": 10
+  },
+  "11968": {
+    "id": 11968,
+    "serverside": true
   },
   "11969": {
     "id": 11969,
@@ -64480,7 +61810,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 1/8",
       "bonusId": 11999,
-      "itemLevel": 561
+      "itemLevel": 80
     },
     "quality": 4
   },
@@ -64493,7 +61823,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 2/8",
       "bonusId": 12001,
-      "itemLevel": 564
+      "itemLevel": 80
     },
     "quality": 4
   },
@@ -64506,7 +61836,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 3/8",
       "bonusId": 12002,
-      "itemLevel": 571
+      "itemLevel": 80
     },
     "quality": 4
   },
@@ -64519,7 +61849,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 4/8",
       "bonusId": 12003,
-      "itemLevel": 577
+      "itemLevel": 80
     },
     "quality": 4
   },
@@ -64532,7 +61862,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 5/8",
       "bonusId": 12004,
-      "itemLevel": 584
+      "itemLevel": 83
     },
     "quality": 4
   },
@@ -64545,7 +61875,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 6/8",
       "bonusId": 12005,
-      "itemLevel": 590
+      "itemLevel": 83
     },
     "quality": 4
   },
@@ -64558,7 +61888,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 7/8",
       "bonusId": 12006,
-      "itemLevel": 597
+      "itemLevel": 86
     },
     "quality": 4
   },
@@ -64571,7 +61901,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 8/8",
       "bonusId": 12007,
-      "itemLevel": 603
+      "itemLevel": 86
     },
     "quality": 4
   },
@@ -64649,26 +61979,38 @@ export const bonus_IDs: {[key: string]: any} = {
   "12015": {
     "id": 12015,
     "quality": 2,
-    "base_level": 571,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 571,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12016": {
     "id": 12016,
     "quality": 3,
-    "base_level": 584,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 584,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12017": {
     "id": 12017,
     "quality": 4,
-    "base_level": 623,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 623,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12024": {
     "id": 12024,
     "quality": 3,
-    "base_level": 593,
-    "base_level_priority": 0
+    "itemLevel": {
+      "amount": 593,
+      "priority": 0,
+      "squishEra": 1
+    }
   },
   "12025": {
     "id": 12025,
@@ -64689,42 +62031,63 @@ export const bonus_IDs: {[key: string]: any} = {
   "12037": {
     "id": 12037,
     "quality": 2,
-    "base_level": 597,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 597,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12038": {
     "id": 12038,
     "quality": 3,
-    "base_level": 610,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 610,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12039": {
     "id": 12039,
     "quality": 4,
-    "base_level": 649,
-    "base_level_priority": 1000
+    "itemLevel": {
+      "amount": 649,
+      "priority": 1000,
+      "squishEra": 1
+    }
   },
   "12040": {
     "id": 12040,
-    "base_level": 632,
-    "base_level_priority": 70,
+    "itemLevel": {
+      "amount": 632,
+      "priority": 70,
+      "squishEra": 1
+    },
     "tag": "Fortune Crafted"
   },
   "12041": {
     "id": 12041,
-    "base_level": 616,
-    "base_level_priority": 1,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 616,
+      "priority": 1,
+      "squishEra": 1
+    }
   },
   "12042": {
     "id": 12042,
-    "base_level": 645,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 645,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "12043": {
     "id": 12043,
-    "base_level": 662,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 662,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "12047": {
     "id": 12047,
@@ -64743,25 +62106,37 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12050": {
     "id": 12050,
-    "base_level": 678,
-    "base_level_priority": 70,
+    "itemLevel": {
+      "amount": 678,
+      "priority": 70,
+      "squishEra": 1
+    },
     "tag": "Starlight Crafted"
   },
   "12051": {
     "id": 12051,
-    "base_level": 662,
-    "base_level_priority": 1,
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 662,
+      "priority": 1,
+      "squishEra": 1
+    }
   },
   "12052": {
     "id": 12052,
-    "base_level": 691,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 691,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "12053": {
     "id": 12053,
-    "base_level": 707,
-    "base_level_priority": 65
+    "itemLevel": {
+      "amount": 707,
+      "priority": 65,
+      "squishEra": 1
+    }
   },
   "12055": {
     "id": 12055,
@@ -64841,6 +62216,15 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_ability_eluneschosendruid_boundlessmoonlight"
       }
     }
+  },
+  "12066": {
+    "id": 12066,
+    "itemLevel": {
+      "amount": 246,
+      "priority": 70,
+      "squishEra": 2
+    },
+    "tag": "Radiance Crafted"
   },
   "12067": {
     "id": 12067,
@@ -64931,18 +62315,22 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12092": {
     "id": 12092,
+    "serverside": true,
     "tag": "Raid Finder"
   },
   "12093": {
     "id": 12093,
+    "serverside": true,
     "tag": "Timewarped"
   },
   "12094": {
     "id": 12094,
+    "serverside": true,
     "tag": "Heroic"
   },
   "12095": {
     "id": 12095,
+    "serverside": true,
     "tag": "Mythic"
   },
   "12096": {
@@ -65824,6 +63212,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12165": {
+    "id": 12165,
+    "serverside": true
+  },
   "12169": {
     "id": 12169,
     "effect": {
@@ -65891,10 +63283,34 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% AgiInt [0.2045]"
   },
+  "12176": {
+    "id": 12176,
+    "serverside": true
+  },
+  "12177": {
+    "id": 12177,
+    "serverside": true
+  },
+  "12178": {
+    "id": 12178,
+    "serverside": true
+  },
+  "12179": {
+    "id": 12179,
+    "serverside": true
+  },
   "12180": {
     "id": 12180,
     "ilevel": "356 @plvl 55 - 551 @plvl 551",
     "curveId": 71408
+  },
+  "12214": {
+    "id": 12214,
+    "itemLevel": {
+      "amount": 246,
+      "priority": 100,
+      "squishEra": 2
+    }
   },
   "12215": {
     "id": 12215,
@@ -66097,6 +63513,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12238": {
+    "id": 12238,
+    "serverside": true
+  },
   "12239": {
     "id": 12239,
     "item_conversion": 11
@@ -66116,6 +63536,50 @@ export const bonus_IDs: {[key: string]: any} = {
   "12243": {
     "id": 12243,
     "item_conversion": 11
+  },
+  "12244": {
+    "id": 12244,
+    "serverside": true
+  },
+  "12245": {
+    "id": 12245,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 3000,
+      "squishEra": 2
+    }
+  },
+  "12247": {
+    "id": 12247,
+    "itemLevel": {
+      "amount": 201,
+      "priority": 100,
+      "squishEra": 2
+    }
+  },
+  "12249": {
+    "id": 12249,
+    "itemLevel": {
+      "amount": 165,
+      "priority": 100,
+      "squishEra": 2
+    }
+  },
+  "12252": {
+    "id": 12252,
+    "itemLevel": {
+      "amount": 180,
+      "priority": 100,
+      "squishEra": 2
+    }
+  },
+  "12253": {
+    "id": 12253,
+    "itemLevel": {
+      "amount": 206,
+      "priority": 100,
+      "squishEra": 2
+    }
   },
   "12255": {
     "id": 12255,
@@ -66225,7 +63689,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 1/8",
       "bonusId": 12265,
-      "itemLevel": 642,
+      "itemLevel": 98,
       "seasonId": 30,
       "costs": [
         {
@@ -66364,7 +63828,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 2
+    "quality": 2,
+    "itemLevel": {
+      "amount": 642,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12266": {
     "id": 12266,
@@ -66375,7 +63845,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 2/8",
       "bonusId": 12266,
-      "itemLevel": 645,
+      "itemLevel": 99,
       "seasonId": 30,
       "costs": [
         {
@@ -66514,7 +63984,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 2
+    "quality": 2,
+    "itemLevel": {
+      "amount": 645,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12267": {
     "id": 12267,
@@ -66525,7 +64001,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 3/8",
       "bonusId": 12267,
-      "itemLevel": 649,
+      "itemLevel": 100,
       "seasonId": 30,
       "costs": [
         {
@@ -66664,7 +64140,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 649,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12268": {
     "id": 12268,
@@ -66675,7 +64157,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 4/8",
       "bonusId": 12268,
-      "itemLevel": 652,
+      "itemLevel": 101,
       "seasonId": 30,
       "costs": [
         {
@@ -66814,7 +64296,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 652,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12269": {
     "id": 12269,
@@ -66825,7 +64313,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 5/8",
       "bonusId": 12269,
-      "itemLevel": 655,
+      "itemLevel": 102,
       "seasonId": 30,
       "costs": [
         {
@@ -66964,7 +64452,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 655,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12270": {
     "id": 12270,
@@ -66975,7 +64469,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 6/8",
       "bonusId": 12270,
-      "itemLevel": 658,
+      "itemLevel": 103,
       "seasonId": 30,
       "costs": [
         {
@@ -67114,7 +64608,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 658,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12271": {
     "id": 12271,
@@ -67125,7 +64625,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 7/8",
       "bonusId": 12271,
-      "itemLevel": 662,
+      "itemLevel": 104,
       "seasonId": 30,
       "costs": [
         {
@@ -67264,7 +64764,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 662,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12272": {
     "id": 12272,
@@ -67275,7 +64781,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 8/8",
       "bonusId": 12272,
-      "itemLevel": 665,
+      "itemLevel": 105,
       "seasonId": 30,
       "costs": [
         {
@@ -67414,7 +64920,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 665,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12273": {
     "id": 12273,
@@ -67432,7 +64944,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 1/8",
       "bonusId": 12274,
-      "itemLevel": 655,
+      "itemLevel": 102,
       "seasonId": 30,
       "costs": [
         {
@@ -67571,7 +65083,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 655,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12275": {
     "id": 12275,
@@ -67582,7 +65100,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 2/8",
       "bonusId": 12275,
-      "itemLevel": 658,
+      "itemLevel": 103,
       "seasonId": 30,
       "costs": [
         {
@@ -67721,7 +65239,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 658,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12276": {
     "id": 12276,
@@ -67732,7 +65256,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 3/8",
       "bonusId": 12276,
-      "itemLevel": 662,
+      "itemLevel": 104,
       "seasonId": 30,
       "costs": [
         {
@@ -67871,7 +65395,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 662,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12277": {
     "id": 12277,
@@ -67882,7 +65412,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 4/8",
       "bonusId": 12277,
-      "itemLevel": 665,
+      "itemLevel": 105,
       "seasonId": 30,
       "costs": [
         {
@@ -68021,7 +65551,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 665,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12278": {
     "id": 12278,
@@ -68032,7 +65568,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 5/8",
       "bonusId": 12278,
-      "itemLevel": 668,
+      "itemLevel": 108,
       "seasonId": 30,
       "costs": [
         {
@@ -68219,7 +65755,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 668,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12279": {
     "id": 12279,
@@ -68230,7 +65772,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 6/8",
       "bonusId": 12279,
-      "itemLevel": 671,
+      "itemLevel": 111,
       "seasonId": 30,
       "costs": [
         {
@@ -68417,7 +65959,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 671,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12280": {
     "id": 12280,
@@ -68428,7 +65976,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 7/8",
       "bonusId": 12280,
-      "itemLevel": 675,
+      "itemLevel": 115,
       "seasonId": 30,
       "costs": [
         {
@@ -68615,7 +66163,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 675,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12281": {
     "id": 12281,
@@ -68626,7 +66180,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 8/8",
       "bonusId": 12281,
-      "itemLevel": 678,
+      "itemLevel": 118,
       "seasonId": 30,
       "costs": [
         {
@@ -68813,7 +66367,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 678,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12282": {
     "id": 12282,
@@ -68824,7 +66384,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 1/8",
       "bonusId": 12282,
-      "itemLevel": 668,
+      "itemLevel": 108,
       "seasonId": 30,
       "costs": [
         {
@@ -69011,7 +66571,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 668,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12283": {
     "id": 12283,
@@ -69022,7 +66588,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 2/8",
       "bonusId": 12283,
-      "itemLevel": 671,
+      "itemLevel": 111,
       "seasonId": 30,
       "costs": [
         {
@@ -69209,7 +66775,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 671,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12284": {
     "id": 12284,
@@ -69220,7 +66792,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 3/8",
       "bonusId": 12284,
-      "itemLevel": 675,
+      "itemLevel": 115,
       "seasonId": 30,
       "costs": [
         {
@@ -69407,7 +66979,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 675,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12285": {
     "id": 12285,
@@ -69418,7 +66996,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 4/8",
       "bonusId": 12285,
-      "itemLevel": 678,
+      "itemLevel": 118,
       "seasonId": 30,
       "costs": [
         {
@@ -69605,7 +67183,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 678,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12286": {
     "id": 12286,
@@ -69616,7 +67200,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 5/8",
       "bonusId": 12286,
-      "itemLevel": 681,
+      "itemLevel": 121,
       "seasonId": 30,
       "costs": [
         {
@@ -69803,7 +67387,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 681,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12287": {
     "id": 12287,
@@ -69814,7 +67404,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 6/8",
       "bonusId": 12287,
-      "itemLevel": 684,
+      "itemLevel": 124,
       "seasonId": 30,
       "costs": [
         {
@@ -70001,7 +67591,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 684,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12288": {
     "id": 12288,
@@ -70012,7 +67608,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 7/8",
       "bonusId": 12288,
-      "itemLevel": 688,
+      "itemLevel": 128,
       "seasonId": 30,
       "costs": [
         {
@@ -70199,7 +67795,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 688,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12289": {
     "id": 12289,
@@ -70210,7 +67812,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 8/8",
       "bonusId": 12289,
-      "itemLevel": 691,
+      "itemLevel": 131,
       "seasonId": 30,
       "costs": [
         {
@@ -70397,7 +67999,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 691,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12290": {
     "id": 12290,
@@ -70408,7 +68016,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 1/8",
       "bonusId": 12290,
-      "itemLevel": 681,
+      "itemLevel": 121,
       "seasonId": 30,
       "costs": [
         {
@@ -70595,7 +68203,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 681,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12291": {
     "id": 12291,
@@ -70606,7 +68220,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 2/8",
       "bonusId": 12291,
-      "itemLevel": 684,
+      "itemLevel": 124,
       "seasonId": 30,
       "costs": [
         {
@@ -70793,7 +68407,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 684,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12292": {
     "id": 12292,
@@ -70804,7 +68424,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 3/8",
       "bonusId": 12292,
-      "itemLevel": 688,
+      "itemLevel": 128,
       "seasonId": 30,
       "costs": [
         {
@@ -70991,7 +68611,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 688,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12293": {
     "id": 12293,
@@ -71002,7 +68628,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 4/8",
       "bonusId": 12293,
-      "itemLevel": 691,
+      "itemLevel": 131,
       "seasonId": 30,
       "costs": [
         {
@@ -71189,7 +68815,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 691,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12294": {
     "id": 12294,
@@ -71200,7 +68832,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 5/8",
       "bonusId": 12294,
-      "itemLevel": 694,
+      "itemLevel": 134,
       "seasonId": 30,
       "costs": [
         {
@@ -71387,7 +69019,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 694,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12295": {
     "id": 12295,
@@ -71398,7 +69036,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 6/8",
       "bonusId": 12295,
-      "itemLevel": 697,
+      "itemLevel": 137,
       "seasonId": 30,
       "costs": [
         {
@@ -71585,7 +69223,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 697,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12296": {
     "id": 12296,
@@ -71596,7 +69240,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 7/8",
       "bonusId": 12296,
-      "itemLevel": 701,
+      "itemLevel": 141,
       "seasonId": 30,
       "costs": [
         {
@@ -71783,7 +69427,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 701,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12297": {
     "id": 12297,
@@ -71794,7 +69444,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 8/8",
       "bonusId": 12297,
-      "itemLevel": 704,
+      "itemLevel": 144,
       "seasonId": 30,
       "costs": [
         {
@@ -71981,7 +69631,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 704,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12298": {
     "id": 12298,
@@ -72706,7 +70362,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 1/8",
       "bonusId": 12350,
-      "itemLevel": 694,
+      "itemLevel": 134,
       "seasonId": 30,
       "costs": [
         {
@@ -72893,7 +70549,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 694,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12351": {
     "id": 12351,
@@ -72904,7 +70566,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 2/8",
       "bonusId": 12351,
-      "itemLevel": 697,
+      "itemLevel": 137,
       "seasonId": 30,
       "costs": [
         {
@@ -73091,7 +70753,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 697,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12352": {
     "id": 12352,
@@ -73102,7 +70770,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 3/8",
       "bonusId": 12352,
-      "itemLevel": 701,
+      "itemLevel": 141,
       "seasonId": 30,
       "costs": [
         {
@@ -73289,7 +70957,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 701,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12353": {
     "id": 12353,
@@ -73300,7 +70974,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 4/8",
       "bonusId": 12353,
-      "itemLevel": 704,
+      "itemLevel": 144,
       "seasonId": 30,
       "costs": [
         {
@@ -73487,7 +71161,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 704,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12354": {
     "id": 12354,
@@ -73498,7 +71178,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 5/8",
       "bonusId": 12354,
-      "itemLevel": 707,
+      "itemLevel": 147,
       "seasonId": 30,
       "costs": [
         {
@@ -73685,7 +71365,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 707,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12355": {
     "id": 12355,
@@ -73696,7 +71382,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 6/8",
       "bonusId": 12355,
-      "itemLevel": 710,
+      "itemLevel": 150,
       "seasonId": 30,
       "costs": [
         {
@@ -73883,7 +71569,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 710,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12356": {
     "id": 12356,
@@ -73894,7 +71586,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 1/8",
       "bonusId": 12356,
-      "itemLevel": 707,
+      "itemLevel": 147,
       "seasonId": 30,
       "costs": [
         {
@@ -74081,7 +71773,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 707,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12357": {
     "id": 12357,
@@ -74092,7 +71790,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 2/8",
       "bonusId": 12357,
-      "itemLevel": 710,
+      "itemLevel": 150,
       "seasonId": 30,
       "costs": [
         {
@@ -74279,7 +71977,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 710,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12358": {
     "id": 12358,
@@ -74290,7 +71994,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 3/8",
       "bonusId": 12358,
-      "itemLevel": 714,
+      "itemLevel": 154,
       "seasonId": 30,
       "costs": [
         {
@@ -74477,7 +72181,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 714,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12359": {
     "id": 12359,
@@ -74488,7 +72198,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 4/8",
       "bonusId": 12359,
-      "itemLevel": 717,
+      "itemLevel": 157,
       "seasonId": 30,
       "costs": [
         {
@@ -74675,7 +72385,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 717,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12360": {
     "id": 12360,
@@ -74686,7 +72402,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 5/8",
       "bonusId": 12360,
-      "itemLevel": 720,
+      "itemLevel": 160,
       "seasonId": 30,
       "costs": [
         {
@@ -74873,7 +72589,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 720,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12361": {
     "id": 12361,
@@ -74884,7 +72606,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 6/8",
       "bonusId": 12361,
-      "itemLevel": 723,
+      "itemLevel": 163,
       "seasonId": 30,
       "costs": [
         {
@@ -75071,7 +72793,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 723,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12362": {
     "id": 12362,
@@ -75095,8 +72823,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "12367": {
     "id": 12367,
     "quality": 3,
-    "base_level": 639,
-    "base_level_priority": 0
+    "itemLevel": {
+      "amount": 639,
+      "priority": 0,
+      "squishEra": 1
+    }
   },
   "12371": {
     "id": 12371,
@@ -75108,11 +72839,15 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12373": {
     "id": 12373,
-    "level": 6
+    "levelOffsetSecondary": {
+      "amount": 6
+    }
   },
   "12374": {
     "id": 12374,
-    "level": 3
+    "levelOffsetSecondary": {
+      "amount": 3
+    }
   },
   "12375": {
     "id": 12375,
@@ -75145,6 +72880,30 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 83940,
     "quality": 3
   },
+  "12384": {
+    "id": 12384,
+    "effect": {
+      "id": 208649,
+      "index": 0,
+      "spell": {
+        "id": 1229511,
+        "name": "Arcanoweave Lining",
+        "icon": "inv_elemental_primal_mana"
+      }
+    }
+  },
+  "12385": {
+    "id": 12385,
+    "effect": {
+      "id": 208662,
+      "index": 0,
+      "spell": {
+        "id": 1241711,
+        "name": "Sunfire Silk Lining",
+        "icon": "inv_elemental_primal_mana"
+      }
+    }
+  },
   "12396": {
     "id": 12396,
     "tag": "Rank 1"
@@ -75172,6 +72931,51 @@ export const bonus_IDs: {[key: string]: any} = {
   "12402": {
     "id": 12402,
     "tag": "Rank 7"
+  },
+  "12403": {
+    "id": 12403,
+    "dropLevelCurve": {
+      "curveId": 94633,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "12405": {
+    "id": 12405,
+    "dropLevelCurve": {
+      "curveId": 94633,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "12406": {
+    "id": 12406,
+    "dropLevelCurve": {
+      "curveId": 94633,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "12407": {
+    "id": 12407,
+    "dropLevelCurve": {
+      "curveId": 94633,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "12408": {
+    "id": 12408,
+    "dropLevelCurve": {
+      "curveId": 94633,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12409": {
     "id": 12409,
@@ -75824,6 +73628,84 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% StrAgiInt [0.5259]"
   },
+  "12493": {
+    "id": 12493,
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 2
+    }
+  },
+  "12494": {
+    "id": 12494,
+    "levelOffset": {
+      "amount": 3,
+      "squishEra": 2
+    }
+  },
+  "12495": {
+    "id": 12495,
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 2
+    }
+  },
+  "12496": {
+    "id": 12496,
+    "levelOffset": {
+      "amount": 9,
+      "squishEra": 2
+    }
+  },
+  "12497": {
+    "id": 12497,
+    "levelOffset": {
+      "amount": 13,
+      "squishEra": 2
+    }
+  },
+  "12498": {
+    "id": 12498,
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 2
+    }
+  },
+  "12499": {
+    "id": 12499,
+    "levelOffset": {
+      "amount": 6,
+      "squishEra": 2
+    }
+  },
+  "12500": {
+    "id": 12500,
+    "levelOffset": {
+      "amount": 12,
+      "squishEra": 2
+    }
+  },
+  "12501": {
+    "id": 12501,
+    "levelOffset": {
+      "amount": 19,
+      "squishEra": 2
+    }
+  },
+  "12502": {
+    "id": 12502,
+    "levelOffset": {
+      "amount": 26,
+      "squishEra": 2
+    }
+  },
+  "12503": {
+    "id": 12503,
+    "itemLevel": {
+      "amount": 232,
+      "priority": 100,
+      "squishEra": 2
+    }
+  },
   "12504": {
     "id": 12504,
     "quality": 4
@@ -76265,7 +74147,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 1/8",
       "bonusId": 12534,
-      "itemLevel": 655
+      "itemLevel": 102
     },
     "quality": 3
   },
@@ -76278,7 +74160,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 2/8",
       "bonusId": 12535,
-      "itemLevel": 658
+      "itemLevel": 103
     },
     "quality": 3
   },
@@ -76291,7 +74173,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 3/8",
       "bonusId": 12536,
-      "itemLevel": 662
+      "itemLevel": 104
     },
     "quality": 3
   },
@@ -76303,10 +74185,15 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Test",
       "fullName": "Test 4/8",
-      "bonusId": 12537,
-      "itemLevel": 665
+      "bonusId": 12537
     },
-    "quality": 3
+    "quality": 3,
+    "itemLevel": {
+      "amount": 777,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "12538": {
     "id": 12538,
@@ -76317,7 +74204,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 5/8",
       "bonusId": 12538,
-      "itemLevel": 668
+      "itemLevel": 108
     },
     "quality": 3
   },
@@ -76330,7 +74217,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 6/8",
       "bonusId": 12539,
-      "itemLevel": 671
+      "itemLevel": 111
     },
     "quality": 3
   },
@@ -76343,7 +74230,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 7/8",
       "bonusId": 12540,
-      "itemLevel": 675
+      "itemLevel": 115
     },
     "quality": 3
   },
@@ -76356,7 +74243,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Test",
       "fullName": "Test 8/8",
       "bonusId": 12541,
-      "itemLevel": 678
+      "itemLevel": 118
     },
     "quality": 3
   },
@@ -77158,105 +75045,41 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12646": {
     "id": 12646,
-    "effect": {
-      "id": 212706,
-      "index": 0,
-      "spell": {
-        "id": 1234373,
-        "name": "Storm Surger",
-        "icon": "creatureportrait_infernal_ball_02"
-      }
-    },
+    "effect": null,
     "quality": 5
   },
   "12647": {
     "id": 12647,
-    "effect": {
-      "id": 212704,
-      "index": 0,
-      "spell": {
-        "id": 1234374,
-        "name": "Storm Surger",
-        "icon": "creatureportrait_infernal_ball_02"
-      }
-    },
+    "effect": null,
     "quality": 4
   },
   "12648": {
     "id": 12648,
-    "effect": {
-      "id": 212707,
-      "index": 0,
-      "spell": {
-        "id": 1234375,
-        "name": "Storm Surger",
-        "icon": "creatureportrait_infernal_ball_02"
-      }
-    },
+    "effect": null,
     "quality": 3
   },
   "12649": {
     "id": 12649,
-    "effect": {
-      "id": 212705,
-      "index": 0,
-      "spell": {
-        "id": 1234376,
-        "name": "Storm Surger",
-        "icon": "creatureportrait_infernal_ball_02"
-      }
-    }
+    "effect": null
   },
   "12650": {
     "id": 12650,
-    "effect": {
-      "id": 212710,
-      "index": 0,
-      "spell": {
-        "id": 1234368,
-        "name": "Arcane Ward",
-        "icon": "ability_bossdarkvindicator_auraofmalice"
-      }
-    },
+    "effect": null,
     "quality": 5
   },
   "12651": {
     "id": 12651,
-    "effect": {
-      "id": 212708,
-      "index": 0,
-      "spell": {
-        "id": 1234369,
-        "name": "Arcane Ward",
-        "icon": "ability_bossdarkvindicator_auraofmalice"
-      }
-    },
+    "effect": null,
     "quality": 4
   },
   "12652": {
     "id": 12652,
-    "effect": {
-      "id": 212711,
-      "index": 0,
-      "spell": {
-        "id": 1234370,
-        "name": "Arcane Ward",
-        "icon": "ability_bossdarkvindicator_auraofmalice"
-      }
-    },
+    "effect": null,
     "quality": 3
   },
   "12653": {
     "id": 12653,
-    "effect": {
-      "id": 212709,
-      "index": 0,
-      "spell": {
-        "id": 1234371,
-        "name": "Arcane Ward",
-        "icon": "ability_bossdarkvindicator_auraofmalice"
-      }
-    }
+    "effect": null
   },
   "12654": {
     "id": 12654,
@@ -77411,9 +75234,41 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12666": {
+    "id": 12666,
+    "socket": 1
+  },
+  "12667": {
+    "id": 12667,
+    "serverside": true
+  },
+  "12668": {
+    "id": 12668,
+    "serverside": true
+  },
+  "12669": {
+    "id": 12669,
+    "serverside": true
+  },
+  "12670": {
+    "id": 12670,
+    "serverside": true
+  },
+  "12671": {
+    "id": 12671,
+    "serverside": true
+  },
   "12674": {
     "id": 12674,
     "tag": "Voidtouched"
+  },
+  "12675": {
+    "id": 12675,
+    "serverside": true
+  },
+  "12676": {
+    "id": 12676,
+    "serverside": true
   },
   "12677": {
     "id": 12677,
@@ -77526,6 +75381,66 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "12685": {
+    "id": 12685,
+    "effect": {
+      "id": 212929,
+      "index": 0,
+      "spell": {
+        "id": 1244238,
+        "name": "Devouring Banding",
+        "icon": "inv_cosmicvoid_buff"
+      }
+    }
+  },
+  "12686": {
+    "id": 12686,
+    "effect": {
+      "id": 212930,
+      "index": 0,
+      "spell": {
+        "id": 1244243,
+        "name": "Blessed Pango Charm",
+        "icon": "inv_jewelry_necklace_139"
+      }
+    }
+  },
+  "12687": {
+    "id": 12687,
+    "effect": {
+      "id": 212945,
+      "index": 0,
+      "spell": {
+        "id": 1244276,
+        "name": "Primal Spore Binding",
+        "icon": "inv_viridescent_spores_green"
+      }
+    }
+  },
+  "12692": {
+    "id": 12692,
+    "effect": {
+      "id": 213044,
+      "index": 0,
+      "spell": {
+        "id": 1245055,
+        "name": "Rot",
+        "icon": "inv_ability_hunter_deathchakram"
+      }
+    }
+  },
+  "12693": {
+    "id": 12693,
+    "effect": {
+      "id": 213045,
+      "index": 0,
+      "spell": {
+        "id": 1245054,
+        "name": "Hunt",
+        "icon": "inv_ability_hunter_deathchakram"
+      }
+    }
+  },
   "12694": {
     "id": 12694,
     "quality": 4
@@ -77541,6 +75456,178 @@ export const bonus_IDs: {[key: string]: any} = {
   "12697": {
     "id": 12697,
     "quality": 4
+  },
+  "12704": {
+    "id": 12704,
+    "itemLevel": {
+      "amount": 245,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 1,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 12704,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12705": {
+    "id": 12705,
+    "effect": {
+      "id": 213245,
+      "index": 0,
+      "spell": {
+        "id": 1245053,
+        "name": "Blood",
+        "icon": "inv_inscriptions_darkmoondeckvivacity_0"
+      }
+    }
   },
   "12706": {
     "id": 12706,
@@ -77656,9 +75743,9695 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Vers [0.3000]"
   },
+  "12715": {
+    "id": 12715,
+    "effect": {
+      "id": 213317,
+      "index": 0,
+      "spell": {
+        "id": 1246298,
+        "name": "Lucky Keychain",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "12716": {
+    "id": 12716,
+    "effect": {
+      "id": 213319,
+      "index": 0,
+      "spell": {
+        "id": 1246299,
+        "name": "Lucky Keychain",
+        "icon": "inv_misc_powder_mithril"
+      }
+    }
+  },
+  "12717": {
+    "id": 12717,
+    "effect": {
+      "id": 213322,
+      "index": 0,
+      "spell": {
+        "id": 1246308,
+        "name": "Kinetic Ankle Primers",
+        "icon": "ability_karoz_leap"
+      }
+    }
+  },
+  "12762": {
+    "id": 12762,
+    "itemLevel": {
+      "amount": 248,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 12762,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12763": {
+    "id": 12763,
+    "itemLevel": {
+      "amount": 252,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 3,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 12763,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12764": {
+    "id": 12764,
+    "itemLevel": {
+      "amount": 255,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 4,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 12764,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 25,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 50,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 2
+  },
+  "12765": {
+    "id": 12765,
+    "itemLevel": {
+      "amount": 258,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 5,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 12765,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12766": {
+    "id": 12766,
+    "itemLevel": {
+      "amount": 261,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 6,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 12766,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12767": {
+    "id": 12767,
+    "itemLevel": {
+      "amount": 265,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 7,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 12767,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12768": {
+    "id": 12768,
+    "itemLevel": {
+      "amount": 268,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 607,
+      "level": 8,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 12768,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12769": {
+    "id": 12769,
+    "itemLevel": {
+      "amount": 220,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 1,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 1/6",
+      "bonusId": 12769,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12770": {
+    "id": 12770,
+    "itemLevel": {
+      "amount": 224,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 2,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 2/6",
+      "bonusId": 12770,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 10,
+        "name": "Adventurer Dawncrest",
+        "id": 3383,
+        "icon": "inv_120_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12771": {
+    "id": 12771,
+    "itemLevel": {
+      "amount": 227,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 3,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/6",
+      "bonusId": 12771,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Dawncrest",
+        "id": 3383,
+        "icon": "inv_120_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12772": {
+    "id": 12772,
+    "itemLevel": {
+      "amount": 230,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 4,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/6",
+      "bonusId": 12772,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 30,
+        "name": "Adventurer Dawncrest",
+        "id": 3383,
+        "icon": "inv_120_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12773": {
+    "id": 12773,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 5,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 5/6",
+      "bonusId": 12773,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 40,
+        "name": "Adventurer Dawncrest",
+        "id": 3383,
+        "icon": "inv_120_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12774": {
+    "id": 12774,
+    "itemLevel": {
+      "amount": 237,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 608,
+      "level": 6,
+      "max": 6,
+      "name": "Adventurer",
+      "fullName": "Adventurer 6/6",
+      "bonusId": 12774,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 40,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 80,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 50,
+        "name": "Adventurer Dawncrest",
+        "id": 3383,
+        "icon": "inv_120_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 3
+  },
+  "12775": {
+    "id": 12775,
+    "itemLevel": {
+      "amount": 240,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "12776": {
+    "id": 12776,
+    "itemLevel": {
+      "amount": 243,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "12777": {
+    "id": 12777,
+    "upgrade": {
+      "group": 609,
+      "level": 1,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 1/6",
+      "bonusId": 12777,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "12778": {
+    "id": 12778,
+    "itemLevel": {
+      "amount": 237,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 609,
+      "level": 2,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 2/6",
+      "bonusId": 12778,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 10,
+        "name": "Veteran Dawncrest",
+        "id": 3341,
+        "icon": "inv_120_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12779": {
+    "id": 12779,
+    "itemLevel": {
+      "amount": 240,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 609,
+      "level": 3,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 3/6",
+      "bonusId": 12779,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Dawncrest",
+        "id": 3341,
+        "icon": "inv_120_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12780": {
+    "id": 12780,
+    "itemLevel": {
+      "amount": 243,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 609,
+      "level": 4,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 4/6",
+      "bonusId": 12780,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 30,
+        "name": "Veteran Dawncrest",
+        "id": 3341,
+        "icon": "inv_120_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12781": {
+    "id": 12781,
+    "itemLevel": {
+      "amount": 246,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 609,
+      "level": 5,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 5/6",
+      "bonusId": 12781,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 40,
+        "name": "Veteran Dawncrest",
+        "id": 3341,
+        "icon": "inv_120_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12782": {
+    "id": 12782,
+    "itemLevel": {
+      "amount": 250,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 609,
+      "level": 6,
+      "max": 6,
+      "name": "Veteran",
+      "fullName": "Veteran 6/6",
+      "bonusId": 12782,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 65,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 125,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 250,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3341,
+              "amount": 15,
+              "name": "Veteran Dawncrest",
+              "icon": "inv_120_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 50,
+        "name": "Veteran Dawncrest",
+        "id": 3341,
+        "icon": "inv_120_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12783": {
+    "id": 12783,
+    "itemLevel": {
+      "amount": 253,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12784": {
+    "id": 12784,
+    "itemLevel": {
+      "amount": 256,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12785": {
+    "id": 12785,
+    "itemLevel": {
+      "amount": 246,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 1,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 1/6",
+      "bonusId": 12785,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12786": {
+    "id": 12786,
+    "itemLevel": {
+      "amount": 250,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 2,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 2/6",
+      "bonusId": 12786,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 10,
+        "name": "Champion Dawncrest",
+        "id": 3343,
+        "icon": "inv_120_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12787": {
+    "id": 12787,
+    "itemLevel": {
+      "amount": 253,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 3,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 3/6",
+      "bonusId": 12787,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Dawncrest",
+        "id": 3343,
+        "icon": "inv_120_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12788": {
+    "id": 12788,
+    "itemLevel": {
+      "amount": 256,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 4,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 4/6",
+      "bonusId": 12788,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 30,
+        "name": "Champion Dawncrest",
+        "id": 3343,
+        "icon": "inv_120_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12789": {
+    "id": 12789,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 5,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 5/6",
+      "bonusId": 12789,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 40,
+        "name": "Champion Dawncrest",
+        "id": 3343,
+        "icon": "inv_120_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12790": {
+    "id": 12790,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 610,
+      "level": 6,
+      "max": 6,
+      "name": "Champion",
+      "fullName": "Champion 6/6",
+      "bonusId": 12790,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 145,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 120,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 75,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 150,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 225,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3343,
+              "amount": 15,
+              "name": "Champion Dawncrest",
+              "icon": "inv_120_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 50,
+        "name": "Champion Dawncrest",
+        "id": 3343,
+        "icon": "inv_120_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12791": {
+    "id": 12791,
+    "itemLevel": {
+      "amount": 266,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12792": {
+    "id": 12792,
+    "itemLevel": {
+      "amount": 269,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12793": {
+    "id": 12793,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 1,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 1/6",
+      "bonusId": 12793,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12794": {
+    "id": 12794,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 2,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 2/6",
+      "bonusId": 12794,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 10,
+        "name": "Hero Dawncrest",
+        "id": 3345,
+        "icon": "inv_120_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12795": {
+    "id": 12795,
+    "itemLevel": {
+      "amount": 266,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 3,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 3/6",
+      "bonusId": 12795,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Dawncrest",
+        "id": 3345,
+        "icon": "inv_120_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12796": {
+    "id": 12796,
+    "itemLevel": {
+      "amount": 269,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 4,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 4/6",
+      "bonusId": 12796,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 30,
+        "name": "Hero Dawncrest",
+        "id": 3345,
+        "icon": "inv_120_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12797": {
+    "id": 12797,
+    "itemLevel": {
+      "amount": 272,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 5,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 5/6",
+      "bonusId": 12797,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 40,
+        "name": "Hero Dawncrest",
+        "id": 3345,
+        "icon": "inv_120_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12798": {
+    "id": 12798,
+    "itemLevel": {
+      "amount": 276,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 611,
+      "level": 6,
+      "max": 6,
+      "name": "Hero",
+      "fullName": "Hero 6/6",
+      "bonusId": 12798,
+      "costs": [
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 170,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 140,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 90,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 175,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 275,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 350,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3345,
+              "amount": 15,
+              "name": "Hero Dawncrest",
+              "icon": "inv_120_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 50,
+        "name": "Hero Dawncrest",
+        "id": 3345,
+        "icon": "inv_120_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12799": {
+    "id": 12799,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12800": {
+    "id": 12800,
+    "itemLevel": {
+      "amount": 282,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12801": {
+    "id": 12801,
+    "itemLevel": {
+      "amount": 272,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 1,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 1/6",
+      "bonusId": 12801,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12802": {
+    "id": 12802,
+    "itemLevel": {
+      "amount": 276,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 2,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 2/6",
+      "bonusId": 12802,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 10,
+        "name": "Myth Dawncrest",
+        "id": 3347,
+        "icon": "inv_120_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12803": {
+    "id": 12803,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 3,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 3/6",
+      "bonusId": 12803,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Dawncrest",
+        "id": 3347,
+        "icon": "inv_120_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12804": {
+    "id": 12804,
+    "itemLevel": {
+      "amount": 282,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 4,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 4/6",
+      "bonusId": 12804,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 30,
+        "name": "Myth Dawncrest",
+        "id": 3347,
+        "icon": "inv_120_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12805": {
+    "id": 12805,
+    "itemLevel": {
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 5,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 5/6",
+      "bonusId": 12805,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 40,
+        "name": "Myth Dawncrest",
+        "id": 3347,
+        "icon": "inv_120_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12806": {
+    "id": 12806,
+    "itemLevel": {
+      "amount": 289,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "upgrade": {
+      "group": 612,
+      "level": 6,
+      "max": 6,
+      "name": "Myth",
+      "fullName": "Myth 6/6",
+      "bonusId": 12806,
+      "costs": [
+        {
+          "mask_inv_type": 67272704,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 67117056,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 300,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 131072,
+          "flags": 1,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 400,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 1048738,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 190,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 5448,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 160,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 68100,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8404992,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 100,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        },
+        {
+          "mask_inv_type": 8192,
+          "flags": 2,
+          "amounts": [
+            {
+              "currencyId": 3008,
+              "amount": 200,
+              "name": "Valorstones",
+              "icon": "inv_valorstone_base"
+            },
+            {
+              "currencyId": 3347,
+              "amount": 15,
+              "name": "Myth Dawncrest",
+              "icon": "inv_120_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 50,
+        "name": "Myth Dawncrest",
+        "id": 3347,
+        "icon": "inv_120_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3341,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3343,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3345,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3347,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3008,
+          "scaling": 0.5,
+          "accountWide": true
+        },
+        {
+          "type": "currency",
+          "id": 3383,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
+    },
+    "quality": 4
+  },
+  "12807": {
+    "id": 12807,
+    "itemLevel": {
+      "amount": 292,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12808": {
+    "id": 12808,
+    "itemLevel": {
+      "amount": 295,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "12809": {
+    "id": 12809,
+    "itemLevel": {
+      "amount": 284,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 1,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 12809
+    },
+    "quality": 2
+  },
+  "12810": {
+    "id": 12810,
+    "itemLevel": {
+      "amount": 287,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 12810
+    },
+    "quality": 2
+  },
+  "12811": {
+    "id": 12811,
+    "itemLevel": {
+      "amount": 291,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 3,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 12811
+    },
+    "quality": 2
+  },
+  "12812": {
+    "id": 12812,
+    "itemLevel": {
+      "amount": 294,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 4,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 12812
+    },
+    "quality": 2
+  },
+  "12813": {
+    "id": 12813,
+    "itemLevel": {
+      "amount": 297,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 5,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 12813
+    },
+    "quality": 2
+  },
+  "12814": {
+    "id": 12814,
+    "itemLevel": {
+      "amount": 300,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 6,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 12814
+    },
+    "quality": 2
+  },
+  "12815": {
+    "id": 12815,
+    "itemLevel": {
+      "amount": 304,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 7,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 12815
+    },
+    "quality": 2
+  },
+  "12816": {
+    "id": 12816,
+    "itemLevel": {
+      "amount": 307,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 613,
+      "level": 8,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 12816
+    },
+    "quality": 2
+  },
+  "12817": {
+    "id": 12817,
+    "itemLevel": {
+      "amount": 97,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 1,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 1/8",
+      "bonusId": 12817
+    },
+    "quality": 3
+  },
+  "12818": {
+    "id": 12818,
+    "itemLevel": {
+      "amount": 300,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 2,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 2/8",
+      "bonusId": 12818
+    },
+    "quality": 3
+  },
+  "12819": {
+    "id": 12819,
+    "itemLevel": {
+      "amount": 304,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 3,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 12819
+    },
+    "quality": 3
+  },
+  "12820": {
+    "id": 12820,
+    "itemLevel": {
+      "amount": 307,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 4,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 12820
+    },
+    "quality": 3
+  },
+  "12821": {
+    "id": 12821,
+    "itemLevel": {
+      "amount": 310,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 5,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 5/8",
+      "bonusId": 12821
+    },
+    "quality": 3
+  },
+  "12822": {
+    "id": 12822,
+    "itemLevel": {
+      "amount": 313,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 6,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 6/8",
+      "bonusId": 12822
+    },
+    "quality": 3
+  },
+  "12823": {
+    "id": 12823,
+    "itemLevel": {
+      "amount": 317,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 7,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 7/8",
+      "bonusId": 12823
+    },
+    "quality": 3
+  },
+  "12824": {
+    "id": 12824,
+    "itemLevel": {
+      "amount": 320,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 614,
+      "level": 8,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 8/8",
+      "bonusId": 12824
+    },
+    "quality": 3
+  },
+  "12825": {
+    "id": 12825,
+    "itemLevel": {
+      "amount": 310,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 1,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 1/8",
+      "bonusId": 12825
+    },
+    "quality": 4
+  },
+  "12826": {
+    "id": 12826,
+    "itemLevel": {
+      "amount": 313,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 2,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 2/8",
+      "bonusId": 12826
+    },
+    "quality": 4
+  },
+  "12827": {
+    "id": 12827,
+    "itemLevel": {
+      "amount": 317,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 3,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 3/8",
+      "bonusId": 12827
+    },
+    "quality": 4
+  },
+  "12828": {
+    "id": 12828,
+    "itemLevel": {
+      "amount": 320,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 4,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 4/8",
+      "bonusId": 12828
+    },
+    "quality": 4
+  },
+  "12829": {
+    "id": 12829,
+    "itemLevel": {
+      "amount": 323,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 5,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 12829
+    },
+    "quality": 4
+  },
+  "12830": {
+    "id": 12830,
+    "itemLevel": {
+      "amount": 326,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 6,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 12830
+    },
+    "quality": 4
+  },
+  "12831": {
+    "id": 12831,
+    "itemLevel": {
+      "amount": 330,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 7,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 7/8",
+      "bonusId": 12831
+    },
+    "quality": 4
+  },
+  "12832": {
+    "id": 12832,
+    "itemLevel": {
+      "amount": 333,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 615,
+      "level": 8,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 8/8",
+      "bonusId": 12832
+    },
+    "quality": 4
+  },
+  "12833": {
+    "id": 12833,
+    "itemLevel": {
+      "amount": 323,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 1,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 1/8",
+      "bonusId": 12833
+    },
+    "quality": 4
+  },
+  "12834": {
+    "id": 12834,
+    "itemLevel": {
+      "amount": 326,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 2,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 2/8",
+      "bonusId": 12834
+    },
+    "quality": 4
+  },
+  "12835": {
+    "id": 12835,
+    "itemLevel": {
+      "amount": 330,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 3,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 3/8",
+      "bonusId": 12835
+    },
+    "quality": 4
+  },
+  "12836": {
+    "id": 12836,
+    "itemLevel": {
+      "amount": 333,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 4,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 4/8",
+      "bonusId": 12836
+    },
+    "quality": 4
+  },
+  "12837": {
+    "id": 12837,
+    "itemLevel": {
+      "amount": 336,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 5,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 5/8",
+      "bonusId": 12837
+    },
+    "quality": 4
+  },
+  "12838": {
+    "id": 12838,
+    "itemLevel": {
+      "amount": 339,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 6,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 6/8",
+      "bonusId": 12838
+    },
+    "quality": 4
+  },
+  "12839": {
+    "id": 12839,
+    "itemLevel": {
+      "amount": 343,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 7,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 12839
+    },
+    "quality": 4
+  },
+  "12840": {
+    "id": 12840,
+    "itemLevel": {
+      "amount": 346,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 616,
+      "level": 8,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 12840
+    },
+    "quality": 4
+  },
+  "12841": {
+    "id": 12841,
+    "itemLevel": {
+      "amount": 336,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 1,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 1/8",
+      "bonusId": 12841
+    },
+    "quality": 4
+  },
+  "12842": {
+    "id": 12842,
+    "itemLevel": {
+      "amount": 339,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 2,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 2/8",
+      "bonusId": 12842
+    },
+    "quality": 4
+  },
+  "12843": {
+    "id": 12843,
+    "itemLevel": {
+      "amount": 343,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 3,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 3/8",
+      "bonusId": 12843
+    },
+    "quality": 4
+  },
+  "12844": {
+    "id": 12844,
+    "itemLevel": {
+      "amount": 346,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 4,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 4/8",
+      "bonusId": 12844
+    },
+    "quality": 4
+  },
+  "12845": {
+    "id": 12845,
+    "itemLevel": {
+      "amount": 349,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 5,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 5/8",
+      "bonusId": 12845
+    },
+    "quality": 4
+  },
+  "12846": {
+    "id": 12846,
+    "itemLevel": {
+      "amount": 352,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 6,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 6/8",
+      "bonusId": 12846
+    },
+    "quality": 4
+  },
+  "12847": {
+    "id": 12847,
+    "itemLevel": {
+      "amount": 356,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 7,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 7/8",
+      "bonusId": 12847
+    },
+    "quality": 4
+  },
+  "12848": {
+    "id": 12848,
+    "itemLevel": {
+      "amount": 359,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 617,
+      "level": 8,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 8/8",
+      "bonusId": 12848
+    },
+    "quality": 4
+  },
+  "12849": {
+    "id": 12849,
+    "itemLevel": {
+      "amount": 349,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 1,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 1/8",
+      "bonusId": 12849
+    },
+    "quality": 4
+  },
+  "12850": {
+    "id": 12850,
+    "itemLevel": {
+      "amount": 352,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 2,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 2/8",
+      "bonusId": 12850
+    },
+    "quality": 4
+  },
+  "12851": {
+    "id": 12851,
+    "itemLevel": {
+      "amount": 356,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 3,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 3/8",
+      "bonusId": 12851
+    },
+    "quality": 4
+  },
+  "12852": {
+    "id": 12852,
+    "itemLevel": {
+      "amount": 359,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 4,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 4/8",
+      "bonusId": 12852
+    },
+    "quality": 4
+  },
+  "12853": {
+    "id": 12853,
+    "itemLevel": {
+      "amount": 362,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 5,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 5/8",
+      "bonusId": 12853
+    },
+    "quality": 4
+  },
+  "12854": {
+    "id": 12854,
+    "itemLevel": {
+      "amount": 365,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 6,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 6/8",
+      "bonusId": 12854
+    },
+    "quality": 4
+  },
+  "12855": {
+    "id": 12855,
+    "itemLevel": {
+      "amount": 369,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 7,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 7/8",
+      "bonusId": 12855
+    },
+    "quality": 4
+  },
+  "12856": {
+    "id": 12856,
+    "itemLevel": {
+      "amount": 372,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 618,
+      "level": 8,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 8/8",
+      "bonusId": 12856
+    },
+    "quality": 4
+  },
+  "12857": {
+    "id": 12857,
+    "itemLevel": {
+      "amount": 323,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 1,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 1/8",
+      "bonusId": 12857
+    },
+    "quality": 2
+  },
+  "12858": {
+    "id": 12858,
+    "itemLevel": {
+      "amount": 326,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 2,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 2/8",
+      "bonusId": 12858
+    },
+    "quality": 2
+  },
+  "12859": {
+    "id": 12859,
+    "upgrade": {
+      "group": 619,
+      "level": 3,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 3/8",
+      "bonusId": 12859
+    },
+    "quality": 2,
+    "itemLevel": {
+      "amount": 330,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    }
+  },
+  "12860": {
+    "id": 12860,
+    "itemLevel": {
+      "amount": 333,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 4,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 4/8",
+      "bonusId": 12860
+    },
+    "quality": 2
+  },
+  "12861": {
+    "id": 12861,
+    "itemLevel": {
+      "amount": 336,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 5,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 5/8",
+      "bonusId": 12861
+    },
+    "quality": 2
+  },
+  "12862": {
+    "id": 12862,
+    "itemLevel": {
+      "amount": 339,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 6,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 6/8",
+      "bonusId": 12862
+    },
+    "quality": 2
+  },
+  "12863": {
+    "id": 12863,
+    "itemLevel": {
+      "amount": 343,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 7,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 7/8",
+      "bonusId": 12863
+    },
+    "quality": 2
+  },
+  "12864": {
+    "id": 12864,
+    "itemLevel": {
+      "amount": 346,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 619,
+      "level": 8,
+      "max": 8,
+      "name": "Explorer",
+      "fullName": "Explorer 8/8",
+      "bonusId": 12864
+    },
+    "quality": 2
+  },
+  "12865": {
+    "id": 12865,
+    "itemLevel": {
+      "amount": 336,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 1,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 1/8",
+      "bonusId": 12865
+    },
+    "quality": 3
+  },
+  "12866": {
+    "id": 12866,
+    "itemLevel": {
+      "amount": 339,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 2,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 2/8",
+      "bonusId": 12866
+    },
+    "quality": 3
+  },
+  "12867": {
+    "id": 12867,
+    "itemLevel": {
+      "amount": 343,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 3,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 3/8",
+      "bonusId": 12867
+    },
+    "quality": 3
+  },
+  "12868": {
+    "id": 12868,
+    "itemLevel": {
+      "amount": 346,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 4,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 4/8",
+      "bonusId": 12868
+    },
+    "quality": 3
+  },
+  "12869": {
+    "id": 12869,
+    "itemLevel": {
+      "amount": 349,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 5,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 5/8",
+      "bonusId": 12869
+    },
+    "quality": 3
+  },
+  "12870": {
+    "id": 12870,
+    "itemLevel": {
+      "amount": 352,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 6,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 6/8",
+      "bonusId": 12870
+    },
+    "quality": 3
+  },
+  "12871": {
+    "id": 12871,
+    "itemLevel": {
+      "amount": 356,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 7,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 7/8",
+      "bonusId": 12871
+    },
+    "quality": 3
+  },
+  "12872": {
+    "id": 12872,
+    "itemLevel": {
+      "amount": 359,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 626,
+      "level": 8,
+      "max": 8,
+      "name": "Adventurer",
+      "fullName": "Adventurer 8/8",
+      "bonusId": 12872
+    },
+    "quality": 3
+  },
+  "12873": {
+    "id": 12873,
+    "itemLevel": {
+      "amount": 349,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 1,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 1/8",
+      "bonusId": 12873
+    },
+    "quality": 4
+  },
+  "12874": {
+    "id": 12874,
+    "itemLevel": {
+      "amount": 352,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 2,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 2/8",
+      "bonusId": 12874
+    },
+    "quality": 4
+  },
+  "12875": {
+    "id": 12875,
+    "itemLevel": {
+      "amount": 356,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 3,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 3/8",
+      "bonusId": 12875
+    },
+    "quality": 4
+  },
+  "12876": {
+    "id": 12876,
+    "itemLevel": {
+      "amount": 359,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 4,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 4/8",
+      "bonusId": 12876
+    },
+    "quality": 4
+  },
+  "12877": {
+    "id": 12877,
+    "itemLevel": {
+      "amount": 362,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 5,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 5/8",
+      "bonusId": 12877
+    },
+    "quality": 4
+  },
+  "12878": {
+    "id": 12878,
+    "itemLevel": {
+      "amount": 365,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 6,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 6/8",
+      "bonusId": 12878
+    },
+    "quality": 4
+  },
+  "12879": {
+    "id": 12879,
+    "itemLevel": {
+      "amount": 369,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 7,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 7/8",
+      "bonusId": 12879
+    },
+    "quality": 4
+  },
+  "12880": {
+    "id": 12880,
+    "itemLevel": {
+      "amount": 372,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 627,
+      "level": 8,
+      "max": 8,
+      "name": "Veteran",
+      "fullName": "Veteran 8/8",
+      "bonusId": 12880
+    },
+    "quality": 4
+  },
+  "12881": {
+    "id": 12881,
+    "itemLevel": {
+      "amount": 362,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 1,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 1/8",
+      "bonusId": 12881
+    },
+    "quality": 4
+  },
+  "12882": {
+    "id": 12882,
+    "itemLevel": {
+      "amount": 365,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 2,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 2/8",
+      "bonusId": 12882
+    },
+    "quality": 4
+  },
+  "12883": {
+    "id": 12883,
+    "itemLevel": {
+      "amount": 369,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 3,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 3/8",
+      "bonusId": 12883
+    },
+    "quality": 4
+  },
+  "12884": {
+    "id": 12884,
+    "itemLevel": {
+      "amount": 372,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 4,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 4/8",
+      "bonusId": 12884
+    },
+    "quality": 4
+  },
+  "12885": {
+    "id": 12885,
+    "itemLevel": {
+      "amount": 375,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 5,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 5/8",
+      "bonusId": 12885
+    },
+    "quality": 4
+  },
+  "12886": {
+    "id": 12886,
+    "itemLevel": {
+      "amount": 378,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 6,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 6/8",
+      "bonusId": 12886
+    },
+    "quality": 4
+  },
+  "12887": {
+    "id": 12887,
+    "itemLevel": {
+      "amount": 382,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 7,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 7/8",
+      "bonusId": 12887
+    },
+    "quality": 4
+  },
+  "12888": {
+    "id": 12888,
+    "itemLevel": {
+      "amount": 385,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 628,
+      "level": 8,
+      "max": 8,
+      "name": "Champion",
+      "fullName": "Champion 8/8",
+      "bonusId": 12888
+    },
+    "quality": 4
+  },
+  "12889": {
+    "id": 12889,
+    "itemLevel": {
+      "amount": 375,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 1,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 1/8",
+      "bonusId": 12889
+    },
+    "quality": 4
+  },
+  "12890": {
+    "id": 12890,
+    "itemLevel": {
+      "amount": 378,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 2,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 2/8",
+      "bonusId": 12890
+    },
+    "quality": 4
+  },
+  "12891": {
+    "id": 12891,
+    "itemLevel": {
+      "amount": 382,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 3,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 3/8",
+      "bonusId": 12891
+    },
+    "quality": 4
+  },
+  "12892": {
+    "id": 12892,
+    "itemLevel": {
+      "amount": 385,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 4,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 4/8",
+      "bonusId": 12892
+    },
+    "quality": 4
+  },
+  "12893": {
+    "id": 12893,
+    "itemLevel": {
+      "amount": 388,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 5,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 5/8",
+      "bonusId": 12893
+    },
+    "quality": 4
+  },
+  "12894": {
+    "id": 12894,
+    "itemLevel": {
+      "amount": 391,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 6,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 6/8",
+      "bonusId": 12894
+    },
+    "quality": 4
+  },
+  "12895": {
+    "id": 12895,
+    "itemLevel": {
+      "amount": 395,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 7,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 7/8",
+      "bonusId": 12895
+    },
+    "quality": 4
+  },
+  "12896": {
+    "id": 12896,
+    "itemLevel": {
+      "amount": 398,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 629,
+      "level": 8,
+      "max": 8,
+      "name": "Hero",
+      "fullName": "Hero 8/8",
+      "bonusId": 12896
+    },
+    "quality": 4
+  },
+  "12897": {
+    "id": 12897,
+    "itemLevel": {
+      "amount": 388,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 1,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 1/8",
+      "bonusId": 12897
+    },
+    "quality": 4
+  },
+  "12898": {
+    "id": 12898,
+    "itemLevel": {
+      "amount": 391,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 2,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 2/8",
+      "bonusId": 12898
+    },
+    "quality": 4
+  },
+  "12899": {
+    "id": 12899,
+    "itemLevel": {
+      "amount": 395,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 3,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 3/8",
+      "bonusId": 12899
+    },
+    "quality": 4
+  },
+  "12900": {
+    "id": 12900,
+    "itemLevel": {
+      "amount": 398,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 4,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 4/8",
+      "bonusId": 12900
+    },
+    "quality": 4
+  },
+  "12901": {
+    "id": 12901,
+    "itemLevel": {
+      "amount": 401,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 5,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 5/8",
+      "bonusId": 12901
+    },
+    "quality": 4
+  },
+  "12902": {
+    "id": 12902,
+    "itemLevel": {
+      "amount": 404,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 6,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 6/8",
+      "bonusId": 12902
+    },
+    "quality": 4
+  },
+  "12903": {
+    "id": 12903,
+    "itemLevel": {
+      "amount": 408,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 7,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 7/8",
+      "bonusId": 12903
+    },
+    "quality": 4
+  },
+  "12904": {
+    "id": 12904,
+    "itemLevel": {
+      "amount": 411,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
+    "upgrade": {
+      "group": 630,
+      "level": 8,
+      "max": 8,
+      "name": "Myth",
+      "fullName": "Myth 8/8",
+      "bonusId": 12904
+    },
+    "quality": 4
+  },
+  "12921": {
+    "id": 12921,
+    "serverside": true
+  },
   "12922": {
     "id": 12922,
     "socket": 1
+  },
+  "12990": {
+    "id": 12990,
+    "effect": {
+      "id": 213453,
+      "index": 0,
+      "spell": {
+        "id": 1246309,
+        "name": "B1P, Scorcher of Souls",
+        "icon": "inv_10_engineering_device_flamethrower_flame"
+      }
+    }
+  },
+  "12991": {
+    "id": 12991,
+    "effect": {
+      "id": 213454,
+      "index": 0,
+      "spell": {
+        "id": 1246312,
+        "name": "Meddy, Pocket-Sized",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13183": {
+    "id": 13183,
+    "effect": {
+      "id": 213562,
+      "index": 2,
+      "spell": {
+        "id": 1247568,
+        "name": "Drum of Renewed Bonds",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13184": {
+    "id": 13184,
+    "effect": {
+      "id": 213563,
+      "index": 2,
+      "spell": {
+        "id": 1247569,
+        "name": "Drum of Renewed Bonds",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13185": {
+    "id": 13185,
+    "effect": {
+      "id": 213564,
+      "index": 2,
+      "spell": {
+        "id": 1247570,
+        "name": "Drum of Renewed Bonds",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13186": {
+    "id": 13186,
+    "effect": {
+      "id": 213565,
+      "index": 2,
+      "spell": {
+        "id": 1247571,
+        "name": "Drum of Renewed Bonds",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13206": {
+    "id": 13206,
+    "serverside": true,
+    "tag": "Raid Finder"
+  },
+  "13207": {
+    "id": 13207,
+    "serverside": true
+  },
+  "13208": {
+    "id": 13208,
+    "serverside": true,
+    "tag": "Heroic"
+  },
+  "13210": {
+    "id": 13210,
+    "effect": {
+      "id": 213707,
+      "index": 0,
+      "spell": {
+        "id": 1248523,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    },
+    "tag": "Rank 1/4"
+  },
+  "13211": {
+    "id": 13211,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213708,
+      "index": 0,
+      "spell": {
+        "id": 1248525,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13212": {
+    "id": 13212,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213709,
+      "index": 0,
+      "spell": {
+        "id": 1248526,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13213": {
+    "id": 13213,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213710,
+      "index": 0,
+      "spell": {
+        "id": 1248527,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13214": {
+    "id": 13214,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213714,
+      "index": 0,
+      "spell": {
+        "id": 1248529,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13215": {
+    "id": 13215,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213713,
+      "index": 0,
+      "spell": {
+        "id": 1248531,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13216": {
+    "id": 13216,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213712,
+      "index": 0,
+      "spell": {
+        "id": 1248532,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13217": {
+    "id": 13217,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213711,
+      "index": 0,
+      "spell": {
+        "id": 1248551,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13218": {
+    "id": 13218,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213718,
+      "index": 0,
+      "spell": {
+        "id": 1248552,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13219": {
+    "id": 13219,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213717,
+      "index": 0,
+      "spell": {
+        "id": 1248553,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13220": {
+    "id": 13220,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213716,
+      "index": 0,
+      "spell": {
+        "id": 1248554,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13221": {
+    "id": 13221,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213715,
+      "index": 0,
+      "spell": {
+        "id": 1248555,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13222": {
+    "id": 13222,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213722,
+      "index": 0,
+      "spell": {
+        "id": 1248556,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13223": {
+    "id": 13223,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213721,
+      "index": 0,
+      "spell": {
+        "id": 1248557,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13224": {
+    "id": 13224,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213720,
+      "index": 0,
+      "spell": {
+        "id": 1248558,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13225": {
+    "id": 13225,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213719,
+      "index": 0,
+      "spell": {
+        "id": 1248559,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13226": {
+    "id": 13226,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213726,
+      "index": 0,
+      "spell": {
+        "id": 1248560,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13227": {
+    "id": 13227,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213725,
+      "index": 0,
+      "spell": {
+        "id": 1248561,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13228": {
+    "id": 13228,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213724,
+      "index": 0,
+      "spell": {
+        "id": 1248562,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13229": {
+    "id": 13229,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213723,
+      "index": 0,
+      "spell": {
+        "id": 1248564,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13230": {
+    "id": 13230,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213730,
+      "index": 0,
+      "spell": {
+        "id": 1248565,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13231": {
+    "id": 13231,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213729,
+      "index": 0,
+      "spell": {
+        "id": 1248566,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13232": {
+    "id": 13232,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213728,
+      "index": 0,
+      "spell": {
+        "id": 1248577,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13233": {
+    "id": 13233,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213727,
+      "index": 0,
+      "spell": {
+        "id": 1248578,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13234": {
+    "id": 13234,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213734,
+      "index": 0,
+      "spell": {
+        "id": 1248582,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13235": {
+    "id": 13235,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213733,
+      "index": 0,
+      "spell": {
+        "id": 1248581,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13236": {
+    "id": 13236,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213732,
+      "index": 0,
+      "spell": {
+        "id": 1248580,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13237": {
+    "id": 13237,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213731,
+      "index": 0,
+      "spell": {
+        "id": 1248579,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13238": {
+    "id": 13238,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213738,
+      "index": 0,
+      "spell": {
+        "id": 1248586,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13239": {
+    "id": 13239,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213737,
+      "index": 0,
+      "spell": {
+        "id": 1248585,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13240": {
+    "id": 13240,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213736,
+      "index": 0,
+      "spell": {
+        "id": 1248584,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13241": {
+    "id": 13241,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213735,
+      "index": 0,
+      "spell": {
+        "id": 1248583,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13242": {
+    "id": 13242,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213742,
+      "index": 0,
+      "spell": {
+        "id": 1248590,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13243": {
+    "id": 13243,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213741,
+      "index": 0,
+      "spell": {
+        "id": 1248589,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13244": {
+    "id": 13244,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213740,
+      "index": 0,
+      "spell": {
+        "id": 1248588,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13245": {
+    "id": 13245,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213739,
+      "index": 0,
+      "spell": {
+        "id": 1248587,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13246": {
+    "id": 13246,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 213746,
+      "index": 0,
+      "spell": {
+        "id": 1248594,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13247": {
+    "id": 13247,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 213745,
+      "index": 0,
+      "spell": {
+        "id": 1248593,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13248": {
+    "id": 13248,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 213744,
+      "index": 0,
+      "spell": {
+        "id": 1248592,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13249": {
+    "id": 13249,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 213743,
+      "index": 0,
+      "spell": {
+        "id": 1248591,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
   },
   "13251": {
     "id": 13251,
@@ -77980,9 +85753,113 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13331,
     "quality": 6
   },
+  "13332": {
+    "id": 13332,
+    "serverside": true,
+    "tag": "Raid Finder"
+  },
+  "13333": {
+    "id": 13333,
+    "serverside": true
+  },
+  "13334": {
+    "id": 13334,
+    "serverside": true,
+    "tag": "Heroic"
+  },
+  "13335": {
+    "id": 13335,
+    "serverside": true,
+    "tag": "Mythic"
+  },
+  "13341": {
+    "id": 13341,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13342": {
+    "id": 13342,
+    "itemLevel": {
+      "amount": 237,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13343": {
+    "id": 13343,
+    "itemLevel": {
+      "amount": 240,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13346": {
+    "id": 13346,
+    "itemLevel": {
+      "amount": 250,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13347": {
+    "id": 13347,
+    "itemLevel": {
+      "amount": 253,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13350": {
+    "id": 13350,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13351": {
+    "id": 13351,
+    "itemLevel": {
+      "amount": 266,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13354": {
+    "id": 13354,
+    "itemLevel": {
+      "amount": 276,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13355": {
+    "id": 13355,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
   "13357": {
     "id": 13357,
     "quality": 4
+  },
+  "13358": {
+    "id": 13358,
+    "serverside": true
+  },
+  "13359": {
+    "id": 13359,
+    "itemLevel": {
+      "amount": 777,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "13360": {
     "id": 13360,
@@ -78068,6 +85945,44 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "13436": {
+    "id": 13436,
+    "serverside": true
+  },
+  "13437": {
+    "id": 13437,
+    "serverside": true
+  },
+  "13438": {
+    "id": 13438,
+    "tag": "Heroic"
+  },
+  "13439": {
+    "id": 13439,
+    "tag": "Mythic"
+  },
+  "13440": {
+    "id": 13440,
+    "tag": "Mythic+"
+  },
+  "13441": {
+    "id": 13441,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 6,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13442": {
+    "id": 13442,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 214,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
   "13443": {
     "id": 13443,
     "upgrade": {
@@ -78077,7 +85992,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 7/8",
       "bonusId": 13443,
-      "itemLevel": 714,
+      "itemLevel": 154,
       "seasonId": 30,
       "costs": [
         {
@@ -78264,7 +86179,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 714,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "13444": {
     "id": 13444,
@@ -78275,7 +86196,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 8/8",
       "bonusId": 13444,
-      "itemLevel": 717,
+      "itemLevel": 157,
       "seasonId": 30,
       "costs": [
         {
@@ -78462,7 +86383,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 717,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "13445": {
     "id": 13445,
@@ -78473,7 +86400,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 7/8",
       "bonusId": 13445,
-      "itemLevel": 727,
+      "itemLevel": 167,
       "seasonId": 30,
       "costs": [
         {
@@ -78660,7 +86587,13 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 727,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
   },
   "13446": {
     "id": 13446,
@@ -78671,7 +86604,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 8/8",
       "bonusId": 13446,
-      "itemLevel": 730,
+      "itemLevel": 170,
       "seasonId": 30,
       "costs": [
         {
@@ -78858,15 +86791,320 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 730,
+      "priority": 9999,
+      "squishEra": 1,
+      "curveId": 87537
+    }
+  },
+  "13453": {
+    "id": 13453,
+    "effect": {
+      "id": 215077,
+      "index": 0,
+      "spell": {
+        "id": 1251906,
+        "name": "Prismatic Focusing Iris",
+        "icon": "inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_green"
+      }
+    }
+  },
+  "13454": {
+    "id": 13454,
+    "effect": {
+      "id": 215078,
+      "index": 0,
+      "spell": {
+        "id": 1251905,
+        "name": "Stabilizing Gemstone Bandolier",
+        "icon": "jewelcrafting_cut_epic_gem_color2"
+      }
+    }
   },
   "13468": {
     "id": 13468,
-    "level": 7
+    "levelOffsetSecondary": {
+      "amount": 7
+    }
   },
   "13469": {
     "id": 13469,
-    "level": 3
+    "levelOffsetSecondary": {
+      "amount": 3
+    }
+  },
+  "13470": {
+    "id": 13470,
+    "quality": 4,
+    "tag": "Raid Finder",
+    "itemLevel": {
+      "amount": 78,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13471": {
+    "id": 13471,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 79,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13472": {
+    "id": 13472,
+    "quality": 4,
+    "tag": "Heroic",
+    "itemLevel": {
+      "amount": 80,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13473": {
+    "id": 13473,
+    "quality": 4,
+    "tag": "Mythic",
+    "itemLevel": {
+      "amount": 81,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13474": {
+    "id": 13474,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 78,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13475": {
+    "id": 13475,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 79,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13476": {
+    "id": 13476,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 80,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13477": {
+    "id": 13477,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 81,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13478": {
+    "id": 13478,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 82,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13479": {
+    "id": 13479,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13480": {
+    "id": 13480,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 80,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13481": {
+    "id": 13481,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 81,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13482": {
+    "id": 13482,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13483": {
+    "id": 13483,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 82,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13484": {
+    "id": 13484,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 84,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13485": {
+    "id": 13485,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 85,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13486": {
+    "id": 13486,
+    "tag": "Heroic",
+    "quality": 3,
+    "itemLevel": {
+      "amount": 73,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13487": {
+    "id": 13487,
+    "tag": "Mythic",
+    "quality": 4,
+    "itemLevel": {
+      "amount": 76,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13488": {
+    "id": 13488,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13489": {
+    "id": 13489,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 79,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13490": {
+    "id": 13490,
+    "itemLevel": {
+      "amount": 51,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13491": {
+    "id": 13491,
+    "itemLevel": {
+      "amount": 46,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13493": {
+    "id": 13493,
+    "itemLevel": {
+      "amount": 48,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13494": {
+    "id": 13494,
+    "itemLevel": {
+      "amount": 43,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13495": {
+    "id": 13495,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13496": {
+    "id": 13496,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 85,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13497": {
+    "id": 13497,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 82,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13498": {
+    "id": 13498,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 86,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13499": {
+    "id": 13499,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 87,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13500": {
+    "id": 13500,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 84,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "13501": {
     "id": 13501,
@@ -78916,6 +87154,152 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "13505": {
+    "id": 13505,
+    "quality": 5,
+    "itemLevel": {
+      "amount": 87,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13506": {
+    "id": 13506,
+    "quality": 5,
+    "itemLevel": {
+      "amount": 85,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13507": {
+    "id": 13507,
+    "quality": 5,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13508": {
+    "id": 13508,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 81,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13509": {
+    "id": 13509,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 76,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13510": {
+    "id": 13510,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 76,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13511": {
+    "id": 13511,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13512": {
+    "id": 13512,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 75,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13513": {
+    "id": 13513,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 80,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13514": {
+    "id": 13514,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 85,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13515": {
+    "id": 13515,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 81,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13516": {
+    "id": 13516,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 87,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13517": {
+    "id": 13517,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 83,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13518": {
+    "id": 13518,
+    "quality": 5,
+    "itemLevel": {
+      "amount": 67,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13519": {
+    "id": 13519,
+    "serverside": true
+  },
+  "13520": {
+    "id": 13520,
+    "serverside": true
+  },
+  "13521": {
+    "id": 13521,
+    "serverside": true
+  },
+  "13522": {
+    "id": 13522,
+    "serverside": true
+  },
+  "13523": {
+    "id": 13523,
+    "serverside": true
+  },
   "13524": {
     "id": 13524,
     "quality": 4,
@@ -78928,9 +87312,921 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Sta [0.1000]"
   },
+  "13525": {
+    "id": 13525,
+    "tag": "Tier 1"
+  },
+  "13526": {
+    "id": 13526,
+    "tag": "Tier 2"
+  },
+  "13527": {
+    "id": 13527,
+    "tag": "Tier 3"
+  },
+  "13528": {
+    "id": 13528,
+    "tag": "Tier 4"
+  },
+  "13529": {
+    "id": 13529,
+    "tag": "Tier 5"
+  },
+  "13530": {
+    "id": 13530,
+    "tag": "Tier 6"
+  },
+  "13531": {
+    "id": 13531,
+    "tag": "Tier 7"
+  },
+  "13532": {
+    "id": 13532,
+    "tag": "Tier 8"
+  },
+  "13533": {
+    "id": 13533,
+    "serverside": true
+  },
+  "13534": {
+    "id": 13534,
+    "socket": 1
+  },
+  "13536": {
+    "id": 13536,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 71,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13537": {
+    "id": 13537,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 66,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13538": {
+    "id": 13538,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 73,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13539": {
+    "id": 13539,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 68,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13540": {
+    "id": 13540,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 75,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13541": {
+    "id": 13541,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13542": {
+    "id": 13542,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 72,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13543": {
+    "id": 13543,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 77,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13544": {
+    "id": 13544,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 61,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13545": {
+    "id": 13545,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 63,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13546": {
+    "id": 13546,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 65,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13547": {
+    "id": 13547,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 67,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13548": {
+    "id": 13548,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 56,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13549": {
+    "id": 13549,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 58,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13550": {
+    "id": 13550,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13551": {
+    "id": 13551,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13552": {
+    "id": 13552,
+    "serverside": true
+  },
+  "13553": {
+    "id": 13553,
+    "serverside": true
+  },
+  "13554": {
+    "id": 13554,
+    "serverside": true
+  },
+  "13555": {
+    "id": 13555,
+    "item_limit_category": 697
+  },
+  "13556": {
+    "id": 13556,
+    "effect": {
+      "id": 224964,
+      "index": 0,
+      "spell": {
+        "id": 1259648,
+        "name": "HU5H, Nonchalant Pup",
+        "icon": "inv_10_engineering2_tinkermodules_color6"
+      }
+    }
+  },
+  "13558": {
+    "id": 13558,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 66,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13559": {
+    "id": 13559,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13560": {
+    "id": 13560,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 68,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13561": {
+    "id": 13561,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 62,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13562": {
+    "id": 13562,
+    "effect": {
+      "id": 225135,
+      "index": 0,
+      "spell": {
+        "id": 1260254,
+        "name": "Griftah's Fool-Proof Embellishing Powder",
+        "icon": "inv_misc_powder_mithril"
+      }
+    }
+  },
+  "13563": {
+    "id": 13563,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 201,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
+  "13564": {
+    "id": 13564,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 0,
+      "priority": 300,
+      "squishEra": 2
+    },
+    "quality": 2
+  },
+  "13565": {
+    "id": 13565,
+    "ilevel": "15 @plvl 10 - 232 @plvl 232",
+    "curveId": 92753
+  },
+  "13566": {
+    "id": 13566,
+    "ilevel": "15 @plvl 10 - 239 @plvl 239",
+    "curveId": 92754
+  },
+  "13567": {
+    "id": 13567,
+    "ilevel": "15 @plvl 10 - 232 @plvl 232",
+    "curveId": 92753,
+    "quality": 3
+  },
+  "13568": {
+    "id": 13568,
+    "ilevel": "15 @plvl 10 - 239 @plvl 239",
+    "curveId": 92754,
+    "quality": 4
+  },
+  "13569": {
+    "id": 13569,
+    "ilevel": "15 @plvl 10 - 239 @plvl 239",
+    "curveId": 92754,
+    "quality": 3
+  },
+  "13570": {
+    "id": 13570,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 220,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
+  "13571": {
+    "id": 13571,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
   "13572": {
     "id": 13572,
     "ilevel": "1 @plvl 1 - 655 @plvl 655",
     "curveId": 92770
+  },
+  "13573": {
+    "id": 13573,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 0,
+      "priority": 300,
+      "squishEra": 2
+    }
+  },
+  "13574": {
+    "id": 13574,
+    "serverside": true
+  },
+  "13575": {
+    "id": 13575,
+    "serverside": true
+  },
+  "13576": {
+    "id": 13576,
+    "socket": 1
+  },
+  "13577": {
+    "id": 13577,
+    "item_conversion": 12
+  },
+  "13578": {
+    "id": 13578,
+    "serverside": true
+  },
+  "13579": {
+    "id": 13579,
+    "socket": 2
+  },
+  "13580": {
+    "id": 13580,
+    "ilevel": "15 @plvl 10 - 226 @plvl 226",
+    "curveId": 92752
+  },
+  "13581": {
+    "id": 13581,
+    "ilevel": "15 @plvl 10 - 232 @plvl 232",
+    "curveId": 92753
+  },
+  "13582": {
+    "id": 13582,
+    "ilevel": "15 @plvl 10 - 239 @plvl 239",
+    "curveId": 92754
+  },
+  "13583": {
+    "id": 13583,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 225864,
+      "index": 0,
+      "spell": {
+        "id": 1261812,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13584": {
+    "id": 13584,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 225867,
+      "index": 0,
+      "spell": {
+        "id": 1261816,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13585": {
+    "id": 13585,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 225866,
+      "index": 0,
+      "spell": {
+        "id": 1261817,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13586": {
+    "id": 13586,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 225865,
+      "index": 0,
+      "spell": {
+        "id": 1261818,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13587": {
+    "id": 13587,
+    "effect": {
+      "id": 225885,
+      "index": 0,
+      "spell": {
+        "id": 1261971,
+        "name": "M0LL1, Atomic Anomaly",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13588": {
+    "id": 13588,
+    "effect": {
+      "id": 225886,
+      "index": 0,
+      "spell": {
+        "id": 1261968,
+        "name": "B0P, Curator of Booms",
+        "icon": "trade_engineering"
+      }
+    }
+  },
+  "13589": {
+    "id": 13589,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 225901,
+      "index": 0,
+      "spell": {
+        "id": 1262069,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13590": {
+    "id": 13590,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 225900,
+      "index": 0,
+      "spell": {
+        "id": 1262070,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13591": {
+    "id": 13591,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 225899,
+      "index": 0,
+      "spell": {
+        "id": 1262071,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13592": {
+    "id": 13592,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 225898,
+      "index": 0,
+      "spell": {
+        "id": 1262072,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13593": {
+    "id": 13593,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 225914,
+      "index": 0,
+      "spell": {
+        "id": 1262113,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13594": {
+    "id": 13594,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 225915,
+      "index": 0,
+      "spell": {
+        "id": 1262186,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13595": {
+    "id": 13595,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 225916,
+      "index": 0,
+      "spell": {
+        "id": 1262188,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13597": {
+    "id": 13597,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 225917,
+      "index": 0,
+      "spell": {
+        "id": 1262189,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13602": {
+    "id": 13602,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 225918,
+      "index": 0,
+      "spell": {
+        "id": 1262268,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13603": {
+    "id": 13603,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 225919,
+      "index": 0,
+      "spell": {
+        "id": 1262270,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13604": {
+    "id": 13604,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 225920,
+      "index": 0,
+      "spell": {
+        "id": 1262271,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13605": {
+    "id": 13605,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 225921,
+      "index": 0,
+      "spell": {
+        "id": 1262272,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13606": {
+    "id": 13606,
+    "item_limit_category": 699
+  },
+  "13607": {
+    "id": 13607,
+    "dropLevelCurve": {
+      "curveId": 94166,
+      "offset": 0,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "tag": "Timewarped"
+  },
+  "13608": {
+    "id": 13608,
+    "dropLevelCurve": {
+      "curveId": 94167,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13609": {
+    "id": 13609,
+    "dropLevelCurve": {
+      "curveId": 94166,
+      "offset": 0,
+      "priority": 290,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13610": {
+    "id": 13610,
+    "dropLevelCurve": {
+      "curveId": 94166,
+      "offset": 0,
+      "priority": 290,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13611": {
+    "id": 13611,
+    "ilevel": "120 @plvl 80 - 201 @plvl 201",
+    "curveId": 92772
+  },
+  "13613": {
+    "id": 13613,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 6,
+      "priority": 200,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13614": {
+    "id": 13614,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 13,
+      "priority": 100,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "13617": {
+    "id": 13617,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 0,
+      "priority": 300,
+      "squishEra": 0
+    }
+  },
+  "13618": {
+    "id": 13618,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 3,
+      "priority": 200,
+      "squishEra": 0
+    },
+    "quality": 3
+  },
+  "13619": {
+    "id": 13619,
+    "dropLevelCurve": {
+      "curveId": 6243,
+      "offset": 6,
+      "priority": 100,
+      "squishEra": 0
+    },
+    "quality": 4
+  },
+  "13620": {
+    "id": 13620,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "13621": {
+    "id": 13621,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 65,
+      "squishEra": 2
+    }
+  },
+  "13622": {
+    "id": 13622,
+    "itemLevel": {
+      "amount": 272,
+      "priority": 65,
+      "squishEra": 2
+    }
+  },
+  "13623": {
+    "id": 13623,
+    "itemLevel": {
+      "amount": 220,
+      "priority": 1,
+      "squishEra": 2
+    }
+  },
+  "13624": {
+    "id": 13624,
+    "levelOffset": {
+      "amount": 0,
+      "squishEra": 2
+    }
+  },
+  "13625": {
+    "id": 13625,
+    "levelOffset": {
+      "amount": 1,
+      "squishEra": 2
+    }
+  },
+  "13626": {
+    "id": 13626,
+    "levelOffset": {
+      "amount": 2,
+      "squishEra": 2
+    }
+  },
+  "13627": {
+    "id": 13627,
+    "levelOffset": {
+      "amount": 3,
+      "squishEra": 2
+    }
+  },
+  "13628": {
+    "id": 13628,
+    "levelOffset": {
+      "amount": 4,
+      "squishEra": 2
+    }
+  },
+  "13629": {
+    "id": 13629,
+    "itemLevel": {
+      "amount": 217,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13634": {
+    "id": 13634,
+    "itemLevel": {
+      "amount": 214,
+      "priority": 300,
+      "squishEra": 2
+    }
+  },
+  "13635": {
+    "id": 13635,
+    "dropLevelCurve": {
+      "curveId": 96449,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13636": {
+    "id": 13636,
+    "itemLevel": {
+      "amount": 60,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13637": {
+    "id": 13637,
+    "itemLevel": {
+      "amount": 70,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13638": {
+    "id": 13638,
+    "itemLevel": {
+      "amount": 80,
+      "priority": 0,
+      "squishEra": 0
+    }
+  },
+  "13640": {
+    "id": 13640,
+    "effect": {
+      "id": 213244,
+      "index": 0,
+      "spell": {
+        "id": 1245052,
+        "name": "Void",
+        "icon": "inv_10_inscription3_darkmoondeckbox_black"
+      }
+    }
+  },
+  "13642": {
+    "id": 13642,
+    "ilevel": "5 @plvl 1 - 551 @plvl 551",
+    "curveId": 97109
+  },
+  "13643": {
+    "id": 13643,
+    "tag": "Beginner Crafted",
+    "ilevel": "1 @plvl 1 - 90 @plvl 90",
+    "curveId": 97367
+  },
+  "13644": {
+    "id": 13644,
+    "itemLevel": {
+      "amount": 201,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13645": {
+    "id": 13645,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 6,
+      "priority": 200,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13646": {
+    "id": 13646,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 13,
+      "priority": 100,
+      "squishEra": 2
+    },
+    "quality": 4
+  },
+  "13647": {
+    "id": 13647,
+    "dropLevelCurve": {
+      "curveId": 97686,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 2
+  },
+  "13648": {
+    "id": 13648,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 6,
+      "priority": 200,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13649": {
+    "id": 13649,
+    "dropLevelCurve": {
+      "curveId": 88583,
+      "offset": 0,
+      "priority": 100,
+      "squishEra": 2
+    },
+    "quality": 3
   }
 }
