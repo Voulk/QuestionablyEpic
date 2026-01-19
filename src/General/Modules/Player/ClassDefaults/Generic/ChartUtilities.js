@@ -1,5 +1,5 @@
 import { convertStatPercentages, runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
-
+import { runProfileSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"
 
 const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
     const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
@@ -52,7 +52,28 @@ const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, t
 
 }
 
-export const buildChartEntryClassic = (sequence, spellData, spell, activeStats, userSettings, playerData, scoreSet) => {
+export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeStats, userSettings, playerData, scoreSet) => {
+    let data = {
+        healingDone: 0,
+        damageDone: 0,
+        manaSpent: 0,
+        execTime: 0,
+        spellValues: {
+
+        }
+    }
+
+    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1}
+    console.log(playerData);
+    const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
+
+    console.log(result);
+    
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(result.healing), hpm: 0, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+
+}
+
+export const buildChartEntryClassic = (sequence, spellData, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         healingDone: 0,
         damageDone: 0,

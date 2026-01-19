@@ -7,7 +7,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 
 import { buildEvokerChartData } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
@@ -15,6 +14,7 @@ import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/Discipl
 import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRampUtilities";
 import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidRampGen";
 import { buildHolyPriestChartData } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestRampGen";
+import { buildShamanChartData } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanChartGen";
 
 import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
 
@@ -32,6 +32,9 @@ function buildChartData(spec, stats, talents) {
   }
   else if (spec === "Restoration Druid") {
     return buildDruidChartData(stats, talents);
+  }
+  else if (spec === "Restoration Shaman") {
+    return buildShamanChartData(stats, talents);
   }
   else if (spec === "Holy Priest") {
     return buildHolyPriestChartData(stats, talents);
@@ -88,7 +91,7 @@ export default function SequenceDataTable(props) {
                   return (
                     <>
                       <TableRow>
-                        <TableCell colSpan={4} style={{ fontWeight: 'bold' }}>{cat}</TableCell>
+                        <TableCell colSpan={6} style={{ fontWeight: 'bold' }}>{cat}</TableCell>
                       </TableRow>
                       {rows
                         .filter(row => row.cat === cat)

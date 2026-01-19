@@ -432,7 +432,7 @@ const heroTalents: TalentTree = {
     }},
 }
 
-export const druidTalents = {
+export const shamanTalents = {
     ...classTalents,
     ...specTalents,
     ...heroTalents,

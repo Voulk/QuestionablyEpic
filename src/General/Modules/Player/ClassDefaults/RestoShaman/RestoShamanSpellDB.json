@@ -1,10 +1,32 @@
 {
+    "Chain Heal": [
+        {
+            "displayInfo": {
+                "id": 1064,
+                "icon": "inv_1115_shaman_chainheal",
+                "spellName": "Chain Heal",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "cost": 4.5,
+            "coeff": 2.31,
+            "aura": 2.49,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
     "Riptide": [
         {
             "displayInfo": {
                 "id": 61295,
                 "icon": "spell_nature_riptide",
-                "spellName": "Riptide"
+                "spellName": "Riptide",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 1.6,
@@ -48,7 +70,8 @@
             "displayInfo": {
                 "id": 5394,
                 "icon": "inv_spear_04",
-                "spellName": "Healing Stream Totem"
+                "spellName": "Healing Stream Totem",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 1.8,
@@ -81,7 +104,8 @@
             "displayInfo": {
                 "id": 73920,
                 "icon": "spell_nature_giftofthewaterspirit",
-                "spellName": "Healing Rain"
+                "spellName": "Healing Rain",
+                "cat": "heal"
             },
             "castTime": 2.0,
             "cost": 4.32,
@@ -112,7 +136,8 @@
             "displayInfo": {
                 "id": 108280,
                 "icon": "ability_shaman_healingtide",
-                "spellName": "Healing Tide Totem"
+                "spellName": "Healing Tide Totem",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 1.12,
@@ -139,26 +164,7 @@
             "AoEScaling": "sqrt"
         }
     ],
-    "Chain Heal": [
-        {
-            "displayInfo": {
-                "id": 1064,
-                "icon": "inv_1115_shaman_chainheal",
-                "spellName": "Chain Heal"
-            },
-            "castTime": 2.0,
-            "cost": 4.5,
-            "coeff": 2.31,
-            "aura": 2.49,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "heal"
-        }
-    ],
+
     "Earth Shield": [
         {
             "displayInfo": {
@@ -175,7 +181,8 @@
             "displayInfo": {
                 "id": 188443,
                 "icon": "spell_nature_chainlightning",
-                "spellName": "Chain Lightning"
+                "spellName": "Chain Lightning",
+                "cat": "damage"
             },
             "castTime": 2.0,
             "cost": 0.2,
@@ -184,8 +191,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         }
@@ -195,7 +201,8 @@
             "displayInfo": {
                 "id": 77472,
                 "icon": "spell_nature_healingwavelesser",
-                "spellName": "Healing Wave"
+                "spellName": "Healing Wave",
+                "cat": "heal"
             },
             "castTime": 2.0,
             "cost": 2.5,
@@ -215,7 +222,8 @@
             "displayInfo": {
                 "id": 73685,
                 "icon": "spell_shaman_unleashweapon_life",
-                "spellName": "Unleash Life"
+                "spellName": "Unleash Life",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.8,
@@ -256,7 +264,8 @@
             "displayInfo": {
                 "id": 1267068,
                 "icon": false,
-                "spellName": "Stormstream Totem"
+                "spellName": "Stormstream Totem",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 1.8,
@@ -292,7 +301,8 @@
             "displayInfo": {
                 "id": 382024,
                 "icon": "spell_shaman_giftearthmother",
-                "spellName": "Earthliving Weapon"
+                "spellName": "Earthliving Weapon",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -319,7 +329,8 @@
             "displayInfo": {
                 "id": 447415,
                 "icon": "spell_nature_healingway",
-                "spellName": "Healing Surge (Ancestor)"
+                "spellName": "Healing Surge (Ancestor)",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -339,7 +350,8 @@
             "displayInfo": {
                 "id": 1223391,
                 "icon": "spell_nature_healingwavelesser",
-                "spellName": "Healing Wave (Ancestor)"
+                "spellName": "Healing Wave (Ancestor)",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -359,7 +371,8 @@
             "displayInfo": {
                 "id": 447433,
                 "icon": "spell_nature_healingwavegreater",
-                "spellName": "Chain Heal (Ancestor)"
+                "spellName": "Chain Heal (Ancestor)",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -379,7 +392,8 @@
             "displayInfo": {
                 "id": 447425,
                 "icon": "spell_nature_chainlightning",
-                "spellName": "Chain Lightning (Ancestor)"
+                "spellName": "Chain Lightning (Ancestor)",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -388,8 +402,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         }
@@ -399,7 +412,8 @@
             "displayInfo": {
                 "id": 447419,
                 "icon": "spell_shaman_lavaburst",
-                "spellName": "Lava Burst (Ancestor)"
+                "spellName": "Lava Burst (Ancestor)",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -408,8 +422,7 @@
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
-                "versatility",
-                "mastery"
+                "versatility"
             ],
             "spellType": "damage"
         }

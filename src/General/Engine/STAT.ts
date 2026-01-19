@@ -31,18 +31,18 @@ export const getMasteryPercentage = (statQuantity: number, spec: string) => {
 }
 
 export const STATCONVERSION = {
-    LEECH: 1020,
-    HASTE: 660,
-    CRIT: 700,
-    VERSATILITY: 780,
-    MASTERY: 700,
-    VERSATILITY_DR: 1560,
+    LEECH: 69,
+    HASTE: 44,
+    CRIT: 46,
+    VERSATILITY: 54,
+    MASTERY: 46,
+    VERSATILITY_DR: 108,
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
-      "Restoration Druid": 0.728,
-      "Mistweaver Monk": 6.93,
+      "Restoration Druid": 1.42,
+      "Mistweaver Monk": 13.86,
       "Holy Paladin": 1.5,
-      "Holy Priest": 0.95625,
+      "Holy Priest": 0.908437,
       "Discipline Priest": 1.35,
       "Restoration Shaman": 3,
     } as Record<string, number>,
