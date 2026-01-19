@@ -64,8 +64,10 @@ function getPlayerRace(lines: string[]) {
 export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
     let itemLevel = getItemProp(itemID, "itemLevel");
     let legacyLevelOffset = 0;
+    const eraMax = 2;
 
     const operations = [];
+    const curveIDs = [{priority: 1000, value: 0}, {priority: 1000, value: 0}, {priority: 1000, value: 0}]
     
 
     bonusIDs.forEach((bonusID: number) => {
@@ -83,25 +85,58 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
       if ('level' in bonusData) {
         legacyLevelOffset += bonusData.level;
       }
-
+      if ('curveId' in bonusData) {
+        curveIDs[1] = {priority: 0, value: bonusData.curveId};
+        console.log("Found base curveID: " + bonusData.curveId);
+        console.log(curveIDs);
+      }
+      if ('dropLevelCurve' in bonusData) {
+        curveIDs[bonusData.dropLevelCurve.squishEra] = {priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId};
+      }
     });
 
-    if (operations.length > 0) {
+    if (operations.length > 0 || curveIDs[1].priority !== 1000 || curveIDs[2].priority !== 1000) {
       ItemSquishEras.forEach(squishEra => {
         if (squishEra.curveId) {
+
+          const curveLevels = curveIDs.slice(0, squishEra.id+1);
+          console.log(curveLevels);
+          curveLevels.forEach((curveID, i) => {
+            if (curveID && curveID.priority !== 1000) {
+              itemLevel = processCurve(curveID.value.toString(), dropLevel);
+              console.log(squishEra.curveId, curveID, itemLevel);
+              if (i !== eraMax) itemLevel = processCurve(squishEra.curveId.toString(), itemLevel);
+            }
+            
+
+          })
+
+
+          // Take care of any era levels that are below squishEra.
           const eraLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra < squishEra.id);
           const eraLevel = eraLevels
                             .reduce((acc, currentValue) => {
                                 return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
                           }, eraLevels[0]);
-          console.log(eraLevels);
-          console.log(eraLevel);
 
-          itemLevel = processCurve(squishEra.curveId.toString(), eraLevel.value.amount)
+          if (eraLevel && eraLevel.value) {
+            itemLevel = processCurve(squishEra.curveId.toString(), eraLevel.value.amount)
+          }
 
+          // Take care of any era levels that are equal to squishera
+          const modernLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra === squishEra.id && op.value.squishEra === eraMax);
+          const modernLevel = modernLevels
+                  .reduce((acc, currentValue) => {
+                      return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
+                }, modernLevels[0]);
+          
+          if (modernLevel && 'value' in modernLevel) {
+            itemLevel = modernLevel.value.amount;
+          }
+      
           const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);
 
-          eraOffsets.forEach(op =>{
+          eraOffsets.forEach(op =>{ 
             itemLevel += op.value.amount;
           })
         }
@@ -329,11 +364,11 @@ export function processCurve(curveID: string, dropLevel: number) {
         if (i > 0) {
           playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
           jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
-          return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+          return Math.round(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
         } else {
           //playerLevelGap = 0;
           //jump = curve[i].itemLevel / playerLevelGap;
-          return Math.floor(curve[i].itemLevel);
+          return Math.round(curve[i].itemLevel);
         }
       }
     }

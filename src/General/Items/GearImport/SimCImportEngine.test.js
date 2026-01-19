@@ -95,6 +95,87 @@ describe("Test Item Level Imports", () => {
         expect(itemLevel).toEqual(167);
     });
 
+    test("Midnight Vendor Item - Hero Track", () => {
+        /*
+            Bonus IDs:
+            12793 - ilvl 259 prio 0 era 2
+        */
+
+
+        const importLine = "trinket1=,id=251792,bonus_id=12793/6652"
+        const id = 251792
+        const bonusIDs = [12793,6652]
+
+        const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+        expect(itemLevel).toEqual(259);
+    });
+
+    test("TWW Quest Drop Item", () => {
+        /*
+            Bonus IDs:
+            10385: CurveID 71409 (NO ERA) = 541 item level
+            // I guess this gets run through the aura filter anyway?
+            // dropLevelCurve never has era = 1 so if missing assume era = 1
+        */
+
+        const importLine = "neck=,id=221077,bonus_id=10385/10387/6652/10395/10392,drop_level=78"
+        const id = 221077
+        const bonusIDs = [10385,10387,6652,10395,10392]
+
+        const itemLevel = getItemLevel(id, bonusIDs, 78)
+
+        expect(itemLevel).toEqual(79);
+    });
+
+    test("TWW Quest Drop Item 2", () => {
+        /*
+            Bonus IDs:
+            11306: CurveID 77472 (NO ERA) = 554 item level
+        */
+
+        const importLine = "off_hand=,id=211040,bonus_id=11306/6652,drop_level=80"
+        const id = 211040
+        const bonusIDs = [11306,6652]
+
+        const itemLevel = getItemLevel(id, bonusIDs, 80)
+
+        expect(itemLevel).toEqual(79);
+    });
+
+    test("Midnight Quest Drop Item", () => {
+        /*
+            Bonus IDs:
+            13573: dropLevelCurve - 92772 - Squish Era 2 No Offset (resolves to 120)
+            
+        */
+
+        const importLine = "neck=,id=251076,bonus_id=13573/6652/13534,drop_level=80"
+        const id = 251076
+        const bonusIDs = [13573,6652,13534]
+
+        const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+        expect(itemLevel).toEqual(120);
+    });
+
+    /*test("Mists of Pandaria Timewalking Item Dropped in TWW", () => {
+        /*
+            Bonus IDs:
+            None?
+            Would expect a little over 342 if using era curve
+        
+
+        const importLine = "finger2=,id=144132,bonus_id=6652/8812/9407/7756,drop_level=68"
+        const id = 251076
+        const bonusIDs = [13573,6652,13534]
+
+        //const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+        //expect(itemLevel).toEqual(71);
+    });*/
+
+
     
 });
 
