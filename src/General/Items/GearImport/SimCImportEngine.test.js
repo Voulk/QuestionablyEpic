@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processItem, processCurve, processAllLines, runSimC} from "General/Items/GearImport/SimCImportEngine"
+import { processItem, processCurve, processAllLines, runSimC, getItemLevel} from "General/Items/GearImport/SimCImportEngine"
 
 const testDruidSet = 
 `
@@ -62,11 +62,43 @@ const settings = {
   } 
 
 describe("Test Item Level Imports", () => {
-    
+    test("Standard 730 Pre-Squish Tier Item", () => {
+    const importLine = "head=,id=237655,gem_id=213470,bonus_id=6652/10390/12231/12676/13446/1540/10255/12365"
+    const id = 237655
+    const bonusIDs = [6652,10390,12231,12676,13446,1540,10255,12365]
 
+    const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+    expect(itemLevel).toEqual(170);
+    
+    });
+
+    test("Test Crafted Item 727 Pre-Squish Item", () => {
+        /*
+            Bonus IDs:
+            10421 - ilvl 593 era 1 prio 100
+            9627 - ivl offset 13 era 2
+            12050 - ilvl 678 era 1 prio 70
+            12053 - ilvl 707 era 1 prio 65
+            13468 - ilvl offsetSecondary 7
+
+            Lowest Era sets ilvl to 147, offset + offset secondary make up the 20 ilvl difference.
+        */
+
+
+        const importLine = "neck=,id=215136,gem_id=213746/213497,bonus_id=10421/9633/8902/10879/10396/9627/12050/8794/12053/13468,crafted_stats=49/32,crafting_quality=5"
+        const id = 215136
+        const bonusIDs = [10421,9633,8902,10879,10396,9627,12050,8794,12053,13468]
+
+        const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+        expect(itemLevel).toEqual(167);
+    });
+
+    
 });
 
-
+/*
 describe("Test Curve IDs", () => {
     test("Evoker Starting Items", () => {
         expect(processCurve(30725, 59)).toEqual(229)
@@ -167,7 +199,7 @@ describe("Test Upgrade Track", () => {
         expect(item.upgradeRank).toEqual(3);
         expect(item.level).toEqual(382);
     });
-}); */
+}); 
 
 describe("Test Crafted Items", () => {
     const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");

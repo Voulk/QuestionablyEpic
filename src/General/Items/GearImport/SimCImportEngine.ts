@@ -5,6 +5,7 @@ import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+import ItemSquishEras from "Retail/Engine/ItemSquishEras.json"
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -60,7 +61,61 @@ function getPlayerRace(lines: string[]) {
 
 
 // Item levels are way too complicated to not have a specific function for now.
-export function getItemLevel(line: string) {
+export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
+    let itemLevel = getItemProp(itemID, "itemLevel");
+    let legacyLevelOffset = 0;
+
+    const operations = [];
+    
+
+    bonusIDs.forEach((bonusID: number) => {
+      const bonusData = bonus_IDs[bonusID.toString()] || {};
+
+      if (bonusData.itemLevel) {
+        operations.push({type: 'set level', value: bonusData['itemLevel']});
+      }
+      if ('levelOffset' in bonusData) {
+        operations.push({type: 'era offset', value: bonusData['levelOffset']});
+      }
+      if ('levelOffsetSecondary' in bonusData) {
+        operations.push({type: 'modern offset', value: bonusData['levelOffsetSecondary']});
+      }
+      if ('level' in bonusData) {
+        legacyLevelOffset += bonusData.level;
+      }
+
+    });
+
+    if (operations.length > 0) {
+      ItemSquishEras.forEach(squishEra => {
+        if (squishEra.curveId) {
+          const eraLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra < squishEra.id);
+          const eraLevel = eraLevels
+                            .reduce((acc, currentValue) => {
+                                return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
+                          }, eraLevels[0]);
+          console.log(eraLevels);
+          console.log(eraLevel);
+
+          itemLevel = processCurve(squishEra.curveId.toString(), eraLevel.value.amount)
+
+          const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);
+
+          eraOffsets.forEach(op =>{
+            itemLevel += op.value.amount;
+          })
+        }
+      })
+
+      operations.filter(op => op.type === 'modern offset').forEach(op => {
+        itemLevel += op.value.amount;
+      })
+
+    }
+
+    //console.log(operations);
+
+    return itemLevel;
 
 }
 
