@@ -67,6 +67,8 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
     const eraMax = 2;
 
     const operations = [];
+
+    // Item curve IDs that are not the Era curve.
     const curveIDs = [{priority: 1000, value: 0}, {priority: 1000, value: 0}, {priority: 1000, value: 0}]
     
 
@@ -74,30 +76,55 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
       const bonusData = bonus_IDs[bonusID.toString()] || {};
 
       if (bonusData.itemLevel) {
+        // Item Level bonus IDS have the following format:
+        // - amount (the item level to use)
+        // - priority (lower priority is better. Higher priority numbers are just discarded.)
+        // - squishEra (if squishEra isn't equal to our maximum then we'll need to squish its value afterwards.)
         operations.push({type: 'set level', value: bonusData['itemLevel']});
       }
       if ('levelOffset' in bonusData) {
+        // Item level offsets are used to make a flat change to item level. It has the following format:
+        // - amount (the amount to offset the item level by)
+        // - squishEra (they seem to mostly use 2 here = no squish, but if 1 then we'll apply the offset first.)
         operations.push({type: 'era offset', value: bonusData['levelOffset']});
       }
       if ('levelOffsetSecondary' in bonusData) {
+        // A strictly post-squish item level adjustment. Seems equal to levelOffset if levelOffset = eraMax.
         operations.push({type: 'modern offset', value: bonusData['levelOffsetSecondary']});
       }
       if ('level' in bonusData) {
+        // Some older items will just use their base level + legacyLevelOffset. 
         legacyLevelOffset += bonusData.level;
       }
       if ('curveId' in bonusData) {
+        // Some TWW and before items use curveId
         curveIDs[1] = {priority: 0, value: bonusData.curveId};
-        console.log("Found base curveID: " + bonusData.curveId);
-        console.log(curveIDs);
       }
       if ('dropLevelCurve' in bonusData) {
+        // Most Midnight items use dropLevelCurve instead. It contains the following fields:
+        // - curveId: The curve ID to use.
+        // - priority: Only the lowest priority is kept.
+        // - squishEra: Squish if not = eraMax.
+        // - offset: TODO: either a pre or post squish item level offset. 
         curveIDs[bonusData.dropLevelCurve.squishEra] = {priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId};
       }
     });
 
     if (operations.length > 0 || curveIDs[1].priority !== 1000 || curveIDs[2].priority !== 1000) {
       ItemSquishEras.forEach(squishEra => {
+        /*
+          There are currently two eras. 1 and 2 but they might add more in future - probably not until another item squish.
+          Era 1: Pre-Midnight
+          Era 2: Midnight
+
+          If there is a curveID for this era, process it. This will effectively squish the item level of all eras that came before it.
+          Then, apply any item level operations and then curves for the new era. 
+
+        */
+
         if (squishEra.curveId) {
+
+          
 
           const curveLevels = curveIDs.slice(0, squishEra.id+1);
           console.log(curveLevels);
