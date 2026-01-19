@@ -65,11 +65,13 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
     let itemLevel = getItemProp(itemID, "itemLevel");
     let legacyLevelOffset = 0;
     const eraMax = 2;
+    let operationOverride = false;
 
     const operations = [];
 
     // Item curve IDs that are not the Era curve.
-    const curveIDs = [{priority: 1000, value: 0}, {priority: 1000, value: 0}, {priority: 1000, value: 0}]
+    // {priority: X, value: Y, era: Z}
+    const curveOperations = []
     
 
     bonusIDs.forEach((bonusID: number) => {
@@ -94,11 +96,13 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
       }
       if ('level' in bonusData) {
         // Some older items will just use their base level + legacyLevelOffset. 
-        legacyLevelOffset += bonusData.level;
+        //legacyLevelOffset += bonusData.level;
+        itemLevel += bonusData.level;
+        operationOverride = true;
       }
       if ('curveId' in bonusData) {
         // Some TWW and before items use curveId
-        curveIDs[1] = {priority: 0, value: bonusData.curveId};
+        curveOperations.push({priority: 0, value: bonusData.curveId, era: 1});
       }
       if ('dropLevelCurve' in bonusData) {
         // Most Midnight items use dropLevelCurve instead. It contains the following fields:
@@ -106,11 +110,11 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
         // - priority: Only the lowest priority is kept.
         // - squishEra: Squish if not = eraMax.
         // - offset: TODO: either a pre or post squish item level offset. 
-        curveIDs[bonusData.dropLevelCurve.squishEra] = {priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId};
+        curveOperations.push({priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId, era: bonusData.dropLevelCurve.squishEra});
       }
     });
 
-    if (operations.length > 0 || curveIDs[1].priority !== 1000 || curveIDs[2].priority !== 1000) {
+    if (operations.length > 0 || curveOperations.length > 0 || operationOverride) {
       ItemSquishEras.forEach(squishEra => {
         /*
           There are currently two eras. 1 and 2 but they might add more in future - probably not until another item squish.
@@ -121,53 +125,31 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
           Then, apply any item level operations and then curves for the new era. 
 
         */
-
         if (squishEra.curveId) {
+          itemLevel = processCurve(squishEra.curveId.toString(), itemLevel)
 
-          
+        }
 
-          const curveLevels = curveIDs.slice(0, squishEra.id+1);
-          console.log(curveLevels);
-          curveLevels.forEach((curveID, i) => {
-            if (curveID && curveID.priority !== 1000) {
-              itemLevel = processCurve(curveID.value.toString(), dropLevel);
-              console.log(squishEra.curveId, curveID, itemLevel);
-              if (i !== eraMax) itemLevel = processCurve(squishEra.curveId.toString(), itemLevel);
-            }
-            
+        // Handle flat item level increases.
+        const eraLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra === squishEra.id);
+        const eraLevel = eraLevels
+                          .reduce((acc, currentValue) => {
+                              return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
+                        }, eraLevels[0]);
 
-          })
+        itemLevel = eraLevel ? eraLevel.value.amount : itemLevel;  
 
+        // Handle curve item level increases
+        const curveLevel = curveOperations.filter(op => op.era === squishEra.id)[0] || {};
+        itemLevel = (curveLevel && curveLevel.value) ? processCurve(curveLevel.value.toString(), dropLevel) : itemLevel;
 
-          // Take care of any era levels that are below squishEra.
-          const eraLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra < squishEra.id);
-          const eraLevel = eraLevels
-                            .reduce((acc, currentValue) => {
-                                return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
-                          }, eraLevels[0]);
+        // Handle offsets for this Era
+        const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);
 
-          if (eraLevel && eraLevel.value) {
-            itemLevel = processCurve(squishEra.curveId.toString(), eraLevel.value.amount)
-          }
-
-          // Take care of any era levels that are equal to squishera
-          const modernLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra === squishEra.id && op.value.squishEra === eraMax);
-          const modernLevel = modernLevels
-                  .reduce((acc, currentValue) => {
-                      return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
-                }, modernLevels[0]);
-          
-          if (modernLevel && 'value' in modernLevel) {
-            itemLevel = modernLevel.value.amount;
-          }
-      
-          const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);
-
-          eraOffsets.forEach(op =>{ 
+        eraOffsets.forEach(op =>{ 
             itemLevel += op.value.amount;
           })
-        }
-      })
+        });
 
       operations.filter(op => op.type === 'modern offset').forEach(op => {
         itemLevel += op.value.amount;
@@ -698,10 +680,12 @@ export function processItem(line: string, player: Player, contentType: contentTy
             itemData.slot === "Offhand" ||
             (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
   
+  protoItem.level.finalLevel = getItemLevel(protoItem.id, itemBonusIDs.map(Number), protoItem.level.drop || 0);
 
+  
   // Add the new item to our characters item collection.
-  // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
-  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
+  // Note that we're also verifying that the item is at least level 50 and that it exists in our item database.
+  if (protoItem.level.finalLevel > 50 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     
