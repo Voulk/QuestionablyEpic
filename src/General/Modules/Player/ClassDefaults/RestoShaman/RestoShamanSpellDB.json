@@ -1,25 +1,4 @@
 {
-    "Chain Heal": [
-        {
-            "displayInfo": {
-                "id": 1064,
-                "icon": "inv_1115_shaman_chainheal",
-                "spellName": "Chain Heal",
-                "cat": "heal"
-            },
-            "castTime": 2.0,
-            "cost": 4.5,
-            "coeff": 2.31,
-            "aura": 2.49,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "heal"
-        }
-    ],
     "Riptide": [
         {
             "displayInfo": {
@@ -113,6 +92,7 @@
                 "cooldown": 18.0,
                 "hasted": false
             },
+            "targets": 5,
             "coeff": 0.6208,
             "aura": 1.0,
             "expectedOverheal": 0.25,
@@ -145,6 +125,7 @@
                 "cooldown": 180.0,
                 "hasted": false
             },
+            "targets": 20,
             "coeff": 5.145,
             "aura": 1.0,
             "expectedOverheal": 0.25,
@@ -164,7 +145,27 @@
             "AoEScaling": "sqrt"
         }
     ],
-
+    "Chain Heal": [
+        {
+            "displayInfo": {
+                "id": 1064,
+                "icon": "inv_1115_shaman_chainheal",
+                "spellName": "Chain Heal",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "cost": 4.5,
+            "coeff": 2.31,
+            "aura": 2.49,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
     "Earth Shield": [
         {
             "displayInfo": {

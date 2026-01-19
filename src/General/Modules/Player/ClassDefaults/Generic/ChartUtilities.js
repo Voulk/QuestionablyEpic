@@ -63,13 +63,15 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
         }
     }
 
+    data.manaSpent = spell[0].cost * 250000 / 100;
+
     const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1}
     console.log(playerData);
     const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
 
     console.log(result);
     
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(result.healing), hpm: 0, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
 
 }
 

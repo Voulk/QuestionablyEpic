@@ -45,13 +45,6 @@ describe("Test Mistweaver Spell Values", () => {
     const armor = getEnemyArmor(statPercentages.armorReduction);
     
 
-    /*test("Jab", () => {
-        const spellName = "Jab";
-        const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings) / armor;
-        const expectedAvg = (2314 + 2810) / 2; 
-        expect(Math.abs(value-expectedAvg)).toBeLessThan(errorMargin);
-    });*/
-
     // Test 2 handed values.
     // Example test was naked with Gustwalker Staff.
     each`

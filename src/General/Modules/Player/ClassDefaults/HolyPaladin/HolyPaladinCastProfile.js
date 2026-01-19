@@ -177,7 +177,7 @@ export const runHolyPaladinCastProfile = (playerData) => {
     const holyShockCritChance = (baseCritChance + paladinSpells["Holy Shock"][0].statMods.crit)
     const totalInfusions = getCPM(castProfile, "Holy Shock") * holyShockCritChance;
 
-    state.currentStats.crit += (genericCritIncrease - 1) * 700 * 100
+    state.currentStats.crit += (genericCritIncrease - 1) * 46 * 100
 
     // Handle CDR on Holy Shock and free casts
     // Note that we get some free HS casts here that won't be run for Infusions. Have a think about this. Minor.

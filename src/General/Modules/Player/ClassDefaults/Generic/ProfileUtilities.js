@@ -89,11 +89,8 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
-    const critSize = (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond") ? 2.03 : 2; // 3% increased crit damage / healing;
+    const critSize = 2; 
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
-
-    //const additiveScaling = (spell.additiveScaling || 0) + 1
-    if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
         
     let spellOutput = 0;
     if (false && spellName === "Melee") {
@@ -107,36 +104,30 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * // Spell "base" healing
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
-                            genericMult *
-                            targetCount
-    }
+                            genericMult
 
-    if (spell.type === "heal" || spell.buffType === "heal") {
+    }
+    
+
+    if (spell.spellType === "heal" || spell.buffType === "heal") {
         spellOutput *= (1 - spell.expectedOverheal)
         targetCount = spell.targets ? spell.targets : 1;
     }
-    else if (spell.type === "damage" || spell.buffType === "damage") {
+    else if (spell.spellType === "damage" || spell.buffType === "damage") {
         if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
-        
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
     }
 
-    
-    spellOutput *= targetCount;
-
     // Handle HoT
-    if (spell.type === "classic periodic") {
+    if (spell.spellType === "buff" && (spell.buffType === "heal" || spell.buffType === "damage")) {
         const haste = ('hasteScaling' in spell.tickData && spell.tickData.hasteScaling === false) ? 1 : (statPercentages.haste);
-        const adjTickRate = Math.ceil((spell.tickData.tickRate / haste - 0.0005) * 1000)/1000;
-        let tickCount = Math.round(spell.buffDuration / (adjTickRate));
+
+        let tickCount = spell.buffDuration / spell.tickData.tickRate * haste;
 
         if (spell.tickData.tickOnCast) tickCount += 1;
         if (flags["RampingHoTEffect"]) spellOutput = spellOutput * (1 + flags["RampingHoTEffect"] / 2 * (tickCount + 1));
-        
-        // Take care of any HoTs that don't have obvious breakpoints.
-        // Examples include Lifebloom where you're always keeping 3 stacks active, or Efflorescence which is so long that breakpoints are irrelevant.
-        if (spell.tickData.rolling) spellOutput = spellOutput * (spell.buffDuration / spell.tickData.tickRate * haste);
-        else spellOutput = spellOutput * tickCount;
+
+        spellOutput = spellOutput * tickCount;
     }
 
     return spellOutput;
