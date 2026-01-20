@@ -72,7 +72,6 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;

@@ -89,19 +89,19 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.01,
-    crit: 1.274,
-    mastery: 1.249,
-    versatility: 1.135,
-    leech: 0.47,
+    haste: 0.45,
+    crit: 0.6,
+    mastery: 0.58,
+    versatility: 0.5,
+    leech: 0.24,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.24,
-    crit: 1.28,
-    mastery: 1.08,
-    versatility: 1.151,
-    leech: 0.37,
+    haste: 0.56,
+    crit: 0.61,
+    mastery: 0.58,
+    versatility: 0.5,
+    leech: 0.24,
   };
 
   return statWeights[contentType];
