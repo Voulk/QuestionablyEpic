@@ -443,7 +443,7 @@ export const otherTrinketData = [
     }
   },
   { 
-    name: "Algari Alchemist Stone",
+    name: "Magister's Alchemist Stone",
     description: "High variance. Beware the low uptime. Requires a valuable spark to craft which you're usually better off spending elsewhere.",
     effects: [
       {

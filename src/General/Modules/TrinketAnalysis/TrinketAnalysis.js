@@ -169,7 +169,7 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(170);
+  const [levelCap, setLevelCap] = React.useState(289);
   const maxLevelMarks = [
     { value: 0, label: "110" },
     { value: 1, label: "130" },
@@ -196,6 +196,7 @@ export default function TrinketAnalysis(props) {
       1273, // Palace
       1296, // Liberation of Undermine
       1302, // Manaforge Omega
+      
     ];
     const dungeonSources = [
       -1, // General Dungeons
@@ -266,7 +267,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [118, 124, 128, 137, 144, 150, 157, 167, 170] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
