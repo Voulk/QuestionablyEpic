@@ -172,31 +172,26 @@ describe("Test Item Level Imports", () => {
         const id = 251076
         const bonusIDs = [13573,6652,13534]
 
-        //const itemLevel = getItemLevel(id, bonusIDs, -1)
+        const itemLevel = getItemLevel(id, bonusIDs, -1)
 
-        //expect(itemLevel).toEqual(120);
+        expect(itemLevel).toEqual(120);
     });
 
-    /*test("Mists of Pandaria Timewalking Item Dropped in TWW", () => {
+    test("Mists of Pandaria Timewalking Item Dropped in TWW", () => {
         /*
             Bonus IDs:
-            None?
-            Would expect a little over 342 if using era curve
-        
+            9407 applies 6682
+            6682 = CurveID 6243 with offset of 3
+        */        
 
         const importLine = "finger2=,id=144132,bonus_id=6652/8812/9407/7756,drop_level=68"
-        const id = 251076
-        const bonusIDs = [13573,6652,13534]
+        const id = 144132
+        const bonusIDs = [6652,8812,9407,7756]
 
-        //const itemLevel = getItemLevel(id, bonusIDs, -1)
+        const itemLevel = getItemLevel(id, bonusIDs, 68)
 
-        //expect(itemLevel).toEqual(71);
-    });*/
-
-    // =6316/4932/4933/1515
-    // 6316 = itemLevel 0
-    // 1515 = item level 43
-
+        expect(itemLevel).toEqual(71);
+    });
 
 
     

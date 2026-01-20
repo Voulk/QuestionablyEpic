@@ -63,6 +63,17 @@ function getPlayerRace(lines: string[]) {
 // Item levels are way too complicated to not have a specific function for now.
 export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
     let itemLevel = getItemProp(itemID, "itemLevel");
+    const extraBonuses: number[] = []
+
+    // Handle attached bonusIDs
+    bonusIDs.forEach(bonusIDs => {
+      const bonusData = bonus_IDs[bonusIDs.toString()] || {};
+      if (bonusData.applyBonusId) extraBonuses.push(bonusData.applyBonusId);
+    })
+
+
+    bonusIDs = bonusIDs.concat(extraBonuses);
+
     let legacyLevelOffset = 0;
     const eraMax = 2;
     let operationOverride = false;
@@ -102,7 +113,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
       }
       if ('curveId' in bonusData) {
         // Some TWW and before items use curveId
-        curveOperations.push({priority: 0, value: bonusData.curveId, era: 1});
+        curveOperations.push({priority: 0, value: bonusData.curveId, era: 1, offset: 0});
       }
       if ('dropLevelCurve' in bonusData) {
         // Most Midnight items use dropLevelCurve instead. It contains the following fields:
@@ -110,7 +121,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
         // - priority: Only the lowest priority is kept.
         // - squishEra: Squish if not = eraMax.
         // - offset: TODO: either a pre or post squish item level offset. 
-        curveOperations.push({priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId, era: bonusData.dropLevelCurve.squishEra});
+        curveOperations.push({priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId, era: bonusData.dropLevelCurve.squishEra || 2, offset: bonusData.dropLevelCurve.offset || 0});
       }
     });
 
@@ -127,7 +138,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
         */
         if (squishEra.curveId) {
           itemLevel = processCurve(squishEra.curveId.toString(), itemLevel)
-
+          
         }
 
         // Handle flat item level increases.
@@ -141,7 +152,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
 
         // Handle curve item level increases
         const curveLevel = curveOperations.filter(op => op.era === squishEra.id)[0] || {};
-        itemLevel = (curveLevel && curveLevel.value) ? processCurve(curveLevel.value.toString(), dropLevel) : itemLevel;
+        itemLevel = (curveLevel && curveLevel.value) ? (processCurve(curveLevel.value.toString(), dropLevel) + curveLevel.offset) : itemLevel;
 
         // Handle offsets for this Era
         const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);

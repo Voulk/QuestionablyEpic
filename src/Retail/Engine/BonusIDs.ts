@@ -1,4 +1,8 @@
 export const bonus_IDs: {[key: string]: any} = {
+  "0": {
+    "id": 0,
+    "serverside": true
+  },
   "1": {
     "id": 1,
     "rawStats": [
@@ -25,7 +29,8 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "levelOffset": {
       "amount": 15,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 5
     },
     "levelOffsetSecondary": {
       "amount": 10
@@ -16125,6 +16130,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "7 @plvl 1 - 180 @plvl 180",
     "curveId": 5064
   },
+  "3777": {
+    "id": 3777,
+    "applyBonusId": 7168
+  },
   "3778": {
     "id": 3778,
     "ilevel": "7 @plvl 1 - 180 @plvl 180",
@@ -18286,6 +18295,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "17 @plvl 1 - 190 @plvl 190",
     "curveId": 5086
   },
+  "4212": {
+    "id": 4212,
+    "applyBonusId": 7164
+  },
   "4213": {
     "id": 4213,
     "quality": 5,
@@ -19244,6 +19257,14 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "4791": {
+    "id": 4791,
+    "applyBonusId": 6682
+  },
+  "4792": {
+    "id": 4792,
+    "applyBonusId": 6683
+  },
   "4793": {
     "id": 4793,
     "ilevel": "1 @plvl 1 - 80 @plvl 80",
@@ -19329,6 +19350,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
     "curveId": 6695
   },
+  "4811": {
+    "id": 4811,
+    "applyBonusId": 6682
+  },
   "4812": {
     "id": 4812,
     "ilevel": "10 @plvl 1 - 371 @plvl 371",
@@ -19345,6 +19370,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "5 @plvl 5 - 59 @plvl 59",
     "curveId": 6240,
     "quality": 4
+  },
+  "4815": {
+    "id": 4815,
+    "applyBonusId": 6683
   },
   "4816": {
     "id": 4816,
@@ -25177,7 +25206,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6273": {
     "id": 6273,
@@ -25198,7 +25228,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6274": {
     "id": 6274,
@@ -25219,7 +25250,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6275": {
     "id": 6275,
@@ -25240,7 +25272,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6276": {
     "id": 6276,
@@ -25261,7 +25294,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6277": {
     "id": 6277,
@@ -25282,7 +25316,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6278": {
     "id": 6278,
@@ -25303,7 +25338,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6279": {
     "id": 6279,
@@ -25324,7 +25360,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6280": {
     "id": 6280,
@@ -25345,7 +25382,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6281": {
     "id": 6281,
@@ -25366,7 +25404,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6282": {
     "id": 6282,
@@ -25387,7 +25426,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6283": {
     "id": 6283,
@@ -25408,7 +25448,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Draconic Empowerment",
         "icon": "inv_misc_head_dragon_black"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6284": {
     "id": 6284,
@@ -25429,7 +25470,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6285": {
     "id": 6285,
@@ -25450,7 +25492,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6286": {
     "id": 6286,
@@ -25471,7 +25514,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6288": {
     "id": 6288,
@@ -26240,8 +26284,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6416": {
     "id": 6416,
-    "ilevel": "5 @plvl 1 - 551 @plvl 551",
-    "curveId": 14096
+    "applyBonusId": 4790
   },
   "6417": {
     "id": 6417,
@@ -28018,7 +28061,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6579": {
     "id": 6579,
@@ -28043,7 +28087,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6581": {
     "id": 6581,
@@ -28064,7 +28109,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6582": {
     "id": 6582,
@@ -28085,7 +28131,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6583": {
     "id": 6583,
@@ -28106,7 +28153,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6584": {
     "id": 6584,
@@ -28127,7 +28175,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6585": {
     "id": 6585,
@@ -28148,7 +28197,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6586": {
     "id": 6586,
@@ -28169,7 +28219,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6587": {
     "id": 6587,
@@ -28190,7 +28241,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6588": {
     "id": 6588,
@@ -28211,7 +28263,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6589": {
     "id": 6589,
@@ -28232,7 +28285,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6590": {
     "id": 6590,
@@ -28253,7 +28307,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6591": {
     "id": 6591,
@@ -28274,7 +28329,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6592": {
     "id": 6592,
@@ -28295,7 +28351,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6593": {
     "id": 6593,
@@ -28316,7 +28373,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6594": {
     "id": 6594,
@@ -28337,7 +28395,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6595": {
     "id": 6595,
@@ -28358,7 +28417,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6596": {
     "id": 6596,
@@ -28379,7 +28439,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6597": {
     "id": 6597,
@@ -28400,7 +28461,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6598": {
     "id": 6598,
@@ -28421,7 +28483,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6599": {
     "id": 6599,
@@ -28442,7 +28505,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6600": {
     "id": 6600,
@@ -28463,7 +28527,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6601": {
     "id": 6601,
@@ -28484,7 +28549,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6602": {
     "id": 6602,
@@ -28505,7 +28571,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6603": {
     "id": 6603,
@@ -28526,7 +28593,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shroud of Resolve",
         "icon": "inv_misc_cape_deathwingraid_d_03"
       }
-    }
+    },
+    "applyBonusId": 13518
   },
   "6604": {
     "id": 6604,
@@ -28743,6 +28811,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "6655": {
+    "id": 6655,
+    "applyBonusId": 6654
+  },
   "6656": {
     "id": 6656,
     "quality": 0,
@@ -28752,6 +28824,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 0
     }
+  },
+  "6657": {
+    "id": 6657,
+    "applyBonusId": 6656
   },
   "6658": {
     "id": 6658,
@@ -28763,6 +28839,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "6659": {
+    "id": 6659,
+    "applyBonusId": 6658
+  },
   "6660": {
     "id": 6660,
     "quality": 4,
@@ -28773,10 +28853,18 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "6661": {
+    "id": 6661,
+    "applyBonusId": 6660
+  },
   "6662": {
     "id": 6662,
     "ilevel": "75 @plvl 1 - 75 @plvl 75",
     "curveId": 16559
+  },
+  "6663": {
+    "id": 6663,
+    "applyBonusId": 6664
   },
   "6664": {
     "id": 6664,
@@ -28956,15 +29044,31 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 0
     }
   },
+  "6691": {
+    "id": 6691,
+    "applyBonusId": 6682
+  },
   "6694": {
     "id": 6694,
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244
   },
+  "6695": {
+    "id": 6695,
+    "applyBonusId": 6683
+  },
   "6696": {
     "id": 6696,
     "ilevel": "15 @plvl 1 - 376 @plvl 376",
     "curveId": 6244
+  },
+  "6697": {
+    "id": 6697,
+    "applyBonusId": 6682
+  },
+  "6700": {
+    "id": 6700,
+    "applyBonusId": 6683
   },
   "6703": {
     "id": 6703,
@@ -33524,6 +33628,14 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "7166": {
+    "id": 7166,
+    "applyBonusId": 7168
+  },
+  "7167": {
+    "id": 7167,
+    "applyBonusId": 7169
+  },
   "7168": {
     "id": 7168,
     "dropLevelCurve": {
@@ -33533,6 +33645,22 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     },
     "quality": 3
+  },
+  "7169": {
+    "id": 7169,
+    "applyBonusId": 13490
+  },
+  "7170": {
+    "id": 7170,
+    "applyBonusId": 7164
+  },
+  "7171": {
+    "id": 7171,
+    "applyBonusId": 7168
+  },
+  "7172": {
+    "id": 7172,
+    "applyBonusId": 7169
   },
   "7173": {
     "id": 7173,
@@ -33663,6 +33791,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 22118,
     "quality": 3,
     "tag": "Timewarped"
+  },
+  "7192": {
+    "id": 7192,
+    "applyBonusId": 6710
   },
   "7193": {
     "id": 7193,
@@ -34020,7 +34152,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7250": {
     "id": 7250,
-    "quality": 4
+    "quality": 4,
+    "applyBonusId": 9117
   },
   "7251": {
     "id": 7251,
@@ -34041,6 +34174,202 @@ export const bonus_IDs: {[key: string]: any} = {
   "7255": {
     "id": 7255,
     "serverside": true
+  },
+  "7256": {
+    "id": 7256,
+    "applyBonusId": 13539
+  },
+  "7257": {
+    "id": 7257,
+    "applyBonusId": 13539
+  },
+  "7258": {
+    "id": 7258,
+    "applyBonusId": 13539
+  },
+  "7259": {
+    "id": 7259,
+    "applyBonusId": 13539
+  },
+  "7260": {
+    "id": 7260,
+    "applyBonusId": 13539
+  },
+  "7261": {
+    "id": 7261,
+    "applyBonusId": 13539
+  },
+  "7262": {
+    "id": 7262,
+    "applyBonusId": 13539
+  },
+  "7263": {
+    "id": 7263,
+    "applyBonusId": 13539
+  },
+  "7264": {
+    "id": 7264,
+    "applyBonusId": 13539
+  },
+  "7265": {
+    "id": 7265,
+    "applyBonusId": 13539
+  },
+  "7266": {
+    "id": 7266,
+    "applyBonusId": 13539
+  },
+  "7267": {
+    "id": 7267,
+    "applyBonusId": 13539
+  },
+  "7268": {
+    "id": 7268,
+    "applyBonusId": 13539
+  },
+  "7269": {
+    "id": 7269,
+    "applyBonusId": 13539
+  },
+  "7270": {
+    "id": 7270,
+    "applyBonusId": 13539
+  },
+  "7271": {
+    "id": 7271,
+    "applyBonusId": 13539
+  },
+  "7272": {
+    "id": 7272,
+    "applyBonusId": 13539
+  },
+  "7273": {
+    "id": 7273,
+    "applyBonusId": 13539
+  },
+  "7274": {
+    "id": 7274,
+    "applyBonusId": 13539
+  },
+  "7275": {
+    "id": 7275,
+    "applyBonusId": 13539
+  },
+  "7276": {
+    "id": 7276,
+    "applyBonusId": 13539
+  },
+  "7277": {
+    "id": 7277,
+    "applyBonusId": 13539
+  },
+  "7278": {
+    "id": 7278,
+    "applyBonusId": 13539
+  },
+  "7279": {
+    "id": 7279,
+    "applyBonusId": 13539
+  },
+  "7280": {
+    "id": 7280,
+    "applyBonusId": 13539
+  },
+  "7281": {
+    "id": 7281,
+    "applyBonusId": 13539
+  },
+  "7282": {
+    "id": 7282,
+    "applyBonusId": 13539
+  },
+  "7283": {
+    "id": 7283,
+    "applyBonusId": 13539
+  },
+  "7284": {
+    "id": 7284,
+    "applyBonusId": 13539
+  },
+  "7285": {
+    "id": 7285,
+    "applyBonusId": 13539
+  },
+  "7286": {
+    "id": 7286,
+    "applyBonusId": 13539
+  },
+  "7287": {
+    "id": 7287,
+    "applyBonusId": 13539
+  },
+  "7288": {
+    "id": 7288,
+    "applyBonusId": 13539
+  },
+  "7289": {
+    "id": 7289,
+    "applyBonusId": 13539
+  },
+  "7290": {
+    "id": 7290,
+    "applyBonusId": 13539
+  },
+  "7291": {
+    "id": 7291,
+    "applyBonusId": 13539
+  },
+  "7292": {
+    "id": 7292,
+    "applyBonusId": 13539
+  },
+  "7293": {
+    "id": 7293,
+    "applyBonusId": 13539
+  },
+  "7294": {
+    "id": 7294,
+    "applyBonusId": 13539
+  },
+  "7295": {
+    "id": 7295,
+    "applyBonusId": 13539
+  },
+  "7296": {
+    "id": 7296,
+    "applyBonusId": 13539
+  },
+  "7297": {
+    "id": 7297,
+    "applyBonusId": 13539
+  },
+  "7298": {
+    "id": 7298,
+    "applyBonusId": 13539
+  },
+  "7299": {
+    "id": 7299,
+    "applyBonusId": 13539
+  },
+  "7300": {
+    "id": 7300,
+    "applyBonusId": 13539
+  },
+  "7301": {
+    "id": 7301,
+    "applyBonusId": 13539
+  },
+  "7302": {
+    "id": 7302,
+    "applyBonusId": 13539
+  },
+  "7303": {
+    "id": 7303,
+    "applyBonusId": 13539
+  },
+  "7304": {
+    "id": 7304,
+    "applyBonusId": 13539
   },
   "7305": {
     "id": 7305,
@@ -34934,7 +35263,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7479,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7480": {
     "id": 7480,
@@ -34950,7 +35280,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7481": {
     "id": 7481,
@@ -34966,7 +35297,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7482": {
     "id": 7482,
@@ -34982,7 +35314,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7483": {
     "id": 7483,
@@ -34998,7 +35331,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7484": {
     "id": 7484,
@@ -35014,7 +35348,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7485": {
     "id": 7485,
@@ -35030,7 +35365,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7486": {
     "id": 7486,
@@ -35040,7 +35376,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7486,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7487": {
     "id": 7487,
@@ -35056,7 +35393,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7488": {
     "id": 7488,
@@ -35072,7 +35410,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7489": {
     "id": 7489,
@@ -35088,7 +35427,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7490": {
     "id": 7490,
@@ -35104,7 +35444,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7491": {
     "id": 7491,
@@ -35120,7 +35461,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7492": {
     "id": 7492,
@@ -35136,7 +35478,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7493": {
     "id": 7493,
@@ -35146,7 +35489,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7493,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7494": {
     "id": 7494,
@@ -35162,7 +35506,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7495": {
     "id": 7495,
@@ -35178,7 +35523,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7496": {
     "id": 7496,
@@ -35194,7 +35540,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7497": {
     "id": 7497,
@@ -35210,7 +35557,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7498": {
     "id": 7498,
@@ -35226,7 +35574,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7499": {
     "id": 7499,
@@ -35242,7 +35591,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7500": {
     "id": 7500,
@@ -35252,7 +35602,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7500,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7501": {
     "id": 7501,
@@ -35268,7 +35619,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7502": {
     "id": 7502,
@@ -35284,7 +35636,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7503": {
     "id": 7503,
@@ -35300,7 +35653,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7504": {
     "id": 7504,
@@ -35316,7 +35670,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7505": {
     "id": 7505,
@@ -35332,7 +35687,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7506": {
     "id": 7506,
@@ -35348,7 +35704,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7507": {
     "id": 7507,
@@ -35358,7 +35715,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7507,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7508": {
     "id": 7508,
@@ -35374,7 +35732,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7509": {
     "id": 7509,
@@ -35390,7 +35749,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7510": {
     "id": 7510,
@@ -35406,7 +35766,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7511": {
     "id": 7511,
@@ -35422,7 +35783,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7512": {
     "id": 7512,
@@ -35438,7 +35800,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7513": {
     "id": 7513,
@@ -35454,7 +35817,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7514": {
     "id": 7514,
@@ -35464,7 +35828,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7514,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7515": {
     "id": 7515,
@@ -35480,7 +35845,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7516": {
     "id": 7516,
@@ -35496,7 +35862,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7517": {
     "id": 7517,
@@ -35512,7 +35879,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7518": {
     "id": 7518,
@@ -35528,7 +35896,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7519": {
     "id": 7519,
@@ -35544,7 +35913,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7520": {
     "id": 7520,
@@ -35560,7 +35930,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7521": {
     "id": 7521,
@@ -35570,7 +35941,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7521,
       "itemLevel": 45
-    }
+    },
+    "applyBonusId": 13541
   },
   "7522": {
     "id": 7522,
@@ -35586,7 +35958,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7523": {
     "id": 7523,
@@ -35602,7 +35975,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7524": {
     "id": 7524,
@@ -35618,7 +35992,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7525": {
     "id": 7525,
@@ -35634,7 +36009,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7526": {
     "id": 7526,
@@ -35650,7 +36026,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7527": {
     "id": 7527,
@@ -35666,7 +36043,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13541
   },
   "7528": {
     "id": 7528,
@@ -36913,7 +37291,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7692,
       "itemLevel": 44
-    }
+    },
+    "applyBonusId": 13560
   },
   "7693": {
     "id": 7693,
@@ -36929,7 +37308,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
       }
-    }
+    },
+    "applyBonusId": 13560
   },
   "7694": {
     "id": 7694,
@@ -36945,7 +37325,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
       }
-    }
+    },
+    "applyBonusId": 13560
   },
   "7695": {
     "id": 7695,
@@ -36961,7 +37342,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
       }
-    }
+    },
+    "applyBonusId": 13560
   },
   "7696": {
     "id": 7696,
@@ -36977,7 +37359,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
       }
-    }
+    },
+    "applyBonusId": 13560
   },
   "7697": {
     "id": 7697,
@@ -36993,7 +37376,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1931,
         "icon": "inv_misc_paperbundle04a"
       }
-    }
+    },
+    "applyBonusId": 13560
   },
   "7698": {
     "id": 7698,
@@ -39301,6 +39685,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "7890": {
+    "id": 7890,
+    "applyBonusId": 6712
+  },
   "7891": {
     "id": 7891,
     "effect": {
@@ -40016,6 +40404,50 @@ export const bonus_IDs: {[key: string]: any} = {
   "7962": {
     "id": 7962,
     "level": 3
+  },
+  "7963": {
+    "id": 7963,
+    "applyBonusId": 4790
+  },
+  "7964": {
+    "id": 7964,
+    "applyBonusId": 6682
+  },
+  "7965": {
+    "id": 7965,
+    "applyBonusId": 6683
+  },
+  "7966": {
+    "id": 7966,
+    "applyBonusId": 6656
+  },
+  "7967": {
+    "id": 7967,
+    "applyBonusId": 6657
+  },
+  "7968": {
+    "id": 7968,
+    "applyBonusId": 6654
+  },
+  "7969": {
+    "id": 7969,
+    "applyBonusId": 6655
+  },
+  "7970": {
+    "id": 7970,
+    "applyBonusId": 6658
+  },
+  "7971": {
+    "id": 7971,
+    "applyBonusId": 6659
+  },
+  "7972": {
+    "id": 7972,
+    "applyBonusId": 6660
+  },
+  "7973": {
+    "id": 7973,
+    "applyBonusId": 6661
   },
   "7974": {
     "id": 7974,
@@ -41905,9 +42337,33 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8108,
     "quality": 3
   },
+  "8109": {
+    "id": 8109,
+    "applyBonusId": 13559
+  },
   "8110": {
     "id": 8110,
     "serverside": true
+  },
+  "8111": {
+    "id": 8111,
+    "applyBonusId": 13559
+  },
+  "8112": {
+    "id": 8112,
+    "applyBonusId": 13559
+  },
+  "8113": {
+    "id": 8113,
+    "applyBonusId": 13559
+  },
+  "8114": {
+    "id": 8114,
+    "applyBonusId": 13559
+  },
+  "8115": {
+    "id": 8115,
+    "applyBonusId": 13559
   },
   "8116": {
     "id": 8116,
@@ -42211,11 +42667,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8171": {
     "id": 8171,
-    "tag": "Timewarped"
+    "tag": "Timewarped",
+    "applyBonusId": 6682
   },
   "8172": {
     "id": 8172,
-    "tag": "Timewarped"
+    "tag": "Timewarped",
+    "applyBonusId": 6682
   },
   "8173": {
     "id": 8173,
@@ -43825,7 +44283,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8290,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8291": {
     "id": 8291,
@@ -43841,7 +44300,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8292": {
     "id": 8292,
@@ -43857,7 +44317,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8293": {
     "id": 8293,
@@ -43873,7 +44334,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8294": {
     "id": 8294,
@@ -43889,7 +44351,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8295": {
     "id": 8295,
@@ -43905,7 +44368,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8296": {
     "id": 8296,
@@ -43921,7 +44385,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8297": {
     "id": 8297,
@@ -43931,7 +44396,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8297,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8298": {
     "id": 8298,
@@ -43947,7 +44413,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8299": {
     "id": 8299,
@@ -43963,7 +44430,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8300": {
     "id": 8300,
@@ -43979,7 +44447,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8301": {
     "id": 8301,
@@ -43995,7 +44464,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8302": {
     "id": 8302,
@@ -44011,7 +44481,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8303": {
     "id": 8303,
@@ -44027,7 +44498,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8304": {
     "id": 8304,
@@ -44037,7 +44509,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8304,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8305": {
     "id": 8305,
@@ -44053,7 +44526,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8306": {
     "id": 8306,
@@ -44069,7 +44543,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8307": {
     "id": 8307,
@@ -44085,7 +44560,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8308": {
     "id": 8308,
@@ -44101,7 +44577,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8309": {
     "id": 8309,
@@ -44117,7 +44594,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8310": {
     "id": 8310,
@@ -44133,7 +44611,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8311": {
     "id": 8311,
@@ -44143,7 +44622,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8311,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8312": {
     "id": 8312,
@@ -44159,7 +44639,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8313": {
     "id": 8313,
@@ -44175,7 +44656,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8314": {
     "id": 8314,
@@ -44191,7 +44673,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8315": {
     "id": 8315,
@@ -44207,7 +44690,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8316": {
     "id": 8316,
@@ -44223,7 +44707,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8317": {
     "id": 8317,
@@ -44239,7 +44724,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8318": {
     "id": 8318,
@@ -44249,7 +44735,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8318,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8319": {
     "id": 8319,
@@ -44265,7 +44752,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8320": {
     "id": 8320,
@@ -44281,7 +44769,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8321": {
     "id": 8321,
@@ -44297,7 +44786,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8322": {
     "id": 8322,
@@ -44313,7 +44803,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8323": {
     "id": 8323,
@@ -44329,7 +44820,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8324": {
     "id": 8324,
@@ -44345,7 +44837,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8325": {
     "id": 8325,
@@ -44355,7 +44848,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8325,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8326": {
     "id": 8326,
@@ -44371,7 +44865,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8327": {
     "id": 8327,
@@ -44387,7 +44882,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8328": {
     "id": 8328,
@@ -44403,7 +44899,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8329": {
     "id": 8329,
@@ -44419,7 +44916,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8330": {
     "id": 8330,
@@ -44435,7 +44933,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8331": {
     "id": 8331,
@@ -44451,7 +44950,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8332": {
     "id": 8332,
@@ -44461,7 +44961,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8332,
       "itemLevel": 50
-    }
+    },
+    "applyBonusId": 13542
   },
   "8333": {
     "id": 8333,
@@ -44477,7 +44978,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8334": {
     "id": 8334,
@@ -44493,7 +44995,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8335": {
     "id": 8335,
@@ -44509,7 +45012,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8336": {
     "id": 8336,
@@ -44525,7 +45029,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8337": {
     "id": 8337,
@@ -44541,7 +45046,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8338": {
     "id": 8338,
@@ -44557,7 +45063,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "id": 1792,
         "icon": "achievement_legionpvptier4"
       }
-    }
+    },
+    "applyBonusId": 13542
   },
   "8339": {
     "id": 8339,
@@ -46661,6 +47168,54 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8767,
     "quality": 4
   },
+  "8768": {
+    "id": 8768,
+    "applyBonusId": 4790
+  },
+  "8769": {
+    "id": 8769,
+    "applyBonusId": 6682
+  },
+  "8770": {
+    "id": 8770,
+    "applyBonusId": 6683
+  },
+  "8771": {
+    "id": 8771,
+    "applyBonusId": 4790
+  },
+  "8772": {
+    "id": 8772,
+    "applyBonusId": 6682
+  },
+  "8773": {
+    "id": 8773,
+    "applyBonusId": 6683
+  },
+  "8774": {
+    "id": 8774,
+    "applyBonusId": 6682
+  },
+  "8775": {
+    "id": 8775,
+    "applyBonusId": 6683
+  },
+  "8776": {
+    "id": 8776,
+    "applyBonusId": 6682
+  },
+  "8777": {
+    "id": 8777,
+    "applyBonusId": 6683
+  },
+  "8778": {
+    "id": 8778,
+    "applyBonusId": 6682
+  },
+  "8779": {
+    "id": 8779,
+    "applyBonusId": 6683
+  },
   "8780": {
     "id": 8780,
     "socket": 1
@@ -46759,71 +47314,85 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8798,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 0
     }
   },
   "8799": {
     "id": 8799,
     "levelOffset": {
       "amount": 2,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 1
     }
   },
   "8800": {
     "id": 8800,
     "levelOffset": {
       "amount": 4,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 2
     }
   },
   "8801": {
     "id": 8801,
     "levelOffset": {
       "amount": 7,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 3
     }
   },
   "8802": {
     "id": 8802,
     "levelOffset": {
       "amount": 10,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 4
     }
   },
   "8803": {
     "id": 8803,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 0
     }
   },
   "8804": {
     "id": 8804,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 1
     }
   },
   "8805": {
     "id": 8805,
     "levelOffset": {
       "amount": 12,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 2
     }
   },
   "8806": {
     "id": 8806,
     "levelOffset": {
       "amount": 19,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 3
     }
   },
   "8807": {
     "id": 8807,
     "levelOffset": {
       "amount": 26,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 4
     }
+  },
+  "8809": {
+    "id": 8809,
+    "applyBonusId": 13508
   },
   "8810": {
     "id": 8810,
@@ -46936,13 +47505,33 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8836,
     "serverside": true
   },
+  "8837": {
+    "id": 8837,
+    "applyBonusId": 13510
+  },
   "8838": {
     "id": 8838,
     "serverside": true
   },
+  "8839": {
+    "id": 8839,
+    "applyBonusId": 13509
+  },
   "8840": {
     "id": 8840,
     "serverside": true
+  },
+  "8841": {
+    "id": 8841,
+    "applyBonusId": 13511
+  },
+  "8843": {
+    "id": 8843,
+    "applyBonusId": 13512
+  },
+  "8844": {
+    "id": 8844,
+    "applyBonusId": 13513
   },
   "8845": {
     "id": 8845,
@@ -46967,6 +47556,10 @@ export const bonus_IDs: {[key: string]: any} = {
   "8850": {
     "id": 8850,
     "serverside": true
+  },
+  "8851": {
+    "id": 8851,
+    "applyBonusId": 13510
   },
   "8852": {
     "id": 8852,
@@ -47584,6 +48177,62 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8960,
     "item_limit_category": 512
   },
+  "8961": {
+    "id": 8961,
+    "applyBonusId": 13470
+  },
+  "8962": {
+    "id": 8962,
+    "applyBonusId": 13470
+  },
+  "8963": {
+    "id": 8963,
+    "applyBonusId": 13470
+  },
+  "8964": {
+    "id": 8964,
+    "applyBonusId": 13470
+  },
+  "8965": {
+    "id": 8965,
+    "applyBonusId": 13471
+  },
+  "8966": {
+    "id": 8966,
+    "applyBonusId": 13471
+  },
+  "8967": {
+    "id": 8967,
+    "applyBonusId": 13471
+  },
+  "8968": {
+    "id": 8968,
+    "applyBonusId": 13471
+  },
+  "8969": {
+    "id": 8969,
+    "applyBonusId": 13472
+  },
+  "8970": {
+    "id": 8970,
+    "applyBonusId": 13472
+  },
+  "8971": {
+    "id": 8971,
+    "applyBonusId": 13472
+  },
+  "8972": {
+    "id": 8972,
+    "applyBonusId": 13472
+  },
+  "8973": {
+    "id": 8973,
+    "applyBonusId": 13473
+  },
+  "8974": {
+    "id": 8974,
+    "applyBonusId": 13473
+  },
   "8975": {
     "id": 8975,
     "rawStats": [
@@ -47594,6 +48243,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     ],
     "stats": "100% Indestructible [0.3000]"
+  },
+  "8979": {
+    "id": 8979,
+    "applyBonusId": 6682
   },
   "8980": {
     "id": 8980,
@@ -47609,6 +48262,38 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8982,
     "ilevel": "395 @plvl 45 - 395 @plvl 395",
     "curveId": 56681
+  },
+  "8983": {
+    "id": 8983,
+    "applyBonusId": 13508
+  },
+  "8984": {
+    "id": 8984,
+    "applyBonusId": 6683
+  },
+  "8985": {
+    "id": 8985,
+    "applyBonusId": 13509
+  },
+  "8986": {
+    "id": 8986,
+    "applyBonusId": 13509
+  },
+  "8987": {
+    "id": 8987,
+    "applyBonusId": 13509
+  },
+  "8988": {
+    "id": 8988,
+    "applyBonusId": 13509
+  },
+  "8989": {
+    "id": 8989,
+    "applyBonusId": 13509
+  },
+  "8990": {
+    "id": 8990,
+    "applyBonusId": 13509
   },
   "8991": {
     "id": 8991,
@@ -47649,11 +48334,51 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "8999": {
+    "id": 8999,
+    "applyBonusId": 13508
+  },
+  "9000": {
+    "id": 9000,
+    "applyBonusId": 13508
+  },
+  "9001": {
+    "id": 9001,
+    "applyBonusId": 13508
+  },
+  "9002": {
+    "id": 9002,
+    "applyBonusId": 13508
+  },
+  "9003": {
+    "id": 9003,
+    "applyBonusId": 13508
+  },
+  "9004": {
+    "id": 9004,
+    "applyBonusId": 13508
+  },
+  "9005": {
+    "id": 9005,
+    "applyBonusId": 13508
+  },
+  "9006": {
+    "id": 9006,
+    "applyBonusId": 13508
+  },
   "9007": {
     "id": 9007,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
     "quality": 3
+  },
+  "9008": {
+    "id": 9008,
+    "applyBonusId": 13508
+  },
+  "9009": {
+    "id": 9009,
+    "applyBonusId": 13508
   },
   "9010": {
     "id": 9010,
@@ -48713,6 +49438,14 @@ export const bonus_IDs: {[key: string]: any} = {
   "9128": {
     "id": 9128,
     "serverside": true
+  },
+  "9129": {
+    "id": 9129,
+    "applyBonusId": 6658
+  },
+  "9130": {
+    "id": 9130,
+    "applyBonusId": 13473
   },
   "9131": {
     "id": 9131,
@@ -50915,6 +51648,70 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     }
   },
+  "9294": {
+    "id": 9294,
+    "applyBonusId": 13474
+  },
+  "9295": {
+    "id": 9295,
+    "applyBonusId": 13474
+  },
+  "9296": {
+    "id": 9296,
+    "applyBonusId": 13474
+  },
+  "9297": {
+    "id": 9297,
+    "applyBonusId": 13474
+  },
+  "9298": {
+    "id": 9298,
+    "applyBonusId": 13474
+  },
+  "9299": {
+    "id": 9299,
+    "applyBonusId": 13474
+  },
+  "9300": {
+    "id": 9300,
+    "applyBonusId": 13474
+  },
+  "9301": {
+    "id": 9301,
+    "applyBonusId": 13474
+  },
+  "9302": {
+    "id": 9302,
+    "applyBonusId": 13475
+  },
+  "9303": {
+    "id": 9303,
+    "applyBonusId": 13475
+  },
+  "9304": {
+    "id": 9304,
+    "applyBonusId": 13475
+  },
+  "9305": {
+    "id": 9305,
+    "applyBonusId": 13475
+  },
+  "9306": {
+    "id": 9306,
+    "applyBonusId": 13475
+  },
+  "9307": {
+    "id": 9307,
+    "applyBonusId": 13475
+  },
+  "9308": {
+    "id": 9308,
+    "applyBonusId": 13475
+  },
+  "9309": {
+    "id": 9309,
+    "applyBonusId": 13475
+  },
   "9310": {
     "id": 9310,
     "quality": 5,
@@ -50923,6 +51720,110 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 0
     }
+  },
+  "9311": {
+    "id": 9311,
+    "applyBonusId": 13489
+  },
+  "9312": {
+    "id": 9312,
+    "applyBonusId": 13488
+  },
+  "9313": {
+    "id": 9313,
+    "applyBonusId": 13476
+  },
+  "9314": {
+    "id": 9314,
+    "applyBonusId": 13476
+  },
+  "9315": {
+    "id": 9315,
+    "applyBonusId": 13476
+  },
+  "9316": {
+    "id": 9316,
+    "applyBonusId": 13476
+  },
+  "9317": {
+    "id": 9317,
+    "applyBonusId": 13476
+  },
+  "9318": {
+    "id": 9318,
+    "applyBonusId": 13476
+  },
+  "9319": {
+    "id": 9319,
+    "applyBonusId": 13476
+  },
+  "9320": {
+    "id": 9320,
+    "applyBonusId": 13476
+  },
+  "9321": {
+    "id": 9321,
+    "applyBonusId": 13477
+  },
+  "9322": {
+    "id": 9322,
+    "applyBonusId": 13477
+  },
+  "9323": {
+    "id": 9323,
+    "applyBonusId": 13477
+  },
+  "9324": {
+    "id": 9324,
+    "applyBonusId": 13477
+  },
+  "9325": {
+    "id": 9325,
+    "applyBonusId": 13477
+  },
+  "9327": {
+    "id": 9327,
+    "applyBonusId": 13477
+  },
+  "9328": {
+    "id": 9328,
+    "applyBonusId": 13477
+  },
+  "9329": {
+    "id": 9329,
+    "applyBonusId": 13477
+  },
+  "9330": {
+    "id": 9330,
+    "applyBonusId": 13478
+  },
+  "9331": {
+    "id": 9331,
+    "applyBonusId": 13478
+  },
+  "9332": {
+    "id": 9332,
+    "applyBonusId": 13478
+  },
+  "9333": {
+    "id": 9333,
+    "applyBonusId": 13478
+  },
+  "9334": {
+    "id": 9334,
+    "applyBonusId": 13478
+  },
+  "9335": {
+    "id": 9335,
+    "applyBonusId": 13478
+  },
+  "9336": {
+    "id": 9336,
+    "applyBonusId": 13478
+  },
+  "9337": {
+    "id": 9337,
+    "applyBonusId": 13478
   },
   "9338": {
     "id": 9338,
@@ -51563,11 +52464,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9365": {
     "id": 9365,
-    "tag": "Ingenuity Crafted"
+    "tag": "Ingenuity Crafted",
+    "applyBonusId": 13471
   },
   "9366": {
     "id": 9366,
-    "tag": "Shadowflame Crafted"
+    "tag": "Shadowflame Crafted",
+    "applyBonusId": 13477
   },
   "9367": {
     "id": 9367,
@@ -51589,6 +52492,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9370,
     "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
+  },
+  "9371": {
+    "id": 9371,
+    "applyBonusId": 13476
   },
   "9372": {
     "id": 9372,
@@ -51656,6 +52563,30 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "9380": {
+    "id": 9380,
+    "applyBonusId": 13479
+  },
+  "9381": {
+    "id": 9381,
+    "applyBonusId": 13479
+  },
+  "9382": {
+    "id": 9382,
+    "applyBonusId": 13479
+  },
+  "9383": {
+    "id": 9383,
+    "applyBonusId": 13479
+  },
+  "9384": {
+    "id": 9384,
+    "applyBonusId": 13479
+  },
+  "9385": {
+    "id": 9385,
+    "applyBonusId": 13479
+  },
   "9399": {
     "id": 9399,
     "effect": {
@@ -51684,43 +52615,50 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9401,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 0
     }
   },
   "9402": {
     "id": 9402,
     "levelOffset": {
       "amount": 3,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 1
     }
   },
   "9403": {
     "id": 9403,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 2
     }
   },
   "9404": {
     "id": 9404,
     "levelOffset": {
       "amount": 9,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 3
     }
   },
   "9405": {
     "id": 9405,
     "levelOffset": {
       "amount": 13,
-      "squishEra": 1
+      "squishEra": 1,
+      "craftingQuality": 4
     }
   },
   "9406": {
     "id": 9406,
+    "applyBonusId": 6682,
     "tag": "Timewarped"
   },
   "9407": {
     "id": 9407,
+    "applyBonusId": 6682,
     "tag": "Timewarped"
   },
   "9408": {
@@ -51776,6 +52714,70 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_misc_food_legion_goochocovanilla_bottle"
       }
     }
+  },
+  "9419": {
+    "id": 9419,
+    "applyBonusId": 13489
+  },
+  "9420": {
+    "id": 9420,
+    "applyBonusId": 13488
+  },
+  "9421": {
+    "id": 9421,
+    "applyBonusId": 13489
+  },
+  "9422": {
+    "id": 9422,
+    "applyBonusId": 13489
+  },
+  "9423": {
+    "id": 9423,
+    "applyBonusId": 13489
+  },
+  "9424": {
+    "id": 9424,
+    "applyBonusId": 13489
+  },
+  "9425": {
+    "id": 9425,
+    "applyBonusId": 13489
+  },
+  "9426": {
+    "id": 9426,
+    "applyBonusId": 13489
+  },
+  "9427": {
+    "id": 9427,
+    "applyBonusId": 13488
+  },
+  "9428": {
+    "id": 9428,
+    "applyBonusId": 13488
+  },
+  "9429": {
+    "id": 9429,
+    "applyBonusId": 13488
+  },
+  "9430": {
+    "id": 9430,
+    "applyBonusId": 13488
+  },
+  "9431": {
+    "id": 9431,
+    "applyBonusId": 13488
+  },
+  "9432": {
+    "id": 9432,
+    "applyBonusId": 13488
+  },
+  "9433": {
+    "id": 9433,
+    "applyBonusId": 13488
+  },
+  "9434": {
+    "id": 9434,
+    "applyBonusId": 13488
   },
   "9436": {
     "id": 9436,
@@ -52556,6 +53558,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     }
   },
+  "9492": {
+    "id": 9492,
+    "applyBonusId": 6682
+  },
   "9495": {
     "id": 9495,
     "serverside": true
@@ -52570,7 +53576,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9498": {
     "id": 9498,
-    "tag": "Dream Crafted"
+    "tag": "Dream Crafted",
+    "applyBonusId": 13482
   },
   "9499": {
     "id": 9499,
@@ -52661,6 +53668,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9526,
     "tag": "Divergent"
   },
+  "9527": {
+    "id": 9527,
+    "applyBonusId": 13515
+  },
+  "9528": {
+    "id": 9528,
+    "applyBonusId": 13514
+  },
   "9529": {
     "id": 9529,
     "tag": "Divergent"
@@ -52687,15 +53702,209 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9533": {
     "id": 9533,
-    "tag": "Timewarped"
+    "tag": "Timewarped",
+    "applyBonusId": 6682
   },
   "9534": {
     "id": 9534,
+    "applyBonusId": 6682,
     "tag": "Timewarped"
+  },
+  "9535": {
+    "id": 9535,
+    "applyBonusId": 6682
+  },
+  "9536": {
+    "id": 9536,
+    "applyBonusId": 13481
+  },
+  "9537": {
+    "id": 9537,
+    "applyBonusId": 13481
+  },
+  "9538": {
+    "id": 9538,
+    "applyBonusId": 13481
+  },
+  "9539": {
+    "id": 9539,
+    "applyBonusId": 13481
+  },
+  "9540": {
+    "id": 9540,
+    "applyBonusId": 13481
+  },
+  "9541": {
+    "id": 9541,
+    "applyBonusId": 13481
+  },
+  "9542": {
+    "id": 9542,
+    "applyBonusId": 13481
+  },
+  "9543": {
+    "id": 9543,
+    "applyBonusId": 13481
+  },
+  "9544": {
+    "id": 9544,
+    "applyBonusId": 13480
+  },
+  "9545": {
+    "id": 9545,
+    "applyBonusId": 13480
+  },
+  "9546": {
+    "id": 9546,
+    "applyBonusId": 13480
+  },
+  "9547": {
+    "id": 9547,
+    "applyBonusId": 13480
+  },
+  "9548": {
+    "id": 9548,
+    "applyBonusId": 13480
+  },
+  "9549": {
+    "id": 9549,
+    "applyBonusId": 13480
+  },
+  "9550": {
+    "id": 9550,
+    "applyBonusId": 13480
+  },
+  "9551": {
+    "id": 9551,
+    "applyBonusId": 13480
+  },
+  "9552": {
+    "id": 9552,
+    "applyBonusId": 13483
+  },
+  "9553": {
+    "id": 9553,
+    "applyBonusId": 13483
+  },
+  "9554": {
+    "id": 9554,
+    "applyBonusId": 13483
+  },
+  "9555": {
+    "id": 9555,
+    "applyBonusId": 13483
+  },
+  "9556": {
+    "id": 9556,
+    "applyBonusId": 13483
+  },
+  "9557": {
+    "id": 9557,
+    "applyBonusId": 13483
+  },
+  "9558": {
+    "id": 9558,
+    "applyBonusId": 13483
+  },
+  "9559": {
+    "id": 9559,
+    "applyBonusId": 13483
+  },
+  "9560": {
+    "id": 9560,
+    "applyBonusId": 13482
+  },
+  "9561": {
+    "id": 9561,
+    "applyBonusId": 13482
+  },
+  "9562": {
+    "id": 9562,
+    "applyBonusId": 13482
+  },
+  "9563": {
+    "id": 9563,
+    "applyBonusId": 13482
+  },
+  "9564": {
+    "id": 9564,
+    "applyBonusId": 13482
+  },
+  "9565": {
+    "id": 9565,
+    "applyBonusId": 13482
+  },
+  "9566": {
+    "id": 9566,
+    "applyBonusId": 13482
+  },
+  "9567": {
+    "id": 9567,
+    "applyBonusId": 13482
+  },
+  "9568": {
+    "id": 9568,
+    "applyBonusId": 13484
+  },
+  "9569": {
+    "id": 9569,
+    "applyBonusId": 13484
+  },
+  "9570": {
+    "id": 9570,
+    "applyBonusId": 13484
+  },
+  "9571": {
+    "id": 9571,
+    "applyBonusId": 13484
+  },
+  "9572": {
+    "id": 9572,
+    "applyBonusId": 13484
+  },
+  "9573": {
+    "id": 9573,
+    "applyBonusId": 13485
+  },
+  "9574": {
+    "id": 9574,
+    "applyBonusId": 13485
+  },
+  "9575": {
+    "id": 9575,
+    "applyBonusId": 13485
+  },
+  "9576": {
+    "id": 9576,
+    "applyBonusId": 13485
+  },
+  "9577": {
+    "id": 9577,
+    "applyBonusId": 13485
+  },
+  "9578": {
+    "id": 9578,
+    "applyBonusId": 13485
+  },
+  "9579": {
+    "id": 9579,
+    "applyBonusId": 13514
+  },
+  "9580": {
+    "id": 9580,
+    "applyBonusId": 13515
+  },
+  "9581": {
+    "id": 9581,
+    "applyBonusId": 13484
   },
   "9584": {
     "id": 9584,
     "tag": "|nShadowflame Suffused"
+  },
+  "9585": {
+    "id": 9585,
+    "applyBonusId": 13514
   },
   "9598": {
     "id": 9598,
@@ -52797,70 +54006,80 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9623,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 0
     }
   },
   "9624": {
     "id": 9624,
     "levelOffset": {
       "amount": 3,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 1
     }
   },
   "9625": {
     "id": 9625,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 2
     }
   },
   "9626": {
     "id": 9626,
     "levelOffset": {
       "amount": 9,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 3
     }
   },
   "9627": {
     "id": 9627,
     "levelOffset": {
       "amount": 13,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 4
     }
   },
   "9628": {
     "id": 9628,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 0
     }
   },
   "9629": {
     "id": 9629,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 1
     }
   },
   "9630": {
     "id": 9630,
     "levelOffset": {
       "amount": 12,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 2
     }
   },
   "9631": {
     "id": 9631,
     "levelOffset": {
       "amount": 19,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 3
     }
   },
   "9632": {
     "id": 9632,
     "levelOffset": {
       "amount": 26,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 4
     }
   },
   "9634": {
@@ -53239,6 +54458,14 @@ export const bonus_IDs: {[key: string]: any} = {
   "9913": {
     "id": 9913,
     "level": -450
+  },
+  "9914": {
+    "id": 9914,
+    "applyBonusId": 13515
+  },
+  "9915": {
+    "id": 9915,
+    "applyBonusId": 13515
   },
   "9916": {
     "id": 9916,
@@ -54491,7 +55718,16 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10249": {
     "id": 10249,
-    "tag": "Awakened Crafted"
+    "tag": "Awakened Crafted",
+    "applyBonusId": 13496
+  },
+  "10250": {
+    "id": 10250,
+    "applyBonusId": 13517
+  },
+  "10251": {
+    "id": 10251,
+    "applyBonusId": 13516
   },
   "10254": {
     "id": 10254,
@@ -54705,6 +55941,182 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10304,
     "ilevel": "0 @plvl 0 - 463 @plvl 463",
     "curveId": 71353
+  },
+  "10305": {
+    "id": 10305,
+    "applyBonusId": 13495
+  },
+  "10306": {
+    "id": 10306,
+    "applyBonusId": 13495
+  },
+  "10307": {
+    "id": 10307,
+    "applyBonusId": 13495
+  },
+  "10308": {
+    "id": 10308,
+    "applyBonusId": 13495
+  },
+  "10309": {
+    "id": 10309,
+    "applyBonusId": 13495
+  },
+  "10310": {
+    "id": 10310,
+    "applyBonusId": 13495
+  },
+  "10311": {
+    "id": 10311,
+    "applyBonusId": 13495
+  },
+  "10312": {
+    "id": 10312,
+    "applyBonusId": 13495
+  },
+  "10313": {
+    "id": 10313,
+    "applyBonusId": 13496
+  },
+  "10314": {
+    "id": 10314,
+    "applyBonusId": 13496
+  },
+  "10315": {
+    "id": 10315,
+    "applyBonusId": 13496
+  },
+  "10316": {
+    "id": 10316,
+    "applyBonusId": 13496
+  },
+  "10317": {
+    "id": 10317,
+    "applyBonusId": 13496
+  },
+  "10318": {
+    "id": 10318,
+    "applyBonusId": 13496
+  },
+  "10319": {
+    "id": 10319,
+    "applyBonusId": 13496
+  },
+  "10320": {
+    "id": 10320,
+    "applyBonusId": 13496
+  },
+  "10321": {
+    "id": 10321,
+    "applyBonusId": 13497
+  },
+  "10322": {
+    "id": 10322,
+    "applyBonusId": 13497
+  },
+  "10323": {
+    "id": 10323,
+    "applyBonusId": 13497
+  },
+  "10324": {
+    "id": 10324,
+    "applyBonusId": 13497
+  },
+  "10325": {
+    "id": 10325,
+    "applyBonusId": 13497
+  },
+  "10326": {
+    "id": 10326,
+    "applyBonusId": 13497
+  },
+  "10327": {
+    "id": 10327,
+    "applyBonusId": 13497
+  },
+  "10328": {
+    "id": 10328,
+    "applyBonusId": 13497
+  },
+  "10329": {
+    "id": 10329,
+    "applyBonusId": 13498
+  },
+  "10330": {
+    "id": 10330,
+    "applyBonusId": 13498
+  },
+  "10331": {
+    "id": 10331,
+    "applyBonusId": 13498
+  },
+  "10332": {
+    "id": 10332,
+    "applyBonusId": 13498
+  },
+  "10333": {
+    "id": 10333,
+    "applyBonusId": 13498
+  },
+  "10334": {
+    "id": 10334,
+    "applyBonusId": 13498
+  },
+  "10335": {
+    "id": 10335,
+    "applyBonusId": 13499
+  },
+  "10336": {
+    "id": 10336,
+    "applyBonusId": 13499
+  },
+  "10337": {
+    "id": 10337,
+    "applyBonusId": 13499
+  },
+  "10338": {
+    "id": 10338,
+    "applyBonusId": 13499
+  },
+  "10339": {
+    "id": 10339,
+    "applyBonusId": 13499
+  },
+  "10340": {
+    "id": 10340,
+    "applyBonusId": 13499
+  },
+  "10341": {
+    "id": 10341,
+    "applyBonusId": 13500
+  },
+  "10342": {
+    "id": 10342,
+    "applyBonusId": 13500
+  },
+  "10343": {
+    "id": 10343,
+    "applyBonusId": 13500
+  },
+  "10344": {
+    "id": 10344,
+    "applyBonusId": 13500
+  },
+  "10345": {
+    "id": 10345,
+    "applyBonusId": 13500
+  },
+  "10346": {
+    "id": 10346,
+    "applyBonusId": 13500
+  },
+  "10347": {
+    "id": 10347,
+    "applyBonusId": 13500
+  },
+  "10348": {
+    "id": 10348,
+    "applyBonusId": 13500
   },
   "10349": {
     "id": 10349,
@@ -54934,6 +56346,54 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10407": {
+    "id": 10407,
+    "applyBonusId": 13496
+  },
+  "10408": {
+    "id": 10408,
+    "applyBonusId": 13496
+  },
+  "10409": {
+    "id": 10409,
+    "applyBonusId": 13496
+  },
+  "10410": {
+    "id": 10410,
+    "applyBonusId": 13496
+  },
+  "10411": {
+    "id": 10411,
+    "applyBonusId": 13498
+  },
+  "10412": {
+    "id": 10412,
+    "applyBonusId": 13498
+  },
+  "10413": {
+    "id": 10413,
+    "applyBonusId": 13498
+  },
+  "10414": {
+    "id": 10414,
+    "applyBonusId": 13498
+  },
+  "10415": {
+    "id": 10415,
+    "applyBonusId": 13499
+  },
+  "10416": {
+    "id": 10416,
+    "applyBonusId": 13499
+  },
+  "10417": {
+    "id": 10417,
+    "applyBonusId": 13499
+  },
+  "10418": {
+    "id": 10418,
+    "applyBonusId": 13499
+  },
   "10419": {
     "id": 10419,
     "serverside": true
@@ -54949,6 +56409,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 100,
       "squishEra": 1
     }
+  },
+  "10426": {
+    "id": 10426,
+    "applyBonusId": 6682
   },
   "10427": {
     "id": 10427,
@@ -55424,7 +56888,8 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10465": {
     "id": 10465,
-    "tag": "Timewarped"
+    "tag": "Timewarped",
+    "applyBonusId": 6683
   },
   "10466": {
     "id": 10466,
@@ -55734,6 +57199,62 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10490": {
+    "id": 10490,
+    "applyBonusId": 13496
+  },
+  "10491": {
+    "id": 10491,
+    "applyBonusId": 13496
+  },
+  "10492": {
+    "id": 10492,
+    "applyBonusId": 13496
+  },
+  "10493": {
+    "id": 10493,
+    "applyBonusId": 13496
+  },
+  "10494": {
+    "id": 10494,
+    "applyBonusId": 13498
+  },
+  "10495": {
+    "id": 10495,
+    "applyBonusId": 13498
+  },
+  "10496": {
+    "id": 10496,
+    "applyBonusId": 13498
+  },
+  "10497": {
+    "id": 10497,
+    "applyBonusId": 13498
+  },
+  "10498": {
+    "id": 10498,
+    "applyBonusId": 13499
+  },
+  "10499": {
+    "id": 10499,
+    "applyBonusId": 13499
+  },
+  "10500": {
+    "id": 10500,
+    "applyBonusId": 13499
+  },
+  "10501": {
+    "id": 10501,
+    "applyBonusId": 13499
+  },
+  "10502": {
+    "id": 10502,
+    "applyBonusId": 13499
+  },
+  "10503": {
+    "id": 10503,
+    "applyBonusId": 13499
+  },
   "10504": {
     "id": 10504,
     "quality": 1,
@@ -55938,6 +57459,14 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "spell_priest_divinestar_holy"
       }
     }
+  },
+  "10522": {
+    "id": 10522,
+    "applyBonusId": 13516
+  },
+  "10523": {
+    "id": 10523,
+    "applyBonusId": 13517
   },
   "10524": {
     "id": 10524,
@@ -56706,6 +58235,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10845": {
     "id": 10845,
+    "applyBonusId": 6682,
     "tag": "Timewarped"
   },
   "10846": {
@@ -56876,8 +58406,13 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "10861": {
+    "id": 10861,
+    "applyBonusId": 6682
+  },
   "10862": {
     "id": 10862,
+    "applyBonusId": 6682,
     "tag": "Timewarped"
   },
   "10863": {
@@ -56946,11 +58481,80 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10882": {
     "id": 10882,
+    "applyBonusId": 6683,
     "tag": "Timewarped"
+  },
+  "10883": {
+    "id": 10883,
+    "applyBonusId": 6682
   },
   "10884": {
     "id": 10884,
     "tag": "Awakened"
+  },
+  "10889": {
+    "id": 10889,
+    "applyBonusId": 13517
+  },
+  "10890": {
+    "id": 10890,
+    "applyBonusId": 13517
+  },
+  "10951": {
+    "id": 10951,
+    "applyBonusId": 13505
+  },
+  "10952": {
+    "id": 10952,
+    "applyBonusId": 13505
+  },
+  "10953": {
+    "id": 10953,
+    "applyBonusId": 13505
+  },
+  "10954": {
+    "id": 10954,
+    "applyBonusId": 13505
+  },
+  "10955": {
+    "id": 10955,
+    "applyBonusId": 13505
+  },
+  "10956": {
+    "id": 10956,
+    "applyBonusId": 13505
+  },
+  "10957": {
+    "id": 10957,
+    "applyBonusId": 13505
+  },
+  "10958": {
+    "id": 10958,
+    "applyBonusId": 13505
+  },
+  "10959": {
+    "id": 10959,
+    "applyBonusId": 13505
+  },
+  "10960": {
+    "id": 10960,
+    "applyBonusId": 13505
+  },
+  "10961": {
+    "id": 10961,
+    "applyBonusId": 13505
+  },
+  "10962": {
+    "id": 10962,
+    "applyBonusId": 13505
+  },
+  "10963": {
+    "id": 10963,
+    "applyBonusId": 13505
+  },
+  "10964": {
+    "id": 10964,
+    "applyBonusId": 13505
   },
   "10965": {
     "id": 10965,
@@ -57284,7 +58888,8 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 11055,
     "ilevel": "369 @plvl 55 - 554 @plvl 554",
     "curveId": 71410,
-    "quality": 4
+    "quality": 4,
+    "applyBonusId": 13616
   },
   "11061": {
     "id": 11061,
@@ -58118,6 +59723,10 @@ export const bonus_IDs: {[key: string]: any} = {
         "icon": "inv_misc_enggizmos_24"
       }
     }
+  },
+  "11227": {
+    "id": 11227,
+    "applyBonusId": 4790
   },
   "11228": {
     "id": 11228,
@@ -73632,70 +75241,80 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12493,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 0
     }
   },
   "12494": {
     "id": 12494,
     "levelOffset": {
       "amount": 3,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 1
     }
   },
   "12495": {
     "id": 12495,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 2
     }
   },
   "12496": {
     "id": 12496,
     "levelOffset": {
       "amount": 9,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 3
     }
   },
   "12497": {
     "id": 12497,
     "levelOffset": {
       "amount": 13,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 4
     }
   },
   "12498": {
     "id": 12498,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 0
     }
   },
   "12499": {
     "id": 12499,
     "levelOffset": {
       "amount": 6,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 1
     }
   },
   "12500": {
     "id": 12500,
     "levelOffset": {
       "amount": 12,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 2
     }
   },
   "12501": {
     "id": 12501,
     "levelOffset": {
       "amount": 19,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 3
     }
   },
   "12502": {
     "id": 12502,
     "levelOffset": {
       "amount": 26,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 4
     }
   },
   "12503": {
@@ -87036,6 +88655,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 0
     }
   },
+  "13492": {
+    "id": 13492,
+    "applyBonusId": 13491
+  },
   "13493": {
     "id": 13493,
     "itemLevel": {
@@ -88068,35 +89691,40 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13624,
     "levelOffset": {
       "amount": 0,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 0
     }
   },
   "13625": {
     "id": 13625,
     "levelOffset": {
       "amount": 1,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 1
     }
   },
   "13626": {
     "id": 13626,
     "levelOffset": {
       "amount": 2,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 2
     }
   },
   "13627": {
     "id": 13627,
     "levelOffset": {
       "amount": 3,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 3
     }
   },
   "13628": {
     "id": 13628,
     "levelOffset": {
       "amount": 4,
-      "squishEra": 2
+      "squishEra": 2,
+      "craftingQuality": 4
     }
   },
   "13629": {
@@ -88162,8 +89790,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13642": {
     "id": 13642,
-    "ilevel": "5 @plvl 1 - 551 @plvl 551",
-    "curveId": 97109
+    "applyBonusId": 13617
   },
   "13643": {
     "id": 13643,
