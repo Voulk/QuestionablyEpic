@@ -169,13 +169,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(730);
+  const [levelCap, setLevelCap] = React.useState(170);
   const maxLevelMarks = [
-    { value: 0, label: "684" },
-    { value: 1, label: "697" },
-    { value: 2, label: "710" },
-    { value: 3, label: "717" },
-    { value: 4, label: "730" },
+    { value: 0, label: "110" },
+    { value: 1, label: "130" },
+    { value: 2, label: "140" },
+    { value: 3, label: "155" },
+    { value: 4, label: "170" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -266,7 +266,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [684, 691, 697, 704, 707, 710, 714, 717, 720, 723, 727, 730] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [118, 124, 128, 137, 144, 150, 157, 167, 170] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 

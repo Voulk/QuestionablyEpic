@@ -5,6 +5,7 @@ import Item from "../Item";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+import ItemSquishEras from "Retail/Engine/ItemSquishEras.json"
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -56,6 +57,121 @@ function getPlayerRace(lines: string[]) {
     }
   })
   return playerRace;
+}
+
+
+// Item levels are way too complicated to not have a specific function for now.
+export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
+    let itemLevel = getItemProp(itemID, "itemLevel");
+    const extraBonuses: number[] = []
+
+    // Handle attached bonusIDs
+    bonusIDs.forEach(bonusIDs => {
+      const bonusData = bonus_IDs[bonusIDs.toString()] || {};
+      if (bonusData.applyBonusId) extraBonuses.push(bonusData.applyBonusId);
+    })
+
+
+    bonusIDs = bonusIDs.concat(extraBonuses);
+
+    let legacyLevelOffset = 0;
+    const eraMax = 2;
+    let operationOverride = false;
+
+    const operations = [];
+
+    // Item curve IDs that are not the Era curve.
+    // {priority: X, value: Y, era: Z}
+    const curveOperations = []
+    
+
+    bonusIDs.forEach((bonusID: number) => {
+      const bonusData = bonus_IDs[bonusID.toString()] || {};
+
+      if (bonusData.itemLevel) {
+        // Item Level bonus IDS have the following format:
+        // - amount (the item level to use)
+        // - priority (lower priority is better. Higher priority numbers are just discarded.)
+        // - squishEra (if squishEra isn't equal to our maximum then we'll need to squish its value afterwards.)
+        operations.push({type: 'set level', value: bonusData['itemLevel']});
+      }
+      if ('levelOffset' in bonusData) {
+        // Item level offsets are used to make a flat change to item level. It has the following format:
+        // - amount (the amount to offset the item level by)
+        // - squishEra (they seem to mostly use 2 here = no squish, but if 1 then we'll apply the offset first.)
+        operations.push({type: 'era offset', value: bonusData['levelOffset']});
+      }
+      if ('levelOffsetSecondary' in bonusData) {
+        // A strictly post-squish item level adjustment. Seems equal to levelOffset if levelOffset = eraMax.
+        operations.push({type: 'modern offset', value: bonusData['levelOffsetSecondary']});
+      }
+      if ('level' in bonusData) {
+        // Some older items will just use their base level + legacyLevelOffset. 
+        //legacyLevelOffset += bonusData.level;
+        itemLevel += bonusData.level;
+        operationOverride = true;
+      }
+      if ('curveId' in bonusData) {
+        // Some TWW and before items use curveId
+        curveOperations.push({priority: 0, value: bonusData.curveId, era: 1, offset: 0});
+      }
+      if ('dropLevelCurve' in bonusData) {
+        // Most Midnight items use dropLevelCurve instead. It contains the following fields:
+        // - curveId: The curve ID to use.
+        // - priority: Only the lowest priority is kept.
+        // - squishEra: Squish if not = eraMax.
+        // - offset: TODO: either a pre or post squish item level offset. 
+        curveOperations.push({priority: bonusData.dropLevelCurve.priority, value: bonusData.dropLevelCurve.curveId, era: bonusData.dropLevelCurve.squishEra || 2, offset: bonusData.dropLevelCurve.offset || 0});
+      }
+    });
+
+    if (operations.length > 0 || curveOperations.length > 0 || operationOverride) {
+      ItemSquishEras.forEach(squishEra => {
+        /*
+          There are currently two eras. 1 and 2 but they might add more in future - probably not until another item squish.
+          Era 1: Pre-Midnight
+          Era 2: Midnight
+
+          If there is a curveID for this era, process it. This will effectively squish the item level of all eras that came before it.
+          Then, apply any item level operations and then curves for the new era. 
+
+        */
+        if (squishEra.curveId) {
+          itemLevel = processCurve(squishEra.curveId.toString(), itemLevel)
+          
+        }
+
+        // Handle flat item level increases.
+        const eraLevels = operations.filter(op => op.type === 'set level' && op.value.squishEra === squishEra.id);
+        const eraLevel = eraLevels
+                          .reduce((acc, currentValue) => {
+                              return (currentValue.value.priority < acc.value.priority) ? currentValue : acc;
+                        }, eraLevels[0]);
+
+        itemLevel = eraLevel ? eraLevel.value.amount : itemLevel;  
+
+        // Handle curve item level increases
+        const curveLevel = curveOperations.filter(op => op.era === squishEra.id)[0] || {};
+        itemLevel = (curveLevel && curveLevel.value) ? (processCurve(curveLevel.value.toString(), dropLevel) + curveLevel.offset) : itemLevel;
+
+        // Handle offsets for this Era
+        const eraOffsets = operations.filter(op => op.type === 'era offset' && op.value.squishEra === squishEra.id);
+
+        eraOffsets.forEach(op =>{ 
+            itemLevel += op.value.amount;
+          })
+        });
+
+      operations.filter(op => op.type === 'modern offset').forEach(op => {
+        itemLevel += op.value.amount;
+      })
+
+    }
+
+    //console.log(operations);
+
+    return itemLevel;
+
 }
 
 export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
@@ -268,11 +384,11 @@ export function processCurve(curveID: string, dropLevel: number) {
         if (i > 0) {
           playerLevelGap = curve[i].playerLevel - curve[i - 1].playerLevel;
           jump = (curve[i].itemLevel - curve[i - 1].itemLevel) / playerLevelGap;
-          return Math.floor(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
+          return Math.round(curve[i - 1].itemLevel + jump * (dropLevel - curve[i - 1].playerLevel));
         } else {
           //playerLevelGap = 0;
           //jump = curve[i].itemLevel / playerLevelGap;
-          return Math.floor(curve[i].itemLevel);
+          return Math.round(curve[i].itemLevel);
         }
       }
     }
@@ -288,7 +404,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     slot: string;
     upgradeTrack: string;
     upgradeRank: number;
-    level: {drop: number; override: number; baseLevel: number; baseLevelPriority: number; levelGain: number; finalLevel: number };
+    level: number;
     uniqueTag: string;
     itemEquipped: boolean;
     sockets: number;
@@ -304,7 +420,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     slot: "",
     upgradeTrack: "",
     upgradeRank: 0,
-    level: {drop: 0, override: 0, baseLevel: 0, baseLevelPriority: 9999, levelGain: 0, finalLevel: 0},
+    level: 0,
     uniqueTag: "",
     itemEquipped: !line.includes("#"),
     sockets: 0,
@@ -323,6 +439,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let enchantID = 0;
   let titanDisc = 0;
   let itemSpecial = 0;
+  let dropLevel = -1;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -343,7 +460,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("titan_disc_id=")) titanDisc = parseInt(info.split("=")[1]);
     else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) protoItem.id = parseInt(info.split("=")[1]);
-    else if (info.includes("drop_level=")) protoItem.level.drop = parseInt(info.split("=")[1]);
+    else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) {
       const craftedStats = info.split("=")[1].split("/");
       craftedStats.forEach(stat => {
@@ -357,9 +474,8 @@ export function processItem(line: string, player: Player, contentType: contentTy
   }
 
   // Grab the items base level from our item database.
-  protoItem.level.baseLevel = getItemProp(protoItem.id, "itemLevel");
   protoItem.slot = getItemProp(protoItem.id, "slot");
-
+  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), protoItem.level.drop || 0);
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
@@ -367,40 +483,32 @@ export function processItem(line: string, player: Player, contentType: contentTy
     let idPayload = bonus_IDs[bonus_id];
     if (idPayload !== undefined) {
       if ("level" in idPayload) {
-        protoItem.level.levelGain += idPayload["level"];
-        //itemLevelGain += idPayload["level"];
-      } else if ("socket" in idPayload) {
-        protoItem.sockets += idPayload["socket"];
-        //itemSockets = idPayload["socket"];
-      } else if ("base_level" in idPayload) {
-        // If the base_level has a priority level, then make sure it's lower than our existing priority level.
-        if (("base_level_priority" in idPayload && idPayload["base_level_priority"] < protoItem.level.baseLevelPriority) ||
-            "base_level_priority" in idPayload === false) {
-              protoItem.level.baseLevel = idPayload["base_level"];
-              protoItem.level.baseLevelPriority = idPayload["base_level_priority"];
-              //itemBaseLevel = idPayload["base_level"];
-              //itemBaseLevelPriority = idPayload["base_level_priority"];
-            }
+        // Do nothing. Levels are handled in getItemLevel since it's very complicated now.
       }
+      else if ("socket" in idPayload) {
+        protoItem.sockets += idPayload["socket"];
+      } 
       else if (bonus_id === "41") {
         protoItem.tertiary = "Leech";
       }
       else if ("rawStats" in idPayload) {
-      idPayload["rawStats"].forEach((stat: any) => {
-        if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
-          let statName = stat["name"].toLowerCase();
-          if (statName === "vers") statName = "versatility"; // Pain
-          specialAllocations[statName] = stat["amount"];
-          if (protoItem.id === 235499) {
-            itemSpecial = parseInt(bonus_id);
+        idPayload["rawStats"].forEach((stat: any) => {
+          if (["Haste", "Crit", "Vers", "Mastery", "Intellect"].includes(stat["name"])) {
+            let statName = stat["name"].toLowerCase();
+            if (statName === "vers") statName = "versatility"; // Pain
+            specialAllocations[statName] = stat["amount"];
+            if (protoItem.id === 235499) {
+              itemSpecial = parseInt(bonus_id);
+            }
+
           }
-
-        }
-      });
+        });
       } else if ("curveId" in idPayload) {
-        let curve = idPayload["curveId"];
+        // Handled in getItemLevel now.
 
-        protoItem.level.override = processCurve(curve, protoItem.level.drop);
+        //let curve = idPayload["curveId"];
+
+        //protoItem.level.override = processCurve(curve, protoItem.level.drop);
         //levelOverride = processCurve(curve, protoItem.level.drop);
 
       } 
@@ -423,7 +531,6 @@ export function processItem(line: string, player: Player, contentType: contentTy
       if ("quality" in idPayload) {
         protoItem.quality = idPayload["quality"];
       } 
-      //if (bonusID === 9365 || bonusID == 9366) itemQuality = 4; // Ingenuity Crafted
       if ("craftedStats" in idPayload) {
         //craftedStats = idPayload['craftedStats'];
         const craftedStats: number[] = idPayload['craftedStats'];
@@ -433,35 +540,24 @@ export function processItem(line: string, player: Player, contentType: contentTy
         });
         
       }
-      else {
-      }
+      if ("effect" in idPayload) {
+        if ("spell" in idPayload["effect"] && bonus_id !== "8174" && bonus_id !== "6917") { // Ignore Flavor Packet.
+          let specialEffectName = idPayload["effect"]["spell"]["name"]
 
 
-        //console.log("Legendary detected" + JSON.stringify(itemEffect));
-        if ("effect" in idPayload) {
-          if ("spell" in idPayload["effect"] && bonus_id !== "8174" && bonus_id !== "6917") { // Ignore Flavor Packet.
-            let specialEffectName = idPayload["effect"]["spell"]["name"]
-            /*itemEffect = {
+          // Embellishments that require a tag.
+          if (['Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
+            if (specialEffectName === "Ascendance") specialEffectName = "Darkmoon Sigil: Ascension"
+            else if (specialEffectName === "Symbiosis") specialEffectName = "Darkmoon Sigil: Symbiosis"
+            
+            protoItem.effect = {
               type: "embellishment",
               name: specialEffectName,
-              level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
-            };*/
-
-
-
-            // Embellishments that require a tag.
-            if (['Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
-              if (specialEffectName === "Ascendance") specialEffectName = "Darkmoon Sigil: Ascension"
-              else if (specialEffectName === "Symbiosis") specialEffectName = "Darkmoon Sigil: Symbiosis"
-              
-              protoItem.effect = {
-                type: "embellishment",
-                name: specialEffectName,
-                level: protoItem.level.baseLevel + protoItem.level.levelGain //(itemBaseLevel + itemLevelGain),
-              }
-              
-              protoItem.uniqueTag = "embellishment";
+              level: protoItem.level //(itemBaseLevel + itemLevelGain),
             }
+            
+            protoItem.uniqueTag = "embellishment";
+          }
 
           }
 
@@ -484,49 +580,6 @@ export function processItem(line: string, player: Player, contentType: contentTy
       protoItem.missiveStats.push("versatility");
       //craftedStats = [];
     }
-    /* They've thankfully converted these to a nice array so we don't need messy overrides anymore.
-    else if (bonus_id === "8790") {
-      // Haste / Crit Crafted Override
-      craftedStats = ["32", "36"]
-    }
-    else if (bonus_id === "8791") {
-      // Mast / Crit Crafted Override
-      craftedStats = ["49", "32"]
-    }
-    else if (bonus_id === "8792") {
-      // Haste / Vers Crafted Override
-      craftedStats = ["36", "40"]
-    }
-    else if (bonus_id === "8793") {
-      // Haste / Mast Crafted Override
-      craftedStats = ["36", "49"]
-    }
-    else if (bonus_id === "8794") {
-      // Vers / Mast Crafted Override
-      craftedStats = ["40", "49"]
-    }
-    else if (bonus_id === "8795") {
-      // Vers / Crit Crafted Override
-      craftedStats = ["40", "32"]
-    } 
-
-    // Solo stat overrides. Currently used on Engineering items that have only one secondary.
-    else if (bonus_id === "8948") {
-      // Haste Crafted Override
-      craftedStats = ["36"]
-    }
-    else if (bonus_id === "8949") {
-      // Crit Crafted Override
-      craftedStats = ["32"]
-    }
-    else if (bonus_id === "8950") {
-      // Mastery Crafted Override
-      craftedStats = ["49"]
-    }
-    else if (bonus_id === "8951") {
-      // Versatility Crafted Override
-      craftedStats = ["40"]
-    }*/
     if (bonus_id === "12053") {
       protoItem.upgradeTrack = "Gilded Crafted";
     }
@@ -535,19 +588,10 @@ export function processItem(line: string, player: Player, contentType: contentTy
     }
     if (bonus_id === "8960") protoItem.uniqueTag = "embellishment";
   }
-  //if (craftedStats.length !== 0) itemBonusStats = getSecondaryAllocationAtItemLevel(itemLevel, itemSlot, craftedStats);
-  
-  /*if (craftedStats.length !== 0) {
-    craftedStats.forEach(stat => {
-      missiveStats.push(stat_ids[stat]);
-    });
-  } */
-  /*if (levelOverride !== 0) itemLevel = Math.min(699, levelOverride);
-  else itemLevel = itemBaseLevel + itemLevelGain; */
 
   // If our item has a special level override then we'll use that. If not, our level is equal to our baseLevel and our levelGain.
-  if (protoItem.level.override !== 0) protoItem.level.finalLevel = Math.min(699, protoItem.level.override);
-  else protoItem.level.finalLevel = protoItem.level.baseLevel + protoItem.level.levelGain;
+  //if (protoItem.level.override !== 0) protoItem.level.finalLevel = Math.min(699, protoItem.level.override);
+  //else protoItem.level.finalLevel = protoItem.level.baseLevel + protoItem.level.levelGain;
 
   // Check Gems for Dom sockets
   if (gemID.length > 0) {
@@ -559,30 +603,32 @@ export function processItem(line: string, player: Player, contentType: contentTy
   // Auto upgrade vaults
   if (autoUpgradeAll) {
     const itemLevelCaps: { [key: string]: number } = { Explorer: 664, Adventurer: 678, Veteran: 690, Champion: 704, Hero: 717, Myth: 730 };
-    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
+    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
     const itemLevelCaps: { [key: string]: number } = { Explorer: 664, Adventurer: 678, Veteran: 690, Champion: 704, Hero: 717, Myth: 730 };
-    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level.finalLevel = itemLevelCaps[protoItem.upgradeTrack];
+    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   
-    const acceptableArmorTypes = getValidArmorTypes(player.spec);
-    const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
-    const itemData = getItem(protoItem.id, "Retail")
-    const isSuitable = (itemData.slot === "Back" ||
-            (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
-            itemData.slot === "Holdable" ||
-            itemData.slot === "Offhand" ||
-            (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
+  const acceptableArmorTypes = getValidArmorTypes(player.spec);
+  const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+  const itemData = getItem(protoItem.id, "Retail")
+  const isSuitable = (itemData.slot === "Back" ||
+          (itemData.itemClass === 4 && acceptableArmorTypes.includes(itemData.itemSubClass)) ||
+          itemData.slot === "Holdable" ||
+          itemData.slot === "Offhand" ||
+          (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
+  
   
 
+  
   // Add the new item to our characters item collection.
-  // Note that we're also verifying that the item is at least level 180 and that it exists in our item database.
-  if (protoItem.level.finalLevel > 180 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
+  // Note that we're also verifying that the item is at least level 50 and that it exists in our item database.
+  if (protoItem.level > 50 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     
-    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level.finalLevel, bonusIDS);
+    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level, bonusIDS);
     if (craftedIDs) item.craftedStats = craftedIDs;
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";

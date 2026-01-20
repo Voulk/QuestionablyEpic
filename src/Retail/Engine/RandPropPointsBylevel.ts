@@ -1,4 +1,3 @@
-/* All credit to the SimC devs for providing the raw data that was then transformed into the below format. */
 
 export const randPropPoints = [
   { level: 0, p1: 0, p8: 0, slotValues: [0, 0, 0, 0, 0] },
