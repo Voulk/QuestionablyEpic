@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.0 / 5.5.3",
+    update: 24,
+    date: "January 20",
+    changes: [ 
+      "Added limited support for Midnight Prepatch",
+    ]
+  },
       {
     version: "11.2.7 / 5.5.3",
     update: 23,

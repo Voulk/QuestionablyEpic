@@ -80,9 +80,9 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 5300000,
-      rawhps: 655000,
-      dps: 12000,
+      hps: 34200,
+      rawhps: 34200,
+      dps: 2000,
       fightLength: 400,
       reportID: "Default",
       bossName: "Default",
@@ -98,14 +98,14 @@ class CastModel {
         this.baseStatWeights = druidDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 30000 : 90000);
       }
-      else if (modelID === "Balanced") {
+      /*else if (modelID === "Balanced") {
         this.modelName = "Balanced";
         spellList = druidBalancedSpellData(contentType);
         specialQueries = druidBalancedSpecialQueries(contentType);
         this.baseStatWeights = druidBalancedStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 7000 : 180000);
 
-      }
+      }*/
 
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Herald of the Sun") {
@@ -163,6 +163,7 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
+      /*
       else if (modelID === "Chi-Ji (Beta)") {
         this.modelName = "Chi-Ji (Beta)"
         this.modelType["Raid"] = "CastModel";
@@ -173,7 +174,7 @@ class CastModel {
         specialQueries = chijiSpecialQueries(contentType);
         this.baseStatWeights = chijiStatWeights("Raid");
         this.fightInfo.dps = 600000;
-      }
+      }*/
 
     } else if (spec === SPEC.DISCPRIEST) {
         if (modelID === "Oracle (Beta)") {
@@ -187,13 +188,14 @@ class CastModel {
           this.baseStatWeights = discPriestOracleStatWeights(contentType);
           this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
         }
+        /*
         else {
           this.modelName = "Voidweaver";
           spellList = discPriestDefaultSpellData(contentType);
           specialQueries = discPriestDefaultSpecialQueries(contentType);
           this.baseStatWeights = discPriestDefaultStatWeights(contentType);
           this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
-        }
+        }*/
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";

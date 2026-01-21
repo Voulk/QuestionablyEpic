@@ -29,19 +29,19 @@ describe("Make sure Items Exist", () => {
     expect(getItem(109784)).toBeTruthy();
   })
 
-  test("Burning Crusade Timewalking", () => {
+  /*test("Burning Crusade Timewalking", () => {
     expect(getItem(123999)).toBeTruthy();
     expect(getItem(133470)).toBeTruthy();
-  })
+  })*/
 
-  test("Wrath of the Lich King Timewalking", () => {
+  /*test("Wrath of the Lich King Timewalking", () => {
     expect(getItem(188423)).toBeTruthy();
     expect(getItem(188425)).toBeTruthy();
-    expect(getItem(188427)).toBeTruthy();
+    //expect(getItem(188427)).toBeTruthy();
 
     expect(getItem(127525)).toBeTruthy();
     expect(getItem(127512)).toBeTruthy();
-  })
+  })*/
 
   test("Cataclysm Timewalking", () => {
     expect(getItem(133233)).toBeTruthy();

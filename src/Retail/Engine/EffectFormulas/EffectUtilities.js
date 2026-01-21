@@ -138,6 +138,7 @@ export function runGenericFlatProc(effect, itemLevel, player, contentType = "Rai
   if ('holyMasteryFlag' in effect) mult *= addSpecMastery(player.spec, setStats);
 
   if ('cooldown' in effect) return value * mult / effect.cooldown;
+
   else return value * mult / 60;
 
 }

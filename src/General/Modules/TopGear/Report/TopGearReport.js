@@ -344,9 +344,9 @@ function displayReport(
   };
 
   const topInfo = {
-    color: player.model.includes("Beta") ? "brick" : "transparent",
-    info: player.model.includes("Beta")
-      ? "This is a Beta playstyle model. Take results with a small degree of caution over the next few days."
+    color: (gameType === "Retail") ? "brick" : "transparent", //"transparent" player.model.includes("Beta") || 
+    info: (gameType === "Retail")
+      ? "QE Live Prepatch support is very light! Full support will return with Midnight. Take all results with caution."
       : "This is your best set of gear. You can see how close other sets are below!",
   };
 

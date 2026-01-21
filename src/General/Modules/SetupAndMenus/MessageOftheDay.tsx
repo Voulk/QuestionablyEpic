@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Prepatch support next week will be limited as usual. Full support will return for Midnight."
+    "Prepatch support is live but limited as usual. Full support will return for Midnight."
   ] : 
   [
     "Please report any bugs you find to the QE Live Discord.",
