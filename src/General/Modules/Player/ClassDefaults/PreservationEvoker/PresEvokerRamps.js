@@ -307,7 +307,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
     let currentStats = {...stats};
-    currentStats.mastery += 700;
+    currentStats.mastery += 12.158;
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);

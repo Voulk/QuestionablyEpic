@@ -537,7 +537,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  315; // 64 x 2.
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  21; // 64 x 2.
   enchants["Finger"] = "+315 " + highestWeight;
 
   // Chest
@@ -546,18 +546,18 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   enchants["Chest"] = "Crystalline Radiance";
 
   // Cape
-  bonus_stats.leech = (bonus_stats.leech || 0) + 1020;
+  bonus_stats.leech = (bonus_stats.leech || 0) + 67;
   enchants["Back"] = "Leeching Fangs";
 
   // Wrists
-  bonus_stats.leech += 2040;
+  bonus_stats.leech += 135;
   enchants["Wrist"] = "Armored Leech";
 
   // Belt
   //enchants["Waist"] = "Shadowed Belt Clasp";
 
   // Legs - Also gives 3/4/5% mana.
-  bonus_stats.intellect += 747;
+  bonus_stats.intellect += 8;
   enchants["Legs"] = "Sunset Spellthread";
 
   if (false) {
@@ -577,7 +577,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   else {
     // Weapon - Sophic Devotion
     let expected_uptime = convertPPMToUptime(2, 12);
-    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 3910 * expected_uptime;
+    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
 
     let wepEnchantName = "";
     if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
@@ -592,8 +592,8 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   }
 
   // Algari Mana Oil
-  bonus_stats.haste = (bonus_stats.haste || 0) + 232;
-  bonus_stats.crit = (bonus_stats.crit || 0) + 232;
+  bonus_stats.haste = (bonus_stats.haste || 0) + 15;
+  bonus_stats.crit = (bonus_stats.crit || 0) + 15;
 
   return enchants;
 }
@@ -624,8 +624,8 @@ export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Sta
     if (gemStats[stat] === 70) {
       // Do primary gem
       gemArray.push(primaryGems[stat]);
-      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 75;
-      bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
+      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 12;
+      //bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
       
     }
   })
@@ -706,12 +706,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
       // We are in second DR already, try and swap.
     }
-    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 2825;
+    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 60;
     selectedChoice = bestStat;
   }
   else {
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
-    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 2825;
+    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 60;
   }
 
   if (selectedChoice === "haste") enchants.flask = "Flask of Tempered Swiftness";
@@ -808,10 +808,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     } 
     if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
     // These are fallbacks for if we can't find an upgrade track.
-    else if (boots.level >= 720) setVariables.reshiiBoots = 0.5;
-    else if (boots.level > 710) setVariables.reshiiBoots = 0.4;
-    else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
-    else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+    else if (boots.level >= 160) setVariables.reshiiBoots = 0.5;
+    else if (boots.level > 150) setVariables.reshiiBoots = 0.4;
+    else if (boots.level > 140) setVariables.reshiiBoots = 0.3;
+    else if (boots.level > 130) setVariables.reshiiBoots = 0.2;
     
   }
 
