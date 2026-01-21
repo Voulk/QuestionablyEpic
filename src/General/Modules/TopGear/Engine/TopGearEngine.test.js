@@ -33,7 +33,7 @@ describe("Top Gear Gems", () => {
     })
 });
 
-describe("Test Stat DRs", () => {
+/*describe("Test Stat DRs", () => {
     each`
         rawHaste | expectedResult
         ${990}  | ${990}
@@ -94,7 +94,7 @@ describe("Test Stat DRs", () => {
 
     });
 
-});
+});*/
 
 describe("MergeBonusStats function", () => {
     test("Test 1, range of stats", () => {

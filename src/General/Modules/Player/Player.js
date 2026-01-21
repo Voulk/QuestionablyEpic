@@ -655,13 +655,13 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
       this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
-
+      // 1200 stats post-squish
       this.activeStats = {
-        intellect: 120000,
-        haste: 22000,
-        crit: 2550,
-        mastery: 18000,
-        versatility: 7000,
+        intellect: 750,
+        haste: 550,
+        crit: 100,
+        mastery: 450,
+        versatility: 200,
         stamina: 1900,
       };
     } else if (spec === SPEC.HOLYPALADIN) {
@@ -670,11 +670,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
       
       this.activeStats = {
-        intellect: 85000,
-        haste: 11200,
-        crit: 12000,
-        mastery: 10800,
-        versatility: 1900,
+        intellect: 750,
+        haste: 310,
+        crit: 350,
+        mastery: 440,
+        versatility: 210,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
@@ -683,11 +683,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Totemic (Coming Soon)", 2));
       this.activeStats = {
-        intellect: 120000,
-        haste: 14000,
-        crit: 18000,
-        mastery: 5200,
-        versatility: 14000,
+        intellect: 750,
+        haste: 540,
+        crit: 440,
+        mastery: 120,
+        versatility: 210,
         stamina: 1900,
       };
     } else if (spec === SPEC.DISCPRIEST) {
@@ -697,11 +697,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
 
       this.activeStats = {
-        intellect: 120000, 
-        haste: 12000,
-        crit: 21000,
-        mastery: 18000,
-        versatility: 2900,
+        intellect: 750, 
+        haste: 290,
+        crit: 400,
+        mastery: 490,
+        versatility: 250,
         stamina: 1900,
         critMult: 2,
       };
@@ -711,11 +711,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 120000,
-        haste: 5500,
-        crit: 21000,
-        mastery: 19500,
-        versatility: 6200,
+        intellect: 750,
+        haste: 240,
+        crit: 500,
+        mastery: 440,
+        versatility: 210,
         stamina: 1900,
       }
     }
@@ -724,12 +724,12 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
-          intellect: 120000,
-          haste: 10500,
-          crit: 14000,
-          mastery: 24000,
-          versatility: 3900,
-          stamina: 30000,
+          intellect: 750,
+          haste: 390,
+          crit: 120,
+          mastery: 550,
+          versatility: 390,
+          stamina: 3000,
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
@@ -740,11 +740,11 @@ export class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 120000,
-        haste: 22000,
-        crit: 16000,
-        mastery: 3600,
-        versatility: 8000,
+        intellect: 750,
+        haste: 500,
+        crit: 480,
+        mastery: 120,
+        versatility: 200,
         stamina: 1900,
       };
     } 

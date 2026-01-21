@@ -1034,7 +1034,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || (key.classRestriction.includes(player.spec) || player.spec.includes(key.classRestriction))) &&
-      (gameType === "Classic" || itemLevel > 640) &&
+      (gameType === "Classic" || itemLevel > 70) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -1075,7 +1075,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "Rep & Professions" && sources) sourceCheck = [-12, -6, -4].includes(sources.instanceId);
       else if (!sources) sourceCheck = false;
     }
-
+     
     const slot = getItemProp(item.id, "slot", gameType);
     if (
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
@@ -1087,11 +1087,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         && sourceCheck) { 
           const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
-
+         
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if ([243308, 243307, 243306, 243305].includes(item.id)) {
             // Special boots stuff
-            if (newItem.level === 730) newItem.bonusIDS += "13503";
+            if (newItem.level === 170) newItem.bonusIDS += "13503";
             else newItem.bonusIDS += "13504";
           }
           if (gameType === "Retail") newItem.quality = 4;
@@ -1235,7 +1235,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       const weight = player.getStatWeight(contentType, stat);
-      score += statSum * weight / 120000 * player.getHPS(contentType);
+      score += statSum * weight / 760 * player.getHPS(contentType);
     }
   }
 
