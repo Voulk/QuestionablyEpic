@@ -344,11 +344,11 @@ export default function ItemBar(props) {
     { label: "Throne Heroic", value: -1, gameType: "Classic", source: "T15+", icon: "totHeroic" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
-    { label: "Manaforge H", value: 717, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
-    { label: "Manaforge M", value: 730, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
-    { label: "S3 Mythic+", value: 723, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
+    { label: "Manaforge H", value: 154, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "Manaforge M", value: 170, gameType: "Retail", source: "Manaforge", icon: "undermineIcon" },
+    { label: "S3 Mythic+", value: 170, gameType: "Retail", source: "S3 Dungeons", icon: "retailDungeonIcon" },
     { label: "Cartel Chips H", value: 717, gameType: "Retail", source: "S3 Dinar", icon: "celestialVendor" },
-    { label: "Cartel Chips M", value: 730, gameType: "Retail", source: "S3 Dinar", icon: "CraftingIcon" },
+    { label: "Cartel Chips M", value: 154, gameType: "Retail", source: "S3 Dinar", icon: "CraftingIcon" },
   ]
 
   return (
