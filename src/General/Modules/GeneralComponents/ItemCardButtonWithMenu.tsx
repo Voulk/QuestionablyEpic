@@ -35,7 +35,7 @@ const getMenuItems = (item: any): MenuItemType[] => {
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
   //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
   const fullItemLevels = [118, 121, 124, 128, 131, 134, 137, 140, 144, 147, 150, 154, 157, 160, 163, 167, 170];
-  const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 154, Myth: 170, Circlet: 155, "Runed Crafted": 151, "Gilded Crafted": 167 };
+  const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 157, Myth: 170, Circlet: 155, "Runed Crafted": 154, "Gilded Crafted": 167 };
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
