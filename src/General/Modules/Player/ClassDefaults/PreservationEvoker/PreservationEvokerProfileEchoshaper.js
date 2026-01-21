@@ -40,7 +40,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const localSettings = {gracePeriodOverheal: 0.7};
     const tier = playerData.effectList ? playerData.effectList.filter(effect => effect.type === "set bonus").map(effect => effect.name) : [];
 
-    state.currentStats.crit += (15 * 700);
+    state.currentStats.crit += (15 * 12.158);
 
     const talents = {};
     for (const [key, value] of Object.entries(state.talents)) {
