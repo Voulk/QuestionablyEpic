@@ -258,17 +258,17 @@ const specTalents: TalentTree = {
     }},
 
     /* Riptide has a X% chance to upgrade your next Healing Stream Totem to Stormstream Totem which heals for Y% more, heals Z additional $Lally:allies; at $s4% effectiveness, and heals $s5 injured allies for $1268684s1 healing when used. */
-    "Stormstream Totem1": {id: 1267016, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem1": {id: 1267016, values: [6.0, 10.0, 1.0, 100.0, 2.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
     /* Healing Stream and Stormstream Totem healing increased by X%. */
-    "Stormstream Totem2": {id: 1267093,  values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem2": {id: 1267093,  values: [30.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
     /* Casting $?s443454[Ancestral][Nature's] Swiftness grants a use of Stormstream Totem and Stormstream Totem no longer consumes a charge of Healing Stream Totem when used. */
-    "Stormstream Totem3": {id: 1267120, values: [], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Stormstream Totem3": {id: 1267120, values: [0.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 }

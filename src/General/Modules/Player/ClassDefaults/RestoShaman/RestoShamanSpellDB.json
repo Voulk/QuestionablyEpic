@@ -187,7 +187,7 @@
             },
             "castTime": 2.0,
             "cost": 0.2,
-            "coeff": 0.7303,
+            "coeff": 0.7302,
             "aura": 4.5,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -307,7 +307,7 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 0.4631,
+            "coeff": 0.463,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -335,7 +335,7 @@
             },
             "castTime": 0.0,
             "cost": 0.0,
-            "coeff": 2.1291,
+            "coeff": 2.1292,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [

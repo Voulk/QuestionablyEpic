@@ -4,7 +4,8 @@
             "displayInfo": {
                 "id": 20473,
                 "icon": "spell_holy_searinglight",
-                "spellName": "Holy Shock"
+                "spellName": "Holy Shock",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 2.8,
@@ -35,13 +36,15 @@
             "displayInfo": {
                 "id": 85222,
                 "icon": "spell_paladin_lightofdawn",
-                "spellName": "Light of Dawn"
+                "spellName": "Light of Dawn",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
             },
+            "targets": 5,
             "coeff": 2.7821,
             "aura": 1.0,
             "expectedOverheal": 0.25,
@@ -58,7 +61,8 @@
             "displayInfo": {
                 "id": 156322,
                 "icon": "inv_torch_thrown",
-                "spellName": "Eternal Flame"
+                "spellName": "Eternal Flame",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.6,
@@ -99,7 +103,8 @@
             "displayInfo": {
                 "id": 85673,
                 "icon": "inv_helmet_96",
-                "spellName": "Word of Glory"
+                "spellName": "Word of Glory",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.6,
@@ -137,7 +142,8 @@
             "displayInfo": {
                 "id": 19750,
                 "icon": "spell_holy_flashheal",
-                "spellName": "Flash of Light"
+                "spellName": "Flash of Light",
+                "cat": "heal"
             },
             "castTime": 1.5,
             "cost": 0.6,
@@ -162,7 +168,8 @@
             "displayInfo": {
                 "id": 82326,
                 "icon": "spell_holy_surgeoflight",
-                "spellName": "Holy Light"
+                "spellName": "Holy Light",
+                "cat": "heal"
             },
             "castTime": 2.0,
             "cost": 7.0,
@@ -248,7 +255,8 @@
             "displayInfo": {
                 "id": 415091,
                 "icon": "ability_paladin_shieldofvengeance",
-                "spellName": "Shield of the Righteous"
+                "spellName": "Shield of the Righteous",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.0,
@@ -279,7 +287,8 @@
             "displayInfo": {
                 "id": 20271,
                 "icon": "spell_holy_righteousfury",
-                "spellName": "Judgment"
+                "spellName": "Judgment",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.6,
@@ -314,7 +323,8 @@
             "displayInfo": {
                 "id": 24275,
                 "icon": "inv12_ability_paladin_hammerofwrath",
-                "spellName": "Hammer of Wrath"
+                "spellName": "Hammer of Wrath",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.6,
@@ -354,7 +364,8 @@
             "displayInfo": {
                 "id": 35395,
                 "icon": "spell_holy_crusaderstrike",
-                "spellName": "Crusader Strike"
+                "spellName": "Crusader Strike",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "cost": 0.6,
@@ -384,7 +395,8 @@
             "displayInfo": {
                 "id": 26573,
                 "icon": "spell_holy_innerfire",
-                "spellName": "Consecration"
+                "spellName": "Consecration",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "cost": 0.0,

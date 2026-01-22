@@ -207,7 +207,7 @@ const specTalents: TalentTree = {
     }},
 
     /* X% of Word of Glory and Light of Dawn's healing is converted into Holy damage that strikes a nearby enemy. */
-    "Liberation": {id: 461287, values: [20.0],  points: 0, maxPoints: 1, icon: "ability_paladin_toweroflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Liberation": {id: 461287, values: [12.0],  points: 0, maxPoints: 1, icon: "ability_paladin_toweroflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -222,7 +222,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Beacon of Light transfers an additional X% of the amount healed. */
-    "Commanding Light": {id: 387781, values: [5.0],  points: 0, maxPoints: 1, icon: "ability_paladin_beaconoflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Commanding Light": {id: 387781, values: [5.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_paladin_beaconoflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
