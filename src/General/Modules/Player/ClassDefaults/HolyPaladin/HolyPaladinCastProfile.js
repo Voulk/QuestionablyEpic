@@ -14,9 +14,6 @@ const getCPM = (profile, spellName) => {
     return cpm;
 }
 
-const getSpellEntry = (profile, spellName, index = 0) => {
-    return profile.filter(spell => spell.spell === spellName)[index]
-}
 
 const getBeaconHealing = (state, healingVal, spellName) => {
         let beaconHealing = 0;
