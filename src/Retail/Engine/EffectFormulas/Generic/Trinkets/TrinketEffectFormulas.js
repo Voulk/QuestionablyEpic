@@ -11,7 +11,7 @@ import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest
 
 
 export function getAllTrinketData() {
-  return raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData);
+  return raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData, );
 }
 
 // Returns the value of a trinket effect while active. This is different to its average value which is typically what we'll use.

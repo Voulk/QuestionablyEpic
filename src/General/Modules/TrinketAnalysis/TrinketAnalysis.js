@@ -163,14 +163,23 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
 const handleDownload = () => {
   // Compile trinket data
   const allTrinketData = getAllTrinketData();
+  const toPrint = {}
 
-  const toPrint = allTrinketData.map((trinketX => {
+  console.log(allTrinketData.length)
+  allTrinketData.forEach((trinketX => {
+
+    toPrint[trinketX.name] = {description: trinketX.addonDescription || ""};
+    if ('effects' in trinketX && 'ppm' in trinketX.effects[0]) {
+      toPrint[trinketX.name].ppm = trinketX.effects[0].ppm;
+    }
+  }))
+  /*const toPrint = allTrinketData.map((trinketX => {
     return {
       id: trinketX.id,
       name: trinketX.name,
       description: trinketX.addonDescription || "",
     }
-  }))
+  }))*/
 
   const jsonString = JSON.stringify(toPrint);
 
