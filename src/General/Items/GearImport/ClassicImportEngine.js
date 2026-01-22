@@ -152,10 +152,13 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     // Blue items gain 4 ilvl per upgrade.
     // Epic items gain 8 ilvl per upgrade.
     // We won't check if an item can be upgraded at all here because they are imports.
+    const exceptionList = [95186, 95188, 95177, 95164, 95147, 95195, 95193, 95150, 95200, 95163, 95182, 95151, 95185, 95183, 95190]
     let baseRarity = getItemProp(itemID, "quality", "Classic");
+    if (!(itemID in exceptionList)) {
+      if (itemLevel > 520 && itemLevel !== 528 && itemLevel !== 541 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += 3 * upgradeLevel;
+      else if (itemLevel < 520 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
+    }
 
-    if (itemLevel > 520 && itemLevel !== 528 && itemLevel !== 541 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += 3 * upgradeLevel;
-    else if (itemLevel < 520 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
   }
 
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
