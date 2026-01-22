@@ -750,6 +750,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const gemStats = getGemStats(enchants["Gems"]);
 
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+
     compileStats(bonus_stats, gemStats);
   }
   if (enchants["Gems"].length > 1) {
@@ -847,7 +848,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
-    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 658;
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 150;
 
     //const comboSetting = getSetting(userSettings, "circletOptions");
     let combo = [];
@@ -882,8 +883,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     effectStats.push(discStats);
   }
-
+  
   const mergedEffectStats = mergeBonusStats(effectStats);
+  
 
   // Post-effect overrides. Use these very sparingly.
   if (player.spec === "Preservation Evoker" && castModel.modelName === "Flameshaper") {
