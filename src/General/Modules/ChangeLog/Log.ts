@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.0 / 5.5.3",
+    update: 25,
+    date: "January 21",
+    changes: [ 
+      "Fixed various issues with unsquished items that snuck through, both in QE Live and in-game.",
+    ]
+  },
   {
     version: "12.0 / 5.5.3",
     update: 24,
