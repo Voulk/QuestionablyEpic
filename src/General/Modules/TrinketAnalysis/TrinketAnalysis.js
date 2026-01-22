@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../../Items/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
@@ -23,6 +23,8 @@ import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
+import { downloadJson } from "./TrinketJSONDownload"
+import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -156,6 +158,24 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
   const highestLevel = Math.min(item.levelRange[item.levelRange.length - 1], maxLevel);
 
   return trinket["i" + highestLevel];
+};
+
+const handleDownload = () => {
+  // Compile trinket data
+  const allTrinketData = getAllTrinketData();
+
+  const toPrint = allTrinketData.map((trinketX => {
+    return {
+      id: trinketX.id,
+      name: trinketX.name,
+      description: trinketX.addonDescription || "",
+    }
+  }))
+
+  const jsonString = JSON.stringify(toPrint);
+
+  // Download them
+  downloadJson(jsonString, 'QE-trinket-data.json');
 };
 
 export default function TrinketAnalysis(props) {
@@ -507,6 +527,11 @@ export default function TrinketAnalysis(props) {
                         </ToggleButton>
                       </Tooltip>
                     </Grid>
+                    <Grid item>
+                      <Button variant="contained" onClick={handleDownload}>
+                        Download JSON
+                      </Button>   
+                    </Grid>
                   </Grid>
                 </Grid>
               ) : (
@@ -515,7 +540,7 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-          
+ 
       <div id="qelivead2"></div>
       {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
