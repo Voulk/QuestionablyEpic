@@ -4,7 +4,7 @@ import { otherTrinketData } from "./OtherTrinketData";
 import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { embellishmentData } from "Retail/Engine/EffectFormulas/Generic/Embellishments/EmbellishmentData";
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../../EffectUtilities";
-import { correctCasing, getItemProp } from "General/Engine/ItemUtilities";
+import { correctCasing, getItemProp, getItemAllocations, calcStatsAtLevel } from "General/Engine/ItemUtilities";
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 
 import { encounterDB, timewalkingDB } from "Databases/InstanceDB"
@@ -47,6 +47,18 @@ const getTrinketDropLoc = (trinketID) => {
 export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerSettings, trinketID) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     
+    // Handle Passive Stats
+    let itemAllocations = getItemAllocations(trinketID);
+    
+    const trinketBaseStats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
+    trinketDescription.push("Passive Stats")
+
+    Object.keys(trinketBaseStats).forEach((statName) => {    
+        if (trinketBaseStats[statName] > 0) trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketBaseStats[statName]))
+        
+    });
+
+    // Effect Stats
 
     const trinketData = getTrinketData(trinketName);
     if (trinketData === undefined) return [];

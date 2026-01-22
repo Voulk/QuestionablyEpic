@@ -2707,29 +2707,6 @@ const oldTrinketData = [
   },
   {
     /* ---------------------------------------------------------------------------------------------- */
-    /*                                    Emerald Coach's Whistle                                      */
-    /* ---------------------------------------------------------------------------------------------- */
-    /* 
-    */
-    name: "Emerald Coach's Whistle",
-    effects: [
-      { // Mastery portion
-        coefficient: 0.780421,
-        table: -7,
-        stat: "mastery",
-        duration: 10,
-        ppm: 1,
-      },
-    ],
-    runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats = {};
-      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
-      if (getSetting(additionalData.settings, 'includeGroupBenefits')) bonus_stats.allyStats = bonus_stats.mastery;
-      return bonus_stats;
-    }
-  },
-  {
-    /* ---------------------------------------------------------------------------------------------- */
     /*                                     Water's Beating Heart                                      */
     /* ---------------------------------------------------------------------------------------------- */
     /* Armor bonus not included (and rarely useful).

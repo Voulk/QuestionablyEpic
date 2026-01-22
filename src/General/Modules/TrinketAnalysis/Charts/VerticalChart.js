@@ -139,6 +139,7 @@ export default class VerticalChart extends PureComponent {
       //const { x, y, payload } = props;
       const row = payload?.payload ?? data?.[payload.index];
       const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
+
       //console.log(row);
       return (
         <g transform={`translate(${x},${y})`}>
@@ -164,7 +165,7 @@ export default class VerticalChart extends PureComponent {
                   return (
                     <span key={key}/* style={{ fontWeight: "bold" }}*/
                     style={{ 
-                      fontWeight: (index === 0 || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Drops from")) ? "bold" : "normal", // Make the first entry bold
+                      fontWeight: (index === 0 || key == "Passive Stats" || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Drops from")) ? "bold" : "normal", // Make the first entry bold
                       color: index === 0 ? "yellow" : key.includes("Drops from") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
                     }}
                     >

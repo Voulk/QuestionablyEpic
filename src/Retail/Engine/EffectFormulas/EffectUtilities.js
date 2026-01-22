@@ -290,7 +290,7 @@ export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1,
  * @returns A flat value representing the in-game effect number at whatever item level we're given.
  */
 export function processedValue(data, itemLevel, efficiency = 1, roundType = "floor") {
-  const value = data.coefficient * getScalarValue(data.table, itemLevel) * efficiency;
+  const value = data.coefficient * getScalarValue(data.scalingClass, itemLevel) * efficiency;
   if (roundType === "floor") return Math.floor(value);
   else if (roundType === "ceil") return Math.ceil(value);
   else if (roundType === "round") return Math.round(value);
