@@ -273,7 +273,7 @@ export const embellishmentData = [
 
       
       ['haste', 'crit', 'versatility', 'mastery'].forEach((stat) => {
-        bonus_stats[stat] = 89 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
+        bonus_stats[stat] = 1 /*processedValue(data[0], itemLevel)*/ * averageStacks / 4;
         if (armorPatch) bonus_stats[stat] *= 2;
       })
 

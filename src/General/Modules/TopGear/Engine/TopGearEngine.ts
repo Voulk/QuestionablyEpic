@@ -78,11 +78,11 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 147 && gem.stats[littleStat] === 49);
+                                        && gem.stats[bigStat] === 10 && gem.stats[littleStat] === 3);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
-  else return 192945; // Default fallback. Report error.                               
+  else return 213482; // Default fallback. Report error.                               
 }
 
 // Return an array of gem IDs based on the spec and content type. 
@@ -141,7 +141,13 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
 function getGemStats(gemArray: number[]) {
   const gem_stats: Stats = {};
   gemArray.forEach(gem => {
-    const gemStats = gemDB.filter(g => g.id === gem)[0].stats;
+    const gemData = gemDB.filter(g => g.id === gem)[0];
+    if (!gemData) {
+      console.error("Can't find gem ID: " + gem);
+      return {}
+    }
+    const gemStats = gemData.stats;
+    
     Object.keys(gemStats).forEach(stat => {
       gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
     });
@@ -537,7 +543,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  315; // 64 x 2.
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  21; // 64 x 2.
   enchants["Finger"] = "+315 " + highestWeight;
 
   // Chest
@@ -546,18 +552,18 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   enchants["Chest"] = "Crystalline Radiance";
 
   // Cape
-  bonus_stats.leech = (bonus_stats.leech || 0) + 1020;
+  bonus_stats.leech = (bonus_stats.leech || 0) + 67;
   enchants["Back"] = "Leeching Fangs";
 
   // Wrists
-  bonus_stats.leech += 2040;
+  bonus_stats.leech += 135;
   enchants["Wrist"] = "Armored Leech";
 
   // Belt
   //enchants["Waist"] = "Shadowed Belt Clasp";
 
   // Legs - Also gives 3/4/5% mana.
-  bonus_stats.intellect += 747;
+  bonus_stats.intellect += 8;
   enchants["Legs"] = "Sunset Spellthread";
 
   if (false) {
@@ -577,7 +583,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   else {
     // Weapon - Sophic Devotion
     let expected_uptime = convertPPMToUptime(2, 12);
-    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 3910 * expected_uptime;
+    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
 
     let wepEnchantName = "";
     if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
@@ -592,8 +598,8 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   }
 
   // Algari Mana Oil
-  bonus_stats.haste = (bonus_stats.haste || 0) + 232;
-  bonus_stats.crit = (bonus_stats.crit || 0) + 232;
+  bonus_stats.haste = (bonus_stats.haste || 0) + 15;
+  bonus_stats.crit = (bonus_stats.crit || 0) + 15;
 
   return enchants;
 }
@@ -624,8 +630,8 @@ export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Sta
     if (gemStats[stat] === 70) {
       // Do primary gem
       gemArray.push(primaryGems[stat]);
-      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 75;
-      bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
+      bonus_stats['intellect'] = (bonus_stats['intellect'] || 0) + 12;
+      //bonus_stats[stat] = (bonus_stats[stat] || 0) + 66;
       
     }
   })
@@ -658,6 +664,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   let enchantStats = {};
   let evalStats: Stats = {};
   let hardScore = 0;
+  
 
   let bonus_stats = {
     intellect: 0,
@@ -697,7 +704,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
-
+  
   // == Flask / Phials ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
@@ -706,12 +713,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
       // We are in second DR already, try and swap.
     }
-    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 2825;
+    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 60;
     selectedChoice = bestStat;
   }
   else {
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
-    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 2825;
+    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 60;
   }
 
   if (selectedChoice === "haste") enchants.flask = "Flask of Tempered Swiftness";
@@ -743,6 +750,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const gemStats = getGemStats(enchants["Gems"]);
 
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
+
     compileStats(bonus_stats, gemStats);
   }
   if (enchants["Gems"].length > 1) {
@@ -756,7 +764,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
   compileStats(gearStats, bonus_stats);
-
 
 
   //builtSet.baseStats = gearStats;
@@ -776,7 +783,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const usedSets: any[] = []
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
-
       const itemSet: ItemEffect[] = getItemSet(set, setBonuses[set], player.getSpec())
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
@@ -808,13 +814,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     } 
     if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
     // These are fallbacks for if we can't find an upgrade track.
-    else if (boots.level >= 720) setVariables.reshiiBoots = 0.5;
-    else if (boots.level > 710) setVariables.reshiiBoots = 0.4;
-    else if (boots.level > 691) setVariables.reshiiBoots = 0.3;
-    else if (boots.level > 684) setVariables.reshiiBoots = 0.2;
+    else if (boots.level >= 160) setVariables.reshiiBoots = 0.5;
+    else if (boots.level > 150) setVariables.reshiiBoots = 0.4;
+    else if (boots.level > 140) setVariables.reshiiBoots = 0.3;
+    else if (boots.level > 130) setVariables.reshiiBoots = 0.2;
     
   }
-
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -843,7 +848,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
-    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 658;
+    const itemLevel = builtSet.itemList.filter(item => item.id === 228411)[0].level || 150;
 
     //const comboSetting = getSetting(userSettings, "circletOptions");
     let combo = [];
@@ -878,8 +883,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     effectStats.push(discStats);
   }
-
+  
   const mergedEffectStats = mergeBonusStats(effectStats);
+  
 
   // Post-effect overrides. Use these very sparingly.
   if (player.spec === "Preservation Evoker" && castModel.modelName === "Flameshaper") {
