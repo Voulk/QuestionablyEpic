@@ -11,7 +11,6 @@ export default function TopSetStatsPanel(props) {
   const statList = props.statList;
   const { t } = useTranslation();
   const gameType = props.gameType;
-
   const stats =
     gameType === "Retail"
       ? [

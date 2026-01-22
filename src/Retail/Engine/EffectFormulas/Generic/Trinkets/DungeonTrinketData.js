@@ -92,7 +92,7 @@ export const dungeonTrinketData =
           coefficient: 22.20824 * 1.2, // Heal portion
           table: -9,
           secondaries: ['crit', 'versatility'],
-          efficiency: 0.55,
+          efficiency: 0.52,
           meteor: 0.3,
           avgTargetsHit: 3, // Real average will be much higher than this, but we're interested in its meteor effect here, so it's really an average where the cap per event is 5.
           ppm: 3,

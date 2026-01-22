@@ -95,11 +95,13 @@ export const raidTrinketData: Effect[] = [
   // Throne of Thunder
     {
     name: "Lightning-Imbued Chalice", 
-    effects: [ // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Check if proc scales with spell power.
+    effects: [ 
+      // Heals have chance to give buff. When 6 stacks of buff = random target is healed. Scales with spec passives, and scales with sp.
       { 
         value: {0: 0},
-        coefficient: 18.90800094604,
-        efficiency: 0.94,
+        coefficient: 18.90800094604, // Confirmed in game
+        spScaling: 1.25,
+        efficiency: 0.65,
         ppm: 5.78 / 6,
         stat: "hps",
         secondaries: ['haste', 'crit'],
@@ -136,16 +138,16 @@ export const raidTrinketData: Effect[] = [
     effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
       { 
         value: {0: 0},
-        coefficient: 0,
+        coefficient: 2.47499990463,
         ppm: 0.85,
         stat: "intellect",
+        secondaries: ['crit'],
         duration: 10,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
-      let bonus_stats: Stats = {};
-
-
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
       return bonus_stats;
     }
   },

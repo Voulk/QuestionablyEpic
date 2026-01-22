@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializeShamanSet } from "General/Modules/Player/ClassDefaults/Classic/Shaman/RestoShamanClassic";
 import { shamanTalents } from "./ClassicShamanSpellDB";
 import each from "jest-each";

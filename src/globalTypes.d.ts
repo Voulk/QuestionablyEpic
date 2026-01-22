@@ -1,3 +1,51 @@
+
+interface TickData {
+    tickRate: number;
+    canPartialTick: boolean;
+    tickOnCast: boolean;
+}
+
+interface SpellDB {
+    [spellName: string]: SpellData[]; // e.g. "Rejuvenation": [ Spell ]
+}
+
+type SpellData = {
+    displayInfo: {
+        id: number;
+        icon: string;
+        spellName: string;
+    };
+    castTime: number;
+    cost: number;
+    coeff: number;
+    aura: number;
+    expectedOverheal: number;
+    secondaries: string[]; 
+    spellType: "damage" | "buff" | "heal";
+    buffType?: string;
+    buffDuration?: number;
+    tickData?: TickData;
+    hasScript?: boolean;
+    specialFields?: { [key: string]: any }; // For any extra fields we might need later.
+    targets?: number;
+}
+
+interface TalentTemplate {
+    points: number;
+    maxPoints: number;
+    icon: string;
+    id: number;
+    values: number[];
+    select: boolean;
+    tier: number;
+    heroTree?: string;
+    runFunc: (state: any, spellDB: SpellDB, talentData: number[], points: number) => void;
+}
+
+interface TalentTree {
+    [key: string]: TalentTemplate;
+}
+
 declare type Stats = {
     [key: string]: number;
     intellect?: number;
@@ -134,7 +182,7 @@ declare type ClassicEffectData =
     secondaries?: Array<string>;
     efficiency?: number;
     specMod?: { [key: string]: number };
-    spScaling?: { [key: number]: number };
+    spScaling?: number;
   }
 
 

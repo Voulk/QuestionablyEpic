@@ -72,7 +72,6 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
 
       return bonus_stats;
@@ -444,7 +443,7 @@ export const otherTrinketData = [
     }
   },
   { 
-    name: "Algari Alchemist Stone",
+    name: "Magister's Alchemist Stone",
     description: "High variance. Beware the low uptime. Requires a valuable spark to craft which you're usually better off spending elsewhere.",
     effects: [
       {

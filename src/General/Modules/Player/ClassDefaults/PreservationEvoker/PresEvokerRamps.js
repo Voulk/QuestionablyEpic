@@ -2,11 +2,12 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
-import { applyLoadoutEffects } from "./PresEvokerTalents";
+import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
 
 export const EVOKERCONSTANTS = {
     
@@ -307,7 +308,7 @@ export const runCastSequence = (sequence, stats, settings = {}, incTalents = {},
     // Add base Mastery bonus.
     // We'd like to convert this to a % buff at some point since it will be incorrectly reduced by DR as-is.
     let currentStats = {...stats};
-    currentStats.mastery += 700;
+    currentStats.mastery += STATCONVERSION.MASTERY;
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
     
     const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);

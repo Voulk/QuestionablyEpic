@@ -283,6 +283,7 @@
         "upgradeFinder": "Upgrade Finder",
         "embellishments": "Embellishments",
         "enchants": "Enchants",
+        "specSpecific": "Spec Specific",
 
         "enchantItems": {
           "title": "Enchant Items",
@@ -432,6 +433,14 @@
           "title": "Gem Behavior",
           "tooltip": "Most of the time matching gems is a good idea, but in niche scenarios it can be worth ignoring them. Don't change this setting unless you know what you're doing."
         },
+        "classicGemTypes": {
+          "title": "Gem Types",
+          "tooltip": "Choose whether to focus on Intellect or Secondary stats for your gems. Generally secondary gems will take over as you equip more Throne of Thunder gear."
+        },
+        "classicMetaGem": {
+          "title": "Meta Gem",
+          "tooltip": "The legendary meta gem is always better, but it'll take a while to acquire it so we'll default to a regular one for now."
+        },
         "metric": {
           "title": "Scoring Metric",
           "tooltip": "Pick whether to include DPS value in your score or not."
@@ -477,6 +486,10 @@
         "hasteBuff": {
           "title": "Haste Buffs",
           "tooltip": "Pick which haste buffs you have active to in raid. Haste Aura is provided my Moonkin, Shadow Priest and Shaman and applies to the entire raid. Dark Intent is 3% but only applies to one target."
+        },
+        "druidLevelSixtyTalent": {
+          "title": "Druid L60 Talent",
+          "tooltip": "Pick which level 60 talent you'd like to optimize for."
         }
 
         
@@ -593,7 +606,8 @@
     "Yes": "Yes",
     "itemTags": {
       "effect": "Effect",
-      "greatvault": "Great Vault"
+      "greatvault": "Great Vault",
+      "exclusive": "Dinar "
     }
   }
 }

@@ -56,7 +56,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Reckless Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, haste: 160 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 88943,
@@ -64,7 +64,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Reckless Sardonyx",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 100, haste: 200 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76602,
@@ -72,7 +72,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Perfect Reckless Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_perfectcut_orange",
     stats: { intellect: 80, haste: 160 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76536,
@@ -80,7 +80,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Reckless Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 60, haste: 120 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76660,
@@ -88,7 +88,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Potent Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, crit: 160 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76594,
@@ -96,7 +96,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Perfect Potent Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_perfectcut_orange",
     stats: { intellect: 80, crit: 160 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76528,
@@ -104,7 +104,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Potent Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 60, crit: 120 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 88942,
@@ -112,7 +112,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Potent Sardonyx",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 100, crit: 200 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76672,
@@ -120,7 +120,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Artful Vermilion Onyx",
     icon: "inv_misc_gem_x4_rare_cut_orange",
     stats: { intellect: 80, mastery: 160 },
-    color: "yellow", //"orange",
+    color: "orange", //"orange",
   },
   {
     id: 76606,
@@ -128,7 +128,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Perfect Artful Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_perfectcut_orange",
     stats: { intellect: 80, mastery: 160 },
-    color: "yellow", //"purple",
+    color: "orange", //"purple",
   },
   {
     id: 76540,
@@ -136,7 +136,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Perfect Artful Tiger Opal",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 60, mastery: 120 },
-    color: "yellow", //"purple",
+    color: "orange", //"purple",
   },
   {
     id: 88931,
@@ -144,7 +144,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Artful Sardonyx",
     icon: "inv_misc_gem_x4_uncommon_cut_orange",
     stats: { intellect: 100, mastery: 200 },
-    color: "yellow", //"purple",
+    color: "orange", //"purple",
   },
   {
     id: 76620,
@@ -152,7 +152,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Perfect Purified Roguestone",
     icon: "inv_misc_gem_x4_uncommon_perfectcut_purple",
     stats: { intellect: 80, spirit: 160 },
-    color: "blue", //"purple",
+    color: "purple", //"purple",
   },
   {
     id: 76686,
@@ -160,7 +160,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Purified Imperial Amethyst",
     icon: "inv_misc_gem_x4_rare_cut_purple",
     stats: { intellect: 80, spirit: 160 },
-    color: "blue", //"purple",
+    color: "purple", //"purple",
   },
   {
     id: 76554,
@@ -168,7 +168,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Purified Roguestone",
     icon: "inv_misc_gem_x4_uncommon_cut_purple",
     stats: { intellect: 60, spirit: 120 },
-    color: "blue", //"purple",
+    color: "purple", //"purple",
   },
   {
     id: 88958,
@@ -176,7 +176,7 @@ export const classicGemDB: GemEntry[] = [
     name: "Purified Zyanite",
     icon: "inv_misc_gem_x4_uncommon_cut_purple",
     stats: { intellect: 100, spirit: 200 },
-    color: "blue", //"purple",
+    color: "purple", //"purple",
   },
 
   // Others

@@ -19,11 +19,13 @@ import { runCastSequence as classicSequence } from "General/Modules/Player/Class
 
 import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
-import { SHAMANSPELLDB } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB";
-import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDB";
-import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDB";
+import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDBWarWithin";
+import shamanSpellDB from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB.json"
 
+import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDBTWW";
+import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDBTWW";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
+
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
 import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
@@ -78,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 const getSpellDB = (spec) => {
   if (spec === "Preservation Evoker") return EVOKERSPELLDB;
   else if (spec === "Discipline Priest") return DISCSPELLS;
-  else if (spec === "Restoration Shaman") return SHAMANSPELLDB;
+  else if (spec === "Restoration Shaman") return shamanSpellDB;
   else if (spec === "Holy Paladin") return PALADINSPELLDB;
   else if (spec === "Restoration Druid") return DRUIDSPELLDB;
   else if (spec === "Mistweaver Monk") return MONKSPELLS;
@@ -95,7 +97,7 @@ const getSpellDB = (spec) => {
 const getTalentDB = (spec) => {
   if (spec === "Preservation Evoker") return evokerTalents;
   else if (spec === "Discipline Priest") return discTalents;
-  else if (spec === "Restoration Shaman") return null;
+  else if (spec === "Restoration Shaman") return shamanTalents;
   else if (spec === "Holy Paladin") return palaTalents;
   else if (spec === "Restoration Druid") return druidTalents;
   else if (spec === "Mistweaver Monk") return monkTalents;
@@ -174,6 +176,7 @@ const roundN = (num, places) => {
 export default function SequenceGenerator(props) {
   const selectedSpec = props.player.getSpec();
   const spellDB = getSpellDB(selectedSpec);
+  console.log(spellDB);
   const gameType = useSelector((state) => state.gameType);
   const spellCategories = ["Healing", "Damage", "Cooldowns & Other"];
 
@@ -209,9 +212,9 @@ export default function SequenceGenerator(props) {
   };
 
   const spellList = {
-    Damage: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "damage" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
-    Healing: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].spellData?.cat === "heal" && (spellDB[spell][0].spellData?.spec === selectedSpec || !spellDB[spell][0].spellData.spec))),
-    "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].spellData?.cat === "cooldown"),
+    Damage: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].displayInfo?.cat === "damage" && (spellDB[spell][0].displayInfo?.spec === selectedSpec || !spellDB[spell][0].displayInfo.spec))),
+    Healing: Object.keys(spellDB).filter((spell) => (spellDB[spell][0].displayInfo?.cat === "heal" && (spellDB[spell][0].displayInfo?.spec === selectedSpec || !spellDB[spell][0].displayInfo.spec))),
+    "Cooldowns & Other": Object.keys(spellDB).filter((spell) => spellDB[spell][0].displayInfo?.cat === "cooldown"),
   };
   const talentList = Object.keys(talentDB).filter((talent) => talentDB[talent].select === true);
   const [talents, setTalents] = useState({ ...talentDB });
@@ -482,9 +485,9 @@ export default function SequenceGenerator(props) {
                       </Grid>
                       <Grid container spacing={1}>
                         {spellList[cat].map((spell, i) => (
-                          <Grid item xs="auto" key={spellDB[spell][0].spellData.id}>
+                          <Grid item xs="auto" key={spellDB[spell][0].displayInfo.id}>
                             <SpellIcon
-                              spell={spellDB[spell][0].spellData}
+                              spell={spellDB[spell][0].displayInfo}
                               spec={selectedSpec}
                               gameType={gameType}
                               iconType={"Spell"}

@@ -1,9 +1,10 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { DRUIDSPELLDB } from "./RestoDruidSpellDB";
+import { DRUIDSPELLDB } from "./RestoDruidSpellDBTWW";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 
 const DRUIDCONSTANTS = {
@@ -234,7 +235,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
 
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, casts: {}, manaSpent: 0, settings: settings, 
-        talents: talents, reporting: true, heroSpec: "Keeper of the Grove", currentTarget: 0};
+        talents: talents, reporting: true, heroSpec: "Keeper of the Grove", currentTarget: 0, spec: "Restoration Druid"};
 
     let currentStats = {...stats};
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)

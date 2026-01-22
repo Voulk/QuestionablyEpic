@@ -1,0 +1,431 @@
+{
+    "Riptide": [
+        {
+            "displayInfo": {
+                "id": 61295,
+                "icon": "spell_nature_riptide",
+                "spellName": "Riptide",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 1.6,
+            "cooldownData": {
+                "cooldown": 6.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 4.8029,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "coeff": 0.3984,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 18.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Healing Stream Totem": [
+        {
+            "displayInfo": {
+                "id": 5394,
+                "icon": "inv_spear_04",
+                "spellName": "Healing Stream Totem",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 1.8,
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false,
+                "charges": 0,
+                "maxCharges": 0
+            },
+            "coeff": 0.6768,
+            "aura": 1.65,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 15.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Healing Rain": [
+        {
+            "displayInfo": {
+                "id": 73920,
+                "icon": "spell_nature_giftofthewaterspirit",
+                "spellName": "Healing Rain",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "cost": 4.32,
+            "cooldownData": {
+                "cooldown": 18.0,
+                "hasted": false
+            },
+            "targets": 5,
+            "coeff": 0.6208,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 18.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            }
+        }
+    ],
+    "Healing Tide Totem": [
+        {
+            "displayInfo": {
+                "id": 108280,
+                "icon": "ability_shaman_healingtide",
+                "spellName": "Healing Tide Totem",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 1.12,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            },
+            "targets": 20,
+            "coeff": 5.145,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 10.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            },
+            "AoEScaling": "sqrt"
+        }
+    ],
+    "Chain Heal": [
+        {
+            "displayInfo": {
+                "id": 1064,
+                "icon": "inv_1115_shaman_chainheal",
+                "spellName": "Chain Heal",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "cost": 4.5,
+            "coeff": 2.31,
+            "aura": 2.49,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Earth Shield": [
+        {
+            "displayInfo": {
+                "id": 974,
+                "icon": "spell_nature_skinofearth",
+                "spellName": "Earth Shield"
+            },
+            "castTime": 0.0,
+            "cost": 2.0
+        }
+    ],
+    "Chain Lightning": [
+        {
+            "displayInfo": {
+                "id": 188443,
+                "icon": "spell_nature_chainlightning",
+                "spellName": "Chain Lightning",
+                "cat": "damage"
+            },
+            "castTime": 2.0,
+            "cost": 0.2,
+            "coeff": 0.7302,
+            "aura": 4.5,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Healing Wave": [
+        {
+            "displayInfo": {
+                "id": 77472,
+                "icon": "spell_nature_healingwavelesser",
+                "spellName": "Healing Wave",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "cost": 2.5,
+            "coeff": 13.6458,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Unleash Life": [
+        {
+            "displayInfo": {
+                "id": 73685,
+                "icon": "spell_shaman_unleashweapon_life",
+                "spellName": "Unleash Life",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.8,
+            "cooldownData": {
+                "cooldown": 20.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 6.0999,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Surging Totem": [
+        {
+            "displayInfo": {
+                "id": 444995,
+                "icon": "inv_ability_totemicshaman_surgingtotem",
+                "spellName": "Surging Totem"
+            },
+            "castTime": 0.0,
+            "cost": 6.5,
+            "cooldownData": {
+                "cooldown": 25.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Stormstream Totem": [
+        {
+            "displayInfo": {
+                "id": 1267068,
+                "icon": false,
+                "spellName": "Stormstream Totem",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 1.8,
+            "coeff": 1.0943900000000002,
+            "aura": 1.65,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal",
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 13.23,
+            "aura": 1.65,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Earthliving Weapon": [
+        {
+            "displayInfo": {
+                "id": 382024,
+                "icon": "spell_shaman_giftearthmother",
+                "spellName": "Earthliving Weapon",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 0.463,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Healing Surge (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447415,
+                "icon": "spell_nature_healingway",
+                "spellName": "Healing Surge (Ancestor)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 2.1292,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Healing Wave (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 1223391,
+                "icon": "spell_nature_healingwavelesser",
+                "spellName": "Healing Wave (Ancestor)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 2.549,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Chain Heal (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447433,
+                "icon": "spell_nature_healingwavegreater",
+                "spellName": "Chain Heal (Ancestor)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 1.6493,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Chain Lightning (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447425,
+                "icon": "spell_nature_chainlightning",
+                "spellName": "Chain Lightning (Ancestor)",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 3.8258,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Lava Burst (Ancestor)": [
+        {
+            "displayInfo": {
+                "id": 447419,
+                "icon": "spell_shaman_lavaburst",
+                "spellName": "Lava Burst (Ancestor)",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 1.7399,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ]
+}

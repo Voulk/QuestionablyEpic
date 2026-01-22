@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializeMonkSet } from "General/Modules/Player/ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 import { getEnemyArmor } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
@@ -39,18 +39,11 @@ describe("Test Mistweaver Spell Values", () => {
         hps: 0,
     }
 
-    const init = initializeMonkSet(monkTalents, true);
+    const init = initializeMonkSet(userSettings, monkTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, "Mistweaver Monk");
     const statPercentagesOneHanded = convertStatPercentages(oneHandedStats, 1, "Mistweaver Monk");
     const armor = getEnemyArmor(statPercentages.armorReduction);
     
-
-    /*test("Jab", () => {
-        const spellName = "Jab";
-        const value = runClassicSpell(spellName, {...init.spellDB[spellName][0], secondaries: []}, statPercentages, "Mistweaver Monk", userSettings) / armor;
-        const expectedAvg = (2314 + 2810) / 2; 
-        expect(Math.abs(value-expectedAvg)).toBeLessThan(errorMargin);
-    });*/
 
     // Test 2 handed values.
     // Example test was naked with Gustwalker Staff.

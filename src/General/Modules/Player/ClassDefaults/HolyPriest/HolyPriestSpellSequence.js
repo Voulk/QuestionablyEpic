@@ -2,8 +2,9 @@
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import { HOLYPRIESTSPELLDB as SPELLDB } from "./HolyPriestSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { runRampTidyUp, getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 import { STATCONVERSION } from "General/Engine/STAT"
 

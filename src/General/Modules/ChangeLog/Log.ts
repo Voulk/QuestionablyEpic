@@ -19,7 +19,84 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.0 / 5.5.3",
+    update: 25,
+    date: "January 21",
+    changes: [ 
+      "Fixed various issues with unsquished items that snuck through, both in QE Live and in-game.",
+    ]
+  },
+  {
+    version: "12.0 / 5.5.3",
+    update: 24,
+    date: "January 20",
+    changes: [ 
+      "Added limited support for Midnight Prepatch",
+    ]
+  },
       {
+    version: "11.2.7 / 5.5.3",
+    update: 23,
+    date: "December 24",
+    changes: [ 
+      "Classic: New Level 60 talent option for Resto Druid",
+      "Classic: Added legendary meta gem support.",
+      "Bugfix: Added some missing trinket item levels to the chart.",
+      "Bugfix: Resto Shaman damage metrics will now report correctly.",
+      "Trinket chart now shows innervate mana gain for Resto Druid. No change to valuations, just better information.",
+
+    ]
+  },
+      {
+    version: "11.2.7 / 5.5.3",
+    update: 22,
+    date: "December 20",
+    changes: [ 
+      "Bugfix: Socket bonuses should now be included in advanced gem configurations too.",
+      "Bugfix: Fixed some items that would import at the wrong upgrade level with auto-upgrade on.",
+    ]
+  },
+    {
+    version: "11.2.7 / 5.5.3",
+    update: 21,
+    date: "December 12",
+    changes: [ 
+      "Mists of Pandaria: Added settings for Meta and Int / Secondary focused gem choices. Moved default back to Intellect focused.",
+      "Mists of Pandaria: Updated default profiles for a few specs like Discipline Priest and Holy Priest."
+    ]
+  },
+  {
+    version: "11.2.7 / 5.5.3",
+    update: 20,
+    date: "December 9",
+    changes: [ 
+      "Mists of Pandaria: Added Throne of Thunder content including trinkets, tier sets, the new meta gem and more.",
+      "Mists of Pandaria: The trinket chart is now based on item level instead of normal / heroic alone. This better supports item level upgrades."
+    ]
+  },
+  {
+    version: "11.2.5 / 5.5.1",
+    update: 19,
+    date: "October 30",
+    changes: [ 
+      "Mists of Pandaria: Restoration Shaman is now in Beta. ",
+      "Added new 'Dinar' buttons that automatically add all dinar vendor items to the selection. It also makes them exclusive so only one can be chosen.",
+      "The Reshii boot items will now include the associated tooltip in more situations - still not all.",
+      "Added a warning when a SimC is imported that is missing items (this is often due to wearing the wrong armor type accidentally).",
+      "Items in your bag that are significantly lower level will no longer import. This should make item selection way nicer for item hoarders (like me).",
+      "Minor tidyup and visual improvements."
+    ]
+  },
+  {
+    version: "11.2.5 / 5.5.1",
+    update: 18,
+    date: "October 7",
+    changes: [ 
+      "DISC belt nerfs are now in. All of the secondary powers got nerfed by 20%. The belt is still acceptable though replaced sooner.",
+      "Enabled longer upgrade tracks for all items. Updated Trinket chart to the new item levels.",
+  ]},
+  {
     version: "11.2 / 5.5.1",
     update: 17,
     date: "September 29",

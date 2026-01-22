@@ -1,0 +1,338 @@
+{
+    "Fire and Ice": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+    ],
+    "Elemental Orbit": [
+        0.0
+    ],
+    "Brimming with Life": [
+        5.0,
+        50.0
+    ],
+    "Spiritual Awakening": [
+        3.0
+    ],
+    "Enhanced Imbues": [
+        30.0,
+        15.0,
+        20.0,
+        30.0,
+        30.0,
+        20.0,
+        20.0,
+        20.0,
+        30.0,
+        20.0
+    ],
+    "Refreshing Waters": [
+        25.0
+    ],
+    "Nature's Fury": [
+        2.0,
+        2.0
+    ],
+    "Primordial Bond": [
+        0.0
+    ],
+    "Totemic Focus": [
+        10000.0,
+        3000.0,
+        15.0,
+        0.0
+    ],
+    "Mana Spring": [
+        4.0,
+        0.0
+    ],
+    "Therazane's Resilience": [
+        15.0,
+        -99.0,
+        -99.0,
+        15.0,
+        15.0,
+        -99.0,
+        -99.0,
+        800.0
+    ],
+    "Reactive Warding": [
+        1.0,
+        -1000.0
+    ],
+    "Totemic Surge": [
+        -5000.0,
+        -5000.0
+    ],
+    "Instinctive Imbuements": [
+        3.0,
+        3.0
+    ],
+    "Soothing Rain": [
+        10.0,
+        -500.0
+    ],
+    "Acid Rain": [
+        1.0
+    ],
+    "Water Totem Mastery": [
+        -5000.0
+    ],
+    "Overflowing Shores": [
+        2.0,
+        2.0,
+        5.0
+    ],
+    "Ancestral Vigor": [
+        0.0,
+        5.0
+    ],
+    "First Ascendant": [
+        -60000.0
+    ],
+    "Preeminence": [
+        3000.0,
+        25.0,
+        25.0
+    ],
+    "Resurgence": [
+        100.0
+    ],
+    "Living Stream": [
+        100.0
+    ],
+    "Current Control": [
+        -15.0
+    ],
+    "White Water": [
+        15.0,
+        200.0
+    ],
+    "Calm Waters": [
+        -15.0
+    ],
+    "Quickstream": [
+        -13.0
+    ],
+    "Rip Current": [
+        -1000.0
+    ],
+    "Crashing Waves": [
+        12.0
+    ],
+    "Torrent": [
+        20.0,
+        10.0
+    ],
+    "Earthweaver": [
+        40.0
+    ],
+    "Deluge": [
+        15.0,
+        15.0
+    ],
+    "Earthen Accord": [
+        30.0,
+        20.0
+    ],
+    "Echo of the Elements": [
+        1.0,
+        1.0
+    ],
+    "Improved Earthliving Weapon": [
+        150.0,
+        0.0
+    ],
+    "Ancestral Reach": [
+        1.0,
+        8.0
+    ],
+    "Flow of the Tides": [
+        30.0,
+        1.0
+    ],
+    "Primal Tide Core": [
+        4.0
+    ],
+    "Earthen Harmony": [
+        150.0,
+        50.0,
+        -3.0
+    ],
+    "Water Expulsion": [
+        20.0
+    ],
+    "Ancestral Awakening": [
+        15.0,
+        30.0,
+        60.0
+    ],
+    "Tidewaters": [
+        1.0
+    ],
+    "Undercurrent": [
+        0.5,
+        5.0,
+        0.5
+    ],
+    "Spouting Spirits": [
+        -5.0,
+        1.0,
+        5.0
+    ],
+    "Wavespeaker's Blessing": [
+        6000.0,
+        15.0
+    ],
+    "Double Dip": [
+        1.0
+    ],
+    "Whispering Waves": [
+        10.0
+    ],
+    "Coalescing Water": [
+        0.0
+    ],
+    "Deeply Rooted Elements": [
+        6000.0,
+        11.60000038147,
+        6.0,
+        7.0
+    ],
+    "Call of the Ancestors": [
+        12.0
+    ],
+    "Latent Wisdom": [
+        25.0
+    ],
+    "Ancient Fellowship": [
+        20.0,
+        30.0,
+        6.0
+    ],
+    "Heed My Call": [
+        4000.0,
+        4.0
+    ],
+    "Routine Communication": [
+        15.0,
+        8.0,
+        6.0,
+        40.0,
+        4.0,
+        50.0,
+        6.0
+    ],
+    "Elemental Reverb": [
+        1.0,
+        10.0,
+        20.0,
+        20.0,
+        1.0
+    ],
+    "Ancestral Influence": [
+        1.0
+    ],
+    "Totemic Rebound": [
+        2.0
+    ],
+    "Amplification Core": [
+        0.0
+    ],
+    "Oversurge": [
+        150.0,
+        50.0
+    ],
+    "Lively Totems": [
+        0.0,
+        0.0,
+        5.0
+    ],
+    "Totemic Momentum": [
+        200.0,
+        10.0,
+        -3000.0
+    ],
+    "Offering from Beyond": [
+        -3000.0,
+        -2000.0
+    ],
+    "Primordial Capacity": [
+        25.0,
+        10.0
+    ],
+    "Windspeaker": [
+        -10.0,
+        -10.0
+    ],
+    "Wind Barrier": [
+        6.0
+    ],
+    "Splitstream": [
+        80.0,
+        25.0,
+        30.0
+    ],
+    "Elemental Attunement": [
+        2.0
+    ],
+    "Natural Harmony": [
+        -15000.0,
+        10.0,
+        50.0
+    ],
+    "Earthen Communion": [
+        3.0,
+        3.0,
+        25.0,
+        -3.0,
+        -3.0
+    ],
+    "Maelstrom Supremacy": [
+        25.0,
+        25.0
+    ],
+    "Final Calling": [
+        0.0
+    ],
+    "Mystic Knowledge": [
+        20.0
+    ],
+    "Imbuement Mastery": [
+        5.0,
+        8.0,
+        3000.0,
+        1.0,
+        300.0
+    ],
+    "Pulse Capacitor": [
+        18.0,
+        25.0,
+        18.0
+    ],
+    "Supportive Imbuements": [
+        25.0,
+        100.0
+    ],
+    "Totemic Coordination": [
+        15.0,
+        30.0,
+        25.0
+    ],
+    "Earthsurge": [
+        125.0,
+        40.0,
+        15.0
+    ],
+    "Primal Catalyst": [
+        150.0,
+        8.0
+    ],
+    "Whirling Elements": [
+        0.0
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "Echo of L'ura": [
+        {
+            "coefficient": "19.42865753174",
+            "scalingClass": "-9"
+        }
+    ],
+    "Emerald Coach's Whistle": [
+        {
+            "coefficient": "2.02112174034",
+            "scalingClass": "-7"
+        }
+    ],
+    "Refueling Orb": [
+        {
+            "coefficient": "0.81432986259",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "64.23183441162",
+            "scalingClass": "-9"
+        }
+    ],
+    "Whisper of the Duskwraith": [
+        {
+            "coefficient": "44.89406967163",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "0.36382597685",
+            "scalingClass": "-7"
+        }
+    ],
+    "Heart of Wind": [
+        {
+            "coefficient": "1.12422311306",
+            "scalingClass": "-7"
+        }
+    ],
+    "Vessel of Tortured Souls": [
+        {
+            "coefficient": "0.1735932678",
+            "scalingClass": "-7"
+        }
+    ],
+    "Ever-Collapsing Void Fissure": [
+        {
+            "coefficient": "0.51851814985",
+            "scalingClass": "-7"
+        }
+    ],
+    "Sealed Chaos Urn": [
+        {
+            "coefficient": "0.86419689655",
+            "scalingClass": "-7"
+        }
+    ],
+    "Gift of Light": [
+        {
+            "coefficient": "1.5623395443",
+            "scalingClass": "-7"
+        }
+    ],
+    "Consecrated Chalice": [
+        {
+            "coefficient": "22.3427066803",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "22.3427066803",
+            "scalingClass": "-9"
+        }
+    ],
+    "Glorious Crusader's Keepsake": [
+        {
+            "coefficient": "1.12422311306",
+            "scalingClass": "-7"
+        },
+        {
+            "coefficient": "0.11248111725",
+            "scalingClass": "-7"
+        }
+    ],
+    "Radiant Sunstone": [
+        {
+            "coefficient": "203.31686401367",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "10.89197540283",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "203.31686401367",
+            "scalingClass": "-9"
+        },
+        {
+            "coefficient": "10.89197540283",
+            "scalingClass": "-9"
+        }
+    ],
+    "Cosmic Bell": [
+        {
+            "coefficient": "459.48999023438",
+            "scalingClass": "-9"
+        }
+    ]
+}

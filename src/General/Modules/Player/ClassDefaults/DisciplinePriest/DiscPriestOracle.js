@@ -74,19 +74,19 @@ export const discPriestOracleStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 1.2,
-    crit: 1.32,
-    mastery: 1.275,
-    versatility: 1.11,
-    leech: 0.54,
+    haste: 0.55,
+    crit: 0.6,
+    mastery: 0.64,
+    versatility: 0.5,
+    leech: 0.24,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 1.2163,
-    crit: 1.314,
-    mastery: 1.27,
-    versatility: 1.101,
-    leech: 0.45,
+    haste: 0.55,
+    crit: 0.62,
+    mastery: 0.58,
+    versatility: 0.5,
+    leech: 0.24,
   };
 
   return statWeights[contentType];

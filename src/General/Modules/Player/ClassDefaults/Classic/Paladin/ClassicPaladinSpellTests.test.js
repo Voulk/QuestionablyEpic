@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializePaladinSet } from "General/Modules/Player/ClassDefaults/Classic/Paladin/HolyPaladinClassic";
 import { paladinTalents } from "./ClassicPaladinSpellDB";
 import each from "jest-each";
@@ -23,7 +23,7 @@ describe("Test Paladin Spell Values", () => {
     }
 
 
-    const init = initializePaladinSet(paladinTalents, true);
+    const init = initializePaladinSet(userSettings, paladinTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.

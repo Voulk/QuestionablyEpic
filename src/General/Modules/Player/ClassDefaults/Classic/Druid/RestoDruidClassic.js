@@ -4,9 +4,10 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic,  updateSpellCPM, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell,  getHasteClassic, splitSpellCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
-import { buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+//import {  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
+import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 export const restoDruidDefaults = {
     spec: "Restoration Druid Classic",
@@ -27,19 +28,18 @@ export const restoDruidDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
-
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.11,
-        crit: 0.348,
-        mastery: 0.427,
-        haste: 0.25,
-        mp5: 0.614,
-        spirit: 0.431,
+        crit: 0.452,
+        mastery: 0.538,
+        haste: 0.331,
+        mp5: 0.683,
+        spirit: 0.519,
         hit: 0,
-        hps: 0.458, // 
+        hps: 0.304, // 
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -48,9 +48,21 @@ export const restoDruidDefaults = {
 }
 
 // --------------- Druid --------------
-export function initializeDruidSet(talents = druidTalents) {
-    const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
-  
+export function initializeDruidSet(userSettings, talents = druidTalents) {
+    const testSettings = {spec: "Restoration Druid Classic", masteryEfficiency: 1, includeOverheal: "Yes", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
+
+
+    const levelSixtyTalent = userSettings.druidLevelSixtyTalent ? userSettings.druidLevelSixtyTalent.value : "Soul of the Forest";
+    if (levelSixtyTalent === "Soul of the Forest") {
+      talents.soulOfTheForest.points = 1; talents.forceOfNature.points = 0; talents.incarnation.points = 0;
+    }
+    else if (levelSixtyTalent === "Force of Nature") {
+      talents.forceOfNature.points = 1; talents.soulOfTheForest.points = 0; talents.incarnation.points = 0;
+    }
+    else if (levelSixtyTalent === "Incarnation") {
+      talents.incarnation.points = 1; talents.soulOfTheForest.points = 0; talents.forceOfNature.points = 0;
+    }
+
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Swiftmend", efficiency: 0.8, bonus: 1.2},
@@ -76,6 +88,9 @@ export function initializeDruidSet(talents = druidTalents) {
         {spell: "Wild Growth", cpm: 3.8 * (36 / 180), bonus: (1.15 * (8/6))}, // Tree of Life Wild Growth
       ])
     }
+    else if (talents.forceOfNature.points === 1) {
+      castProfile.push({spell: "Force of Nature", efficiency: 0.85 }); // Force of Nature
+    }
 
     if (talents.yserasGift.points === 1) {
       castProfile.push({spell: "Ysera's Gift", cpm: 12, freeCast: true, castOverride: 0}); // Ysera's Gift
@@ -92,8 +107,6 @@ export function initializeDruidSet(talents = druidTalents) {
     })
 
     const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
-
-    //console.log(JSON.stringify(adjSpells));
     return { castProfile: castProfile, spellDB: adjSpells, costPerMinute: costPerMinute, talents: talents };
   }
   
@@ -111,6 +124,9 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
@@ -139,7 +155,13 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     }
     if (tierSets.includes("Druid T15-2")) {
       getSpellEntry(castProfile, "Efflorescence").bonus *= 1.33; // 
+      druidBaseline.spellDB["Force of Nature"][2].targets = 4;
     }
+    else {
+      // Safely reset FoN targets to 3.
+      druidBaseline.spellDB["Force of Nature"][2].targets = 3;
+    }
+
     if (tierSets.includes("Druid T15-4")) {
       getSpellEntry(castProfile, "Rejuvenation").flags = {"RampingHoTEffect": 0.06}; // 
     }
@@ -166,9 +188,9 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     const totalManaPool = manaPool + regen;
 
-    let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] * (1-freeCastsUptime); 
     const fillerWastage = 0.9;
-    let costPerMinute = druidBaseline.costPerMinute;
+    let costPerMinute = druidBaseline.costPerMinute * (1-freeCastsUptime);
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 

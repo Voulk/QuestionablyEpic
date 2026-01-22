@@ -22,9 +22,15 @@ export const processedValue = (data: ClassicEffectData, itemLevel: number, effic
 }
 
 // A generic stat effect with a duration and a ppm.
-export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number): Stats => {
+export const getGenericStatEffect = (data: ClassicEffectData, itemLevel: number, setStats = {}, spec: string = ""): Stats => {
     const trinketValue = data.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0];
-    const trinketAverage = data.duration * trinketValue * data.ppm / 60
+    let effectivePPM = data.ppm!;
+    if (data.secondaries) {
+      if (data.secondaries.includes("crit")) effectivePPM *= (1 + getCritPercentage(setStats || 0, spec.replace(" Classic", ""))); 
+      if (data.secondaries.includes("haste")) effectivePPM *= getHaste(setStats, spec.replace(" Classic", "")); // Assume 15% haste for now.
+    }
+
+    const trinketAverage = data.duration * trinketValue * effectivePPM / 60
     const statType = data.stat;
     const bonus_stats: Stats = {};
     bonus_stats[statType] = trinketAverage;

@@ -818,7 +818,7 @@ export function calcStatsAtLevelClassic(itemID: number, itemLevel: number, itemA
   for (var key in statAllocations) {
     let allocation = statAllocations[key];
 
-    if (["haste", "crit", "mastery", "spirit"].includes(key) && allocation > 0) {
+    if (["haste", "crit", "mastery", "spirit", "hit"].includes(key) && allocation > 0) {
       //stats[key] = Math.floor(Math.floor(rand_prop * allocation * 0.0001 + 0.5) * combat_mult);
       stats[key] = Math.round(rand_prop * allocation * 0.0001) - (penalties[key] || 0); // It doesn't look like combat mult is used at the moment.
     } 
@@ -1024,7 +1024,7 @@ function checkAutoAddLevelOk(item: any, itemLevelReq: number) {
 }
 
 // It is useful to have some items to work with.
-export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "") {
+export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: number, source: string = "", maxChecked = false) {
   let itemDB = getItemDB(gameType);
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
@@ -1034,7 +1034,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || (key.classRestriction.includes(player.spec) || player.spec.includes(key.classRestriction))) &&
-      (gameType === "Classic" || itemLevel > 640) &&
+      (gameType === "Classic" || itemLevel > 70) &&
       (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
@@ -1050,11 +1050,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
       // Check the item drops from the expected location.
-      if (item.id === 235499) sourceCheck = true;
-      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650) sourceCheck = true;
+      if (item.id === 235499 && source !== "S3 Dinar") sourceCheck = true;
+      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
       else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      else if (source === "S3 Dinar" && sources) {
+        sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
+      }
 
       else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
       else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
@@ -1072,18 +1075,28 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "Rep & Professions" && sources) sourceCheck = [-12, -6, -4].includes(sources.instanceId);
       else if (!sources) sourceCheck = false;
     }
-
+     
     const slot = getItemProp(item.id, "slot", gameType);
     if (
         ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390].includes(item.id)))
+        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
+          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
+        ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (gameType === "Classic" && item.itemLevel >= 463 && ["T14", "T14+"].includes(source)) ? 8 : 0;
+          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+         
+          if (source === "S3 Dinar") newItem.exclusiveItem = true;
+          if ([243308, 243307, 243306, 243305].includes(item.id)) {
+            // Special boots stuff
+            if (newItem.level === 170) newItem.bonusIDS += "13503";
+            else newItem.bonusIDS += "13504";
+          }
+          if (gameType === "Retail") newItem.quality = 4;
 
-      if (player.activeItems.filter((i) => i.id === item.id).length === 0) player.activeItems.push(newItem);
+      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
 
@@ -1222,7 +1235,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
       const weight = player.getStatWeight(contentType, stat);
-      score += statSum * weight / 120000 * player.getHPS(contentType);
+      score += statSum * weight / 760 * player.getHPS(contentType);
     }
   }
 

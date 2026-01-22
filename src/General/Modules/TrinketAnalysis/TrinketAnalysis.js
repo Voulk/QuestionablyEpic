@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../../Items/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
@@ -22,6 +22,9 @@ import { trackPageView } from "Analytics";
 import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
+import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
+import { downloadJson } from "./TrinketJSONDownload"
+import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -157,6 +160,33 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
   return trinket["i" + highestLevel];
 };
 
+const handleDownload = () => {
+  // Compile trinket data
+  const allTrinketData = getAllTrinketData();
+  const toPrint = {}
+
+  console.log(allTrinketData.length)
+  allTrinketData.forEach((trinketX => {
+
+    toPrint[trinketX.name] = {description: trinketX.addonDescription || ""};
+    if ('effects' in trinketX && 'ppm' in trinketX.effects[0]) {
+      toPrint[trinketX.name].ppm = trinketX.effects[0].ppm;
+    }
+  }))
+  /*const toPrint = allTrinketData.map((trinketX => {
+    return {
+      id: trinketX.id,
+      name: trinketX.name,
+      description: trinketX.addonDescription || "",
+    }
+  }))*/
+
+  const jsonString = JSON.stringify(toPrint);
+
+  // Download them
+  downloadJson(jsonString, 'QE-trinket-data.json');
+};
+
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
@@ -168,13 +198,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(723);
+  const [levelCap, setLevelCap] = React.useState(999); // 170
   const maxLevelMarks = [
-    { value: 0, label: "678" },
-    { value: 1, label: "691" },
-    { value: 2, label: "704" },
-    { value: 3, label: "710" },
-    { value: 4, label: "723" },
+    { value: 0, label: "110" },
+    { value: 1, label: "130" },
+    { value: 2, label: "140" },
+    { value: 3, label: "155" },
+    { value: 4, label: "170" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -195,6 +225,7 @@ export default function TrinketAnalysis(props) {
       1273, // Palace
       1296, // Liberation of Undermine
       1302, // Manaforge Omega
+      
     ];
     const dungeonSources = [
       -1, // General Dungeons
@@ -263,12 +294,13 @@ export default function TrinketAnalysis(props) {
     }
   };
   const contentType = useSelector((state) => state.contentType);
+  const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = [671, 675, 678, 684, 691, 697, 704, 707, 710, 714, 720, 723]; 
+  const allItemLevels = gameType === "Retail" ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
-  const gameType = useSelector((state) => state.gameType);
+  
   const trinketDB = getItemDB(gameType).filter(
     (key) =>
       key.slot === "Trinket" && 'levelRange' in key && key.levelRange.length > 0);
@@ -295,10 +327,10 @@ export default function TrinketAnalysis(props) {
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
-      highestLevel: 0,
+      highestLevel: getItemProp(trinket.id, "levelRange", gameType).at(-1) || 0,
     };
 
-    if (gameType === "Classic") {
+    if (false && gameType === "Classic") {
       /*const difficulties = ["10N", "10H", "25N", "25H"]
       for (var x = 0; x < difficulties.length; x++) {
           trinketAtLevels[difficulties[x]] = getTrinketAtContentLevel(trinket.id, difficulties[x], props.player, "Raid");
@@ -352,13 +384,22 @@ export default function TrinketAnalysis(props) {
 
     } else {
         for (var x = 0; x < itemLevels.length; x++) {
-
-          trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
+          if (gameType === "Retail") trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], props.player, contentType, playerSettings);
+          else {
+            if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
+              // Classic items can exist in multiple item levels in the database but we want to compile them into one entry.
+              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x]);
+              
+            }
+          }
+          
         }
-        trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
-        activeTrinkets.push(trinketAtLevels);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
+        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
   }
+
   if (gameType === "Retail") {
     // Add any additional entries
 
@@ -377,7 +418,7 @@ export default function TrinketAnalysis(props) {
     
   }
 
-  if (gameType === "Classic") {
+  if (gameType === "Classicc") {
     // Sort. We'll need to use the retail "highest level" code here.
     const getHighestClassicScore = (trinket) => {return trinket.heroic || trinket.normal || 0}
     activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
@@ -385,8 +426,8 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "The Twisted Mana Sprite bug has been fixed. It should now perform as the chart suggests. You can compare Diamantine Voidcore with the weapon set in Top Gear."  :
-                                              "Trinkets are modelled at their maximum item upgrade level.";
+  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
+                                              "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (
     <div className={classes.root}>
@@ -466,9 +507,9 @@ export default function TrinketAnalysis(props) {
                     ) : (
                       ""
                     )}
-                    {gameType === "Retail" ? (
+                    {true ? (
                       <Grid item xs={12}>
-                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} />
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} gameType={gameType} />
                       </Grid>
                     ) : (
                       <Grid item xs={12}>
@@ -495,6 +536,11 @@ export default function TrinketAnalysis(props) {
                         </ToggleButton>
                       </Tooltip>
                     </Grid>
+                    <Grid item>
+                      <Button variant="contained" onClick={handleDownload}>
+                        Download JSON
+                      </Button>   
+                    </Grid>
                   </Grid>
                 </Grid>
               ) : (
@@ -503,8 +549,9 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-
+ 
       <div id="qelivead2"></div>
+      {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
     </div>
   );

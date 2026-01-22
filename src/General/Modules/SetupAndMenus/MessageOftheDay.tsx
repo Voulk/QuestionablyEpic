@@ -4,10 +4,10 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "The D.I.S.C belt nerfs do not go live in-game until 11.2.5 which is predicted to be in October."
+    "Welcome to the QE Live Midnight Alpha. Please report any bugs but expect the app to be unstable until way closer to launch."
   ] : 
   [
-    "Mists of Pandaria is in a Beta state. Please report any bugs you find to the QE Live Discord. Paladin now live. Shaman will be along very soon!",
+    "Please report any bugs you find to the QE Live Discord.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

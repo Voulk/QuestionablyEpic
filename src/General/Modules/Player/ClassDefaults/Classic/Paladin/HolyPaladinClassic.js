@@ -3,8 +3,8 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
-
+import { runClassicSpell, convertStatPercentages} from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
+import { printHealingBreakdownWithCPM,  getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const holyPaladinDefaults = {
@@ -31,21 +31,21 @@ export const holyPaladinDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
         intellect: 1.107,
-        crit: 0.341,
-        mastery: 0.493,
-        haste: 0.25,
-        spirit: 0.497,
-        mp5: 0.678,
-        hps: 0.553
+        crit: 0.442,
+        mastery: 0.6,
+        haste: 0.31,
+        spirit: 0.57,
+        mp5: 0.82,
+        hps: 0.34,
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["mastery", "spirit", "crit", 'haste', 'hit'],
+    autoReforgeOrder: ["mastery", "crit", "spirit", 'haste', 'hit'],
 }
 
 
-export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing = false) {
+export function initializePaladinSet(userSettings, talents = paladinTalents, ignoreOverhealing = false) {
     console.log("Initializing Paladin Set")
     const testSettings = {spec: "Holy Paladin Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", reporting: false, t31_2: false, seqLength: 100, alwaysMastery: true};
   
@@ -109,6 +109,8 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
     const talents = specBaseline.talents || paladinTalents;
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
     let hopoGenerated = 0;
+    const metaGem = getSetting(userSettings, "classicMetaGem");
+    let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
   
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
@@ -149,12 +151,12 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       // Handle our filler casts. 
       // We'll probably rework this to be a package.
-      let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+      let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost * (1 - freeCastsUptime); //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
       if (tierSets.includes("Paladin T14-2")) fillerCost *= 0.9;
-      const fillerWastage = 0.9;
+      const fillerWastage = 0.8;
 
       // Update Cost Per Minute with our more frequent hasted casts.
-      let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+      let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
 
       // Selfless Healer: Mana
       // We can model Selfless Healer as a flat mana reduction attached to Judgment. 
@@ -191,7 +193,8 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
 
       // Daybreak
       const daybreakCastEfficiency = Math.min(2, fillerCPM / (getSpellEntry(castProfile, "Holy Shock").cpm));
-      getSpellEntry(castProfile, "Holy Shock").bonus = (getSpellEntry(castProfile, "Holy Shock").bonus || 1) * (1 + 0.75 * daybreakCastEfficiency);
+      let daybreakBonus = tierSets.includes("Paladin T15-2") ? 1.5 : 1;
+      getSpellEntry(castProfile, "Holy Shock").bonus = (getSpellEntry(castProfile, "Holy Shock").bonus || 1) * (1 + 0.75 * daybreakCastEfficiency * daybreakBonus);
       reportingData.daybreakCastEfficiencyFull = (1 + 0.75 * daybreakCastEfficiency);
 
       reportingData.fillerCPM = fillerCPM;
@@ -300,7 +303,7 @@ export function initializePaladinSet(talents = paladinTalents, ignoreOverhealing
                   "Holy Prism": 0.15,
                 }
                 const beaconMod = (spellName in beaconSpecialMods) ? beaconSpecialMods[spellName] : 0.5;
-                const beaconHealing = rawHeal * beaconMod * (1 - 0.15); // 15% Beacon Overheal
+                const beaconHealing = rawHeal * beaconMod * (1 - 0.15) * (tierSets.includes("Paladin T15-4") ? 1.2 : 1); // 15% Beacon Overheal
                 healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] || 0) + beaconHealing;
                 totalHealing += beaconHealing;
 

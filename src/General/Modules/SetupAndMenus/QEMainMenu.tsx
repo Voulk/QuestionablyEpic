@@ -100,7 +100,7 @@ export default function QEMainMenu(props: Props) {
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
           //{ route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
           //{ route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
-          { route: "/spelldata", disabled: true, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/spelldata", disabled: false, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },
         ]
       : [ // Classic

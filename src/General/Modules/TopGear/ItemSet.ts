@@ -101,7 +101,7 @@ class ItemSet {
 
   getStartingStats(gameType: gameTypes): Stats {
       const stats: Stats = gameType === "Retail" ? {
-        intellect: 2091,
+        intellect: 159,
         haste: 0,
         crit: 0,
         mastery: 0,
@@ -120,9 +120,9 @@ class ItemSet {
         hps: 0,
         mp5: 0,
       }
-      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 17647;
-      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 17647;
-      else if (this.spec === "Mistweaver Monk") stats.intellect = 17647;
+      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 159;
+      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 159;
+      else if (this.spec === "Mistweaver Monk") stats.intellect = 159;
       return stats
   }
 
@@ -155,7 +155,8 @@ class ItemSet {
       }
       
       if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
-      if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1
+      if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1;
+      if (item.exclusiveItem) this.uniques['exclusive'] = (this.uniques['exclusive'] || 0) + 1;
 
       if (item.setID) {
         this.sets[item.setID] = (item.setID in this.sets) ? this.sets[item.setID] + 1 : 1;
@@ -197,6 +198,9 @@ class ItemSet {
       return false;
     } 
     else if (this.uniques["vault"] && this.uniques["vault"] > 1) {
+      return false;
+    }
+    else if (this.uniques["exclusive"] && this.uniques["exclusive"] > 1) {
       return false;
     }
     else if (this.uniques["alchstone"] && this.uniques["alchstone"] > 1) {

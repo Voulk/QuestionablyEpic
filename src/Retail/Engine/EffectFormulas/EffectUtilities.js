@@ -138,6 +138,7 @@ export function runGenericFlatProc(effect, itemLevel, player, contentType = "Rai
   if ('holyMasteryFlag' in effect) mult *= addSpecMastery(player.spec, setStats);
 
   if ('cooldown' in effect) return value * mult / effect.cooldown;
+
   else return value * mult / 60;
 
 }
@@ -247,7 +248,7 @@ export function getScalarValue(table, itemLevel) {
       return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
   } 
   else if (table === -571) { // -7 table but locked at level 80 and a 571 item.
-    return randPropPoints[571]["slotValues"][0] * combat_ratings_mult_by_ilvl[80];
+    return randPropPoints[80]["slotValues"][0] * combat_ratings_mult_by_ilvl[80];
 } 
   else if (table === -72) { // Jewelry
     return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl_jewl[itemLevel];

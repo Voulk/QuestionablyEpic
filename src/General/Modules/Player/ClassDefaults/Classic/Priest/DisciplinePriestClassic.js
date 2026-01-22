@@ -4,7 +4,8 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM, checkHasTalent } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
+import { printHealingBreakdownWithCPMWithCPM, getSpellEntry, updateSpellCPM, buildCPM, checkHasTalent } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const discPriestDefaults = {
@@ -30,18 +31,18 @@ export const discPriestDefaults = {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO
         spellpower: 1,
         intellect: 1.11,
-        crit: 0.43,
-        mastery: 0.347,
-        haste: 0.25,
+        crit: 0.5461,
+        mastery: 0.44,
+        haste: 0.305,
         mp5: 0.614,
-        spirit: 0.402,
+        spirit: 0.5,
         hit: 0,
-        hps: 0.458, // 
+        hps: 0.314, // 
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    autoReforgeOrder: ["crit", "spirit", "mastery", "haste", "hit"],
+    autoReforgeOrder: ["crit", "mastery", "spirit", "haste", "hit"],
 
 }
 
@@ -68,7 +69,8 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.4;
   let fillerCPM = 0;
-
+  const metaGem = getSetting(userSettings, "classicMetaGem");
+  let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 * 0.8 / 60) : 0; // 1.61 rppm, 4s duration
 
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
@@ -80,6 +82,12 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   const masteryHeal = statPercentages.mastery;
 
   reportingData.statPercentages = statPercentages;
+
+  if (tierSets.includes("Priest T15-2")) {
+    // 10% increase to PoM healing per jump.
+    getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
+  }
+
 
   if (!userSettings.strictSeq) {
 
@@ -111,7 +119,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
     ["Smite", "Holy Fire", "Penance"].forEach(spell => {
       getSpellEntry(castProfile, spell) ? getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06) : null;
     });
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
 
 
     const totalManaPool = manaPool + regen + petRegen;
@@ -127,21 +135,25 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
 
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
-    let fillerCost = getSpellEntry(castProfile, "Smite").cost || 1 //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    let fillerCost = getSpellEntry(castProfile, "Smite").cost * (1 - freeCastsUptime) //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
     const fillerWastage = 0.9;
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
     
     const fillerCPMMana = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
     const fillerCPMTime = timeAvailable / (1.5 / statPercentages.haste) * fillerWastage;
 
-    //fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
-    fillerCPM = (fillerCPMMana + fillerCPMTime) / 2
+    fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    //fillerCPM = (fillerCPMMana + fillerCPMTime) / 2
     timeAvailable -= fillerCPM * (1.5 / statPercentages.haste); // 
 
     // Penances gained
     const penanceCD = specBaseline.spellDB["Penance"][0].cooldownData.cooldown;
     const percReduced = 0.5 / penanceCD;
     getSpellEntry(castProfile, "Penance").cpm += (fillerCPM * percReduced); // Practically speaking there's likely to be gaps in gameplay. 
+
+    if (tierSets.includes("Priest T15-4")) {
+      castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Penance").cpm * 0.4})
+    }
 
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
     reportingData.manaRemaining = manaRemaining;
@@ -239,7 +251,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
     return {damage: totalDamage, healing: totalHealing};
 }
 
-export function initializeDiscSet(talents = discTalents, ignoreOverhealing = false) {
+export function initializeDiscSet(userSettings, talents = discTalents, ignoreOverhealing = false) {
   const testSettings = {spec: "Discipline Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, alwaysMastery: true, fightTimer: 300};
   const discCastProfile = [
     {spell: "Power Word: Shield", cpm: 4.8, freeCast: true}, // Rapture
@@ -248,7 +260,7 @@ export function initializeDiscSet(talents = discTalents, ignoreOverhealing = fal
     {spell: "Smite", cpm: 0, fillerSpell: true},
     {spell: "Holy Fire", efficiency: 0.85},
     {spell: "Flash Heal", cpm: 1},
-    {spell: "Prayer of Mending", efficiency: 0.6},
+    {spell: "Prayer of Mending", efficiency: 0.8, bonus: 1},
   ]
 
   // 

@@ -157,8 +157,8 @@ export const getManaRegen = (currentStats, spec) => {
     const spiritToMP5 = currentStats.spirit * 1.128;
 
     const inCombatRegen = {
-        "Holy Paladin": 0.5, // 0.5 base + Judgements of the Pure
-        "Restoration Druid": 0.5,
+        "Holy Paladin": 0.5, 
+        "Restoration Druid": 0.55, // Buffed in ToT
         "Discipline Priest": 0.5,
         "Holy Priest": 0.5,
         "Restoration Shaman": 0.5,

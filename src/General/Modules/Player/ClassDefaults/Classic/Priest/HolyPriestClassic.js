@@ -3,7 +3,8 @@ import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "G
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getTimeUsed, convertStatPercentages, buildCPM, checkHasTalent, updateSpellCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
+import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, checkHasTalent } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const holyPriestDefaults = {
@@ -29,13 +30,13 @@ export const holyPriestDefaults = {
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
       spellpower: 1,
-      intellect: 2.062,
-      crit: 0.656,
-      mastery: 0.634,
-      haste: 0.588,
-      spirit: 1.481,
-      mp5: 1.296,
-      hps: 1.027
+      intellect: 1.138,
+      crit: 0.445,
+      mastery: 0.543,
+      haste: 0,
+      spirit: 0.55,
+      mp5: 0.8,
+      hps: 0.334
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -43,7 +44,7 @@ export const holyPriestDefaults = {
     autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
 
-export function initializeHPriestSet(talents = holyTalents, ignoreOverhealing = false) {
+export function initializeHPriestSet(userSettings, talents = holyTalents, ignoreOverhealing = false) {
   const testSettings = {spec: "Holy Priest Classic", masteryEfficiency: 1, includeOverheal: ignoreOverhealing ? "No" : "Yes", testMode: "No", reporting: true, t31_2: false, seqLength: 100, alwaysMastery: true};
   console.log("Initializing Holy Priest Set");
   const castProfile = [
@@ -52,7 +53,7 @@ export function initializeHPriestSet(talents = holyTalents, ignoreOverhealing = 
     {spell: "Holy Word: Sanctuary", efficiency: 0.9},
     {spell: "Holy Word: Serenity", efficiency: 0.1},
     {spell: "Divine Hymn", efficiency: 0.9},
-    {spell: "Prayer of Mending", efficiency: 0.9},
+    {spell: "Prayer of Mending", efficiency: 0.9, bonus: 1},
     //{spell: "Sequence", sequence: ["Spirit Shell", "Prayer of Healing", "Prayer of Healing", "Prayer of Healing"], cooldown: 60},
     
     // Filler Spells
@@ -111,7 +112,8 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const twistOfFateUptime = 0.35;
   const echoOverhealing = 0.24;
   let fillerCPM = 0;
-
+  const metaGem = getSetting(userSettings, "classicMetaGem");
+  let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
@@ -119,6 +121,11 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   statPercentages.spellpower *= 1.1; // Inner Fire
 
   reportingData.statPercentages = statPercentages;
+
+  if (tierSets.includes("Priest T15-2")) {
+    // 10% increase to PoM healing per jump.
+    getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
+  }
 
   
   if (!userSettings.strictSeq) {
@@ -133,7 +140,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     ["Smite", "Holy Fire"].forEach(spell => {
       getSpellEntry(castProfile, spell)['cost'] *= (1 - averageEvangStacks * 0.06);
     });
-    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
 
     // Calculate filler CPM
     const manaPool = getManaPool(statProfile, spec);
@@ -162,11 +169,14 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
     const totalManaPool = manaPool + regen + petRegen;
 
+    if (tierSets.includes("Priest T15-4")) {
+      castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Circle of Healing").cpm * 0.4})
+    }
 
     // Handle our filler casts. 
     // They'll mostly be Smite for us.
-    let fillerCost = getSpellEntry(castProfile, "Prayer of Healing").cost //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
-    const fillerWastage = 0.8;
+    let fillerCost = getSpellEntry(castProfile, "Prayer of Healing").cost * (1 - freeCastsUptime) //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
+    const fillerWastage = 0.65;
 
     let timeAvailable = 60 - getTimeUsed(castProfile, specBaseline.spellDB, statPercentages.haste);
     

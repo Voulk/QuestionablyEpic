@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializeDruidSet } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic";
 import { druidTalents } from "./ClassicDruidSpellDB";
 import each from "jest-each";
@@ -23,7 +23,7 @@ describe("Test Druid Spell Values", () => {
     }
 
 
-    const init = initializeDruidSet(druidTalents, true);
+    const init = initializeDruidSet(userSettings, druidTalents, true);
     const statPercentages = convertStatPercentages(activeStats, 1, spec);
 
     // Test Regular Spells.

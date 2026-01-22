@@ -1,12 +1,12 @@
 
 import { getCurrentStats, getSpellRaw, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { runHeal, EVOKERCONSTANTS } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
-import { applyLoadoutEffects } from "./PresEvokerTalents";
+import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
 
-import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
@@ -40,7 +40,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
     const localSettings = {gracePeriodOverheal: 0.7};
     const tier = playerData.effectList ? playerData.effectList.filter(effect => effect.type === "set bonus").map(effect => effect.name) : [];
 
-    state.currentStats.crit += (15 * 700);
+    state.currentStats.crit += (15 * STATCONVERSION.CRIT); // Baseline 15% crit from gear.
 
     const talents = {};
     for (const [key, value] of Object.entries(state.talents)) {
@@ -74,7 +74,7 @@ export const runPreservationEvokerCastProfileEchoshaper = (playerData) => {
         {spell: "Dream Flight", cpm: buildCPM(evokerSpells, "Dream Flight")},
         {spell: "Temporal Anomaly", cpm: buildCPM(evokerSpells, "Temporal Anomaly") * 0.8, hastedCPM: true},    
         {spell: "Rewind", cpm: buildCPM(evokerSpells, "Rewind")},
-        {spell: "Engulf", cpm: Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5 }, 
+        {spell: "Engulf", cpm: Math.min(2, Math.floor(94 / (getSpellAttribute(evokerSpells["Engulf"], "cooldown") / getHaste(state.currentStats)))/1.5) }, 
         //{spell: "Chrono Flame", cpm: 0},     
       ]
     // Echo Breakdown
