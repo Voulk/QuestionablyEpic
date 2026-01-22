@@ -78,11 +78,11 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 147 && gem.stats[littleStat] === 49);
+                                        && gem.stats[bigStat] === 10 && gem.stats[littleStat] === 3);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
-  else return 192945; // Default fallback. Report error.                               
+  else return 213482; // Default fallback. Report error.                               
 }
 
 // Return an array of gem IDs based on the spec and content type. 
@@ -141,7 +141,13 @@ function getTWWGemOptions(spec: string, contentType: contentTypes, settings: Pla
 function getGemStats(gemArray: number[]) {
   const gem_stats: Stats = {};
   gemArray.forEach(gem => {
-    const gemStats = gemDB.filter(g => g.id === gem)[0].stats;
+    const gemData = gemDB.filter(g => g.id === gem)[0];
+    if (!gemData) {
+      console.error("Can't find gem ID: " + gem);
+      return {}
+    }
+    const gemStats = gemData.stats;
+    
     Object.keys(gemStats).forEach(stat => {
       gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
     });
@@ -658,6 +664,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   let enchantStats = {};
   let evalStats: Stats = {};
   let hardScore = 0;
+  
 
   let bonus_stats = {
     intellect: 0,
@@ -697,7 +704,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Enchants and gems ==
   const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
-
+  
   // == Flask / Phials ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
@@ -758,7 +765,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   compileStats(gearStats, bonus_stats);
 
 
-
   //builtSet.baseStats = gearStats;
 
   // == Effects ==
@@ -776,7 +782,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const usedSets: any[] = []
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
-
       const itemSet: ItemEffect[] = getItemSet(set, setBonuses[set], player.getSpec())
       itemSet.forEach(setBonus => {
         if (!usedSets.includes(setBonus.name)) {
@@ -814,7 +819,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     else if (boots.level > 130) setVariables.reshiiBoots = 0.2;
     
   }
-
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
