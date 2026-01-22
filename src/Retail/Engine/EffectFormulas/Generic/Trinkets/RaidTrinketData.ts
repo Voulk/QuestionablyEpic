@@ -3,6 +3,7 @@ import { setBounds } from "General/Engine/CONSTRAINTS"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  
     { // Check which "direct heal" spells count and whether you can track it on frames. Check is it's really 100% of your overhealing with no cap.
     name: "Nexus-King's Command",
     description: "The absorb portion is only on the single spell that procs the shield. Is quite hard to play well but if you consume the debuff during your healing cooldowns then this is an excellent trinket.",
