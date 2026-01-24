@@ -37,7 +37,12 @@
             },
             "castTime": 1.5,
             "cost": 3.8,
+            "cooldownData": {
+                "cooldown": 10.0,
+                "hasted": false
+            },
             "targets": 5,
+            "customScript": "Wild Growth",
             "coeff": 0.265,
             "aura": 1.44,
             "expectedOverheal": 0.25,
@@ -94,6 +99,10 @@
             },
             "castTime": 0.0,
             "cost": 3.68,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            },
             "coeff": 9.272,
             "aura": 1.0,
             "expectedOverheal": 0.25,

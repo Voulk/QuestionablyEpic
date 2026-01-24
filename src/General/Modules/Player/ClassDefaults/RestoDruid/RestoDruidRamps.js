@@ -1,6 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { DRUIDSPELLDB } from "./RestoDruidSpellDBTWW";
+import RestoDruidSpellDB from "./RestoDruidSpellDB.json";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampBase";
@@ -11,12 +11,9 @@ const DRUIDCONSTANTS = {
     
     masteryMod: 0.5, 
     masteryEfficiency: 0.80, 
-    baseMana: 2500000, // 2.5m
+    baseMana: 250000, // 250k
 
-    auraHealingBuff: 1,
-    auraDamageBuff: 1,
     enemyTargets: 1, 
-    echoExceptionSpells: [], // These are spells that do not consume or otherwise interact with our Echo buff.
 
     yserasGift: {
         // Regrowth HoT portion
@@ -66,26 +63,6 @@ const DRUIDCONSTANTS = {
         const fullSpell = value;
         const spellInfo = fullSpell[0];
 
-
-        if ('school' in spellInfo && spellInfo.school === "bronze" && talents.temporalCompression) {
-            druidSpells[key].push({
-                name: "Temporal Compression",
-                type: "buff",
-                canStack: true,
-                stacks: 1,
-                maxStacks: 4,
-                value: 0.05 * talents.temporalCompression,
-                buffDuration: 999,
-                buffType: 'special',
-            })
-        }
-        if ('school' in spellInfo && spellInfo.school === "green" && talents.lushGrowth) {
-            value.forEach(spellSlice => {
-                if ('name' in spellSlice && (spellSlice.name === "Panacea" || spellSlice.name === "Fluttering Seedlings")) return; // Exception case.
-                spellSlice.coeff *= (1 + 0.05 * talents.lushGrowth);
-            });
-        }
-
         if (spellInfo.targets && 'maxAllyTargets' in settings) Math.max(spellInfo.targets, settings.maxAllyTargets);
         if (!spellInfo.targets) spellInfo.targets = 1;
         if (spellInfo.cooldown) spellInfo.activeCooldown = 0;
@@ -99,10 +76,6 @@ const DRUIDCONSTANTS = {
  
         }
     }
-
-    if (settings.t31_2) {}
-    if (settings.t31_4) {}
-
 
     // ==== Tier Sets ====
 
@@ -119,8 +92,6 @@ const DRUIDCONSTANTS = {
 const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
     let mult = DRUIDCONSTANTS.auraDamageBuff;
 
-    mult *= (buffs.filter(function (buff) {return buff.name === "Energy Loop"}).length > 0 ? 1.2 : 1);
-
     return mult;
 }
 
@@ -129,7 +100,7 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents) => {
  * @ascendedEruption The healing portion also gets a buff based on number of boon stacks on expiry.
  */
 const getHealingMult = (state, t, spellName, talents) => {
-    let mult = DRUIDCONSTANTS.auraHealingBuff * 1.06; // Not taking Nurt is trolling so we won't even check for it. 
+    let mult = 1;
     const treeActive = state.activeBuffs.filter(buff => buff.name === "Incarnation: Tree of Life").length > 0;
     const numGGActive = state.activeBuffs.filter(buff => buff.name === "Grove Guardians").length;
 
@@ -137,8 +108,8 @@ const getHealingMult = (state, t, spellName, talents) => {
     if (treeActive) mult *= 1.1; // Not affected by tree: External healing sources (not included anyway), Ysera's Gift
     if (spellName.includes("Rejuvenation")) mult *= treeActive ? 1.4 : 1;
     if (spellName === "Regrowth" && checkBuffActive(state.activeBuffs, "Soul of the Forest")) mult *= 3; // This cannot buff the HoT portion or we would double dip.
-    if (state.talents.harmonyOfTheGrove.points) mult *= (1 + numGGActive * 0.05);
-    if (state.talents.powerOfNature.points && ["Efflorescence", "Rejuvenation", "Lifebloom"].includes(spellName)) mult *= (1 + numGGActive * 0.1);
+    if (state.talents["Harmony of the Grove"].points) mult *= (1 + numGGActive * 0.05);
+    if (state.talents["Power of Nature"].points && ["Efflorescence", "Rejuvenation", "Lifebloom"].includes(spellName)) mult *= (1 + numGGActive * 0.1);
     return mult;
 }
 
@@ -161,11 +132,11 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
         // Check avg stack counts. Could also just take a mastery average across the raid.
         
         // This calculates an average stack count. We know it'll always benefit from itself, and then we'll take an average of other HoTs across the raid.
-        masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth", "Dream Petal"].includes(buff.name)).length +
-                                state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Cenarion Ward", "Spring Blossoms"].includes(buff.name)).length / 20;
+        masteryStacks = state.activeBuffs.filter(buff => ["Wild Growth"].includes(buff.name)).length +
+                                state.activeBuffs.filter(buff => ["Rejuvenation", "Regrowth", "Symbiotic Bloom"].includes(buff.name)).length / 20;
 
     }
-    else if (["Rejuvenation", "Regrowth", "Cenarion Ward", "Swiftmend", "Grove Guardians - Nourish", "Grove Guardians - Swiftmend"].includes(spellName)) {
+    else if (["Rejuvenation", "Regrowth", "Symbiotic Bloom", "Swiftmend", "Grove Guardians - Nourish"].includes(spellName)) {
         // Check stacks on target.
         //console.log([1].includes(parseInt(targetNum)));
         //console.log("|" + typeof(targetNum) + "|");
@@ -181,7 +152,7 @@ export const runHeal = (state, spell, spellName, targetNum = 0) => {
     if ('specialMult' in spell) healingVal *= spell.specialMult;
 
     // Abundance
-    if (spellName.includes("Regrowth") && state.talents.abundance.points > 0) {
+    if (spellName.includes("Regrowth") && state.talents["Abundance"].points > 0) {
         // Reduce price of Regrowth by 8% per active Rejuv, to a maximum of 12 stacks (96% reduction).
         const abundanceStacks = state.activeBuffs.filter(buff => buff.name === "Rejuvenation").length;
         const crit = getCrit(currentStats);
@@ -241,7 +212,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
     state.currentStats = getCurrentStats(currentStats, state.activeBuffs)
 
 
-    const sequenceLength = 45; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
+    const sequenceLength = 30; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
     const seqType = "Manual" // Auto / Manual.
 
     let castState = {
@@ -254,7 +225,7 @@ export const runCastSequence = (sequence, stats, settings = {}, talents = {}, ap
     // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
     // Ideally we'll cover as much as we can in here.
 
-    const druidSpells = applyLoadoutEffects(deepCopyFunction(DRUIDSPELLDB), settings, talents, state, stats);
+    const druidSpells = applyLoadoutEffects(deepCopyFunction(RestoDruidSpellDB), settings, talents, state, stats);
     applyTalents(state, druidSpells, stats)
 
     const yserasGift = {...DRUIDCONSTANTS.yserasGift};

@@ -132,6 +132,7 @@ const runPeriodic = (state, spell, spellName, runHeal, runDamage) => {
 export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpecial, runHeal, runDamage, flags = {}) => {
     fullSpell.forEach(spell => {
         let canProceed = false
+        const spellType = spell.spellType;
 
         if (spell.chance) {
             const roll = Math.random();
@@ -148,7 +149,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             // The spell casts a different spell. 
             const target = fullSpell[0].targeting ? generateSpellTarget(state, fullSpell[0], spellName) : [];
             if (target) state.currentTarget = target;
-            if (spell.type === 'castSpell') {
+            if (spellType === 'castSpell') {
                 addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = deepCopyFunction(evokerSpells[spell.storedSpell]); // This might fail on function-based spells.
                 if (spell.powerMod) {
@@ -169,27 +170,27 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
             }
             // The spell has a healing component. Add it's effective healing.
             // Absorbs are also treated as heals.
-            else if (spell.type === 'heal') {
+            else if (spellType === 'heal') {
                 runHeal(state, spell, spellName)
             }
 
             // In classic we don't need to worry about hots and dots changing 
-            else if (spell.type === "classic periodic") {
+            else if (spellType === "classic periodic") {
                 runPeriodic(state, spell, spellName, runHeal, runDamage);
             }
             
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-            else if (spell.type === 'damage') {
+            else if (spellType === 'damage') {
                 runDamage(state, spell, spellName)
             }
             // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-            else if (spell.type === 'function') {
+            else if (spellType === 'function') {
                 spell.runFunc(state, spell, evokerSpells, triggerSpecial, runHeal, runDamage);
             }
 
             // The spell adds a buff to our player.
             // We'll track what kind of buff, and when it expires.
-            else if (spell.type === "buff") {
+            else if (spellType === "buff") {
                 if (spell.name === "Essence Burst") {
                     // Special code for essence burst.
                     triggerSpecial(state);
@@ -199,16 +200,16 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
                 }
                 
             }
-            else if (spell.type === "buffExtension") {
+            else if (spellType === "buffExtension") {
                 extendBuff(state.activeBuffs, 0, spell.extensionList, spell.extensionDuration)
             }
             // The spell reduces the cooldown of another spell. 
-            else if (spell.type === "cooldownReduction") {
+            else if (spellType === "cooldownReduction") {
                 const targetSpell = evokerSpells[spell.targetSpell];
                 targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
             }
              // The spell reduces the cooldown of multiple spells. 
-            else if (spell.type === "cooldownReductions") {
+            else if (spellType === "cooldownReductions") {
                 spell.targetSpells.forEach(target => {
                     const targetSpell = evokerSpells[target];
                     if (targetSpell[0].cooldownData.activeCooldown) targetSpell[0].cooldownData.activeCooldown -= spell.cooldownReduction;
@@ -254,7 +255,7 @@ export const runSpell = (fullSpell, state, spellName, evokerSpells, triggerSpeci
 
     // TODO: make this an onCastEnd effect.
     if (spellName === "Dream Breath") state.activeBuffs = removeBuffStack(state.activeBuffs, "Call of Ysera");
-    if (["Rejuvenation", "Regrowth", "Wild Growth"].includes(spellName)) state.activeBuffs = removeBuffStack(state.activeBuffs, "Soul of the Forest");
+    if (["Rejuvenation", "Regrowth"].includes(spellName)) state.activeBuffs = removeBuffStack(state.activeBuffs, "Soul of the Forest");
 
     //if (spellName === "Verdant Embrace" && state.talents.callofYsera) addBuff(state, EVOKERCONSTANTS.callOfYsera, "Call of Ysera");
     state.currentTarget = [];
@@ -554,13 +555,13 @@ const getSpellFlat = (spell, flatBonus = 0) => {
 
 /**
  * Get a spells raw damage or healing. This is made up of it's coefficient, our intellect, and any secondary stats it scales with.
- * We'll take care of multipliers like Schism and Sins in another function.
+ * We'll take care of multipliers in another function.
  * @param {object} spell The spell being cast. Spell data is pulled from DiscSpellDB. 
  * @param {object} currentStats A players current stats, including any buffs.
  * @returns The raw damage or healing of the spell.
  */
 export const getSpellRaw = (spell, currentStats, specConstants, flatBonus = 0) => {
-    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
+    return (getSpellFlat(spell, flatBonus) + spell.coeff * currentStats.intellect * (spell.aura || 1)) * getStatMult(currentStats, spell.secondaries, spell.statMods || {}, specConstants); // Multiply our spell coefficient by int and secondaries.
 }
 
 export const getSpellAttribute = (spell, attribute, index = 0) => {
