@@ -35,7 +35,7 @@ export const runSpellScript = (scriptName: string, state: any, spell: any) : num
                     targets: spell.targets,// + (inTree ? 2 : 0),
                     expectedOverheal: spell.expectedOverheal, 
                     secondaries: spell.secondaries,
-                    type: "heal",
+                    spellType: "heal",
                 }
 
                 totalHealing += getSpellThroughput(wgCast, state.statPercentages, state.spec, state.settings, {}) * partialTickSize;

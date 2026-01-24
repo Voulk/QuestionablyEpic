@@ -129,6 +129,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     if (spell.spellType === "heal" || spell.buffType === "heal") {
         spellOutput *= (1 - spell.expectedOverheal)
         targetCount = spell.targets ? spell.targets : 1;
+        spellOutput *= targetCount;
     }
     else if (spell.spellType === "damage" || spell.buffType === "damage") {
         if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);

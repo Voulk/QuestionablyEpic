@@ -52,14 +52,17 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
 
     // Cast Profile
+    // Maybe use manaOverride instead of freeCast
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      //{spell: "Swiftmend", efficiency: 0.9 },
+      {spell: "Swiftmend", efficiency: 0.9 },
       {spell: "Wild Growth", efficiency: 0.8 },
+      {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
+      {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
 
-      {spell: "Rejuvenation", efficiency: 0 },
-      {spell: "Regrowth", efficiency: 0 },
-      {spell: "Lifebloom", efficiency: 0 },
+      //{spell: "Rejuvenation", efficiency: 0 },
+      //{spell: "Regrowth", efficiency: 0 },
+      //{spell: "Lifebloom", efficiency: 0 },
     ]
 
     castProfile.forEach(spell => {

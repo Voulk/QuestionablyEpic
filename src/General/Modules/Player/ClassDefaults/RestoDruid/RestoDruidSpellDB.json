@@ -45,7 +45,7 @@
             "customScript": "Wild Growth",
             "coeff": 0.331,
             "aura": 1.44,
-            "expectedOverheal": 0,
+            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -131,7 +131,7 @@
             },
             "castTime": 0.0,
             "cost": 3.4,
-            "targets": 20,
+            "targets": 3,
             "coeff": 0.5856,
             "aura": 1.0,
             "expectedOverheal": 0.25,
