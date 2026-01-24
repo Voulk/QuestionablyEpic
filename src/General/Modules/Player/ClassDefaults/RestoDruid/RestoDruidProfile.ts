@@ -42,7 +42,7 @@ import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, 
 export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    const state = {fightLength: 6, spec: "Resto Druid", statPercentages: {intellect: 618, haste: 1, crit: 1, mastery: 0.114, versatility: 1.04}, settings: settings, talents: druidTalents};
+    const state = {fightLength: 6, spec: "Resto Druid", statPercentages: {intellect: 618, haste: 1.0689, crit: 1, mastery: 0.114, versatility: 1.04}, settings: settings, talents: druidTalents};
     //const spec = "Resto Druid"
     //const statPercentages = {intellect: 2000, haste: 1.3, crit: 1.2, mastery: 1.2, versatility: 1.04};
     const healingBreakdown: Record<string, number> = {};
