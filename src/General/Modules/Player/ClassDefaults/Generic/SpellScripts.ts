@@ -1,7 +1,52 @@
 
 
 // Returns a throughput value.
-// 
-export const runSpellScript = (state: any, spell: any) => {
 
+import { getSpellThroughput } from "./ProfileUtilities";
+
+// 
+export const runSpellScript = (scriptName: string, state: any, spell: any) : number => {
+    let throughput = 0;
+
+    switch (scriptName) {
+        case "Wild Growth":
+            // Wild Growth caught a 4% nerf in Dragonflight, and this is applied to the decayrate also.
+            // Unstoppable Growth is a 15/30% reduction to the Decay rate.
+
+            const tickCount = Math.ceil(7 * 1)// state.statPercentages.haste;
+            const buffDuration = 7;
+            const tickRate = 1 / 1; 
+            let totalHealing = 0;
+
+            for (let i = 1; i <= tickCount; i++) {
+
+                const decayRate = 0.07 * 1.878 * (1 - state.talents["Unstoppable Growth"].points * 0.15) / buffDuration;
+                const t = i * tickRate;
+                //const inTree = state.activeBuffs.filter(x => x.name === "Incarnation: Tree of Life").length > 0;
+                
+                // The Wild Growth aura is applied at the end, after the decay has been applied.
+                const netCoeff = ((spell.coeff) - decayRate * t)// * spell.specialMod;
+
+                const wgCast = {
+                    name: "Wild Growth",
+                    coeff: netCoeff, 
+                    aura: spell.aura,
+                    targets: 1, //spell.targets,// + (inTree ? 2 : 0),
+                    expectedOverheal: spell.expectedOverheal, 
+                    secondaries: spell.secondaries,
+                    type: "heal",
+                }
+
+                console.log("Tick " + i + ". Healing: " + getSpellThroughput(wgCast, state.statPercentages, state.spec, state.settings, {}) + ". Coeff: " + netCoeff);
+                totalHealing += getSpellThroughput(wgCast, state.statPercentages, state.spec, state.settings, {});
+            }
+
+            throughput = totalHealing;
+
+
+
+
+    }
+
+    return throughput;
 }

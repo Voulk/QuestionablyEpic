@@ -27,6 +27,7 @@ type SpellData = {
     tickData?: TickData;
     hasScript?: boolean;
     specialFields?: { [key: string]: any }; // For any extra fields we might need later.
+    customScript?: string; // For spells that are very unique, or that are mostly scripted in game too.
     targets?: number;
 }
 

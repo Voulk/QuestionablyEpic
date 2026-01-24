@@ -1,4 +1,5 @@
 
+import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { druidTalents } from "./RestoDruidTalents";
 import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
@@ -41,12 +42,11 @@ import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, 
 export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    const spec = "Resto Druid"
-    const statPercentages = {intellect: 2000, haste: 1.3, crit: 1.2, mastery: 1.2, versatility: 1.04};
+    const state = {fightLength: 6, spec: "Resto Druid", statPercentages: {intellect: 618, haste: 1, crit: 1, mastery: 0.114, versatility: 1.04}, settings: settings, talents: druidTalents};
+    //const spec = "Resto Druid"
+    //const statPercentages = {intellect: 2000, haste: 1.3, crit: 1.2, mastery: 1.2, versatility: 1.04};
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
-    const fightLength = 6;
-    const talents = {} //druidBaseline.talents || druidTalents;
 
     // Apply Talents
 
@@ -54,7 +54,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
     // Cast Profile
     let castProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-      {spell: "Swiftmend", efficiency: 0.9 },
+      //{spell: "Swiftmend", efficiency: 0.9 },
       {spell: "Wild Growth", efficiency: 0.8 },
 
       {spell: "Rejuvenation", efficiency: 0 },
@@ -78,7 +78,12 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
         fullSpell.forEach((slice: SpellData) => {
             let spellOutput = 0;
 
-            spellOutput = getSpellThroughput(slice, statPercentages, spec, settings, spellFlags)
+            if (slice.customScript) {
+                spellOutput = runSpellScript(slice.customScript, state, slice);
+            }
+            else {
+                spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
+            }
 
 
             const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;

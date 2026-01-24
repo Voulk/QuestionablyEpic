@@ -65,7 +65,7 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
-export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
+export const runFullProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
     console.log(fullSpell);
@@ -78,6 +78,22 @@ export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flag
             throughput.damage += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
         }
     })
+
+    return throughput;
+}
+
+export const runProfileSlice = (fullSpell, statPercentages, spec, settings, flags = {}) => {
+    const throughput = {damage: 0, healing: 0};
+
+    console.log(fullSpell);
+
+
+    if (spell.spellType === "heal" || spell.buffType === "heal") {
+        throughput.healing += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
+    }
+    else if (spell.type === "damage" || spell.buffType === "damage") {
+        throughput.damage += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
+    }
 
     return throughput;
 }
@@ -104,8 +120,9 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * // Spell "base" healing
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
-                            genericMult
-
+                            (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1) *
+                            genericMult 
+        //console.log(critMult, masteryMult, genericMult);
     }
     
 
