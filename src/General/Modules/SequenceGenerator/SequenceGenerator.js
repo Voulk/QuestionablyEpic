@@ -19,7 +19,7 @@ import { runCastSequence as classicSequence } from "General/Modules/Player/Class
 
 import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
-import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDBWarWithin";
+import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/RestoShamanSpellDBWarWithin";
 import shamanSpellDB from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB.json"
 
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDBTWW";

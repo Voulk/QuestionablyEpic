@@ -5,9 +5,8 @@ import { druidTalents } from "./RestoDruidTalents"
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { scoreDruidSet } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidProfile"
 
-// These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
-describe("Evang Cast Sequence", () => {
+describe("Generic Profile Testing Environment", () => {
     test("Test APL", () => {
         
         console.log("Testing APL");

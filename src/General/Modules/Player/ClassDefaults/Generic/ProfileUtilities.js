@@ -177,3 +177,11 @@ export const applyTalents = (state, spellDB, stats) => {
         }
     });
 };
+
+export const completeCastProfile = (castProfile, spellDB) => {
+    castProfile.forEach(spell => {
+        if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)
+        spell.castTime = spellDB[spell.spell][0].castTime;
+        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1);
+    });
+}

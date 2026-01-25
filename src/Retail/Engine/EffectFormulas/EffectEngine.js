@@ -3,7 +3,7 @@ import { getDruidSpecEffect } from "General/Modules/Player/ClassDefaults/RestoDr
 import { getDiscPriestSpecEffect } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestSpecEffects";
 import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpecEffects";
 import { getMonkSpecEffect } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpecEffects";
-import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/ShamanSpecEffects";
+import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/ShamanSpecEffects";
 import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects";
 import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects";
 import { getTrinketEffect} from "./Generic/Trinkets/TrinketEffectFormulas";

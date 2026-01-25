@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/ShamanSpecEffects"
+import { getShamanSpecEffect } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/ShamanSpecEffects"
 import { getMonkSpecEffect } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpecEffects"
 import { getEvokerSpecEffect } from "General/Modules/Player/ClassDefaults/PreservationEvoker/EvokerSpecEffects"
 import { getPaladinSpecEffect } from "General/Modules/Player/ClassDefaults/HolyPaladin/PaladinSpecEffects"

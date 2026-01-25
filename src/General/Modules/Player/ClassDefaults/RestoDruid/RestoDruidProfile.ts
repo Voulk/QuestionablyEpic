@@ -1,9 +1,8 @@
 
-import { stat } from "fs";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { druidTalents } from "./RestoDruidTalents";
-import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 // Mixed Profile
 // Convoke Ramp every 1 minute
@@ -44,15 +43,13 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
 
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: druidTalents};
+    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: "Keeper of the Grove"};
     
-    
-    //const spec = "Resto Druid"
-    //const statPercentages = {intellect: 2000, haste: 1.3, crit: 1.2, mastery: 1.2, versatility: 1.04};
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
     // Apply Talents
+    applyTalents(initialState, spellDB, initialState.statBonuses);
 
     // Apply Stats
     const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid"), settings: settings, talents: druidTalents};
@@ -73,11 +70,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
       //{spell: "Lifebloom", efficiency: 0 },
     ]
 
-    castProfile.forEach(spell => {
-        if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)
-        spell.castTime = spellDB[spell.spell][0].castTime;
-        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1);
-    });
+    completeCastProfile(castProfile, spellDB);
 
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
 
@@ -97,7 +90,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
             }
 
 
-            const effectiveCPM = spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
+            const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
             const totalOutput = (spellOutput * effectiveCPM);
             if (totalOutput > 0) {
@@ -109,7 +102,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
     })
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
-    //console.log(healingBreakdown);
+
     printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { damage: 0 / 60, healing: totalHealing / 60 }
