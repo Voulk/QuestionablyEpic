@@ -168,4 +168,12 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
 
     return spellOutput;
-}
+};
+export const applyTalents = (state, spellDB, stats) => {
+    Object.keys(state.talents).forEach(talentName => {
+        const talent = state.talents[talentName];
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
+            talent.runFunc(state, spellDB, talent.points, stats);
+        }
+    });
+};

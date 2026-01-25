@@ -14,21 +14,22 @@ describe("Evang Cast Sequence", () => {
 
         const activeStats = {
             intellect: 2000,
-            haste: 500,
-            crit: 200,
-            mastery: 500,
-            versatility: 200,
-            stamina: 29000,
+            haste: 550,
+            crit: 550,
+            mastery: 550,
+            versatility: 550,
+            stamina: 19000,
             critMult: 2,
         }
+
+        const playerData = { spec: "Resto Druid", profileName: "Keeper of the Grove", settings: {}, stats: activeStats }
     
         /*
         const baseSpells = RestoDruidSpellDB;
         const baseTalents = druidTalents;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, seqLength: 30};
 
-        const playerData = { spec: "Resto Druid", profileName: "Herald of the Sun AW", spells: baseSpells, settings: testSettings, 
-                                talents: {...baseTalents}, stats: activeStats }
+
         const sequence = ["Rejuvenation", "Rejuvenation", "Rejuvenation", "Regrowth", "Regrowth"]
 
 
@@ -40,18 +41,17 @@ describe("Evang Cast Sequence", () => {
 
         expect(true).toEqual(true);
 
-        
-       /* const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        /*
+       const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runHolyPaladinCastProfile(playerData).hps;
+            baseline += scoreDruidSet(activeStats).healing;
         }
 
-        baseline = baseline / iterations*/
+        baseline = baseline / iterations;
         
-        /*
         const results = {};
         stats.forEach(stat => {
             let statHealing = 0;
@@ -60,7 +60,7 @@ describe("Evang Cast Sequence", () => {
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
-                statHealing += runHolyPaladinCastProfile(newPlayerData).hps;
+                statHealing += scoreDruidSet(playerStats).healing;
                 
             }
             results[stat] = statHealing / iterations;
@@ -73,8 +73,7 @@ describe("Evang Cast Sequence", () => {
         });
         console.log(weights); 
 
-        */
-        
+      */  
     })
 
 

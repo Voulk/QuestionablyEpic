@@ -90,6 +90,22 @@ declare type AdditionalData = {
     setVariables: any;
 }
 
+declare type ProfileEntry = {
+    spell: string;
+    efficiency?: number; // Used mostly for cooldown spells. Defines how good they are at pressing button cooldown. 
+    cpm?: number; // Casts per minute. Can be used for fixed spells that don't have a cooldown but are only pressed X times per minute like Efflorescence.
+    manaOverride?: number; // Used for free casts, or cheaper casts.
+    castTimeOverride?: number; // Used for spells that should not take up time on our timeline but that aren't structurally off-GCD.
+
+    castTime?: number; // Cast time of the spell before Haste
+    cost?: number; // Mana cost of the spell
+
+    fillerSpell?: boolean; // Used by some profiles to designate which spells excess mana and time should be filled with. Can be manually coded instead.
+    flags?: any; // Currently unused. Assign a type when necessary.
+}
+
+declare type CastProfile = ProfileEntry[]
+
 declare type contentTypes = "Raid" | "Dungeon";
 declare type gameTypes = "Retail" | "Classic";
 

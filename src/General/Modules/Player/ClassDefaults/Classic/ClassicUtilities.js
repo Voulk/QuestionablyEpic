@@ -8,7 +8,8 @@ import { CLASSICMONKSPELLDB as monkSpells, monkTalents } from "./Monk/ClassicMon
 import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICPALADINSPELLDB as paladinSpells, paladinTalents } from "./Paladin/ClassicPaladinSpellDB";
 import { CLASSICPRIESTSPELLDB as priestSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
-import { applyTalents, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { getCritPercentage } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 
 /**

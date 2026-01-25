@@ -1,5 +1,6 @@
 
-import { getCurrentStats, getSpellRaw, getCrit, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { getCurrentStats, getSpellRaw, getCrit, getHaste, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { runHeal, EVOKERCONSTANTS } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
 import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
 import { STATCONVERSION } from "General/Engine/STAT";

@@ -5,7 +5,8 @@ import { CLASSICPRIESTSPELLDB } from "./Priest/ClassicPriestSpellDB";
 import { CLASSICSHAMANSPELLDB } from "./Shaman/ClassicShamanSpellDB";
 import { CLASSICMONKSPELLDB } from "./Monk/ClassicMonkSpellDB";
 import { runRampTidyUp, addReport,  getHaste, getStatMult, GLOBALCONST, 
-            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents, getTalentPoints } from "../Generic/RampBase";
+            getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, getTalentPoints } from "../Generic/RampBase";
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { getSpellRaw, applyRaidBuffs, getMastery, getCurrentStats, getWeaponScaling, getEnemyArmor } from "../Generic/ClassicBase"
 import { genSpell } from "../Generic/APLBase";

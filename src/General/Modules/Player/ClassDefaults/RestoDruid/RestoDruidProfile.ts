@@ -60,7 +60,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
     // Cast Profile
     // Maybe use manaOverride instead of freeCast
-    let castProfile = [
+    let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       {spell: "Swiftmend", efficiency: 0.9 },
       {spell: "Wild Growth", efficiency: 0.8 },
@@ -76,7 +76,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
     castProfile.forEach(spell => {
         if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)
         spell.castTime = spellDB[spell.spell][0].castTime;
-        spell.cost = spell.freeCast ? 0 : spellDB[spell.spell][0].cost/* * 18635 / 100*/;
+        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1);
     });
 
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);

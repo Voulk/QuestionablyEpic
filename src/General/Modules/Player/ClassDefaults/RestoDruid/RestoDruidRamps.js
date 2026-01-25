@@ -3,7 +3,8 @@ import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
 import RestoDruidSpellDB from "./RestoDruidSpellDB.json";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-    getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "../Generic/RampBase";
+    getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampBase";
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 

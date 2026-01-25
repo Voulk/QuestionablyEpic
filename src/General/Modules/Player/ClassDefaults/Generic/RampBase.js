@@ -42,16 +42,6 @@ export const getTalentValue = (talents, talentName) => {
     }
 }
 
-export const applyTalents = (state, spellDB, stats) => {
-    Object.keys(state.talents).forEach(talentName => {
-        const talent = state.talents[talentName];
-        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
-            talent.runFunc(state, spellDB, talent.points, stats)
-        }
-    });
-
-}
-
 // Cleanup is called after every hard spell cast. 
 export const spellCleanup = (spell, state) => {
 

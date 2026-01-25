@@ -1,5 +1,6 @@
 
-import { getCurrentStats, getCrit, getHaste, applyTalents, hasTalent, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { getCurrentStats, getCrit, getHaste, hasTalent, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
