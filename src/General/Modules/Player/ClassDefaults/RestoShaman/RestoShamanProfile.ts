@@ -40,7 +40,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
     let initialState = {statBonuses: {}, talents: shamanTalents, heroTree: playerData.heroTree};
-    const reportingData = {};
+    const reportingData: any = {};
     
     const damageBreakdown: Record<string, number> = {};
     const healingBreakdown: Record<string, number> = {};
@@ -59,6 +59,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB);
+
+    // Handle mana and begin to construct filler spells.
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost! * spell.cpm!)), 0);
+    reportingData.baselineManaPerMinute = baselineCostPerMinute;
 
     // Sum the healing of each spell. Some of this can be shared between specs, others might need spec-specific implementations.
     castProfile.forEach(spellProfile => {
@@ -96,6 +100,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     const totalDamage = Object.values(damageBreakdown).reduce((sum: number, val: number) => sum + val, 0);
 
+    console.log(reportingData);
     printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { damage: totalDamage / 60, healing: totalHealing / 60 }

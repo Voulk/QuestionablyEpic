@@ -1,5 +1,5 @@
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { STATCONVERSION } from "General/Engine/STAT";
+import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
 
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
         const sortedEntries = Object.entries(healingBreakdown)
@@ -182,6 +182,6 @@ export const completeCastProfile = (castProfile, spellDB) => {
     castProfile.forEach(spell => {
         if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)
         spell.castTime = spellDB[spell.spell][0].castTime;
-        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1);
+        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1) * BASEMANA / 100;
     });
 }

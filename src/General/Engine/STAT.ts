@@ -50,15 +50,8 @@ export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
   LEECH: [STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 20, STATCONVERSION.LEECH * 20],
 };
 
-export const BASEMANA = {
-  "Restoration Druid": 250000,
-  "Mistweaver Monk": 15000,
-  "Holy Paladin": 15000,
-  "Holy Priest": 15000,
-  "Discipline Priest": 15000,
-  "Restoration Shaman": 15000,
-  "Preservation Evoker": 15000,
-}
+// These used to be different. Could potentially just be folded into a single variable now.
+export const BASEMANA = 250000;
 
 export const STATCONVERSIONCLASSIC = {
   HASTE: 425,

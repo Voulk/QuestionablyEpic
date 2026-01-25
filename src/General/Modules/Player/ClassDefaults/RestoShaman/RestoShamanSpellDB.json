@@ -242,7 +242,11 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "heal",
+            "specialFields": {
+                "healingIncrease": 0.25,
+                "castTimeReduction": -0.3
+            }
         }
     ],
     "Surging Totem": [
