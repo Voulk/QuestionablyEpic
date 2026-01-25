@@ -40,6 +40,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
     let initialState = {statBonuses: {}, talents: shamanTalents, heroTree: playerData.heroTree};
+    const reportingData = {};
     
     const damageBreakdown: Record<string, number> = {};
     const healingBreakdown: Record<string, number> = {};

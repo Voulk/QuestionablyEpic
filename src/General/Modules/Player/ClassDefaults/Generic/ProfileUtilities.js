@@ -84,7 +84,7 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, race = ""
     return stats;
 }
 
-export const runFullProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
+export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
     console.log(fullSpell);

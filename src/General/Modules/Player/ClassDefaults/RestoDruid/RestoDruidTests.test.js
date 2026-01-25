@@ -3,7 +3,7 @@ import RestoDruidSpellDB from "./RestoDruidSpellDB.json";
 import { runCastSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps"
 import { druidTalents } from "./RestoDruidTalents"
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
-import { scoreDruidSet } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidProfile"
+import { restoDruidProfile, scoreDruidSet } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidProfile"
 
 
 describe("Generic Profile Testing Environment", () => {
@@ -11,17 +11,9 @@ describe("Generic Profile Testing Environment", () => {
         
         console.log("Testing APL");
 
-        const activeStats = {
-            intellect: 2000,
-            haste: 550,
-            crit: 550,
-            mastery: 550,
-            versatility: 550,
-            stamina: 19000,
-            critMult: 2,
-        }
+        const activeStats = restoDruidProfile.defaultStatProfile;
 
-        const playerData = { spec: "Resto Druid", profileName: "Keeper of the Grove", settings: {}, stats: activeStats }
+        const playerData = { spec: "Resto Druid", heroTree: "Keeper of the Grove", settings: {}, stats: activeStats }
     
         /*
         const baseSpells = RestoDruidSpellDB;
@@ -34,7 +26,7 @@ describe("Generic Profile Testing Environment", () => {
 
         const data = runCastSequence(sequence, playerData.stats, playerData.settings, playerData.talents)*/
 
-        const data = scoreDruidSet(activeStats);
+        const data = scoreDruidSet(activeStats, playerData);
 
         console.log(data);
 

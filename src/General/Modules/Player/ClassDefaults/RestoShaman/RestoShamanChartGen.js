@@ -1,5 +1,5 @@
 
-import { getSpellRaw, runCastSequence } from "./RestoShamanRamps";
+import { getSpellRaw, runCastSequence } from "./Archive/RestoShamanRamps";
 import restoShamanSpellDB  from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB.json";
 import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanTalents";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";

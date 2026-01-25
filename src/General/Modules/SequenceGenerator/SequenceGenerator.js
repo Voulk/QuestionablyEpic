@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 import { runCastSequence as evokerSequence } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
 import { runCastSequence as discSequence } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestRamps";
-import { runCastSequence as shamanSequence } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanRamps";
+import { runCastSequence as shamanSequence } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/RestoShamanRamps";
 import { runCastSequence as paladinSequence } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps";
 import { runCastSequence as monkSequence } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";

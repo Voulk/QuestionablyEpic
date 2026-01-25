@@ -1,6 +1,6 @@
 
 import { FamilyRestroom, SpellcheckRounded } from "@mui/icons-material";
-import { runHeal, getHaste, runDamage } from "../RestoShamanRamps";
+import { runHeal, getHaste, runDamage } from "./RestoShamanRamps";
 
 // This is the Rshaman spell database. 
 // It contains information on every spell used in a ramp. Each spell is an array which means you can include multiple effects to code spells like Mindblast. 

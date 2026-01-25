@@ -4,6 +4,37 @@ import specSpellDB from "./RestoDruidSpellDB.json";
 import { druidTalents } from "./RestoDruidTalents";
 import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
+
+export const restoDruidProfile = {
+    spec: "Restoration Druid",
+    name: "Restoration Druid Classic",
+    scoreSet: scoreDruidSet,
+    defaultStatProfile: { 
+        // Our stats we want to run through the profile. 
+        // You can change and play with these as much as you want.
+        // All user-facing operations will set their own anyway like in Top Gear.
+        intellect: 2000,
+        haste: 550,
+        crit: 550,
+        mastery: 550,
+        versatility: 550,
+        stamina: 19000,
+        critMult: 2,
+    },
+    defaultStatWeights: {
+        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+        intellect: 1,
+        crit: 0.452,
+        mastery: 0.2,
+        versatility: 0.35,
+        haste: 0.3,
+        hps: 0.304, // 
+    },
+    specialQueries: {
+        // Any special information we need to pull.
+    },
+}
+
 // Mixed Profile
 // Convoke Ramp every 1 minute
 // Mini-ramps 
@@ -39,12 +70,14 @@ import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, up
 
 // Wrath regen = 1687 effective mana per cast.
 
-export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
+export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
 
 
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: "Keeper of the Grove"};
-    
+    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree};
+    const reportingData: any = {};
+
+    const damageBreakdown: Record<string, number> = {};
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
@@ -72,7 +105,8 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
     completeCastProfile(castProfile, spellDB);
 
-    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0);
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost! * spell.cpm!)), 0);
+    reportingData.baselineManaPerMinute = baselineCostPerMinute;
 
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
@@ -103,6 +137,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
     })
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
 
+    console.log(reportingData)
     printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { damage: 0 / 60, healing: totalHealing / 60 }

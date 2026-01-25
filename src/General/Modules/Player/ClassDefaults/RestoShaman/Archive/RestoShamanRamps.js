@@ -1,5 +1,5 @@
 // 
-import { SHAMANSPELLDB } from "./Archive/RestoShamanSpellDBWarWithin";
+import { SHAMANSPELLDB } from "./RestoShamanSpellDBWarWithin";
 import { getCurrentStats, getHaste, getSpellRaw, getStatMult } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 
