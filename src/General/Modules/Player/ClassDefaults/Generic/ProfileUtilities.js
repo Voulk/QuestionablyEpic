@@ -1,4 +1,5 @@
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { STATCONVERSION } from "General/Engine/STAT";
 
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
         const sortedEntries = Object.entries(healingBreakdown)
@@ -63,6 +64,24 @@ export const getSpellEntry = (profile, spellName, index = 0) => {
 
 export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
+}
+
+
+// Stat profile is an object containing stats found from all non-talent sources.
+// StatBonuses contains percentages instead. 
+export const convertStatPercentages = (statProfile, statBonuses, spec, race = "") => {
+
+    const stats = {
+        intellect: statProfile.intellect,
+        crit: 1.05 + (statProfile.crit / STATCONVERSION.CRIT / 100) + (statBonuses.crit || 0),
+        haste: 1 + (statProfile.haste / STATCONVERSION.HASTE / 100) * (statBonuses.haste || 1),
+        mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08) * STATCONVERSION.MASTERYMULT[spec], 
+        versatility: 1 + (statProfile.versatility / STATCONVERSION.VERSATILITY / 100) + (statBonuses.versatility || 0),
+        genericMult: (statBonuses.genericMult) ? 1 + statBonuses.genericMult : 1,
+    }
+
+    //getClassicRaceBonuses(stats, race);
+    return stats;
 }
 
 export const runFullProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {

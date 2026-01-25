@@ -103,6 +103,7 @@
                 "cooldown": 180.0,
                 "hasted": false
             },
+            "targets": 20,
             "coeff": 9.272,
             "aura": 1.0,
             "expectedOverheal": 0.25,
@@ -207,6 +208,27 @@
             },
             "coeff": 10.37,
             "aura": 0.9,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Lifebloom (Bloom)": [
+        {
+            "displayInfo": {
+                "id": 33778,
+                "icon": "inv_misc_herb_felblossom",
+                "spellName": "Lifebloom (Bloom)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 2.1887,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",

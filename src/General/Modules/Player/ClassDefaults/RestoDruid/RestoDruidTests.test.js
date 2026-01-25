@@ -34,7 +34,7 @@ describe("Evang Cast Sequence", () => {
 
         const data = runCastSequence(sequence, playerData.stats, playerData.settings, playerData.talents)*/
 
-        const data = scoreDruidSet();
+        const data = scoreDruidSet(activeStats);
 
         console.log(data);
 

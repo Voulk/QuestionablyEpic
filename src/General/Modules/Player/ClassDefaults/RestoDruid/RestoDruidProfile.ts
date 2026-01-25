@@ -1,8 +1,9 @@
 
+import { stat } from "fs";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { druidTalents } from "./RestoDruidTalents";
-import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 // Mixed Profile
 // Convoke Ramp every 1 minute
@@ -41,14 +42,20 @@ import { printHealingBreakdownWithCPM, getSpellEntry, updateSpellCPM, buildCPM, 
 
 export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
 
+
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    const state = {fightLength: 6, spec: "Resto Druid", statPercentages: {intellect: 618, haste: 1.0689, crit: 1, mastery: 0.114, versatility: 1.04}, settings: settings, talents: druidTalents};
+    let initialState = {statBonuses: {}, talents: druidTalents};
+    
+    
     //const spec = "Resto Druid"
     //const statPercentages = {intellect: 2000, haste: 1.3, crit: 1.2, mastery: 1.2, versatility: 1.04};
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
     // Apply Talents
+
+    // Apply Stats
+    const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid"), settings: settings, talents: druidTalents};
 
 
     // Cast Profile
@@ -59,6 +66,7 @@ export const scoreDruidSet = (stats: Stats, settings: PlayerSettings = {}) => {
       {spell: "Wild Growth", efficiency: 0.8 },
       {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
+      {spell: "Lifebloom (Bloom)", cpm: 4 }, // Does not proc if we extend Lifebloom with Verdant Infusion so adjust down in that case.
 
       //{spell: "Rejuvenation", efficiency: 0 },
       //{spell: "Regrowth", efficiency: 0 },
