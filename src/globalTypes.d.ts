@@ -5,6 +5,11 @@ interface TickData {
     tickOnCast: boolean;
 }
 
+interface CooldownData {
+    cooldown: number;
+    hasted: boolean;
+}
+
 interface SpellDB {
     [spellName: string]: SpellData[]; // e.g. "Rejuvenation": [ Spell ]
 }
@@ -25,9 +30,11 @@ type SpellData = {
     buffType?: string;
     buffDuration?: number;
     tickData?: TickData;
+    cooldownData?: CooldownData;
     hasScript?: boolean;
     specialFields?: { [key: string]: any }; // For any extra fields we might need later.
     customScript?: string; // For spells that are very unique, or that are mostly scripted in game too.
+    statMods?: { [key: string]: number };
     targets?: number;
 }
 

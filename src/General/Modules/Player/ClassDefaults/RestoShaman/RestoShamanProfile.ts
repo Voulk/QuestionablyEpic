@@ -34,6 +34,8 @@ export const restoShamanProfile = {
     },
 }
 
+
+
 // PlayerData needs some work to be a fully formed idea still. I'll fix its typing later.
 export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));

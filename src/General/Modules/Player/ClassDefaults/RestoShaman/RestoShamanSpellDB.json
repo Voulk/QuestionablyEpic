@@ -312,6 +312,33 @@
             "spellType": "heal"
         }
     ],
+    "Ascendance": [
+        {
+            "displayInfo": {
+                "id": 114052,
+                "icon": "spell_fire_elementaldevastation",
+                "spellName": "Ascendance",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            },
+            "coeff": 12.8772,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal",
+            "buffDuration": 15.0
+        }
+    ],
     "Earthliving Weapon": [
         {
             "displayInfo": {
