@@ -8,6 +8,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 2.1,
             "coeff": 0.73,
             "aura": 1.0,
@@ -36,6 +37,7 @@
                 "cat": "heal"
             },
             "castTime": 1.5,
+            "school": "nature",
             "cost": 3.8,
             "cooldownData": {
                 "cooldown": 10.0,
@@ -70,6 +72,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 1.6,
             "coeff": 0.2684,
             "aura": 1.0,
@@ -98,6 +101,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 3.68,
             "cooldownData": {
                 "cooldown": 180.0,
@@ -131,6 +135,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 3.4,
             "targets": 3,
             "coeff": 0.5856,
@@ -160,6 +165,7 @@
                 "cat": "heal"
             },
             "castTime": 1.5,
+            "school": "nature",
             "cost": 2.8,
             "coeff": 6.3,
             "aura": 1.0,
@@ -199,6 +205,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 1.4,
             "cooldownData": {
                 "cooldown": 15.0,
@@ -226,6 +233,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "nature",
             "cost": 0.0,
             "coeff": 2.1887,
             "aura": 1.0,
@@ -247,6 +255,7 @@
                 "cat": "damage"
             },
             "castTime": 1.5,
+            "school": "nature",
             "cost": 0.2,
             "coeff": 0.6122,
             "aura": 3.5475,
@@ -266,6 +275,7 @@
                 "spellName": "Moonfire"
             },
             "castTime": 0.0,
+            "school": "arcane",
             "cost": 1.2,
             "coeff": 0.212,
             "aura": 1.65,
@@ -287,6 +297,45 @@
                 "mastery"
             ],
             "spellType": "energize"
+        }
+    ],
+    "Sylvan Beckoning": [
+        {
+            "displayInfo": {
+                "id": 1264614,
+                "icon": "ui_darkshore_warfront_alliance_dryad",
+                "spellName": "Sylvan Beckoning",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "coeff": 0.9272,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 6.5851,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ]
 }

@@ -1,3 +1,4 @@
+import { buffSpellPerc } from "../Generic/TalentBase";
 
 
 const classTalents: TalentTree = {
@@ -243,7 +244,7 @@ const specTalents: TalentTree = {
 
     /* Wild Growth heals X additional $ltarget:targets;. */
     "Improved Wild Growth": {id: 328025, values: [1.0],  points: 0, maxPoints: 1, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Wild Growth"][0].targets! += talentValues[0];
     }},
 
     /* Ironbark increases healing from your heal over time effects by X%. */
@@ -262,9 +263,9 @@ const specTalents: TalentTree = {
     }},
 
     /* Regrowth's healing over time is increased by X%, and it also applies to the target of your Lifebloom. */
-    "Rampant Growth": {id: 404521, values: [100.0],  points: 0, maxPoints: 1, icon: "spell_nature_resistnature", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
+    "Rampant Growth": {id: 404521, values: [100.0],  points: 0, maxPoints: 1, icon: "spell_nature_resistnature", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: 
     any, points: number) {
-
+        buffSpellPerc(spellDB['Regrowth'], talentValues[0], 1); // Buff HoT only
     }},
 
     /* Rejuvenation healing is increased by up to X%, and Tranquility healing is increased by up to Y%, healing for more on low-health targets. */
@@ -274,7 +275,9 @@ const specTalents: TalentTree = {
 
     /* Grove Guardians, Efflorescence, and your other summons heal for X% more. */
     "Wild Synthesis": {id: 400533, values: [30.0, 30.0, 30.0],  points: 0, maxPoints: 1, icon: "spell_nature_protectionformnature", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB['Grove Guardians'], talentValues[0]);
+        buffSpellPerc(spellDB['Efflorescence'], talentValues[1]);
+        // TODO: Dryad etc
     }},
 
     /* Soul of the Forest now causes your next Rejuvenation or Regrowth to apply to X additional $Lally:allies; within $189877s1 yards of the target. */
