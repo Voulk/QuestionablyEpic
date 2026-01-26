@@ -1,5 +1,5 @@
 
-import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTime } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
+import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTimeFlat } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
 
 const classTalents: TalentTree = {
     /* Increases all Fire and Frost damage you deal by X%. */
