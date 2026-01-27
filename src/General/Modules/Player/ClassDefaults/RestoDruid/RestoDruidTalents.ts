@@ -1,4 +1,4 @@
-import { buffSpellPerc } from "../Generic/TalentBase";
+import { adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
 
 
 const classTalents: TalentTree = {
@@ -287,14 +287,15 @@ const specTalents: TalentTree = {
     }},
 
     /* Wild Growth's healing falls off X% less over time. */
+    /* Note: The spell data for this seems to just use a wrong (and incorrect) dummy value. */
     "Unstoppable Growth": {id: 382559, values: [40.0],  points: 0, maxPoints: 2, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
     any, points: number) {
-
+        spellDB["Wild Growth"][0].specialFields!.decayRate *= (1 - points * 0.15)
     }},
 
     /* Swiftmend healing increased by X%. */
     "Improved Swiftmend": {id: 470549, values: [30.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredtouch", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB['Swiftmend'], talentValues[0]);
     }},
 
     /* Allies protected by your Ironbark also receive X% of the healing from each of your active Rejuvenations and Ironbark's duration is increased by ${Y/1000} sec. */
@@ -315,7 +316,7 @@ const specTalents: TalentTree = {
 
     /* When Regrowth critically heals, it is ${X+200}% effective instead of the usual 200%. */
     "Intensity": {id: 1264649, values: [75.0],  points: 0, maxPoints: 1, icon: "spell_frost_windwalkon", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritMult(spellDB['Regrowth'], talentValues[0]);
     }},
 
     /* Your damage over time effects deal their damage X% faster, and your healing over time effects heal Y% faster. */
@@ -357,7 +358,7 @@ const specTalents: TalentTree = {
     /* Rejuvenation instantly heals your target for X% of its total periodic effect and Regrowth's duration is increased by ${Y/1000} sec. */
     "Thriving Vegetation": {id: 447131, values: [20.0, 3000.0],  points: 0, maxPoints: 2, icon: "spell_nature_rejuvenation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, 
     talentValues: number[], points: number) {
-
+        adjBuffDurationFlat(spellDB['Regrowth'], talentValues[1] * points, 1);
     }},
 
     /* For each Rejuvenation you have active, Regrowth's cost is reduced by $207640s1% and critical effect chance is increased by $207640s2%, up to a maximum of ${$207640s2*$207640u}%. */
@@ -387,21 +388,23 @@ const specTalents: TalentTree = {
 
     /* You can apply Rejuvenation twice to the same target. Rejuvenation's duration is increased by ${X/1000} sec. */
     "Germination": {id: 155675, values: [2000.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
     }},
 
     /* Lifebloom stacks every X sec, stacking up to ${Y+1} times. */
-    "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        buffSpellPerc(spellDB['Lifebloom'], talentValues[1] * 100); 
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
-    "Everbloom2": {id: 1244331, values: [2.0, 15.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    "Everbloom2": {id: 1244331, values: [2.0, 15.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        spellDB["Lifebloom"].forEach(slice => {
+            slice.targets =  (slice.targets ? slice.targets : 1) +  (talentValues[0] * talentValues[1] / 100 * points)
+        })
     }},
 
     /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
-    "Everbloom3": {id: 1244470, values: [5.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Everbloom3": {id: 1244470, values: [5.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 }

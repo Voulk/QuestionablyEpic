@@ -60,6 +60,9 @@
                 "tickRate": 1.0,
                 "canPartialTick": true,
                 "tickOnCast": false
+            },
+            "specialFields": {
+                "decayRate": 1.878
             }
         }
     ],
@@ -329,6 +332,28 @@
         {
             "coeff": 6.5851,
             "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Verdancy": [
+        {
+            "displayInfo": {
+                "id": 392329,
+                "icon": "inv_10_herb_seed_magiccolor5",
+                "spellName": "Verdancy",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.9487,
+            "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",

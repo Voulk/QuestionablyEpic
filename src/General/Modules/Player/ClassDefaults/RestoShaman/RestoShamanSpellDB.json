@@ -339,6 +339,28 @@
             "buffDuration": 15.0
         }
     ],
+    "Downpour": [
+        {
+            "displayInfo": {
+                "id": 207778,
+                "icon": "ability_mage_waterjet",
+                "spellName": "Downpour",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 3.234,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
     "Earthliving Weapon": [
         {
             "displayInfo": {
