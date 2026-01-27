@@ -277,7 +277,7 @@ const specTalents: TalentTree = {
     "Wild Synthesis": {id: 400533, values: [30.0, 30.0, 30.0],  points: 0, maxPoints: 1, icon: "spell_nature_protectionformnature", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB['Grove Guardians'], talentValues[0]);
         buffSpellPerc(spellDB['Efflorescence'], talentValues[1]);
-        // TODO: Dryad etc
+        buffSpellPerc(spellDB['Sylvan Beckoning'], talentValues[2]);
     }},
 
     /* Soul of the Forest now causes your next Rejuvenation or Regrowth to apply to X additional $Lally:allies; within $189877s1 yards of the target. */
