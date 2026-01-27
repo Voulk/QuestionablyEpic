@@ -1,4 +1,4 @@
-import { adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
+import { addStatPerc, adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
 
 
 const classTalents: TalentTree = {
@@ -117,19 +117,9 @@ const classTalents: TalentTree = {
 
     }},
 
-    /* Increases Typhoon's radius by X% and its range by Y yds. */
-    "Gale Winds": {id: 400142, values: [20.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_druid_galewinds", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
-
-    /* Reduces the cooldown of Typhoon by ${$m1/-1000} sec. */
-    "Incessant Tempest": {id: 400140, values: [-5000.0],  points: 0, maxPoints: 1, icon: "ability_skyreach_wind", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
-
     /* Mark of the Wild is X% more effective on yourself. */
     "Gift of the Wild": {id: 1262034, values: [100.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewild", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "versatility", 0.03)
     }},
 
     /* For $340541d after shifting into Bear Form, your health and armor are increased by X%. */
@@ -219,7 +209,7 @@ const specTalents: TalentTree = {
 
     /* Efflorescence healing increased by X%, and it now automatically grows beneath your Lifebloom target's feet. */
     "Lifetreading": {id: 1217941, values: [25.0],  points: 0, maxPoints: 1, icon: "inv12_ability_druid_lifetreading", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB['Efflorescence'], talentValues[0], 0);
     }},
 
     /* Casting Swiftmend or Wild Growth summons a Treant that casts Nourish on that target or a nearby ally periodically, healing for ${$422090m1}. Lasts $102693d. */

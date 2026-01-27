@@ -361,6 +361,70 @@
             "spellType": "heal"
         }
     ],
+    "Lightning Bolt": [
+        {
+            "displayInfo": {
+                "id": 188196,
+                "icon": "spell_nature_lightning",
+                "spellName": "Lightning Bolt",
+                "cat": "damage"
+            },
+            "castTime": 2.5,
+            "school": "nature",
+            "cost": 0.2,
+            "coeff": 1.311,
+            "aura": 4.404,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Flame Shock": [
+        {
+            "displayInfo": {
+                "id": 470411,
+                "icon": "spell_fire_flameshock",
+                "spellName": "Flame Shock"
+            },
+            "castTime": 0.0,
+            "school": "volcanic",
+            "cost": 0.3,
+            "cooldownData": {
+                "cooldown": 6.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Lava Burst": [
+        {
+            "displayInfo": {
+                "id": 51505,
+                "icon": "spell_shaman_lavaburst",
+                "spellName": "Lava Burst"
+            },
+            "castTime": 2.0,
+            "school": "fire",
+            "cost": 0.5,
+            "cooldownData": {
+                "cooldown": 8.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.0,
+            "aura": 3.312,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "damage"
+        }
+    ],
     "Earthliving Weapon": [
         {
             "displayInfo": {
