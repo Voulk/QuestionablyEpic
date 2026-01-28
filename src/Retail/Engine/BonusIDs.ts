@@ -23443,8 +23443,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5817": {
     "id": 5817,
-    "ilevel": "16 @plvl 1 - 189 @plvl 189",
-    "curveId": 1690
+    "applyBonusId": 5805
   },
   "5818": {
     "id": 5818,
@@ -40133,8 +40132,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7924": {
     "id": 7924,
-    "ilevel": "16 @plvl 1 - 189 @plvl 189",
-    "curveId": 1690
+    "applyBonusId": 7920
   },
   "7925": {
     "id": 7925,
@@ -89771,9 +89769,9 @@ export const bonus_IDs: {[key: string]: any} = {
   "13638": {
     "id": 13638,
     "itemLevel": {
-      "amount": 80,
+      "amount": 102,
       "priority": 0,
-      "squishEra": 0
+      "squishEra": 2
     }
   },
   "13640": {
@@ -89855,5 +89853,14 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2
     },
     "quality": 3
+  },
+  "13670": {
+    "id": 13670,
+    "itemLevel": {
+      "amount": 577,
+      "priority": 1,
+      "squishEra": 1
+    },
+    "quality": 4
   }
 }

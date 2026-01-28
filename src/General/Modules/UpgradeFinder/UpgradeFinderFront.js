@@ -153,20 +153,20 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 681, label: "M0" },
-  { value: 684, label: "+2/3" },
-  { value: 688, label: "+4" },
-  { value: 691, label: "+5" },
-  { value: 694, label: "+6/7" },
-  { value: 697, label: "+8/9" },
-  { value: 701, label: "+10" },
-  { value: 704, label: "Vault" },
-  { value: 710, label: "" },
-  { value: 717, label: "" },
-  { value: 720, label: "" },
-  { value: 723, label: "" },
-  { value: 727, label: "" },
-  { value: 730, label: "" },
+  { value: 121, label: "M0" },
+  { value: 124, label: "+2/3" },
+  { value: 128, label: "+4" },
+  { value: 131, label: "+5" },
+  { value: 134, label: "+6/7" },
+  { value: 137, label: "+8/9" },
+  { value: 140, label: "+10" },
+  { value: 144, label: "Vault" },
+  { value: 147, label: "" },
+  { value: 150, label: "" },
+  { value: 154, label: "" },
+  { value: 157, label: "" },
+  { value: 160, label: "" },
+  { value: 170, label: "" },
 
 ]
 

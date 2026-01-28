@@ -254,7 +254,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
 
   // Step 2: Filter items that are within 40 levels of that max
   player.activeItems = player.activeItems.filter(item => 
-    (item.level >= maxLevels[item.slot] - 40)
+    (item.level >= maxLevels[item.slot] - 40 || item.slot === "Trinket" || item.slot === "Finger")
   );
 
 
@@ -625,6 +625,8 @@ export function processItem(line: string, player: Player, contentType: contentTy
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 50 and that it exists in our item database.
   if (protoItem.level > 50 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
+
+
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     

@@ -193,6 +193,24 @@ describe("Test Item Level Imports", () => {
         expect(itemLevel).toEqual(71);
     });
 
+    test("Random Item I got from Underpin", () => {
+        /*
+            3322: Item level 393
+
+        */
+
+        const importLine = "finger2=,id=235424,enchant_id=7339,bonus_id=11978/6652/10394/10392/3322/10255"
+
+        const id = 235424
+        const bonusIDs = [11978,6652,10394,10392,3322,10255]
+
+        const itemLevel = getItemLevel(id, bonusIDs, -1)
+
+        expect(itemLevel).toEqual(95);
+
+
+    })
+
 
     
 });
