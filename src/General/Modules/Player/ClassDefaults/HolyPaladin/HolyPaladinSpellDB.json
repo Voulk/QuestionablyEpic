@@ -8,9 +8,10 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 2.8,
             "cooldownData": {
-                "cooldown": 6.0,
+                "cooldown": 9.5,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
@@ -40,12 +41,13 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
             },
             "targets": 5,
-            "coeff": 2.7821,
+            "coeff": 3.06,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -107,6 +109,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
@@ -130,6 +133,7 @@
                 "spellName": "Aura Mastery"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "cooldownData": {
                 "cooldown": 180.0,
@@ -146,6 +150,7 @@
                 "cat": "heal"
             },
             "castTime": 1.5,
+            "school": "holy",
             "cost": 0.6,
             "coeff": 3.156,
             "aura": 1.11,
@@ -172,8 +177,9 @@
                 "cat": "heal"
             },
             "castTime": 2.0,
+            "school": "holy",
             "cost": 7.0,
-            "coeff": 25.9875,
+            "coeff": 32.5,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -197,6 +203,7 @@
                 "spellName": "Divine Toll"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 3.0,
             "cooldownData": {
                 "cooldown": 60.0,
@@ -221,6 +228,7 @@
                 "spellName": "Holy Prism"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 2.6,
             "cooldownData": {
                 "cooldown": 45.0,
@@ -241,6 +249,7 @@
                 "spellName": "Holy Bulwark"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "cooldownData": {
                 "cooldown": 60.0,
@@ -259,6 +268,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "additionalCosts": {
                 "holyPower": 3
@@ -291,6 +301,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "cooldownData": {
                 "cooldown": 11.0,
@@ -327,6 +338,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "cooldownData": {
                 "cooldown": 7.5,
@@ -368,6 +380,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "physical",
             "cost": 0.6,
             "cooldownData": {
                 "cooldown": 6.0,
@@ -376,7 +389,7 @@
                 "maxCharges": 2
             },
             "coeff": 0.0,
-            "aura": 2.124,
+            "aura": 2.544,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -399,7 +412,12 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 9.0,
+                "hasted": false
+            },
             "coeff": 0.0,
             "aura": 1,
             "expectedOverheal": 0.25,

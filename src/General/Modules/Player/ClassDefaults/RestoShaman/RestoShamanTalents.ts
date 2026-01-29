@@ -344,7 +344,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Increases your maximum $?a137040[Maelstrom by X.][mana by Y%.] */
-    "Primordial Capacity": {id: 443448, values: [25.0, 10.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "ability_monk_chiswirl", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Primordial Capacity": {id: 443448, values: [25.0, 10.0, 1.0, 2.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "ability_monk_chiswirl", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

@@ -402,7 +402,7 @@ const specTalents: TalentTree = {
 const heroTalents: TalentTree = {
     // Wildstalker
     /* Rip and Rake damage has a chance to cause Bloodseeker Vines to grow on the victim, dealing $439531o1 Bleed damage over $439531d.    $?a137011[Wild Growth and Regrowth][Wild Growth, Regrowth, and Efflorescence] healing has a chance to cause Symbiotic Blooms to grow on the target, healing for $439530o1 over $439530d.    Multiple instances of these can overlap. */
-    "Thriving Growth": {id: 439528, values: [100.0, 135.0, 85.0, 85.0, 155.0, 62.0, 75.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_ability_wildstalkerdruid_thrivinggrowth", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Thriving Growth": {id: 439528, values: [100.0, 135.0, 85.0, 85.0, 155.0, 52.0, 75.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_ability_wildstalkerdruid_thrivinggrowth", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -471,7 +471,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Your $?c2[Bleeds and other damage over time][heal over time] effects are $?c2[X][Z]% more effective. */
-    "Patient Custodian": {id: 1270592, values: [6.0, 6.0, 6.0, 6.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_helm_misc_rose_a_01_red", select: true, tier: 2, runFunc: function 
+    "Patient Custodian": {id: 1270592, values: [8.0, 8.0, 6.0, 6.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_helm_misc_rose_a_01_red", select: true, tier: 2, runFunc: function 
     (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -487,7 +487,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c2[Bloodseeker Vines][Symbiotic Blooms] have a $?c2[X][Y]% chance to trigger Bursting Growth every 2 sec at $?c2[Z][$s4]% effectiveness.   */
-    "Rampancy": {id: 1270586, values: [20.0, 20.0, 100.0, 100.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_misc_thornnecklace", select: true, tier: 2, runFunc: function (state: 
+    "Rampancy": {id: 1270586, values: [30.0, 20.0, 100.0, 100.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_misc_thornnecklace", select: true, tier: 2, runFunc: function (state: 
     any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -530,7 +530,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?a137013[Your Force of Nature treants have 50% increased health.][Grove Guardians last Y% longer.] */
-    "Durability of Nature": {id: 429227, values: [100.0, 20.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_manatree", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Durability of Nature": {id: 429227, values: [100.0, 20.0, 20.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_manatree", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

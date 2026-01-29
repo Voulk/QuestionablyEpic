@@ -161,7 +161,7 @@
             "school": "nature",
             "cost": 4.5,
             "coeff": 2.31,
-            "aura": 2.49,
+            "aura": 2.83,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -194,7 +194,7 @@
             "castTime": 2.0,
             "school": "nature",
             "cost": 0.2,
-            "coeff": 0.7302,
+            "coeff": 0.7303,
             "aura": 4.5,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -436,7 +436,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
-            "coeff": 0.463,
+            "coeff": 0.4631,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -465,7 +465,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
-            "coeff": 2.1292,
+            "coeff": 2.1291,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [
