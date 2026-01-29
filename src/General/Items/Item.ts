@@ -90,7 +90,7 @@ export class Item {
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
 
-      if (slot === "Waist") this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
+      if (slot === "Waist" || slot.includes("Weapon")) this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
       this.stats = calcStatsAtLevelClassic(id, level);
 
