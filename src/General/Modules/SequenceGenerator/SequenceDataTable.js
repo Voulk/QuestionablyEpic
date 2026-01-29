@@ -12,7 +12,7 @@ import { SpellIcon } from "General/Modules/SequenceGenerator/SpellIcon"
 import { buildEvokerChartData } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
 import { buildDiscChartData } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRampUtilities";
-import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidRampGen";
+import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidChartGen";
 import { buildHolyPriestChartData } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestRampGen";
 import { buildShamanChartData } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanChartGen";
 

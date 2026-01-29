@@ -1,5 +1,27 @@
 import { addStatPerc, adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
 
+/**
+ * A list of talents to turn on
+ */
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Keeper of the Grove") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+        "Nurturing Instinct", "Gift of the Wild", "Improved Rejuvenation", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
+        "Flourish", "Improved Wild Growth", "Renewing Surge", "Rampant Growth", "Wild Synthesis", "Power of the Archdruid", "Improved Swiftmend", "Master Shapeshifter",
+        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis"
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+            //console.log(`Enabling talent: ${talentName}`);
+        }
+    })
+}
+
 
 const classTalents: TalentTree = {
     /* Rake, Rip, and Thrash damage increased by Y%. */
@@ -18,10 +40,6 @@ const classTalents: TalentTree = {
 
     }},
 
-    /* Nature's Cure additionally removes all Curse and Poison effects. */
-    "Improved Nature's Cure": {id: 392378, values: [0.0],  points: 0, maxPoints: 1, icon: "ability_shaman_cleansespirit", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
 
     /* Physical damage and Armor increased by X%. */
     "Killer Instinct": {id: 108299, values: [6.0, 6.0, 6.0, 6.0],  points: 0, maxPoints: 2, icon: "ability_druid_predatoryinstincts", select: true, tier: 0, runFunc: function (state: any, spellDB: 
@@ -278,8 +296,7 @@ const specTalents: TalentTree = {
 
     /* Wild Growth's healing falls off X% less over time. */
     /* Note: The spell data for this seems to just use a wrong (and incorrect) dummy value. */
-    "Unstoppable Growth": {id: 382559, values: [40.0],  points: 0, maxPoints: 2, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
-    any, points: number) {
+    "Unstoppable Growth": {id: 382559, values: [40.0],  points: 0, maxPoints: 2, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         spellDB["Wild Growth"][0].specialFields!.decayRate *= (1 - points * 0.15)
     }},
 

@@ -1,7 +1,7 @@
 
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
-import { druidTalents } from "./RestoDruidTalents";
+import { defaultTalents, druidTalents } from "./RestoDruidTalents";
 import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
@@ -81,13 +81,15 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
+    
     // Apply Talents
+    defaultTalents(initialState.talents, "default", playerData.heroTree);
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
     // Apply Stats
     const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid"), settings: settings, talents: druidTalents};
 
-
+    console.log(spellDB);
     // Cast Profile
     // Maybe use manaOverride instead of freeCast
     let castProfile: CastProfile = [

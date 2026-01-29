@@ -302,6 +302,45 @@
             "spellType": "energize"
         }
     ],
+    "Grove Guardians": [
+        {
+            "displayInfo": {
+                "id": 102693,
+                "icon": "ability_druid_forceofnature",
+                "spellName": "Grove Guardians",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 1.6,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "coeff": 0.61,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
     "Sylvan Beckoning": [
         {
             "displayInfo": {

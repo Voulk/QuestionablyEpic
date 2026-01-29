@@ -8,11 +8,11 @@
  * @param index Optional parameter to specify a specific slice of the spell. You might use this if a talent buffs the HoT of a direct / HoT spell like Regrowth or Riptide.
  */
 export const buffSpellPerc = (spell: SpellData[], value: number, index: number = -1) => {
-        spell.forEach((slice, i) => {
-            if (index === -1 || index === i) {
-                slice.coeff = slice.coeff * (1 + (value / 100));
-            }
-        })
+    spell.forEach((slice, i) => {
+        if (index === -1 || index === i) {
+            slice.coeff = slice.coeff * (1 + (value / 100));
+        }
+    })
 }
 
 /**
