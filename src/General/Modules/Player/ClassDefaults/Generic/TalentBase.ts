@@ -107,8 +107,8 @@ export const modCastTimePerc = (spell: SpellData[], value: number) => {
 // - Lycara's Gift adds haste
 // Be careful with Mastery talents since their tooltips often lie and refer to base mastery points, not sheet mastery. 
 export const addStatPerc = (statBonuses: any, stat: string, value: number) => {
-    if (statBonuses[stat]) statBonuses[stat] += value;
-    else statBonuses[stat] = value;
+    if (statBonuses[stat]) statBonuses[stat] += value / 100;
+    else statBonuses[stat] = value / 100;
 }
 
 /**

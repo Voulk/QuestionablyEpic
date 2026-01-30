@@ -32,13 +32,13 @@ describe("Generic Profile Testing Environment", () => {
 
         expect(true).toEqual(true);
 
-        /*
+/*
        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += scoreDruidSet(activeStats).healing;
+            baseline += scoreDruidSet(activeStats, playerData).healing;
         }
 
         baseline = baseline / iterations;
@@ -47,11 +47,11 @@ describe("Generic Profile Testing Environment", () => {
         stats.forEach(stat => {
             let statHealing = 0;
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 2400;
+            playerStats[stat] = playerStats[stat] + 200;
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
-                statHealing += scoreDruidSet(playerStats).healing;
+                statHealing += scoreDruidSet(playerStats, newPlayerData).healing;
                 
             }
             results[stat] = statHealing / iterations;
@@ -63,8 +63,8 @@ describe("Generic Profile Testing Environment", () => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
         console.log(weights); 
-
-      */  
+      
+      */
     })
 
 

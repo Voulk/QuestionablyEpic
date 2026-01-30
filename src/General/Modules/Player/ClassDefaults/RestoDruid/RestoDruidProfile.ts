@@ -72,7 +72,7 @@ export const restoDruidProfile = {
 
 export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
 
-
+    const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree};
     const reportingData: any = {};
@@ -89,26 +89,50 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     // Apply Stats
     const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid"), settings: settings, talents: druidTalents};
 
-    console.log(spellDB);
     // Cast Profile
     // Maybe use manaOverride instead of freeCast
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
+      
       {spell: "Swiftmend", efficiency: 0.9 },
       {spell: "Wild Growth", efficiency: 0.8 },
       {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
       {spell: "Lifebloom (Bloom)", cpm: 4 }, // Does not proc if we extend Lifebloom with Verdant Infusion so adjust down in that case.
 
-      //{spell: "Rejuvenation", efficiency: 0 },
+      {spell: "Grove Guardians", cpm: 0 },
+      {spell: "Dream Bloom", cpm: 0 },
+      {spell: "Rejuvenation", cpm: 0 },
       //{spell: "Regrowth", efficiency: 0 },
-      //{spell: "Lifebloom", efficiency: 0 },
     ]
 
     completeCastProfile(castProfile, spellDB);
+    
+
+    const manaPool = 250000;
+    const regen = manaPool * 0.04 * 12;
+
+    const manaAvailable = manaPool / fightLength + regen;
+    reportingData.manaAvailable = manaAvailable;
 
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost! * spell.cpm!)), 0);
     reportingData.baselineManaPerMinute = baselineCostPerMinute;
+
+    const fillerMana = manaAvailable - baselineCostPerMinute;
+    reportingData.fillerManaPerMinute = fillerMana;
+
+
+
+    // Insert Grove Guardians
+    const groveGuardiansCPM = 0//getSpellEntry(castProfile, "Wild Growth").cpm + (getSpellEntry(castProfile, "Swiftmend").cpm)
+    getSpellEntry(castProfile, "Grove Guardians").cpm = groveGuardiansCPM;                                
+    getSpellEntry(castProfile, "Dream Bloom").cpm = groveGuardiansCPM;                                                          
+
+
+    // Calculate initial filler via mana costs
+    getSpellEntry(castProfile, "Rejuvenation").cpm = fillerMana / getSpellEntry(castProfile, "Rejuvenation").cost!;
+
+    // Calculate *time* left, fill it with packages.
 
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];

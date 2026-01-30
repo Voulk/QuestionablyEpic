@@ -8,7 +8,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-        "Nurturing Instinct", "Gift of the Wild", "Improved Rejuvenation", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
+        "Nurturing Instinct", "Gift of the Wild", "Lingering Healing", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
         "Flourish", "Improved Wild Growth", "Renewing Surge", "Rampant Growth", "Wild Synthesis", "Power of the Archdruid", "Improved Swiftmend", "Master Shapeshifter",
         "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis"
     ]
@@ -106,6 +106,7 @@ const classTalents: TalentTree = {
     /* Rejuvenation's duration is increased by ${X/1000} sec.    Regrowth's duration is increased by ${Y/1000} sec when cast on yourself. */
     "Lingering Healing": {id: 231040, values: [3000.0, 3000.0],  points: 0, maxPoints: 1, icon: "spell_nature_rejuvenation", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, 
     talentValues: number[], points: number) {
+        adjBuffDurationFlat(spellDB["Rejuvenation"], talentValues[0]);
 
     }},
 
@@ -137,7 +138,7 @@ const classTalents: TalentTree = {
 
     /* Mark of the Wild is X% more effective on yourself. */
     "Gift of the Wild": {id: 1262034, values: [100.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewild", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        addStatPerc(state.statBonuses, "versatility", 0.03)
+        addStatPerc(state.statBonuses, "versatility", 3)
     }},
 
     /* For $340541d after shifting into Bear Form, your health and armor are increased by X%. */

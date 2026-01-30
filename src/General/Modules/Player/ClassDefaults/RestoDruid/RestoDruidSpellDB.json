@@ -401,5 +401,28 @@
             ],
             "spellType": "heal"
         }
+    ],
+    "Dream Bloom": [
+        {
+            "displayInfo": {
+                "id": 434141,
+                "icon": "inv_ability_keeperofthegrovedruid_dreamsurge_fiendly",
+                "spellName": "Dream Bloom",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "targets": 3,
+            "coeff": 1.464,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
     ]
 }
