@@ -166,7 +166,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Casting Riptide grants 1 stack of Tidal Waves. Tidal Waves reduces the cast time of your next Healing Wave or Chain Heal by 20%. Can accumulate up to 2 stacks. */
-    "Tidal Waves": {id: 51564, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_tidalwaves", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Tidal Waves": {id: 51564, values: [1.0],  points: 0, maxPoints: 1, icon: "spell_shaman_tidalwaves", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
