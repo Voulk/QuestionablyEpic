@@ -6,7 +6,7 @@ import { scoreItem, getItemDB, getItemAllocations, calcStatsAtLevel } from "../.
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
 import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
-import { shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/ShamanDefaults";
+import { shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/RestoShamanDefaults";
 import { discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
 import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
 import { monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";

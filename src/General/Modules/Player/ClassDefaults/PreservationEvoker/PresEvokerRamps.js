@@ -1,13 +1,13 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { EVOKERSPELLDB } from "./PresEvokerSpellDB";
+import { EVOKERSPELLDB } from "./Archive/PresEvokerSpellDBTWW";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampBase";
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
-import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
+import { applyLoadoutEffects } from "./Archive/PresEvokerTalentsTWW";
 
 export const EVOKERCONSTANTS = {
     

@@ -1,8 +1,8 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-import { reversionProfile, blossomProfile } from "./PresEvokerDefaultAPL";
+import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
+import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
-import { runPreservationEvokerCastProfile } from "./PreservationEvokerCastProfile";
+import { runPreservationEvokerCastProfile } from "./PreservationEvokerProfile";
 import { runPreservationEvokerCastProfileEchoshaper } from "./PreservationEvokerProfileEchoshaper";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.

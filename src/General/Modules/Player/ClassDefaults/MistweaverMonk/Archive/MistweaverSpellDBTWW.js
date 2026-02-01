@@ -1,4 +1,4 @@
-import { runHeal } from "./MonkSpellSequence";
+import { runHeal } from "../MistweaverMonkRamps";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 
 

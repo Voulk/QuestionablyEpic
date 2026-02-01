@@ -2,7 +2,7 @@
 import { getCurrentStats, getCrit, getHaste, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { applyTalents } from "../Generic/ProfileUtilities";
 import { runHeal, EVOKERCONSTANTS } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
-import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
+import { applyLoadoutEffects } from "./Archive/PresEvokerTalentsTWW";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 const getCPM = (profile, spellName) => {

@@ -1,6 +1,6 @@
-import { getHaste, getHealth, runSpell } from "../Generic/RampBase";
-import { checkBuffActive, getBuffStacks, addBuff, removeBuff } from "../Generic/BuffBase";
-import { runHeal  } from "./HolyPaladinRamps";
+import { getHaste, getHealth, runSpell } from "../../Generic/RampBase";
+import { checkBuffActive, getBuffStacks, addBuff, removeBuff } from "../../Generic/BuffBase";
+import { runHeal  } from "../HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT"
 
 // This is the Disc spell database. 

@@ -1,10 +1,10 @@
 import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
 import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
-import { paladinMeleeProfile } from "./PaladinDefaultAPL";
+import { paladinMeleeProfile } from "./Archive/PaladinDefaultAPL";
 import { runHolyPaladinCastProfile } from "./HolyPaladinCastProfile";
 import { genStatWeights } from './HolyPaladinUtilities';
 import { buildRamp } from "./HolyPaladinRampGen";
-import { PALADINSPELLDB, baseTalents } from "./HolyPaladinSpellDBTWW";
+import { PALADINSPELLDB, baseTalents } from "./Archive/HolyPaladinSpellDBTWW";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.

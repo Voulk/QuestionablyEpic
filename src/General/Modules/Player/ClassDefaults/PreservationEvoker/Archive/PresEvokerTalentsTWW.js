@@ -1,7 +1,7 @@
-import { getHealth, getHaste} from "../Generic/RampBase";
+import { getHealth, getHaste} from "../../Generic/RampBase";
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
-import { addBuff } from "../Generic/BuffBase";
-import { runHeal } from "./PresEvokerRamps"
+import { addBuff } from "../../Generic/BuffBase";
+import { runHeal } from "../PresEvokerRamps"
 
 /**
  * This function handles all of our effects that might change our spell database before the ramps begin.

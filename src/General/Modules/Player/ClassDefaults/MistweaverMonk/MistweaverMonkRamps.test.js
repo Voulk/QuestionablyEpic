@@ -1,4 +1,4 @@
-import { MONKSPELLS } from "./MistweaverSpellDB";
+import { MONKSPELLS } from "./Archive/MistweaverSpellDBTWW";
 import { baseTalents } from "./MistweaverTalents";
 import { runMistweaverMonkCastProfile } from "./MistweaverCastProfile";
 

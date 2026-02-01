@@ -11,25 +11,25 @@ import { runCastSequence as discSequence } from "General/Modules/Player/ClassDef
 import { runCastSequence as shamanSequence } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/RestoShamanRamps";
 import { runCastSequence as paladinSequence } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { runCastSequence as druidSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps";
-import { runCastSequence as monkSequence } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";
+import { runCastSequence as monkSequence } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
 import { runCastSequence as holyPriestSequence } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence";
 
 // Classic
 import { runCastSequence as classicSequence } from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 
-import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
+import { EVOKERSPELLDB, evokerTalents } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PresEvokerSpellDBTWW";
 import { DISCSPELLS, baseTalents as discTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscSpellDB";
 import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/Archive/RestoShamanSpellDBWarWithin";
 import shamanSpellDB from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanSpellDB.json"
 
-import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinSpellDBTWW";
+import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/Archive/HolyPaladinSpellDBTWW";
 import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDBTWW";
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
 
-import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverSpellDB";
-import { baseTalents as monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
+import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/Archive/MistweaverSpellDBTWW";
+import { monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRampGen";
+import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerChartGen";
 
 // Classic
 import { CLASSICDRUIDSPELLDB, druidTalents as classicDruidTalents } from "General/Modules/Player/ClassDefaults/Classic/Druid/ClassicDruidSpellDB";

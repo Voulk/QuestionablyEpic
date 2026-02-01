@@ -1,7 +1,7 @@
 
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDB";
-import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
+import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
+import { blossomProfile, reversionProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
 /**
