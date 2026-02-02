@@ -272,5 +272,49 @@
                 "tickOnCast": false
             }
         }
+    ],
+    "Twin Flame": [
+        {
+            "displayInfo": {
+                "id": 1265991,
+                "icon": "ability_evoker_infernosblessing",
+                "spellName": "Twin Flame",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "fire",
+            "cost": 0.0,
+            "coeff": 3.9,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Panacea": [
+        {
+            "displayInfo": {
+                "id": 387763,
+                "icon": "ability_druid_protectionofthegrove",
+                "spellName": "Panacea",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 2.0,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
     ]
 }

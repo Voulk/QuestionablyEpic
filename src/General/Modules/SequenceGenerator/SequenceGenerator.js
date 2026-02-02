@@ -24,7 +24,7 @@ import shamanSpellDB from "General/Modules/Player/ClassDefaults/RestoShaman/Rest
 
 import { PALADINSPELLDB, baseTalents as palaTalents } from "General/Modules/Player/ClassDefaults/HolyPaladin/Archive/HolyPaladinSpellDBTWW";
 import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidSpellDBTWW";
-import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/Archive/HolyPriestSpellDB";
 
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/Archive/MistweaverSpellDBTWW";
 import { monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"

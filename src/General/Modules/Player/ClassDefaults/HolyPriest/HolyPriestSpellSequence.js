@@ -1,6 +1,6 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { HOLYPRIESTSPELLDB as SPELLDB } from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB as SPELLDB } from "./Archive/HolyPriestSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
     getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
