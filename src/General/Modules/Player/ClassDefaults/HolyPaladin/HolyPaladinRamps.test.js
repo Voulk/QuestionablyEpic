@@ -1,7 +1,7 @@
 import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
 import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
 import { paladinMeleeProfile } from "./Archive/PaladinDefaultAPL";
-import { runHolyPaladinCastProfile } from "./HolyPaladinCastProfile";
+import { runHolyPaladinCastProfile } from "./HolyPaladinProfile";
 import { genStatWeights } from './HolyPaladinUtilities';
 import { buildRamp } from "./HolyPaladinRampGen";
 import { PALADINSPELLDB, baseTalents } from "./Archive/HolyPaladinSpellDBTWW";

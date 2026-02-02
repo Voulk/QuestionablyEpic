@@ -1,0 +1,276 @@
+{
+    "Fire Breath": [
+        {
+            "displayInfo": {
+                "id": 357208,
+                "icon": "ability_evoker_firebreath",
+                "spellName": "Fire Breath",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "fire",
+            "cost": 2.6,
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "targets": 5,
+            "coeff": 1.6341,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.3948,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 16,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Echo": [
+        {
+            "displayInfo": {
+                "id": 364343,
+                "icon": "ability_evoker_echo",
+                "spellName": "Echo",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "arcane",
+            "cost": 1.9,
+            "additionalCosts": {
+                "essence": 2
+            },
+            "coeff": 2.4,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Dream Breath": [
+        {
+            "displayInfo": {
+                "id": 355936,
+                "icon": "ability_evoker_dreambreath",
+                "spellName": "Dream Breath",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 4.9,
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "targets": 6,
+            "coeff": 0.3072,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 16,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 1.536,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Verdant Embrace": [
+        {
+            "displayInfo": {
+                "id": 360995,
+                "icon": "ability_evoker_rescue",
+                "spellName": "Verdant Embrace"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 3.3,
+            "cooldownData": {
+                "cooldown": 24.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            }
+        }
+    ],
+    "Emerald Blossom": [
+        {
+            "displayInfo": {
+                "id": 355913,
+                "icon": "ability_evoker_emeraldblossom",
+                "spellName": "Emerald Blossom"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 4.42,
+            "additionalCosts": {
+                "essence": 3
+            },
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false
+            },
+            "targets": 3
+        }
+    ],
+    "Reversion": [
+        {
+            "displayInfo": {
+                "id": 366155,
+                "icon": "ability_evoker_reversion",
+                "spellName": "Reversion",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "arcane",
+            "cost": 2.8,
+            "cooldownData": {
+                "cooldown": 9.0,
+                "hasted": false,
+                "charges": 2,
+                "maxCharges": 2
+            },
+            "coeff": 0.342,
+            "aura": 0.83,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 0.342,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "spellType": "absorb"
+        }
+    ],
+    "Temporal Anomaly": [
+        {
+            "displayInfo": {
+                "id": 373861,
+                "icon": "ability_evoker_temporalanomaly",
+                "spellName": "Temporal Anomaly"
+            },
+            "castTime": 1.5,
+            "school": "arcane",
+            "cost": 7.5,
+            "cooldownData": {
+                "cooldown": 15.0,
+                "hasted": false
+            },
+            "targets": 6
+        }
+    ],
+    "Dream Flight": [
+        {
+            "displayInfo": {
+                "id": 359816,
+                "icon": "ability_evoker_dreamflight",
+                "spellName": "Dream Flight"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 4.0,
+            "cooldownData": {
+                "cooldown": 120.0,
+                "hasted": false
+            },
+            "targets": 20,
+            "coeff": 2.0,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "spellType": "absorb"
+        }
+    ],
+    "Disintegrate": [
+        {
+            "displayInfo": {
+                "id": 356995,
+                "icon": "ability_evoker_disintegrate",
+                "spellName": "Disintegrate",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "additionalCosts": {
+                "essence": 3
+            },
+            "coeff": 1.5851,
+            "aura": 1.8719999999999999,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 3.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ]
+}
