@@ -1,11 +1,40 @@
 
 import { getCurrentStats, getCrit, getHaste, hasTalent, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyTalents } from "../Generic/ProfileUtilities";
+import { applyTalents } from "../../Generic/ProfileUtilities";
 import { runHeal, applyLoadoutEffects, PALADINCONSTANTS } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 import { printHealingBreakdown, getSpellEntry } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
+export const holyPaladinProfile = {
+    spec: "Holy Paladin",
+    name: "Holy Paladin",
+    scoreSet: scorePaladinSet,
+    defaultStatProfile: { 
+        // Our stats we want to run through the profile. 
+        // You can change and play with these as much as you want.
+        // All user-facing operations will set their own anyway like in Top Gear.
+        intellect: 2000,
+        haste: 550,
+        crit: 550,
+        mastery: 550,
+        versatility: 550,
+        stamina: 19000,
+        critMult: 2,
+    },
+    defaultStatWeights: {
+        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+        intellect: 1,
+        crit: 0.452,
+        mastery: 0.2,
+        versatility: 0.35,
+        haste: 0.3,
+        hps: 0.304, // 
+    },
+    specialQueries: {
+        // Any special information we need to pull.
+    },
+}
 
 const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
@@ -31,79 +60,8 @@ const getBeaconHealing = (state, healingVal, spellName) => {
         return beaconHealing;
 }
 
-const getCastData = (profileName, paladinSpells) => {
-    const castData = {
-        profile: [],
-        extras: {},
-    }
-    const cooldownWastage = 0.9;
-    const blessingOfDawnCDR = 1 + 0.1 * 0.9
 
-    if (profileName === "Herald of the Sun AW") {
-        castData.profile = [
-            {spell: "Avenging Wrath", cpm: 0.5},
-            {spell: "Divine Toll", cpm: 1},
-            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-            {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-            {spell: "Eternal Flame", cpm: 0},
-            {spell: "Light of Dawn", cpm: 0},
-            
-            {spell: "Judgment", cpm: 5.5 / blessingOfDawnCDR, hastedCPM: true }, // Technically a hasted CPM but in practice we cast this twice every 20s
-            {spell: "Flash of Light", cpm: 4, hastedCPM: true},
-            {spell: "Holy Light", cpm: 3.5, hastedCPM: true},
-            {spell: "Holy Prism", cpm: 2},
-    
-            // Free Holy Shocks
-            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Divine Toll"], "cooldown") * 9
-                                    + 60 / getSpellAttribute(paladinSpells["Avenging Wrath"], "cooldown") * 4, freeSpell: true},
-     
-            {spell: "Dawnlight", cpm: 0, freeSpell: true},       
-            {spell: "Sunsear", cpm: 0, freeSpell: true},       
-            
-            
-          ]
-
-          castData.extras.spenderUsage = {
-            "Light of Dawn": 0.3,
-            "Eternal Flame": 0.7,
-            "Word of Glory": 0
-            }
-    }
-    else if (profileName === "Lightsmith AW") {
-
-    }
-    else if (profileName === "Lightsmith AC") {
-        castData.profile = [
-            {spell: "Avenging Wrath", cpm: 0.5},
-            {spell: "Divine Toll", cpm: 1},
-            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown") * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-            {spell: "Crusader Strike", cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-            {spell: "Eternal Flame", cpm: 0},
-            {spell: "Light of Dawn", cpm: 0},
-            
-            {spell: "Judgment", cpm: 5.5 / blessingOfDawnCDR, hastedCPM: true }, // Technically a hasted CPM but in practice we cast this twice every 20s
-            {spell: "Flash of Light", cpm: 4, hastedCPM: true},
-            {spell: "Holy Light", cpm: 3.5, hastedCPM: true},
-            {spell: "Holy Prism", cpm: 2},
-    
-            // Free Holy Shocks
-            {spell: "Holy Shock", cpm: 60 / getSpellAttribute(paladinSpells["Divine Toll"], "cooldown") * 9
-                                    + 60 / getSpellAttribute(paladinSpells["Avenging Wrath"], "cooldown") * 4, freeSpell: true},    
-            
-            // AC
-            {spell: "Crusader Strike", avengingCrusader: true, cpm: 60 / getSpellAttribute(paladinSpells["Crusader Strike"], "cooldown") * 0.3 * cooldownWastage / blessingOfDawnCDR, hastedCPM: true},
-
-            
-          ]
-    }
-    else {
-        console.error("Paladin Cast Profile not found: " + profileName);
-    }
-
-    return castData;
-}
-
-export const runHolyPaladinCastProfile = (playerData) => {
+export const scorePaladinSet = (playerData) => {
     const fightLength = 300;
 
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 

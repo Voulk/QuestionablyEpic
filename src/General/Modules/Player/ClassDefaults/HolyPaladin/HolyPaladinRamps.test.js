@@ -1,11 +1,8 @@
-import { allRamps, allRampsHealing } from "./HolyPaladinRampUtilities";
-import { getSpellRaw, runCastSequence } from "./HolyPaladinRamps";
+
 import { paladinMeleeProfile } from "./Archive/PaladinDefaultAPL";
-import { runHolyPaladinCastProfile } from "./HolyPaladinProfile";
-import { genStatWeights } from './HolyPaladinUtilities';
-import { buildRamp } from "./HolyPaladinRampGen";
 import { PALADINSPELLDB, baseTalents } from "./Archive/HolyPaladinSpellDBTWW";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
+import { holyPaladinProfile, scorePaladinSet } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinProfile"
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -15,27 +12,19 @@ describe("Evang Cast Sequence", () => {
         console.log("Testing APL");
 
 
-        const profile = paladinMeleeProfile;
-    
-        const baseSpells = PALADINSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, t31_2: false, seqLength: 200};
+        const activeStats = holyPaladinProfile.defaultStatProfile;
 
-        const playerData = { spec: "Holy Paladin", profileName: "Herald of the Sun AW", spells: baseSpells, settings: testSettings, talents: {...baseTalents}, stats: profile.defaultStats }
+
+        const playerData = { spec: "Holy Paladin", profileName: "Herald of the Sun", settings: {}, stats: activeStats }
         
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
-        const data = runCastProfileSuites(playerData, runHolyPaladinCastProfile)
-        //const data = runStatSuites(playerData, profile, runCastSequence);
-        //console.log(data);
+        const data = scorePaladinSet(activeStats, playerData);
 
-        //const data = runAPLSuites(playerData, profile, runCastSequence);
-        //console.log(data);
-        //const data = runStatDifferentialSuite(playerData, profile, runCastSequence)
-        //console.log(data);
-
+        console.log(data);
         expect(true).toEqual(true);
 
-        
+        /*
         const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;

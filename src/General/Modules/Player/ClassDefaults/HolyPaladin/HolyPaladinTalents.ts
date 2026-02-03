@@ -1,3 +1,25 @@
+
+
+/**
+ * A list of talents to turn on
+ */
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Herald of the Sun") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+            //console.log(`Enabling talent: ${talentName}`);
+        }
+    })
+}
+
 const classTalents: TalentTree = {
     /* After you spend Z Holy Power, your next Word of Glory echoes onto a nearby ally at X% effectiveness. */
     "Afterimage": {id: 385414, values: [30.0, 1.0, 20.0],  points: 0, maxPoints: 1, icon: "spell_holy_aspiration", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {

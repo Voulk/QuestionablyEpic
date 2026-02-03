@@ -7,7 +7,7 @@ import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, up
 
 export const restoDruidProfile = {
     spec: "Restoration Druid",
-    name: "Restoration Druid Classic",
+    name: "Restoration Druid",
     scoreSet: scoreDruidSet,
     defaultStatProfile: { 
         // Our stats we want to run through the profile. 
