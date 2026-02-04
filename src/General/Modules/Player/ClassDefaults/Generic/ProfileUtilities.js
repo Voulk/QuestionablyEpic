@@ -72,13 +72,14 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
 export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEffectiveness, race = "") => {
 
     const stats = {
-        intellect: statProfile.intellect *= (statBonuses.intellect || 1),
+        intellect: statProfile.intellect *= (1 + (statBonuses.intellect || 0)),
         crit: 1.05 + (statProfile.crit / STATCONVERSION.CRIT / 100) + (statBonuses.crit || 0),
-        haste: 1 + (statProfile.haste / STATCONVERSION.HASTE / 100) * (statBonuses.haste || 1),
+        haste: (1 + statProfile.haste / STATCONVERSION.HASTE / 100) * (1 + (statBonuses.haste || 0)),
         mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08 + (statBonuses.mastery || 0)) * STATCONVERSION.MASTERYMULT[spec] * masteryEffectiveness,
         versatility: 1 + (statProfile.versatility / STATCONVERSION.VERSATILITY / 100) + (statBonuses.versatility || 0),
         critMult: 2 + (statBonuses.critMult || 0),
-        genericMult: (statBonuses.genericMult) ? 1 + statBonuses.genericMult : 1,
+        genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
+        genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
     }
 
     //getClassicRaceBonuses(stats, race);
@@ -136,9 +137,9 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else {
         // Most other spells follow a uniform formula.
-        const masterySize = (1 + statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? spell.statMods.masteryMult : 1);
+        const masterySize = 1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? spell.statMods.masteryMult + 1 : 1);
         const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? masterySize : 1; // We'll handle Holy mastery differently.
-        spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * // Spell "base" healing
+        spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * 
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1) *

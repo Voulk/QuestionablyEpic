@@ -15,11 +15,11 @@ describe("Evang Cast Sequence", () => {
         const activeStats = holyPaladinProfile.defaultStatProfile;
 
 
-        const playerData = { spec: "Holy Paladin", profileName: "Herald of the Sun", settings: {averageRaidHealth: 0.8}, stats: activeStats, masteryEffectiveness: 0.85 }
-        
+        const playerData = { spec: "Holy Paladin", heroTree: "Herald of the Sun", profileName: "Herald of the Sun", stats: activeStats, masteryEffectiveness: 0.85 }
+        const settings = {averageRaidHealth: 0.8}
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
-        const data = scorePaladinSet(activeStats, playerData);
+        const data = scorePaladinSet(activeStats, playerData, settings);
 
         console.log(data);
         expect(true).toEqual(true);
@@ -30,7 +30,7 @@ describe("Evang Cast Sequence", () => {
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += scorePaladinSet(activeStats, playerData).healing;
+            baseline += scorePaladinSet(activeStats, playerData, settings).healing;
         }
 
         baseline = baseline / iterations;
@@ -43,7 +43,7 @@ describe("Evang Cast Sequence", () => {
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
-                statHealing += scorePaladinSet(playerStats, newPlayerData).healing;
+                statHealing += scorePaladinSet(playerStats, newPlayerData, settings).healing;
                 
             }
             results[stat] = statHealing / iterations;

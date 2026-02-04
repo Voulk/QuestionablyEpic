@@ -8,6 +8,7 @@ interface TickData {
 interface CooldownData {
     cooldown: number;
     hasted: boolean;
+    charges?: number;
 }
 
 interface SpellDB {

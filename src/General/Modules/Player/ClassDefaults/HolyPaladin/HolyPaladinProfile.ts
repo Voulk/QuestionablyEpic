@@ -68,7 +68,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     const spec = "Holy Paladin"; // We'll pass this to a few functions so it's easier to just define it.
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: paladinTalents, heroTree: playerData.heroTree};
+    let initialState = {statBonuses: {}, talents: paladinTalents, heroTree: playerData.heroTree, settings: settings};
     const reportingData: any = {};
 
     const damageBreakdown: Record<string, number> = {};
@@ -83,7 +83,8 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
     // Apply Stats
-    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, playerData.masteryEffectiveness), settings: settings, talents: paladinTalents};
+    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, 
+                    playerData.masteryEffectiveness), settings: settings, talents: paladinTalents};
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
     
@@ -135,6 +136,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
     //getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.12;
 
+
     // Fill in missing casts like Holy Words. Adjust any others that are impacted.
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
@@ -147,6 +149,8 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     const totalInfusions = getCPM(castProfile, "Holy Shock") * 0.1;
 
 
+
+
     // Handle CDR on Holy Shock and free casts
     // Note that we get some free HS casts here that won't be run for Infusions. Have a think about this. Minor.
     let totalHolyShockCDR = 0;
@@ -154,6 +158,21 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     if (getTalentPoints(state.talents, "imbuedInfusions")) totalHolyShockCDR += totalInfusions * 1;
     const extraHolyShockCPM = totalHolyShockCDR / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown");
     getSpellEntry(castProfile, "Holy Shock").cpm += extraHolyShockCPM;*/
+
+        // Sunsear
+    if (hasTalent(talents, "Sun Sear")) {
+        const holyShockCritChance = state.statPercentages.crit + (spellDB["Holy Shock"][0].statMods?.crit || 0) - 1;
+        const lightOfDawnCritChance = state.statPercentages.crit + (spellDB["Light of Dawn"][0].statMods?.crit || 0) - 1;
+        
+        castProfile.push({spell: "Sun Sear",
+                            cpm: getCPM(castProfile, "Holy Shock") * holyShockCritChance +
+                                 getCPM(castProfile, "Light of Dawn") * lightOfDawnCritChance,
+        })
+
+    }
+
+    reportingData.hastePerc = state.statPercentages.haste
+    reportingData.statBon = initialState.statBonuses
 
 
     // Run healing
