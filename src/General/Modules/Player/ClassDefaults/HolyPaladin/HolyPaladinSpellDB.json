@@ -67,6 +67,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "radiant",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
@@ -317,16 +318,6 @@
                 "versatility"
             ],
             "spellType": "damage"
-        },
-        {
-            "coeff": 0.5037,
-            "aura": 2.4,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility"
-            ],
-            "spellType": "damage"
         }
     ],
     "Hammer of Wrath": [
@@ -419,7 +410,56 @@
                 "hasted": false
             },
             "coeff": 0.0,
+            "aura": 1.2,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Greater Judgment": [
+        {
+            "displayInfo": {
+                "id": 414019,
+                "icon": "spell_holy_righteousfury",
+                "spellName": "Greater Judgment"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 0.0,
+            "coeff": 1.38,
             "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "versatility",
+                "crit"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Dawnlight": [
+        {
+            "displayInfo": {
+                "id": 431381,
+                "icon": "inv_ability_heraldofthesunpaladin_dawnlight",
+                "spellName": "Dawnlight",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "coeff": 1.3455,
+            "aura": 1.77,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
@@ -428,12 +468,85 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 12.0,
+            "buffDuration": 8.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            }
+        }
+    ],
+    "Sun Sear": [
+        {
+            "displayInfo": {
+                "id": 431415,
+                "icon": "spell_priest_burningwill",
+                "spellName": "Sun Sear",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "coeff": 0.135,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 4.0,
             "tickData": {
                 "tickRate": 1.0,
                 "canPartialTick": true,
-                "tickOnCast": false
+                "tickOnCast": true
             }
+        }
+    ],
+    "Sun's Avatar": [
+        {
+            "displayInfo": {
+                "id": 431939,
+                "icon": "ability_paladin_holyavenger",
+                "spellName": "Sun's Avatar",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "coeff": 0.3726,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Truth Prevails": [
+        {
+            "displayInfo": {
+                "id": 461546,
+                "icon": "ability_paladin_artofwar",
+                "spellName": "Truth Prevails",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 2.4,
+            "aura": 1.0,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ]
 }

@@ -91,6 +91,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
         {spell: "Holy Shock", efficiency: 0.9 },
+        {spell: "Judgment", efficiency: 0.9 },
 
         {spell: "Eternal Flame", cpm: 0 }, // Filled later
         {spell: "Light of Dawn", cpm: 0 }, // Filled later
