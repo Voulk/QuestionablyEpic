@@ -278,7 +278,7 @@
                 "cooldown": 1.0,
                 "hasted": false
             },
-            "coeff": 0.0,
+            "coeff": 2.5636,
             "aura": 1.2,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -337,7 +337,7 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 0.0,
+            "coeff": 1.4963,
             "aura": 1.44,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -352,7 +352,7 @@
             "resourceAmount": 1.0
         },
         {
-            "coeff": 0.0,
+            "coeff": 1.1222,
             "aura": 1.44,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -379,7 +379,7 @@
                 "charges": 2,
                 "maxCharges": 2
             },
-            "coeff": 0.0,
+            "coeff": 1.456,
             "aura": 2.544,
             "expectedOverheal": 0.25,
             "secondaries": [

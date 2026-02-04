@@ -1,3 +1,4 @@
+import { attachSpellEffect } from "../Generic/TalentBase"
 
 
 /**
@@ -8,7 +9,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-
+        "Greater Judgment",
     ]
 
     // Apply talents
@@ -34,7 +35,7 @@ const classTalents: TalentTree = {
 
     /* Judgment deems the target unworthy, preventing the next $<shield> damage dealt by the target.   */
     "Greater Judgment": {id: 231644, values: [138.0],  points: 0, maxPoints: 1, icon: "spell_holy_righteousfury", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Judgment"] = attachSpellEffect(spellDB["Judgment"], spellDB["Greater Judgment"]);
     }},
 
     /* While holding a shield, you have a Y% chance to block incoming spells, reducing their damage by Z%.     Without a shield, you have a $s4% chance to parry incoming melee attacks, reducing their damage by $s5%. */

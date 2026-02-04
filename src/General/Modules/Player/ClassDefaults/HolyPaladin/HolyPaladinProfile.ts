@@ -83,15 +83,15 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // Apply Stats
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec), settings: settings, talents: paladinTalents};
-
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
     
 
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-        {spell: "Holy Shock", efficiency: 0.9 },
-        {spell: "Judgment", efficiency: 0.9 },
+        {spell: "Holy Shock", efficiency: 0.9, hastedCPM: true },
+        {spell: "Judgment", efficiency: 0.9, hastedCPM: true  },
+        {spell: "Divine Toll", efficiency: 0.95 },
 
         {spell: "Eternal Flame", cpm: 0 }, // Filled later
         {spell: "Light of Dawn", cpm: 0 }, // Filled later
@@ -108,6 +108,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     completeCastProfile(castProfile, spellDB);
 
+
     // Second Sunrise
     if (hasTalent(talents, "Second Sunrise")) castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Holy Shock") * 0.15, mult: 0.3});
    
@@ -121,8 +122,13 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // Haste our CPMs
     castProfile.forEach(spellProfile => {
-        if (spellProfile.hastedCPM) spellProfile.cpm = spellProfile.cpm * getHaste(state.currentStats);
+        if (spellProfile.hastedCPM) spellProfile.cpm = spellProfile.cpm * state.statPercentages.haste;
     })
+
+
+    // Handle Divine Toll
+    // Could potentially be re-organized.
+    castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Divine Toll"), mult: 0.6, label: "Holy Shock (Divine Toll)" })
 
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
@@ -134,6 +140,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
     getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
 
+    reportingData.holyPowerPerMinute = holyPowerPerMinute;
 
     // Infusion Count
     const totalInfusions = getCPM(castProfile, "Holy Shock") * 0.1;
@@ -169,8 +176,10 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
             const totalOutput = (spellOutput * effectiveCPM);
             if (totalOutput > 0) {
-                castBreakdown[spellName] = (castBreakdown[spellName] ?? 0) + (effectiveCPM);
-                healingBreakdown[spellName] = (healingBreakdown[spellName] ?? 0) + (totalOutput);
+                const label = spellProfile.label || spellName;
+
+                castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
+                healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
             }
 
         })

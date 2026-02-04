@@ -126,3 +126,10 @@ export const adjBuffDurationFlat = (spell: SpellData[], value: number, index: nu
     })
 
 }
+
+export const attachSpellEffect = (recSpell: SpellData[], effect: SpellData[], index: number = -1) => {
+    const target = (index >= 0) ? effect.slice(index, index + 1) : effect;
+    
+    return recSpell.concat(target);
+    
+}
