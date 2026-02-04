@@ -170,7 +170,7 @@
             "castTime": 1.5,
             "school": "nature",
             "cost": 2.8,
-            "coeff": 6.3,
+            "coeff": 5.36,
             "aura": 1.0,
             "expectedOverheal": 0.25,
             "secondaries": [

@@ -98,7 +98,7 @@ const classTalents: TalentTree = {
     }},
 
     /* When you use Barkskin or Survival Instincts, absorb $<shield> damage for $280165d. */
-    "Matted Fur": {id: 385786, values: [600.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
+    "Matted Fur": {id: 385786, values: [1200.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
     number) {
 
     }},
@@ -252,7 +252,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Wild Growth heals X additional $ltarget:targets;. */
-    "Improved Wild Growth": {id: 328025, values: [1.0],  points: 0, maxPoints: 1, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Improved Wild Growth": {id: 328025, values: [2.0],  points: 0, maxPoints: 1, icon: "ability_druid_flourish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         spellDB["Wild Growth"][0].targets! += talentValues[0];
     }},
 
@@ -323,7 +323,7 @@ const specTalents: TalentTree = {
     }},
 
     /* When Regrowth critically heals, it is ${X+200}% effective instead of the usual 200%. */
-    "Intensity": {id: 1264649, values: [75.0],  points: 0, maxPoints: 1, icon: "spell_frost_windwalkon", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Intensity": {id: 1264649, values: [60.0],  points: 0, maxPoints: 1, icon: "spell_frost_windwalkon", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellCritMult(spellDB['Regrowth'], talentValues[0]);
     }},
 
@@ -375,7 +375,7 @@ const specTalents: TalentTree = {
     }},
 
     /* When your Rejuvenation heals a full health target, its duration is increased by X sec, up to a maximum total increase of Y sec per cast. */
-    "Nurturing Dormancy": {id: 392099, values: [2.0, 4.0],  points: 0, maxPoints: 1, icon: "ability_druid_replenish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Nurturing Dormancy": {id: 392099, values: [2.0, 6.0],  points: 0, maxPoints: 1, icon: "ability_druid_replenish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -563,7 +563,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c1[Orbital Strike damage increased by Z%, and damage of Stellar Flares it applies increased by Y%.    Whirling Stars increases the haste you gain during ][]$?c1&s394013[Incarnation: Chosen of Elune]?c1[Celestial Alignment][]$?c1[ by an additional $s4%.][Reforestation grants Tree of Life for $s5 additional sec.] */
-    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 10.0, 3.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 10.0, 6.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -600,7 +600,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c4[Ironbark summons a Dryad to channel a beam of pure nature onto your target, healing them for $1264905o1 over $1264905d.][Your Starfall damage is increased by X% and your Starsurge damage is increased by Y%.] */
-    "Spirit of the Thicket": {id: 1264899, values: [8.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Spirit of the Thicket": {id: 1264899, values: [12.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

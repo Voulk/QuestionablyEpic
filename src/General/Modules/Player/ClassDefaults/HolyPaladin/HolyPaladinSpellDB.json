@@ -16,7 +16,7 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 5.3256,
+            "coeff": 6.125,
             "aura": 1,
             "expectedOverheal": 0.25,
             "secondaries": [
@@ -154,7 +154,7 @@
             "school": "holy",
             "cost": 0.6,
             "coeff": 3.156,
-            "aura": 1.11,
+            "aura": 1.5,
             "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
