@@ -4,7 +4,7 @@ import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
         const sortedEntries = Object.entries(healingBreakdown)
                             .sort((a, b) => b[1] - a[1])
-                            .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.spell === key || spell.label === key)) ? spell.cpm : 0), 0))/100}`);
+                            .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
     console.log(sortedEntries);
 }
 
@@ -69,14 +69,15 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
 
 // Stat profile is an object containing stats found from all non-talent sources.
 // StatBonuses contains percentages instead. 
-export const convertStatPercentages = (statProfile, statBonuses, spec, race = "") => {
+export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEffectiveness, race = "") => {
 
     const stats = {
-        intellect: statProfile.intellect,
+        intellect: statProfile.intellect *= (statBonuses.intellect || 1),
         crit: 1.05 + (statProfile.crit / STATCONVERSION.CRIT / 100) + (statBonuses.crit || 0),
         haste: 1 + (statProfile.haste / STATCONVERSION.HASTE / 100) * (statBonuses.haste || 1),
-        mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08) * STATCONVERSION.MASTERYMULT[spec], 
+        mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08 + (statBonuses.mastery || 0)) * STATCONVERSION.MASTERYMULT[spec] * masteryEffectiveness,
         versatility: 1 + (statProfile.versatility / STATCONVERSION.VERSATILITY / 100) + (statBonuses.versatility || 0),
+        critMult: 2 + (statBonuses.critMult || 0),
         genericMult: (statBonuses.genericMult) ? 1 + statBonuses.genericMult : 1,
     }
 
@@ -118,13 +119,13 @@ export const runProfileSlice = (fullSpell, statPercentages, spec, settings, flag
 }
 
 export const getSpellThroughput = (spell, statPercentages, spec, settings, flags = {}) => {
-    const genericMult = 1;
+    const genericMult = statPercentages.genericMult || 1;
     let targetCount = 1;
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
-    const critSize = 2; 
+    const critSize = (spell.statMods && spell.statMods.critMult) ? spell.statMods.critMult + statPercentages.critMult : statPercentages.critMult;
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
         
     let spellOutput = 0;
@@ -135,7 +136,8 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else {
         // Most other spells follow a uniform formula.
-        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? (1 + statPercentages.mastery) : 1; // We'll handle Holy mastery differently.
+        const masterySize = (1 + statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? spell.statMods.masteryMult : 1);
+        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? masterySize : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * // Spell "base" healing
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *

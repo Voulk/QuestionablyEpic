@@ -207,7 +207,7 @@
             "school": "holy",
             "cost": 3.0,
             "cooldownData": {
-                "cooldown": 60.0,
+                "cooldown": 45.0,
                 "hasted": false
             },
             "coeff": 0.0,
@@ -218,7 +218,8 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "energize"
+            "spellType": "energize",
+            "targets": 5.0
         }
     ],
     "Holy Prism": [

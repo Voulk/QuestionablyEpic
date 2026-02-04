@@ -48,16 +48,16 @@ const getCPM = (profile, spellName: string) => {
 
 
 
-const getBeaconHealing = (state, healingVal: number, spellName: string) => {
+const getBeaconHealing = (beacon: string, healingVal: number, spellName: string) => {
         let beaconHealing = 0;
         let beaconMult = 1;
         if (PALADINCONSTANTS.beaconAoEList.includes(spellName)) beaconMult = 0.5;
         else if (PALADINCONSTANTS.beaconExclusionList.includes(spellName)) beaconMult = 0;
     
-    
         // Beacons
-        if (state.beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
-        else if (state.beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        if (beacon === "Beacon of Light") beaconHealing = healingVal * 0.15 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        else if (beacon === "Beacon of Faith") beaconHealing = healingVal * 0.105 * 2 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
+        else if (beacon === "Beacon of the Savior") beaconHealing = healingVal * 0.25 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult;
         //else if (state.beacon === "Beacon of Virtue") beaconHealing = (checkBuffActive(state.activeBuffs, "Beacon of Virtue") ? healingVal * 0.1 * 5 * (1 - PALADINCONSTANTS.beaconOverhealing) * beaconMult : 0);
         
         return beaconHealing;
@@ -74,6 +74,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     const damageBreakdown: Record<string, number> = {};
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
+    const beaconChoice: string = "Beacon of Faith";
 
     
     // Apply Talents
@@ -82,7 +83,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
     // Apply Stats
-    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec), settings: settings, talents: paladinTalents};
+    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, playerData.masteryEffectiveness), settings: settings, talents: paladinTalents};
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
     
@@ -128,7 +129,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // Handle Divine Toll
     // Could potentially be re-organized.
-    castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Divine Toll"), mult: 0.6, label: "Holy Shock (Divine Toll)" })
+    castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Divine Toll") * spellDB["Divine Toll"][0].targets, mult: 0.6, label: "Holy Shock (Divine Toll)" })
 
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
@@ -174,12 +175,20 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
-            const totalOutput = (spellOutput * effectiveCPM);
+            const totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult || 1));
             if (totalOutput > 0) {
                 const label = spellProfile.label || spellName;
 
                 castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
                 healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
+
+
+                // Handle Beacons including any bonus multipliers.
+                const beaconHealing = getBeaconHealing(beaconChoice, totalOutput, spellName);
+                healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] ?? 0) + (beaconHealing);
+
+                const saviorHealing = getBeaconHealing("Beacon of the Savior", totalOutput, spellName);
+                healingBreakdown["Beacon of the Savior"] = (healingBreakdown["Beacon of the Savior"] ?? 0) + (saviorHealing);
             }
 
         })

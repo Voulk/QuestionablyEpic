@@ -15,7 +15,7 @@ describe("Evang Cast Sequence", () => {
         const activeStats = holyPaladinProfile.defaultStatProfile;
 
 
-        const playerData = { spec: "Holy Paladin", profileName: "Herald of the Sun", settings: {}, stats: activeStats }
+        const playerData = { spec: "Holy Paladin", profileName: "Herald of the Sun", settings: {averageRaidHealth: 0.8}, stats: activeStats, masteryEffectiveness: 0.85 }
         
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
@@ -25,26 +25,25 @@ describe("Evang Cast Sequence", () => {
         expect(true).toEqual(true);
 
         /*
-        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+       const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runHolyPaladinCastProfile(playerData).hps;
+            baseline += scorePaladinSet(activeStats, playerData).healing;
         }
 
-        baseline = baseline / iterations
+        baseline = baseline / iterations;
         
-        /*
         const results = {};
         stats.forEach(stat => {
             let statHealing = 0;
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 2400;
+            playerStats[stat] = playerStats[stat] + 200;
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
-                statHealing += runHolyPaladinCastProfile(newPlayerData).hps;
+                statHealing += scorePaladinSet(playerStats, newPlayerData).healing;
                 
             }
             results[stat] = statHealing / iterations;
@@ -56,8 +55,8 @@ describe("Evang Cast Sequence", () => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
         console.log(weights); 
-
-        */
+      */
+      
         
     })
 
