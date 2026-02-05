@@ -94,8 +94,8 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-        {spell: "Holy Shock", efficiency: 0.9, hastedCPM: true },
-        {spell: "Judgment", efficiency: 0.9, hastedCPM: true  },
+        {spell: "Holy Shock", efficiency: 0.9, hastedCPM: false },
+        {spell: "Judgment", efficiency: 0.9, hastedCPM: false  },
         {spell: "Divine Toll", efficiency: 0.95 },
         {spell: "Beacon of the Savior", cpm: 60 / 8, castTimeOverride: 0, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
 
@@ -124,9 +124,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         castProfile.push({spell: "Dawnlight", cpm: dawnlightCPM, castTimeOverride: 0})
 
         // Suns Avatar
-        // Every 0.5s 
-        const sunsAvatarCPM = 0
-    
+        // Every 0.5s it ticks on X allies.
+        const sunsAvatarAlliesPerTick = 5;
+        const sunsAvatarUptime = dawnlightCPM * 8; // TODO: use spell data.
+
+        castProfile.push({spell: "Sun's Avatar", cpm: sunsAvatarAlliesPerTick * sunsAvatarUptime, freeSpell: true})
     }
 
     // Haste our CPMs
@@ -141,18 +143,22 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
-    //getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.12;
+
+    // Infusions
+    const infusionsPerMinute = getCPM(castProfile, "Holy Shock") * 0.1;
+    reportingData.infusionsPerMinute = infusionsPerMinute * (hasTalent(talents, "Inflorescence of the Sunwell") ? 2 : 1);
+    castProfile.push({spell: "Flash of Light", cpm: infusionsPerMinute, mult: 3})
 
 
     // == Holy Power Spenders ==
-    const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
+    const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
     
     // Handle Empyrean Legacy
     // Judgment crits per minute + 10% spenders if Awakening is talented
     // Consider Lightsmith too.
     if (hasTalent(talents, "Empyrean Legacy")) {
-        let judgmentCritsPerMin = getSpellCritChance(spellDB["Judgment"][0], state.statPercentages);
+        let judgmentCritsPerMin = getSpellCritChance(spellDB["Judgment"][0], state.statPercentages) * getCPM(castProfile, "Judgment");
 
         if (hasTalent(talents, "Awakening")) {
             judgmentCritsPerMin += (averageSpenderCPM * 0.1) + getCPM(castProfile, "Avenging Wrath");

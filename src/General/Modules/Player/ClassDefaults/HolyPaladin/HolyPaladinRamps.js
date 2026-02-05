@@ -23,7 +23,7 @@ export const PALADINCONSTANTS = {
     beaconAoEList: ["Light of Dawn", "Light's Hammer"], // Glimmer is handled manually to catch other sources of glimmer
     beaconExclusionList: ["Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
                             "Judgment", "Greater Judgment", "Shield of the Righteous", "Barrier of Faith"],
-    beaconOverhealing: 0.3,
+    beaconOverhealing: 0.2,
 
     // Talents
     tyrsHitRate: 0.8,

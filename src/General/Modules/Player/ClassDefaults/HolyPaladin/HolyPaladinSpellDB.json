@@ -11,14 +11,14 @@
             "school": "holy",
             "cost": 2.8,
             "cooldownData": {
-                "cooldown": 9.5,
+                "cooldown": 6.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
             },
             "coeff": 6.125,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -49,7 +49,7 @@
             "targets": 5,
             "coeff": 3.06,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -74,7 +74,7 @@
             },
             "coeff": 0.1368,
             "aura": 1.49,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -92,7 +92,7 @@
         {
             "coeff": 3.78,
             "aura": 3.4,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -117,7 +117,7 @@
             },
             "coeff": 4.158,
             "aura": 2.8600000000000003,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -155,7 +155,7 @@
             "cost": 0.6,
             "coeff": 3.156,
             "aura": 1.5,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -182,7 +182,7 @@
             "cost": 7.0,
             "coeff": 32.5,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -212,7 +212,7 @@
             },
             "coeff": 0.0,
             "aura": 1.2,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -273,7 +273,7 @@
             "cost": 0.0,
             "coeff": 3.75,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "mastery",
                 "versatility"
@@ -318,7 +318,7 @@
             },
             "coeff": 2.5636,
             "aura": 1.2,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -343,14 +343,14 @@
             "school": "holy",
             "cost": 0.6,
             "cooldownData": {
-                "cooldown": 11.0,
+                "cooldown": 6.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
             },
             "coeff": 0.6716,
             "aura": 2.4,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -377,7 +377,7 @@
             },
             "coeff": 1.4963,
             "aura": 1.44,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -392,7 +392,7 @@
         {
             "coeff": 1.1222,
             "aura": 1.44,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -418,8 +418,8 @@
                 "maxCharges": 2
             },
             "coeff": 1.456,
-            "aura": 2.544,
-            "expectedOverheal": 0.25,
+            "aura": 2.124,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -449,7 +449,7 @@
             },
             "coeff": 0.0,
             "aura": 1.2,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -477,7 +477,7 @@
             "cost": 0.0,
             "coeff": 1.38,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "versatility",
                 "crit"
@@ -499,7 +499,7 @@
             "targets": 1.25,
             "coeff": 1.3455,
             "aura": 1.77,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -528,7 +528,7 @@
             "cost": 0.0,
             "coeff": 0.135,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -557,7 +557,7 @@
             "cost": 0.0,
             "coeff": 0.3726,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -579,7 +579,7 @@
             "cost": 0.0,
             "coeff": 2.4,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",

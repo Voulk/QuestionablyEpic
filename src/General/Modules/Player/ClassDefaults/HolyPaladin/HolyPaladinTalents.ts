@@ -311,7 +311,9 @@ const specTalents: TalentTree = {
 
     /* Holy Shock refunds up to X% of its Mana cost and deals up to Y% more healing or damage, based on the target's missing health. */
     "Reclamation": {id: 415364, values: [10.0, 50.0],  points: 0, maxPoints: 1, icon: "ability_paladin_longarmofthelaw", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        const healthMod = (1 - state.settings.averageRaidHealth);
+        manaCostAdj(spellDB["Holy Shock"], talentValues[0] * healthMod);
+        buffSpellPerc(spellDB["Holy Shock"], talentValues[1] * healthMod);
     }},
 
     /* $@spellicon156910 $@spellname156910:  Allies with Beacon of Light or Beacon of Faith are healed for $53563s5 every $53563t5 sec.    $@spellicon200025 $@spellname200025:  Beacon of Virtue instantly heals allies for $1232617s1. */
