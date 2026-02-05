@@ -158,6 +158,8 @@ export function runStatDifferentialSuite(playerData, aplList, runCastSequence) {
     })
 }
 
+
+
 // A small meta suite to run an APL at different durations.
 // Note that we're mostly interested in runtime here, not HPS. We can use it to identify any issues that's causing our APL to run slowly.
 export function runTimeSuite(playerData, aplList, runCastSequence) {

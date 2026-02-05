@@ -1,6 +1,6 @@
 
 import { getHaste, hasTalent } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyTalents, completeCastProfile, convertStatPercentages, getSpellCritChance, getSpellThroughput, printHealingBreakdownWithCPM } from "../Generic/ProfileUtilities";
+import { applyRaidBuffs, applyTalents, completeCastProfile, convertStatPercentages, getSpellCritChance, getSpellThroughput, getTimeUsed, printHealingBreakdownWithCPM } from "../Generic/ProfileUtilities";
 import { PALADINCONSTANTS } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 
 import { printHealingBreakdown, getSpellEntry } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
@@ -46,6 +46,11 @@ const getCPM = (profile, spellName: string) => {
     return cpm;
 }
 
+const getSpenderCPM = (castProfile : CastProfile) => {
+    const noAutos = castProfile.filter(spell => !spell.autoSpell);
+    return (getCPM(noAutos, "Eternal Flame") + getCPM(noAutos, "Light of Dawn") + getCPM(noAutos, "Word of Glory"))
+}
+
 
 
 const getBeaconHealing = (beacon: string, healingVal: number, spellName: string) => {
@@ -64,11 +69,13 @@ const getBeaconHealing = (beacon: string, healingVal: number, spellName: string)
 }
 
 
+// Paladin will spend 50% of its in-combat time casting Holy Shock or Judgment base casts.
+// It has a total of 40 total GCDs to spend per minute. This amount scales with haste but some of our GCD choices do not.
 export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
     const spec = "Holy Paladin"; // We'll pass this to a few functions so it's easier to just define it.
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: paladinTalents, heroTree: playerData.heroTree, settings: settings};
+    let initialState = {statBonuses: applyRaidBuffs(settings), talents: paladinTalents, heroTree: playerData.heroTree, settings: settings};
     const reportingData: any = {};
 
     const damageBreakdown: Record<string, number> = {};
@@ -97,8 +104,8 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         {spell: "Holy Shock", efficiency: 0.9, hastedCPM: true },
         {spell: "Judgment", efficiency: 0.9, hastedCPM: true  },
         {spell: "Divine Toll", efficiency: 0.95 },
-        {spell: "Beacon of the Savior", cpm: 60 / 8 + 5, autoSpell: true, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
-        {spell: "Avenging Wrath", efficiency: 1 },
+        {spell: "Beacon of the Savior", cpm: 60 / 8 + 7, autoSpell: true, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
+        {spell: "Avenging Wrath", efficiency: 1, autoSpell: true },
 
         {spell: "Eternal Flame", cpm: 0 }, // Filled later
         {spell: "Light of Dawn", cpm: 0 }, // Filled later
@@ -114,7 +121,6 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     completeCastProfile(castProfile, spellDB, state.statPercentages);
     const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
-    reportingData.spellCosts = spellCosts;
 
 
     // Dawnlight
@@ -133,7 +139,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // Hand of Divinity
     if (hasTalent(talents, "Hand of Divinity")) {
-        castProfile.push({spell: "Holy Light", cpm: getCPM(castProfile, "Avenging Wrath") * 2, manaOverride: 0.5 })
+        castProfile.push({spell: "Holy Light", cpm: getCPM(castProfile, "Avenging Wrath") * 2, manaOverride: 0.5, castTimeOverride: 1.5 })
     }
 
 
@@ -160,7 +166,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     // == Holy Power Spenders ==
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
-    const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
+    const averageSpenderCPM = holyPowerPerMinute / 3;
     
     // Handle Empyrean Legacy
     // Judgment crits per minute + 10% spenders if Awakening is talented
@@ -176,10 +182,21 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         reportingData.empyreanLegacyProcsPerMinute = judgmentCritsPerMin;
     }
     
-    
-    
     getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
     getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
+
+
+    // Divine Purpose
+    if (hasTalent(talents, "Divine Purpose")) {
+        // 15% chance on spender to get +1 free spender at +15% strength.
+        // If we are Herald we also get one of these whenever we press divine toll.
+        let dpPerMin = getSpenderCPM(castProfile) * 0.1725;
+        if (hasTalent(talents, "Aurora")) dpPerMin += getCPM(castProfile, "Divine Toll"); 
+        reportingData.divinePurposeProcsPerMinute = dpPerMin;
+
+        castProfile.push({spell: "Light of Dawn", cpm: dpPerMin, mult: 1.15, label: `Light of Dawn (Divine Purpose)`})
+
+    }
 
     if (hasTalent(talents, "Second Sunrise")) {
         castProfile.push({spell: "Light of Dawn", cpm: getCPM(castProfile, "Light of Dawn"), mult: 0.15, autoSpell: true});
@@ -205,7 +222,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         
         castProfile.push({spell: "Sun Sear",
                             cpm: getCPM(castProfile, "Holy Shock") * holyShockCritChance +
-                                 getCPM(castProfile, "Light of Dawn") * lightOfDawnCritChance,
+                                 getCPM(castProfile, "Light of Dawn") * lightOfDawnCritChance * spellDB["Light of Dawn"][0].targets,
                                  autoSpell: true
         })
 
@@ -224,17 +241,33 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride || 1))), 0);
     reportingData.baselineCostPerMinute = baselineCostPerMinute;
 
-    castProfile.forEach(spellEntry => {
+    /*castProfile.forEach(spellEntry => {
         console.log(`${spellEntry.spell}: CPM ${spellEntry.cpm}, Cost per cast: ${spellCosts[spellEntry.spell] * (spellEntry.manaOverride || 1)}
         Total Cost per minute: ${spellEntry.autoSpell? 0 : spellCosts[spellEntry.spell] * spellEntry.cpm! * (spellEntry.manaOverride || 1)}
         at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%`);
-    })
+    })*/
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
 
     // Calculate Time Available
-    
+    const timeAvailable = 60 - getTimeUsed(castProfile, spellDB, state.statPercentages.haste);
+    reportingData.timeAvailable = timeAvailable;
+
+    // Filler bundle is a 4 : 1 split of HL : FoL, with the associated HoPo spend.
+    // We will lose some slight efficiency from the lack of LoD tie-ins. 
+    const fillerCost = spellCosts["Flash of Light"] * 0.2 + spellCosts["Holy Light"] * 0.8 + spellCosts["Light of Dawn"] / 3;
+    const fillerTime = ((spellDB["Flash of Light"][0].castTime) * 0.2 + (spellDB["Holy Light"][0].castTime) * 0.8 + (spellDB["Light of Dawn"][0].castTime) / 3) / state.statPercentages.haste;
+    const fillerCPMMana = fillerMana / fillerCost;
+    const fillerCPMTime = timeAvailable / fillerTime;
+    const fillerCPM = Math.min(fillerCPMMana, fillerCPMTime); //
+    reportingData.fillerCPMMana = fillerCPMMana;
+    reportingData.fillerCPMTime = fillerCPMTime;
+
+    castProfile.push({spell: "Holy Light", cpm: fillerCPM * 0.8 })
+    castProfile.push({spell: "Flash of Light", cpm: fillerCPM * 0.2 })
+    castProfile.push({spell: "Light of Dawn", cpm: fillerCPM / 3 })
+
 
 
     // Run healing

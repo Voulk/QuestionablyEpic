@@ -21,8 +21,8 @@ export const PALADINCONSTANTS = {
     // Beacon Section
     beaconSingleTargetList: ["Holy Shock", "Word of Glory", "Eternal Flame", "Holy Light", "Flash of Light", "Avenging Crusader"],
     beaconAoEList: ["Light of Dawn", "Light's Hammer"], // Glimmer is handled manually to catch other sources of glimmer
-    beaconExclusionList: ["Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
-                            "Judgment", "Greater Judgment", "Shield of the Righteous", "Barrier of Faith"],
+    beaconExclusionList: ["Dawnlight", "Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
+                            "Judgment", "Truth Prevails", "Judgment", "Shield of the Righteous", "Barrier of Faith", "Beacon of the Savior"],
     beaconOverhealing: 0.2,
 
     // Talents

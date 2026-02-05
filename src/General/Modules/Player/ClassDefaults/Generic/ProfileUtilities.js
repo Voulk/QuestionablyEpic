@@ -29,6 +29,23 @@ export const getSpellAttribute = (spell, attribute, index = 0) => {
     
 }
 
+export const applyRaidBuffs = (settings) => {
+    const statBonuses = {};
+    // Arcane Int
+    statBonuses.intellect = 0.03
+
+    // Phys damage
+
+    // Mastery
+    statBonuses.mastery = 0.02
+
+    // Versatility
+    statBonuses.versatility = 0.03
+
+    // Vantus?
+
+    return statBonuses;
+}
 
 export const getTimeUsed = (castProfile, spellDB, averageHaste) => {
     let timeUsed = 0;
@@ -38,7 +55,12 @@ export const getTimeUsed = (castProfile, spellDB, averageHaste) => {
 
         if (spell.customGCD) castTime = spell.customGCD;
         if (castTime === 0 && !spell.offGCD) castTime = 1.5 / averageHaste;
-        timeUsed += castTime * spellProfile.cpm;
+        if (spellProfile.castTimeOverride !== undefined) castTime = spellProfile.castTimeOverride;
+        if (spellProfile.autoSpell) castTime = 0;
+        const spellTimeAllocation = castTime * spellProfile.cpm;
+        /*console.log(`Spell: ${spellProfile.spell}, Cast Time: ${castTime.toFixed(2)}, CPM: ${spellProfile.cpm.toFixed(2)}, 
+                    Time Allocation: ${spellTimeAllocation.toFixed(2)},`)*/
+        timeUsed += spellTimeAllocation;
     }
     )
 
