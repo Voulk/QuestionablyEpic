@@ -24,7 +24,7 @@ describe("Evang Cast Sequence", () => {
         console.log(data);
         expect(true).toEqual(true);
 
-        /*
+        
        const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
@@ -55,7 +55,7 @@ describe("Evang Cast Sequence", () => {
             weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
         });
         console.log(weights); 
-      */
+      
       
         
     })

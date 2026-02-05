@@ -1,6 +1,6 @@
 
 import { getHaste, hasTalent } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyTalents, completeCastProfile, convertStatPercentages, getSpellThroughput, printHealingBreakdownWithCPM } from "../Generic/ProfileUtilities";
+import { applyTalents, completeCastProfile, convertStatPercentages, getSpellCritChance, getSpellThroughput, printHealingBreakdownWithCPM } from "../Generic/ProfileUtilities";
 import { PALADINCONSTANTS } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinRamps";
 
 import { printHealingBreakdown, getSpellEntry } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
@@ -85,8 +85,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     // Apply Stats
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, 
                     playerData.masteryEffectiveness), settings: settings, talents: paladinTalents};
-    let genericHealingIncrease = 1;
-    let genericCritIncrease = 1;
+
+    // Handle wings
+    const wingsUptime = spellDB["Avenging Wrath"][0].buffDuration / spellDB["Avenging Wrath"][0].cooldownData!.cooldown;
+    state.statPercentages.genericHealingMult *= (1 + wingsUptime * 0.15)
+    state.statPercentages.crit += (wingsUptime * 0.15)
     
 
     let castProfile: CastProfile = [
@@ -94,12 +97,12 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         {spell: "Holy Shock", efficiency: 0.9, hastedCPM: true },
         {spell: "Judgment", efficiency: 0.9, hastedCPM: true  },
         {spell: "Divine Toll", efficiency: 0.95 },
+        {spell: "Beacon of the Savior", cpm: 60 / 8, castTimeOverride: 0, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
 
         {spell: "Eternal Flame", cpm: 0 }, // Filled later
         {spell: "Light of Dawn", cpm: 0 }, // Filled later
 
       
-      //{spell: "Regrowth", efficiency: 0 },
     ]
 
     const spenderUsage = {
@@ -116,9 +119,13 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
    
 
     // Dawnlight
-    if (playerData.heroTree === "heraldOfTheSun") {
-        const dawnlightCPM = getCPM(castProfile, "Avenging Wrath") * 4 + getCPM(castProfile, "Holy Prism") * 2;
-        getSpellEntry(castProfile, "Dawnlight").cpm = dawnlightCPM;
+    if (playerData.heroTree === "Herald of the Sun") {
+        const dawnlightCPM = getCPM(castProfile, "Divine Toll") * 2;
+        castProfile.push({spell: "Dawnlight", cpm: dawnlightCPM, castTimeOverride: 0})
+
+        // Suns Avatar
+        // Every 0.5s 
+        const sunsAvatarCPM = 0
     
     }
 
@@ -137,9 +144,26 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     //getSpellEntry(castProfile, "Holy Shock", 1).cpm *= 1.12;
 
 
-    // Fill in missing casts like Holy Words. Adjust any others that are impacted.
+    // == Holy Power Spenders ==
     const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Crusader Strike") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3 * 1.1725; // DP
+    
+    // Handle Empyrean Legacy
+    // Judgment crits per minute + 10% spenders if Awakening is talented
+    // Consider Lightsmith too.
+    if (hasTalent(talents, "Empyrean Legacy")) {
+        let judgmentCritsPerMin = getSpellCritChance(spellDB["Judgment"][0], state.statPercentages);
+
+        if (hasTalent(talents, "Awakening")) {
+            judgmentCritsPerMin += (averageSpenderCPM * 0.1) + getCPM(castProfile, "Avenging Wrath");
+        }
+
+        castProfile.push({spell: "Eternal Flame", cpm: judgmentCritsPerMin, castTimeOverride: 0, manaOverride: 0, label: "Eternal Flame (Empyrean Legacy)" })
+        reportingData.empyreanLegacyProcsPerMinute = judgmentCritsPerMin;
+    }
+    
+    
+    
     getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
     getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
 
@@ -159,10 +183,10 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     const extraHolyShockCPM = totalHolyShockCDR / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown");
     getSpellEntry(castProfile, "Holy Shock").cpm += extraHolyShockCPM;*/
 
-        // Sunsear
+    // Sunsear
     if (hasTalent(talents, "Sun Sear")) {
-        const holyShockCritChance = state.statPercentages.crit + (spellDB["Holy Shock"][0].statMods?.crit || 0) - 1;
-        const lightOfDawnCritChance = state.statPercentages.crit + (spellDB["Light of Dawn"][0].statMods?.crit || 0) - 1;
+        const holyShockCritChance =  getSpellCritChance(spellDB["Holy Shock"][0], state.statPercentages);
+        const lightOfDawnCritChance = getSpellCritChance(spellDB["Light of Dawn"][0], state.statPercentages);
         
         castProfile.push({spell: "Sun Sear",
                             cpm: getCPM(castProfile, "Holy Shock") * holyShockCritChance +

@@ -261,6 +261,43 @@
             }
         }
     ],
+    "Beacon of the Savior": [
+        {
+            "displayInfo": {
+                "id": 1245369,
+                "icon": false,
+                "spellName": "Beacon of the Savior"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 3.75,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Avenging Wrath": [
+        {
+            "displayInfo": {
+                "id": 31884,
+                "icon": "spell_holy_avenginewrath",
+                "spellName": "Avenging Wrath"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 120.0,
+                "hasted": false
+            },
+            "buffDuration": 20
+        }
+    ],
     "Shield of the Righteous": [
         {
             "displayInfo": {
@@ -459,6 +496,7 @@
             "castTime": 0.0,
             "school": "radiant",
             "cost": 0.0,
+            "targets": 1.25,
             "coeff": 1.3455,
             "aura": 1.77,
             "expectedOverheal": 0.25,

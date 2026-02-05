@@ -66,13 +66,17 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
+export const getSpellCritChance = (spell, statPercentages) => {
+    return statPercentages.crit + (spell.statMods?.crit || 0) - 1
+}
+
 
 // Stat profile is an object containing stats found from all non-talent sources.
 // StatBonuses contains percentages instead. 
 export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEffectiveness, race = "") => {
 
     const stats = {
-        intellect: statProfile.intellect *= (1 + (statBonuses.intellect || 0)),
+        intellect: statProfile.intellect * (1 + (statBonuses.intellect || 0)),
         crit: 1.05 + (statProfile.crit / STATCONVERSION.CRIT / 100) + (statBonuses.crit || 0),
         haste: (1 + statProfile.haste / STATCONVERSION.HASTE / 100) * (1 + (statBonuses.haste || 0)),
         mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08 + (statBonuses.mastery || 0)) * STATCONVERSION.MASTERYMULT[spec] * masteryEffectiveness,
@@ -149,11 +153,14 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     
 
     if (spell.spellType === "heal" || spell.buffType === "heal") {
+        spellOutput *= statPercentages.genericHealingMult;
         spellOutput *= (1 - spell.expectedOverheal)
         targetCount = spell.targets ? spell.targets : 1;
         spellOutput *= targetCount;
+        
     }
     else if (spell.spellType === "damage" || spell.buffType === "damage") {
+        spellOutput *= statPercentages.genericDamageMult;
         if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
     }

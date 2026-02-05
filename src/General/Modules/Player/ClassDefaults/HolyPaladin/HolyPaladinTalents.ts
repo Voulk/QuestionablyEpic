@@ -14,7 +14,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
         // Spec talents
         "Divine Glimpse", "Light's Conviction", "Ringing of the Heavens", "Awestruck", "Unending Light", "Extrication",
         "Resplendent Light", "Divine Favor", "Imbued Infusions", "Light of the Martyr", "Overflowing Light", "Commanding Light", "Glistening Radiance", "Breaking Dawn",
-        "Divine Glimpse", "Bestow Light", "Beacon of Faith", "Empyrean Legacy", "Reclamation", "Seek Deliverance", "Awakening", "Truth Prevails", "Glorious Dawn", 
+        "Divine Glimpse", "Bestow Light", "Beacon of Faith", "Empyrean Legacy", "Reclamation", "Seek Deliverance", "Sanctified Wrath", "Truth Prevails", "Glorious Dawn", 
         "Hand of Divinity", "Inflorescence of the Sunwell"
     ]
 
@@ -327,7 +327,7 @@ const specTalents: TalentTree = {
 
     /* $?(c1|c2|c3)[][The duration of Avenging Wrath is increased by X%.]$?c1[Avenging Wrath and Avenging Crusader have X% increased duration.]?c2[Avenging Wrath and Sentinel cause Judgment to generate Z additional Holy Power,]?c3[Avenging Wrath and Crusade cause each Holy Power spent to explode with Holy light for $326731s1 damage to nearby enemies,][]$?(c2|c3)[ and have X% increased duration.][] */
     "Sanctified Wrath": {id: 53376, values: [25.0, 0.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_paladin_judgementsofthejust", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Avenging Wrath"][0].buffDuration! *= (1 + 50 / 100);
     }},
 
     /* While in combat, your Holy Power spenders have a X% chance to cause your next Judgment to deal $414193s1% increased damage and critically strike.    Activating Avenging Wrath activates Awakening. */
@@ -414,12 +414,15 @@ const heroTalents: TalentTree = {
     /* Your Holy Power spenders deal X% additional damage and healing. */
     "Gleaming Rays": {id: 431480, values: [3.0, 3.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_priest_power_word", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Light of Dawn"], talentValues[0]);
+        buffSpellPerc(spellDB["Eternal Flame"], talentValues[0]);
+        buffSpellPerc(spellDB["Word of Glory"], talentValues[0]);
     }},
 
     /* $?c1[Critical Strike chance of Holy Shock and Light of Dawn increased by X%.]?c3[Critical Strike chance of Hammer of Wrath and Divine Storm increased by Y%.][] */
     "Luminosity": {id: 431402, values: [5.0, 10.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "inv_qirajidol_sun", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritChance(spellDB["Holy Shock"], talentValues[0]);
+        buffSpellCritChance(spellDB["Light of Dawn"], talentValues[0]);
     }},
 
     /* $?c1[Dawnlight's duration is increased by ${X/1000}.1 sec when it heals an ally with full health.][Dawnlight's duration is increased by ${Y/1000}.1 sec whenever struck by Divine Storm or Templar's Verdict.    When 2 Dawnlights are struck by Divine Storm, their durations are extended by an additional ${Z/1000}.1 sec.] */
@@ -427,19 +430,10 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* Dawnlight reduces the movement speed of enemies by $431380s3% and increases the movement speed of allies by $431381s3%. */
-    "Illumine": {id: 431423, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_holy_divineillumination", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
-
-    /* Movement speed increased by $431462s1% while above X% health.    When your health is brought below Z%, your movement speed is increased by $431752s1% for $431752d. Cannot occur more than once every $456779d. */
-    "Will of the Dawn": {id: 431406, values: [80.0, 80.0, 35.0, 35.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_holy_divineprovidence", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
 
     /* $?c1[The healing and damage of Holy Shock is increased by X%.]?c3[Your damage and healing over time effects have a chance to increase the damage of your next Judgment by $445206s1%.][] */
     "Blessing of An'she": {id: 445200, values: [15.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "inv_ability_holyfire_orb", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Shock"], talentValues[0]);
     }},
 
     /* Dawnlight leaves an Eternal Flame for ${X/1000} sec on allies or a Greater Judgment on enemies when it expires or is extended. */
@@ -450,12 +444,11 @@ const heroTalents: TalentTree = {
     /* $?c1[Holy Shock and Light of Dawn critical strikes cause the target to be healed for an additional $431415o1 over $431415d.]?c3[Hammer of Wrath and Divine Storm critical strikes cause the target to burn for an additional $431414o1 Radiant damage over $431414d.][] */
     "Sun Sear": {id: 431413, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_priest_burningwill", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentValues: number[], points: number) {
-
+        // Implemented in Profile
     }},
 
     /* Haste is increased by X%. */
     "Solar Grace": {id: 431404, values: [5.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "ability_malkorok_blightofyshaarj_yellow", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        console.log("SOLAR GRACE");
         addStatPerc(state.statBonuses, "haste", talentValues[0]);
     }},
 
@@ -471,12 +464,12 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Light of Dawn and Holy Shock have a X% chance to cast again at Y% effectiveness.]?c3[Divine Storm and Hammer of Wrath have a X% chance to cast again at Y% effectiveness.][] */
     "Second Sunrise": {id: 431474, values: [15.0, 30.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "ability_priest_halo", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Implemented in Profile
     }},
 
     /* Dawnlight's critical strike chance is increased by $1264050s1% during Avenging Wrath. */
     "Born in Sunlight": {id: 1263920, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_paladin_lightofdawn", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritChance(spellDB["Dawnlight"], 15 * (20 / 120));
     }},
 
     /* You link to your Dawnlights within $s8 yds, causing $431911s1 Radiant damage to enemies or $431939s1 healing to allies that pass through the beams, reduced beyond $?c3[$s9][$s6] targets. */
