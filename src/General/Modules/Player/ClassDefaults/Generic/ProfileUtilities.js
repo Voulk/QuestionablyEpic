@@ -124,7 +124,6 @@ export const runProfileSlice = (fullSpell, statPercentages, spec, settings, flag
 }
 
 export const getSpellThroughput = (spell, statPercentages, spec, settings, flags = {}) => {
-    const genericMult = statPercentages.genericMult || 1;
     let targetCount = 1;
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
@@ -146,14 +145,12 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * 
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
-                            (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1) *
-                            genericMult 
-        //console.log(critMult, masteryMult, genericMult);
+                            (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
     }
     
 
     if (spell.spellType === "heal" || spell.buffType === "heal") {
-        spellOutput *= statPercentages.genericHealingMult;
+        spellOutput *= (spell.specialFields?.absorb ? 1 : statPercentages.genericHealingMult);
         spellOutput *= (1 - spell.expectedOverheal)
         targetCount = spell.targets ? spell.targets : 1;
         spellOutput *= targetCount;
@@ -190,10 +187,11 @@ export const applyTalents = (state, spellDB, stats) => {
     });
 };
 
-export const completeCastProfile = (castProfile, spellDB) => {
+export const completeCastProfile = (castProfile, spellDB, statPercentages) => {
     castProfile.forEach(spell => {
         if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)
         spell.castTime = spellDB[spell.spell][0].castTime;
-        spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1) * BASEMANA / 100;
+        //spell.cost = spellDB[spell.spell][0].cost * (spell.manaOverride ?? 1) * BASEMANA / 100;
+        if (spell.hastedCPM) spell.cpm = spell.cpm * statPercentages.haste;
     });
 }

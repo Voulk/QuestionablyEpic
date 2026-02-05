@@ -9,7 +9,7 @@
             },
             "castTime": 0.0,
             "school": "holy",
-            "cost": 2.8,
+            "cost": 2.24,
             "cooldownData": {
                 "cooldown": 6.0,
                 "hasted": false,
@@ -278,6 +278,9 @@
                 "mastery",
                 "versatility"
             ],
+            "specialFields": {
+                "absorb": true
+            },
             "spellType": "heal"
         }
     ],
@@ -334,21 +337,21 @@
     "Judgment": [
         {
             "displayInfo": {
-                "id": 20271,
+                "id": 275773,
                 "icon": "spell_holy_righteousfury",
                 "spellName": "Judgment",
                 "cat": "damage"
             },
             "castTime": 0.0,
             "school": "holy",
-            "cost": 0.6,
+            "cost": 1.2,
             "cooldownData": {
                 "cooldown": 6.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 0.6716,
+            "coeff": 1.2375,
             "aura": 2.4,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -482,6 +485,9 @@
                 "versatility",
                 "crit"
             ],
+            "specialFields": {
+                "absorb": true
+            },
             "spellType": "heal"
         }
     ],

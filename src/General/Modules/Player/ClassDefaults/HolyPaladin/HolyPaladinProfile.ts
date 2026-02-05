@@ -94,10 +94,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
-        {spell: "Holy Shock", efficiency: 0.9, hastedCPM: false },
-        {spell: "Judgment", efficiency: 0.9, hastedCPM: false  },
+        {spell: "Holy Shock", efficiency: 0.9, hastedCPM: true },
+        {spell: "Judgment", efficiency: 0.9, hastedCPM: true  },
         {spell: "Divine Toll", efficiency: 0.95 },
-        {spell: "Beacon of the Savior", cpm: 60 / 8, castTimeOverride: 0, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
+        {spell: "Beacon of the Savior", cpm: 60 / 8 + 5, autoSpell: true, label: "Beacon of the Savior (Absorb)" }, // Ticks every 8 seconds.
+        {spell: "Avenging Wrath", efficiency: 1 },
 
         {spell: "Eternal Flame", cpm: 0 }, // Filled later
         {spell: "Light of Dawn", cpm: 0 }, // Filled later
@@ -106,17 +107,15 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     ]
 
     const spenderUsage = {
-        "Light of Dawn": 1,
-        "Eternal Flame": 0,
+        "Light of Dawn": 0.9,
+        "Eternal Flame": 0.1,
         "Word of Glory": 0,
     };
 
-    completeCastProfile(castProfile, spellDB);
+    completeCastProfile(castProfile, spellDB, state.statPercentages);
+    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
+    reportingData.spellCosts = spellCosts;
 
-
-    // Second Sunrise
-    if (hasTalent(talents, "Second Sunrise")) castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Holy Shock") * 0.15, mult: 0.3});
-   
 
     // Dawnlight
     if (playerData.heroTree === "Herald of the Sun") {
@@ -125,21 +124,30 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
         // Suns Avatar
         // Every 0.5s it ticks on X allies.
-        const sunsAvatarAlliesPerTick = 5;
+        const sunsAvatarAlliesPerTick = 4;
         const sunsAvatarUptime = dawnlightCPM * 8; // TODO: use spell data.
 
-        castProfile.push({spell: "Sun's Avatar", cpm: sunsAvatarAlliesPerTick * sunsAvatarUptime, freeSpell: true})
+        castProfile.push({spell: "Sun's Avatar", cpm: sunsAvatarAlliesPerTick * sunsAvatarUptime, autoSpell: true})
     }
 
-    // Haste our CPMs
-    castProfile.forEach(spellProfile => {
-        if (spellProfile.hastedCPM) spellProfile.cpm = spellProfile.cpm * state.statPercentages.haste;
-    })
 
+    // Hand of Divinity
+    if (hasTalent(talents, "Hand of Divinity")) {
+        castProfile.push({spell: "Holy Light", cpm: getCPM(castProfile, "Avenging Wrath") * 2, manaOverride: 0.5 })
+    }
+
+
+    // Second Sunrise - Holy Shock
+    if (hasTalent(talents, "Second Sunrise")) {
+        castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Holy Shock"), mult: 0.15, autoSpell: true});
+    }
 
     // Handle Divine Toll
     // Could potentially be re-organized.
-    castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Divine Toll") * spellDB["Divine Toll"][0].targets, mult: 0.6, label: "Holy Shock (Divine Toll)" })
+    if (hasTalent(talents, "Divine Toll")) {
+        castProfile.push({spell: "Holy Shock", cpm: getCPM(castProfile, "Divine Toll") * spellDB["Divine Toll"][0].targets, mult: 0.6, autoSpell: true, label: "Holy Shock (Divine Toll)" })
+    }
+    
 
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
@@ -164,7 +172,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
             judgmentCritsPerMin += (averageSpenderCPM * 0.1) + getCPM(castProfile, "Avenging Wrath");
         }
 
-        castProfile.push({spell: "Eternal Flame", cpm: judgmentCritsPerMin, castTimeOverride: 0, manaOverride: 0, label: "Eternal Flame (Empyrean Legacy)" })
+        castProfile.push({spell: "Eternal Flame", cpm: judgmentCritsPerMin, autoSpell: true, label: "Eternal Flame (Empyrean Legacy)" })
         reportingData.empyreanLegacyProcsPerMinute = judgmentCritsPerMin;
     }
     
@@ -173,10 +181,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     getSpellEntry(castProfile, "Eternal Flame").cpm = averageSpenderCPM * spenderUsage["Eternal Flame"];
     getSpellEntry(castProfile, "Light of Dawn").cpm = averageSpenderCPM * spenderUsage["Light of Dawn"];
 
-    reportingData.holyPowerPerMinute = holyPowerPerMinute;
+    if (hasTalent(talents, "Second Sunrise")) {
+        castProfile.push({spell: "Light of Dawn", cpm: getCPM(castProfile, "Light of Dawn"), mult: 0.15, autoSpell: true});
+    }
 
-    // Infusion Count
-    const totalInfusions = getCPM(castProfile, "Holy Shock") * 0.1;
+    reportingData.holyPowerPerMinute = holyPowerPerMinute;
 
 
 
@@ -197,12 +206,35 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
         castProfile.push({spell: "Sun Sear",
                             cpm: getCPM(castProfile, "Holy Shock") * holyShockCritChance +
                                  getCPM(castProfile, "Light of Dawn") * lightOfDawnCritChance,
+                                 autoSpell: true
         })
 
     }
 
     reportingData.hastePerc = state.statPercentages.haste
     reportingData.statBon = initialState.statBonuses
+
+    // Fillers
+    const manaPool = 250000;
+    const regen = manaPool * 0.04 * 12;
+
+    const manaAvailable = manaPool / fightLength + regen;
+    reportingData.manaAvailable = manaAvailable;
+
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride || 1))), 0);
+    reportingData.baselineCostPerMinute = baselineCostPerMinute;
+
+    castProfile.forEach(spellEntry => {
+        console.log(`${spellEntry.spell}: CPM ${spellEntry.cpm}, Cost per cast: ${spellCosts[spellEntry.spell] * (spellEntry.manaOverride || 1)}
+        Total Cost per minute: ${spellEntry.autoSpell? 0 : spellCosts[spellEntry.spell] * spellEntry.cpm! * (spellEntry.manaOverride || 1)}
+        at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%`);
+    })
+
+    const fillerMana = manaAvailable - baselineCostPerMinute;
+    reportingData.fillerManaPerMinute = fillerMana;
+
+    // Calculate Time Available
+    
 
 
     // Run healing

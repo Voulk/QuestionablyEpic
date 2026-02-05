@@ -102,6 +102,7 @@ declare type ProfileEntry = {
     spell: string;
     efficiency?: number; // Used mostly for cooldown spells. Defines how good they are at pressing button cooldown. 
     cpm?: number; // Casts per minute. Can be used for fixed spells that don't have a cooldown but are only pressed X times per minute like Efflorescence.
+    autoSpell?: boolean; // Used for passive-type effects. Automatically sets mana and cast time to 0.
     manaOverride?: number; // Used for free casts, or cheaper casts.
     castTimeOverride?: number; // Used for spells that should not take up time on our timeline but that aren't structurally off-GCD.
     mult?: number; // Multiply throughput by this amount.
@@ -111,6 +112,8 @@ declare type ProfileEntry = {
     fillerSpell?: boolean; // Used by some profiles to designate which spells excess mana and time should be filled with. Can be manually coded instead.
     flags?: any; // Currently unused. Assign a type when necessary.
     label?: string; // Can show up in our cast breakdown if we want to separate them out.
+
+    hastedCPM?: boolean; // Whether the CPM should be adjusted by Haste or not. Potential to automate in future.
 }
 
 declare type CastProfile = ProfileEntry[]
