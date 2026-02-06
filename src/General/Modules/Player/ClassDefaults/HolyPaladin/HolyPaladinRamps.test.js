@@ -15,7 +15,8 @@ describe("Evang Cast Sequence", () => {
         const activeStats = holyPaladinProfile.defaultStatProfile;
 
 
-        const playerData = { spec: "Holy Paladin", heroTree: "Herald of the Sun", profileName: "Herald of the Sun", stats: activeStats, masteryEffectiveness: 0.85 }
+        const playerData = { spec: "Holy Paladin", heroTree: "Herald of the Sun", profileName: "Herald of the Sun", stats: activeStats, 
+                                masteryEffectiveness: 0.85, tierSets: ["Holy Paladin S1-2", "Holy Paladin S1-4"] }
         const settings = {averageRaidHealth: 0.8}
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);

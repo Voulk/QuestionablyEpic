@@ -560,6 +560,7 @@ const heroTalents: TalentTree = {
     }},
 }
 
+
 export const paladinTalents = {
     ...classTalents,
     ...specTalents,

@@ -89,6 +89,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     defaultTalents(initialState.talents, "default", playerData.heroTree);
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
+    if (playerData.tierSets.includes("Holy Paladin S1-2")) {
+        spellDB["Holy Shock"][0].coeff *= 1.15;
+    }
+
+
     // Apply Stats
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, 
                     playerData.masteryEffectiveness), settings: settings, talents: paladinTalents};
@@ -158,6 +163,16 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
     // Free Holy shocks from Glorious Dawn
     getSpellEntry(castProfile, "Holy Shock", 0).cpm *= 1.12;
 
+    // Imbued Infusions
+    // Issue: Does not fully account for Holy Shock itself giving more infusions, or Second Sunrise. 
+    if (hasTalent(talents, "Imbued Infusions")) {
+        const extraCasts = (getCPM(castProfile, "Holy Shock") * 0.1 * (hasTalent(talents, "Inflorescence of the Sunwell") ? 2 : 1)) / (spellDB["Holy Shock"][0].cooldownData!.cooldown / state.statPercentages.haste);
+        getSpellEntry(castProfile, "Holy Shock", 0).cpm += extraCasts;
+        getSpellEntry(castProfile, "Holy Shock", 1).cpm += extraCasts;
+        reportingData.infusionCastsPerMinute = extraCasts;
+    }
+
+
     // Infusions
     const infusionsPerMinute = getCPM(castProfile, "Holy Shock") * 0.1;
     reportingData.infusionsPerMinute = infusionsPerMinute * (hasTalent(talents, "Inflorescence of the Sunwell") ? 2 : 1);
@@ -165,7 +180,8 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
 
     // == Holy Power Spenders ==
-    const holyPowerPerMinute = getCPM(castProfile, "Holy Shock") + getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
+    const holyPowerPerMinute = getSpellEntry(castProfile, "Holy Shock", 0).cpm + getCPM(castProfile, "Divine Toll") * 5 + 
+                                    getCPM(castProfile, "Flash of Light")+ getCPM(castProfile, "Holy Light")  + getCPM(castProfile, "Judgment");
     const averageSpenderCPM = holyPowerPerMinute / 3;
     
     // Handle Empyrean Legacy
@@ -204,16 +220,6 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     reportingData.holyPowerPerMinute = holyPowerPerMinute;
 
-
-
-
-    // Handle CDR on Holy Shock and free casts
-    // Note that we get some free HS casts here that won't be run for Infusions. Have a think about this. Minor.
-    let totalHolyShockCDR = 0;
-    /*if (getTalentPoints(state.talents, "crusadersMight")) totalHolyShockCDR += getCPM(castProfile, "Crusader Strike") * 2;
-    if (getTalentPoints(state.talents, "imbuedInfusions")) totalHolyShockCDR += totalInfusions * 1;
-    const extraHolyShockCPM = totalHolyShockCDR / getSpellAttribute(paladinSpells["Holy Shock"], "cooldown");
-    getSpellEntry(castProfile, "Holy Shock").cpm += extraHolyShockCPM;*/
 
     // Sunsear
     if (hasTalent(talents, "Sun Sear")) {
@@ -298,10 +304,11 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
 
                 // Handle Beacons including any bonus multipliers.
-                const beaconHealing = getBeaconHealing(beaconChoice, totalOutput, spellName);
+                const beaconOutput = totalOutput * (playerData.tierSets.includes("Holy Paladin S1-4") && spellName === "Holy Shock" ? 1.2 : 1);
+                const beaconHealing = getBeaconHealing(beaconChoice, beaconOutput, spellName);
                 healingBreakdown["Beacon of Light"] = (healingBreakdown["Beacon of Light"] ?? 0) + (beaconHealing);
 
-                const saviorHealing = getBeaconHealing("Beacon of the Savior", totalOutput, spellName);
+                const saviorHealing = getBeaconHealing("Beacon of the Savior", beaconOutput, spellName);
                 healingBreakdown["Beacon of the Savior"] = (healingBreakdown["Beacon of the Savior"] ?? 0) + (saviorHealing);
             }
 
