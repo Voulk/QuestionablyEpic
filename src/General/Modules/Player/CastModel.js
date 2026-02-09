@@ -4,7 +4,7 @@ import { druidDefaultSpecialQueries, druidDefaultSpellData, druidDefaultStatWeig
 import { druidBalancedSpecialQueries, druidBalancedSpellData, druidBalancedStatWeights } from "./ClassDefaults/RestoDruid/DruidBalancedFocus";
 
 import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } from "./ClassDefaults/HolyPaladin/Archive/PaladinAvengingCrusader";
-import { paladinMeleeSpecialQueries, paladinMeleeSpellData, paladinMeleeStatWeights } from "./ClassDefaults/HolyPaladin/Archive/PaladinHerald";
+import { paladinDefaultSpecialQueries, paladinDefaultSpellData, paladinDefaultStatWeights } from "./ClassDefaults/HolyPaladin/HolyPaladinDefaults";
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/RestoShamanDefaults";
 import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
@@ -80,8 +80,8 @@ class CastModel {
 
   setDefaults = (spec, contentType, modelID) => {
     this.fightInfo = {
-      hps: 34200,
-      rawhps: 34200,
+      hps: 100000,
+      rawhps: 115000,
       dps: 2000,
       fightLength: 400,
       reportID: "Default",
@@ -110,23 +110,23 @@ class CastModel {
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Herald of the Sun") {
         this.modelName = "Herald of the Sun";
-        spellList = paladinMeleeSpellData(contentType);
-        specialQueries = paladinMeleeSpecialQueries(contentType);
-        this.baseStatWeights = paladinMeleeStatWeights("Raid");
+        spellList = paladinDefaultSpellData(contentType);
+        specialQueries = paladinDefaultSpecialQueries(contentType);
+        this.baseStatWeights = paladinDefaultStatWeights("Raid");
         this.fightInfo.dps = 17000;
       }
       else if (modelID === "Lightsmith") {
-        this.modelName = "Lightsmith";
-        spellList = paladinACSpellData(contentType);
-        specialQueries = paladinACSpecialQueries(contentType);
-        this.baseStatWeights = paladinACStatWeights("Raid");
-        this.fightInfo.dps = 15000;
+        //this.modelName = "Lightsmith";
+        //spellList = paladinACSpellData(contentType);
+        //specialQueries = paladinACSpecialQueries(contentType);
+        //this.baseStatWeights = paladinACStatWeights("Raid");
+        //this.fightInfo.dps = 15000;
       }
       else if (modelID === "Default") { // Dungeon
         this.modelName = "Default";
-        spellList = paladinMeleeSpellData(contentType);
-        specialQueries = paladinMeleeSpecialQueries(contentType);
-        this.baseStatWeights = paladinMeleeStatWeights(contentType);
+        spellList = paladinDefaultSpellData(contentType);
+        specialQueries = paladinDefaultSpecialQueries(contentType);
+        this.baseStatWeights = paladinDefaultStatWeights(contentType);
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {

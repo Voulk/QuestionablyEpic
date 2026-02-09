@@ -1,11 +1,11 @@
 
 import { getCurrentStats, getSpellRaw, getCrit, getHaste, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyTalents } from "../Generic/ProfileUtilities";
+import { applyTalents } from "../../Generic/ProfileUtilities";
 import { runHeal, EVOKERCONSTANTS } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps";
-import { applyLoadoutEffects } from "./Archive/PresEvokerTalentsTWW";
+import { applyLoadoutEffects } from "./PresEvokerTalentsTWW";
 import { STATCONVERSION } from "General/Engine/STAT";
 
-import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
+import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./PresEvokerSpellDBTWW";
 
 import { printHealingBreakdown, hasTier } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
 

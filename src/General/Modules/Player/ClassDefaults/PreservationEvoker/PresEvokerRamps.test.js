@@ -3,7 +3,7 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerS
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { runPreservationEvokerCastProfile } from "./PreservationEvokerProfile";
-import { runPreservationEvokerCastProfileEchoshaper } from "./PreservationEvokerProfileEchoshaper";
+import { runPreservationEvokerCastProfileEchoshaper } from "./Archive/PreservationEvokerProfileEchoshaper";
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 

@@ -1,4 +1,4 @@
-import { runPreservationEvokerCastProfileEchoshaper } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PreservationEvokerProfileEchoshaper"
+import { runPreservationEvokerCastProfileEchoshaper } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PreservationEvokerProfileEchoshaper"
 
 export const evokerDefaultSpellData = (contentType) => {
     let spellList = {};
