@@ -4,7 +4,7 @@ import { PALADINSPELLDB } from "./Archive/HolyPaladinSpellDBTWW";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell, deepCopyFunction, spendSpellCost, runRampTidyUp,
             getStatMult, GLOBALCONST, getHealth, getCrit, runSpell, getSpellCastTime, getTalentPoints, getTalentData } from "../Generic/RampBase";
-import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
             import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
 

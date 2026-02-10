@@ -1,4 +1,4 @@
-import { runPreservationEvokerCastProfileEchoshaper } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PreservationEvokerProfileEchoshaper"
+import { scoreEvokerSet } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PreservationEvokerProfileEchoshaper"
 
 export const evokerDefaultSpellData = (contentType) => {
     let spellList = {};
@@ -20,7 +20,7 @@ export const evokerDefaultSpellData = (contentType) => {
   export const runFlameshaperCastModel = (itemSet, setStats, castModel, effectList) => {
     const settings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: false};
     const playerData = { spec: "Preservation Evoker", settings: settings, stats: setStats, tier: ["S1-2", "S1-4"], effectList: effectList }
-    const result = runPreservationEvokerCastProfileEchoshaper(playerData);
+    const result = scoreEvokerSet(playerData);
 
     return result;
   }

@@ -2,8 +2,10 @@ import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
-import { runPreservationEvokerCastProfile } from "./PreservationEvokerProfile";
+import { scoreEvokerSet } from "./PreservationEvokerProfile";
 import { runPreservationEvokerCastProfileEchoshaper } from "./Archive/PreservationEvokerProfileEchoshaper";
+
+import { getScalarValue } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
 
@@ -29,7 +31,9 @@ describe("Test APL", () => {
         const baseSpells = EVOKERSPELLDB;
         const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
 
-        const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S3-2", "Evoker S3-4"] }
+        //console.log([getScalarValue(-9, 150), getScalarValue(-9, 151)])
+
+        /*const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S3-2", "Evoker S3-4"] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
         const iterations = 1;
@@ -41,7 +45,7 @@ describe("Test APL", () => {
 
         baseline = baseline / iterations
         console.log("Baseline HPS: " + baseline);
-        runStats(playerData, profile);
+        runStats(playerData, profile);*/
         
     })
 

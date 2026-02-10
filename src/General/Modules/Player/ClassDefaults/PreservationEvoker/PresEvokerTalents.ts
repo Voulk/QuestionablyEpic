@@ -1,4 +1,23 @@
 
+/**
+ * A list of talents to turn on
+ */
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Flameshaper") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+            //console.log(`Enabling talent: ${talentName}`);
+        }
+    })
+}
 
 const specTalents: TalentTree = {
     /* Each cast of a Bronze spell causes your next empower spell to reach maximum level in X% less time, stacking up to $362877u times. */

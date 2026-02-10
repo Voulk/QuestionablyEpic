@@ -4,7 +4,7 @@ import { EVOKERSPELLDB } from "./Archive/PresEvokerSpellDBTWW";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
             getHealth, getCrit, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "../Generic/RampBase";
-import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
 import { applyLoadoutEffects } from "./Archive/PresEvokerTalentsTWW";

@@ -3,7 +3,7 @@ import { checkBuffActive, removeBuffStack, removeBuff, addBuff, getBuffStacks, e
 import { getEssenceBuff, triggerTemporal } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerRamps" // TODO: Handle this differently.
 import { genSpell } from "./APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { getSqrt } from "./sqrtScripts";    
+import { getSqrt } from "./TargetScripts";    
 
 const GLOBALCONST = {
     rollRNG: true, // Model RNG through chance. Increases the number of iterations required for accuracy but more accurate than other solutions.
