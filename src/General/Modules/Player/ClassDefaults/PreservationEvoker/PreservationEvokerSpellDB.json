@@ -187,19 +187,6 @@
                 "canPartialTick": true,
                 "tickOnCast": false
             }
-        },
-        {
-            "coeff": 0.342,
-            "aura": 1,
-            "expectedOverheal": 0.03,
-            "secondaries": [
-                "mastery",
-                "versatility"
-            ],
-            "specialFields": {
-                "absorb": true
-            },
-            "spellType": "heal"
         }
     ],
     "Temporal Anomaly": [

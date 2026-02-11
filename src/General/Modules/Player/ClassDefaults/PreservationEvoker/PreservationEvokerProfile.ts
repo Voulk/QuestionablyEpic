@@ -4,6 +4,7 @@ import { runHeal } from "General/Modules/Player/ClassDefaults/PreservationEvoker
 import specSpellDB from "./PreservationEvokerSpellDB.json";
 import { defaultTalents, evokerTalents } from "./PresEvokerTalents";
 import { runSpellScript } from "../Generic/SpellScripts";
+import { hasTalent } from "../Generic/RampBase";
 
 export const preservationEvokerProfile = {
     spec: "Preservation Evoker",
@@ -70,7 +71,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         //{spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
         //{spell: "Dream Breath", cpm: 2},           
         //{spell: "Dream Flight", efficiency: 0.95 },
-        {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
+        //{spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
+        {spell: "Reversion", efficiency: 0.6, hastedCPM: false}
         //{spell: "Chrono Flame", cpm: 0},     
     ]
 
@@ -96,7 +98,9 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
 
     // Total Echo CPM
-    const totalEchoPower = getCPM(castProfile, "Echo") * 1.05 + getCPM(castProfile, "Temporal Anomaly") * 0.45 * 5;
+    const echoMult = 1 + (hasTalent(talents, "Time Lord") ? 0.5 : 0) + (playerData.heroTree.includes("Chronowarden") ? 0.1 : 0);   
+    const totalEchoPower = (getCPM(castProfile, "Echo") * 0.7 + getCPM(castProfile, "Temporal Anomaly") * 0.3 * 5) * echoMult;
+    reportingData.totalEchoPower = totalEchoPower; 
 
     // Lifebind
     // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.

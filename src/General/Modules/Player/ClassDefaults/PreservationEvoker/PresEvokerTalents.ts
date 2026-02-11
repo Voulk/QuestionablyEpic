@@ -7,7 +7,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-
+        "Time Lord"
     ]
 
     // Apply talents

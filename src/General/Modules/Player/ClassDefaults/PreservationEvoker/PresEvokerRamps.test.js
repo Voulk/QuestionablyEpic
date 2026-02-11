@@ -28,27 +28,42 @@ describe("Test APL", () => {
         console.log(data);
         expect(true).toEqual(true);
 
+        //runStats(playerData, profile)
 
-        /*
-        const scalingValues = []
-        for (let i = 1; i < 420; i++) {
-            scalingValues.push(Math.round(1000 * getScalarValue(-8, i) )/ 1000);
-        }
-        console.log(JSON.stringify(scalingValues))
-*/
-        /*const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S3-2", "Evoker S3-4"] }
-
-        //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)
+            
+       const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runPreservationEvokerCastProfileEchoshaper(playerData).hps;
+            baseline += scoreEvokerSet(activeStats, playerData, settings).healing;
         }
 
-        baseline = baseline / iterations
-        console.log("Baseline HPS: " + baseline);
-        runStats(playerData, profile);*/
+        baseline = baseline / iterations;
+       
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 200;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += scoreEvokerSet(playerStats, newPlayerData, settings).healing;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+      
+
+
         
     })
 
@@ -61,20 +76,20 @@ const runStats = (playerData, profile) => {
     let baseline = 0;
     const exhilUptime = 0.7;
 
-    const activeStats = { // Here we'll just reset activeStats so that we have the same amount of each.
-        intellect: 120000 * 1.05,
-        haste: 12000,
-        crit: 12000,
-        mastery: 12000 + (2 * 700),
-        versatility: 12000 + (3 * 780),
-        stamina: 29000,
-        critMult: 2 + (0.6 * exhilUptime),
-    }
+    const activeStats = {
+        intellect: 2000,
+        haste: 200,
+        crit: 200,
+        mastery: 200,
+        versatility: 200,
+        stamina: 19000,
+        critMult: 2,
+    };
 
     playerData.stats = activeStats;
     
     for (let i = 0; i < iterations; i++) {
-        baseline += runPreservationEvokerCastProfileEchoshaper(playerData).hps;
+        baseline += scoreEvokerSet(activeStats, playerData, settings).healing;
     }
 
     baseline = baseline / iterations
@@ -87,7 +102,7 @@ const runStats = (playerData, profile) => {
         playerStats[stat] = playerStats[stat] + 2400;
         const newPlayerData = {...playerData, stats: playerStats};
         for (let i = 0; i < iterations; i++) {
-            statHealing += runPreservationEvokerCastProfileEchoshaper(newPlayerData).hps;
+            statHealing += scoreEvokerSet(activeStats, playerData, settings).healing;
         }
         results[stat] = statHealing / iterations;
 
