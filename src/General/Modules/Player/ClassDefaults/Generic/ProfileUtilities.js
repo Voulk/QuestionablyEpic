@@ -1,5 +1,6 @@
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
+import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
         const sortedEntries = Object.entries(healingBreakdown)
@@ -174,7 +175,14 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     if (spell.spellType === "heal" || spell.buffType === "heal") {
         spellOutput *= (spell.specialFields?.absorb ? 1 : statPercentages.genericHealingMult);
         spellOutput *= (1 - spell.expectedOverheal)
-        targetCount = spell.targets ? spell.targets : 1;
+
+        if (spell.targetScript) {
+            targetCount = getTargetScript(spell.targetScript, spell.targets, spell.specialFields)
+        }
+        else {
+            targetCount = spell.targets ? spell.targets : 1;
+        }
+        
         spellOutput *= targetCount;
         
     }

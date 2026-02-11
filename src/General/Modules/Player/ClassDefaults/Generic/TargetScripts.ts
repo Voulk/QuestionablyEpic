@@ -5,6 +5,14 @@ export const getTargetScript = (scriptName: string, targets: number, specialFiel
     if (scriptName === "sqrt") {
         return getSqrt(targets, specialFields.sqrtMin);
     }
+    else if (scriptName === "Temporal Anomaly") {
+        let effectiveMult = 0;
+        for (let i = 1; i <= targets; i++) {
+            if (i <= 5) effectiveMult += 1;
+            else effectiveMult += (1 / (i - 5 + 1)^(4/5));
+        }
+        return effectiveMult;
+    }
 
     else {
         console.error("Invalid Target Script");

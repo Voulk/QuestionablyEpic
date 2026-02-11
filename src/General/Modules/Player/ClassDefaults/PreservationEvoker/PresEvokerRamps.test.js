@@ -2,8 +2,7 @@ import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
-import { scoreEvokerSet } from "./PreservationEvokerProfile";
-import { runPreservationEvokerCastProfileEchoshaper } from "./Archive/PreservationEvokerProfileEchoshaper";
+import { preservationEvokerProfile, scoreEvokerSet } from "./PreservationEvokerProfile";
 
 import { getScalarValue } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
@@ -14,25 +13,29 @@ describe("Test APL", () => {
     test("Test APL", () => {
         
         console.log("Testing APL");
-        const exhilUptime = 0.7;
 
-        let activeStats = {
-            intellect: 110000 * 1.05 * 1.05,
-            haste: 13200,
-            crit: 8000,
-            mastery: 25000 + (2 * 700),
-            versatility: 8500 + (3 * 780),
-            stamina: 29000,
-            critMult: 2 + (0.6 * exhilUptime),
+
+        const activeStats = preservationEvokerProfile.defaultStatProfile;
+
+
+        const playerData = { spec: "Preservation Evoker", heroTree: "Chronowarden", profileName: "Chronowarden", stats: activeStats, 
+                                masteryEffectiveness: 0.85, tierSets: ["Preservation Evoker S1-2", "Preservation Evoker S1-4"] }
+        const settings = {averageRaidHealth: 0.8}
+
+        //const data = runAPLSuites(playerData, profile, runCastSequence);
+        const data = scoreEvokerSet(activeStats, playerData, settings);
+
+        console.log(data);
+        expect(true).toEqual(true);
+
+
+        /*
+        const scalingValues = []
+        for (let i = 1; i < 420; i++) {
+            scalingValues.push(Math.round(1000 * getScalarValue(-8, i) )/ 1000);
         }
-
-        const profile = reversionProfile;
-    
-        const baseSpells = EVOKERSPELLDB;
-        const testSettings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: true, t31_2: false, seqLength: 200};
-
-        //console.log([getScalarValue(-9, 150), getScalarValue(-9, 151)])
-
+        console.log(JSON.stringify(scalingValues))
+*/
         /*const playerData = { spec: "Preservation Evoker", spells: baseSpells, settings: testSettings, talents: {...evokerTalents}, stats: activeStats, tier: ["Evoker S3-2", "Evoker S3-4"] }
 
         //const data = runCastProfileSuites(playerData, runPreservationEvokerProfile)

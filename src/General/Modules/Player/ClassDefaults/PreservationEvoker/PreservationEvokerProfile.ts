@@ -88,7 +88,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Afterimage
     if (playerData.heroTree.includes("Chronowarden")) {
-        getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
+        //getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
     }
     
 
@@ -101,11 +101,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // Lifebind
     // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
     // We'll need to include the 4pc too if we're running tier.
-    const lifebindIncoming = 0 / spellDB["Spiritbloom"][0].targets * 2.05 + runHeal(state, spellDB["Echo"][0], "Dream Breath");
+    const lifebindIncoming = 0;
 
-    const verdantEmbraceHealing = runHeal(state, spellDB["Verdant Embrace"][0], "Verdant Embrace");
-    healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
-    healingBreakdown["Lifebind"] = lifebindIncoming * 0.4 * echoUsage["Verdant Embrace"] * totalEchoPower;
+    //const verdantEmbraceHealing = runHeal(state, spellDB["Verdant Embrace"][0], "Verdant Embrace");
+    //healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
+    //healingBreakdown["Lifebind"] = lifebindIncoming * 0.4 * echoUsage["Verdant Embrace"] * totalEchoPower;
 
 
     // Fillers
@@ -135,7 +135,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // you need to convert into Disintegrate casts.
 
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
-
+    console.log(castProfile);
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];

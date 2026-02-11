@@ -19,7 +19,6 @@
             "targets": 5,
             "coeff": 1.6341,
             "aura": 1,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -29,7 +28,7 @@
         {
             "coeff": 0.3948,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -61,7 +60,7 @@
             },
             "coeff": 2.4,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -90,7 +89,7 @@
             "targets": 6,
             "coeff": 0.3072,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -108,7 +107,7 @@
         {
             "coeff": 1.536,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -174,7 +173,7 @@
             },
             "coeff": 0.342,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -192,12 +191,15 @@
         {
             "coeff": 0.342,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.03,
             "secondaries": [
                 "mastery",
                 "versatility"
             ],
-            "spellType": "absorb"
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
         }
     ],
     "Temporal Anomaly": [
@@ -214,7 +216,19 @@
                 "cooldown": 15.0,
                 "hasted": false
             },
-            "targets": 6
+            "targets": 15,
+            "targetScript": "Temporal Anomaly",
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal",
+            "coeff": 6.0,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "expectedOverheal": 0.03,
+            "aura": 1
         }
     ],
     "Dream Flight": [
@@ -234,12 +248,15 @@
             "targets": 20,
             "coeff": 2.0,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.03,
             "secondaries": [
                 "mastery",
                 "versatility"
             ],
-            "spellType": "absorb"
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
         }
     ],
     "Disintegrate": [
@@ -257,7 +274,7 @@
             },
             "coeff": 1.5851,
             "aura": 1.8719999999999999,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -286,7 +303,7 @@
             "cost": 0.0,
             "coeff": 3.9,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -308,7 +325,7 @@
             "cost": 0.0,
             "coeff": 2.0,
             "aura": 0.83,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
