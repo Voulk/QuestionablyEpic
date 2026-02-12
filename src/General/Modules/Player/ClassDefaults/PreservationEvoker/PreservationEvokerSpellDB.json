@@ -340,5 +340,47 @@
             ],
             "spellType": "heal"
         }
+    ],
+    "Living Flame": [
+        {
+            "displayInfo": {
+                "id": 361469,
+                "icon": "ability_evoker_livingflame",
+                "spellName": "Living Flame",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "school": "fire",
+            "cost": 2.2,
+            "coeff": 6.0,
+            "aura": 1.0374999999999999,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Living Flame O": [
+        {
+            "displayInfo": {
+                "id": 361469,
+                "icon": "ability_evoker_livingflame",
+                "spellName": "Living Flame",
+                "cat": "damage"
+            },
+            "castTime": 2.0,
+            "school": "fire",
+            "cost": 0.44000000000000006,
+            "coeff": 2.32,
+            "aura": 1.8719999999999999,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
     ]
 }

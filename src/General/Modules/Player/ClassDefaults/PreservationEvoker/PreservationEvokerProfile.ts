@@ -78,6 +78,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     let genericHealingIncrease = 1;
     let genericCritIncrease = 1;
+    const incomingDTPS = 20000;
 
     const castProfile: CastProfile = [
         //{spell: "Living Flame O", cpm: 0},
@@ -87,14 +88,13 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         //{spell: "Dream Flight", efficiency: 0.95 },
         {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.6, hastedCPM: false}
-        //{spell: "Chrono Flame", cpm: 0},     
     ]
 
     // Assign echo usage
-    const echoUsage = {
-        "Verdant Embrace": 0.4,
-        "Dream Breath": 0.2, 
-        "Reversion": 0,
+    const echoUsage: Record<string, number> = {
+        "Verdant Embrace": 0.1,
+        "Dream Breath": 0, 
+        "Reversion": 0.9,
     }
     
 
@@ -110,26 +110,33 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     if (playerData.heroTree.includes("Chronowarden")) {
         //getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
     }
-    
 
-    // Essence Bursts generated
-    const essenceBurst = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+    let essenceAvailable = 60 / 5 / 2 * state.statPercentages.haste; // Base Essence Gen
+    
+    // Natty bursts from LF / Reversion
+    let essenceBurstCount = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+
+    // Talented bursts
+
+    // Extra bursts from Echo -> Reversion casts
 
     // Total Echo CPM
     const echoMult = 1 + (hasTalent(talents, "Time Lord") ? 0.5 : 0) + (playerData.heroTree.includes("Chronowarden") ? 0.1 : 0);   
-    const totalEchoPower = (getCPM(castProfile, "Echo") * 0.7 + getCPM(castProfile, "Temporal Anomaly") * 0.3 * 5) * echoMult;
+    let totalEchoEvents = getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5;
+    let totalEchoPower = (getCPM(castProfile, "Echo") * 0.7 + getCPM(castProfile, "Temporal Anomaly") * 0.3 * 5) * echoMult;
     reportingData.totalEchoPower = totalEchoPower; 
+    reportingData.totalEchoEvents = totalEchoEvents;
 
-    castProfile.push({spell: "Reversion", cpm: totalEchoPower, autoSpell: true, label: "Echo - Reversion"});
+    // Handle reversions own burst chance
+    const reversionBursts = totalEchoEvents * 0.225 * echoUsage["Reversion"]
+    castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true, label: "Reversion Burst"});
+    totalEchoEvents += reversionBursts;
+    totalEchoPower += reversionBursts * 0.7 * echoMult;
 
-    // Lifebind
-    // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
-    // We'll need to include the 4pc too if we're running tier.
-    const lifebindIncoming = 0;
 
-    //const verdantEmbraceHealing = runHeal(state, spellDB["Verdant Embrace"][0], "Verdant Embrace");
-    //healingBreakdown["Echo - Verdant Embrace"] = verdantEmbraceHealing * echoUsage["Verdant Embrace"] * totalEchoPower;
-    //healingBreakdown["Lifebind"] = lifebindIncoming * 0.4 * echoUsage["Verdant Embrace"] * totalEchoPower;
+    Object.keys(echoUsage).forEach(spell => {
+        castProfile.push({spell: spell, cpm: totalEchoPower * echoUsage[spell], autoSpell: true, label: "Echo - " + spell});
+    });
 
 
     // Fillers
@@ -176,8 +183,6 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
                 spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
             }
 
-            if (spellName === "Dream Breath") console.log("Dream Breath: " + spellOutput);
-
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
@@ -193,6 +198,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         })
 
     })
+
+    // Handle special spells
+    const reversionApexHealing = getCPM(castProfile, "Reversion") * adjReversionDuration * incomingDTPS * 0.04;
+    healingBreakdown["Reversion (DR)"] = reversionApexHealing;
 
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     printHealingBreakdown(healingBreakdown, totalHealing);

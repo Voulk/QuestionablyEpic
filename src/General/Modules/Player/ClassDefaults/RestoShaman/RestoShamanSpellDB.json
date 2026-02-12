@@ -267,7 +267,8 @@
             "displayInfo": {
                 "id": 444995,
                 "icon": "inv_ability_totemicshaman_surgingtotem",
-                "spellName": "Surging Totem"
+                "spellName": "Surging Totem",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -275,6 +276,22 @@
             "cooldownData": {
                 "cooldown": 25.0,
                 "hasted": false
+            },
+            "coeff": 0.74496,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 25.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
             }
         }
     ],
@@ -512,6 +529,8 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
+            "targets": 3,
+            "targetScript": "Chain Heal",
             "coeff": 1.6493,
             "aura": 1.0,
             "expectedOverheal": 0.2,
@@ -520,7 +539,10 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "heal",
+            "specialFields": {
+                "chainHealFalloff": 0.3
+            }
         }
     ],
     "Chain Lightning (Ancestor)": [
@@ -561,6 +583,33 @@
                 "versatility"
             ],
             "spellType": "damage"
+        }
+    ],
+    "Chain Heal (Totemic Rebound)": [
+        {
+            "displayInfo": {
+                "id": 458357,
+                "icon": "spell_nature_healingwavegreater",
+                "spellName": "Chain Heal (Totemic Rebound)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "targets": 3,
+            "targetScript": "Chain Heal",
+            "coeff": 2.205,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal",
+            "specialFields": {
+                "chainHealFalloff": 0.3
+            }
         }
     ]
 }
