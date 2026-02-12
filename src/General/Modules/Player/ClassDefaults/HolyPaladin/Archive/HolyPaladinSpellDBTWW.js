@@ -206,7 +206,7 @@ export const PALADINSPELLDB = {
         castTime: 0,
         cost: 0,
         coeff: 0,
-        flatHeal: getHealth({stamina: 360000}, {}) * 15,
+        flatHeal: 0, //getHealth({stamina: 360000}, {}) * 15,
         expectedOverheal: 0.05,
         secondaries: ['versatility']
     },
@@ -214,7 +214,7 @@ export const PALADINSPELLDB = {
         type: "buff",
         buffType: "heal",
         buffDuration: 20,
-        flatHeal: getHealth({stamina: 360000}, {}) * 2,
+        flatHeal: 0, //getHealth({stamina: 360000}, {}) * 2,
         coeff: 0.1254, // 0.114 x 1.1
         tickData: {tickRate: 2, canPartialTick: false, tickOnCast: false}, 
         expectedOverheal: 0.07,
@@ -593,11 +593,12 @@ export const baseTalents = {
     }},*/
 
     // SotR heals 5 nearby allies for 1% max health. Doesn't scale with anything. 
+    // // getHealth(state.currentStats, {}) * 0.01,
     lightforgedBlessing: {points: 0, maxPoints: 1, icon: "spell_holy_circleofrenewal", id: 406468, select: true, tier: 4, runFunc: function (state, spellDB, points) {
         spellDB['Shield of the Righteous'].push({
             type: "heal",
             coeff: 0,
-            flatHeal: getHealth(state.currentStats, {}) * 0.01,
+            flatHeal: 0, 
             expectedOverheal: 0.20,
             targets: 3,
             statMods: {'crit': 0},

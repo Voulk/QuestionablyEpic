@@ -121,7 +121,8 @@
             "displayInfo": {
                 "id": 360995,
                 "icon": "ability_evoker_rescue",
-                "spellName": "Verdant Embrace"
+                "spellName": "Verdant Embrace",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -131,7 +132,16 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            }
+            },
+            "coeff": 9.2,
+            "aura": 0.83,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Emerald Blossom": [
@@ -139,7 +149,8 @@
             "displayInfo": {
                 "id": 355913,
                 "icon": "ability_evoker_emeraldblossom",
-                "spellName": "Emerald Blossom"
+                "spellName": "Emerald Blossom",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -151,7 +162,16 @@
                 "cooldown": 30.0,
                 "hasted": false
             },
-            "targets": 3
+            "targets": 3,
+            "coeff": 3.23,
+            "aura": 0.83,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Reversion": [

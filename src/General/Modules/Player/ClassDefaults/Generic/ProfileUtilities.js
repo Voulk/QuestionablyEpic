@@ -169,6 +169,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
+                        
     }
     
 
@@ -182,7 +183,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         else {
             targetCount = spell.targets ? spell.targets : 1;
         }
-        
+
         spellOutput *= targetCount;
         
     }

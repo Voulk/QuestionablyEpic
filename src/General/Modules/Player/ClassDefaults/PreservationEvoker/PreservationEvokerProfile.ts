@@ -5,6 +5,7 @@ import specSpellDB from "./PreservationEvokerSpellDB.json";
 import { defaultTalents, evokerTalents } from "./PresEvokerTalents";
 import { runSpellScript } from "../Generic/SpellScripts";
 import { hasTalent } from "../Generic/RampBase";
+import reversionSimData from "./ReversionSimulationData";
 
 export const preservationEvokerProfile = {
     spec: "Preservation Evoker",
@@ -37,6 +38,20 @@ export const preservationEvokerProfile = {
 }
 
 
+const getReversionAdjDuration = (critChance: number) => {
+    // Make sure our crit chance is within bounds.
+    const effectiveCritChance = (critChance - 1) * 100;
+    if (effectiveCritChance <= 0) return reversionSimData[0];
+    if (effectiveCritChance >= reversionSimData.length - 1) return reversionSimData[reversionSimData.length - 1];
+
+    // Split index into the integer part and the decimal part
+    const i = Math.floor(effectiveCritChance);
+    const fraction = effectiveCritChance - i;
+
+    // Interpolate between array[i] and array[i + 1]
+    return reversionSimData[i] + (reversionSimData[i + 1] - reversionSimData[i]) * fraction;
+
+}
 
 const getEmpowerCPM = (castProfile: CastProfile) => {
     return getCPM(castProfile, "Dream Breath") + getCPM(castProfile, "Fire Breath");
@@ -65,13 +80,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     let genericCritIncrease = 1;
 
     const castProfile: CastProfile = [
-        //{spell: "Echo", cpm: 0},
         //{spell: "Living Flame O", cpm: 0},
         //{spell: "Living Flame", cpm: 0},
-        //{spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true},
-        //{spell: "Dream Breath", cpm: 2},           
+        {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
+        {spell: "Dream Breath", cpm: 2},           
         //{spell: "Dream Flight", efficiency: 0.95 },
-        //{spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
+        {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.6, hastedCPM: false}
         //{spell: "Chrono Flame", cpm: 0},     
     ]
@@ -87,6 +101,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     completeCastProfile(castProfile, spellDB, state.statPercentages);
     const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
 
+    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit);
+    reportingData.adjReversionDuration = adjReversionDuration;
+    reportingData.critChance = state.statPercentages.crit;
+    spellDB["Reversion"][0].buffDuration = adjReversionDuration;
 
     // Afterimage
     if (playerData.heroTree.includes("Chronowarden")) {
@@ -101,6 +119,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const echoMult = 1 + (hasTalent(talents, "Time Lord") ? 0.5 : 0) + (playerData.heroTree.includes("Chronowarden") ? 0.1 : 0);   
     const totalEchoPower = (getCPM(castProfile, "Echo") * 0.7 + getCPM(castProfile, "Temporal Anomaly") * 0.3 * 5) * echoMult;
     reportingData.totalEchoPower = totalEchoPower; 
+
+    castProfile.push({spell: "Reversion", cpm: totalEchoPower, autoSpell: true, label: "Echo - Reversion"});
 
     // Lifebind
     // First, let's work out how much healing we'll include in our Lifebind. Remember this comes at a 40% penalty.
@@ -139,7 +159,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // you need to convert into Disintegrate casts.
 
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
-    console.log(castProfile);
+
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
@@ -155,6 +175,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
             else if (slice.spellType === "heal" || (slice.spellType === "buff" && slice.buffType === "heal")) {
                 spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
             }
+
+            if (spellName === "Dream Breath") console.log("Dream Breath: " + spellOutput);
 
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
