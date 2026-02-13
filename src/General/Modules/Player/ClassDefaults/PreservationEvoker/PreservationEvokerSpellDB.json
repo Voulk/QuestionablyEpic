@@ -341,6 +341,29 @@
             "spellType": "heal"
         }
     ],
+    "Merithra's Blessing": [
+        {
+            "displayInfo": {
+                "id": 1256581,
+                "icon": "ability_evoker_spiritbloom",
+                "spellName": "Merithra's Blessing",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "targets": 5,
+            "coeff": 2.5,
+            "aura": 0.83,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
     "Living Flame": [
         {
             "displayInfo": {

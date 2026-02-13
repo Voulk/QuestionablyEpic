@@ -84,17 +84,19 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         //{spell: "Living Flame O", cpm: 0},
         //{spell: "Living Flame", cpm: 0},
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
-        {spell: "Dream Breath", cpm: 2},           
+        {spell: "Dream Breath", efficiency: 0.9 },           
         //{spell: "Dream Flight", efficiency: 0.95 },
         {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
-        {spell: "Reversion", efficiency: 0.6, hastedCPM: false}
+        {spell: "Reversion", efficiency: 0.6, hastedCPM: false},
+        {spell: "Merithra's Blessing", cpm: 2, autoSpell: true }
     ]
 
     // Assign echo usage
     const echoUsage: Record<string, number> = {
         "Verdant Embrace": 0.1,
         "Dream Breath": 0, 
-        "Reversion": 0.9,
+        "Reversion": 0,
+        "Merithra's Blessing": 0.9, // This also includes Reversion
     }
     
 
@@ -128,13 +130,17 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.totalEchoEvents = totalEchoEvents;
 
     // Handle reversions own burst chance
-    const reversionBursts = totalEchoEvents * 0.225 * echoUsage["Reversion"]
+    const reversionBursts = totalEchoEvents * 0.225 * (echoUsage["Reversion"] + echoUsage["Merithra's Blessing"]);
     castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true, label: "Reversion Burst"});
     totalEchoEvents += reversionBursts;
     totalEchoPower += reversionBursts * 0.7 * echoMult;
 
 
     Object.keys(echoUsage).forEach(spell => {
+        if (spell === "Merithra's Blessing") {
+            // If we echo Merithra's Blessing then we get both Reversion and Merithra's Blessing. 
+            castProfile.push({spell: "Reversion", cpm: totalEchoPower * echoUsage["Merithra's Blessing"], autoSpell: true, label: "Echo - Reversion"});
+        }
         castProfile.push({spell: spell, cpm: totalEchoPower * echoUsage[spell], autoSpell: true, label: "Echo - " + spell});
     });
 

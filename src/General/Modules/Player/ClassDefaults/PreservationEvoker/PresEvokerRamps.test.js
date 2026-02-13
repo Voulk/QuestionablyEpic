@@ -31,7 +31,7 @@ describe("Test APL", () => {
         //runStats(playerData, profile)
 
             
-      /* const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+      const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;
         let baseline = 0;
         
@@ -62,7 +62,7 @@ describe("Test APL", () => {
         });
         console.log(weights); 
       
-*/
+
 
         
     })
