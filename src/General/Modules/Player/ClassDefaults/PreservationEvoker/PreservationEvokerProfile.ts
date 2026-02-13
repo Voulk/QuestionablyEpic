@@ -53,6 +53,16 @@ const getReversionAdjDuration = (critChance: number) => {
 
 }
 
+const spendEchoes = (castProfile: CastProfile, echoBreakdown: any, echoPower : number) => {
+    Object.keys(echoBreakdown).forEach(spell => {
+        if (spell === "Merithra's Blessing") {
+            // If we echo Merithra's Blessing then we get both Reversion and Merithra's Blessing. 
+            castProfile.push({spell: "Reversion", cpm: echoPower * echoBreakdown["Merithra's Blessing"], autoSpell: true, label: "Echo - Reversion"});
+        }
+        castProfile.push({spell: spell, cpm: echoPower * echoBreakdown[spell], autoSpell: true, label: "Echo - " + spell});
+    });
+}
+
 const getEmpowerCPM = (castProfile: CastProfile) => {
     return getCPM(castProfile, "Dream Breath") + getCPM(castProfile, "Fire Breath");
 }
@@ -81,10 +91,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const incomingDTPS = 20000;
 
     const castProfile: CastProfile = [
-        //{spell: "Living Flame O", cpm: 0},
+        //{spell: "Living Flame O", cpm: 5},
         //{spell: "Living Flame", cpm: 0},
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
-        {spell: "Dream Breath", efficiency: 0.9 },           
+        {spell: "Dream Breath", efficiency: 0.9 },         
+        {spell: "Fire Breath", efficiency: 0.9 },     
         //{spell: "Dream Flight", efficiency: 0.95 },
         {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.6, hastedCPM: false},
@@ -115,12 +126,22 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     let essenceAvailable = 60 / 5 / 2 * state.statPercentages.haste; // Base Essence Gen
     
+    // Leaping Flames
+    if (hasTalent(talents, "Leaping Flames")) {
+        // We will cast Fire Breath at rank 3 and get 3 free Living Flames.
+        const freeFlames = 3;
+        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Fire Breath") * freeFlames, autoSpell: true});
+    }
+
     // Natty bursts from LF / Reversion
     let essenceBurstCount = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
 
     // Talented bursts
 
     // Extra bursts from Echo -> Reversion casts
+
+    
+
 
     // Total Echo CPM
     const echoMult = 1 + (hasTalent(talents, "Time Lord") ? 0.5 : 0) + (playerData.heroTree.includes("Chronowarden") ? 0.1 : 0);   
@@ -131,18 +152,14 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Handle reversions own burst chance
     const reversionBursts = totalEchoEvents * 0.225 * (echoUsage["Reversion"] + echoUsage["Merithra's Blessing"]);
-    castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true, label: "Reversion Burst"});
+    essenceBurstCount += reversionBursts;
+    castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true});
     totalEchoEvents += reversionBursts;
     totalEchoPower += reversionBursts * 0.7 * echoMult;
 
+    reportingData.essenceBurstCount = essenceBurstCount;
 
-    Object.keys(echoUsage).forEach(spell => {
-        if (spell === "Merithra's Blessing") {
-            // If we echo Merithra's Blessing then we get both Reversion and Merithra's Blessing. 
-            castProfile.push({spell: "Reversion", cpm: totalEchoPower * echoUsage["Merithra's Blessing"], autoSpell: true, label: "Echo - Reversion"});
-        }
-        castProfile.push({spell: spell, cpm: totalEchoPower * echoUsage[spell], autoSpell: true, label: "Echo - " + spell});
-    });
+    spendEchoes(castProfile, echoUsage, totalEchoPower);
 
 
     // Fillers
@@ -164,12 +181,27 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
 
+
+    // If Energy Loop is taken then you can't actually run out of mana, we can therefore value mana at the number of Echo casts (or Blossom / Echo packages) that
+    // you need to convert into Disintegrate casts.
+    const disintCasts = Math.max(0,(-fillerMana / 9000));
+    reportingData.fillerManaPerMinute += disintCasts * 9000;
+    const blossomCasts = (essenceBurstCount - disintCasts) * 0.8;
+    const bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
+    castProfile.push({spell: "Emerald Blossom", cpm: blossomCasts});
+    castProfile.push({spell: "Disintegrate", cpm: disintCasts});
+    castProfile.push({spell: "Echo", cpm: bonusEchoCasts});
+
     // Calculate Time Available
     const timeAvailable = 60 - getTimeUsed(castProfile, spellDB, state.statPercentages.haste);
     reportingData.timeAvailable = timeAvailable;
 
-    // If Energy Loop is taken then you can't actually run out of mana, we can therefore value mana at the number of Echo casts (or Blossom / Echo packages) that
-    // you need to convert into Disintegrate casts.
+    // Use remaining time on Living Flame
+    const fillerPackage = spellDB["Living Flame O"][0].castTime * 5 + spellDB["Emerald Blossom"][0].castTime; // 5 Living Flames & an Emerald Blossom
+    const fillerCPM = timeAvailable / fillerPackage;
+    castProfile.push({spell: "Living Flame O", cpm: fillerCPM * 5});
+    castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM });
+
 
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
 

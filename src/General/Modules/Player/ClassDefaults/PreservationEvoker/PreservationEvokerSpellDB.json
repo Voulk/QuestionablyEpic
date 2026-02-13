@@ -274,7 +274,7 @@
                 "spellName": "Disintegrate",
                 "cat": "damage"
             },
-            "castTime": 0.0,
+            "castTime": 2.5,
             "cost": 0.0,
             "additionalCosts": {
                 "essence": 3

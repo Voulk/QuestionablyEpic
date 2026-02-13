@@ -1,3 +1,4 @@
+import { buffSpellPerc, cooldownAdjFlat } from "../Generic/TalentBase"
 
 /**
  * A list of talents to turn on
@@ -7,7 +8,10 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-        "Time Lord"
+        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Leaping Flames", "Lush Growth",
+
+        "Unshakable", "Golden Hour", "Time Lord", "Spiritual Clarity", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
+        "Renewing Breath", "Timeless Magic", "Twin Echoes", "Tempo Charged", "Merithra's Blessing1", "Merithra's Blessing2", "Merithra's Blessing3", "Dream Simulacrum"
     ]
 
     // Apply talents
@@ -42,7 +46,7 @@ const specTalents: TalentTree = {
 
     /* Your empower spells are X% more effective. While charging a healing empower spell, you cannot be knocked back. */
     "Unshakable": {id: 1239581, values: [10.0, 10.0],  points: 0, maxPoints: 1, icon: "ability_evoker_masterygiantkiller", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0])
     }},
 
     /* Emerald Blossom sends out flying seedlings when it bursts, healing X $Lally:allies; up to Y yds away for $361361s1. */
@@ -67,7 +71,7 @@ const specTalents: TalentTree = {
 
     /* Dream Breath's cooldown is reduced by ${X/-1000} sec. */
     "Spiritual Clarity": {id: 376150, values: [-10000.0],  points: 0, maxPoints: 1, icon: "ability_evoker_spiritbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        cooldownAdjFlat(spellDB["Dream Breath"], talentData[0])
     }},
 
     /* Each time you gain Essence Burst, your critical heals are ${X+200}% effective instead of the usual 200% for $377102d. */
@@ -88,7 +92,7 @@ const specTalents: TalentTree = {
     /* Echo replicates X% more healing. */
     "Time Lord": {id: 372527, values: [50.0],  points: 0, maxPoints: 2, icon: "ability_evoker_innatemagic4", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: 
     number) {
-
+        // Handled in profile for now.
     }},
 
     /* Empower spells cause time to flow X% faster for you, increasing movement speed, cooldown recharge rate, and cast speed. Lasts $390148d. */
@@ -98,7 +102,7 @@ const specTalents: TalentTree = {
 
     /* Temporal Anomaly applies Echo at X% effectiveness to the first Y allies it passes through. */
     "Resonating Sphere": {id: 376236, values: [30.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_evoker_bronze_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        // Handled in profile.
     }},
 
     /* Temporal Anomaly reduces the cooldowns of your empower spells by X sec. */
@@ -108,7 +112,8 @@ const specTalents: TalentTree = {
 
     /* Dream Breath healing increased by X%, and Living Flame healing increased by Y%. */
     "Call of Ysera": {id: 373834, values: [20.0, 30.0, 20.0],  points: 0, maxPoints: 1, icon: "inv_drakemountemerald", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0]);
+        buffSpellPerc(spellDB["Living Flame"], talentData[1]);
     }},
 
     /* Your healing is increased by X% on targets with your Reversion. */
