@@ -243,7 +243,8 @@
             "displayInfo": {
                 "id": 359816,
                 "icon": "ability_evoker_dreamflight",
-                "spellName": "Dream Flight"
+                "spellName": "Dream Flight",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -253,17 +254,38 @@
                 "hasted": false
             },
             "targets": 20,
+            "targetScript": "Sqrt",
             "coeff": 2.0,
-            "aura": 1,
-            "expectedOverheal": 0.03,
+            "aura": 0.83,
+            "expectedOverheal": 0.2,
             "secondaries": [
-                "mastery",
-                "versatility"
+                "crit",
+                "versatility",
+                "mastery"
             ],
-            "specialFields": {
-                "absorb": true
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 15,
+            "tickData": {
+                "tickRate": 3.0,
+                "canPartialTick": true,
+                "tickOnCast": false
             },
-            "spellType": "heal"
+            "specialFields": {
+                "sqrtMin": 5
+            }
+        },
+        {
+            "coeff": 5.0,
+            "aura": 0.83,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal",
+            "targets": 20
         }
     ],
     "Disintegrate": [

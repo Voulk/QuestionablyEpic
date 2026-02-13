@@ -2,7 +2,7 @@
 
 // Returns the effective target count of the spell.
 export const getTargetScript = (scriptName: string, targets: number, specialFields: any) : number => {
-    if (scriptName === "sqrt") {
+    if (scriptName === "Sqrt") {
         return getSqrt(targets, specialFields.sqrtMin);
     }
     else if (scriptName === "Temporal Anomaly") {
@@ -24,6 +24,9 @@ export const getTargetScript = (scriptName: string, targets: number, specialFiel
 // They often do full healing up to the first X targets hit, and then are reduced via a square root formula after that.
 // The formula after you reach your sqrt cap is 1/TargetNumber. So the first target hit after the minimum gets sqrt(1/1), the second gets sqrt(1/2) and so on.
 export const getSqrt = (targets: number, sqrtMin: number) => {
+
+    if (targets <= sqrtMin) return targets;
+
     const effectiveSqrtTargets = targets - sqrtMin;
     let totalMult = sqrtMin;
     for (let i = 1; i <= effectiveSqrtTargets; i++) { totalMult += Math.sqrt(1 / i) }

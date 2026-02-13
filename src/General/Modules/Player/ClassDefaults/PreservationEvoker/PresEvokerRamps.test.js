@@ -29,7 +29,6 @@ describe("Test APL", () => {
         expect(true).toEqual(true);
 
         //runStats(playerData, profile)
-
             /*
       const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
         const iterations = 1;

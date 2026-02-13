@@ -22,6 +22,8 @@ describe("Test Preservation Evoker Spell Values", () => {
         ${"Temporal Anomaly"}            | ${(3720)}                       | ${0}
         ${"Echo"}                        | ${(1235)}                       | ${0}
         ${"Merithra's Blessing"}         | ${(1286)}                       | ${0}
+        ${"Dream Flight"}                | ${(2573)}                       | ${1}
+        ${"Dream Flight"}                | ${(5146)}                       | ${0}
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = specDB[spellName][index]

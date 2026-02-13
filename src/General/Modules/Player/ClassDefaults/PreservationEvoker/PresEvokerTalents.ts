@@ -1,4 +1,5 @@
-import { buffSpellPerc, cooldownAdjFlat } from "../Generic/TalentBase"
+import { buffSpell } from "../Generic/ClassicBase"
+import { addStatPerc, adjBuffDurationFlat, attachSpellEffect, buffSpellPerc, cooldownAdjFlat, manaCostAdj, modCastTimePerc } from "../Generic/TalentBase"
 
 /**
  * A list of talents to turn on
@@ -170,12 +171,17 @@ const specTalents: TalentTree = {
 
     /* Reversion, Time Dilation, Echo, and Temporal Anomaly last X% longer and cost Y% less mana. */
     "Timeless Magic": {id: 376240, values: [15.0, -15.0, -15.0],  points: 0, maxPoints: 2, icon: "inv_artifact_xp05", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+        manaCostAdj(spellDB["Reversion"], talentData[1]);
+        //manaCostAdj(spellDB["Time Dilation"], talentData[1]);
+        manaCostAdj(spellDB["Echo"], talentData[1]);
+        manaCostAdj(spellDB["Temporal Anomaly"], talentData[1]);
 
+        adjBuffDurationFlat(spellDB["Reversion"], talentData[0]);
     }},
 
     /* Verdant Embrace healing is increased by X%. In addition, it no longer causes you to leap to your target, instead sending forth a Dream Simulacrum. */
     "Dream Simulacrum": {id: 1241669, values: [30.0, 100.0],  points: 0, maxPoints: 1, icon: "ability_evoker_dragonrage2_green", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Verdant Embrace"], talentData[0]);
     }},
 
     /* Verdant Embrace gains an additional charge. */
@@ -201,7 +207,9 @@ const specTalents: TalentTree = {
 
     /* Bronze healing and absorption increased by X%. */
     "Tempo Charged": {id: 1237978, values: [15.0, 15.0, 15.0],  points: 0, maxPoints: 1, icon: "classicon_evoker_preservation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Reversion"], talentData[0]);
+        buffSpellPerc(spellDB["Echo"], talentData[0]);
+        buffSpellPerc(spellDB["Temporal Anomaly"], talentData[0]);
     }},
 
     /* Essence abilities have a chance to infuse your next Reversion with the power of the Green Dragonflight, upgrading it to Merithra's Blessing:    $@spellicon1256581 $@spellname1256581  $@spelldesc1256581 */
@@ -216,14 +224,14 @@ const specTalents: TalentTree = {
 
     /* Dream Breath's instant healing is increased by X% and Dream Breath has a Y% chance to grant Merithra's Blessing. */
     "Merithra's Blessing3": {id: 1256689, values: [], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0], 1);
     }},
 }
 
 const classTalents: TalentTree = {
     /* Disintegrate channels X% faster. */
     "Natural Convergence": {id: 369913, values: [-20.0, -20.0, -20.0],  points: 0, maxPoints: 1, icon: "spell_frost_frostblast", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        modCastTimePerc(spellDB["Disintegrate"], talentData[0]);
     }},
 
     /* Essence regenerates X% faster. */
@@ -233,7 +241,8 @@ const classTalents: TalentTree = {
 
     /* Living Flame deals X% more damage and healing. */
     "Enkindled": {id: 375554, values: [3.0, 3.0],  points: 0, maxPoints: 2, icon: "ability_evoker_livingflame", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Living Flame"], talentData[0] * points);
+        buffSpellPerc(spellDB["Living Flame O"], talentData[0] * points);
     }},
 
     /* Store X% of your effective healing, up to $<cap>. Your next damaging Living Flame consumes all stored healing to increase its damage dealt. */
@@ -259,8 +268,9 @@ const classTalents: TalentTree = {
     }},
 
     /* Your healing done and healing received are increased by X%. */
+    // Is 3% per point for Preservation, not 2%.
     "Attuned to the Dream": {id: 376930, values: [2.0, 2.0, 2.0],  points: 0, maxPoints: 2, icon: "ability_rogue_imrovedrecuperate", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        addStatPerc(state.statBonuses, "genericHealingMult", talentData[0] * points * 1.5);
     }},
 
     /* Azure Strike damages X additional $Lenemy:enemies;. */
@@ -275,7 +285,7 @@ const classTalents: TalentTree = {
 
     /* Emerald Blossom heals X additional allies. */
     "Bountiful Bloom": {id: 370886, values: [2.0],  points: 0, maxPoints: 1, icon: "ability_evoker_emeraldblossom", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        spellDB["Emerald Blossom"][0].targets! += talentData[0];
     }},
 
     /* Your Leech is increased by X%. */
@@ -285,7 +295,7 @@ const classTalents: TalentTree = {
 
     /* Fire Breath's damage over time lasts X sec longer. */
     "Blast Furnace": {id: 375510, values: [4.0],  points: 0, maxPoints: 1, icon: "ability_evoker_firebreath", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        spellDB["Fire Breath"][0].buffDuration += talentData[0];
     }},
 
     /* Obsidian Scales surrounds you with a Renewing Blaze, causing X% of the damage it reduced to be healed back over $374349d. */
@@ -295,7 +305,8 @@ const classTalents: TalentTree = {
 
     /* Emerald Blossom and Verdant Embrace instantly heal you for $387763s1 when cast. */
     "Panacea": {id: 387761, values: [2.0],  points: 0, maxPoints: 1, icon: "ability_druid_protectionofthegrove", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        attachSpellEffect(spellDB["Emerald Blossom"], spellDB["Panacea"]);
+        attachSpellEffect(spellDB["Verdant Embrace"], spellDB["Panacea"]);
     }},
 
     /* Renewing Blaze restores you more quickly, causing damage you take to be healed back over $<newDur> sec. */
@@ -306,7 +317,12 @@ const classTalents: TalentTree = {
 
     /* Green spells restore X% more health. */
     "Lush Growth": {id: 375561, values: [5.0, 5.0],  points: 0, maxPoints: 2, icon: "inv_staff_2h_bloodelf_c_01", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Emerald Blossom"], talentData[0] * points);
+        buffSpellPerc(spellDB["Verdant Embrace"], talentData[0] * points);
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0] * points);
+        buffSpellPerc(spellDB["Merithra's Blessing"], talentData[0] * points);
+        buffSpellPerc(spellDB["Dream Flight"], talentData[0] * points);
+        buffSpellPerc(spellDB["Panacea"], talentData[0] * points);
     }},
 
     /* Fire Breath causes your next Living Flame to strike 1 additional target per empower level. */
@@ -401,6 +417,8 @@ const heroTalents: TalentTree = {
 
     }},
 
+
+    // === Chronowarden ===
     /* Living Flame is enhanced with Bronze magic, repeating $?c2[X%][Z%] of the damage or healing you dealt to the target in the last Y sec as Arcane, up to $?s1260647[$<cap2>][$<cap>]. */
     "Chrono Flame": {id: 431442, values: [15.0, 5.0, 25.0, 431443.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "inv_ability_chronowardenevoker_chronoflame", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
@@ -418,12 +436,14 @@ const heroTalents: TalentTree = {
 
     /* $?c2[Verdant Embrace heals for an additional X% over $409895d.][Upheaval deals Y% additional damage over $431620d.] */
     "Reverberations": {id: 431615, values: [60.0, 50.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Verdant Embrace"], talentData[0] * points);
+        // TODO: Convert to a real HoT.
     }},
 
-    /* $?c2[Temporal Anomaly mana cost reduced by X% and cooldown reduced by ${Y/-1000} sec.][Prescience cooldown reduced by ${Z/-1000} sec and it grants $s4% additional critical strike chance.] */
+    /* Temporal Anomaly mana cost reduced by X% and cooldown reduced by ${Y/-1000} sec. */
     "Nozdormu Adept": {id: 431715, values: [-15.0, -4000.0, -2000.0, 1.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_evoker_aspectsfavorbronze", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        manaCostAdj(spellDB["Temporal Anomaly"], talentData[0]);
+        cooldownAdjFlat(spellDB["Temporal Anomaly"], talentData[1]);
     }},
 
     /* Temporal Burst grants Essence Burst every X sec. */
@@ -433,7 +453,7 @@ const heroTalents: TalentTree = {
 
     /* For each $?c2[healing over time effect from Verdant Embrace][damage over time effect from Upheaval], gain X% haste, up to Y%. */
     "Primacy": {id: 431657, values: [3.0, 9.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "inv_misc_pocketwatch_01", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        addStatPerc(state.statBonuses, "haste", talentData[1]);
     }},
 
     /* $?c2[When Dream Breath or Fire Breath critically strike, their duration is extended by X sec, up to a maximum of ${X*6} sec.][Ebon Might and Prescience gain a chance equal to your critical strike chance to grant Y% additional stats.] */
@@ -449,7 +469,8 @@ const heroTalents: TalentTree = {
 
     /* Each time you cast an empower spell, unstable time magic reduces its cooldown by up to X sec. */
     "Instability Matrix": {id: 431484, values: [6.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_dragonriding_bronzerewind01", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        cooldownAdjFlat(spellDB["Dream Breath"], talentData[0] / 2);
+        cooldownAdjFlat(spellDB["Fire Breath"], talentData[0] / 2);
     }},
 
     /* Chrono Flames' maximum damage or healing is increased by X%, up to $<cap> Arcane. */

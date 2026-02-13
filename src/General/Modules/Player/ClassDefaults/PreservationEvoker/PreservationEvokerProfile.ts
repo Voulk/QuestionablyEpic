@@ -99,7 +99,9 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         //{spell: "Dream Flight", efficiency: 0.95 },
         {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.6, hastedCPM: false},
-        {spell: "Merithra's Blessing", cpm: 2, autoSpell: true }
+        {spell: "Merithra's Blessing", cpm: 2, autoSpell: true },
+        {spell: "Verdant Embrace", hastedCPM: false, efficiency: 0.9 },
+        {spell: "Dream Flight", efficiency: 0.8 }
     ]
 
     // Assign echo usage
@@ -121,6 +123,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Afterimage
     if (playerData.heroTree.includes("Chronowarden")) {
+        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Dream Breath") * 3, autoSpell: true, label: "Living Flame - Afterimage"});
+        castProfile.push({spell: "Living Flame O", cpm: getCPM(castProfile, "Fire Breath"), autoSpell: true});
         //getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
     }
 
@@ -137,10 +141,9 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     let essenceBurstCount = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
 
     // Talented bursts
+    if (hasTalent(talents, "Energy Cycles")) essenceBurstCount += 6 / 1.5; // 6 bursts every Tip the Scales
 
     // Extra bursts from Echo -> Reversion casts
-
-    
 
 
     // Total Echo CPM
@@ -197,10 +200,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.timeAvailable = timeAvailable;
 
     // Use remaining time on Living Flame
-    const fillerPackage = spellDB["Living Flame O"][0].castTime * 5 + spellDB["Emerald Blossom"][0].castTime; // 5 Living Flames & an Emerald Blossom
+    const fillerPackage = spellDB["Living Flame O"][0].castTime * 5 + (spellDB["Emerald Blossom"][0].castTime / 2 + spellDB['Disintegrate'][0].castTime / 2); // 5 Living Flames & an Emerald Blossom
     const fillerCPM = timeAvailable / fillerPackage;
     castProfile.push({spell: "Living Flame O", cpm: fillerCPM * 5});
-    castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM });
+    castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM / 2});
+    castProfile.push({spell: "Disintegrate", cpm: fillerCPM / 2});
 
 
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
