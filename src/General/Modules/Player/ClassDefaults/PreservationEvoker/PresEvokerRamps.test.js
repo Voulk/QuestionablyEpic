@@ -3,6 +3,7 @@ import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerS
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { preservationEvokerProfile, scoreEvokerSet } from "./PreservationEvokerProfile";
+import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 
 import { getScalarValue } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
@@ -27,6 +28,7 @@ describe("Test APL", () => {
 
         console.log(data);
         expect(true).toEqual(true);
+
 
         //runStats(playerData, profile)
             /*

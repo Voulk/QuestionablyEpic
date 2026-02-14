@@ -9,7 +9,8 @@ export const getTargetScript = (scriptName: string, targets: number, specialFiel
         let effectiveMult = 0;
         for (let i = 1; i <= targets; i++) {
             if (i <= 5) effectiveMult += 1;
-            else effectiveMult += (1 / (i - 5 + 1)^(4/5));
+            else effectiveMult += (1 / Math.pow((i - 5 + 1), (4/5)));
+            
         }
         return effectiveMult;
     }

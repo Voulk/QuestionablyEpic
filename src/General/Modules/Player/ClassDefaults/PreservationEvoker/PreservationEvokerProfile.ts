@@ -199,6 +199,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.fillerManaPerMinute += disintCasts * 9000;
     const blossomCasts = (essenceBurstCount - disintCasts) * 0.8;
     let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
+    reportingData.disintBlossomRatio = disintCasts / essenceBurstCount;
     castProfile.push({spell: "Emerald Blossom", cpm: blossomCasts});
     castProfile.push({spell: "Disintegrate", cpm: disintCasts});
     castProfile.push({spell: "Echo", cpm: bonusEchoCasts});
