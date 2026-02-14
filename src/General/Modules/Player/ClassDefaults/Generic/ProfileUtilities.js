@@ -41,7 +41,7 @@ export const applyRaidBuffs = (settings) => {
     statBonuses.mastery = 0.02
 
     // Versatility
-    statBonuses.versatility = 0.03
+    //statBonuses.versatility = 0.03
 
     // Vantus?
 
@@ -116,7 +116,6 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
 export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
-    console.log(fullSpell);
 
     fullSpell.forEach(spell => {
         if (spell.spellType === "heal" || spell.buffType === "heal") {
@@ -169,7 +168,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
-                        
+        //if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
     }
     
 

@@ -7,9 +7,9 @@
                 "spellName": "Fire Breath",
                 "cat": "damage"
             },
-            "castTime": 0.0,
+            "castTime": 2.5,
             "school": "fire",
-            "cost": 2.6,
+            "cost": 1.82,
             "cooldownData": {
                 "cooldown": 30.0,
                 "hasted": false,
@@ -184,7 +184,7 @@
             },
             "castTime": 0.0,
             "school": "arcane",
-            "cost": 2.8,
+            "cost": 2.184,
             "cooldownData": {
                 "cooldown": 9.0,
                 "hasted": false,

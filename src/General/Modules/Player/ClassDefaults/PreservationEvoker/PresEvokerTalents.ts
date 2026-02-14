@@ -9,7 +9,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Leaping Flames", "Lush Growth",
+        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Lush Growth", "Leaping Flames",
 
         "Unshakable", "Golden Hour", "Time Lord", "Spiritual Clarity", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
         "Renewing Breath", "Timeless Magic", "Twin Echoes", "Tempo Charged", "Merithra's Blessing1", "Merithra's Blessing2", "Merithra's Blessing3", "Dream Simulacrum"
@@ -161,7 +161,7 @@ const specTalents: TalentTree = {
 
     /* Dream Breath healing is increased by X%. */
     "Renewing Breath": {id: 371257, values: [15.0, 15.0],  points: 0, maxPoints: 2, icon: "ability_evoker_dreambreath", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0] * points);
     }},
 
     /* Red spells deal X% additional damage and healing. */
@@ -347,7 +347,7 @@ const heroTalents: TalentTree = {
     /* Fire Breath's cooldown is reduced by ${X/-1000} sec. */
     "Ashes in Motion": {id: 1264365, values: [-5000.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_ability_flameshaperevoker_engulf", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentData: any, points: number) {
-
+        cooldownAdjFlat(spellDB["Fire Breath"], talentData[0]);
     }},
 
     /* Essence abilities are enhanced with Flame, dealing X% of healing or damage done as Fire over 8 sec. */
@@ -358,7 +358,8 @@ const heroTalents: TalentTree = {
     /* Fire Breath's damage over time is increased by X%. Dream Breath's heal over time is increased by X%. */
     "Expanded Lungs": {id: 444845, values: [30.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_fyrakk_dragonbreath", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
     talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Fire Breath"], talentData[0]);
+        buffSpellPerc(spellDB["Dream Breath"], talentData[0]);
     }},
 
     /* $?c1[Fire Breath has][Dream Breath and Fire Breath have] a X% chance to generate Essence Burst. */
@@ -368,7 +369,7 @@ const heroTalents: TalentTree = {
 
     /* Critical strike chance against targets above Y% health increased by X%. */
     "Conduit of Flame": {id: 444843, values: [15.0, 50.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic5", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        addStatPerc(state.statBonuses, "crit", talentData[0] * 0.95);
     }},
 
     /* Fire Breath $?c1[reaches its][and Dream Breath reach their] maximum empower level X% faster. */
@@ -379,7 +380,8 @@ const heroTalents: TalentTree = {
     /* Fire Breath and Dream Breath deal their damage and healing X% more often. */
     "Fulminous Roar": {id: 1218447, values: [-20.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_oppressingroar2", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentData: any, points: number) {
-
+        spellDB["Dream Breath"][0]['tickData']!['tickRate']! *= (1 + talentData[0] / 100);
+        spellDB["Fire Breath"][1]['tickData']!['tickRate']! *= (1 + talentData[0] / 100);
     }},
 
     /* Consuming Essence Burst fires a twin flame, healing your target for $1265991s1. */

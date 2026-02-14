@@ -6,6 +6,7 @@ import { defaultTalents, evokerTalents } from "./PresEvokerTalents";
 import { runSpellScript } from "../Generic/SpellScripts";
 import { hasTalent } from "../Generic/RampBase";
 import reversionSimData from "./ReversionSimulationData";
+import { buffSpellPerc, cooldownAdjFlat } from "../Generic/TalentBase";
 
 export const preservationEvokerProfile = {
     spec: "Preservation Evoker",
@@ -85,23 +86,20 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, 
                     playerData.masteryEffectiveness), settings: settings, talents: evokerTalents};
+    state.statPercentages.genericHealingMult += 0.06; // The 6% aura buff that hasn't been baked in yet.
 
-    let genericHealingIncrease = 1;
-    let genericCritIncrease = 1;
-    const incomingDTPS = 20000;
+    const incomingDTPS = 25000;
+    const burstDTPS = 30000; 
 
     const castProfile: CastProfile = [
-        //{spell: "Living Flame O", cpm: 5},
-        //{spell: "Living Flame", cpm: 0},
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
-        {spell: "Dream Breath", efficiency: 0.9 },         
+        {spell: "Dream Breath", efficiency: 0.9,  },         
         {spell: "Fire Breath", efficiency: 0.9 },     
-        //{spell: "Dream Flight", efficiency: 0.95 },
-        {spell: "Temporal Anomaly", efficiency: 0.95, hastedCPM: true },
-        {spell: "Reversion", efficiency: 0.6, hastedCPM: false},
-        {spell: "Merithra's Blessing", cpm: 2, autoSpell: true },
-        {spell: "Verdant Embrace", hastedCPM: false, efficiency: 0.9 },
-        {spell: "Dream Flight", efficiency: 0.8 }
+        {spell: "Temporal Anomaly", efficiency: 0.9, hastedCPM: true },
+        {spell: "Reversion", efficiency: 0.6, },
+        {spell: "Merithra's Blessing", cpm: 3, autoSpell: true, hastedCPM: true },
+        {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.9 },
+        {spell: "Dream Flight", efficiency: 0.8  }
     ]
 
     // Assign echo usage
@@ -111,12 +109,19 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         "Reversion": 0,
         "Merithra's Blessing": 0.9, // This also includes Reversion
     }
+
+    if (playerData.tierSets.includes("Preservation Evoker S1-2")) {
+        buffSpellPerc(spellDB["Verdant Embrace"], 20);
+        cooldownAdjFlat(spellDB["Verdant Embrace"], -2000);
+    }
     
 
     completeCastProfile(castProfile, spellDB, state.statPercentages);
     const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
 
-    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit);
+    // Ultimately we can pre-calculate how long reversion will last at different crit percentages, but it is more difficult to 
+    // 
+    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit) * 0.5 + spellDB["Reversion"][0].buffDuration * 0.5;
     reportingData.adjReversionDuration = adjReversionDuration;
     reportingData.critChance = state.statPercentages.crit;
     spellDB["Reversion"][0].buffDuration = adjReversionDuration;
@@ -125,7 +130,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     if (playerData.heroTree.includes("Chronowarden")) {
         castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Dream Breath") * 3, autoSpell: true, label: "Living Flame - Afterimage"});
         castProfile.push({spell: "Living Flame O", cpm: getCPM(castProfile, "Fire Breath"), autoSpell: true});
-        //getSpellEntry(castProfile, "Living Flame").cpm = getEmpowerCPM(castProfile) * 3;
+
     }
 
     let essenceAvailable = 60 / 5 / 2 * state.statPercentages.haste; // Base Essence Gen
@@ -139,11 +144,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Natty bursts from LF / Reversion
     let essenceBurstCount = (getCPM(castProfile, "Living Flame O") + getCPM(castProfile, "Living Flame")) * 0.2;
+    reportingData.essenceBurst_livingFlame = essenceBurstCount;
 
     // Talented bursts
     if (hasTalent(talents, "Energy Cycles")) essenceBurstCount += 6 / 1.5; // 6 bursts every Tip the Scales
-
-    // Extra bursts from Echo -> Reversion casts
 
 
     // Total Echo CPM
@@ -154,9 +158,13 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.totalEchoEvents = totalEchoEvents;
 
     // Handle reversions own burst chance
-    const reversionBursts = totalEchoEvents * 0.225 * (echoUsage["Reversion"] + echoUsage["Merithra's Blessing"]);
+    const effectiveEchoReversionCasts = totalEchoEvents * (echoUsage["Merithra's Blessing"] + echoUsage["Reversion"]);
+
+   
+    const reversionBursts = effectiveEchoReversionCasts * 0.15;
     essenceBurstCount += reversionBursts;
-    castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true});
+    reportingData.essenceBurst_reversion = reversionBursts;
+    //castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true});
     totalEchoEvents += reversionBursts;
     totalEchoPower += reversionBursts * 0.7 * echoMult;
 
@@ -190,10 +198,22 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const disintCasts = Math.max(0,(-fillerMana / 9000));
     reportingData.fillerManaPerMinute += disintCasts * 9000;
     const blossomCasts = (essenceBurstCount - disintCasts) * 0.8;
-    const bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
+    let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
     castProfile.push({spell: "Emerald Blossom", cpm: blossomCasts});
     castProfile.push({spell: "Disintegrate", cpm: disintCasts});
     castProfile.push({spell: "Echo", cpm: bonusEchoCasts});
+
+    if (playerData.tierSets.includes("Preservation Evoker S1-4")) {
+        castProfile.push({spell: "Emerald Blossom", cpm: getSpellEntry(castProfile, "Verdant Embrace", 0).cpm, autoSpell: true})
+    }
+
+    if (hasTalent(talents, "Twin Echoes")) {
+        // If we have twin echoes, add a free Echo cast every time we cast a blossom.
+        castProfile.push({spell: "Echo", cpm: blossomCasts, autoSpell: true, label: "Echo - Twin Echoes"});
+        bonusEchoCasts += blossomCasts;
+    }
+
+    spendEchoes(castProfile, echoUsage, bonusEchoCasts * 0.7 * echoMult); 
 
     // Calculate Time Available
     const timeAvailable = 60 - getTimeUsed(castProfile, spellDB, state.statPercentages.haste);
@@ -201,13 +221,22 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Use remaining time on Living Flame
     const fillerPackage = spellDB["Living Flame O"][0].castTime * 5 + (spellDB["Emerald Blossom"][0].castTime / 2 + spellDB['Disintegrate'][0].castTime / 2); // 5 Living Flames & an Emerald Blossom
-    const fillerCPM = timeAvailable / fillerPackage;
+    const fillerCPM = timeAvailable / (fillerPackage / state.statPercentages.haste);
     castProfile.push({spell: "Living Flame O", cpm: fillerCPM * 5});
     castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM / 2});
     castProfile.push({spell: "Disintegrate", cpm: fillerCPM / 2});
 
 
+
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
+
+
+    // Handle Grace Period
+    if (hasTalent(talents, "Grace Period")) {
+        const reversionCoverage = (effectiveEchoReversionCasts + getSpellEntry(castProfile, "Reversion", 0).cpm) * adjReversionDuration / 60 / 20 * 0.1;
+        state.statPercentages.genericHealingMult *= (1 + reversionCoverage);
+        reportingData.reversionCoverage = reversionCoverage;
+    }
 
     // Run healing
     castProfile.forEach(spellProfile => {
@@ -218,6 +247,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         fullSpell.forEach((slice: SpellData) => {
             let spellOutput = 0;
 
+
             if (slice.customScript) {
                 spellOutput = runSpellScript(slice.customScript, state, slice);
             }
@@ -226,7 +256,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
             }
 
 
-            const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
+            const effectiveCPM = spellProfile.cpm! || 0;
 
             const totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult || 1));
             if (totalOutput > 0) {
@@ -242,8 +272,17 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     })
 
     // Handle special spells
-    const reversionApexHealing = getCPM(castProfile, "Reversion") * adjReversionDuration * incomingDTPS * 0.04;
+
+    // For the apex we do not care about Echo strength, only reversion applications.
+    const reversionApexHealing = (effectiveEchoReversionCasts + getSpellEntry(castProfile, "Reversion", 0).cpm) * adjReversionDuration * incomingDTPS * 0.04;
     healingBreakdown["Reversion (DR)"] = reversionApexHealing;
+
+    // Golden Hour
+    // For golden hour we do care about Echo strength because it is scaled.
+    const goldenHourHealing = getCPM(castProfile, "Reversion") * burstDTPS * 0.15 * 5;
+    reportingData.reversionEff = getCPM(castProfile, "Reversion")
+    reportingData.reversionBaseCasts = getSpellEntry(castProfile, "Reversion", 0).cpm
+    healingBreakdown["Reversion (Golden Hour)"] = goldenHourHealing;
 
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     printHealingBreakdown(healingBreakdown, totalHealing);

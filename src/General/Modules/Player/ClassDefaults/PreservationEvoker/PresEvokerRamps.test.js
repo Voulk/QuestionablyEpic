@@ -19,7 +19,7 @@ describe("Test APL", () => {
 
 
         const playerData = { spec: "Preservation Evoker", heroTree: "Chronowarden", profileName: "Chronowarden", stats: activeStats, 
-                                masteryEffectiveness: 0.85, tierSets: ["Preservation Evoker S1-2", "Preservation Evoker S1-4"] }
+                                masteryEffectiveness: 0.87, tierSets: ["Preservation Evoker S1-2", "Preservation Evoker S1-4"] }
         const settings = {averageRaidHealth: 0.8}
 
         //const data = runAPLSuites(playerData, profile, runCastSequence);
@@ -44,7 +44,7 @@ describe("Test APL", () => {
         stats.forEach(stat => {
             let statHealing = 0;
             let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 200;
+            playerStats[stat] = playerStats[stat] + 150;
             const newPlayerData = {...playerData, stats: playerStats};
             for (let i = 0; i < iterations; i++) {
 
@@ -61,8 +61,8 @@ describe("Test APL", () => {
         });
         console.log(weights); 
       
-
 */
+
         
     })
 

@@ -194,7 +194,7 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
             judgmentCritsPerMin += (averageSpenderCPM * 0.1) + getCPM(castProfile, "Avenging Wrath");
         }
 
-        castProfile.push({spell: "Eternal Flame", cpm: judgmentCritsPerMin, autoSpell: true, label: "Eternal Flame (Empyrean Legacy)" })
+        //castProfile.push({spell: "Eternal Flame", cpm: judgmentCritsPerMin, autoSpell: true, label: "Eternal Flame (Empyrean Legacy)" })
         reportingData.empyreanLegacyProcsPerMinute = judgmentCritsPerMin;
     }
     
