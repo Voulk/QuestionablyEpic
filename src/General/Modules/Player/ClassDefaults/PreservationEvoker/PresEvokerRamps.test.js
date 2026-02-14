@@ -42,6 +42,7 @@ describe("Test APL", () => {
 
         //runStats(playerData, profile)
             
+        /*
     
         const iterations = 1;
         let baseline = 0;
@@ -73,7 +74,7 @@ describe("Test APL", () => {
         });
         console.log(weights); 
       
-
+*/
         
     })
 

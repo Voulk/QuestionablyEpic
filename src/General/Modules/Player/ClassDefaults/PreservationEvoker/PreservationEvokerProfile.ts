@@ -281,7 +281,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // For the apex we do not care about Echo strength, only reversion applications.
     const reversionApexHealing = (effectiveEchoReversionCasts + getSpellEntry(castProfile, "Reversion", 0).cpm) * adjReversionDuration * incomingDTPS * 0.04;
-    healingBreakdown["Reversion (DR)"] = reversionApexHealing;
+    healingBreakdown["Reversion (DR)"] = reversionApexHealing * (1 - 0.05);
 
     // Golden Hour
     // For golden hour we do care about Echo strength because it is scaled.
