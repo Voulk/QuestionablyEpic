@@ -63,31 +63,3 @@ describe("Evang Cast Sequence", () => {
     })
 }); 
 
-const buildStatChart = (profile, playerData, testSettings) => {
-    
-    const activeStats = {
-        intellect: 2000,
-        haste: 200,
-        crit: 200,
-        mastery: 200,
-        versatility: 200,
-        stamina: 19000,
-        critMult: 2,
-    };
-
-
-    const results = [];
-    for (let i = 0; i < 500; i += 10) {
-        const newPlayerStats = {...activeStats, crit: i};
-        const score = scorePaladinSet(newPlayerStats, playerData, testSettings).healing;
-        results.push(Math.round(score));
-    }
-    //console.log("==" + stat + "==")
-    console.log(JSON.stringify(results));
-
-    //['haste'].forEach(stat => {
-
-
-    //});
-
-}

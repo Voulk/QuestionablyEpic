@@ -1,10 +1,10 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, buildStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { preservationEvokerProfile, scoreEvokerSet } from "./PreservationEvokerProfile";
 import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
-
+import { calcStatsAtLevel } from "General/Engine/ItemUtilities"
 import { getScalarValue } from "Retail/Engine/EffectFormulas/EffectUtilities"
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -30,9 +30,19 @@ describe("Test APL", () => {
         expect(true).toEqual(true);
 
 
+        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility'];
+
+        stats.forEach(stat => {
+            if (stat !== "intellect") {
+                
+            }
+        })
+
+        //buildStatChart(playerData, settings, scoreEvokerSet, 'mastery')
+
         //runStats(playerData, profile)
-            /*
-      const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+            
+    
         const iterations = 1;
         let baseline = 0;
         
@@ -63,7 +73,6 @@ describe("Test APL", () => {
         });
         console.log(weights); 
       
-*/
 
         
     })

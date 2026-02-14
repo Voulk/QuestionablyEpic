@@ -171,12 +171,12 @@ const specTalents: TalentTree = {
 
     /* Reversion, Time Dilation, Echo, and Temporal Anomaly last X% longer and cost Y% less mana. */
     "Timeless Magic": {id: 376240, values: [15.0, -15.0, -15.0],  points: 0, maxPoints: 2, icon: "inv_artifact_xp05", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-        manaCostAdj(spellDB["Reversion"], talentData[1]);
+        manaCostAdj(spellDB["Reversion"], talentData[1] * points);
         //manaCostAdj(spellDB["Time Dilation"], talentData[1]);
-        manaCostAdj(spellDB["Echo"], talentData[1]);
-        manaCostAdj(spellDB["Temporal Anomaly"], talentData[1]);
+        manaCostAdj(spellDB["Echo"], talentData[1] * points);
+        manaCostAdj(spellDB["Temporal Anomaly"], talentData[1] * points);
 
-        adjBuffDurationFlat(spellDB["Reversion"], talentData[0]);
+        adjBuffDurationFlat(spellDB["Reversion"], talentData[0] * points);
     }},
 
     /* Verdant Embrace healing is increased by X%. In addition, it no longer causes you to leap to your target, instead sending forth a Dream Simulacrum. */
@@ -223,7 +223,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Dream Breath's instant healing is increased by X% and Dream Breath has a Y% chance to grant Merithra's Blessing. */
-    "Merithra's Blessing3": {id: 1256689, values: [], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Merithra's Blessing3": {id: 1256689, values: [100.00], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         buffSpellPerc(spellDB["Dream Breath"], talentData[0], 1);
     }},
 }
@@ -364,7 +364,7 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Fire Breath has][Dream Breath and Fire Breath have] a X% chance to generate Essence Burst. */
     "Essence Well": {id: 1265993, values: [50.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_essenceburst4", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        // Profiled
     }},
 
     /* Critical strike chance against targets above Y% health increased by X%. */
@@ -411,7 +411,7 @@ const heroTalents: TalentTree = {
 
     /* Twin Flame bounces to up to X additional targets. */
     "Fire Torrent": {id: 1265992, values: [2.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "spell_shaman_stormearthfire", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        spellDB["Twin Flame"][0].targets = 1 + talentData[0];
     }},
 
     /* Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Emerald Blossom healing consumes 2 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. */

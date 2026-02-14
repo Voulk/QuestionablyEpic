@@ -95,7 +95,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
         {spell: "Dream Breath", efficiency: 0.9,  },         
         {spell: "Fire Breath", efficiency: 0.9 },     
-        {spell: "Temporal Anomaly", efficiency: 0.9, hastedCPM: true },
+        {spell: "Temporal Anomaly", efficiency: 0.85, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.6, },
         {spell: "Merithra's Blessing", cpm: 3, autoSpell: true, hastedCPM: true },
         {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.9 },
@@ -128,7 +128,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Afterimage
     if (playerData.heroTree.includes("Chronowarden")) {
-        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Dream Breath") * 3, autoSpell: true, label: "Living Flame - Afterimage"});
+        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Dream Breath") * 3, autoSpell: true, label: "Living Flame - Afterimage", overrideOverhealing: 0.4});
         castProfile.push({spell: "Living Flame O", cpm: getCPM(castProfile, "Fire Breath"), autoSpell: true});
 
     }
@@ -139,7 +139,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     if (hasTalent(talents, "Leaping Flames")) {
         // We will cast Fire Breath at rank 3 and get 3 free Living Flames.
         const freeFlames = 3;
-        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Fire Breath") * freeFlames, autoSpell: true});
+        castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Fire Breath") * freeFlames, autoSpell: true, overrideOverhealing: 0.6,});
     }
 
     // Natty bursts from LF / Reversion
@@ -148,10 +148,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Talented bursts
     if (hasTalent(talents, "Energy Cycles")) essenceBurstCount += 6 / 1.5; // 6 bursts every Tip the Scales
-
+    if (hasTalent(talents, "Essence Well")) essenceBurstCount += (getCPM(castProfile, "Dream Breath") + getCPM(castProfile, "Fire Breath")) * 0.5; // 50% of a burst on DB / FB cast.
 
     // Total Echo CPM
-    const echoMult = 1 + (hasTalent(talents, "Time Lord") ? 0.5 : 0) + (playerData.heroTree.includes("Chronowarden") ? 0.1 : 0);   
+    const echoMult = (hasTalent(talents, "Time Lord") ? 1.5 : 1) * (playerData.heroTree.includes("Chronowarden") ? 1.1 : 1);   
     let totalEchoEvents = getCPM(castProfile, "Echo") + getCPM(castProfile, "Temporal Anomaly") * 5;
     let totalEchoPower = (getCPM(castProfile, "Echo") * 0.7 + getCPM(castProfile, "Temporal Anomaly") * 0.3 * 5) * echoMult;
     reportingData.totalEchoPower = totalEchoPower; 
@@ -183,11 +183,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride || 1))), 0);
     reportingData.baselineCostPerMinute = baselineCostPerMinute;
 
-    /*castProfile.forEach(spellEntry => {
+    castProfile.forEach(spellEntry => {
         console.log(`${spellEntry.spell}: CPM ${spellEntry.cpm}, Cost per cast: ${spellCosts[spellEntry.spell] * (spellEntry.manaOverride || 1)}
         Total Cost per minute: ${spellEntry.autoSpell? 0 : spellCosts[spellEntry.spell] * spellEntry.cpm! * (spellEntry.manaOverride || 1)}
         at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%`);
-    })*/
+    })
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
@@ -200,9 +200,13 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const blossomCasts = (essenceBurstCount - disintCasts) * 0.8;
     let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
     reportingData.disintBlossomRatio = disintCasts / essenceBurstCount;
-    castProfile.push({spell: "Emerald Blossom", cpm: blossomCasts});
-    castProfile.push({spell: "Disintegrate", cpm: disintCasts});
-    castProfile.push({spell: "Echo", cpm: bonusEchoCasts});
+    if (hasTalent(talents, "Twin Flame")) {
+        castProfile.push({spell: "Twin Flame", cpm: essenceBurstCount, autoSpell: true });
+    }
+    const essenceBurstMult = hasTalent(talents, "Titan's Gift") ? 1.35 : 1;
+    castProfile.push({spell: "Emerald Blossom", cpm: blossomCasts, mult: essenceBurstMult });
+    castProfile.push({spell: "Disintegrate", cpm: disintCasts, mult: essenceBurstMult});
+    castProfile.push({spell: "Echo", cpm: bonusEchoCasts, mult: essenceBurstMult});
 
     if (playerData.tierSets.includes("Preservation Evoker S1-4")) {
         castProfile.push({spell: "Emerald Blossom", cpm: getSpellEntry(castProfile, "Verdant Embrace", 0).cpm, autoSpell: true})
@@ -253,6 +257,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
                 spellOutput = runSpellScript(slice.customScript, state, slice);
             }
             else if (slice.spellType === "heal" || (slice.spellType === "buff" && slice.buffType === "heal")) {
+                if (spellProfile.overrideOverhealing) spellFlags['overrideOverhealing'] = spellProfile.overrideOverhealing;
                 spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
             }
 
@@ -283,7 +288,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const goldenHourHealing = getCPM(castProfile, "Reversion") * burstDTPS * 0.15 * 5;
     reportingData.reversionEff = getCPM(castProfile, "Reversion")
     reportingData.reversionBaseCasts = getSpellEntry(castProfile, "Reversion", 0).cpm
-    healingBreakdown["Reversion (Golden Hour)"] = goldenHourHealing;
+    healingBreakdown["Reversion (Golden Hour)"] = goldenHourHealing * (1 - 0.2);
 
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     printHealingBreakdown(healingBreakdown, totalHealing);

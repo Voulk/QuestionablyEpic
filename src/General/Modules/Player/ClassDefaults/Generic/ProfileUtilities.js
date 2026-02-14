@@ -174,7 +174,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
 
     if (spell.spellType === "heal" || spell.buffType === "heal") {
         spellOutput *= (spell.specialFields?.absorb ? 1 : statPercentages.genericHealingMult);
-        spellOutput *= (1 - spell.expectedOverheal)
+        spellOutput *= (flags['overrideOverhealing'] ? (1 - flags['overrideOverhealing']) : (1 - spell.expectedOverheal));
 
         if (spell.targetScript) {
             targetCount = getTargetScript(spell.targetScript, spell.targets, spell.specialFields)

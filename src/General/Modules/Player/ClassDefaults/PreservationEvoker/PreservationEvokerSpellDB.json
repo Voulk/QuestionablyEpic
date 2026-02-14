@@ -107,6 +107,7 @@
         {
             "coeff": 1.536,
             "aura": 0.83,
+            "targets": 6,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

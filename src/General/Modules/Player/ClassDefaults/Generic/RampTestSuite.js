@@ -322,3 +322,35 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence,
         sampleProfile: castProfile,
     }
 }
+
+
+export const buildStatChart = (playerData, testSettings, scoringFunction, statName) => {
+    
+    const baseStat = 200;
+    const activeStats = {
+        intellect: 2000,
+        haste: baseStat,
+        crit: baseStat,
+        mastery: baseStat,
+        versatility: baseStat,
+        stamina: 19000,
+        critMult: 2,
+    };
+
+
+    const results = [];
+    for (let i = 0; i < 500; i += 10) {
+        const newPlayerStats = {...activeStats, [statName]: baseStat + i};
+        const score = scoringFunction(newPlayerStats, playerData, testSettings).healing;
+        results.push(Math.round(score));
+    }
+    //console.log("==" + stat + "==")
+    console.log(statName);
+    console.log(JSON.stringify(results));
+
+    //['haste'].forEach(stat => {
+
+
+    //});
+
+}
