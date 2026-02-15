@@ -11,6 +11,99 @@ type embellishmentData = {
 }
 
 export const embellishmentDB: embellishmentData[] = [
+
+  {
+    id: 241140,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Ring
+    name: "Signet of Azerothian Blessings",
+    effect: {
+      type: "embellishment",
+      name: "Signet of Azerothian Blessings",
+    },
+  },
+    {
+    id: 245871,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Weapon Reagent, DPS only
+    name: "Darkmoon Sigil: Blood",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Blood",
+    },
+  },
+    {
+    id: 245875,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Weapon Reagent, Based on creature type??
+    name: "Darkmoon Sigil: Hunt",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Hunt",
+    },
+  },
+      {
+    id: 245873,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Weapon Reagent, DPS only.
+    name: "Darkmoon Sigil: Void",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Void",
+    },
+  },
+   {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Vers
+    name: "Blessed Pango Charm",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Void",
+    },
+  },
+    {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Healing
+    name: "Primal Spore Binding",
+    effect: {
+      type: "embellishment",
+      name: "Primal Spore Binding",
+    },
+  },
+      {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Healing
+    name: "Devouring Banding",
+    effect: {
+      type: "embellishment",
+      name: "Devouring Banding",
+    },
+  },
+        {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Primary stat for you + a friend
+    name: "Arcanoweave Lining",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Lining",
+    },
+  },
+          {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 0, // Healing and damage from periodics can increase int, stacking to 10.
+    name: "Sunfire Silk Lining",
+    effect: {
+      type: "embellishment",
+      name: "Sunfire Silk Lining",
+    },
+  },
+
+  /*
   {
     id: 215135,
     icon: "inv_ringwod_d3_4",
@@ -194,7 +287,7 @@ export const embellishmentDB: embellishmentData[] = [
       type: "embellishment",
       name: "Darkmoon Sigil: Vivacity",
     },
-  },
+  },*/
 ];
 
   /*

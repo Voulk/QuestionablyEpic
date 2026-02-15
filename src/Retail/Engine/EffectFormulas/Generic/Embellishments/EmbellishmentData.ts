@@ -1,7 +1,8 @@
 import { itemLevels } from "Databases/ItemLevelsDB";
+import Player from "General/Modules/Player/Player";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
   getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
-
+import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
   if (getSetting(additionalData.settings, "calculateEmbellishments") === false) { // I hate that JS false and 0 are ==. Might break if getSetting gets changed ?
@@ -25,6 +26,25 @@ export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) =>
 }
 
 export const embellishmentData = [
+  // 
+    { // Proc for all secondary stats. +1% power for each unique gem colour in gear.
+        id: 241140,
+        name: "Signet of Azerothian Blessings",
+        description: "",
+        effects: [
+        { // 
+            stat: "mastery",
+            duration: 10,
+            ppm: 1,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+
   // ---------- THE WAR WITHIN
   {
     /* -------------------- */

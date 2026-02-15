@@ -96,10 +96,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         {spell: "Dream Breath", efficiency: 0.9,  },         
         {spell: "Fire Breath", efficiency: 0.9 },     
         {spell: "Temporal Anomaly", efficiency: 0.85, hastedCPM: true },
-        {spell: "Reversion", efficiency: 0.6, },
+        {spell: "Reversion", efficiency: 0.66, },
         {spell: "Merithra's Blessing", cpm: 3, autoSpell: true, hastedCPM: true },
         {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.9 },
         {spell: "Dream Flight", efficiency: 0.8  }
+
     ]
 
     // Assign echo usage
@@ -121,7 +122,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Ultimately we can pre-calculate how long reversion will last at different crit percentages, but it is more difficult to 
     // 
-    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit) * 0.5 + spellDB["Reversion"][0].buffDuration * 0.5;
+    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit) * 0.4 + spellDB["Reversion"][0].buffDuration * 0.6;
     reportingData.adjReversionDuration = adjReversionDuration;
     reportingData.critChance = state.statPercentages.crit;
     spellDB["Reversion"][0].buffDuration = adjReversionDuration;
@@ -186,7 +187,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     castProfile.forEach(spellEntry => {
         console.log(`${spellEntry.spell}: CPM ${spellEntry.cpm}, Cost per cast: ${spellCosts[spellEntry.spell] * (spellEntry.manaOverride || 1)}
         Total Cost per minute: ${spellEntry.autoSpell? 0 : spellCosts[spellEntry.spell] * spellEntry.cpm! * (spellEntry.manaOverride || 1)}
-        at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%`);
+        at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%
+        Label: ${spellEntry.label || "N/A"}`);
     })
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
@@ -289,6 +291,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.reversionEff = getCPM(castProfile, "Reversion")
     reportingData.reversionBaseCasts = getSpellEntry(castProfile, "Reversion", 0).cpm
     healingBreakdown["Reversion (Golden Hour)"] = goldenHourHealing * (1 - 0.2);
+
+    // Handle Lifecinders just for Chrono vs Flameshaper comparisons.
+    if (playerData.heroTree.includes("Flameshaper")) {
+        const renewingBlazeHealing = burstDTPS * 0.5 * 12 / 1.5 * (1 - 0.3);
+        healingBreakdown["Renewing Blaze"] = renewingBlazeHealing;
+    }
 
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     printHealingBreakdown(healingBreakdown, totalHealing);
