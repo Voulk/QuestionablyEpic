@@ -137,7 +137,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_ringwod_d3_4",
     armorType: 1, // Crit above 80% health, cloth, set
     pieces: 2,
-    name: "Arcanoweave Trappings (2pc)",
+    name: "Arcanoweave Trappings (Set)",
     effect: {
       type: "embellishment",
       name: "Arcanoweave Trappings",
@@ -158,7 +158,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_ringwod_d3_4",
     armorType: 1, // Crit above 80% health, cloth, set
     pieces: 2,
-    name: "Sunfire Silk Trappings (2pc)",
+    name: "Sunfire Silk Trappings (Set)",
     effect: {
       type: "embellishment",
       name: "Sunfire Silk Trappings",
@@ -169,7 +169,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_chest_leather_questbloodelf_b_01",
     armorType: 2, // Does random shit every 30s on a crit. Untested for healing crits.
     pieces: 2,
-    name: "Murder Row Materials (2pc)",
+    name: "Murder Row Materials (Set)",
     effect: {
       type: "embellishment",
       name: "Murder Row Materials",
@@ -200,7 +200,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_chest_mail_questbloodelf_b_01",
     armorType: 3, // Random secondary proc
     pieces: 2,
-    name: "Root Warden's Regalia (2pc)",
+    name: "Root Warden's Regalia (Set)",
     effect: {
       type: "embellishment",
       name: "Root Warden's Regalia",
@@ -274,7 +274,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "spell_nature_stormreach",
     armorType: 2,
     pieces: 2,
-    name: "Fury of the Stormrook (2pc)",
+    name: "Fury of the Stormrook (Set)",
     effect: {
       type: "embellishment",
       name: "Fury of the Stormrook",
@@ -315,7 +315,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_10_tailoring_silkrare_color3",
     armorType: 1,
     pieces: 2,
-    name: "Woven Dusk (2pc)",
+    name: "Woven Dusk (Set)",
     effect: {
       type: "embellishment",
       name: "Woven Dusk",
@@ -326,7 +326,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_10_tailoring_silkrare_color2",
     pieces: 2,
     armorType: 1,
-    name: "Woven Dawn (2pc)",
+    name: "Woven Dawn (Set)",
     effect: {
       type: "embellishment",
       name: "Woven Dawn",

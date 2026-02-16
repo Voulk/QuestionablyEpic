@@ -233,7 +233,9 @@ export const embellishmentData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.8;
+            const totalIntellect = runGenericPPMTrinket(data[0], itemLevel);
+            bonus_stats.intellect = totalIntellect * 0.8;
+            bonus_stats.allyStats = totalIntellect * 0.2; // Could be rewritten to avoid overlaps on allies which aren't likely.
 
             return bonus_stats;
         }
@@ -347,6 +349,27 @@ export const embellishmentData = [
             // Split the proc rate by that number
 
             bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
+
+            return bonus_stats;
+        }
+    },
+        { // DPS spells only. Overlapping procs
+        id: 0,
+        name: "Darkmoon Sigil: Void",
+        description: "",
+        effects: [
+        { //
+            scalingClass: -790,
+            coefficient: 0.30146,
+            stat: "versatility",
+            duration: 15,
+            ppm: 3,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.versatility = processedValue(data[0], itemLevel) * 1.13 * data[0].ppm! * data[0].duration! / 60;
 
             return bonus_stats;
         }
