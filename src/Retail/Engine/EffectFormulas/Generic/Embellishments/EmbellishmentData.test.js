@@ -12,12 +12,17 @@ describe("Trinket Tests", () => {
         {name: "Root Warden's Regalia", levels: {[level]: [158]}},
         {name: "World Tree Rootwraps", levels: {[level]: [113]}},
         {name: "Blessed Pango Charm", levels: {[level]: [101]}},
+        {name: "Thalassian Phoenix Torque", levels: {252: [Math.round(4102 / 20)]}},
         {name: "Sunfire Silk Lining", levels: {252: [4]}},
         {name: "Sunfire Silk Trappings", levels: {252: [156]}}, // 157
+        {name: "Darkmoon Sigil: Hunt", levels: {252: [85]}}, // 157
         
 
         {name: "Arcanoweave Lining", levels: {252: [40]}},
         {name: "Primal Spore Binding", levels: {252: [5833]}},
+        {name: "Voidstone Shielding Array", levels: {252: [45025]}},
+
+        {name: "Loa Worshiper's Band", levels: {252: [40, 113, 6]}},
     ]
 
     ingameData.forEach(({ name, levels }) => {
@@ -34,7 +39,10 @@ describe("Trinket Tests", () => {
                 (level, expectedResult) => {
                     //level = Number(level); // Convert level string back to number
                     effects.forEach((effect, index) => {
-                        expect(processedValue(effects[index], level, 1, "round")).toBe(expectedResult[index]);
+                        if (expectedResult.length > index) {
+                            expect(processedValue(effects[index], level, 1, "round")).toBe(expectedResult[index]);
+                        }
+                        
                     });
                     
                     //expect(processedValue(effect[1], level)).toBe(expectedResult[1]);

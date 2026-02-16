@@ -23,6 +23,36 @@ export const embellishmentDB: embellishmentData[] = [
     },
   },
     {
+    id: 241139,
+    icon: "inv_12_profession_jewelcrafting_necklace1_gold",
+    armorType: 0, // Ring
+    name: "Thalassian Phoenix Torque",
+    effect: {
+      type: "embellishment",
+      name: "Thalassian Phoenix Torque",
+    },  
+  },
+  {
+    id: 251513,
+    icon: "inv_12_profession_jewelcrafting_ring3_silver",
+    armorType: 0, // Ring
+    name: "Loa Worshiper's Band",
+    effect: {
+      type: "embellishment",
+      name: "Loa Worshiper's Band",
+    },
+  },
+    {
+    id: 251073,
+    icon: "inv_12_profession_jewelcrafting_necklace3_silver",
+    armorType: 0, // Ring
+    name: "Voidstone Shielding Array",
+    effect: {
+      type: "embellishment",
+      name: "Voidstone Shielding Array",
+    },
+  },
+    {
     id: 245871,
     icon: "inv_12_profession_inscriptions_darkmoonsigil_hunt",
     armorType: 0, // Weapon Reagent, DPS only

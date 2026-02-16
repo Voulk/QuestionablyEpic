@@ -110,13 +110,10 @@ export const embellishmentData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-
-
-
             return bonus_stats;
         }
     },
-        { // 
+        { // Gives vers to a random target
         id: 0,
         name: "Blessed Pango Charm",
         description: "",
@@ -132,6 +129,8 @@ export const embellishmentData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
+            bonus_stats.allyStats = processedValue(data[0], itemLevel) * data[0].ppm! * data[0].duration! / 60;
+
             return bonus_stats;
         }
     },
@@ -146,6 +145,49 @@ export const embellishmentData = [
             ppm: 2,
             efficiency: 0.7,
             secondaries: ['haste', 'crit', 'versatility'],
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+            return bonus_stats;
+        }
+    },
+        { // 10s HoT
+        id: 0,
+        name: "Thalassian Phoenix Torque",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -8,
+            coefficient: 1.86696 * 0.66,
+            ticks: 20,
+            ppm: 2,
+            efficiency: 0.7,
+            secondaries: ['haste', 'crit', 'versatility'],
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+            return bonus_stats;
+        }
+    },
+    { //
+        id: 0,
+        name: "Voidstone Shielding Array",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -8,
+            coefficient: 409.7696 * 0.66,
+            cooldown: 180,
+            efficiency: 0.8,
+            secondaries: ['versatility'],
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -230,6 +272,81 @@ export const embellishmentData = [
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+    { // 
+      // Humanoid / Dragonkin: Mastery
+      // Beast / Mechanical: Crit
+      // Undead / Giant / Undefined: Versatility
+      // Elemental / Demon / Aberration: Haste
+      // CAN overlap if you swap your target type after a proc.
+        id: 0,
+        name: "Darkmoon Sigil: Hunt",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.42939, // Inferred, not spell data. I think it's scriped, though there are two values for it that don't fit.
+            stat: "mixed",
+            duration: 15,
+            ppm: 4, // Hasted?
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            const enemyType = "Mastery";
+
+            bonus_stats['mastery'] = runGenericPPMTrinket({...data[0], stat: enemyType}, itemLevel, additionalData.setStats);
+
+            return bonus_stats;
+        }
+    },
+    { // 
+      /*
+      - Capybara - Intellect buff - Always Available
+      - Nalorakk - Crit buff - Requires Garnets (big crit)
+      - Halazzi - Damage proc - Requires Amethysts (big mastery)
+      - Janali - Damage proc - Requires Lapis (big vers)
+      - Akilzon - Haste & Speed buff - Requires Peridot (big haste)
+      */
+        id: 0,
+        name: "Loa Worshiper's Band",
+        description: "",
+        effects: [
+        { // Capybara / Int buff - 40
+            scalingClass: -1,
+            coefficient: 0.241141,
+            stat: "intellect",
+            duration: 15,
+            ppm: 2,
+        },
+        { // Akil'zon (Haste buff) 0.030146
+            scalingClass: -790,
+            coefficient: 0.569302,
+            stat: "haste",
+            duration: 15,
+            ppm: 2,
+        },
+        { // Nalorakk (Crit buff)
+          // The crit buff lasts 6s but refreshes itself for 10s. 
+            scalingClass: -790,
+            coefficient: 0.030146,
+            stat: "crit",
+            stacks: 5.5,
+            duration: 15,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            // Work out which buffs are possible
+            // Split the proc rate by that number
+
+            bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
 
             return bonus_stats;
         }
