@@ -1,4 +1,4 @@
-import { scoreEvokerSet } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PreservationEvokerProfileEchoshaper"
+import { scoreEvokerSet } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PreservationEvokerProfile"
 
 export const evokerDefaultSpellData = (contentType) => {
     let spellList = {};
@@ -30,10 +30,10 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 1.27, 
-      crit: 1.3, 
-      mastery: 1.45, 
-      versatility: 1.10, 
+      haste: 0.4, 
+      crit: 0.37, 
+      mastery: 0.5, 
+      versatility: 0.33, 
       leech: 0.55,
       defaults: true,
     };

@@ -55,7 +55,7 @@ const getRankDiff = (rank, map2, prevRank) => {
   if (rank > 0) {
     // added a or 0 to handle NANs
     return map2["r" + rank] - map2["r" + prevRank] || 0;
-  } else if (rank == 167) {
+  } else if (rank == 250) {
     return map2["r" + rank];
   } else {
     return 0;
@@ -118,7 +118,7 @@ export default class EmbelChart extends PureComponent {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
           // 600, 606, 612, 618, 624, 630, 636 [619, 636, 642, 662, 675 ];
           name: map2.id,
-          167: map2.r167,
+          250: map2.r250,
           /*691: getRankDiff(691, map2, 675),
           704: getRankDiff(704, map2, 691),
           720: getRankDiff(720, map2, 704),*/
@@ -209,7 +209,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[167].map((key, i) => (
+          {[250].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

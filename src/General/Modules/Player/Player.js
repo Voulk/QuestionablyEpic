@@ -724,7 +724,7 @@ export class Player {
         this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
         this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
         this.activeStats = {
-          intellect: 750,
+          intellect: 2000,
           haste: 390,
           crit: 120,
           mastery: 550,

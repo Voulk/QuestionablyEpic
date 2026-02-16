@@ -33,9 +33,199 @@ export const embellishmentData = [
         description: "",
         effects: [
         { // 
-            stat: "mastery",
+            scalingClass: -790,
+            coefficient: 0.429352 / 4,
+            stat: "all",
+            duration: 15,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            ["haste", "crit", "versatility", "mastery"].forEach((stat) => {
+              bonus_stats[stat] = runGenericPPMTrinket({...data[0], stat: stat}, itemLevel, additionalData.setStats);
+            });
+
+
+            return bonus_stats;
+        }
+    },
+      { // 
+        id: 241140,
+        name: "Axe-Flingin' Bands",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.05693,
+            stat: "all",
+            duration: 15,
+            ppm: 6,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+      { // 
+        id: 0,
+        name: "Root Warden's Regalia",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.797023,
+            stat: "all",
+            duration: 15,
+            ppm: 3,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            ["haste", "crit", "versatility", "mastery"].forEach((stat) => {
+              // Can't use the function for this since there is no / limited proc munching.
+              bonus_stats[stat] = processedValue(data[0], itemLevel) * data[0].ppm! * data[0].duration! / 60 / 4;
+            });
+
+            return bonus_stats;
+        }
+    },
+    { // 
+        id: 0,
+        name: "World Tree Rootwraps",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.569302,
+            stat: "all",
+            duration: 15,
+            ppm: 3,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+
+
+
+            return bonus_stats;
+        }
+    },
+        { // 
+        id: 0,
+        name: "Blessed Pango Charm",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.512372,
+            stat: "all",
+            duration: 15,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+    { // Healers currently get hit by the roleMult and so it heals for a third less for them. 
+        id: 0,
+        name: "Primal Spore Binding",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -9,
+            coefficient: 43.70122 * 0.66,
+            ppm: 2,
+            efficiency: 0.7,
+            secondaries: ['haste', 'crit', 'versatility'],
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player, additionalData.contentType);
+
+            return bonus_stats;
+        }
+    },
+    { // 
+        id: 0,
+        name: "Sunfire Silk Lining",
+        description: "",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.083918,
+            stat: "intellect",
             duration: 10,
-            ppm: 1,
+            ppm: 5,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+        { // 
+        id: 0,
+        name: "Arcanoweave Lining",
+        description: "",
+        effects: [
+        { // 80% of the coefficient goes to you, 20% to your friend.
+            scalingClass: -1,
+            coefficient: 0.24066,
+            stat: "intellect",
+            duration: 20,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel) * 0.8;
+
+            return bonus_stats;
+        }
+    },
+            { // 
+        id: 0,
+        name: "Sunfire Silk Trappings",
+        description: "",
+        effects: [
+        { //
+            scalingClass: -790,
+            coefficient: 0.78882032633,
+            stat: "haste",
+            duration: 10,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            return bonus_stats;
+        }
+    },
+    { // 
+        id: 0,
+        name: "Arcanoweave Trappings",
+        description: "",
+        effects: [
+        { //
+            scalingClass: -790,
+            coefficient: 0.78882032633,
+            stat: "crit",
+            duration: 10,
+            ppm: 2,
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {

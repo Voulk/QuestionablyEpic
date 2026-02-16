@@ -14,7 +14,7 @@ export const embellishmentDB: embellishmentData[] = [
 
   {
     id: 241140,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_12_profession_jewelcrafting_ring1_gold",
     armorType: 0, // Ring
     name: "Signet of Azerothian Blessings",
     effect: {
@@ -24,7 +24,7 @@ export const embellishmentDB: embellishmentData[] = [
   },
     {
     id: 245871,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_hunt",
     armorType: 0, // Weapon Reagent, DPS only
     name: "Darkmoon Sigil: Blood",
     effect: {
@@ -34,7 +34,7 @@ export const embellishmentDB: embellishmentData[] = [
   },
     {
     id: 245875,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_bloom",
     armorType: 0, // Weapon Reagent, Based on creature type??
     name: "Darkmoon Sigil: Hunt",
     effect: {
@@ -44,7 +44,7 @@ export const embellishmentDB: embellishmentData[] = [
   },
       {
     id: 245873,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_void",
     armorType: 0, // Weapon Reagent, DPS only.
     name: "Darkmoon Sigil: Void",
     effect: {
@@ -53,18 +53,18 @@ export const embellishmentDB: embellishmentData[] = [
     },
   },
    {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+    id: 244603,
+    icon: "inv_jewelry_necklace_139",
     armorType: 0, // Vers
     name: "Blessed Pango Charm",
     effect: {
       type: "embellishment",
-      name: "Darkmoon Sigil: Void",
+      name: "Blessed Pango Charm",
     },
   },
     {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+    id: 244608,
+    icon: "inv_12_profession_leatherworking_armor_banding_green",
     armorType: 0, // Healing
     name: "Primal Spore Binding",
     effect: {
@@ -73,8 +73,8 @@ export const embellishmentDB: embellishmentData[] = [
     },
   },
       {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+    id: 244675,
+    icon: "inv_12_profession_leatherworking_armor_banding_brown",
     armorType: 0, // Healing
     name: "Devouring Banding",
     effect: {
@@ -82,9 +82,9 @@ export const embellishmentDB: embellishmentData[] = [
       name: "Devouring Banding",
     },
   },
-        {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+  {
+    id: 240166,
+    icon: "inv_12_tailoring_rare_cloth_violet_rare-cloth",
     armorType: 0, // Primary stat for you + a friend
     name: "Arcanoweave Lining",
     effect: {
@@ -93,13 +93,87 @@ export const embellishmentDB: embellishmentData[] = [
     },
   },
           {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+    id: 240165,
+    icon: "inv_12_tailoring_rare_cloth_orange-_rare-cloth",
     armorType: 0, // Healing and damage from periodics can increase int, stacking to 10.
     name: "Sunfire Silk Lining",
     effect: {
       type: "embellishment",
       name: "Sunfire Silk Lining",
+    },
+  },
+  {
+    id: 239660,
+    icon: "inv_ringwod_d3_4",
+    armorType: 1, // Crit above 80% health, cloth, set
+    pieces: 2,
+    name: "Arcanoweave Trappings (2pc)",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Trappings",
+    },
+  },
+  {
+    id: 239664,
+    icon: "inv_ringwod_d3_4",
+    armorType: 1, // Mastery proc
+    name: "Arcanoweave Cord",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Cord",
+    },
+  },
+  {
+    id: 0,
+    icon: "inv_ringwod_d3_4",
+    armorType: 1, // Crit above 80% health, cloth, set
+    pieces: 2,
+    name: "Sunfire Silk Trappings (2pc)",
+    effect: {
+      type: "embellishment",
+      name: "Sunfire Silk Trappings",
+    },
+  },
+    {
+    id: 244613,
+    icon: "inv_chest_leather_questbloodelf_b_01",
+    armorType: 2, // Does random shit every 30s on a crit. Untested for healing crits.
+    pieces: 2,
+    name: "Murder Row Materials (2pc)",
+    effect: {
+      type: "embellishment",
+      name: "Murder Row Materials",
+    },
+  },
+      {
+    id: 244601,
+    icon: "inv_boot_leather_questbloodelf_b_01",
+    armorType: 2, // Pops out orbs. Pick up orb = + highest secondary stat.
+    name: "World Tree Rootwraps",
+    effect: {
+      type: "embellishment",
+      name: "World Tree Rootwraps",
+    },
+  },
+  {
+    id: 244605,
+    icon: "inv_bracer_mail_questbloodelf_b_01",
+    armorType: 3, // Stacking haste proc  
+    name: "Axe-Flingin' Bands",
+    effect: {
+      type: "embellishment",
+      name: "Axe-Flingin' Bands",
+    },
+  },
+  {
+    id: 244609,
+    icon: "inv_chest_mail_questbloodelf_b_01",
+    armorType: 3, // Random secondary proc
+    pieces: 2,
+    name: "Root Warden's Regalia (2pc)",
+    effect: {
+      type: "embellishment",
+      name: "Root Warden's Regalia",
     },
   },
 
