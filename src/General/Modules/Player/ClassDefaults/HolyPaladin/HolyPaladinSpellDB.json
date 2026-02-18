@@ -9,7 +9,7 @@
             },
             "castTime": 0.0,
             "school": "holy",
-            "cost": 2.24,
+            "cost": 2.8,
             "cooldownData": {
                 "cooldown": 6.0,
                 "hasted": false,
@@ -182,7 +182,7 @@
             "cost": 7.0,
             "coeff": 32.5,
             "aura": 1.0,
-            "expectedOverheal": 0.3,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",

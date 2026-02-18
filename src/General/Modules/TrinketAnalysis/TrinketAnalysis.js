@@ -198,13 +198,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(999); // 170
+  const [levelCap, setLevelCap] = React.useState(289); // 170
   const maxLevelMarks = [
     { value: 0, label: "110" },
     { value: 1, label: "130" },
     { value: 2, label: "140" },
-    { value: 3, label: "155" },
-    { value: 4, label: "170" },
+    { value: 3, label: "263" },
+    { value: 4, label: "289" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -394,7 +394,7 @@ export default function TrinketAnalysis(props) {
           }
           
         }
-        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, 263/*trinket.levelRange[trinket.levelRange.length - 1]*/, playerSettings, trinket.id);
         else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }

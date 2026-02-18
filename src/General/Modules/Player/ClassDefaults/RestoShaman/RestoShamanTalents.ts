@@ -245,7 +245,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Casting Riptide has a Y% chance to activate Ascendance for X seconds. */
-    "Deeply Rooted Elements": {id: 378270, values: [6000.0, 11.6, 6.0, 7.0],  points: 0, maxPoints: 1, icon: "inv_misc_herb_liferoot_stem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Deeply Rooted Elements": {id: 378270, values: [6000.0, 11.60000038147, 6.0, 7.0],  points: 0, maxPoints: 1, icon: "inv_misc_herb_liferoot_stem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
