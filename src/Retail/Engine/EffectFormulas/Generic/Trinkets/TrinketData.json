@@ -5,6 +5,16 @@
             "scalingClass": -1
         }
     ],
+    "Emberwing Feather": [
+        {
+            "coefficient": 2.06463932991,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.64144134521,
+            "scalingClass": -9
+        }
+    ],
     "Lightspire Core": [
         {
             "coefficient": 0.40009117126,
@@ -13,6 +23,12 @@
         {
             "coefficient": 0.69850623608,
             "scalingClass": -7
+        }
+    ],
+    "Freightrunner's Flask": [
+        {
+            "coefficient": 1.45577120781,
+            "scalingClass": -9
         }
     ],
     "Refueling Orb": [

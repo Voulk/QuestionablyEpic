@@ -1,5 +1,5 @@
 import Player from "General/Modules/Player/Player";
-import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, forceGenericOnUseTrinket, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericPPMTrinketHasted } from "../../EffectUtilities";
+import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, forceGenericOnUseTrinket, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericPPMTrinketHasted, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 export const dungeonTrinketData = 
@@ -241,6 +241,68 @@ export const dungeonTrinketData =
         return bonus_stats;
       }
     },
+    { // Passive mastery at all times, + a light effect you have to stand in.
+        name: "Vessel of Tortured Souls",
+        description: "",
+        addonDescription: "",
+        effects: [
+        { // Stat Proc Portion
+            stat: "intellect",
+            duration: 60,
+            ppm: 3,
+            efficiency: 0.5,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            const orbStats = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Vessel of Tortured Souls"][0]}, itemLevel)
+            bonus_stats.intellect = orbStats * data[0].efficiency!;
+
+            return bonus_stats;
+            }
+    },
+      { // 
+        name: "Freightrunner's Flask",
+        description: "",
+        effects: [
+          { // Int Proc
+            duration: 15,
+            cooldown: 90, //
+            stat: "crit",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Freightrunner's Flask"][0]}, itemLevel, additionalData.castModel)
+          return bonus_stats;
+        }
+      },
+       { // 
+        name: "Emberwing Feather",
+        description: "",
+        effects: [
+          { // 
+            duration: 15,
+            cooldown: 120, //
+            stat: "haste",
+          },
+          { // Backfire Effect
+            duration: 10,
+            cooldown: 120, //
+            stat: "mixed",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Emberwing Feather"][0]}, itemLevel, additionalData.castModel)
+          
+          return bonus_stats;
+        }
+      },
 
 
 ]; 
