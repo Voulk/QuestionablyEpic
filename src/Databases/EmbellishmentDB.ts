@@ -154,8 +154,8 @@ export const embellishmentDB: embellishmentData[] = [
     },
   },
   {
-    id: 0,
-    icon: "inv_ringwod_d3_4",
+    id: 239658,
+    icon: "inv_cape_firelands_fireset_d_01",
     armorType: 1, // Crit above 80% health, cloth, set
     pieces: 2,
     name: "Sunfire Silk Trappings (Set)",

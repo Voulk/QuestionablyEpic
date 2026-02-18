@@ -104,7 +104,7 @@ export const embellishmentData = [
             coefficient: 0.569302,
             stat: "all",
             duration: 15,
-            ppm: 3,
+            ppm: 2,
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -374,6 +374,50 @@ export const embellishmentData = [
             return bonus_stats;
         }
     },
+   { // DPS spells only. Overlapping procs
+        id: 0,
+        name: "Darkmoon Sigil: Blood",
+        description: "",
+        effects: [
+        { //
+            scalingClass: -790,
+            coefficient: 0.30146,
+            stat: "",
+            duration: 15,
+            ppm: 3,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+            console.log(additionalData);
+            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
+
+            bonus_stats[minStat] = runGenericPPMTrinket({...data[0], stat: minStat}, itemLevel, additionalData.setStats);
+
+            return bonus_stats;
+        }
+  },
+     { // 
+        id: 0,
+        name: "Arcanoweave Cord",
+        description: "",
+        effects: [
+        { //
+            scalingClass: -790,
+            coefficient: 0.682807,
+            stat: "mastery",
+            duration: 12,
+            ppm: 2.5,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats['mastery'] = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
+
+            return bonus_stats;
+        }
+  },
 
   // ---------- THE WAR WITHIN
   {

@@ -14,8 +14,14 @@ import { styled } from "@mui/material/styles";
 const mobileWidthThreshold = 650;
 
 const getTooltip = (data, id) => {
-  const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
-  return tooltip;
+  const effect = data.filter(filter => filter.id === id)[0];
+  if (effect) {
+    return effect.tooltip;
+  }
+  else {
+    console.error("Tooltip not found for id: " + id);
+    return ["Tooltip Error"];
+  }
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (

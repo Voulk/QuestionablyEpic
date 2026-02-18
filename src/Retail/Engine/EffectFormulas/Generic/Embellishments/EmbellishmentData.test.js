@@ -15,7 +15,8 @@ describe("Trinket Tests", () => {
         {name: "Thalassian Phoenix Torque", levels: {252: [Math.round(4102 / 20)]}},
         {name: "Sunfire Silk Lining", levels: {252: [4]}},
         {name: "Sunfire Silk Trappings", levels: {252: [156]}}, // 157
-        {name: "Darkmoon Sigil: Hunt", levels: {252: [85]}}, // 157
+        {name: "Darkmoon Sigil: Hunt", levels: {252: [85]}}, 
+        {name: "Arcanoweave Cord", levels: {252: [135]}}, 
         
 
         {name: "Arcanoweave Lining", levels: {252: [40]}},
