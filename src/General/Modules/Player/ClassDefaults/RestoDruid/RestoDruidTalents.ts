@@ -17,7 +17,6 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     Object.keys(talents).forEach(talentName => {
         if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
             talents[talentName].points = talents[talentName].maxPoints;
-            //console.log(`Enabling talent: ${talentName}`);
         }
     })
 }

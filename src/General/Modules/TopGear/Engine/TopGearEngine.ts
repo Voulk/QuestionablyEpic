@@ -86,7 +86,7 @@ function getGemID(bigStat: string, littleStat: string): number {
 }
 
 // Return an array of gem IDs based on the spec and content type. 
-function getTWWGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
+function getMidnightGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
   const metaGem = 213746; // Elusive Meta Gem
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
@@ -543,28 +543,29 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  21; // 64 x 2.
-  enchants["Finger"] = "+315 " + highestWeight;
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  22; // 64 x 2.
+  enchants["Finger"] = "+22 " + highestWeight;
+
+
+  // Helm
+  bonus_stats.leech = (bonus_stats.leech || 0) + 55;
+  enchants["Head"] = "Empowered Hex of Leeching";
 
   // Chest
   // There is a mana option too that we might include later.
-  bonus_stats.intellect = (bonus_stats.intellect || 0) + 745; 
-  enchants["Chest"] = "Crystalline Radiance";
+  bonus_stats.intellect = (bonus_stats.intellect || 0) + 50; 
+  enchants["Chest"] = "Mark of the Worldsoul";
 
-  // Cape
-  bonus_stats.leech = (bonus_stats.leech || 0) + 67;
-  enchants["Back"] = "Leeching Fangs";
-
-  // Wrists
-  bonus_stats.leech += 135;
-  enchants["Wrist"] = "Armored Leech";
+  // Shoulders
+  bonus_stats.leech = (bonus_stats.leech || 0) + 166;
+  enchants["Shoulder"] = "Silvermoon's Mending";
 
   // Belt
   //enchants["Waist"] = "Shadowed Belt Clasp";
 
   // Legs - Also gives 3/4/5% mana.
-  bonus_stats.intellect += 8;
-  enchants["Legs"] = "Sunset Spellthread";
+  bonus_stats.intellect += 41;
+  enchants["Legs"] = "Arcanoweave Spellthread";
 
   if (false) {
     const dreamingData =  { // 
@@ -713,18 +714,18 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
       // We are in second DR already, try and swap.
     }
-    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 60;
+    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 165;
     selectedChoice = bestStat;
   }
   else {
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
-    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 60;
+    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 165;
   }
 
-  if (selectedChoice === "haste") enchants.flask = "Flask of Tempered Swiftness";
-  else if (selectedChoice === "mastery") enchants.flask = "Flask of Tempered Mastery";
-  else if (selectedChoice === "crit") enchants.flask = "Flask of Tempered Aggression";
-  else if (selectedChoice === "versatility") enchants.flask = "Flask of Tempered Versatility";
+  if (selectedChoice === "haste") enchants.flask = "Flask of the Blood Knights";
+  else if (selectedChoice === "mastery") enchants.flask = "Flask of Mastery";
+  else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
+  else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
 
   // == Runes == 
   // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
@@ -746,7 +747,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
   }
   else {
-    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
+    enchants["Gems"] = getMidnightGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
 
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
