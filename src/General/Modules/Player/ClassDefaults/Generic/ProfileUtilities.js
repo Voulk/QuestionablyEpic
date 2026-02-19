@@ -170,7 +170,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
-        if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
+        //if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
     }
     
 
