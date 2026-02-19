@@ -277,6 +277,7 @@
                 "cooldown": 25.0,
                 "hasted": false
             },
+            "targets": 5,
             "coeff": 0.74496,
             "aura": 1.0,
             "expectedOverheal": 0.2,
@@ -306,6 +307,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 1.8,
+            "targets": 2,
             "coeff": 0.74448,
             "aura": 1.65,
             "expectedOverheal": 0.2,
@@ -330,7 +332,8 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "heal",
+            "targets": 2
         }
     ],
     "Ascendance": [
