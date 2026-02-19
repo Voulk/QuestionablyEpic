@@ -127,6 +127,22 @@ export const adjBuffDurationFlat = (spell: SpellData[], value: number, index: nu
 
 }
 
+/**
+ * 
+ * @param spell Spell to increase buff duration of.
+ * @param value The amount of duration to add to the buff. A negative value is also acceptable. Provided in ms.
+ * @param index Specify a specific slice of the spell to edit. If not provided, we will apply it to all slices with a buff duration
+ *              though it is rare for there to be more than one.
+ */
+export const adjTargetCount = (spell: SpellData[], value: number, index: number = -1) => {
+    spell.forEach((slice, i) => {
+        if (index === -1 || index === i) {
+            if (slice.targets) slice.targets += value;
+        }
+    })
+
+}
+
 export const attachSpellEffect = (recSpell: SpellData[], effect: SpellData[], index: number = -1) => {
     const target = (index >= 0) ? effect.slice(index, index + 1) : effect;
     
