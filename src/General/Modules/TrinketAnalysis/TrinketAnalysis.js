@@ -225,6 +225,10 @@ export default function TrinketAnalysis(props) {
       1273, // Palace
       1296, // Liberation of Undermine
       1302, // Manaforge Omega
+
+      1314, // 
+      1308, //
+      1307, //
       
     ];
     const dungeonSources = [

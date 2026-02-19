@@ -1,8 +1,36 @@
 {
+    "Volatile Void Suffuser": [
+        {
+            "coefficient": 0.85835248232,
+            "scalingClass": -1
+        }
+    ],
     "Gaze of the Alnseer": [
         {
             "coefficient": 0.24065957963,
             "scalingClass": -1
+        }
+    ],
+    "Vaelgor's Final Stare": [
+        {
+            "coefficient": 5.76131296158,
+            "scalingClass": -7
+        }
+    ],
+    "Locus-Walker's Ribbon": [
+        {
+            "coefficient": 1.14032506943,
+            "scalingClass": -1
+        }
+    ],
+    "Light of the Cosmic Crescendo": [
+        {
+            "coefficient": 0.18065594137,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 25.692735672,
+            "scalingClass": -9
         }
     ],
     "Emberwing Feather": [

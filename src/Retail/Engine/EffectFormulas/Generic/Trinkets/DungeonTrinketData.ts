@@ -25,29 +25,7 @@ export const dungeonTrinketData =
             return bonus_stats;
             }
     },
-    { //
-        id: 249343,
-        name: "Gaze of the Alnseer",
-        description: "",
-        addonDescription: "",
-        effects: [
-        { // Stat Proc Portion
-            stat: "intellect",
-            duration: 12,
-            ppm: 2,
-        },
-        ],
-        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-            let bonus_stats: Stats = {};
 
-            const spellsCastInduration = 12 / 1.5 / 2; // Placeholder obviously
-
-            bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Gaze of the Alnseer"][0]}, itemLevel);
-            bonus_stats.intellect *= spellsCastInduration; // 
-
-            return bonus_stats;
-        }
-  },
     {
       name: "Echo of L'ura",
       effects: [

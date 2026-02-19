@@ -60,7 +60,7 @@ export const evokerDefaultSpellData = (contentType) => {
         cooldownMult: {
           c30: 1.1,
           c60: 1,
-          c90: 1.37,
+          c90: 1.3,
           c120: 1.1,
           c180: 1,
 
