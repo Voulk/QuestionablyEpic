@@ -84,8 +84,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     defaultTalents(initialState.talents, "default", playerData.heroTree);
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
-    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, 
-                    playerData.masteryEffectiveness), settings: settings, talents: evokerTalents};
+    const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, playerData.masteryEffectiveness), 
+        settings: settings, talents: evokerTalents};
     state.statPercentages.genericHealingMult += 0.06; // The 6% aura buff that hasn't been baked in yet.
 
     const incomingDTPS = 25000;
