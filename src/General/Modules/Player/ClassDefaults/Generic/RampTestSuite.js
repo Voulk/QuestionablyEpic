@@ -347,10 +347,53 @@ export const buildStatChart = (playerData, testSettings, scoringFunction, statNa
     //console.log("==" + stat + "==")
     console.log(statName);
     console.log(JSON.stringify(results));
-
     //['haste'].forEach(stat => {
 
-
     //});
+}
+
+export const buildStatWeights = (playerData, scoringFunction, testSettings ) => {
+        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility'];
+
+    const activeStats = {
+        intellect: 2000,
+        haste: 200,
+        crit: 200,
+        mastery: 200,
+        versatility: 200,
+        stamina: 19000,
+        critMult: 2,
+    };
+    
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+
+            baseline += scoringFunction(activeStats, playerData, testSettings).healing;
+        }
+
+        baseline = baseline / iterations;
+       
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(activeStats));
+            playerStats[stat] = playerStats[stat] + 150;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += scoringFunction(playerStats, newPlayerData, testSettings).healing;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
 
 }

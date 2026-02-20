@@ -1,7 +1,7 @@
 import { getSpellRaw, runCastSequence } from "./PresEvokerRamps";
 import { EVOKERSPELLDB, baseTalents, evokerTalents } from "./Archive/PresEvokerSpellDBTWW";
 import { reversionProfile, blossomProfile } from "./Archive/PresEvokerDefaultAPL";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, buildStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, buildStatWeights } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { preservationEvokerProfile, scoreEvokerSet } from "./PreservationEvokerProfile";
 import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 import { calcStatsAtLevel } from "General/Engine/ItemUtilities"
@@ -28,52 +28,8 @@ describe("Test APL", () => {
 
         console.log(data);
         expect(true).toEqual(true);
-
-
-        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility'];
-
-        stats.forEach(stat => {
-            if (stat !== "intellect") {
-                
-            }
-        })
-
-        //buildStatChart(playerData, settings, scoreEvokerSet, 'mastery')
-
-        //runStats(playerData, profile)
-            
         
-    
-        const iterations = 1;
-        let baseline = 0;
-        
-        for (let i = 0; i < iterations; i++) {
-            baseline += scoreEvokerSet(activeStats, playerData, settings).healing;
-        }
-
-        baseline = baseline / iterations;
-       
-        const results = {};
-        stats.forEach(stat => {
-            let statHealing = 0;
-            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
-            playerStats[stat] = playerStats[stat] + 150;
-            const newPlayerData = {...playerData, stats: playerStats};
-            for (let i = 0; i < iterations; i++) {
-
-                statHealing += scoreEvokerSet(playerStats, newPlayerData, settings).healing;
-                
-            }
-            results[stat] = statHealing / iterations;
-
-        });
-        const weights = {}
-
-        stats.forEach(stat => {
-            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
-        });
-        console.log(weights); 
-      
+        buildStatWeights(playerData, scoreEvokerSet, settings);
 
         
     })

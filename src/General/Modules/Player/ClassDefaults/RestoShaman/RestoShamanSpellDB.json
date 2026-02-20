@@ -188,7 +188,16 @@
             },
             "castTime": 0.0,
             "school": "nature",
-            "cost": 2.0
+            "cost": 2.0,
+            "coeff": 0.73,
+            "aura": 1.47,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Chain Lightning": [
