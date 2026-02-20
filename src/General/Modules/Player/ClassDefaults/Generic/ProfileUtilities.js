@@ -152,7 +152,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
-    let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
+    let adjCritChance = Math.min(((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1, 1); 
     const critSize = (spell.statMods && spell.statMods.critMult) ? spell.statMods.critMult + statPercentages.critMult : statPercentages.critMult;
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
         

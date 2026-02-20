@@ -76,6 +76,19 @@ const wowheadCodes = {
   2747: "[=retail-raid-tww-s3-fractillus]",
   2690: "[=retail-raid-tww-s3-nexus-king]", 
   2691: "[=retail-raid-tww-s3-dimensius]", 
+
+  2795: "[icon name=inv_120_raid_dreamwell_malformedmanifestation][/icon][url guide=33231]Chimaerus[/url]", // Chimaerus
+
+  // Voidspire
+  2733: "[icon name=inv_120_raid_voidspire_hostgeneral][/icon][url guide=33223]Imperator Averzian[/url]", // Imperator Averzian
+  2734: "[icon name=inv_120_raid_voidspire_kaiju][/icon][url guide=33224]Vorasius[/url]", // Vorasius
+  2736: "[icon name=inv_120_raid_voidspire_salhadaar][/icon][url guide=33225]Fallen-King Salhadaar[/url]", // Fallen-King Salhadaar
+  2735: "[icon name=inv_120_raid_voidspire_dragonduo][/icon][url guide=33226]Vaelgor & Ezzorak[/url]", // Vaelgor & Ezzorak
+  2737: "[icon name=inv_120_raid_voidspire_paladintrio][/icon][url guide=33227]Lightblinded Vanguard[/url]", // Lightblinded Vanguard
+  2738: "[icon name=inv_120_raid_voidspire_alleria][/icon][url guide=33228]Crown of the Cosmos[/url]", // Crown of the Cosmos
+
+  2739: "[icon name=inv_120_raid_marchonqueldanas_lightvoidphoenix][/icon][url guide=33233]Belo'ren[/url]", // Belo'ren
+  2740: "[icon name=inv_120_raid_marchonqueldanas_lura][/icon][url guide=33234]Midnight Falls[/url]", // Midnight Falls
   
 
   // Dungeons
@@ -95,6 +108,23 @@ const wowheadCodes = {
   1185: "[=retail-dun-halls-of-atonement]", // The Halls of Atonement
   1270: "[=retail-dun-dawnbreaker]", // Dawnbreaker
   1271: "[=retail-dun-ara-kara]", // Ara'kara
+
+  1315: "[icon name=inv_achievement_dungeon_maisarahills][/icon][url guide=33181]Maisara Caverns[/url]", // Maisara Cavern
+  1316: "[icon name=inv_achievement_dungeon_nexuspointxenas][/icon][url guide=33182]Nexus Point Xenas[/url]", // Nexus-Point Xenas
+  1311: "", // Den of Nalorakk
+  1309: "", // The Blinding Vale
+  1304: "", // Murder Row
+  1300: "[icon name=inv_achievement_dungeon_magisters_terrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace 
+  1299: "[icon name=inv_achievement_dungeon_windrunner_spire][/icon][url guide=33184]Windrunner Spire[/url]", // Windrunner Spire
+  1313: "", // Voidscar Arena
+
+  1201: "[icon name=inv_achievement_dungeon_dragonacademy][/icon][url guide=33197]Algeth'ar Academy[/url]", // Algethar Academy 
+  278: "[icon name=inv_achievement_dungeon_pitofsaron][/icon][url guide=33198]Pit of Saron[/url]", // Pit of Saron 
+  476: "[icon name=achievement_dungeon_arakkoaspires][/icon][url guide=33199]Skyreach[/url]", // Skyreach
+  945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
+
+
+
 
   // Classic
   // Dungeons
