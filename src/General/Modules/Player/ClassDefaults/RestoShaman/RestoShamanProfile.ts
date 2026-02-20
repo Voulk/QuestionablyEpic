@@ -52,10 +52,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     applyTalents(initialState, spellDB, initialState.statBonuses);
     
     // The state variable that will be passed into each spell calculation. 
-    const state = { fightLength: 6, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman"), settings: settings, talents: shamanTalents};
+    const state = { fightLength: 6, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman", playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
     let castProfile: CastProfile = [
-        {spell: "Riptide", efficiency: 0.9}
+        {spell: "Chain Heal", cpm: 1}
         // Add Spells here
     ]
 

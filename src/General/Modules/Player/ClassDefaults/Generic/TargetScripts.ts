@@ -14,7 +14,16 @@ export const getTargetScript = (scriptName: string, targets: number, specialFiel
         }
         return effectiveMult;
     }
-
+    else if (scriptName === "Chain Heal") {
+        // Each target takes X - fallOff with the fallOff being based on the previous target.
+        let effectiveMult = 0;
+        let currentMult = 1;
+        for (let i = 1; i <= targets; i++) {
+            effectiveMult += currentMult;
+            currentMult *= (1 - specialFields.chainHealFalloff);
+        }
+        return effectiveMult;
+    }
     else {
         console.error("Invalid Target Script");
         return targets;

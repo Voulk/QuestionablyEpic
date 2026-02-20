@@ -111,8 +111,6 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
     }
 
-    console.log(statProfile.mastery, statBonuses.mastery, STATCONVERSION.MASTERYMULT[spec], masteryEffectiveness, stats.mastery);
-
     //getClassicRaceBonuses(stats, race);
     return stats;
 }
