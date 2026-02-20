@@ -76,7 +76,7 @@ export const getTrinketData = (trinketName, itemLevel) => {
 export const getCPM = (profile, spellName) => {
     const filterSpell = profile.filter(spell => spell.spell === spellName)
     if (filterSpell.length === 0) return 0;
-    
+
     let cpm = 0;
     for (let i = 0; i < filterSpell.length; i++) cpm += filterSpell[i].cpm || 0;
 
@@ -110,6 +110,8 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
     }
+
+    console.log(statProfile.mastery, statBonuses.mastery, STATCONVERSION.MASTERYMULT[spec], masteryEffectiveness, stats.mastery);
 
     //getClassicRaceBonuses(stats, race);
     return stats;
