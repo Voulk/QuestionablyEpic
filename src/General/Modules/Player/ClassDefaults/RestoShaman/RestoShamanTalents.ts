@@ -2,7 +2,7 @@
 import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTimePerc, modCastTimeFlat, cooldownAdjFlat, addStatPerc, adjBuffDurationFlat, attachSpellEffect, adjTargetCount } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
 
 /**A list of talents to turn on*/
-export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Keeper of the Grove") => {
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Totemic") => {
     let talentsEnabled: string[] = []
     let halfTalents: string[] = []
 
@@ -438,7 +438,7 @@ const heroTalents: TalentTree = {
 
     /* Learn a new weapon imbue, Tidecaller's Guard.  */
     "Supportive Imbuements": {id: 445033, values: [25.0, 100.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_fortifyingwaters", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        if (state.talents.enhancedImbues){
+        if (state.talents["Enhanced Imbues"]){
             adjBuffDurationFlat(spellDB["Healing Stream Totem"], 3600),
             adjBuffDurationFlat(spellDB["Stormstream Totem"], 3600),
             addStatPerc(state.statBonuses, "genericHealingMult", 2.4);
@@ -451,7 +451,8 @@ const heroTalents: TalentTree = {
 
     /* Chain Heals from Lively Totem and Totemic Rebound are Z% more effective. */
     "Totemic Coordination": {id: 445036, values: [15.0, 30.0, 25.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_echooftheelements", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        //Implemented in profile
+        buffSpellPerc(spellDB["Chain Heal (Totemic Rebound)"], talentValues[2])
+        //Lively totems chain heal is handled in profile
     }},
 
     /* Allies affected by your Earthliving effect receive Z% increased healing from you. */

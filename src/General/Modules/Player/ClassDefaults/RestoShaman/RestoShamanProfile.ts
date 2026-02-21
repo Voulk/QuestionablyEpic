@@ -8,7 +8,6 @@ import {
     applyRaidBuffs,
     printHealingBreakdownWithCPM,
     convertStatPercentages,
-    getSpellEntry,
     getSpellThroughput,
     applyTalents,
     completeCastProfile,
@@ -116,7 +115,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // Add Surging for totemic or rain if talented for farseer
-    // Swiftness procs one guaranteed SST and we also keep the cpm to apply the free spell from it later
+    // Swiftness procs one guaranteed SST and also gets us one free chain heal (which should be better than healing wave when its free)
     let swiftnessCPM
     if (playerData.heroTree === "Totemic") {
         castProfile.push({spell: "Surging Totem", efficiency: 1})
@@ -136,6 +135,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         castProfile.push({spell: "Riptide", cpm: (8 / 10 * swiftnessCPM) / spellDB["Riptide"][0].cooldownData.cooldown})
     }
     castProfile.push({spell: "Stormstream Totem", cpm: swiftnessCPM, label: "Stormstream Totem - Swiftness Proc"})
+    // This is our free chain heal from swiftness, if we are farseer the swiftness also increases it by 10%
+    castProfile.push({spell: "Chain Heal", cpm: swiftnessCPM, manaOverride: 0, castTimeOverride: 0, mult: (playerData.heroTree === "Farseer") ? 1.1 : 1, label: "Chain Heal - Swiftness Cast"})
 
     // Earth shield has a 3s icd but in actual logs it procs aprox every 5 seconds on tanks that are taking constant damage
     const avgEarthShieldTickTime = 5
@@ -273,9 +274,6 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     }
 
-    // This is our free chain heal from swiftness, if we are farseer the swiftness also increases it by 10%
-    castProfile.push({spell: "Chain Heal", cpm: swiftnessCPM, manaOverride: 0, castTimeOverride: 0, mult: (playerData.heroTree === "Farseer") ? 1.1 : 1, label: "Chain Heal - Swiftness Cast"})
-
     // Check our current mana usage
     const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride ?? 1))), 0);
@@ -343,7 +341,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         // Final Calling makes ancestors cast one hydrobubble when they go away
         // I assume there is no practical purpose to "when they depart" and we just care about one ancestor = one hydrobubble
         const ancestorSpawns = getCPM(castProfile, "Unleash Life") + swiftnessCPM
-        // TODO: Hydrobubble is not in the spellDB
+        // TODO: Hydrobubble is not in the spellDB - https://www.wowhead.com/spell=444490
         //castProfile.push({spell: "Hydrobubble", cpm: ancestorSpawns, autoSpell: true})
     }
 
@@ -352,6 +350,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Tidewaters heals everyone with Riptide every time we cast Surging or Rain
     if (hasTalent(talents, "Tidewaters")){
+        // Is this the correct way?
         spellDB["Tidewaters"][0].targets = getCPM(castProfile, "Riptide")
         castProfile.push({spell: "Tidewaters", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")), autoSpell: true})
     }
@@ -367,7 +366,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         state.statPercentages.genericHealingMult *= 1 + (averageDelugeIncrease / 100)
     }
 
-    // Now to unravel Earthliving Weapon
+    // Now to figure out Earthliving Weapon
     if (hasTalent(talents, "Earthliving Weapon")){
         // Totemic gets ELW from totem heals
         if (hasTalent(talents, "Primal Catalyst")){
