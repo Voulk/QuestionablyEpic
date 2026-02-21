@@ -1,4 +1,6 @@
 
+import { baseTalents } from "../DisciplinePriest/DiscSpellDB";
+import { hasTalent } from "../Generic/RampBase";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoShamanSpellDB.json";
 import { shamanTalents } from "./RestoShamanTalents";
@@ -49,6 +51,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const castBreakdown: Record<string, number> = {};
 
     // Apply Talents
+    const talents = initialState.talents;
     applyTalents(initialState, spellDB, initialState.statBonuses);
     
     // The state variable that will be passed into each spell calculation. 
@@ -61,6 +64,14 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB);
+
+    const ascendanceSpellPrio = {"Chain Heal": 0.9, "Healing Wave": 0.1}
+    const ascendanceDuration = 20 + (hasTalent(talents, "Preeminance") ? 3 : 0); // Add any talents you need here.
+    const ascendanceHaste = state.statPercentages.haste * (hasTalent(talents, "Preeminance") ? 1.25 : 0);
+    const ascendanceSpellCount = ascendanceDuration / spellDB["Chain Heal (Ascendance)"][0].castTime * ascendanceHaste;
+    const ascendanceUptime = ascendanceDuration / 180; // Whatever, setup talents or pull spell data for this.
+
+    castProfile.push({spell: "Chain Heal (Ascendance)", cpm: ascendanceSpellCount * ascendanceUptime * ascendanceSpellPrio["Chain Heal"], label: "Ascendance - Chain Heal"});
 
     // Handle mana and begin to construct filler spells.
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost! * spell.cpm!)), 0);
