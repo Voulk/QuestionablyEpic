@@ -1049,12 +1049,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     let sourceCheck = true;
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
-      // Check the item drops from the expected location.
-      if (item.id === 235499 && source !== "S3 Dinar") sourceCheck = true;
-      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
-      else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
-      else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
-      else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      // Check the item drops from the expected location
+      //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
+      if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
+      else if (source === "Retail Raid" && sources) sourceCheck = ([1312, 1314, 1308, 1307].includes(sources.instanceId));
+      else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }

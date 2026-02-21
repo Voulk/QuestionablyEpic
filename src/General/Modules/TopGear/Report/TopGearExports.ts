@@ -76,6 +76,19 @@ const wowheadCodes = {
   2747: "[=retail-raid-tww-s3-fractillus]",
   2690: "[=retail-raid-tww-s3-nexus-king]", 
   2691: "[=retail-raid-tww-s3-dimensius]", 
+
+  2795: "[icon name=inv_120_raid_dreamwell_malformedmanifestation][/icon][url guide=33231]Chimaerus[/url] [i](Raid)[/i]", // Chimaerus
+
+  // Voidspire
+  2733: "[icon name=inv_120_raid_voidspire_hostgeneral][/icon][url guide=33223]Imperator Averzian[/url] [i](Raid)[/i]", // Imperator Averzian
+  2734: "[icon name=inv_120_raid_voidspire_kaiju][/icon][url guide=33224]Vorasius[/url] [i](Raid)[/i]", // Vorasius
+  2736: "[icon name=inv_120_raid_voidspire_salhadaar][/icon][url guide=33225]Fallen-King Salhadaar[/url] [i](Raid)[/i]", // Fallen-King Salhadaar
+  2735: "[icon name=inv_120_raid_voidspire_dragonduo][/icon][url guide=33226]Vaelgor & Ezzorak[/url] [i](Raid)[/i]", // Vaelgor & Ezzorak
+  2737: "[icon name=inv_120_raid_voidspire_paladintrio][/icon][url guide=33227]Lightblinded Vanguard[/url] [i](Raid)[/i]", // Lightblinded Vanguard
+  2738: "[icon name=inv_120_raid_voidspire_alleria][/icon][url guide=33228]Crown of the Cosmos[/url] [i](Raid)[/i]", // Crown of the Cosmos
+
+  2739: "[icon name=inv_120_raid_marchonqueldanas_lightvoidphoenix][/icon][url guide=33233]Belo'ren[/url] [i](Raid)[/i]", // Belo'ren
+  2740: "[icon name=inv_120_raid_marchonqueldanas_lura][/icon][url guide=33234]Midnight Falls[/url] [i](Raid)[/i]", // Midnight Falls
   
 
   // Dungeons
@@ -95,6 +108,23 @@ const wowheadCodes = {
   1185: "[=retail-dun-halls-of-atonement]", // The Halls of Atonement
   1270: "[=retail-dun-dawnbreaker]", // Dawnbreaker
   1271: "[=retail-dun-ara-kara]", // Ara'kara
+
+  1315: "[icon name=inv_achievement_dungeon_maisarahills][/icon][url guide=33181]Maisara Caverns[/url]", // Maisara Cavern
+  1316: "[icon name=inv_achievement_dungeon_nexuspointxenas][/icon][url guide=33182]Nexus Point Xenas[/url]", // Nexus-Point Xenas
+  1311: "", // Den of Nalorakk
+  1309: "", // The Blinding Vale
+  1304: "", // Murder Row
+  1300: "[icon name=inv_achievement_dungeon_magisters_terrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace 
+  1299: "[icon name=inv_achievement_dungeon_windrunnerspire][/icon][url guide=33184]Windrunner Spire[/url]", // Windrunner Spire
+  1313: "", // Voidscar Arena
+
+  1201: "[icon name=achievement_dungeon_dragonacademy][/icon][url guide=33197]Algeth'ar Academy[/url]", // Algethar Academy 
+  278: "[icon name=inv_achievement_dungeon_pitofsaron][/icon][url guide=33198]Pit of Saron[/url]", // Pit of Saron 
+  476: "[icon name=achievement_dungeon_arakkoaspires][/icon][url guide=33199]Skyreach[/url]", // Skyreach
+  945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
+
+
+
 
   // Classic
   // Dungeons
@@ -192,7 +222,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
   // [tr][td]Cloak[/td][td][item=212446 bonus=[=gv-raid]][/td][td][npc=215657][/td][/tr]
   const classColor = wowheadClassColors[spec.replace(" Classic", "")];
   const results = ["[center][table class=grid width=900px]", "[tr]", `[td background=${classColor}][b]Slot[/b][/td]`, `[td background=${classColor}][b]Item[/b][/td]`, `[td background=${classColor}][b]Source[/b][/td]`, "[/tr]"];
-  
+  const tierPiece = "[icon name=inv_achievement_raid_voidspire][/icon][url guide=33180]Raid[/url] | [icon name=inv_radientazeritematrix][/icon][url guide=33219]Catalyst[/url] | [icon name=ability_racial_packhobgoblin][/icon][url guide=17592]Vault[/url]"
 
   itemSet.forEach(item => {
     let colourTag = "";
@@ -213,7 +243,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
       else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
       else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
-      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && item.source.instanceId === CONSTANTS.currentRaidID && item.setID > 0) source = "[=retail-links-tier-" + item.slot.toLowerCase() + "]";
+      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidID.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
