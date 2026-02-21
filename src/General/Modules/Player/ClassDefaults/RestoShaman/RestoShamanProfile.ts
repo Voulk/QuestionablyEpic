@@ -1,6 +1,4 @@
 
-import { baseTalents } from "../DisciplinePriest/DiscSpellDB";
-import { hasTalent } from "../Generic/RampBase";
 import { runSpellScript } from "../Generic/SpellScripts";
 import { hasTalent, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import specSpellDB from "./RestoShamanSpellDB.json";
