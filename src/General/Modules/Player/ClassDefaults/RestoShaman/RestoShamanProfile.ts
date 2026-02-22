@@ -473,7 +473,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
-            const totalOutput = (spellOutput * effectiveCPM);
+            const totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult ?? 1));
 
             if (totalOutput > 0) {
                 const label = spellProfile.label || spellName;

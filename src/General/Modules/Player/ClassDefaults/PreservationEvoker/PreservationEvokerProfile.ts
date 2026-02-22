@@ -266,7 +266,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
             const effectiveCPM = spellProfile.cpm! || 0;
 
-            const totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult || 1));
+            const totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult ?? 1));
             if (totalOutput > 0) {
                 const label = spellProfile.label || spellName;
 
