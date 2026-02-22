@@ -1,5 +1,33 @@
 
-import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTimePerc, modCastTimeFlat, cooldownAdjFlat, addStatPerc, adjBuffDurationFlat } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
+import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTimePerc, modCastTimeFlat, cooldownAdjFlat, addStatPerc, adjBuffDurationFlat, attachSpellEffect, adjTargetCount } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
+
+/**A list of talents to turn on*/
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Totemic") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+        //Class Tree
+        "Spiritual Awakening", "Enhanced Imbues", "Totemic Focus", "Nature's Fury", "Mana Spring", "Therazane's Resilience", "Totemic Surge", "Instinctive Imbuements",
+        //Spec Tree
+        "Soothing Rain", "Water Totem Mastery", "Overflowing Shores", "First Ascendant", "Living Stream", "White Water", "Quickstream", "Rip Current", "Torrent",
+        "Deluge", "Earthen Accord", "Tidal Waves", "Improved Earthliving Weapon", "Ancestral Reach", "Echo of the Elements", "Undercurrent", "Wavespeaker's Blessing",
+        "Primal Tide Core", "Coalescing Water", "Ascendance", "Resurgence", "Ancestral Awakening", "Earthliving Weapon",
+        // Option 1
+        "Deeply Rooted Elements",
+        // Option 2
+        //"Downpour", "Water Expulsion", "Double Dip",
+        //Hero Talents
+        "Amplification Core", "Totemic Coordination", "Supportive Imbuements"
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+        }
+    })
+}
 
 const classTalents: TalentTree = {
     /* Increases all Fire and Frost damage you deal by X%. */
@@ -15,13 +43,12 @@ const classTalents: TalentTree = {
 
     /* Mastery increased by X%. */
     "Spiritual Awakening": {id: 1270375, values: [3.0],  points: 0, maxPoints: 1, icon: "spell_shaman_blessingoftheeternals", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        addStatPerc(state.statbonuses, 'mastery', talentValues[0])
+        addStatPerc(state.statBonuses, 'mastery', talentValues[0])
     }},
 
     /* The effects of your weapon $?a137041[][and shield ]imbues are increased by $?c1[X]?c2[Y]?c3[Z][]%. */
     "Enhanced Imbues": {id: 462796, values: [30.0, 15.0, 20.0, 30.0, 30.0, 20.0, 20.0, 20.0, 30.0, 20.0],  points: 0, maxPoints: 1, icon: "spell_nature_rockbiter", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB["Earthliving Weapon"], talentValues[9])
-        //Missing effects from Tidecallers Guard
     }},
 
     /* Your Healing $?a137039[Wave][Surge] is X% more effective on yourself.   */
@@ -31,7 +58,11 @@ const classTalents: TalentTree = {
 
     /* Increases the critical strike chance of your Nature spells and abilities by X%. */
     "Nature's Fury": {id: 381655, values: [2.0, 2.0],  points: 0, maxPoints: 2, icon: "spell_nature_spiritarmor", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        Object.keys(spellDB).forEach(spellName => {
+            if(spellDB[spellName][0].school === "nature"){
+                buffSpellCritChance(spellDB[spellName], talentValues[0] * points)
+            }
+        })
     }},
 
     /* Increases the radius of your totem effects by Z%.    Increases the duration of your Earthbind and Earthgrab Totems by ${X/1000} sec.    Increases the duration of your $?s157153[Cloudburst][Healing Stream], Tremor, Poison Cleansing, $?s137039[Ancestral Protection, Earthen Wall, ][]and Wind Rush Totems by ${Y/1000}.1 sec. */
@@ -47,7 +78,7 @@ const classTalents: TalentTree = {
 
     /* Earth Shield $?c3[and Water Shield no longer lose charges and are][no longer loses charges and is] ${100+X}% effective. */
     "Therazane's Resilience": {id: 1217622, values: [15.0, -99.0, -99.0, 15.0, 15.0, -99.0, -99.0, 800.0],  points: 0, maxPoints: 1, icon: "shaman_pvp_rockshield", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Earth Shield"], talentValues[0])
     }},
 
     /* When refreshing Earth Shield, your target is healed for $462477s1 for each stack of Earth Shield they are missing.$?c3[    When refreshing Water Shield, you are refunded $462479s1 mana for each stack of Water Shield missing.][]    Additionally, Earth Shield$?c3[ and Water Shield][] can consume charges ${Y/-1000}.1 sec faster. */
@@ -65,7 +96,7 @@ const classTalents: TalentTree = {
     /* $?c3[Water][Lightning] Shield increases your $?c2[Agility][Intellect] by X%.    Casting $?c3[Water][Lightning] Shield also applies Earth Shield to yourself and any weapon imbuements if known. */
     "Instinctive Imbuements": {id: 1270350, values: [3.0, 3.0],  points: 0, maxPoints: 1, icon: "ability_shaman_ascendance", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, 
     talentValues: number[], points: number) {
-        addStatPerc(state.statbonuses, 'intellect', talentValues[1])
+        addStatPerc(state.statBonuses, 'intellect', talentValues[1])
     }},
 }
 
@@ -88,7 +119,8 @@ const specTalents: TalentTree = {
 
     /* $?a455630[Surging Totem][Healing Rain] instantly restores $383223s1 health to Z allies within its area, and its radius is increased by X $Lyard:yards;. */
     "Overflowing Shores": {id: 383222, values: [2.0, 2.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        attachSpellEffect(spellDB["Healing Rain"], spellDB["Overflowing Shores"]),
+        attachSpellEffect(spellDB["Surging Totem"], spellDB["Overflowing Shores"])
     }},
 
     /* The cooldown of Ascendance$?a137039[ and Healing Tide Totem][] is reduced by ${X/-1000} sec. */
@@ -99,12 +131,13 @@ const specTalents: TalentTree = {
 
     /* Your haste is increased by Y% $?a137039 [while Ascendance or Healing Tide Totem is active and their durations are][during Ascendance and its duration is] increased by ${X/1000} sec. */
     "Preeminence": {id: 462443, values: [3000.0, 25.0, 25.0],  points: 0, maxPoints: 1, icon: "spell_shaman_improvedreincarnation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        adjBuffDurationFlat(spellDB["Ascendance"], talentValues[0])
+        adjBuffDurationFlat(spellDB["Healing Tide Totem"], talentValues[0])
     }},
 
     /* Your direct heal criticals refund a percentage of your maximum mana: $<healingwave>% from Healing Wave, $<riptide>% from Riptide, and $<chainheal>% from Chain Heal. */
     "Resurgence": {id: 16196, values: [100.0],  points: 0, maxPoints: 1, icon: "ability_shaman_watershield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Healing Stream Totem heals for X% more, decaying over its duration. */
@@ -120,7 +153,7 @@ const specTalents: TalentTree = {
 
     /* Your critical heals have ${Y+X}% effectiveness instead of the usual Y%. */
     "White Water": {id: 462587, values: [15.0, 200.0],  points: 0, maxPoints: 1, icon: "ability_shawaterelemental_swirl", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, 'critMult', talentValues[0])
     }},
 
     /* Reduces the mana cost of Chain Heal by X%. */
@@ -130,7 +163,8 @@ const specTalents: TalentTree = {
 
     /* Healing Stream Totem heals ${100*(1/(1+X/100)-1)}% more often. */
     "Quickstream": {id: 1253099, values: [-13.0],  points: 0, maxPoints: 1, icon: "inv_spear_04", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Healing Stream Totem"][0]["tickData"]["tickRate"] *= 1 + (talentValues[0] / 100)
+        spellDB["Stormstream Totem"][0]["tickData"]["tickRate"] *= 1 + (talentValues[0] / 100)
     }},
 
     /* Reduces the cooldown of Riptide by ${X/-1000}.1 sec. */
@@ -151,12 +185,12 @@ const specTalents: TalentTree = {
 
     /* Increases Earth Shield healing by X%. */
     "Earthweaver": {id: 1254210, values: [40.0],  points: 0, maxPoints: 1, icon: "spell_nature_skinofearth", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Earth Shield"], talentValues[0])
     }},
 
     /* Healing Wave and Chain Heal heal for an additional X% on targets affected by your Healing Rain or Riptide. */
     "Deluge": {id: 200076, values: [15.0, 15.0],  points: 0, maxPoints: 1, icon: "ability_shawaterelemental_reform", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Unleash Life heals for X% more and its bonus healing effect is increased by Y%. */
@@ -172,18 +206,22 @@ const specTalents: TalentTree = {
 
     /* Earthliving receives X% additional benefit from Mastery: Deep Healing.    Healing Wave always triggers Earthliving on its target. */
     "Improved Earthliving Weapon": {id: 382315, values: [150.0, 0.0],  points: 0, maxPoints: 1, icon: "spell_shaman_giftearthmother", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Earthliving Weapon"].forEach((slice, i) => {
+            if (!slice.statMods) slice.statMods = {};
+            if (!('masteryMult' in slice.statMods)) slice.statMods.masteryMult = 0;
+            slice.statMods.masteryMult += talentValues[0] / 100;
+        })
     }},
 
     /* Chain Heal bounces an additional time and its healing is increased by Y%. */
     "Ancestral Reach": {id: 382732, values: [1.0, 8.0],  points: 0, maxPoints: 1, icon: "inv_1115_shaman_chainheal", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Chain Heal"], talentValues[1])
-        //Missing the extra jump
+        buffSpellPerc(spellDB["Chain Heal"], talentValues[1]),
+        adjTargetCount(spellDB["Chain Heal"], 1)
     }},
 
     /* Chain Heal bounces an additional time and casting Chain Heal on a target affected by Riptide consumes Riptide, increasing the healing of your Chain Heal by X%.     */
     "Flow of the Tides": {id: 382039, values: [30.0, 1.0],  points: 0, maxPoints: 1, icon: "spell_frost_manarecharge", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        adjTargetCount(spellDB["Chain Heal"], 1)
     }},
 
     /* $?s137039[Riptide and Lava Burst have][Lava Burst has] an additional charge. */
@@ -198,7 +236,7 @@ const specTalents: TalentTree = {
 
     /* Increases Downpour healing by X%. */
     "Water Expulsion": {id: 1253014, values: [20.0],  points: 0, maxPoints: 1, icon: "inv_elemental_primal_water", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Downpour"], talentValues[0]) //Downpour is not in spellDB
+        buffSpellPerc(spellDB["Downpour"], talentValues[0])
     }},
 
     /* When you heal with your Healing Wave or Riptide you have a Y% chance to summon an Ancestral spirit to aid you, instantly healing an injured friendly party or raid target within 40 yards for 
@@ -210,33 +248,33 @@ const specTalents: TalentTree = {
     /* When you cast $?a455630[Surging Totem][Healing Rain], each ally with your Riptide on them is healed for $462425s1. */
     "Tidewaters": {id: 462424, values: [1.0],  points: 0, maxPoints: 1, icon: "ability_shawaterelemental_split", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
     any, points: number) {
-
+        //Implemented in profile
     }},
 
     /* For each Riptide active on an ally, your heals are ${Y/10}.1% more effective. */
     "Undercurrent": {id: 382194, values: [0.5, 5.0, 0.5],  points: 0, maxPoints: 2, icon: "spell_fire_bluehellfire", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Spirit Link Totem reduces damage taken by an additional X%, and it restores $462384s1 health to all nearby allies $m2 $Lsecond:seconds; after it is dropped. Healing reduced beyond Z targets.   */
     "Spouting Spirits": {id: 462383, values: [-5.0, 1.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_shaman_spiritlink", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        attachSpellEffect(spellDB["Spirit Link Totem"], spellDB["Spouting Spirits"])
     }},
 
     /* Increases Riptide's duration by ${X/1000}.1 sec and its healing over time by Y%. */
     "Wavespeaker's Blessing": {id: 381946, values: [6000.0, 15.0],  points: 0, maxPoints: 2, icon: "inv_alchemist_81_spiritedalchemiststone", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Riptide"], talentValues[1], 1)
-        //Missing duration increase
+        buffSpellPerc(spellDB["Riptide"], talentValues[1], 1),
+        adjBuffDurationFlat(spellDB["Riptide"], talentValues[0], 1)
     }},
 
     /* $?a455630[Surging Totem][Healing Rain] grants an additional use of Downpour.   */
     "Double Dip": {id: 1252882, values: [1.0],  points: 0, maxPoints: 1, icon: "spell_shaman_tidalwaves", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Every X casts of Riptide also applies Riptide to another friendly target near your Riptide target. */
     "Primal Tide Core": {id: 382045, values: [4.0],  points: 0, maxPoints: 1, icon: "ability_shaman_repulsiontotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Healing Wave and Chain Heal increase the initial healing of your next Riptide by $470077s1%, stacking up to $470077u times. */
@@ -251,7 +289,7 @@ const specTalents: TalentTree = {
 
     /* Riptide has a X% chance to upgrade your next Healing Stream Totem to Stormstream Totem which heals for Y% more, heals Z additional $Lally:allies; at $s4% effectiveness, and heals $s5 injured allies for $1268684s1 healing when used. */
     "Stormstream Totem1": {id: 1267016, values: [6.0, 10.0, 1.0, 100.0, 2.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Healing Stream and Stormstream Totem healing increased by X%. */
@@ -262,7 +300,7 @@ const specTalents: TalentTree = {
 
     /* Casting $?s443454[Ancestral][Nature's] Swiftness grants a use of Stormstream Totem and Stormstream Totem no longer consumes a charge of Healing Stream Totem when used. */
     "Stormstream Totem3": {id: 1267120, values: [0.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 }
 
@@ -311,13 +349,13 @@ const heroTalents: TalentTree = {
 
     /* Chain Heal now jumps to a nearby totem within $458357A3 yards once it reaches its last target, causing the totem to cast Chain Heal on an injured ally within $458357r yards for $458357s1. Jumps to X nearby targets within $458357A3 yards. */
     "Totemic Rebound": {id: 445025, values: [2.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_vehicle_electrocharge", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        attachSpellEffect(spellDB["Chain Heal"], spellDB["Chain Heal (Totemic Rebound)"])
     }},
 
     /* While Surging Totem is active, your damage and healing done is increased by $456369s1%. */
     "Amplification Core": {id: 445029, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_evoker_essenceburststacks", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "genericHealingMult", 3);
     }},
 
     /* Surging Totem $?a462110[heals for X% more][deals Y% more damage] while Ascendance or Healing Tide Totem is active. */
@@ -327,7 +365,7 @@ const heroTalents: TalentTree = {
 
     /* When you summon a Healing Tide Totem, Healing Stream Totem, or Spirit Link Totem you cast a free instant Chain Heal at $458221s2% effectiveness. */
     "Lively Totems": {id: 445034, values: [0.0, 0.0, 5.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_fire_searingtotem", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implement in profile
     }},
 
     /* Reduces the cooldown of Healing Stream Totem by ${Z/-1000} sec. */
@@ -353,19 +391,20 @@ const heroTalents: TalentTree = {
 
     /* Your Healing Stream Totems heals an additional ally at Z% effectiveness. Healing Tide Totem healing increased by Y%. */
     "Splitstream": {id: 445035, values: [80.0, 25.0, 30.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_rhyolith_lavapool", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Healing Tide Totem"], talentValues[1])
-        //Missing healing stream extra target
+        buffSpellPerc(spellDB["Healing Tide Totem"], talentValues[1]),
+        adjTargetCount(spellDB["Healing Stream Totem"], 0.3),
+        adjTargetCount(spellDB["Stormstream Totem"], 0.3)
     }},
 
     /* Mastery increased by X%. */
     "Elemental Attunement": {id: 1263288, values: [2.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_10_elementalcombinedfoozles_primordial", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        addStatPerc(state.statbonuses, 'mastery', talentValues[0])
+        addStatPerc(state.statBonuses, 'mastery', talentValues[0])
     }},
 
     /* Earth Shield has an additional X charges and heals you for Z% more. */
     "Earthen Communion": {id: 443441, values: [3.0, 3.0, 25.0, -3.0, -3.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_nature_skinofearth", select: true, tier: 2, runFunc: function 
     (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Earth Shield"], talentValues[2])
     }},
 
     /* Increases the healing done by Healing Wave, Downpour, and Chain Heal by Y%. */
@@ -394,17 +433,26 @@ const heroTalents: TalentTree = {
 
     /* $?a137041[Increases the damage of Surging Totem by X%.][Increases the healing done by Surging Totem by Y%.] */
     "Pulse Capacitor": {id: 445032, values: [18.0, 25.0, 18.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_nature_elementalprecision_1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Surging Totem"], talentValues[1]) //Surging or Rain??
+        buffSpellPerc(spellDB["Surging Totem"], talentValues[1])
     }},
 
     /* Learn a new weapon imbue, Tidecaller's Guard.  */
     "Supportive Imbuements": {id: 445033, values: [25.0, 100.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_fortifyingwaters", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        if (state.talents["Enhanced Imbues"]){
+            adjBuffDurationFlat(spellDB["Healing Stream Totem"], 3600),
+            adjBuffDurationFlat(spellDB["Stormstream Totem"], 3600),
+            addStatPerc(state.statBonuses, "genericHealingMult", 2.4);
+        } else {
+            adjBuffDurationFlat(spellDB["Healing Stream Totem"], 3000),
+            adjBuffDurationFlat(spellDB["Stormstream Totem"], 3000),
+            addStatPerc(state.statBonuses, "genericHealingMult", 2);
+        }
     }},
 
     /* Chain Heals from Lively Totem and Totemic Rebound are Z% more effective. */
     "Totemic Coordination": {id: 445036, values: [15.0, 30.0, 25.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_echooftheelements", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Chain Heal (Totemic Rebound)"], talentValues[2])
+        //Lively totems chain heal is handled in profile
     }},
 
     /* Allies affected by your Earthliving effect receive Z% increased healing from you. */
@@ -420,6 +468,22 @@ const heroTalents: TalentTree = {
     /* Elemental Motes orbit your Surging Totem. Your abilities can consume them for the following effects: Earth Mote: Your next Chain Heal applies Earthliving at 150% effectiveness to all targets hit. Air: The cast time of your next healing spell is reduced by 40%. Water: Your next Healing Wave also heals an ally inside your healing rain at 100% effectiveness. */
     "Whirling Elements": {id: 445024, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_10_enchanting2_elementalswirl_color1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
+    }},
+
+    /* Talent Stubs and Other stuff */
+
+    "Earthliving Weapon": {id: 382021, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_giftearthmother", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+    "Healing Tide Totem": {id: 108280, values: [], points: 0, maxPoints: 1, icon: "ability_shaman_healingtide", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+    "Ascendance": {id: 114052, values: [], points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+    "Spirit Link Totem": {id: 98008, values: [], points: 0, maxPoints: 1, icon: "spell_shaman_spiritlink", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+    "Downpour": {id: 462486, values: [], points: 0, maxPoints: 1, icon: "ability_mage_waterjet", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+    "Healing Rain": {id: 73920, values: [], points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
+
+    /* This is the totemic aura */
+    "Totemic Init": {id: 455630, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_ability_totemicshaman_surgingtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        buffSpellPerc(spellDB["Downpour"], 100),
+        buffSpellPerc(spellDB["Overflowing Shores"], 100),
+        buffSpellPerc(spellDB["Tidewaters"], 100)
     }},
 }
 

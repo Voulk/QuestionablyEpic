@@ -13,17 +13,19 @@ describe("Generic Profile Testing Environment", () => {
         // PlayerData will be hooked into the ecosystem in more detail soon.
         // Right now some of these are reiterated in scoreShamanSet but that can be cleaned up later.
         // Settings needs to be expanded and will include metrics like mastery efficiency that a player can edit. 
-        // Mastery will probably look very OP before that's added. 
-        const playerData = { spec: "Restoration Shaman", profileName: "Farseer", settings: {}, masteryEffectiveness: 1 }
+        // Mastery will probably look very OP before that's added.
+        const playerData = { spec: "Restoration Shaman", heroTree: "Totemic", profileName: "Totemic", stats: activeStats,
+                                masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"] }
+        const settings = {averageRaidHealth: 0.8}
     
 
         const data = restoShamanProfile.scoreSet(activeStats, playerData);
 
+        buildStatWeights(playerData, scoreShamanSet, {});
         console.log(data);
 
         expect(true).toEqual(true);
 
-        buildStatWeights(playerData, scoreShamanSet, {});
  
     })
 
