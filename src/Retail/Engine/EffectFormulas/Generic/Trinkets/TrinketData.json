@@ -1,4 +1,16 @@
 {
+    "Echo of L'ura": [
+        {
+            "coefficient": 19.42865753174,
+            "scalingClass": -9
+        }
+    ],
+    "Emerald Coach's Whistle": [
+        {
+            "coefficient": 2.02112174034,
+            "scalingClass": -7
+        }
+    ],
     "Volatile Void Suffuser": [
         {
             "coefficient": 0.85835248232,
@@ -181,18 +193,6 @@
         {
             "coefficient": 459.48999023438,
             "scalingClass": -9
-        }
-    ],
-    "Echo of L'ura": [
-        {
-            "coefficient": 19.42865753174,
-            "scalingClass": -9
-        }
-    ],
-    "Emerald Coach's Whistle": [
-        {
-            "coefficient": 2.02112174034,
-            "scalingClass": -7
         }
     ]
 }

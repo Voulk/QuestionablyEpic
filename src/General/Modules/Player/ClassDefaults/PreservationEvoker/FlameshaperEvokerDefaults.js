@@ -36,7 +36,7 @@ export const evokerDefaultSpellData = (contentType) => {
       crit: 0.37, 
       mastery: 0.5, 
       versatility: 0.33, 
-      leech: 0.55,
+      leech: 0.45,
       defaults: true,
     };
     statWeights.Dungeon = {
