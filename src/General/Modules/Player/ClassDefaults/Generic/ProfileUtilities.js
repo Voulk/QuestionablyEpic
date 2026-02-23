@@ -118,7 +118,6 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
 export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
-
     fullSpell.forEach(spell => {
         if (spell.spellType === "heal" || spell.buffType === "heal") {
             throughput.healing += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
@@ -127,7 +126,7 @@ export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flag
             throughput.damage += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
         }
     })
-
+    console.log(throughput);
     return throughput;
 }
 

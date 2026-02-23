@@ -5,6 +5,7 @@ import { shamanTalents } from "General/Modules/Player/ClassDefaults/RestoShaman/
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry, buildFormulatedChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
+import { addAscendanceSpells } from "./RestoShamanProfile";
 
 export const buildShamanChartData = (activeStats) => {
     //
@@ -23,8 +24,14 @@ export const buildShamanChartData = (activeStats) => {
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...shamanTalents};
     Object.keys(talents).forEach(talentName => {
-        if (talents[talentName].heroTree === "Keeper of the Grove") talents[talentName].points = 1;
+        if (talents[talentName].heroTree === "Totemic") talents[talentName].points = 1;
     })
+
+    if (restoShamanSpellDB["Healing Wave (Ascendance"]) {}
+    else {
+        addAscendanceSpells(restoShamanSpellDB);
+    }
+
     let sequences = Object.keys(restoShamanSpellDB).map(spellKey => {
         const spell = restoShamanSpellDB[spellKey][0];
         let catSuffix = ""
@@ -81,7 +88,7 @@ export const buildShamanChartData = (activeStats) => {
         }
         else if (cat.includes("Base Spells")) {
             const fullSpell = restoShamanSpellDB[sequence.seq[0]];
-            results.push(buildFormulatedChartEntry(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Shaman"}, null));
+            results.push(buildFormulatedChartEntry(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Shaman", masteryEffectiveness: 0.3}, null));
         }
         else {
             // All sequence based.

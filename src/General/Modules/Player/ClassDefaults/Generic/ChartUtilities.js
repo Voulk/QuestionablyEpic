@@ -65,7 +65,7 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
 
     data.manaSpent = spell[0].cost * 250000 / 100;
 
-    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1}
+    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1, critMult: 2, genericHealingMult: 1}
     console.log(playerData);
     const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
 

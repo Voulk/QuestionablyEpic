@@ -45,14 +45,16 @@ export const restoShamanProfile = {
 }
 
 // Ascendance spells are modified copies of the base ones so we add their own entries
-const addAscendanceSpells = (spellDB) => {
+export const addAscendanceSpells = (spellDB: SpellDB) => {
     let ascendanceHealingWave = deepCopyFunction(spellDB["Healing Wave"]);
+    ascendanceHealingWave[0].displayInfo.spellName = "Healing Wave (Ascendance)"
     if (!ascendanceHealingWave[0].statMods) ascendanceHealingWave[0].statMods = {};
     ascendanceHealingWave[0].statMods.crit = 1
     // Extra target is handled in profile
     spellDB["Healing Wave (Ascendance)"] = ascendanceHealingWave
 
     let ascendanceChainHeal = deepCopyFunction(spellDB["Chain Heal"]);
+    ascendanceChainHeal[0].displayInfo.spellName = "Chain Heal (Ascendance)"
     ascendanceChainHeal[0].targets += 3
     ascendanceChainHeal[0].specialFields.chainHealFalloff = 0.1
     ascendanceChainHeal[0].cost *= 0.75
