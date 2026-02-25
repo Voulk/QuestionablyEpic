@@ -237,7 +237,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (getSetting(userSettings, 'gemSettings') === ("Precise")) { // Add setting here.
+    if (false) { // Add setting here.
       if (gemPoss.length > 0) {
         gemPoss.forEach(gem => {
           resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
@@ -799,28 +799,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // The set has a Writhing Armor Banding so we'll double our other embellishment slot so long as it's Nerubian.
     setVariables.nerubianArmorPatch = 1;
   }
-  if (effectList.filter(effect => effect.name === "Diamantine Voidcore").length > 0) {
-    // Having voidcore buffs the power of the Voidglass Shards effect.
-    setVariables.hasVoidcore = true;
-  }
-  if (effectList.filter(effect => effect.name === "Reshii Boots").length > 0) {
-    // Check Upgrade track I guess
-    //console.log("Reshii Boots effect detected");
-    const boots = itemSet.itemList.filter(item => (item.effect && item.effect.name === "Reshii Boots"))[0];
-    const bootsPerc = {
-      "Veteran": 0.2,
-      "Champion": 0.3,
-      "Hero": 0.4,
-      "Myth": 0.5,
-    } 
-    if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
-    // These are fallbacks for if we can't find an upgrade track.
-    else if (boots.level >= 160) setVariables.reshiiBoots = 0.5;
-    else if (boots.level > 150) setVariables.reshiiBoots = 0.4;
-    else if (boots.level > 140) setVariables.reshiiBoots = 0.3;
-    else if (boots.level > 130) setVariables.reshiiBoots = 0.2;
-    
-  }
 
   for (var x = 0; x < effectList.length; x++) {
     const effect = effectList[x];
@@ -873,46 +851,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);
   } 
-
-  // Titan Disc Belt
-  if (builtSet.checkHasItem(242664) || builtSet.checkHasItem(245964) || builtSet.checkHasItem(245965) || builtSet.checkHasItem(245966)) {
-    const discBelt = builtSet.itemList.filter(item => item.flags.includes("DelveBelt"))[0];
-    const discEffect = discBelt.selectedOptions || [];
-    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
-
-    const discStats = getTitanBeltEffect(discEffect, player, discBelt.level, additionalData)
-
-    effectStats.push(discStats);
-  }
   
   const mergedEffectStats = mergeBonusStats(effectStats);
   
-
-  // Post-effect overrides. Use these very sparingly.
-  if (player.spec === "Preservation Evoker" && castModel.modelName === "Flameshaper") {
-    // Try and swap ring enchants and / or flask to hit breakpoint. 
-    const totalHaste = (setStats.haste || 0) + (mergedEffectStats.haste || 0);
-    if (totalHaste < 9834 && totalHaste > (9834 - 315 * 2)) {
-      // Haste enchants are enough to hit our breakpoint. Swap over. 
-      enchants["Finger"] = "+315 Haste";
-      setStats.haste = (setStats.haste || 0) + 315 * 2;
-      setStats.mastery = (setStats.mastery || 0) - 315 * 2;
-    }
-    else if (totalHaste < 9834 && totalHaste > (9834 - 2825)) {
-      // Haste Flask is enough to hit our breakpoint. Swap over. 
-      enchants.flask = "Flask of Tempered Swiftness";
-      setStats.haste = (setStats.haste || 0) + 2825;
-      setStats.mastery = (setStats.mastery || 0) - 2825;
-    }
-    else if (totalHaste < 9834 && totalHaste > (9834 - 2825 - 315 * 2)) {
-      // We need both flask and ring to hit our breakpoint.
-      enchants.flask = "Flask of Tempered Swiftness";
-      enchants["Finger"] = "+315 Haste";
-      setStats.haste = (setStats.haste || 0) + 2825 + 315 * 2;
-      setStats.mastery = (setStats.mastery || 0) - 2825 - 315 * 2;
-    }
-  }
-
+  console.log(JSON.stringify(castModel));
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (castModel.modelType[contentType] === "Sequences") {
@@ -931,14 +873,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
 
+    // 5% int bonus for wearing all Mail
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
-    // Raid Buffs
-    setStats.intellect = (setStats.intellect || 0) * 1.05;
-    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
-    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+    // Raid Buffs are now handled in-file.
+    const playerData = { spec: player.spec, heroTree: castModel.heroTree, settings: userSettings, stats: setStats, tierSets: usedSets, effectList: effectList,
+      masteryEffectiveness: 0.9};
+    //console.log(JSON.stringify(playerData));
+    console.log(castModel.runCastModel);
 
-    const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
+    const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
 
     setStats.hps = (setStats.hps || 0) + castModelResult.hps;
     
@@ -1012,7 +956,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // This is somewhat of an estimate but it's more reasonable than leaving it out entirely.
     // Note that this is actually a setting and players can opt out if they'd like the score to be personal benefit only.
     else if (stat === "allyStats" && evalStats.allyStats) {
-      if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
+      if (userSettings) {
         //hardScore += evalStats.allyStats * CONSTANTS.allyStatWeight;
         hardScore += getAllyStatsValue(contentType, evalStats.allyStats, player, userSettings) || 0
       }

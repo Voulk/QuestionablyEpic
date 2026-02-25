@@ -102,7 +102,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
     else if (key === "hps") {
       estHPS += value;
     }
-    else if (key === "allyStats" && playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+    else if (key === "allyStats" && playerSettings  && bonus_stats.allyStats) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.

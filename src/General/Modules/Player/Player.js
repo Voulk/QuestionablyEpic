@@ -679,9 +679,9 @@ export class Player {
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.castModels.push(new CastModel(spec, "Raid", "Farseer WW", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Farseer HW", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Totemic (Coming Soon)", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
       this.activeStats = {
         intellect: 750,
         haste: 540,

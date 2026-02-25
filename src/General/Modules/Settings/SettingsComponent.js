@@ -33,7 +33,7 @@ export default function SettingsComponent(props) {
 
   const dispatch = useDispatch();
 
-  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants", "specSpecific"];
+  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder", "specSpecific"] : ["topGear", "enchants", "specSpecific"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
   /* ---------------------------------------------------------------------------------------------- */

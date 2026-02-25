@@ -19,6 +19,7 @@ import { getSeasonalDungeons, getMoPDungeons } from "Databases/InstanceDB";
 import { classicGemDB } from "Databases/ClassicGemDB";
 import { ItemDamageTwoHand } from "Retail/Engine/ItemDamageTwoHand";
 import { ItemDamageOneHand } from "Retail/Engine/ItemDamageOneHand";
+import { setBounds } from "./CONSTRAINTS";
 
 
 
@@ -1196,7 +1197,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Add any group benefit, if we're interested in it.
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
-  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+  if (playerSettings && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
     score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings);
   }
@@ -1255,7 +1256,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
   // Add any group benefit, if we're interested in it.
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
-  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+  if (playerSettings && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
     score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings) / player.getInt() * player.getHPS(contentType);
   }
@@ -1267,10 +1268,11 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player, playerSettings: PlayerSettings) => { // Maybe add PlayerSettings
   const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
+  let groupBuffValuation = ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value ? playerSettings.groupBuffValuation.value : 100) / 100;
+  groupBuffValuation = setBounds(groupBuffValuation, 0, 1);
 
-  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "50%") return (dpsValue * 0.75 + healerValue * 0.25) * 0.5;
-  else if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "75%")return (dpsValue * 0.75 + healerValue * 0.25) * 0.75;
-  else return dpsValue * 0.75 + healerValue * 0.25;
+  return (dpsValue * 0.75 + healerValue * 0.25) * groupBuffValuation;
+
 }
 
 /*

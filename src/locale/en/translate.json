@@ -357,6 +357,10 @@
           "title": "Ominous Chromatic Allies",
           "tooltip": "Chromatic Ominous can be calculated with all or no ally buffs."
         },
+        "masteryEffectivenessShaman": {
+          "title": "Mastery Effectiveness",
+          "tooltip": "Expected Mastery Effectiveness. Can be pulled from a specific log on wowanalyzer.com. Top Gear only."
+        },
 
         "flaskChoice": {
           "title": "Flask",
@@ -378,10 +382,7 @@
           "title": "Overheal: Mr Pick-me-up",
           "tooltip": "Expected overhealing for the Mr Pick-me-up trinket."
         },
-        "ovinaxAverageIntStacks": {
-          "title": "Ovinax Avg Int Stacks",
-          "tooltip": "The number of intellect stacks you'll average with the Ovi'nax trinket. Secondary stacks auto-calculated."
-        },
+        
         "dpsFlag": {
           "title": "DPS Flag",
           "tooltip": "Include DPS for specs that don't do it naturally as part of their healing rotation. Does not effect Disc Priest, Pres Evoker. May effect which trinkets you can proc."

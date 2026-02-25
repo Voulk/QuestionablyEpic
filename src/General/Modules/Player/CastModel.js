@@ -14,7 +14,7 @@ import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatW
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
 import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
-
+import { scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
@@ -46,6 +46,7 @@ class CastModel {
   arrayID = 0;
   baseStatWeights = {}
   modelType = {"Raid": "Default", "Dungeon": "Default"};
+  runCastModel = null;
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -130,22 +131,25 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      if (modelID === "Farseer WW") {
-        this.modelName = "Farseer WW";
+      if (modelID === "Farseer HW") {
+        this.modelName = "Farseer HW";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
+        this.heroTree = "Farseer";
+        this.runCastModel = scoreShamanSet;
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
+
       }
       else {
-        this.modelName = modelID;
+        this.modelName = "Default";
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
         this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
       }
-
-
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
@@ -267,6 +271,7 @@ class CastModel {
 
     this.setSpellList(spellList);
     this.specialQueries = specialQueries;
+
   };
 
   getBaseStatWeights = () => {
