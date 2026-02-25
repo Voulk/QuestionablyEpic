@@ -78,7 +78,7 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 10 && gem.stats[littleStat] === 3);
+                                        && gem.stats[bigStat] === 12 && gem.stats[littleStat] === 5);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
@@ -87,48 +87,66 @@ function getGemID(bigStat: string, littleStat: string): number {
 
 // Return an array of gem IDs based on the spec and content type. 
 function getMidnightGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
-  const metaGem = 213746; // Elusive Meta Gem
+  const metaGem = 240983; // Elusive Meta Gem
+  const gemArray = Array(8);
+  gemArray[0] = metaGem;
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
     if (contentType === "Raid") {
-      return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
-        getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+      gemArray.fill(getGemID('mastery', 'haste'), 1);
+      return gemArray;
+      return [metaGem, getGemID('mastery', 'haste')]//, getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste')] //getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste',
+        //getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
     }
     else {
-      return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
-        getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+      gemArray.fill(getGemID('haste', 'crit'), 1);
+      return gemArray;
+      return [metaGem, getGemID('haste', 'crit')] /*, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+        getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
     }
 
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
-      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    return [metaGem, getGemID('crit', 'mastery'), getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
-                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];
+    gemArray.fill(getGemID('crit', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('crit', 'mastery')]/*, getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
+                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];*/
   }
   else if (spec === "Restoration Druid") {
     // Haste / Mastery
-    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
-      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    return [metaGem, getGemID('mastery', 'crit'), getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
-      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];
+    gemArray.fill(getGemID('mastery', 'haste'), 1);
+    return gemArray;
+    return [metaGem, getGemID('mastery', 'haste')]/*, getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
+      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];*/
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
-    return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
-      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    gemArray.fill(getGemID('haste', 'crit'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'crit')]/*, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [metaGem, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
-      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    gemArray.fill(getGemID('crit', 'versatility'), 1);
+    return gemArray;
+    return [metaGem, getGemID('crit', 'haste')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
 
   }
   else {
@@ -149,7 +167,7 @@ function getGemStats(gemArray: number[]) {
     const gemStats = gemData.stats;
     
     Object.keys(gemStats).forEach(stat => {
-      gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
+      gem_stats[stat] = (gem_stats[stat] ?? 0) + gemStats[stat];
     });
   });
   return gem_stats;
@@ -723,7 +741,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   if (selectedChoice === "haste") enchants.flask = "Flask of the Blood Knights";
-  else if (selectedChoice === "mastery") enchants.flask = "Flask of Mastery";
+  else if (selectedChoice === "mastery") enchants.flask = "Flask of the Magisters";
   else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
   else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
 
@@ -854,7 +872,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   
   const mergedEffectStats = mergeBonusStats(effectStats);
   
-  console.log(JSON.stringify(castModel));
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (castModel.modelType[contentType] === "Sequences") {
@@ -879,12 +896,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Raid Buffs are now handled in-file.
     const playerData = { spec: player.spec, heroTree: castModel.heroTree, settings: userSettings, stats: setStats, tierSets: usedSets, effectList: effectList,
       masteryEffectiveness: 0.9};
-    //console.log(JSON.stringify(playerData));
-    console.log(castModel.runCastModel);
-
+ 
+    if (player.spec === "Restoration Shaman Classic") playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
-
-    setStats.hps = (setStats.hps || 0) + castModelResult.hps;
+    
+    setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
