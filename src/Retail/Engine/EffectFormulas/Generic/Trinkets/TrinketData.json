@@ -11,6 +11,12 @@
             "scalingClass": -7
         }
     ],
+    "Magister's Alchemist Stone": [
+        {
+            "coefficient": 0.52062690258,
+            "scalingClass": -1
+        }
+    ],
     "Volatile Void Suffuser": [
         {
             "coefficient": 0.85835248232,
@@ -187,6 +193,12 @@
         {
             "coefficient": 10.89197540283,
             "scalingClass": -9
+        }
+    ],
+    "Ultradon Cuirass": [
+        {
+            "coefficient": 1328.8757324219,
+            "scalingClass": -8
         }
     ],
     "Cosmic Bell": [
