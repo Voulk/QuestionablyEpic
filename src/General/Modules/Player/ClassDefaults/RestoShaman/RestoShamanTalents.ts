@@ -2,43 +2,104 @@
 import { buffSpellPerc, buffSpellCritChance, manaCostAdj, modCastTimePerc, modCastTimeFlat, cooldownAdjFlat, addStatPerc, adjBuffDurationFlat, attachSpellEffect, adjTargetCount } from "General/Modules/Player/ClassDefaults/Generic/TalentBase";
 
 /**A list of talents to turn on*/
-export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Totemic") => {
+export const defaultTalents = (talents: TalentTree, loadoutName: string) => {
     let talentsEnabled: string[] = []
     let halfTalents: string[] = []
 
-    if (loadoutName === "default") talentsEnabled = [
-        //Class Tree
-        "Spiritual Awakening", "Enhanced Imbues", "Totemic Focus", "Nature's Fury", "Mana Spring", "Therazane's Resilience", "Totemic Surge", "Instinctive Imbuements",
-        //Spec Tree
-        "Soothing Rain", "Water Totem Mastery", "Overflowing Shores", "First Ascendant", "Living Stream", "White Water", "Quickstream", "Rip Current", "Torrent",
-        "Deluge", "Earthen Accord", "Tidal Waves", "Improved Earthliving Weapon", "Ancestral Reach", "Echo of the Elements", "Undercurrent", "Wavespeaker's Blessing",
-        "Primal Tide Core", "Coalescing Water", "Ascendance", "Resurgence", "Ancestral Awakening", "Earthliving Weapon",
-        // Option 1
-        "Deeply Rooted Elements",
-        // Option 2
-        //"Downpour", "Water Expulsion", "Double Dip",
-        //Hero Talents
+    // Building some reusable blocks of talents for different loadouts
+
+    // We always get all the throughput stuff on the class tree
+    const baseClassTalents = [
+        "Spiritual Awakening", "Enhanced Imbues", "Totemic Focus", "Nature's Fury", "Therazane's Resilience", "Totemic Surge", "Instinctive Imbuements"
+    ]
+
+    // Some spec stuff that you would always get
+    const baseSpecTalents = [
+        "White Water", "Torrent", "Deluge", "Rip Current", "Water Totem Mastery", "Living Stream", "Quickstream", "Earthliving Weapon", "Echo of the Elements"
+    ]
+
+    // Now we define some builds
+    const totemicHttDownpour = [
+        // Tier 1 & 2
+        "Healing Tide Totem", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Calm Waters", "Tidal Waves", "Ancestral Reach",
+        // Tier 3
+        "Downpour", "Water Expulsion", "Double Dip", "Undercurrent", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing",
+        // Hero choices
         "Amplification Core", "Totemic Coordination", "Supportive Imbuements"
     ]
 
+    const totemicAscDre = [
+        // Tier 1 & 2
+        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Improved Earthliving Weapon", "Tidal Waves", "Ancestral Reach",
+        // Tier 3
+        "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Ancestral Awakening", "Undercurrent",
+        // Hero choices
+        "Amplification Core", "Totemic Coordination", "Supportive Imbuements"
+    ]
+
+    const farseerDreNoRain = [
+        // Tier 1 & 2
+        "Ascendance", "Preeminence", "Tidal Waves", "Ancestral Reach", "Current Control", "Resurgence", "Improved Earthliving Weapon",
+        // Tier 3
+        "Deeply Rooted Elements",  "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Undercurrent","Ancestral Awakening",
+        // Hero choices
+        "Latent Wisdom", "Heed My Call"
+    ]
+
+    const farseerDreRain = [
+        // Tier 1 & 2
+        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Improved Earthliving Weapon", "Tidal Waves", "Ancestral Reach",
+        // Tier 3
+        "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Ancestral Awakening", "Undercurrent",
+        // Hero choices
+        "Latent Wisdom", "Heed My Call"
+    ]
+
+    let heroTree: string
+    let talentBuild = [baseClassTalents, baseSpecTalents]
+    switch(loadoutName){
+        case "Totemic HTT Downpour":
+            talentBuild.push(totemicHttDownpour)
+            heroTree = "Totemic"
+            break
+        case "Totemic Ascendance DRE":
+            talentBuild.push(totemicAscDre)
+            heroTree = "Totemic"
+            break
+        case "Farseer DRE No Rain":
+            talentBuild.push(farseerDreNoRain)
+            heroTree = "Farseer"
+            break
+        default:
+            talentBuild.push(farseerDreRain)
+            heroTree = "Farseer"
+    }
+
     // Apply talents
+    talentBuild.forEach(talentGroup => {
+        talentGroup.forEach(talent => {
+            talentsEnabled.push(talent)
+        })
+    })
+
     Object.keys(talents).forEach(talentName => {
         if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
             talents[talentName].points = talents[talentName].maxPoints;
         }
     })
+
 }
 
 const classTalents: TalentTree = {
     /* Increases all Fire and Frost damage you deal by X%. */
     "Fire and Ice": {id: 382886, values: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0],  points: 0, maxPoints: 1, icon: "spell_firefrost_orb", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented
     }},
 
     /* Increases the number of Elemental Shields you can have active on yourself by 1.    You can have Earth Shield on yourself and one ally at the same time. */
     "Elemental Orbit": {id: 383010, values: [0.0],  points: 0, maxPoints: 1, icon: "ability_mage_shattershield", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: 
     any, points: number) {
-
+        //Assumed always picked
     }},
 
     /* Mastery increased by X%. */
@@ -53,7 +114,7 @@ const classTalents: TalentTree = {
 
     /* Your Healing $?a137039[Wave][Surge] is X% more effective on yourself.   */
     "Refreshing Waters": {id: 378211, values: [25.0],  points: 0, maxPoints: 1, icon: "ability_shaman_fortifyingwaters", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented
     }},
 
     /* Increases the critical strike chance of your Nature spells and abilities by X%. */
@@ -73,7 +134,7 @@ const classTalents: TalentTree = {
 
     /* Your Lava Burst and Riptide casts restore X mana to you and four allies. Allies can only benefit from one Mana Spring effect at a time. */
     "Mana Spring": {id: 381930, values: [4.0, 0.0],  points: 0, maxPoints: 1, icon: "spell_nature_manaregentotem", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented (its shit)
     }},
 
     /* Earth Shield $?c3[and Water Shield no longer lose charges and are][no longer loses charges and is] ${100+X}% effective. */
@@ -84,7 +145,7 @@ const classTalents: TalentTree = {
     /* When refreshing Earth Shield, your target is healed for $462477s1 for each stack of Earth Shield they are missing.$?c3[    When refreshing Water Shield, you are refunded $462479s1 mana for each stack of Water Shield missing.][]    Additionally, Earth Shield$?c3[ and Water Shield][] can consume charges ${Y/-1000}.1 sec faster. */
     "Reactive Warding": {id: 462454, values: [1.0, -1000.0],  points: 0, maxPoints: 1, icon: "inv_10_elementalcombinedfoozles_water", select: true, tier: 0, runFunc: function (state: any, spellDB: 
     SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented (terrible qol)
     }},
 
     /* Reduces the cooldown of most totems by ${X/-1000} sec. */
@@ -109,7 +170,7 @@ const specTalents: TalentTree = {
 
     /* Deal ${$378597s1*X} Nature damage every $378463t1 sec to up to $378597s2 enemies inside of your Healing Rain. */
     "Acid Rain": {id: 378443, values: [1.0],  points: 0, maxPoints: 1, icon: "spell_nature_acid_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented (profile doesn't have damage)
     }},
 
     /* Reduces the cooldown of Healing Stream Totem by ${X/-1000} sec. */
@@ -201,7 +262,7 @@ const specTalents: TalentTree = {
 
     /* Casting Riptide grants 1 stack of Tidal Waves. Tidal Waves reduces the cast time of your next Healing Wave or Chain Heal by 20%. Can accumulate up to 2 stacks. */
     "Tidal Waves": {id: 51564, values: [1.0],  points: 0, maxPoints: 1, icon: "spell_shaman_tidalwaves", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Earthliving receives X% additional benefit from Mastery: Deep Healing.    Healing Wave always triggers Earthliving on its target. */
@@ -222,16 +283,17 @@ const specTalents: TalentTree = {
     /* Chain Heal bounces an additional time and casting Chain Heal on a target affected by Riptide consumes Riptide, increasing the healing of your Chain Heal by X%.     */
     "Flow of the Tides": {id: 382039, values: [30.0, 1.0],  points: 0, maxPoints: 1, icon: "spell_frost_manarecharge", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         adjTargetCount(spellDB["Chain Heal"], 1)
+        //Extra healing consuming a Riptide is not implemented
     }},
 
     /* $?s137039[Riptide and Lava Burst have][Lava Burst has] an additional charge. */
     "Echo of the Elements": {id: 333919, values: [1.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_shaman_echooftheelements", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Assumed always taken (it would do 0 hps but its qol)
     }},
 
     /* Earth Shield reduces damage taken by Z% and its healing is increased by up to X% as its target's health decreases. Maximum benefit is reached below Y% health. */
     "Earthen Harmony": {id: 382020, values: [150.0, 50.0, -3.0],  points: 0, maxPoints: 1, icon: "spell_shaman_improvedearthshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented
     }},
 
     /* Increases Downpour healing by X%. */
@@ -242,7 +304,7 @@ const specTalents: TalentTree = {
     /* When you heal with your Healing Wave or Riptide you have a Y% chance to summon an Ancestral spirit to aid you, instantly healing an injured friendly party or raid target within 40 yards for 
     X% of the amount healed. Critical strikes increase this chance to Z%. */
     "Ancestral Awakening": {id: 382309, values: [15.0, 30.0, 60.0],  points: 0, maxPoints: 2, icon: "spell_shaman_ancestralawakening", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* When you cast $?a455630[Surging Totem][Healing Rain], each ally with your Riptide on them is healed for $462425s1. */
@@ -263,8 +325,8 @@ const specTalents: TalentTree = {
 
     /* Increases Riptide's duration by ${X/1000}.1 sec and its healing over time by Y%. */
     "Wavespeaker's Blessing": {id: 381946, values: [6000.0, 15.0],  points: 0, maxPoints: 2, icon: "inv_alchemist_81_spiritedalchemiststone", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        buffSpellPerc(spellDB["Riptide"], talentValues[1], 1),
-        adjBuffDurationFlat(spellDB["Riptide"], talentValues[0], 1)
+        buffSpellPerc(spellDB["Riptide"], 10 * points, 1),
+        adjBuffDurationFlat(spellDB["Riptide"], (talentValues[0] / 2) * points, 1)
     }},
 
     /* $?a455630[Surging Totem][Healing Rain] grants an additional use of Downpour.   */
@@ -279,12 +341,12 @@ const specTalents: TalentTree = {
 
     /* Healing Wave and Chain Heal increase the initial healing of your next Riptide by $470077s1%, stacking up to $470077u times. */
     "Coalescing Water": {id: 470076, values: [0.0],  points: 0, maxPoints: 1, icon: "inv_helm_mail_raidshamanmythic_s_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Casting Riptide has a Y% chance to activate Ascendance for X seconds. */
     "Deeply Rooted Elements": {id: 378270, values: [6000.0, 11.60000038147, 6.0, 7.0],  points: 0, maxPoints: 1, icon: "inv_misc_herb_liferoot_stem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Riptide has a X% chance to upgrade your next Healing Stream Totem to Stormstream Totem which heals for Y% more, heals Z additional $Lally:allies; at $s4% effectiveness, and heals $s5 injured allies for $1268684s1 healing when used. */
@@ -307,7 +369,7 @@ const specTalents: TalentTree = {
 const heroTalents: TalentTree = {
     /* $?a137040[Stormkeeper calls an Ancestor to your side for $445624d.][Unleash Life calls an Ancestor to your side for X sec.]    Whenever you cast a healing or damaging spell, the Ancestor will cast a similar spell. */
     "Call of the Ancestors": {id: 443450, values: [12.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "ability_racial_ancestralcall", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Your Ancestors' spells are X% more powerful. */
@@ -322,19 +384,19 @@ const heroTalents: TalentTree = {
 
     /* Ancestors have a X% chance to call another Ancestor for $445624d when they depart. */
     "Ancient Fellowship": {id: 443423, values: [20.0, 30.0, 6.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_shaman_astralshift", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Implemented in profile
     }},
 
     /* Ancestors last an additional ${X/1000} sec. */
     "Heed My Call": {id: 443444, values: [4000.0, 4.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_unused2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
     talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Riptide has a X% chance to call an Ancestor to your side for $445624d. */
     "Routine Communication": {id: 443445, values: [15.0, 8.0, 6.0, 40.0, 4.0, 50.0, 6.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_nature_undyingstrength", select: true, tier: 2, 
     runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Lava Burst gains an additional charge and deals Y% increased damage.$?a137039[    Riptide gains an additional charge and heals for Z% more.][] */
@@ -344,7 +406,7 @@ const heroTalents: TalentTree = {
 
     /* Your Intellect is increased by ${X}.1% for each Ancestor active. */
     "Ancestral Influence": {id: 1270446, values: [1.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "shaman_pvp_leaderclan", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Chain Heal now jumps to a nearby totem within $458357A3 yards once it reaches its last target, causing the totem to cast Chain Heal on an injured ally within $458357r yards for $458357s1. Jumps to X nearby targets within $458357A3 yards. */
@@ -360,12 +422,12 @@ const heroTalents: TalentTree = {
 
     /* Surging Totem $?a462110[heals for X% more][deals Y% more damage] while Ascendance or Healing Tide Totem is active. */
     "Oversurge": {id: 445030, values: [150.0, 50.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not Implemented
     }},
 
     /* When you summon a Healing Tide Totem, Healing Stream Totem, or Spirit Link Totem you cast a free instant Chain Heal at $458221s2% effectiveness. */
     "Lively Totems": {id: 445034, values: [0.0, 0.0, 5.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_fire_searingtotem", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        //Implement in profile
+        //Implemented in profile
     }},
 
     /* Reduces the cooldown of Healing Stream Totem by ${Z/-1000} sec. */
@@ -375,12 +437,12 @@ const heroTalents: TalentTree = {
 
     /* When an Ancestor is called, they reduce the cooldown of $?a137040[Stormkeeper by ${X/-1000} sec.][Riptide by ${Y/-1000} sec.] */
     "Offering from Beyond": {id: 443451, values: [-3000.0, -2000.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_shaman_blessingoftheeternals", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Increases your maximum $?a137040[Maelstrom by X.][mana by Y%.] */
     "Primordial Capacity": {id: 443448, values: [25.0, 10.0, 1.0, 2.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "ability_monk_chiswirl", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* The cast times of $?c1[Healing Surge, Chain Heal and][Healing Wave, Chain Heal, and] Lava Burst are reduced by X%. */
@@ -416,13 +478,13 @@ const heroTalents: TalentTree = {
 
     /* When an Ancestor departs, they cast Hydrobubble on a nearby injured ally. */
     "Final Calling": {id: 443446, values: [0.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_shaman_ancestralawakening", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* $?c3[For $1270453d sec after casting Nature's Swiftness or Ancestral Swiftness, the recharge rate of Riptide is increased by $1270453s1%.    ][]Increases the chance for Lava Surge to occur by X%. */
     "Mystic Knowledge": {id: 1270450, values: [20.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "achievement_raidprimalist_council", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Not implemented (its shit anyway)
     }},
 
     /* Increases the duration of your Earthliving effect by ${Z/1000} sec. */
@@ -457,17 +519,18 @@ const heroTalents: TalentTree = {
 
     /* Allies affected by your Earthliving effect receive Z% increased healing from you. */
     "Earthsurge": {id: 455590, values: [125.0, 40.0, 15.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_elementalearth2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Healing Stream Totem and Healing Tide Totem healing has a Y% chance to apply Earthliving to allies it heals. */
     "Primal Catalyst": {id: 1260874, values: [150.0, 8.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "misc_legionfall_shaman", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
     }},
 
     /* Elemental Motes orbit your Surging Totem. Your abilities can consume them for the following effects: Earth Mote: Your next Chain Heal applies Earthliving at 150% effectiveness to all targets hit. Air: The cast time of your next healing spell is reduced by 40%. Water: Your next Healing Wave also heals an ally inside your healing rain at 100% effectiveness. */
     "Whirling Elements": {id: 445024, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_10_enchanting2_elementalswirl_color1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //Implemented in profile
+        //Water mote is not implemented, the others are
     }},
 
     /* Talent Stubs and Other stuff */
