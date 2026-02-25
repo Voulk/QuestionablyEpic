@@ -22,17 +22,68 @@ describe("Generic Profile Testing Environment", () => {
             //"Farseer DRE No Rain": "Farseer"
         }
         let results = []
-
+        /*
         Object.keys(testProfiles).forEach(profile => {
 
+            const params = {
+                filler: {
+                    hw: 0,
+                    ch: 1
+                },
+                asc: {
+                    hw: 1,
+                    ch: 0
+                },
+                downtime: 0
+            }
             const playerData = { spec: "Restoration Shaman", heroTree: testProfiles[profile], profileName: profile, stats: activeStats,
-                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"] }
+                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
             const data = restoShamanProfile.scoreSet(activeStats, playerData);
             //buildStatWeights(playerData, scoreShamanSet, {});
             results[profile] = data.healing
         })
 
         console.log(results)
+        */
+
+        results = []
+        function formatNumber(num){ return Math.round(num*10) / 10}
+        let best = {}
+        for (let i = 0; i <= 10; i++){
+            for (let j = 0; j <= 10; j++){
+                for (let k = 0; k <= 5; k++){
+
+                    const params = {
+                        filler: {
+                            hw: formatNumber(i / 10),
+                            ch: formatNumber(1 - (i / 10))
+                        },
+                        asc: {
+                            hw: formatNumber(j / 10),
+                            ch: formatNumber(1 - (j / 10))
+                        },
+                        downtime: formatNumber(k / 10)
+                    }
+
+                    const label = 'F=HW:' + params.filler.hw + '/CH:' + params.filler.ch + '-A=HW:' + params.asc.hw + '/CH:' + params.asc.ch
+                    const playerData = { spec: "Restoration Shaman", heroTree: "Farseer", profileName: "Farseer DRE Rain", stats: activeStats,
+                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
+                    const data = restoShamanProfile.scoreSet(activeStats, playerData);
+
+                    if (!results[params.downtime]) results[params.downtime] = {}
+                    if (!best[params.downtime]) best[params.downtime] = { label: '', result: 0}
+
+                    if (data.healing > best[params.downtime].result){
+                        best[params.downtime].result = data.healing
+                        best[params.downtime].label = label
+                    }
+                    results[params.downtime][label] = Math.round(data.healing)
+
+                }
+            }
+        }
+        //console.log(results.sort(function(a, b){ return b - a }))
+        console.log(best)
 
         /*
         const statProfiles = [
@@ -56,6 +107,8 @@ describe("Generic Profile Testing Environment", () => {
         })
         console.log(statResults)
         */
+
+
 
         expect(true).toEqual(true);
     })

@@ -102,12 +102,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Ratio of how to spend extra time on filler spells
     const fillerSpellsPriority = {
-        "Chain Heal": 1,
-        "Healing Wave": 0
+        "Chain Heal": playerData.params.filler.ch ?? 1,
+        "Healing Wave": playerData.params.filler.hw ?? 0
     }
     const ascendanceFillerSpellsPriority = {
-        "Chain Heal": 0,
-        "Healing Wave": 1
+        "Chain Heal": playerData.params.asc.ch ?? 0,
+        "Healing Wave": playerData.params.asc.hw ?? 1
     }
 
     // Add our 2 piece
@@ -333,6 +333,11 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const unleashLifeFillerTime = (fillerCastTime * 0.3) * unleashLifeStacks
     timeAvailable += unleashLifeFillerTime
 
+    if (playerData.params.downtime){
+        const downtimeTime = 60 * playerData.params.downtime
+        timeAvailable = Math.max(timeAvailable - downtimeTime, 0)
+    }
+
     const fillerCPMTime = timeAvailable / fillerTime
     const fillerCost = (spellCosts["Healing Wave"] * fillerSpellsPriority["Healing Wave"]) + (spellCosts["Chain Heal"] * fillerSpellsPriority["Chain Heal"])
     const fillerCPMMana = fillerMana / fillerCost
@@ -344,7 +349,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const unleashLifeMod = 1 + ( unleashLifeStacks * ( hasTalent(talents, "Earthen Accord") ? 0.25 : 0.3 )) / fillerCPM
 
     Object.keys(fillerSpellsPriority).forEach(spellName => {
-        castProfile.push({spell: spellName, cpm: fillerCPM * fillerSpellsPriority[spellName], mod: unleashLifeMod})
+        castProfile.push({spell: spellName, cpm: fillerCPM * fillerSpellsPriority[spellName], mult: unleashLifeMod})
     })
     //I am actually not completely sure but i am assuming that below here i am only allowed to add autoSpells, otherwise i am cheating by adding more stuff after i already spend my remaining resources
 
@@ -522,7 +527,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
             const totalOutput = (sliceOutput * effectiveCPM * (spellProfile.mult ?? 1));
 
             if (totalOutput > 0) {
-                const label = (spellProfile.label || spellName + ' - Slice ' + spellProfile.forceSlice); 
+                const label = (spellProfile.label || spellName + ' - Slice ' + spellProfile.forceSlice);
                 castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
                 healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
             }
@@ -561,7 +566,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const totalDamage = Object.values(damageBreakdown).reduce((sum: number, val: number) => sum + val, 0);
 
     //console.log(reportingData);
-    printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+    //printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { damage: totalDamage / 60, healing: totalHealing / 60 }
 }
