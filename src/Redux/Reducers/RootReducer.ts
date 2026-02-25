@@ -26,7 +26,7 @@ const initialState : RootState = {
   contentType: ls.get<string>("contentType") || "Raid",
   playerSettings: {
     //includeGroupBenefits: { value: true, options: [true, false], category: "trinkets", type: "selector", gameType: "Retail" },
-    groupBuffValuation: {value: 50, options: [], category: "trinkets", type: "entry", gameType: "Retail"},
+    groupBuffValuation: {value: 65, options: [], category: "trinkets", type: "entry", gameType: "Retail"},
 
     // TWW Trinkets
     //misterPickMeUpOverheal: { value: 20, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },

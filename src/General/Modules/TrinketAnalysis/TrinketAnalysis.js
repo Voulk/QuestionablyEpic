@@ -216,20 +216,9 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
     const raidSources = [
-      //1190, // Castle Nathria
-      //1193, // Sanctum of Domination
-      //1195, // Sepulcher
-      //1200, // Vault of the Incarnates
-      //1208, // Aberrus
-      //1207, // Amirdrassil
-      1273, // Palace
-      1296, // Liberation of Undermine
-      1302, // Manaforge Omega
-
-      1314, // 
-      1308, //
-      1307, //
-      
+      1314, // Dreamrift
+      1308, // March
+      1307, // Voidspire
     ];
     const dungeonSources = [
       -1, // General Dungeons

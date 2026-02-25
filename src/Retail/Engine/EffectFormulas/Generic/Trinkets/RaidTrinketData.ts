@@ -7,8 +7,8 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 export const raidTrinketData = [
   { // 
     name: "Vaelgor's Final Stare",
-    description: "",
-    addonDescription: "",
+    description: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
+    addonDescription: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
     effects: [
       { // Int Proc
         duration: 15,
@@ -26,8 +26,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "",
-        addonDescription: "",
+        description: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
+        addonDescription: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -49,8 +49,8 @@ export const raidTrinketData = [
     { //
         id: 249809,
         name: "Locus-Walker's Ribbon",
-        description: "",
-        addonDescription: "",
+        description: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
+        addonDescription: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -75,8 +75,8 @@ export const raidTrinketData = [
     { //
         id: 249341,
         name: "Volatile Void Suffuser",
-        description: "",
-        addonDescription: "",
+        description: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
+        addonDescription: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -96,6 +96,8 @@ export const raidTrinketData = [
     },
         {
           name: "Light of the Cosmic Crescendo",
+          description: "",
+          addonDescription: "",
           effects: [
             { // Damage effect. NYI.
               secondaries: ['haste', 'versatility', 'crit'],

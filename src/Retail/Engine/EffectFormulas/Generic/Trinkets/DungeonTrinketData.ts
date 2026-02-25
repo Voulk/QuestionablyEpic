@@ -7,8 +7,8 @@ export const dungeonTrinketData =
     { //
         id: 193718,
         name: "Emerald Coach's Whistle",
-        description: "",
-        addonDescription: "",
+        description: "Really shines as a support-trinket. Poor if you only care about personal benefit.",
+        addonDescription: "Really shines as a support-trinket. Poor if you only care about personal benefit.",
         effects: [
         { // Stat Proc Portion
             stat: "mastery",
@@ -28,6 +28,8 @@ export const dungeonTrinketData =
 
     {
       name: "Echo of L'ura",
+      description: "Procs a lot when active (about 20 times) but the very long cooldown prevents it from being a real contender.",
+      addonDescription: "Procs a lot when active (about 20 times) but the very long cooldown prevents it from being a real contender.",
       effects: [
         { 
           secondaries: ['versatility', 'crit'],
@@ -47,8 +49,8 @@ export const dungeonTrinketData =
         { // Passive mastery at all times, + a light effect you have to stand in.
         id: 250214,
         name: "Lightspire Core",
-        description: "",
-        addonDescription: "",
+        description: "Most of Lightspire Cores power comes from the passive mastery buff, so don't worry too much if you're not able to stand in the light beam it occasionally summons.",
+        addonDescription: "Most of Lightspire Cores power comes from the passive mastery buff, so don't worry too much if you're not able to stand in the light beam it occasionally summons.",
         effects: [
         { // Stat Proc Portion
             stat: "mastery",
@@ -72,8 +74,8 @@ export const dungeonTrinketData =
     { //
         id: 250256,
         name: "Heart of Wind",
-        description: "",
-        addonDescription: "",
+        description: "A solid stat stick if your spec enjoys Haste.",
+        addonDescription: "A solid stat stick if your spec enjoys Haste.",
         effects: [
         { // Stat Proc Portion
             stat: "haste",
@@ -90,23 +92,9 @@ export const dungeonTrinketData =
       }
     },
     {
-      name: "Unstable Felheart Crystal",
-      effects: [
-        { 
-          secondaries: ['versatility'],
-          cooldown: 120,
-          efficiency: {Raid: 0.7, Dungeon: 0.85} //
-        },
-      ],
-      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-        let bonus_stats: Stats = {};
-  
-        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Unstable Felheart Crystal"][0]}, itemLevel, player, additionalData.contentType)
-        return bonus_stats;
-      }
-    },
-    {
       name: "Seed of Radiant Hope",
+      description: "Currently undertuned.",
+      addonDescription: "Currently undertuned.",
       effects: [
         {  // HoT effect
           secondaries: ['crit', 'versatility'],
@@ -131,6 +119,8 @@ export const dungeonTrinketData =
     },
         {
       name: "Unstable Felheart Crystal",
+      description: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
+      addonDescription: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
       effects: [
         { 
           secondaries: ['versatility'],
@@ -147,6 +137,8 @@ export const dungeonTrinketData =
     },
     {
       name: "Mycolic Medicine",
+      description: "Dreadful Trinket",
+      addonDescription: "Dreadful Trinket",
       effects: [
         {  // Instant Heal
           secondaries: ['haste', 'crit', 'versatility'],
@@ -170,6 +162,8 @@ export const dungeonTrinketData =
     },
     {
       name: "Whisper of the Duskwraith",
+      description: "A great idea for a trinket, but the numbers aren't high enough to put it in the top leagues. B-tier.",
+      addonDescription: "A great idea for a trinket, but the numbers aren't high enough to put it in the top leagues. B-tier.",
       effects: [
         {  // Instant Heal, no haste scaling - probably because of the vers
           secondaries: ['crit', 'versatility'],
@@ -194,6 +188,8 @@ export const dungeonTrinketData =
     },
         {
       name: "Refueling Orb",
+      description: "The best support trinket in the game. Gives way more stats to your team than any other trinket gives to yourself. Might get nerfed.",
+      addonDescription: "The best support trinket in the game. Gives way more stats to your team than any other trinket gives to yourself. Might get nerfed.",
       effects: [
         { // Vers portion. Hasted for some reason.
           ppm: 2,
@@ -221,8 +217,8 @@ export const dungeonTrinketData =
     },
     { // Passive mastery at all times, + a light effect you have to stand in.
         name: "Vessel of Tortured Souls",
-        description: "",
-        addonDescription: "",
+        description: "Summons a soul that you have to chase around to get the stats. As a result, not very good.",
+        addonDescription: "Summons a soul that you have to chase around to get the stats. As a result, not very good.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -242,7 +238,8 @@ export const dungeonTrinketData =
     },
       { // 
         name: "Freightrunner's Flask",
-        description: "",
+        description: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
+        addonDescription: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
         effects: [
           { // Int Proc
             duration: 15,
@@ -260,7 +257,8 @@ export const dungeonTrinketData =
       },
        { // 
         name: "Emberwing Feather",
-        description: "",
+        description: "A solid on-use stat stick. The potential downside (losing stats) is extremely rare and not that punishing anyway.",
+        addonDescription: "A solid on-use stat stick. The potential downside (losing stats) is extremely rare and not that punishing anyway.",
         effects: [
           { // 
             duration: 15,
