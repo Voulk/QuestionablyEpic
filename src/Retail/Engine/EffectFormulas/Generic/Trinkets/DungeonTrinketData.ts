@@ -20,7 +20,7 @@ export const dungeonTrinketData =
             let bonus_stats: Stats = {};
 
             bonus_stats.mastery = runGenericPPMTrinket({...data[0], ...trinketRawData["Emerald Coach's Whistle"][0]}, itemLevel);
-            if (getSetting(additionalData.settings, 'includeGroupBenefits')) bonus_stats.allyStats = bonus_stats.mastery;
+            bonus_stats.allyStats = bonus_stats.mastery;
 
             return bonus_stats;
             }

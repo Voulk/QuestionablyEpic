@@ -602,11 +602,11 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 157, Myth: 170, Circlet: 155 };
-    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
+    const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
+    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps && !protoItem.upgradeTrack.includes("Crafted")) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 157, Myth: 170, Circlet: 155 };
+    const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   
