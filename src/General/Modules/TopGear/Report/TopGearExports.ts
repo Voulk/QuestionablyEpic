@@ -114,7 +114,7 @@ const wowheadCodes = {
   1311: "", // Den of Nalorakk
   1309: "", // The Blinding Vale
   1304: "", // Murder Row
-  1300: "[icon name=inv_achievement_dungeon_magisters_terrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace 
+  1300: "[icon name=inv_achievement_dungeon_magistersterrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace 
   1299: "[icon name=inv_achievement_dungeon_windrunnerspire][/icon][url guide=33184]Windrunner Spire[/url]", // Windrunner Spire
   1313: "", // Voidscar Arena
 
