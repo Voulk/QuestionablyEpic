@@ -720,9 +720,9 @@ export class Player {
       }
     }
       else if (spec === SPEC.PRESEVOKER) {
-        this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
-        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 1));
-        this.castModels.push(new CastModel(spec, "Dungeon", "Default", 2));
+        //this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
+        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 0));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Chronowarden", 1));
         this.activeStats = {
           intellect: 2000,
           haste: 390,

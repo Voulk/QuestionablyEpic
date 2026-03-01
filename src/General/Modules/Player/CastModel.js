@@ -212,7 +212,10 @@ class CastModel {
       if (modelID === "Chronowarden" || modelID === "Default") {
         // TODO
         this.modelName = "Chronowarden";
-        //this.modelType = "CastModel";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
+        this.runCastModel = scoreEvokerSet;
+        this.heroTree = "Chronowarden";
         spellList = chronoDefaultSpellData(contentType);
         specialQueries = chronoDefaultSpecialQueries(contentType);
         this.baseStatWeights = chronoDefaultStatWeights(contentType);
@@ -223,7 +226,8 @@ class CastModel {
         this.modelName = "Flameshaper";
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
-        this.runCastModel = runFlameshaperCastModel;
+        this.runCastModel = scoreEvokerSet;
+        this.heroTree = "Flameshaper";
         spellList = evokerDefaultSpellData(contentType);
         specialQueries = evokerDefaultSpecialQueries(contentType);
         this.baseStatWeights = evokerDefaultStatWeights(contentType);

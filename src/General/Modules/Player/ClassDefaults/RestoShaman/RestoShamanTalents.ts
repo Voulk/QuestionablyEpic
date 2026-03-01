@@ -83,7 +83,7 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string) => {
     })
 
     Object.keys(talents).forEach(talentName => {
-        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+        if (talentsEnabled.includes(talentName) || (talents[talentName].heroTree === heroTree && !talents[talentName].choice)) {
             talents[talentName].points = talents[talentName].maxPoints;
         }
     })
@@ -373,7 +373,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Your Ancestors' spells are X% more powerful. */
-    "Latent Wisdom": {id: 443449, values: [25.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", select: true, tier: 2, runFunc: function (state: any, spellDB: 
+    "Latent Wisdom": {id: 443449, values: [25.0], heroTree: "Farseer", choice: true, points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB["Healing Surge (Ancestor)"], talentValues[0])
         buffSpellPerc(spellDB["Healing Wave (Ancestor)"], talentValues[0])
@@ -383,18 +383,18 @@ const heroTalents: TalentTree = {
     }},
 
     /* Ancestors have a X% chance to call another Ancestor for $445624d when they depart. */
-    "Ancient Fellowship": {id: 443423, values: [20.0, 30.0, 6.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_shaman_astralshift", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Ancient Fellowship": {id: 443423, values: [20.0, 30.0, 6.0], heroTree: "Farseer", choice: true, points: 0, maxPoints: 1, icon: "spell_shaman_astralshift", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         // Implemented in profile
     }},
 
     /* Ancestors last an additional ${X/1000} sec. */
-    "Heed My Call": {id: 443444, values: [4000.0, 4.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_unused2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
+    "Heed My Call": {id: 443444, values: [4000.0, 4.0], heroTree: "Farseer", choice: true, points: 0, maxPoints: 1, icon: "spell_unused2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
     talentValues: number[], points: number) {
         //Implemented in profile
     }},
 
     /* Riptide has a X% chance to call an Ancestor to your side for $445624d. */
-    "Routine Communication": {id: 443445, values: [15.0, 8.0, 6.0, 40.0, 4.0, 50.0, 6.0], heroTree: "Farseer", points: 0, maxPoints: 1, icon: "spell_nature_undyingstrength", select: true, tier: 2, 
+    "Routine Communication": {id: 443445, values: [15.0, 8.0, 6.0, 40.0, 4.0, 50.0, 6.0], heroTree: "Farseer", choice: true, points: 0, maxPoints: 1, icon: "spell_nature_undyingstrength", select: true, tier: 2, 
     runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Implemented in profile
     }},
@@ -415,13 +415,13 @@ const heroTalents: TalentTree = {
     }},
 
     /* While Surging Totem is active, your damage and healing done is increased by $456369s1%. */
-    "Amplification Core": {id: 445029, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_evoker_essenceburststacks", select: true, tier: 2, runFunc: function (state: any, 
+    "Amplification Core": {id: 445029, values: [0.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "ability_evoker_essenceburststacks", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentValues: number[], points: number) {
         addStatPerc(state.statBonuses, "genericHealingMult", 3);
     }},
 
     /* Surging Totem $?a462110[heals for X% more][deals Y% more damage] while Ascendance or Healing Tide Totem is active. */
-    "Oversurge": {id: 445030, values: [150.0, 50.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Oversurge": {id: 445030, values: [150.0, 50.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Not Implemented
     }},
 
@@ -494,12 +494,12 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?a137041[Increases the damage of Surging Totem by X%.][Increases the healing done by Surging Totem by Y%.] */
-    "Pulse Capacitor": {id: 445032, values: [18.0, 25.0, 18.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "spell_nature_elementalprecision_1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Pulse Capacitor": {id: 445032, values: [18.0, 25.0, 18.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "spell_nature_elementalprecision_1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB["Surging Totem"], talentValues[1])
     }},
 
     /* Learn a new weapon imbue, Tidecaller's Guard.  */
-    "Supportive Imbuements": {id: 445033, values: [25.0, 100.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_fortifyingwaters", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Supportive Imbuements": {id: 445033, values: [25.0, 100.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "ability_shaman_fortifyingwaters", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         if (state.talents["Enhanced Imbues"]){
             adjBuffDurationFlat(spellDB["Healing Stream Totem"], 3600),
             adjBuffDurationFlat(spellDB["Stormstream Totem"], 3600),
@@ -512,13 +512,13 @@ const heroTalents: TalentTree = {
     }},
 
     /* Chain Heals from Lively Totem and Totemic Rebound are Z% more effective. */
-    "Totemic Coordination": {id: 445036, values: [15.0, 30.0, 25.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_shaman_echooftheelements", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Totemic Coordination": {id: 445036, values: [15.0, 30.0, 25.0], heroTree: "Totemic", choice: true,points: 0, maxPoints: 1, icon: "ability_shaman_echooftheelements", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB["Chain Heal (Totemic Rebound)"], talentValues[2])
         //Lively totems chain heal is handled in profile
     }},
 
     /* Allies affected by your Earthliving effect receive Z% increased healing from you. */
-    "Earthsurge": {id: 455590, values: [125.0, 40.0, 15.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_elementalearth2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Earthsurge": {id: 455590, values: [125.0, 40.0, 15.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "inv_elementalearth2", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Implemented in profile
     }},
 

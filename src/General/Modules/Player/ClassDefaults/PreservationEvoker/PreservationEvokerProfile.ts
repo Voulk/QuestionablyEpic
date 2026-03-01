@@ -16,7 +16,7 @@ export const preservationEvokerProfile = {
         // Our stats we want to run through the profile. 
         // You can change and play with these as much as you want.
         // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2000,
+        intellect: 2400,
         haste: 550,
         crit: 550,
         mastery: 550,
@@ -70,7 +70,7 @@ const getEmpowerCPM = (castProfile: CastProfile) => {
 
 export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
     const spec = "Preservation Evoker"; // We'll pass this to a few functions so it's easier to just define it.
-    const fightLength = 6;
+    const fightLength = 4;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     let initialState = {statBonuses: applyRaidBuffs(settings), talents: evokerTalents, heroTree: playerData.heroTree, settings: settings};
     const reportingData: any = {};
