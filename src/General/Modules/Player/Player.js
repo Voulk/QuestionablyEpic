@@ -654,10 +654,10 @@ export class Player {
     if (spec === SPEC.RESTODRUID) {
       this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 1));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
+      //this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
       // 1200 stats post-squish
       this.activeStats = {
-        intellect: 750,
+        intellect: 2400,
         haste: 550,
         crit: 100,
         mastery: 450,
@@ -667,10 +667,10 @@ export class Player {
     } else if (spec === SPEC.HOLYPALADIN) {
       this.castModels.push(new CastModel(spec, "Raid", "Herald of the Sun", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
+      //this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
       
       this.activeStats = {
-        intellect: 750,
+        intellect: 2400,
         haste: 310,
         crit: 350,
         mastery: 440,
@@ -683,7 +683,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
       this.activeStats = {
-        intellect: 750,
+        intellect: 2400,
         haste: 540,
         crit: 440,
         mastery: 120,
@@ -691,13 +691,13 @@ export class Player {
         stamina: 1900,
       };
     } else if (spec === SPEC.DISCPRIEST) {
-      this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
-      this.castModels.push(new CastModel(spec, "Raid", "Oracle (Beta)", 2));
-      this.castModels.push(new CastModel(spec, "Dungeon", "Oracle (Beta)", 3));
+      //this.castModels.push(new CastModel(spec, "Raid", "Voidweaver", 0));
+      //this.castModels.push(new CastModel(spec, "Dungeon", "Voidweaver", 1));
+      this.castModels.push(new CastModel(spec, "Raid", "Oracle", 0));
+      this.castModels.push(new CastModel(spec, "Dungeon", "Oracle", 1));
 
       this.activeStats = {
-        intellect: 750, 
+        intellect: 2400, 
         haste: 290,
         crit: 400,
         mastery: 490,
@@ -711,7 +711,7 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 750,
+        intellect: 2400,
         haste: 240,
         crit: 500,
         mastery: 440,
@@ -740,7 +740,7 @@ export class Player {
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 750,
+        intellect: 2400,
         haste: 500,
         crit: 480,
         mastery: 120,

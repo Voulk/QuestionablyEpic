@@ -14,8 +14,8 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
         // Spec talents
         "Divine Glimpse", "Light's Conviction", "Ringing of the Heavens", "Awestruck",  "Unending Light", "Extrication",
         "Resplendent Light", "Divine Favor", "Imbued Infusions", "Light of the Martyr", "Overflowing Light", "Commanding Light", "Glistening Radiance", "Breaking Dawn",
-        "Divine Glimpse", "Bestow Light", "Beacon of Faith", "Empyrean Legacy", "Reclamation", "Seek Deliverance", "Sanctified Wrath", "Truth Prevails", "Glorious Dawn", 
-        "Hand of Divinity", "Inflorescence of the Sunwell"
+        "Divine Glimpse", "Bestow Light", "Beacon of Faith", "Reclamation", "Seek Deliverance", "Sanctified Wrath", "Truth Prevails", "Glorious Dawn", 
+        "Hand of Divinity", "Inflorescence of the Sunwell"  
     ]
 
     // Apply talents

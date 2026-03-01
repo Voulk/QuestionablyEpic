@@ -1,7 +1,7 @@
 
 import { paladinMeleeProfile } from "./Archive/PaladinDefaultAPL";
 import { PALADINSPELLDB, baseTalents } from "./Archive/HolyPaladinSpellDBTWW";
-import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, buildStatWeights, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { holyPaladinProfile, scorePaladinSet } from "General/Modules/Player/ClassDefaults/HolyPaladin/HolyPaladinProfile"
 
 // These are basic tests to make sure our coefficients and secondary scaling arrays are all working as expected.
@@ -24,6 +24,8 @@ describe("Evang Cast Sequence", () => {
 
         console.log(data);
         expect(true).toEqual(true);
+
+        buildStatWeights(playerData, scorePaladinSet, settings);
 
        // buildStatChart(holyPaladinProfile, playerData, settings);
 
