@@ -3,10 +3,29 @@ import { Player } from "General/Modules/Player/Player";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 export const otherTrinketData = [
+        { 
+    name: "Crucible of Erratic Energies",
+    description: "",
+    addonDescription: "",
+    effects: [
+      {
+        duration: 10,
+        ppm: 4,
+        stat: "crit",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}, itemLevel);
+
+      return bonus_stats;
+    }
+  },
       { 
     name: "Magister's Alchemist Stone",
-    description: "High variance. Beware the low uptime. Requires a valuable spark to craft which you're usually better off spending elsewhere.",
-    addonDescription: "High variance. Beware the low uptime. Requires a valuable spark to craft which you're usually better off spending elsewhere.",
+    description: "High variance, low uptime and uses an embellishment slot. Do not craft.",
+    addonDescription: "High variance, low uptime and uses an embellishment slot. Do not craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
