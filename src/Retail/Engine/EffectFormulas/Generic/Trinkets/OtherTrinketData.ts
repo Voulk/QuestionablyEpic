@@ -1,11 +1,12 @@
 import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, getHighestStat, forceGenericOnUseTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket, runGenericRandomPPMTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
+import { STATCONVERSION } from "General/Engine/STAT"
 
 export const otherTrinketData = [
         { 
     name: "Crucible of Erratic Energies",
-    description: "",
+    description: "A fantastic crit / leech stat stick. The extra text about empowering the trinket only works in Voidstorm and ",
     addonDescription: "",
     effects: [
       {
@@ -18,6 +19,7 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}, itemLevel);
+      bonus_stats.leech = convertPPMToUptime(data[0].ppm, data[0].duration) * 2 * STATCONVERSION.LEECH;
 
       return bonus_stats;
     }
