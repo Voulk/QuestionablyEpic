@@ -1,8 +1,4 @@
 export const bonus_IDs: {[key: string]: any} = {
-  "0": {
-    "id": 0,
-    "serverside": true
-  },
   "1": {
     "id": 1,
     "rawStats": [
@@ -19178,7 +19174,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4775": {
     "id": 4775,
-    "level": 5
+    "levelOffset": {
+      "amount": 5,
+      "squishEra": 1,
+      "craftingQuality": 1
+    }
   },
   "4776": {
     "id": 4776,
@@ -25440,12 +25440,12 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Rcor [0.0042]",
     "effect": {
-      "id": 116780,
+      "id": 116854,
       "index": 0,
       "spell": {
-        "id": 317860,
-        "name": "Draconic Empowerment",
-        "icon": "inv_misc_head_dragon_black"
+        "id": 300470,
+        "name": "Shroud of Resolve",
+        "icon": "inv_misc_cape_deathwingraid_d_03"
       }
     },
     "applyBonusId": 13518
@@ -29628,7 +29628,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6825": {
     "id": 6825,
-    "ilevel": "5 @plvl 0 - 61 @plvl 72",
+    "ilevel": "1 @plvl 0 - 63 @plvl 74",
     "curveId": 16520
   },
   "6826": {
@@ -33821,6 +33821,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7196,
       "itemLevel": 38,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 25,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 25,
         "name": "Reservoir Anima",
@@ -33837,6 +33851,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7197,
       "itemLevel": 39,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 50,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 50,
         "name": "Reservoir Anima",
@@ -33853,6 +33881,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7198,
       "itemLevel": 40,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 75,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 75,
         "name": "Reservoir Anima",
@@ -33869,6 +33911,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7199,
       "itemLevel": 41,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 100,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 100,
         "name": "Reservoir Anima",
@@ -33885,6 +33941,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7200,
       "itemLevel": 43,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 125,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 125,
         "name": "Reservoir Anima",
@@ -33901,6 +33971,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7201,
       "itemLevel": 44,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1813,
+              "amount": 150,
+              "name": "Reservoir Anima",
+              "icon": "spell_animabastion_orb"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 150,
         "name": "Reservoir Anima",
@@ -35273,6 +35357,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7480,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 200,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -35290,6 +35388,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7481,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -35307,6 +35419,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7482,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 275,
         "name": "Honor",
@@ -35324,6 +35450,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7483,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -35341,6 +35481,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7484,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -35358,6 +35512,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7485,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -35386,6 +35554,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7487,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 250,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -35403,6 +35585,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7488,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -35420,6 +35616,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7489,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -35437,6 +35647,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7490,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 400,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Honor",
@@ -35454,6 +35678,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7491,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -35471,6 +35709,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7492,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -35499,6 +35751,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7494,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 325,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -35516,6 +35782,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7495,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -35533,6 +35813,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7496,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -35550,6 +35844,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7497,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -35567,6 +35875,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7498,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 575,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -35584,6 +35906,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7499,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -35612,6 +35948,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7501,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -35629,6 +35979,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7502,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -35646,6 +36010,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7503,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 900,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -35663,6 +36041,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7504,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1000,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Honor",
@@ -35680,6 +36072,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7505,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1150,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1150,
         "name": "Honor",
@@ -35697,6 +36103,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7506,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1300,
         "name": "Honor",
@@ -35725,6 +36145,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7508,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 175,
         "name": "Honor",
@@ -35742,6 +36176,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7509,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 200,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -35759,6 +36207,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7510,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -35776,6 +36238,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7511,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 250,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -35793,6 +36269,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7512,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -35810,6 +36300,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7513,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -35838,6 +36342,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7515,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -35855,6 +36373,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7516,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -35872,6 +36404,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7517,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 675,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -35889,6 +36435,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7518,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -35906,6 +36466,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7519,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -35923,6 +36497,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7520,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 950,
         "name": "Honor",
@@ -35951,6 +36539,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7522,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 325,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -35968,6 +36570,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7523,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -35985,6 +36601,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7524,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -36002,6 +36632,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7525,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -36019,6 +36663,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7526,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 575,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -36036,6 +36694,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 7527,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -36065,6 +36737,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7529,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -36082,6 +36768,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7530,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -36099,6 +36799,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7531,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 825,
         "name": "Honor",
@@ -36116,6 +36830,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7532,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1100,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -36133,6 +36861,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7533,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -36161,6 +36903,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7535,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 675,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -36178,6 +36934,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7536,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -36195,6 +36965,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7537,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1100,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -36212,6 +36996,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7538,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1475,
         "name": "Honor",
@@ -36229,6 +37027,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7539,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -36257,6 +37069,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7541,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -36274,6 +37100,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7542,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1075,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -36291,6 +37131,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7543,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -36308,6 +37162,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7544,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -36325,6 +37193,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7545,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1525,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -36353,6 +37235,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7547,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1700,
         "name": "Honor",
@@ -36370,6 +37266,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7548,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2150,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2150,
         "name": "Honor",
@@ -36387,6 +37297,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7549,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -36404,6 +37328,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7550,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 3650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 3650,
         "name": "Honor",
@@ -36421,6 +37359,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7551,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 3050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 3050,
         "name": "Honor",
@@ -36449,6 +37401,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7553,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 425,
         "name": "Honor",
@@ -36466,6 +37432,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7554,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -36483,6 +37463,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7555,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 700,
         "name": "Honor",
@@ -36500,6 +37494,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7556,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 900,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -36517,6 +37525,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7557,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -36545,6 +37567,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7559,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1275,
         "name": "Honor",
@@ -36562,6 +37598,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7560,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1600,
         "name": "Honor",
@@ -36579,6 +37629,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7561,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2050,
         "name": "Honor",
@@ -36596,6 +37660,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7562,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -36613,6 +37691,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7563,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2275,
         "name": "Honor",
@@ -36641,6 +37733,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7565,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -36658,6 +37764,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7566,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1075,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -36675,6 +37795,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7567,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -36692,6 +37826,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7568,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -36709,6 +37857,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7569,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1525,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -37301,6 +38463,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7693,
       "itemLevel": 46,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1931,
+              "amount": 250,
+              "name": "Cataloged Research",
+              "icon": "inv_misc_paperbundle04a"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Cataloged Research",
@@ -37318,6 +38494,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7694,
       "itemLevel": 47,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1931,
+              "amount": 750,
+              "name": "Cataloged Research",
+              "icon": "inv_misc_paperbundle04a"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Cataloged Research",
@@ -37335,6 +38525,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7695,
       "itemLevel": 48,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1931,
+              "amount": 1250,
+              "name": "Cataloged Research",
+              "icon": "inv_misc_paperbundle04a"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1250,
         "name": "Cataloged Research",
@@ -37352,6 +38556,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7696,
       "itemLevel": 49,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1931,
+              "amount": 2000,
+              "name": "Cataloged Research",
+              "icon": "inv_misc_paperbundle04a"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2000,
         "name": "Cataloged Research",
@@ -37369,6 +38587,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 6,
       "bonusId": 7697,
       "itemLevel": 50,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1931,
+              "amount": 3000,
+              "name": "Cataloged Research",
+              "icon": "inv_misc_paperbundle04a"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 3000,
         "name": "Cataloged Research",
@@ -38172,15 +39404,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7753": {
     "id": 7753,
-    "serverside": true
+    "itemLevel": {
+      "amount": 71,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7754": {
     "id": 7754,
-    "serverside": true
+    "itemLevel": {
+      "amount": 72,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7755": {
     "id": 7755,
-    "serverside": true
+    "itemLevel": {
+      "amount": 73,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "7756": {
     "id": 7756,
@@ -38194,6 +39438,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7759,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38210,6 +39468,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7760,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38226,6 +39498,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7761,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38242,6 +39528,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7762,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38258,6 +39558,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7763,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38274,6 +39588,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7764,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38290,6 +39618,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7765,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38306,6 +39648,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7766,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38322,6 +39678,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7767,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38338,6 +39708,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7768,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38354,6 +39738,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7769,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38370,6 +39768,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7770,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -38386,6 +39798,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7773,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38402,6 +39828,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7774,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38418,6 +39858,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7775,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38434,6 +39888,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7776,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38450,6 +39918,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7777,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38466,6 +39948,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7778,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38482,6 +39978,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7779,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38498,6 +40008,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7780,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38514,6 +40038,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7781,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38530,6 +40068,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7782,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38546,6 +40098,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7783,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38562,6 +40128,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7784,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -38578,6 +40158,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7787,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38594,6 +40188,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7788,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38610,6 +40218,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7789,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38626,6 +40248,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7790,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38642,6 +40278,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7791,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38658,6 +40308,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7792,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38674,6 +40338,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7793,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38690,6 +40368,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7794,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38706,6 +40398,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7795,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38722,6 +40428,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7796,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38738,6 +40458,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7797,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38754,6 +40488,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7798,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -38770,6 +40518,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7801,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38786,6 +40548,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7802,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38802,6 +40578,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7803,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38818,6 +40608,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7804,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38834,6 +40638,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7805,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38850,6 +40668,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7806,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38866,6 +40698,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7807,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38882,6 +40728,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7808,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38898,6 +40758,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7809,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38914,6 +40788,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7810,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38930,6 +40818,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7811,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38946,6 +40848,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7812,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -38962,6 +40878,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7815,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -38978,6 +40908,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7816,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -38994,6 +40938,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7817,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39010,6 +40968,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7818,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39026,6 +40998,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7819,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39042,6 +41028,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7820,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39058,6 +41058,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7821,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39074,6 +41088,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7822,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39090,6 +41118,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7823,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39106,6 +41148,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7824,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39122,6 +41178,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7825,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39138,6 +41208,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7826,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -39154,6 +41238,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7829,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39170,6 +41268,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7830,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39186,6 +41298,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7831,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39202,6 +41328,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7832,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39218,6 +41358,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7833,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39234,6 +41388,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7834,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39250,6 +41418,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7835,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39266,6 +41448,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7836,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39282,6 +41478,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7837,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39298,6 +41508,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7838,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39314,6 +41538,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7839,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39330,6 +41568,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7840,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -39346,6 +41598,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7843,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39362,6 +41628,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7844,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39378,6 +41658,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7845,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39394,6 +41688,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7846,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39410,6 +41718,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7847,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39426,6 +41748,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7848,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39442,6 +41778,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7849,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39458,6 +41808,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7850,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39474,6 +41838,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7851,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39490,6 +41868,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7852,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39506,6 +41898,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7853,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39522,6 +41928,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 7854,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -39616,9 +42036,9 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "7880": {
     "id": 7880,
+    "quality": 4,
     "ilevel": "233 @plvl 0 - 233 @plvl 233",
-    "curveId": 28743,
-    "quality": 4
+    "curveId": 28743
   },
   "7881": {
     "id": 7881,
@@ -39721,6 +42141,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7893,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -39738,6 +42172,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7894,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -39755,6 +42203,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7895,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 725,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -39772,6 +42234,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7896,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 600,
         "name": "Honor",
@@ -39789,6 +42265,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7897,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 725,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -39806,6 +42296,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7898,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 975,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 975,
         "name": "Honor",
@@ -39823,6 +42327,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7899,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -39840,6 +42358,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7900,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -39857,6 +42389,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7901,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -39874,6 +42420,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7902,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1550,
         "name": "Honor",
@@ -39891,6 +42451,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7903,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1850,
         "name": "Honor",
@@ -39908,6 +42482,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7904,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2450,
         "name": "Honor",
@@ -39925,6 +42513,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7905,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -39942,6 +42544,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7906,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -39959,6 +42575,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7907,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 625,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 625,
         "name": "Honor",
@@ -39976,6 +42606,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7908,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1175,
         "name": "Honor",
@@ -39993,6 +42637,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7909,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -40010,6 +42668,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7910,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -40027,6 +42699,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7911,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -40044,6 +42730,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7912,
       "itemLevel": 55,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -40061,6 +42761,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 7913,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -42925,6 +45639,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8189,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -42941,6 +45669,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8190,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -42957,6 +45699,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8191,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -42973,6 +45729,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8192,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -42989,6 +45759,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8193,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43005,6 +45789,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8194,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43021,6 +45819,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8195,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43037,6 +45849,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8196,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43053,6 +45879,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8197,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43069,6 +45909,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8198,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43085,6 +45939,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8199,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43101,6 +45969,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8200,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 1000,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Valor",
@@ -43117,6 +45999,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8203,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43133,6 +46029,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8204,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43149,6 +46059,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8205,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43165,6 +46089,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8206,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43181,6 +46119,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8207,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43197,6 +46149,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8208,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43213,6 +46179,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8209,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43229,6 +46209,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8210,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43245,6 +46239,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8211,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43261,6 +46269,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8212,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43277,6 +46299,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8213,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43293,6 +46329,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8214,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 500,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Valor",
@@ -43309,6 +46359,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8217,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43325,6 +46389,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8218,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43341,6 +46419,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8219,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43357,6 +46449,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8220,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43373,6 +46479,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8221,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43389,6 +46509,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8222,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43405,6 +46539,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8223,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43421,6 +46569,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8224,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43437,6 +46599,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8225,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43453,6 +46629,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8226,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43469,6 +46659,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8227,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43485,6 +46689,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8228,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -43501,6 +46719,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8231,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43517,6 +46749,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8232,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43533,6 +46779,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8233,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43549,6 +46809,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8234,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43565,6 +46839,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8235,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43581,6 +46869,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8236,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43597,6 +46899,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8237,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43613,6 +46929,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8238,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43629,6 +46959,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8239,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43645,6 +46989,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8240,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43661,6 +47019,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8241,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43677,6 +47049,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8242,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 750,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Valor",
@@ -43693,6 +47079,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8245,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43709,6 +47109,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8246,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43725,6 +47139,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8247,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43741,6 +47169,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8248,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43757,6 +47199,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8249,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43773,6 +47229,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8250,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43789,6 +47259,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8251,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43805,6 +47289,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8252,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43821,6 +47319,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8253,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43837,6 +47349,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8254,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43853,6 +47379,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8255,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43869,6 +47409,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8256,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 475,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Valor",
@@ -43885,6 +47439,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8259,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43901,6 +47469,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8260,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43917,6 +47499,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8261,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43933,6 +47529,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8262,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43949,6 +47559,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8263,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43965,6 +47589,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8264,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43981,6 +47619,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8265,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -43997,6 +47649,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8266,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -44013,6 +47679,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8267,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -44029,6 +47709,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8268,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -44045,6 +47739,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8269,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -44061,6 +47769,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8270,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 400,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Valor",
@@ -44077,6 +47799,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8273,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44093,6 +47829,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8274,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44109,6 +47859,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8275,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44125,6 +47889,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8276,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44141,6 +47919,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8277,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44157,6 +47949,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8278,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44173,6 +47979,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8279,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44189,6 +48009,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8280,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44205,6 +48039,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8281,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44221,6 +48069,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8282,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44237,6 +48099,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8283,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44253,6 +48129,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 12,
       "bonusId": 8284,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1191,
+              "amount": 250,
+              "name": "Valor",
+              "icon": "pvecurrency-valor"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Valor",
@@ -44292,6 +48182,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8291,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 200,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -44309,6 +48213,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8292,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -44326,6 +48244,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8293,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 275,
         "name": "Honor",
@@ -44343,6 +48275,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8294,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -44360,6 +48306,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8295,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -44377,6 +48337,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8296,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -44405,6 +48379,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8298,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 250,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -44422,6 +48410,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8299,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -44439,6 +48441,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8300,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -44456,6 +48472,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8301,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 400,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 400,
         "name": "Honor",
@@ -44473,6 +48503,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8302,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -44490,6 +48534,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8303,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -44518,6 +48576,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8305,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 325,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -44535,6 +48607,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8306,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -44552,6 +48638,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8307,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -44569,6 +48669,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8308,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -44586,6 +48700,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8309,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 575,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -44603,6 +48731,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8310,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -44631,6 +48773,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8312,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -44648,6 +48804,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8313,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -44665,6 +48835,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8314,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 900,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -44682,6 +48866,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8315,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1000,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1000,
         "name": "Honor",
@@ -44699,6 +48897,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8316,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1150,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1150,
         "name": "Honor",
@@ -44716,6 +48928,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8317,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1300,
         "name": "Honor",
@@ -44744,6 +48970,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8319,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 175,
         "name": "Honor",
@@ -44761,6 +49001,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8320,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 200,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 200,
         "name": "Honor",
@@ -44778,6 +49032,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8321,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 225,
         "name": "Honor",
@@ -44795,6 +49063,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8322,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 250,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 250,
         "name": "Honor",
@@ -44812,6 +49094,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8323,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 300,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 300,
         "name": "Honor",
@@ -44829,6 +49125,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8324,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 350,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 350,
         "name": "Honor",
@@ -44857,6 +49167,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8326,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -44874,6 +49198,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8327,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -44891,6 +49229,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8328,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 675,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -44908,6 +49260,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8329,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 750,
         "name": "Honor",
@@ -44925,6 +49291,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8330,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -44942,6 +49322,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8331,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 950,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 950,
         "name": "Honor",
@@ -44970,6 +49364,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8333,
       "itemLevel": 51,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 325,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 325,
         "name": "Honor",
@@ -44987,6 +49395,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8334,
       "itemLevel": 52,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -45004,6 +49426,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8335,
       "itemLevel": 53,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -45021,6 +49457,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8336,
       "itemLevel": 54,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -45038,6 +49488,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8337,
       "itemLevel": 56,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 575,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 575,
         "name": "Honor",
@@ -45055,6 +49519,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 7,
       "bonusId": 8338,
       "itemLevel": 57,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -45084,6 +49562,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8340,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 500,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 500,
         "name": "Honor",
@@ -45101,6 +49593,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8341,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 650,
         "name": "Honor",
@@ -45118,6 +49624,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8342,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 825,
         "name": "Honor",
@@ -45135,6 +49655,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8343,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1100,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -45152,6 +49686,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8344,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -45180,6 +49728,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8346,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 675,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 675,
         "name": "Honor",
@@ -45197,6 +49759,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8347,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -45214,6 +49790,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8348,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1100,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1100,
         "name": "Honor",
@@ -45231,6 +49821,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8349,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1475,
         "name": "Honor",
@@ -45248,6 +49852,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8350,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -45276,6 +49894,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8352,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -45293,6 +49925,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8353,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1075,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -45310,6 +49956,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8354,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -45327,6 +49987,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8355,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -45344,6 +50018,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8356,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1525,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -45372,6 +50060,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8358,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1700,
         "name": "Honor",
@@ -45389,6 +50091,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8359,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2150,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2150,
         "name": "Honor",
@@ -45406,6 +50122,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8360,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -45423,6 +50153,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8361,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 3650,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 3650,
         "name": "Honor",
@@ -45440,6 +50184,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8362,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 3050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 3050,
         "name": "Honor",
@@ -45468,6 +50226,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8364,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 425,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 425,
         "name": "Honor",
@@ -45485,6 +50257,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8365,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -45502,6 +50288,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8366,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 700,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 700,
         "name": "Honor",
@@ -45519,6 +50319,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8367,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 900,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 900,
         "name": "Honor",
@@ -45536,6 +50350,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8368,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -45564,6 +50392,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8370,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1275,
         "name": "Honor",
@@ -45581,6 +50423,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8371,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1600,
         "name": "Honor",
@@ -45598,6 +50454,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8372,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2050,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2050,
         "name": "Honor",
@@ -45615,6 +50485,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8373,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2750,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2750,
         "name": "Honor",
@@ -45632,6 +50516,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8374,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2275,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2275,
         "name": "Honor",
@@ -45660,6 +50558,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8376,
       "itemLevel": 59,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 850,
         "name": "Honor",
@@ -45677,6 +50589,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8377,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1075,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1075,
         "name": "Honor",
@@ -45694,6 +50620,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8378,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -45711,6 +50651,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8379,
       "itemLevel": 63,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -45728,6 +50682,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8380,
       "itemLevel": 62,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1525,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1525,
         "name": "Honor",
@@ -45745,6 +50713,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8381,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 450,
         "name": "Honor",
@@ -45762,6 +50744,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8382,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 550,
         "name": "Honor",
@@ -45779,6 +50775,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8383,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 725,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -45796,6 +50806,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8384,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 600,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 600,
         "name": "Honor",
@@ -45813,6 +50837,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8385,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 725,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 725,
         "name": "Honor",
@@ -45830,6 +50868,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8386,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 975,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 975,
         "name": "Honor",
@@ -45847,6 +50899,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8387,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -45864,6 +50930,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8388,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -45881,6 +50961,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8389,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -45898,6 +50992,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8390,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1550,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1550,
         "name": "Honor",
@@ -45915,6 +51023,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8391,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1850,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1850,
         "name": "Honor",
@@ -45932,6 +51054,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8392,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 2450,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 2450,
         "name": "Honor",
@@ -45949,6 +51085,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8393,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 375,
         "name": "Honor",
@@ -45966,6 +51116,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8394,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 475,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 475,
         "name": "Honor",
@@ -45983,6 +51147,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8395,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 625,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 625,
         "name": "Honor",
@@ -46000,6 +51178,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8396,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1175,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1175,
         "name": "Honor",
@@ -46017,6 +51209,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8397,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1375,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1375,
         "name": "Honor",
@@ -46034,6 +51240,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8398,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1825,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1825,
         "name": "Honor",
@@ -46051,6 +51271,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8399,
       "itemLevel": 58,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 775,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 775,
         "name": "Honor",
@@ -46068,6 +51302,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8400,
       "itemLevel": 60,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 925,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 925,
         "name": "Honor",
@@ -46085,6 +51333,20 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 9,
       "bonusId": 8401,
       "itemLevel": 61,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 1792,
+              "amount": 1225,
+              "name": "Honor",
+              "icon": "achievement_legionpvptier4"
+            }
+          ]
+        }
+      ],
       "currency": {
         "amount": 1225,
         "name": "Honor",
@@ -47259,8 +52521,8 @@ export const bonus_IDs: {[key: string]: any} = {
   "8792": {
     "id": 8792,
     "craftedStats": [
-      40,
-      36
+      36,
+      40
     ]
   },
   "8793": {
@@ -49357,8 +54619,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9118": {
     "id": 9118,
-    "quality": 4,
-    "tag": "Raid Finder",
     "itemLevel": {
       "amount": 70,
       "priority": 0,
@@ -49367,37 +54627,35 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9119": {
     "id": 9119,
-    "quality": 4,
     "itemLevel": {
       "amount": 71,
       "priority": 0,
       "squishEra": 0
-    }
+    },
+    "quality": 4
   },
   "9120": {
     "id": 9120,
-    "quality": 4,
     "tag": "Heroic",
     "itemLevel": {
       "amount": 72,
       "priority": 0,
       "squishEra": 0
-    }
+    },
+    "quality": 4
   },
   "9121": {
     "id": 9121,
-    "quality": 4,
     "tag": "Mythic",
     "itemLevel": {
       "amount": 73,
       "priority": 0,
       "squishEra": 0
-    }
+    },
+    "quality": 4
   },
   "9122": {
     "id": 9122,
-    "quality": 4,
-    "tag": "Raid Finder",
     "itemLevel": {
       "amount": 72,
       "priority": 0,
@@ -49406,7 +54664,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9123": {
     "id": 9123,
-    "quality": 4,
     "itemLevel": {
       "amount": 73,
       "priority": 0,
@@ -49415,8 +54672,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9124": {
     "id": 9124,
-    "quality": 4,
-    "tag": "Heroic",
     "itemLevel": {
       "amount": 74,
       "priority": 0,
@@ -49425,8 +54680,6 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9125": {
     "id": 9125,
-    "quality": 4,
-    "tag": "Mythic",
     "itemLevel": {
       "amount": 75,
       "priority": 0,
@@ -49632,6 +54885,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9155": {
     "id": 9155,
+    "quality": 1,
     "effect": {
       "id": 172599,
       "index": 0,
@@ -49640,8 +54894,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Shadow Barrage",
         "icon": "spell_fire_twilightrainoffire"
       }
-    },
-    "quality": 1
+    }
   },
   "9156": {
     "id": 9156,
@@ -49650,6 +54903,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9157": {
     "id": 9157,
+    "quality": 1,
     "effect": {
       "id": 172602,
       "index": 0,
@@ -49658,8 +54912,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Death Grip",
         "icon": "spell_deathknight_strangulate"
       }
-    },
-    "quality": 1
+    }
   },
   "9159": {
     "id": 9159,
@@ -49702,6 +54955,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9162": {
     "id": 9162,
+    "quality": 1,
     "effect": {
       "id": 172632,
       "index": 0,
@@ -49710,11 +54964,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Snowdrift",
         "icon": "spell_fire_blueflamestrike"
       }
-    },
-    "quality": 1
+    }
   },
   "9163": {
     "id": 9163,
+    "quality": 1,
     "effect": {
       "id": 172646,
       "index": 0,
@@ -49723,11 +54977,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Spitfire",
         "icon": "ability_warlock_fireandbrimstone"
       }
-    },
-    "quality": 1
+    }
   },
   "9164": {
     "id": 9164,
+    "quality": 1,
     "effect": {
       "id": 172647,
       "index": 0,
@@ -49736,11 +54990,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Fire Whirl",
         "icon": "spell_fire_playingwithfire"
       }
-    },
-    "quality": 1
+    }
   },
   "9165": {
     "id": 9165,
+    "quality": 1,
     "effect": {
       "id": 172648,
       "index": 0,
@@ -49749,11 +55003,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Frozen Orb",
         "icon": "spell_frost_frozenorb"
       }
-    },
-    "quality": 1
+    }
   },
   "9166": {
     "id": 9166,
+    "quality": 1,
     "effect": {
       "id": 172649,
       "index": 0,
@@ -49762,11 +55016,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Arcanosphere",
         "icon": "ability_mage_arcanosphere"
       }
-    },
-    "quality": 1
+    }
   },
   "9167": {
     "id": 9167,
+    "quality": 1,
     "effect": {
       "id": 172650,
       "index": 0,
@@ -49775,11 +55029,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Blessed Hammer",
         "icon": "paladin_retribution"
       }
-    },
-    "quality": 1
+    }
   },
   "9168": {
     "id": 9168,
+    "quality": 1,
     "effect": {
       "id": 172651,
       "index": 0,
@@ -49788,11 +55042,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Dark Star",
         "icon": "spell_priest_divinestar_shadow"
       }
-    },
-    "quality": 1
+    }
   },
   "9169": {
     "id": 9169,
+    "quality": 1,
     "effect": {
       "id": 172652,
       "index": 0,
@@ -49801,11 +55055,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Fists of Earthen Fury",
         "icon": "monk_ability_fistoffury"
       }
-    },
-    "quality": 1
+    }
   },
   "9170": {
     "id": 9170,
+    "quality": 1,
     "effect": {
       "id": 172653,
       "index": 0,
@@ -49814,11 +55068,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Flying Serpent Kick",
         "icon": "ability_monk_flyingdragonkick"
       }
-    },
-    "quality": 1
+    }
   },
   "9171": {
     "id": 9171,
+    "quality": 1,
     "effect": {
       "id": 172654,
       "index": 0,
@@ -49827,11 +55081,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Holy Dragon Punch",
         "icon": "ability_monk_hurricanestrike"
       }
-    },
-    "quality": 1
+    }
   },
   "9172": {
     "id": 9172,
+    "quality": 1,
     "effect": {
       "id": 172655,
       "index": 0,
@@ -49840,11 +55094,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Earthbreaker",
         "icon": "inv_ore_blackrock_nugget"
       }
-    },
-    "quality": 1
+    }
   },
   "9173": {
     "id": 9173,
+    "quality": 1,
     "effect": {
       "id": 172656,
       "index": 0,
@@ -49853,11 +55107,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Arcane Storm",
         "icon": "spell_druid_astralstorm"
       }
-    },
-    "quality": 1
+    }
   },
   "9174": {
     "id": 9174,
+    "quality": 1,
     "effect": {
       "id": 172657,
       "index": 0,
@@ -49866,11 +55120,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Capacitor Totem",
         "icon": "spell_nature_brilliance"
       }
-    },
-    "quality": 1
+    }
   },
   "9175": {
     "id": 9175,
+    "quality": 1,
     "effect": {
       "id": 172658,
       "index": 0,
@@ -49879,11 +55133,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Dragon's Breath",
         "icon": "inv_misc_head_dragon_01"
       }
-    },
-    "quality": 1
+    }
   },
   "9176": {
     "id": 9176,
+    "quality": 1,
     "effect": {
       "id": 172659,
       "index": 0,
@@ -49892,11 +55146,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Frost Nova",
         "icon": "spell_frost_frostnova"
       }
-    },
-    "quality": 1
+    }
   },
   "9177": {
     "id": 9177,
+    "quality": 1,
     "effect": {
       "id": 172660,
       "index": 0,
@@ -49905,11 +55159,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Ice Wall",
         "icon": "ability_mage_icewall"
       }
-    },
-    "quality": 1
+    }
   },
   "9178": {
     "id": 9178,
+    "quality": 1,
     "effect": {
       "id": 172661,
       "index": 0,
@@ -49918,11 +55172,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Intimidating Shout",
         "icon": "ability_golemthunderclap"
       }
-    },
-    "quality": 1
+    }
   },
   "9179": {
     "id": 9179,
+    "quality": 1,
     "effect": {
       "id": 172662,
       "index": 0,
@@ -49931,11 +55185,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Mighty Ox Kick",
         "icon": "ability_monk_mightyoxkick"
       }
-    },
-    "quality": 1
+    }
   },
   "9180": {
     "id": 9180,
+    "quality": 1,
     "effect": {
       "id": 172663,
       "index": 0,
@@ -49944,11 +55198,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Icebind",
         "icon": "spell_mage_frostbomb"
       }
-    },
-    "quality": 1
+    }
   },
   "9181": {
     "id": 9181,
+    "quality": 1,
     "effect": {
       "id": 172664,
       "index": 0,
@@ -49957,11 +55211,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Thunderstorm",
         "icon": "spell_shaman_thunderstorm"
       }
-    },
-    "quality": 1
+    }
   },
   "9182": {
     "id": 9182,
+    "quality": 1,
     "effect": {
       "id": 172665,
       "index": 0,
@@ -49970,11 +55224,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Alter Time",
         "icon": "spell_mage_altertime"
       }
-    },
-    "quality": 1
+    }
   },
   "9183": {
     "id": 9183,
+    "quality": 1,
     "effect": {
       "id": 172666,
       "index": 0,
@@ -49983,11 +55237,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Anti-Magic Shell",
         "icon": "spell_shadow_antimagicshell"
       }
-    },
-    "quality": 1
+    }
   },
   "9184": {
     "id": 9184,
+    "quality": 1,
     "effect": {
       "id": 172667,
       "index": 0,
@@ -49996,11 +55250,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Dispersion",
         "icon": "spell_shadow_dispersion"
       }
-    },
-    "quality": 1
+    }
   },
   "9185": {
     "id": 9185,
+    "quality": 1,
     "effect": {
       "id": 172668,
       "index": 0,
@@ -50009,11 +55263,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Feign Death",
         "icon": "ability_rogue_feigndeath"
       }
-    },
-    "quality": 1
+    }
   },
   "9186": {
     "id": 9186,
+    "quality": 1,
     "effect": {
       "id": 172669,
       "index": 0,
@@ -50022,11 +55276,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Grounding Totem",
         "icon": "spell_nature_groundingtotem"
       }
-    },
-    "quality": 1
+    }
   },
   "9187": {
     "id": 9187,
+    "quality": 1,
     "effect": {
       "id": 172670,
       "index": 0,
@@ -50035,11 +55289,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Ice Block",
         "icon": "spell_frost_frost"
       }
-    },
-    "quality": 1
+    }
   },
   "9188": {
     "id": 9188,
+    "quality": 1,
     "effect": {
       "id": 172671,
       "index": 0,
@@ -50048,11 +55302,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Spell Reflection",
         "icon": "ability_warrior_shieldreflection"
       }
-    },
-    "quality": 1
+    }
   },
   "9189": {
     "id": 9189,
+    "quality": 1,
     "effect": {
       "id": 172672,
       "index": 0,
@@ -50061,11 +55315,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Vanish",
         "icon": "ability_vanish"
       }
-    },
-    "quality": 1
+    }
   },
   "9190": {
     "id": 9190,
+    "quality": 1,
     "effect": {
       "id": 172673,
       "index": 0,
@@ -50074,11 +55328,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Anti-Magic Zone",
         "icon": "spell_deathknight_antimagiczone"
       }
-    },
-    "quality": 1
+    }
   },
   "9191": {
     "id": 9191,
+    "quality": 1,
     "effect": {
       "id": 172678,
       "index": 0,
@@ -50087,11 +55341,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Gorefiend's Grasp",
         "icon": "ability_deathknight_aoedeathgrip"
       }
-    },
-    "quality": 1
+    }
   },
   "9192": {
     "id": 9192,
+    "quality": 1,
     "effect": {
       "id": 172679,
       "index": 0,
@@ -50100,11 +55354,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Darkness",
         "icon": "ability_demonhunter_darkness"
       }
-    },
-    "quality": 1
+    }
   },
   "9193": {
     "id": 9193,
+    "quality": 1,
     "effect": {
       "id": 172680,
       "index": 0,
@@ -50113,11 +55367,11 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Smoke Bomb",
         "icon": "ability_rogue_smoke"
       }
-    },
-    "quality": 1
+    }
   },
   "9194": {
     "id": 9194,
+    "quality": 1,
     "effect": {
       "id": 172681,
       "index": 0,
@@ -50126,8 +55380,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Arclight Cannon",
         "icon": "inv_weapon_rifle_33"
       }
-    },
-    "quality": 1
+    }
   },
   "9195": {
     "id": 9195,
@@ -50170,6 +55423,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9198": {
     "id": 9198,
+    "quality": 1,
     "effect": {
       "id": 172685,
       "index": 0,
@@ -50178,8 +55432,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Hunting Bow",
         "icon": "inv_weapon_bow_11"
       }
-    },
-    "quality": 1
+    }
   },
   "9199": {
     "id": 9199,
@@ -50222,6 +55475,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9202": {
     "id": 9202,
+    "quality": 1,
     "effect": {
       "id": 172689,
       "index": 0,
@@ -50230,8 +55484,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Vanguard Sword",
         "icon": "inv_sword_1h_newplayer_a_03"
       }
-    },
-    "quality": 1
+    }
   },
   "9203": {
     "id": 9203,
@@ -50274,6 +55527,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9206": {
     "id": 9206,
+    "quality": 1,
     "effect": {
       "id": 172693,
       "index": 0,
@@ -50282,8 +55536,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Frostscythe",
         "icon": "inv_staff_78"
       }
-    },
-    "quality": 1
+    }
   },
   "9207": {
     "id": 9207,
@@ -50326,6 +55579,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "9210": {
     "id": 9210,
+    "quality": 1,
     "effect": {
       "id": 172697,
       "index": 0,
@@ -50334,8 +55588,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Blitzfire Revolver",
         "icon": "inv_weapon_rifle_40"
       }
-    },
-    "quality": 1
+    }
   },
   "9211": {
     "id": 9211,
@@ -52545,7 +57798,21 @@ export const bonus_IDs: {[key: string]: any} = {
       "level": 2,
       "max": 2,
       "bonusId": 9378,
-      "itemLevel": 72
+      "itemLevel": 72,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "itemId": 204276,
+              "amount": 1,
+              "name": "Untapped Forbidden Knowledge",
+              "icon": "inv_offhand_hyjal_d_01"
+            }
+          ]
+        }
+      ]
     },
     "tag": "Primal Empowered"
   },
@@ -55913,9 +61180,9 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10300": {
     "id": 10300,
+    "tag": "Vanity Crafted",
     "ilevel": "0 @plvl 0 - 450 @plvl 450",
     "curveId": 71196,
-    "tag": "Beginner Crafted",
     "quality": 7
   },
   "10301": {
@@ -55925,10 +61192,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10302": {
     "id": 10302,
+    "tag": "Vanity Crafted",
     "ilevel": "0 @plvl 0 - 456 @plvl 456",
     "curveId": 71351,
-    "quality": 7,
-    "tag": "Beginner Crafted"
+    "quality": 7
   },
   "10303": {
     "id": 10303,
@@ -56118,15 +61385,13 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10349": {
     "id": 10349,
-    "tag": "Beginner Crafted",
     "itemLevel": {
-      "amount": 564,
-      "priority": 70,
-      "squishEra": 1
+      "amount": 1,
+      "priority": 80,
+      "squishEra": 0
     },
-    "quality": 7,
-    "ilevel": "0 @plvl 0 - 450 @plvl 450",
-    "curveId": 71196
+    "tag": "Vanity Crafted",
+    "quality": 1
   },
   "10350": {
     "id": 10350,
@@ -56238,6 +61503,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10381": {
     "id": 10381,
+    "quality": 1,
     "effect": {
       "id": 181637,
       "index": 0,
@@ -56246,8 +61512,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Health Brew",
         "icon": "inv_drink_32_disgustingrotgut_color04"
       }
-    },
-    "quality": 1
+    }
   },
   "10382": {
     "id": 10382,
@@ -58992,8 +64257,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11083": {
     "id": 11083,
-    "ilevel": "1 @plvl 1 - 80 @plvl 80",
-    "curveId": 6243
+    "applyBonusId": 4790
   },
   "11085": {
     "id": 11085,
@@ -63673,12 +68937,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12041": {
     "id": 12041,
-    "quality": 4,
     "itemLevel": {
       "amount": 616,
       "priority": 1,
       "squishEra": 1
-    }
+    },
+    "quality": 4
   },
   "12042": {
     "id": 12042,
@@ -63722,12 +68986,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12051": {
     "id": 12051,
-    "quality": 4,
     "itemLevel": {
       "amount": 662,
       "priority": 1,
       "squishEra": 1
-    }
+    },
+    "quality": 4
   },
   "12052": {
     "id": 12052,
@@ -65151,7 +70415,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "12245": {
     "id": 12245,
     "itemLevel": {
-      "amount": 259,
+      "amount": 175,
       "priority": 3000,
       "squishEra": 2
     }
@@ -74493,7 +79757,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "id": 208649,
       "index": 0,
       "spell": {
-        "id": 1229511,
+        "id": 1283697,
         "name": "Arcanoweave Lining",
         "icon": "inv_elemental_primal_mana"
       }
@@ -75936,6 +81200,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12549": {
     "id": 12549,
+    "quality": 3,
     "rawStats": [
       {
         "stat": 7,
@@ -75948,8 +81213,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "StrInt"
       }
     ],
-    "stats": "50% Sta [0.2045], 50% StrInt [0.2045]",
-    "quality": 3
+    "stats": "50% Sta [0.2045], 50% StrInt [0.2045]"
   },
   "12550": {
     "id": 12550,
@@ -76285,15 +81549,15 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12616": {
     "id": 12616,
+    "quality": 3,
     "ilevel": "18 @plvl 1 - 578 @plvl 578",
-    "curveId": 87662,
-    "quality": 3
+    "curveId": 87662
   },
   "12617": {
     "id": 12617,
-    "quality": 4,
     "ilevel": "24 @plvl 1 - 584 @plvl 584",
     "curveId": 89644,
+    "quality": 4,
     "rawStats": [
       {
         "stat": 7,
@@ -76859,10 +82123,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12667,
     "serverside": true
   },
-  "12668": {
-    "id": 12668,
-    "serverside": true
-  },
   "12669": {
     "id": 12669,
     "serverside": true
@@ -76959,6 +82219,7 @@ export const bonus_IDs: {[key: string]: any} = {
   "12682": {
     "id": 12682,
     "tag": "Rank 1/4",
+    "quality": 2,
     "effect": {
       "id": 203483,
       "index": 0,
@@ -76967,8 +82228,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
-    },
-    "quality": 2
+    }
   },
   "12683": {
     "id": 12683,
@@ -77016,9 +82276,9 @@ export const bonus_IDs: {[key: string]: any} = {
       "id": 212930,
       "index": 0,
       "spell": {
-        "id": 1244243,
+        "id": 1259060,
         "name": "Blessed Pango Charm",
-        "icon": "inv_jewelry_necklace_139"
+        "icon": "jewelcrafting_cut_epic_gem_color2"
       }
     }
   },
@@ -77089,6 +82349,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 1/8",
       "bonusId": 12704,
+      "itemLevel": 245,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77394,7 +82656,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Kinetic Ankle Primers",
         "icon": "ability_karoz_leap"
       }
-    }
+    },
+    "item_limit_category": 697
   },
   "12762": {
     "id": 12762,
@@ -77411,6 +82674,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 2/8",
       "bonusId": 12762,
+      "itemLevel": 248,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77571,6 +82836,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 3/8",
       "bonusId": 12763,
+      "itemLevel": 252,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77731,6 +82998,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 4/8",
       "bonusId": 12764,
+      "itemLevel": 255,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -77891,6 +83160,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 5/8",
       "bonusId": 12765,
+      "itemLevel": 258,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78051,6 +83322,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 6/8",
       "bonusId": 12766,
+      "itemLevel": 261,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78211,6 +83484,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 7/8",
       "bonusId": 12767,
+      "itemLevel": 265,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78371,6 +83646,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Explorer",
       "fullName": "Explorer 8/8",
       "bonusId": 12768,
+      "itemLevel": 268,
+      "seasonId": 34,
       "costs": [
         {
           "mask_inv_type": 1048738,
@@ -78530,104 +83807,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 1/6",
       "bonusId": 12769,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
+      "itemLevel": 220,
+      "seasonId": 34,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -78689,106 +83870,24 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 2/6",
       "bonusId": 12770,
+      "itemLevel": 224,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
+              "currencyId": 3383,
+              "amount": 20,
+              "name": "Adventurer Dawncrest",
+              "icon": "inv_120_crest_adventurer"
             }
           ]
         }
       ],
       "currency": {
-        "amount": 10,
+        "amount": 20,
         "name": "Adventurer Dawncrest",
         "id": 3383,
         "icon": "inv_120_crest_adventurer"
@@ -78854,100 +83953,18 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 3/6",
       "bonusId": 12771,
+      "itemLevel": 227,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
+              "currencyId": 3383,
+              "amount": 20,
+              "name": "Adventurer Dawncrest",
+              "icon": "inv_120_crest_adventurer"
             }
           ]
         }
@@ -79019,106 +84036,24 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 4/6",
       "bonusId": 12772,
+      "itemLevel": 230,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
+              "currencyId": 3383,
+              "amount": 20,
+              "name": "Adventurer Dawncrest",
+              "icon": "inv_120_crest_adventurer"
             }
           ]
         }
       ],
       "currency": {
-        "amount": 30,
+        "amount": 20,
         "name": "Adventurer Dawncrest",
         "id": 3383,
         "icon": "inv_120_crest_adventurer"
@@ -79184,106 +84119,24 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 5/6",
       "bonusId": 12773,
+      "itemLevel": 233,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
+              "currencyId": 3383,
+              "amount": 20,
+              "name": "Adventurer Dawncrest",
+              "icon": "inv_120_crest_adventurer"
             }
           ]
         }
       ],
       "currency": {
-        "amount": 40,
+        "amount": 20,
         "name": "Adventurer Dawncrest",
         "id": 3383,
         "icon": "inv_120_crest_adventurer"
@@ -79349,106 +84202,24 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Adventurer",
       "fullName": "Adventurer 6/6",
       "bonusId": 12774,
+      "itemLevel": 237,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
+              "currencyId": 3383,
+              "amount": 20,
+              "name": "Adventurer Dawncrest",
+              "icon": "inv_120_crest_adventurer"
             }
           ]
         }
       ],
       "currency": {
-        "amount": 50,
+        "amount": 20,
         "name": "Adventurer Dawncrest",
         "id": 3383,
         "icon": "inv_120_crest_adventurer"
@@ -79520,6 +84291,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12777": {
     "id": 12777,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 233,
+      "priority": 0,
+      "squishEra": 2
+    },
     "upgrade": {
       "group": 609,
       "level": 1,
@@ -79527,152 +84304,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 1/6",
       "bonusId": 12777,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
+      "itemLevel": 233,
+      "seasonId": 34,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -79717,12 +84350,6 @@ export const bonus_IDs: {[key: string]: any} = {
           "accountWide": false
         }
       ]
-    },
-    "quality": 4,
-    "itemLevel": {
-      "amount": 233,
-      "priority": 0,
-      "squishEra": 2
     }
   },
   "12778": {
@@ -79739,146 +84366,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 2/6",
       "bonusId": 12778,
+      "itemLevel": 237,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
+              "amount": 20,
               "name": "Veteran Dawncrest",
               "icon": "inv_120_crest_veteran"
             }
@@ -79886,7 +84383,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 10,
+        "amount": 20,
         "name": "Veteran Dawncrest",
         "id": 3341,
         "icon": "inv_120_crest_veteran"
@@ -79952,146 +84449,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 3/6",
       "bonusId": 12779,
+      "itemLevel": 240,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
+              "amount": 20,
               "name": "Veteran Dawncrest",
               "icon": "inv_120_crest_veteran"
             }
@@ -80165,146 +84532,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 4/6",
       "bonusId": 12780,
+      "itemLevel": 243,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
+              "amount": 20,
               "name": "Veteran Dawncrest",
               "icon": "inv_120_crest_veteran"
             }
@@ -80312,7 +84549,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 30,
+        "amount": 20,
         "name": "Veteran Dawncrest",
         "id": 3341,
         "icon": "inv_120_crest_veteran"
@@ -80378,146 +84615,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 5/6",
       "bonusId": 12781,
+      "itemLevel": 246,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
+              "amount": 20,
               "name": "Veteran Dawncrest",
               "icon": "inv_120_crest_veteran"
             }
@@ -80525,7 +84632,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 40,
+        "amount": 20,
         "name": "Veteran Dawncrest",
         "id": 3341,
         "icon": "inv_120_crest_veteran"
@@ -80591,146 +84698,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Veteran",
       "fullName": "Veteran 6/6",
       "bonusId": 12782,
+      "itemLevel": 250,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 125,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 250,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3341,
-              "amount": 15,
+              "amount": 20,
               "name": "Veteran Dawncrest",
               "icon": "inv_120_crest_veteran"
             }
@@ -80738,7 +84715,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 50,
+        "amount": 20,
         "name": "Veteran Dawncrest",
         "id": 3341,
         "icon": "inv_120_crest_veteran"
@@ -80822,152 +84799,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 1/6",
       "bonusId": 12785,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
+      "itemLevel": 246,
+      "seasonId": 34,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -81029,146 +84862,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 2/6",
       "bonusId": 12786,
+      "itemLevel": 250,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
+              "amount": 20,
               "name": "Champion Dawncrest",
               "icon": "inv_120_crest_champion"
             }
@@ -81176,7 +84879,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 10,
+        "amount": 20,
         "name": "Champion Dawncrest",
         "id": 3343,
         "icon": "inv_120_crest_champion"
@@ -81242,146 +84945,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 3/6",
       "bonusId": 12787,
+      "itemLevel": 253,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
+              "amount": 20,
               "name": "Champion Dawncrest",
               "icon": "inv_120_crest_champion"
             }
@@ -81455,146 +85028,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 4/6",
       "bonusId": 12788,
+      "itemLevel": 256,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
+              "amount": 20,
               "name": "Champion Dawncrest",
               "icon": "inv_120_crest_champion"
             }
@@ -81602,7 +85045,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 30,
+        "amount": 20,
         "name": "Champion Dawncrest",
         "id": 3343,
         "icon": "inv_120_crest_champion"
@@ -81668,146 +85111,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 5/6",
       "bonusId": 12789,
+      "itemLevel": 259,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
+              "amount": 20,
               "name": "Champion Dawncrest",
               "icon": "inv_120_crest_champion"
             }
@@ -81815,7 +85128,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 40,
+        "amount": 20,
         "name": "Champion Dawncrest",
         "id": 3343,
         "icon": "inv_120_crest_champion"
@@ -81881,146 +85194,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Champion",
       "fullName": "Champion 6/6",
       "bonusId": 12790,
+      "itemLevel": 263,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 145,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 150,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 225,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3343,
-              "amount": 15,
+              "amount": 20,
               "name": "Champion Dawncrest",
               "icon": "inv_120_crest_champion"
             }
@@ -82028,7 +85211,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 50,
+        "amount": 20,
         "name": "Champion Dawncrest",
         "id": 3343,
         "icon": "inv_120_crest_champion"
@@ -82112,152 +85295,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 1/6",
       "bonusId": 12793,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
+      "itemLevel": 259,
+      "seasonId": 34,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -82319,146 +85358,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 2/6",
       "bonusId": 12794,
+      "itemLevel": 263,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
+              "amount": 20,
               "name": "Hero Dawncrest",
               "icon": "inv_120_crest_hero"
             }
@@ -82466,7 +85375,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 10,
+        "amount": 20,
         "name": "Hero Dawncrest",
         "id": 3345,
         "icon": "inv_120_crest_hero"
@@ -82532,146 +85441,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 3/6",
       "bonusId": 12795,
+      "itemLevel": 266,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
+              "amount": 20,
               "name": "Hero Dawncrest",
               "icon": "inv_120_crest_hero"
             }
@@ -82745,146 +85524,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 4/6",
       "bonusId": 12796,
+      "itemLevel": 269,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
+              "amount": 20,
               "name": "Hero Dawncrest",
               "icon": "inv_120_crest_hero"
             }
@@ -82892,7 +85541,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 30,
+        "amount": 20,
         "name": "Hero Dawncrest",
         "id": 3345,
         "icon": "inv_120_crest_hero"
@@ -82958,146 +85607,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 5/6",
       "bonusId": 12797,
+      "itemLevel": 272,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
+              "amount": 20,
               "name": "Hero Dawncrest",
               "icon": "inv_120_crest_hero"
             }
@@ -83105,7 +85624,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 40,
+        "amount": 20,
         "name": "Hero Dawncrest",
         "id": 3345,
         "icon": "inv_120_crest_hero"
@@ -83171,146 +85690,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Hero",
       "fullName": "Hero 6/6",
       "bonusId": 12798,
+      "itemLevel": 276,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 170,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 140,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 90,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 175,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 275,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 350,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3345,
-              "amount": 15,
+              "amount": 20,
               "name": "Hero Dawncrest",
               "icon": "inv_120_crest_hero"
             }
@@ -83318,7 +85707,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 50,
+        "amount": 20,
         "name": "Hero Dawncrest",
         "id": 3345,
         "icon": "inv_120_crest_hero"
@@ -83402,152 +85791,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 1/6",
       "bonusId": 12801,
-      "costs": [
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
+      "itemLevel": 272,
+      "seasonId": 34,
       "highWatermarkDiscounts": [
         {
           "type": "currency",
@@ -83609,146 +85854,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 2/6",
       "bonusId": 12802,
+      "itemLevel": 276,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
+              "amount": 20,
               "name": "Myth Dawncrest",
               "icon": "inv_120_crest_myth"
             }
@@ -83756,7 +85871,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 10,
+        "amount": 20,
         "name": "Myth Dawncrest",
         "id": 3347,
         "icon": "inv_120_crest_myth"
@@ -83822,146 +85937,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 3/6",
       "bonusId": 12803,
+      "itemLevel": 279,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
+              "amount": 20,
               "name": "Myth Dawncrest",
               "icon": "inv_120_crest_myth"
             }
@@ -84035,146 +86020,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 4/6",
       "bonusId": 12804,
+      "itemLevel": 282,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
+              "amount": 20,
               "name": "Myth Dawncrest",
               "icon": "inv_120_crest_myth"
             }
@@ -84182,7 +86037,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 30,
+        "amount": 20,
         "name": "Myth Dawncrest",
         "id": 3347,
         "icon": "inv_120_crest_myth"
@@ -84248,146 +86103,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 5/6",
       "bonusId": 12805,
+      "itemLevel": 285,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
+              "amount": 20,
               "name": "Myth Dawncrest",
               "icon": "inv_120_crest_myth"
             }
@@ -84395,7 +86120,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 40,
+        "amount": 20,
         "name": "Myth Dawncrest",
         "id": 3347,
         "icon": "inv_120_crest_myth"
@@ -84461,146 +86186,16 @@ export const bonus_IDs: {[key: string]: any} = {
       "name": "Myth",
       "fullName": "Myth 6/6",
       "bonusId": 12806,
+      "itemLevel": 289,
+      "seasonId": 34,
       "costs": [
         {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 300,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 400,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 1048738,
+          "mask_inv_type": 0,
           "flags": 0,
           "amounts": [
             {
-              "currencyId": 3008,
-              "amount": 190,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
               "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 200,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            },
-            {
-              "currencyId": 3347,
-              "amount": 15,
+              "amount": 20,
               "name": "Myth Dawncrest",
               "icon": "inv_120_crest_myth"
             }
@@ -84608,7 +86203,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ],
       "currency": {
-        "amount": 50,
+        "amount": 20,
         "name": "Myth Dawncrest",
         "id": 3347,
         "icon": "inv_120_crest_myth"
@@ -84692,7 +86287,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 1/8",
-      "bonusId": 12809
+      "bonusId": 12809,
+      "itemLevel": 284
     },
     "quality": 2
   },
@@ -84710,7 +86306,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 2/8",
-      "bonusId": 12810
+      "bonusId": 12810,
+      "itemLevel": 287
     },
     "quality": 2
   },
@@ -84728,7 +86325,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 3/8",
-      "bonusId": 12811
+      "bonusId": 12811,
+      "itemLevel": 291
     },
     "quality": 2
   },
@@ -84746,7 +86344,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 4/8",
-      "bonusId": 12812
+      "bonusId": 12812,
+      "itemLevel": 294
     },
     "quality": 2
   },
@@ -84764,7 +86363,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 5/8",
-      "bonusId": 12813
+      "bonusId": 12813,
+      "itemLevel": 297
     },
     "quality": 2
   },
@@ -84782,7 +86382,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 6/8",
-      "bonusId": 12814
+      "bonusId": 12814,
+      "itemLevel": 300
     },
     "quality": 2
   },
@@ -84800,7 +86401,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 7/8",
-      "bonusId": 12815
+      "bonusId": 12815,
+      "itemLevel": 304
     },
     "quality": 2
   },
@@ -84818,7 +86420,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 8/8",
-      "bonusId": 12816
+      "bonusId": 12816,
+      "itemLevel": 307
     },
     "quality": 2
   },
@@ -84836,7 +86439,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 1/8",
-      "bonusId": 12817
+      "bonusId": 12817,
+      "itemLevel": 97
     },
     "quality": 3
   },
@@ -84854,7 +86458,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 2/8",
-      "bonusId": 12818
+      "bonusId": 12818,
+      "itemLevel": 300
     },
     "quality": 3
   },
@@ -84872,7 +86477,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 3/8",
-      "bonusId": 12819
+      "bonusId": 12819,
+      "itemLevel": 304
     },
     "quality": 3
   },
@@ -84890,7 +86496,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 4/8",
-      "bonusId": 12820
+      "bonusId": 12820,
+      "itemLevel": 307
     },
     "quality": 3
   },
@@ -84908,7 +86515,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 5/8",
-      "bonusId": 12821
+      "bonusId": 12821,
+      "itemLevel": 310
     },
     "quality": 3
   },
@@ -84926,7 +86534,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 6/8",
-      "bonusId": 12822
+      "bonusId": 12822,
+      "itemLevel": 313
     },
     "quality": 3
   },
@@ -84944,7 +86553,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 7/8",
-      "bonusId": 12823
+      "bonusId": 12823,
+      "itemLevel": 317
     },
     "quality": 3
   },
@@ -84962,7 +86572,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 8/8",
-      "bonusId": 12824
+      "bonusId": 12824,
+      "itemLevel": 320
     },
     "quality": 3
   },
@@ -84980,7 +86591,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 1/8",
-      "bonusId": 12825
+      "bonusId": 12825,
+      "itemLevel": 310
     },
     "quality": 4
   },
@@ -84998,7 +86610,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 2/8",
-      "bonusId": 12826
+      "bonusId": 12826,
+      "itemLevel": 313
     },
     "quality": 4
   },
@@ -85016,7 +86629,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 3/8",
-      "bonusId": 12827
+      "bonusId": 12827,
+      "itemLevel": 317
     },
     "quality": 4
   },
@@ -85034,7 +86648,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 4/8",
-      "bonusId": 12828
+      "bonusId": 12828,
+      "itemLevel": 320
     },
     "quality": 4
   },
@@ -85052,7 +86667,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 5/8",
-      "bonusId": 12829
+      "bonusId": 12829,
+      "itemLevel": 323
     },
     "quality": 4
   },
@@ -85070,7 +86686,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 6/8",
-      "bonusId": 12830
+      "bonusId": 12830,
+      "itemLevel": 326
     },
     "quality": 4
   },
@@ -85088,7 +86705,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 7/8",
-      "bonusId": 12831
+      "bonusId": 12831,
+      "itemLevel": 330
     },
     "quality": 4
   },
@@ -85106,7 +86724,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 8/8",
-      "bonusId": 12832
+      "bonusId": 12832,
+      "itemLevel": 333
     },
     "quality": 4
   },
@@ -85124,7 +86743,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 1/8",
-      "bonusId": 12833
+      "bonusId": 12833,
+      "itemLevel": 323
     },
     "quality": 4
   },
@@ -85142,7 +86762,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 2/8",
-      "bonusId": 12834
+      "bonusId": 12834,
+      "itemLevel": 326
     },
     "quality": 4
   },
@@ -85160,7 +86781,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 3/8",
-      "bonusId": 12835
+      "bonusId": 12835,
+      "itemLevel": 330
     },
     "quality": 4
   },
@@ -85178,7 +86800,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 4/8",
-      "bonusId": 12836
+      "bonusId": 12836,
+      "itemLevel": 333
     },
     "quality": 4
   },
@@ -85196,7 +86819,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 5/8",
-      "bonusId": 12837
+      "bonusId": 12837,
+      "itemLevel": 336
     },
     "quality": 4
   },
@@ -85214,7 +86838,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 6/8",
-      "bonusId": 12838
+      "bonusId": 12838,
+      "itemLevel": 339
     },
     "quality": 4
   },
@@ -85232,7 +86857,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 7/8",
-      "bonusId": 12839
+      "bonusId": 12839,
+      "itemLevel": 343
     },
     "quality": 4
   },
@@ -85250,7 +86876,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 8/8",
-      "bonusId": 12840
+      "bonusId": 12840,
+      "itemLevel": 346
     },
     "quality": 4
   },
@@ -85268,7 +86895,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 1/8",
-      "bonusId": 12841
+      "bonusId": 12841,
+      "itemLevel": 336
     },
     "quality": 4
   },
@@ -85286,7 +86914,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 2/8",
-      "bonusId": 12842
+      "bonusId": 12842,
+      "itemLevel": 339
     },
     "quality": 4
   },
@@ -85304,7 +86933,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 3/8",
-      "bonusId": 12843
+      "bonusId": 12843,
+      "itemLevel": 343
     },
     "quality": 4
   },
@@ -85322,7 +86952,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 4/8",
-      "bonusId": 12844
+      "bonusId": 12844,
+      "itemLevel": 346
     },
     "quality": 4
   },
@@ -85340,7 +86971,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 5/8",
-      "bonusId": 12845
+      "bonusId": 12845,
+      "itemLevel": 349
     },
     "quality": 4
   },
@@ -85358,7 +86990,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 6/8",
-      "bonusId": 12846
+      "bonusId": 12846,
+      "itemLevel": 352
     },
     "quality": 4
   },
@@ -85376,7 +87009,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 7/8",
-      "bonusId": 12847
+      "bonusId": 12847,
+      "itemLevel": 356
     },
     "quality": 4
   },
@@ -85394,7 +87028,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 8/8",
-      "bonusId": 12848
+      "bonusId": 12848,
+      "itemLevel": 359
     },
     "quality": 4
   },
@@ -85412,7 +87047,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 1/8",
-      "bonusId": 12849
+      "bonusId": 12849,
+      "itemLevel": 349
     },
     "quality": 4
   },
@@ -85430,7 +87066,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 2/8",
-      "bonusId": 12850
+      "bonusId": 12850,
+      "itemLevel": 352
     },
     "quality": 4
   },
@@ -85448,7 +87085,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 3/8",
-      "bonusId": 12851
+      "bonusId": 12851,
+      "itemLevel": 356
     },
     "quality": 4
   },
@@ -85466,7 +87104,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 4/8",
-      "bonusId": 12852
+      "bonusId": 12852,
+      "itemLevel": 359
     },
     "quality": 4
   },
@@ -85484,7 +87123,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 5/8",
-      "bonusId": 12853
+      "bonusId": 12853,
+      "itemLevel": 362
     },
     "quality": 4
   },
@@ -85502,7 +87142,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 6/8",
-      "bonusId": 12854
+      "bonusId": 12854,
+      "itemLevel": 365
     },
     "quality": 4
   },
@@ -85520,7 +87161,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 7/8",
-      "bonusId": 12855
+      "bonusId": 12855,
+      "itemLevel": 369
     },
     "quality": 4
   },
@@ -85538,7 +87180,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 8/8",
-      "bonusId": 12856
+      "bonusId": 12856,
+      "itemLevel": 372
     },
     "quality": 4
   },
@@ -85556,7 +87199,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 1/8",
-      "bonusId": 12857
+      "bonusId": 12857,
+      "itemLevel": 323
     },
     "quality": 2
   },
@@ -85574,27 +87218,29 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 2/8",
-      "bonusId": 12858
+      "bonusId": 12858,
+      "itemLevel": 326
     },
     "quality": 2
   },
   "12859": {
     "id": 12859,
+    "itemLevel": {
+      "amount": 330,
+      "priority": 9999,
+      "squishEra": 2,
+      "curveId": 88583
+    },
     "upgrade": {
       "group": 619,
       "level": 3,
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 3/8",
-      "bonusId": 12859
+      "bonusId": 12859,
+      "itemLevel": 330
     },
-    "quality": 2,
-    "itemLevel": {
-      "amount": 330,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    }
+    "quality": 2
   },
   "12860": {
     "id": 12860,
@@ -85610,7 +87256,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 4/8",
-      "bonusId": 12860
+      "bonusId": 12860,
+      "itemLevel": 333
     },
     "quality": 2
   },
@@ -85628,7 +87275,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 5/8",
-      "bonusId": 12861
+      "bonusId": 12861,
+      "itemLevel": 336
     },
     "quality": 2
   },
@@ -85646,7 +87294,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 6/8",
-      "bonusId": 12862
+      "bonusId": 12862,
+      "itemLevel": 339
     },
     "quality": 2
   },
@@ -85664,7 +87313,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 7/8",
-      "bonusId": 12863
+      "bonusId": 12863,
+      "itemLevel": 343
     },
     "quality": 2
   },
@@ -85682,7 +87332,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Explorer",
       "fullName": "Explorer 8/8",
-      "bonusId": 12864
+      "bonusId": 12864,
+      "itemLevel": 346
     },
     "quality": 2
   },
@@ -85700,7 +87351,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 1/8",
-      "bonusId": 12865
+      "bonusId": 12865,
+      "itemLevel": 336
     },
     "quality": 3
   },
@@ -85718,7 +87370,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 2/8",
-      "bonusId": 12866
+      "bonusId": 12866,
+      "itemLevel": 339
     },
     "quality": 3
   },
@@ -85736,7 +87389,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 3/8",
-      "bonusId": 12867
+      "bonusId": 12867,
+      "itemLevel": 343
     },
     "quality": 3
   },
@@ -85754,7 +87408,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 4/8",
-      "bonusId": 12868
+      "bonusId": 12868,
+      "itemLevel": 346
     },
     "quality": 3
   },
@@ -85772,7 +87427,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 5/8",
-      "bonusId": 12869
+      "bonusId": 12869,
+      "itemLevel": 349
     },
     "quality": 3
   },
@@ -85790,7 +87446,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 6/8",
-      "bonusId": 12870
+      "bonusId": 12870,
+      "itemLevel": 352
     },
     "quality": 3
   },
@@ -85808,7 +87465,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 7/8",
-      "bonusId": 12871
+      "bonusId": 12871,
+      "itemLevel": 356
     },
     "quality": 3
   },
@@ -85826,7 +87484,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Adventurer",
       "fullName": "Adventurer 8/8",
-      "bonusId": 12872
+      "bonusId": 12872,
+      "itemLevel": 359
     },
     "quality": 3
   },
@@ -85844,7 +87503,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 1/8",
-      "bonusId": 12873
+      "bonusId": 12873,
+      "itemLevel": 349
     },
     "quality": 4
   },
@@ -85862,7 +87522,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 2/8",
-      "bonusId": 12874
+      "bonusId": 12874,
+      "itemLevel": 352
     },
     "quality": 4
   },
@@ -85880,7 +87541,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 3/8",
-      "bonusId": 12875
+      "bonusId": 12875,
+      "itemLevel": 356
     },
     "quality": 4
   },
@@ -85898,7 +87560,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 4/8",
-      "bonusId": 12876
+      "bonusId": 12876,
+      "itemLevel": 359
     },
     "quality": 4
   },
@@ -85916,7 +87579,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 5/8",
-      "bonusId": 12877
+      "bonusId": 12877,
+      "itemLevel": 362
     },
     "quality": 4
   },
@@ -85934,7 +87598,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 6/8",
-      "bonusId": 12878
+      "bonusId": 12878,
+      "itemLevel": 365
     },
     "quality": 4
   },
@@ -85952,7 +87617,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 7/8",
-      "bonusId": 12879
+      "bonusId": 12879,
+      "itemLevel": 369
     },
     "quality": 4
   },
@@ -85970,7 +87636,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Veteran",
       "fullName": "Veteran 8/8",
-      "bonusId": 12880
+      "bonusId": 12880,
+      "itemLevel": 372
     },
     "quality": 4
   },
@@ -85988,7 +87655,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 1/8",
-      "bonusId": 12881
+      "bonusId": 12881,
+      "itemLevel": 362
     },
     "quality": 4
   },
@@ -86006,7 +87674,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 2/8",
-      "bonusId": 12882
+      "bonusId": 12882,
+      "itemLevel": 365
     },
     "quality": 4
   },
@@ -86024,7 +87693,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 3/8",
-      "bonusId": 12883
+      "bonusId": 12883,
+      "itemLevel": 369
     },
     "quality": 4
   },
@@ -86042,7 +87712,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 4/8",
-      "bonusId": 12884
+      "bonusId": 12884,
+      "itemLevel": 372
     },
     "quality": 4
   },
@@ -86060,7 +87731,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 5/8",
-      "bonusId": 12885
+      "bonusId": 12885,
+      "itemLevel": 375
     },
     "quality": 4
   },
@@ -86078,7 +87750,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 6/8",
-      "bonusId": 12886
+      "bonusId": 12886,
+      "itemLevel": 378
     },
     "quality": 4
   },
@@ -86096,7 +87769,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 7/8",
-      "bonusId": 12887
+      "bonusId": 12887,
+      "itemLevel": 382
     },
     "quality": 4
   },
@@ -86114,7 +87788,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Champion",
       "fullName": "Champion 8/8",
-      "bonusId": 12888
+      "bonusId": 12888,
+      "itemLevel": 385
     },
     "quality": 4
   },
@@ -86132,7 +87807,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 1/8",
-      "bonusId": 12889
+      "bonusId": 12889,
+      "itemLevel": 375
     },
     "quality": 4
   },
@@ -86150,7 +87826,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 2/8",
-      "bonusId": 12890
+      "bonusId": 12890,
+      "itemLevel": 378
     },
     "quality": 4
   },
@@ -86168,7 +87845,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 3/8",
-      "bonusId": 12891
+      "bonusId": 12891,
+      "itemLevel": 382
     },
     "quality": 4
   },
@@ -86186,7 +87864,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 4/8",
-      "bonusId": 12892
+      "bonusId": 12892,
+      "itemLevel": 385
     },
     "quality": 4
   },
@@ -86204,7 +87883,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 5/8",
-      "bonusId": 12893
+      "bonusId": 12893,
+      "itemLevel": 388
     },
     "quality": 4
   },
@@ -86222,7 +87902,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 6/8",
-      "bonusId": 12894
+      "bonusId": 12894,
+      "itemLevel": 391
     },
     "quality": 4
   },
@@ -86240,7 +87921,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 7/8",
-      "bonusId": 12895
+      "bonusId": 12895,
+      "itemLevel": 395
     },
     "quality": 4
   },
@@ -86258,7 +87940,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Hero",
       "fullName": "Hero 8/8",
-      "bonusId": 12896
+      "bonusId": 12896,
+      "itemLevel": 398
     },
     "quality": 4
   },
@@ -86276,7 +87959,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 1/8",
-      "bonusId": 12897
+      "bonusId": 12897,
+      "itemLevel": 388
     },
     "quality": 4
   },
@@ -86294,7 +87978,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 2/8",
-      "bonusId": 12898
+      "bonusId": 12898,
+      "itemLevel": 391
     },
     "quality": 4
   },
@@ -86312,7 +87997,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 3/8",
-      "bonusId": 12899
+      "bonusId": 12899,
+      "itemLevel": 395
     },
     "quality": 4
   },
@@ -86330,7 +88016,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 4/8",
-      "bonusId": 12900
+      "bonusId": 12900,
+      "itemLevel": 398
     },
     "quality": 4
   },
@@ -86348,7 +88035,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 5/8",
-      "bonusId": 12901
+      "bonusId": 12901,
+      "itemLevel": 401
     },
     "quality": 4
   },
@@ -86366,7 +88054,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 6/8",
-      "bonusId": 12902
+      "bonusId": 12902,
+      "itemLevel": 404
     },
     "quality": 4
   },
@@ -86384,7 +88073,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 7/8",
-      "bonusId": 12903
+      "bonusId": 12903,
+      "itemLevel": 408
     },
     "quality": 4
   },
@@ -86402,7 +88092,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Myth",
       "fullName": "Myth 8/8",
-      "bonusId": 12904
+      "bonusId": 12904,
+      "itemLevel": 411
     },
     "quality": 4
   },
@@ -86436,7 +88127,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Meddy, Pocket-Sized",
         "icon": "trade_engineering"
       }
-    }
+    },
+    "item_limit_category": 697
   },
   "13183": {
     "id": 13183,
@@ -86486,22 +88178,9 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
-  "13206": {
-    "id": 13206,
-    "serverside": true,
-    "tag": "Raid Finder"
-  },
-  "13207": {
-    "id": 13207,
-    "serverside": true
-  },
-  "13208": {
-    "id": 13208,
-    "serverside": true,
-    "tag": "Heroic"
-  },
   "13210": {
     "id": 13210,
+    "tag": "Rank 1/4",
     "effect": {
       "id": 213707,
       "index": 0,
@@ -86510,8 +88189,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
-    },
-    "tag": "Rank 1/4"
+    }
   },
   "13211": {
     "id": 13211,
@@ -89121,10 +90799,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13552,
     "serverside": true
   },
-  "13553": {
-    "id": 13553,
-    "serverside": true
-  },
   "13554": {
     "id": 13554,
     "serverside": true
@@ -89143,7 +90817,8 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "HU5H, Nonchalant Pup",
         "icon": "inv_10_engineering2_tinkermodules_color6"
       }
-    }
+    },
+    "item_limit_category": 697
   },
   "13558": {
     "id": 13558,
@@ -89197,7 +90872,7 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13563,
     "quality": 2,
     "itemLevel": {
-      "amount": 201,
+      "amount": 175,
       "priority": 1000,
       "squishEra": 2
     }
@@ -89244,7 +90919,7 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13570,
     "quality": 3,
     "itemLevel": {
-      "amount": 220,
+      "amount": 204,
       "priority": 1000,
       "squishEra": 2
     }
@@ -89291,10 +90966,6 @@ export const bonus_IDs: {[key: string]: any} = {
   "13578": {
     "id": 13578,
     "serverside": true
-  },
-  "13579": {
-    "id": 13579,
-    "socket": 2
   },
   "13580": {
     "id": 13580,
@@ -89737,7 +91408,7 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13634,
     "itemLevel": {
       "amount": 214,
-      "priority": 300,
+      "priority": 250,
       "squishEra": 2
     }
   },
@@ -89790,12 +91461,6 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13642,
     "applyBonusId": 13617
   },
-  "13643": {
-    "id": 13643,
-    "tag": "Beginner Crafted",
-    "ilevel": "1 @plvl 1 - 90 @plvl 90",
-    "curveId": 97367
-  },
   "13644": {
     "id": 13644,
     "itemLevel": {
@@ -89846,13 +91511,28 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13649": {
     "id": 13649,
-    "dropLevelCurve": {
-      "curveId": 88583,
-      "offset": 0,
+    "itemLevel": {
+      "amount": 180,
       "priority": 100,
       "squishEra": 2
     },
     "quality": 3
+  },
+  "13667": {
+    "id": 13667,
+    "serverside": true
+  },
+  "13668": {
+    "id": 13668,
+    "socket": 1
+  },
+  "13669": {
+    "id": 13669,
+    "itemLevel": {
+      "amount": 220,
+      "priority": 1,
+      "squishEra": 2
+    }
   },
   "13670": {
     "id": 13670,
@@ -89862,5 +91542,24 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 1
     },
     "quality": 4
+  },
+  "13729": {
+    "id": 13729,
+    "dropLevelCurve": {
+      "curveId": 101225,
+      "offset": 0,
+      "priority": 1,
+      "squishEra": 2
+    }
+  },
+  "13730": {
+    "id": 13730,
+    "dropLevelCurve": {
+      "curveId": 101225,
+      "offset": 6,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "quality": 3
   }
 }
