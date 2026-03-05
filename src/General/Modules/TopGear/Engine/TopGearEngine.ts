@@ -67,9 +67,6 @@ function autoSocketItems(itemList: Item[]) {
     else if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
-    else if (item.slot === "Neck" || item.slot === "Finger") {
-      item.socket = 2;
-    }
   }
 
   return itemList;
@@ -561,8 +558,8 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  22; // 64 x 2.
-  enchants["Finger"] = "+22 " + highestWeight;
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
+  enchants["Finger"] = "+29 " + highestWeight;
 
 
   // Helm
