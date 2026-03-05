@@ -1,10 +1,11 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { PALADINSPELLDB } from "./HolyPaladinSpellDB";
+import { PALADINSPELLDB } from "./Archive/HolyPaladinSpellDBTWW";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell, deepCopyFunction, spendSpellCost, runRampTidyUp,
+import { addReport, getCurrentStats, getHaste, getSpellRaw, queueSpell, deepCopyFunction, spendSpellCost, runRampTidyUp,
             getStatMult, GLOBALCONST, getHealth, getCrit, runSpell, getSpellCastTime, getTalentPoints, getTalentData } from "../Generic/RampBase";
-import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/BuffBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
+            import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff } from "../Generic/BuffBase";
 import { genSpell } from "../Generic/APLBase";
 
 export const PALADINCONSTANTS = {
@@ -20,9 +21,9 @@ export const PALADINCONSTANTS = {
     // Beacon Section
     beaconSingleTargetList: ["Holy Shock", "Word of Glory", "Eternal Flame", "Holy Light", "Flash of Light", "Avenging Crusader"],
     beaconAoEList: ["Light of Dawn", "Light's Hammer"], // Glimmer is handled manually to catch other sources of glimmer
-    beaconExclusionList: ["Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
-                            "Judgment", "Greater Judgment", "Shield of the Righteous", "Barrier of Faith"],
-    beaconOverhealing: 0.3,
+    beaconExclusionList: ["Dawnlight", "Saved by the Light", "Greater Judgment", "Touch of Light", "Beacon of Light", "Beacon of Light + Faith", "Beacon of Virtue", 
+                            "Judgment", "Truth Prevails", "Judgment", "Shield of the Righteous", "Barrier of Faith", "Beacon of the Savior"],
+    beaconOverhealing: 0.2,
 
     // Talents
     tyrsHitRate: 0.8,

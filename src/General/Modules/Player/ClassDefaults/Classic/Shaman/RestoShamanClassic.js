@@ -1,7 +1,9 @@
 import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Modules/Player/ClassDefaults/Classic/Shaman/ClassicShamanSpellDB";
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
-import { runClassicSpell, printHealingBreakdownWithCPM, getSpellEntry, getHasteClassic, getSpellAttribute, getTimeUsed, updateSpellCPM, splitSpellCPM, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { printHealingBreakdownWithCPM, getSpellEntry, getSpellAttribute, getTimeUsed, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { runClassicSpell, getHasteClassic,  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
+
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
 
@@ -165,7 +167,6 @@ export function initializeShamanSet(userSettings) {
         let reduction = (statPercentages.crit - 1) * resurgenceReturn[spellName];
         if (spellName === "Chain Heal") reduction *= 3; 
         spell.cost -= reduction;
-        //console.log(spellName + " cost reduced by " + reduction + " to " + spell.cost + " (original price: " + (spell.cost + reduction) + ")");
       }
     })
 

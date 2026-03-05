@@ -11,6 +11,203 @@ type embellishmentData = {
 }
 
 export const embellishmentDB: embellishmentData[] = [
+
+  {
+    id: 241140,
+    icon: "inv_12_profession_jewelcrafting_ring1_gold",
+    armorType: 0, // Ring
+    name: "Signet of Azerothian Blessings",
+    effect: {
+      type: "embellishment",
+      name: "Signet of Azerothian Blessings",
+    },
+  },
+    {
+    id: 241139,
+    icon: "inv_12_profession_jewelcrafting_necklace1_gold",
+    armorType: 0, // Ring
+    name: "Thalassian Phoenix Torque",
+    effect: {
+      type: "embellishment",
+      name: "Thalassian Phoenix Torque",
+    },  
+  },
+  {
+    id: 251513,
+    icon: "inv_12_profession_jewelcrafting_ring3_silver",
+    armorType: 0, // Ring
+    name: "Loa Worshiper's Band",
+    effect: {
+      type: "embellishment",
+      name: "Loa Worshiper's Band",
+    },
+  },
+    {
+    id: 251073,
+    icon: "inv_12_profession_jewelcrafting_necklace3_silver",
+    armorType: 0, // Ring
+    name: "Voidstone Shielding Array",
+    effect: {
+      type: "embellishment",
+      name: "Voidstone Shielding Array",
+    },
+  },
+    {
+    id: 245871,
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_hunt",
+    armorType: 0, // Weapon Reagent, DPS only
+    name: "Darkmoon Sigil: Blood",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Blood",
+    },
+  },
+    {
+    id: 245875,
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_bloom",
+    armorType: 0, // Weapon Reagent, Based on creature type??
+    name: "Darkmoon Sigil: Hunt",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Hunt",
+    },
+  },
+      {
+    id: 245873,
+    icon: "inv_12_profession_inscriptions_darkmoonsigil_void",
+    armorType: 0, // Weapon Reagent, DPS only.
+    name: "Darkmoon Sigil: Void",
+    effect: {
+      type: "embellishment",
+      name: "Darkmoon Sigil: Void",
+    },
+  },
+   {
+    id: 244603,
+    icon: "inv_jewelry_necklace_139",
+    armorType: 0, // Vers
+    name: "Blessed Pango Charm",
+    effect: {
+      type: "embellishment",
+      name: "Blessed Pango Charm",
+    },
+  },
+    {
+    id: 244608,
+    icon: "inv_12_profession_leatherworking_armor_banding_green",
+    armorType: 0, // Healing
+    name: "Primal Spore Binding",
+    effect: {
+      type: "embellishment",
+      name: "Primal Spore Binding",
+    },
+  },
+      {
+    id: 244675,
+    icon: "inv_12_profession_leatherworking_armor_banding_brown",
+    armorType: 0, // Healing
+    name: "Devouring Banding",
+    effect: {
+      type: "embellishment",
+      name: "Devouring Banding",
+    },
+  },
+  {
+    id: 240166,
+    icon: "inv_12_tailoring_rare_cloth_violet_rare-cloth",
+    armorType: 0, // Primary stat for you + a friend
+    name: "Arcanoweave Lining",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Lining",
+    },
+  },
+          {
+    id: 240165,
+    icon: "inv_12_tailoring_rare_cloth_orange-_rare-cloth",
+    armorType: 0, // Healing and damage from periodics can increase int, stacking to 10.
+    name: "Sunfire Silk Lining",
+    effect: {
+      type: "embellishment",
+      name: "Sunfire Silk Lining",
+    },
+  },
+  {
+    id: 239660,
+    icon: "inv_ringwod_d3_4",
+    armorType: 1, // Crit above 80% health, cloth, set
+    pieces: 2,
+    name: "Arcanoweave Trappings (Set)",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Trappings",
+    },
+  },
+  {
+    id: 239664,
+    icon: "inv_ringwod_d3_4",
+    armorType: 1, // Mastery proc
+    name: "Arcanoweave Cord",
+    effect: {
+      type: "embellishment",
+      name: "Arcanoweave Cord",
+    },
+  },
+  {
+    id: 239658,
+    icon: "inv_cape_firelands_fireset_d_01",
+    armorType: 1, // Crit above 80% health, cloth, set
+    pieces: 2,
+    name: "Sunfire Silk Trappings (Set)",
+    effect: {
+      type: "embellishment",
+      name: "Sunfire Silk Trappings",
+    },
+  },
+    {
+    id: 244613,
+    icon: "inv_chest_leather_questbloodelf_b_01",
+    armorType: 2, // Does random shit every 30s on a crit. Untested for healing crits.
+    pieces: 2,
+    name: "Murder Row Materials (Set)",
+    effect: {
+      type: "embellishment",
+      name: "Murder Row Materials",
+    },
+  },
+      {
+    id: 244601,
+    icon: "inv_boot_leather_questbloodelf_b_01",
+    armorType: 2, // Pops out orbs. Pick up orb = + highest secondary stat.
+    name: "World Tree Rootwraps",
+    effect: {
+      type: "embellishment",
+      name: "World Tree Rootwraps",
+    },
+  },
+  {
+    id: 244605,
+    icon: "inv_bracer_mail_questbloodelf_b_01",
+    armorType: 3, // Stacking haste proc  
+    name: "Axe-Flingin' Bands",
+    effect: {
+      type: "embellishment",
+      name: "Axe-Flingin' Bands",
+    },
+  },
+  {
+    id: 244609,
+    icon: "inv_chest_mail_questbloodelf_b_01",
+    armorType: 3, // Random secondary proc
+    pieces: 2,
+    name: "Root Warden's Regalia (Set)",
+    effect: {
+      type: "embellishment",
+      name: "Root Warden's Regalia",
+    },
+  },
+
+  /*
   {
     id: 215135,
     icon: "inv_ringwod_d3_4",
@@ -77,7 +274,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "spell_nature_stormreach",
     armorType: 2,
     pieces: 2,
-    name: "Fury of the Stormrook (2pc)",
+    name: "Fury of the Stormrook (Set)",
     effect: {
       type: "embellishment",
       name: "Fury of the Stormrook",
@@ -118,7 +315,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_10_tailoring_silkrare_color3",
     armorType: 1,
     pieces: 2,
-    name: "Woven Dusk (2pc)",
+    name: "Woven Dusk (Set)",
     effect: {
       type: "embellishment",
       name: "Woven Dusk",
@@ -129,7 +326,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_10_tailoring_silkrare_color2",
     pieces: 2,
     armorType: 1,
-    name: "Woven Dawn (2pc)",
+    name: "Woven Dawn (Set)",
     effect: {
       type: "embellishment",
       name: "Woven Dawn",
@@ -194,7 +391,7 @@ export const embellishmentDB: embellishmentData[] = [
       type: "embellishment",
       name: "Darkmoon Sigil: Vivacity",
     },
-  },
+  },*/
 ];
 
   /*

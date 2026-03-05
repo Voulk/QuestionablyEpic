@@ -1,73 +1,85 @@
-// Unused Profile
-export const discPriestDefaultSpellData = (contentType) => {
-  let spellList = {};
-  if (contentType === "Raid") {
-    spellList = {};
-  } else if (contentType === "Dungeon") {
-    spellList = {};
-  } else {
-    console.error("Unknown Content Type");
-  }
+import { scorePaladinSet } from "./HolyPaladinProfile";
 
-  return spellList;
-};
+export const paladinDefaultSpellData = (contentType) => {
+    let spellList = {};
+    if (contentType === "Raid") {
+      spellList = {
 
-export const discPriestDefaultSpecialQueries = (contentType) => {
-  let specialQueries = {};
-  if (contentType === "Raid") {
-    specialQueries = {
-      OneManaHealing: 6.4,
-      CastsPerMinute: 36,
-      cooldownMult: {
-        oneMinute: 1,
-        ninetySeconds: 1.4,
-        twoMinutes: 1,
-        twoMinutesOrb: 0.85,
-        threeMinutes: 1.7,
-      },
-      rampData: {},
-      HoldYourGroundUptime: 0.8
-    };
-  } else if (contentType === "Dungeon") {
-    specialQueries = {
-      OneManaHealing: 0,
-      CastsPerMinute: 30,
-      cooldownMult: {
-        oneMinute: 1.8,
-        ninetySeconds: 1.0,
-        twoMinutes: 1.4,
-        twoMinutesOrb: 1,
-        threeMinutes: 1.1,
-      },
-      rampData: {},
-      HoldYourGroundUptime: 0.8
-    };
-  } else {
-    console.error("Unknown Content Type");
-  }
+      };
+    } else if (contentType === "Dungeon") {
+      spellList = {
 
-  return specialQueries;
-};
-
-export const discPriestDefaultStatWeights = (contentType) => {
-  let statWeights = {};
-
-  statWeights.Raid = {
-    intellect: 1,
-    haste: 0.52,
-    crit: 0.49,
-    mastery: 0.42,
-    versatility: 0.47,
-    leech: 0.56,
-  };
-  statWeights.Dungeon = {
-    intellect: 1,
-    haste: 0.62,
-    crit: 0.59,
-    mastery: 0.38,
-    versatility: 0.59,
-    leech: 0.29,
+      };
+    } else {
+      console.error("Unknown Content Type");
+    }
+  
+    return spellList;
   };
 
-  return statWeights[contentType];
-};
+  export const runPaladinCastModel = (itemSet, setStats, castModel, effectList) => {
+    const settings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: false};
+    const playerData = { spec: "Holy Paladin", settings: settings, stats: setStats, tier: ["Holy Paladin S1-2", "Holy Paladin S1-4"], effectList: effectList }
+    const result = scorePaladinSet(setStats, playerData, settings);
+
+    return result;
+  }
+  
+  export const paladinDefaultStatWeights = (contentType) => {
+    let statWeights = {};
+  
+    statWeights.Raid = {
+      intellect: 1,
+      haste: 0.46, 
+      crit: 0.462, 
+      mastery: 0.538, 
+      versatility: 0.429, 
+      leech: 0.25,
+      defaults: true,
+    };
+    statWeights.Dungeon = {
+      intellect: 1,
+      haste: 0.538,
+      crit: 0.47,
+      mastery: 0.537,
+      versatility: 0.429,
+      leech: 0.2,
+      defaults: true,
+    };
+  
+    return statWeights[contentType];
+  };
+  
+  export const paladinDefaultSpecialQueries = (contentType) => {
+    let specialQueries = {};
+    if (contentType === "Raid") {
+      specialQueries = {
+        OneManaHealing: 11,
+        CastsPerMinute: 22, // ONLY tracks spells with a mana cost.
+        cooldownMult: {
+          c30: 1.1,
+          c60: 1,
+          c90: 1.37,
+          c120: 1.1,
+          c180: 1,
+        },
+      };
+    } else if (contentType === "Dungeon") {
+      specialQueries = {
+        OneManaHealing: 1.2,
+        CastsPerMinute: 30,
+        cooldownMult: {
+          c30: 1.1,
+          c60: 1,
+          c90: 1.15,
+          c120: 1,
+          c180: 1,
+        },
+      };
+    } else {
+      console.error("Unknown Content Type");
+    }
+  
+    return specialQueries;
+  };
+  

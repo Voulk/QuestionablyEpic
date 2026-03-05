@@ -67,9 +67,6 @@ function autoSocketItems(itemList: Item[]) {
     else if (["Head", "Wrist", "Waist"].includes(item.slot) && item.id !== 203460) {
       item.socket = 1;
     }
-    else if (item.slot === "Neck" || item.slot === "Finger") {
-      item.socket = 2;
-    }
   }
 
   return itemList;
@@ -78,7 +75,7 @@ function autoSocketItems(itemList: Item[]) {
 // This just grab the ID for us so that we're less likely to make errors.
 function getGemID(bigStat: string, littleStat: string): number {
   const foundGem = gemDB.filter(gem => bigStat in gem.stats && littleStat in gem.stats
-                                        && gem.stats[bigStat] === 10 && gem.stats[littleStat] === 3);
+                                        && gem.stats[bigStat] === 12 && gem.stats[littleStat] === 5);
   if (foundGem.length > 0) {
     return foundGem[0].id;
   }
@@ -86,49 +83,67 @@ function getGemID(bigStat: string, littleStat: string): number {
 }
 
 // Return an array of gem IDs based on the spec and content type. 
-function getTWWGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
-  const metaGem = 213746; // Elusive Meta Gem
+function getMidnightGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
+  const metaGem = 240983; // Elusive Meta Gem
+  const gemArray = Array(8);
+  gemArray[0] = metaGem;
   if (spec === "Holy Paladin") {
     // Crit / haste, crit / mastery
     if (contentType === "Raid") {
-      return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
-        getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+      gemArray.fill(getGemID('mastery', 'haste'), 1);
+      return gemArray;
+      return [metaGem, getGemID('mastery', 'haste')]//, getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste'), getGemID('mastery', 'haste')] //getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste',
+        //getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
     }
     else {
-      return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
-        getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+      gemArray.fill(getGemID('haste', 'crit'), 1);
+      return gemArray;
+      return [metaGem, getGemID('haste', 'crit')] /*, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+        getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
     }
 
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
-      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    return [metaGem, getGemID('crit', 'mastery'), getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
-                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];
+    gemArray.fill(getGemID('crit', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('crit', 'mastery')]/*, getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
+                getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];*/
   }
   else if (spec === "Restoration Druid") {
     // Haste / Mastery
-    return [metaGem, getGemID('haste', 'mastery'), getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
-      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];
+    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('versatility', 'haste'), getGemID('crit', 'haste'),
+      getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    return [metaGem, getGemID('mastery', 'crit'), getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
-      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];
+    gemArray.fill(getGemID('mastery', 'haste'), 1);
+    return gemArray;
+    return [metaGem, getGemID('mastery', 'haste')]/*, getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
+      getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];*/
   }
   else if (spec === "Mistweaver Monk") {
     // Haste / Crit
-    return [metaGem, getGemID('haste', 'crit'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
-      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    gemArray.fill(getGemID('haste', 'crit'), 1);
+    return gemArray;
+    return [metaGem, getGemID('haste', 'crit')]/*, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    return [metaGem, getGemID('crit', 'haste'), getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
-      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];
+    gemArray.fill(getGemID('crit', 'versatility'), 1);
+    return gemArray;
+    return [metaGem, getGemID('crit', 'haste')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+      getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
 
   }
   else {
@@ -149,7 +164,7 @@ function getGemStats(gemArray: number[]) {
     const gemStats = gemData.stats;
     
     Object.keys(gemStats).forEach(stat => {
-      gem_stats[stat] = (gem_stats[stat] || 0) + gemStats[stat];
+      gem_stats[stat] = (gem_stats[stat] ?? 0) + gemStats[stat];
     });
   });
   return gem_stats;
@@ -237,7 +252,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     // Create sets for each gem type.
     const gemPoss = getGemOptions(player.spec, contentType) // TODO: Turn this into a function
 
-    if (getSetting(userSettings, 'gemSettings') === ("Precise")) { // Add setting here.
+    if (false) { // Add setting here.
       if (gemPoss.length > 0) {
         gemPoss.forEach(gem => {
           resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
@@ -543,28 +558,29 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  21; // 64 x 2.
-  enchants["Finger"] = "+315 " + highestWeight;
+  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
+  enchants["Finger"] = "+29 " + highestWeight;
+
+
+  // Helm
+  bonus_stats.leech = (bonus_stats.leech || 0) + 55;
+  enchants["Head"] = "Empowered Hex of Leeching";
 
   // Chest
   // There is a mana option too that we might include later.
-  bonus_stats.intellect = (bonus_stats.intellect || 0) + 745; 
-  enchants["Chest"] = "Crystalline Radiance";
+  bonus_stats.intellect = (bonus_stats.intellect || 0) + 50; 
+  enchants["Chest"] = "Mark of the Worldsoul";
 
-  // Cape
-  bonus_stats.leech = (bonus_stats.leech || 0) + 67;
-  enchants["Back"] = "Leeching Fangs";
-
-  // Wrists
-  bonus_stats.leech += 135;
-  enchants["Wrist"] = "Armored Leech";
+  // Shoulders
+  bonus_stats.leech = (bonus_stats.leech || 0) + 166;
+  enchants["Shoulder"] = "Silvermoon's Mending";
 
   // Belt
   //enchants["Waist"] = "Shadowed Belt Clasp";
 
   // Legs - Also gives 3/4/5% mana.
-  bonus_stats.intellect += 8;
-  enchants["Legs"] = "Sunset Spellthread";
+  bonus_stats.intellect += 41;
+  enchants["Legs"] = "Arcanoweave Spellthread";
 
   if (false) {
     const dreamingData =  { // 
@@ -713,18 +729,18 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
       // We are in second DR already, try and swap.
     }
-    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 60;
+    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 165;
     selectedChoice = bestStat;
   }
   else {
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
-    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 60;
+    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 165;
   }
 
-  if (selectedChoice === "haste") enchants.flask = "Flask of Tempered Swiftness";
-  else if (selectedChoice === "mastery") enchants.flask = "Flask of Tempered Mastery";
-  else if (selectedChoice === "crit") enchants.flask = "Flask of Tempered Aggression";
-  else if (selectedChoice === "versatility") enchants.flask = "Flask of Tempered Versatility";
+  if (selectedChoice === "haste") enchants.flask = "Flask of the Blood Knights";
+  else if (selectedChoice === "mastery") enchants.flask = "Flask of the Magisters";
+  else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
+  else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
 
   // == Runes == 
   // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
@@ -746,7 +762,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
   }
   else {
-    enchants["Gems"] = getTWWGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
+    enchants["Gems"] = getMidnightGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
 
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
@@ -797,28 +813,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
     // The set has a Writhing Armor Banding so we'll double our other embellishment slot so long as it's Nerubian.
     setVariables.nerubianArmorPatch = 1;
-  }
-  if (effectList.filter(effect => effect.name === "Diamantine Voidcore").length > 0) {
-    // Having voidcore buffs the power of the Voidglass Shards effect.
-    setVariables.hasVoidcore = true;
-  }
-  if (effectList.filter(effect => effect.name === "Reshii Boots").length > 0) {
-    // Check Upgrade track I guess
-    //console.log("Reshii Boots effect detected");
-    const boots = itemSet.itemList.filter(item => (item.effect && item.effect.name === "Reshii Boots"))[0];
-    const bootsPerc = {
-      "Veteran": 0.2,
-      "Champion": 0.3,
-      "Hero": 0.4,
-      "Myth": 0.5,
-    } 
-    if (boots.upgradeTrack && boots.upgradeTrack in bootsPerc) setVariables.reshiiBoots = bootsPerc[boots.upgradeTrack];
-    // These are fallbacks for if we can't find an upgrade track.
-    else if (boots.level >= 160) setVariables.reshiiBoots = 0.5;
-    else if (boots.level > 150) setVariables.reshiiBoots = 0.4;
-    else if (boots.level > 140) setVariables.reshiiBoots = 0.3;
-    else if (boots.level > 130) setVariables.reshiiBoots = 0.2;
-    
   }
 
   for (var x = 0; x < effectList.length; x++) {
@@ -872,46 +866,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     //builtSet.primGems = combo; 
     effectStats.push(annuletStats);
   } 
-
-  // Titan Disc Belt
-  if (builtSet.checkHasItem(242664) || builtSet.checkHasItem(245964) || builtSet.checkHasItem(245965) || builtSet.checkHasItem(245966)) {
-    const discBelt = builtSet.itemList.filter(item => item.flags.includes("DelveBelt"))[0];
-    const discEffect = discBelt.selectedOptions || [];
-    const additionalData = {contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, player: player, setVariables: setVariables};
-
-    const discStats = getTitanBeltEffect(discEffect, player, discBelt.level, additionalData)
-
-    effectStats.push(discStats);
-  }
   
   const mergedEffectStats = mergeBonusStats(effectStats);
   
-
-  // Post-effect overrides. Use these very sparingly.
-  if (player.spec === "Preservation Evoker" && castModel.modelName === "Flameshaper") {
-    // Try and swap ring enchants and / or flask to hit breakpoint. 
-    const totalHaste = (setStats.haste || 0) + (mergedEffectStats.haste || 0);
-    if (totalHaste < 9834 && totalHaste > (9834 - 315 * 2)) {
-      // Haste enchants are enough to hit our breakpoint. Swap over. 
-      enchants["Finger"] = "+315 Haste";
-      setStats.haste = (setStats.haste || 0) + 315 * 2;
-      setStats.mastery = (setStats.mastery || 0) - 315 * 2;
-    }
-    else if (totalHaste < 9834 && totalHaste > (9834 - 2825)) {
-      // Haste Flask is enough to hit our breakpoint. Swap over. 
-      enchants.flask = "Flask of Tempered Swiftness";
-      setStats.haste = (setStats.haste || 0) + 2825;
-      setStats.mastery = (setStats.mastery || 0) - 2825;
-    }
-    else if (totalHaste < 9834 && totalHaste > (9834 - 2825 - 315 * 2)) {
-      // We need both flask and ring to hit our breakpoint.
-      enchants.flask = "Flask of Tempered Swiftness";
-      enchants["Finger"] = "+315 Haste";
-      setStats.haste = (setStats.haste || 0) + 2825 + 315 * 2;
-      setStats.mastery = (setStats.mastery || 0) - 2825 - 315 * 2;
-    }
-  }
-
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
   if (castModel.modelType[contentType] === "Sequences") {
@@ -930,16 +887,20 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
 
+    // 5% int bonus for wearing all Mail
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
-    // Raid Buffs
-    setStats.intellect = (setStats.intellect || 0) * 1.05;
-    setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 2;
-    setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
-
-    const castModelResult = castModel.runCastModel(itemSet, setStats, castModel, effectList)
-
-    setStats.hps = (setStats.hps || 0) + castModelResult.hps;
+    // Raid Buffs are now handled in-file.
+    const playerData = { spec: player.spec, heroTree: castModel.heroTree, settings: userSettings, stats: setStats, tierSets: usedSets, effectList: effectList,
+      masteryEffectiveness: 0.9};
+ 
+    if (player.spec === "Restoration Shaman") {
+      playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
+      playerData.params = {asc: {ch: 0, hw: 1}, filler: {ch: 1, hw: 0}}
+    }
+    const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
+    
+    setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
@@ -1011,7 +972,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // This is somewhat of an estimate but it's more reasonable than leaving it out entirely.
     // Note that this is actually a setting and players can opt out if they'd like the score to be personal benefit only.
     else if (stat === "allyStats" && evalStats.allyStats) {
-      if (userSettings && 'includeGroupBenefits' in userSettings && userSettings.includeGroupBenefits.value === true) {
+      if (userSettings) {
         //hardScore += evalStats.allyStats * CONSTANTS.allyStatWeight;
         hardScore += getAllyStatsValue(contentType, evalStats.allyStats, player, userSettings) || 0
       }

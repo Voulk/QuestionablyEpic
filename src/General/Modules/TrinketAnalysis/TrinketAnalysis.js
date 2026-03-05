@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip, Tabs, Tab, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Item from "../../Items/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getEffectValue, getTranslatedItemName, getItemDB } from "../../Engine/ItemUtilities";
@@ -23,6 +23,8 @@ import TrinketDeepDive from "General/Modules/TrinketAnalysis/TrinketDeepDive";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
+import { downloadJson } from "./TrinketJSONDownload"
+import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -158,6 +160,33 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
   return trinket["i" + highestLevel];
 };
 
+const handleDownload = () => {
+  // Compile trinket data
+  const allTrinketData = getAllTrinketData();
+  const toPrint = {}
+
+  console.log(allTrinketData.length)
+  allTrinketData.forEach((trinketX => {
+
+    toPrint[trinketX.name] = {description: trinketX.addonDescription || ""};
+    if ('effects' in trinketX && 'ppm' in trinketX.effects[0]) {
+      toPrint[trinketX.name].ppm = trinketX.effects[0].ppm;
+    }
+  }))
+  /*const toPrint = allTrinketData.map((trinketX => {
+    return {
+      id: trinketX.id,
+      name: trinketX.name,
+      description: trinketX.addonDescription || "",
+    }
+  }))*/
+
+  const jsonString = JSON.stringify(toPrint);
+
+  // Download them
+  downloadJson(jsonString, 'QE-trinket-data.json');
+};
+
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
@@ -169,13 +198,13 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(999); // 170
+  const [levelCap, setLevelCap] = React.useState(289); 
   const maxLevelMarks = [
-    { value: 0, label: "110" },
-    { value: 1, label: "130" },
-    { value: 2, label: "140" },
-    { value: 3, label: "155" },
-    { value: 4, label: "170" },
+    { value: 0, label: "237" },
+    { value: 1, label: "250" },
+    { value: 2, label: "263" },
+    { value: 3, label: "276" },
+    { value: 4, label: "289" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -187,15 +216,9 @@ export default function TrinketAnalysis(props) {
   const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
     const raidSources = [
-      //1190, // Castle Nathria
-      //1193, // Sanctum of Domination
-      //1195, // Sepulcher
-      //1200, // Vault of the Incarnates
-      //1208, // Aberrus
-      //1207, // Amirdrassil
-      1273, // Palace
-      1296, // Liberation of Undermine
-      1302, // Manaforge Omega
+      1314, // Dreamrift
+      1308, // March
+      1307, // Voidspire
     ];
     const dungeonSources = [
       -1, // General Dungeons
@@ -266,7 +289,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [118, 124, 128, 137, 144, 150, 157, 167, 170] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => level <= levelCap);
 
@@ -364,7 +387,7 @@ export default function TrinketAnalysis(props) {
           }
           
         }
-        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, 263/*trinket.levelRange[trinket.levelRange.length - 1]*/, playerSettings, trinket.id);
         else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
@@ -396,7 +419,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
+  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer is also very good but is too bugged to correctly assess."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (
@@ -506,6 +529,11 @@ export default function TrinketAnalysis(props) {
                         </ToggleButton>
                       </Tooltip>
                     </Grid>
+                    <Grid item>
+                      <Button variant="contained" onClick={handleDownload}>
+                        Download JSON
+                      </Button>   
+                    </Grid>
                   </Grid>
                 </Grid>
               ) : (
@@ -514,7 +542,7 @@ export default function TrinketAnalysis(props) {
             </Grid>
         </Grid>
       </Grid>
-          
+ 
       <div id="qelivead2"></div>
       {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />

@@ -2,13 +2,14 @@
 import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 import { buildRamp } from "./DiscRampGen";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
-import { getSqrt, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
+import { addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
             getHealth, getCrit, getSpellCastTime, spendSpellCost } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 import { applyLoadoutEffects } from "./DiscPriestTalents";
 import { genSpell } from "General/Modules/Player/ClassDefaults/Generic/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
-import { printHealingBreakdown, getTrinketData } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared"; 
+import { printHealingBreakdown, getTrinketData } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
 
 // Any settings included in this object are immutable during any given runtime. Think of them as hard-locked settings.
 const discSettings = {

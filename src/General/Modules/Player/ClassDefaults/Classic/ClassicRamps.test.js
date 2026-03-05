@@ -9,7 +9,6 @@ import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents } from "./Shaman/Cl
 import { CLASSICPRIESTSPELLDB as discSpells, compiledDiscTalents as discTalents, compiledHolyTalents as holyTalents } from "./Priest/ClassicPriestSpellDB";
 import { runCastSequence} from "General/Modules/Player/ClassDefaults/Classic/ClassicRamps";
 import { getTalentedSpellDB } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
-import { initializePaladinSet, scorePaladinSet, initializeDruidSet, scoreDruidSet, initializeDiscSet, scoreDiscSet } from "General/Modules/Player/ClassDefaults/Classic/ClassicDefaults";
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { restoShamanDefaults } from "General/Modules/Player/ClassDefaults/Classic/Shaman/RestoShamanClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
