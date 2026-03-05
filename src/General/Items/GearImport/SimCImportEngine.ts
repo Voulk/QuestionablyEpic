@@ -139,6 +139,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
         if (squishEra.curveId) {
           itemLevel = processCurve(squishEra.curveId.toString(), itemLevel)
           
+          
         }
 
         // Handle flat item level increases.
@@ -239,6 +240,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
         }
         catch (e) {
           console.error("Error processing SimC line: " + line);
+          console.error(e);
         }
 
       }
@@ -475,7 +477,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Grab the items base level from our item database.
   protoItem.slot = getItemProp(protoItem.id, "slot");
-  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), protoItem.level.drop || 0);
+  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {

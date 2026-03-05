@@ -8,7 +8,7 @@ interface CurveData {
   points: CurvePoint[];
 }
 
-export const curveDB: { [key: string]: CurveData }= 
+export const curveDB: { [key: string]: CurveData } = 
 {
   "956": {
     "curveId": 956,
@@ -272,115 +272,6 @@ export const curveDB: { [key: string]: CurveData }=
       {
         "playerLevel": 44,
         "itemLevel": 50
-      }
-    ]
-  },
-  "1690": {
-    "curveId": 1690,
-    "points": [
-      {
-        "playerLevel": 1,
-        "itemLevel": 16
-      },
-      {
-        "playerLevel": 7,
-        "itemLevel": 22
-      },
-      {
-        "playerLevel": 10,
-        "itemLevel": 28
-      },
-      {
-        "playerLevel": 11,
-        "itemLevel": 31
-      },
-      {
-        "playerLevel": 12,
-        "itemLevel": 35
-      },
-      {
-        "playerLevel": 14,
-        "itemLevel": 41
-      },
-      {
-        "playerLevel": 15,
-        "itemLevel": 43
-      },
-      {
-        "playerLevel": 17,
-        "itemLevel": 49
-      },
-      {
-        "playerLevel": 18,
-        "itemLevel": 51
-      },
-      {
-        "playerLevel": 21,
-        "itemLevel": 59
-      },
-      {
-        "playerLevel": 22,
-        "itemLevel": 61
-      },
-      {
-        "playerLevel": 24,
-        "itemLevel": 67
-      },
-      {
-        "playerLevel": 25,
-        "itemLevel": 69
-      },
-      {
-        "playerLevel": 37,
-        "itemLevel": 105
-      },
-      {
-        "playerLevel": 38,
-        "itemLevel": 109
-      },
-      {
-        "playerLevel": 40,
-        "itemLevel": 115
-      },
-      {
-        "playerLevel": 41,
-        "itemLevel": 119
-      },
-      {
-        "playerLevel": 43,
-        "itemLevel": 125
-      },
-      {
-        "playerLevel": 44,
-        "itemLevel": 129
-      },
-      {
-        "playerLevel": 47,
-        "itemLevel": 139
-      },
-      {
-        "playerLevel": 49,
-        "itemLevel": 147
-      },
-      {
-        "playerLevel": 50,
-        "itemLevel": 150
-      },
-      {
-        "playerLevel": 53,
-        "itemLevel": 162
-      },
-      {
-        "playerLevel": 54,
-        "itemLevel": 165
-      },
-      {
-        "playerLevel": 60,
-        "itemLevel": 189
-      },
-      {
-        "playerLevel": 70,
-        "itemLevel": 189
       }
     ]
   },
@@ -8715,239 +8606,6 @@ export const curveDB: { [key: string]: CurveData }=
       }
     ]
   },
-  "14096": {
-    "curveId": 14096,
-    "points": [
-      {
-        "playerLevel": 1,
-        "itemLevel": 5
-      },
-      {
-        "playerLevel": 2,
-        "itemLevel": 6
-      },
-      {
-        "playerLevel": 6,
-        "itemLevel": 11
-      },
-      {
-        "playerLevel": 7,
-        "itemLevel": 12
-      },
-      {
-        "playerLevel": 8,
-        "itemLevel": 14
-      },
-      {
-        "playerLevel": 9,
-        "itemLevel": 17
-      },
-      {
-        "playerLevel": 10,
-        "itemLevel": 19
-      },
-      {
-        "playerLevel": 11,
-        "itemLevel": 25
-      },
-      {
-        "playerLevel": 19,
-        "itemLevel": 72
-      },
-      {
-        "playerLevel": 20,
-        "itemLevel": 79
-      },
-      {
-        "playerLevel": 21,
-        "itemLevel": 84
-      },
-      {
-        "playerLevel": 22,
-        "itemLevel": 90
-      },
-      {
-        "playerLevel": 23,
-        "itemLevel": 95
-      },
-      {
-        "playerLevel": 24,
-        "itemLevel": 101
-      },
-      {
-        "playerLevel": 27,
-        "itemLevel": 118
-      },
-      {
-        "playerLevel": 28,
-        "itemLevel": 124
-      },
-      {
-        "playerLevel": 31,
-        "itemLevel": 141
-      },
-      {
-        "playerLevel": 32,
-        "itemLevel": 147
-      },
-      {
-        "playerLevel": 33,
-        "itemLevel": 152
-      },
-      {
-        "playerLevel": 34,
-        "itemLevel": 158
-      },
-      {
-        "playerLevel": 37,
-        "itemLevel": 175
-      },
-      {
-        "playerLevel": 38,
-        "itemLevel": 181
-      },
-      {
-        "playerLevel": 39,
-        "itemLevel": 186
-      },
-      {
-        "playerLevel": 40,
-        "itemLevel": 192
-      },
-      {
-        "playerLevel": 41,
-        "itemLevel": 197
-      },
-      {
-        "playerLevel": 43,
-        "itemLevel": 209
-      },
-      {
-        "playerLevel": 44,
-        "itemLevel": 214
-      },
-      {
-        "playerLevel": 45,
-        "itemLevel": 220
-      },
-      {
-        "playerLevel": 46,
-        "itemLevel": 225
-      },
-      {
-        "playerLevel": 47,
-        "itemLevel": 231
-      },
-      {
-        "playerLevel": 48,
-        "itemLevel": 236
-      },
-      {
-        "playerLevel": 49,
-        "itemLevel": 242
-      },
-      {
-        "playerLevel": 50,
-        "itemLevel": 247
-      },
-      {
-        "playerLevel": 51,
-        "itemLevel": 253
-      },
-      {
-        "playerLevel": 52,
-        "itemLevel": 262
-      },
-      {
-        "playerLevel": 54,
-        "itemLevel": 279
-      },
-      {
-        "playerLevel": 55,
-        "itemLevel": 289
-      },
-      {
-        "playerLevel": 56,
-        "itemLevel": 296
-      },
-      {
-        "playerLevel": 57,
-        "itemLevel": 304
-      },
-      {
-        "playerLevel": 58,
-        "itemLevel": 311
-      },
-      {
-        "playerLevel": 59,
-        "itemLevel": 320
-      },
-      {
-        "playerLevel": 60,
-        "itemLevel": 327
-      },
-      {
-        "playerLevel": 62,
-        "itemLevel": 339
-      },
-      {
-        "playerLevel": 64,
-        "itemLevel": 347
-      },
-      {
-        "playerLevel": 67,
-        "itemLevel": 357
-      },
-      {
-        "playerLevel": 69,
-        "itemLevel": 382
-      },
-      {
-        "playerLevel": 70,
-        "itemLevel": 408
-      },
-      {
-        "playerLevel": 71,
-        "itemLevel": 434
-      },
-      {
-        "playerLevel": 72,
-        "itemLevel": 460
-      },
-      {
-        "playerLevel": 73,
-        "itemLevel": 483
-      },
-      {
-        "playerLevel": 74,
-        "itemLevel": 506
-      },
-      {
-        "playerLevel": 75,
-        "itemLevel": 515
-      },
-      {
-        "playerLevel": 76,
-        "itemLevel": 525
-      },
-      {
-        "playerLevel": 77,
-        "itemLevel": 532
-      },
-      {
-        "playerLevel": 78,
-        "itemLevel": 538
-      },
-      {
-        "playerLevel": 79,
-        "itemLevel": 545
-      },
-      {
-        "playerLevel": 80,
-        "itemLevel": 551
-      }
-    ]
-  },
   "14301": {
     "curveId": 14301,
     "points": [
@@ -9879,7 +9537,7 @@ export const curveDB: { [key: string]: CurveData }=
     "points": [
       {
         "playerLevel": 0,
-        "itemLevel": 5
+        "itemLevel": 1
       },
       {
         "playerLevel": 11,
@@ -9887,95 +9545,95 @@ export const curveDB: { [key: string]: CurveData }=
       },
       {
         "playerLevel": 16,
-        "itemLevel": 9
+        "itemLevel": 11
       },
       {
         "playerLevel": 19,
-        "itemLevel": 12
-      },
-      {
-        "playerLevel": 21,
         "itemLevel": 14
       },
       {
-        "playerLevel": 24,
-        "itemLevel": 17
+        "playerLevel": 21,
+        "itemLevel": 16
       },
       {
-        "playerLevel": 26,
+        "playerLevel": 24,
         "itemLevel": 19
       },
       {
-        "playerLevel": 29,
-        "itemLevel": 22
+        "playerLevel": 26,
+        "itemLevel": 21
       },
       {
-        "playerLevel": 31,
+        "playerLevel": 29,
         "itemLevel": 24
       },
       {
-        "playerLevel": 34,
-        "itemLevel": 27
+        "playerLevel": 31,
+        "itemLevel": 26
       },
       {
-        "playerLevel": 36,
+        "playerLevel": 34,
         "itemLevel": 29
       },
       {
-        "playerLevel": 39,
-        "itemLevel": 32
+        "playerLevel": 36,
+        "itemLevel": 31
       },
       {
-        "playerLevel": 41,
+        "playerLevel": 39,
         "itemLevel": 34
       },
       {
-        "playerLevel": 44,
-        "itemLevel": 37
+        "playerLevel": 41,
+        "itemLevel": 36
       },
       {
-        "playerLevel": 46,
+        "playerLevel": 44,
         "itemLevel": 39
       },
       {
+        "playerLevel": 46,
+        "itemLevel": 41
+      },
+      {
         "playerLevel": 49,
-        "itemLevel": 42
+        "itemLevel": 44
       },
       {
         "playerLevel": 53,
-        "itemLevel": 46
+        "itemLevel": 48
       },
       {
         "playerLevel": 56,
-        "itemLevel": 49
+        "itemLevel": 51
       },
       {
         "playerLevel": 59,
-        "itemLevel": 52
-      },
-      {
-        "playerLevel": 63,
         "itemLevel": 54
       },
       {
+        "playerLevel": 63,
+        "itemLevel": 56
+      },
+      {
         "playerLevel": 67,
-        "itemLevel": 57
+        "itemLevel": 59
       },
       {
         "playerLevel": 71,
-        "itemLevel": 61
+        "itemLevel": 63
       },
       {
         "playerLevel": 75,
-        "itemLevel": 65
+        "itemLevel": 67
       },
       {
         "playerLevel": 78,
-        "itemLevel": 69
+        "itemLevel": 71
       },
       {
         "playerLevel": 80,
-        "itemLevel": 72
+        "itemLevel": 74
       }
     ]
   },
@@ -18955,256 +18613,6 @@ export const curveDB: { [key: string]: CurveData }=
       }
     ]
   },
-  "97109": {
-    "curveId": 97109,
-    "points": [
-      {
-        "playerLevel": 1,
-        "itemLevel": 5
-      },
-      {
-        "playerLevel": 2,
-        "itemLevel": 6
-      },
-      {
-        "playerLevel": 6,
-        "itemLevel": 11
-      },
-      {
-        "playerLevel": 7,
-        "itemLevel": 12
-      },
-      {
-        "playerLevel": 8,
-        "itemLevel": 14
-      },
-      {
-        "playerLevel": 9,
-        "itemLevel": 17
-      },
-      {
-        "playerLevel": 10,
-        "itemLevel": 19
-      },
-      {
-        "playerLevel": 11,
-        "itemLevel": 25
-      },
-      {
-        "playerLevel": 19,
-        "itemLevel": 72
-      },
-      {
-        "playerLevel": 20,
-        "itemLevel": 79
-      },
-      {
-        "playerLevel": 21,
-        "itemLevel": 84
-      },
-      {
-        "playerLevel": 22,
-        "itemLevel": 90
-      },
-      {
-        "playerLevel": 23,
-        "itemLevel": 95
-      },
-      {
-        "playerLevel": 24,
-        "itemLevel": 101
-      },
-      {
-        "playerLevel": 27,
-        "itemLevel": 118
-      },
-      {
-        "playerLevel": 28,
-        "itemLevel": 124
-      },
-      {
-        "playerLevel": 31,
-        "itemLevel": 141
-      },
-      {
-        "playerLevel": 32,
-        "itemLevel": 147
-      },
-      {
-        "playerLevel": 33,
-        "itemLevel": 152
-      },
-      {
-        "playerLevel": 34,
-        "itemLevel": 158
-      },
-      {
-        "playerLevel": 37,
-        "itemLevel": 175
-      },
-      {
-        "playerLevel": 38,
-        "itemLevel": 181
-      },
-      {
-        "playerLevel": 39,
-        "itemLevel": 186
-      },
-      {
-        "playerLevel": 40,
-        "itemLevel": 192
-      },
-      {
-        "playerLevel": 41,
-        "itemLevel": 197
-      },
-      {
-        "playerLevel": 43,
-        "itemLevel": 209
-      },
-      {
-        "playerLevel": 44,
-        "itemLevel": 214
-      },
-      {
-        "playerLevel": 45,
-        "itemLevel": 220
-      },
-      {
-        "playerLevel": 46,
-        "itemLevel": 225
-      },
-      {
-        "playerLevel": 47,
-        "itemLevel": 231
-      },
-      {
-        "playerLevel": 48,
-        "itemLevel": 236
-      },
-      {
-        "playerLevel": 49,
-        "itemLevel": 242
-      },
-      {
-        "playerLevel": 50,
-        "itemLevel": 247
-      },
-      {
-        "playerLevel": 51,
-        "itemLevel": 253
-      },
-      {
-        "playerLevel": 52,
-        "itemLevel": 262
-      },
-      {
-        "playerLevel": 54,
-        "itemLevel": 279
-      },
-      {
-        "playerLevel": 55,
-        "itemLevel": 289
-      },
-      {
-        "playerLevel": 56,
-        "itemLevel": 296
-      },
-      {
-        "playerLevel": 57,
-        "itemLevel": 304
-      },
-      {
-        "playerLevel": 58,
-        "itemLevel": 311
-      },
-      {
-        "playerLevel": 59,
-        "itemLevel": 320
-      },
-      {
-        "playerLevel": 60,
-        "itemLevel": 327
-      },
-      {
-        "playerLevel": 62,
-        "itemLevel": 339
-      },
-      {
-        "playerLevel": 64,
-        "itemLevel": 347
-      },
-      {
-        "playerLevel": 67,
-        "itemLevel": 357
-      },
-      {
-        "playerLevel": 68,
-        "itemLevel": 360
-      },
-      {
-        "playerLevel": 69,
-        "itemLevel": 382
-      },
-      {
-        "playerLevel": 70,
-        "itemLevel": 408
-      },
-      {
-        "playerLevel": 71,
-        "itemLevel": 434
-      },
-      {
-        "playerLevel": 72,
-        "itemLevel": 460
-      },
-      {
-        "playerLevel": 73,
-        "itemLevel": 483
-      },
-      {
-        "playerLevel": 74,
-        "itemLevel": 506
-      },
-      {
-        "playerLevel": 75,
-        "itemLevel": 515
-      },
-      {
-        "playerLevel": 76,
-        "itemLevel": 525
-      },
-      {
-        "playerLevel": 77,
-        "itemLevel": 532
-      },
-      {
-        "playerLevel": 78,
-        "itemLevel": 538
-      },
-      {
-        "playerLevel": 79,
-        "itemLevel": 545
-      },
-      {
-        "playerLevel": 80,
-        "itemLevel": 551
-      }
-    ]
-  },
-  "97367": {
-    "curveId": 97367,
-    "points": [
-      {
-        "playerLevel": 1,
-        "itemLevel": 1
-      },
-      {
-        "playerLevel": 90,
-        "itemLevel": 90
-      }
-    ]
-  },
   "97686": {
     "curveId": 97686,
     "points": [
@@ -19262,6 +18670,19 @@ export const curveDB: { [key: string]: CurveData }=
       }
     ]
   },
+  "97910": {
+    "curveId": 97910,
+    "points": [
+      {
+        "playerLevel": 1,
+        "itemLevel": 1
+      },
+      {
+        "playerLevel": 80,
+        "itemLevel": 1
+      }
+    ]
+  },
   "98296": {
     "curveId": 98296,
     "points": [
@@ -19312,6 +18733,43 @@ export const curveDB: { [key: string]: CurveData }=
       {
         "playerLevel": 90,
         "itemLevel": 201
+      }
+    ]
+  },
+  "101225": {
+    "curveId": 101225,
+    "points": [
+      {
+        "playerLevel": 70,
+        "itemLevel": 133
+      },
+      {
+        "playerLevel": 83,
+        "itemLevel": 133
+      },
+      {
+        "playerLevel": 84,
+        "itemLevel": 152
+      },
+      {
+        "playerLevel": 86,
+        "itemLevel": 152
+      },
+      {
+        "playerLevel": 87,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 89,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 90,
+        "itemLevel": 192
+      },
+      {
+        "playerLevel": 100,
+        "itemLevel": 192
       }
     ]
   }
