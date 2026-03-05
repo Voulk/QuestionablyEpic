@@ -38,10 +38,12 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const spellsCastInduration = 12 / 1.5 / 2; // Placeholder obviously
+            const spellsCastInduration = 12 / 2; // Placeholder obviously
 
-            bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Gaze of the Alnseer"][0]}, itemLevel);
-            bonus_stats.intellect *= spellsCastInduration; // 
+            const alnUptime = convertPPMToUptime(data[0].ppm, data[0].duration)
+            // Currently bugged and accruing a stack per second.
+            const stacksPerMinute = alnUptime * 60;
+            bonus_stats.intellect = stacksPerMinute * 12 / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel) * 0.8;
 
             return bonus_stats;
         }

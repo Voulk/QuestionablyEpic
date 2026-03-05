@@ -26,14 +26,9 @@ export const shamanDefaultSpellData = (contentType) => {
         cooldownMult: {
           c60: 1,
           c90: 1,
-          c120: 1.25,
-          c180: 1.1,
+          c120: 1,
+          c180: 1,
   
-          oneMinute: 1.1,
-          ninetySeconds: 1,
-          twoMinutes: 1.18,
-          twoMinutesOrb: 1.06,
-          threeMinutes: 1.25,
         },
         HoldYourGroundUptime: 0.8
       };
@@ -45,14 +40,9 @@ export const shamanDefaultSpellData = (contentType) => {
         cooldownMult: {
           c60: 1,
           c90: 1,
-          c120: 1.2,
+          c120: 1,
           c180: 1,
   
-          oneMinute: 1.1,
-          ninetySeconds: 1,
-          twoMinutes: 1.1,
-          twoMinutesOrb: 1.1,
-          threeMinutes: 1.1,
         },
         HoldYourGroundUptime: 0.8
       };
@@ -68,19 +58,19 @@ export const shamanDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.64,
-      crit: 0.62,
-      mastery: 0.45,
-      versatility: 0.51,
-      leech: 0.24,
+      haste: 0.48,
+      crit: 0.45,
+      mastery: 0.4,
+      versatility: 0.43,
+      leech: 0.25,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.64,
-      crit: 0.62,
-      mastery: 0.45,
-      versatility: 0.51,
-      leech: 0.24,
+      haste: 0.49,
+      crit: 0.45,
+      mastery: 0.38,
+      versatility: 0.429,
+      leech: 0.2,
     };
   
     return statWeights[contentType];

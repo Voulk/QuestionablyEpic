@@ -141,7 +141,7 @@ export const embellishmentData = [
         effects: [
         { // 
             scalingClass: -9,
-            coefficient: 43.70122 * 0.66,
+            coefficient: 43.70122 * 0.66 * 1.67,
             ppm: 2,
             efficiency: 0.7,
             secondaries: ['haste', 'crit', 'versatility'],
@@ -162,7 +162,7 @@ export const embellishmentData = [
         effects: [
         { // 
             scalingClass: -8,
-            coefficient: 1.86696 * 0.66,
+            coefficient: 1.86696 * 0.66 * 1.89,
             ticks: 20,
             ppm: 2,
             efficiency: 0.7,

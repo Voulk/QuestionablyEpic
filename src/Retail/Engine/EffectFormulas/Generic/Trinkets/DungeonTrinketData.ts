@@ -188,8 +188,8 @@ export const dungeonTrinketData =
     },
         {
       name: "Refueling Orb",
-      description: "The best support trinket in the game. Gives way more stats to your team than any other trinket gives to yourself. Might get nerfed.",
-      addonDescription: "The best support trinket in the game. Gives way more stats to your team than any other trinket gives to yourself. Might get nerfed.",
+      description: "Was nerfed shortly after going live. Now just an adequate support trinket.",
+      addonDescription: "Was nerfed shortly after going live. Now just an adequate support trinket.",
       effects: [
         { // Vers portion. Hasted for some reason.
           ppm: 2,

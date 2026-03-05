@@ -419,7 +419,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "You can compare Diamantine Voidcore with the weapon set in Top Gear. Loom'ithar's Living Silk is an excellent Mythic+ trinket since it is an amazing problem solver. Do not worry too much about its placement on the chart."  :
+  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer is also very good but is too bugged to correctly assess."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (

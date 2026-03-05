@@ -47,7 +47,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         c30: 1,
         c60: 1,
         c90: 1,
-        c120: 1.15,
+        c120: 1,
         c180: 1,
       },
     };
@@ -59,7 +59,7 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         c30: 1,
         c60: 1,
         c90: 1,
-        c120: 1.2,
+        c120: 1,
         c180: 1,
       },
     };

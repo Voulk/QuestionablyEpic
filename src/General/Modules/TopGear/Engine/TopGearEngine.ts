@@ -897,7 +897,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const playerData = { spec: player.spec, heroTree: castModel.heroTree, settings: userSettings, stats: setStats, tierSets: usedSets, effectList: effectList,
       masteryEffectiveness: 0.9};
  
-    if (player.spec === "Restoration Shaman Classic") playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
+    if (player.spec === "Restoration Shaman") {
+      playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
+      playerData.params = {asc: {ch: 0, hw: 1}, filler: {ch: 1, hw: 0}}
+    }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;

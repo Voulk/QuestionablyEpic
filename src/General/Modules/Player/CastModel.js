@@ -132,8 +132,8 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      if (modelID === "Farseer HW") {
-        this.modelName = "Farseer HW";
+      if (modelID === "Farseer") {
+        this.modelName = "Farseer";
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
         this.heroTree = "Farseer";

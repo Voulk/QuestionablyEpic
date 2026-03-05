@@ -257,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="You are limited to two embellishment effects. Make sure you consult your favorite guide before crafting anything." variant="red" />
+        <InformationBox information="You are limited to two embellishment effects. Do NOT craft anything during these early weeks and make sure you consult your favorite guide before crafting anything." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
