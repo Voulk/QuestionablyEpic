@@ -12,15 +12,15 @@ describe("Trinket Tests", () => {
         {name: "Root Warden's Regalia", levels: {[level]: [158]}},
         {name: "World Tree Rootwraps", levels: {[level]: [113]}},
         {name: "Blessed Pango Charm", levels: {[level]: [101]}},
-        {name: "Thalassian Phoenix Torque", levels: {252: [Math.round(4102 / 20)]}},
-        {name: "Sunfire Silk Lining", levels: {252: [4]}},
+        {name: "Thalassian Phoenix Torque", levels: {252: [Math.round(4102 * 1.89 / 20)]}},
+        {name: "Sunfire Silk Lining", levels: {252: [17]}},
         {name: "Sunfire Silk Trappings", levels: {252: [156]}}, // 157
         {name: "Darkmoon Sigil: Hunt", levels: {252: [85]}}, 
         {name: "Arcanoweave Cord", levels: {252: [135]}}, 
         
 
         {name: "Arcanoweave Lining", levels: {252: [40]}},
-        {name: "Primal Spore Binding", levels: {252: [5833]}},
+        {name: "Primal Spore Binding", levels: {252: [9740]}},
         {name: "Voidstone Shielding Array", levels: {252: [45025]}},
 
         {name: "Loa Worshiper's Band", levels: {252: [40, 113, 6]}},

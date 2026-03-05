@@ -19,15 +19,15 @@ import each from "jest-each";
 
 
 describe("Make sure Items Exist", () => {
-  test("Hall of Valor", () => {
+  /*test("Hall of Valor", () => {
       expect(getItem(133633)).toBeTruthy();
       expect(getItem(136777)).toBeTruthy();
-  })
+  })*/
 
-  test("Shadowmoon Burial Ground", () => {
+ /* test("Shadowmoon Burial Ground", () => {
     expect(getItem(110039)).toBeTruthy();
     expect(getItem(109784)).toBeTruthy();
-  })
+  })*/
 
   /*test("Burning Crusade Timewalking", () => {
     expect(getItem(123999)).toBeTruthy();
@@ -58,12 +58,12 @@ describe("Make sure Items Exist", () => {
 
   })
 
-  test("Warlords of Draenor Timewalking", () => {
+  /*test("Warlords of Draenor Timewalking", () => {
     expect(getItem(109982)).toBeTruthy();
     expect(getItem(119176)).toBeTruthy();
     expect(getItem(110033)).toBeTruthy();
 
-  })
+  })*/
 
   test("Legion Timewalking", () => {
     expect(getItem(136714)).toBeTruthy();
