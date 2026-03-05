@@ -346,7 +346,7 @@ function displayReport(
   const topInfo = {
     color: (gameType === "Retail") ? "brick" : "transparent", //"transparent" player.model.includes("Beta") || 
     info: (gameType === "Retail")
-      ? "QE Live Prepatch support is very light! Full support will return with Midnight. Take all results with caution."
+      ? "Blizzard continue to tune items in-game. Be cautious with results until the season begins."
       : "This is your best set of gear. You can see how close other sets are below!",
   };
 

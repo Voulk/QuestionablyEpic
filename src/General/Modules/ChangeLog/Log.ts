@@ -20,12 +20,11 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
       {
-    version: "12.0 / 5.5.3",
-    update: 26,
-    date: "January 29",
+    version: "12.0.1 / 5.5.3",
+    update: 1,
+    date: "March 5",
     changes: [ 
-      "Fixed some Upgrade Finder prepatch issues.",
-      "MoP: Added some missing servers.",
+      "Updated QE Live for Midnight.",
     ]
   },
     {

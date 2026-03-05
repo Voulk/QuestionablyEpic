@@ -77,7 +77,8 @@ export class Item {
     this.uniqueEquip = getItemProp(id, "uniqueEquip", gameType).toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
-    if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 2; // We'll just auto apply sockets to rings / necks now.
+    if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 1; // We'll just auto apply sockets to rings / necks now.
+    if (id === 249920 || id === 250247) this.socket = 2;
     if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
     this.quality = getItemProp(id, "quality", gameType);

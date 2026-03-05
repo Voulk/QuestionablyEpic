@@ -24,20 +24,20 @@ export const chronoDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 1.014, 
-      crit: 1.33, 
-      mastery: 1.44, 
-      versatility: 1.15, 
-      leech: 0.6,
+      haste: 0.534, 
+      crit: 0.451, 
+      mastery: 0.66, 
+      versatility: 0.429, 
+      leech: 0.25,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 1.35,
-      crit: 1.14,
-      mastery: 1.32,
-      versatility: 1.15,
-      leech: 0.45,
+      haste: 0.546,
+      crit: 0.434,
+      mastery: 0.62,
+      versatility: 0.429,
+      leech: 0.25,
       defaults: true,
     };
   
@@ -53,8 +53,8 @@ export const chronoDefaultSpellData = (contentType) => {
         cooldownMult: {
           c30: 1.05,
           c60: 1,
-          c90: 1,
-          c120: 1.15,
+          c90: 1.1,
+          c120: 1.1,
           c180: 1,
         },
       };
@@ -63,9 +63,9 @@ export const chronoDefaultSpellData = (contentType) => {
         OneManaHealing: 1.2,
         CastsPerMinute: 30,
         cooldownMult: {
-          c30: 1.05,
+          c30: 1,
           c60: 1,
-          c90: 1.15,
+          c90: 1,
           c120: 1,
           c180: 1,
         },

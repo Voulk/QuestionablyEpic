@@ -1,4 +1,4 @@
-import { runPreservationEvokerCastProfileEchoshaper } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PreservationEvokerProfileEchoshaper"
+import { scoreEvokerSet } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PreservationEvokerProfile"
 
 export const evokerDefaultSpellData = (contentType) => {
     let spellList = {};
@@ -19,8 +19,10 @@ export const evokerDefaultSpellData = (contentType) => {
 
   export const runFlameshaperCastModel = (itemSet, setStats, castModel, effectList) => {
     const settings = {masteryEfficiency: 0.85, includeOverheal: true, reporting: false};
-    const playerData = { spec: "Preservation Evoker", settings: settings, stats: setStats, tier: ["S1-2", "S1-4"], effectList: effectList }
-    const result = runPreservationEvokerCastProfileEchoshaper(playerData);
+    const playerData = { spec: "Preservation Evoker", heroTree: "Chronowarden", settings: settings, stats: setStats, tierSets: ["S1-2", "S1-4"], effectList: effectList,
+      masteryEffectiveness: 0.9};
+
+    const result = scoreEvokerSet(setStats, playerData, settings);
 
     return result;
   }
@@ -30,11 +32,11 @@ export const evokerDefaultSpellData = (contentType) => {
   
     statWeights.Raid = {
       intellect: 1,
-      haste: 1.27, 
-      crit: 1.3, 
-      mastery: 1.45, 
-      versatility: 1.10, 
-      leech: 0.55,
+      haste: 0.4, 
+      crit: 0.37, 
+      mastery: 0.5, 
+      versatility: 0.33, 
+      leech: 0.45,
       defaults: true,
     };
     statWeights.Dungeon = {
@@ -60,7 +62,7 @@ export const evokerDefaultSpellData = (contentType) => {
         cooldownMult: {
           c30: 1.1,
           c60: 1,
-          c90: 1.37,
+          c90: 1.3,
           c120: 1.1,
           c180: 1,
 

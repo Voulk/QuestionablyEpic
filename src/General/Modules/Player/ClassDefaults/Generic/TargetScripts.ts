@@ -1,0 +1,55 @@
+
+
+// Returns the effective target count of the spell.
+export const getTargetScript = (scriptName: string, targets: number, specialFields: any) : number => {
+    if (scriptName === "Sqrt") {
+        return getSqrt(targets, specialFields.sqrtMin);
+    }
+    else if (scriptName === "Temporal Anomaly") {
+        let effectiveMult = 0;
+        for (let i = 1; i <= targets; i++) {
+            if (i <= 5) effectiveMult += 1;
+            else effectiveMult += (1 / Math.pow((i - 5 + 1), (4/5)));
+            
+        }
+        return effectiveMult;
+    }
+    else if (scriptName === "Chain Heal") {
+        // Each target takes X - fallOff with the fallOff being based on the previous target.
+        let effectiveMult = 0;
+        let currentMult = 1;
+        for (let i = 1; i <= targets; i++) {
+            effectiveMult += currentMult;
+            currentMult *= (1 - specialFields.chainHealFalloff);
+        }
+        return effectiveMult;
+    }
+    else {
+        console.error("Invalid Target Script");
+        return targets;
+    }
+}
+
+// The formula for sqrt abilties is a bit of a pain.
+// They often do full healing up to the first X targets hit, and then are reduced via a square root formula after that.
+// The formula after you reach your sqrt cap is 1/TargetNumber. So the first target hit after the minimum gets sqrt(1/1), the second gets sqrt(1/2) and so on.
+export const getSqrt = (targets: number, sqrtMin: number) => {
+
+    if (targets <= sqrtMin) return targets;
+
+    const effectiveSqrtTargets = targets - sqrtMin;
+    let totalMult = sqrtMin;
+    for (let i = 1; i <= effectiveSqrtTargets; i++) { totalMult += Math.sqrt(1 / i) }
+
+    return totalMult;
+    //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
+}
+
+export const getSqrtHalo = (targets: number, sqrtMin: number) => {
+
+
+}
+
+export const getSqrtCustom = (spellName: string, targets: number, sqrtMin: number) => {
+
+}

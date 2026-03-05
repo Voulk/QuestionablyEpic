@@ -1,11 +1,10 @@
 
 
-import {getProcessedValue, processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import Player from "General/Modules/Player/Player";
-import { trinket_data} from "../PatchEffectItems/ShadowlandsTrinketData";
+import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { raidTrinketData } from "./RaidTrinketData";
 import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
+import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 import each from "jest-each";
 
 
@@ -13,7 +12,7 @@ import each from "jest-each";
 describe("Trinket Tests", () => {
 const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
     const ingameData = [
-         {name: "Nexus-King's Command", levels: {717: [15790]}},
+         {name: "Locus-Walker's Ribbon", levels: {279: [244]}},
          /*
         {name: "Eye of Kezan", levels: {645: [298, 115947], 671: [379, 168875]}},
         {name: "Araz's Ritual Forge", levels: {714: [35728]}},
@@ -41,7 +40,7 @@ const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData)
                 (level, expectedResult) => {
                     //level = Number(level); // Convert level string back to number
                     effects.forEach((effect, index) => {
-                        expect(processedValue(effects[index], level, 1)).toBe(expectedResult[index]);
+                        expect(processedValue({...effects[index], ...trinketRawData[name][index]}, level, 1)).toBe(expectedResult[index]);
                     });
                     
                     //expect(processedValue(effect[1], level)).toBe(expectedResult[1]);

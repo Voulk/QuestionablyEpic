@@ -47,16 +47,9 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         c30: 1,
         c60: 1,
         c90: 1,
-        c120: 1.15,
+        c120: 1,
         c180: 1,
-
-        oneMinute: 1,
-        ninetySeconds: 1,
-        twoMinutes: 1,
-        twoMinutesOrb: 1,
-        threeMinutes: 1,
       },
-      HoldYourGroundUptime: 0.8
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
@@ -66,16 +59,9 @@ export const holyPriestDefaultSpecialQueries = (contentType) => {
         c30: 1,
         c60: 1,
         c90: 1,
-        c120: 1.2,
+        c120: 1,
         c180: 1,
-
-        oneMinute: 1,
-        ninetySeconds: 1,
-        twoMinutes: 1,
-        twoMinutesOrb: 1,
-        threeMinutes: 1,
       },
-      HoldYourGroundUptime: 0.8
     };
   } else {
     console.error("Unknown Content Type");
@@ -89,19 +75,19 @@ export const holyPriestDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.45,
-    crit: 0.6,
-    mastery: 0.58,
-    versatility: 0.5,
-    leech: 0.24,
+    haste: 0.42,
+    crit: 0.48,
+    mastery: 0.44,
+    versatility: 0.44,
+    leech: 0.18,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.56,
-    crit: 0.61,
-    mastery: 0.58,
-    versatility: 0.5,
-    leech: 0.24,
+    haste: 0.42,
+    crit: 0.48,
+    mastery: 0.44,
+    versatility: 0.44,
+    leech: 0.18,
   };
 
   return statWeights[contentType];

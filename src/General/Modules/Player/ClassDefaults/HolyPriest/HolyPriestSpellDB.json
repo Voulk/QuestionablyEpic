@@ -1,0 +1,307 @@
+{
+    "Prayer of Mending": [
+        {
+            "displayInfo": {
+                "id": 33076,
+                "icon": "spell_holy_prayerofmendingtga",
+                "spellName": "Prayer of Mending"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 12.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            }
+        }
+    ],
+    "Prayer of Healing": [
+        {
+            "displayInfo": {
+                "id": 596,
+                "icon": "spell_holy_prayerofhealing02",
+                "spellName": "Prayer of Healing",
+                "cat": "heal"
+            },
+            "castTime": 2.5,
+            "school": "holy",
+            "cost": 5.25,
+            "coeff": 5.7874,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Flash Heal": [
+        {
+            "displayInfo": {
+                "id": 2061,
+                "icon": "spell_holy_flashheal",
+                "spellName": "Flash Heal",
+                "cat": "heal"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 6.82,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Holy Word: Serenity": [
+        {
+            "displayInfo": {
+                "id": 2050,
+                "icon": "spell_holy_persuitofjustice",
+                "spellName": "Holy Word: Serenity",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 2.375,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 17.8744,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Holy Word: Sanctify": [
+        {
+            "displayInfo": {
+                "id": 34861,
+                "icon": "spell_holy_divineprovidence",
+                "spellName": "Holy Word: Sanctify",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 3.325,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 5.011,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Divine Hymn": [
+        {
+            "displayInfo": {
+                "id": 64843,
+                "icon": "spell_holy_divinehymn",
+                "spellName": "Divine Hymn"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 4.4,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Apotheosis": [
+        {
+            "displayInfo": {
+                "id": 200183,
+                "icon": "ability_priest_ascension",
+                "spellName": "Apotheosis",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 120.0,
+                "hasted": false
+            },
+            "coeff": 0.0,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 20.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Halo": [
+        {
+            "displayInfo": {
+                "id": 120517,
+                "icon": "ability_priest_halo",
+                "spellName": "Halo"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 2.7,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Smite": [
+        {
+            "displayInfo": {
+                "id": 585,
+                "icon": "spell_holy_holysmite",
+                "spellName": "Smite",
+                "cat": "damage"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 0.987,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Holy Fire": [
+        {
+            "displayInfo": {
+                "id": 14914,
+                "icon": "spell_holy_searinglight",
+                "spellName": "Holy Fire",
+                "cat": "damage"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 0.24,
+            "cooldownData": {
+                "cooldown": 10.0,
+                "hasted": false
+            },
+            "coeff": 4.1112,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.1884,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 7.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Holy Nova": [
+        {
+            "displayInfo": {
+                "id": 132157,
+                "icon": "spell_holy_holynova",
+                "spellName": "Holy Nova",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 0.4095,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Holy Word: Chastise": [
+        {
+            "displayInfo": {
+                "id": 88625,
+                "icon": "spell_holy_chastise",
+                "spellName": "Holy Word: Chastise",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.6,
+            "cooldownData": {
+                "cooldown": 60.0,
+                "hasted": false
+            },
+            "coeff": 3.8575,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Cosmic Ripple": [
+        {
+            "displayInfo": {
+                "id": 238136,
+                "icon": "inv_ability_holyfire_nova",
+                "spellName": "Cosmic Ripple"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0
+        }
+    ]
+}

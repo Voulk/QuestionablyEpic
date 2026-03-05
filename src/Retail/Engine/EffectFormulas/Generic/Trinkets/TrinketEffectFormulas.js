@@ -5,9 +5,14 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
-import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinMiscFormulas"
+import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/Archive/PaladinMiscFormulas"
 import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
+
+
+export function getAllTrinketData() {
+  return raidTrinketData.concat(dungeonTrinketData, otherTrinketData, timewalkingTrinketData, );
+}
 
 // Returns the value of a trinket effect while active. This is different to its average value which is typically what we'll use.
 export function getTrinketValue(trinketName, itemLevel) {

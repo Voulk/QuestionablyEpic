@@ -19,6 +19,7 @@ import { getSeasonalDungeons, getMoPDungeons } from "Databases/InstanceDB";
 import { classicGemDB } from "Databases/ClassicGemDB";
 import { ItemDamageTwoHand } from "Retail/Engine/ItemDamageTwoHand";
 import { ItemDamageOneHand } from "Retail/Engine/ItemDamageOneHand";
+import { setBounds } from "./CONSTRAINTS";
 
 
 
@@ -1049,21 +1050,15 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
     let sourceCheck = true;
     if (source !== "") {
       const sources = getItemProp(item.id, "sources", gameType)[0];
-      // Check the item drops from the expected location.
-      if (item.id === 235499 && source !== "S3 Dinar") sourceCheck = true;
-      else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
-      else if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
-      else if (source === "Manaforge" && sources) sourceCheck = (sources.instanceId === 1302);
-      else if (source === "S3 Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
+      // Check the item drops from the expected location
+      //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
+      if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
+      else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
+      else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }
 
-      else if (source === "Mogushan Vaults" && sources) sourceCheck = ([317/*, 320, 330*/].includes(sources.instanceId));
-      else if (source === "Heart of Fear" && sources) sourceCheck = sources.instanceId === 330;
-      else if (source === "Terrace" && sources) sourceCheck = sources.instanceId === 320;
-      else if (source === "T14" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 0);
-      else if (source === "T14+" && sources) sourceCheck = ([317, 320, 330].includes(sources.instanceId) && sources.difficulty === 1);
       else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
       else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
       else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
@@ -1089,11 +1084,6 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
-          if ([243308, 243307, 243306, 243305].includes(item.id)) {
-            // Special boots stuff
-            if (newItem.level === 170) newItem.bonusIDS += "13503";
-            else newItem.bonusIDS += "13504";
-          }
           if (gameType === "Retail") newItem.quality = 4;
 
       if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
@@ -1197,7 +1187,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Add any group benefit, if we're interested in it.
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
-  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+  if (playerSettings && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
     score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings);
   }
@@ -1256,7 +1246,7 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
   // Add any group benefit, if we're interested in it.
   // This could be expanded to better simulate the number of buffs that go on healers vs DPS. Right now it assumes DPS.
-  if (playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+  if (playerSettings && bonus_stats.allyStats) {
     //score += 0.45 * bonus_stats.allyStats; // TODO: Move this somewhere nice.
     score += getAllyStatsValue(contentType, bonus_stats.allyStats, player, playerSettings) / player.getInt() * player.getHPS(contentType);
   }
@@ -1268,10 +1258,11 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 export const getAllyStatsValue = (contentType: contentTypes, statValue: number, player: Player, playerSettings: PlayerSettings) => { // Maybe add PlayerSettings
   const dpsValue = statValue * CONSTANTS.allyStatWeight; //CONSTANTS.allyDPSPerPoint / player.getHPS(contentType) * player.getInt();
   const healerValue = statValue * CONSTANTS.allyStatWeight;
+  let groupBuffValuation = ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value ? playerSettings.groupBuffValuation.value : 100) / 100;
+  groupBuffValuation = setBounds(groupBuffValuation, 0, 1);
 
-  if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "50%") return (dpsValue * 0.75 + healerValue * 0.25) * 0.5;
-  else if ('groupBuffValuation' in playerSettings && playerSettings.groupBuffValuation.value === "75%")return (dpsValue * 0.75 + healerValue * 0.25) * 0.75;
-  else return dpsValue * 0.75 + healerValue * 0.25;
+  return (dpsValue * 0.75 + healerValue * 0.25) * groupBuffValuation;
+
 }
 
 /*

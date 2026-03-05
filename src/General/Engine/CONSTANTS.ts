@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 1.1, // This is a heavy underestimation. Maybe add a setting.
-    allyDPSPerPoint: 1.1 / 125000 * 3000000,
+    allyStatWeight: 0.4, // 
+    allyDPSPerPoint: 0.4 / 2000 * 30000,
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,
@@ -16,9 +16,11 @@ export const CONSTANTS = {
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
     seasonalItemConversion: 11, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-    currentRaidID: 1302, // Undermine
-    currentDungeonIDs: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
-    bossNPCIDs: {
+    currentRaidID: [1314, 1308, 1307], // S1
+    currentDungeonIDs: [1315, 1316, 1300, 1299, 1201, 278, 476, 945],
+    fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
+    itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
+    bossNPCIDs: { // Unused?
         2639: 225821, // Vexie and the Geargrinders.
         2640: 229177, // Cauldron of Carnage
         2641: 228652, // Rik Reverb
@@ -28,7 +30,7 @@ export const CONSTANTS = {
         2645: 229953, // Mug'Zee
         2646: 237194 // Chrome King Gallywix
     },
-    dungeonZoneIDs: {
+    dungeonZoneIDs: { // Unused?
         1210: 14882, // Darkflame Cleft
         1272: 15103, // Cinderbrew Meadery
         1268: 14938, // The Rookery

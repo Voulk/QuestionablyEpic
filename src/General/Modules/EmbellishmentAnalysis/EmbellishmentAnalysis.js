@@ -102,7 +102,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
     else if (key === "hps") {
       estHPS += value;
     }
-    else if (key === "allyStats" && playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+    else if (key === "allyStats" && playerSettings  && bonus_stats.allyStats) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
@@ -160,7 +160,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r167 //gem.r5;
+  return gem.r250 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -199,7 +199,7 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [167];
+  const itemLevels = [250];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -229,7 +229,7 @@ export default function EmbellishmentAnalysis(props) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
-    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 167, playerSettings)
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 250, playerSettings)
     activeGems.push(gemAtLevels);
   }
 
@@ -257,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="You are limited to two embellishment effects. Make sure you consult your favorite guide before crafting anything." variant="red" />
+        <InformationBox information="You are limited to two embellishment effects. Do NOT craft anything during these early weeks and make sure you consult your favorite guide before crafting anything." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />

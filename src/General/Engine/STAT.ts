@@ -25,18 +25,18 @@ export const getMasteryPercentage = (statQuantity: number, spec: string) => {
 }
 
 export const STATCONVERSION = {
-    LEECH: 18.237,
-    HASTE: 11.629,
-    CRIT: 12.158,
-    VERSATILITY: 14.27,
-    MASTERY: 12.158,
-    VERSATILITY_DR: 1560,
+    LEECH: 69,
+    HASTE: 44,
+    CRIT: 46,
+    VERSATILITY: 54,
+    MASTERY: 46,
+    VERSATILITY_DR: 108,
     MASTERYMULT: {
       "Preservation Evoker": 1.8,
       "Restoration Druid": 1.42,
-      "Mistweaver Monk": 6.93,
+      "Mistweaver Monk": 13.86,
       "Holy Paladin": 1.5,
-      "Holy Priest": 0.90843,
+      "Holy Priest": 0.908437,
       "Discipline Priest": 1.35,
       "Restoration Shaman": 3,
     } as Record<string, number>,
@@ -49,6 +49,9 @@ export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
   HASTE: [STATCONVERSION.HASTE * 30, STATCONVERSION.HASTE * 40, STATCONVERSION.HASTE * 50, STATCONVERSION.HASTE * 60],
   LEECH: [STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 20, STATCONVERSION.LEECH * 20],
 };
+
+// These used to be different. Could potentially just be folded into a single variable now.
+export const BASEMANA = 250000;
 
 export const STATCONVERSIONCLASSIC = {
   HASTE: 425,

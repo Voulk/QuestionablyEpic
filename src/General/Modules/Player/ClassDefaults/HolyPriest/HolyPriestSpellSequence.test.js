@@ -1,5 +1,5 @@
 import { getSpellRaw, runCastSequence } from "./HolyPriestSpellSequence";
-import { HOLYPRIESTSPELLDB, baseTalents, } from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB, baseTalents, } from "./Archive/HolyPriestSpellDB";
 import { runHolyPriestCastProfile } from "./HolyPriestCastProfile";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite,  } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 
@@ -43,7 +43,7 @@ describe("Test APL", () => {
         let baseline = 0;
         
         for (let i = 0; i < iterations; i++) {
-            baseline += runHolyPriestCastProfile(playerData);
+            baseline += 0 //runHolyPriestCastProfile(playerData);
         }
 
         

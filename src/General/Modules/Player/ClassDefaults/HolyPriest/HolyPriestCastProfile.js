@@ -1,5 +1,6 @@
 
-import { getCurrentStats, getHaste, applyTalents, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { getCurrentStats, getHaste, deepCopyFunction, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyTalents } from "../Generic/ProfileUtilities";
 import { runHeal, applyLoadoutEffects } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestSpellSequence"
 
 const getCPM = (profile, spellName) => {

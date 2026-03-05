@@ -1,4 +1,4 @@
-import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileShared";
+import { runClassicSpell, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
 import { initializeDiscSet } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic";
 import { compiledDiscTalents } from "./ClassicPriestSpellDB";
 import each from "jest-each";
