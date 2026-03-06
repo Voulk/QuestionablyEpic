@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.0.1 / 5.5.3",
+    update: 2,
+    date: "March 6",
+    changes: [ 
+      "Crucible of Erratic Energies nerfed in-game. Rating may still change as we learn more about it.",
+      "Fixed Disc Priest Classic.",
+    ]
+  },
       {
     version: "12.0.1 / 5.5.3",
     update: 1,
