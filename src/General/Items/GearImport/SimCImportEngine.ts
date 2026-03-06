@@ -170,7 +170,6 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
     }
 
     //console.log(operations);
-
     return itemLevel;
 
 }
@@ -256,7 +255,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
 
   // Step 2: Filter items that are within 40 levels of that max
   player.activeItems = player.activeItems.filter(item => 
-    (item.level >= maxLevels[item.slot] - 40 || item.slot === "Trinket" || item.slot === "Finger")
+    (item.level >= maxLevels[item.slot] - 70 || item.slot === "Trinket" || item.slot === "Finger")
   );
 
 

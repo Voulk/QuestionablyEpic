@@ -75,7 +75,7 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
 
 }
 
-export const buildChartEntryClassic = (sequence, spellData, activeStats, userSettings, playerData, scoreSet) => {
+export const buildChartEntryClassic = (sequence, spellData, spell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         healingDone: 0,
         damageDone: 0,

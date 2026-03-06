@@ -153,7 +153,7 @@ export const buildClassicHolyChartData = (activeStats, baseTalents) => {
         else {
             // All sequence based.
             const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
-            results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, holyPriestDefaults.scoreSet));
+            results.push(buildChartEntryClassic(sequence, spellData, db[newSeq[0]], activeStats, testSettings, playerData, holyPriestDefaults.scoreSet));
         };  
     }); 
 
@@ -215,7 +215,7 @@ export const buildClassicDiscChartData = (activeStats, baseTalents) => {
         else {
             // All sequence based.
             const playerData = { castProfile: [{'spell': newSeq[0], 'cpm': 1}], spellDB: db, costPerMinute: 1, talents: baseTalents }
-            results.push(buildChartEntryClassic(sequence,spellData, db[newSeq[0]], activeStats, testSettings, playerData, discPriestDefaults.scoreSet));
+            results.push(buildChartEntryClassic(sequence, spellData, db[newSeq[0]], activeStats, testSettings, playerData, discPriestDefaults.scoreSet));
 
         };  
     }); 
