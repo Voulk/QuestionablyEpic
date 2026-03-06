@@ -6,7 +6,7 @@ import { STATCONVERSION } from "General/Engine/STAT"
 export const otherTrinketData = [
         { 
     name: "Crucible of Erratic Energies",
-    description: "A fantastic crit / leech stat stick. The extra text about empowering the trinket only works in Voidstorm and can be ignored in instanced content.",
+    description: "NERFED Mar 6th. An ok crit / leech stat stick that gets stronger as you complete content in Voidstorm. Rating might change as the trinket is still very unexplored.",
     addonDescription: "",
     effects: [
       {
