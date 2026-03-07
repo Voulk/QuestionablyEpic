@@ -291,7 +291,7 @@ export default function TrinketAnalysis(props) {
   const playerSettings = useSelector((state) => state.playerSettings);
   const allItemLevels = gameType === "Retail" ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
-  const itemLevels = allItemLevels.filter(level => level <= levelCap);
+  const itemLevels = allItemLevels.filter(level => (level <= levelCap || gameType === "Classic"));
 
   
   const trinketDB = getItemDB(gameType).filter(
@@ -410,6 +410,7 @@ export default function TrinketAnalysis(props) {
     //activeTrinkets.push(trinketAtLevels);
     
   }
+
 
   if (gameType === "Classicc") {
     // Sort. We'll need to use the retail "highest level" code here.
