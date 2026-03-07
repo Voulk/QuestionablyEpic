@@ -100,12 +100,12 @@ export const dungeonTrinketData =
           secondaries: ['crit', 'versatility'],
           cooldown: 90,
           ticks: 8,
-          efficiency: 0.7 //
+          efficiency: 0.65 //
         },
         { // Direct Heal effect
           secondaries: ['crit', 'versatility'],
           cooldown: 90,
-          efficiency: {Raid: 0.4, Dungeon: 0.6} //
+          efficiency: {Raid: 0.3, Dungeon: 0.4} //
         },
         
       ],
@@ -113,7 +113,7 @@ export const dungeonTrinketData =
         let bonus_stats: Stats = {};
   
         bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Seed of Radiant Hope"][0]}, itemLevel, player, additionalData.contentType)
-        bonus_stats.hps += runGenericFlatProc({...data[0], ...trinketRawData["Seed of Radiant Hope"][1]}, itemLevel, player, additionalData.contentType)
+        bonus_stats.hps += runGenericFlatProc({...data[1], ...trinketRawData["Seed of Radiant Hope"][1]}, itemLevel, player, additionalData.contentType)
         return bonus_stats;
       }
     },
