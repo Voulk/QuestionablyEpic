@@ -4,7 +4,7 @@ import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { runClassicSpell, convertStatPercentages} from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic";
-import { printHealingBreakdownWithCPM,  getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM,  getSpellEntry, updateSpellCPM, buildCPM, getTimeUsed } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const holyPaladinDefaults = {
