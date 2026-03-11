@@ -201,13 +201,13 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
     // 
     if (topGear && gemCount > 0) {
       // We'll only add int gems in Top Gear. Otherwise every individual item gets heavily overrated.
-      bonus_stats.intellect = (bonus_stats.intellect || 0) + 75;
-      bonus_stats.mastery = (bonus_stats.mastery || 0) + 66;
+      bonus_stats.intellect = (bonus_stats.intellect || 0) + 30;
+      //bonus_stats.mastery = (bonus_stats.mastery || 0) + 66;
       gemCount -= 1;
       gemArray.push(192988)
     }
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 70 * (gemCount);
-    bonus_stats.crit = (bonus_stats.crit || 0) + 33 * (gemCount);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 12 * (gemCount);
+    bonus_stats.crit = (bonus_stats.crit || 0) + 5 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
@@ -219,8 +219,8 @@ export function getGems(spec: string, gemCount: number, bonus_stats: Stats, cont
       gemCount -= 1;
       gemArray.push(192982)
     }
-    bonus_stats.crit = (bonus_stats.crit || 0) + 147 * (gemCount);
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 49 * (gemCount);
+    bonus_stats.crit = (bonus_stats.crit || 0) + 12 * (gemCount);
+    bonus_stats.versatility = (bonus_stats.mastery || 0) + 5 * (gemCount);
     gemArray.push(192958)
     return gemArray;
   }
@@ -881,7 +881,7 @@ export function calcStatsAtLevel(itemLevel: number, slot: string, statAllocation
   // This could all be shortened to a one line formula by using slot-by-slot allocations like the trinket formula.
   // Accuracy is the same but tidy code is nice code.
   if (tertiary === "Leech") {
-    const terMult = slot === "Finger" || slot === "Neck" ? 0.170127 : 0.428632;
+    const terMult = slot === "Finger" || slot === "Neck" ? 0.120127 : 0.4261;
     if (slot === "Trinket") {
       stats.leech = Math.round(rand_prop * combat_mult * 0.0001 * terMult * 6995);
     } else {
@@ -1133,22 +1133,15 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 
   // Handle Annulet
   if (item.id === 203460) {
-    //const combo = getBestCombo(player, contentType, item.level, player.activeStats, playerSettings)
-    try {
-      const combo = player.getBestPrimordialIDs(playerSettings, contentType);
-      const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
-      bonus_stats = compileStats(bonus_stats, annuletStats);
-    }
-    catch (error) {
-      bonus_stats.hps = 6750; // This should never be returned, but is a fair estimate if the app does crash.
-      reportError(player, "ItemUtil Annulet Error", error, "");
-    }
+      //const combo = player.getBestPrimordialIDs(playerSettings, contentType);
+     // const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, item.level, player.activeStats, playerSettings);
+     // bonus_stats = compileStats(bonus_stats, annuletStats);
 
   }
   if (item.id === 228411) {
-    const combo = item.primGems;
-    const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player};
-    bonus_stats = getCircletEffect(combo, item.level, additionalData);
+    //const combo = item.primGems;
+   // const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player};
+   // bonus_stats = getCircletEffect(combo, item.level, additionalData);
   }
 
   // Add Retail Socket
