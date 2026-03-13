@@ -204,11 +204,10 @@ export default function ItemBar(props) {
           if (itemEffect.type === "embellishment") {
             item.uniqueEquip = "embellishment";
             
-            if (itemEffect.effectName === "Darkmoon Sigil: Ascension") item.bonusIDS = (item.bonusIDS || "") + ":11300";
-            else if (itemEffect.effectName === "Darkmoon Sigil: Symbiosis") item.bonusIDS = (item.bonusIDS || "") + ":11302";
-            else if (itemEffect.effectName === "Writhing Armor Banding") item.bonusIDS = (item.bonusIDS || "") + ":11109";
-            else if (itemEffect.effectName === "Dawnthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11303";
-            else if (itemEffect.effectName === "Duskthread Lining") item.bonusIDS = (item.bonusIDS || "") + ":11304";
+            if (itemEffect.effectName === "Darkmoon Sigil: Hunt") item.bonusIDS = (item.bonusIDS || "") + ":12693";
+            else if (itemEffect.effectName === "Blessed Pango Charm") item.bonusIDS = (item.bonusIDS || "") + ":12686";
+            else if (itemEffect.effectName === "Arcanoweave Lining") item.bonusIDS = (item.bonusIDS || "") + ":12384";
+            else if (itemEffect.effectName === "Primal Spore Binding") item.bonusIDS = (item.bonusIDS || "") + ":12687";
           }
         }
 
