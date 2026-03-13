@@ -387,7 +387,7 @@ export default function TrinketAnalysis(props) {
           }
           
         }
-        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, 263/*trinket.levelRange[trinket.levelRange.length - 1]*/, playerSettings, trinket.id);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
         else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
@@ -420,7 +420,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer is also very good but is too bugged to correctly assess."  :
+  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer and Litany of Lightblind Wrath have severe bugs which affect ability to rate them correctly."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (

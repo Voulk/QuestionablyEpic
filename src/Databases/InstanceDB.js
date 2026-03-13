@@ -10,6 +10,22 @@ export const getMoPDungeons = () => {
     return [246, 316, 313, 312, 311, 303, 302, 324, 321];
 }
 
+export const getSourceName = (instanceID, encounterID) => {
+  if (instanceID === -1) {
+    return encounterDB["-1"]["Retail"][encounterID] || ""
+  }
+  else {
+    return encounterDB[instanceID].bosses[encounterID] || ""
+  }
+
+}
+
+export const getInstanceName = (instanceID) => {
+  if (instanceID !== -1) {
+    return encounterDB[instanceID].name || "";
+  }
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",

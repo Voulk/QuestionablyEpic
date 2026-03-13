@@ -18,7 +18,7 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { exportWowheadGearList, exportReforgeLite } from "./TopGearExports";
+import { exportWowheadGearList, exportReforgeLite, exportIcyVeinsGearList } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import { getItemProp } from "General/Engine/ItemUtilities";
@@ -287,10 +287,16 @@ function displayReport(
     if (buttonClicked === "ReforgeLite Export") {
       setDialogOpen(true);
       setDialogText(exportReforgeLite(player, itemList, topSet.reforges));
-    } else if (buttonClicked === "Wowhead BIS List") {
+    } 
+    else if (buttonClicked === "Wowhead BIS List") {
       setDialogOpen(true);
       setDialogText(exportWowheadGearList(itemList, player.spec, gameType));
-    } else if (buttonClicked === "Wowhead Gear Planner") {
+    } 
+      else if (buttonClicked === "Icy Veins BIS List") {
+      setDialogOpen(true);
+      setDialogText(exportIcyVeinsGearList(itemList, player.spec, gameType));
+    } 
+    else if (buttonClicked === "Wowhead Gear Planner") {
       setDialogOpen(true);
       setDialogText(getWHData(player, itemList, topSet.reforges, enchants));
     } else {
