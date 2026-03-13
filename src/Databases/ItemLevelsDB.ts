@@ -2,7 +2,7 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
   raid: [ // Updated for S4.
     /* ----------------------------------------- Raid Finder ---------------------------------------- */
     // Slider Value = 0
-    234, 
+    234,
     250, // ?
     /* ------------------------------------------- Normal ------------------------------------------- */
     247, // Base
@@ -15,20 +15,20 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     289, // Mythic Max
   ],
   dungeon: [
-    681,
-    684,
-    688,
-    691,
-    694,
-    697,
-    701,
-    704,
-    710,
-    717,
-    720,
-    723,
-    727,
-    730
+    246,
+    250,
+    253,
+    256,
+    259,
+    263,
+    266,
+    269,
+    272,
+    276,
+    279,
+    282,
+    285,
+    289,
   ],
   pvp: [
     /* ------------------------------------------ Unranked ------------------------------------------ */
@@ -56,6 +56,9 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     // Slider Value = 8
     408,
   ],
-  crafted:
-    [681, 697, 710, 727]
+  crafted: [
+    256, // R5 Champion
+    269, // R5 Hero
+    285, // R5 Mythic
+  ]
 };

@@ -49,6 +49,9 @@ export const raidStyles = makeStyles((theme) => {
         maxWidth: "100%",
       },
     },
+    defaultHeader: {
+      ...commonStyles,
+    },
     throneOfFourWindsHeaderStyle: {
       ...commonStyles,
       backgroundImage: `url(${require("../../../../Images/Classic/Raid/RaidThroneOfFourWinds.jpg")})`,
@@ -139,6 +142,15 @@ export const raidStyles = makeStyles((theme) => {
     },
     manaforgeOmegaHeader: {
       backgroundImage: `url(${require("../../../../Images/Bosses/ManaforgeOmega/ManaforgeOmegaLong.png")})`,
+      ...commonStyles,
+    },
+    dreamriftHeader: {
+      ...commonStyles,
+    },
+    marchOnQueldanasHeader: {
+      ...commonStyles,
+    },
+    voidspireHeader: {
       ...commonStyles,
     },
   };

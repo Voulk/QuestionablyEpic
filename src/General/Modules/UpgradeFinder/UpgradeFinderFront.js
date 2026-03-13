@@ -124,12 +124,12 @@ function shortenReport(player, contentType, result, ufSettings, settings) {
   const timestamp = now.toUTCString();
 
   const socketSetting = settings.topGearAutoGem.value || false;
-  
+
   // Equipped items
   const equippedItems = player.activeItems.filter((item) => item.isEquipped);
-  
-  const report = { id: generateReportCode(), dateCreated: date, timeCreated: timestamp, playername: player.charName, realm: player.realm, region: player.region, 
-                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings, 
+
+  const report = { id: generateReportCode(), dateCreated: date, timeCreated: timestamp, playername: player.charName, realm: player.realm, region: player.region,
+                    autoGem: socketSetting, spec: player.spec, contentType: contentType, results: result.differentials, ufSettings: ufSettings,
                     equippedItems: equippedItems, gameType: player.gameType };
   return report;
 }
@@ -153,21 +153,20 @@ const sendReport = (shortReport) => {
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
 const mythicPlusLevels = [
-  { value: 121, label: "M0" },
-  { value: 124, label: "+2/3" },
-  { value: 128, label: "+4" },
-  { value: 131, label: "+5" },
-  { value: 134, label: "+6/7" },
-  { value: 137, label: "+8/9" },
-  { value: 140, label: "+10" },
-  { value: 144, label: "Vault" },
-  { value: 147, label: "" },
-  { value: 150, label: "" },
-  { value: 154, label: "" },
-  { value: 157, label: "" },
-  { value: 160, label: "" },
-  { value: 170, label: "" },
-
+  { value: 246, label: "M0" },
+  { value: 250, label: "+2/3" },
+  { value: 253, label: "+4" },
+  { value: 256, label: "+5" },
+  { value: 259, label: "+6/7" },
+  { value: 263, label: "+8/9" },
+  { value: 266, label: "+10" },
+  { value: 269, label: "Vault" },
+  { value: 272, label: "" },
+  { value: 276, label: "" },
+  { value: 279, label: "" },
+  { value: 282, label: "" },
+  { value: 285, label: "" },
+  { value: 289, label: "" },
 ]
 
 const getSessionStorageOrDefault = (key, defaultValue) => {
@@ -324,7 +323,7 @@ export default function UpgradeFinderFront(props) {
         ];
 
   const marks = mythicPlusLevels.map((level, index) => {
-    return { value: index, 
+    return { value: index,
       label: (
         <div className={classes.labels}>
           <div>{level.value}</div>
@@ -360,8 +359,8 @@ export default function UpgradeFinderFront(props) {
       props.setUFResult(shortReport);
       //props.setShowReport(true);
       history.push("/upgradereport/");
-    } 
-    
+    }
+
     else if (gameType === "Classic") {
       const result = runUpgradeFinderBC(props.player, contentType, currentLanguage, ufSettings, userSettings);
       const shortReport = shortenReport(player, result.contentType, result, ufSettings, userSettings);
@@ -565,9 +564,9 @@ export default function UpgradeFinderFront(props) {
                 change={setCraftedLevel}
               />
             </Grid>
-          </Grid> 
+          </Grid>
 
-          
+
         </div>
       </Paper>
     </Grid> ) : null}
