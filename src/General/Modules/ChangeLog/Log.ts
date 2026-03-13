@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+            {
+    version: "12.0.1 / 5.5.3",
+    update: 4,
+    date: "March 13",
+    changes: [ 
+      "Fixed weapon enchants and Mistweaver gem advice.",
+      "Added formulas to a few missing trinkets.",
+      "Added item levels to the embellishment chart.",
+      "Dev: Added an Icy Veins export option.",
+    ]
+  },
           {
     version: "12.0.1 / 5.5.3",
     update: 3,

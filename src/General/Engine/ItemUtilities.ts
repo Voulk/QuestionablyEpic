@@ -391,15 +391,16 @@ export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Reta
     // Crafted item effects are limited to Embellishments currently.
     if (item.slot.includes("Weapon") || item.slot === "Offhand") {
       // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
-      options.push({type: "embellishment", label: "Darkmoon Sigil: Ascension", effectName: "Darkmoon Sigil: Ascension"})
-      options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+      options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
+      //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
     }
     if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon")) {
       // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
-      options.push({type: "embellishment", label: "Writhing Armor Banding", effectName: "Writhing Armor Banding"})
-      options.push({type: "embellishment", label: "Dawnthread Lining", effectName: "Dawnthread Lining"})
-      options.push({type: "embellishment", label: "Duskthread Lining", effectName: "Duskthread Lining"})
+      options.push({type: "embellishment", label: "Arcanoweave Lining", effectName: "Arcanoweave Lining"})
+      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Lining"})
+      options.push({type: "embellishment", label: "Blessed Pango Charm", effectName: "Blessed Pango Charm"})
     }
+    
   }
   // Now, we can also add non-embellishment options here but we don't have any prominent ones yet so TODO.
 

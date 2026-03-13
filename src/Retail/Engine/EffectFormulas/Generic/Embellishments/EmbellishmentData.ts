@@ -350,6 +350,11 @@ export const embellishmentData = [
 
             bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
 
+            if (player.spec !== "Discipline Priest" && player.spec !== "Restoration Druid" && additionalData.contentType === "Raid") {
+                bonus_stats.intellect = bonus_stats.intellect * 0.5; // DPS procs only
+            }
+
+
             return bonus_stats;
         }
     },
@@ -370,6 +375,10 @@ export const embellishmentData = [
             let bonus_stats: Stats = {};
 
             bonus_stats.versatility = processedValue(data[0], itemLevel) * 1.13 * data[0].ppm! * data[0].duration! / 60;
+
+            if (player.spec !== "Discipline Priest" && player.spec !== "Restoration Druid" && additionalData.contentType === "Raid") {
+                bonus_stats.versatility = bonus_stats.versatility * 0.5; // DPS procs only
+            }
 
             return bonus_stats;
         }

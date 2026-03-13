@@ -599,13 +599,14 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   else {
     // Weapon - Sophic Devotion
     let expected_uptime = convertPPMToUptime(2, 12);
-    bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
+    //bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
+    bonus_stats.intellect = 67 * convertPPMToUptime(2, 15);
 
-    let wepEnchantName = "";
-    if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
+    let wepEnchantName = "Acuity of the Ren'dorei";
+    /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
     else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
     else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
-    else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";
+    else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";*/
 
 
     enchants["CombinedWeapon"] = wepEnchantName; 
