@@ -108,7 +108,7 @@ export const gemDB: GemEntry[] = [
       stats: { haste: 12, mastery: 5 },
     },
       {
-      id: 240900,
+      id: 240890,
       element: "Peridot",
       name: "Flawless Deadly Peridot",
       icon: "inv_12_profession_jewelcrafting_rare_gem_cut_fire_green",

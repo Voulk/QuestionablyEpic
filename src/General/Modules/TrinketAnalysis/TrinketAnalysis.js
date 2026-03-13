@@ -387,7 +387,7 @@ export default function TrinketAnalysis(props) {
           }
           
         }
-        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, 263/*trinket.levelRange[trinket.levelRange.length - 1]*/, playerSettings, trinket.id);
+        if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
         else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }

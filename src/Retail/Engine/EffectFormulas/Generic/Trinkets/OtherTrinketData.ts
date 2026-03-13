@@ -4,6 +4,25 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 import { STATCONVERSION } from "General/Engine/STAT"
 
 export const otherTrinketData = [
+    { 
+    name: "Gift of Light",
+    description: "",
+    addonDescription: "",
+    effects: [
+      {
+        duration: 10,
+        ppm: 0.9, // 2 ppm with a 1 minute lockout. Weird.
+        stat: "mastery",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Gift of Light"][0]}, itemLevel);
+
+      return bonus_stats;
+    }
+  },
         { 
     name: "Crucible of Erratic Energies",
     description: "NERFED Mar 6th. An ok crit / leech stat stick that gets stronger as you complete content in Voidstorm. Rating might change as the trinket is still very unexplored.",
