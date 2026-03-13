@@ -167,7 +167,6 @@ export function initializeShamanSet(userSettings) {
         let reduction = (statPercentages.crit - 1) * resurgenceReturn[spellName];
         if (spellName === "Chain Heal") reduction *= 3; 
         spell.cost -= reduction;
-        //console.log(spellName + " cost reduced by " + reduction + " to " + spell.cost + " (original price: " + (spell.cost + reduction) + ")");
       }
     })
 

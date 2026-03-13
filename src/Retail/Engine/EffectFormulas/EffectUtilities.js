@@ -247,8 +247,8 @@ export function getScalarValue(table, itemLevel) {
   else if (table === -7) {
       return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl[itemLevel];
   } 
-  else if (table === -571) { // -7 table but locked at level 80 and a 571 item.
-    return randPropPoints[80]["slotValues"][0] * combat_ratings_mult_by_ilvl[80];
+  else if (table === -790) { // -7 table but locked at level 90 and a 571 item.
+    return 198 //randPropPoints[90]["slotValues"][0] * combat_ratings_mult_by_ilvl[90];
 } 
   else if (table === -72) { // Jewelry
     return randPropPoints[itemLevel]["slotValues"][0] * combat_ratings_mult_by_ilvl_jewl[itemLevel];
@@ -290,7 +290,7 @@ export function getProcessedValue(coefficient, table, itemLevel, efficiency = 1,
  * @returns A flat value representing the in-game effect number at whatever item level we're given.
  */
 export function processedValue(data, itemLevel, efficiency = 1, roundType = "floor") {
-  const value = data.coefficient * getScalarValue(data.table, itemLevel) * efficiency;
+  const value = data.coefficient * getScalarValue(data.scalingClass, itemLevel) * efficiency;
   if (roundType === "floor") return Math.floor(value);
   else if (roundType === "ceil") return Math.ceil(value);
   else if (roundType === "round") return Math.round(value);

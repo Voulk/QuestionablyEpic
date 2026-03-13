@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Welcome to the QE Live Midnight Alpha. Please report any bugs but expect the app to be unstable until way closer to launch."
+    "QE Live is updated for Midnight but work continues both in-app and in-game. Consider all rankings and results preliminary until the season begins"
   ] : 
   [
     "Please report any bugs you find to the QE Live Discord.",

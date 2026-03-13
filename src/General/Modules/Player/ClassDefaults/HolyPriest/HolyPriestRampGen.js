@@ -1,6 +1,6 @@
 
 import { getSpellRaw, runCastSequence } from "./HolyPriestSpellSequence";
-import { HOLYPRIESTSPELLDB as SPELLDB, baseTalents } from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB as SPELLDB, baseTalents } from "./Archive/HolyPriestSpellDB";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";

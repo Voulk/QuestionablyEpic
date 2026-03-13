@@ -1,3 +1,32 @@
+import { addStatPerc, attachSpellEffect, buffSpellCritChance, buffSpellCritMult, buffSpellPerc, cooldownAdjFlat, manaCostAdj, modCastTimeFlat } from "../Generic/TalentBase"
+
+
+/**
+ * A list of talents to turn on
+ */
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Herald of the Sun") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+       "Greater Judgment", "Holy Aegis", "Quickened Invocation", "Divine Purpose", "Selfless Healer", "Seal of Might",
+        
+        // Spec talents
+        "Divine Glimpse", "Light's Conviction", "Ringing of the Heavens", "Awestruck",  "Unending Light", "Extrication",
+        "Resplendent Light", "Divine Favor", "Imbued Infusions", "Light of the Martyr", "Overflowing Light", "Commanding Light", "Glistening Radiance", "Breaking Dawn",
+        "Divine Glimpse", "Bestow Light", "Beacon of Faith", "Reclamation", "Seek Deliverance", "Sanctified Wrath", "Truth Prevails", "Glorious Dawn", 
+        "Hand of Divinity", "Inflorescence of the Sunwell"  
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+            //console.log(`Enabling talent: ${talentName}`);
+        }
+    })
+}
+
 const classTalents: TalentTree = {
     /* After you spend Z Holy Power, your next Word of Glory echoes onto a nearby ally at X% effectiveness. */
     "Afterimage": {id: 385414, values: [30.0, 1.0, 20.0],  points: 0, maxPoints: 1, icon: "spell_holy_aspiration", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
@@ -12,7 +41,7 @@ const classTalents: TalentTree = {
 
     /* Judgment deems the target unworthy, preventing the next $<shield> damage dealt by the target.   */
     "Greater Judgment": {id: 231644, values: [138.0],  points: 0, maxPoints: 1, icon: "spell_holy_righteousfury", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Judgment"] = attachSpellEffect(spellDB["Judgment"], spellDB["Greater Judgment"]);
     }},
 
     /* While holding a shield, you have a Y% chance to block incoming spells, reducing their damage by Z%.     Without a shield, you have a $s4% chance to parry incoming melee attacks, reducing their damage by $s5%. */
@@ -32,13 +61,14 @@ const classTalents: TalentTree = {
 
     /* $?c1[Divine Toll's, Holy Armament's, and Holy Prism's][Divine Toll's] cooldown is reduced by ${-X/1000} sec. */
     "Quickened Invocation": {id: 379391, values: [-15000.0, -15000.0],  points: 0, maxPoints: 1, icon: "spell_holy_pureofheart", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        cooldownAdjFlat(spellDB["Divine Toll"], talentValues[0]);
+        cooldownAdjFlat(spellDB["Holy Prism"], talentValues[0]);
     }},
 
 
     /* Armor and critical strike chance increased by Y%. */
     "Holy Aegis": {id: 385515, values: [4.0, 4.0, 0.0],  points: 0, maxPoints: 1, icon: "ability_paladin_touchedbylight", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "crit", talentValues[0]);
     }},
 
     /* After your Blessing of Sacrifice ends, X% of the total damage it diverted is added to your next Judgment as bonus damage, or your next Word of Glory as bonus healing.    This effect's bonus 
@@ -71,7 +101,8 @@ const classTalents: TalentTree = {
 
     /* Mastery increased by Y% and $?c1[Intellect][Strength] increased by X%. */
     "Seal of Might": {id: 385450, values: [2.0, 2.0],  points: 0, maxPoints: 2, icon: "spell_holy_sealofwrath", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "intellect", talentValues[0] * points);
+        addStatPerc(state.statBonuses, "mastery", talentValues[1] * points);
     }},
 
     /* Hammer of Wrath deals up to X% additional damage based on its target's health. Lower health targets receive more damage. */
@@ -86,6 +117,8 @@ const classTalents: TalentTree = {
 
     /* Flash of Light $?c1[and Holy Light are][is] X% more effective on your allies and Y% of the healing done also heals you. */
     "Selfless Healer": {id: 469434, values: [30.0, 40.0],  points: 0, maxPoints: 1, icon: "ability_paladin_gaurdedbythelight", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        buffSpellPerc(spellDB["Flash of Light"], 21); // There's a Holy mod to the values.
+        buffSpellPerc(spellDB["Holy Light"], 21);
 
     }},
 
@@ -115,7 +148,7 @@ const specTalents: TalentTree = {
     /* Holy Shock now has ${X+1} charges and it refunds Y% of its mana cost when cast on an enemy. */
     "Light's Conviction": {id: 414073, values: [1.0, 50.0],  points: 0, maxPoints: 1, icon: "paladin_holy", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], 
     points: number) {
-
+        spellDB["Holy Shock"][0].cooldownData!.charges! = 1 + talentValues[0];
     }},
 
     /* Mastery: Lightbringer now increases your healing based on the target's proximity to either you or your Beacon of Light, whichever is closer. */
@@ -125,7 +158,10 @@ const specTalents: TalentTree = {
 
     /* Word of Glory and Light of Dawn gain up to X% additional chance to critically strike, based on their target's current health. Lower health targets are more likely to be critically struck. */
     "Extrication": {id: 461278, values: [30.0],  points: 0, maxPoints: 1, icon: "spell_holy_spiritualguidence", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        const effectiveValue = talentValues[0] * (1 - state.settings.averageRaidHealth);
+        buffSpellCritChance(spellDB["Light of Dawn"], effectiveValue);
+        buffSpellCritChance(spellDB["Word of Glory"], effectiveValue);
+        buffSpellCritChance(spellDB["Eternal Flame"], effectiveValue);
     }},
 
     /* Activating Aura Mastery also casts a Divine Toll at X% effectiveness. */
@@ -135,33 +171,41 @@ const specTalents: TalentTree = {
 
     /* Light of Dawn receives X% increased benefit from Mastery: Lightbringer. */
     "Unending Light": {id: 1271221, values: [20.0],  points: 0, maxPoints: 1, icon: "spell_holy_holybolt", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        spellDB["Light of Dawn"].forEach((slice, i) => {
+            if (!slice.statMods) slice.statMods = {};
+            if (!('masteryMult' in slice.statMods)) slice.statMods.masteryMult = 0;
+            slice.statMods.masteryMult += talentValues[0] / 100;
 
+        })
     }},
 
     /* Holy Shock, Holy Light, and Flash of Light critical healing increased by X%. */
     "Awestruck": {id: 417855, values: [20.0],  points: 0, maxPoints: 1, icon: "ability_paladin_blindinglight2", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritMult(spellDB["Holy Shock"], talentValues[0]);
+        buffSpellCritMult(spellDB["Holy Light"], talentValues[0]);
+        buffSpellCritMult(spellDB["Flash of Light"], talentValues[0]);
     }},
 
     /* Your Flash of Light heals for an additional X% when cast on a target affected by your Beacon of Light. */
     "Moment of Compassion": {id: 387786, values: [50.0],  points: 0, maxPoints: 1, icon: "spell_holy_flashheal", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
     any, points: number) {
-
+        
     }},
 
     /* Holy Light heals up to Y targets within $392903a1 yds for X% of its healing. */
     "Resplendent Light": {id: 392902, values: [8.0, 5.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_priest_voidshift", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Holy Light"][0].targets = 1 + talentValues[1] * talentValues[0] / 100;
     }},
 
     /* The mana cost of Holy Light is reduced by X% and its cast time is reduced by Y%. */
     "Divine Favor": {id: 1270916, values: [-10.0, -15.0],  points: 0, maxPoints: 1, icon: "spell_holy_heal", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        manaCostAdj(spellDB["Holy Light"], talentValues[0]);
+        modCastTimeFlat(spellDB["Holy Light"], talentValues[1]);
     }},
 
     /* The cooldown of Aura Mastery is reduced by ${X/-1000} sec. */
     "Unwavering Spirit": {id: 392911, values: [-30000.0],  points: 0, maxPoints: 1, icon: "spell_holy_fanaticism", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        cooldownAdjFlat(spellDB["Aura Mastery"], talentValues[0]);
     }},
 
     /* Aura Mastery also increases all healing received by party or raid members within $211210A1 yards by X%. */
@@ -177,12 +221,12 @@ const specTalents: TalentTree = {
     /* While above X% health, Holy Shock's healing is increased $447988s1%, but creates a heal absorb on you for Y% of the amount healed that prevents Beacon of Light from healing you until it has 
     dissipated. */
     "Light of the Martyr": {id: 447985, values: [80.0, 30.0],  points: 0, maxPoints: 1, icon: "ability_paladin_lightofthemartyr", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Shock"], 20.0);
     }},
 
     /* Judgment has a X% chance to cast Consecration at the target's location.    The limit on Consecration does not apply to this effect. */
     "Righteous Judgment": {id: 414113, values: [100.0],  points: 0, maxPoints: 1, icon: "ability_priest_holybolts01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        attachSpellEffect(spellDB["Judgment"], spellDB["Consecration"]);
     }},
 
     /* When an ally with your Beacon of Light is damaged, they absorb the next $157128s1 damage, increasing by up to Z% based on their current health. Lower health allies are shielded for more. */
@@ -197,7 +241,8 @@ const specTalents: TalentTree = {
 
     /* X% of Holy Shock's overhealing is converted into an absorb shield. The shield amount cannot exceed Y% of your max health. */
     "Overflowing Light": {id: 461244, values: [30.0, 10.0],  points: 0, maxPoints: 1, icon: "spell_holy_holyguidance", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // I'd like to add a proper field for overhealing protection at some point.
+        spellDB["Holy Shock"][0].expectedOverheal *= 0.7;
     }},
 
     /* $?s2812[Denounce][Shield of the Righteous] deals $414448s1 damage to its first target struck.    $?s2812[Denounce][Shield of the Righteous] now has a X% chance to activate Divine Purpose if 
@@ -223,7 +268,7 @@ const specTalents: TalentTree = {
 
     /* Beacon of Light transfers an additional X% of the amount healed. */
     "Commanding Light": {id: 387781, values: [5.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_paladin_beaconoflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // We should eventually implement this separately but right now it is baked in.
     }},
 
     /* While at maximum health, targets with Beacon of Light generate an absorb shield equal to X% of their health every $53563t6 sec, up to a maximum of Y%. */
@@ -234,7 +279,7 @@ const specTalents: TalentTree = {
     /* Increases Light of Dawn's healing by X%. */
     "Breaking Dawn": {id: 387879, values: [5.0],  points: 0, maxPoints: 2, icon: "spell_holy_rune", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
     number) {
-
+        buffSpellPerc(spellDB["Light of Dawn"], talentValues[0] * points);
     }},
 
     /* While empowered by Infusion of Light, Flash of Light heals for an additional Y% and Judgment refunds ${X/1000}.1% of your maximum mana. */
@@ -245,18 +290,19 @@ const specTalents: TalentTree = {
     /* Holy Shock and Judgment have a X% increased critical strike chance. */
     "Divine Glimpse": {id: 387805, values: [8.0],  points: 0, maxPoints: 1, icon: "spell_holy_healingaura", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], 
     points: number) {
-
+        buffSpellCritChance(spellDB["Holy Shock"], talentValues[0]);
+        buffSpellCritChance(spellDB["Judgment"], talentValues[0]);
     }},
 
     /* Light of the Martyr's health threshold is reduced to ${$s4+X}% and increases Holy Shock's healing by an additional $448087s1% for every $t2 sec Light of the Martyr is active, stacking up to 
     $448087u times.    While below ${$s4+X}% health, the light urgently heals you for $448086s1 every $448086t1 sec. */
     "Bestow Light": {id: 448040, values: [-10.0, 70.0, 70.0, 80.0, 69.0],  points: 0, maxPoints: 1, icon: "ability_paladin_sheathoflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Shock"], 15 * 0.8);
     }},
 
     /* Judgment critical strikes empower your next Word of Glory to automatically activate Light of Dawn at Y% effectiveness. */
     "Empyrean Legacy": {id: 1241358, values: [0.0, 125.0],  points: 0, maxPoints: 1, icon: "item_holyspark", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Profile talent
     }},
 
     /* Judgment grants an absorb shield on up to Y injured allies for $414411s2% of the damage done, split evenly among them.    Flash of Light and Holy Light critical strikes reset the cooldown of Judgment. */
@@ -267,7 +313,9 @@ const specTalents: TalentTree = {
 
     /* Holy Shock refunds up to X% of its Mana cost and deals up to Y% more healing or damage, based on the target's missing health. */
     "Reclamation": {id: 415364, values: [10.0, 50.0],  points: 0, maxPoints: 1, icon: "ability_paladin_longarmofthelaw", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        const healthMod = (1 - state.settings.averageRaidHealth);
+        manaCostAdj(spellDB["Holy Shock"], talentValues[0] * healthMod * -1);
+        buffSpellPerc(spellDB["Holy Shock"], talentValues[1] * healthMod * -1);
     }},
 
     /* $@spellicon156910 $@spellname156910:  Allies with Beacon of Light or Beacon of Faith are healed for $53563s5 every $53563t5 sec.    $@spellicon200025 $@spellname200025:  Beacon of Virtue instantly heals allies for $1232617s1. */
@@ -277,12 +325,13 @@ const specTalents: TalentTree = {
 
     /* While Avenging Wrath is not active, you gain X% Mastery.    While Avenging Wrath is active, you gain Y% movement speed. */
     "Seek Deliverance": {id: 1271016, values: [5.0, 30.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_holy_blessedresillience", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "mastery", talentValues[0] * (100 / 120));
+        // Needs support for wings talents
     }},
 
     /* $?(c1|c2|c3)[][The duration of Avenging Wrath is increased by X%.]$?c1[Avenging Wrath and Avenging Crusader have X% increased duration.]?c2[Avenging Wrath and Sentinel cause Judgment to generate Z additional Holy Power,]?c3[Avenging Wrath and Crusade cause each Holy Power spent to explode with Holy light for $326731s1 damage to nearby enemies,][]$?(c2|c3)[ and have X% increased duration.][] */
     "Sanctified Wrath": {id: 53376, values: [25.0, 0.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_paladin_judgementsofthejust", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Avenging Wrath"][0].buffDuration! *= (1 + 50 / 100);
     }},
 
     /* While in combat, your Holy Power spenders have a X% chance to cause your next Judgment to deal $414193s1% increased damage and critically strike.    Activating Avenging Wrath activates Awakening. */
@@ -297,22 +346,25 @@ const specTalents: TalentTree = {
 
     /* Judgment heals you for $461546s1 and its mana cost is reduced by X%. Y% of overhealing from this effect is transferred onto Z allies within $461529a1 yds. */
     "Truth Prevails": {id: 461273, values: [-30.0, 50.0, 2.0],  points: 0, maxPoints: 1, icon: "ability_paladin_artofwar", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        spellDB["Judgment"] = attachSpellEffect(spellDB["Judgment"], spellDB["Truth Prevails"]);
 
+        manaCostAdj(spellDB["Judgment"], talentValues[0]);
     }},
 
     /* Holy Light's healing is increased by X%, but its mana cost is increased by Y%. */
     "Divine Overload": {id: 1271077, values: [30.0, 20.0],  points: 0, maxPoints: 1, icon: "spell_holy_surgeoflight", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Light"], talentValues[0]);
+        manaCostAdj(spellDB["Holy Light"], talentValues[1]);
     }},
 
     /* Your healing is increased by up to Y%, based on the average health percentage of allies with your Beacon of Light. */
     "Rising Sunlight": {id: 1277651, values: [0.0, 10.0, 0.0],  points: 0, maxPoints: 1, icon: "spell_priest_divinestar_holy", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "genericHealingMult", talentValues[1] * 0.1);
     }},
 
     /* Holy Shock has a X% chance to refund a charge when cast and its healing is increased by Y%. */
     "Glorious Dawn": {id: 461246, values: [12.0, 10.0],  points: 0, maxPoints: 1, icon: "ability_paladin_holyavenger", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Shock"], talentValues[1]);
     }},
 
     /* Word of Glory and Light of Dawn now convert Y% of their healing into an absorb shield instead. */
@@ -328,12 +380,12 @@ const specTalents: TalentTree = {
 
     /* Activating Avenging Wrath calls upon the Light to empower you, causing your next $?s216331[Holy Light][X Holy Lights] to be instant cast and cost $414273s2% less mana. */
     "Hand of Divinity": {id: 1242008, values: [2.0, 1.0],  points: 0, maxPoints: 1, icon: "spell_holy_vindication", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Profile
     }},
 
     /* Infusion of Light has X additional charge. */
     "Inflorescence of the Sunwell": {id: 392907, values: [1.0],  points: 0, maxPoints: 1, icon: "spell_lfieblood", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Profile
     }},
 
     /* While in combat, apply a Beacon of the Savior to the lowest health ally within X yds that causes your direct healing on others to also heal that ally for Y% of the amount healed.    Beacon of the Savior transfers to the lowest health ally within X yds if it heals a target past maximum health or if an ally drops below $1270083s4% health. */
@@ -367,12 +419,15 @@ const heroTalents: TalentTree = {
     /* Your Holy Power spenders deal X% additional damage and healing. */
     "Gleaming Rays": {id: 431480, values: [3.0, 3.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_priest_power_word", select: true, tier: 2, runFunc: function (state: any, 
     spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Light of Dawn"], talentValues[0]);
+        buffSpellPerc(spellDB["Eternal Flame"], talentValues[0]);
+        buffSpellPerc(spellDB["Word of Glory"], talentValues[0]);
     }},
 
     /* $?c1[Critical Strike chance of Holy Shock and Light of Dawn increased by X%.]?c3[Critical Strike chance of Hammer of Wrath and Divine Storm increased by Y%.][] */
     "Luminosity": {id: 431402, values: [5.0, 10.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "inv_qirajidol_sun", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritChance(spellDB["Holy Shock"], talentValues[0]);
+        buffSpellCritChance(spellDB["Light of Dawn"], talentValues[0]);
     }},
 
     /* $?c1[Dawnlight's duration is increased by ${X/1000}.1 sec when it heals an ally with full health.][Dawnlight's duration is increased by ${Y/1000}.1 sec whenever struck by Divine Storm or Templar's Verdict.    When 2 Dawnlights are struck by Divine Storm, their durations are extended by an additional ${Z/1000}.1 sec.] */
@@ -380,19 +435,10 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* Dawnlight reduces the movement speed of enemies by $431380s3% and increases the movement speed of allies by $431381s3%. */
-    "Illumine": {id: 431423, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_holy_divineillumination", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
-
-    /* Movement speed increased by $431462s1% while above X% health.    When your health is brought below Z%, your movement speed is increased by $431752s1% for $431752d. Cannot occur more than once every $456779d. */
-    "Will of the Dawn": {id: 431406, values: [80.0, 80.0, 35.0, 35.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_holy_divineprovidence", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
-    }},
 
     /* $?c1[The healing and damage of Holy Shock is increased by X%.]?c3[Your damage and healing over time effects have a chance to increase the damage of your next Judgment by $445206s1%.][] */
     "Blessing of An'she": {id: 445200, values: [15.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "inv_ability_holyfire_orb", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Holy Shock"], talentValues[0]);
     }},
 
     /* Dawnlight leaves an Eternal Flame for ${X/1000} sec on allies or a Greater Judgment on enemies when it expires or is extended. */
@@ -403,12 +449,12 @@ const heroTalents: TalentTree = {
     /* $?c1[Holy Shock and Light of Dawn critical strikes cause the target to be healed for an additional $431415o1 over $431415d.]?c3[Hammer of Wrath and Divine Storm critical strikes cause the target to burn for an additional $431414o1 Radiant damage over $431414d.][] */
     "Sun Sear": {id: 431413, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_priest_burningwill", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentValues: number[], points: number) {
-
+        // Implemented in Profile
     }},
 
     /* Haste is increased by X%. */
     "Solar Grace": {id: 431404, values: [5.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "ability_malkorok_blightofyshaarj_yellow", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "haste", talentValues[0]);
     }},
 
     /* After you cast $?c1[Holy Prism or Divine Toll]?c3[Wake of Ashes][], gain Divine Purpose.    $?c1[$@spellicon223819 $@spellname223819  $@spellaura223819]?c3[$@spellicon408458 $@spellname408458  $@spellaura408458][] */
@@ -423,12 +469,12 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Light of Dawn and Holy Shock have a X% chance to cast again at Y% effectiveness.]?c3[Divine Storm and Hammer of Wrath have a X% chance to cast again at Y% effectiveness.][] */
     "Second Sunrise": {id: 431474, values: [15.0, 30.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "ability_priest_halo", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // Implemented in Profile
     }},
 
     /* Dawnlight's critical strike chance is increased by $1264050s1% during Avenging Wrath. */
     "Born in Sunlight": {id: 1263920, values: [0.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_paladin_lightofdawn", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellCritChance(spellDB["Dawnlight"], 15 * (1 / 4)); // 25% of our Dawnlights are within wings if we always combine wings with DT.
     }},
 
     /* You link to your Dawnlights within $s8 yds, causing $431911s1 Radiant damage to enemies or $431939s1 healing to allies that pass through the beams, reduced beyond $?c3[$s9][$s6] targets. */
@@ -513,6 +559,7 @@ const heroTalents: TalentTree = {
 
     }},
 }
+
 
 export const paladinTalents = {
     ...classTalents,

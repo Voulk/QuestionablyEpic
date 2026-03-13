@@ -134,7 +134,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if (instanceID === CONSTANTS.currentRaidID) {
+  if (CONSTANTS.currentRaidID.includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -147,7 +147,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   }
   
   // World Bosses
-  else if (instanceID === 1278) {
+  else if (instanceID === 1312) {
     itemLevel = 603;
   }
   

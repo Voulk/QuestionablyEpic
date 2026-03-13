@@ -8,6 +8,7 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 2.8,
             "cooldownData": {
                 "cooldown": 6.0,
@@ -15,9 +16,9 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 5.3256,
+            "coeff": 6.125,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -40,14 +41,15 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
             },
             "targets": 5,
-            "coeff": 2.7821,
+            "coeff": 3.06,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -65,13 +67,14 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "radiant",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
             },
             "coeff": 0.1368,
             "aura": 1.49,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -89,7 +92,7 @@
         {
             "coeff": 3.78,
             "aura": 3.4,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -107,13 +110,14 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "additionalCosts": {
                 "holyPower": 3
             },
             "coeff": 4.158,
             "aura": 2.8600000000000003,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -130,6 +134,7 @@
                 "spellName": "Aura Mastery"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "cooldownData": {
                 "cooldown": 180.0,
@@ -146,10 +151,11 @@
                 "cat": "heal"
             },
             "castTime": 1.5,
+            "school": "holy",
             "cost": 0.6,
             "coeff": 3.156,
-            "aura": 1.11,
-            "expectedOverheal": 0.25,
+            "aura": 1.5,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -172,10 +178,11 @@
                 "cat": "heal"
             },
             "castTime": 2.0,
+            "school": "holy",
             "cost": 7.0,
-            "coeff": 25.9875,
+            "coeff": 32.5,
             "aura": 1.0,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -197,20 +204,22 @@
                 "spellName": "Divine Toll"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 3.0,
             "cooldownData": {
-                "cooldown": 60.0,
+                "cooldown": 45.0,
                 "hasted": false
             },
             "coeff": 0.0,
             "aura": 1.2,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
                 "mastery"
             ],
-            "spellType": "energize"
+            "spellType": "energize",
+            "targets": 5.0
         }
     ],
     "Holy Prism": [
@@ -221,6 +230,7 @@
                 "spellName": "Holy Prism"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 2.6,
             "cooldownData": {
                 "cooldown": 45.0,
@@ -241,6 +251,7 @@
                 "spellName": "Holy Bulwark"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "cooldownData": {
                 "cooldown": 60.0,
@@ -248,6 +259,46 @@
                 "charges": 2,
                 "maxCharges": 2
             }
+        }
+    ],
+    "Beacon of the Savior": [
+        {
+            "displayInfo": {
+                "id": 1245369,
+                "icon": false,
+                "spellName": "Beacon of the Savior"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 3.75,
+            "aura": 1,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
+    "Avenging Wrath": [
+        {
+            "displayInfo": {
+                "id": 31884,
+                "icon": "spell_holy_avenginewrath",
+                "spellName": "Avenging Wrath"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 120.0,
+                "hasted": false
+            },
+            "buffDuration": 20
         }
     ],
     "Shield of the Righteous": [
@@ -259,6 +310,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
             "additionalCosts": {
                 "holyPower": 3
@@ -267,9 +319,8 @@
                 "cooldown": 1.0,
                 "hasted": false
             },
-            "coeff": 0.0,
+            "coeff": 2.5636,
             "aura": 1.2,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -285,32 +336,22 @@
     "Judgment": [
         {
             "displayInfo": {
-                "id": 20271,
+                "id": 275773,
                 "icon": "spell_holy_righteousfury",
                 "spellName": "Judgment",
                 "cat": "damage"
             },
             "castTime": 0.0,
-            "cost": 0.6,
+            "school": "holy",
+            "cost": 1.2,
             "cooldownData": {
-                "cooldown": 11.0,
+                "cooldown": 6.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 0.6716,
+            "coeff": 1.2375,
             "aura": 2.4,
-            "expectedOverheal": 0.25,
-            "secondaries": [
-                "crit",
-                "versatility"
-            ],
-            "spellType": "damage"
-        },
-        {
-            "coeff": 0.5037,
-            "aura": 2.4,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -327,6 +368,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.6,
             "cooldownData": {
                 "cooldown": 7.5,
@@ -334,9 +376,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 0.0,
+            "coeff": 1.4963,
             "aura": 1.44,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -349,9 +390,8 @@
             "resourceAmount": 1.0
         },
         {
-            "coeff": 0.0,
+            "coeff": 1.1222,
             "aura": 1.44,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -368,6 +408,7 @@
                 "cat": "damage"
             },
             "castTime": 0.0,
+            "school": "physical",
             "cost": 0.6,
             "cooldownData": {
                 "cooldown": 6.0,
@@ -375,9 +416,8 @@
                 "charges": 2,
                 "maxCharges": 2
             },
-            "coeff": 0.0,
+            "coeff": 1.456,
             "aura": 2.124,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -399,10 +439,68 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
+            "school": "holy",
             "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 9.0,
+                "hasted": false
+            },
             "coeff": 0.0,
+            "aura": 1.2,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Greater Judgment": [
+        {
+            "displayInfo": {
+                "id": 414019,
+                "icon": "spell_holy_righteousfury",
+                "spellName": "Greater Judgment"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 0.0,
+            "coeff": 1.38,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "versatility",
+                "crit"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
+    "Dawnlight": [
+        {
+            "displayInfo": {
+                "id": 431381,
+                "icon": "inv_ability_heraldofthesunpaladin_dawnlight",
+                "spellName": "Dawnlight",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "targets": 1.25,
+            "coeff": 1.3455,
+            "aura": 1.77,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -410,12 +508,119 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 12.0,
+            "buffDuration": 8.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": true
+            }
+        }
+    ],
+    "Sun Sear": [
+        {
+            "displayInfo": {
+                "id": 431415,
+                "icon": "spell_priest_burningwill",
+                "spellName": "Sun Sear",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "coeff": 0.135,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 4.0,
             "tickData": {
                 "tickRate": 1.0,
                 "canPartialTick": true,
-                "tickOnCast": false
+                "tickOnCast": true
             }
+        }
+    ],
+    "Sun's Avatar": [
+        {
+            "displayInfo": {
+                "id": 431939,
+                "icon": "ability_paladin_holyavenger",
+                "spellName": "Sun's Avatar",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "radiant",
+            "cost": 0.0,
+            "coeff": 0.3726,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Truth Prevails": [
+        {
+            "displayInfo": {
+                "id": 461546,
+                "icon": "ability_paladin_artofwar",
+                "spellName": "Truth Prevails",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 2.4,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Golden Path": [
+        {
+            "displayInfo": {
+                "id": 377128,
+                "icon": "ability_priest_cascade",
+                "spellName": "Golden Path"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0
+        }
+    ],
+    "Holy Ritual": [
+        {
+            "displayInfo": {
+                "id": 199423,
+                "icon": "spell_holy_surgeoflight",
+                "spellName": "Holy Ritual",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "coeff": 20.0,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ]
 }

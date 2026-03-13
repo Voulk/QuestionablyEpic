@@ -1,4 +1,4 @@
-import { EVOKERSPELLDB } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerSpellDB";
+import { EVOKERSPELLDB } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PresEvokerSpellDBTWW";
 
 const valueEssenceBurst = (player, contentType) => {
   const blossomData = EVOKERSPELLDB["Emerald Blossom"][0];

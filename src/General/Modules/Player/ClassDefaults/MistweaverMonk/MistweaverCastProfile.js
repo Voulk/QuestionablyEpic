@@ -1,10 +1,11 @@
 
-import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, applyTalents, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MonkSpellSequence";
-import { applyLoadoutEffects, baseTalents } from "./MistweaverTalents";
+import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyTalents } from "../Generic/ProfileUtilities";
+import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
+import { monkTalents } from "./MistweaverTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
-import { MONKSPELLS as spellDB } from "./MistweaverSpellDB";
+import { MONKSPELLS as spellDB } from "./Archive/MistweaverSpellDBTWW";
 import { getTrinketData, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
@@ -47,7 +48,7 @@ export const runMistweaverMonkCastProfile = (playerData) => {
     }*/
 
     // Run Talents
-    const playerSpells = applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, state, MONKCONSTANTS);
+    const playerSpells = spellDB// applyLoadoutEffects(deepCopyFunction(spellDB), state.settings, state, MONKCONSTANTS);
     //applyTalents(state, playerSpells, state.currentStats)
     state.spellDB = spellDB;
     //state.talents = talents;

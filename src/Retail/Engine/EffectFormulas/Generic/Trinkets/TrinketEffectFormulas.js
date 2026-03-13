@@ -5,7 +5,7 @@ import { dungeonTrinketData } from "./DungeonTrinketData";
 import { otherTrinketData } from "./OtherTrinketData";
 import { timewalkingTrinketData } from "./TimewalkingTrinketData";
 import { useSelector } from "react-redux";
-import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/PaladinMiscFormulas"
+import { getAdjustedHolyShock } from "../../../../../General/Modules/Player/ClassDefaults/HolyPaladin/Archive/PaladinMiscFormulas"
 import { allRampsHealing } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 

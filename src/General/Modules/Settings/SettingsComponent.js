@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { MenuItem, Grid, Typography, TextField, Tooltip, FormControl, InputLabel } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { setBounds } from "General/Engine/CONSTRAINTS";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -33,7 +31,7 @@ export default function SettingsComponent(props) {
 
   const dispatch = useDispatch();
 
-  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder"] : ["topGear", "enchants", "specSpecific"];
+  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder", "specSpecific"] : ["topGear", "enchants", "specSpecific"];
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
   /* ---------------------------------------------------------------------------------------------- */

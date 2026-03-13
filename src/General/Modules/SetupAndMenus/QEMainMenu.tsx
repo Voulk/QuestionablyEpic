@@ -91,7 +91,7 @@ export default function QEMainMenu(props: Props) {
       ? [
           // Gearing
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
-          { route: "/upgradefinder", disabled: false, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
+          { route: "/upgradefinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", localization: "MainMenu.EmbellishmentAnalysis", glow: false },
           //{ route: "/circlet", disabled: false, tooltip: "CircletAnalysis", type: "Gearing", localization: "MainMenu.CyrcesCirclet", glow: false },
@@ -100,7 +100,7 @@ export default function QEMainMenu(props: Props) {
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
           //{ route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
           //{ route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
-          { route: "/spelldata", disabled: false, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
+          { route: "/spelldata", disabled: true, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },
         ]
       : [ // Classic

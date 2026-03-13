@@ -158,6 +158,8 @@ export function runStatDifferentialSuite(playerData, aplList, runCastSequence) {
     })
 }
 
+
+
 // A small meta suite to run an APL at different durations.
 // Note that we're mostly interested in runtime here, not HPS. We can use it to identify any issues that's causing our APL to run slowly.
 export function runTimeSuite(playerData, aplList, runCastSequence) {
@@ -319,4 +321,79 @@ export const runCastProfileSuite = (playerData, incCastProfile, runCastSequence,
         fillerHPM: fillerHPM,
         sampleProfile: castProfile,
     }
+}
+
+
+export const buildStatChart = (playerData, testSettings, scoringFunction, statName) => {
+    
+    const baseStat = 200;
+    const activeStats = {
+        intellect: 2400,
+        haste: baseStat,
+        crit: baseStat,
+        mastery: baseStat,
+        versatility: baseStat,
+        stamina: 19000,
+        critMult: 2,
+    };
+
+
+    const results = [];
+    for (let i = 0; i < 500; i += 10) {
+        const newPlayerStats = {...activeStats, [statName]: baseStat + i};
+        const score = scoringFunction(newPlayerStats, playerData, testSettings).healing;
+        results.push(Math.round(score));
+    }
+    //console.log("==" + stat + "==")
+    console.log(statName);
+    console.log(JSON.stringify(results));
+    //['haste'].forEach(stat => {
+
+    //});
+}
+
+export const buildStatWeights = (playerData, scoringFunction, testSettings ) => {
+        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility'];
+
+    const activeStats = {
+        intellect: 2400,
+        haste: 200,
+        crit: 200,
+        mastery: 200,
+        versatility: 200,
+        stamina: 19000,
+        critMult: 2,
+    };
+    
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+
+            baseline += scoringFunction(activeStats, playerData, testSettings).healing;
+        }
+
+        baseline = baseline / iterations;
+       
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(activeStats));
+            playerStats[stat] = playerStats[stat] + 150;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += scoringFunction(playerStats, newPlayerData, testSettings).healing;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+
 }

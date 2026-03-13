@@ -14,8 +14,14 @@ import { styled } from "@mui/material/styles";
 const mobileWidthThreshold = 650;
 
 const getTooltip = (data, id) => {
-  const tooltip = data.filter(filter => filter.id === id)[0].tooltip;
-  return tooltip;
+  const effect = data.filter(filter => filter.id === id)[0];
+  if (effect) {
+    return effect.tooltip;
+  }
+  else {
+    console.error("Tooltip not found for id: " + id);
+    return ["Tooltip Error"];
+  }
 }
 
 const StyledTooltip = styled(({ className, ...props }) => (
@@ -55,7 +61,7 @@ const getRankDiff = (rank, map2, prevRank) => {
   if (rank > 0) {
     // added a or 0 to handle NANs
     return map2["r" + rank] - map2["r" + prevRank] || 0;
-  } else if (rank == 167) {
+  } else if (rank == 285) {
     return map2["r" + rank];
   } else {
     return 0;
@@ -118,7 +124,9 @@ export default class EmbelChart extends PureComponent {
         arr.push({ // [447, 460, 470, 473, 477, 480, 483, 486];
           // 600, 606, 612, 618, 624, 630, 636 [619, 636, 642, 662, 675 ];
           name: map2.id,
-          167: map2.r167,
+          285: getRankDiff(285, map2, 272),
+          272: getRankDiff(272, map2, 259),
+          259: map2.r259
           /*691: getRankDiff(691, map2, 675),
           704: getRankDiff(704, map2, 691),
           720: getRankDiff(720, map2, 704),*/
@@ -136,7 +144,7 @@ export default class EmbelChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)) : truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={522}  domain={currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={270}  domain={currentLanguage}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={
@@ -209,7 +217,7 @@ export default class EmbelChart extends PureComponent {
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
-          {[167].map((key, i) => (
+          {[259, 272, 285].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}
 

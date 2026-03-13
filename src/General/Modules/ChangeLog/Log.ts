@@ -19,6 +19,32 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+          {
+    version: "12.0.1 / 5.5.3",
+    update: 3,
+    date: "March 7",
+    changes: [ 
+      "Fixed Mists of Pandaria trinket chart showing no entries.",
+      "Fixed a bug that caused Seed of Radiant Hope to show as a middling trinket instead of an actively bad one.",
+    ]
+  },
+        {
+    version: "12.0.1 / 5.5.3",
+    update: 2,
+    date: "March 6",
+    changes: [ 
+      "Crucible of Erratic Energies nerfed in-game. Rating may still change as we learn more about it.",
+      "Fixed Disc Priest Classic.",
+    ]
+  },
+      {
+    version: "12.0.1 / 5.5.3",
+    update: 1,
+    date: "March 5",
+    changes: [ 
+      "Updated QE Live for Midnight.",
+    ]
+  },
     {
     version: "12.0 / 5.5.3",
     update: 25,

@@ -1,5 +1,5 @@
 import Player from "../../Player";
-import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing, getPaladinCovAbility } from "./PaladinMiscFormulas";
+import { getOneHolyPower, getAwakeningWingsUptime, getWingsHealingInc, processPaladinRawHealing, getPaladinCovAbility } from "./Archive/PaladinMiscFormulas";
 
 /* ------------------------------------- Paladin Spell ID's ------------------------------------- */
 const IDLIGHTOFDAWN = 225311;

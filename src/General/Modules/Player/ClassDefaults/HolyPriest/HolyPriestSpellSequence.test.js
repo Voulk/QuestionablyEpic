@@ -1,5 +1,5 @@
 import { getSpellRaw, runCastSequence } from "./HolyPriestSpellSequence";
-import { HOLYPRIESTSPELLDB, baseTalents, } from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB, baseTalents, } from "./Archive/HolyPriestSpellDB";
 import { runHolyPriestCastProfile } from "./HolyPriestCastProfile";
 import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite,  } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 

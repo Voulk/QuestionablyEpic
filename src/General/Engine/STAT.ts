@@ -50,6 +50,9 @@ export const STATDIMINISHINGRETURNS: Record<string, number[]> = {
   LEECH: [STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 10, STATCONVERSION.LEECH * 20, STATCONVERSION.LEECH * 20],
 };
 
+// These used to be different. Could potentially just be folded into a single variable now.
+export const BASEMANA = 250000;
+
 export const STATCONVERSIONCLASSIC = {
   HASTE: 425,
   CRIT: 600,

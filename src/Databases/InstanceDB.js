@@ -10,12 +10,31 @@ export const getMoPDungeons = () => {
     return [246, 316, 313, 312, 311, 303, 302, 324, 321];
 }
 
+export const getSourceName = (instanceID, encounterID) => {
+  if (instanceID === -1) {
+    return encounterDB["-1"]["Retail"][encounterID] || ""
+  }
+  else {
+    return encounterDB[instanceID].bosses[encounterID] || ""
+  }
+
+}
+
+export const getInstanceName = (instanceID) => {
+  if (instanceID !== -1) {
+    return encounterDB[instanceID].name || "";
+  }
+}
+
 export const instanceDB = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
   "-30": "PVP Season 1 (Honor)",
   "-1": "Dungeons",
-  "1278": "World Bosses",
+  "1312": "World Bosses",
+  "1314": "Dreamrift",
+  "1307": "The Voidspire",
+  "1308": "March on Quel'Danas",
   "1273": "Nerub-ar Palace",
   "1296": "Liberation of Undermine",
 
@@ -66,6 +85,35 @@ export const retailInstanceDB = {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Raids                                             */
   /* ---------------------------------------------------------------------------------------------- */
+  // Voidspire
+  1307: {
+    name: "The Voidspire",
+    bossOrder: [2733, 2734, 2736, 2735, 2737, 2738],
+    bosses: {
+      2733: "Imperator Averzian",
+      2734: "Vorasius",
+      2736: "Fallen-King Salhadaar",
+      2735: "Vaelgor & Ezzorak",
+      2737: "Lightblinded Vanguard",
+      2738: "Crown of the Cosmos",
+    }
+  },
+
+  1314: {
+    name: "Dreamrift",
+    bossOrder: [2795],
+    bosses: {
+      2795: "Chimaerus",
+    }
+  },
+  1308: {
+    name: "March on Quel'Danas",
+    bossOrder: [2739, 2740],
+    bosses: {
+      2739: "Belo'ren, Child of Al'ar",
+      2740: "Midnight Falls",
+    }
+  },
   // Nerub'ar Palace
   1273: {
     name: "Nerub'ar Palace",
@@ -120,32 +168,19 @@ export const retailInstanceDB = {
   "-1": {
     "Retail": {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
-      bossOrderMythicPlus: [-20, 11941, 1303, 1185, 1267, 1298, 1270, 1271],
+      bossOrderMythicPlus: [1315, 1316, 1300, 1299, 1201, 278, 476, 945], // Dungeon Order
 
-      // M+ season 2
-      "-20": "Tazavesh Streets", // Tazavesh: Streets of Wonder
-      11941: "Tazavesh Gambit", // Tazavesh: The Gambit
-      1303: "Eco-Dome Al'dani", // 
-      1185: "Halls of Atonement", // The Halls of Atonement
+      1315: "Maisara Cavern",
+      1316: "Nexus-Point Xenas",
+      1300: "Magisters Terrace",
+      1299: "Windrunner Spire",
 
-      1210: "Darkflame Cleft",
-      1272: "Cinderbrew Meadery",
-      1268: "The Rookery",
-      1267: "Priory of the Sacred Flame",
-      1012: "Motherlode",
-      1178: "Mechagon: Workshop",
-      1298: "Operation Floodgate",
-      1187: "Theater of Pain",
+      1201: "Algeth'ar Academy", // Algethar Academy 
+      278: "Pit of Saron", // Pit of Saron 
+      476: "Skyreach", // Skyreach
+      945: "Seat of the Triumvirate", // Seat of the Triumvirate
 
-      // M+ Season 1 - Keep around in case they re-use.
-      1271: "Ara-kara, City of Echoes", 
-      1274: "City of Threads", 
-      1270: "The Dawnbreaker",
-      1269: "The Stonevault",
-      1184: "Mists of Tirna Scithe",
-      1182: "The Necrotic Wake",
-      1023: "Siege of Boralus",
-      71: "Grim Batol",
+
     },
     "Classic": {
       //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.

@@ -139,6 +139,7 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
         if (squishEra.curveId) {
           itemLevel = processCurve(squishEra.curveId.toString(), itemLevel)
           
+          
         }
 
         // Handle flat item level increases.
@@ -169,7 +170,6 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
     }
 
     //console.log(operations);
-
     return itemLevel;
 
 }
@@ -239,6 +239,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
         }
         catch (e) {
           console.error("Error processing SimC line: " + line);
+          console.error(e);
         }
 
       }
@@ -254,7 +255,7 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
 
   // Step 2: Filter items that are within 40 levels of that max
   player.activeItems = player.activeItems.filter(item => 
-    (item.level >= maxLevels[item.slot] - 40)
+    (item.level >= maxLevels[item.slot] - 70 || item.slot === "Trinket" || item.slot === "Finger")
   );
 
 
@@ -475,7 +476,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Grab the items base level from our item database.
   protoItem.slot = getItemProp(protoItem.id, "slot");
-  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), protoItem.level.drop || 0);
+  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
@@ -602,11 +603,11 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
   // Auto upgrade vaults
   if (autoUpgradeAll) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 157, Myth: 170, Circlet: 155 };
-    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
+    const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
+    if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps && !protoItem.upgradeTrack.includes("Crafted")) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   else if (type === "Vault" && autoUpgradeVault) {
-    const itemLevelCaps: { [key: string]: number } = { Explorer: 110, Adventurer: 110, Veteran: 120, Champion: 140, Hero: 157, Myth: 170, Circlet: 155 };
+    const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
     if (protoItem.upgradeTrack && protoItem.upgradeTrack in itemLevelCaps) protoItem.level = itemLevelCaps[protoItem.upgradeTrack];
   }
   
@@ -625,6 +626,8 @@ export function processItem(line: string, player: Player, contentType: contentTy
   // Add the new item to our characters item collection.
   // Note that we're also verifying that the item is at least level 50 and that it exists in our item database.
   if (protoItem.level > 50 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
+
+
     let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     

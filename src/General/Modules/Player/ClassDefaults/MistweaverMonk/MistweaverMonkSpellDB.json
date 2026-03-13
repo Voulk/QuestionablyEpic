@@ -1,0 +1,265 @@
+{
+    "Enveloping Mist": [
+        {
+            "displayInfo": {
+                "id": 124682,
+                "icon": "spell_monk_envelopingmist",
+                "spellName": "Enveloping Mist",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "school": "nature",
+            "cost": 3.6,
+            "coeff": 1.248,
+            "aura": 0.95,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "coeff": 7.488,
+            "aura": 0.95,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Renewing Mist": [
+        {
+            "displayInfo": {
+                "id": 115151,
+                "icon": "ability_monk_renewingmists",
+                "spellName": "Renewing Mist"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 1.8,
+            "cooldownData": {
+                "cooldown": 9.0,
+                "hasted": false,
+                "charges": 2,
+                "maxCharges": 2
+            }
+        }
+    ],
+    "Vivify": [
+        {
+            "displayInfo": {
+                "id": 116670,
+                "icon": "ability_monk_vivify",
+                "spellName": "Vivify",
+                "cat": "heal"
+            },
+            "castTime": 1.5,
+            "school": "nature",
+            "cost": 3.0,
+            "coeff": 2.58,
+            "aura": 1.8239999999999998,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Sheilun's Gift": [
+        {
+            "displayInfo": {
+                "id": 399491,
+                "icon": "inv12_ability_monk_sheilunsgift",
+                "spellName": "Sheilun's Gift",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "school": "nature",
+            "cost": 3.0,
+            "coeff": 2.606,
+            "aura": 0.95,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Thunder Focus Tea": [
+        {
+            "displayInfo": {
+                "id": 116680,
+                "icon": "ability_monk_thunderfocustea",
+                "spellName": "Thunder Focus Tea"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 30.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            }
+        }
+    ],
+    "Life Cocoon": [
+        {
+            "displayInfo": {
+                "id": 116849,
+                "icon": "ability_monk_chicocoon",
+                "spellName": "Life Cocoon"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 2.4,
+            "cooldownData": {
+                "cooldown": 120.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.0,
+            "aura": 1,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "spellType": "absorb"
+        }
+    ],
+    "Rushing Wind Kick": [
+        {
+            "displayInfo": {
+                "id": 467307,
+                "icon": "inv12_ability_monk_rushingwindkick",
+                "spellName": "Rushing Wind Kick"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 1.25,
+            "cooldownData": {
+                "cooldown": 10.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Celestial Conduit": [
+        {
+            "displayInfo": {
+                "id": 443028,
+                "icon": "inv_ability_conduitofthecelestialsmonk_celestialconduit",
+                "spellName": "Celestial Conduit"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 5.0,
+            "cooldownData": {
+                "cooldown": 90.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Rising Sun Kick": [
+        {
+            "displayInfo": {
+                "id": 107428,
+                "icon": "ability_monk_risingsunkick",
+                "spellName": "Rising Sun Kick"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 2.5,
+            "cooldownData": {
+                "cooldown": 10.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Blackout Kick": [
+        {
+            "displayInfo": {
+                "id": 100784,
+                "icon": "ability_monk_roundhousekick",
+                "spellName": "Blackout Kick",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 3.0,
+                "hasted": false
+            },
+            "coeff": 0.0,
+            "aura": 2.2800000000000002,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Tiger Palm": [
+        {
+            "displayInfo": {
+                "id": 100780,
+                "icon": "ability_monk_tigerpalm",
+                "spellName": "Tiger Palm",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "coeff": 0.0,
+            "aura": 1.22,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.0,
+            "aura": 1.22,
+            "expectedOverheal": 0.25,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "energize"
+        }
+    ],
+    "Spinning Crane Kick": [
+        {
+            "displayInfo": {
+                "id": 101546,
+                "icon": "ability_monk_cranekick_new",
+                "spellName": "Spinning Crane Kick"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 1.0
+        }
+    ]
+}

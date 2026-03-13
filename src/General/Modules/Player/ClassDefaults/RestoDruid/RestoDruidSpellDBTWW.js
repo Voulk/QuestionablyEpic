@@ -67,7 +67,7 @@ export const DRUIDSPELLDB = {
 
             // Wild Growth caught a 4% nerf in Dragonflight, and this is applied to the decayrate also.
             // Unstoppable Growth is a 15/30% reduction to the Decay rate.
-            const decayRate = 0.07 * 0.96 * (1 - state.talents.unstoppableGrowth.points * 0.15) / (buff.expiration - buff.startTime);
+            const decayRate = 0.07 * 0.96 * (1 - state.talents["Unstoppable Growth"].points * 0.15) / (buff.expiration - buff.startTime);
             const t = state.t - buff.startTime;
             const inTree = state.activeBuffs.filter(x => x.name === "Incarnation: Tree of Life").length > 0;
             

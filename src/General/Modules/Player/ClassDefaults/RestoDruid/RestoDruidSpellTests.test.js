@@ -8,7 +8,7 @@ describe("Test Resto Druid Spell Values", () => {
     const userSettings = {};
     const spec = "Restoration Druid";
 
-    const statPercentages = {intellect: 618, crit: 1, haste: 1, mastery: 0, versatility: 1}//convertStatPercentages(activeStats, 1, spec);
+    const statPercentages = {intellect: 618, crit: 1, haste: 1, mastery: 0, versatility: 1, genericHealingMult: 1, critMult: 2}//convertStatPercentages(activeStats, 1, spec);
 
     /* TEST SPELLS */
     //  ${"Healing Rain"}     | ${(2244 / 6 * 10)}              | ${0} - Off by 2% but incorrect tooltip anyway.

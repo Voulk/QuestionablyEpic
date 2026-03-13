@@ -1,0 +1,71 @@
+
+import RestoDruidSpellDB from "./RestoDruidSpellDB.json";
+import { runCastSequence } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidRamps"
+import { druidTalents } from "./RestoDruidTalents"
+import { runAPLSuites, runStatSuites, runStatDifferentialSuite, runTimeSuite, runSuite, runCastProfileSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
+import { restoDruidProfile, scoreDruidSet } from "General/Modules/Player/ClassDefaults/RestoDruid/RestoDruidProfile"
+
+
+describe("Generic Profile Testing Environment", () => {
+    test("Test APL", () => {
+        
+        console.log("Testing APL");
+
+        const activeStats = restoDruidProfile.defaultStatProfile;
+
+        const playerData = { spec: "Resto Druid", heroTree: "Keeper of the Grove", settings: {}, stats: activeStats }
+    
+        /*
+        const baseSpells = RestoDruidSpellDB;
+        const baseTalents = druidTalents;
+        const testSettings = {masteryEfficiency: 0.85, includeOverheal: "No", reporting: true, seqLength: 30};
+
+
+        const sequence = ["Rejuvenation", "Rejuvenation", "Rejuvenation", "Regrowth", "Regrowth"]
+
+
+        const data = runCastSequence(sequence, playerData.stats, playerData.settings, playerData.talents)*/
+
+        const data = scoreDruidSet(activeStats, playerData);
+
+        console.log(data);
+
+        expect(true).toEqual(true);
+
+/*
+       const stats = ['intellect', 'crit', 'mastery', 'haste', 'versatility'];
+        const iterations = 1;
+        let baseline = 0;
+        
+        for (let i = 0; i < iterations; i++) {
+            baseline += scoreDruidSet(activeStats, playerData).healing;
+        }
+
+        baseline = baseline / iterations;
+        
+        const results = {};
+        stats.forEach(stat => {
+            let statHealing = 0;
+            let playerStats = JSON.parse(JSON.stringify(playerData.stats));
+            playerStats[stat] = playerStats[stat] + 200;
+            const newPlayerData = {...playerData, stats: playerStats};
+            for (let i = 0; i < iterations; i++) {
+
+                statHealing += scoreDruidSet(playerStats, newPlayerData).healing;
+                
+            }
+            results[stat] = statHealing / iterations;
+
+        });
+        const weights = {}
+
+        stats.forEach(stat => {
+            weights[stat] = Math.round(1000*(results[stat] - baseline) / (results['intellect'] - baseline))/1000;
+        });
+        console.log(weights); 
+      
+      */
+    })
+
+
+}); 

@@ -1,108 +1,222 @@
 {
+        "Litany of Lightblind Wrath": [
+        {
+            "coefficient": 49.0738,
+            "scalingClass": -9
+        }
+    ],
+    "Crucible of Erratic Energies": [
+        {
+            "coefficient": 0.659241,
+            "scalingClass": -7
+        }
+    ],
     "Echo of L'ura": [
         {
-            "coefficient": "19.42865753174",
-            "scalingClass": "-9"
+            "coefficient": 32.83378,
+            "scalingClass": -9
         }
     ],
     "Emerald Coach's Whistle": [
         {
-            "coefficient": "2.02112174034",
-            "scalingClass": "-7"
+            "coefficient": 2.0211217,
+            "scalingClass": -7
+        }
+    ],
+    "Magister's Alchemist Stone": [
+        {
+            "coefficient": 0.5206269,
+            "scalingClass": -1
+        }
+    ],
+    "Volatile Void Suffuser": [
+        {
+            "coefficient": 0.8583525,
+            "scalingClass": -1
+        }
+    ],
+    "Gaze of the Alnseer": [
+        {
+            "coefficient": 0.18049468,
+            "scalingClass": -1
+        }
+    ],
+    "Vaelgor's Final Stare": [
+        {
+            "coefficient": 5.761313,
+            "scalingClass": -7
+        }
+    ],
+    "Locus-Walker's Ribbon": [
+        {
+            "coefficient": 1.1403251,
+            "scalingClass": -1
+        }
+    ],
+    "Light of the Cosmic Crescendo": [
+        {
+            "coefficient": 0.3048851,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 43.42072,
+            "scalingClass": -9
+        }
+    ],
+    "Emberwing Feather": [
+        {
+            "coefficient": 2.0646393,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.64144135,
+            "scalingClass": -9
+        }
+    ],
+    "Lightspire Core": [
+        {
+            "coefficient": 0.40009117,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.69850624,
+            "scalingClass": -7
+        }
+    ],
+    "Freightrunner's Flask": [
+        {
+            "coefficient": 1.4557712,
+            "scalingClass": -9
         }
     ],
     "Refueling Orb": [
         {
-            "coefficient": "0.81432986259",
-            "scalingClass": "-9"
+            "coefficient": 0.26865628,
+            "scalingClass": -7
         },
         {
-            "coefficient": "64.23183441162",
-            "scalingClass": "-9"
+            "coefficient": 21.72131,
+            "scalingClass": -9
+        }
+    ],
+    "Mycolic Medicine": [
+        {
+            "coefficient": 76.97045,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 43.983833,
+            "scalingClass": -9
         }
     ],
     "Whisper of the Duskwraith": [
         {
-            "coefficient": "44.89406967163",
-            "scalingClass": "-9"
+            "coefficient": 75.87048,
+            "scalingClass": -9
         },
         {
-            "coefficient": "0.36382597685",
-            "scalingClass": "-7"
+            "coefficient": 0.36382598,
+            "scalingClass": -7
+        }
+    ],
+    "Seed of Radiant Hope": [
+        {
+            "coefficient": 36.792675,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 331.1767,
+            "scalingClass": -9
+        }
+    ],
+    "Unstable Felheart Crystal": [
+        {
+            "coefficient": 588.763,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 34.835777,
+            "scalingClass": -9
         }
     ],
     "Heart of Wind": [
         {
-            "coefficient": "1.12422311306",
-            "scalingClass": "-7"
+            "coefficient": 1.1242231,
+            "scalingClass": -7
         }
     ],
     "Vessel of Tortured Souls": [
         {
-            "coefficient": "0.1735932678",
-            "scalingClass": "-7"
+            "coefficient": 0.17359327,
+            "scalingClass": -7
         }
     ],
     "Ever-Collapsing Void Fissure": [
         {
-            "coefficient": "0.51851814985",
-            "scalingClass": "-7"
+            "coefficient": 0.51851815,
+            "scalingClass": -7
         }
     ],
     "Sealed Chaos Urn": [
         {
-            "coefficient": "0.86419689655",
-            "scalingClass": "-7"
+            "coefficient": 0.8641969,
+            "scalingClass": -7
         }
     ],
     "Gift of Light": [
         {
-            "coefficient": "1.5623395443",
-            "scalingClass": "-7"
+            "coefficient": 1.5623395,
+            "scalingClass": -7
         }
     ],
     "Consecrated Chalice": [
         {
-            "coefficient": "22.3427066803",
-            "scalingClass": "-9"
+            "coefficient": 37.774883,
+            "scalingClass": -9
         },
         {
-            "coefficient": "22.3427066803",
-            "scalingClass": "-9"
+            "coefficient": 37.774883,
+            "scalingClass": -9
         }
     ],
     "Glorious Crusader's Keepsake": [
         {
-            "coefficient": "1.12422311306",
-            "scalingClass": "-7"
+            "coefficient": 1.1242231,
+            "scalingClass": -7
         },
         {
-            "coefficient": "0.11248111725",
-            "scalingClass": "-7"
+            "coefficient": 0.11248112,
+            "scalingClass": -7
         }
     ],
     "Radiant Sunstone": [
         {
-            "coefficient": "203.31686401367",
-            "scalingClass": "-9"
+            "coefficient": 343.6046,
+            "scalingClass": -9
         },
         {
-            "coefficient": "10.89197540283",
-            "scalingClass": "-9"
+            "coefficient": 18.40636,
+            "scalingClass": -9
         },
         {
-            "coefficient": "203.31686401367",
-            "scalingClass": "-9"
+            "coefficient": 343.6046,
+            "scalingClass": -9
         },
         {
-            "coefficient": "10.89197540283",
-            "scalingClass": "-9"
+            "coefficient": 18.40636,
+            "scalingClass": -9
+        }
+    ],
+    "Ultradon Cuirass": [
+        {
+            "coefficient": 2151.9985,
+            "scalingClass": -8
         }
     ],
     "Cosmic Bell": [
         {
-            "coefficient": "459.48999023438",
-            "scalingClass": "-9"
+            "coefficient": 776.8206,
+            "scalingClass": -9
         }
     ]
 }

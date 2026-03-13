@@ -1,10 +1,11 @@
 // 
 import { applyDiminishingReturns } from "General/Engine/ItemUtilities";
-import { HOLYPRIESTSPELLDB as SPELLDB } from "./HolyPriestSpellDB";
+import { HOLYPRIESTSPELLDB as SPELLDB } from "./Archive/HolyPriestSpellDB";
 import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALCONST, 
-    getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell, applyTalents } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
-import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/sqrtScripts"
+    getHealth, getCrit, getMastery, advanceTime, spendSpellCost, getSpellCastTime, queueSpell, deepCopyFunction, runSpell } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { applyTalents } from "../Generic/ProfileUtilities";
+import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 import { STATCONVERSION } from "General/Engine/STAT"
 
