@@ -1,8 +1,8 @@
 
 
 export const CONSTANTS = {
-    dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.4, // 
+    dpsValue: 1, // In dungeon settings
+    allyStatWeight: 0.4, //
     allyDPSPerPoint: 0.4 / 2000 * 30000,
     difficulties: {
         "LFR": 0,
@@ -16,7 +16,7 @@ export const CONSTANTS = {
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
     seasonalItemConversion: 11, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-    currentRaidID: [1314, 1308, 1307], // S1
+    currentRaidIDs: [1307, 1314, 1308], // This should be an array even with one raid. This value is used in various array specific functions.
     currentDungeonIDs: [1315, 1316, 1300, 1299, 1201, 278, 476, 945],
     fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
     itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
@@ -54,5 +54,5 @@ export const CONSTANTS = {
 
 // Currently unused. Might use later.
 export const SEASONALCONSTS = {
-    
+
 }
