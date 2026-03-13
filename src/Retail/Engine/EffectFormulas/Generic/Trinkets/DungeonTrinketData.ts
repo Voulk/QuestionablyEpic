@@ -22,7 +22,7 @@ export const dungeonTrinketData =
   
         const dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
         bonus_stats.dps = dps;
-        bonus_stats.hps = dps * 5;
+        bonus_stats.hps = dps// * 5;
 
         return bonus_stats;
       }
