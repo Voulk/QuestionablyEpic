@@ -3,7 +3,9 @@
 
 // Sample ReforgeLite export:
 
+import { getInstanceName, getSourceName } from "Databases/InstanceDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getTranslatedItemName } from "General/Engine/ItemUtilities";
 import Item from "General/Items/Item";
 import Player from "General/Modules/Player/Player";
 import { getTranslatedSlotName } from "locale/slotsLocale";
@@ -213,6 +215,47 @@ const wowheadClassColors = {
   "Holy Priest": "c5", 
   "Restoration Shaman": "c7", 
   "Mistweaver Monk": "c10"
+}
+
+export function exportIcyVeinsGearList(itemSet, spec, gameType = "Retail") {
+  const results = ["<table>",
+                    "<tr>",
+                    "<th>Slot</th>",
+                    "<th>Item</th>",
+                    "<th>Source/Note</th>",
+                    "</tr>"
+  ]
+
+    itemSet.forEach(item => {
+      let colourTag = "";
+      let source = "";
+      let bonusTag = "";
+      const slotName = getTranslatedSlotName(item.slot, "en")
+      const itemName = "@@@WoW" + getTranslatedItemName(item.id, "en", "").replaceAll(" ", "").replaceAll("'", "");
+
+      if (item.source) {
+        //else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidID.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
+        /*else*/ source = "@@@Link" + getSourceName(item.source.instanceId, item.source.encounterId).replaceAll(" ", "").replaceAll("&", "and").replaceAll("-", "").replaceAll("'", "") + "@@@"
+        if (item.source.instanceId !== -1) source += " - @@@Link" + getInstanceName(item.source.instanceId) + "@@@"
+        bonusTag = "#AddBonus=12806"
+
+      }
+
+      results.push("<tr>")
+      results.push("<td>" + slotName + "</td>")
+      results.push("<td>" + itemName + bonusTag + "@@@" + "</td>")
+      results.push("<td>" + source + "</td>")
+      results.push("</tr>")
+
+    })
+
+    results.push("</table>")
+
+    const formattedArray = results.map(String).join('\n');
+
+    return formattedArray;
+
+
 }
 
 // It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 

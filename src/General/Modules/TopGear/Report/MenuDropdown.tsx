@@ -25,7 +25,11 @@ export default function HoverMenu({ handleClicked, gameType }: HoverMenuProps) {
     exportOptions.push("ReforgeLite Export");
     exportOptions.push("Wowhead Gear Planner");
   }
-  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) exportOptions.push("Wowhead BIS List");
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
+    exportOptions.push("Wowhead BIS List");
+    exportOptions.push("Icy Veins BIS List")
+
+  }
 
   return (
     <>
