@@ -4,6 +4,28 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 import { STATCONVERSION } from "General/Engine/STAT"
 
 export const otherTrinketData = [
+    {
+      name: "Drum of Renewed Bonds",
+      description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
+      addonDescription: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
+      effects: [
+        {
+          duration: 12,
+          ppm: 1.5,
+          stat: "highest",
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats = {};
+
+        //console.log(JSON.stringify(additionalData.selectedOptions));
+
+        const bestStat = player.getHighestStatWeight(additionalData.contentType);
+        bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], ...trinketRawData["Drum of Renewed Bonds"][0], stat: bestStat}, itemLevel, player);
+  
+        return bonus_stats;
+      }
+  },
     { 
     name: "Gift of Light",
     description: "",
@@ -18,7 +40,7 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Gift of Light"][0]}, itemLevel);
+      bonus_stats.mastery = runGenericPPMTrinket({...data[0], ...trinketRawData["Gift of Light"][0]}, itemLevel);
 
       return bonus_stats;
     }

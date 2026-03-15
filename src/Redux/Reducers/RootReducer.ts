@@ -45,7 +45,7 @@ const initialState : RootState = {
     //gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
     flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
-    liningUptime: { value: 30, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
+    liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
     // Spec values:
     masteryEffectivenessShaman: { value: 30, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
