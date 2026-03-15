@@ -408,8 +408,8 @@
           "tooltip": "Number of gems you have socketed. Ignored by Top Gear which will just use your actual set."
         },
         "liningUptime": {
-          "title": "Lining Uptime",
-          "tooltip": "Your expected uptime of Dusk / Dawnthread lining during moments where you are actually healing."
+          "title": "Trappings Uptime",
+          "tooltip": "Your expected uptime of Arcanoweave / Sunfire Trappings cloth embellishment sets. They're only active while you're above 80% health."
         },
         "includeJastorEffect": {
           "title": "Include Jastor Effect",
