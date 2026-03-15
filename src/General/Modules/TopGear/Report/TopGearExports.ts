@@ -70,14 +70,14 @@ const wowheadCodes = {
   2645: "[=retail-raid-tww-s2-mugzee]", // Mug'Zee
   2646: "[=retail-raid-tww-s2-gallywix]", // Chrome King Gallywix
 
-  2684: "[=retail-raid-tww-s3-plexus]", 
-  2686: "[=retail-raid-tww-s3-loomithar]", 
-  2685: "[=retail-raid-tww-s3-soulbinder]", 
-  2687: "[=retail-raid-tww-s3-forgeweaver]", 
-  2688: "[=retail-raid-tww-s3-soul-hunters]", 
+  2684: "[=retail-raid-tww-s3-plexus]",
+  2686: "[=retail-raid-tww-s3-loomithar]",
+  2685: "[=retail-raid-tww-s3-soulbinder]",
+  2687: "[=retail-raid-tww-s3-forgeweaver]",
+  2688: "[=retail-raid-tww-s3-soul-hunters]",
   2747: "[=retail-raid-tww-s3-fractillus]",
-  2690: "[=retail-raid-tww-s3-nexus-king]", 
-  2691: "[=retail-raid-tww-s3-dimensius]", 
+  2690: "[=retail-raid-tww-s3-nexus-king]",
+  2691: "[=retail-raid-tww-s3-dimensius]",
 
   2795: "[icon name=inv_120_raid_dreamwell_malformedmanifestation][/icon][url guide=33231]Chimaerus[/url] [i](Raid)[/i]", // Chimaerus
 
@@ -91,7 +91,7 @@ const wowheadCodes = {
 
   2739: "[icon name=inv_120_raid_marchonqueldanas_lightvoidphoenix][/icon][url guide=33233]Belo'ren[/url] [i](Raid)[/i]", // Belo'ren
   2740: "[icon name=inv_120_raid_marchonqueldanas_lura][/icon][url guide=33234]Midnight Falls[/url] [i](Raid)[/i]", // Midnight Falls
-  
+
 
   // Dungeons
   1210: "[=retail-dun-darkflame-cleft]", // Darkflame Cleft
@@ -106,7 +106,7 @@ const wowheadCodes = {
   "-20": "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   1194: "[=retail-dun-tazavesh-streets]", // Tazavesh: Streets of Wonder
   11941: "[=retail-dun-tazavesh-gambit]", // Tazavesh: The Gambit
-  1303: "[=retail-dun-echo-dome]", // 
+  1303: "[=retail-dun-echo-dome]", //
   1185: "[=retail-dun-halls-of-atonement]", // The Halls of Atonement
   1270: "[=retail-dun-dawnbreaker]", // Dawnbreaker
   1271: "[=retail-dun-ara-kara]", // Ara'kara
@@ -116,12 +116,12 @@ const wowheadCodes = {
   1311: "", // Den of Nalorakk
   1309: "", // The Blinding Vale
   1304: "", // Murder Row
-  1300: "[icon name=inv_achievement_dungeon_magistersterrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace 
+  1300: "[icon name=inv_achievement_dungeon_magistersterrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace
   1299: "[icon name=inv_achievement_dungeon_windrunnerspire][/icon][url guide=33184]Windrunner Spire[/url]", // Windrunner Spire
   1313: "", // Voidscar Arena
 
-  1201: "[icon name=achievement_dungeon_dragonacademy][/icon][url guide=33197]Algeth'ar Academy[/url]", // Algethar Academy 
-  278: "[icon name=inv_achievement_dungeon_pitofsaron][/icon][url guide=33198]Pit of Saron[/url]", // Pit of Saron 
+  1201: "[icon name=achievement_dungeon_dragonacademy][/icon][url guide=33197]Algeth'ar Academy[/url]", // Algethar Academy
+  278: "[icon name=inv_achievement_dungeon_pitofsaron][/icon][url guide=33198]Pit of Saron[/url]", // Pit of Saron
   476: "[icon name=achievement_dungeon_arakkoaspires][/icon][url guide=33199]Skyreach[/url]", // Skyreach
   945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
 
@@ -209,11 +209,11 @@ const wowheadRepColors = {
 
 const wowheadClassColors = {
   "Holy Paladin": "c2",
-  "Restoration Druid": "c11", 
-  "Preservation Evoker": "c13",  
-  "Discipline Priest": "c5", 
-  "Holy Priest": "c5", 
-  "Restoration Shaman": "c7", 
+  "Restoration Druid": "c11",
+  "Preservation Evoker": "c13",
+  "Discipline Priest": "c5",
+  "Holy Priest": "c5",
+  "Restoration Shaman": "c7",
   "Mistweaver Monk": "c10"
 }
 
@@ -258,7 +258,7 @@ export function exportIcyVeinsGearList(itemSet, spec, gameType = "Retail") {
 
 }
 
-// It can be convenient to export our best in slot list for a range of uses including putting together gear lists. 
+// It can be convenient to export our best in slot list for a range of uses including putting together gear lists.
 export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
   console.log(spec);
   // Slot, itemID, bonusTag, source
@@ -286,11 +286,11 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
       else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
       else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
-      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidID.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
+      else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidIDs.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
-        if (item.source.instanceId === CONSTANTS.currentRaidID) bonusTag = " bonus=[=gv-raid]";
+        if (CONSTANTS.currentRaidIDs.includes(item.source.instanceId)) bonusTag = " bonus=[=gv-raid]";
         else if (item.source.instanceId === -1) {
           const instanceID = item.source.encounterId;
           if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
@@ -301,7 +301,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       }
 
     }
-    
+
     if (item.id !== 228411 && item.id !== 235499 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
     else if (gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
     })
