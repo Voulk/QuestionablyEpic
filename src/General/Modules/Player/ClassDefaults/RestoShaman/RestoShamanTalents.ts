@@ -48,11 +48,12 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string) => {
 
     const farseerDreRain = [
         // Tier 1 & 2
-        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Improved Earthliving Weapon", "Tidal Waves", "Ancestral Reach",
+        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Tidal Waves", "Ancestral Reach", "Calm Waters",
         // Tier 3
-        "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Ancestral Awakening", "Undercurrent",
+        "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Undercurrent", "Tidewaters",
         // Hero choices
-        "Latent Wisdom", "Heed My Call"
+        "Latent Wisdom", "Heed My Call",
+        //"Ancient Fellowship", "Routine Communication"
     ]
 
     let heroTree: string
