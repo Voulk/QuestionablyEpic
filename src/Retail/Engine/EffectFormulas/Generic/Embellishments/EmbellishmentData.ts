@@ -266,14 +266,16 @@ export const embellishmentData = [
         effects: [
         { //
             scalingClass: -790,
-            coefficient: 0.78882032633,
+            coefficient: 0.78882,
             stat: "crit",
-            duration: 10,
-            ppm: 2,
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
+
+            const uptime = getSetting(additionalData.settings, "liningUptime") / 100
+            console.log(processedValue(data[0], itemLevel) )
+            bonus_stats.crit = processedValue(data[0], itemLevel) * uptime;
 
             return bonus_stats;
         }

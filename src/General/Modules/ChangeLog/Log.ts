@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+              {
+    version: "12.0.1 / 5.5.3",
+    update: 5,
+    date: "March 15",
+    changes: [ 
+      "Updated Shaman profile based on tuning.",
+      "Added formulas for Litany of Lightblind Wrath, Drum of Renewed Bonds, Primal Philosopher's Stone",
+      "Embellishment Chart: Added Arcanoweave Trappings, fixed Pango Charm."
+    ]
+  },
             {
     version: "12.0.1 / 5.5.3",
     update: 4,
