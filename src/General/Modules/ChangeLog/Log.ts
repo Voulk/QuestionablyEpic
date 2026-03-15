@@ -25,7 +25,7 @@ export const changeLog: entry[] = [
     date: "March 15",
     changes: [ 
       "Updated Shaman profile based on tuning.",
-      "Added formulas for LItany of Lightblind Wrath, Drum of Renewed Bonds",
+      "Added formulas for Litany of Lightblind Wrath, Drum of Renewed Bonds, Primal Philosopher's Stone",
       "Embellishment Chart: Added Arcanoweave Trappings, fixed Pango Charm."
     ]
   },

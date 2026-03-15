@@ -189,7 +189,7 @@ export default function EmbellishmentAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const [metric, setMetric] = React.useState("both");
+  const [metric, setMetric] = React.useState("hps");
   const [theme, setTheme] = React.useState(false);
   const [tabIndex, setTabIndex] = React.useState(0);
 
