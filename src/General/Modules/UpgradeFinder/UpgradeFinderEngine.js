@@ -142,13 +142,13 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
     // Otherwise grab both the very rare and any boss-specific item level increase.
-    itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    //itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
 
   // World Bosses
   else if (instanceID === 1312) {
-    itemLevel = 603;
+    itemLevel = 250;
   }
 
   else if (instanceID === -1) {
@@ -158,6 +158,8 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
+    console.log(itemLevel);
+    console.log(playerSettings.craftedLevel)
   }
   else if (instanceID === -69) {
     // Delves
@@ -178,6 +180,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
 
 function buildItem(player, contentType, rawItem, itemLevel, source, settings, upgradeFinderSettings) {
   const itemSource = source; //rawItem.sources[0];
+  console.log(rawItem);
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
@@ -190,6 +193,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
     if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection.
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
+    console.log(itemLevel);
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
 
     item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
@@ -200,7 +204,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
     item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   }
 
-  if (item.slot === "Neck" || item.slot === "Finger") item.socket = 2;
+  if (item.slot === "Neck" || item.slot === "Finger") item.socket = 1;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;

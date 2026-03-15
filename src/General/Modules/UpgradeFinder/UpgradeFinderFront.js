@@ -193,7 +193,7 @@ export default function UpgradeFinderFront(props) {
   const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => getSessionStorageOrDefault("ufRaidDifficulty", [5,7]));
   const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => getSessionStorageOrDefault("ufDungeonDifficulty", gameType === "Retail" ? 6 : 1));
   const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
-  const [ufCraftedLevel, setUfCraftedLevel] = useState(() => getSessionStorageOrDefault("ufCraftedLevel", 3));
+  const [ufCraftedLevel, setUfCraftedLevel] = useState(() => Math.min(getSessionStorageOrDefault("ufCraftedLevel", 2), 2));
   const [ufCraftedStats, setUfCraftedStats] = useState(() => getSessionStorageOrDefault("ufCraftedStats", "Crit / Haste"));
 
   const ufSettings = {
