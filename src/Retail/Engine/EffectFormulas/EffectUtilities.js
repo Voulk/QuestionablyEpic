@@ -182,7 +182,8 @@ export function getSetting(playerSettings, setting) {
 
   if (setting in playerSettings) return playerSettings[setting].value;
   else {
-    reportError("", "Setting", "Missing Setting", setting)
+    console.error("Missing Setting" + setting);
+    //reportError("", "Setting", "Missing Setting", setting)
     return 0;
   }
 
