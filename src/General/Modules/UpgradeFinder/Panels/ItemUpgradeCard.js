@@ -106,7 +106,7 @@ export default function ItemCard(props) {
 
   const itemID = item.item;
   const itemName = getTranslatedItemName(itemID, currentLanguage, "", gameType);
-  const itemQuality = item.level > 463 ? "#a73fee" : "#328CE3" //item.getQualityColor();
+  const itemQuality = item.level > 100 ? "#a73fee" : "#328CE3" //item.getQualityColor();
 
   const sourceName = (item) => {
     // Rework this code goodness gracious

@@ -1,5 +1,11 @@
 {
-        "Litany of Lightblind Wrath": [
+    "Drum of Renewed Bonds": [
+        {
+            "coefficient": 1.707,
+            "scalingClass": -7
+        }
+    ],
+    "Litany of Lightblind Wrath": [
         {
             "coefficient": 49.0738,
             "scalingClass": -9

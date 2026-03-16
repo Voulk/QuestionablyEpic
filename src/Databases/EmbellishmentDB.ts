@@ -134,7 +134,7 @@ export const embellishmentDB: embellishmentData[] = [
   },
   {
     id: 239660,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_bracer_cloth_questbloodelf_b_01",
     armorType: 1, // Crit above 80% health, cloth, set
     pieces: 2,
     name: "Arcanoweave Trappings (Set)",
@@ -145,7 +145,7 @@ export const embellishmentDB: embellishmentData[] = [
   },
   {
     id: 239664,
-    icon: "inv_ringwod_d3_4",
+    icon: "inv_belt_cloth_questbloodelf_b_01",
     armorType: 1, // Mastery proc
     name: "Arcanoweave Cord",
     effect: {

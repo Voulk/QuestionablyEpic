@@ -22,7 +22,7 @@ describe("Generic Profile Testing Environment", () => {
             //"Farseer DRE No Rain": "Farseer"
         }
         let results = []
-        /*
+        
         Object.keys(testProfiles).forEach(profile => {
 
             const params = {
@@ -31,20 +31,20 @@ describe("Generic Profile Testing Environment", () => {
                     ch: 1
                 },
                 asc: {
-                    hw: 1,
-                    ch: 0
+                    hw: 0,
+                    ch: 1
                 },
                 downtime: 0
             }
             const playerData = { spec: "Restoration Shaman", heroTree: testProfiles[profile], profileName: profile, stats: activeStats,
                                     masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
             const data = restoShamanProfile.scoreSet(activeStats, playerData);
-            //buildStatWeights(playerData, scoreShamanSet, {});
+            buildStatWeights(playerData, scoreShamanSet, {});
             results[profile] = data.healing
         })
 
         console.log(results)
-        */
+        /*
 
         results = []
         function formatNumber(num){ return Math.round(num*10) / 10}

@@ -23,11 +23,11 @@ export const restoShamanProfile = {
         // Our stats we want to run through the profile. 
         // You can change and play with these as much as you want.
         // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2000,
-        haste: 550,
-        crit: 550,
-        mastery: 550,
-        versatility: 550,
+        intellect: 2090,
+        haste: 461,
+        crit: 1832,
+        mastery: 552,
+        versatility: 571,
         stamina: 19000,
         critMult: 2,
     },
@@ -106,8 +106,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         "Healing Wave": playerData.params.filler.hw ?? 0
     }
     const ascendanceFillerSpellsPriority = {
-        "Chain Heal": playerData.params.asc.ch ?? 0,
-        "Healing Wave": playerData.params.asc.hw ?? 1
+        "Chain Heal": playerData.params.asc.ch ?? 1,
+        "Healing Wave": playerData.params.asc.hw ?? 0
     }
 
     // Add our 2 piece
@@ -154,6 +154,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB);
+
+    if (hasTalent(talents, "Overflowing Shores")){
+        castProfile.push({spell: "Overflowing Shores", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")), autoSpell: true})
+    }
 
     // Totemic procs motes every time you cast Surging Totem
     if (playerData.heroTree === "Totemic") {
@@ -204,7 +208,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     // No talent check cause our tierset forces us into unleash life
     let unleashLifeStacks = getCPM(castProfile, "Unleash Life")
     // 4 piece makes unleash give two stacks
-    if (playerData.tierSets.includes("Restoration Shaman S1-2")) unleashLifeStacks *= 2
+    if (playerData.tierSets.includes("Restoration Shaman S1-4")) unleashLifeStacks *= 2
 
     // If we have any Ascendance in the profile at all we need to add the filler spells
     // I am fairly sure that i am messing up this because i am not removing other things spells, but also i am not totally sure what the ideal asc cast sequence is

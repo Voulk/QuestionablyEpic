@@ -44,7 +44,7 @@ const getDifficultyName = (difficulty, gameType = "Retail") => {
       case 1:
         return "Heroic";
     }
-  
+
   }
 
 };
@@ -80,7 +80,18 @@ export default function RaidGearContainer(props) {
     return raidName;
   };
 
-
+  const getRaidHeaderClass = (raidID) => {
+    switch (raidID) {
+      case 1314:
+        return classes.dreamriftHeader;
+      case 1308:
+        return classes.marchOnQueldanasHeader;
+      case 1307:
+        return classes.voidspireHeader;
+      default:
+        return classes.defaultHeader;
+    }
+  };
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                           Retail                                          */
@@ -88,7 +99,7 @@ export default function RaidGearContainer(props) {
 
   const contentGenerator = () => {
     // Raid Panel
-    const raidList = [CONSTANTS.currentRaidID]; // This is an array because there are sometimes multiple raids at a time (fated etc);
+    const raidList = CONSTANTS.currentRaidIDs;
     const difficulties = props.playerSettings.raid;
 
     difficulties.sort().reverse();
@@ -116,12 +127,9 @@ export default function RaidGearContainer(props) {
                   style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
                   TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
                 >
-                  {/* ------------------------------------------  ------------------------------------------ */}
-                  <Tab className={classes.manaforgeOmegaHeader} label={getTranslatedRaidName(CONSTANTS.currentRaidID)} {...a11yProps(0)} />
-                  {/* ------------------------------------------  ------------------------------------------ 
-                  <Tab className={classes.aberrusHeader} label={getTranslatedRaidName(1208)} {...a11yProps(1)} />*/}
-                  {/* ------------------------------------------  ------------------------------------------ 
-                  <Tab className={classes.amirdrassilHeader} label={getTranslatedRaidName(1207)} {...a11yProps(2)} />*/}
+                  {raidList.map((raidID, index) => (
+                    <Tab key={raidID} className={getRaidHeaderClass(raidID)} label={getTranslatedRaidName(raidID)} {...a11yProps(index)} />
+                  ))}
                 </Tabs>
               </AppBar>
             </Grid>
@@ -282,7 +290,7 @@ export default function RaidGearContainer(props) {
                   <Tab className={classes.heartOfFearHeaderStyle} label={encounterDB[330].name} {...a11yProps(1)} />}
                   {/* ------------------------------------ Terrace ------------------------------------  */
                   <Tab className={classes.terraceOfEndlessSpringHeaderStyle} label={encounterDB[320].name} {...a11yProps(2)} />}
-                  
+
                 </Tabs>
                 </div>
               </AppBar>

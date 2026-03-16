@@ -92,7 +92,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
-      estHPS += ((value * player.getStatWeight(contentType, key)) / player.activeStats.intellect) * player.getHPS(contentType);
+      estHPS += ((value * player.getStatWeight(contentType, key)) / 2400) * player.getHPS(contentType);
     } else if (key === "intellect") {
       estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
     } 
@@ -106,7 +106,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.25 / player.getInt() * player.getHPS(contentType);
+      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.25 / 2400 * player.getHPS(contentType);
     }
   }
   return Math.round(100 * estHPS) / 100;
@@ -126,11 +126,11 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
     else if (key === "mastery") {
       estDPS += 0;
     }
-    else if (key === "allyStats" && playerSettings && playerSettings.includeGroupBenefits && playerSettings.includeGroupBenefits.value && bonus_stats.allyStats) {
+    else if (key === "allyStats" && playerSettings && bonus_stats.allyStats) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estDPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.75 / player.getInt() * player.getHPS(contentType);
+      estDPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.75 / 2400 * player.getHPS(contentType);
     }
   }
   return Math.round(Math.max(0, Math.round(100 * estDPS) / 100));
@@ -189,7 +189,7 @@ export default function EmbellishmentAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const [metric, setMetric] = React.useState("both");
+  const [metric, setMetric] = React.useState("hps");
   const [theme, setTheme] = React.useState(false);
   const [tabIndex, setTabIndex] = React.useState(0);
 

@@ -4,29 +4,7 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 export const dungeonTrinketData = 
 [
-      {
-      name: "Litany of Lightblind Wrath",
-      description: "",
-      addonDescription: "",
-      effects: [
-        {  // Damage Effect - Need to check if it double dips Vers
-          secondaries: ['crit', 'versatility'],
-          cooldown: 90,
-          ticks: 5,
-          efficiency: 1 //
-        },
-        
-      ],
-      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
-        let bonus_stats: Stats = {};
-  
-        const dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
-        bonus_stats.dps = dps;
-        bonus_stats.hps = dps// * 5;
 
-        return bonus_stats;
-      }
-    },
     { //
         id: 193718,
         name: "Emerald Coach's Whistle",
@@ -55,9 +33,7 @@ export const dungeonTrinketData =
       addonDescription: "Procs a lot when active (about 20 times) but the very long cooldown prevents it from being a real contender.",
       effects: [
         { 
-          secondaries: ['versatility', 'crit'],
-          cooldown: 180,
-          duration: 45,
+          secondaries: ['versatility', 'crit', 'haste'],
           ppm: 25 * (45 / 180), // Only active while the trinket is up which is 45/180 of the time.
           efficiency: {Raid: 0.7, Dungeon: 0.55} //
         },

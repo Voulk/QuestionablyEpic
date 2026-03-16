@@ -11,10 +11,10 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 The core Upgrade Finder loop is as follows:
 - Run the players current gear set through our evaluation function to get a baseline score.
 - Loop through the ItemDB and find all items that drop from raid, Mythic+, or PVP.
-- For each item, build a set consisting of a players current item set + the item. 
+- For each item, build a set consisting of a players current item set + the item.
 - Run each set through our evaluation function. Store the score differential against the item.
-- Print the items in the correct place along with their score differential. 
-- (Extra Feature) Include a summary page that lists the largest score upgrades and where they come from. 
+- Print the items in the correct place along with their score differential.
+- (Extra Feature) Include a summary page that lists the largest score upgrades and where they come from.
 */
 
 // This is a copy paste from buildWepCombos.
@@ -67,7 +67,7 @@ export function buildWepCombosUF(player, itemList) {
   return wep_list.slice(0, 9);
 } */
 
-// This is a new version of WepCombos that simply stores them in an array instead of in a weird 
+// This is a new version of WepCombos that simply stores them in an array instead of in a weird
 // composite "fake item". Top Gear can then separate them after combinations have been built.
 export function buildNewWepCombosUF(player, itemList) {
   let wep_list = [];
@@ -134,7 +134,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
-  if (CONSTANTS.currentRaidID.includes(instanceID)) {
+  if (CONSTANTS.currentRaidIDs.includes(instanceID)) {
     const difficulty = playerSettings.raid[raidIndex];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
 
@@ -142,26 +142,26 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
     // Otherwise grab both the very rare and any boss-specific item level increase.
-    itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    //itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
-  
+
   // World Bosses
   else if (instanceID === 1312) {
-    itemLevel = 603;
+    itemLevel = 250;
   }
-  
+
   else if (instanceID === -1) {
     //if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
     itemLevel = itemLevels.dungeon[playerSettings.dungeon];
-  } 
+  }
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
   }
   else if (instanceID === -69) {
     // Delves
-    itemLevel = 710 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
+    itemLevel = 276 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -178,6 +178,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
 
 function buildItem(player, contentType, rawItem, itemLevel, source, settings, upgradeFinderSettings) {
   const itemSource = source; //rawItem.sources[0];
+  console.log(rawItem);
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
@@ -187,9 +188,10 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
   // Crafted
   if (source.instanceId === -4) {
     let missiveStats = upgradeFinderSettings.craftedStats.toLowerCase().replace(/ /g, "").split("/");
-    if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection. 
+    if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection.
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
+    console.log(itemLevel);
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
 
     item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
@@ -200,7 +202,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
     item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   }
 
-  if (item.slot === "Neck" || item.slot === "Finger") item.socket = 2;
+  if (item.slot === "Neck" || item.slot === "Finger") item.socket = 1;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;
@@ -227,10 +229,10 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const primarySource = itemSources[0].instanceId;
       const encounter = itemSources[0].encounterId;
       //const isRaid = [1273].includes(primarySource);
-      const isRaid = primarySource === CONSTANTS.currentRaidID;
+      const isRaid = CONSTANTS.currentRaidIDs.includes(primarySource);
 
       if (isRaid && encounter > 0) {
-        // 
+        //
         for (var x = 0; x < playerSettings.raid.length; x++) {
           const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
@@ -267,7 +269,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         item.dropDifficultyTxt = "";
         item.quality = 4;
         itemPoss.push(item);
-      } 
+      }
       else if (primarySource === -69) {
         // Delves
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
@@ -277,7 +279,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         item.dropDifficultyTxt = "";
         item.quality = 4;
         itemPoss.push(item);
-      } 
+      }
       /*else if (primarySource !== -18) {
         /*
         // Exclude Nathria gear.

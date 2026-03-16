@@ -5,6 +5,32 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  {
+        name: "Litany of Lightblind Wrath",
+        description: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
+        addonDescription: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
+        effects: [
+          {  // Damage Effect - Need to check if it double dips Vers
+            secondaries: ['crit', 'versatility'],
+            cooldown: 90,
+            efficiency: 0.88, // Unlikely to be able to use it perfectly on CD.
+            ticks: 5,
+          },
+          
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
+          if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
+          else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.65
+
+          bonus_stats.dps = dps;
+          bonus_stats.hps = dps * 5;
+  
+          return bonus_stats;
+        }
+      },
   { // 
     name: "Vaelgor's Final Stare",
     description: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",

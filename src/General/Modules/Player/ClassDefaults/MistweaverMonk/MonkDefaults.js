@@ -27,9 +27,9 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 5.6,
       cooldownMult: {
-        c60: 1.16,
+        c60: 1,
         c90: 1,
-        c120: 1.36,
+        c120: 1,
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
@@ -44,16 +44,11 @@ export const monkDefaultSpecialQueries = (contentType) => {
       HPSExpelHarmOnSelf: 0,
       OneManaHealing: 1.4,
       cooldownMult: {
-        c60: 1.1,
+        c60: 1,
         c90: 1,
-        c120: 1.1,
+        c120: 1,
         c180: 1,
 
-        oneMinute: 1.2,
-        ninetySeconds: 1,
-        twoMinutes: 1.2,
-        twoMinutesOrb: 1.1,
-        threeMinutes: 1.2,
       },
       HoldYourGroundUptime: 0.6
     };
@@ -71,7 +66,7 @@ export const monkDefaultStatWeights = (contentType) => {
     intellect: 1,
     haste: 0.55,
     crit: 0.49,
-    mastery: 0.3,
+    mastery: 0.32,
     versatility: 0.428,
     leech: 0.25,
   };
