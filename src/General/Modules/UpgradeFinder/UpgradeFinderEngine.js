@@ -178,7 +178,6 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
 
 function buildItem(player, contentType, rawItem, itemLevel, source, settings, upgradeFinderSettings) {
   const itemSource = source; //rawItem.sources[0];
-  console.log(rawItem);
   const itemSlot = rawItem.slot;
   const itemID = rawItem.id;
   const tertiary = settings.upFinderLeech ? "Leech" : ""; // TODO
@@ -191,7 +190,6 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
     if (source.encounterId === 4) missiveStats = missiveStats[0]; // For engineering we'll just use the first stat in their selection.
     let itemAllocations = getItemAllocations(itemID, missiveStats);
     let craftedSocket = false;
-    console.log(itemLevel);
     //let craftedSocket = itemSocket || checkDefaultSocket(itemID);
 
     item = new Item(itemID, "", itemSlot, craftedSocket, tertiary, 0, itemLevel, bonusIDs);
