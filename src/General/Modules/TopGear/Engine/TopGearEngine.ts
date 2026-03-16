@@ -758,7 +758,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
-  if (getSetting(userSettings, "gemSettings") === ("Precise")) {
+  if (false) {
     enchants["Gems"] = getTopGearGems(gemID, Math.max(0, builtSet.setSockets), bonus_stats );
     
   }
