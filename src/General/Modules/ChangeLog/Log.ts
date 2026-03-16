@@ -24,6 +24,7 @@ export const changeLog: entry[] = [
     update: 5,
     date: "March 15",
     changes: [ 
+      "Enabled Upgrade Finder.",
       "Updated Shaman profile based on tuning.",
       "Added formulas for Litany of Lightblind Wrath, Drum of Renewed Bonds, Primal Philosopher's Stone",
       "Embellishment Chart: Added Arcanoweave Trappings, fixed Pango Charm."

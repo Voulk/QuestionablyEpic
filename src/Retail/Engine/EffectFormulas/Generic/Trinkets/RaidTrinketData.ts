@@ -7,13 +7,13 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 export const raidTrinketData = [
   {
         name: "Litany of Lightblind Wrath",
-        description: "",
-        addonDescription: "",
+        description: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
+        addonDescription: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
         effects: [
           {  // Damage Effect - Need to check if it double dips Vers
             secondaries: ['crit', 'versatility'],
             cooldown: 90,
-            efficiency: 0.9, // Unlikely to be able to use it perfectly on CD.
+            efficiency: 0.88, // Unlikely to be able to use it perfectly on CD.
             ticks: 5,
           },
           
@@ -21,8 +21,10 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
           let bonus_stats: Stats = {};
     
-          const dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
-          if (["Mistweaver Monk", "Holy Paladin"].includes(player.spec))
+          let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
+          if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
+          else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.65
+
           bonus_stats.dps = dps;
           bonus_stats.hps = dps * 5;
   

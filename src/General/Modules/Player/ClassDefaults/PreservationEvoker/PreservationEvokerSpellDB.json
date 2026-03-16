@@ -89,7 +89,7 @@
             "targets": 6,
             "coeff": 0.3072,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -108,7 +108,7 @@
             "coeff": 1.536,
             "aura": 0.83,
             "targets": 6,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -136,7 +136,7 @@
             },
             "coeff": 9.2,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -166,7 +166,7 @@
             "targets": 3,
             "coeff": 3.23,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -194,7 +194,7 @@
             },
             "coeff": 0.342,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -258,7 +258,7 @@
             "targetScript": "Sqrt",
             "coeff": 2.0,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -378,7 +378,7 @@
             "targets": 5,
             "coeff": 2.5,
             "aura": 0.83,
-            "expectedOverheal": 0.2,
+            "expectedOverheal": 0.05,
             "secondaries": [
                 "crit",
                 "versatility",
