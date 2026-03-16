@@ -897,7 +897,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
  
     if (player.spec === "Restoration Shaman") {
       playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
-      playerData.params = {asc: {ch: 0, hw: 1}, filler: {ch: 1, hw: 0}}
+      playerData.params = {asc: {ch: 1, hw: 0}, filler: {ch: 1, hw: 0}}
     }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
