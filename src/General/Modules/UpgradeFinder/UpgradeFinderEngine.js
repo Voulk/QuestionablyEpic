@@ -158,8 +158,6 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
   else if (instanceID === -4) {
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
-    console.log(itemLevel);
-    console.log(playerSettings.craftedLevel)
   }
   else if (instanceID === -69) {
     // Delves
