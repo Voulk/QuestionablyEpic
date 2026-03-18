@@ -155,7 +155,7 @@ const getHighestTrinketScore = (db, trinket, maxLevel) => {
 
   const item = temp[0];
 
-  const highestLevel = Math.min(item.levelRange[item.levelRange.length - 1], maxLevel);
+  const highestLevel = Math.min(trinket.highestLevel, maxLevel);
 
   return trinket["i" + highestLevel];
 };
@@ -397,18 +397,19 @@ export default function TrinketAnalysis(props) {
     // Add any additional entries
 
     // Voidcore with Mythic Weapon
-    let trinketAtLevels = {
-      id: 242392,
-      name: "Diamantine Voidcore (Mythic Wep)",
-      flag: "Mythic Wep",
+    /*let trinketAtLevels = {
+      id: 250462,
+      name: "Forgotten Farstrider's Insignia (Haste)",
+      flag: "Haste",
     };
 
     for (var x = 0; x < itemLevels.length; x++) {
       //mockUniqueItemCombo(242392, "mythicWeapon")
-      trinketAtLevels["i" + itemLevels[x]] = 285000;
+      trinketAtLevels["i" + itemLevels[x]] = 50;
+      trinketAtLevels['highestLevel'] = 263
     }
-    //activeTrinkets.push(trinketAtLevels);
-    
+    activeTrinkets.push(trinketAtLevels);
+    */ 
   }
 
 
@@ -420,7 +421,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer and Litany of Lightblind Wrath have severe bugs which affect ability to rate them correctly."  :
+  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer has a bug which affect ability to rate them correctly."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (

@@ -33,8 +33,8 @@ export const raidTrinketData = [
       },
   { // 
     name: "Vaelgor's Final Stare",
-    description: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
-    addonDescription: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
+    description: "A powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
+    addonDescription: "A powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
     effects: [
       { // Int Proc
         duration: 15,
@@ -52,8 +52,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
-        addonDescription: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
+        description: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
+        addonDescription: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -64,12 +64,14 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const spellsCastInduration = 12 / 2; // Placeholder obviously
+            const buggedSpecs = ["Holy Paladin", "Restoration Druid", "Restoration Shaman"]
+            const spellsCastInDuration = buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+            
 
             const alnUptime = convertPPMToUptime(data[0].ppm, data[0].duration)
             // Currently bugged and accruing a stack per second.
             const stacksPerMinute = alnUptime * 60;
-            bonus_stats.intellect = stacksPerMinute * 12 / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel) * 0.8;
+            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel);
 
             return bonus_stats;
         }
@@ -91,9 +93,9 @@ export const raidTrinketData = [
 
             bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Locus-Walker's Ribbon"][0]}, itemLevel);
 
-            const timeToMax = 10 / data[0].ppm!;
-            const timeAtMax = 6 - timeToMax; 
-            const averageStacks = timeAtMax + (timeToMax / 2);
+            const timeToMax = 10 / data[0].ppm!; // 4 minutes
+            const timeAtMax = 6 - timeToMax; // 2 minutes
+            const averageStacks = (10 * (timeAtMax / 6)) + (5 * timeToMax / 6);
 
             bonus_stats.intellect *= averageStacks * 0.05 + 1;
 
