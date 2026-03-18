@@ -378,7 +378,7 @@ export const embellishmentData = [
 
             bonus_stats.versatility = processedValue(data[0], itemLevel) * 1.13 * data[0].ppm! * data[0].duration! / 60;
 
-            if (player.spec !== "Discipline Priest" && player.spec !== "Restoration Druid" && additionalData.contentType === "Raid") {
+            if (player.spec !== "Discipline Priest" && player.spec !== "Restoration Druid" && player.spec !== "Mistweaver Monk" && additionalData.contentType === "Raid") {
                 bonus_stats.versatility = bonus_stats.versatility * 0.5; // DPS procs only
             }
 
