@@ -33,8 +33,8 @@ export const raidTrinketData = [
       },
   { // 
     name: "Vaelgor's Final Stare",
-    description: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
-    addonDescription: "An absurdly powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
+    description: "A powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
+    addonDescription: "A powerful on-use trinket that that diminishes linearly over 15 seconds. Great for all healer specs that like Mastery.",
     effects: [
       { // Int Proc
         duration: 15,
@@ -52,8 +52,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
-        addonDescription: "Extremely powerful but bugged on Beta, and you would gain stacks by doing nothing at all. Check in a few weeks to see if they've fixed it.",
+        description: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
+        addonDescription: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -91,9 +91,9 @@ export const raidTrinketData = [
 
             bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Locus-Walker's Ribbon"][0]}, itemLevel);
 
-            const timeToMax = 10 / data[0].ppm!;
-            const timeAtMax = 6 - timeToMax; 
-            const averageStacks = timeAtMax + (timeToMax / 2);
+            const timeToMax = 10 / data[0].ppm!; // 4 minutes
+            const timeAtMax = 6 - timeToMax; // 2 minutes
+            const averageStacks = (10 * (timeAtMax / 6)) + (5 * timeToMax / 6);
 
             bonus_stats.intellect *= averageStacks * 0.05 + 1;
 
