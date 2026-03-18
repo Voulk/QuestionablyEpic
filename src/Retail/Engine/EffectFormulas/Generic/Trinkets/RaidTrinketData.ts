@@ -64,12 +64,14 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const spellsCastInduration = 12 / 2; // Placeholder obviously
+            const buggedSpecs = ["Holy Paladin", "Restoration Druid", "Restoration Shaman"]
+            const spellsCastInDuration = buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+            
 
             const alnUptime = convertPPMToUptime(data[0].ppm, data[0].duration)
             // Currently bugged and accruing a stack per second.
             const stacksPerMinute = alnUptime * 60;
-            bonus_stats.intellect = stacksPerMinute * 12 / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel) * 0.8;
+            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel);
 
             return bonus_stats;
         }

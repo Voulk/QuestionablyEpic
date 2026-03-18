@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+                {
+    version: "12.0.1 / 5.5.3",
+    update: 6,
+    date: "March 18",
+    changes: [ 
+      "Trinket updates for Ribbon, Alnseer. Embellishment update for Mistweaver.",
+      "The upgrade to Max import option should work again.",
+      "Added Eredar Battle Cape. Removed Unique Equip tag from PVP rings.",
+    ]
+  },
               {
     version: "12.0.1 / 5.5.3",
     update: 5,
