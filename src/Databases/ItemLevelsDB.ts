@@ -57,8 +57,8 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     408,
   ],
   crafted: [
-    256, // R5 Champion
-    269, // R5 Hero
+    259, // R5 Champion
+    272, // R5 Hero
     285, // R5 Mythic
   ]
 };
