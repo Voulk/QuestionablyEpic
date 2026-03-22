@@ -6,6 +6,7 @@ import MuiTooltip from '@mui/material/Tooltip';
 import "./VerticalChart.css";
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
+import WarningAmber from '@mui/icons-material/WarningAmber';
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
@@ -177,8 +178,8 @@ export default class VerticalChart extends PureComponent {
               </div>
             }
             style={{ display: "inline-block", lineHeight: "0px" }}>
-              <IconButton sx={{ color: 'goldenrod', marginTop: '-5px' }} size="small">
-                <HelpIcon fontSize="inherit" />
+              <IconButton sx={{ color: row.warningFlag ? 'red' : 'goldenrod', marginTop: '-5px' }} size="small">
+                {row.warningFlag ? <WarningAmber fontSize="inherit" /> : <HelpIcon fontSize="inherit" />}
               </IconButton>
             </StyledTooltip>
             </div>

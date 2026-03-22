@@ -17,7 +17,6 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Druid S3-4") {
     bonus_stats.bonusHPS = 0.08;
-
   }
   else if (effectName === "Druid S2-2") {
     
@@ -44,7 +43,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Druid S1-4") {
     const effectiveUptime = 0.5; 
-    bonus_stats.hps = effectiveUptime * 0.08 * player.getHPS();
+    bonus_stats.hps = effectiveUptime * 0.04 * player.getHPS();
   }
   else if (effectName === "Druid T31-4") {
     // 

@@ -28,20 +28,19 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
 
   }
-  else if (effectName === "HPriest S2-4") {
+  else if (effectName === "Holy Priest S2-4") {
     // TODO
-    const apothUptime = 0.4;
 
     bonus_stats.hps = player.getHPS() * 0.0842;
   }
 
-  else if (effectName === "HPriest S1-2") {
+  else if (effectName === "Holy Priest S1-2") {
 
-    bonus_stats.hps = player.getHPS() * 0.0205;
+    bonus_stats.hps = player.getHPS() * 0.0305;
 
   }
-  else if (effectName === "HPriest S1-4") {
-    bonus_stats.hps = player.getHPS() * 0.0462;
+  else if (effectName === "Holy Priest S1-4") {
+    bonus_stats.hps = player.getHPS() * 0.0402;
   }
   else if (effectName === "HPriest T31-2") {
     // Placeholder pulled from sheet. Replace very soon.

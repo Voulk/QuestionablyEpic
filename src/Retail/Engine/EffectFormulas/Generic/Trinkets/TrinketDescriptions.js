@@ -173,7 +173,7 @@ export const getTrinketDescription = (trinketName, player, additionalData) => {
 
 }
 
-const getTrinketData = (trinketName) => {
+export const getTrinketData = (trinketName) => {
     const trinketData = raidTrinketData.concat(dungeonTrinketData, otherTrinketData, embellishmentData, timewalkingTrinketData)
     let activeTrinket = trinketData.find((trinket) => trinket.name === trinketName);
 

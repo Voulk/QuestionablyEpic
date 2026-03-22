@@ -47,7 +47,8 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "NERFED Mar 6th. An ok crit / leech stat stick that gets stronger as you complete content in Voidstorm. Rating might change as the trinket is still very unexplored.",
+    description: "A powerful crit / leech stat stick that's very overbudget. Does not include the special Voidstorm buffs, though they do work in raids and dungeons. Setting coming soon.",
+    warningFlag: true,
     addonDescription: "",
     effects: [
       {
@@ -82,6 +83,25 @@ export const otherTrinketData = [
       let bonus_stats: Stats = {};
 
       bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Magister's Alchemist Stone"][0]}, itemLevel);
+
+      return bonus_stats;
+    }
+  },
+        { 
+    name: "Galactic Gladiator's Insignia of Alacrity",
+    description: "",
+    addonDescription: "",
+    effects: [
+      {
+        duration: 20,
+        ppm: 1.5,
+        stat: "intellect",
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Galactic Gladiator's Insignia of Alacrity"][0]}, itemLevel);
 
       return bonus_stats;
     }
@@ -129,6 +149,43 @@ export const otherTrinketData = [
           let bonus_stats: Stats = {};
     
           bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Cosmic Bell"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
+      {
+        name: "Consecrated Chalice",
+        description: "Stacks actually drop outside of combat!",
+        addonDescription: "Stacks actually drop outside of combat!",
+        effects: [
+          { 
+            secondaries: ['versatility', 'crit', 'haste'],
+            ppm: 5,
+            efficiency: {Raid: 0.8, Dungeon: 0.85} //
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Consecrated Chalice"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
+            {
+        name: "Tangle of Vibrant Vines",
+        description: "Adding a rare G tier to my tier list to handle this monstrosity.",
+        addonDescription: "Dreadful.",
+        effects: [
+          { 
+            secondaries: ['haste', 'versatility', 'crit'],
+            ppm: 1.5,
+            targets: 1,
+            efficiency: {Raid: 0.7, Dungeon: 0.55} //
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Tangle of Vibrant Vines"][1]}, itemLevel, player, additionalData.contentType)
           return bonus_stats;
         }
       },
