@@ -8,13 +8,14 @@ export const dungeonTrinketData =
     { //
         id: 193718,
         name: "Emerald Coach's Whistle",
-        description: "Really shines as a support-trinket. Poor if you only care about personal benefit.",
-        addonDescription: "Really shines as a support-trinket. Poor if you only care about personal benefit.",
+        description: "Absurd support trinket and still decent if you don't care about your friends (if your spec likes Mastery). Likely to be nerfed. Will obey AllyStats setting in the settings panel.",
+        addonDescription: "Absurd support trinket and still decent if you don't care about your friends (if your spec likes Mastery). Likely to be nerfed. Will obey AllyStats setting in the settings panel.",
+        warningFlag: true,
         effects: [
         { // Stat Proc Portion
             stat: "mastery",
             duration: 10,
-            ppm: 1,
+            ppm: 1.9,
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -35,7 +36,7 @@ export const dungeonTrinketData =
         { 
           secondaries: ['versatility', 'crit', 'haste'],
           ppm: 25 * (45 / 180), // Only active while the trinket is up which is 45/180 of the time.
-          efficiency: {Raid: 0.7, Dungeon: 0.55} //
+          efficiency: {Raid: 0.8, Dungeon: 0.65} //
         },
       ],
       runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -113,6 +114,26 @@ export const dungeonTrinketData =
   
         bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Seed of Radiant Hope"][0]}, itemLevel, player, additionalData.contentType)
         bonus_stats.hps += runGenericFlatProc({...data[1], ...trinketRawData["Seed of Radiant Hope"][1]}, itemLevel, player, additionalData.contentType)
+        return bonus_stats;
+      }
+    },
+        {
+      name: "Radiant Sunstone",
+      description: "Doesn't include the extra heal portion which is currently undertested.",
+      addonDescription: "Doesn't include the extra heal portion which is currently undertested.",
+      effects: [
+        {  // HoT effect
+          secondaries: ['crit', 'versatility'],
+          cooldown: 120,
+          efficiency: 0.7 //
+        },
+        
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+  
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Radiant Sunstone"][0]}, itemLevel, player, additionalData.contentType)
+        //bonus_stats.hps += runGenericFlatProc({...data[1], ...trinketRawData["Radiant Sunstone"][1]}, itemLevel, player, additionalData.contentType)
         return bonus_stats;
       }
     },

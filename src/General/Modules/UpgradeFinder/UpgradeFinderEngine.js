@@ -200,7 +200,7 @@ function buildItem(player, contentType, rawItem, itemLevel, source, settings, up
     item = new Item(itemID, "", itemSlot, false, tertiary, 0, itemLevel, bonusIDs);
   }
 
-  if (item.slot === "Neck" || item.slot === "Finger") item.socket = 1;
+  //if (item.slot === "Neck" || item.slot === "Finger") item.socket = 1;
   //let itemAllocations = getItemAllocations(itemID, []);
   //item.stats = calcStatsAtLevel(itemLevel, itemSlot, itemAllocations, "");
   //item.level = itemLevel;

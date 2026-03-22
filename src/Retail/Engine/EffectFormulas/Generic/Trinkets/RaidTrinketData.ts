@@ -52,7 +52,7 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
+        description: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman, Resto Druid and Holy Paladin continue to get stacks for doing nothing.",
         addonDescription: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
         effects: [
         { // Stat Proc Portion
@@ -93,9 +93,10 @@ export const raidTrinketData = [
 
             bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Locus-Walker's Ribbon"][0]}, itemLevel);
 
-            const timeToMax = 10 / data[0].ppm!; // 4 minutes
-            const timeAtMax = 6 - timeToMax; // 2 minutes
-            const averageStacks = (10 * (timeAtMax / 6)) + (5 * timeToMax / 6);
+            const fightLength = player.getFightLength(additionalData.contentType) / 60;
+            const timeToMax = 10 / (data[0].ppm! * 1.13); // 4 minutes
+            const timeAtMax = fightLength - timeToMax; // 2 minutes
+            const averageStacks = (10 * (timeAtMax / fightLength)) + (5 * timeToMax / fightLength);
 
             bonus_stats.intellect *= averageStacks * 0.05 + 1;
 
@@ -136,7 +137,7 @@ export const raidTrinketData = [
             { 
               secondaries: ['haste', 'versatility', 'crit'],
               ppm: 5, 
-              targets: 1.5, // Heals for more per healed ally, up to 5.
+              targets: 2.5, // Heals for more per healed ally, up to 5.
               efficiency: {Raid: 0.7, Dungeon: 0.55} //
             },
           ],
