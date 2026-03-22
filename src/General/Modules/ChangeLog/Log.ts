@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+                  {
+    version: "12.0.1 / 5.5.3",
+    update: 7,
+    date: "March 21",
+    changes: [ 
+      "Added a new icon type to the trinket chart for highly volatile trinkets that are likely to see changes.",
+      "Trinket updates for Ribbon, Emerald Coach Whistle, Light of the Cosmic Crescendo, Radiant Sunstone, Consecrated Chalice. No real changes in relative trinket values.",
+      "New Settings: Cosmic Crescendo usage, ",
+      "Added Hero-track versions of Delve trinkets to the chart.",
+    ]
+  },
                 {
     version: "12.0.1 / 5.5.3",
     update: 6,

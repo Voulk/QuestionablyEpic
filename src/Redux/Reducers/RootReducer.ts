@@ -40,6 +40,7 @@ const initialState : RootState = {
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
     calculateEmbellishments: { value: true, options: [true, false], category: "embellishments", type: "selector", gameType: "Retail" },
+    cosmicCrescendoUsage: { value: 75, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     //socketedGems: { value: 4, options: [0, 1, 2, 3, 4, 5, 6, 7, 8], category: "embellishments", type: "Entry", gameType: "Retail" },
     
     //gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".

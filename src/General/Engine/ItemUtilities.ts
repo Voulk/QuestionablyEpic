@@ -1097,6 +1097,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
 }
 
 
+
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.

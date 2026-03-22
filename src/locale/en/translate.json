@@ -382,6 +382,10 @@
           "title": "Overheal: Mr Pick-me-up",
           "tooltip": "Expected overhealing for the Mr Pick-me-up trinket."
         },
+        "cosmicCrescendoUsage": {
+          "title": "Cosmic Crescendo",
+          "tooltip": "Expected number of stacks consumed by allies dropping low on health."
+        },
         
         "dpsFlag": {
           "title": "DPS Flag",

@@ -101,7 +101,7 @@ class ItemSet {
 
   getStartingStats(gameType: gameTypes): Stats {
       const stats: Stats = gameType === "Retail" ? {
-        intellect: 159,
+        intellect: 620,
         haste: 0,
         crit: 0,
         mastery: 0,

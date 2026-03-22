@@ -15,7 +15,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
-import { getTrinketDescription, buildRetailEffectTooltip } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
+import { getTrinketDescription, buildRetailEffectTooltip, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
 import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
 import { trackPageView } from "Analytics";
@@ -25,6 +25,7 @@ import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 import { downloadJson } from "./TrinketJSONDownload"
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
+
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -231,6 +232,7 @@ export default function TrinketAnalysis(props) {
       1205, // DF World Bosses
       -18, // PVP
       -17, // PVP
+      -85, // Also PVP
       -4,
     ];
     const timewalkingSources = [-12]
@@ -316,12 +318,17 @@ export default function TrinketAnalysis(props) {
     const trinket = finalDB[i];
     const trinketName = getItemProp(trinket.id, "name", gameType);
     const trinketStats = getItemProp(trinket.id, "stats", gameType);
+    const trinketData = getTrinketData(trinketName);
+    
+    
 
     let trinketAtLevels = {
       id: trinket.id,
       name: trinketName,
       highestLevel: getItemProp(trinket.id, "levelRange", gameType).at(-1) || 0,
     };
+
+    if (trinketData && trinketData.warningFlag) trinketAtLevels.warningFlag = true;
 
     if (false && gameType === "Classic") {
       /*const difficulties = ["10N", "10H", "25N", "25H"]
