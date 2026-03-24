@@ -132,11 +132,11 @@ class CastModel {
         this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
-      if (modelID === "Farseer") {
-        this.modelName = "Farseer";
+      if (modelID === "Default") {
+        this.modelName = "Default";
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
-        this.heroTree = "Farseer";
+        this.heroTree = "Default";
         this.runCastModel = scoreShamanSet;
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);

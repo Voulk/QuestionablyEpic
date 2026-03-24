@@ -679,7 +679,7 @@ export class Player {
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.castModels.push(new CastModel(spec, "Raid", "Farseer", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       //this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
       this.activeStats = {
