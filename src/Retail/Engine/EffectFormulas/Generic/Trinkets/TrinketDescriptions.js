@@ -84,7 +84,13 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     }
     else if (trinketEffects[0].ppm && trinketEffects[0].stat) {
         // We're dealing with a stat proc trinket.
-        trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
+        if (trinketName === "Locus-Walker's Ribbon" || trinketName === "Gaze of the Alnseer") {
+            trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false, true));
+        }
+        else {
+            trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
+        }
+       
     }
 
     Object.keys(trinketStats).forEach((statName) => {    
