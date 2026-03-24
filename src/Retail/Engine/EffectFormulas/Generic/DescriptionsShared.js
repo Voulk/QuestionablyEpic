@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
+import { convertPPMToUptime, convertPPMToUptimeExtended, getSetting, processedValue, runGenericPPMTrinket } from "../EffectUtilities";
 import { correctCasing } from "General/Engine/ItemUtilities";
 
 export const buildGenericStatStick = (data, itemLevel, player, additionalData, cat, trinketDescr) => {
@@ -43,9 +43,9 @@ export const buildGenericHealProc = (data, itemLevel, player, additionalData, ca
       };
 }
 
-export const convertExpectedUptime = (effect, player, hasted) => {
+export const convertExpectedUptime = (effect, player, hasted, procExtends = false) => {
     let ppm = effect.ppm;
     if (hasted) ppm = ppm * player.getStatPerc('haste');
-    const realUptime = Math.min(Math.round(convertPPMToUptime(ppm, effect.duration) * 100), 99);
+    const realUptime =  Math.min(Math.round((procExtends ? convertPPMToUptimeExtended(ppm, effect.duration) : convertPPMToUptime(ppm, effect.duration)) * 100), 99);
     return realUptime + "%"; //data.effects[0].duration * data.effects[0].ppm / 60;
 }

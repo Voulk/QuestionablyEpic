@@ -905,6 +905,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
     evalStats.leech = (setStats.leech || 0);
+    evalStats.allyStats = (setStats.allyStats || 0);
     evalStats.bonusHPS = (setStats.bonusHPS || 0);
     //hardScore = setStats.hps || 0;
 

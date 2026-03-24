@@ -1,5 +1,5 @@
 import { Player } from "General/Modules/Player/Player";
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, getDiminishedValue, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
@@ -65,13 +65,25 @@ export const raidTrinketData = [
             let bonus_stats: Stats = {};
 
             const buggedSpecs = ["Holy Paladin", "Restoration Druid", "Restoration Shaman"]
-            const spellsCastInDuration = buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+            const specData = { // This trinket just does random shit. We can try and calculate it dynamically later.
+              "Holy Priest": 9.4,
+              "Discipline Priest": 11.4,
+              "Restoration Druid": 11,
+              "Preservation Evoker": 11.8,
+              "Mistweaver Monk": 12,
+              "Restoration Shaman": 10.6,
+              "Holy Paladin": 11.83,
+            }
+            const spellsCastInDuration = specData[player.spec]
+            
+            //buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+
             
 
-            const alnUptime = convertPPMToUptime(data[0].ppm, data[0].duration)
+            const alnUptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
             // Currently bugged and accruing a stack per second.
             const stacksPerMinute = alnUptime * 60;
-            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel);
+            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil");
 
             return bonus_stats;
         }
@@ -91,7 +103,7 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Locus-Walker's Ribbon"][0]}, itemLevel);
+            bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Locus-Walker's Ribbon"][0]}, itemLevel, additionalData.setStats, ["RefreshExtends"]);
 
             const fightLength = player.getFightLength(additionalData.contentType) / 60;
             const timeToMax = 10 / (data[0].ppm! * 1.13); // 4 minutes

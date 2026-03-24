@@ -8,8 +8,8 @@ export const dungeonTrinketData =
     { //
         id: 193718,
         name: "Emerald Coach's Whistle",
-        description: "Absurd support trinket and still decent if you don't care about your friends (if your spec likes Mastery). Likely to be nerfed. Will obey AllyStats setting in the settings panel.",
-        addonDescription: "Absurd support trinket and still decent if you don't care about your friends (if your spec likes Mastery). Likely to be nerfed. Will obey AllyStats setting in the settings panel.",
+        description: "Nerfed! Still an ok support trinket but no longer a frontrunner.",
+        addonDescription: "Nerfed! Still an ok support trinket but no longer a frontrunner.",
         warningFlag: true,
         effects: [
         { // Stat Proc Portion
