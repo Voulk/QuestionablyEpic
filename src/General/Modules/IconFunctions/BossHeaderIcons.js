@@ -611,7 +611,18 @@ export default function bossHeaders(props, style, QEmodule) {
   else if (props === 2690) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-nexuskingsalhadaar.png");
   else if (props === 2691) source = require("Images/Bosses/ManaforgeOmega/ui-ej-boss-dimensius.png");
 
+  else if (props === 2733) source = require("Images/Bosses/MidnightS1/ui-ej-boss-host-general.png");
+  else if (props === 2734) source = require("Images/Bosses/MidnightS1/ui-ej-boss-kaiju.png");
+  else if (props === 2736) source = require("Images/Bosses/MidnightS1/ui-ej-boss-salhadaar.png");
+  else if (props === 2735) source = require("Images/Bosses/MidnightS1/ui-ej-boss-dragon-duo.png");
+  else if (props === 2737) source = require("Images/Bosses/MidnightS1/ui-ej-boss-paladin-trio.png");
+  else if (props === 2738) source = require("Images/Bosses/MidnightS1/ui-ej-boss-alleria.png");
 
+  else if (props === 2795) source = require("Images/Bosses/MidnightS1/ui-ej-boss-malformed-manifestation.png");
+
+  else if (props === 2739) source = require("Images/Bosses/MidnightS1/ui-ej-boss-light-void-phoenix.png");
+  else if (props === 2740) source = require("Images/Bosses/MidnightS1/ui-ej-boss-lura-midnight.png");
+  
 
   return <img style={{ ...style }} src={source} alt={props} />;
 }

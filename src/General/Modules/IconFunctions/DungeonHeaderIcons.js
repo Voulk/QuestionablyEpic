@@ -94,6 +94,11 @@ import Priory from "Images/MythicPlus/Priory.png";
 import Rookery from "Images/MythicPlus/Rookery.png";
 import ecoDome from "Images/MythicPlus/EcoDome.png";
 
+import WindrunnerSpire from "Images/MythicPlus/WindrunnerSpire.png";
+import MagistersTerrace from "Images/MythicPlus/MagistersTerrace.png";
+import NexusPoint from "Images/MythicPlus/NexusPoint.png";
+import MaisaraCaverns from "Images/MythicPlus/MaisaraCaverns.png";
+
 
 export default function DungeonHeaderIcons(props) {
   let source = "";
@@ -295,6 +300,13 @@ export default function DungeonHeaderIcons(props) {
   if (props === 1267) source = Priory;
   if (props === 1298) source = OperationFloodgate;
   if (props === 1012) source = Motherlode;
+
+  
+  if (props === 1299) source = WindrunnerSpire;
+  if (props === 1300) source = MagistersTerrace;
+  if (props === 1316) source = NexusPoint;
+  if (props === 1315) source = MaisaraCaverns;
+
 
 
   /* ---------------------------------------------------------------------------------------------- */

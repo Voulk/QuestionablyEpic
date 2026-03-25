@@ -145,12 +145,15 @@ export const raidStyles = makeStyles((theme) => {
       ...commonStyles,
     },
     dreamriftHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/DreamriftLong.png")})`,
       ...commonStyles,
     },
     marchOnQueldanasHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchLong.png")})`,
       ...commonStyles,
     },
     voidspireHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireLong.png")})`,
       ...commonStyles,
     },
   };
