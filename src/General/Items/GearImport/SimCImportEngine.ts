@@ -254,10 +254,10 @@ export function processAllLines(player: Player, contentType: contentTypes, lines
   }, {});
 
   // Step 2: Filter items that are within 40 levels of that max
-  player.activeItems = player.activeItems.filter(item => 
+  /*player.activeItems = player.activeItems.filter(item => 
     (item.level >= maxLevels[item.slot] - 70 || item.slot === "Trinket" || item.slot === "Finger")
   );
-
+*/
 
   player.updatePlayerStats();
   
@@ -621,7 +621,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
           itemData.slot === "Offhand" ||
           (itemData.itemClass === 2 && acceptableWeaponTypes.includes(itemData.itemSubClass)))
   
-  
+
 
   
   // Add the new item to our characters item collection.

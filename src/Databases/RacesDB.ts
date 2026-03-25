@@ -288,6 +288,17 @@ export const raceDB: RaceEntry[] = [
     id: "Races.Earthen",
     icon: "",
   },
+    {
+    name: {
+      en: "Haranir",
+      fr: "Haranir",
+      de: "Haranir",
+      ru: "Haranir",
+      ch: "Haranir",
+    },
+    id: "Races.Haranir",
+    icon: "",
+  },
 ];
 
 export const getTranslatedRaceName = (id: string, currentLanguage: "en" | "fr" | "de" | "ru" | "ch"): string => {
