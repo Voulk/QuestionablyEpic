@@ -10,6 +10,47 @@ interface CurveData {
 
 export const curveDB: { [key: string]: CurveData } = 
 {
+  "0": {
+    "curveId": 0,
+    "points": [
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      },
+      {
+        "playerLevel": 0,
+        "itemLevel": 0
+      }
+    ]
+  },
   "956": {
     "curveId": 956,
     "points": [
