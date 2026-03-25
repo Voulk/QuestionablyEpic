@@ -29,7 +29,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
 
   /* ------------------------------------------- Retail ------------------------------------------- */
   "Restoration Druid": {
-    races: ["Night Elf", "Worgen", "Kul Tiran", "Tauren", "Troll", "Highmountain Tauren", "Zandalari Troll"],
+    races: ["Night Elf", "Worgen", "Kul Tiran", "Tauren", "Troll", "Highmountain Tauren", "Zandalari Troll", "Haranir"],
     gameType: "Retail",
   },
 
@@ -81,6 +81,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
       "Orc",
       "Dracthyr",
       "Earthen",
+      "Haranir",
     ],
     gameType: "Retail",
   },
@@ -111,6 +112,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
       "Orc",
       "Dracthyr",
       "Earthen",
+      "Haranir",
     ],
     gameType: "Retail",
   },
@@ -146,6 +148,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
       "Zandalari Troll",
       "Vulpera",
       "Earthen",
+      "Haranir",
     ],
     gameType: "Retail",
   },
@@ -188,6 +191,7 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
       "Zandalari Troll",
       "Vulpera",
       "Earthen",
+      "Haranir",
     ],
     gameType: "Retail",
   },

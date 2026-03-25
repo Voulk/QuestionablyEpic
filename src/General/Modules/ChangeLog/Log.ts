@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+                    {
+    version: "12.0.1 / 5.5.3",
+    update: 8,
+    date: "March 24",
+    changes: [ 
+      "Added the Haranir race",
+      "Emerald Coach Whistle nerfed by 50% in-game.",
+      "Fixed a bug where some lower item level items wouldn't import.",
+    ]
+  },
                   {
     version: "12.0.1 / 5.5.3",
     update: 7,

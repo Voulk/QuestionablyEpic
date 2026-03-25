@@ -46,6 +46,8 @@ import WorgenFemale from "Images/Races/Worgen/WorgenFemale.jpg";
 import ZandalariMale from "Images/Races/Zandalari/ZandalariMale.jpg";
 import ZandalariFemale from "Images/Races/Zandalari/ZandalariFemale.jpg";
 import Dracthyr from "Images/Races/Dracthyr/ui_dracthyr.jpg";
+import HaranirMale from "Images/Races/Haranir/HaranirMale.jpg";
+import HaranirFemale from "Images/Races/Haranir/HaranirFemale.jpg";
 
 
 export const getRacePath = (race) => {
@@ -174,11 +176,14 @@ export const getRacePath = (race) => {
   if (race === "Earthen") {
     sources.male = DwarfMale;
     sources.female = DwarfFemale;
-
   }
   if (race === "Dracthyr") {
     sources.male = Dracthyr;
     sources.female = Dracthyr;
+  }
+    if (race === "Haranir") {
+    sources.male = HaranirMale;
+    sources.female = HaranirFemale;
   }
 
   return sources;

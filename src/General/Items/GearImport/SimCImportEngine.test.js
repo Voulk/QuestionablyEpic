@@ -73,6 +73,19 @@ describe("Test Item Level Imports", () => {
     
     });
 
+    test("Post-Squish Curve Helm", () => {
+        const line = "legs=,id=251130,bonus_id=13441/13436/13578,drop_level=87"
+
+            const id = 251130
+            const bonusIDs = [13441,13436,13578]
+
+            const itemLevel = getItemLevel(id, bonusIDs, 87)
+
+            expect(itemLevel).toEqual(180);
+
+
+    });
+
     test("Test Crafted Item 727 Pre-Squish Item", () => {
         /*
             Bonus IDs:
