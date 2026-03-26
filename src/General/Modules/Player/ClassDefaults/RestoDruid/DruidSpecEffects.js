@@ -36,14 +36,12 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = (insuranceRPPM + lifebloomInsurancePPM) * healingOneRejuv / 60;
 
   }
-  else if (effectName === "Druid S1-2") {
+  else if (effectName === "Restoration Druid S1-2") {
     // +10% Regrowth, Swiftmend, Wild Growth
-    const percentEffected = 0.32; 
-    bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
+    bonus_stats.bonusHPS = 0.0204;
   }
-  else if (effectName === "Druid S1-4") {
-    const effectiveUptime = 0.5; 
-    bonus_stats.hps = effectiveUptime * 0.04 * player.getHPS();
+  else if (effectName === "Restoration Druid S1-4") {
+    bonus_stats.bonusHPS = 0.0289;
   }
   else if (effectName === "Druid T31-4") {
     // 

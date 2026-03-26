@@ -100,7 +100,7 @@ export default function MythicPlusGearContainer(props) {
                                 display: "flex",
                               }}
                             >
-                              <img style={{ height: 36, width: 72, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key]} />
+                              <img style={{ height: 36, width: 56, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key]} />
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB["-1"][gameType][key]} -{" "}
                               {

@@ -262,13 +262,13 @@ export class Player {
       "Mistweaver Monk": "Ageless Serpent's",
       "Holy Paladin": "Aureate Sentry's",
       "Preservation Evoker": "Opulent Treasurescale's",*/
-      "Preservation Evoker": "Spellweaver's Immaculate", 
-      "Holy Paladin": "of the Lucent Battalion", 
-      "Holy Priest": "Dying Star's", 
-      "Discipline Priest": "Dying Star's", 
-      "Restoration Shaman": "of Channeled Fury", 
-      "Mistweaver Monk": "of Fallen Storms", 
-      "Restoration Druid": "of the Mother Eagle"
+      "Preservation Evoker": "of the Black Talon", 
+      "Holy Paladin": "Luminant Verdict's", 
+      "Holy Priest": "Blind Oath's", 
+      "Discipline Priest": "Blind Oath's", 
+      "Restoration Shaman": "of the Primal Core", 
+      "Mistweaver Monk": "of Ra-den's Chosen", 
+      "Restoration Druid": "of the Luminous Bloom"
     };
 
     const temp = getItemDB("Retail").filter(function (item) {
