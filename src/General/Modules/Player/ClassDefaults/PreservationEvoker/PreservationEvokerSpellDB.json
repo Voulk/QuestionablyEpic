@@ -108,7 +108,7 @@
             "coeff": 1.536,
             "aura": 0.83,
             "targets": 6,
-            "expectedOverheal": 0.05,
+            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -192,7 +192,7 @@
                 "charges": 2,
                 "maxCharges": 2
             },
-            "coeff": 0.342,
+            "coeff": 0.4275,
             "aura": 0.83,
             "expectedOverheal": 0.05,
             "secondaries": [

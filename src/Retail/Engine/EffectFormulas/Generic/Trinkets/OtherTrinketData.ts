@@ -60,8 +60,16 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}, itemLevel);
-      bonus_stats.leech = convertPPMToUptime(data[0].ppm, data[0].duration) * 2 * STATCONVERSION.LEECH;
+      const trinketData = {...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}
+
+      if (getSetting(additionalData.settings, "crucibleUpgrades") === "Fully Upgraded") {
+        trinketData.coefficient *= 1.2; 
+        trinketData.duration = 20;
+        trinketData.ppm = 5;
+      }
+
+      bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
+      bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 2 * STATCONVERSION.LEECH;
 
       return bonus_stats;
     }

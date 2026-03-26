@@ -87,15 +87,15 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, playerData.masteryEffectiveness), 
         settings: settings, talents: evokerTalents};
     state.statPercentages.genericHealingMult += 0.06; // The 6% aura buff that hasn't been baked in yet.
-
-    const incomingDTPS = 25000;
-    const burstDTPS = 30000; 
+    state.statPercentages.critMult = 2.3;
+    const incomingDTPS = 30000;
+    const burstDTPS = 45000; 
 
     const castProfile: CastProfile = [
         {spell: "Echo", cpm: 60 / 5 / 2, hastedCPM: true}, // Do essence stuff separately
         {spell: "Dream Breath", efficiency: 0.9,  },         
         {spell: "Fire Breath", efficiency: 0.9 },     
-        {spell: "Temporal Anomaly", efficiency: 0.85, hastedCPM: true },
+        {spell: "Temporal Anomaly", efficiency: 0.9, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.66, },
         {spell: "Merithra's Blessing", cpm: 3, autoSpell: true, hastedCPM: true },
         {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.9 },
@@ -122,7 +122,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Ultimately we can pre-calculate how long reversion will last at different crit percentages, but it is more difficult to 
     // 
-    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit) * 0.4 + spellDB["Reversion"][0].buffDuration * 0.6;
+    const adjReversionDuration = getReversionAdjDuration(state.statPercentages.crit) * 0.3 + spellDB["Reversion"][0].buffDuration * 0.7;
     reportingData.adjReversionDuration = adjReversionDuration;
     reportingData.critChance = state.statPercentages.crit;
     spellDB["Reversion"][0].buffDuration = adjReversionDuration;
@@ -131,7 +131,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     if (playerData.heroTree.includes("Chronowarden")) {
         castProfile.push({spell: "Living Flame", cpm: getCPM(castProfile, "Dream Breath") * 3, autoSpell: true, label: "Living Flame - Afterimage", overrideOverhealing: 0.4});
         castProfile.push({spell: "Living Flame O", cpm: getCPM(castProfile, "Fire Breath"), autoSpell: true});
-
+        state.statPercentages.intellect *= 1.025 // Time Convergence
     }
 
     let essenceAvailable = 60 / 5 / 2 * state.statPercentages.haste; // Base Essence Gen
@@ -282,7 +282,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // Handle special spells
 
     // For the apex we do not care about Echo strength, only reversion applications.
-    const reversionApexHealing = (effectiveEchoReversionCasts + getSpellEntry(castProfile, "Reversion", 0).cpm) * adjReversionDuration * incomingDTPS * 0.04;
+    const reversionApexHealing = (effectiveEchoReversionCasts + getSpellEntry(castProfile, "Reversion", 0).cpm) * adjReversionDuration * incomingDTPS * 0.02;
     healingBreakdown["Reversion (DR)"] = reversionApexHealing * (1 - 0.05);
 
     // Golden Hour
