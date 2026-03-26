@@ -11,14 +11,27 @@ import { getHolyPriestSpecEffect } from "General/Modules/Player/ClassDefaults/Ho
 // This is a dummy test unit and is not fully functional yet.
 describe("Shaman", () => {
     const player = new Player("Voulk", "Mistweaver Monk", 99, "NA", "Stonemaul", "Night Elf");
-    const contentType = "Raid";
+    const contentType = "Mythic+";
     const type = "Regular";
+    const stats = {intellect: 2000, haste: 500, crit: 500, versatility: 500, mastery: 500}
 
     const specs = ["Restoration Druid", "Restoration Shaman", "Mistweaver Monk", "Holy Priest", "Discipline Priest", "Holy Paladin", "Preservation Evoker"]
     
         test("Dummy", () => {
         expect(true).toEqual(true);
+
+        
     });
+
+    test("Preservation Evoker", () => {
+        const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
+        console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Preservation Evoker S1-2", player, contentType, stats)))
+        console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Preservation Evoker S1-4", player, contentType, stats)))
+
+
+        //console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
+        //console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
+    }) 
     /*
     test("Null", () => {
         const player = new Player("Voulk", "Restoration Druid", 99, "NA", "Stonemaul", "Night Elf");
@@ -55,17 +68,7 @@ describe("Shaman", () => {
         console.log("Monk 4pc: " + JSON.stringify(getMonkSpecEffect("Monk S2-4", player, contentType)))
     })
 
-    test("Preservation Evoker", () => {
-        const player = new Player("Voulk", "Preservation Evoker", 99, "NA", "Stonemaul", "Night Elf");
-        console.log("Evoker 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S3-2", player, contentType)))
-        console.log("Evoker 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S3-4", player, contentType)))
 
-        console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-2", player, contentType)))
-        console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker S2-4", player, contentType)))
-
-        //console.log("Evoker S2 2pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-2", player, contentType)))
-        //console.log("Evoker S2 4pc: " + JSON.stringify(getEvokerSpecEffect("Evoker T30-4", player, contentType)))
-    }) 
  
     /*
     test("Disc Priest", () => {

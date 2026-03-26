@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.0.1 / 5.5.3",
+    update: 9,
+    date: "March 25",
+    changes: [ 
+      "Fixed some tier set issues",
+      "Added missing images to Upgrade Finder",
+      "Item Catalyst conversions should now work for the season.",
+      "Removed some old items from the Crafts section of the Upgrade Finder.",
+    ]
+  },
                     {
     version: "12.0.1 / 5.5.3",
     update: 8,

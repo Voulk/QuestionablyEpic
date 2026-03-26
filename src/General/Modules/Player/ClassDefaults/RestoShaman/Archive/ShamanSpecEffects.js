@@ -36,16 +36,16 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps = player.getHPS() * 0.032
 
   }
-  else if (effectName === "Shaman S1-2") {
+  else if (effectName === "Restoration Shaman S1-2" && contentType === "Dungeon") {
+    // 
+
+    bonus_stats.hps = player.getHPS() * 0.024;
+
+  }
+  else if (effectName === "Restoration Shaman S1-4" && contentType === "Dungeon") {
     // 
 
     bonus_stats.hps = player.getHPS() * 0.029;
-
-  }
-  else if (effectName === "Shaman S1-4") {
-    // 
-
-    bonus_stats.hps = player.getHPS() * 0.032
 
   }
   else if (effectName === "Shaman T30-2") {
