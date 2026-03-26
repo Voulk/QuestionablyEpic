@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-
+ 
 export interface Profile {
   id: string;
   label: string;
 }
-
+ 
 export interface StatWeights {
   intellect: number;
   haste: number;
@@ -15,30 +15,32 @@ export interface StatWeights {
   mastery: number;
   versatility: number;
 }
-
+ 
 export interface ControlPanelProps {
   profiles: Profile[];
   stats: Stats;
   setStats: (stats: Stats) => void;
   onRunProfile?: (profileId: string, stats: StatWeights) => void;
 }
-
+ 
 // ─── Styles ───────────────────────────────────────────────────────────────────
-
+ 
 const styles: Record<string, React.CSSProperties> = {
   panel: {
     display: "flex",
-    flexDirection: "column",
-    gap: "18px",
-    width: "260px",
-    padding: "20px",
-    background: "#303030",
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: "24px",
+    width: "100%",
+    padding: "16px 20px",
+    background: "#1e1e1e",
     border: "1px solid #3a3a3a",
     borderRadius: "6px",
     fontFamily: "'Cinzel', 'Georgia', serif",
     color: "#e0e0e0",
+    boxSizing: "border-box" as const,
   },
-
+ 
   sectionTitle: {
     fontSize: "10px",
     fontFamily: "'Cinzel', 'Georgia', serif",
@@ -50,13 +52,26 @@ const styles: Record<string, React.CSSProperties> = {
     paddingBottom: "5px",
     borderBottom: "1px solid #2e2e2e",
   },
-
+ 
+  divider: {
+    width: "1px",
+    alignSelf: "stretch",
+    background: "#2e2e2e",
+    flexShrink: 0,
+  },
+ 
   // ── Profile dropdown ──────────────────────────────────────────────────────
-
+ 
+  profileSection: {
+    display: "flex",
+    flexDirection: "column" as const,
+    minWidth: "180px",
+  },
+ 
   selectWrapper: {
     position: "relative" as const,
   },
-
+ 
   select: {
     width: "100%",
     padding: "8px 28px 8px 10px",
@@ -72,7 +87,7 @@ const styles: Record<string, React.CSSProperties> = {
     transition: "border-color 0.15s",
     boxSizing: "border-box" as const,
   },
-
+ 
   selectChevron: {
     position: "absolute" as const,
     right: "9px",
@@ -82,37 +97,39 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#DAA520",
     fontSize: "11px",
   },
-
-  // ── Statistics box ────────────────────────────────────────────────────────
-
-  statsBox: {
-    border: "1px solid #2e2e2e",
-    borderRadius: "5px",
-    padding: "12px 14px",
-    background: "#252525",
+ 
+  // ── Statistics ────────────────────────────────────────────────────────────
+ 
+  statsSection: {
     display: "flex",
     flexDirection: "column" as const,
-    gap: "9px",
-  },
-
-  statRow: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: "10px",
-  },
-
-  statLabel: {
-    fontSize: "11px",
-    color: "#999",
-    letterSpacing: "0.04em",
     flex: 1,
+  },
+ 
+  statsFields: {
+    display: "flex",
+    flexDirection: "row" as const,
+    gap: "12px",
+  },
+ 
+  statCol: {
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "5px",
+    flex: 1,
+  },
+ 
+  statLabel: {
+    fontSize: "10px",
+    color: "#777",
+    letterSpacing: "0.06em",
+    textTransform: "uppercase" as const,
     fontFamily: "'Cinzel', 'Georgia', serif",
   },
-
+ 
   statInput: {
-    width: "78px",
-    padding: "5px 8px",
+    width: "100%",
+    padding: "7px 8px",
     background: "#1a1a1a",
     border: "1px solid #3a3a3a",
     borderRadius: "3px",
@@ -124,12 +141,12 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box" as const,
     transition: "border-color 0.15s, box-shadow 0.15s",
   },
-
+ 
   // ── Run button styles handled via MUI sx prop ─────────────────────────────
 };
-
+ 
 // ─── Stat field metadata ──────────────────────────────────────────────────────
-
+ 
 const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
   { key: "intellect", label: "Intellect" },
   { key: "haste", label: "Haste" },
@@ -137,9 +154,9 @@ const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
   { key: "mastery", label: "Mastery" },
   { key: "versatility", label: "Versatility" },
 ];
-
+ 
 // ─── Component ────────────────────────────────────────────────────────────────
-
+ 
 const ControlPanel: React.FC<ControlPanelProps> = ({
   profiles = [],
   stats = { intellect: 0, haste: 0, crit: 0, mastery: 0, versatility: 0 },
@@ -153,20 +170,21 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
 
   const [selectHovered, setSelectHovered] = useState(false);
-
+ 
   const handleStatChange = (key: keyof StatWeights, raw: string) => {
     const value = parseInt(raw, 10);
     setStats((prev) => ({ ...prev, [key]: isNaN(value) ? 0 : value }));
   };
-
+ 
   const handleRun = () => {
     onRunProfile?.(selectedProfileId, stats);
   };
-
+ 
   return (
     <div style={styles.panel}>
+ 
       {/* Profile selector */}
-      <div>
+      <div style={styles.profileSection}>
         <div style={styles.sectionTitle}>Profile</div>
         <div style={styles.selectWrapper}>
           <select
@@ -191,11 +209,14 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           <span style={styles.selectChevron}>▾</span>
         </div>
       </div>
-
-      {/* Statistics box */}
-      <div>
+ 
+      {/* Divider */}
+      <div style={styles.divider} />
+ 
+      {/* Statistics */}
+      <div style={styles.statsSection}>
         <div style={styles.sectionTitle}>Statistics</div>
-        <div style={styles.statsBox}>
+        <div style={styles.statsFields}>
           {STAT_FIELDS.map(({ key, label }) => (
             <StatInputRow
               key={key}
@@ -206,11 +227,13 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           ))}
         </div>
       </div>
-
+ 
+      {/* Divider */}
+      <div style={styles.divider} />
+ 
       {/* Run button */}
       <Button
         variant="contained"
-        fullWidth
         onClick={handleRun}
         sx={{
           background: "#DAA520",
@@ -220,8 +243,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           letterSpacing: "0.12em",
           color: "#fff",
           borderRadius: "4px",
-          padding: "10px 0",
+          padding: "8px 24px",
           boxShadow: "none",
+          whiteSpace: "nowrap",
+          alignSelf: "flex-end",
           "&:hover": {
             background: "#c4941c",
             boxShadow: "none",
@@ -230,23 +255,25 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       >
         Run Profile
       </Button>
+ 
     </div>
   );
 };
-
+ 
 // ─── Sub-component: individual stat row ──────────────────────────────────────
-
+ 
 const StatInputRow: React.FC<{
   label: string;
   value: number;
   onChange: (v: string) => void;
 }> = ({ label, value, onChange }) => {
   const [focused, setFocused] = useState(false);
-
+ 
   return (
-    <div style={styles.statRow}>
+    <div style={styles.statCol}>
       <label style={styles.statLabel}>{label}</label>
       <input
+        className="cp-no-spinner"
         type="number"
         min={0}
         value={value === 0 ? "" : value}
@@ -257,13 +284,11 @@ const StatInputRow: React.FC<{
         style={{
           ...styles.statInput,
           borderColor: focused ? "#DAA520" : "#3a3a3a",
-          boxShadow: focused
-            ? "0 0 0 2px rgba(218,165,32,0.15)"
-            : "none",
+          boxShadow: focused ? "0 0 0 2px rgba(218,165,32,0.15)" : "none",
         }}
       />
     </div>
   );
 };
-
+ 
 export default ControlPanel;

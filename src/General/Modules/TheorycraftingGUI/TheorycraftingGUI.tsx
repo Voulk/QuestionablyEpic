@@ -3,6 +3,7 @@ import { useState } from "react";
 import ControlPanel from "./ControlPanel";
 import SpellBreakdown, { SpellRow } from "./SpellBreakdownPanel";
 import { Box } from "@mui/material";
+import TCPanel from "./TCPanel";
 
 export default function TheorycraftingGUI(props) {
     const selectedSpec = props.player.getSpec();
@@ -44,24 +45,24 @@ export default function TheorycraftingGUI(props) {
       const [seqSettings, setSeqSettings] = useState(getSpecSettings(selectedSpec));*/
     
     return (
-        <Box
-            sx={{
-                width: "50%",
-                margin: "0 auto",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "flex-start",
-                gap: "24px",
-            }}
-            >
-                        <ControlPanel 
-                profiles={[]}
-                stats={stats}
-                setStats={setStats}
-                onRunProfile={null}/>
-            <Box sx={{ flex: 1, minWidth: 0 }}>
-                <SpellBreakdown rows={rows} />
-            </Box>
-            </Box>
+    <Box
+      sx={{
+        width: "60%",
+        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        gap: "24px",
+      }}
+    >
+      {/* Control panel spans full width as a header bar */}
+      <ControlPanel stats={stats} setStats={setStats} profiles={[]} onRunProfile={null} />
+ 
+      {/* Charts flow vertically below */}
+      <TCPanel title="Spell Breakdown">
+        <SpellBreakdown rows={rows} />
+      </TCPanel>
+ 
+      {/* Future panels go here */}
+    </Box>
     )
 }

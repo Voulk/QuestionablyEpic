@@ -1,6 +1,4 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -64,32 +62,7 @@ const sxTdNumeric = {
 
 const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
   return (
-    <Box
-      sx={{
-        background: "#1e1e1e",
-        border: "1px solid #3a3a3a",
-        borderRadius: "6px",
-        overflow: "hidden",
-      }}
-    >
-      {/* Title bar */}
-      <Box sx={{ px: "16px", py: "12px", borderBottom: "1px solid #2e2e2e" }}>
-        <Typography
-          sx={{
-            fontSize: "11px",
-            fontFamily: "'Cinzel', Georgia, serif",
-            fontWeight: 600,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#DAA520",
-          }}
-        >
-          Spell Breakdown
-        </Typography>
-      </Box>
-
-      {/* Table */}
-      <TableContainer>
+    <TableContainer>
         <Table size="small">
           <TableHead>
             <TableRow>
@@ -125,10 +98,8 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
             )}
           </TableBody>
         </Table>
-      </TableContainer>
-    </Box>
+    </TableContainer>
   );
 };
 
 export default SpellBreakdown;
-
