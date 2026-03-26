@@ -26,6 +26,8 @@ export const changeLog: entry[] = [
     changes: [ 
       "Fixed some tier set issues",
       "Added missing images to Upgrade Finder",
+      "Item Catalyst conversions should now work for the season.",
+      "Removed some old items from the Crafts section of the Upgrade Finder.",
     ]
   },
                     {
