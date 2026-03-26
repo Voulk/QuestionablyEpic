@@ -34,11 +34,11 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
     bonus_stats.hps += player.getHPS() * insuranceUptime * healingIncrease;
 
   }
-  else if (effectName === "DPriest S1-2") {
-    bonus_stats.hps = player.getRampID('twoPc', contentType);
+  else if (effectName === "Discipline Priest S1-2") {
+    bonus_stats.bonusHPS = 0.018;
   }
-  else if (effectName === "DPriest S1-4") {
-    bonus_stats.hps = player.getRampID('fourPc', contentType);
+  else if (effectName === "Discipline Priest S1-4") {
+    bonus_stats.bonusHPS = 0.04;
 
   }
 

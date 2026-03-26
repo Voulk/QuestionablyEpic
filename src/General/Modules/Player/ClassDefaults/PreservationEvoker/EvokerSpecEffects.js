@@ -1,4 +1,5 @@
-import { EVOKERSPELLDB } from "General/Modules/Player/ClassDefaults/PreservationEvoker/Archive/PresEvokerSpellDBTWW";
+import EVOKERSPELLDB from "General/Modules/Player/ClassDefaults/PreservationEvoker/PreservationEvokerSpellDB";
+import { getSpellThroughput, convertStatPercentages } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 const valueEssenceBurst = (player, contentType) => {
   const blossomData = EVOKERSPELLDB["Emerald Blossom"][0];
@@ -11,7 +12,7 @@ const valueEssenceBurst = (player, contentType) => {
 
 }
 
-export const getEvokerSpecEffect = (effectName, player, contentType) => {
+export const getEvokerSpecEffect = (effectName, player, contentType, setStats) => {
   // These are going to be moved to a proper file soon.
 
   const modelName = player.getActiveModel(contentType)?.modelName;
@@ -21,50 +22,29 @@ export const getEvokerSpecEffect = (effectName, player, contentType) => {
   const insuranceRPPM = 4 * player.getStatPerc('haste');
   const insuranceHealing = 0.80664 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
   let bonus_stats = {};
+  const stats = convertStatPercentages(setStats, {}, "Preservation Evoker",  0.85, "Dracythyr")
+  const verdantEmbraceCPM = 4;
 
-  if (effectName === "Evoker S3-2") {
-    bonus_stats.bonusHPS = 0.02;
-  }
-  else if (modelName !== "Flameshaper" && effectName === "Evoker S3-4") {
-    // Just move this into the ramp file when you get a minute.
-    const bombsPerMinute = 8 * 2 * player.getStatPerc('haste') * (60 / 45);
-    const bombEfficiency = 0.4;
-    const oneBomb = 2.5 * 7.5 * player.getStatMults(['crit', 'versatility', 'intellect', 'mastery']) * bombEfficiency;
-    bonus_stats.hps = oneBomb * bombsPerMinute / 60;
-  }
-  else if (effectName === "Evoker S2-2") {
-    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
-  }
-  else if (effectName === "Evoker S2-4") {
-    const verdantEmbraceCPM = 3;
-    const verdantEmbraceEchoCPM = 8 + (3.2 * 5); // 10 hard cast Echo + 3.2 Temporal Anomaly casts. Note there is no Echo multiplier currently.
-
-    bonus_stats.hps = (insuranceHealing * 6 / 15) * (verdantEmbraceCPM + verdantEmbraceEchoCPM) / 60;
-  }
-  else if (effectName === "Evoker S1-2") {
-    // This bonus is just awful
+  if (effectName === "Preservation Evoker S1-2") {
+    // Handled in Ramps
     if (contentType === "Raid") bonus_stats.hps = 0;
     else {
-      const percentEffected = 0.25;
-      bonus_stats.hps = percentEffected * 0.1 * player.getHPS();
+      const verdantEmbrace = EVOKERSPELLDB["Verdant Embrace"]
+      const verdantEmbraceHealing = getSpellThroughput(verdantEmbrace[0], stats, "Preservation Evoker", "")
+      const verdantEmbraceTalents = 1.3 * 1.6 * 1.1 * 1.06;
+      bonus_stats.hps = verdantEmbraceHealing * verdantEmbraceCPM * (0.2 + 2 / 15) / 60 * verdantEmbraceTalents;
     }
   }
-  else if (effectName === "Evoker S1-4") {
-    // +40% to spiritbloom, dream breath baseline + possible extras like Lifebind
-    const spiritbloomCPM = 2.4;
-    const spiritbloomData = EVOKERSPELLDB["Spiritbloom"][0];
-    const oneSpiritbloom = spiritbloomData.coeff * 4 * 1.4 * player.getInt() * player.getStatMults(spiritbloomData.secondaries) * 1.1 * healingBonus; // Lush Growth
+  else if (effectName === "Preservation Evoker S1-4") {
+      const emeraldBlossom = EVOKERSPELLDB["Emerald Blossom"]
+      const verdantEmbraceHealing = getSpellThroughput(EVOKERSPELLDB["Verdant Embrace"][0], stats, "Preservation Evoker", "")
+      const emeraldBlossomHealing = getSpellThroughput(emeraldBlossom[0], stats, "Preservation Evoker", "")
+      const emeraldBlossomTalents = 1.1;
+      const verdantEmbraceTalents = 1.3 * 1.6 * 1.1 * 1.06;
+      bonus_stats.hps = (emeraldBlossomHealing * emeraldBlossomTalents + verdantEmbraceHealing * verdantEmbraceTalents) * verdantEmbraceCPM / 60;
 
-    bonus_stats.hps = oneSpiritbloom * spiritbloomCPM * 0.4 / 60;
 
-    const dreamBreathCPM = 1.9;
-    const dreamBreathData = EVOKERSPELLDB["Dream Breath"];
-    const dreamBreathTicks = dreamBreathData[2].buffDuration[0] / dreamBreathData[2].tickData.tickRate * player.getStatPerc("haste") + 3.5;
-    const dreamBreathCoeff = dreamBreathData[0].coeff + dreamBreathData[1].coeff[0] + dreamBreathData[2].coeff * dreamBreathTicks;
-    const specialBonuses = 1.4; // Call of Ysera
-    const oneDreamBreath = dreamBreathCoeff * 5 * player.getInt() * player.getStatMults(dreamBreathData[0].secondaries) * 1.1 * healingBonus * specialBonuses; // Lush Growth
 
-    bonus_stats.hps += oneDreamBreath * dreamBreathCPM * 0.4 / 60;
   }
   else if (effectName === "Evoker T31-2") {
     // 

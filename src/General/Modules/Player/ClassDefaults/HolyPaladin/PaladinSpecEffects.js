@@ -15,105 +15,15 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   const holyShockCPM = holyShockBaseCPM + (5 + 4 + 2 + 3) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
   const insuranceHealing = 1.2752 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
 
-  // These will be replaced by the CastProfile. This is a fairly rough estimate as a result.
-  if (effectName === "Paladin S3-2") {
-    //bonus_stats.hps = player.getHPS() * 0.06;
-    bonus_stats.bonusHPS = 0.06;
-
-  }
-  else if (effectName === "Paladin S3-4") {
-    //bonus_stats.hps = player.getHPS() * 0.11;
-    bonus_stats.bonusHPS = 0.11;
-  }
-  else if (effectName === "Paladin S2-2") {
-    const insuranceRPPM = 4 * player.getStatPerc('haste');
-    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
-
-  }
-  else if (effectName === "Paladin S2-4") {
-    const divineTollCPM = 1.5;
-    const extraDivineTollHPS = 30000;
-    const freeInsuranceSeconds = divineTollCPM * 5 * 8;
-
-    bonus_stats.hps = (freeInsuranceSeconds / 15) * insuranceHealing / 60 + extraDivineTollHPS;
-  }
-  else if (effectName === "Paladin S1-2") {
-    
-    const reclamation = 1.3
-    const oneHolyShock = 2.26 * player.getStatMultiplier("ALL") * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.85 * 1.2 * 1.12 * reclamation * (0.3 * 0.15 + 1) * 1.1;
-
-    // 10% more Holy Shock Healing
-    bonus_stats.hps = oneHolyShock * holyShockCPM * 0.11; // Include additional healing on extra casts
-    
-    // 10% more Holy Shocks
-    bonus_stats.hps += getOneHolyPower(player) * holyShockBaseCPM * 0.1;
-    bonus_stats.hps += oneHolyShock * holyShockBaseCPM * 0.1;
-
-    bonus_stats.hps /= 60 * 1.45;
-
-  }
-  else if (effectName === "Paladin S1-4") {
+  if (effectName === "Holy Paladin S1-4") {
     // We're unlikely to cap this, so every holy shock is basically just 8% of a spender.
-    bonus_stats.hps = getOneHolyPower(player) * holyShockCPM * 0.08 * 3 / 60 * 1.4;
+    bonus_stats.bonusHPS = 0.015;
   }
-  else if (effectName === "Paladin T31-2") {
-    // 
-    const holyShockCPM = 15 + (5 + 4) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
-    const oneReverb = 1.08 * player.getStatMults(["intellect", "versatility", "crit", "mastery"]) * 0.65
-    console.log(holyShockCPM * oneReverb / 60)
-    bonus_stats.hps = holyShockCPM * oneReverb / 60;
-
+  else if (effectName === "Holy Paladin S1-2") {
+    // We're unlikely to cap this, so every holy shock is basically just 8% of a spender.
+    bonus_stats.bonusHPS = 0.035;
   }
-  else if (effectName === "Paladin T31-4") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const daybreakData = 0;
-    const oneDaybreak = 0;
-    
-    bonus_stats.hps = 9200;
-    bonus_stats.haste = 0;
-
-  }
-
-  else if (effectName === "Paladin T30-2") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const holyShockCPM = 15 + (5 + 4) * 60/45; // Holy Shock raw + Divine Toll / Rising Sunlight
-    const critChance = player.getStatPerc("Crit") + 0.075 - 1; // HS crit bonus
-    const relativeHPSIncrease = (critChance * 2.8 + (1-critChance))  / (critChance * 2 + (1-critChance));
-    const oneHolyShock = 1.53 * player.getStatMultiplier("ALL") * 3.15 * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.5;
-    bonus_stats.hps = oneHolyShock * (relativeHPSIncrease - 1) * holyShockCPM / 60;
-    //bonus_stats.hps = 9000;
-
-  }
-  else if (effectName === "Paladin T30-4") {
-    // Placeholder pulled from sheet. Replace very soon.
-    const lightsHammerCPM = 2;
-    const oneLightsHammer = 0.48 * 6 * 7 * player.getStatMultiplier("ALL") * processPaladinRawHealing(player.getStatPerc("Crit")) * 0.7;
-    const healingIncrease = 1; // Adds an amount equal to the original LH.
-
-    bonus_stats.hps = oneLightsHammer * lightsHammerCPM * healingIncrease / 60;
-
-
-  }
-
-  else if (effectName === "Paladin T29-2") {
-    // +8% crit to almost everything that matters.
-    const percentEffected = 1; // TODO: Auto-calc this.
-    bonus_stats.crit = 4 * percentEffected * 170;
-
-  }
-  else if (effectName === "Paladin T29-4") {
-    // Flat healing portion
-    const percentBuffed = 0.55;
-    bonus_stats.hps = (percentBuffed * 0.06 * player.getHPS(contentType))
-
-    // Holy Shock portion
-    const percHolyShockAffected = 0.74;
-    const tierBoost = 0.2;
-    const holyShockPerc = 0.18;
-
-    bonus_stats.hps += (percHolyShockAffected * tierBoost * holyShockPerc * player.getHPS(contentType))
-
-  }
+ 
   // Tier Sets
   else if (effectName === "Paladin T28-2") {
     // Holy Paladin Sepulcher tier set 2pc

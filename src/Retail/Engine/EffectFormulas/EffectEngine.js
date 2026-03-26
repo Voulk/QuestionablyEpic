@@ -81,7 +81,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
             bonus_stats = getShamanSpecEffect(effectName, player, contentType);
             break;
           case "Preservation Evoker":
-            bonus_stats = getEvokerSpecEffect(effectName, player, contentType);
+            bonus_stats = getEvokerSpecEffect(effectName, player, contentType, setStats);
             break;
           default:
             break;
