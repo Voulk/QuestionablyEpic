@@ -254,22 +254,7 @@ export class Player {
   catalyzeItem = (item) => {
     const slot = item.slot;
     const pClass = this.spec;
-    const classTag = {
-      /*"Holy Priest": "Confessor's Unshakable",
-      "Discipline Priest": "Confessor's Unshakable",
-      "Restoration Druid": "of Reclaiming Blight",
-      "Restoration Shaman": "Gale Sovereign's",
-      "Mistweaver Monk": "Ageless Serpent's",
-      "Holy Paladin": "Aureate Sentry's",
-      "Preservation Evoker": "Opulent Treasurescale's",*/
-      "Preservation Evoker": "of the Black Talon", 
-      "Holy Paladin": "Luminant Verdict's", 
-      "Holy Priest": "Blind Oath's", 
-      "Discipline Priest": "Blind Oath's", 
-      "Restoration Shaman": "of the Primal Core", 
-      "Mistweaver Monk": "of Ra-den's Chosen", 
-      "Restoration Druid": "of the Luminous Bloom"
-    };
+    const classTag = CONSTANTS.tierNames;
 
     const temp = getItemDB("Retail").filter(function (item) {
       return item.slot === slot && item.name.includes(classTag[pClass]);

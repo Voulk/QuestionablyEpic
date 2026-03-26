@@ -47,9 +47,10 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "A powerful crit / leech stat stick that's very overbudget. Does not include the special Voidstorm buffs, though they do work in raids and dungeons. Setting coming soon.",
+    description: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings.",
     warningFlag: true,
-    addonDescription: "",
+    hasSetting: true,
+    addonDescription: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too.",
     effects: [
       {
         duration: 10,
