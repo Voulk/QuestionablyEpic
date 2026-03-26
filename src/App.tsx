@@ -6,6 +6,7 @@ import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
+import TheorycraftingGUI from "General/Modules/TheorycraftingGUI/TheorycraftingGUI";
 import CircletAnalysis from "General/Modules/CircletAnalysis/CircletAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
@@ -373,7 +374,7 @@ const App = () => {
                     )}
                   />
                   <Route path="/spelldata" render={() => <SequenceGen player={activePlayer} />} />
-
+                  <Route path="/theorycrafting" render={() => <TheorycraftingGUI player={activePlayer} />} />
 
                   <CustomRoute 
                     player={activePlayer} 
@@ -428,20 +429,6 @@ const App = () => {
                     player={activePlayer}
                     render={() => (
                       <EmbellishmentAnalysis
-                        player={activePlayer}
-                        updatePlayerChar={updatePlayerChar}
-                        singleUpdate={updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={handleSimCSnackOpen}
-                        patronStatus={patronStatus}
-                      />
-                    )}
-                  />
-                  <CustomRoute
-                    path="/circlet"
-                    player={activePlayer}
-                    render={() => (
-                      <CircletAnalysis
                         player={activePlayer}
                         updatePlayerChar={updatePlayerChar}
                         singleUpdate={updatePlayerChar}
