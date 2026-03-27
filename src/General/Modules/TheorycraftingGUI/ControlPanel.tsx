@@ -263,7 +263,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             >
               {profiles.map((p) => (
                 <option key={p.id} value={p.id}>
-                  {p.label}
+                  {p.modelName}
                 </option>
               ))}
               {profiles.length === 0 && (

@@ -44,10 +44,10 @@ const PLACEHOLDER_DATA: StatScalingDataPoint[] = Array.from({ length: 11 }, (_, 
   return {
     amount,
     haste:       8000 + amount * 4.2  + Math.sin(i * 0.8) * 200,
-    crit:        8000 + amount * 3.8  + Math.sin(i * 1.1) * 180,
-    mastery:     8000 + amount * 3.1  + Math.sin(i * 0.6) * 150,
+    crit:        8000 + amount * 4  + Math.sin(i * 1.1) * 180,
+    mastery:     8000 + amount * 3.5  + Math.sin(i * 0.6) * 150,
     versatility: 8000 + amount * 2.7  + Math.sin(i * 1.3) * 120,
-    intellect:   8000 + amount * 5.0  + Math.sin(i * 0.9) * 250,
+    intellect:   8000 + amount * 7.0  + Math.sin(i * 0.9) * 250,
   };
 });
  
@@ -88,8 +88,30 @@ const CustomTooltip: React.FC<{
 const StatScalingChart: React.FC<StatScalingChartProps> = ({
   data = PLACEHOLDER_DATA,
 }) => {
+  const yAxisMin = React.useMemo(() => {
+    if (!data.length) return 0;
+
+    let lowest = Number.POSITIVE_INFINITY;
+    for (const point of data) {
+      for (const { key } of STAT_LINES) {
+        const value = point[key];
+        if (value < lowest) lowest = value;
+      }
+    }
+
+    if (!Number.isFinite(lowest)) return 0;
+    return Math.floor(lowest * 0.8);
+  }, [data]);
+
+  // Uses the final data point (highest amount) as the displayed total.
+  const totalHps = React.useMemo(() => {
+    if (!data.length) return 0;
+    const lastPoint = data[data.length - 1];
+    return STAT_LINES.reduce((sum, { key }) => sum + (Number(lastPoint[key]) || 0), 0);
+  }, [data]);
+
   return (
-    <TCPanel title="Stat Scaling">
+    <TCPanel title="Stat Scaling" height={500}>
       <div style={{ padding: "20px 8px 16px" }}>
         <ResponsiveContainer width="100%" height={340}>
           <LineChart data={data} margin={{ top: 4, right: 24, left: 8, bottom: 4 }}>
@@ -114,6 +136,7 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
               }}
             />
             <YAxis
+              domain={[yAxisMin, "auto"]}
               tick={{ fill: "#777", fontSize: 11, fontFamily: "monospace" }}
               axisLine={false}
               tickLine={false}
@@ -154,7 +177,7 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
           </LineChart>
         </ResponsiveContainer>
       </div>
-    </TCPanel>    
+    </TCPanel>
   );
 };
  

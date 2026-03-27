@@ -374,7 +374,7 @@ const App = () => {
                     )}
                   />
                   <Route path="/spelldata" render={() => <SequenceGen player={activePlayer} />} />
-                  <Route path="/theorycrafting" render={() => <TheorycraftingGUI player={activePlayer} />} />
+                  <Route path="/theorycrafting" render={() => <TheorycraftingGUI player={activePlayer}/>} />
 
                   <CustomRoute 
                     player={activePlayer} 

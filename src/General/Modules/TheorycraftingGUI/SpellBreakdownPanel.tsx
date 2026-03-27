@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 
 export interface SpellRow {
   spellName: string;
+  icon?: string;
   cpm: number;
   overhealing: number;
   hps: number;
@@ -61,8 +62,11 @@ const sxTdNumeric = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
+  const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
+
   return (
-    <TableContainer>
+    <div style={{ padding: "10px 12px 12px" }}>
+      <TableContainer>
         <Table size="small">
           <TableHead>
             <TableRow>
@@ -79,7 +83,23 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
                 key={i}
                 sx={{ background: i % 2 === 0 ? "#1e1e1e" : "#232323" }}
               >
-                <TableCell sx={sxTd}>{row.spellName}</TableCell>
+                <TableCell sx={sxTd}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    {row.icon && (
+                      <img
+                        src={"https://wow.zamimg.com/images/wow/icons/large/" + row.icon + ".jpg"}
+                        alt=""
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "3px",
+                          flexShrink: 0,
+                        }}
+                      />
+                    )}
+                    {row.spellName}
+                  </div>
+                </TableCell>
                 <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{fmtInt(row.hps)}</TableCell>
@@ -98,7 +118,26 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
             )}
           </TableBody>
         </Table>
-    </TableContainer>
+      </TableContainer>
+
+      <div
+        style={{
+          marginTop: "10px",
+          display: "flex",
+          justifyContent: "flex-end",
+          fontFamily: "'Cinzel', Georgia, serif",
+          fontSize: "12px",
+          letterSpacing: "0.08em",
+          color: "#999",
+          paddingRight: "2px",
+        }}
+      >
+        <span style={{ color: "#DAA520", marginRight: "8px" }}>TOTAL HPS:</span>
+        <span style={{ fontFamily: "monospace", color: "#e0e0e0" }}>
+          {Math.round(totalHps).toLocaleString()}
+        </span>
+      </div>
+    </div>
   );
 };
 
