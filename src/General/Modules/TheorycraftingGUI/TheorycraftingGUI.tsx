@@ -4,16 +4,17 @@ import ControlPanel from "./ControlPanel";
 import SpellBreakdown, { SpellRow } from "./SpellBreakdownPanel";
 import { Box } from "@mui/material";
 import TCPanel from "./TCPanel";
+import StatScalingChart from "./StatScalingPanel";
 
 export default function TheorycraftingGUI(props) {
     const selectedSpec = props.player.getSpec();
 
     const [stats, setStats] = useState<Stats>({
-        intellect: 0,
-        haste: 0,
-        crit: 0,
-        mastery: 0,
-        versatility: 0,
+        intellect: 2400,
+        haste: 400,
+        crit: 400,
+        mastery: 400,
+        versatility: 400,
     });
 
     const rows: SpellRow[] = [
@@ -61,6 +62,8 @@ export default function TheorycraftingGUI(props) {
       <TCPanel title="Spell Breakdown">
         <SpellBreakdown rows={rows} />
       </TCPanel>
+
+      <StatScalingChart />
  
       {/* Future panels go here */}
     </Box>

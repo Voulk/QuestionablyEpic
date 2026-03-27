@@ -26,18 +26,48 @@ export interface ControlPanelProps {
 // ─── Styles ───────────────────────────────────────────────────────────────────
  
 const styles: Record<string, React.CSSProperties> = {
-  panel: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-end",
-    gap: "24px",
+  accordion: {
     width: "100%",
-    padding: "16px 20px",
     background: "#1e1e1e",
     border: "1px solid #3a3a3a",
     borderRadius: "6px",
     fontFamily: "'Cinzel', 'Georgia', serif",
     color: "#e0e0e0",
+    boxSizing: "border-box" as const,
+  },
+
+  accordionHeader: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: "12px",
+    padding: "16px 20px",
+    cursor: "pointer",
+    userSelect: "none" as const,
+    transition: "background-color 0.15s",
+  },
+
+  accordionHeaderHover: {
+    background: "#252525",
+  },
+
+  expandArrow: {
+    fontSize: "16px",
+    color: "#DAA520",
+    transition: "transform 0.3s",
+    flexShrink: 0,
+  },
+
+  expandArrowOpen: {
+    transform: "rotate(90deg)",
+  },
+
+  panel: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: "24px",
+    padding: "16px 20px",
     boxSizing: "border-box" as const,
   },
  
@@ -84,7 +114,7 @@ const styles: Record<string, React.CSSProperties> = {
     appearance: "none" as const,
     cursor: "pointer",
     outline: "none",
-    transition: "border-color 0.15s",
+    transition: "border-color 0.15s, box-shadow 0.15s",
     boxSizing: "border-box" as const,
   },
  
@@ -141,6 +171,35 @@ const styles: Record<string, React.CSSProperties> = {
     boxSizing: "border-box" as const,
     transition: "border-color 0.15s, box-shadow 0.15s",
   },
+
+  // ── Accordion content (expandable tray) ───────────────────────────────────
+
+  accordionContent: {
+    maxHeight: "1000px",
+    overflow: "hidden",
+    transition: "max-height 0.3s ease, padding 0.3s ease",
+    borderTop: "1px solid #2e2e2e",
+    paddingTop: "16px",
+  },
+
+  accordionContentCollapsed: {
+    maxHeight: "0px",
+    padding: "0",
+    borderTop: "none",
+  },
+
+  settingsSection: {
+    padding: "0 20px 20px 20px",
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "16px",
+  },
+
+  settingsPlaceholder: {
+    fontSize: "13px",
+    color: "#777",
+    fontStyle: "italic",
+  },
  
   // ── Run button styles handled via MUI sx prop ─────────────────────────────
 };
@@ -154,6 +213,8 @@ const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
   { key: "mastery", label: "Mastery" },
   { key: "versatility", label: "Versatility" },
 ];
+
+const ADDITIONAL_SETTINGS: string[] = [];
  
 // ─── Component ────────────────────────────────────────────────────────────────
  
@@ -167,9 +228,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     profiles[0]?.id ?? ""
   );
 
-
-
   const [selectHovered, setSelectHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [headerHovered, setHeaderHovered] = useState(false);
  
   const handleStatChange = (key: keyof StatWeights, raw: string) => {
     const value = parseInt(raw, 10);
@@ -181,81 +242,132 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   };
  
   return (
-    <div style={styles.panel}>
+    <div style={styles.accordion}>
+
+      {/* Main Content */}
+      <div style={styles.panel}>
  
-      {/* Profile selector */}
-      <div style={styles.profileSection}>
-        <div style={styles.sectionTitle}>Profile</div>
-        <div style={styles.selectWrapper}>
-          <select
-            value={selectedProfileId}
-            onChange={(e) => setSelectedProfileId(e.target.value)}
-            style={{
-              ...styles.select,
-              borderColor: selectHovered ? "#DAA520" : "#3a3a3a",
-            }}
-            onMouseEnter={() => setSelectHovered(true)}
-            onMouseLeave={() => setSelectHovered(false)}
-          >
-            {profiles.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.label}
-              </option>
+        {/* Profile selector */}
+        <div style={styles.profileSection}>
+          <div style={styles.sectionTitle}>Profile</div>
+          <div style={styles.selectWrapper}>
+            <select
+              value={selectedProfileId}
+              onChange={(e) => setSelectedProfileId(e.target.value)}
+              style={{
+                ...styles.select,
+                borderColor: selectHovered ? "#DAA520" : "#3a3a3a",
+              }}
+              onMouseEnter={() => setSelectHovered(true)}
+              onMouseLeave={() => setSelectHovered(false)}
+            >
+              {profiles.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.label}
+                </option>
+              ))}
+              {profiles.length === 0 && (
+                <option value="">— No profiles —</option>
+              )}
+            </select>
+            <span style={styles.selectChevron}>▾</span>
+          </div>
+        </div>
+ 
+        {/* Divider */}
+        <div style={styles.divider} />
+ 
+        {/* Statistics */}
+        <div style={styles.statsSection}>
+          <div style={styles.sectionTitle}>Statistics</div>
+          <div style={styles.statsFields}>
+            {STAT_FIELDS.map(({ key, label }) => (
+              <StatInputRow
+                key={key}
+                label={label}
+                value={stats[key]}
+                onChange={(v) => handleStatChange(key, v)}
+              />
             ))}
-            {profiles.length === 0 && (
-              <option value="">— No profiles —</option>
-            )}
-          </select>
-          <span style={styles.selectChevron}>▾</span>
+          </div>
         </div>
-      </div>
  
-      {/* Divider */}
-      <div style={styles.divider} />
+        {/* Divider */}
+        <div style={styles.divider} />
  
-      {/* Statistics */}
-      <div style={styles.statsSection}>
-        <div style={styles.sectionTitle}>Statistics</div>
-        <div style={styles.statsFields}>
-          {STAT_FIELDS.map(({ key, label }) => (
-            <StatInputRow
-              key={key}
-              label={label}
-              value={stats[key]}
-              onChange={(v) => handleStatChange(key, v)}
-            />
-          ))}
+        {/* Run button and Settings toggle */}
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+          <Button
+            variant="contained"
+            onClick={handleRun}
+            sx={{
+              background: "#DAA520",
+              fontFamily: "'Cinzel', Georgia, serif",
+              fontWeight: 600,
+              fontSize: "12px",
+              letterSpacing: "0.12em",
+              color: "#fff",
+              borderRadius: "4px",
+              padding: "8px 24px",
+              boxShadow: "none",
+              whiteSpace: "nowrap",
+              "&:hover": {
+                background: "#c4941c",
+                boxShadow: "none",
+              },
+            }}
+          >
+            Run Profile
+          </Button>
+
+          {/* Settings toggle arrow */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              padding: "4px 8px",
+              transition: "background-color 0.15s",
+            }}
+            onClick={() => setIsExpanded(!isExpanded)}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#252525")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+            title="Toggle additional settings"
+          >
+            <span
+              style={{
+                ...styles.expandArrow,
+                ...(isExpanded ? styles.expandArrowOpen : {}),
+              }}
+            >
+              ▸
+            </span>
+          </div>
         </div>
+ 
       </div>
- 
-      {/* Divider */}
-      <div style={styles.divider} />
- 
-      {/* Run button */}
-      <Button
-        variant="contained"
-        onClick={handleRun}
-        sx={{
-          background: "#DAA520",
-          fontFamily: "'Cinzel', Georgia, serif",
-          fontWeight: 600,
-          fontSize: "12px",
-          letterSpacing: "0.12em",
-          color: "#fff",
-          borderRadius: "4px",
-          padding: "8px 24px",
-          boxShadow: "none",
-          whiteSpace: "nowrap",
-          alignSelf: "flex-end",
-          "&:hover": {
-            background: "#c4941c",
-            boxShadow: "none",
-          },
+
+      {/* Expandable Settings Tray */}
+      <div
+        style={{
+          ...styles.accordionContent,
+          ...(isExpanded ? {} : styles.accordionContentCollapsed),
         }}
       >
-        Run Profile
-      </Button>
- 
+        <div style={styles.settingsSection}>
+          {ADDITIONAL_SETTINGS.length === 0 ? (
+            <div style={styles.settingsPlaceholder}>
+              Additional settings coming soon...
+            </div>
+          ) : (
+            ADDITIONAL_SETTINGS.map((setting, idx) => (
+              <div key={idx}>{setting}</div>
+            ))
+          )}
+        </div>
+      </div>
+
     </div>
   );
 };
