@@ -3,7 +3,7 @@ import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
 import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
-        const sortedEntries = Object.entries(healingBreakdown)
+    const sortedEntries = Object.entries(healingBreakdown)
                             .sort((a, b) => b[1] - a[1])
                             .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
     console.log(sortedEntries);

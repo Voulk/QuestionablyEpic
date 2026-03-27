@@ -19,6 +19,7 @@ export interface SpellRow {
 
 export interface SpellBreakdownProps {
   rows: SpellRow[];
+  activeResult?: any;
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -61,8 +62,9 @@ const sxTdNumeric = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
-  const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
+const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) => {
+  // const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
+  console.log(rows);
 
   return (
     <div style={{ padding: "10px 12px 12px" }}>
@@ -71,10 +73,11 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
           <TableHead>
             <TableRow>
               <TableCell sx={sxTh}>Spell Name</TableCell>
-              <TableCell sx={{ ...sxTh, textAlign: "right" }}>CPM</TableCell>
-              <TableCell sx={{ ...sxTh, textAlign: "right" }}>Overhealing</TableCell>
               <TableCell sx={{ ...sxTh, textAlign: "right" }}>HPS</TableCell>
               <TableCell sx={{ ...sxTh, textAlign: "right" }}>% Healing</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>CPM</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>Overhealing</TableCell>
+
             </TableRow>
           </TableHead>
           <TableBody>
@@ -100,10 +103,11 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
                     {row.spellName}
                   </div>
                 </TableCell>
-                <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
-                <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{fmtInt(row.hps)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{row.percentHealing}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing)}</TableCell>
+
               </TableRow>
             ))}
             {rows.length === 0 && (
@@ -134,7 +138,7 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows }) => {
       >
         <span style={{ color: "#DAA520", marginRight: "8px" }}>TOTAL HPS:</span>
         <span style={{ fontFamily: "monospace", color: "#e0e0e0" }}>
-          {Math.round(totalHps).toLocaleString()}
+          {Math.round(activeResult?.healing || 0).toLocaleString()}
         </span>
       </div>
     </div>

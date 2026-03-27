@@ -71,7 +71,7 @@ const getRealCrit = (spellName: string, state, spellDB) => {
 }
 
 // PlayerData needs some work to be a fully formed idea still. I'll fix its typing later.
-export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
+export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     const fightLength = 5
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
@@ -569,8 +569,28 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     const totalDamage = Object.values(damageBreakdown).reduce((sum: number, val: number) => sum + val, 0);
 
+    const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
+
+    if (reporting) {
+        const sortedEntries = Object.entries(healingBreakdown)
+                            .sort((a, b) => b[1] - a[1])
+                           // .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
+        const spellBreakdown = []
+        sortedEntries.forEach(entry => {
+            spellBreakdown.push({
+                spellName: entry[0], 
+                hps: Math.round(entry[1] / 60), 
+                percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
+                overhealing: 0.25,
+                cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100
+            });
+        })
+        
+        console.log(spellBreakdown);
+        result.spellBreakdown = spellBreakdown;
+    }
     //console.log(reportingData);
     //printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
-    return { damage: totalDamage / 60, healing: totalHealing / 60 }
+    return result;
 }

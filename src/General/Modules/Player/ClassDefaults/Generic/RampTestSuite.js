@@ -397,3 +397,4 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         console.log(weights); 
 
 }
+
