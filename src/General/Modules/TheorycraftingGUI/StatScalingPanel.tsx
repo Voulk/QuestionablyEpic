@@ -88,6 +88,7 @@ const CustomTooltip: React.FC<{
  
 const StatScalingChart: React.FC<StatScalingChartProps> = ({
   data = PLACEHOLDER_DATA,
+  currentWeights,
 }) => {
   const yAxisMin = React.useMemo(() => {
     if (!data.length) return 0;
@@ -177,6 +178,51 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
             ))}
           </LineChart>
         </ResponsiveContainer>
+
+        <div
+          style={{
+            marginTop: "14px",
+            paddingTop: "12px",
+            borderTop: "1px solid #2e2e2e",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "18px",
+              flexWrap: "wrap",
+              padding: "10px 16px",
+              background: "#1f1f1f",
+              border: "1px solid #2e2e2e",
+              borderRadius: "6px",
+              minWidth: "fit-content",
+            }}
+          >
+            {STAT_LINES.map(({ key, label, color }) => (
+              <div
+                key={key}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "12px",
+                  fontFamily: "'Cinzel', Georgia, serif",
+                  color: "#bbb",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <span style={{ color, fontWeight: 600 }}>{label}:</span>
+                <span style={{ fontFamily: "monospace", color: "#e0e0e0" }}>
+                  {currentWeights[key].toFixed(2)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </TCPanel>
   );

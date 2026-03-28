@@ -7,7 +7,7 @@ import TCPanel from "./TCPanel";
 import StatScalingChart from "./StatScalingPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
+import { buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 
 
 
@@ -53,6 +53,7 @@ export default function TheorycraftingGUI(props) {
         const statResults = buildTCStatChart(selectedProfile.runCastModel, playerData)
         setActiveResult(result);
         setStatChart(statResults);
+        setCurrentWeights(buildStatWeights(playerData, selectedProfile.runCastModel, {}))
         
     }
 

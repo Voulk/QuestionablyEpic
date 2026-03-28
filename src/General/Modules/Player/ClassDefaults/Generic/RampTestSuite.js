@@ -396,6 +396,8 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         });
         console.log(weights); 
 
+    return weights;
+
 }
 
 export const buildTCStatChart = (scoreSet, playerData) => {
