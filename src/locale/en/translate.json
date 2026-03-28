@@ -382,6 +382,10 @@
           "title": "Overheal: Mr Pick-me-up",
           "tooltip": "Expected overhealing for the Mr Pick-me-up trinket."
         },
+        "crucibleUpgrades": {
+          "title": "Crucible Upgrades",
+          "tooltip": "You can upgrade your Crucible trinket in Voidstorm and it applies in raids and dungeons too."
+        },
         "cosmicCrescendoUsage": {
           "title": "Cosmic Crescendo",
           "tooltip": "Expected number of stacks consumed by allies dropping low on health."

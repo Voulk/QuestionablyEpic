@@ -15,41 +15,32 @@ export const CONSTANTS = {
         "mythicMax": 7,
     },
     socketSlots: ["Head", "Neck", "Wrist", "Finger", "Waist"],
-    seasonalItemConversion: 12, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-    currentRaidIDs: [1307, 1314, 1308], // This should be an array even with one raid. This value is used in various array specific functions.
-    currentDungeonIDs: [1315, 1316, 1300, 1299, 1201, 278, 476, 945],
-    fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
-    itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
-    bossNPCIDs: { // Unused?
-        2639: 225821, // Vexie and the Geargrinders.
-        2640: 229177, // Cauldron of Carnage
-        2641: 228652, // Rik Reverb
-        2642: 230322, // Stix Bunkjunker
-        2653: 230583, // Sprocketmonger Lockenstock
-        2644: 228458, // One Armed Bandit
-        2645: 229953, // Mug'Zee
-        2646: 237194 // Chrome King Gallywix
-    },
-    dungeonZoneIDs: { // Unused?
-        1210: 14882, // Darkflame Cleft
-        1272: 15103, // Cinderbrew Meadery
-        1268: 14938, // The Rookery
-        1267: 14954, // Priory
-        1012: 8064, // The Motherlode
-        1178: 10225, // Workshop
-        1298: 15452, // Operation Floodgate
-        1187: 12841, // Theater of Pain
-    },
-    seasonID: 34,
-    specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
-    classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic", "Mistweaver Monk Classic"],
-
     qualityColors: {
         3: "#328CE3",
         4: "#a73fee",
         5: "#ff8000", // Legendary
         6: "#e6cc80", // Artifact
-    }
+    },
+    specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
+    classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic", "Mistweaver Monk Classic"],
+
+    // SEASONAL CONSTANTS
+    seasonalItemConversion: 12, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
+    currentRaidIDs: [1307, 1314, 1308], // This should be an array even with one raid. This value is used in various array specific functions.
+    currentDungeonIDs: [1315, 1316, 1300, 1299, 1201, 278, 476, 945],
+    fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
+    itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
+    seasonID: 34,
+    tierNames: {
+      "Preservation Evoker": "of the Black Talon", 
+      "Holy Paladin": "Luminant Verdict's", 
+      "Holy Priest": "Blind Oath's", 
+      "Discipline Priest": "Blind Oath's", 
+      "Restoration Shaman": "of the Primal Core", 
+      "Mistweaver Monk": "of Ra-den's Chosen", 
+      "Restoration Druid": "of the Luminous Bloom"
+    },
+
 }
 
 // Currently unused. Might use later.

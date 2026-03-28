@@ -18,7 +18,7 @@ describe("Test Preservation Evoker Spell Values", () => {
         ${"Dream Breath"}                | ${(790)}                        | ${1}
         ${"Emerald Blossom"}             | ${(1662)}                       | ${0}
         ${"Verdant Embrace"}             | ${(4734)}                       | ${0}
-        ${"Reversion"}                   | ${(1055)}                       | ${0}
+        ${"Reversion"}                   | ${(1055 * 1.25)}                       | ${0}
         ${"Temporal Anomaly"}            | ${(3720)}                       | ${0}
         ${"Echo"}                        | ${(1235)}                       | ${0}
         ${"Merithra's Blessing"}         | ${(1286)}                       | ${0}
