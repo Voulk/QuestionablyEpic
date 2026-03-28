@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "QE Live is updated for Midnight but work continues both in-app and in-game. Check back often."
+    "Many trinkets have been nerfed or bug-fixed in-game."
   ] : 
   [
     "Please report any bugs you find to the QE Live Discord.",

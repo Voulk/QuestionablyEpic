@@ -89,8 +89,7 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
         }
         else {
             trinketDescription.push("Expected Uptime: " + convertExpectedUptime(trinketEffects[0], player, false));
-        }
-       
+        }  
     }
 
     Object.keys(trinketStats).forEach((statName) => {    
