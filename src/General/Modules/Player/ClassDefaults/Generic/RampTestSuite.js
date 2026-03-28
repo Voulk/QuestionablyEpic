@@ -398,3 +398,34 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
 
 }
 
+export const buildTCStatChart = (scoreSet, playerData) => {
+    const statResults = []
+    const baseStats = {
+        intellect: 2400,
+        haste: 0,
+        crit: 0,
+        mastery: 0,
+        versatility: 0,
+    }
+
+    const stepSize = 100;
+    const steps = 10;
+
+    for (let i = 0; i < steps; i++) {
+        const res = {}
+        Object.keys(baseStats).forEach(stat => {
+            res.amount = i * stepSize;
+            const playerStats = {...baseStats, [stat]: baseStats[stat] + i * stepSize};
+            const result = scoreSet(playerStats, playerData);
+            res[stat] = result.healing;
+        });
+        statResults.push(res);
+
+    }
+
+    console.log(statResults);
+
+    return statResults;
+
+}
+

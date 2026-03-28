@@ -312,7 +312,7 @@
         {
             "displayInfo": {
                 "id": 1267068,
-                "icon": false,
+                "icon": "inv12_apextalent_shaman_stormstreamtotem",
                 "spellName": "Stormstream Totem",
                 "cat": "heal"
             },

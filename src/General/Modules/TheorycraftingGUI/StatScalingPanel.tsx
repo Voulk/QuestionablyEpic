@@ -24,6 +24,7 @@ export interface StatScalingDataPoint {
  
 export interface StatScalingChartProps {
   data?: StatScalingDataPoint[];
+  currentWeights: { haste: number; crit: number; mastery: number; versatility: number; intellect: number };
 }
  
 // ─── Colour palette ───────────────────────────────────────────────────────────

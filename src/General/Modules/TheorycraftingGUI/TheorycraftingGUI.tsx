@@ -7,7 +7,7 @@ import TCPanel from "./TCPanel";
 import StatScalingChart from "./StatScalingPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { truncate } from "fs";
+import { buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 
 
 
@@ -25,7 +25,8 @@ export default function TheorycraftingGUI(props) {
             { spellName: "Healing Tide Totem",    cpm: 0.33, overhealing: 0.05, hps: 2680,  percentHealing: "7.3%", icon: "ability_shaman_healingtide"  },
         ]
     });
-    
+    const [statChart, setStatChart] = useState([]);
+    const [currentWeights, setCurrentWeights] = useState({ haste: 0.2, crit: 0.2, mastery: 0.2, versatility: 0.2, intellect: 1 });
 
     const [stats, setStats] = useState<Stats>({
         intellect: 2400,
@@ -49,7 +50,10 @@ export default function TheorycraftingGUI(props) {
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
+        const statResults = buildTCStatChart(selectedProfile.runCastModel, playerData)
         setActiveResult(result);
+        setStatChart(statResults);
+        
     }
 
     const rows: SpellRow[] = [];
@@ -65,6 +69,7 @@ export default function TheorycraftingGUI(props) {
         gap: "24px",
       }}
     >
+        <div style={{ height: 5 }} />
       {/* Control panel spans full width as a header bar */}
       <ControlPanel stats={stats} setStats={setStats} profiles={profiles} onRunProfile={runProfile} />
  
@@ -73,9 +78,10 @@ export default function TheorycraftingGUI(props) {
         <SpellBreakdown rows={activeResult.spellBreakdown} activeResult={activeResult} />
       </TCPanel>
 
-      <StatScalingChart />
+      <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
+      <div style={{ height: 100 }} />
     </Box>
     )
 }

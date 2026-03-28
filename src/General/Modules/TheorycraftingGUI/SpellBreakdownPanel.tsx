@@ -64,7 +64,6 @@ const sxTdNumeric = {
 
 const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) => {
   // const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
-  console.log(rows);
 
   return (
     <div style={{ padding: "10px 12px 12px" }}>
