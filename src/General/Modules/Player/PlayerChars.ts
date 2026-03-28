@@ -17,7 +17,7 @@ import { autoAddItems } from "General/Engine/ItemUtilities";
 // This entire component class might be scrapped and replaced. Beware edits.
 
 
-export function createPlayerChars(): PlayerChars {
+export function createPlayerChars(importedSpec?: string): PlayerChars {
   const playerChars: PlayerChars = {
     allChar: [],
     activeChar: 0,
@@ -68,7 +68,29 @@ export function createPlayerChars(): PlayerChars {
 
       this.allChar = charArray;
       this.activeChar = ls.get("activeChar") || 0;
-      if (this.activeChar > this.allChar.length - 1) {
+      if (importedSpec) {
+        // We have a specific spec query. 
+        console.log(importedSpec);
+        let realSpecName = "";
+        let importedSpecName = importedSpec.toLowerCase();
+        if (importedSpecName === "holypriest") realSpecName = "Holy Priest";
+        else if (importedSpecName === "disciplinepriest") realSpecName = "Discipline Priest";
+        else if (importedSpecName === "restoshaman" || importedSpecName === "restorationshaman") realSpecName = "Restoration Shaman";
+        else if (importedSpecName === "restodruid" || importedSpecName === "restorationdruid") realSpecName = "Restoration Druid";
+        else if (importedSpecName === "presevoker" || importedSpecName === "preservationevoker") realSpecName = "Preservation Evoker";
+        else if (importedSpecName === "mwmonk" || importedSpecName === "mistweavermonk") realSpecName = "Mistweaver Monk";
+        else if (importedSpecName === "holypaladin") realSpecName = "Holy Paladin";
+
+        else if (importedSpecName === "holypriestclassic") realSpecName = "Holy Priest Classic";
+        else if (importedSpecName === "disciplinepriestclassic") realSpecName = "Discipline Priest Classic";
+        else if (importedSpecName === "restoshamanclassic" || importedSpecName === "restorationshamanclassic") realSpecName = "Restoration Shaman Classic";
+        else if (importedSpecName === "restodruidclassic" || importedSpecName === "restorationdruidclassic") realSpecName = "Restoration Druid Classic";
+        else if (importedSpecName === "mwmonkclassic" || importedSpecName === "mistweavermonkclassic") realSpecName = "Mistweaver Monk Classic";
+        else if (importedSpecName === "holypaladinclassic") realSpecName = "Holy Paladin Classic";
+
+        this.activeChar = charArray.findIndex(char => char.spec === realSpecName);
+      }
+      else if (this.activeChar > this.allChar.length - 1) {
         // We have a mismatch because they've selected a character that doesn't exist. We'll auto select the lowest character that matches their game type.
         this.activeChar = charArray.findIndex(char => char.gameType === (ls.get<string>("gameType") || "Retail"));
       }

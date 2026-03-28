@@ -23,8 +23,8 @@ export const raidTrinketData = [
     
           let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
           if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
-          else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.65
-          else if (["Preservation Evoker", "Mistweaver Monk"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.85; // These specs can use it on more targets in raid, but it's still not amazing for them.
+          else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.6
+          else if (["Preservation Evoker", "Restoration Druid"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.80; // These specs can use it on more targets in raid, but it's still not amazing for them.
 
           bonus_stats.dps = dps;
           bonus_stats.hps = dps * 5;
