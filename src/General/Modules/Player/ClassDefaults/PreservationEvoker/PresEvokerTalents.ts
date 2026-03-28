@@ -223,7 +223,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Dream Breath's instant healing is increased by X% and Dream Breath has a Y% chance to grant Merithra's Blessing. */
-    "Merithra's Blessing3": {id: 1256689, values: [100.00], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Merithra's Blessing3": {id: 1256689, values: [250.00], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         buffSpellPerc(spellDB["Dream Breath"], talentData[0], 1);
     }},
 }

@@ -7,8 +7,8 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 export const raidTrinketData = [
   {
         name: "Litany of Lightblind Wrath",
-        description: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
-        addonDescription: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value. Particularly good in Mythic+.",
+        description: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value.",
+        addonDescription: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value.",
         effects: [
           {  // Damage Effect - Need to check if it double dips Vers
             secondaries: ['crit', 'versatility'],
@@ -24,6 +24,7 @@ export const raidTrinketData = [
           let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
           if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
           else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.65
+          else if (["Preservation Evoker", "Mistweaver Monk"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.85; // These specs can use it on more targets in raid, but it's still not amazing for them.
 
           bonus_stats.dps = dps;
           bonus_stats.hps = dps * 5;
@@ -52,8 +53,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman, Resto Druid and Holy Paladin continue to get stacks for doing nothing.",
-        addonDescription: "Still bugged, but now also nerfed multiple times. Some specs like Resto Shaman and Holy Paladin continue to get stacks for doing nothing.",
+        description: "Gaze continues to get bugfixes and in-game tuning.",
+        addonDescription: "Gaze continues to get bugfixes and in-game tuning.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -64,15 +65,14 @@ export const raidTrinketData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const buggedSpecs = ["Holy Paladin", "Restoration Druid", "Restoration Shaman"]
             const specData = { // This trinket just does random shit. We can try and calculate it dynamically later.
-              "Holy Priest": 9.4,
-              "Discipline Priest": 11.4,
-              "Restoration Druid": 11,
-              "Preservation Evoker": 11.8,
-              "Mistweaver Monk": 12,
-              "Restoration Shaman": 10.6,
-              "Holy Paladin": 11.83,
+              "Holy Priest": 8.9,
+              "Discipline Priest": 10.7,
+              "Restoration Druid": 10.2,
+              "Preservation Evoker": 11.2,
+              "Mistweaver Monk": 11.6,
+              "Restoration Shaman": 10,
+              "Holy Paladin": 10.8,
             }
             const spellsCastInDuration = specData[player.spec]
             

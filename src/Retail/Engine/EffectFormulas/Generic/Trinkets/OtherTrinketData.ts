@@ -47,9 +47,10 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "A powerful crit / leech stat stick that's very overbudget. Does not include the special Voidstorm buffs, though they do work in raids and dungeons. Setting coming soon.",
+    description: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. EXPECT NERFS!",
     warningFlag: true,
-    addonDescription: "",
+    hasSetting: true,
+    addonDescription: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too.",
     effects: [
       {
         duration: 10,
@@ -60,8 +61,16 @@ export const otherTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
 
-      bonus_stats.crit = runGenericPPMTrinket({...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}, itemLevel);
-      bonus_stats.leech = convertPPMToUptime(data[0].ppm, data[0].duration) * 2 * STATCONVERSION.LEECH;
+      const trinketData = {...data[0], ...trinketRawData["Crucible of Erratic Energies"][0]}
+
+      if (getSetting(additionalData.settings, "crucibleUpgrades") === "Fully Upgraded") {
+        trinketData.coefficient *= 1.2; 
+        trinketData.duration = 20;
+        trinketData.ppm = 5;
+      }
+
+      bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
+      bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 2 * STATCONVERSION.LEECH;
 
       return bonus_stats;
     }

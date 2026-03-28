@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "12.0.1 / 5.5.3",
+    update: 10,
+    date: "March 28",
+    changes: [ 
+      "Fixed Mistweaver Monk tier set.",
+      "Updated trinkets based on in-game changes.",
+      "Added setting for the Crucible of Erratic Energies and enabled it by default."
+    ]
+  },
     {
     version: "12.0.1 / 5.5.3",
     update: 9,
