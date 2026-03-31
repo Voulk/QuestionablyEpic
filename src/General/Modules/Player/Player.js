@@ -665,10 +665,10 @@ export class Player {
       //this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
       this.activeStats = {
         intellect: 2400,
-        haste: 540,
-        crit: 440,
+        haste: 240,
+        crit: 700,
         mastery: 120,
-        versatility: 210,
+        versatility: 410,
         stamina: 1900,
       };
     } else if (spec === SPEC.DISCPRIEST) {

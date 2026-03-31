@@ -428,7 +428,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "Gaze of the Alnseer has a bug which affect ability to rate them correctly."  :
+  const trinketText = gameType === "Retail" ? "31/3 Trinket changes are in."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (

@@ -10,7 +10,6 @@ export const dungeonTrinketData =
         name: "Emerald Coach's Whistle",
         description: "Nerfed! Still an ok support trinket but no longer a frontrunner.",
         addonDescription: "Nerfed! Still an ok support trinket but no longer a frontrunner.",
-        warningFlag: true,
         effects: [
         { // Stat Proc Portion
             stat: "mastery",

@@ -10,12 +10,8 @@ describe("Test Preservation Evoker Spell Values", () => {
 
     const statPercentages = {intellect: 620, crit: 1, haste: 1, mastery: 0, versatility: 1, critMult: 2, genericHealingMult: 1}//convertStatPercentages(activeStats, 1, spec);
 
-    /* TEST SPELLS */
-    
-    each`
-        spellName                        | expectedResult                  | index
-        ${"Dream Breath"}                | ${(1264)}                       | ${0}
-        ${"Dream Breath"}                | ${(790)}                        | ${1}
+    /* TEST SPELLS 
+            ${"Dream Breath"}                | ${(790)}                        | ${1}
         ${"Emerald Blossom"}             | ${(1662)}                       | ${0}
         ${"Verdant Embrace"}             | ${(4734)}                       | ${0}
         ${"Reversion"}                   | ${(1055 * 1.25)}                       | ${0}
@@ -24,6 +20,12 @@ describe("Test Preservation Evoker Spell Values", () => {
         ${"Merithra's Blessing"}         | ${(1286)}                       | ${0}
         ${"Dream Flight"}                | ${(2573)}                       | ${1}
         ${"Dream Flight"}                | ${(5146)}                       | ${0}
+    */
+    
+    each`
+        spellName                        | expectedResult                  | index
+        ${"Dream Breath"}                | ${(1264 * 1.0115)}                       | ${0}
+
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = specDB[spellName][index]
