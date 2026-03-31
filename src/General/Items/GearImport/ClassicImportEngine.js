@@ -153,10 +153,15 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     // Epic items gain 8 ilvl per upgrade.
     // We won't check if an item can be upgraded at all here because they are imports.
     const exceptionList = [95186, 95188, 95177, 95164, 95147, 95195, 95193, 95150, 95200, 95163, 95182, 95151, 95185, 95183, 95190]
+    const maxUpgrades = getItemProp(itemID, "maxUpgrades", "Classic")
     let baseRarity = getItemProp(itemID, "quality", "Classic");
     if (!(itemID in exceptionList)) {
-      if (itemLevel > 520 && itemLevel !== 528 && itemLevel !== 541 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += 3 * upgradeLevel;
-      else if (itemLevel < 520 && getItemProp(itemID, "maxUpgrades", "Classic")) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
+      if (itemLevel == 541 || itemLevel == 528) {
+        // Titanforged items
+        itemLevel += 4 * upgradeLevel
+      }
+      else if (itemLevel > 520 && maxUpgrades) itemLevel += (maxUpgrades / 2) * upgradeLevel;
+      else if (itemLevel < 520 && maxUpgrades) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
     }
 
   }

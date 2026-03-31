@@ -26,8 +26,8 @@ export const changeLog: entry[] = [
     changes: [ 
       "In-game trinket tuning.",
       "Upped Crucible Limit to 4 by default.",
-      "Tagged the Tailoring Cloak as a crafted item."
-
+      "Tagged the Tailoring Cloak as a crafted item.",
+      "Mists of Pandaria: Added new item upgrade system.",
     ]
   },
       {
