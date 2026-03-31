@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.0.1 / 5.5.3",
+    update: 11,
+    date: "March 31",
+    changes: [ 
+      "In-game trinket tuning.",
+      "Upped Crucible Limit to 4 by default.",
+      "Tagged the Tailoring Cloak as a crafted item."
+
+    ]
+  },
       {
     version: "12.0.1 / 5.5.3",
     update: 10,
