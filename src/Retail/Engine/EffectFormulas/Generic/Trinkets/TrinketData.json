@@ -1,7 +1,7 @@
 {
     "Echo of L'ura": [
         {
-            "coefficient": 32.834,
+            "coefficient": 44.32,
             "scalingClass": -9
         }
     ],
@@ -59,7 +59,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 43.421,
+            "coefficient": 54.276,
             "scalingClass": -9
         }
     ],
@@ -111,7 +111,7 @@
     ],
     "Whisper of the Duskwraith": [
         {
-            "coefficient": 75.87,
+            "coefficient": 102.42,
             "scalingClass": -9
         },
         {
@@ -191,7 +191,7 @@
     ],
     "Radiant Sunstone": [
         {
-            "coefficient": 343.605,
+            "coefficient": 463.86,
             "scalingClass": -9
         },
         {
@@ -199,7 +199,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 343.605,
+            "coefficient": 463.86,
             "scalingClass": -9
         },
         {

@@ -141,6 +141,7 @@ export const raidTrinketData = [
           name: "Light of the Cosmic Crescendo",
           description: "",
           addonDescription: "",
+          
           effects: [
             { // Damage effect. NYI.
               secondaries: ['haste', 'versatility', 'crit'],
@@ -150,13 +151,15 @@ export const raidTrinketData = [
               secondaries: ['haste', 'versatility', 'crit'],
               ppm: 5, 
               targets: 2.5, // Heals for more per healed ally, up to 5.
-              efficiency: {Raid: 0.7, Dungeon: 0.55} //
+              //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
             },
           ],
           runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
+
+            const usageRate = getSetting(additionalData.settings, "cosmicCrescendoUsage") / 100;
       
-            bonus_stats.hps = runGenericFlatProc({...data[1], ...trinketRawData["Light of the Cosmic Crescendo"][1]}, itemLevel, player, additionalData.contentType)
+            bonus_stats.hps = runGenericFlatProc({...data[1], ...trinketRawData["Light of the Cosmic Crescendo"][1]}, itemLevel, player, additionalData.contentType) * (usageRate || 0.7)
             
             return bonus_stats;
           }
