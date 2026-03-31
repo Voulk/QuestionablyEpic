@@ -55,6 +55,26 @@ export const timewalkingTrinketData = [
         return bonus_stats;
       }
     },
+        {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                         Eye of Blazing Power                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      /* 
+      */
+      name: "Fall of Mortality",
+      effects: [
+        {  // Heal effect
+          duration: 15,
+          ppm: 60 / 75, // ICD: 45
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        bonus_stats.versatility = processedValue({...data[0], ...trinketRawData["Fall of Mortality"][0]}, itemLevel, data[0].efficiency) * data[0].ppm! * data[0].duration! / 60
+  
+        return bonus_stats;
+      }
+    },
     {
     name: "Energy Siphon",
     effects: [
@@ -147,7 +167,7 @@ export const timewalkingTrinketData = [
           { // Mastery portion
             coefficient: 0.450353,
             table: -7,
-            ppm: {"Restoration Druid": 35-5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+            ppm: {"Restoration Druid": 35.5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
                   "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
           },
         ],
