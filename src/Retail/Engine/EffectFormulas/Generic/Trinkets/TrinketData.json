@@ -1,4 +1,16 @@
 {
+    "Necromantic Focus": [
+        {
+            "coefficient": 0.047,
+            "scalingClass": -7
+        }
+    ],
+    "Eye of Blazing Power": [
+        {
+            "coefficient": 118.339,
+            "scalingClass": -9
+        }
+    ],
     "Echo of L'ura": [
         {
             "coefficient": 44.32,
