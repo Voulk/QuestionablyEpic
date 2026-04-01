@@ -5,6 +5,7 @@ import ReportRoute from "./ReportRoute";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
+import SpecTrinketsPage from "General/Modules/TrinketAnalysis/SpecTrinketsPage";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
 import CircletAnalysis from "General/Modules/CircletAnalysis/CircletAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
@@ -428,6 +429,10 @@ const App = () => {
                         patronStatus={patronStatus}
                       />
                     )}
+                  />
+                  <Route
+                    path="/spec-trinkets/:spec?"
+                    render={() => <SpecTrinketsPage />}
                   />
                   <CustomRoute
                     path="/trinkets"
