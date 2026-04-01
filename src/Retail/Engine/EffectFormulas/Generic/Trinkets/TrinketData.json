@@ -1,4 +1,16 @@
 {
+    "Nevermelting Ice Crystal": [
+        {
+            "coefficient": 0.863833,
+            "scalingClass": -7
+        }
+    ],
+    "Fall of Mortality": [
+        {
+            "coefficient": 2.123,
+            "scalingClass": -7
+        }
+    ],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,

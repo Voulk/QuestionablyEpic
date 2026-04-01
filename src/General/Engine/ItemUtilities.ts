@@ -392,6 +392,7 @@ export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Reta
     if (item.slot.includes("Weapon") || item.slot === "Offhand") {
       // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
       options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
+      options.push({type: "embellishment", label: "Darkmoon Sigil: Void", effectName: "Darkmoon Sigil: Void"})
       //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
     }
     if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon")) {

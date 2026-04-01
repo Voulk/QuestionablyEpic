@@ -105,14 +105,14 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    gemArray.fill(getGemID('haste', 'crit'), 1);
     return gemArray;
     return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
       getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    gemArray.fill(getGemID('crit', 'mastery'), 1);
+    gemArray.fill(getGemID('crit', 'versatility'), 1);
     return gemArray;
     return [metaGem, getGemID('crit', 'mastery')]/*, getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
                 getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];*/

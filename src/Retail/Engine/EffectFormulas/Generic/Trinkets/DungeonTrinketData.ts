@@ -298,6 +298,25 @@ export const dungeonTrinketData =
           return bonus_stats;
         }
       },
+      { // Could be modelled better, but the trinket isn't very relevant.
+        name: "Nevermelting Ice Crystal",
+        description: "A brutally long cooldown reduces any real potential.",
+        addonDescription: "A brutally long cooldown reduces any real potential.",
+        effects: [
+          { // 
+            duration: 20,
+            cooldown: 180, //
+            stat: "crit",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Nevermelting Ice Crystal"][0]}, itemLevel, additionalData.castModel) * 2.5
+          
+          return bonus_stats;
+        }
+      },
 
 
 ]; 
