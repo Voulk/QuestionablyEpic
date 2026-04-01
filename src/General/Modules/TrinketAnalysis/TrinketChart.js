@@ -35,7 +35,7 @@ const getClassicTrinketScore = (id, player, itemLevel) => {
   return item.softScore;
 };
 
-const getHighestTrinketScore = (db, trinket, maxLevel) => {
+export const getHighestTrinketScore = (db, trinket, maxLevel) => {
   const trinketID = trinket.id;
   const temp = db.filter((item) => item.id === trinketID);
   const highestLevel = Math.min(trinket.highestLevel, maxLevel);
@@ -54,7 +54,7 @@ const handleDownload = () => {
   downloadJson(JSON.stringify(toPrint), "QE-trinket-data.json");
 };
 
-const sourceHandler = (array, sources, playerSpec) => {
+export const sourceHandler = (array, sources, playerSpec) => {
   const raidSources = [1314, 1308, 1307];
   const dungeonSources = [-1];
   const delveSources = [-69];
