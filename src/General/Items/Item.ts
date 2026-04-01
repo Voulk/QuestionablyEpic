@@ -237,8 +237,8 @@ export class Item {
   // Make an educated guess at what quality an item is based on its level.
   // We'll use this when we don't have access to precise information via SimC string.
   guessItemQuality() {
-    if (this.level >= 372) this.quality = 4;
-    else if (this.level >= 340) this.quality = 3;
+    if (this.level >= 250) this.quality = 4;
+    else if (this.level >= 200) this.quality = 3;
     else this.quality = 2;
   }
 

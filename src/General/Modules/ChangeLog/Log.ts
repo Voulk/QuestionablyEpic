@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.0.1 / 5.5.3",
+    update: 12,
+    date: "April 1",
+    changes: [ 
+      "Improved Engineering support.",
+      "The special raid leech items that drop in Midnight Falls will now correctly have leech if added in-app. Imports always worked correctly.",
+      "Bugfix: The Paladin stat panel haste stat should now be correct. No change to results.",
+      "Bugfix: Fixed a few Timewalking imports.",
+    ]
+  },
         {
     version: "12.0.1 / 5.5.3",
     update: 11,
