@@ -923,8 +923,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
       setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       setStats.intellect = (setStats.intellect || 0) * 1.04;
+      setStats.haste = (setStats.intellect || 0) * 1.05;
 
-      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.04;
+      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.05;
       mergedEffectStats.crit = (mergedEffectStats.crit || 0) + STATCONVERSION.CRIT * 4;
       mergedEffectStats.mastery = (mergedEffectStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       mergedEffectStats.intellect = (mergedEffectStats.intellect || 0) * 1.04;
