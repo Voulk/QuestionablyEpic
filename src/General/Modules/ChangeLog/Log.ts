@@ -27,6 +27,7 @@ export const changeLog: entry[] = [
       "In-game trinket tuning.",
       "Upped Crucible Limit to 4 by default.",
       "Tagged the Tailoring Cloak as a crafted item.",
+      "Added Catalysm trinkets to the chart under the Timewalking filter.",
       "Mists of Pandaria: Added new item upgrade system.",
     ]
   },

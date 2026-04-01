@@ -9,7 +9,10 @@ export function getItemSet(id: number, pieces: number, spec: string) {
     if (temp.length > 0) {
       for (const [bonus, effectID] of Object.entries(temp[0].setBonuses)) {
         //console.log("Getting bonus " + bonus + ". ID: " + effectID + ". Pieces: " + pieces);
-        if (pieces >= Number(bonus)) effects.push({type: 'set bonus', name: effectID, class: temp[0].class});
+        if (pieces >= Number(bonus)) {
+          if (effectID === "Root Warden's Regalia") effects.push({type: 'embellishment', name: effectID});
+          else effects.push({type: 'set bonus', name: effectID, class: temp[0].class});
+        }
       }
       return effects;
     }
@@ -25,6 +28,13 @@ type ItemSetData = {
 export const itemSets: ItemSetData[] = [
 
   // Season 3
+  {
+    id: [1967],
+    class: "All",
+    setBonuses: {
+      2: "Root Warden's Regalia", // 
+  },
+  },
     {
     id: [1988],
     class: "Restoration Shaman",
