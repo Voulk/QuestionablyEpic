@@ -10,6 +10,7 @@ import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ShareIcon from "@mui/icons-material/Share";
+import PieChartOutlineIcon from "@mui/icons-material/PieChartOutline";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { buildRetailEffectTooltip, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
@@ -25,6 +26,17 @@ const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSetting
 
   item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
   item.effect = getItemProp(id, "effect");
+  item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
+
+  return item.softScore;
+};
+
+const getTrinketPassiveScore = (id, itemLevel, player, contentType, playerSettings) => {
+  let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
+  let itemAllocations = getItemAllocations(id);
+
+  item.stats = calcStatsAtLevel(itemLevel, "Trinket", itemAllocations, "");
+  item.effect = null;
   item.softScore = scoreTrinket(item, player, contentType, "Retail", playerSettings);
 
   return item.softScore;
@@ -136,6 +148,7 @@ export default function TrinketChart({ player }) {
     }
   };
   const [levelCap, setLevelCap] = React.useState(289);
+  const [breakdown, setBreakdown] = React.useState(false);
 
   const maxLevelMarks = [
     { value: 0, label: "237" },
@@ -213,6 +226,7 @@ export default function TrinketChart({ player }) {
       for (var x = 0; x < itemLevels.length; x++) {
         if (gameType === "Retail") {
           trinketAtLevels["i" + itemLevels[x]] = getTrinketAtItemLevel(trinket.id, itemLevels[x], player, contentType, playerSettings);
+          trinketAtLevels["p" + itemLevels[x]] = getTrinketPassiveScore(trinket.id, itemLevels[x], player, contentType, playerSettings);
         } else {
           if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
             trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, player, itemLevels[x]);
@@ -230,10 +244,10 @@ export default function TrinketChart({ player }) {
 
   if (gameType === "Classicc") {
     const getHighestClassicScore = (trinket) => trinket.heroic || trinket.normal || 0;
-    activeTrinkets.sort((a, b) => (getHighestClassicScore(a) < getHighestClassicScore(b) ? 1 : -1));
+    activeTrinkets.sort((a, b) => getHighestClassicScore(b) - getHighestClassicScore(a));
   } else {
     activeTrinkets.sort((a, b) =>
-      getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1
+      (getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) || 0) - (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) || 0)
     );
   }
 
@@ -311,6 +325,31 @@ export default function TrinketChart({ player }) {
                   </ToggleButton>
                 </Tooltip>
               </Grid>
+
+              {gameType === "Retail" ? (
+                <Grid item sx={{ marginLeft: "auto", paddingRight: 1, display: "flex", gap: 0.5 }}>
+                  <Tooltip title={"Effect vs Stats Breakdown"} arrow>
+                    <ToggleButton
+                      value="breakdown"
+                      selected={breakdown}
+                      onChange={() => setBreakdown(!breakdown)}
+                      size="small"
+                    >
+                      <PieChartOutlineIcon />
+                    </ToggleButton>
+                  </Tooltip>
+                  <Tooltip title={"Alternate Theme"} arrow>
+                    <ToggleButton
+                      value="check"
+                      selected={theme}
+                      onChange={() => setTheme(!theme)}
+                      size="small"
+                    >
+                      <VisibilityIcon />
+                    </ToggleButton>
+                  </Tooltip>
+                </Grid>
+              ) : null}
               <Grid item xs={12}>
                 <VerticalChart
                   data={activeTrinkets}
@@ -318,6 +357,7 @@ export default function TrinketChart({ player }) {
                   itemLevels={itemLevels}
                   theme={themeSelection(theme ? "candidate2" : "candidate21")}
                   gameType={gameType}
+                  breakdown={breakdown}
                 />
               </Grid>
             </Grid>
