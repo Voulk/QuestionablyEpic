@@ -66,14 +66,22 @@ export default function SpecTrinketsPage() {
   const match = useRouteMatch();
   const history = useHistory();
 
+  const defaultSpec = (forGameType) => forGameType === "Classic" ? CONSTANTS.classicSpecs[0] : CONSTANTS.specs[0];
+
   const [selectedSpec, setSelectedSpec] = useState(() => {
     const urlSlug = match.params.spec;
     const urlSpec = urlSlug ? URL_TO_SPEC[urlSlug.toLowerCase()] : null;
     if (urlSpec && [...CONSTANTS.specs, ...CONSTANTS.classicSpecs].includes(urlSpec)) {
       return urlSpec;
     }
-    return CONSTANTS.specs[0];
+    return defaultSpec(gameType);
   });
+
+  React.useEffect(() => {
+    if (!availableSpecs.includes(selectedSpec)) {
+      setSelectedSpec(defaultSpec(gameType));
+    }
+  }, [gameType]);
 
   const player = useMemo(() => {
     const specGameType = selectedSpec.includes("Classic") ? "Classic" : "Retail";
