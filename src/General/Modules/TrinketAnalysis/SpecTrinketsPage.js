@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, useHistory } from "react-router-dom";
-import { Grid, MenuItem, Select, Typography } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { Grid } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import TrinketChart from "./TrinketChart";
+import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import { trackPageView } from "Analytics";
 
 export const URL_TO_SPEC = {
@@ -59,12 +60,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SpecTrinketsPage() {
+export default function SpecTrinketsPage({ onSpecChange, player, allChars, singleUpdate, simcSnack }) {
   const gameType = useSelector((state) => state.gameType);
   const availableSpecs = gameType === "Classic" ? CONSTANTS.classicSpecs : CONSTANTS.specs;
   const classes = useStyles();
   const location = useLocation();
-  const history = useHistory();
 
   const defaultSpec = (forGameType) => forGameType === "Classic" ? CONSTANTS.classicSpecs[0] : CONSTANTS.specs[0];
 
@@ -78,45 +78,48 @@ export default function SpecTrinketsPage() {
   });
 
   React.useEffect(() => {
+    if (onSpecChange) onSpecChange(selectedSpec);
+  }, [selectedSpec]);
+
+  React.useEffect(() => {
     if (!availableSpecs.includes(selectedSpec)) {
       setSelectedSpec(defaultSpec(gameType));
     }
   }, [gameType]);
 
-  const player = useMemo(() => {
+  const specPlayer = useMemo(() => {
     const specGameType = selectedSpec.includes("Classic") ? "Classic" : "Retail";
     return new Player("", selectedSpec, 0, "US", "Default", "Default", "default", specGameType);
   }, [selectedSpec]);
 
-  const handleSpecChange = (event) => {
-    const newSpec = event.target.value;
-    setSelectedSpec(newSpec);
-    const urlSlug = newSpec.toLowerCase().replace(/ /g, "");
-    history.replace(`/trinkets?spec=${urlSlug}`);
-  };
+  const contentType = useSelector((state) => state.contentType);
 
   React.useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
   }, [selectedSpec]);
 
+  const chartPlayer = player || specPlayer;
+
   return (
     <div className={classes.root}>
       <div style={{ height: 96 }} />
       <Grid container spacing={2}>
-        <Grid item xs={12} style={{ textAlign: "center" }}>
-          <Typography variant="h5" color="primary" gutterBottom>
-            Trinket Rankings
-          </Typography>
-          <Select value={selectedSpec} onChange={handleSpecChange}>
-            {availableSpecs.map((spec) => (
-              <MenuItem key={spec} value={spec}>
-                {spec}
-              </MenuItem>
-            ))}
-          </Select>
-        </Grid>
+        {player ? (
+          <Grid item xs={12}>
+            <CharacterPanel
+              player={player}
+              simcSnack={simcSnack}
+              allChars={allChars}
+              contentType={contentType}
+              singleUpdate={singleUpdate}
+              hymnalShow={true}
+              groupBuffShow={true}
+              autoSocket={true}
+            />
+          </Grid>
+        ) : null}
         <Grid item xs={12}>
-          <TrinketChart player={player} />
+          <TrinketChart player={chartPlayer} />
         </Grid>
       </Grid>
       <div style={{ height: 300 }} />
