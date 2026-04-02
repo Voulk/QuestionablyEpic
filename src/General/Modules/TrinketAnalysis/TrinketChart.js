@@ -319,37 +319,19 @@ export default function TrinketChart({ player }) {
                     <ShareIcon fontSize="small" />
                   </ToggleButton>
                 </Tooltip>
+                {gameType === "Retail" ? (
+                  <Tooltip title={"Effect vs Stats Breakdown"} arrow>
+                    <ToggleButton value="breakdown" selected={breakdown} onChange={() => setBreakdown(!breakdown)} size="small">
+                      <PieChartOutlineIcon fontSize="small" />
+                    </ToggleButton>
+                  </Tooltip>
+                ) : null}
                 <Tooltip title={"Alternate Theme"} arrow>
                   <ToggleButton value="check" selected={theme} onChange={() => setTheme(!theme)} size="small">
                     <VisibilityIcon fontSize="small" />
                   </ToggleButton>
                 </Tooltip>
               </Grid>
-
-              {gameType === "Retail" ? (
-                <Grid item sx={{ marginLeft: "auto", paddingRight: 1, display: "flex", gap: 0.5 }}>
-                  <Tooltip title={"Effect vs Stats Breakdown"} arrow>
-                    <ToggleButton
-                      value="breakdown"
-                      selected={breakdown}
-                      onChange={() => setBreakdown(!breakdown)}
-                      size="small"
-                    >
-                      <PieChartOutlineIcon />
-                    </ToggleButton>
-                  </Tooltip>
-                  <Tooltip title={"Alternate Theme"} arrow>
-                    <ToggleButton
-                      value="check"
-                      selected={theme}
-                      onChange={() => setTheme(!theme)}
-                      size="small"
-                    >
-                      <VisibilityIcon />
-                    </ToggleButton>
-                  </Tooltip>
-                </Grid>
-              ) : null}
               <Grid item xs={12}>
                 <VerticalChart
                   data={activeTrinkets}
