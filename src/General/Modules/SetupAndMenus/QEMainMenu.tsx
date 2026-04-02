@@ -100,7 +100,6 @@ export default function QEMainMenu(props: Props) {
           //{ route: "/cooldownplanner", disabled: true, tooltip: "CooldownPlanner", type: "Tools", order: 0, localization: "MainMenu.CooldownPlanner", glow: false },
           //{ route: "/oneshot", disabled: true, tooltip: "OneShot", type: "Tools", order: 1, localization: "MainMenu.OneShot", glow: false },
           //{ route: "/fightAnalysis", disabled: true, tooltip: "FightAnalysis", type: "Tools", order: 2, localization: "MainMenu.FightAnalysis", glow: false },
-          { route: "/spec-trinkets", disabled: false, tooltip: "SpecTrinkets", type: "Tools", localization: "MainMenu.SpecTrinkets", glow: false },
           { route: "/spelldata", disabled: true, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },
         ]
@@ -111,7 +110,6 @@ export default function QEMainMenu(props: Props) {
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", localization: "MainMenu.QuickCompare", glow: false },
-          { route: "/spec-trinkets", disabled: false, tooltip: "SpecTrinkets", type: "Tools", localization: "MainMenu.SpecTrinkets", glow: false },
           { route: "/spelldata", disabled: false, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           // Tools
           { route: "/profile", disabled: false, tooltip: "Profile", type: "Tools", localization: "MainMenu.Profile", glow: false },

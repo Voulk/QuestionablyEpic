@@ -9,6 +9,7 @@ import ReactGA from "react-ga";
 import SourceToggle from "./SourceToggle";
 import ToggleButton from "@mui/material/ToggleButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import ShareIcon from "@mui/icons-material/Share";
 import { themeSelection } from "./Charts/ChartColourThemes";
 import { buildRetailEffectTooltip, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
@@ -113,6 +114,27 @@ export default function TrinketChart({ player }) {
 
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]);
   const [theme, setTheme] = React.useState(false);
+  const [copied, setCopied] = React.useState(false);
+
+  const handleShare = () => {
+    const slug = player.getSpec().toLowerCase().replace(/ /g, "");
+    const url = `${window.location.origin}${window.location.pathname}?spec=${slug}`;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    } else {
+      const el = document.createElement("textarea");
+      el.value = url;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
   const [levelCap, setLevelCap] = React.useState(289);
 
   const maxLevelMarks = [
@@ -277,6 +299,18 @@ export default function TrinketChart({ player }) {
                   <SourceToggle sources={sources} setSources={handleSource} />
                 </Grid>
               ) : null}
+              <Grid item sx={{ marginLeft: "auto", paddingRight: 1, display: "flex", gap: 0.5 }}>
+                <Tooltip title={copied ? "Copied!" : "Copy link"} arrow>
+                  <ToggleButton value="share" selected={copied} onChange={handleShare} size="small">
+                    <ShareIcon fontSize="small" />
+                  </ToggleButton>
+                </Tooltip>
+                <Tooltip title={"Alternate Theme"} arrow>
+                  <ToggleButton value="check" selected={theme} onChange={() => setTheme(!theme)} size="small">
+                    <VisibilityIcon fontSize="small" />
+                  </ToggleButton>
+                </Tooltip>
+              </Grid>
               <Grid item xs={12}>
                 <VerticalChart
                   data={activeTrinkets}
@@ -293,17 +327,6 @@ export default function TrinketChart({ player }) {
         {gameType === "Retail" ? (
           <Grid item xs={12}>
             <Grid container spacing={0} direction="row" justifyContent="flex-end">
-              <Grid item>
-                <Tooltip title={"Alternate Theme"} arrow>
-                  <ToggleButton
-                    value="check"
-                    selected={theme}
-                    onChange={() => setTheme(!theme)}
-                  >
-                    <VisibilityIcon />
-                  </ToggleButton>
-                </Tooltip>
-              </Grid>
               <Grid item>
                 <Button variant="contained" onClick={handleDownload}>
                   Download JSON

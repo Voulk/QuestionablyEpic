@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { useRouteMatch, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { Grid, MenuItem, Select, Typography } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import Player from "General/Modules/Player/Player";
@@ -63,13 +63,13 @@ export default function SpecTrinketsPage() {
   const gameType = useSelector((state) => state.gameType);
   const availableSpecs = gameType === "Classic" ? CONSTANTS.classicSpecs : CONSTANTS.specs;
   const classes = useStyles();
-  const match = useRouteMatch();
+  const location = useLocation();
   const history = useHistory();
 
   const defaultSpec = (forGameType) => forGameType === "Classic" ? CONSTANTS.classicSpecs[0] : CONSTANTS.specs[0];
 
   const [selectedSpec, setSelectedSpec] = useState(() => {
-    const urlSlug = match.params.spec;
+    const urlSlug = new URLSearchParams(location.search).get("spec");
     const urlSpec = urlSlug ? URL_TO_SPEC[urlSlug.toLowerCase()] : null;
     if (urlSpec && [...CONSTANTS.specs, ...CONSTANTS.classicSpecs].includes(urlSpec)) {
       return urlSpec;
@@ -92,11 +92,11 @@ export default function SpecTrinketsPage() {
     const newSpec = event.target.value;
     setSelectedSpec(newSpec);
     const urlSlug = newSpec.toLowerCase().replace(/ /g, "");
-    history.replace(`/spec-trinkets/${urlSlug}`);
+    history.replace(`/trinkets?spec=${urlSlug}`);
   };
 
   React.useEffect(() => {
-    trackPageView(window.location.pathname);
+    trackPageView(window.location.pathname + window.location.search);
   }, [selectedSpec]);
 
   return (
