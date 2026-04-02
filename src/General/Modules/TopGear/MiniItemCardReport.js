@@ -73,6 +73,8 @@ export default function ItemCardReport(props) {
   const socketImage = getGemIcon(enchants["Gems"], gameType);
   const tier = item.setID !== "" && item.slot !== "Trinket" ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
+  const isEmbellishment = item.effect && item.effect.type === "embellishment";
+  const embellishmentLabel = isEmbellishment ? <div style={{ fontSize: 10, lineHeight: 1, color: "lightblue" }}>{t('Embellishment')}</div> : null;
   const isCatalysable = item.isCatalystItem;
   const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
@@ -237,6 +239,7 @@ export default function ItemCardReport(props) {
                         {tier}
                         {(tertiary && catalyst) || (isVault && catalyst) || (tier && catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
                         {catalyst}
+                        {embellishmentLabel}
                       </div>
                     </Typography>
                   </Grid>
