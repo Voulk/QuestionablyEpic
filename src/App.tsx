@@ -434,7 +434,15 @@ const App = () => {
                     path="/trinkets"
                     render={({ location }) => {
                       const spec = new URLSearchParams(location.search).get("spec");
-                      if (spec !== null) return <SpecTrinketsPage />;
+                      if (spec !== null) return (
+                          <SpecTrinketsPage
+                            onSpecChange={handlePickPlayerSpec}
+                            player={activePlayer}
+                            allChars={allChars}
+                            singleUpdate={updatePlayerChar}
+                            simcSnack={handleSimCSnackOpen}
+                          />
+                        );
                       if (!activePlayer) return <Redirect to="/" />;
                       return (
                         <TrinketAnalysis
