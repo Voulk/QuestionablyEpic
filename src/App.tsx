@@ -431,22 +431,22 @@ const App = () => {
                     )}
                   />
                   <Route
-                    path="/spec-trinkets/:spec?"
-                    render={() => <SpecTrinketsPage />}
-                  />
-                  <CustomRoute
                     path="/trinkets"
-                    player={activePlayer}
-                    render={() => (
-                      <TrinketAnalysis
-                        player={activePlayer}
-                        updatePlayerChar={updatePlayerChar}
-                        singleUpdate={updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={handleSimCSnackOpen}
-                        patronStatus={patronStatus}
-                      />
-                    )}
+                    render={({ location }) => {
+                      const spec = new URLSearchParams(location.search).get("spec");
+                      if (spec !== null) return <SpecTrinketsPage />;
+                      if (!activePlayer) return <Redirect to="/" />;
+                      return (
+                        <TrinketAnalysis
+                          player={activePlayer}
+                          updatePlayerChar={updatePlayerChar}
+                          singleUpdate={updatePlayerChar}
+                          allChars={allChars}
+                          simcSnack={handleSimCSnackOpen}
+                          patronStatus={patronStatus}
+                        />
+                      );
+                    }}
                   />
                   <CustomRoute
                     path="/embellishments"
