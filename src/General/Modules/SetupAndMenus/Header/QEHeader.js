@@ -188,6 +188,17 @@ export default function QEHeader(props) {
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid> */}
       <Grid item>
+        <StyledButton
+          color={"secondary"}
+          variant="contained"
+          style={{ whiteSpace: "nowrap" }}
+          component={Link}
+          to="/profile"
+        >
+          Support QE Live
+        </StyledButton>
+      </Grid>
+      <Grid item>
         <LanguageSelector />
       </Grid>
     </Grid>
