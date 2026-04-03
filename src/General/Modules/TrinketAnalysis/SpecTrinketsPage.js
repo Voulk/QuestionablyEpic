@@ -9,28 +9,6 @@ import TrinketChart from "./TrinketChart";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
 import { trackPageView } from "Analytics";
 
-export const URL_TO_SPEC = {
-  holypriest: "Holy Priest",
-  disciplinepriest: "Discipline Priest",
-  restoshaman: "Restoration Shaman",
-  restorationshaman: "Restoration Shaman",
-  restodruid: "Restoration Druid",
-  restorationdruid: "Restoration Druid",
-  presevoker: "Preservation Evoker",
-  preservationevoker: "Preservation Evoker",
-  mwmonk: "Mistweaver Monk",
-  mistweavermonk: "Mistweaver Monk",
-  holypaladin: "Holy Paladin",
-  holypriestclassic: "Holy Priest Classic",
-  disciplinepriestclassic: "Discipline Priest Classic",
-  restoshamanclassic: "Restoration Shaman Classic",
-  restorationshamanclassic: "Restoration Shaman Classic",
-  restodruidclassic: "Restoration Druid Classic",
-  restorationdruidclassic: "Restoration Druid Classic",
-  mwmonkclassic: "Mistweaver Monk Classic",
-  mistweavermonkclassic: "Mistweaver Monk Classic",
-  holypaladinclassic: "Holy Paladin Classic",
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,8 +48,9 @@ export default function SpecTrinketsPage({ onSpecChange, player, allChars, singl
 
   const [selectedSpec, setSelectedSpec] = useState(() => {
     const urlSlug = new URLSearchParams(location.search).get("spec");
-    const urlSpec = urlSlug ? URL_TO_SPEC[urlSlug.toLowerCase()] : null;
-    if (urlSpec && [...CONSTANTS.specs, ...CONSTANTS.classicSpecs].includes(urlSpec)) {
+    const allSpecs = [...CONSTANTS.specs, ...CONSTANTS.classicSpecs];
+    const urlSpec = urlSlug ? allSpecs.find((s) => s.toLowerCase().replace(/\s+/g, "") === urlSlug.toLowerCase()) : null;
+    if (urlSpec) {
       return urlSpec;
     }
     return defaultSpec(gameType);
