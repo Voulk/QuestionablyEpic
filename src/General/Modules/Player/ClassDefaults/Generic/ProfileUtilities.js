@@ -109,6 +109,7 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         critMult: 2 + (statBonuses.critMult || 0),
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
+        //leech: (statProfile.leech / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
     }
 
     //getClassicRaceBonuses(stats, race);
