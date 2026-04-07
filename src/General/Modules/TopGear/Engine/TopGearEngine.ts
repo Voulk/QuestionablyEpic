@@ -937,6 +937,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     // Extra raid buffs
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
