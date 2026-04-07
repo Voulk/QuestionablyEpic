@@ -142,7 +142,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
     // Otherwise grab both the very rare and any boss-specific item level increase.
-    //itemLevel += getItemLevelBoost(bossID, difficulty) + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
   }
 

@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.0.1 / 5.5.3",
+    update: 13,
+    date: "April 7",
+    changes: [ 
+      "Non-max Upgrade Finder difficulties should now include boss-specific ilvl boosts",
+      "Fixed a few more Timewalking imports."
+    ]
+  },
   {
     version: "12.0.1 / 5.5.3",
     update: 12,
