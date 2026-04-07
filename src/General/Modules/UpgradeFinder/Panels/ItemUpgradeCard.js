@@ -186,6 +186,10 @@ export default function ItemCard(props) {
     if (item.source.instanceId === -4) {
       return craftedDB[item.source.encounterId];
     }
+    /* ----------------------------- Catalyst ----------------------------- */
+    if (item.source.instanceId === 1307 && item.source.encounterId === 999) {
+      return t("Catalyst");
+    }
   };
 
   return (

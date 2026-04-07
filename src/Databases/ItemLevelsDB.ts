@@ -11,7 +11,7 @@ export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; craf
     260, // Heroic Base
     276, // Heroic Max
     /* ------------------------------------------- Mythic ------------------------------------------- */
-    273, // Mythic Base
+    272, // Mythic Base
     289, // Mythic Max
   ],
   dungeon: [

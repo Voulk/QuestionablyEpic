@@ -375,9 +375,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2640 || bossID === 2641) return 3; // Cauldron, Rik
-  else if (bossID === 2642 || bossID === 2653 || bossID === 2644) return 6; // Stix, Sprocket, OAB
-  else if (bossID === 2645 || bossID === 2646) return 9; // Mug'zee, Gallywix
+  if (bossID === 2734 || bossID === 2736 || bossID === 2795) return 4; // Cauldron, Rik
+  else if (bossID === 2735 || bossID === 2737) return 7; // Stix, Sprocket, OAB
+  else if (bossID === 2738 || bossID === 2739 || bossID === 2740) return 10; // Mug'zee, Gallywix
 
   return 0;
 }
