@@ -199,11 +199,13 @@
         "UpgradeFinder": "Find your next upgrade",
         "SequenceSandbox": "Details coming soon",
         "OneShot": "Mythic+ Damage Calculator",
-        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!"
+        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!",
+        "SpecTrinkets": "Share trinket rankings by spec"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
+      "SpecTrinkets": "BiS Trinkets",
       "SequenceSandbox": "Spell Information (Alpha)",
       "OneShot": "One Shot (Beta)",
       "CyrcesCirclet": "Cyrce's Circlet"
