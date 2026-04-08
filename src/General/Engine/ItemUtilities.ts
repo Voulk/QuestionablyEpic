@@ -1112,11 +1112,12 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   let item_stats = { ...item.stats };
 
   if (gameType === "Classic" && item.slot === "trinket") {
-    // Try and reforge 
-    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    // Try and reforge
+    const activeProfile = player.getActiveProfile("Raid");
+    const playerStatPriorityList = activeProfile?.autoReforgeOrder;
     const trinketSecondary = Object.keys(item.stats)[0];
 
-    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+    if (playerStatPriorityList && trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
           const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
 
           if (trinketSecondaryPos !== 0) {
