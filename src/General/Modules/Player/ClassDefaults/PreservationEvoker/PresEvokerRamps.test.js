@@ -29,7 +29,7 @@ describe("Test APL", () => {
         console.log(data);
         expect(true).toEqual(true);
         
-        //buildStatWeights(playerData, scoreEvokerSet, settings);
+        buildStatWeights(playerData, scoreEvokerSet, settings);
 
         
     })

@@ -21,6 +21,15 @@ export const getVersion = (): string => {
 export const changeLog: entry[] = [
     {
     version: "12.0.1 / 5.5.3",
+    update: 14,
+    date: "April 9",
+    changes: [ 
+      "Minor model updates and item database fixes.",
+      "Resto Shaman: will now use the Mana metagem in raid."
+    ]
+  },
+    {
+    version: "12.0.1 / 5.5.3",
     update: 13,
     date: "April 7",
     changes: [ 

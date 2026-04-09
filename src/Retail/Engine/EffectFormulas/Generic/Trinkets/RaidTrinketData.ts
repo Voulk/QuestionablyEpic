@@ -13,7 +13,7 @@ export const raidTrinketData = [
           {  // Damage Effect - Need to check if it double dips Vers
             secondaries: ['crit', 'versatility'],
             cooldown: 90,
-            efficiency: 0.88, // Unlikely to be able to use it perfectly on CD.
+            efficiency: 0.87, // Unlikely to be able to use it perfectly on CD.
             ticks: 5,
           },
           
@@ -24,7 +24,7 @@ export const raidTrinketData = [
           let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
           if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
           else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.6
-          else if (["Preservation Evoker", "Restoration Druid"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.80; // These specs can use it on more targets in raid, but it's still not amazing for them.
+          else if (["Preservation Evoker", "Restoration Druid"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.7; // These specs can use it on more targets in raid, but it's still not amazing for them.
 
           bonus_stats.dps = dps;
           bonus_stats.hps = dps * 5;
@@ -118,8 +118,8 @@ export const raidTrinketData = [
     { //
         id: 249341,
         name: "Volatile Void Suffuser",
-        description: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
-        addonDescription: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
+        description: "A reasonable stat stick that can be powerful if your raid isn't frequently at full health.",
+        addonDescription: "A reasonable stat stick that can be powerful if your raid isn't frequently at full health.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -131,7 +131,7 @@ export const raidTrinketData = [
             let bonus_stats: Stats = {};
 
             bonus_stats.intellect = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Volatile Void Suffuser"][0]}, itemLevel);
-            const averageRaidHealth = 0.9; // Can we just put this in settings maybe?
+            const averageRaidHealth = getSetting(additionalData.settings, "averageRaidHealth") / 100; // Can we just put this in settings maybe?
             bonus_stats.intellect *= (1 + (1 - averageRaidHealth));
 
             return bonus_stats;
