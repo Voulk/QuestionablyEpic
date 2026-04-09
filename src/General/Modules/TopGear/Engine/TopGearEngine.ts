@@ -551,7 +551,7 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes) {
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes, spec: string) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
@@ -602,7 +602,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
     //bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
     bonus_stats.intellect = 67 * convertPPMToUptime(2, 15);
 
-    let wepEnchantName = "Acuity of the Ren'dorei";
+    let wepEnchantName = "Acuity of the Ren'dorei"
     /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
     else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
     else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
@@ -720,7 +720,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
+  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType, player.spec);
   
   // == Flask / Phials ==
   let selectedChoice = "";
@@ -888,7 +888,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
 
-    // 5% int bonus for wearing all Mail
+    // 5% int bonus for wearing all of one armor type.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs are now handled in-file.

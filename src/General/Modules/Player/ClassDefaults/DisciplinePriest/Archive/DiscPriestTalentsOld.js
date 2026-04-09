@@ -1,5 +1,5 @@
 
-import { DISCCONSTANTS, runDamage } from "./DiscPriestRamps";
+import { DISCCONSTANTS, runDamage } from "../DiscPriestRamps";
 //import { removeBuffStack } from "Retail/Engine/EffectFormulas/Generic/RampGeneric/RampBase"
 import { removeBuffStack } from "General/Modules/Player/ClassDefaults/Generic/BuffBase"
 /**

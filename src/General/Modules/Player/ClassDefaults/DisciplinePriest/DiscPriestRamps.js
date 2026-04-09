@@ -6,7 +6,7 @@ import { addReport, getCurrentStats, getHaste, getSpellRaw, getStatMult, GLOBALC
             getHealth, getCrit, getSpellCastTime, spendSpellCost } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { checkBuffActive, removeBuffStack, getBuffStacks, addBuff, removeBuff, runBuffs, extendBuff, getBuffValue } from "General/Modules/Player/ClassDefaults/Generic/BuffBase";
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
-import { applyLoadoutEffects } from "./DiscPriestTalents";
+import { applyLoadoutEffects } from "./Archive/DiscPriestTalentsOld";
 import { genSpell } from "General/Modules/Player/ClassDefaults/Generic/APLBase";
 import { STATCONVERSION } from "General/Engine/STAT"
 import { printHealingBreakdown, getTrinketData } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"; 
