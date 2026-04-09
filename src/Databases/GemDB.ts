@@ -9,6 +9,13 @@ type GemEntry = {
   }
 
 export const gemDB: GemEntry[] = [
+    {
+      id: 240969,
+      element: "Meta",
+      name: "Telluric Eversong Diamond",
+      icon: "inv_12_profession_jewelcrafting_epic_gem_cut_blue",
+      stats: { intellect: 23 },
+    },
       {
       id: 240983,
       element: "Meta",

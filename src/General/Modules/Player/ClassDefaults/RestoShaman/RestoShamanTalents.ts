@@ -134,7 +134,7 @@ const classTalents: TalentTree = {
     }},
 
     /* Your Lava Burst and Riptide casts restore X mana to you and four allies. Allies can only benefit from one Mana Spring effect at a time. */
-    "Mana Spring": {id: 381930, values: [4.0, 0.0],  points: 0, maxPoints: 1, icon: "spell_nature_manaregentotem", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Mana Spring": {id: 381930, values: [4.0, 0.0, 0.0, 0.0, 0.0],  points: 0, maxPoints: 1, icon: "spell_nature_manaregentotem", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Not implemented (its shit)
     }},
 
