@@ -140,9 +140,15 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    gemArray.fill(getGemID('crit', 'versatility'), 1);
-    return gemArray;
-    return [metaGem, getGemID('crit', 'haste')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+    //gemArray.fill(getGemID('crit', 'versatility'), 1);
+    if (contentType === "Raid") {
+      return [240969, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
+    }
+    else {
+      gemArray.fill(getGemID('crit', 'versatility'), 1);
+      return gemArray;
+    }
+    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
       getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
 
   }

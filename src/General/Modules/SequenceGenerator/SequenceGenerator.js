@@ -27,7 +27,7 @@ import { DRUIDSPELLDB, druidTalents } from "General/Modules/Player/ClassDefaults
 import { HOLYPRIESTSPELLDB, baseTalents as holyPriestTalents } from "General/Modules/Player/ClassDefaults/HolyPriest/Archive/HolyPriestSpellDB";
 
 import { MONKSPELLS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/Archive/MistweaverSpellDBTWW";
-import { monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverTalents"
+import { monkTalents } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkTalents"
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { buildEvokerRamp } from "General/Modules/Player/ClassDefaults/PreservationEvoker/PresEvokerChartGen";
 

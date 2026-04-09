@@ -2,7 +2,7 @@
 import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { applyTalents } from "../Generic/ProfileUtilities";
 import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
-import { monkTalents } from "./MistweaverTalents";
+import { monkTalents } from "./MistweaverMonkTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
 
 import { MONKSPELLS as spellDB } from "./Archive/MistweaverSpellDBTWW";
