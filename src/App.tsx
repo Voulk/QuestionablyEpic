@@ -29,6 +29,8 @@ import ReactGA from "react-ga";
 import TopGearResult from "General/Modules/TopGear/Engine/TopGearResult";
 import Player from "General/Modules/Player/Player";
 import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
+import { useDispatch } from "react-redux";
+import { toggleGameType } from "Redux/Actions";
 
 //process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -36,8 +38,26 @@ const App = () => {
     /* ---------------- Here we bind functions to this component ---------------- */
     /* ---------- This is so they can be used as props in other modules --------- */
     /* -------------------- And they will change states here -------------------- */
+    const dispatch = useDispatch();
+    // Extract spec from URL query params
+    const getSpecFromURL = (): string | null => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("spec");
+    };
 
-    const [characters, setCharacters] = React.useState(createPlayerChars());
+    const [characters, setCharacters] = React.useState(() => {
+      const spec = getSpecFromURL();
+
+      if (spec && spec.includes("classic")) {
+        dispatch(toggleGameType("Classic"));
+      }
+      else if (spec) {
+        dispatch(toggleGameType("Retail"));
+      }
+
+      return createPlayerChars(spec);
+    });
+
     const [email, setEmail] = useState<string>("");
     const [client_id, setClient_id] = useState<string>("1be64387daf6494da2de568527ad82cc");
     const [playerLoginID, setPlayerLoginID] = useState("");

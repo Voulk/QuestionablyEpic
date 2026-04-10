@@ -5,17 +5,13 @@ import Item from "../../Items/Item";
 import { scoreItem, getItemDB, getItemAllocations, calcStatsAtLevel } from "../../Engine/ItemUtilities";
 import { getUnique } from "./PlayerUtilities";
 import CastModel from "./CastModel";
-import { druidDefaultStatWeights } from "./ClassDefaults/RestoDruid/DruidHealingFocus";
-import { shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/RestoShamanDefaults";
-import { discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
-import { holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
-import { monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
 import { reportError } from "../../SystemTools/ErrorLogging/ErrorReporting";
 import ItemSet from "../../../General/Modules/TopGear/ItemSet";
 import { apiGetPlayerImage2, apiGetPlayerAvatar2 } from "../SetupAndMenus/ConnectionUtilities";
 import { getBestCombo, convertGemNameToID } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { classRaceDB } from "Databases/ClassRaceDB";
 import { bonus_IDs } from "Retail/Engine/BonusIDs";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 export class Player {
   constructor(playerName, specName, charID, region, realm, race, statWeights = "default", gameType = "Retail") {
@@ -669,10 +665,10 @@ export class Player {
       //this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
       this.activeStats = {
         intellect: 2400,
-        haste: 540,
-        crit: 440,
+        haste: 240,
+        crit: 700,
         mastery: 120,
-        versatility: 210,
+        versatility: 410,
         stamina: 1900,
       };
     } else if (spec === SPEC.DISCPRIEST) {

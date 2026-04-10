@@ -42,7 +42,7 @@ export const discPriestOracleSpecialQueries = (contentType) => {
       cooldownMult: {
         c30: 1.4,
         c60: 1,
-        c90: 1.8,
+        c90: 1.9,
         c120: 1,
         c180: 1,
       },
@@ -74,10 +74,10 @@ export const discPriestOracleStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.59,
-    crit: 0.504,
-    mastery: 0.45,
-    versatility: 0.44,
+    haste: 0.69,
+    crit: 0.508,
+    mastery: 0.487,
+    versatility: 0.439,
     leech: 0.25,
   };
   statWeights.Dungeon = {

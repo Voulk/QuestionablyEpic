@@ -1,5 +1,6 @@
 import { convertPPMToUptime, runGenericFlatProc, getSetting, processedValue, runGenericPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, buildIdolTrinket } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { Player } from "General/Modules/Player/Player";
+import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 export const timewalkingTrinketData = [
     {
@@ -11,8 +12,6 @@ export const timewalkingTrinketData = [
       name: "Necromantic Focus",
       effects: [
         { // Small Proc
-          coefficient: 0.058876 * 0.8, // Nerfed
-          table: -7,
         },
   
       ],
@@ -29,8 +28,7 @@ export const timewalkingTrinketData = [
           averageStacks = 2;
         }
   
-
-        bonus_stats.mastery = processedValue(data[0], itemLevel) * averageStacks;
+        bonus_stats.mastery = processedValue({...data[0], ...trinketRawData["Necromantic Focus"][0]}, itemLevel) * averageStacks;
         return bonus_stats;
   
       }
@@ -44,8 +42,6 @@ export const timewalkingTrinketData = [
       name: "Eye of Blazing Power",
       effects: [
         {  // Heal effect
-          coefficient: 118.3393,
-          table: -9,
           secondaries: ['versatility', 'crit'],
           efficiency: 0.85,
           ppm: 60 / 50, // ICD: 45
@@ -54,7 +50,27 @@ export const timewalkingTrinketData = [
       ],
       runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
-        bonus_stats.hps = processedValue(data[0], itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
+        bonus_stats.hps = processedValue({...data[0], ...trinketRawData["Eye of Blazing Power"][0]}, itemLevel, data[0].efficiency) * data[0].ppm! / 60 * player.getStatMults(data[0].secondaries);
+  
+        return bonus_stats;
+      }
+    },
+        {
+      /* ---------------------------------------------------------------------------------------------- */
+      /*                                         Eye of Blazing Power                                   */
+      /* ---------------------------------------------------------------------------------------------- */
+      /* 
+      */
+      name: "Fall of Mortality",
+      effects: [
+        {  // Heal effect
+          duration: 15,
+          ppm: 60 / 75, // ICD: 45
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+        bonus_stats.versatility = processedValue({...data[0], ...trinketRawData["Fall of Mortality"][0]}, itemLevel, data[0].efficiency) * data[0].ppm! * data[0].duration! / 60
   
         return bonus_stats;
       }
@@ -151,7 +167,7 @@ export const timewalkingTrinketData = [
           { // Mastery portion
             coefficient: 0.450353,
             table: -7,
-            ppm: {"Restoration Druid": 35-5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
+            ppm: {"Restoration Druid": 35.5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
                   "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
           },
         ],

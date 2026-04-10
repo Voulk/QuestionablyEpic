@@ -298,7 +298,13 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         healingBreakdown["Renewing Blaze"] = renewingBlazeHealing;
     }
 
-    const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    let totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    
+    if (state.statPercentages.leech) {
+        healingBreakdown["Leech"] = state.statPercentages.leech * totalHealing * 0.4;
+        totalHealing += healingBreakdown["Leech"];
+    }
+
     printHealingBreakdown(healingBreakdown, totalHealing);
 
     console.log(reportingData)

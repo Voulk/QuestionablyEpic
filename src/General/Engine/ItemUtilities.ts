@@ -375,9 +375,9 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
   else if (isMaxxed(difficulty)) return 0;
 
   // Handle non-max difficulties.
-  if (bossID === 2640 || bossID === 2641) return 3; // Cauldron, Rik
-  else if (bossID === 2642 || bossID === 2653 || bossID === 2644) return 6; // Stix, Sprocket, OAB
-  else if (bossID === 2645 || bossID === 2646) return 9; // Mug'zee, Gallywix
+  if (bossID === 2734 || bossID === 2736 || bossID === 2795) return 4; // Cauldron, Rik
+  else if (bossID === 2735 || bossID === 2737) return 7; // Stix, Sprocket, OAB
+  else if (bossID === 2738 || bossID === 2739 || bossID === 2740) return 10; // Mug'zee, Gallywix
 
   return 0;
 }
@@ -386,15 +386,17 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
 export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Retail"): { type: string; label: string; effectName: string }[] => {
   const options: { type: string; label: string; effectName: string }[] = []; // type: "embellishment", label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"
   const item = getItem(itemID);
+  const isEngineering = getItemProp(itemID, "engineering");
 
   if (getItemProp(item.id, "crafted")) {
     // Crafted item effects are limited to Embellishments currently.
     if (item.slot.includes("Weapon") || item.slot === "Offhand") {
       // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
       options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
+      options.push({type: "embellishment", label: "Darkmoon Sigil: Void", effectName: "Darkmoon Sigil: Void"})
       //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
     }
-    if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon")) {
+    if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && !isEngineering) {
       // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
       options.push({type: "embellishment", label: "Arcanoweave Lining", effectName: "Arcanoweave Lining"})
       options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Lining"})
@@ -1082,7 +1084,8 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ].includes(item.id)))
         && sourceCheck) { 
           const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
-          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+          const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
+          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;

@@ -21,6 +21,57 @@ export const getVersion = (): string => {
 export const changeLog: entry[] = [
     {
     version: "12.0.1 / 5.5.3",
+    update: 14,
+    date: "April 9",
+    changes: [ 
+      "Minor model updates and item database fixes.",
+      "Resto Shaman: will now use the Mana metagem in raid."
+    ]
+  },
+    {
+    version: "12.0.1 / 5.5.3",
+    update: 13,
+    date: "April 7",
+    changes: [ 
+      "Non-max Upgrade Finder difficulties should now include boss-specific ilvl boosts",
+      "Fixed a few more Timewalking imports."
+    ]
+  },
+  {
+    version: "12.0.1 / 5.5.3",
+    update: 12,
+    date: "April 1",
+    changes: [ 
+      "Improved Engineering support.",
+      "The special raid leech items that drop in Midnight Falls will now correctly have leech if added in-app. Imports always worked correctly.",
+      "Bugfix: The Paladin stat panel haste stat should now be correct. No change to results.",
+      "Bugfix: Fixed a few Timewalking imports.",
+    ]
+  },
+        {
+    version: "12.0.1 / 5.5.3",
+    update: 11,
+    date: "March 31",
+    changes: [ 
+      "In-game trinket tuning.",
+      "Upped Crucible Limit to 4 by default.",
+      "Tagged the Tailoring Cloak as a crafted item.",
+      "Added Catalysm trinkets to the chart under the Timewalking filter.",
+      "Mists of Pandaria: Added new item upgrade system.",
+    ]
+  },
+      {
+    version: "12.0.1 / 5.5.3",
+    update: 10,
+    date: "March 28",
+    changes: [ 
+      "Fixed Mistweaver Monk tier set.",
+      "Updated trinkets based on in-game changes.",
+      "Added setting for the Crucible of Erratic Energies and enabled it by default."
+    ]
+  },
+    {
+    version: "12.0.1 / 5.5.3",
     update: 9,
     date: "March 25",
     changes: [ 

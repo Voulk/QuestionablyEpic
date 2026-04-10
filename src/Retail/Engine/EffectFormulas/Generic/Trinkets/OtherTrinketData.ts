@@ -47,10 +47,10 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings.",
+    description: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
     warningFlag: true,
-    hasSetting: true,
-    addonDescription: "A powerful crit / leech stat stick that's very overbudget. Includes the world buffs available since they work in raids / dungeons too.",
+    setting: true,
+    addonDescription: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
     effects: [
       {
         duration: 10,
@@ -70,7 +70,7 @@ export const otherTrinketData = [
       }
 
       bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
-      bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 2 * STATCONVERSION.LEECH;
+      bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 1 * STATCONVERSION.LEECH;
 
       return bonus_stats;
     }

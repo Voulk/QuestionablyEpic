@@ -106,7 +106,12 @@ export class Item {
     }
     else if (gameType === "Retail") {
       if (this.id === 228411) this.primGems = [228639, 228638, 228640];
+      if ([249914, 249913, 249912, 249915].includes(this.id)) {
+        if (tertiary !== "Leech") tertiary = "Leech"; // These special helms always have leech but apply it via bonus ID for some reason.
+      }
       this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
+
+
 
       // TEMPORARY
       if (this.id === 228411) {
@@ -120,33 +125,6 @@ export class Item {
                               {label: "Stormbringers, Fathomdwellers, Old Salts", id: [228638, 228639, 228643]},
                             ]
         this.selectedOptions = this.customOptions[0].id;
-      }
-      else if ([242664, 245964, 245965, 245966].includes(this.id)) {
-        this.customOptions = [
-          {label: "Critical Chain", id: [1236272]},
-          {label: "Cauterizing Bolts", id: [1236122]},
-          {label: "Spark Burst", id: [1236273]},
-          {label: "Static Charge", id: [1236275]},
-          {label: "Electric Current", id: [1236961]},
-          {label: "Charged Touch", id: [1233262]},
-        ]
-        this.socket = 1;
-        this.selectedOptions = this.customOptions[0].id;
-        this.flags.push("DelveBelt")
-      }
-      else if (this.id === 235499) {
-        // Reshii Wraps
-        this.customOptions = [
-          {label: "Chronomatic Fiber (Haste)", id: [12262]},
-          {label: "Dextrous Fiber (Versatility)", id: [12260]},
-          {label: "Energizing Fiber (Mastery)", id: [12255]},
-          {label: "Precise Fiber (Crit)", id: [12261]},
-          {label: "Pure Chronomatic Fiber (Haste)", id: [12258]},
-          {label: "Pure Dextrous Fiber (Versatility)", id: [12259]},
-          {label: "Pure Energizing Fiber (Mastery)", id: [12256]},
-          {label: "Pure Precise Fiber (Crit)", id: [12257]},
-        ]
-
       }
       else if (this.id === 190958) {
         // So'leah's Secret Technique
@@ -237,8 +215,8 @@ export class Item {
   // Make an educated guess at what quality an item is based on its level.
   // We'll use this when we don't have access to precise information via SimC string.
   guessItemQuality() {
-    if (this.level >= 372) this.quality = 4;
-    else if (this.level >= 340) this.quality = 3;
+    if (this.level >= 250) this.quality = 4;
+    else if (this.level >= 200) this.quality = 3;
     else this.quality = 2;
   }
 

@@ -10,8 +10,8 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 2.1,
-            "coeff": 0.73,
-            "aura": 1.0,
+            "coeff": 0.803,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -46,7 +46,7 @@
             "targets": 5,
             "customScript": "Wild Growth",
             "coeff": 0.331,
-            "aura": 1.44,
+            "aura": 1.3536,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -78,7 +78,7 @@
             "school": "nature",
             "cost": 1.6,
             "coeff": 0.2684,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -111,8 +111,8 @@
                 "hasted": false
             },
             "targets": 20,
-            "coeff": 9.272,
-            "aura": 1.0,
+            "coeff": 10.1992,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -142,7 +142,7 @@
             "cost": 3.4,
             "targets": 3,
             "coeff": 0.5856,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -171,7 +171,7 @@
             "school": "nature",
             "cost": 2.8,
             "coeff": 5.36,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -182,7 +182,7 @@
         },
         {
             "coeff": 0.225,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -217,7 +217,7 @@
                 "maxCharges": 1
             },
             "coeff": 10.37,
-            "aura": 0.9,
+            "aura": 0.846,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -239,7 +239,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 2.1887,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -261,7 +261,7 @@
             "school": "nature",
             "cost": 0.2,
             "coeff": 0.6122,
-            "aura": 3.5475,
+            "aura": 5.111,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -278,9 +278,9 @@
             },
             "castTime": 0.0,
             "school": "arcane",
-            "cost": 1.2,
+            "cost": 0.8,
             "coeff": 0.212,
-            "aura": 1.65,
+            "aura": 2.4699999999999998,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -291,7 +291,7 @@
         },
         {
             "coeff": 0.212,
-            "aura": 1.65,
+            "aura": 2.4699999999999998,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -391,7 +391,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 0.9487,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -414,7 +414,7 @@
             "cost": 0.0,
             "targets": 3,
             "coeff": 1.464,
-            "aura": 1.0,
+            "aura": 0.94,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

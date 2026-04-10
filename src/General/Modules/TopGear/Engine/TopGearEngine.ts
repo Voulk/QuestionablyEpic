@@ -105,14 +105,14 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    gemArray.fill(getGemID('haste', 'mastery'), 1);
+    gemArray.fill(getGemID('haste', 'crit'), 1);
     return gemArray;
     return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
       getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
   }
   else if (spec === "Holy Priest") {
     // Crit / Mastery, Mastery / Crit
-    gemArray.fill(getGemID('crit', 'mastery'), 1);
+    gemArray.fill(getGemID('crit', 'versatility'), 1);
     return gemArray;
     return [metaGem, getGemID('crit', 'mastery')]/*, getGemID('mastery', 'crit'), getGemID('versatility', 'crit'), getGemID('haste', 'crit'),
                 getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery'), getGemID('crit', 'mastery')];*/
@@ -140,9 +140,15 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    gemArray.fill(getGemID('crit', 'versatility'), 1);
-    return gemArray;
-    return [metaGem, getGemID('crit', 'haste')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+    //gemArray.fill(getGemID('crit', 'versatility'), 1);
+    if (contentType === "Raid") {
+      return [240969, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
+    }
+    else {
+      gemArray.fill(getGemID('crit', 'versatility'), 1);
+      return gemArray;
+    }
+    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
       getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
 
   }
@@ -551,7 +557,7 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes) {
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes, spec: string) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
@@ -602,7 +608,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
     //bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
     bonus_stats.intellect = 67 * convertPPMToUptime(2, 15);
 
-    let wepEnchantName = "Acuity of the Ren'dorei";
+    let wepEnchantName = "Acuity of the Ren'dorei"
     /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
     else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
     else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
@@ -720,7 +726,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
+  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType, player.spec);
   
   // == Flask / Phials ==
   let selectedChoice = "";
@@ -888,7 +894,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
 
-    // 5% int bonus for wearing all Mail
+    // 5% int bonus for wearing all of one armor type.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs are now handled in-file.
@@ -904,7 +910,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
-    evalStats.leech = (setStats.leech || 0);
+    //evalStats.leech = (setStats.leech || 0);
     evalStats.allyStats = (setStats.allyStats || 0);
     evalStats.bonusHPS = (setStats.bonusHPS || 0);
     //hardScore = setStats.hps || 0;
@@ -923,8 +929,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
       setStats.mastery = (setStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       setStats.intellect = (setStats.intellect || 0) * 1.04;
+      setStats.haste = (setStats.haste || 0) * 1.05;
 
-      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.04;
+      mergedEffectStats.haste = (mergedEffectStats.haste || 0) * 1.05;
       mergedEffectStats.crit = (mergedEffectStats.crit || 0) + STATCONVERSION.CRIT * 4;
       mergedEffectStats.mastery = (mergedEffectStats.mastery || 0) + STATCONVERSION.MASTERY * 4;
       mergedEffectStats.intellect = (mergedEffectStats.intellect || 0) * 1.04;
@@ -936,6 +943,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     // Extra raid buffs
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;

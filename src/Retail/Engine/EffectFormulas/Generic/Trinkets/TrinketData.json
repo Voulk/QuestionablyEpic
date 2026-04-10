@@ -1,7 +1,31 @@
 {
+    "Nevermelting Ice Crystal": [
+        {
+            "coefficient": 0.863833,
+            "scalingClass": -7
+        }
+    ],
+    "Fall of Mortality": [
+        {
+            "coefficient": 2.123,
+            "scalingClass": -7
+        }
+    ],
+    "Necromantic Focus": [
+        {
+            "coefficient": 0.047,
+            "scalingClass": -7
+        }
+    ],
+    "Eye of Blazing Power": [
+        {
+            "coefficient": 118.339,
+            "scalingClass": -9
+        }
+    ],
     "Echo of L'ura": [
         {
-            "coefficient": 32.834,
+            "coefficient": 44.32,
             "scalingClass": -9
         }
     ],
@@ -59,7 +83,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 43.421,
+            "coefficient": 58.617092,
             "scalingClass": -9
         }
     ],
@@ -111,7 +135,7 @@
     ],
     "Whisper of the Duskwraith": [
         {
-            "coefficient": 75.87,
+            "coefficient": 102.42,
             "scalingClass": -9
         },
         {
@@ -191,7 +215,7 @@
     ],
     "Radiant Sunstone": [
         {
-            "coefficient": 343.605,
+            "coefficient": 463.86,
             "scalingClass": -9
         },
         {
@@ -199,7 +223,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 343.605,
+            "coefficient": 463.86,
             "scalingClass": -9
         },
         {

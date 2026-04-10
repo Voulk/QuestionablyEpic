@@ -9,7 +9,7 @@
             },
             "castTime": 0.0,
             "school": "holy",
-            "cost": 2.8,
+            "cost": 2.24,
             "cooldownData": {
                 "cooldown": 6.0,
                 "hasted": false,
@@ -211,7 +211,7 @@
                 "hasted": false
             },
             "coeff": 0.0,
-            "aura": 1.2,
+            "aura": 1.9,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -271,7 +271,7 @@
             "castTime": 0.0,
             "school": "holy",
             "cost": 0.0,
-            "coeff": 3.75,
+            "coeff": 2.8125,
             "aura": 1,
             "expectedOverheal": 0.03,
             "secondaries": [
@@ -320,7 +320,7 @@
                 "hasted": false
             },
             "coeff": 2.5636,
-            "aura": 1.2,
+            "aura": 1.9,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -351,7 +351,7 @@
                 "maxCharges": 1
             },
             "coeff": 1.2375,
-            "aura": 2.4,
+            "aura": 2.3939999999999997,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -377,7 +377,7 @@
                 "maxCharges": 1
             },
             "coeff": 1.4963,
-            "aura": 1.44,
+            "aura": 2.28,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -391,7 +391,7 @@
         },
         {
             "coeff": 1.1222,
-            "aura": 1.44,
+            "aura": 2.28,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -417,7 +417,7 @@
                 "maxCharges": 2
             },
             "coeff": 1.456,
-            "aura": 2.124,
+            "aura": 2.698,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -446,7 +446,7 @@
                 "hasted": false
             },
             "coeff": 0.0,
-            "aura": 1.2,
+            "aura": 1.9,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

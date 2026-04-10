@@ -566,8 +566,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         }
 
     })
-    const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    let totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
     const totalDamage = Object.values(damageBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    if (state.statPercentages.leech) {
+        healingBreakdown["Leech"] = state.statPercentages.leech * (totalDamage + totalHealing) * 0.35;
+        totalHealing += healingBreakdown["Leech"];
+    }
 
     const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
