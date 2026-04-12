@@ -1,4 +1,23 @@
 
+/**
+ * A list of talents to turn on
+ */
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Keeper of the Grove") => {
+    let talentsEnabled: string[] = []
+    let halfTalents: string[] = []
+
+    if (loadoutName === "default") talentsEnabled = [
+
+    ]
+
+    // Apply talents
+    Object.keys(talents).forEach(talentName => {
+        if (talentsEnabled.includes(talentName) || talents[talentName].heroTree === heroTree) {
+            talents[talentName].points = talents[talentName].maxPoints;
+        }
+    })
+}
+
 const classTalents: TalentTree = {
     /* Increases healing done by Flash Heal by X%. */
     "Improved Flash Heal": {id: 393870, values: [15.0],  points: 0, maxPoints: 1, icon: "spell_holy_heal", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {

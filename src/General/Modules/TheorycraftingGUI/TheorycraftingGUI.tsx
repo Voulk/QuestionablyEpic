@@ -8,6 +8,7 @@ import StatScalingChart from "./StatScalingPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
 import { buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
+import SequenceDataTable from "../SequenceGenerator/SequenceDataTable";
 
 
 
@@ -82,6 +83,9 @@ export default function TheorycraftingGUI(props) {
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
+
+      <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />
+
       <div style={{ height: 100 }} />
     </Box>
     )
