@@ -34,10 +34,10 @@ export const restoShamanProfile = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         intellect: 1,
-        crit: 0.452,
-        mastery: 0.2,
-        versatility: 0.35,
-        haste: 0.3,
+        crit: 0.573,
+        mastery: 0.438,
+        versatility: 0.429,
+        haste: 0.257,
         hps: 0.304, // 
     },
     specialQueries: {
