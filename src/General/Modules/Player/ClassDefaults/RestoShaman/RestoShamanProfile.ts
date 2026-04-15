@@ -357,6 +357,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     })
     //I am actually not completely sure but i am assuming that below here i am only allowed to add autoSpells, otherwise i am cheating by adding more stuff after i already spend my remaining resources
 
+    if (playerData.heroTree == "Totemic"){
+        castProfile.push({spell: "Chain Heal (Totemic Rebound)", cpm: (getCPM(castProfile, "Chain Heal") + getCPM(castProfile, "Chain Heal (Ascendance)")), autoSpell: true})
+    }
+
     // Farseer Ancestor casts
     // Should be fairly simple? we find our average ancestor count, and then add a cpm of the ancestor spell that matches each of the real spells multiplied by that
     if (playerData.heroTree === "Farseer"){
@@ -368,7 +372,6 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                 "Healing Stream Totem",
                 "Healing Tide Totem"
             ],
-            // I am not sure if the ancestors respond to the asc hw cleaves, if they don't i need to come back and cut down half the casts from those
             "Healing Wave (Ancestor)": [
                 "Healing Wave",
                 "Healing Wave (Ascendance)"
