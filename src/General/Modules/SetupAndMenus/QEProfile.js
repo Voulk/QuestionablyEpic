@@ -91,7 +91,7 @@ export default function QEProfile(props) {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        {/* <Grid item xs={12} sm={6}>
           <Paper elevation={0} style={{ padding: 10, height: "100%" }}>
             <Typography variant="h6" gutterBottom color="primary">
               Support Directly
@@ -107,8 +107,8 @@ export default function QEProfile(props) {
               Subscribe via Stripe
             </Button>
           </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6}>
+        </Grid> */}
+        <Grid item xs={12}>
           <Paper elevation={0} style={{ padding: 10, height: "100%" }}>
             <Typography variant="h6" gutterBottom color="primary">
               Support on Patreon
