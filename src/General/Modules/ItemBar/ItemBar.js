@@ -205,6 +205,7 @@ export default function ItemBar(props) {
             item.uniqueEquip = "embellishment";
             
             if (itemEffect.effectName === "Darkmoon Sigil: Hunt") item.bonusIDS = (item.bonusIDS || "") + ":12693";
+            if (itemEffect.effectName === "Darkmoon Sigil: Void") item.bonusIDS = (item.bonusIDS || "") + ":13640";
             else if (itemEffect.effectName === "Blessed Pango Charm") item.bonusIDS = (item.bonusIDS || "") + ":12686";
             else if (itemEffect.effectName === "Arcanoweave Lining") item.bonusIDS = (item.bonusIDS || "") + ":12384";
             else if (itemEffect.effectName === "Primal Spore Binding") item.bonusIDS = (item.bonusIDS || "") + ":12687";

@@ -91,8 +91,8 @@ export const raidTrinketData = [
     { //
         id: 249809,
         name: "Locus-Walker's Ribbon",
-        description: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
-        addonDescription: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
+        description: "Good in Mythic+ (even if stacks drop often) but truly shines in raid.",
+        addonDescription: "Good in Mythic+ (even if stacks drop often) but truly shines in raid.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -118,8 +118,9 @@ export const raidTrinketData = [
     { //
         id: 249341,
         name: "Volatile Void Suffuser",
-        description: "A reasonable stat stick that can be powerful if your raid isn't frequently at full health.",
-        addonDescription: "A reasonable stat stick that can be powerful if your raid isn't frequently at full health.",
+        description: "A reasonable stat stick that can be very powerful if your raid isn't frequently at full health.",
+        addonDescription: "A reasonable stat stick that can be very powerful if your raid isn't frequently at full health.",
+        setting: true,
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -139,8 +140,9 @@ export const raidTrinketData = [
     },
         {
           name: "Light of the Cosmic Crescendo",
-          description: "",
-          addonDescription: "",
+          description: "A good trinket, but highly dependent on doing difficult content where your raid drops below 60% often.",
+          setting: true,
+          addonDescription: "A good trinket, but highly dependent on doing difficult content where your raid drops below 60% often.",
           
           effects: [
             { // Damage effect. NYI.

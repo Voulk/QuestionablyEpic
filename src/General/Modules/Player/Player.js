@@ -545,7 +545,8 @@ export class Player {
   };
 
   getFightLength = (contentType) => {
-    return this.getActiveModel(contentType).getFightInfo("fightLength");
+    if (contentType === "Dungeon") return 200;
+    else return this.getActiveModel(contentType).getFightInfo("fightLength");
   };
 
   getInt = () => {

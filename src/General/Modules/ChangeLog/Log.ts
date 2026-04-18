@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "12.0.1 / 5.5.3",
+    update: 15,
+    date: "April 19",
+    changes: [ 
+      "Boot enchant will now show in Top Gear.",
+      "Adjusted Locus-Walker's Ribbon expected stacks in M+.",
+      "Fixed an issue with some Darkmoon Sigil: Void imports."
+    ]
+  },
     {
     version: "12.0.1 / 5.5.3",
     update: 14,
