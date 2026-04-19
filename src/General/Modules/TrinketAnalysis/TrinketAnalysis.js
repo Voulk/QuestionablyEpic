@@ -199,13 +199,14 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(289); 
+  const [levelCap, setLevelCap] = React.useState(298); 
   const maxLevelMarks = [
     { value: 0, label: "237" },
     { value: 1, label: "250" },
     { value: 2, label: "263" },
     { value: 3, label: "276" },
     { value: 4, label: "289" },
+    { value: 5, label: "298" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -291,7 +292,7 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [237, 243, 250, 256, 263, 272, 276, 285, 289, 298] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter(level => (level <= levelCap || gameType === "Classic"));
 
@@ -428,7 +429,7 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
-  const trinketText = gameType === "Retail" ? "31/3 Trinket changes are in."  :
+  const trinketText = gameType === "Retail" ? "Hero / Myth trinkets can be upgraded 9 item levels via the new Ascended upgrade system. Hover over ? next to trinkets for more information on them."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   return (
@@ -467,11 +468,11 @@ export default function TrinketAnalysis(props) {
                   className={classes.slider}
                   style={{ color: "#52af77" }}
                   containerStyle={{ paddingRight: 8 }}
-                  defaultValue={4}
+                  defaultValue={5}
                   step={null}
                   valueLabelDisplay="off"
                   marks={maxLevelMarks} //marks
-                  max={4}
+                  max={5}
                   change={changeLevelCap} //setDungeonDifficulty
                 />
               </div>
@@ -511,7 +512,7 @@ export default function TrinketAnalysis(props) {
                     )}
                     {true ? (
                       <Grid item xs={12}>
-                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "candidate21")} gameType={gameType} />
+                        <VerticalChart data={activeTrinkets} db={finalDB} itemLevels={itemLevels} theme={themeSelection(theme ? "candidate2" : "wong")} gameType={gameType} />
                       </Grid>
                     ) : (
                       <Grid item xs={12}>

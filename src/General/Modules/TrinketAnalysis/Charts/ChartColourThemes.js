@@ -36,6 +36,9 @@ const candidate21 = [
   "#e0636b",
   "#d43d51",
 ]
+const candidate30 = [
+
+]
 const candidate3 = ["#E1BE6A", "#40B0A6", "#EBF2BB", "#000000", "#FFD5BD", "#E7A9C1", "#D3F27A"];
 const candidate4 = ["#ffff99", "#b15928", "#cab2d6", "#6a3d9a", "#b2df8a", "#33a02c", "#fdbf6f", "#ff7f00", "#fb9a99", "#e31a1c", "#a6cee3", "#1f78b4", "#666666"];
 const candidate5 = ["#8e0152", "#ae206e", "#c74389", "#d967a3", "#e48bbb", "#eeafd1", "#f4d3e5", "#f7f7f7", "#d7edb8", "#b8e187", "#a1d26c", "#8bc255", "#76b241", "#61a22f", "#4d9221"];
@@ -80,6 +83,7 @@ const candidate12 = [
   "#42150A",
 ];
 const candidate13 = ["#77AADD", "#EE8866", "#EEDD88", "#FFAABB", "#99DDFF", "#44BB99", "#BBCC33", "#AAAA00", "#DDDDDD"];
+
 // const candidate8 = [
 //   "#004d84",
 //   "#1f78b4",
@@ -122,7 +126,7 @@ const candidate13 = ["#77AADD", "#EE8866", "#EEDD88", "#FFAABB", "#99DDFF", "#44
 //   "#ff9174",
 // ];
 const IBM = ["#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000"];
-const wong = ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7"];
+const wong = ["#E269C2", "#56B4E9", "#00B581", "#F0E442", "#0072B2", "#D55E00", "#CC79A7"];
 
 export const themeSelection = (profile) => {
   let colourScale = [];

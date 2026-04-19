@@ -74,16 +74,16 @@ export const raidTrinketData = [
               "Restoration Shaman": 10,
               "Holy Paladin": 10.8,
             }
-            const spellsCastInDuration = specData[player.spec]
+            const stacksPerMinute = specData[player.spec] * data[0].ppm * 1.13;
             
             //buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
 
             
 
-            const alnUptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
+            //const alnUptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
             // Currently bugged and accruing a stack per second.
-            const stacksPerMinute = alnUptime * 60;
-            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil");
+            //const stacksPerMinute = alnUptime * 60;
+            bonus_stats.intellect = stacksPerMinute / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil") * data[0].duration;
 
             return bonus_stats;
         }
