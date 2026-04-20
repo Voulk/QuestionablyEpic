@@ -912,6 +912,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
+    console.log("SET HPS" + castModelResult.healing);
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));

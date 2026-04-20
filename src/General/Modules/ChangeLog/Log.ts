@@ -25,6 +25,7 @@ export const changeLog: entry[] = [
     date: "April 19",
     changes: [ 
       "Added support for the 12.0.5 Ascended Item system and increased the level range on the trinket chart.",
+      "Greatly expanded on what data is available in Trinket Chart tooltips.",
       "Boot enchant will now show in Top Gear.",
       "Adjusted Locus-Walker's Ribbon expected stacks in M+.",
       "Fixed an issue with some Darkmoon Sigil: Void imports."

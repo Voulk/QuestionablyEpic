@@ -53,7 +53,7 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Gaze continues to get bugfixes and in-game tuning.",
+        description: "Gaze is a dominant trinket option that has been changed many times over the current patch. It's assumed there won't be further changes.",
         addonDescription: "Gaze continues to get bugfixes and in-game tuning.",
         effects: [
         { // Stat Proc Portion
@@ -75,14 +75,10 @@ export const raidTrinketData = [
               "Holy Paladin": 10.8,
             }
             const stacksPerMinute = specData[player.spec] * data[0].ppm * 1.13;
-            
-            //buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Expected Stacks per Proc", value: specData[player.spec]})
 
             
-
-            //const alnUptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
-            // Currently bugged and accruing a stack per second.
-            //const stacksPerMinute = alnUptime * 60;
             bonus_stats.intellect = stacksPerMinute / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil") * data[0].duration;
 
             return bonus_stats;
@@ -112,6 +108,12 @@ export const raidTrinketData = [
 
             bonus_stats.intellect *= averageStacks * 0.05 + 1;
 
+            if (additionalData.includeTooltip) {
+              additionalData.tooltipData.push({name: "Time to Max Stacks", value: Math.round(100 * timeToMax)/100 + " minutes"})
+              additionalData.tooltipData.push({name: "Average Stacks", value: Math.round(100 * averageStacks)/100})
+            }
+
+
             return bonus_stats;
             }
     },
@@ -134,6 +136,8 @@ export const raidTrinketData = [
             bonus_stats.intellect = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Volatile Void Suffuser"][0]}, itemLevel);
             const averageRaidHealth = getSetting(additionalData.settings, "averageRaidHealth") / 100; // Can we just put this in settings maybe?
             bonus_stats.intellect *= (1 + (1 - averageRaidHealth));
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Average Raid Health (Adjustable)", value: `${getSetting(additionalData.settings, "averageRaidHealth")}%`})
 
             return bonus_stats;
             }
@@ -163,6 +167,10 @@ export const raidTrinketData = [
       
             bonus_stats.hps = runGenericFlatProc({...data[1], ...trinketRawData["Light of the Cosmic Crescendo"][1]}, itemLevel, player, additionalData.contentType) * (usageRate || 0.7)
             
+            if (additionalData.includeTooltip) {
+              additionalData.tooltipData.push({name: "Stacks Consumed (Adjustable)", value: usageRate})
+            }
+
             return bonus_stats;
           }
         },

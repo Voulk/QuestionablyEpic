@@ -40,7 +40,7 @@ const initialState : RootState = {
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
     cosmicCrescendoUsage: { value: 75, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    averageRaidHealth: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    averageRaidHealth: { value: 85, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     
     crucibleUpgrades: { value: "Fully Upgraded", options: ["Fully Upgraded", "Not Upgraded"], category: "trinkets", type: "selector", gameType: "Retail" },
 
