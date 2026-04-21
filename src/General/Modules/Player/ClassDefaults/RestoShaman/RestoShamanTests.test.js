@@ -15,15 +15,14 @@ describe("Generic Profile Testing Environment", () => {
         // Settings needs to be expanded and will include metrics like mastery efficiency that a player can edit.
         // Mastery will probably look very OP before that's added.
         const settings = {averageRaidHealth: 0.8}
-        const testProfiles = {
-            //"Totemic HTT Downpour": "Totemic",
-            //"Totemic Ascendance DRE": "Totemic",
-            "Farseer DRE Rain": "Farseer",
-            //"Farseer DRE No Rain": "Farseer"
-        }
+        const testProfiles = [
+            "Totemic",
+            "Farseer",
+        ]
+
         let results = []
-        
-        Object.keys(testProfiles).forEach(profile => {
+
+        testProfiles.forEach(profile => {
 
             const params = {
                 filler: {
@@ -36,7 +35,7 @@ describe("Generic Profile Testing Environment", () => {
                 },
                 downtime: 0
             }
-            const playerData = { spec: "Restoration Shaman", heroTree: testProfiles[profile], profileName: profile, stats: activeStats,
+            const playerData = { spec: "Restoration Shaman", heroTree: profile, profileName: profile, stats: activeStats,
                                     masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
             const data = restoShamanProfile.scoreSet(activeStats, playerData);
             buildStatWeights(playerData, scoreShamanSet, {});
