@@ -153,7 +153,8 @@
             "displayInfo": {
                 "id": 467307,
                 "icon": "inv12_ability_monk_rushingwindkick",
-                "spellName": "Rushing Wind Kick"
+                "spellName": "Rushing Wind Kick",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -161,7 +162,14 @@
             "cooldownData": {
                 "cooldown": 10.0,
                 "hasted": false
-            }
+            },
+            "coeff": 1.8694,
+            "aura": 1.41,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
         }
     ],
     "Celestial Conduit": [
@@ -185,7 +193,8 @@
             "displayInfo": {
                 "id": 107428,
                 "icon": "ability_monk_risingsunkick",
-                "spellName": "Rising Sun Kick"
+                "spellName": "Rising Sun Kick",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "school": "physical",
@@ -193,7 +202,14 @@
             "cooldownData": {
                 "cooldown": 10.0,
                 "hasted": false
-            }
+            },
+            "coeff": 1.4955,
+            "aura": 1.41,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
         }
     ],
     "Blackout Kick": [
@@ -238,17 +254,6 @@
                 "versatility"
             ],
             "spellType": "damage"
-        },
-        {
-            "coeff": 0.0,
-            "aura": 1.577,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "energize"
         }
     ],
     "Spinning Crane Kick": [
@@ -256,11 +261,19 @@
             "displayInfo": {
                 "id": 101546,
                 "icon": "ability_monk_cranekick_new",
-                "spellName": "Spinning Crane Kick"
+                "spellName": "Spinning Crane Kick",
+                "cat": "damage"
             },
             "castTime": 0.0,
             "school": "physical",
-            "cost": 1.0
+            "cost": 1.0,
+            "coeff": 0.104,
+            "aura": 1,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
         }
     ]
 }

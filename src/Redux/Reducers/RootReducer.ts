@@ -45,7 +45,7 @@ const initialState : RootState = {
     crucibleUpgrades: { value: "Fully Upgraded", options: ["Fully Upgraded", "Not Upgraded"], category: "trinkets", type: "selector", gameType: "Retail" },
 
     calculateEmbellishments: { value: true, options: [true, false], category: "embellishments", type: "selector", gameType: "Retail" },
-    darkmoonHuntStat: { value: "Mastery", options: ["Mastery", "Versatility", "Crit", "Haste"], category: "embellishments", type: "Entry", gameType: "Retail" },
+    darkmoonHuntStat: { value: "Mastery", options: ["Mastery", "Versatility", "Crit", "Haste"], category: "embellishments", type: "selector", gameType: "Retail" },
 
     //socketedGems: { value: 4, options: [0, 1, 2, 3, 4, 5, 6, 7, 8], category: "embellishments", type: "Entry", gameType: "Retail" },
     
