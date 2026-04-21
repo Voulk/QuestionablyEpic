@@ -39,10 +39,13 @@ const initialState : RootState = {
     upgradeFinderMetric: { value: "Show % Upgrade", options: ["Show % Upgrade", "Show HPS"], category: "upgradeFinder", type: "selector", gameType: "Retail" },
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
-    calculateEmbellishments: { value: true, options: [true, false], category: "embellishments", type: "selector", gameType: "Retail" },
     cosmicCrescendoUsage: { value: 75, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
-    averageRaidHealth: { value: 90, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    averageRaidHealth: { value: 85, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    
     crucibleUpgrades: { value: "Fully Upgraded", options: ["Fully Upgraded", "Not Upgraded"], category: "trinkets", type: "selector", gameType: "Retail" },
+
+    calculateEmbellishments: { value: true, options: [true, false], category: "embellishments", type: "selector", gameType: "Retail" },
+    darkmoonHuntStat: { value: "Mastery", options: ["Mastery", "Versatility", "Crit", "Haste"], category: "embellishments", type: "selector", gameType: "Retail" },
 
     //socketedGems: { value: 4, options: [0, 1, 2, 3, 4, 5, 6, 7, 8], category: "embellishments", type: "Entry", gameType: "Retail" },
     
