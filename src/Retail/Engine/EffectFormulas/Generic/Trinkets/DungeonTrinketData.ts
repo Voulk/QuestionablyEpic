@@ -42,6 +42,12 @@ export const dungeonTrinketData =
         let bonus_stats: Stats = {};
   
         bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Echo of L'ura"][0]}, itemLevel, player, additionalData.contentType)
+
+        if (additionalData.includeTooltip) {
+          additionalData.tooltipData.push({name: "Expected Overhealing", value: data[0].efficiency[additionalData.contentType!]})
+
+        }
+
         return bonus_stats;
       }
     },
@@ -230,6 +236,10 @@ export const dungeonTrinketData =
         bonus_stats.allyStats = runGenericPPMTrinketHasted({...data[0], ...trinketRawData["Refueling Orb"][0]}, itemLevel, player.getStatPerc("haste")) * data[0].targets! * versatilityRatio;
         bonus_stats.hps = runGenericFlatProc({...data[1], ...trinketRawData["Refueling Orb"][1]}, itemLevel, player, additionalData.contentType) * (1 - versatilityRatio);
         
+        if (additionalData.includeTooltip) {
+          additionalData.tooltipData.push({name: "Expected Ally Buff %", value: (versatilityRatio * 100) + "%"})
+
+        }
 
         return bonus_stats;
       }
@@ -251,6 +261,10 @@ export const dungeonTrinketData =
 
             const orbStats = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Vessel of Tortured Souls"][0]}, itemLevel)
             bonus_stats.intellect = orbStats * data[0].efficiency!;
+
+            if (additionalData.includeTooltip) {
+              additionalData.tooltipData.push({name: "Pick up %", value: data[0].efficiency! * 100 + "%"})
+            }
 
             return bonus_stats;
             }

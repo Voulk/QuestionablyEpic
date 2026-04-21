@@ -588,6 +588,11 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   bonus_stats.intellect += 41;
   enchants["Legs"] = "Arcanoweave Spellthread";
 
+  // Boots
+  bonus_stats.leech = (bonus_stats.leech || 0) + 28;
+  enchants["Feet"] = "Shaladrassil's Roots";
+
+
   if (false) {
     const dreamingData =  { // 
       coefficient: 40.32042, 
@@ -907,6 +912,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
+    console.log("SET HPS" + castModelResult.healing);
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));

@@ -71,12 +71,15 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     if (trinketData === undefined) return [];
     const trinketEffects = trinketData.effects;
 
-    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}};
+    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}, includeTooltip: true, tooltipData: []};
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     if (trinketData.description) trinketDescription.push(trinketData.description);
     trinketDescription.push("")
 
     trinketDescription.push("Effect Breakdown")
+
+
+
     if (trinketEffects[0].canOverlap) {
         // Overlapping stack trinkets.
         const avgStacks = Math.round(100*trinketStats[trinketEffects[0].stat] / processedValue(trinketEffects[0], itemLevel))/100;
@@ -95,6 +98,12 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     Object.keys(trinketStats).forEach((statName) => {    
         trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
     });
+
+    if (additionalData.tooltipData.length > 0) {
+        additionalData.tooltipData.forEach((data) => {
+            trinketDescription.push(data.name + ": " + data.value + (data.format === "percent" ? "%" : ""));
+        })
+    }
 
     
     if (trinketData.setting) {

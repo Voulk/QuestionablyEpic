@@ -127,6 +127,17 @@
                 "canPartialTick": false,
                 "tickOnCast": true
             }
+        },
+        {
+            "coeff": 10.1992,
+            "aura": 0.94,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Efflorescence": [
@@ -270,25 +281,6 @@
         }
     ],
     "Moonfire": [
-        {
-            "displayInfo": {
-                "id": 8921,
-                "icon": "spell_nature_starfall",
-                "spellName": "Moonfire"
-            },
-            "castTime": 0.0,
-            "school": "arcane",
-            "cost": 0.8,
-            "coeff": 0.212,
-            "aura": 2.4699999999999998,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "energize"
-        },
         {
             "coeff": 0.212,
             "aura": 2.4699999999999998,
