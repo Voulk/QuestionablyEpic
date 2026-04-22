@@ -28,6 +28,7 @@ import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import { exportWowheadTierList, exportWowheadTrinketCheatSheet } from "General/Modules/TopGear/Report/TopGearExports";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 
 function TabPanel(props) {
@@ -192,11 +193,7 @@ const handleDownload = () => {
 };
 
 export const TRINKET_SOURCES = {
-  raid: [
-    1314, // Dreamrift
-    1308, // March
-    1307, // Voidspire
-  ],
+  raid: CONSTANTS.currentRaidIDs,
   dungeon: [-1],
   delves: [-69],
   crafted: [-4],
