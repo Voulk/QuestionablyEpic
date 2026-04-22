@@ -25,6 +25,9 @@ import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 import { downloadJson } from "./TrinketJSONDownload"
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
+import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
+import { exportWowheadTierList } from "General/Modules/TopGear/Report/TopGearExports";
 
 
 function TabPanel(props) {
@@ -199,7 +202,9 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(298); 
+  const [levelCap, setLevelCap] = React.useState(298);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [dialogText, setDialogText] = React.useState(""); 
   const maxLevelMarks = [
     { value: 0, label: "237" },
     { value: 1, label: "250" },
@@ -429,6 +434,21 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
+  // setup export button menu options
+  let exportOptions = ["Download JSON"];
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
+    exportOptions.push("Wowhead Tier List");
+  }
+
+  const handleExportMenuClick = (buttonClicked) => {
+    if (buttonClicked === "Wowhead Tier List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTierList(activeTrinkets, props.player.spec));
+    } else if (buttonClicked === "Download JSON") {
+      handleDownload();
+    }
+  };
+
   const trinketText = gameType === "Retail" ? "Hero / Myth trinkets can be upgraded 9 item levels via the new Ascended upgrade system. Hover over ? next to trinkets for more information on them."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
@@ -541,13 +561,11 @@ export default function TrinketAnalysis(props) {
                       </Tooltip>
                     </Grid>
                     <Grid item>
-                      <Button 
-                        variant="contained"
-                        onClick={handleDownload}
+                      <MenuDropdown
+                        handleClicked={handleExportMenuClick}
+                        exportOptions={exportOptions}
                         sx={{ height: 40 }}
-                      >
-                        Download JSON
-                      </Button>   
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
@@ -561,6 +579,11 @@ export default function TrinketAnalysis(props) {
       <div id="qelivead2"></div>
       {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
+      <GenericDialog
+        dialogText={dialogText}
+        isDialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+      />
     </div>
   );
 }
