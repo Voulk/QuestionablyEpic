@@ -191,6 +191,25 @@ const handleDownload = () => {
   downloadJson(jsonString, 'QE-trinket-data.json');
 };
 
+export const TRINKET_SOURCES = {
+  raid: [
+    1314, // Dreamrift
+    1308, // March
+    1307, // Voidspire
+  ],
+  dungeon: [-1],
+  delves: [-69],
+  crafted: [-4],
+  timewalking: [-12],
+  other: [
+    1192, // World Bosses
+    1205, // DF World Bosses
+    -18, // PVP
+    -17, // PVP
+    -85, // Also PVP
+  ],
+};
+
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
@@ -222,26 +241,6 @@ export default function TrinketAnalysis(props) {
   /* ---------------------------------------------------------------------------------------------- */
   const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
-    const raidSources = [
-      1314, // Dreamrift
-      1308, // March
-      1307, // Voidspire
-    ];
-    const dungeonSources = [
-      -1, // General Dungeons
-    ];
-    const delveSources = [
-      -69
-    ]
-    const otherSources = [
-      1192, // World Bosses
-      1205, // DF World Bosses
-      -18, // PVP
-      -17, // PVP
-      -85, // Also PVP
-      -4,
-    ];
-    const timewalkingSources = [-12]
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
@@ -253,11 +252,11 @@ export default function TrinketAnalysis(props) {
         return (
           (item["sources"] === undefined && sources.includes("The Rest")) ||
           (item["sources"] &&
-            ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
-              (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-              (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
-              (timewalkingSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
-              (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
+            ((TRINKET_SOURCES.other.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+              (TRINKET_SOURCES.raid.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (TRINKET_SOURCES.delves.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
+              (TRINKET_SOURCES.timewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
+              (TRINKET_SOURCES.dungeon.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
     }
