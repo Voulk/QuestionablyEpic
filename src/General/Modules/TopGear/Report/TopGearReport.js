@@ -282,6 +282,17 @@ function displayReport(
 
   console.log(fullItemList);
 
+  // setup export button menu options
+  let exportOptions = [];
+  if (gameType === "Classic") {
+    exportOptions.push("ReforgeLite Export");
+    exportOptions.push("Wowhead Gear Planner");
+  }
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
+    exportOptions.push("Wowhead BIS List");
+    exportOptions.push("Icy Veins BIS List");
+  }
+
   const handleExportMenuClick = (buttonClicked) => {
     //alert("Exporting to " + buttonClicked, result.id);
     if (buttonClicked === "ReforgeLite Export") {
@@ -449,7 +460,7 @@ function displayReport(
                       <Grid item>
                         <MenuDropdown
                           handleClicked={handleExportMenuClick}
-                          gameType={gameType}
+                          exportOptions={exportOptions}
                         />
                       </Grid>
                     </Grid>
