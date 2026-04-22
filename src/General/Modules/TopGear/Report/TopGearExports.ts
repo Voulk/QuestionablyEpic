@@ -314,6 +314,47 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
   return formattedArray;
 }
 
+// wowhead trinket cheat sheet export generator
+export function exportWowheadTrinketCheatSheet(trinketData: any[]) {
+  const getBonusTag = (itemId: number) => {
+    const sources = getItemProp(itemId, "sources", "Retail");
+    if (!sources || sources.length === 0) return "[=gv-delves]";
+    
+    const source = sources[0];
+    
+    if (CONSTANTS.currentRaidIDs.includes(source.instanceId)) return "[=gv-raid]";
+    if (source.instanceId === -69) return "[=gv-delves]";
+    if (source.instanceId === -1) {
+      const instanceID = source.encounterId;
+      if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) return "[=gv-tww-dun]";
+      if ([1012, 1178].includes(instanceID)) return "[=gv-bfa-dun]";
+      if ([1194, 11941, 1185].includes(instanceID)) return "[=gv-sl-dun]";
+      return "[=gv-mid-dun]";
+    }
+    
+    return "[=gv-delves]";
+  };
+
+  const trinketScores = trinketData.map((trinket: any) => ({
+    ...trinket,
+    score: trinket.highestLevel ? trinket["i" + trinket.highestLevel] : 0
+  })).filter((t: any) => t.score > 0);
+  
+  trinketScores.sort((a: any, b: any) => b.score - a.score);
+
+  const top4 = trinketScores.slice(0, 4);
+  
+  const formatTrinket = (trinket: any) => {
+    const bonusTag = getBonusTag(trinket.id);
+    return `${trinket.id};${bonusTag}`;
+  };
+
+  const bis = top4.slice(0, 2).map(formatTrinket).join(",");
+  const alt = top4.slice(2, 4).map(formatTrinket).join(",");
+
+  return `[build-items cols=2 url=guide=3292 bis=${bis} alt=${alt}]Trinkets[/build-items]`;
+}
+
 // wowhead trinket tier list export generator
 export function exportWowheadTierList(trinketData: any[]) {
   const getQualityAndSource = (trinket: any) => {

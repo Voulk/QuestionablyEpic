@@ -27,7 +27,7 @@ import { downloadJson } from "./TrinketJSONDownload"
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
-import { exportWowheadTierList } from "General/Modules/TopGear/Report/TopGearExports";
+import { exportWowheadTierList, exportWowheadTrinketCheatSheet } from "General/Modules/TopGear/Report/TopGearExports";
 
 
 function TabPanel(props) {
@@ -437,12 +437,16 @@ export default function TrinketAnalysis(props) {
   let exportOptions = ["Download JSON"];
   if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
     exportOptions.push("Wowhead Tier List");
+    exportOptions.push("Wowhead Cheat Sheet");
   }
 
   const handleExportMenuClick = (buttonClicked) => {
     if (buttonClicked === "Wowhead Tier List") {
       setDialogOpen(true);
       setDialogText(exportWowheadTierList(activeTrinkets));
+    } else if (buttonClicked === "Wowhead Cheat Sheet") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTrinketCheatSheet(activeTrinkets));
     } else if (buttonClicked === "Download JSON") {
       handleDownload();
     }
