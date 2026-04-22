@@ -442,7 +442,7 @@ export default function TrinketAnalysis(props) {
   const handleExportMenuClick = (buttonClicked) => {
     if (buttonClicked === "Wowhead Tier List") {
       setDialogOpen(true);
-      setDialogText(exportWowheadTierList(activeTrinkets, props.player.spec));
+      setDialogText(exportWowheadTierList(activeTrinkets));
     } else if (buttonClicked === "Download JSON") {
       handleDownload();
     }
