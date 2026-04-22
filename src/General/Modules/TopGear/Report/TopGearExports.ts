@@ -218,6 +218,37 @@ const wowheadClassColors = {
   "Mistweaver Monk": "c10"
 }
 
+// helper for trinket scoring
+function getTrinketScores(trinketData: any[]) {
+  return trinketData
+    .map((trinket: any) => ({
+      ...trinket,
+      score: trinket.highestLevel ? trinket["i" + trinket.highestLevel] : 0
+    }))
+    .filter((t: any) => t.score > 0)
+    .sort((a: any, b: any) => b.score - a.score);
+}
+
+// wowhead's great vault bonus tag info from item
+function getWowheadBonusTag(itemId: number) {
+  const sources = getItemProp(itemId, "sources", "Retail");
+  if (!sources || sources.length === 0) return "[=gv-delves]";
+  
+  const source = sources[0];
+  
+  if (CONSTANTS.currentRaidIDs.includes(source.instanceId)) return "[=gv-raid]";
+  if (source.instanceId === -69) return "[=gv-delves]";
+  if (source.instanceId === -1) {
+    const instanceID = source.encounterId;
+    if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) return "[=gv-tww-dun]";
+    if ([1012, 1178].includes(instanceID)) return "[=gv-bfa-dun]";
+    if ([1194, 11941, 1185].includes(instanceID)) return "[=gv-sl-dun]";
+    return "[=gv-mid-dun]";
+  }
+  
+  return "[=gv-delves]";
+}
+
 export function exportIcyVeinsGearList(itemSet, spec, gameType = "Retail") {
   const results = ["<table>",
                     "<tr>",
@@ -291,14 +322,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
-        if (CONSTANTS.currentRaidIDs.includes(item.source.instanceId)) bonusTag = " bonus=[=gv-raid]";
-        else if (item.source.instanceId === -1) {
-          const instanceID = item.source.encounterId;
-          if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
-          else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-          else if ([1194, 11941, 1185].includes(instanceID)) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
-        }
-        else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
+        bonusTag = ` bonus=${getWowheadBonusTag(item.id)}`;
       }
 
     }
@@ -316,36 +340,12 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
 
 // wowhead trinket cheat sheet export generator
 export function exportWowheadTrinketCheatSheet(trinketData: any[]) {
-  const getBonusTag = (itemId: number) => {
-    const sources = getItemProp(itemId, "sources", "Retail");
-    if (!sources || sources.length === 0) return "[=gv-delves]";
-    
-    const source = sources[0];
-    
-    if (CONSTANTS.currentRaidIDs.includes(source.instanceId)) return "[=gv-raid]";
-    if (source.instanceId === -69) return "[=gv-delves]";
-    if (source.instanceId === -1) {
-      const instanceID = source.encounterId;
-      if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) return "[=gv-tww-dun]";
-      if ([1012, 1178].includes(instanceID)) return "[=gv-bfa-dun]";
-      if ([1194, 11941, 1185].includes(instanceID)) return "[=gv-sl-dun]";
-      return "[=gv-mid-dun]";
-    }
-    
-    return "[=gv-delves]";
-  };
-
-  const trinketScores = trinketData.map((trinket: any) => ({
-    ...trinket,
-    score: trinket.highestLevel ? trinket["i" + trinket.highestLevel] : 0
-  })).filter((t: any) => t.score > 0);
-  
-  trinketScores.sort((a: any, b: any) => b.score - a.score);
+  const trinketScores = getTrinketScores(trinketData);
 
   const top4 = trinketScores.slice(0, 4);
   
   const formatTrinket = (trinket: any) => {
-    const bonusTag = getBonusTag(trinket.id);
+    const bonusTag = getWowheadBonusTag(trinket.id);
     return `${trinket.id};${bonusTag}`;
   };
 
@@ -380,11 +380,7 @@ export function exportWowheadTierList(trinketData: any[]) {
     return `${sanitized}_tooltip`;
   };
 
-  const trinketScores = trinketData.map((trinket: any) => ({
-    ...trinket,
-    score: trinket.highestLevel ? trinket["i" + trinket.highestLevel] : 0
-  })).filter((t: any) => t.score > 0);
-  trinketScores.sort((a: any, b: any) => b.score - a.score);
+  const trinketScores = getTrinketScores(trinketData);
   
   const tooltipThreshold = 0.80
   const tierConfigs = [
