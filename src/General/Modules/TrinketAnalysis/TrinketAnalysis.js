@@ -525,7 +525,7 @@ export default function TrinketAnalysis(props) {
 
               {gameType === "Retail" ? (
                 <Grid item xs={12}>
-                  <Grid container spacing={0} direction="row" justifyContent="flex-end">
+                  <Grid container spacing={0.5} direction="row" justifyContent="flex-end">
                     <Grid item>
                       <Tooltip title={"Alternate Theme"} arrow>
                         <ToggleButton
@@ -534,13 +534,18 @@ export default function TrinketAnalysis(props) {
                           onChange={() => {
                             setTheme(!theme);
                           }}
+                          sx={{ height: 40, width: 40 }}
                         >
                           <VisibilityIcon />
                         </ToggleButton>
                       </Tooltip>
                     </Grid>
                     <Grid item>
-                      <Button variant="contained" onClick={handleDownload}>
+                      <Button 
+                        variant="contained"
+                        onClick={handleDownload}
+                        sx={{ height: 40 }}
+                      >
                         Download JSON
                       </Button>   
                     </Grid>
