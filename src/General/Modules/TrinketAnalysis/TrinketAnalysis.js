@@ -236,7 +236,7 @@ export default function TrinketAnalysis(props) {
       -85, // Also PVP
       -4,
     ];
-    const timewalkingSources = [-12]
+    const timewalkingSources = [-67]
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
