@@ -197,7 +197,7 @@ export const TRINKET_SOURCES = {
   dungeon: [-1],
   delves: [-69],
   crafted: [-4],
-  timewalking: [-12],
+  timewalking: [-67],
   other: [
     1192, // World Bosses
     1205, // DF World Bosses
