@@ -211,7 +211,7 @@ export const slotNameLocale = [
   },
 ];
 
-export const getTranslatedSlotName = (slot, currentLanguage) => {
+export const getTranslatedSlotName = (slot: string, currentLanguage : string) => {
   let name = slotNameLocale
     .filter((obj) => {
       return obj.id === slot.toLowerCase();
