@@ -1,7 +1,3 @@
-/**
- * Types for the Class Database
- */
-type SupportedLanguages = "en" | "fr" | "de" | "ru" | "ch";
 
 interface ClassData {
   names: Record<SupportedLanguages, string>;
