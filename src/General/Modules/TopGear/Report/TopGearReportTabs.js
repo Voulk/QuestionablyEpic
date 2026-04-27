@@ -6,12 +6,60 @@ import SpellDataAccordion from "./SpellDataAccordion";
 import TopGearGemList from "./Panels/TopGearGemPanel";
 import ErrorBoundary from "./Panels/PanelErrorBoundary";
 
-function a11yProps(index) {
-  return {
-    id: `top-gear-tab-${index}`,
-    "aria-controls": `top-gear-tabpanel-${index}`,
-  };
-}
+// To add a tab: append one entry. Each tab owns its label, colors,
+// visibility rule (`show`), and content (`render`). Both `show` and
+// `render` receive the full props object passed to TopGearReportTabs.
+const TAB_DEFS = [
+  {
+    label: "Set Notes",
+    bg: "#304434",
+    accent: "#80ff80",
+    show: ({ advice }) => advice && advice.length > 0,
+    render: ({ advice }) => (
+      <ListedInformationBox
+        introText="Here are some notes on your set:"
+        bulletPoints={advice}
+        color="transparent"
+        backgroundCol="transparent"
+        title="Insights - Set Notes"
+      />
+    ),
+  },
+  {
+    label: "Gems",
+    bg: "#612B78",
+    accent: "#E900FF",
+    show: ({ gameType }) => gameType === "Classic",
+    render: ({ topSet }) => (
+      <ErrorBoundary>
+        <TopGearGemList gemData={topSet.socketedGems} />
+      </ErrorBoundary>
+    ),
+  },
+  {
+    label: "Mana",
+    bg: "#304478",
+    accent: "#00FFFF",
+    show: ({ gameType }) => gameType === "Classic",
+    render: ({ manaSources }) => (
+      <ManaSourcesComponent manaSources={manaSources} />
+    ),
+  },
+  {
+    label: "Spells",
+    bg: "#9B3B3B",
+    accent: "#ff8888",
+    show: ({ gameType }) => gameType === "Classic",
+    render: ({ spec, statList }) => (
+      <SpellDataAccordion spec={spec} statList={statList} talents={null} />
+    ),
+  },
+];
+
+const a11yProps = (i) => ({
+  id: `top-gear-tab-${i}`,
+  "aria-controls": `top-gear-tabpanel-${i}`,
+});
 
 const TabPanel = ({ children, value, index }) => (
   <div
@@ -24,55 +72,28 @@ const TabPanel = ({ children, value, index }) => (
   </div>
 );
 
-const TopGearReportTabs = ({ advice, gameType, topSet, statList, manaSources, spec }) => {
-  const tabs = [];
-
-  if (advice && advice.length > 0) {
-    tabs.push({
-      label: "Set Notes",
-      content: (
-        <ListedInformationBox
-          introText="Here are some notes on your set:"
-          bulletPoints={advice}
-          color="green"
-          backgroundCol="#304434"
-          title="Insights - Set Notes"
-        />
-      ),
-    });
-  }
-
-  if (gameType === "Classic") {
-    tabs.push({
-      label: "Gems",
-      content: (
-        <ErrorBoundary>
-          <TopGearGemList gemData={topSet.socketedGems} />
-        </ErrorBoundary>
-      ),
-    });
-    tabs.push({
-      label: "Mana",
-      content: <ManaSourcesComponent manaSources={manaSources} />,
-    });
-    tabs.push({
-      label: "Spells",
-      content: (
-        <SpellDataAccordion spec={spec} statList={statList} talents={null} />
-      ),
-    });
-  }
-
+const TopGearReportTabs = (props) => {
+  const visibleTabs = TAB_DEFS.filter((def) => def.show(props));
   const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
-    if (tabValue > tabs.length - 1) setTabValue(0);
-  }, [tabs.length, tabValue]);
+    if (tabValue > visibleTabs.length - 1) setTabValue(0);
+  }, [visibleTabs.length, tabValue]);
 
-  if (tabs.length === 0) return null;
+  if (visibleTabs.length === 0) return null;
+
+  const active = visibleTabs[tabValue];
 
   return (
-    <Paper elevation={0} style={{ backgroundColor: "rgba(34, 34, 34, 0.5)", borderRadius: 4 }}>
+    <Paper
+      elevation={0}
+      style={{
+        backgroundColor: active.bg,
+        border: "1px solid rgba(255, 255, 255, 0.22)",
+        borderRadius: 4,
+        transition: "background-color 150ms ease",
+      }}
+    >
       <AppBar
         position="static"
         style={{ backgroundColor: "#000", borderRadius: "4px 4px 0 0" }}
@@ -83,16 +104,24 @@ const TopGearReportTabs = ({ advice, gameType, topSet, statList, manaSources, sp
           onChange={(_, v) => setTabValue(v)}
           aria-label="top gear report tabs"
           variant="fullWidth"
-          TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+          TabIndicatorProps={{ style: { backgroundColor: active.accent } }}
         >
-          {tabs.map((tab, i) => (
-            <Tab key={tab.label} label={tab.label} {...a11yProps(i)} />
+          {visibleTabs.map((tab, i) => (
+            <Tab
+              key={tab.label}
+              label={tab.label}
+              {...a11yProps(i)}
+              sx={{
+                backgroundColor: tab.bg,
+                "&.Mui-selected": { color: "#bdbdbd", fontWeight: 600 },
+              }}
+            />
           ))}
         </Tabs>
       </AppBar>
-      {tabs.map((tab, i) => (
+      {visibleTabs.map((tab, i) => (
         <TabPanel key={tab.label} value={tabValue} index={i}>
-          {tab.content}
+          {tab.render(props)}
         </TabPanel>
       ))}
     </Paper>

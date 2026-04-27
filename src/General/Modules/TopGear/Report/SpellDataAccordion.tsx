@@ -34,13 +34,13 @@ const SpellDataAccordion: React.FC<SpellDataAccordionProps> = ({
 }) => {
   return (
     <Grid item xs={12} style={{ paddingBottom: "10px" }}>
-      <Accordion 
+      <Accordion
         defaultExpanded={defaultExpanded}
         sx={{
-        backgroundColor: "#9B3B3B", // soft beige background
-        border: "1px solid #DB6D6D",
-        boxShadow: "none", // remove default shadow
-  }}
+          backgroundColor: "transparent",
+          backgroundImage: "none",
+          boxShadow: "none",
+        }}
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

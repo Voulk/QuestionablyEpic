@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Typography, List, ListItem, ListItemText } from '@mui/material';
 import { classicGemDB } from 'Databases/ClassicGemDB';
 import { getGemIcon } from 'General/Engine/ItemUtilities';
 import { check } from 'prettier';
@@ -33,24 +33,22 @@ const TopGearGemList = ({ gemData }) => {
   const gemOccurrences = countOccurrences(gemList);
 
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "#E900FF", backgroundColor: "#612B78"}}>
-      <div>
-        <Typography variant="h5">Socketed Gems</Typography>
-        <Typography variant="body2" sx={{paddingBottom: "4px"}}>This is a list of gems included in the above set. There's a setting to instead keep your equipped gems during Item Select if you'd prefer that. 
-          There is also a toggle for intellect-focused and secondary-focused setups. You can expect the intellect-focused setup to win early on and you'll transition to secondary gems as you get more Throne of Thunder gear.
-        </Typography>
-        <List dense>
-          {Object.keys(gemOccurrences).map((gem, index) => (
-            checkGemExists(Number(gem)) && (
-              <ListItem key={index} disablePadding>
-                <img src={getGemIcon(Number(gem), "Classic")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
-                <ListItemText style={{paddingLeft: '3px'}} primary={` ${classicGemDB.filter(g => g.id === Number(gem))?.[0]?.name || "Unknown Gem"} (${gemOccurrences[Number(gem)]}x - ${getGemStats(Number(gem))})`} />
-              </ListItem>
-            )
-          ))}
-        </List>
-      </div>
-    </Paper>
+    <div>
+      <Typography variant="h5">Socketed Gems</Typography>
+      <Typography variant="body2" sx={{paddingBottom: "4px"}}>This is a list of gems included in the above set. There's a setting to instead keep your equipped gems during Item Select if you'd prefer that.
+        There is also a toggle for intellect-focused and secondary-focused setups. You can expect the intellect-focused setup to win early on and you'll transition to secondary gems as you get more Throne of Thunder gear.
+      </Typography>
+      <List dense>
+        {Object.keys(gemOccurrences).map((gem, index) => (
+          checkGemExists(Number(gem)) && (
+            <ListItem key={index} disablePadding>
+              <img src={getGemIcon(Number(gem), "Classic")} width={15} height={15} style={{ verticalAlign: "middle" }} alt="Socket" />
+              <ListItemText style={{paddingLeft: '3px'}} primary={` ${classicGemDB.filter(g => g.id === Number(gem))?.[0]?.name || "Unknown Gem"} (${gemOccurrences[Number(gem)]}x - ${getGemStats(Number(gem))})`} />
+            </ListItem>
+          )
+        ))}
+      </List>
+    </div>
   );
 };
 
