@@ -1,10 +1,9 @@
 import React from 'react';
-import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Typography, List, ListItem, ListItemText } from '@mui/material';
 
 const ManaSourcesComponent = ({ manaSources }) => {
   const { pool, regen, additional, totalMana } = manaSources;
   return (
-    <Paper elevation={0} style={{ border: "1px", borderStyle: "solid", padding: 16, borderColor: "#00FFFF", backgroundColor: "#304478"}}>
     <div>
       <Typography variant="h5">Mana</Typography>
       <Typography variant="body2" sx={{paddingBottom: "4px"}}>This is the mana you're able to spend over a six minute fight and a breakdown of where it comes from. </Typography>
@@ -19,7 +18,6 @@ const ManaSourcesComponent = ({ manaSources }) => {
         ))}
       </List>
     </div>
-    </Paper>
   );
 };
 
