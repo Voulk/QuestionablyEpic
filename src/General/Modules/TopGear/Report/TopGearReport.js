@@ -25,18 +25,15 @@ import { getItemProp } from "General/Engine/ItemUtilities";
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
-import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import {
   getManaRegen,
   getManaPool,
   getAdditionalManaEffects,
 } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
-import SpellDataAccordion from "./SpellDataAccordion";
 import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
-import TopGearGemList from "./Panels/TopGearGemPanel";
-import ErrorBoundary from "./Panels/PanelErrorBoundary";
+import TopGearReportTabs from "./TopGearReportTabs";
 
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -760,39 +757,16 @@ function displayReport(
               gameType={gameType}
             />
           </Grid>
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <ErrorBoundary>
-                <TopGearGemList gemData={topSet.socketedGems} />
-              </ErrorBoundary>
-            </Grid>) : null}
           <Grid item xs={12} style={{ marginTop: 8 }}>
-            {advice && advice.length > 0 ? (
-              <ListedInformationBox
-                introText="Here are some notes on your set:"
-                bulletPoints={advice}
-                color="green"
-                backgroundCol="#304434"
-                title="Insights - Set Notes"
-              />
-            ) : (
-              ""
-            )}
+            <TopGearReportTabs
+              advice={advice}
+              gameType={gameType}
+              topSet={topSet}
+              statList={statList}
+              manaSources={manaSources}
+              spec={player.spec}
+            />
           </Grid>
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <ManaSourcesComponent manaSources={manaSources} />
-            </Grid>
-          ) : null}
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <SpellDataAccordion
-                spec={player.spec}
-                statList={statList}
-                talents={null}
-              />
-            </Grid>
-          ) : null}
           <Grid item style={{ height: 60 }} xs={12} />{" "}
           {/* This adds space to the bottom of the page to improve scrolling. */}
         </Grid>
