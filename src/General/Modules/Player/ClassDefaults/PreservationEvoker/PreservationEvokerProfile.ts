@@ -148,7 +148,6 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.essenceBurst_livingFlame = essenceBurstCount;
 
     // Talented bursts
-    if (hasTalent(talents, "Energy Cycles")) essenceBurstCount += 6 / 1.5; // 6 bursts every Tip the Scales
     if (hasTalent(talents, "Essence Well")) essenceBurstCount += (getCPM(castProfile, "Dream Breath") + getCPM(castProfile, "Fire Breath")) * 0.5; // 50% of a burst on DB / FB cast.
 
     // Total Echo CPM

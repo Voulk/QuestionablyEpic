@@ -272,7 +272,7 @@
             "school": "nature",
             "cost": 0.2,
             "coeff": 0.6122,
-            "aura": 5.111,
+            "aura": 7.162999999999999,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -283,7 +283,7 @@
     "Moonfire": [
         {
             "coeff": 0.212,
-            "aura": 2.4699999999999998,
+            "aura": 3.078,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
