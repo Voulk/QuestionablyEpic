@@ -1,8 +1,8 @@
 # QE Live
 
-QE Live is a healing simulator and gear analysis tool for World of Warcraft. It helps healers evaluate gear, trinkets, and stat weights across all healer specializations for both Retail and Classic.
+QE Live is a healing modelling tool and gear analysis tool for World of Warcraft. It helps healers evaluate gear, trinkets, and stats across Retail and Classic.
 
-**Live site:** [questionablyepic.com](https://questionablyepic.com)
+**Live site:** [questionablyepic.com/live](https://questionablyepic.com/live)
 
 ## Features
 
