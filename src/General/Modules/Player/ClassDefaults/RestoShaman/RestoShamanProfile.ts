@@ -25,7 +25,7 @@ export const restoShamanProfile = {
         // All user-facing operations will set their own anyway like in Top Gear.
         intellect: 2090,
         haste: 461,
-        crit: 1832,
+        crit: 1432,
         mastery: 552,
         versatility: 571,
         stamina: 19000,
@@ -92,6 +92,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: fightLength, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman",
         playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
+
+    console.log(state.statPercentages)
     let castProfile: CastProfile = [
         // Add Spells here
         {spell: "Riptide", efficiency: 1},

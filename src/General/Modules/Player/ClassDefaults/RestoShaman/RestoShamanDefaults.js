@@ -66,10 +66,10 @@ export const shamanDefaultSpellData = (contentType) => {
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.495,
+      haste: 0.443,
       crit: 0.552,
-      mastery: 0.387,
-      versatility: 0.428,
+      mastery: 0.388,
+      versatility: 0.431,
       leech: 0.2,
     };
   
