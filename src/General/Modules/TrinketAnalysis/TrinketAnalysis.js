@@ -25,6 +25,10 @@ import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
 import TrinketSpecialMentions from "General/Modules/TrinketAnalysis/TrinketSpecialMentions";
 import { downloadJson } from "./TrinketJSONDownload"
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js"
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
+import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
+import { exportWowheadTierList, exportWowheadTrinketCheatSheet } from "General/Modules/TopGear/Report/TopGearExports";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 
 function TabPanel(props) {
@@ -188,6 +192,21 @@ const handleDownload = () => {
   downloadJson(jsonString, 'QE-trinket-data.json');
 };
 
+export const TRINKET_SOURCES = {
+  raid: CONSTANTS.currentRaidIDs,
+  dungeon: [-1],
+  delves: [-69],
+  crafted: [-4],
+  timewalking: [-67],
+  other: [
+    1192, // World Bosses
+    1205, // DF World Bosses
+    -18, // PVP
+    -17, // PVP
+    -85, // Also PVP
+  ],
+};
+
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
@@ -199,7 +218,9 @@ export default function TrinketAnalysis(props) {
   const [tabIndex, setTabIndex] = React.useState(0);
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]); //, "LegionTimewalking"
   const [theme, setTheme] = React.useState(false);
-  const [levelCap, setLevelCap] = React.useState(298); 
+  const [levelCap, setLevelCap] = React.useState(298);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [dialogText, setDialogText] = React.useState(""); 
   const maxLevelMarks = [
     { value: 0, label: "237" },
     { value: 1, label: "250" },
@@ -217,26 +238,6 @@ export default function TrinketAnalysis(props) {
   /* ---------------------------------------------------------------------------------------------- */
   const sourceHandler = (array, sources, playerSpec) => {
     let results = [];
-    const raidSources = [
-      1314, // Dreamrift
-      1308, // March
-      1307, // Voidspire
-    ];
-    const dungeonSources = [
-      -1, // General Dungeons
-    ];
-    const delveSources = [
-      -69
-    ]
-    const otherSources = [
-      1192, // World Bosses
-      1205, // DF World Bosses
-      -18, // PVP
-      -17, // PVP
-      -85, // Also PVP
-      -4,
-    ];
-    const timewalkingSources = [-67]
 
     /* ---------------------------------------------------------------------------------------------- */
     /*                                   The Rest & Raids & Dungeons                                  */
@@ -248,11 +249,11 @@ export default function TrinketAnalysis(props) {
         return (
           (item["sources"] === undefined && sources.includes("The Rest")) ||
           (item["sources"] &&
-            ((otherSources.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
-              (raidSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
-              (delveSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
-              (timewalkingSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
-              (dungeonSources.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
+            ((TRINKET_SOURCES.other.includes(item["sources"][0]["instanceId"]) && sources.includes("The Rest")) ||
+              (TRINKET_SOURCES.raid.includes(item["sources"][0]["instanceId"]) && sources.includes("Raids")) ||
+              (TRINKET_SOURCES.delves.includes(item["sources"][0]["instanceId"]) && sources.includes("Delves")) ||
+              (TRINKET_SOURCES.timewalking.includes(item["sources"][0]["instanceId"]) && sources.includes("Timewalking")) ||
+              (TRINKET_SOURCES.dungeon.includes(item["sources"][0]["instanceId"]) && sources.includes("Dungeons"))))
         );
       });
     }
@@ -429,6 +430,25 @@ export default function TrinketAnalysis(props) {
     activeTrinkets.sort((a, b) => (getHighestTrinketScore(finalDB, a, itemLevels.at(-1)) < getHighestTrinketScore(finalDB, b, itemLevels.at(-1)) ? 1 : -1));
   }
 
+  // setup export button menu options
+  let exportOptions = ["Download JSON"];
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
+    exportOptions.push("Wowhead Tier List");
+    exportOptions.push("Wowhead Cheat Sheet");
+  }
+
+  const handleExportMenuClick = (buttonClicked) => {
+    if (buttonClicked === "Wowhead Tier List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTierList(activeTrinkets));
+    } else if (buttonClicked === "Wowhead Cheat Sheet") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTrinketCheatSheet(activeTrinkets));
+    } else if (buttonClicked === "Download JSON") {
+      handleDownload();
+    }
+  };
+
   const trinketText = gameType === "Retail" ? "Hero / Myth trinkets can be upgraded 9 item levels via the new Ascended upgrade system. Hover over ? next to trinkets for more information on them."  :
                                               "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
@@ -525,7 +545,7 @@ export default function TrinketAnalysis(props) {
 
               {gameType === "Retail" ? (
                 <Grid item xs={12}>
-                  <Grid container spacing={0} direction="row" justifyContent="flex-end">
+                  <Grid container spacing={0.5} direction="row" justifyContent="flex-end">
                     <Grid item>
                       <Tooltip title={"Alternate Theme"} arrow>
                         <ToggleButton
@@ -534,15 +554,18 @@ export default function TrinketAnalysis(props) {
                           onChange={() => {
                             setTheme(!theme);
                           }}
+                          sx={{ height: 40, width: 40 }}
                         >
                           <VisibilityIcon />
                         </ToggleButton>
                       </Tooltip>
                     </Grid>
                     <Grid item>
-                      <Button variant="contained" onClick={handleDownload}>
-                        Download JSON
-                      </Button>   
+                      <MenuDropdown
+                        handleClicked={handleExportMenuClick}
+                        exportOptions={exportOptions}
+                        sx={{ height: 40 }}
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
@@ -556,6 +579,11 @@ export default function TrinketAnalysis(props) {
       <div id="qelivead2"></div>
       {/*<TrinketSpecialMentions information={"Demo"} />*/}
       <div style={{ height: 300 }} />
+      <GenericDialog
+        dialogText={dialogText}
+        isDialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+      />
     </div>
   );
 }
