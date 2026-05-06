@@ -48,8 +48,8 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { getTranslatedRaceName } from "Databases/RacesDB";
-import { getTranslatedClassName } from "locale/ClassNames.js";
-import { getTranslatedStats } from "locale/statsLocale.js";
+import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedStats } from "locale/statsLocale";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {

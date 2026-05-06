@@ -8,18 +8,8 @@ import HolyPriestIcon from "Images/Classes/Priest/Specialisation/Holy/Icons/Holy
 import MistweaverIcon from "Images/Classes/Monk/Specialisation/Mistweaver/Icons/MistWeaverMonk.jpg";
 import RestorationDruidIcon from "Images/Classes/Druid/Specialisation/Restoration/Icons/RestorationDruid.jpg";
 import RestorationShamanIcon from "Images/Classes/Shaman/Specialisation/Restoration/Icons/RestorationShaman.jpg";
-import WarriorIcon from "Images/Classes/Warrior/WarriorIcon.jpg";
-import DemonHunterIcon from "Images/Classes/DemonHunter/DemonHunterIcon.jpg";
-import DeathKnightIcon from "Images/Classes/DeathKnight/DeathKnightIcon.jpg";
-import RogueIcon from "Images/Classes/Rogue/Icons/RogueIcon.jpg";
-import WarlockIcon from "Images/Classes/Warlock/Icons/WarlockIcon.jpg";
-import MageIcon from "Images/Classes/Mage/Icons/MageIcon.jpg";
-import HunterIcon from "Images/Classes/Hunter/Icons/HunterIcon.jpg";
 import DruidIcon from "Images/Classes/Druid/classicon_druid.jpg";
 import EvokerIcon from "Images/Classes/Evoker/classicon_evoker_preservation.jpg";
-import DevastationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_devastation.jpg";
-import AugmentationEvokerIcon from "Images/Classes/Evoker/classicon_evoker_augmentation.jpg";
-import ShamanIcon from "Images/Classes/Shaman/Icons/class_shaman.jpg";
 
 // --- Types ---
 interface ClassIconProps {
