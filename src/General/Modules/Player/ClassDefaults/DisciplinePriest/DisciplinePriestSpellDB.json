@@ -1,0 +1,278 @@
+{
+    "Smite": [
+        {
+            "displayInfo": {
+                "id": 585,
+                "icon": "spell_holy_holysmite",
+                "spellName": "Smite",
+                "cat": "damage"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 0.4,
+            "coeff": 0.987,
+            "aura": 1.9,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Mind Blast": [
+        {
+            "displayInfo": {
+                "id": 8092,
+                "icon": "spell_shadow_unholyfrenzy",
+                "spellName": "Mind Blast",
+                "cat": "damage"
+            },
+            "castTime": 1.5,
+            "school": "shadow",
+            "cost": 1.5,
+            "cooldownData": {
+                "cooldown": 28.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 0.7834,
+            "aura": 2.85,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Shadow Word: Death": [
+        {
+            "displayInfo": {
+                "id": 32379,
+                "icon": "spell_shadow_demonicfortitude",
+                "spellName": "Shadow Word: Death",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 0.5,
+            "cooldownData": {
+                "cooldown": 10.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 2.55,
+            "aura": 2.375,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.85,
+            "aura": 2.375,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        }
+    ],
+    "Shadow Word: Pain": [
+        {
+            "displayInfo": {
+                "id": 589,
+                "icon": "spell_shadow_shadowwordpain",
+                "spellName": "Shadow Word: Pain",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 1.8,
+            "coeff": 0.168,
+            "aura": 5.035,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.1246,
+            "aura": 5.035,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 16.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        },
+        {
+            "spellType": "energize",
+            "resourceGiven": "insanity",
+            "resourceAmount": 300.0
+        }
+    ],
+    "Shadowfiend": [
+        {
+            "displayInfo": {
+                "id": 34433,
+                "icon": "spell_shadow_shadowfiend",
+                "spellName": "Shadowfiend"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 0.0
+        }
+    ],
+    "Mindbender": [
+        {
+            "displayInfo": {
+                "id": 1280137,
+                "icon": "spell_shadow_soulleech_3",
+                "spellName": "Mindbender"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0
+        }
+    ],
+    "Voidwraith": [
+        {
+            "displayInfo": {
+                "id": 451234,
+                "icon": "warlock_curse_shadow",
+                "spellName": "Voidwraith"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0
+        }
+    ],
+    "Flash Heal": [
+        {
+            "displayInfo": {
+                "id": 2061,
+                "icon": "spell_holy_flashheal",
+                "spellName": "Flash Heal",
+                "cat": "heal"
+            },
+            "castTime": 1.5,
+            "school": "holy",
+            "cost": 3.6,
+            "coeff": 6.82,
+            "aura": 1.76,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Power Word: Shield": [
+        {
+            "displayInfo": {
+                "id": 17,
+                "icon": "spell_holy_powerwordshield",
+                "spellName": "Power Word: Shield"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 2.6,
+            "coeff": 4.638,
+            "aura": 2.49,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
+    "Void Shield": [
+        {
+            "displayInfo": {
+                "id": 1253593,
+                "icon": false,
+                "spellName": "Void Shield"
+            },
+            "castTime": 0.0,
+            "school": "shadow",
+            "cost": 2.6,
+            "cooldownData": {
+                "cooldown": 7.5,
+                "hasted": false
+            },
+            "coeff": 7.0,
+            "aura": 2.49,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
+    "Power Word: Radiance": [
+        {
+            "displayInfo": {
+                "id": 194509,
+                "icon": "spell_priest_power word",
+                "spellName": "Power Word: Radiance",
+                "cat": "heal"
+            },
+            "castTime": 2.0,
+            "school": "radiant",
+            "cost": 5.4,
+            "cooldownData": {
+                "cooldown": 18.0,
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
+            },
+            "coeff": 5.75,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Evangelism": [
+        {
+            "displayInfo": {
+                "id": 472433,
+                "icon": "spell_holy_divineillumination",
+                "spellName": "Evangelism"
+            },
+            "castTime": 0.0,
+            "school": "holy",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 90.0,
+                "hasted": false
+            }
+        }
+    ]
+}
