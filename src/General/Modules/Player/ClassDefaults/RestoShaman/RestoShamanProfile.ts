@@ -25,7 +25,7 @@ export const restoShamanProfile = {
         // All user-facing operations will set their own anyway like in Top Gear.
         intellect: 2090,
         haste: 461,
-        crit: 1832,
+        crit: 1432,
         mastery: 552,
         versatility: 571,
         stamina: 19000,
@@ -34,10 +34,10 @@ export const restoShamanProfile = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         intellect: 1,
-        crit: 0.452,
-        mastery: 0.2,
-        versatility: 0.35,
-        haste: 0.3,
+        crit: 0.573,
+        mastery: 0.438,
+        versatility: 0.429,
+        haste: 0.257,
         hps: 0.304, // 
     },
     specialQueries: {
@@ -92,6 +92,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: fightLength, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman",
         playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
+
+    console.log(state.statPercentages)
     let castProfile: CastProfile = [
         // Add Spells here
         {spell: "Riptide", efficiency: 1},
@@ -357,6 +359,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     })
     //I am actually not completely sure but i am assuming that below here i am only allowed to add autoSpells, otherwise i am cheating by adding more stuff after i already spend my remaining resources
 
+    if (playerData.heroTree == "Totemic"){
+        castProfile.push({spell: "Chain Heal (Totemic Rebound)", cpm: (getCPM(castProfile, "Chain Heal") + getCPM(castProfile, "Chain Heal (Ascendance)")), autoSpell: true})
+    }
+
     // Farseer Ancestor casts
     // Should be fairly simple? we find our average ancestor count, and then add a cpm of the ancestor spell that matches each of the real spells multiplied by that
     if (playerData.heroTree === "Farseer"){
@@ -368,7 +374,6 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                 "Healing Stream Totem",
                 "Healing Tide Totem"
             ],
-            // I am not sure if the ancestors respond to the asc hw cleaves, if they don't i need to come back and cut down half the casts from those
             "Healing Wave (Ancestor)": [
                 "Healing Wave",
                 "Healing Wave (Ascendance)"

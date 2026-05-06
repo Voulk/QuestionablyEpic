@@ -15,40 +15,21 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string) => {
 
     // Some spec stuff that you would always get
     const baseSpecTalents = [
-        "White Water", "Torrent", "Deluge", "Rip Current", "Water Totem Mastery", "Living Stream", "Quickstream", "Earthliving Weapon", "Echo of the Elements"
+        "White Water", "Deluge", "Rip Current", "Water Totem Mastery", "Living Stream", "Quickstream", "Earthliving Weapon", "Echo of the Elements"
     ]
 
-    // Now we define some builds
-    const totemicHttDownpour = [
+    const totemic = [
         // Tier 1 & 2
-        "Healing Tide Totem", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Calm Waters", "Tidal Waves", "Ancestral Reach",
+        "Healing Rain", "Healing Tide Totem", "Resurgence", "First Ascendant", "Soothing Rain", "Overflowing Shores", "Improved Earthliving Weapon", "Tidal Waves", "Ancestral Reach", "Calm Waters",
         // Tier 3
-        "Downpour", "Water Expulsion", "Double Dip", "Undercurrent", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing",
+        "Earthen Harmony", "Deeply Rooted Elements", "Primal Tide Core", "Undercurrent", "Downpour", "Water Expulsion", "Double Dip",
         // Hero choices
-        "Amplification Core", "Totemic Coordination", "Supportive Imbuements"
+        "Amplification Core", "Earthsurge", "Supportive Imbuements"
     ]
 
-    const totemicAscDre = [
+    const farseer = [
         // Tier 1 & 2
-        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Improved Earthliving Weapon", "Tidal Waves", "Ancestral Reach",
-        // Tier 3
-        "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Ancestral Awakening", "Undercurrent",
-        // Hero choices
-        "Amplification Core", "Totemic Coordination", "Supportive Imbuements"
-    ]
-
-    const farseerDreNoRain = [
-        // Tier 1 & 2
-        "Ascendance", "Preeminence", "Tidal Waves", "Ancestral Reach", "Current Control", "Resurgence", "Improved Earthliving Weapon",
-        // Tier 3
-        "Deeply Rooted Elements",  "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Undercurrent","Ancestral Awakening",
-        // Hero choices
-        "Latent Wisdom", "Heed My Call"
-    ]
-
-    const farseerDreRain = [
-        // Tier 1 & 2
-        "Healing Rain", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Tidal Waves", "Ancestral Reach", "Calm Waters",
+        "Healing Rain", "Torrent", "Ascendance", "Resurgence", "Preeminence", "Soothing Rain", "Overflowing Shores", "Tidal Waves", "Ancestral Reach", "Calm Waters",
         // Tier 3
         "Deeply Rooted Elements", "Coalescing Water", "Primal Tide Core", "Wavespeaker's Blessing", "Undercurrent", "Tidewaters",
         // Hero choices
@@ -56,24 +37,14 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string) => {
         //"Ancient Fellowship", "Routine Communication"
     ]
 
-    let heroTree: string
+    let heroTree = loadoutName
     let talentBuild = [baseClassTalents, baseSpecTalents]
     switch(loadoutName){
-        case "Totemic HTT Downpour":
-            talentBuild.push(totemicHttDownpour)
-            heroTree = "Totemic"
-            break
-        case "Totemic Ascendance DRE":
-            talentBuild.push(totemicAscDre)
-            heroTree = "Totemic"
-            break
-        case "Farseer DRE No Rain":
-            talentBuild.push(farseerDreNoRain)
-            heroTree = "Farseer"
+        case "Farseer":
+            talentBuild.push(farseer)
             break
         default:
-            talentBuild.push(farseerDreRain)
-            heroTree = "Farseer"
+            talentBuild.push(totemic)
     }
 
     // Apply talents
@@ -181,8 +152,8 @@ const specTalents: TalentTree = {
 
     /* $?a455630[Surging Totem][Healing Rain] instantly restores $383223s1 health to Z allies within its area, and its radius is increased by X $Lyard:yards;. */
     "Overflowing Shores": {id: 383222, values: [2.0, 2.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        attachSpellEffect(spellDB["Healing Rain"], spellDB["Overflowing Shores"]),
-        attachSpellEffect(spellDB["Surging Totem"], spellDB["Overflowing Shores"])
+        //attachSpellEffect(spellDB["Healing Rain"], spellDB["Overflowing Shores"]),
+        //attachSpellEffect(spellDB["Surging Totem"], spellDB["Overflowing Shores"])
     }},
 
     /* The cooldown of Ascendance$?a137039[ and Healing Tide Totem][] is reduced by ${X/-1000} sec. */
@@ -412,7 +383,7 @@ const heroTalents: TalentTree = {
 
     /* Chain Heal now jumps to a nearby totem within $458357A3 yards once it reaches its last target, causing the totem to cast Chain Heal on an injured ally within $458357r yards for $458357s1. Jumps to X nearby targets within $458357A3 yards. */
     "Totemic Rebound": {id: 445025, values: [2.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "ability_vehicle_electrocharge", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        attachSpellEffect(spellDB["Chain Heal"], spellDB["Chain Heal (Totemic Rebound)"])
+        //attachSpellEffect(spellDB["Chain Heal"], spellDB["Chain Heal (Totemic Rebound)"])
     }},
 
     /* While Surging Totem is active, your damage and healing done is increased by $456369s1%. */

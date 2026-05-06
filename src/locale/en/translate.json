@@ -394,6 +394,10 @@
           "title": "Volatile Void Suffuser",
           "tooltip": "The average health of your raid for Volatile Void Suffuser. Note that it can proc off any healing event and you frequently have a lot of these on high health targets."
         },
+        "darkmoonHuntStat": {
+          "title": "Darkmoon Hunt: Stat",
+          "tooltip": "Darkmoon Hunts stat is based on what you are targeting. Targeting allies gives you Mastery so this is the most consistent stat, but it otherwise differs per boss."
+        },
         
         "dpsFlag": {
           "title": "DPS Flag",

@@ -545,7 +545,8 @@ export class Player {
   };
 
   getFightLength = (contentType) => {
-    return this.getActiveModel(contentType).getFightInfo("fightLength");
+    if (contentType === "Dungeon") return 200;
+    else return this.getActiveModel(contentType).getFightInfo("fightLength");
   };
 
   getInt = () => {
@@ -679,10 +680,10 @@ export class Player {
 
       this.activeStats = {
         intellect: 2400, 
-        haste: 290,
-        crit: 400,
-        mastery: 490,
-        versatility: 250,
+        haste: 1100,
+        crit: 600,
+        mastery: 400,
+        versatility: 200,
         stamina: 1900,
         critMult: 2,
       };

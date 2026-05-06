@@ -22,7 +22,7 @@ export const preservationEvokerProfile = {
         mastery: 550,
         versatility: 550,
         stamina: 19000,
-        critMult: 2,
+        critMult: 2.3,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -87,7 +87,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: 6, spec: spec, statPercentages: convertStatPercentages(stats, initialState.statBonuses, spec, playerData.masteryEffectiveness), 
         settings: settings, talents: evokerTalents};
     state.statPercentages.genericHealingMult += 0.06; // The 6% aura buff that hasn't been baked in yet.
-    state.statPercentages.critMult = 2.3;
+    state.statPercentages.critMult = 2.3//26// 1.3 * 1.02 + 1;
     const incomingDTPS = 30000;
     const burstDTPS = 45000; 
 
@@ -148,7 +148,6 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.essenceBurst_livingFlame = essenceBurstCount;
 
     // Talented bursts
-    if (hasTalent(talents, "Energy Cycles")) essenceBurstCount += 6 / 1.5; // 6 bursts every Tip the Scales
     if (hasTalent(talents, "Essence Well")) essenceBurstCount += (getCPM(castProfile, "Dream Breath") + getCPM(castProfile, "Fire Breath")) * 0.5; // 50% of a burst on DB / FB cast.
 
     // Total Echo CPM

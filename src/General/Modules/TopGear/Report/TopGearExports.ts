@@ -5,10 +5,11 @@
 
 import { getInstanceName, getSourceName } from "Databases/InstanceDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
-import { getTranslatedItemName } from "General/Engine/ItemUtilities";
+import { getTranslatedItemName, getItemProp } from "General/Engine/ItemUtilities";
 import Item from "General/Items/Item";
 import Player from "General/Modules/Player/Player";
 import { getTranslatedSlotName } from "locale/slotsLocale";
+import { TRINKET_SOURCES } from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 
 // {"player":{"name":"Player","equipment":{"items":[{"id":78785,"enchant":4207,"gems":[52296,52207]},{"id":78382,"reforging":119},{"id":78835,"enchant":4199,"gems":[52207,52207],"reforging":117},{"id":77096,"enchant":4096,"gems":[52207],"reforging":119},{"id":78755,"enchant":4063,"gems":[52207,52207,52208],"reforging":119},{"id":71262,"gems":[0],"reforging":117},{"id":76157,"gems":[52207,0],"reforging":119},{"id":75117,"gems":[0],"reforging":167},{"id":78805,"enchant":4112,"gems":[52207,52207,52207],"reforging":117},{"id":77172,"enchant":4069,"gems":[52207,52208],"reforging":119},{"id":77109,"gems":[52207],"reforging":117},{"id":71211,"reforging":145},{"id":77976},{"id":72898},{"id":78485,"enchant":4084},{"id":72878,"reforging":167},{"id":77083,"gems":[52207],"reforging":117}]}}}
 export const exportReforgeLite = (player: Player, itemSet: Item[], reforges: any) => {
@@ -217,6 +218,37 @@ const wowheadClassColors = {
   "Mistweaver Monk": "c10"
 }
 
+// helper for trinket scoring
+function getTrinketScores(trinketData: any[]) {
+  return trinketData
+    .map((trinket: any) => ({
+      ...trinket,
+      score: trinket.highestLevel ? trinket["i" + trinket.highestLevel] : 0
+    }))
+    .filter((t: any) => t.score > 0)
+    .sort((a: any, b: any) => b.score - a.score);
+}
+
+// wowhead's great vault bonus tag info from item
+function getWowheadBonusTag(itemId: number) {
+  const sources = getItemProp(itemId, "sources", "Retail");
+  if (!sources || sources.length === 0) return "[=gv-delves]";
+  
+  const source = sources[0];
+  
+  if (CONSTANTS.currentRaidIDs.includes(source.instanceId)) return "[=gv-raid]";
+  if (source.instanceId === -69) return "[=gv-delves]";
+  if (source.instanceId === -1) {
+    const instanceID = source.encounterId;
+    if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) return "[=gv-tww-dun]";
+    if ([1012, 1178].includes(instanceID)) return "[=gv-bfa-dun]";
+    if ([1194, 11941, 1185].includes(instanceID)) return "[=gv-sl-dun]";
+    return "[=gv-mid-dun]";
+  }
+  
+  return "[=gv-delves]";
+}
+
 export function exportIcyVeinsGearList(itemSet, spec, gameType = "Retail") {
   const results = ["<table>",
                     "<tr>",
@@ -290,14 +322,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
-        if (CONSTANTS.currentRaidIDs.includes(item.source.instanceId)) bonusTag = " bonus=[=gv-raid]";
-        else if (item.source.instanceId === -1) {
-          const instanceID = item.source.encounterId;
-          if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) bonusTag = " bonus=[=gv-tww-dun]"; // TWW
-          else if ([1012, 1178].includes(instanceID)) bonusTag = " bonus=[=gv-bfa-dun]"; // BFA
-          else if ([1194, 11941, 1185].includes(instanceID)) bonusTag = " bonus=[=gv-sl-dun]"; // Shadowlands
-        }
-        else if (item.source.instanceId === -69) bonusTag = " bonus=[=gv-delves]"
+        bonusTag = ` bonus=${getWowheadBonusTag(item.id)}`;
       }
 
     }
@@ -312,3 +337,121 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
 
   return formattedArray;
 }
+
+// wowhead trinket cheat sheet export generator
+export function exportWowheadTrinketCheatSheet(trinketData: any[]) {
+  const trinketScores = getTrinketScores(trinketData);
+
+  const top4 = trinketScores.slice(0, 4);
+  
+  const formatTrinket = (trinket: any) => {
+    const bonusTag = getWowheadBonusTag(trinket.id);
+    return `${trinket.id};${bonusTag}`;
+  };
+
+  const bis = top4.slice(0, 2).map(formatTrinket).join(",");
+  const alt = top4.slice(2, 4).map(formatTrinket).join(",");
+
+  return `[build-items cols=2 url=guide=3292 bis=${bis} alt=${alt}]Trinkets[/build-items]`;
+}
+
+// wowhead trinket tier list export generator
+export function exportWowheadTierList(trinketData: any[]) {
+  const getQualityAndSource = (trinket: any) => {
+    const sources = getItemProp(trinket.id, "sources", "Retail");
+    if (!sources || sources.length === 0) return { quality: 1, source: "delves" };
+    
+    const instanceId = sources[0].instanceId;
+    
+    if (TRINKET_SOURCES.delves.includes(instanceId)) return { quality: 2, source: "delves" };
+    if (TRINKET_SOURCES.dungeon.includes(instanceId)) return { quality: 3, source: "dungeon" };
+    if (TRINKET_SOURCES.raid.includes(instanceId)) return { quality: 4, source: "raid" };
+    if (TRINKET_SOURCES.crafted.includes(instanceId)) return { quality: 5, source: "crafting" };
+    
+    // just fallback to white quality (pvp, other sources, etc)
+    return { quality: 1, source: "delves" };
+  };
+
+  const formatTooltipName = (name: string) => {
+    const sanitized = name
+      .toLowerCase()
+      .replace(/['\s]/g, "_")
+      .replace(/,/g, "");
+    return `${sanitized}_tooltip`;
+  };
+
+  const trinketScores = getTrinketScores(trinketData);
+  
+  const tooltipThreshold = 0.80
+  const tierConfigs = [
+    { name: "S", bg: "q5", threshold: 0.95 },
+    { name: "A", bg: "q4", threshold: tooltipThreshold },
+    { name: "B", bg: "q3", threshold: 0.75 },
+    { name: "C", bg: "q2", threshold: 0.60 },
+    { name: "D", bg: "q1", threshold: 0.50 },
+    { name: "F", bg: "q10", threshold: 0 }
+  ];
+
+  const tiers: { [key: string]: any[] } = tierConfigs.reduce((acc, tier) => {
+    acc[tier.name] = [];
+    return acc;
+  }, {} as { [key: string]: any[] });
+
+  const maxScore = trinketScores[0]?.score || 1;
+  trinketScores.forEach((trinket: any) => {
+    const score = trinket.score;
+    const tier = tierConfigs.find(t => score >= maxScore * t.threshold);
+    if (tier) tiers[tier.name].push(trinket);
+  });
+
+  const tierList = ["[tier-list=rows grid]"];
+  const tooltips: string[] = [];
+
+  tierConfigs.forEach(tierConfig => {
+    const tierTrinkets = tiers[tierConfig.name];
+    if (tierTrinkets.length === 0) return;
+
+    tierList.push("[tier]");
+    tierList.push(`[tier-label bg=${tierConfig.bg}]${tierConfig.name}[/tier-label]`);
+    tierList.push("[tier-content]");
+
+    tierTrinkets.forEach((trinket: any) => {
+      const { quality, source } = getQualityAndSource(trinket);
+      const tooltipName = formatTooltipName(trinket.name);
+      
+      const includeTooltip = tierConfig.threshold >= tooltipThreshold || trinket.warningFlag;
+      const tooltipAttr = includeTooltip ? ` tooltip="${tooltipName}"` : "";
+      
+      tierList.push(`[icon-badge=${trinket.id} quality=${quality} display-options=${source}${tooltipAttr}]`);
+      
+      if (includeTooltip) {
+        tooltips.push(`[tooltip name=${tooltipName}][/tooltip]`);
+      }
+    });
+
+    tierList.push("[/tier-content]");
+    tierList.push("[/tier]");
+  });
+
+  tierList.push("[/tier-list]");
+
+  const displayOptions = [
+    "[grid width=95% align=centered]",
+    "[display-option=raid icon=inv_achievement_raidnerubian_queenansurek checked color=4]Raid[/display-option]",
+    "[display-option=dungeon icon=inv_relics_hourglass checked color=3]Mythic Plus[/display-option]",
+    "[display-option=delves icon=ui_delves checked color=2]Delves[/display-option]",
+    "[display-option=crafting icon=inv_10_blacksmithing_consumable_repairhammer_color2 checked color=5]Crafting[/display-option]",
+    "[/grid]",
+  ];
+
+  const results = [
+    "{{REMOVE ME AFTER ADJUSTING TOOLTIPS}}", // user should not blindly paste without tooltips!!!
+    ...displayOptions,
+    ...tierList, 
+    "", // extra space for more visual clarity to manually edit
+    ...tooltips
+  ]
+
+  return results.join('\n');
+}
+

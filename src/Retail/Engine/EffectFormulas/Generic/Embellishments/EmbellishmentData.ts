@@ -301,7 +301,7 @@ export const embellishmentData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const enemyType = "Mastery";
+            const enemyType = (getSetting(additionalData.settings, "darkmoonHuntStat") ?? "mastery").toLowerCase();
 
             bonus_stats['mastery'] = runGenericPPMTrinket({...data[0], stat: enemyType}, itemLevel, additionalData.setStats);
 

@@ -448,9 +448,9 @@ const heroTalents: TalentTree = {
         cooldownAdjFlat(spellDB["Temporal Anomaly"], talentData[1]);
     }},
 
-    /* Temporal Burst grants Essence Burst every X sec. */
-    "Energy Cycles": {id: 1260568, values: [6.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic4", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+    /* Non-Echo Chrono Flames buffed by 50%. */
+    "Chronal Dynamo": {id: 1291522, values: [50.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_red", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+        buffSpellPerc(spellDB["Living Flame"], talentData[0]);
     }},
 
     /* For each $?c2[healing over time effect from Verdant Embrace][damage over time effect from Upheaval], gain X% haste, up to Y%. */
