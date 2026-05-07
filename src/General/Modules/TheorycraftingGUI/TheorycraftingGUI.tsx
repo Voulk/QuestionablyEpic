@@ -84,7 +84,7 @@ export default function TheorycraftingGUI(props) {
  
       {/* Future panels go here */}
 
-      <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />
+      {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 
       <div style={{ height: 100 }} />
     </Box>

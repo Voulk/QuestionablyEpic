@@ -25,8 +25,6 @@ interface IconData {
 
 const ICON_MAP: Record<string, IconData> = {
   preservation: { src: EvokerIcon, alt: "Preservation Evoker" },
-  devastation: { src: DevastationEvokerIcon, alt: "Devastation Evoker" },
-  augmentation: { src: AugmentationEvokerIcon, alt: "Augmentation Evoker" },
   holypaladin: { src: HolyPaladinIcon, alt: "Holy Paladin" },
   restodruid: { src: RestorationDruidIcon, alt: "Restoration Druid" },
   druid: { src: DruidIcon, alt: "Druid" },
@@ -34,15 +32,7 @@ const ICON_MAP: Record<string, IconData> = {
   shadowpriest: { src: ShadowPriestIcon, alt: "Shadow Priest" },
   discpriest: { src: DiscPriestIcon, alt: "Discipline Priest" },
   restoshaman: { src: RestorationShamanIcon, alt: "Restoration Shaman" },
-  shamandps: { src: ShamanIcon, alt: "Shaman" },
   mistweaver: { src: MistweaverIcon, alt: "Mistweaver Monk" },
-  warrior: { src: WarriorIcon, alt: "Warrior" },
-  dh: { src: DemonHunterIcon, alt: "Havoc Demon Hunter" },
-  dk: { src: DeathKnightIcon, alt: "Death Knight" },
-  rogue: { src: RogueIcon, alt: "Rogue" },
-  warlock: { src: WarlockIcon, alt: "Warlock" },
-  hunter: { src: HunterIcon, alt: "Hunter" },
-  mage: { src: MageIcon, alt: "Mage" },
 };
 
 
