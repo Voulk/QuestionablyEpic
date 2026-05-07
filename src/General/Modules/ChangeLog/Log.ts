@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.0.5 / 5.5.3",
+    update: 16,
+    date: "May 7",
+    changes: [ 
+      "Re-added support for ilvl and ilevel tags in SimC imports.",
+      "Minor model changes.",
+      "Fixed Help button",
+    ]
+  },
       {
     version: "12.0.5 / 5.5.3",
     update: 15,
