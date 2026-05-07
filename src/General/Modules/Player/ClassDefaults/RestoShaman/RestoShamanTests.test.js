@@ -10,6 +10,8 @@ describe("Generic Profile Testing Environment", () => {
 
         const activeStats = restoShamanProfile.defaultStatProfile;
 
+        activeStats.critMult += 0.02;
+
         // PlayerData will be hooked into the ecosystem in more detail soon.
         // Right now some of these are reiterated in scoreShamanSet but that can be cleaned up later.
         // Settings needs to be expanded and will include metrics like mastery efficiency that a player can edit.

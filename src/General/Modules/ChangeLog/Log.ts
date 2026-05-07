@@ -19,10 +19,20 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.0.5 / 5.5.3",
+    update: 16,
+    date: "May 7",
+    changes: [ 
+      "Re-added support for ilvl and ilevel tags in SimC imports.",
+      "Minor model changes.",
+      "Fixed Help button",
+    ]
+  },
       {
-    version: "12.0.1 / 5.5.3",
+    version: "12.0.5 / 5.5.3",
     update: 15,
-    date: "April 19",
+    date: "April 21",
     changes: [ 
       "Added support for the 12.0.5 Ascended Item system and increased the level range on the trinket chart.",
       "Greatly expanded on what data is available in Trinket Chart tooltips.",

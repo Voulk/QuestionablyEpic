@@ -106,7 +106,7 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         haste: (1 + statProfile.haste / STATCONVERSION.HASTE / 100) * (1 + (statBonuses.haste || 0)),
         mastery: (statProfile.mastery / STATCONVERSION.MASTERY / 100 + 0.08 + (statBonuses.mastery || 0)) * STATCONVERSION.MASTERYMULT[spec] * masteryEffectiveness,
         versatility: 1 + (statProfile.versatility / STATCONVERSION.VERSATILITY / 100) + (statBonuses.versatility || 0),
-        critMult: 2 + (statBonuses.critMult || 0),
+        critMult: Math.max(statProfile.critMult || 2, 2) + (statBonuses.critMult || 0),
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
         leech: (statProfile.leech / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),

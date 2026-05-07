@@ -441,6 +441,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let titanDisc = 0;
   let itemSpecial = 0;
   let dropLevel = -1;
+  let levelOverride = 0;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -470,13 +471,13 @@ export function processItem(line: string, player: Player, contentType: contentTy
       craftedIDs = craftedStats;
       
     }
-    else if (info.includes("ilevel=") || info.includes("ilvl=")) protoItem.level.override = parseInt(info.split("=")[1]);//  levelOverride = 
+    else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
     
   }
 
   // Grab the items base level from our item database.
   protoItem.slot = getItemProp(protoItem.id, "slot");
-  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
+  protoItem.level = levelOverride ? levelOverride : getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
