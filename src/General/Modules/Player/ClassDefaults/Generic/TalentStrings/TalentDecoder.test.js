@@ -6,9 +6,8 @@ describe("decodeBlizzardString", () => {
     const talentString = "CkGA8cL7tpvige+kkmGM9zUPWPjxMbz2MmZGz2wDwMzmxCzAAAAAAAAAAgtBNbmx0MjhHwsMzMzMMMDAAAAAAAAAgAAAmtZWa2mZzGjZmhZGgmBAYmBgB";
 
 
-    const druidRaw = getSpecTalentData(105); // 
 
-    const result = decodeBlizzardString(talentString, druidRaw);
+    const result = decodeBlizzardString(talentString, 105);
     const enabledTalents = result.selectedTalents.map(talent => talent.nodeId);
 
 
@@ -20,9 +19,7 @@ describe("decodeBlizzardString", () => {
         const talentString = "CwbBPJc41CfcseY0baneJ1IHrBAAAAAYmZ2WmHADzMmtZYMzyMGAAYGzYYMzMiZGAAAgZmZyMmZMLzMDAGYMjNWgBmRDNMsAjZGgxA";
 
 
-        const specRaw = getSpecTalentData(1468); // 
-
-        const result = decodeBlizzardString(talentString, specRaw);
+        const result = decodeBlizzardString(talentString, 1468);
         const enabledTalents = result.selectedTalents.map(talent => talent.entryName);
 
         //console.log(result);

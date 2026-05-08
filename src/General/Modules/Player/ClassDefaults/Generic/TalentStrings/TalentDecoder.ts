@@ -69,11 +69,12 @@ const getNodeById = (data: TalentNode[], nodeId: number): TalentNode | undefined
  */
 export function decodeBlizzardString(
   talentString: string,
-  specData: any,
+  spec: number,
 ): DecodingResult | null {
   if (!talentString) return null;
 
   let head = 0;
+  const specData = getSpecTalentData(spec);
   const fullNodeOrder: number[] = specData.nodeOrder;
   const specNodes: TalentNode[] = specData.nodes;
 
