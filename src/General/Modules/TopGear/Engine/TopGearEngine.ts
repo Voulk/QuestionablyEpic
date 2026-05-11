@@ -126,7 +126,7 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    gemArray.fill(getGemID('mastery', 'haste'), 1);
+    gemArray.fill(getGemID('mastery', 'crit'), 1);
     return gemArray;
     return [metaGem, getGemID('mastery', 'haste')]/*, getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
       getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];*/

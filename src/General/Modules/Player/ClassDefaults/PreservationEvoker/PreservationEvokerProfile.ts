@@ -36,6 +36,7 @@ export const preservationEvokerProfile = {
     specialQueries: {
         // Any special information we need to pull.
     },
+    defaultTalents: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 }
 
 
