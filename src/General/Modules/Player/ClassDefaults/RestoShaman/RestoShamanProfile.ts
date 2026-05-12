@@ -43,7 +43,7 @@ export const restoShamanProfile = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    defaultTalents: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    defaultTalents: "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzwYmZmZGzYB2gZsox2AyMwGjhZsNGz0stMzwMmFWMzMjZYWGAAYAzMDmZAgBD",
 }
 
 // Ascendance spells are modified copies of the base ones so we add their own entries

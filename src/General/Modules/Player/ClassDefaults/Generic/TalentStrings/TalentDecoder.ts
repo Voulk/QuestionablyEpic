@@ -1,3 +1,4 @@
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import talentData from "./RaidbotsTalentData.json";
 
 /** 
@@ -24,6 +25,7 @@ const CHOICE_BITS = 2;
 interface TalentEntry {
   id: number;
   name: string;
+  icon: string;
 }
 
 interface TalentNode {
@@ -40,6 +42,8 @@ interface DecodedTalent {
   rank: number;
   entryName?: string;
   entryId?: number;
+  icon?: string;
+  tree?: "spec" | "class" | "hero";
 }
 
 interface DecodingResult {
@@ -48,16 +52,40 @@ interface DecodingResult {
   selectedTalents: DecodedTalent[];
 }
 
+interface TalentRanks {
+  talentName: string;
+  talentRanks: number;
+  talentIcon: string;
+  tree?: "spec" | "class" | "hero";
+}
+
+export function getSelectedTalentsFromString(talentString: string, specName: string): TalentRanks[] {
+  const specId = CONSTANTS.specIDs[specName];
+  const decoded = decodeBlizzardString(talentString, specId);
+  if (!decoded) return [];
+  return decoded.selectedTalents.map(talent => ({talentName: talent.entryName, talentRanks: talent.rank, talentIcon: talent.icon, tree: talent.tree}));
+}
+
 export function getSpecTalentData(specId: number): any {
-  // This function should return the talent data for the given specId.
+  // Find the raw data for the specific ID
   const specRaw = talentData.find(node => node.specId === specId);
+  
   if (!specRaw) {
     throw new Error(`Spec ID ${specId} not found in talent data.`);
   }
 
-  const nodeData = specRaw.classNodes.concat(specRaw.specNodes).concat(specRaw.heroNodes);
+  // Map over each array to inject the "tree" property
+  const classNodes = specRaw.classNodes.map(node => ({ ...node, tree: 'class' }));
+  const specNodes = specRaw.specNodes.map(node => ({ ...node, tree: 'spec' }));
+  const heroNodes = specRaw.heroNodes.map(node => ({ ...node, tree: 'hero' }));
 
-  return {nodeOrder: specRaw.fullNodeOrder, nodes: nodeData};
+  // Combine the tagged nodes
+  const nodeData = classNodes.concat(specNodes).concat(heroNodes);
+
+  return {
+    nodeOrder: specRaw.fullNodeOrder, 
+    nodes: nodeData
+  };
 }
 
 const getNodeById = (data: TalentNode[], nodeId: number): TalentNode | undefined => {
@@ -77,6 +105,7 @@ export function decodeBlizzardString(
   const specData = getSpecTalentData(spec);
   const fullNodeOrder: number[] = specData.nodeOrder;
   const specNodes: TalentNode[] = specData.nodes;
+  console.log(fullNodeOrder);
 
   // Helper function to extract N bits from the Base64 stream
   const getBits = (bits: number): number => {
@@ -141,12 +170,14 @@ export function decodeBlizzardString(
           nodeName: node?.name || "Unknown Node",
           rank,
           entryName: entry?.name,
-          entryId: entry?.id
+          entryId: entry?.id,
+          icon: entry?.icon,
+          tree: node?.tree,
         });
       }
     }
   }
-
+  console.log(selectedTalents);
   return {
     version,
     specId,

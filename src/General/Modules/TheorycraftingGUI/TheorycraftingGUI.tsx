@@ -9,7 +9,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
 import { buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 import SequenceDataTable from "../SequenceGenerator/SequenceDataTable";
+import ModelInformationTabs from "./ModelInformationTabs";
 
+import { getSelectedTalentsFromString } from "General/Modules/Player/ClassDefaults/Generic/TalentStrings/TalentDecoder"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 
 export default function TheorycraftingGUI(props) {
@@ -17,6 +20,7 @@ export default function TheorycraftingGUI(props) {
     const selectedSpec = player.getSpec();
     const contentType = useSelector((state: RootState) => state.contentType);
     const profiles = player.getAllModels(contentType);
+
     const [activeResult, setActiveResult] = useState({healing: 1,
         spellBreakdown: [
             { spellName: "Healing Wave",    cpm: 4.21, overhealing: 0.18, hps: 12450, percentHealing: "34.2%", icon: "spell_nature_healingwavelesser" },
@@ -37,6 +41,10 @@ export default function TheorycraftingGUI(props) {
         versatility: 400,
     });
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
+    const [talentString, setTalentString] = useState(profiles[0].talents);
+    const [talentsSelected, setTalentsSelected] = useState(getSelectedTalentsFromString(profiles[0].talents, selectedSpec));
+    console.log(profiles[0])
+    console.log(talentsSelected);
     const params = {
                 filler: {
                     hw: 0, ch: 1
@@ -47,7 +55,7 @@ export default function TheorycraftingGUI(props) {
                 downtime: 0
             }
     const playerData = { spec: "Restoration Shaman", heroTree: "Farseer", profileName: selectedProfile.modelName, stats: stats,
-                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
+                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params,  }
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
@@ -76,9 +84,10 @@ export default function TheorycraftingGUI(props) {
       <ControlPanel stats={stats} setStats={setStats} profiles={profiles} onRunProfile={runProfile} />
  
       {/* Charts flow vertically below */}
-      <TCPanel title="Spell Breakdown">
-        <SpellBreakdown rows={activeResult.spellBreakdown} activeResult={activeResult} />
-      </TCPanel>
+      <ModelInformationTabs
+            activeResult={activeResult}
+            selectedTalents={talentsSelected}
+        />
 
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
