@@ -129,7 +129,7 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemID = 0) {
+export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemSlot = "") {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
@@ -169,6 +169,12 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemI
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
+  }
+
+  if (itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
+    // Voidcores
+    if (itemLevel === 275 || itemLevel === 289) itemLevel += 9;
+    else if (itemLevel === 272 || itemLevel === 285) itemLevel += 10;
   }
 
   return itemLevel;
@@ -232,7 +238,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       if (isRaid && encounter > 0) {
         //
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.id);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, item.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.quality = 4;
           item.dropLoc = "Raid";
@@ -244,7 +250,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         // M+ Dungeons
         // Edit which dungeons are in-season in the CONSTANTS file.
         if (CONSTANTS.currentDungeonIDs.includes(encounter)) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Dungeon";
           item.dropDifficulty = playerSettings.dungeon;
@@ -260,7 +266,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       }
       else if (primarySource === -4 && rawItem.quality === 4) {
         // Crafted. Note that we're excluding blue items. Those are only really good early on.
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Crafted";
         item.dropDifficulty = "";
@@ -270,7 +276,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       }
       else if (primarySource === -69) {
         // Delves
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Delves";
         item.dropDifficulty = "";
@@ -281,7 +287,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       /*else if (primarySource !== -18) {
         /*
         // Exclude Nathria gear.
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings);
         item.quality = 4;
 
