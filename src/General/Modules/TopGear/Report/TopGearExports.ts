@@ -268,6 +268,8 @@ const icyVeinsSlotNames = {
   "Shield": "Offhand",
 }
 
+const cleanupText = (str: string) => str.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "").replaceAll("&", "and").replaceAll("-", "");
+
 // SlotName, Rarity, Name, Source, Enchant, Gem, Gem, Gem, Embellishment
 export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "Retail") {
   const results = [];
@@ -284,28 +286,28 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         
       }
     }
-    const itemName = "@@@WoW" + getTranslatedItemName(item.id, "en", "").replaceAll(" ", "").replaceAll("'", "");
-    const itemEnchant = item.slot in enchants ? ("@@@WoWEnchant" + slotName + enchants[item.slot]).replaceAll(" ", "").replaceAll("'", "") + "Text@@@" : "";
+    const itemName = "@@@WoW" + cleanupText(getTranslatedItemName(item.id, "en", "")) + "@@@";
+    const itemEnchant = item.slot in enchants ? ("@@@WoWEnchant" + slotName.replace("1", "").replace("2", "") + cleanupText(enchants[item.slot]) + "Text@@@") : "";
     let itemEmbellishment = item.effect && item.effect.type === "embellishment" ? item.effect.name : "";
-    if (itemEmbellishment) itemEmbellishment = "@@@WoW" + itemEmbellishment.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "") + "NoText@@@";
+    if (itemEmbellishment) itemEmbellishment = "@@@WoW" + cleanupText(itemEmbellishment) + "NoText@@@";
     let itemGems = item.socketedGems || [];
-    const itemGemNames = itemGems.map((gemId: number) => "@@@WoW" + getGemProp(gemId, "name").replaceAll(" ", "").replaceAll("'", "") + "NoText@@@").join(",");
+    const itemGemNames = itemGems.map((gemId: number) => "@@@WoW" + cleanupText(getGemProp(gemId, "name")) + "NoText@@@").join(",");
     let bonusTag = "";
     let source = "";
     let gemEmbellishmentSection = "";
-    console.log(enchants);
-    console.log(slotName, itemName, itemEnchant, itemEmbellishment, itemGemNames);
 
     if (item.source) {
         //else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidID.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
         /*else*/ 
-        source = "@@@Link" + getSourceName(item.source.instanceId, item.source.encounterId).replaceAll(" ", "").replaceAll("&", "and").replaceAll("-", "").replaceAll("'", "") + "@@@"
+        source = "@@@Link" + cleanupText(getSourceName(item.source.instanceId, item.source.encounterId)) + "@@@";
         if (item.source.instanceId === -4) source = "@@@LinkCrafted@@@ by @@@Link" + craftedDB[item.source.encounterId] + "@@@";
         if (["Chest", "Shoulders", "Legs", "Hands", "Helm"].includes(item.slot)) source = "@@@LinkInspirationCatalyst@@@ or " + source;    
         if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst";    
         
         //else if (item.source.instanceId !== -1) source += " - @@@Link" + getInstanceName(item.source.instanceId) + "@@@"
         bonusTag = "#AddBonus=12806"
+        if (item.slot.includes("Weapon") || ["Shield", "Offhand", "Trinket"].includes(item.slot)) bonusTag = "#AddBonus=13654"
+        else bonusTag = "#AddBonus=12807"
       }
 
     if (itemEmbellishment && itemGemNames) {
@@ -318,7 +320,6 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
       gemEmbellishmentSection = "," + itemGemNames;
     }
 
-    console.log(slotName + ",epic," + itemName + bonusTag + "@@@," + source + (itemEnchant ? "," + itemEnchant.replace("Mainhand", "Weapon") : "") + "" + gemEmbellishmentSection);
     results.push(slotName + ",epic," + itemName + bonusTag + "@@@," + source + (itemEnchant ? "," + itemEnchant.replace("Mainhand", "Weapon") : "") + "" + gemEmbellishmentSection)
 
 
