@@ -18,7 +18,7 @@ import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
 import classIcons from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
-import { exportWowheadGearList, exportReforgeLite, exportIcyVeinsGearList } from "./TopGearExports";
+import { exportWowheadGearList, exportReforgeLite, exportIcyVeinsGearList, exportIcyVeinsGearPlanner } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 import { getItemProp } from "General/Engine/ItemUtilities";
@@ -290,7 +290,9 @@ function displayReport(
   }
   if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
     exportOptions.push("Wowhead BIS List");
+    exportOptions.push("Icy Veins Gear Planner");
     exportOptions.push("Icy Veins BIS List");
+    
   }
 
   const handleExportMenuClick = (buttonClicked) => {
@@ -310,7 +312,12 @@ function displayReport(
     else if (buttonClicked === "Wowhead Gear Planner") {
       setDialogOpen(true);
       setDialogText(getWHData(player, itemList, topSet.reforges, enchants));
-    } else {
+    } 
+    else if (buttonClicked === "Icy Veins Gear Planner") {
+      setDialogOpen(true);
+      setDialogText(exportIcyVeinsGearPlanner(itemList, player.spec, enchants, gameType));
+    }
+    else {
     }
   };
 

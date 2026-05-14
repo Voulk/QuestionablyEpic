@@ -11,8 +11,14 @@ export const getMoPDungeons = () => {
 }
 
 export const getSourceName = (instanceID, encounterID) => {
-  if (instanceID === -1) {
+  if (encounterID === 999) {
+    return "Catalyst";
+  }
+  else if (instanceID === -1) {
     return encounterDB["-1"]["Retail"][encounterID] || ""
+  }
+  else if (instanceID === -4) {
+    return "Crafted";
   }
   else {
     return encounterDB[instanceID].bosses[encounterID] || ""
