@@ -1089,6 +1089,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
+          if (gameType === "Retail" && ["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) newItem.level += 9;
 
       if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
