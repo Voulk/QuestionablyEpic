@@ -286,7 +286,7 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         
       }
     }
-    const itemName = "@@@WoW" + cleanupText(getTranslatedItemName(item.id, "en", "")) + "@@@";
+    const itemName = "@@@WoW" + cleanupText(getTranslatedItemName(item.id, "en", ""));
     const itemEnchant = item.slot in enchants ? ("@@@WoWEnchant" + slotName.replace("1", "").replace("2", "") + cleanupText(enchants[item.slot]) + "Text@@@") : "";
     let itemEmbellishment = item.effect && item.effect.type === "embellishment" ? item.effect.name : "";
     if (itemEmbellishment) itemEmbellishment = "@@@WoW" + cleanupText(itemEmbellishment) + "NoText@@@";
@@ -302,12 +302,15 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         source = "@@@Link" + cleanupText(getSourceName(item.source.instanceId, item.source.encounterId)) + "@@@";
         if (item.source.instanceId === -4) source = "@@@LinkCrafted@@@ by @@@Link" + craftedDB[item.source.encounterId] + "@@@";
         if (["Chest", "Shoulders", "Legs", "Hands", "Helm"].includes(item.slot)) source = "@@@LinkInspirationCatalyst@@@ or " + source;    
-        if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst";    
+        if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst@@@";    
         
         //else if (item.source.instanceId !== -1) source += " - @@@Link" + getInstanceName(item.source.instanceId) + "@@@"
         bonusTag = "#AddBonus=12806"
-        if (item.slot.includes("Weapon") || ["Shield", "Offhand", "Trinket"].includes(item.slot)) bonusTag = "#AddBonus=13654"
-        else bonusTag = "#AddBonus=12807"
+        if (item.slot.includes("Weapon") || ["Shield", "Offhand", "Trinket"].includes(item.slot)) {
+          if (item.source.instanceId === -4) bonusTag = "#AddBonus=13655"
+          else bonusTag = "#AddBonus=13654"
+        }
+        else bonusTag = "#AddBonus=12806"
       }
 
     if (itemEmbellishment && itemGemNames) {

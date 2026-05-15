@@ -116,7 +116,7 @@ export const retailInstanceDB = {
     name: "March on Quel'Danas",
     bossOrder: [2739, 2740],
     bosses: {
-      2739: "Belo'ren, Child of Al'ar",
+      2739: "Belo'ren",
       2740: "Midnight Falls",
     }
   },
@@ -176,7 +176,7 @@ export const retailInstanceDB = {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
       bossOrderMythicPlus: [1315, 1316, 1300, 1299, 1201, 278, 476, 945], // Dungeon Order
 
-      1315: "Maisara Cavern",
+      1315: "Maisara Caverns",
       1316: "Nexus-Point Xenas",
       1300: "Magisters Terrace",
       1299: "Windrunner Spire",
