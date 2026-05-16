@@ -8,6 +8,8 @@ import { loadBottomBannerAd, loadBannerAd } from "General/Ads/AllAds";
 import { trackPageView } from "Analytics";
 import TrinketChart from "./TrinketChart";
 import { useSelector } from "react-redux";
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +42,48 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const handleDownload = () => {
+  // Compile trinket data
+  const allTrinketData = getAllTrinketData();
+  const toPrint = {}
+
+  console.log(allTrinketData.length)
+  allTrinketData.forEach((trinketX => {
+
+    toPrint[trinketX.name] = {description: trinketX.addonDescription || ""};
+    if ('effects' in trinketX && 'ppm' in trinketX.effects[0]) {
+      toPrint[trinketX.name].ppm = trinketX.effects[0].ppm;
+    }
+  }))
+  /*const toPrint = allTrinketData.map((trinketX => {
+    return {
+      id: trinketX.id,
+      name: trinketX.name,
+      description: trinketX.addonDescription || "",
+    }
+  }))*/
+
+  const jsonString = JSON.stringify(toPrint);
+
+  // Download them
+  downloadJson(jsonString, 'QE-trinket-data.json');
+};
+
+export const TRINKET_SOURCES = {
+  raid: CONSTANTS.currentRaidIDs,
+  dungeon: [-1],
+  delves: [-69],
+  crafted: [-4],
+  timewalking: [-67],
+  other: [
+    1192, // World Bosses
+    1205, // DF World Bosses
+    -18, // PVP
+    -17, // PVP
+    -85, // Also PVP
+  ],
+};
+
 export default function TrinketAnalysis(props) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
@@ -50,6 +94,8 @@ export default function TrinketAnalysis(props) {
   const { t } = useTranslation();
   const contentType = useSelector((state) => state.contentType);
   const classes = useStyles();
+  const [dialogText, setDialogText] = React.useState(""); 
+  const [dialogOpen, setDialogOpen] = React.useState(false);
 
   const helpBlurb = [t("TrinketAnalysis.HelpText")];
   const helpText = [
