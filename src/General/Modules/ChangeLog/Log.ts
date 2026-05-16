@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.0.5 / 5.5.3",
+    update: 17,
+    date: "May 13",
+    changes: [ 
+      "Added better support for the new Voidcore system in Top Gear & Upgrade Finder."
+    ]
+  },
         {
     version: "12.0.5 / 5.5.3",
     update: 16,

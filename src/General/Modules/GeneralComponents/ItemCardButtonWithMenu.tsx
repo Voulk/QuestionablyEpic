@@ -35,6 +35,14 @@ const getMenuItems = (item: any): MenuItemType[] => {
   //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
   //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
   const fullItemLevels = CONSTANTS.fullItemLevels;
+  if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
+    // Voidcores
+    if (item.upgradeTrack === "Myth") fullItemLevels.push(298);
+    else if (item.upgradeTrack === "Gilded Crafted") fullItemLevels.push(295);
+    else if (item.upgradeTrack === "Hero") fullItemLevels.push(285);
+    else if (item.upgradeTrack === "Runed Crafted") fullItemLevels.push(282);
+  }
+
   const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
@@ -43,6 +51,8 @@ const getMenuItems = (item: any): MenuItemType[] => {
       }
     });
   }
+
+  
 
   return items;
 };
