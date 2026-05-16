@@ -13,7 +13,7 @@ export const raidTrinketData = [
           {  // Damage Effect - Need to check if it double dips Vers
             secondaries: ['crit', 'versatility'],
             cooldown: 90,
-            efficiency: 0.88, // Unlikely to be able to use it perfectly on CD.
+            efficiency: 0.87, // Unlikely to be able to use it perfectly on CD.
             ticks: 5,
           },
           
@@ -24,7 +24,7 @@ export const raidTrinketData = [
           let dps = runGenericFlatProc({...data[0], ...trinketRawData["Litany of Lightblind Wrath"][0]}, itemLevel, player, additionalData.contentType)
           if (["Holy Paladin"].includes(player.spec) && additionalData.contentType === "Raid") dps = 0;
           else if (player.spec === "Restoration Shaman" && additionalData.contentType === "Raid") dps *= 0.6
-          else if (["Preservation Evoker", "Restoration Druid"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.80; // These specs can use it on more targets in raid, but it's still not amazing for them.
+          else if (["Preservation Evoker", "Restoration Druid"].includes(player.spec) && additionalData.contentType === "Raid") dps *= 0.7; // These specs can use it on more targets in raid, but it's still not amazing for them.
 
           bonus_stats.dps = dps;
           bonus_stats.hps = dps * 5;
@@ -53,7 +53,7 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Gaze continues to get bugfixes and in-game tuning.",
+        description: "Gaze is a dominant trinket option that has been changed many times over the current patch. It's assumed there won't be further changes.",
         addonDescription: "Gaze continues to get bugfixes and in-game tuning.",
         effects: [
         { // Stat Proc Portion
@@ -74,16 +74,12 @@ export const raidTrinketData = [
               "Restoration Shaman": 10,
               "Holy Paladin": 10.8,
             }
-            const spellsCastInDuration = specData[player.spec]
-            
-            //buggedSpecs.includes(player.spec) ? 12 : (12 / 1.5 * player.getStatPerc("haste"));
+            const stacksPerMinute = specData[player.spec] * data[0].ppm * 1.13;
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Expected Stacks per Proc", value: specData[player.spec]})
 
             
-
-            const alnUptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
-            // Currently bugged and accruing a stack per second.
-            const stacksPerMinute = alnUptime * 60;
-            bonus_stats.intellect = stacksPerMinute * spellsCastInDuration / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil");
+            bonus_stats.intellect = stacksPerMinute / 60 * processedValue(trinketRawData["Gaze of the Alnseer"][0], itemLevel, 1, "ceil") * data[0].duration;
 
             return bonus_stats;
         }
@@ -91,8 +87,8 @@ export const raidTrinketData = [
     { //
         id: 249809,
         name: "Locus-Walker's Ribbon",
-        description: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
-        addonDescription: "Fine in Mythic+ (even if stacks drop often) but truly shines in raid.",
+        description: "Good in Mythic+ (even if stacks drop often) but truly shines in raid.",
+        addonDescription: "Good in Mythic+ (even if stacks drop often) but truly shines in raid.",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -112,14 +108,21 @@ export const raidTrinketData = [
 
             bonus_stats.intellect *= averageStacks * 0.05 + 1;
 
+            if (additionalData.includeTooltip) {
+              additionalData.tooltipData.push({name: "Time to Max Stacks", value: Math.round(100 * timeToMax)/100 + " minutes"})
+              additionalData.tooltipData.push({name: "Average Stacks", value: Math.round(100 * averageStacks)/100})
+            }
+
+
             return bonus_stats;
             }
     },
     { //
         id: 249341,
         name: "Volatile Void Suffuser",
-        description: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
-        addonDescription: "A reasonable stat stick, though don't expect a ton of extra value from the low-health-allies portion.",
+        description: "A reasonable stat stick that can be very powerful if your raid isn't frequently at full health.",
+        addonDescription: "A reasonable stat stick that can be very powerful if your raid isn't frequently at full health.",
+        setting: true,
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
@@ -131,16 +134,19 @@ export const raidTrinketData = [
             let bonus_stats: Stats = {};
 
             bonus_stats.intellect = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Volatile Void Suffuser"][0]}, itemLevel);
-            const averageRaidHealth = 0.9; // Can we just put this in settings maybe?
+            const averageRaidHealth = getSetting(additionalData.settings, "averageRaidHealth") / 100; // Can we just put this in settings maybe?
             bonus_stats.intellect *= (1 + (1 - averageRaidHealth));
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Average Raid Health (Adjustable)", value: `${getSetting(additionalData.settings, "averageRaidHealth")}%`})
 
             return bonus_stats;
             }
     },
         {
           name: "Light of the Cosmic Crescendo",
-          description: "",
-          addonDescription: "",
+          description: "A good trinket, but highly dependent on doing difficult content where your raid drops below 60% often.",
+          setting: true,
+          addonDescription: "A good trinket, but highly dependent on doing difficult content where your raid drops below 60% often.",
           
           effects: [
             { // Damage effect. NYI.
@@ -161,6 +167,10 @@ export const raidTrinketData = [
       
             bonus_stats.hps = runGenericFlatProc({...data[1], ...trinketRawData["Light of the Cosmic Crescendo"][1]}, itemLevel, player, additionalData.contentType) * (usageRate || 0.7)
             
+            if (additionalData.includeTooltip) {
+              additionalData.tooltipData.push({name: "Stacks Consumed (Adjustable)", value: usageRate})
+            }
+
             return bonus_stats;
           }
         },

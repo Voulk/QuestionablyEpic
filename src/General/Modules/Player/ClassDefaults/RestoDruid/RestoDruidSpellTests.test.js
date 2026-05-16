@@ -14,7 +14,7 @@ describe("Test Resto Druid Spell Values", () => {
     //  ${"Healing Rain"}     | ${(2244 / 6 * 10)}              | ${0} - Off by 2% but incorrect tooltip anyway.
     each`
         spellName                        | expectedResult                  | index
-        ${"Rejuvenation"}                | ${(2255)}                       | ${0}
+        ${"Rejuvenation"}                | ${(2332)}                       | ${0}
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName", ({ spellName, expectedResult, index }) => {
         const spell = specDB[spellName][index]

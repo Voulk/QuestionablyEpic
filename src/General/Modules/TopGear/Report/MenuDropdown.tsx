@@ -3,10 +3,11 @@ import { Button, Menu, MenuItem } from "@mui/material";
 
 interface HoverMenuProps {
   handleClicked: (value: string) => void;
-  gameType: gameTypes;
+  exportOptions: string[];
+  sx?: any;
 }
 
-export default function HoverMenu({ handleClicked, gameType }: HoverMenuProps) {
+export default function HoverMenu({ handleClicked, exportOptions, sx }: HoverMenuProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -19,18 +20,6 @@ export default function HoverMenu({ handleClicked, gameType }: HoverMenuProps) {
     setAnchorEl(null);
   };
 
-  const exportOptions = []
-
-  if (gameType === "Classic") {
-    exportOptions.push("ReforgeLite Export");
-    exportOptions.push("Wowhead Gear Planner");
-  }
-  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
-    exportOptions.push("Wowhead BIS List");
-    exportOptions.push("Icy Veins BIS List")
-
-  }
-
   return (
     <>
       <Button
@@ -40,6 +29,7 @@ export default function HoverMenu({ handleClicked, gameType }: HoverMenuProps) {
         onClick={handleClick}
         variant="outlined"
         color="primary"
+        sx={sx}
         //size="small"
       >
         Export

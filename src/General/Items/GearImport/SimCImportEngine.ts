@@ -441,6 +441,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
   let titanDisc = 0;
   let itemSpecial = 0;
   let dropLevel = -1;
+  let levelOverride = 0;
 
   let specialAllocations: {[key: string]: number} = {};
   
@@ -470,13 +471,13 @@ export function processItem(line: string, player: Player, contentType: contentTy
       craftedIDs = craftedStats;
       
     }
-    else if (info.includes("ilevel=") || info.includes("ilvl=")) protoItem.level.override = parseInt(info.split("=")[1]);//  levelOverride = 
+    else if (info.includes("ilevel=") || info.includes("ilvl=")) levelOverride = parseInt(info.split("=")[1]);
     
   }
 
   // Grab the items base level from our item database.
   protoItem.slot = getItemProp(protoItem.id, "slot");
-  protoItem.level = getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
+  protoItem.level = levelOverride ? levelOverride : getItemLevel(protoItem.id, itemBonusIDs.map(Number), dropLevel || 0);
   //console.log(itemID + ": " + itemSlot + ". Item Level:" + itemLevel + ". Bonus: " + itemBonusIDs);
   // Process our bonus ID's so that we can establish the items level and sockets / tertiaries.
   for (var k = 0; k < itemBonusIDs.length; k++) {
@@ -547,10 +548,11 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
 
           // Embellishments that require a tag.
-          if (['Blessed Pango Charm', 'Arcanoweave Lining', 'Primal Spore Binding', 'Hunt', 'Writhing Armor Banding', 'Ascendance', 'Symbiosis', 'Blessed Weapon Grip', "Darkmoon Sigil: Ascension", 'Darkmoon Sigil: Symbiosis', 'Duskthread Lining', 'Dawnthread Lining', 'Energy Redistribution Beacon'].includes(specialEffectName)) {
+          if (['Blessed Pango Charm', 'Arcanoweave Lining', 'Sunfire Silk Lining', 'Primal Spore Binding', 'Hunt', 'Void', 'Rot', 'Blood'].includes(specialEffectName)) {
             if (specialEffectName === "Ascendance") specialEffectName = "Darkmoon Sigil: Ascension"
             else if (specialEffectName === "Symbiosis") specialEffectName = "Darkmoon Sigil: Symbiosis"
             else if (specialEffectName === 'Hunt') specialEffectName = "Darkmoon Sigil: Hunt"
+            else if (specialEffectName === "Void") specialEffectName = "Darkmoon Sigil: Void"
             
             protoItem.effect = {
               type: "embellishment",

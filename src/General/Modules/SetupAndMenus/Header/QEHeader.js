@@ -164,14 +164,12 @@ export default function QEHeader(props) {
       </Grid>
       <Grid item>
         <StyledButton
-          color={"secondary"}
+          component="a" // Use component instead of as
+          href="https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide"
+          target="_blank"
+          rel="noopener noreferrer" 
+          color="secondary"
           variant="contained"
-          onClick={() =>
-            window.open(
-              "https://www.wowhead.com/guide/how-to-use-qe-live-tool-guide",
-              "_blank"
-            )
-          }
         >
           {"Help"}
         </StyledButton>

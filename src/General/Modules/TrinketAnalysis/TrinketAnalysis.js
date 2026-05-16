@@ -83,6 +83,11 @@ export default function TrinketAnalysis(props) {
       </Grid>
       <div id="qelivead2"></div>
       <div style={{ height: 300 }} />
+      <GenericDialog
+        dialogText={dialogText}
+        isDialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+      />
     </div>
   );
 }

@@ -30,7 +30,7 @@
             "cost": 5.25,
             "coeff": 5.7874,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -52,7 +52,7 @@
             "cost": 0.0,
             "coeff": 6.82,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -80,7 +80,7 @@
             },
             "coeff": 17.8744,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -108,7 +108,7 @@
             },
             "coeff": 5.011,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -150,7 +150,7 @@
             },
             "coeff": 0.0,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -195,7 +195,6 @@
             "cost": 0.0,
             "coeff": 0.987,
             "aura": 1,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -218,9 +217,8 @@
                 "cooldown": 10.0,
                 "hasted": false
             },
-            "coeff": 4.1112,
+            "coeff": 3.08,
             "aura": 1,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -228,9 +226,9 @@
             "spellType": "damage"
         },
         {
-            "coeff": 0.1884,
+            "coeff": 0.1413,
             "aura": 1,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -259,7 +257,6 @@
             "cost": 0.0,
             "coeff": 0.4095,
             "aura": 1,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -284,7 +281,6 @@
             },
             "coeff": 3.8575,
             "aura": 1,
-            "expectedOverheal": 0.25,
             "secondaries": [
                 "crit",
                 "versatility"

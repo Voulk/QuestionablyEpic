@@ -72,6 +72,10 @@ export const otherTrinketData = [
       bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
       bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 1 * STATCONVERSION.LEECH;
 
+      if (additionalData.includeTooltip) {
+        additionalData.tooltipData.push({name: "Expected Uptime: ", value: convertPPMToUptime(trinketData.ppm, trinketData.duration) * 100 + "%"})
+      }
+
       return bonus_stats;
     }
   },
@@ -163,8 +167,8 @@ export const otherTrinketData = [
       },
       {
         name: "Consecrated Chalice",
-        description: "Stacks actually drop outside of combat!",
-        addonDescription: "Stacks actually drop outside of combat!",
+        description: "",
+        addonDescription: "",
         effects: [
           { 
             secondaries: ['versatility', 'crit', 'haste'],

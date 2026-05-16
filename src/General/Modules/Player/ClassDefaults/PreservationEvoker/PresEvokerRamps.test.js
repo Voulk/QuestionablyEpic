@@ -18,6 +18,8 @@ describe("Test APL", () => {
 
         const activeStats = preservationEvokerProfile.defaultStatProfile;
 
+        
+        //activeStats.mastery += 29;
 
         const playerData = { spec: "Preservation Evoker", heroTree: "Chronowarden", profileName: "Chronowarden", stats: activeStats, 
                                 masteryEffectiveness: 0.87, tierSets: ["Preservation Evoker S1-2", "Preservation Evoker S1-4"] }

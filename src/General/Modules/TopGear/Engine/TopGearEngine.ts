@@ -126,7 +126,7 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    gemArray.fill(getGemID('mastery', 'haste'), 1);
+    gemArray.fill(getGemID('mastery', 'crit'), 1);
     return gemArray;
     return [metaGem, getGemID('mastery', 'haste')]/*, getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
       getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];*/
@@ -140,9 +140,15 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Restoration Shaman") {
     // Crit / Vers
-    gemArray.fill(getGemID('crit', 'versatility'), 1);
-    return gemArray;
-    return [metaGem, getGemID('crit', 'haste')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
+    //gemArray.fill(getGemID('crit', 'versatility'), 1);
+    if (contentType === "Raid") {
+      return [240969, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility'), getGemID('crit', 'versatility')];
+    }
+    else {
+      gemArray.fill(getGemID('crit', 'versatility'), 1);
+      return gemArray;
+    }
+    return [metaGem, getGemID('crit', 'versatility'), getGemID('versatility', 'crit'), getGemID('mastery', 'crit')]/*, getGemID('versatility', 'haste'), getGemID('haste', 'crit'), getGemID('mastery', 'haste'),
       getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit'), getGemID('haste', 'crit')];*/
 
   }
@@ -551,7 +557,7 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes) {
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes, spec: string) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
@@ -559,7 +565,14 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   let highestWeight = getHighestWeight(castModel);
 
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
-  enchants["Finger"] = "+29 " + highestWeight;
+  let ringEnchantName = "";
+
+  if (spec === "Holy Priest" || spec === "Restoration Shaman") ringEnchantName = "Eyes of the Eagle";
+  else if (highestWeight === "haste") ringEnchantName = "Silvermoon's Alacrity";
+  else if (highestWeight === "crit") ringEnchantName = "Nature's Fury";
+  else if (highestWeight === "mastery") ringEnchantName = "Zul'jin's Mastery";
+  else if (highestWeight === "versatility") ringEnchantName = "Silvermoon's Tenacity";
+  enchants["Finger"] = ringEnchantName;
 
 
   // Helm
@@ -582,6 +595,11 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   bonus_stats.intellect += 41;
   enchants["Legs"] = "Arcanoweave Spellthread";
 
+  // Boots
+  bonus_stats.leech = (bonus_stats.leech || 0) + 28;
+  enchants["Feet"] = "Shaladrassil's Roots";
+
+
   if (false) {
     const dreamingData =  { // 
       coefficient: 40.32042, 
@@ -602,7 +620,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
     //bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
     bonus_stats.intellect = 67 * convertPPMToUptime(2, 15);
 
-    let wepEnchantName = "Acuity of the Ren'dorei";
+    let wepEnchantName = "Acuity of the Ren'dorei"
     /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
     else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
     else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
@@ -720,7 +738,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType);
+  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType, player.spec);
   
   // == Flask / Phials ==
   let selectedChoice = "";
@@ -888,7 +906,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately. Do we need to separate out on-use trinkets?
 
-    // 5% int bonus for wearing all Mail
+    // 5% int bonus for wearing all of one armor type.
     setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Raid Buffs are now handled in-file.
@@ -901,10 +919,11 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
+    console.log("SET HPS" + castModelResult.healing);
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
     //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
-    evalStats.leech = (setStats.leech || 0);
+    //evalStats.leech = (setStats.leech || 0);
     evalStats.allyStats = (setStats.allyStats || 0);
     evalStats.bonusHPS = (setStats.bonusHPS || 0);
     //hardScore = setStats.hps || 0;
@@ -937,6 +956,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     // Extra raid buffs
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
+    setStats.intellect = (setStats.intellect || 0) * 1.05;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;

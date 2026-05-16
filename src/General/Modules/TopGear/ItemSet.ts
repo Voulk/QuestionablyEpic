@@ -120,9 +120,9 @@ class ItemSet {
         hps: 0,
         mp5: 0,
       }
-      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 159;
-      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 159;
-      else if (this.spec === "Mistweaver Monk") stats.intellect = 159;
+      if (this.spec === "Restoration Shaman" || this.spec === "Holy Paladin" || this.spec === "Preservation Evoker") stats.intellect = 620;
+      else if (this.spec === "Discipline Priest" || this.spec === "Holy Priest" || this.spec === "Restoration Druid") stats.intellect = 620;
+      else if (this.spec === "Mistweaver Monk") stats.intellect = 620;
       return stats
   }
 

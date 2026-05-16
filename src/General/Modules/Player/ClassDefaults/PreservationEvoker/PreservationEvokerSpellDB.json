@@ -59,7 +59,7 @@
                 "essence": 2
             },
             "coeff": 2.4,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -88,8 +88,8 @@
             },
             "targets": 6,
             "coeff": 0.3072,
-            "aura": 0.84,
-            "expectedOverheal": 0.1,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -106,7 +106,7 @@
         },
         {
             "coeff": 1.8432,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -127,7 +127,7 @@
             },
             "castTime": 0.0,
             "school": "nature",
-            "cost": 3.3,
+            "cost": 2.4,
             "cooldownData": {
                 "cooldown": 24.0,
                 "hasted": false,
@@ -135,7 +135,7 @@
                 "maxCharges": 1
             },
             "coeff": 10.58,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -165,7 +165,7 @@
             },
             "targets": 3,
             "coeff": 3.23,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -193,7 +193,7 @@
                 "maxCharges": 2
             },
             "coeff": 0.4275,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -230,7 +230,7 @@
                 "absorb": true
             },
             "spellType": "heal",
-            "coeff": 6.0,
+            "coeff": 5.0,
             "secondaries": [
                 "mastery",
                 "versatility"
@@ -257,8 +257,8 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 2.0,
-            "aura": 0.83,
-            "expectedOverheal": 0.05,
+            "aura": 1,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -278,7 +278,7 @@
         },
         {
             "coeff": 5.0,
-            "aura": 0.83,
+            "aura": 1,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -303,7 +303,7 @@
                 "essence": 3
             },
             "coeff": 1.5851,
-            "aura": 1.56,
+            "aura": 2.964,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -332,7 +332,7 @@
             "school": "fire",
             "cost": 0.0,
             "coeff": 3.9,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -354,7 +354,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 2.0,
-            "aura": 0.84,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -377,8 +377,8 @@
             "cost": 1.54,
             "targets": 5,
             "coeff": 2.5,
-            "aura": 0.84,
-            "expectedOverheal": 0.06,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -399,8 +399,8 @@
             "school": "fire",
             "cost": 2.2,
             "coeff": 6.0,
-            "aura": 1.05,
-            "expectedOverheal": 0.06,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",

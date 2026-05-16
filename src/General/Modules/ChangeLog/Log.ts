@@ -20,6 +20,54 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
+    version: "12.0.5 / 5.5.3",
+    update: 17,
+    date: "May 13",
+    changes: [ 
+      "Added better support for the new Voidcore system in Top Gear & Upgrade Finder."
+    ]
+  },
+        {
+    version: "12.0.5 / 5.5.3",
+    update: 16,
+    date: "May 7",
+    changes: [ 
+      "Re-added support for ilvl and ilevel tags in SimC imports.",
+      "Minor model changes.",
+      "Fixed Help button",
+    ]
+  },
+      {
+    version: "12.0.5 / 5.5.3",
+    update: 15,
+    date: "April 21",
+    changes: [ 
+      "Added support for the 12.0.5 Ascended Item system and increased the level range on the trinket chart.",
+      "Greatly expanded on what data is available in Trinket Chart tooltips.",
+      "Boot enchant will now show in Top Gear.",
+      "Adjusted Locus-Walker's Ribbon expected stacks in M+.",
+      "Fixed an issue with some Darkmoon Sigil: Void imports."
+    ]
+  },
+    {
+    version: "12.0.1 / 5.5.3",
+    update: 14,
+    date: "April 9",
+    changes: [ 
+      "Minor model updates and item database fixes.",
+      "Resto Shaman: will now use the Mana metagem in raid."
+    ]
+  },
+    {
+    version: "12.0.1 / 5.5.3",
+    update: 13,
+    date: "April 7",
+    changes: [ 
+      "Non-max Upgrade Finder difficulties should now include boss-specific ilvl boosts",
+      "Fixed a few more Timewalking imports."
+    ]
+  },
+  {
     version: "12.0.1 / 5.5.3",
     update: 12,
     date: "April 1",

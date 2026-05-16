@@ -257,7 +257,7 @@ export default function EmbellishmentAnalysis(props) {
           />
         </Grid>
         <Grid item xs={12}>
-        <InformationBox information="You are limited to two embellishment effects. Do NOT craft anything during these early weeks and make sure you consult your favorite guide before crafting anything." variant="red" />
+        <InformationBox information="You are limited to two embellishment effects. The chart below is effect-only and does NOT include what slots an embellishment is limited to. As a result you are likely to swap off weapon-only embellishments like Hunt later in the tier." variant="red" />
 
         <Grid item xs={12} style={{marginTop: "10px"}}>
           <MetricToggle metric={metric} setMetric={setMetric} />
@@ -268,7 +268,7 @@ export default function EmbellishmentAnalysis(props) {
             <Grid item xs={12}>
               
               <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={1} variant="outlined">
-                {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate7")} />}
+                {<EmbelChart data={activeGems} db={db} theme={themeSelection(theme ? "candidate2" : "candidate3")} />}
               </Paper>
 
             </Grid>

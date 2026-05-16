@@ -353,7 +353,7 @@ export const buildStatChart = (playerData, testSettings, scoringFunction, statNa
 }
 
 export const buildStatWeights = (playerData, scoringFunction, testSettings ) => {
-        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility'];
+        const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility', 'leech'];
 
     const activeStats = {
         intellect: 2400,
@@ -362,6 +362,7 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         mastery: 200,
         versatility: 200,
         stamina: 19000,
+        leech: 0,
         critMult: 2,
     };
     

@@ -1,5 +1,5 @@
 import { MONKSPELLS } from "./Archive/MistweaverSpellDBTWW";
-import { baseTalents } from "./MistweaverTalents";
+import { baseTalents } from "./MistweaverMonkTalents";
 import { runMistweaverMonkCastProfile } from "./MistweaverCastProfile";
 
 describe("Test APL", () => {

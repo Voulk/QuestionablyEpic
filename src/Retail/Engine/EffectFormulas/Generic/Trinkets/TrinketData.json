@@ -5,12 +5,6 @@
             "scalingClass": -7
         }
     ],
-    "Fall of Mortality": [
-        {
-            "coefficient": 2.123,
-            "scalingClass": -7
-        }
-    ],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,
@@ -25,13 +19,19 @@
     ],
     "Echo of L'ura": [
         {
-            "coefficient": 44.32,
+            "coefficient": 44.326,
             "scalingClass": -9
+        }
+    ],
+    "Fall of Mortality": [
+        {
+            "coefficient": 2.123,
+            "scalingClass": -7
         }
     ],
     "Emerald Coach's Whistle": [
         {
-            "coefficient": 1.012627,
+            "coefficient": 1.013,
             "scalingClass": -7
         }
     ],
@@ -83,7 +83,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 58.617092,
+            "coefficient": 58.617,
             "scalingClass": -9
         }
     ],
@@ -135,7 +135,7 @@
     ],
     "Whisper of the Duskwraith": [
         {
-            "coefficient": 102.42,
+            "coefficient": 102.425,
             "scalingClass": -9
         },
         {
@@ -215,7 +215,7 @@
     ],
     "Radiant Sunstone": [
         {
-            "coefficient": 463.86,
+            "coefficient": 463.866,
             "scalingClass": -9
         },
         {
@@ -223,7 +223,7 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 463.86,
+            "coefficient": 463.866,
             "scalingClass": -9
         },
         {
@@ -233,7 +233,7 @@
     ],
     "Tangle of Vibrant Vines": [
         {
-            "coefficient": 7.434,
+            "coefficient": 18.519,
             "scalingClass": -9
         },
         {
