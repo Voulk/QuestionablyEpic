@@ -238,7 +238,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       if (isRaid && encounter > 0) {
         //
         for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, item.slot);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.quality = 4;
           item.dropLoc = "Raid";
@@ -250,7 +250,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         // M+ Dungeons
         // Edit which dungeons are in-season in the CONSTANTS file.
         if (CONSTANTS.currentDungeonIDs.includes(encounter)) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.dropLoc = "Dungeon";
           item.dropDifficulty = playerSettings.dungeon;
@@ -266,7 +266,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       }
       else if (primarySource === -4 && rawItem.quality === 4) {
         // Crafted. Note that we're excluding blue items. Those are only really good early on.
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Crafted";
         item.dropDifficulty = "";
@@ -276,7 +276,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       }
       else if (primarySource === -69) {
         // Delves
-        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, item.slot);
+        const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
         item.dropLoc = "Delves";
         item.dropDifficulty = "";
