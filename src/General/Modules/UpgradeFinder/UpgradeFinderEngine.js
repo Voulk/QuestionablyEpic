@@ -173,7 +173,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemS
 
   if (itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
     // Voidcores
-    if (itemLevel === 275 || itemLevel === 289) itemLevel += 9;
+    if (itemLevel === 276 || itemLevel === 289) itemLevel += 9;
     else if (itemLevel === 272 || itemLevel === 285) itemLevel += 10;
   }
 

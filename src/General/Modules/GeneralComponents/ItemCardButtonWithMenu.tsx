@@ -31,19 +31,20 @@ interface ItemCardButtonWithMenuProps {
 const getMenuItems = (item: any): MenuItemType[] => {
   const itemLevel = item.level;
   let items: MenuItemType[] = []; 
-  //const fullItemLevels = [382, 385, 389, 392, 395, 398, 402, 405, 408, 411, 415, 418, 421, 424, 428, 431, 434, 437, 441, 444, 447];
-  //const itemLevelCaps: { [key: string]: number } = { Myth: 447, Champion: 437, Hero: 441, Explorer: 398, Adventurer: 411, Veteran: 424 };
-  //const fullItemLevels = [460, 463, 467, 470, 473, 476, 480, 483, 486, 489, 493, 496, 499, 502, 506, 509, 512, 515, 519, 522, 525, 528];
-  const fullItemLevels = CONSTANTS.fullItemLevels;
+  
+  // Create a shallow copy so we don't mutate the global CONSTANTS array
+  const fullItemLevels = [...CONSTANTS.fullItemLevels];
+  const itemLevelCap = {...CONSTANTS.itemLevelCaps};
+  
   if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
-    // Voidcores
-    if (item.upgradeTrack === "Myth") fullItemLevels.push(298);
-    else if (item.upgradeTrack === "Gilded Crafted") fullItemLevels.push(295);
-    else if (item.upgradeTrack === "Hero") fullItemLevels.push(285);
-    else if (item.upgradeTrack === "Runed Crafted") fullItemLevels.push(282);
+    // Voidcores 
+    if (item.upgradeTrack === "Myth") itemLevelCap["Myth"] = 298;
+    else if (item.upgradeTrack === "Gilded Crafted") itemLevelCap["Gilded Crafted"] = 295;
+    else if (item.upgradeTrack === "Hero") itemLevelCap["Hero"] = 285;
+    else if (item.upgradeTrack === "Runed Crafted") itemLevelCap["Runed Crafted"] = 282;
   }
 
-  const itemLevelCaps: { [key: string]: number } = CONSTANTS.itemLevelCaps;
+  const itemLevelCaps: { [key: string]: number } = itemLevelCap;
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
     fullItemLevels.forEach((level) => {
       if (level > itemLevel && level <= itemLevelCaps[item.upgradeTrack]) {
@@ -51,8 +52,6 @@ const getMenuItems = (item: any): MenuItemType[] => {
       }
     });
   }
-
-  
 
   return items;
 };

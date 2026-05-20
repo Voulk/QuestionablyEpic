@@ -1083,13 +1083,18 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
         ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          let ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          if (gameType === "Retail") {
+            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) ilvlBoost = 9;
+            else ilvlBoost = 0;
+          }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
-          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+          
+          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
-          if (gameType === "Retail" && ["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) newItem.level += 9;
+          
 
       if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
