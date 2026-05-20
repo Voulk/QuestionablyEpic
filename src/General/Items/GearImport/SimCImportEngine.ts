@@ -174,9 +174,9 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
 
 }
 
-export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
-                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, 
-                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
+export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any,
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings,
+                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean, autoCatalyze: boolean = false) {
   let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -208,6 +208,19 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     }
     
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
+
+    if (autoCatalyze) {
+      // Catalyst output is keyed by slot + level, so multiple sources in the same slot
+      // would produce duplicate tier pieces. Keep only the highest-level source per slot.
+      const bestPerSlot = new Map<string, Item>();
+      player.activeItems.forEach((item: Item) => {
+        if (!item.canBeCatalyzed()) return;
+        const current = bestPerSlot.get(item.slot);
+        if (!current || item.level > current.level) bestPerSlot.set(item.slot, item);
+      });
+      bestPerSlot.forEach((item: Item) => player.catalyzeItem(item));
+    }
+
     player.savedPTRString = simCInput;
 
 
