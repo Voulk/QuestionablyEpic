@@ -253,6 +253,7 @@ function compileSetStats(itemSet) {
     crit: 0,
     mastery: 0,
     haste: 0,
+    amp: 0,
   }
 
     for (let i = 0; i < itemSet.itemList.length; i++) {
@@ -349,6 +350,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         stamina: 0,
         mp5: 0,
         haste: 0,
+        amp: 0,
     };
 
     let enchant_stats = {
@@ -360,6 +362,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       mastery: 0,
       mp5: 0,
       haste: 0,
+      amp: 0,
     };
 
 
@@ -576,6 +579,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         stamina: mergeStat(stats, 'stamina'),
         mp5: mergeStat(stats, 'mp5'),
         haste: mergeStat(stats, 'haste'),
+        amp: mergeStat(stats, 'amp'),
       }
   
     return val;

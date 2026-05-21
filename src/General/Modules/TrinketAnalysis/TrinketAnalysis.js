@@ -293,7 +293,8 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [237, 243, 250, 256, 263, 272, 276, 285, 289, 298] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [237, 243, 250, 256, 263, 272, 276, 285, 289, 298] 
+                                              : [502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter(level => (level <= levelCap || gameType === "Classic"));
 

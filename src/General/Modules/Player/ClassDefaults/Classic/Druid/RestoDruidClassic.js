@@ -128,12 +128,22 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const metaGem = getSetting(userSettings, "classicMetaGem");
     let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
+  console.log(JSON.stringify(statProfile));
+
+    if (statProfile.amp) {
+      ["spirit", "mastery", "haste"].forEach(statName => {
+        statProfile[statName] = statProfile[statName] * (1 + statProfile.amp);
+      })
+    }
+
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Resto Druids mastery coefficient.
     }
+
+    
 
     // Take care of any extras.
     let newSwiftmendCD = druidBaseline.spellDB["Swiftmend"][0].cooldownData.cooldown;

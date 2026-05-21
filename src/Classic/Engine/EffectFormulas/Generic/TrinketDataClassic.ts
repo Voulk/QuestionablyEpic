@@ -92,6 +92,59 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Siege of Orgrimmar
+    {
+    name: "Purified Bindings of Immerseus", 
+    effects: [ 
+      // Heals have chance to give an intellect buff.
+      { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+      { // Amp
+        value: {0: 0},
+        coefficient: 0.00176999997, // Has a 2nd coefficient that is half this.
+        stat: "misc",
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
+      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
+
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Prismatic Prison of Pride", 
+    effects: [ 
+      // Heals have chance to give an intellect buff.
+      { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+      { // Amp
+        value: {0: 0},
+        coefficient: 0.00176999997, // Has a 2nd coefficient that is half this.
+        stat: "misc",
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
+
+      return bonus_stats;
+    }
+  },
+
   // Throne of Thunder
     {
     name: "Lightning-Imbued Chalice", 
