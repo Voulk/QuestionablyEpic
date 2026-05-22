@@ -13,8 +13,6 @@ import { TRINKET_SOURCES } from "General/Modules/TrinketAnalysis/TrinketAnalysis
 
 // {"player":{"name":"Player","equipment":{"items":[{"id":78785,"enchant":4207,"gems":[52296,52207]},{"id":78382,"reforging":119},{"id":78835,"enchant":4199,"gems":[52207,52207],"reforging":117},{"id":77096,"enchant":4096,"gems":[52207],"reforging":119},{"id":78755,"enchant":4063,"gems":[52207,52207,52208],"reforging":119},{"id":71262,"gems":[0],"reforging":117},{"id":76157,"gems":[52207,0],"reforging":119},{"id":75117,"gems":[0],"reforging":167},{"id":78805,"enchant":4112,"gems":[52207,52207,52207],"reforging":117},{"id":77172,"enchant":4069,"gems":[52207,52208],"reforging":119},{"id":77109,"gems":[52207],"reforging":117},{"id":71211,"reforging":145},{"id":77976},{"id":72898},{"id":78485,"enchant":4084},{"id":72878,"reforging":167},{"id":77083,"gems":[52207],"reforging":117}]}}}
 export const exportReforgeLite = (player: Player, itemSet: Item[], reforges: any) => {
-  console.log(itemSet);
-  console.log(reforges);
   const reforgeData = {
     player: {
       name: player.name,
@@ -127,8 +125,6 @@ const wowheadCodes = {
   945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
 
 
-
-
   // Classic
   // Dungeons
   303: "[icon name=achievement_greatwall][/icon][zone=5976]", // Gate of the Setting Sun
@@ -180,6 +176,23 @@ const wowheadCodes = {
   829: '[icon name=achievement_boss_mogufemales][/icon][npc=68905] [i](Twin Empyreans, Throne of Thunder)[/i]', // Twin Empyreans
   832: '[icon name=achievement_boss_leishen][/icon][npc=68397] [i](Throne of Thunder)[/i]', // Lei Shen
   831: '[icon name=achievement_boss_ra_den][/icon][npc=69473] [i](Throne of Thunder)[/i]', // Ra-den
+
+  // Siege
+  846: '[icon name=achievement_boss_malkarok][/icon][npc=71454]', // Malkarok
+  849: '[icon name=achievement_boss_golden_lotus_council][/icon][npc=71475] [i](Fallen Protectors)[/i]', // Fallen Protectors
+  850: '[icon name=achievement_boss_general_nazgrim][/icon][npc=71515]', // General Nazgrim
+  851: '[icon name=achievement_boss_thokthebloodthirsty][/icon][npc=71529]', // Thok
+  852: '[icon name=achievement_boss_immerseus][/icon][npc=71543]', // Immerseus
+  853: '[icon name=achievement_boss_klaxxi_paragons][/icon][npc=71161] [i](Paragons of the Klaxxi)[/i]', // Paragons of the Klaxxi
+  856: '[icon name=achievement_boss_korkrondarkshaman][/icon][npc=71859] [i](Dark Shaman)[/i]', // Dark Shaman
+  864: '[icon name=achievement_boss_ironjuggernaut][/icon][npc=71466]', // Iron Juggernaut
+  865: '[icon name=achievement_boss_siegecrafter_blackfuse][/icon][npc=71504]', // Siegecrafter Blackfuse
+  866: '[icon name=achievement_boss_norushen][/icon][npc=72276]', // Norushen
+  867: '[icon name=sha_inv_misc_slime_01][/icon][npc=71734]', // Sha of Pride
+  868: '[icon name=achievement_boss_galakras][/icon][npc=72249]', // Galakras
+  869: '[icon name=achievement_boss_garrosh][/icon][npc=71865]', // Garrosh
+  870: '[icon name=achievement_boss_spoils_of_pandaria][/icon][npc=71889]', // Spoils of Pandaria
+  881: '[icon name=achievement_boss_galakras][/icon][npc=72249]', // Galakras
 
   // World Bosses (Pandaria)
   725: '[icon name=inv_mushanbeastmount][/icon][npc=62346] [i](World Boss)[/i]', // Saylis's Warband (Galleon)
@@ -395,6 +408,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
                     )
     }
     else if (item.id === 235499) results.push(`[tr][td]Cape[/td][td][item=235499][/td][td][=reshii-wraps-source][/td][/tr]`);
+    else if (item.id === 102247) results.push(`[tr][td]Cape[/td][td][item=102247][/td][td][icon name=achievement_zone_cataclysm][/icon][url guide=30205]Legendary Questline[/url][/td][/tr]`);
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
       else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
@@ -410,7 +424,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
     }
 
     if (item.id !== 228411 && item.id !== 235499 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
-    else if (gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
+    else if (item.id !== 102247 && gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
     })
   results.push(`[/table][/center]`)
 
