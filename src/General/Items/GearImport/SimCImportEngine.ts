@@ -174,9 +174,9 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
 
 }
 
-export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
-                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, 
-                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
+export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any,
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings,
+                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean, autoCatalyze: boolean = false) {
   let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -208,6 +208,22 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     }
     
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
+
+    if (autoCatalyze) {
+      // The catalyst inherits slot/socket/tertiary/level from the source, so two sources
+      // that differ in socket or tertiary produce genuinely different tier pieces and
+      // both should be kept. Group by (slot, socket, tertiary) and pick the highest-level
+      // source per group.
+      const bestPerVariant = new Map<string, Item>();
+      player.activeItems.forEach((item: Item) => {
+        if (!item.canBeCatalyzed()) return;
+        const key = `${item.slot}|${item.socket}|${item.tertiary}`;
+        const current = bestPerVariant.get(key);
+        if (!current || item.level > current.level) bestPerVariant.set(key, item);
+      });
+      bestPerVariant.forEach((item: Item) => player.catalyzeItem(item));
+    }
+
     player.savedPTRString = simCInput;
 
 
