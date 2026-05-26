@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Many trinkets have been nerfed or bug-fixed in-game."
+    "Please report any bugs you find to the QE Live Discord."
   ] : 
   [
     "Please report any bugs you find to the QE Live Discord.",
