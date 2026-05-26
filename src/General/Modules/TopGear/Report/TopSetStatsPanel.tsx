@@ -23,19 +23,27 @@ interface StatEntry {
   breakdown?: StatBreakdown;
 }
 
+const getBreakdownEntry = (breakdownEntry: any, stat: string): number => {
+  if (stat in breakdownEntry) {
+    return Math.round(breakdownEntry[stat]);
+  }
+  else return 0;
+}
+
 export default function TopSetStatsPanel(props) {
   const statList = props.statList;
+  const breakdown = props.statBreakdown;
   const { t } = useTranslation();
   const gameType = props.gameType;
   const stats =
     gameType === "Retail"
       ? [
-          {label: "Intellect", value: statList.intellect, breakdown: { gear: 2000, effects: 500, gemsAndEnchants: 300, consumables: 20, talents: 5, total: 2800 }},
-          {label: "Haste", value: statList.haste / STATCONVERSION.HASTE, breakdown: { gear: 1500, effects: 400, gemsAndEnchants: 200, consumables: 10, talents: 0, total: 2110 }},
-          {label: "Crit", value: statList.crit / STATCONVERSION.CRIT, breakdown: { gear: 1200, effects: 300, gemsAndEnchants: 150, consumables: 5, talents: 0, total: 1655 }},
-          {label: "Mastery", value: getMasteryPercentage(statList.mastery, props.spec), breakdown: { gear: 1000, effects: 200, gemsAndEnchants: 100, consumables: 5, talents: 0, total: 1305 }},
-          {label: "Versatility", value: statList.versatility / STATCONVERSION.VERSATILITY, breakdown: { gear: 800, effects: 150, gemsAndEnchants: 80, consumables: 5, talents: 0, total: 1035 }},
-          {label: "Leech", value: statList.leech / STATCONVERSION.LEECH, breakdown: { gear: 500, effects: 100, gemsAndEnchants: 50, consumables: 0, talents: 0, total: 650 }},
+          {label: "Intellect", value: statList.intellect, breakdown: { gear: getBreakdownEntry(breakdown.gear, "intellect"), effects: getBreakdownEntry(breakdown.effects, "intellect"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "intellect") + getBreakdownEntry(breakdown.enchants, "intellect"), consumables: getBreakdownEntry(breakdown.consumables, "intellect"), talents: "3%", total: Math.round(statList.intellect) }},
+          {label: "Haste", value: statList.haste / STATCONVERSION.HASTE, breakdown: { gear: getBreakdownEntry(breakdown.gear, "haste"), effects: getBreakdownEntry(breakdown.effects, "haste"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "haste") + getBreakdownEntry(breakdown.enchants, "haste"), consumables: getBreakdownEntry(breakdown.consumables, "haste"), talents: 0, total: Math.round(statList.haste) }},
+          {label: "Crit", value: statList.crit / STATCONVERSION.CRIT, breakdown: { gear: getBreakdownEntry(breakdown.gear, "crit"), effects: getBreakdownEntry(breakdown.effects, "crit"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "crit") + getBreakdownEntry(breakdown.enchants, "crit"), consumables: getBreakdownEntry(breakdown.consumables, "crit"), talents: 0, total: Math.round(statList.crit) }},
+          {label: "Mastery", value: getMasteryPercentage(statList.mastery, props.spec), breakdown: { gear: getBreakdownEntry(breakdown.gear, "mastery"), effects: getBreakdownEntry(breakdown.effects, "mastery"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "mastery") + getBreakdownEntry(breakdown.enchants, "mastery"), consumables: getBreakdownEntry(breakdown.consumables, "mastery"), talents: 0, total: Math.round(statList.mastery) }},
+          {label: "Versatility", value: statList.versatility / STATCONVERSION.VERSATILITY, breakdown: { gear: getBreakdownEntry(breakdown.gear, "versatility"), effects: getBreakdownEntry(breakdown.effects, "versatility"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "versatility") + getBreakdownEntry(breakdown.enchants, "versatility"), consumables: getBreakdownEntry(breakdown.consumables, "versatility"), talents: 0, total: Math.round(statList.versatility) }},
+          {label: "Leech", value: statList.leech / STATCONVERSION.LEECH, breakdown: { gear: getBreakdownEntry(breakdown.gear, "leech"), effects: getBreakdownEntry(breakdown.effects, "leech"), gemsAndEnchants: getBreakdownEntry(breakdown.gems, "leech") + getBreakdownEntry(breakdown.enchants, "leech"), consumables: getBreakdownEntry(breakdown.consumables, "leech"), talents: 0, total: Math.round(statList.leech) }},
         ]
       : [
           {label: "Spellpower", value: statList.spellpower},
@@ -51,7 +59,7 @@ export default function TopSetStatsPanel(props) {
     if (gameType === "Retail" && ["Haste", "Crit", "Versatility", "Mastery", "Leech"].includes(stat)) {
       return t(stat) + ": " + Math.round(100 * value) / 100 + "%";
     } 
-    else return t(stat) + ": " + Math.floor(value);
+    else return t(stat) + ": " + Math.round(value);
   }
 
   function addMods(spec, stat, value) {
@@ -75,6 +83,9 @@ export default function TopSetStatsPanel(props) {
       { label: "Gems & Enchants", value: breakdown.gemsAndEnchants, color: "#e0a0f0" },
       { label: "Consumables",     value: breakdown.consumables,     color: "#f0d080" },
       { label: "Talents & Buffs",         value: breakdown.talents,         color: "#80c8f0" },
+      ...(label === "Intellect" 
+        ? [{ label: "Armor Specialization Bonus", value: "5%", color: "#ffb3ba" }] 
+        : [])
     ].map(({ label, value, color }) => (
       <Box key={label} sx={{ display: "flex", justifyContent: "space-between", gap: 2, mb: 0.25 }}>
         <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.6)" }}>{label}</Typography>

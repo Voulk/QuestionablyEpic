@@ -278,6 +278,7 @@ function displayReport(
   if (itemList.length === 0) itemList = fullItemList; // Fallback for older reports that don't have non-chosen items on them. Can be removed on a patch launch.
 
   console.log(fullItemList);
+  console.log(topSet);
 
   // setup export button menu options
   let exportOptions = [];
@@ -589,6 +590,7 @@ function displayReport(
                         <Grid container justifyContent="flex-start" width="100%">
                           <TopSetStatsPanel
                             statList={statList}
+                            statBreakdown={topSet.statBreakdown}
                             spec={player.spec}
                             currentLanguage={currentLanguage}
                             gameType={gameType}

@@ -600,41 +600,20 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   enchants["Feet"] = "Shaladrassil's Roots";
 
 
-  if (false) {
-    const dreamingData =  { // 
-      coefficient: 40.32042, 
-      table: -8,
-      ppm: 4,
-      targets: 5,
-      expectedOverheal: 0.3,
-    };
-    bonus_stats.hps! = (bonus_stats.hps! || 0) + (processedValue(dreamingData, 342) * dreamingData.ppm * dreamingData.targets * (1 - dreamingData.expectedOverheal) / 60);
+  // Weapon - Acuity of the Ren'dorei. Should add a setting for secondary enchants too.
+  bonus_stats.intellect += 67 * convertPPMToUptime(2, 15);
 
-    enchants["CombinedWeapon"] = "Authority of Fiery Resolve"; 
-    enchants["2H Weapon"] = "Authority of Fiery Resolve"; 
-    enchants["1H Weapon"] = "Authority of Fiery Resolve"; 
-  }
-  else {
-    // Weapon - Sophic Devotion
-    let expected_uptime = convertPPMToUptime(2, 12);
-    //bonus_stats[highestWeight  as keyof typeof bonus_stats] += 34 * expected_uptime;
-    bonus_stats.intellect = 67 * convertPPMToUptime(2, 15);
+  let wepEnchantName = "Acuity of the Ren'dorei"
+  /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
+  else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
+  else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
+  else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";*/
 
-    let wepEnchantName = "Acuity of the Ren'dorei"
-    /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
-    else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
-    else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
-    else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";*/
+  enchants["CombinedWeapon"] = wepEnchantName; 
+  enchants["2H Weapon"] = wepEnchantName; 
+  enchants["1H Weapon"] = wepEnchantName; 
 
 
-    enchants["CombinedWeapon"] = wepEnchantName; 
-    enchants["2H Weapon"] = wepEnchantName; 
-    enchants["1H Weapon"] = wepEnchantName; 
-  }
-
-  // Algari Mana Oil
-  bonus_stats.haste = (bonus_stats.haste || 0) + 15;
-  bonus_stats.crit = (bonus_stats.crit || 0) + 15;
 
   return enchants;
 }
@@ -689,11 +668,20 @@ export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Sta
  */
 function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, reporting: boolean = false, gemID?: number) {
   // == Setup ==
+    const statBreakdown = {
+    gear: {},
+    enchants: {},
+    gems: {}, // Will be merged into an "Enchants and Gems"
+    effects: {},
+    consumables: {},
+    talentsAndBuffs: {},
+  }
   let itemSet = rawItemSet.clone();
   let builtSet = itemSet.compileStats("Retail", userSettings);
   let report = {ramp: {}};
   let setStats = builtSet.setStats;
   let gearStats = dupObject(setStats);
+  statBreakdown.gear = gearStats;
   const setBonuses = builtSet.sets;
   const useSeq = false;
   let enchantStats = {};
@@ -713,6 +701,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     mana: 0,
     allyStats: 0,
   };
+
+
 
 
   // Our adjusted_weights will be compiled later by dynamically altering our base weights.
@@ -738,8 +728,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(bonus_stats, setStats, castModel, contentType, player.spec);
+  const enchants = enchantItems(enchantStats, setStats, castModel, contentType, player.spec);
+  compileStats(bonus_stats, enchantStats);
+  statBreakdown.enchants = enchantStats;
   
+  // Consumables
+  const consumableStats: Stats = {};
   // == Flask / Phials ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
@@ -748,12 +742,12 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
       // We are in second DR already, try and swap.
     }
-    bonus_stats[bestStat] = (bonus_stats[bestStat] || 0) + 165;
+    consumableStats[bestStat] = (consumableStats[bestStat] || 0) + 165;
     selectedChoice = bestStat;
   }
   else {
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
-    bonus_stats[selectedChoice]  = (bonus_stats[selectedChoice] || 0) + 165;
+    consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
 
   if (selectedChoice === "haste") enchants.flask = "Flask of the Blood Knights";
@@ -761,18 +755,19 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
   else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
 
-  // == Runes == 
+  // Food buff
+  consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;
+
+  // Weapon Oil
+  consumableStats.haste = (consumableStats.haste ?? 0) + 15;
+  consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+  statBreakdown.consumables = consumableStats;  
+  compileStats(bonus_stats, consumableStats);
+
+  // == Vantus Rune ==
   // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
   
   
-  /*if (getSetting(userSettings, "runeChoice") !== "Automatic") {
-    bonus_stats[getSetting(userSettings, "runeChoice")] = (bonus_stats[getSetting(userSettings, "runeChoice")] || 0) + 310;
-  }
-  else {
-    // Defaults to best stat that isn't versatility (as no rune exists for it).
-    const highestWeight = getHighestWeight(castModel, "versatility")
-    bonus_stats[highestWeight] = (bonus_stats[highestWeight] || 0) + 310;
-  }*/
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
@@ -783,6 +778,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else {
     enchants["Gems"] = getMidnightGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
+    statBreakdown.gems = gemStats;
 
     //enchants["Gems"] = getGems(player.spec, Math.max(0, builtSet.setSockets), bonus_stats, contentType, castModel.modelName, true);
 
@@ -798,7 +794,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Add together the sets base stats & any enchants or gems we've added.
   compileStats(setStats, bonus_stats);
-  compileStats(gearStats, bonus_stats);
+  //compileStats(gearStats, bonus_stats);
 
 
   //builtSet.baseStats = gearStats;
@@ -887,6 +883,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   } 
   
   const mergedEffectStats = mergeBonusStats(effectStats);
+  statBreakdown.effects = mergedEffectStats;
   
   // == Disc Specific Ramps ==
   // Further documentation is included in the DiscPriestRamps files.
@@ -919,14 +916,15 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     }
     const castModelResult = castModel.runCastModel(setStats, playerData, userSettings)
     
-    console.log("SET HPS" + castModelResult.healing);
     setStats.hps = (setStats.hps || 0) + castModelResult.healing;
     
-    //evalStats = JSON.parse(JSON.stringify(mergedEffectStats));
-    //evalStats.leech = (setStats.leech || 0);
+    // Stuff that we won't handle in the model itself
     evalStats.allyStats = (setStats.allyStats || 0);
     evalStats.bonusHPS = (setStats.bonusHPS || 0);
-    //hardScore = setStats.hps || 0;
+
+    // Stuff we included in the model already but need to show up in the stats panel.
+    // Could we just return this from the model?
+    setStats.intellect = setStats.intellect *= 1.03;
 
     evalStats.hps = (setStats.hps || 0);
   }
@@ -956,7 +954,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     // Extra raid buffs
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
-    setStats.intellect = (setStats.intellect || 0) * 1.05;
+    setStats.intellect = (setStats.intellect || 0) * 1.03; // Arcane Intellect
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
@@ -1031,6 +1029,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   builtSet.enchantBreakdown = enchants;
   builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);
   builtSet.report = report;
+  builtSet.statBreakdown = statBreakdown;
   
   //
   //if (player.spec() === "Discipline Priest" && contentType === "Raid") formatReport(report);
