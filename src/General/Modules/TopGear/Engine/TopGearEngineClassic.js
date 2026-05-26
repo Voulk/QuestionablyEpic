@@ -481,7 +481,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     let hasteNeeded = 0;
     if (player.spec === "Restoration Druid Classic") {
       // Check which haste bracket we're in and try and push to the next one.
-      if (setStats.haste >= 4856 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
+      if (setStats.haste >= 4705 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
       else if (setStats.haste > 6332) hasteNeeded = Math.max(0, 6652 - setStats.haste);
       else hasteNeeded = Math.max(0, 3043 - setStats.haste);
     }

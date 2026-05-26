@@ -411,7 +411,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
     else if (item.id === 102247) results.push(`[tr][td]Cape[/td][td][item=102247][/td][td][icon name=achievement_zone_cataclysm][/icon][url guide=30205]Legendary Questline[/url][/td][/tr]`);
     if (item.source) {
       if (item.slot === "Waist" && item.source.instanceId === 320) source = wowheadCodes[9997] || ""
-      else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3350]` // Celestial vendor
+      else if (item.source.instanceId === -8) source = item.source.cost + ` [currency=3416]` // Celestial vendor
       else if (item.source.instanceId === -6) source = item.source.cost + ` [currency=396]`; // Valor vendor
       else if (item.source.instanceId === -12) source = `${wowheadRepCodes[item.source.encounterId]} ${wowheadRepColors[item.source.repRequired] || ""}`;
       else if (["Chest", "Head", "Shoulder", "Legs", "Hands"].includes(item.slot) && CONSTANTS.currentRaidIDs.includes(item.source.instanceId) && item.setID > 0) source = tierPiece;
