@@ -115,7 +115,6 @@ class CastModel {
         spellList = paladinDefaultSpellData(contentType);
         specialQueries = paladinDefaultSpecialQueries(contentType);
         this.baseStatWeights = paladinDefaultStatWeights("Raid");
-        this.fightInfo.dps = 17000;
       }
       else if (modelID === "Lightsmith") {
         //this.modelName = "Lightsmith";
@@ -129,7 +128,6 @@ class CastModel {
         spellList = paladinDefaultSpellData(contentType);
         specialQueries = paladinDefaultSpecialQueries(contentType);
         this.baseStatWeights = paladinDefaultStatWeights(contentType);
-        this.fightInfo.dps = 40000;
       }
     } else if (spec === SPEC.RESTOSHAMAN) {
       if (modelID === "Default") {
@@ -141,7 +139,6 @@ class CastModel {
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 28000);
 
       }
       else {
@@ -191,7 +188,6 @@ class CastModel {
           spellList = {};
           specialQueries = discPriestOracleSpecialQueries(contentType);
           this.baseStatWeights = discPriestOracleStatWeights(contentType);
-          this.fightInfo.dps = (contentType === "Raid" ? 200000 : 400000);
         }
         /*
         else {
@@ -207,7 +203,6 @@ class CastModel {
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
-      this.fightInfo.dps = (contentType === "Raid" ? 7000 : 90000);
     } 
     else if (spec === SPEC.PRESEVOKER) {
       if (modelID === "Chronowarden" || modelID === "Default") {
@@ -220,7 +215,6 @@ class CastModel {
         spellList = chronoDefaultSpellData(contentType);
         specialQueries = chronoDefaultSpecialQueries(contentType);
         this.baseStatWeights = chronoDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
       }
       else if (modelID === "Flameshaper") {
         // TODO
@@ -232,7 +226,6 @@ class CastModel {
         spellList = evokerDefaultSpellData(contentType);
         specialQueries = evokerDefaultSpecialQueries(contentType);
         this.baseStatWeights = evokerDefaultStatWeights(contentType);
-        this.fightInfo.dps = (contentType === "Raid" ? 6000 : 60000);
       }
 
     } 

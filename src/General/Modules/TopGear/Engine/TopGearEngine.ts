@@ -732,15 +732,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   compileStats(bonus_stats, enchantStats);
   statBreakdown.enchants = enchantStats;
   
-  // Consumables
+  // =====================
+  // ==== Consumables ====
+  // =====================
   const consumableStats: Stats = {};
-  // == Flask / Phials ==
+  // == Flask ==
   let selectedChoice = "";
   if (getSetting(userSettings, "flaskChoice") === "Automatic") {
     const bestStat = getHighestWeight(castModel);
 
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
-      // We are in second DR already, try and swap.
+      // We are in second DR already, try and swap. Currently unused.
     }
     consumableStats[bestStat] = (consumableStats[bestStat] || 0) + 165;
     selectedChoice = bestStat;
@@ -761,13 +763,15 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Weapon Oil
   consumableStats.haste = (consumableStats.haste ?? 0) + 15;
   consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+
+  // Vantus Rune
+  if (contentType === "Raid") {
+    consumableStats.versatility = (consumableStats.versatility ?? 0) + 270;
+  }
+
   statBreakdown.consumables = consumableStats;  
   compileStats(bonus_stats, consumableStats);
 
-  // == Vantus Rune ==
-  // If the user has specified a rune then we'll use that, otherwise we'll just default to a dynamic best stat.
-  
-  
 
   // Sockets
   // Check for Advanced gem setting and then run this instead of the above.
@@ -802,15 +806,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // == Effects ==
   // Effects include stuff like trinkets, legendaries, tier sets and so on.
   // Each effect returns an object containing which stats it offers. Specific details on each effect can be found in the TrinketData, EffectData and EffectEngine files.
-  // -- Disc note: On use trinkets and legendaries and handled further down in the ramps section. --
-
-  // ------------------
+  // -- Disc note: On use trinkets are handled further down in the ramps section. --
 
   let effectStats = [];
   let effectList = [...itemSet.effectList];
+
   // == Set Bonuses ==
-  // --- Item Set Bonuses ---
-  
+  // --- Item Set Bonuses (usually tier) ---
   const usedSets: any[] = []
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
@@ -836,24 +838,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
-
-  // Special 10.0.7 Ring
-  // No longer necessary in season 4.
-  /*
-  if (builtSet.checkHasItem(203460)) {
-    // Auto gen best gems.
-    
-    const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 424;
-
-    const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
-    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
-
-    // Handle Annulet
-    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
-
-    builtSet.primGems = combo; 
-    effectStats.push(annuletStats);
- } */
 
   // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {
