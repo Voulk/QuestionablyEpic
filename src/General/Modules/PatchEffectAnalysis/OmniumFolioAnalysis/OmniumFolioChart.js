@@ -9,7 +9,8 @@ import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { styled } from "@mui/material/styles";
-import { getCircletIcon, getShortName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
+import { getCircletIcon, } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
+import { getShortName, getFolioIcon  } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 const getTooltip = (data, id) => {
   return [];
@@ -130,11 +131,11 @@ export default class OmniumFolioChart extends PureComponent {
                   key={id} 
                   style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}
                 >
-                  <WowheadTooltip type="item" id={id} level={639} domain={currentLanguage}>
+                  <WowheadTooltip type="spell" id={id} level={639} domain={currentLanguage}>
                     <img 
                       width={20} 
                       height={20} 
-                      src={getCircletIcon(id)} 
+                      src={getFolioIcon(id)} 
                       style={{ 
                         borderRadius: 4, 
                         border: "1px solid rgba(255, 255, 255, 0.12)" 
@@ -188,7 +189,7 @@ export default class OmniumFolioChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={500}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={600}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}

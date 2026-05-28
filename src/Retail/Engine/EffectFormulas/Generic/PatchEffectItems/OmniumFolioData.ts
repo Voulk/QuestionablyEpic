@@ -24,15 +24,15 @@ import s204000 from "Images/Resources/PrimordialGems/s204000.jpg";
 
 export const getAllCombos = () => {
   const allSlotOne = omniumFolioData.filter((gem) => gem.slot === 1);
-  const allSlotTwo = omniumFolioData.filter((gem) => gem.slot === 2);
-  const allSlotThree = omniumFolioData.filter((gem) => gem.slot === 3);
+  const allSlotFour = omniumFolioData.filter((gem) => gem.slot === 4);
+  const allSlotFive = omniumFolioData.filter((gem) => gem.slot === 5);
 
   const combinations = []
 
   for(let i = 0; i < allSlotOne.length; i++){
-    for(let j = 0; j < allSlotTwo.length; j++){
-      for(let k = 0; k < allSlotThree.length; k++){
-        combinations.push([allSlotOne[i].id, allSlotTwo[j].id, allSlotThree[k].id])
+    for(let j = 0; j < allSlotFour.length; j++){
+      for(let k = 0; k < allSlotFive.length; k++){
+        combinations.push([allSlotOne[i].id, allSlotFour[j].id, allSlotFive[k].id])
       }
     }
   }
@@ -40,7 +40,7 @@ export const getAllCombos = () => {
   return combinations;
 }
 
-export const getCircletIcon = (id: number) => {
+export const getFolioIcon = (id: number) => {
   const gem = omniumFolioData.filter(gem => gem.id == id)[0];
   if (gem) return "https://wow.zamimg.com/images/wow/icons/large/" + gem.icon + ".jpg";
   else console.error("Gem Icon not found");
@@ -116,19 +116,19 @@ const folioData = [
   },
   {
     coefficient: 0.771734, 
-    table: -9,
+    scalingClass: -9,
   },
   {
     coefficient: 1.071749, 
-    table: -8,
+    scalingClass: -8,
   },
   {
     coefficient: 0.198392, 
-    table: -7
+    scalingClass: -7
   },
   {
     coefficient: 0.100275,
-    table: -1 
+    scalingClass: -1 
   },
   
 ]
@@ -152,9 +152,40 @@ export const omniumFolioData: Array<folioGemType> = [
     */
     name: "Rune of Void-Touched Orbs",
     id: 1279596,
-    icon: "inv_siren_isle_blessed_citrine_purple",
+    icon: "inv_12_dh_void_ability_soulfragments",
     slot: 1,
     shortName: "Void-Touched",
+    effects: [
+      { 
+        value: 977,
+        ppm: 6,
+        efficiency: 0.8,
+        targets: 1,
+        secondaries: ['versatility', 'crit'], // TODO: Check Crit
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(data.value! / 100 * processedValue(folioData[1], 285));
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+      
+        let bonus_stats: Stats = {};
+        const effect = data.effects[0];
+
+        // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
+        bonus_stats.hps = effect.ppm * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData) / 60; 
+  
+        return bonus_stats;
+    }
+  },
+    {
+    /* 
+    */
+    name: "Rune of Unleashed Fire",
+    id: 1279599,
+    icon: "inv_summerfest_firespirit",
+    slot: 1,
+    shortName: "Unleashed Fire",
     effects: [
       { 
         value: 1960,
@@ -165,8 +196,8 @@ export const omniumFolioData: Array<folioGemType> = [
         secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
+    processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(data.value! / 100 * processedValue(folioData[1], 285));
     },
     runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
       
@@ -174,7 +205,7 @@ export const omniumFolioData: Array<folioGemType> = [
         const effect = data.effects[0];
 
         // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
+        bonus_stats.hps = 0; 
   
         return bonus_stats;
     }
@@ -183,7 +214,7 @@ export const omniumFolioData: Array<folioGemType> = [
     name: "Rune of Critical Power",
     id: 1279609,
     icon: "spell_mage_overpowered",
-    slot: 3,
+    slot: 4,
     shortName: "Crit",
     effects: [
       { 
@@ -192,318 +223,157 @@ export const omniumFolioData: Array<folioGemType> = [
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(processedValue(folioData[1], 285) * data.value! / 100);
+      return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
     runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
         
         const critValue = data.processedValue(data.effects[0], gemData);
-        const rppm = 1.13 * (gemData.includes(1279596) ? 6 : 9);
-        const uptime = data.effects[0].duration * rppm / 60;
-        bonus_stats.crit = critValue; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-  
+        const rppm = (gemData.includes(1279596) ? 6 : 9 * 1.13);
+        bonus_stats.crit = critValue * rppm * data.effects[0].duration / 60; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
         return bonus_stats;
     }
   },
-  {
-    /* DPS proc
-    */
-    name: "Undersea Overseer's Citrine",
-    id: 228636,
-    icon: "inv_siren_isle_stormcharged_citrine_green",
-    slot: "Sea",
-    shortName: "3T DPS",
-    type: "DPS",
+    {
+    name: "Rune of Burning Haste",
+    id: 1287774,
+    icon: "spell_fire_burningspeed",
+    slot: 4,
+    shortName: "Haste",
     effects: [
       { 
-        value: 1306,
-        //coefficient: 0.18911,
-        //table: -9,
-        ppm: 4,
-        targets: 3,
-        secondaries: ['versatility', 'haste'],
+        value: 170,
+        duration: 10,
       },
     ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const effect = data.effects[0];
-        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* Shield
-    */
-    name: "Storm Sewer's Citrine",
-    id: 228642,
-    icon: "inv_siren_isle_blessed_citrine_blue",
-    slot: "Thunder",
-    shortName: "Shield",
-    type: "Absorb",
-    effects: [
-      { 
-        value: 2941,
-        //coefficient: 0.42571,
-        //table: -9,
-        ppm: 4,
-        efficiency: 0.92,
-        secondaries: ['haste', 'versatility'],
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const effect = data.effects[0];
-
-        bonus_stats.hps = effect.ppm * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60
-  
-        return bonus_stats;
-    }
-  },
-  {
-
-    name: "Thunderlord's Crackling Citrine",
-    id: 228634,
-    icon: "inv_siren_isle_stormcharged_citrine_blue",
-    shortName: "ST Zap",
-    slot: "Thunder",
-    type: "DPS",
-    effects: [
-      { 
-        value: 1961, // 1961
-        //coefficient: 0.283813,
-        //table: -9,
-        ppm: 4,
-        targets: 1,
-        secondaries: ['versatility', 'haste'],
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const effect = data.effects[0];
-
-        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* All Stats
-    */
-    name: "Stormbringer's Runed Citrine",
-    id: 228638,
-    icon: "inv_siren_isle_searuned_citrine_red",
-    slot: "Thunder",
-    shortName: "All Sec",
-    type: "Stats",
-    effects: [
-      { 
-        value: 25,
-        //coefficient: 49.23086,
-        //table: -9,
-        ppm: 4,
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.round(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-
-        const allStats = data.processedValue(data.effects[0], gemData, additionalData.player, itemLevel);
-
-        bonus_stats.crit = allStats;
-        bonus_stats.haste = allStats;
-        bonus_stats.mastery = allStats;
-        bonus_stats.versatility = allStats;
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* AoE ticking heal
-    */
-    name: "Old Salt's Bardic Citrine",
-    id: 228643,
-    icon: "inv_siren_isle_blessed_citrine_red",
-    slot: "Wind",
-    shortName: "AoE HoT",
-    type: "Heal",
-    effects: [
-      { 
-        value: 1634,
-        //coefficient: 0.236522,
-        //table: -9,
-        targets: 5,
-        ppm: 4,
-        efficiency: 0.55,
-        secondaries: ['versatility', 'haste'], // Cannot currently crit
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value / 100 * processedValue(circletData[1], circletLevel));
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const effect = data.effects[0];
-
-        // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = effect.ppm * effect.targets * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* Highest Secondary
-    */
-    name: "Windsinger's Runed Citrine",
-    id: 228640,
-    icon: "inv_siren_isle_searuned_citrine_pink",
-    slot: "Wind",
-    shortName: "Secondary",
-    type: "Stats",
-    effects: [
-      { 
-        value: 100,
-        //coefficient: 49.23086,
-        //table: -9,
-        ppm: 4,
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const bestStat = getHighestStat(additionalData.setStats || []);//player.getHighestStatWeight(additionalData.contentType);
-        bonus_stats[bestStat] = data.processedValue(data.effects[0], gemData, additionalData.player, itemLevel); //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* 
-    */
-    name: "Squall Sailor's Citrine",
-    id: 228635,
-    icon: "inv_siren_isle_stormcharged_citrine_turquoise",
-    slot: "Wind",
-    shortName: "AoE Dmg",
-    type: "DPS",
-    effects: [
-      { 
-        value: 1089,
-        //coefficient: 49.23086,
-        //table: -9,
-        ppm: 4,
-        secondaries: ['versatility', 'haste'],
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.floor(data.value! / 100 * processedValue(circletData[1], circletLevel));
-    },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
-        let bonus_stats: Stats = {};
-        const effect = data.effects[0];
-
-        bonus_stats.dps = effect.ppm * effect.targets * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData, additionalData.player, itemLevel) / 60; 
-
-  
-        return bonus_stats;
-    }
-  },
-  {
-    /* 
-    */
-    name: "Legendary Skipper's Citrine",
-    id: 228646,
-    icon: "inv_siren_isle_singing_citrine_prismatic",
-    slot: "Wind",
-    shortName: "Random",
-    type: "Misc",
-    effects: [
-      { 
-        value: 25,
-        //coefficient: 49.23086,
-        //table: -9,
-        ppm: 4,
-      },
-    ],
-    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return 0
+    processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
     runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
         
-
-        const multiplier = 1.5;
-        const gemPPM = 1/11 * data.effects[0].ppm * additionalData.player.getStatPerc("haste");
-
-        omniumFolioData.forEach(circletGem => {
-          // For each circlet gem, add a proc of it to our bonus stats.
-          // Stat procs are boosted by 30% for some reason.
-          // Do not include the gem itself or we will loop infinitely (and be wrong, infinitely!)
-          if (circletGem.id !== data.id) {
-            if (circletGem.type === "Stats") {
-              const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
-              const uptime = gemPPM * 15 / 60;
-
-              Object.keys(local_stats).forEach(stat => {
-                  bonus_stats[stat] = (bonus_stats[stat] || 0) + local_stats[stat] * uptime * multiplier * 1.3;
-              });
-              
-            }
-            /*else if (circletGem.type === "Support") {
-              const local_stats = circletGem.processedValue(circletGem.effects[0], gemData, additionalData.player, itemLevel)
-              const targetCount = 4;
-              
-              bonus_stats['allyStats'] = (bonus_stats['allyStats'] || 0) + local_stats * gemPPM * 15 / 60 * multiplier * targetCount * 4;
-            }*/
-            else if (circletGem.type === "Heal") {
-              const local_stats = circletGem.runFunc(circletGem, gemData, itemLevel, additionalData);
-
-              bonus_stats.hps = (bonus_stats.hps || 0) + local_stats.hps * (gemPPM / circletGem.effects[0].ppm) * multiplier;
-            }
-
-          }
-        })
-
-        //bonus_stats.hps = 10; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+        const hasteValue = data.processedValue(data.effects[0], gemData);
+        const rppm = (gemData.includes(1279596) ? 6 : 9 * 1.13);
+        const uptime = data.effects[0].duration * rppm / 60;
+        bonus_stats.haste = hasteValue * rppm * data.effects[0].duration / 60; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+      {
+    name: "Rune of Masterful Cunning",
+    id: 1287771,
+    icon: "ability_hunter_fervor",
+    slot: 4,
+    shortName: "Mastery",
+    effects: [
+      { 
+        value: 170,
+        duration: 10,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
+        
+        const masteryValue = data.processedValue(data.effects[0], gemData);
+        const rppm = (gemData.includes(1279596) ? 6 : 9 * 1.13);
+        const uptime = data.effects[0].duration * rppm / 60;
+        bonus_stats.mastery = masteryValue * rppm * data.effects[0].duration / 60; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
+        return bonus_stats;
+    }
+  },
+        {
+    name: "Rune of the Versatile Warrior",
+    id: 1279613,
+    icon: "ability_warrior_stalwartprotector",
+    slot: 4,
+    shortName: "Versatility",
+    effects: [
+      { 
+        value: 170,
+        duration: 10,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
+        
+        const versatilityValue = data.processedValue(data.effects[0], gemData);
+        const rppm = (gemData.includes(1279596) ? 6 : 9 * 1.13);
+        bonus_stats.versatility = versatilityValue * rppm * data.effects[0].duration / 60; //processedValue(data[0], itemLevel, data[0].efficiency) * player.getStatMults(data[0].secondaries) * data[0].ppm / 60;
+  
         return bonus_stats;
     }
   },
   {
-    /* Roaring War-Queen's Citrine
+    /* 
     */
-    name: "Roaring War-Queen's Citrine",
-    id: 228648,
-    icon: "inv_siren_isle_singing_citrine_yellow",
-    slot: "Thunder",
-    shortName: "Support",
-    type: "Support",
+    name: "Rune of Overload",
+    id: 1279614,
+    icon: "ability_siege_engineer_overload",
+    slot: 5,
+    shortName: "Overload",
     effects: [
       { 
-        value: 25,
-        //coefficient: 49.23086,
-        //table: -9,
-        ppm: 4,
+        value: 0,
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
-      return Math.round(processedValue(circletData[2], circletLevel) / circletData[3].value * data.value / 100 * circletData[5].value / 3);
+      return 0;
     },
     runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
         let bonus_stats: Stats = {};
-  
+
+        return bonus_stats;
+    }
+  },
+    {
+    /* 
+    */
+    name: "Rune of Residual Energy",
+    id: 1279615,
+    icon: "inv_112_raidtrinkets_etherealenergystoragesphere_purple",
+    slot: 5,
+    shortName: "Residual Energy",
+    effects: [
+      { 
+        value: 0,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0;
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
+
+        return bonus_stats;
+    }
+  },
+      {
+    /* 
+    */
+    name: "Rune of Echoes",
+    id: 1279616,
+    icon: "spell_rogue_shadow_reflection",
+    slot: 5,
+    shortName: "Echoes",
+    effects: [
+      { 
+        value: 0,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0;
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+        let bonus_stats: Stats = {};
+
         return bonus_stats;
     }
   },

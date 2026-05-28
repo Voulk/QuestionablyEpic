@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
 import { embellishmentDB } from "Databases/EmbellishmentDB";
-import { getAllCombos, getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
+import { getAllCombos, getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
 import CharacterPanel from "General/Modules/CharacterPanel/CharacterPanel";
@@ -119,7 +119,8 @@ function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
 
 const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, playerSettings) => {
   const additionalData = {contentType: contentType, settings: playerSettings, setStats: player.activeStats, player: player, setVariables: []};
-  const effect = getCircletEffect(gemCombo, itemLevel, additionalData);
+  const effect = getFolioEffect(gemCombo, itemLevel, additionalData);
+  console.log(effect);
   //const effect = getEffectValue({type: "embellishment", name: effectName}, player, player.getActiveModel(contentType), contentType, itemLevel, playerSettings, "Retail", player.activeStats, {});
   const expHPS = getEstimatedHPS(effect, player, contentType, playerSettings) || 0
   const expDPS = getEstimatedDPS(effect, player, contentType, playerSettings) || 0
@@ -143,7 +144,7 @@ const getEffectAtLevel = (gemCombo, itemLevel, player, contentType, metric, play
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestScore = (combo) => {
-  return combo.i658
+  return combo.i100
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -185,7 +186,8 @@ export default function OmniumFolioAnalysis(props) {
   const itemLevels = [ 100 ];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
-  const combos = [1279596, 1279609, 1279614]//getAllCombos();
+  const combos = getAllCombos();
+  console.log(combos);
   const helpBlurb = [t("EmbellishmentAnalysis.HelpText")];
   const helpText = [
     "",
@@ -203,7 +205,7 @@ export default function OmniumFolioAnalysis(props) {
     };
 
     for (var x = 0; x < itemLevels.length; x++) { // (gemNames, player, contentType, itemLevel, setStats, settings)
-      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = 100 //getEffectAtLevel(gemCombo, itemLevels[x], props.player, contentType, metric, playerSettings); 
+      if (props.player !== null) comboAtLevels["i" + itemLevels[x]] = getEffectAtLevel(gemCombo, itemLevels[x], props.player, contentType, metric, playerSettings); 
       
     }
     comboAtLevels.tooltip = "" // buildRetailEffectTooltip(domGem.effect.name, props.player, 636, playerSettings)
@@ -211,7 +213,7 @@ export default function OmniumFolioAnalysis(props) {
   }
 
   activeCombos.sort((a, b) => (getHighestScore(a) < getHighestScore(b) ? 1 : -1));
-  activeCombos = activeCombos.slice(0, 15);
+  activeCombos = activeCombos.slice(0, 20);
 
   return (
     <div className={classes.root}>
