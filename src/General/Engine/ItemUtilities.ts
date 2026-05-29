@@ -934,6 +934,7 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
   let statString = "";
   let statsList = [];
   const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit", "weaponSwingSpeed", "averageDamage"];
+
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -960,7 +961,6 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
-
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
 
@@ -1061,9 +1061,9 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }
-
-      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
-      else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
+      else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
+      else if (source === "T16+" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 1);
       else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
@@ -1083,13 +1083,18 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
         ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          if (gameType === "Retail") {
+            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) ilvlBoost = 9;
+            else ilvlBoost = 0;
+          }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
-          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+          
+          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
-          if (gameType === "Retail" && ["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) newItem.level += 9;
+          
 
       if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);

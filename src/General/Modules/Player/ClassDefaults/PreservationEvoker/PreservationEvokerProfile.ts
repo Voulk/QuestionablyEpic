@@ -183,12 +183,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride ?? 1))), 0);
     reportingData.baselineCostPerMinute = baselineCostPerMinute;
 
-    castProfile.forEach(spellEntry => {
+    /*castProfile.forEach(spellEntry => {
         console.log(`${spellEntry.spell}: CPM ${spellEntry.cpm}, Cost per cast: ${spellCosts[spellEntry.spell] * (spellEntry.manaOverride || 1)}
         Total Cost per minute: ${spellEntry.autoSpell? 0 : spellCosts[spellEntry.spell] * spellEntry.cpm! * (spellEntry.manaOverride || 1)}
         at a discount of ${((1 - (spellEntry.manaOverride || 1)) * 100)}%
         Label: ${spellEntry.label || "N/A"}`);
-    })
+    })*/
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;

@@ -133,6 +133,7 @@ const GetSockets: React.FC<{ item: Item, gameType: gameTypes }> = ({ item, gameT
       </div>
     }
     else {
+      
       return (
         <div style={{ verticalAlign: "middle" }}>
           {Array.from({ length: item.socket }).map((_, index) => (
