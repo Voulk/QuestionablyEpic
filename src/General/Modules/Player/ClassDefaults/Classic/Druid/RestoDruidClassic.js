@@ -128,12 +128,20 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const metaGem = getSetting(userSettings, "classicMetaGem");
     let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
+    if (statProfile.amp) {
+      ["spirit", "mastery", "haste"].forEach(statName => {
+        statProfile[statName] = statProfile[statName] * (1 + statProfile.amp);
+      })
+    }
+
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Resto Druids mastery coefficient.
     }
+
+    
 
     // Take care of any extras.
     let newSwiftmendCD = druidBaseline.spellDB["Swiftmend"][0].cooldownData.cooldown;
@@ -165,6 +173,12 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     if (tierSets.includes("Druid T15-4")) {
       getSpellEntry(castProfile, "Rejuvenation").flags = {"RampingHoTEffect": 0.06}; // 
     }
+
+
+    if (tierSets.includes("Druid T16-4")) {
+      castProfile.push({spell: "T16-4 Bonus", cpm: getSpellEntry(castProfile, "Wild Growth").cpm, freeCast: true})
+    }
+
     
     if (talents.soulOfTheForest.points === 1) {
       //
@@ -190,11 +204,20 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
 
     let fillerCost = druidBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost'] * (1-freeCastsUptime); 
     const fillerWastage = 0.9;
-    let costPerMinute = druidBaseline.costPerMinute * (1-freeCastsUptime);
+    //let costPerMinute = druidBaseline.costPerMinute * (1-freeCastsUptime);
+    let costPerMinute = castProfile.reduce((acc, spell) => acc + ((spell.fillerSpell || spell.freeCast) ? 0 : (spell.cost * spell.cpm)), 0);
 
     const fillerCPM = ((totalManaPool / fightLength) - costPerMinute) / fillerCost * fillerWastage;
 
     getSpellEntry(castProfile, "Rejuvenation").cpm += fillerCPM;
+
+    if (tierSets.includes("Druid T16-2")) {
+      const rejuv = druidBaseline.spellDB["Rejuvenation"][0];
+      const rejuvCPM = getSpellEntry(castProfile, "Rejuvenation").cpm;
+      const adjTickRate = Math.ceil((rejuv.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
+      let tickCount = Math.round(rejuv.buffDuration / (adjTickRate));
+      castProfile.push({spell: "Healing Touch", cpm: (tickCount + 1) * rejuvCPM * 0.12 / 5, freeCast: true})
+    }
 
     castProfile.forEach(spellProfile => {
         const fullSpell = druidBaseline.spellDB[spellProfile.spell];

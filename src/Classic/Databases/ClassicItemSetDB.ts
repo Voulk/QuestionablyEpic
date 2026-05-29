@@ -22,6 +22,47 @@ type ItemSetData = {
 } 
 
 export const itemSets: ItemSetData[] = [
+  // Tier 16 - Siege of Orgrimmar
+    {
+    id: 1184,
+    class: "Shaman",
+    setBonuses: {
+      2: "Shaman T16-2", 
+      4: "Shaman T16-4", 
+    },
+  },
+    {
+    id: 1189,
+    class: "Paladin",
+    setBonuses: {
+      2: "Paladin T16-2", 
+      4: "Paladin T16-4", 
+    },
+  },
+    {
+    id: 1187,
+    class: "Priest",
+    setBonuses: {
+      2: "Priest T16-2", 
+      4: "Priest T16-4", 
+    },
+  },
+      {
+    id: 1192,
+    class: "Monk",
+    setBonuses: {
+      2: "Monk T16-2", 
+      4: "Monk T16-4", 
+    },
+  },
+   {
+    id: 1198,
+    class: "Druid",
+    setBonuses: {
+      2: "Druid T16-2", 
+      4: "Druid T16-4", 
+    },
+  },
   // Tier 15
     {
     id: 1154,
