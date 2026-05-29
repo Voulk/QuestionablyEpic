@@ -226,8 +226,9 @@ export default function TrinketAnalysis(props) {
     { value: 1, label: "250" },
     { value: 2, label: "263" },
     { value: 3, label: "276" },
-    { value: 4, label: "289" },
-    { value: 5, label: "298" },
+    { value: 4, label: "285" },
+    { value: 5, label: "289" },
+    { value: 6, label: "298" },
   ]
 
   const handleTabChange = (event, newValue) => {
@@ -488,11 +489,11 @@ export default function TrinketAnalysis(props) {
                   className={classes.slider}
                   style={{ color: "#52af77" }}
                   containerStyle={{ paddingRight: 8 }}
-                  defaultValue={5}
+                  defaultValue={6}
                   step={null}
                   valueLabelDisplay="off"
                   marks={maxLevelMarks} //marks
-                  max={5}
+                  max={6}
                   change={changeLevelCap} //setDungeonDifficulty
                 />
               </div>
