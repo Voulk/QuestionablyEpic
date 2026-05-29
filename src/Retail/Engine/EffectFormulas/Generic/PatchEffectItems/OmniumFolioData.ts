@@ -188,12 +188,11 @@ export const omniumFolioData: Array<folioGemType> = [
     shortName: "Unleashed Fire",
     effects: [
       { 
-        value: 1960,
-        coefficient: 0.28371,
-        ppm: 4,
-        efficiency: 0.58,
-        targets: 3,
-        secondaries: ['versatility', 'haste', 'crit'], // TODO: Check Crit
+        value: 1465,
+        ppm: 9,
+        efficiency: 0.8,
+        targets: 1,
+        secondaries: ['versatility', 'crit'], // TODO: Check Crit
       },
     ],
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
@@ -205,7 +204,7 @@ export const omniumFolioData: Array<folioGemType> = [
         const effect = data.effects[0];
 
         // Could possibly replace this with a call to effectUtilities but would need custom handling for the processed value type / formula.
-        bonus_stats.hps = 0; 
+        bonus_stats.hps = effect.ppm * 1.13 * effect.efficiency * additionalData.player.getStatMults(effect.secondaries) * data.processedValue(effect, gemData) / 60; 
   
         return bonus_stats;
     }
@@ -286,12 +285,12 @@ export const omniumFolioData: Array<folioGemType> = [
         return bonus_stats;
     }
   },
-        {
+  {
     name: "Rune of the Versatile Warrior",
     id: 1279613,
     icon: "ability_warrior_stalwartprotector",
     slot: 4,
-    shortName: "Versatility",
+    shortName: "Vers",
     effects: [
       { 
         value: 170,
