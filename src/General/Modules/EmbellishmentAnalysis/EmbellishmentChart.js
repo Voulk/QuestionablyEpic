@@ -149,7 +149,7 @@ export default class EmbelChart extends PureComponent {
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
-                {getTooltip(data, payload.value).map((key) => {
+                {getTooltip(data, payload.value).map((key, index) => {
                   return (
                     <span key={key} 
                       style={{ 
