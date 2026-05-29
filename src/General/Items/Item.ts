@@ -254,6 +254,11 @@ export class Item {
     }
   }
 
+  hasEmbellishment() {
+    if (this.effect && this.effect.type === "embellishment") return true;
+    return false;
+  }
+
 }
 
 export default Item;

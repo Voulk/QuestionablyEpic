@@ -5,6 +5,7 @@ import ReportRoute from "./ReportRoute";
 import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
+import SpecTrinketsPage from "General/Modules/TrinketAnalysis/SpecTrinketsPage";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
 import CircletAnalysis from "General/Modules/CircletAnalysis/CircletAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
@@ -429,19 +430,31 @@ const App = () => {
                       />
                     )}
                   />
-                  <CustomRoute
+                  <Route
                     path="/trinkets"
-                    player={activePlayer}
-                    render={() => (
-                      <TrinketAnalysis
-                        player={activePlayer}
-                        updatePlayerChar={updatePlayerChar}
-                        singleUpdate={updatePlayerChar}
-                        allChars={allChars}
-                        simcSnack={handleSimCSnackOpen}
-                        patronStatus={patronStatus}
-                      />
-                    )}
+                    render={({ location }) => {
+                      const spec = new URLSearchParams(location.search).get("spec");
+                      if (spec !== null) return (
+                          <SpecTrinketsPage
+                            onSpecChange={handlePickPlayerSpec}
+                            player={activePlayer}
+                            allChars={allChars}
+                            singleUpdate={updatePlayerChar}
+                            simcSnack={handleSimCSnackOpen}
+                          />
+                        );
+                      if (!activePlayer) return <Redirect to="/" />;
+                      return (
+                        <TrinketAnalysis
+                          player={activePlayer}
+                          updatePlayerChar={updatePlayerChar}
+                          singleUpdate={updatePlayerChar}
+                          allChars={allChars}
+                          simcSnack={handleSimCSnackOpen}
+                          patronStatus={patronStatus}
+                        />
+                      );
+                    }}
                   />
                   <CustomRoute
                     path="/embellishments"
