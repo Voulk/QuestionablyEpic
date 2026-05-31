@@ -43,6 +43,7 @@ export const restoDruidDefaults = {
     },
     specialQueries: {
         // Any special information we need to pull.
+        cleavePercentage: 1, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
     },
     autoReforgeOrder: ["mastery", "spirit", "crit", "haste", "hit"],
 }
