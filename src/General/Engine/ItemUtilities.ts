@@ -1140,19 +1140,19 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
-    console.log(effectStats);
 
     if (effectStats.amp) {
       // We have an amp trinket. Convert it to regular stats.
       const playerBaseStats = player.getActiveModel("Raid").profile.defaultStatProfile;
       console.log(playerBaseStats);
       ["mastery", "haste", "spirit"].forEach(statName => {
-        bonus_stats[statName] = (bonus_stats[statName] || 0) + (effectStats.amp) * playerBaseStats[statName];
-        console.log("Adding " + (effectStats.amp) * playerBaseStats[statName] + " " + statName + " from amp effect");
+        effectStats[statName] = (effectStats[statName] || 0) + (effectStats.amp) * playerBaseStats[statName];
+        //console.log("Adding " + (effectStats.amp) * playerBaseStats[statName] + " " + statName + " from amp effect");
       })
     }
 
     bonus_stats = compileStats(bonus_stats, effectStats as Stats);
+    console.log(bonus_stats);
   }
 
   // Handle Annulet

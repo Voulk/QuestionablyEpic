@@ -142,11 +142,12 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
   //return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player, itemLevel) => {
+const getClassicTrinketScore = (id, player, itemLevel, playerSettings) => {
   //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
   //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
-  item.softScore = scoreItem(item, player, "Raid", "Classic");
+  console.log(id);
+  item.softScore = scoreItem(item, player, "Raid", "Classic", playerSettings);
 
   return item.softScore;
 };
@@ -391,14 +392,14 @@ export default function TrinketAnalysis(props) {
           else {
             if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
               // Classic items can exist in multiple item levels in the database but we want to compile them into one entry.
-              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x]);
+              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x], playerSettings);
               
             }
           }
           
         }
         if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
-        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id, playerSettings);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
   }

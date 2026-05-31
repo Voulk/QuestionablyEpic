@@ -43,11 +43,11 @@ const getTrinketDropLoc = (trinketID) => {
     return dropLoc
 }
 
-export const buildClassicEffectTooltip = (trinketName, player, itemLevel, trinketID) => {
+export const buildClassicEffectTooltip = (trinketName, player, itemLevel, trinketID, playerSettings) => {
     const trinketDescription = [trinketName + " (" + itemLevel + ")"];
     trinketDescription.push("")
     const trinketData = getTrinketData(trinketName);
-    const additionalData = { setStats: player.activeStats }
+    const additionalData = { setStats: player.activeStats, settings: playerSettings }
     if (trinketData === undefined) return [];
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     

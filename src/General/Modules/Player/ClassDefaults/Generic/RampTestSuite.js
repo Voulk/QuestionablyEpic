@@ -57,12 +57,12 @@ export function runClassicStatSuite(profile, metric = "healing") {
     const fightLength = 420;
 
     const activeStats = {
-        intellect: 17000,
-        spirit: 2500,
-        spellpower: 7200,
-        haste: 2500,
-        crit: 2500,
-        mastery: 5500,
+        intellect: 33000,
+        spirit: 8000,
+        spellpower: 15000,
+        haste: 8000,
+        crit: 8000,
+        mastery: 8000,
         stamina: 5000,
         weaponDamage: 821,
         weaponSwingSpeed: 2.6,
@@ -76,14 +76,15 @@ export function runClassicStatSuite(profile, metric = "healing") {
 
     let playerStats = JSON.parse(JSON.stringify(activeStats));
     applyRaidBuffs({}, playerStats);
-    const testSettings = {hasteBuff: {value: "Haste Aura"}};
+    const testSettings = {hasteBuff: {value: "Haste Aura"}, druidLevelSixtyTalent: {value: "Soul of the Forest" }};
 
-    const baseline = profile.initializeSet();
+    const baseline = profile.initializeSet(testSettings);
     const baselineHPS = scoreFunction(baseline, playerStats, testSettings)[metric];
+
 
     const results = {};
     stats.forEach(stat => {
-        const initSet = profile.initializeSet();
+        const initSet = profile.initializeSet(testSettings);
 
         // Change result to be casts agnostic.
         let playerStats = JSON.parse(JSON.stringify(activeStats));

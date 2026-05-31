@@ -3,6 +3,7 @@ import Player from "General/Modules/Player/Player";
 
 import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 /* 
@@ -93,6 +94,69 @@ export const raidTrinketData: Effect[] = [
     }
   },
   // Siege of Orgrimmar
+        {
+    name: "Nazgrim's Burnished Insignia", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.03539999947, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: 0.92,
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") / 1000 * 0.33;
+        console.log(processedValue(data[0], itemLevel) / 10, healingBuffed, player.getHPS("Raid"));
+      }
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Thok's Acid-Grooved Tooth", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.07859999686, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        const avgTargets = getSetting(additionalData.settings, "thokTargets") || 3;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") * avgTargets / 10000;
+        //console.log(processedValue(data[0], itemLevel), healingBuffed, player.getHPS("Raid"), avgTargets);
+      }
+
+      return bonus_stats;
+    }
+  },
     {
     name: "Purified Bindings of Immerseus", 
     effects: [ 

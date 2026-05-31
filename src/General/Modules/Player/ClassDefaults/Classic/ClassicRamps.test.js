@@ -78,14 +78,14 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Holy Priest");
+        const data = getData("Restoration Druid");
 
         const spec = data.spec
-        const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
+        const testSuite = "Stat" //"TopGearProfile" //"Stat" //;
         const revisedTalents = {...data.talents};
 
         const testSettings = {spec: spec + " Classic", masteryEfficiency: 1, testMode: "No", includeOverheal: "Yes", reporting: true, seqLength: 100, alwaysMastery: true, hasteBuff: {value: "Haste Aura"}};
-        const playerData = { spec: spec, spells: shamanSpells, settings: testSettings, talents: {...revisedTalents}, stats: data.defaults.defaultStatProfile }
+        const playerData = { spec: spec, spells: druidSpells, settings: testSettings, talents: {...revisedTalents}, stats: data.defaults.defaultStatProfile }
         const profile = data.defaults;
 
         if (testSuite === "APL") {
@@ -101,7 +101,7 @@ describe("Test APL", () => {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
             const data = runClassicStatSuite(profile, "healing")
-            
+            console.log(data.baselineHPS / 60)
             console.log(data.weights);
 
         }
