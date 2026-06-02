@@ -36,7 +36,7 @@ export const restoDruidDefaults = {
         crit: 0.683,
         mastery: 0.89,
         haste: 0.7,
-        spirit: 1.082,
+        spirit: 1.022,
         mp5: 1.425,
         hps: 0.275
     },

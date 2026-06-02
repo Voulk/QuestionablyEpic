@@ -64,7 +64,7 @@ export function runClassicStatSuite(profile, metric = "healing") {
         crit: 8000,
         mastery: 8000,
         stamina: 5000,
-        weaponDamage: 821,
+        averageDamage: 821,
         weaponSwingSpeed: 2.6,
         isTwohanded: false,
         mp5: 0,
@@ -76,10 +76,10 @@ export function runClassicStatSuite(profile, metric = "healing") {
 
     let playerStats = JSON.parse(JSON.stringify(activeStats));
     applyRaidBuffs({}, playerStats);
-    const testSettings = {hasteBuff: {value: "Haste Aura"}, druidLevelSixtyTalent: {value: "Soul of the Forest" }};
+    const testSettings = {reporting: true, hasteBuff: {value: "Haste Aura"}, druidLevelSixtyTalent: {value: "Soul of the Forest" }};
 
     const baseline = profile.initializeSet(testSettings);
-    const baselineHPS = scoreFunction(baseline, playerStats, testSettings)[metric];
+    const baselineHPS = scoreFunction(baseline, playerStats, testSettings, ["Monk T16-2", "Monk T16-4"])[metric];
 
 
     const results = {};
@@ -92,7 +92,7 @@ export function runClassicStatSuite(profile, metric = "healing") {
         applyRaidBuffs({}, playerStats);
 
         //const newPlayerData = {...playerData, stats: playerStats};
-        const result = scoreFunction(initSet, playerStats, testSettings)
+        const result = scoreFunction(initSet, playerStats, testSettings, ["Monk T16-2", "Monk T16-4"])
         results[stat] = result[metric];
     });
     const weights = {}

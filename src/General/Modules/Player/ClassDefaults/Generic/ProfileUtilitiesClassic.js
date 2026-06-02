@@ -75,10 +75,11 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
     const critSize = (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond") ? 2.03 : 2; // 3% increased crit damage / healing;
+    if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
 
     //const additiveScaling = (spell.additiveScaling || 0) + 1
-    if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
+    
      
     let spellOutput = 0;
     if (spellName === "Melee") {

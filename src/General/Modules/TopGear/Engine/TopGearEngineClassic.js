@@ -539,6 +539,12 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
 
+    if (setStats.amp) {
+      ["spirit", "mastery", "haste"].forEach(statName => {
+        setStats[statName] = setStats[statName] * (1 + setStats.amp);
+      })
+    }
+
     if (castModel.scoreSet) {
       const result = castModel.scoreSet(baseline, setStats, {...playerSettings, 
                                                                 playerRace: player.race,

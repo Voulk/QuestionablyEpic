@@ -37,23 +37,25 @@ export const mistweaverMonkDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
+
     },
     defaultStatWeights: {
-        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
-        spellpower: 1,
-        intellect: 1.1,
-        crit: 0.572,
-        mastery: 0.254,
-        haste: 0.371,
-        mp5: 0.7,
-        spirit: 0.4,
-        hit: 0,
-        hps: 0.314, // 
+      // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+      spellpower: 1,
+      intellect: 1.245,
+      crit: 0.795,
+      mastery: 0.428,
+      haste: 0.3,
+      spirit: 0.371,
+      mp5: 0.657,
+      hps: 0.206
     },
     specialQueries: {
         // Any special information we need to pull.
+      cleavePercentage: 0.9, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
-    autoReforgeOrder: ["crit", "spirit", "mastery", "haste", "hit"],
+    autoReforgeOrder: ["crit", "mastery","spirit",  "haste", "hit"],
 }
 
 // --------------- Monk --------------
@@ -133,6 +135,7 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
   const statPercentages = convertStatPercentages({...statProfile, haste: statProfile.haste * 1.5}, hasteBuff, spec, playerRace);
   statPercentages.hitChance = Math.min(1, 0.85 + (statProfile.spirit - 190) / 340 / 100); // Serpent converts at a 50% rate, but we get both hit and expertise.
   let masteryOrbsGenerated = 0;
+  let mistWaveGenerated = 0;
   reportingData.statPercentages = statPercentages;
 
   // Calculate filler CPM
@@ -280,6 +283,8 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
             const adjTickRate = Math.ceil((spell.tickData.tickRate / statPercentages.haste - 0.0005) * 1000)/1000;
             let tickCount = Math.round(spell.buffDuration / (adjTickRate));
             masteryOrbsGenerated += (getMasteryChance(statProfile, spell) * spell.targets * tickCount * effectiveCPM);
+            mistWaveGenerated += (0.04 * tickCount * effectiveCPM);
+
 
           }
           else masteryOrbsGenerated += (getMasteryChance(statProfile, spell) * (spell.targets || 1) * effectiveCPM);
@@ -297,8 +302,21 @@ export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets =
       const masteryHealing = runClassicSpell("Mastery: Gift of the Serpent", specBaseline.spellDB["Mastery: Gift of the Serpent"][0], statPercentages, spec, userSettings);
       healingBreakdown["Mastery: Gift of the Serpent"] = masteryHealing * masteryOrbsGenerated;
       totalHealing += masteryHealing * masteryOrbsGenerated;
+
+      if (tierSets.includes("Monk T16-2")) {
+        // Mastery orbs add an absorb to their target for 45% of the raw healing.
+        const masteryAbsorb = masteryHealing * masteryOrbsGenerated * 0.45 / (1-specBaseline.spellDB["Mastery: Gift of the Serpent"][0].expectedOverheal) * 0.9; // Convert back to effective mastery procs, then multiply by 45% to get absorb amount.
+        healingBreakdown["Mastery Absorb"] = masteryAbsorb;
+        totalHealing += masteryAbsorb;
+      }
+
+      if (tierSets.includes("Monk T16-4")) {
+        const mistWaveHealing = runClassicSpell("Mist Wave", specBaseline.spellDB["Mist Wave"][0], statPercentages, spec, userSettings);
+        healingBreakdown["Mist Wave"] = mistWaveHealing * mistWaveGenerated;
+        totalHealing += mistWaveHealing * mistWaveGenerated;
+      }
     
-          // Add any natural HPS we have on the set.
+      // Add any natural HPS we have on the set.
       totalHealing += (60 * statProfile.hps || 0)
 
       // Print stuff.

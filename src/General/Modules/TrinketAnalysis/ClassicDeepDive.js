@@ -51,8 +51,9 @@ export const buildClassicEffectTooltip = (trinketName, player, itemLevel, trinke
     if (trinketData === undefined) return [];
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     
-    Object.keys(trinketStats).forEach((statName) => {    
-        trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
+    Object.keys(trinketStats).forEach((statName) => {
+        if (statName === "amp") trinketDescription.push("Amplification: " + Math.round(trinketStats[statName] * 10000)/100 + "%");
+        else trinketDescription.push(statName.charAt(0).toUpperCase() + statName.slice(1) + ": " + Math.round(trinketStats[statName]))
     });
 
     if (trinketStats.spirit) {

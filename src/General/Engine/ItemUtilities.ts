@@ -1062,6 +1062,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }
       else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1 && item.itemSetId && item.classRestriction && player.spec.includes((player.spec)));
       else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
       else if (source === "T16+" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 1);
       else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));

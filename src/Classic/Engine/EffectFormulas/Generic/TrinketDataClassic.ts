@@ -95,6 +95,25 @@ export const raidTrinketData: Effect[] = [
   },
   // Siege of Orgrimmar
         {
+    name: "Dysmorphic Samophlange of Discontinuity", 
+    effects: [ // coefficient is for 1 stack. You get 20 on proc.
+      { 
+        value: {0: 0},
+        coefficient: 0.29730001092,
+        ppm: 0.85,
+        stat: "spirit",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+
+      bonus_stats.spirit! *= 10.5; // Average stack count.
+
+      return bonus_stats;
+    }
+  },
+        {
     name: "Nazgrim's Burnished Insignia", 
     effects: [ 
       // Cleave Heal
@@ -119,7 +138,7 @@ export const raidTrinketData: Effect[] = [
       if (isTrinketChart) {
         const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
         bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") / 1000 * 0.33;
-        console.log(processedValue(data[0], itemLevel) / 10, healingBuffed, player.getHPS("Raid"));
+        //console.log(processedValue(data[0], itemLevel) / 10, healingBuffed, player.getHPS("Raid"));
       }
 
       return bonus_stats;

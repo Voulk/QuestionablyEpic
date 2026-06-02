@@ -14,14 +14,14 @@ export const discPriestDefaults = {
     scoreSet: scoreDiscSet,
     initializeSet: initializeDiscSet,
     defaultStatProfile: { 
-      intellect: 21000,
-      spirit: 8000,
-      spellpower: 7907,
+      intellect: 33600, //21000,
+      spirit: 12000, //9000,
+      spellpower: 15000, //7907,
       averageDamage: 5585,
       weaponSwingSpeed: 3.4,
-      haste: 2500,
-      crit: 9000,
-      mastery: 9000,
+      haste: 4000, //3043,
+      crit: 15000, //8000,
+      mastery: 10000, //9000,
       stamina: 5000,
       mp5: 0,
       critMult: 2,
@@ -30,17 +30,18 @@ export const discPriestDefaults = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO
         spellpower: 1,
-        intellect: 1.11,
-        crit: 0.5461,
-        mastery: 0.44,
-        haste: 0.305,
-        mp5: 0.614,
-        spirit: 0.5,
-        hit: 0,
-        hps: 0.314, // 
+        intellect: 1.28,
+        crit: 0.91,
+        mastery: 0.924,
+        haste: 0,
+        spirit: 0.43,
+        mp5: 0.763,
+        hps: 0.124
     },
     specialQueries: {
         // Any special information we need to pull.
+        cleavePercentage: 0.65, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
     autoReforgeOrder: ["crit", "mastery", "spirit", "haste", "hit"],
 
@@ -71,15 +72,20 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   let fillerCPM = 0;
   const metaGem = getSetting(userSettings, "classicMetaGem");
   let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 * 0.8 / 60) : 0; // 1.61 rppm, 4s duration
-
+  const archangelUptime = 18 / 36;
 
   const hasteSetting = getSetting(userSettings, "hasteBuff");
   const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
+  
   const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
   statPercentages.spellpower *= 1.1; // Inner Fire
   const masteryAbsorb = (statPercentages.mastery)*2;
   const masteryHeal = statPercentages.mastery;
+
+  if (tierSets.includes("Priest T16-2")) {
+    //statPercentages.crit += 0.1 * archangelUptime;
+  }
 
   reportingData.statPercentages = statPercentages;
 
@@ -203,7 +209,8 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
         else {
           // Archangel
           // Healing Only
-          spellOutput *= (0.25 * 18 / 40 + 1); // Archangel
+          
+          spellOutput *= (0.25 * archangelUptime + 1); // Archangel
 
           healingBreakdown[spellProfile.spell] = (healingBreakdown[spellProfile.spell] || 0) + (spellOutput * effectiveCPM);
           totalHealing += (spellOutput * effectiveCPM);
