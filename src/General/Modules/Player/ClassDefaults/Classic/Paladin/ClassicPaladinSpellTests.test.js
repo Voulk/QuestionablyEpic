@@ -19,6 +19,8 @@ describe("Test Paladin Spell Values", () => {
         stamina: 0,
         mp5: 0,
         critMult: 2,
+        critMultHPS: 1,
+        critMultDPS: 2,
         hps: 0,
     }
 

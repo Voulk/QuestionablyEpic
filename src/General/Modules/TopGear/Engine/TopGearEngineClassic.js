@@ -253,6 +253,10 @@ function compileSetStats(itemSet) {
     crit: 0,
     mastery: 0,
     haste: 0,
+    amp: 0,
+
+    critMultDPS: 2, // Multiplicative
+    critMultHPS: 1, // Additive
   }
 
     for (let i = 0; i < itemSet.itemList.length; i++) {
@@ -349,6 +353,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         stamina: 0,
         mp5: 0,
         haste: 0,
+        amp: 0,
     };
 
     let enchant_stats = {
@@ -360,6 +365,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       mastery: 0,
       mp5: 0,
       haste: 0,
+      amp: 0,
     };
 
 
@@ -478,7 +484,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     let hasteNeeded = 0;
     if (player.spec === "Restoration Druid Classic") {
       // Check which haste bracket we're in and try and push to the next one.
-      if (setStats.haste >= 4856 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
+      if (setStats.haste >= 4705 && getSetting(playerSettings, "druidLevelSixtyTalent") === "Soul of the Forest") hasteNeeded = Math.max(0, 5176 - setStats.haste);
       else if (setStats.haste > 6332) hasteNeeded = Math.max(0, 6652 - setStats.haste);
       else hasteNeeded = Math.max(0, 3043 - setStats.haste);
     }
@@ -536,6 +542,16 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       
     }
 
+    if (setStats.amp) {
+      ["spirit", "mastery", "haste"].forEach(statName => {
+        setStats[statName] = setStats[statName] * (1 + setStats.amp);
+
+      })
+
+      setStats.critMultDPS *= (1 + setStats.amp);
+      setStats.critMultHPS *= (1 + setStats.amp);
+    }
+
     if (castModel.scoreSet) {
       const result = castModel.scoreSet(baseline, setStats, {...playerSettings, 
                                                                 playerRace: player.race,
@@ -576,6 +592,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
         stamina: mergeStat(stats, 'stamina'),
         mp5: mergeStat(stats, 'mp5'),
         haste: mergeStat(stats, 'haste'),
+        amp: mergeStat(stats, 'amp'),
       }
   
     return val;

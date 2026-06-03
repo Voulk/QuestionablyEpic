@@ -85,7 +85,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 5664,
         coeff: 0.675, 
         additiveScaling: 0.25,
-        expectedOverheal: 0.3,
+        expectedOverheal: 0.25,
         holyPower: 1,
         targets: 1,
         secondaries: ['crit', 'mastery'],
@@ -96,7 +96,7 @@ export const CLASSICPALADINSPELLDB = {
         flat: 5664 * 0.5,
         coeff: 0.675 * 0.5, //
         additiveScaling: 0.25,
-        expectedOverheal: 0.35,
+        expectedOverheal: 0.3,
         targets: 6, // Might be capped at 6 now?
         secondaries: ['crit', 'mastery']
     }],
@@ -110,7 +110,7 @@ export const CLASSICPALADINSPELLDB = {
         coeff: 0.152 * 3, // Adjust this per Holy Power. 
         additiveScaling: 0.5,
         targets: 6,
-        expectedOverheal: 0.35,
+        expectedOverheal: 0.25,
         secondaries: ['crit', 'mastery'],
         tags: ['Holy Power Spender'],
     }],
@@ -187,7 +187,7 @@ export const CLASSICPALADINSPELLDB = {
         targets: 6,
         secondaries: ['crit', 'mastery'],
         cooldownData: {cooldown: 60, hasted: false},
-        expectedOverheal: 0.4,
+        expectedOverheal: 0.35,
     },
     {
         type: "damage",

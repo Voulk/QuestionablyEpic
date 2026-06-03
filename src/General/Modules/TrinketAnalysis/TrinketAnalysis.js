@@ -142,11 +142,11 @@ const getTrinketAtContentLevel = (id, difficulty, player, contentType) => {
   //return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player, itemLevel) => {
+const getClassicTrinketScore = (id, player, itemLevel, playerSettings) => {
   //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
   //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
-  item.softScore = scoreItem(item, player, "Raid", "Classic");
+  item.softScore = scoreItem(item, player, "Raid", "Classic", playerSettings);
 
   return item.softScore;
 };
@@ -293,7 +293,8 @@ export default function TrinketAnalysis(props) {
   const contentType = useSelector((state) => state.contentType);
   const gameType = useSelector((state) => state.gameType);
   const playerSettings = useSelector((state) => state.playerSettings);
-  const allItemLevels = gameType === "Retail" ? [237, 243, 250, 256, 263, 272, 276, 285, 289, 298] : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+  const allItemLevels = gameType === "Retail" ? [237, 243, 250, 256, 263, 272, 276, 285, 289, 298] 
+                                              : [502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter(level => (level <= levelCap || gameType === "Classic"));
 
@@ -390,14 +391,14 @@ export default function TrinketAnalysis(props) {
           else {
             if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
               // Classic items can exist in multiple item levels in the database but we want to compile them into one entry.
-              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x]);
+              trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, props.player, itemLevels[x], playerSettings);
               
             }
           }
           
         }
         if (gameType === "Retail") trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
-        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        else trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, props.player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id, playerSettings);
         if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
   }
@@ -450,7 +451,7 @@ export default function TrinketAnalysis(props) {
   };
 
   const trinketText = gameType === "Retail" ? "Hero / Myth trinkets can be upgraded 9 item levels via the new Ascended upgrade system. Hover over ? next to trinkets for more information on them."  :
-                                              "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
+                                              "Siege of Orgrimmar trinkets are very difficult to chart well since value depends heavily on your set. Use Top Gear for the most accurate evaluations.";
 
   return (
     <div className={classes.root}>

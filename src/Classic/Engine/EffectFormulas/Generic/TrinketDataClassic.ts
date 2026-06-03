@@ -3,6 +3,7 @@ import Player from "General/Modules/Player/Player";
 
 import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 /* 
@@ -92,6 +93,143 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  // Siege of Orgrimmar
+        {
+    name: "Dysmorphic Samophlange of Discontinuity", 
+    effects: [ // coefficient is for 1 stack. You get 20 on proc.
+      { 
+        value: {0: 0},
+        coefficient: 0.29730001092,
+        ppm: 0.85,
+        stat: "spirit",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+
+      bonus_stats.spirit! *= 10.5; // Average stack count.
+
+      return bonus_stats;
+    }
+  },
+        {
+    name: "Nazgrim's Burnished Insignia", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.03539999947, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: 0.92,
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") / 1000 * 0.33;
+        //console.log(processedValue(data[0], itemLevel) / 10, healingBuffed, player.getHPS("Raid"));
+      }
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Thok's Acid-Grooved Tooth", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.07859999686, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        const avgTargets = getSetting(additionalData.settings, "thokTargets") || 3;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") * avgTargets / 10000;
+        //console.log(processedValue(data[0], itemLevel), healingBuffed, player.getHPS("Raid"), avgTargets);
+      }
+
+      return bonus_stats;
+    }
+  },
+    {
+    name: "Purified Bindings of Immerseus", 
+    effects: [ 
+      // Heals have chance to give an intellect buff.
+      { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+      { // Amp
+        value: {0: 0},
+        coefficient: 0.00176999997, // Has a 2nd coefficient that is half this.
+        stat: "misc",
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = {}
+      if (player.spec.includes("Holy Paladin") || player.spec.includes("Mistweaver Monk")) {
+        bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      }
+
+      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Prismatic Prison of Pride", 
+    effects: [ 
+      // Heals have chance to give an intellect buff.
+      { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+      { // Amp
+        value: {0: 0},
+        coefficient: 0.00176999997, // Has a 2nd coefficient that is half this.
+        stat: "misc",
+      }
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
+
+      return bonus_stats;
+    }
+  },
+
   // Throne of Thunder
     {
     name: "Lightning-Imbued Chalice", 
