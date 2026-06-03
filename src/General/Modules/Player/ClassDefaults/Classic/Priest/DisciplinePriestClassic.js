@@ -231,7 +231,8 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
         else if (rawHeal > 0) {
             // Divine Aegis
             // Divine Aegis crits are 90% of our heal value (including any HealMast scaling it might have had) x the absorb value of our mastery.
-            const divineAegis = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1); // 90% of our heal value x our mastery absorb value.
+            const critMult = (spell.damageToHeal ? statPercentages.critMultDPS : statPercentages.critMultHPS) - 1;
+            const divineAegis = rawHeal * (1 + masteryAbsorb) * 0.9 * (statPercentages.crit - 1) * critMult; // 90% of our heal value x our mastery absorb value.
             healingBreakdown["Divine Aegis"] = (healingBreakdown["Divine Aegis"] || 0) + divineAegis;
             totalHealing += divineAegis;
         }
