@@ -545,6 +545,7 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
     if (setStats.amp) {
       ["spirit", "mastery", "haste"].forEach(statName => {
         setStats[statName] = setStats[statName] * (1 + setStats.amp);
+
       })
 
       setStats.critMultDPS *= (1 + setStats.amp);

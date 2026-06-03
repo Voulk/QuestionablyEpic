@@ -201,7 +201,6 @@ export const raidTrinketData: Effect[] = [
       }
 
       bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
-
       return bonus_stats;
     }
   },

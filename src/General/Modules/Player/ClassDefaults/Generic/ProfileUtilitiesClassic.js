@@ -80,7 +80,7 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
     const isDamageSpell = spell.type === "damage" || spell.buffType === "damage";
     const critSize = isDamageSpell ? statPercentages.critMultDPS : statPercentages.critMultHPS; // 3% increased crit damage / healing;
-    if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
+    if (spec.includes("Discipline Priest")) adjCritChance = 0; // We'll handle Disc crits separately since they are a nightmare.
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
 
     //const additiveScaling = (spell.additiveScaling || 0) + 1

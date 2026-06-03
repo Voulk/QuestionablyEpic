@@ -115,7 +115,6 @@ export function initializeMonkSet(userSettings, talents = monkTalents, ignoreOve
 export function scoreMonkSet(specBaseline, statProfile, userSettings, tierSets = []) {
   const castProfile = JSON.parse(JSON.stringify(specBaseline.castProfile));
   const reporting = userSettings.reporting || false;
-  console.log(JSON.stringify(userSettings));
   const spec = "Mistweaver Monk";
   const playerRace = userSettings.playerRace || "Pandaren"; // Default to Human if not set.
   let totalHealing = 0;

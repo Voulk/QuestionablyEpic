@@ -242,7 +242,7 @@ class CastModel {
       this.modelName = "Default";
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
-      this.fightInfo.hps = 200000;
+      this.fightInfo.hps = 260000;
 
     } 
     else if (spec === "Holy Priest Classic") {

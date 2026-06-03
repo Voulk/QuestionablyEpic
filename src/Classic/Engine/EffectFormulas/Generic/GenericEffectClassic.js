@@ -44,10 +44,11 @@ export const classicEffectData = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
       
-      const ppm = data[0].ppm[player.spec] || 0;
+      const ppm = data[0].ppm[player.spec] || 0.5;
       const uptime = data[0].duration * ppm / 60;
 
-      bonus_stats.hps = uptime * 0.05 * player.getHPS("Raid");
+      bonus_stats.hps = uptime * 0.15 * player.getHPS("Raid");
+
       return bonus_stats;
 
     }

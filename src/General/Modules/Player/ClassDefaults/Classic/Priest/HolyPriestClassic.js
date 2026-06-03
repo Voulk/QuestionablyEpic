@@ -26,6 +26,8 @@ export const holyPriestDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
+      critMultHPS: 1,
+      critMultDPS: 2,
     },
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
@@ -36,7 +38,9 @@ export const holyPriestDefaults = {
       haste: 0,
       spirit: 0.793,
       mp5: 1.405,
-      hps: 0.227
+      hps: 0.227,
+      critMultHPS: 655,
+      critMultDPS: 0,
     },
     specialQueries: {
       // Any special information we need to pull.

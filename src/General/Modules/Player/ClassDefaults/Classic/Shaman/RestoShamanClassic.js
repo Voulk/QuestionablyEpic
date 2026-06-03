@@ -25,6 +25,8 @@ export const restoShamanDefaults = {
       stamina: 5000,
       mp5: 0,
       critMult: 2,
+      critMultHPS: 1,
+      critMultDPS: 2,
       hps: 0,
     },
     defaultStatWeights: {
@@ -37,6 +39,8 @@ export const restoShamanDefaults = {
         spirit: 0.457,
         mp5: 0.598,
         hps: 0.164,
+        critMultHPS: 983,
+        critMultDPS: 0,
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -141,7 +145,7 @@ export function initializeShamanSet(userSettings) {
    const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
    statPercentages.spellpower += 2873;
    statPercentages.mastery = (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness;
-
+    console.log("Entry");
     getSpellEntry(castProfile, "Healing Tide Totem").hasteBonus = 0.3;
 
     if (tierSets.includes("Shaman T14-2")) {
@@ -154,13 +158,16 @@ export function initializeShamanSet(userSettings) {
       getSpellEntry(castProfile, "Healing Stream Totem").bonus = 1.25; // T15-2 - HST bonus
     }
     if (tierSets.includes("Shaman T16-2")) {
+      console.log("Loading Tier");
       getSpellEntry(castProfile, "Earth Shield").bonus = 3;
+      console.log("Tier loaded");
     }
     if (tierSets.includes("Shaman T16-4")) {
       // This is a little simplistic since the clone can die, and it doesn't have proper mastery scaling. Consider revisiting for slightly more accuracy.
       getSpellEntry(castProfile, "Chain Heal").bonus = (1 + 0.4 * 15 / 120)
-      getSpellEntry(castProfile, "Healing Surge").bonus = (1 + 0.4 * 15 / 120)
-      getSpellEntry(castProfile, "Healing Wave").bonus = (1 + 0.4 * 15 / 120)
+      //getSpellEntry(castProfile, "Healing Surge").bonus = (1 + 0.4 * 15 / 120)
+      getSpellEntry(castProfile, "Greater Healing Wave").bonus = (1 + 0.4 * 15 / 120)
+      console.log("Loaded 4pc");
     }
 
        // Calculate filler CPM
