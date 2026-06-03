@@ -146,7 +146,6 @@ const getClassicTrinketScore = (id, player, itemLevel, playerSettings) => {
   //const itemLevel = getItemProp(id, "itemLevel", "Classic");
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
   //console.log("Scoring item" + item.name + " at ilvl " + itemLevel + " with int: " + item.stats.intellect);
-  console.log(id);
   item.softScore = scoreItem(item, player, "Raid", "Classic", playerSettings);
 
   return item.softScore;

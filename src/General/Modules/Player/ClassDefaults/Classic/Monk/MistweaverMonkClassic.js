@@ -25,17 +25,19 @@ export const mistweaverMonkDefaults = {
     initializeSet: initializeMonkSet,
     defaultStatProfile: { 
       // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-      intellect: 21000,
-      spirit: 9000,
-      spellpower: 7907,
+      intellect: 33600,
+      spirit: 12000,
+      spellpower: 15000,
       averageDamage: 5585,
       weaponSwingSpeed: 3.4,
-      haste: 3145,
-      crit: 9500,
-      mastery: 2500,
+      haste: 6000,
+      crit: 16000,
+      mastery: 5000,
       stamina: 5000,
       mp5: 0,
       critMult: 2,
+      critMultDPS: 2,
+      critMultHPS: 1,
       hps: 0,
 
     },
@@ -48,11 +50,13 @@ export const mistweaverMonkDefaults = {
       haste: 0.3,
       spirit: 0.371,
       mp5: 0.657,
-      hps: 0.206
+      hps: 0.206,
+      critMultHPS: 751, // In HPS value, not normalized
+      critMultDPS: 150, // In HPS value, not normalized
     },
     specialQueries: {
         // Any special information we need to pull.
-      cleavePercentage: 0.9, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+      cleavePercentage: 0.85, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
 
     },
     autoReforgeOrder: ["crit", "mastery","spirit",  "haste", "hit"],

@@ -41,6 +41,9 @@ export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") 
         weaponSwingSpeed: statProfile.weaponSwingSpeed,
         attackpower: (statProfile.intellect + statProfile.spellpower - 10) * 2,
         armorReduction: 0.7,
+
+        critMultDPS: statProfile.critMultDPS,
+        critMultHPS: statProfile.critMultHPS + 1, // Yes it works differently to DPS crits. 
     }
 
     getClassicRaceBonuses(stats, race);
@@ -70,11 +73,13 @@ export const runClassicSpell = (spellName, spell, statPercentages, spec, setting
 
     const genericMult = 1;
     let targetCount = 1;
+    // (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond")
 
     //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
-    const critSize = (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond") ? 2.03 : 2; // 3% increased crit damage / healing;
+    const isDamageSpell = spell.type === "damage" || spell.buffType === "damage";
+    const critSize = isDamageSpell ? statPercentages.critMultDPS : statPercentages.critMultHPS; // 3% increased crit damage / healing;
     if (spec.includes("Discipline Priest")) adjCritChance = 1; // We'll handle Disc crits separately since they are a nightmare.
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
 

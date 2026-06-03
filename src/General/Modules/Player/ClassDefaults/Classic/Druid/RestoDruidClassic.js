@@ -26,7 +26,8 @@ export const restoDruidDefaults = {
       mastery: 17000, //9000,
       stamina: 5000,
       mp5: 0,
-      critMult: 2,
+      critMultDPS: 2,
+      critMultHPS: 1,
       hps: 0,
     },
     defaultStatWeights: {
@@ -38,7 +39,9 @@ export const restoDruidDefaults = {
         haste: 0.7,
         spirit: 1.022,
         mp5: 1.425,
-        hps: 0.275
+        hps: 0.275,
+        critMultHPS: 640, // In HPS value, not normalized
+        critMultDPS: 0, // In HPS value, not normalized
     },
     specialQueries: {
         // Any special information we need to pull.
@@ -139,6 +142,8 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Resto Druids mastery coefficient.
+      critMultHPS: statProfile.critMultHPS + 1,
+      critMultDPS: statProfile.critMultDPS,
     }
 
     

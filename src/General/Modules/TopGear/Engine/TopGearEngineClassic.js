@@ -254,6 +254,9 @@ function compileSetStats(itemSet) {
     mastery: 0,
     haste: 0,
     amp: 0,
+
+    critMultDPS: 2, // Multiplicative
+    critMultHPS: 1, // Additive
   }
 
     for (let i = 0; i < itemSet.itemList.length; i++) {
@@ -543,6 +546,9 @@ function evalSet(itemSet, player, contentType, baseHPS, playerSettings, castMode
       ["spirit", "mastery", "haste"].forEach(statName => {
         setStats[statName] = setStats[statName] * (1 + setStats.amp);
       })
+
+      setStats.critMultDPS *= (1 + setStats.amp);
+      setStats.critMultHPS *= (1 + setStats.amp);
     }
 
     if (castModel.scoreSet) {

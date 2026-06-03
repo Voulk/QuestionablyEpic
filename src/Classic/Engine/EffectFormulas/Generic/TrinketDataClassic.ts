@@ -195,8 +195,11 @@ export const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
 
-      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
-      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
+      let bonus_stats = {}
+      if (player.spec.includes("Holy Paladin") || player.spec.includes("Mistweaver Monk")) {
+        bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      }
+
       bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
 
       return bonus_stats;

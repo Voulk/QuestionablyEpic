@@ -30,16 +30,18 @@ export const holyPriestDefaults = {
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
       spellpower: 1,
-      intellect: 1.138,
-      crit: 0.445,
-      mastery: 0.543,
+      intellect: 1.21,
+      crit: 0.681,
+      mastery: 0.82,
       haste: 0,
-      spirit: 0.55,
-      mp5: 0.8,
-      hps: 0.334
+      spirit: 0.793,
+      mp5: 1.405,
+      hps: 0.227
     },
     specialQueries: {
-        // Any special information we need to pull.
+      // Any special information we need to pull.
+      cleavePercentage: 1, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
     autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
@@ -110,7 +112,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const chakraUptime = {'yellow': 0, 'blue': 0.9, 'red': 0.1}; // Yellow = ST, blue = AoE, red = DPS.
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.35;
-  const echoOverhealing = 0.24;
+  const echoOverhealing = 0.3;
   let fillerCPM = 0;
   const metaGem = getSetting(userSettings, "classicMetaGem");
   let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration

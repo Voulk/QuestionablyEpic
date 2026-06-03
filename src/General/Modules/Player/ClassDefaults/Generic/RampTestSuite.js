@@ -53,12 +53,12 @@ export function runStatSuites(playerData, aplList, runCastSequence) {
 
 export function runClassicStatSuite(profile, metric = "healing") {
     // Weights
-    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps'];
+    const stats = [ 'spellpower', 'intellect', 'crit', 'mastery', 'haste', 'spirit', 'mp5', 'hps', 'critMultHPS', 'critMultDPS'];
     const fightLength = 420;
 
     const activeStats = {
         intellect: 33000,
-        spirit: 8000,
+        spirit: 12000,
         spellpower: 15000,
         haste: 8000,
         crit: 8000,
@@ -68,7 +68,8 @@ export function runClassicStatSuite(profile, metric = "healing") {
         weaponSwingSpeed: 2.6,
         isTwohanded: false,
         mp5: 0,
-        critMult: 2,
+        critMultDPS: 2,
+        critMultHPS: 1,
         hps: 0,
     }
 
@@ -76,7 +77,7 @@ export function runClassicStatSuite(profile, metric = "healing") {
 
     let playerStats = JSON.parse(JSON.stringify(activeStats));
     applyRaidBuffs({}, playerStats);
-    const testSettings = {reporting: true, hasteBuff: {value: "Haste Aura"}, druidLevelSixtyTalent: {value: "Soul of the Forest" }};
+    const testSettings = {reporting: true, hasteBuff: {value: "Haste Aura"}, classicMetaGem: {value: "Courageous Primal Diamond"}, druidLevelSixtyTalent: {value: "Soul of the Forest" }};
 
     const baseline = profile.initializeSet(testSettings);
     const baselineHPS = scoreFunction(baseline, playerStats, testSettings, ["Monk T16-2", "Monk T16-4"])[metric];
@@ -88,7 +89,8 @@ export function runClassicStatSuite(profile, metric = "healing") {
 
         // Change result to be casts agnostic.
         let playerStats = JSON.parse(JSON.stringify(activeStats));
-        playerStats[stat] = playerStats[stat] + 50;
+        if (stat.includes("critMult")) playerStats[stat] = playerStats[stat] + 0.01;
+        else playerStats[stat] = playerStats[stat] + 1;
         applyRaidBuffs({}, playerStats);
 
         //const newPlayerData = {...playerData, stats: playerStats};
@@ -97,9 +99,11 @@ export function runClassicStatSuite(profile, metric = "healing") {
     });
     const weights = {}
 
-    stats.forEach(stat => {
 
-        weights[stat] = Math.round(1000*(results[stat] - baselineHPS)/(results['spellpower'] - baselineHPS))/1000;
+
+    stats.forEach(stat => {
+        if (stat.includes("critMult")) weights[stat] = Math.round((results[stat] - baselineHPS) / 60);
+        else weights[stat] = Math.round(1000*(results[stat] - baselineHPS)/(results['spellpower'] - baselineHPS))/1000;
     });
 
     /*

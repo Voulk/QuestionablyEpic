@@ -26,6 +26,9 @@ export const discPriestDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
+      critMultHPS: 1,
+      critMultDPS: 2,
+
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear. TODO
@@ -36,7 +39,9 @@ export const discPriestDefaults = {
         haste: 0,
         spirit: 0.43,
         mp5: 0.763,
-        hps: 0.124
+        hps: 0.124,
+        critMultHPS: 1266,
+        critMultDPS: 705
     },
     specialQueries: {
         // Any special information we need to pull.
