@@ -451,7 +451,7 @@ export default function TrinketAnalysis(props) {
   };
 
   const trinketText = gameType === "Retail" ? "Hero / Myth trinkets can be upgraded 9 item levels via the new Ascended upgrade system. Hover over ? next to trinkets for more information on them."  :
-                                              "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
+                                              "Siege of Orgrimmar trinkets are very difficult to chart well since value depends heavily on your set. Use Top Gear for the most accurate evaluations.";
 
   return (
     <div className={classes.root}>
