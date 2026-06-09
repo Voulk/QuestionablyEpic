@@ -271,6 +271,26 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+        {
+    name: "Yu'lon's Bite",
+    effects: [
+      { 
+        value: {0: 0}, 
+        coefficient: 2.97300004959,
+        ppm: getEffectPPM(0.2, 115, 1.25),
+        stat: "crit",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.crit! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
+      
+      return bonus_stats;
+    }
+  },
       {
     name: "Cha-Ye's Essence of Brilliance", 
     effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
@@ -417,6 +437,24 @@ export const raidTrinketData: Effect[] = [
         stat: "spirit",
         duration: 20,
         cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {name: "Contemplation of Chi-Ji", 
+    effects: [
+      { 
+        value: {0: 0},
+        coefficient: 2.48000001907,
+        stat: "spirit",
+        duration: 15,
+        cooldown: 90,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
