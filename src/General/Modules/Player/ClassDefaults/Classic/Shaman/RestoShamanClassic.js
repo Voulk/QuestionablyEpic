@@ -2,7 +2,7 @@ import { CLASSICSHAMANSPELLDB as shamanSpells, shamanTalents  } from "General/Mo
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
 import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects, getMastery } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
 import { printHealingBreakdownWithCPM, getSpellEntry, getSpellAttribute, getTimeUsed, buildCPM  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
-import { runClassicSpell, getHasteClassic,  } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
+import { runClassicSpell, getHasteClassic,  convertStatPercentages} from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
 
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT";
@@ -25,21 +25,27 @@ export const restoShamanDefaults = {
       stamina: 5000,
       mp5: 0,
       critMult: 2,
+      critMultHPS: 1,
+      critMultDPS: 2,
       hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 1.11,
-        crit: 0.55,
-        mastery: 0.4,
-        haste: 0.541,
-        spirit: 0.4,
-        mp5: 0.473,
-        hps: 0.3, // 
+        intellect: 1.269,
+        crit: 0.874,
+        mastery: 0.718,
+        haste: 0.687,
+        spirit: 0.457,
+        mp5: 0.598,
+        hps: 0.164,
+        critMultHPS: 983,
+        critMultDPS: 0,
     },
     specialQueries: {
         // Any special information we need to pull.
+        cleavePercentage: 0.8, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
     autoReforgeOrder: ["crit", "haste", "spirit", "mastery", "hit"],
     reforgeDefault: "",
@@ -68,6 +74,7 @@ export function initializeShamanSet(userSettings) {
       {spell: "Riptide", efficiency: 0.7 },
       {spell: "Healing Stream Totem", efficiency: 0.90 },
       {spell: "Unleash Life", efficiency: 0.90 },
+      {spell: "Earth Shield", efficiency: 0.9},
 
 
       // Dynamic filler spells. We'll write these for each individual set.
@@ -107,6 +114,7 @@ export function initializeShamanSet(userSettings) {
     const talents = baseline.talents || shamanTalents;
     const castProfile = JSON.parse(JSON.stringify(baseline.castProfile));
     const reportingData = {}
+    const spec = "Restoration Shaman";
     const spellDB = baseline.spellDB;
     let tidalWavesPercentage = 0.3;
     const resurgenceReturn = {
@@ -118,7 +126,7 @@ export function initializeShamanSet(userSettings) {
       "Riptide": 5309,
     }
     const metaGem = getSetting(userSettings, "classicMetaGem");
-    let freeCastsUptime = (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
+    let freeCastsUptime =  (metaGem === "Courageous Primal Diamond") ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
 
     // Conductivity Extensions. Advantages and disadvantages to doing this dynamically. Ultimately the fight is more likely to dictate
@@ -128,13 +136,16 @@ export function initializeShamanSet(userSettings) {
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
 
-    const statPercentages = {
-      spellpower: statProfile.intellect + statProfile.spellpower + 2873 * 1.1, // 
+    /*const statPercentages = {
+      spellpower: statProfile.intellect + statProfile.spellpower - 10 + 2873, // 
       crit: 1 + getCritPercentage(statProfile, "Restoration Shaman"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness, // We'll +1 this when calculating spells.
-    }
-
+    }*/
+   const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
+   statPercentages.spellpower += 2873;
+   statPercentages.mastery = (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 3 * masteryEffectiveness;
+    console.log("Entry");
     getSpellEntry(castProfile, "Healing Tide Totem").hasteBonus = 0.3;
 
     if (tierSets.includes("Shaman T14-2")) {
@@ -145,6 +156,18 @@ export function initializeShamanSet(userSettings) {
     }
     if (tierSets.includes("Shaman T15-2")) {
       getSpellEntry(castProfile, "Healing Stream Totem").bonus = 1.25; // T15-2 - HST bonus
+    }
+    if (tierSets.includes("Shaman T16-2")) {
+      console.log("Loading Tier");
+      getSpellEntry(castProfile, "Earth Shield").bonus = 3;
+      console.log("Tier loaded");
+    }
+    if (tierSets.includes("Shaman T16-4")) {
+      // This is a little simplistic since the clone can die, and it doesn't have proper mastery scaling. Consider revisiting for slightly more accuracy.
+      getSpellEntry(castProfile, "Chain Heal").bonus = (1 + 0.4 * 15 / 120)
+      //getSpellEntry(castProfile, "Healing Surge").bonus = (1 + 0.4 * 15 / 120)
+      getSpellEntry(castProfile, "Greater Healing Wave").bonus = (1 + 0.4 * 15 / 120)
+      console.log("Loaded 4pc");
     }
 
        // Calculate filler CPM
@@ -167,6 +190,7 @@ export function initializeShamanSet(userSettings) {
         let reduction = (statPercentages.crit - 1) * resurgenceReturn[spellName];
         if (spellName === "Chain Heal") reduction *= 3; 
         spell.cost -= reduction;
+        reportingData["AdjCost_" + spellName] = spell.cost;
       }
     })
 
@@ -188,7 +212,7 @@ export function initializeShamanSet(userSettings) {
     const lbManaRegen = 6000 - getSpellEntry(castProfile, "Lightning Bolt").cost
     reportingData.lbManaRegen = lbManaRegen;
 
-    const costPerMinute = (castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0) * (1 - freeCastsUptime));
+    const costPerMinute = castProfile.reduce((acc, spell) => acc + spell.cost * spell.cpm, 0) * (1 - freeCastsUptime);
     let manaRemaining = (totalManaPool - (costPerMinute * fightLength)) / fightLength; // How much mana we have left after our casts to spend per minute.
 
     // First, spend any excess mana.
@@ -196,14 +220,16 @@ export function initializeShamanSet(userSettings) {
       "Chain Heal": 0.75,
       "Greater Healing Wave": 0.25
     }
+    const fillerWaste = 0.6;
     const packageCost = ((getSpellEntry(castProfile, "Chain Heal").cost * fillerRatio["Chain Heal"] + getSpellEntry(castProfile, "Greater Healing Wave").cost * fillerRatio["Greater Healing Wave"])) * (1 - freeCastsUptime);
-    const pureHealingPackages = manaRemaining / packageCost;
+    const pureHealingPackages = manaRemaining / packageCost * fillerWaste;;
+    reportingData.pureHealingPackages = pureHealingPackages * fillerWaste;
     // Next, spend the rest of the fights time available on a net 0 package that combines lightning bolt with Chain Heal / GHW.
 
     // Resurgence
 
     getSpellEntry(castProfile, "Chain Heal").cpm += pureHealingPackages * fillerRatio["Chain Heal"];
-    getSpellEntry(castProfile, "Greater Healing Wave").cpm = pureHealingPackages * fillerRatio["Greater Healing Wave"];
+    getSpellEntry(castProfile, "Greater Healing Wave").cpm += pureHealingPackages * fillerRatio["Greater Healing Wave"];
     const timeRemaining = 60 - getTimeUsed(castProfile, spellDB, statPercentages.haste);
     reportingData.timeRemaining = timeRemaining;
 
@@ -249,7 +275,7 @@ export function initializeShamanSet(userSettings) {
         if (unleashBreakdown[spellName]) bonusMult *= 1+ (0.3 * unleashBreakdown[spellName]); // Unleash Life bonus
         if (spellProfile.bonus) bonusMult *= spellProfile.bonus;
         spellOutput *= bonusMult; // Any bonuses we've ascribed in our profile.
-        if (bonusMult > 1) reportingData[spellName + " Bonus Mult"] = bonusMult;
+        if (bonusMult > 1) reportingData["BonusMult_" + spellName] = bonusMult;
 
         const effectiveCPM = spellProfile.cpm// spellProfile.fillerSpell ? fillerCPM : spellProfile.cpm;
 

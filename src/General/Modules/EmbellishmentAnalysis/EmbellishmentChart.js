@@ -149,9 +149,13 @@ export default class EmbelChart extends PureComponent {
             </WowheadTooltip>
             <StyledTooltip title={
               <div>
-                {getTooltip(data, payload.value).map((key) => {
+                {getTooltip(data, payload.value).map((key, index) => {
                   return (
-                    <span key={key}/* style={{ fontWeight: "bold" }}*/>
+                    <span key={key} 
+                      style={{ 
+                      fontWeight: (index === 0 || key == "Passive Stats" || key === "Effect Breakdown" || key === "Setting Available" || key.includes("Drops from")) ? "bold" : "normal", // Make the first entry bold
+                      color: index === 0 ? "yellow" : key.includes("Drops from") ? "#00D1D1" : "inherit" // Change color of the first entry (red as an example)
+                    }}>
                       {key}
                       <br />
                     </span>

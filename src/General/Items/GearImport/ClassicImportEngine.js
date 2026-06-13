@@ -217,7 +217,7 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     
     item.suffix = suffix;
     //item.effect = Object.keys(itemEffect).length !== 0 ? itemEffect : getItemProp(itemID, "effect");
-    item.softScore = scoreItem(item, player, contentType, "Classic");
+    item.softScore = 0 // scoreItem(item, player, contentType, "Classic");
 
     player.addActiveItem(item);
   } else {

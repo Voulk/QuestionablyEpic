@@ -18,7 +18,7 @@ export const CLASSICDRUIDSPELLDB = {
         cost: 14.5,
         type: "classic periodic",
         buffType: "heal",
-        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: false}, 
+        tickData: {tickRate: 3, canPartialTick: false, tickOnCast: true}, 
         buffDuration: 12,
         coeff: 0.392,
         flat: 4234, 
@@ -358,6 +358,19 @@ export const CLASSICDRUIDSPELLDB = {
         targets: 7, // Note that only bonus healing is split among targets.
         secondaries: [],
         statMods: {crit: 0, critEffect: 0},
+    }],
+    "T16-4 Bonus": [{
+        // Doesn't appear to scale with Mastery, *can* crit. 
+        spellData: {id: 144876, icon: "talentspec_druid_restoration", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.3, // Not 0.25
+        flat: 0,
+        targets: 6,
+        expectedOverheal: 0.2,
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0}
     }],
 
 

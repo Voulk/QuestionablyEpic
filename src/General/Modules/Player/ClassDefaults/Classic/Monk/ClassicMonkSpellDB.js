@@ -405,6 +405,19 @@ export const CLASSICMONKSPELLDB = {
         targets: 1, // 
         secondaries: ['crit'],
     }],
+    "Mist Wave": [{ // T16-4
+        // This is actually just a single target Chi Wave. Assume it does not proc mastery. Confirmed to crit.
+        spellData: {id: 145449, icon: "ability_rogue_feigndeath", cat: "heal"},
+        type: "heal",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.45 * 2, // 0.806, 
+        flat: 493,
+        expectedOverheal: 0.15,
+        masteryScalar: 0,
+        secondaries: ['crit'],
+        statMods: {crit: 0, critEffect: 0},
+    }],
 
 }
 

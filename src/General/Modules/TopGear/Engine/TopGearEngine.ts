@@ -565,7 +565,14 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   let highestWeight = getHighestWeight(castModel);
 
   bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
-  enchants["Finger"] = "+29 " + highestWeight;
+  let ringEnchantName = "";
+
+  if (spec === "Holy Priest" || spec === "Restoration Shaman") ringEnchantName = "Eyes of the Eagle";
+  else if (highestWeight === "haste") ringEnchantName = "Silvermoon's Alacrity";
+  else if (highestWeight === "crit") ringEnchantName = "Nature's Fury";
+  else if (highestWeight === "mastery") ringEnchantName = "Zul'jin's Mastery";
+  else if (highestWeight === "versatility") ringEnchantName = "Silvermoon's Tenacity";
+  enchants["Finger"] = ringEnchantName;
 
 
   // Helm

@@ -4,10 +4,10 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Many trinkets have been nerfed or bug-fixed in-game."
+    "Have a great day!"
   ] : 
   [
-    "Please report any bugs you find to the QE Live Discord.",
+    "The Siege of Orgrimmar update is now live. Please report any bugs you find to the QE Live Discord.",
   ]
 ;
   if (messageOfTheDay.length === 0) return;

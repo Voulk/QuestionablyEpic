@@ -13579,22 +13579,38 @@ export const bonus_IDs: {[key: string]: any} = {
   "3336": {
     "id": 3336,
     "quality": 4,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3337": {
     "id": 3337,
     "quality": 4,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3338": {
     "id": 3338,
     "quality": 3,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3339": {
     "id": 3339,
     "quality": 3,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3340": {
     "id": 3340,
@@ -14489,6 +14505,13 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 3429,
     "serverside": true
   },
+  "3431": {
+    "id": 3431,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
+  },
   "3432": {
     "id": 3432,
     "quality": 4,
@@ -14588,7 +14611,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3455": {
     "id": 3455,
-    "serverside": true
+    "applyBonusId": 3530
   },
   "3457": {
     "id": 3457,
@@ -14962,11 +14985,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "3527": {
     "id": 3527,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3528": {
     "id": 3528,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "3530": {
     "id": 3530,
@@ -16278,67 +16309,119 @@ export const bonus_IDs: {[key: string]: any} = {
   "3807": {
     "id": 3807,
     "ilevel": "1 @plvl 1 - 1 @plvl 1",
-    "curveId": 5091
+    "curveId": 5091,
+    "requiredLevelCurve": {
+      "curve": 17791,
+      "val": 0
+    }
   },
   "3808": {
     "id": 3808,
     "ilevel": "3 @plvl 1 - 3 @plvl 3",
-    "curveId": 5100
+    "curveId": 5100,
+    "requiredLevelCurve": {
+      "curve": 17792,
+      "val": 0
+    }
   },
   "3809": {
     "id": 3809,
     "ilevel": "5 @plvl 1 - 5 @plvl 5",
-    "curveId": 5099
+    "curveId": 5099,
+    "requiredLevelCurve": {
+      "curve": 17794,
+      "val": 0
+    }
   },
   "3810": {
     "id": 3810,
     "ilevel": "9 @plvl 1 - 9 @plvl 9",
-    "curveId": 5098
+    "curveId": 5098,
+    "requiredLevelCurve": {
+      "curve": 17797,
+      "val": 0
+    }
   },
   "3811": {
     "id": 3811,
     "ilevel": "13 @plvl 1 - 13 @plvl 13",
-    "curveId": 5097
+    "curveId": 5097,
+    "requiredLevelCurve": {
+      "curve": 17799,
+      "val": 0
+    }
   },
   "3812": {
     "id": 3812,
     "ilevel": "16 @plvl 1 - 16 @plvl 16",
-    "curveId": 5096
+    "curveId": 5096,
+    "requiredLevelCurve": {
+      "curve": 17801,
+      "val": 0
+    }
   },
   "3813": {
     "id": 3813,
     "ilevel": "19 @plvl 1 - 19 @plvl 19",
-    "curveId": 5095
+    "curveId": 5095,
+    "requiredLevelCurve": {
+      "curve": 17802,
+      "val": 0
+    }
   },
   "3814": {
     "id": 3814,
     "ilevel": "21 @plvl 1 - 21 @plvl 21",
-    "curveId": 5094
+    "curveId": 5094,
+    "requiredLevelCurve": {
+      "curve": 17804,
+      "val": 0
+    }
   },
   "3815": {
     "id": 3815,
     "ilevel": "22 @plvl 1 - 22 @plvl 22",
-    "curveId": 5093
+    "curveId": 5093,
+    "requiredLevelCurve": {
+      "curve": 17806,
+      "val": 0
+    }
   },
   "3816": {
     "id": 3816,
     "ilevel": "24 @plvl 1 - 24 @plvl 24",
-    "curveId": 5092
+    "curveId": 5092,
+    "requiredLevelCurve": {
+      "curve": 17809,
+      "val": 0
+    }
   },
   "3817": {
     "id": 3817,
     "ilevel": "26 @plvl 1 - 26 @plvl 26",
-    "curveId": 5101
+    "curveId": 5101,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "3818": {
     "id": 3818,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5102
+    "curveId": 5102,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3819": {
     "id": 3819,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5103
+    "curveId": 5103,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3820": {
     "id": 3820,
@@ -16374,777 +16457,1397 @@ export const bonus_IDs: {[key: string]: any} = {
   "3828": {
     "id": 3828,
     "ilevel": "5 @plvl 1 - 5 @plvl 5",
-    "curveId": 5234
+    "curveId": 5234,
+    "requiredLevelCurve": {
+      "curve": 17793,
+      "val": 0
+    }
   },
   "3829": {
     "id": 3829,
     "ilevel": "6 @plvl 1 - 6 @plvl 6",
-    "curveId": 5235
+    "curveId": 5235,
+    "requiredLevelCurve": {
+      "curve": 17795,
+      "val": 0
+    }
   },
   "3830": {
     "id": 3830,
     "ilevel": "9 @plvl 1 - 9 @plvl 9",
-    "curveId": 5236
+    "curveId": 5236,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "3831": {
     "id": 3831,
     "ilevel": "11 @plvl 1 - 11 @plvl 11",
-    "curveId": 5237
+    "curveId": 5237,
+    "requiredLevelCurve": {
+      "curve": 17798,
+      "val": 0
+    }
   },
   "3832": {
     "id": 3832,
     "ilevel": "15 @plvl 1 - 15 @plvl 15",
-    "curveId": 5238
+    "curveId": 5238,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3833": {
     "id": 3833,
     "ilevel": "18 @plvl 1 - 18 @plvl 18",
-    "curveId": 5239
+    "curveId": 5239,
+    "requiredLevelCurve": {
+      "curve": 17802,
+      "val": 0
+    }
   },
   "3834": {
     "id": 3834,
     "ilevel": "20 @plvl 1 - 20 @plvl 20",
-    "curveId": 5240
+    "curveId": 5240,
+    "requiredLevelCurve": {
+      "curve": 17803,
+      "val": 0
+    }
   },
   "3835": {
     "id": 3835,
     "ilevel": "22 @plvl 1 - 22 @plvl 22",
-    "curveId": 5241
+    "curveId": 5241,
+    "requiredLevelCurve": {
+      "curve": 17805,
+      "val": 0
+    }
   },
   "3836": {
     "id": 3836,
     "ilevel": "24 @plvl 1 - 24 @plvl 24",
-    "curveId": 5242
+    "curveId": 5242,
+    "requiredLevelCurve": {
+      "curve": 17808,
+      "val": 0
+    }
   },
   "3837": {
     "id": 3837,
     "ilevel": "25 @plvl 1 - 25 @plvl 25",
-    "curveId": 5243
+    "curveId": 5243,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "3838": {
     "id": 3838,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5244
+    "curveId": 5244,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "3839": {
     "id": 3839,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5245
+    "curveId": 5245,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "3840": {
     "id": 3840,
     "ilevel": "30 @plvl 1 - 30 @plvl 30",
-    "curveId": 5273
+    "curveId": 5273,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3841": {
     "id": 3841,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5274
+    "curveId": 5274,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3842": {
     "id": 3842,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5278
+    "curveId": 5278,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3843": {
     "id": 3843,
     "ilevel": "33 @plvl 1 - 35 @plvl 35",
-    "curveId": 5282
+    "curveId": 5282,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3844": {
     "id": 3844,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5286
+    "curveId": 5286,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "3845": {
     "id": 3845,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5292
+    "curveId": 5292,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3846": {
     "id": 3846,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 5296
+    "curveId": 5296,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "3847": {
     "id": 3847,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5300
+    "curveId": 5300,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3848": {
     "id": 3848,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5304
+    "curveId": 5304,
+    "requiredLevelCurve": {
+      "curve": 17830,
+      "val": 0
+    }
   },
   "3849": {
     "id": 3849,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5277
+    "curveId": 5277,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3850": {
     "id": 3850,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5281
+    "curveId": 5281,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "3851": {
     "id": 3851,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
-    "curveId": 6033
+    "curveId": 6033,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3852": {
     "id": 3852,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5291
+    "curveId": 5291,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "3853": {
     "id": 3853,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5295
+    "curveId": 5295,
+    "requiredLevelCurve": {
+      "curve": 17821,
+      "val": 0
+    }
   },
   "3854": {
     "id": 3854,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5299
+    "curveId": 5299,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "3855": {
     "id": 3855,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6093
+    "curveId": 6093,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3856": {
     "id": 3856,
     "ilevel": "49 @plvl 1 - 49 @plvl 49",
-    "curveId": 5307
+    "curveId": 5307,
+    "requiredLevelCurve": {
+      "curve": 17829,
+      "val": 0
+    }
   },
   "3857": {
     "id": 3857,
     "ilevel": "5 @plvl 1 - 5 @plvl 5",
-    "curveId": 5246
+    "curveId": 5246,
+    "requiredLevelCurve": {
+      "curve": 17793,
+      "val": 0
+    }
   },
   "3858": {
     "id": 3858,
     "ilevel": "7 @plvl 1 - 7 @plvl 7",
-    "curveId": 5247
+    "curveId": 5247,
+    "requiredLevelCurve": {
+      "curve": 17795,
+      "val": 0
+    }
   },
   "3859": {
     "id": 3859,
     "ilevel": "11 @plvl 1 - 11 @plvl 11",
-    "curveId": 5248
+    "curveId": 5248,
+    "requiredLevelCurve": {
+      "curve": 17797,
+      "val": 0
+    }
   },
   "3860": {
     "id": 3860,
     "ilevel": "14 @plvl 1 - 14 @plvl 14",
-    "curveId": 5249
+    "curveId": 5249,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3861": {
     "id": 3861,
     "ilevel": "17 @plvl 1 - 17 @plvl 17",
-    "curveId": 5250
+    "curveId": 5250,
+    "requiredLevelCurve": {
+      "curve": 17801,
+      "val": 0
+    }
   },
   "3862": {
     "id": 3862,
     "ilevel": "19 @plvl 1 - 19 @plvl 19",
-    "curveId": 5251
+    "curveId": 5251,
+    "requiredLevelCurve": {
+      "curve": 17803,
+      "val": 0
+    }
   },
   "3863": {
     "id": 3863,
     "ilevel": "21 @plvl 1 - 21 @plvl 21",
-    "curveId": 5252
+    "curveId": 5252,
+    "requiredLevelCurve": {
+      "curve": 17804,
+      "val": 0
+    }
   },
   "3864": {
     "id": 3864,
     "ilevel": "23 @plvl 1 - 23 @plvl 23",
-    "curveId": 5253
+    "curveId": 5253,
+    "requiredLevelCurve": {
+      "curve": 17807,
+      "val": 0
+    }
   },
   "3865": {
     "id": 3865,
     "ilevel": "25 @plvl 1 - 25 @plvl 25",
-    "curveId": 5254
+    "curveId": 5254,
+    "requiredLevelCurve": {
+      "curve": 17809,
+      "val": 0
+    }
   },
   "3866": {
     "id": 3866,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5255
+    "curveId": 5255,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "3867": {
     "id": 3867,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5256
+    "curveId": 5256,
+    "requiredLevelCurve": {
+      "curve": 17812,
+      "val": 0
+    }
   },
   "3868": {
     "id": 3868,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5257
+    "curveId": 5257,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "3869": {
     "id": 3869,
     "ilevel": "31 @plvl 1 - 31 @plvl 31",
-    "curveId": 5258
+    "curveId": 5258,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3870": {
     "id": 3870,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5276
+    "curveId": 5276,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3871": {
     "id": 3871,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5280
+    "curveId": 5280,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "3872": {
     "id": 3872,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6035
+    "curveId": 6035,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3873": {
     "id": 3873,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6036
+    "curveId": 6036,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3874": {
     "id": 3874,
     "ilevel": "40 @plvl 1 - 40 @plvl 40",
-    "curveId": 5294
+    "curveId": 5294,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3875": {
     "id": 3875,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5298
+    "curveId": 5298,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "3876": {
     "id": 3876,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6091
+    "curveId": 6091,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3877": {
     "id": 3877,
     "ilevel": "49 @plvl 1 - 49 @plvl 49",
-    "curveId": 5306
+    "curveId": 5306,
+    "requiredLevelCurve": {
+      "curve": 17830,
+      "val": 0
+    }
   },
   "3878": {
     "id": 3878,
     "ilevel": "2 @plvl 1 - 2 @plvl 2",
-    "curveId": 5259
+    "curveId": 5259,
+    "requiredLevelCurve": {
+      "curve": 17791,
+      "val": 0
+    }
   },
   "3879": {
     "id": 3879,
     "ilevel": "4 @plvl 1 - 4 @plvl 4",
-    "curveId": 5260
+    "curveId": 5260,
+    "requiredLevelCurve": {
+      "curve": 17792,
+      "val": 0
+    }
   },
   "3880": {
     "id": 3880,
     "ilevel": "6 @plvl 1 - 6 @plvl 6",
-    "curveId": 5261
+    "curveId": 5261,
+    "requiredLevelCurve": {
+      "curve": 17795,
+      "val": 0
+    }
   },
   "3881": {
     "id": 3881,
     "ilevel": "11 @plvl 1 - 11 @plvl 11",
-    "curveId": 5262
+    "curveId": 5262,
+    "requiredLevelCurve": {
+      "curve": 17797,
+      "val": 0
+    }
   },
   "3882": {
     "id": 3882,
     "ilevel": "14 @plvl 1 - 14 @plvl 14",
-    "curveId": 5263
+    "curveId": 5263,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3883": {
     "id": 3883,
     "ilevel": "18 @plvl 1 - 18 @plvl 18",
-    "curveId": 5264
+    "curveId": 5264,
+    "requiredLevelCurve": {
+      "curve": 17801,
+      "val": 0
+    }
   },
   "3884": {
     "id": 3884,
     "ilevel": "19 @plvl 1 - 19 @plvl 19",
-    "curveId": 5265
+    "curveId": 5265,
+    "requiredLevelCurve": {
+      "curve": 17803,
+      "val": 0
+    }
   },
   "3885": {
     "id": 3885,
     "ilevel": "21 @plvl 1 - 21 @plvl 21",
-    "curveId": 5266
+    "curveId": 5266,
+    "requiredLevelCurve": {
+      "curve": 17805,
+      "val": 0
+    }
   },
   "3886": {
     "id": 3886,
     "ilevel": "23 @plvl 1 - 23 @plvl 23",
-    "curveId": 5267
+    "curveId": 5267,
+    "requiredLevelCurve": {
+      "curve": 17807,
+      "val": 0
+    }
   },
   "3887": {
     "id": 3887,
     "ilevel": "25 @plvl 1 - 25 @plvl 25",
-    "curveId": 5268
+    "curveId": 5268,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "3888": {
     "id": 3888,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5270
+    "curveId": 5270,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "3889": {
     "id": 3889,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5271
+    "curveId": 5271,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3890": {
     "id": 3890,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5272
+    "curveId": 5272,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3891": {
     "id": 3891,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5275
+    "curveId": 5275,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3892": {
     "id": 3892,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5279
+    "curveId": 5279,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3893": {
     "id": 3893,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5283
+    "curveId": 5283,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3894": {
     "id": 3894,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5289
+    "curveId": 5289,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "3895": {
     "id": 3895,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5293
+    "curveId": 5293,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3896": {
     "id": 3896,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5297
+    "curveId": 5297,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "3897": {
     "id": 3897,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5301
+    "curveId": 5301,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3898": {
     "id": 3898,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5305
+    "curveId": 5305,
+    "requiredLevelCurve": {
+      "curve": 17830,
+      "val": 0
+    }
   },
   "3899": {
     "id": 3899,
     "ilevel": "6 @plvl 1 - 6 @plvl 6",
-    "curveId": 5309
+    "curveId": 5309,
+    "requiredLevelCurve": {
+      "curve": 17792,
+      "val": 0
+    }
   },
   "3900": {
     "id": 3900,
     "ilevel": "11 @plvl 1 - 11 @plvl 11",
-    "curveId": 5310
+    "curveId": 5310,
+    "requiredLevelCurve": {
+      "curve": 17795,
+      "val": 0
+    }
   },
   "3901": {
     "id": 3901,
     "ilevel": "18 @plvl 1 - 18 @plvl 18",
-    "curveId": 5312
+    "curveId": 5312,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3902": {
     "id": 3902,
     "ilevel": "19 @plvl 1 - 19 @plvl 19",
-    "curveId": 5313
+    "curveId": 5313,
+    "requiredLevelCurve": {
+      "curve": 17801,
+      "val": 0
+    }
   },
   "3903": {
     "id": 3903,
     "ilevel": "21 @plvl 1 - 21 @plvl 21",
-    "curveId": 5314
+    "curveId": 5314,
+    "requiredLevelCurve": {
+      "curve": 17803,
+      "val": 0
+    }
   },
   "3904": {
     "id": 3904,
     "ilevel": "23 @plvl 1 - 23 @plvl 23",
-    "curveId": 5315
+    "curveId": 5315,
+    "requiredLevelCurve": {
+      "curve": 17805,
+      "val": 0
+    }
   },
   "3905": {
     "id": 3905,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5318
+    "curveId": 5318,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "3906": {
     "id": 3906,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5319
+    "curveId": 5319,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "3907": {
     "id": 3907,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5320
+    "curveId": 5320,
+    "requiredLevelCurve": {
+      "curve": 17812,
+      "val": 0
+    }
   },
   "3908": {
     "id": 3908,
     "ilevel": "31 @plvl 1 - 31 @plvl 31",
-    "curveId": 5321
+    "curveId": 5321,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3909": {
     "id": 3909,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5322
+    "curveId": 5322,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3910": {
     "id": 3910,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
-    "curveId": 5323
+    "curveId": 5323,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3911": {
     "id": 3911,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5324
+    "curveId": 5324,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3912": {
     "id": 3912,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6029
+    "curveId": 6029,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3913": {
     "id": 3913,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5326
+    "curveId": 5326,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "3914": {
     "id": 3914,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5327
+    "curveId": 5327,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3915": {
     "id": 3915,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5328
+    "curveId": 5328,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "3916": {
     "id": 3916,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6153
+    "curveId": 6153,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3917": {
     "id": 3917,
     "ilevel": "50 @plvl 1 - 50 @plvl 50",
-    "curveId": 5330
+    "curveId": 5330,
+    "requiredLevelCurve": {
+      "curve": 17829,
+      "val": 0
+    }
   },
   "3918": {
     "id": 3918,
     "ilevel": "8 @plvl 1 - 8 @plvl 8",
-    "curveId": 5331
+    "curveId": 5331,
+    "requiredLevelCurve": {
+      "curve": 17793,
+      "val": 0
+    }
   },
   "3919": {
     "id": 3919,
     "ilevel": "12 @plvl 1 - 12 @plvl 12",
-    "curveId": 5332
+    "curveId": 5332,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "3920": {
     "id": 3920,
     "ilevel": "16 @plvl 1 - 16 @plvl 16",
-    "curveId": 5333
+    "curveId": 5333,
+    "requiredLevelCurve": {
+      "curve": 17798,
+      "val": 0
+    }
   },
   "3921": {
     "id": 3921,
     "ilevel": "18 @plvl 1 - 18 @plvl 18",
-    "curveId": 5334
+    "curveId": 5334,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3922": {
     "id": 3922,
     "ilevel": "20 @plvl 1 - 20 @plvl 20",
-    "curveId": 5335
+    "curveId": 5335,
+    "requiredLevelCurve": {
+      "curve": 17802,
+      "val": 0
+    }
   },
   "3923": {
     "id": 3923,
     "ilevel": "22 @plvl 1 - 22 @plvl 22",
-    "curveId": 5336
+    "curveId": 5336,
+    "requiredLevelCurve": {
+      "curve": 17804,
+      "val": 0
+    }
   },
   "3924": {
     "id": 3924,
     "ilevel": "24 @plvl 1 - 24 @plvl 24",
-    "curveId": 5337
+    "curveId": 5337,
+    "requiredLevelCurve": {
+      "curve": 17806,
+      "val": 0
+    }
   },
   "3925": {
     "id": 3925,
     "ilevel": "26 @plvl 1 - 26 @plvl 26",
-    "curveId": 5338
+    "curveId": 5338,
+    "requiredLevelCurve": {
+      "curve": 17808,
+      "val": 0
+    }
   },
   "3926": {
     "id": 3926,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5339
+    "curveId": 5339,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "3927": {
     "id": 3927,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5340
+    "curveId": 5340,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "3928": {
     "id": 3928,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5341
+    "curveId": 5341,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "3929": {
     "id": 3929,
     "ilevel": "31 @plvl 1 - 31 @plvl 31",
-    "curveId": 5342
+    "curveId": 5342,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3930": {
     "id": 3930,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5343
+    "curveId": 5343,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3931": {
     "id": 3931,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
-    "curveId": 5344
+    "curveId": 5344,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "3932": {
     "id": 3932,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5345
+    "curveId": 5345,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3933": {
     "id": 3933,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6031
+    "curveId": 6031,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3934": {
     "id": 3934,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5347
+    "curveId": 5347,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "3935": {
     "id": 3935,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5348
+    "curveId": 5348,
+    "requiredLevelCurve": {
+      "curve": 17823,
+      "val": 0
+    }
   },
   "3936": {
     "id": 3936,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5349
+    "curveId": 5349,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "3937": {
     "id": 3937,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6083
+    "curveId": 6083,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3938": {
     "id": 3938,
     "ilevel": "50 @plvl 1 - 50 @plvl 50",
-    "curveId": 5351
+    "curveId": 5351,
+    "requiredLevelCurve": {
+      "curve": 17830,
+      "val": 0
+    }
   },
   "3939": {
     "id": 3939,
     "ilevel": "12 @plvl 1 - 12 @plvl 12",
-    "curveId": 5352
+    "curveId": 5352,
+    "requiredLevelCurve": {
+      "curve": 17793,
+      "val": 0
+    }
   },
   "3940": {
     "id": 3940,
     "ilevel": "16 @plvl 1 - 16 @plvl 16",
-    "curveId": 5353
+    "curveId": 5353,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "3941": {
     "id": 3941,
     "ilevel": "14 @plvl 1 - 14 @plvl 14",
-    "curveId": 5311
+    "curveId": 5311,
+    "requiredLevelCurve": {
+      "curve": 17797,
+      "val": 0
+    }
   },
   "3942": {
     "id": 3942,
     "ilevel": "25 @plvl 1 - 25 @plvl 25",
-    "curveId": 5316
+    "curveId": 5316,
+    "requiredLevelCurve": {
+      "curve": 17807,
+      "val": 0
+    }
   },
   "3943": {
     "id": 3943,
     "ilevel": "18 @plvl 1 - 18 @plvl 18",
-    "curveId": 5354
+    "curveId": 5354,
+    "requiredLevelCurve": {
+      "curve": 17798,
+      "val": 0
+    }
   },
   "3944": {
     "id": 3944,
     "ilevel": "20 @plvl 1 - 20 @plvl 20",
-    "curveId": 5355
+    "curveId": 5355,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "3945": {
     "id": 3945,
     "ilevel": "22 @plvl 1 - 22 @plvl 22",
-    "curveId": 5356
+    "curveId": 5356,
+    "requiredLevelCurve": {
+      "curve": 17802,
+      "val": 0
+    }
   },
   "3946": {
     "id": 3946,
     "ilevel": "24 @plvl 1 - 24 @plvl 24",
-    "curveId": 5357
+    "curveId": 5357,
+    "requiredLevelCurve": {
+      "curve": 17804,
+      "val": 0
+    }
   },
   "3947": {
     "id": 3947,
     "ilevel": "26 @plvl 1 - 26 @plvl 26",
-    "curveId": 5358
+    "curveId": 5358,
+    "requiredLevelCurve": {
+      "curve": 17806,
+      "val": 0
+    }
   },
   "3948": {
     "id": 3948,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5359
+    "curveId": 5359,
+    "requiredLevelCurve": {
+      "curve": 17808,
+      "val": 0
+    }
   },
   "3949": {
     "id": 3949,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5360
+    "curveId": 5360,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "3950": {
     "id": 3950,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5361
+    "curveId": 5361,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "3951": {
     "id": 3951,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5362
+    "curveId": 5362,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "3952": {
     "id": 3952,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5363
+    "curveId": 5363,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3953": {
     "id": 3953,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5364
+    "curveId": 5364,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3954": {
     "id": 3954,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5365
+    "curveId": 5365,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3955": {
     "id": 3955,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5366
+    "curveId": 5366,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "3956": {
     "id": 3956,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6025
+    "curveId": 6025,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3957": {
     "id": 3957,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 6134
+    "curveId": 6134,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "3958": {
     "id": 3958,
     "ilevel": "43 @plvl 1 - 43 @plvl 43",
-    "curveId": 5369
+    "curveId": 5369,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3959": {
     "id": 3959,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5370
+    "curveId": 5370,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "3960": {
     "id": 3960,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6151
+    "curveId": 6151,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3961": {
     "id": 3961,
     "ilevel": "50 @plvl 1 - 50 @plvl 50",
-    "curveId": 5372
+    "curveId": 5372,
+    "requiredLevelCurve": {
+      "curve": 17829,
+      "val": 0
+    }
   },
   "3962": {
     "id": 3962,
     "ilevel": "13 @plvl 1 - 13 @plvl 13",
-    "curveId": 5373
+    "curveId": 5373,
+    "requiredLevelCurve": {
+      "curve": 17794,
+      "val": 0
+    }
   },
   "3963": {
     "id": 3963,
     "ilevel": "16 @plvl 1 - 16 @plvl 16",
-    "curveId": 5374
+    "curveId": 5374,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "3964": {
     "id": 3964,
     "ilevel": "19 @plvl 1 - 19 @plvl 19",
-    "curveId": 5375
+    "curveId": 5375,
+    "requiredLevelCurve": {
+      "curve": 17799,
+      "val": 0
+    }
   },
   "3965": {
     "id": 3965,
     "ilevel": "21 @plvl 1 - 21 @plvl 21",
-    "curveId": 5376
+    "curveId": 5376,
+    "requiredLevelCurve": {
+      "curve": 17801,
+      "val": 0
+    }
   },
   "3966": {
     "id": 3966,
     "ilevel": "22 @plvl 1 - 22 @plvl 22",
-    "curveId": 5377
+    "curveId": 5377,
+    "requiredLevelCurve": {
+      "curve": 17802,
+      "val": 0
+    }
   },
   "3967": {
     "id": 3967,
     "ilevel": "24 @plvl 1 - 24 @plvl 24",
-    "curveId": 5378
+    "curveId": 5378,
+    "requiredLevelCurve": {
+      "curve": 17804,
+      "val": 0
+    }
   },
   "3968": {
     "id": 3968,
     "ilevel": "26 @plvl 1 - 26 @plvl 26",
-    "curveId": 5379
+    "curveId": 5379,
+    "requiredLevelCurve": {
+      "curve": 17806,
+      "val": 0
+    }
   },
   "3969": {
     "id": 3969,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5380
+    "curveId": 5380,
+    "requiredLevelCurve": {
+      "curve": 17809,
+      "val": 0
+    }
   },
   "3970": {
     "id": 3970,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5381
+    "curveId": 5381,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "3971": {
     "id": 3971,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5382
+    "curveId": 5382,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "3972": {
     "id": 3972,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5383
+    "curveId": 5383,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "3973": {
     "id": 3973,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5384
+    "curveId": 5384,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "3974": {
     "id": 3974,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5385
+    "curveId": 5385,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "3975": {
     "id": 3975,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5386
+    "curveId": 5386,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "3976": {
     "id": 3976,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5387
+    "curveId": 5387,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "3977": {
     "id": 3977,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6027
+    "curveId": 6027,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "3978": {
     "id": 3978,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5389
+    "curveId": 5389,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "3979": {
     "id": 3979,
     "ilevel": "43 @plvl 1 - 43 @plvl 43",
-    "curveId": 5390
+    "curveId": 5390,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "3980": {
     "id": 3980,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5391
+    "curveId": 5391,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "3981": {
     "id": 3981,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6152
+    "curveId": 6152,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "3982": {
     "id": 3982,
     "ilevel": "50 @plvl 1 - 50 @plvl 50",
-    "curveId": 5393
+    "curveId": 5393,
+    "requiredLevelCurve": {
+      "curve": 17829,
+      "val": 0
+    }
   },
   "3983": {
     "id": 3983,
@@ -18206,55 +18909,91 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
     "curveId": 5452,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4195": {
     "id": 4195,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5453
+    "curveId": 5453,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4196": {
     "id": 4196,
     "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 819
+    }
   },
   "4198": {
     "id": 4198,
     "ilevel": "41 @plvl 1 - 41 @plvl 41",
     "curveId": 5456,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4199": {
     "id": 4199,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5457
+    "curveId": 5457,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4200": {
     "id": 4200,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
     "curveId": 5458,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4201": {
     "id": 4201,
     "ilevel": "43 @plvl 1 - 43 @plvl 43",
     "curveId": 5459,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4202": {
     "id": 4202,
     "ilevel": "47 @plvl 1 - 47 @plvl 47",
     "curveId": 5461,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4204": {
     "id": 4204,
     "ilevel": "48 @plvl 1 - 48 @plvl 48",
     "curveId": 5462,
     "tag": "Mythic",
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4205": {
     "id": 4205,
@@ -18307,87 +19046,155 @@ export const bonus_IDs: {[key: string]: any} = {
   "4214": {
     "id": 4214,
     "ilevel": "56 @plvl 1 - 56 @plvl 56",
-    "curveId": 5553
+    "curveId": 5553,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4215": {
     "id": 4215,
     "ilevel": "60 @plvl 1 - 60 @plvl 60",
-    "curveId": 5554
+    "curveId": 5554,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4216": {
     "id": 4216,
     "ilevel": "57 @plvl 1 - 57 @plvl 57",
-    "curveId": 5555
+    "curveId": 5555,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4217": {
     "id": 4217,
     "ilevel": "60 @plvl 1 - 60 @plvl 60",
-    "curveId": 5556
+    "curveId": 5556,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4218": {
     "id": 4218,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5557
+    "curveId": 5557,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "4219": {
     "id": 4219,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5558
+    "curveId": 5558,
+    "requiredLevelCurve": {
+      "curve": 17835,
+      "val": 0
+    }
   },
   "4220": {
     "id": 4220,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5559
+    "curveId": 5559,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "4221": {
     "id": 4221,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5560
+    "curveId": 5560,
+    "requiredLevelCurve": {
+      "curve": 17835,
+      "val": 0
+    }
   },
   "4222": {
     "id": 4222,
     "ilevel": "54 @plvl 1 - 54 @plvl 54",
-    "curveId": 5561
+    "curveId": 5561,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4223": {
     "id": 4223,
     "ilevel": "60 @plvl 1 - 60 @plvl 60",
-    "curveId": 5562
+    "curveId": 5562,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4224": {
     "id": 4224,
     "ilevel": "56 @plvl 1 - 56 @plvl 56",
-    "curveId": 5563
+    "curveId": 5563,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4225": {
     "id": 4225,
     "ilevel": "60 @plvl 1 - 60 @plvl 60",
-    "curveId": 5564
+    "curveId": 5564,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4226": {
     "id": 4226,
     "ilevel": "53 @plvl 1 - 53 @plvl 53",
-    "curveId": 5565
+    "curveId": 5565,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4227": {
     "id": 4227,
     "ilevel": "59 @plvl 1 - 59 @plvl 59",
-    "curveId": 5566
+    "curveId": 5566,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4228": {
     "id": 4228,
     "ilevel": "54 @plvl 1 - 54 @plvl 54",
-    "curveId": 5567
+    "curveId": 5567,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4229": {
     "id": 4229,
     "ilevel": "60 @plvl 1 - 60 @plvl 60",
-    "curveId": 5568
+    "curveId": 5568,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 0
+    }
   },
   "4230": {
     "id": 4230,
     "name": "of Power",
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "4231": {
     "id": 4231,
@@ -18417,13 +19224,21 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 4236,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
     "curveId": 5714,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4237": {
     "id": 4237,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
     "curveId": 5715,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4238": {
     "id": 4238,
@@ -18439,7 +19254,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "4240": {
     "id": 4240,
     "ilevel": "43 @plvl 1 - 43 @plvl 43",
-    "curveId": 5730
+    "curveId": 5730,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4241": {
     "id": 4241,
@@ -18464,362 +19283,650 @@ export const bonus_IDs: {[key: string]: any} = {
   "4246": {
     "id": 4246,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5857
+    "curveId": 5857,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4247": {
     "id": 4247,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5362
+    "curveId": 5362,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "4248": {
     "id": 4248,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5361
+    "curveId": 5361,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "4249": {
     "id": 4249,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5364
+    "curveId": 5364,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "4250": {
     "id": 4250,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5365
+    "curveId": 5365,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4251": {
     "id": 4251,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5366
+    "curveId": 5366,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "4252": {
     "id": 4252,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 5367
+    "curveId": 5367,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "4253": {
     "id": 4253,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 6134
+    "curveId": 6134,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4254": {
     "id": 4254,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6133
+    "curveId": 6133,
+    "requiredLevelCurve": {
+      "curve": 17821,
+      "val": 0
+    }
   },
   "4255": {
     "id": 4255,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5370
+    "curveId": 5370,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "4256": {
     "id": 4256,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 6134
+    "curveId": 6134,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4257": {
     "id": 4257,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6132
+    "curveId": 6132,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4258": {
     "id": 4258,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5382
+    "curveId": 5382,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "4259": {
     "id": 4259,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5383
+    "curveId": 5383,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "4260": {
     "id": 4260,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5979
+    "curveId": 5979,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4261": {
     "id": 4261,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5385
+    "curveId": 5385,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "4262": {
     "id": 4262,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5386
+    "curveId": 5386,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4263": {
     "id": 4263,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5387
+    "curveId": 5387,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "4264": {
     "id": 4264,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5388
+    "curveId": 5388,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4265": {
     "id": 4265,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5389
+    "curveId": 5389,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4266": {
     "id": 4266,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6137
+    "curveId": 6137,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4267": {
     "id": 4267,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5391
+    "curveId": 5391,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4268": {
     "id": 4268,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5319
+    "curveId": 5319,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "4269": {
     "id": 4269,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5320
+    "curveId": 5320,
+    "requiredLevelCurve": {
+      "curve": 17812,
+      "val": 0
+    }
   },
   "4270": {
     "id": 4270,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5980
+    "curveId": 5980,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4271": {
     "id": 4271,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5322
+    "curveId": 5322,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "4272": {
     "id": 4272,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5340
+    "curveId": 5340,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "4273": {
     "id": 4273,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5341
+    "curveId": 5341,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "4274": {
     "id": 4274,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5981
+    "curveId": 5981,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4275": {
     "id": 4275,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5343
+    "curveId": 5343,
+    "requiredLevelCurve": {
+      "curve": 17815,
+      "val": 0
+    }
   },
   "4276": {
     "id": 4276,
     "ilevel": "25 @plvl 1 - 25 @plvl 25",
-    "curveId": 5243
+    "curveId": 5243,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "4277": {
     "id": 4277,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5244
+    "curveId": 5244,
+    "requiredLevelCurve": {
+      "curve": 17811,
+      "val": 0
+    }
   },
   "4278": {
     "id": 4278,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 6108
+    "curveId": 6108,
+    "requiredLevelCurve": {
+      "curve": 17812,
+      "val": 0
+    }
   },
   "4279": {
     "id": 4279,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5993
+    "curveId": 5993,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4280": {
     "id": 4280,
     "ilevel": "27 @plvl 1 - 27 @plvl 27",
-    "curveId": 5255
+    "curveId": 5255,
+    "requiredLevelCurve": {
+      "curve": 17810,
+      "val": 0
+    }
   },
   "4281": {
     "id": 4281,
     "ilevel": "28 @plvl 1 - 28 @plvl 28",
-    "curveId": 5256
+    "curveId": 5256,
+    "requiredLevelCurve": {
+      "curve": 17812,
+      "val": 0
+    }
   },
   "4282": {
     "id": 4282,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 6109
+    "curveId": 6109,
+    "requiredLevelCurve": {
+      "curve": 17813,
+      "val": 0
+    }
   },
   "4283": {
     "id": 4283,
     "ilevel": "29 @plvl 1 - 29 @plvl 29",
-    "curveId": 5994
+    "curveId": 5994,
+    "requiredLevelCurve": {
+      "curve": 17814,
+      "val": 0
+    }
   },
   "4284": {
     "id": 4284,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5326
+    "curveId": 5326,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4285": {
     "id": 4285,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6139
+    "curveId": 6139,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4286": {
     "id": 4286,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5347
+    "curveId": 5347,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4287": {
     "id": 4287,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6142
+    "curveId": 6142,
+    "requiredLevelCurve": {
+      "curve": 17821,
+      "val": 0
+    }
   },
   "4288": {
     "id": 4288,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5291
+    "curveId": 5291,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4289": {
     "id": 4289,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 6145
+    "curveId": 6145,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4290": {
     "id": 4290,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5290
+    "curveId": 5290,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4291": {
     "id": 4291,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 6149
+    "curveId": 6149,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4292": {
     "id": 4292,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
-    "curveId": 5323
+    "curveId": 5323,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4293": {
     "id": 4293,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5324
+    "curveId": 5324,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "4294": {
     "id": 4294,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 5325
+    "curveId": 5325,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4295": {
     "id": 4295,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5326
+    "curveId": 5326,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4296": {
     "id": 4296,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6140
+    "curveId": 6140,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4297": {
     "id": 4297,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5328
+    "curveId": 5328,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "4298": {
     "id": 4298,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
-    "curveId": 5344
+    "curveId": 5344,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "4299": {
     "id": 4299,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5345
+    "curveId": 5345,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "4300": {
     "id": 4300,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 5346
+    "curveId": 5346,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4301": {
     "id": 4301,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 5347
+    "curveId": 5347,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4302": {
     "id": 4302,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6143
+    "curveId": 6143,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4303": {
     "id": 4303,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 5349
+    "curveId": 5349,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "4304": {
     "id": 4304,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5277
+    "curveId": 5277,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4305": {
     "id": 4305,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5291
+    "curveId": 5291,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4306": {
     "id": 4306,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5285
+    "curveId": 5285,
+    "requiredLevelCurve": {
+      "curve": 17818,
+      "val": 0
+    }
   },
   "4307": {
     "id": 4307,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6146
+    "curveId": 6146,
+    "requiredLevelCurve": {
+      "curve": 17821,
+      "val": 0
+    }
   },
   "4308": {
     "id": 4308,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5299
+    "curveId": 5299,
+    "requiredLevelCurve": {
+      "curve": 17824,
+      "val": 0
+    }
   },
   "4309": {
     "id": 4309,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5281
+    "curveId": 5281,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "4310": {
     "id": 4310,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 5276
+    "curveId": 5276,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4311": {
     "id": 4311,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
-    "curveId": 5280
+    "curveId": 5280,
+    "requiredLevelCurve": {
+      "curve": 17817,
+      "val": 0
+    }
   },
   "4312": {
     "id": 4312,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 5284
+    "curveId": 5284,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4313": {
     "id": 4313,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 5290
+    "curveId": 5290,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4314": {
     "id": 4314,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6150
+    "curveId": 6150,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4315": {
     "id": 4315,
     "ilevel": "42 @plvl 1 - 42 @plvl 42",
-    "curveId": 5298
+    "curveId": 5298,
+    "requiredLevelCurve": {
+      "curve": 17825,
+      "val": 0
+    }
   },
   "4316": {
     "id": 4316,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6136
+    "curveId": 6136,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4317": {
     "id": 4317,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 5389
+    "curveId": 5389,
+    "requiredLevelCurve": {
+      "curve": 17819,
+      "val": 0
+    }
   },
   "4318": {
     "id": 4318,
@@ -18947,15 +20054,30 @@ export const bonus_IDs: {[key: string]: any} = {
     "curveId": 5086,
     "quality": 4
   },
+  "4339": {
+    "id": 4339,
+    "requiredLevelCurve": {
+      "curve": 17803,
+      "val": 0
+    }
+  },
   "4493": {
     "id": 4493,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6045
+    "curveId": 6045,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4503": {
     "id": 4503,
     "ilevel": "44 @plvl 1 - 44 @plvl 44",
-    "curveId": 6089
+    "curveId": 6089,
+    "requiredLevelCurve": {
+      "curve": 17826,
+      "val": 0
+    }
   },
   "4536": {
     "id": 4536,
@@ -18965,21 +20087,33 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 4738,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
     "curveId": 6101,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17816,
+      "val": 0
+    }
   },
   "4739": {
     "id": 4739,
     "ilevel": "33 @plvl 1 - 33 @plvl 33",
     "curveId": 6102,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4740": {
     "id": 4740,
     "ilevel": "34 @plvl 1 - 34 @plvl 34",
     "curveId": 6103,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4741": {
     "id": 4741,
@@ -19063,114 +20197,202 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
     "curveId": 6106,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4753": {
     "id": 4753,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
     "curveId": 6107,
     "quality": 4,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4755": {
     "id": 4755,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 6131
+    "curveId": 6131,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4756": {
     "id": 4756,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6132
+    "curveId": 6132,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4757": {
     "id": 4757,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 6135
+    "curveId": 6135,
+    "requiredLevelCurve": {
+      "curve": 17771,
+      "val": 0
+    }
   },
   "4758": {
     "id": 4758,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6136
+    "curveId": 6136,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4759": {
     "id": 4759,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 6138
+    "curveId": 6138,
+    "requiredLevelCurve": {
+      "curve": 17771,
+      "val": 0
+    }
   },
   "4760": {
     "id": 4760,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6139
+    "curveId": 6139,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4761": {
     "id": 4761,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 6141
+    "curveId": 6141,
+    "requiredLevelCurve": {
+      "curve": 17771,
+      "val": 0
+    }
   },
   "4762": {
     "id": 4762,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6142
+    "curveId": 6142,
+    "requiredLevelCurve": {
+      "curve": 17821,
+      "val": 0
+    }
   },
   "4763": {
     "id": 4763,
     "ilevel": "35 @plvl 1 - 35 @plvl 35",
-    "curveId": 6144
+    "curveId": 6144,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 0
+    }
   },
   "4764": {
     "id": 4764,
     "ilevel": "37 @plvl 1 - 37 @plvl 37",
-    "curveId": 6145
+    "curveId": 6145,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4765": {
     "id": 4765,
     "ilevel": "39 @plvl 1 - 39 @plvl 39",
-    "curveId": 6147
+    "curveId": 6147,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "4766": {
     "id": 4766,
     "ilevel": "36 @plvl 1 - 36 @plvl 36",
-    "curveId": 6148
+    "curveId": 6148,
+    "requiredLevelCurve": {
+      "curve": 17771,
+      "val": 0
+    }
   },
   "4767": {
     "id": 4767,
     "ilevel": "38 @plvl 1 - 38 @plvl 38",
-    "curveId": 6149
+    "curveId": 6149,
+    "requiredLevelCurve": {
+      "curve": 17820,
+      "val": 0
+    }
   },
   "4768": {
     "id": 4768,
     "ilevel": "3 @plvl 1 - 3 @plvl 3",
-    "curveId": 6171
+    "curveId": 6171,
+    "requiredLevelCurve": {
+      "curve": 17792,
+      "val": 0
+    }
   },
   "4769": {
     "id": 4769,
     "ilevel": "5 @plvl 1 - 5 @plvl 5",
-    "curveId": 6172
+    "curveId": 6172,
+    "requiredLevelCurve": {
+      "curve": 17794,
+      "val": 0
+    }
   },
   "4770": {
     "id": 4770,
     "ilevel": "8 @plvl 1 - 8 @plvl 8",
-    "curveId": 6173
+    "curveId": 6173,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "4771": {
     "id": 4771,
     "ilevel": "3 @plvl 1 - 3 @plvl 3",
-    "curveId": 6174
+    "curveId": 6174,
+    "requiredLevelCurve": {
+      "curve": 17792,
+      "val": 0
+    }
   },
   "4772": {
     "id": 4772,
     "ilevel": "6 @plvl 1 - 6 @plvl 6",
-    "curveId": 6175
+    "curveId": 6175,
+    "requiredLevelCurve": {
+      "curve": 17794,
+      "val": 0
+    }
   },
   "4773": {
     "id": 4773,
     "ilevel": "9 @plvl 1 - 9 @plvl 9",
-    "curveId": 6176
+    "curveId": 6176,
+    "requiredLevelCurve": {
+      "curve": 17796,
+      "val": 0
+    }
   },
   "4774": {
     "id": 4774,
     "ilevel": "14 @plvl 1 - 14 @plvl 14",
-    "curveId": 6177
+    "curveId": 6177,
+    "requiredLevelCurve": {
+      "curve": 17799,
+      "val": 0
+    }
   },
   "4775": {
     "id": 4775,
@@ -19188,15 +20410,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4777": {
     "id": 4777,
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4778": {
     "id": 4778,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4779": {
     "id": 4779,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "requiredLevelCurve": {
+      "curve": 0,
+      "val": 704
+    }
   },
   "4780": {
     "id": 4780,
@@ -19206,22 +20440,38 @@ export const bonus_IDs: {[key: string]: any} = {
   "4781": {
     "id": 4781,
     "quality": 3,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4782": {
     "id": 4782,
     "quality": 3,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4783": {
     "id": 4783,
     "quality": 4,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4784": {
     "id": 4784,
     "quality": 4,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4785": {
     "id": 4785,
@@ -19255,6 +20505,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "4791": {
@@ -19297,7 +20551,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4799": {
     "id": 4799,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4800": {
     "id": 4800,
@@ -19318,22 +20576,38 @@ export const bonus_IDs: {[key: string]: any} = {
   "4804": {
     "id": 4804,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 6611
+    "curveId": 6611,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4805": {
     "id": 4805,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 6612
+    "curveId": 6612,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4806": {
     "id": 4806,
     "ilevel": "66 @plvl 40 - 66 @plvl 66",
-    "curveId": 6613
+    "curveId": 6613,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4807": {
     "id": 4807,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 6614
+    "curveId": 6614,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4808": {
     "id": 4808,
@@ -19348,7 +20622,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "4810": {
     "id": 4810,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 6695
+    "curveId": 6695,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4811": {
     "id": 4811,
@@ -19387,15 +20665,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4818": {
     "id": 4818,
-    "tag": "Heroic"
+    "tag": "Heroic",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4819": {
     "id": 4819,
-    "tag": "Mythic"
+    "tag": "Mythic",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4820": {
     "id": 4820,
-    "tag": "Mythic 2"
+    "tag": "Mythic 2",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4821": {
     "id": 4821,
@@ -19468,55 +20758,99 @@ export const bonus_IDs: {[key: string]: any} = {
   "4937": {
     "id": 4937,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7117
+    "curveId": 7117,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4938": {
     "id": 4938,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7118
+    "curveId": 7118,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4939": {
     "id": 4939,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7119
+    "curveId": 7119,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4940": {
     "id": 4940,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7120
+    "curveId": 7120,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4941": {
     "id": 4941,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7121
+    "curveId": 7121,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4942": {
     "id": 4942,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7122
+    "curveId": 7122,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4943": {
     "id": 4943,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7123
+    "curveId": 7123,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4944": {
     "id": 4944,
     "ilevel": "60 @plvl 40 - 60 @plvl 60",
-    "curveId": 7124
+    "curveId": 7124,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4945": {
     "id": 4945,
     "ilevel": "66 @plvl 40 - 66 @plvl 66",
-    "curveId": 7125
+    "curveId": 7125,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4946": {
     "id": 4946,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4947": {
     "id": 4947,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "4948": {
     "id": 4948,
@@ -19532,7 +20866,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "4951": {
     "id": 4951,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "4982": {
     "id": 4982,
@@ -19653,7 +20991,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "5002": {
     "id": 5002,
     "tag": "Mythic 4",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5003": {
     "id": 5003,
@@ -19671,132 +21013,256 @@ export const bonus_IDs: {[key: string]: any} = {
   "5005": {
     "id": 5005,
     "tag": "Mythic 5",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5006": {
     "id": 5006,
     "tag": "Mythic 6",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5007": {
     "id": 5007,
     "tag": "Mythic 7",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5008": {
     "id": 5008,
     "tag": "Mythic 8",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5009": {
     "id": 5009,
     "tag": "Mythic 9",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5010": {
     "id": 5010,
     "tag": "Mythic 10",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5011": {
     "id": 5011,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5012": {
     "id": 5012,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5013": {
     "id": 5013,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5014": {
     "id": 5014,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5015": {
     "id": 5015,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5016": {
     "id": 5016,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5017": {
     "id": 5017,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5018": {
     "id": 5018,
-    "tag": "Mythic 2"
+    "tag": "Mythic 2",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5019": {
     "id": 5019,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5020": {
     "id": 5020,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5021": {
     "id": 5021,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5022": {
     "id": 5022,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5023": {
     "id": 5023,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5024": {
     "id": 5024,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5025": {
     "id": 5025,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5026": {
     "id": 5026,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5027": {
     "id": 5027,
-    "tag": "Mythic 2"
+    "tag": "Mythic 2",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5028": {
     "id": 5028,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5029": {
     "id": 5029,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5030": {
     "id": 5030,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5031": {
     "id": 5031,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5032": {
     "id": 5032,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5033": {
     "id": 5033,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5034": {
     "id": 5034,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5035": {
     "id": 5035,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5036": {
     "id": 5036,
@@ -19807,137 +21273,245 @@ export const bonus_IDs: {[key: string]: any} = {
   "5037": {
     "id": 5037,
     "tag": "Mythic 2",
-    "azerite_tier_unlock_id": 146
+    "azerite_tier_unlock_id": 146,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5038": {
     "id": 5038,
     "tag": "Mythic 2",
-    "azerite_tier_unlock_id": 147
+    "azerite_tier_unlock_id": 147,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5039": {
     "id": 5039,
     "tag": "Mythic 2",
-    "azerite_tier_unlock_id": 148
+    "azerite_tier_unlock_id": 148,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5040": {
     "id": 5040,
     "tag": "Mythic 3",
-    "azerite_tier_unlock_id": 146
+    "azerite_tier_unlock_id": 146,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5041": {
     "id": 5041,
     "tag": "Mythic 3",
-    "azerite_tier_unlock_id": 147
+    "azerite_tier_unlock_id": 147,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5042": {
     "id": 5042,
     "tag": "Mythic 3",
-    "azerite_tier_unlock_id": 148
+    "azerite_tier_unlock_id": 148,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5043": {
     "id": 5043,
     "tag": "Mythic 4",
-    "azerite_tier_unlock_id": 149
+    "azerite_tier_unlock_id": 149,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5044": {
     "id": 5044,
     "tag": "Mythic 4",
-    "azerite_tier_unlock_id": 149
+    "azerite_tier_unlock_id": 149,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5045": {
     "id": 5045,
     "tag": "Mythic 4",
-    "azerite_tier_unlock_id": 151
+    "azerite_tier_unlock_id": 151,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5046": {
     "id": 5046,
     "tag": "Mythic 5",
-    "azerite_tier_unlock_id": 149
+    "azerite_tier_unlock_id": 149,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5047": {
     "id": 5047,
     "tag": "Mythic 5",
-    "azerite_tier_unlock_id": 150
+    "azerite_tier_unlock_id": 150,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5048": {
     "id": 5048,
     "tag": "Mythic 5",
-    "azerite_tier_unlock_id": 151
+    "azerite_tier_unlock_id": 151,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5049": {
     "id": 5049,
     "tag": "Mythic 6",
-    "azerite_tier_unlock_id": 149
+    "azerite_tier_unlock_id": 149,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5050": {
     "id": 5050,
     "tag": "Mythic 6",
-    "azerite_tier_unlock_id": 150
+    "azerite_tier_unlock_id": 150,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5051": {
     "id": 5051,
     "tag": "Mythic 6",
-    "azerite_tier_unlock_id": 151
+    "azerite_tier_unlock_id": 151,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5052": {
     "id": 5052,
     "tag": "Mythic 7",
-    "azerite_tier_unlock_id": 152
+    "azerite_tier_unlock_id": 152,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5053": {
     "id": 5053,
     "tag": "Mythic 7",
-    "azerite_tier_unlock_id": 153
+    "azerite_tier_unlock_id": 153,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5054": {
     "id": 5054,
     "tag": "Mythic 7",
-    "azerite_tier_unlock_id": 154
+    "azerite_tier_unlock_id": 154,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5055": {
     "id": 5055,
     "tag": "Mythic 8",
-    "azerite_tier_unlock_id": 152
+    "azerite_tier_unlock_id": 152,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5056": {
     "id": 5056,
     "tag": "Mythic 8",
-    "azerite_tier_unlock_id": 153
+    "azerite_tier_unlock_id": 153,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5058": {
     "id": 5058,
     "tag": "Mythic 9",
-    "azerite_tier_unlock_id": 152
+    "azerite_tier_unlock_id": 152,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5059": {
     "id": 5059,
     "tag": "Mythic 9",
-    "azerite_tier_unlock_id": 153
+    "azerite_tier_unlock_id": 153,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5060": {
     "id": 5060,
     "tag": "Mythic 9",
-    "azerite_tier_unlock_id": 154
+    "azerite_tier_unlock_id": 154,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5061": {
     "id": 5061,
     "tag": "Mythic 10",
-    "azerite_tier_unlock_id": 155
+    "azerite_tier_unlock_id": 155,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5062": {
     "id": 5062,
     "tag": "Mythic 10",
-    "azerite_tier_unlock_id": 156
+    "azerite_tier_unlock_id": 156,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5063": {
     "id": 5063,
     "tag": "Mythic 10",
-    "azerite_tier_unlock_id": 157
+    "azerite_tier_unlock_id": 157,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5064": {
     "id": 5064,
     "tag": "Mythic 8",
-    "azerite_tier_unlock_id": 154
+    "azerite_tier_unlock_id": 154,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5065": {
     "id": 5065,
@@ -20254,11 +21828,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5115": {
     "id": 5115,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17835,
+      "val": 0
+    }
   },
   "5116": {
     "id": 5116,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17834,
+      "val": 0
+    }
   },
   "5117": {
     "id": 5117,
@@ -20333,32 +21915,56 @@ export const bonus_IDs: {[key: string]: any} = {
   "5135": {
     "id": 5135,
     "quality": 3,
-    "azerite_tier_unlock_id": 177
+    "azerite_tier_unlock_id": 177,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5136": {
     "id": 5136,
     "quality": 4,
-    "azerite_tier_unlock_id": 182
+    "azerite_tier_unlock_id": 182,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5137": {
     "id": 5137,
     "quality": 3,
-    "azerite_tier_unlock_id": 178
+    "azerite_tier_unlock_id": 178,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5138": {
     "id": 5138,
     "quality": 4,
-    "azerite_tier_unlock_id": 183
+    "azerite_tier_unlock_id": 183,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5139": {
     "id": 5139,
     "quality": 3,
-    "azerite_tier_unlock_id": 179
+    "azerite_tier_unlock_id": 179,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5140": {
     "id": 5140,
     "quality": 4,
-    "azerite_tier_unlock_id": 184
+    "azerite_tier_unlock_id": 184,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5141": {
     "id": 5141,
@@ -20521,7 +22127,11 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5261,
     "ilevel": "40 @plvl 0 - 40 @plvl 40",
     "curveId": 8539,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5262": {
     "id": 5262,
@@ -21388,39 +22998,75 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "5440": {
     "id": 5440,
-    "tag": "Mythic 2"
+    "tag": "Mythic 2",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5441": {
     "id": 5441,
-    "tag": "Mythic 3"
+    "tag": "Mythic 3",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5442": {
     "id": 5442,
-    "tag": "Mythic 4"
+    "tag": "Mythic 4",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5443": {
     "id": 5443,
-    "tag": "Mythic 5"
+    "tag": "Mythic 5",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5444": {
     "id": 5444,
-    "tag": "Mythic 6"
+    "tag": "Mythic 6",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5445": {
     "id": 5445,
-    "tag": "Mythic 7"
+    "tag": "Mythic 7",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5446": {
     "id": 5446,
-    "tag": "Mythic 8"
+    "tag": "Mythic 8",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5447": {
     "id": 5447,
-    "tag": "Mythic 9"
+    "tag": "Mythic 9",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5448": {
     "id": 5448,
-    "tag": "Mythic 10"
+    "tag": "Mythic 10",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "5449": {
     "id": 5449,
@@ -21761,7 +23407,11 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 5510,
     "ilevel": "43 @plvl 1 - 43 @plvl 43",
     "curveId": 5459,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 0
+    }
   },
   "5511": {
     "id": 5511,
@@ -25630,22 +27280,38 @@ export const bonus_IDs: {[key: string]: any} = {
   "6317": {
     "id": 6317,
     "quality": 3,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6318": {
     "id": 6318,
     "quality": 3,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6319": {
     "id": 6319,
     "quality": 4,
-    "tag": "Warforged"
+    "tag": "Warforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6320": {
     "id": 6320,
     "quality": 4,
-    "tag": "Titanforged"
+    "tag": "Titanforged",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6321": {
     "id": 6321,
@@ -25714,15 +27380,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6350": {
     "id": 6350,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "6351": {
     "id": 6351,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17835,
+      "val": 0
+    }
   },
   "6352": {
     "id": 6352,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6353": {
     "id": 6353,
@@ -25877,15 +27555,27 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6383": {
     "id": 6383,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
   },
   "6384": {
     "id": 6384,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17835,
+      "val": 0
+    }
   },
   "6385": {
     "id": 6385,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6386": {
     "id": 6386,
@@ -27100,6 +28790,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 0
     }
   },
   "6500": {
@@ -27221,48 +28915,88 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6527": {
     "id": 6527,
-    "tag": "Mythic 11"
+    "tag": "Mythic 11",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6528": {
     "id": 6528,
     "tag": "Mythic 11",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6529": {
     "id": 6529,
-    "tag": "Mythic 12"
+    "tag": "Mythic 12",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6530": {
     "id": 6530,
     "tag": "Mythic 12",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6531": {
     "id": 6531,
-    "tag": "Mythic 13"
+    "tag": "Mythic 13",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6532": {
     "id": 6532,
     "tag": "Mythic 13",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6533": {
     "id": 6533,
-    "tag": "Mythic 14"
+    "tag": "Mythic 14",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6534": {
     "id": 6534,
     "tag": "Mythic 14",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6535": {
     "id": 6535,
-    "tag": "Mythic 15"
+    "tag": "Mythic 15",
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6536": {
     "id": 6536,
     "tag": "Mythic 15",
-    "serverside": true
+    "serverside": true,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "6537": {
     "id": 6537,
@@ -28656,7 +30390,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6616": {
     "id": 6616,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "6617": {
     "id": 6617,
@@ -28764,7 +30502,11 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6646": {
     "id": 6646,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "6647": {
     "id": 6647,
@@ -28803,6 +30545,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6654": {
     "id": 6654,
+    "requiredLevelCurve": {
+      "curve": 17454,
+      "val": 0
+    },
     "dropLevelCurve": {
       "curveId": 16520,
       "offset": 0,
@@ -28816,6 +30562,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6656": {
     "id": 6656,
+    "requiredLevelCurve": {
+      "curve": 17454,
+      "val": 0
+    },
     "quality": 0,
     "dropLevelCurve": {
       "curveId": 16520,
@@ -28830,6 +30580,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6658": {
     "id": 6658,
+    "requiredLevelCurve": {
+      "curve": 17454,
+      "val": 0
+    },
     "quality": 3,
     "dropLevelCurve": {
       "curveId": 16520,
@@ -28844,6 +30598,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6660": {
     "id": 6660,
+    "requiredLevelCurve": {
+      "curve": 17454,
+      "val": 0
+    },
     "quality": 4,
     "dropLevelCurve": {
       "curveId": 16520,
@@ -28867,6 +30625,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "6664": {
     "id": 6664,
+    "requiredLevelCurve": {
+      "curve": 17454,
+      "val": 0
+    },
     "dropLevelCurve": {
       "curveId": 16520,
       "offset": -3,
@@ -28996,7 +30758,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 0
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
+    }
   },
   "6683": {
     "id": 6683,
@@ -29006,7 +30772,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 0
     },
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
+    }
   },
   "6684": {
     "id": 6684,
@@ -29098,6 +30868,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "6710": {
@@ -29108,6 +30882,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 3,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "6711": {
@@ -29123,6 +30901,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 6,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "6713": {
@@ -29132,6 +30914,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": -3,
       "priority": 0,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "6716": {
@@ -29373,12 +31159,20 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 6764,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 820
+    },
     "quality": 3
   },
   "6765": {
     "id": 6765,
     "ilevel": "32 @plvl 1 - 32 @plvl 32",
-    "curveId": 17177
+    "curveId": 17177,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 820
+    }
   },
   "6770": {
     "id": 6770,
@@ -29569,37 +31363,65 @@ export const bonus_IDs: {[key: string]: any} = {
   "6815": {
     "id": 6815,
     "ilevel": "20 @plvl 0 - 20 @plvl 20",
-    "curveId": 17437
+    "curveId": 17437,
+    "requiredLevelCurve": {
+      "curve": 17438,
+      "val": 0
+    }
   },
   "6816": {
     "id": 6816,
     "ilevel": "2 @plvl 1 - 59 @plvl 59",
-    "curveId": 17458
+    "curveId": 17458,
+    "requiredLevelCurve": {
+      "curve": 17456,
+      "val": 0
+    }
   },
   "6817": {
     "id": 6817,
     "ilevel": "4 @plvl 1 - 65 @plvl 65",
-    "curveId": 17459
+    "curveId": 17459,
+    "requiredLevelCurve": {
+      "curve": 17456,
+      "val": 0
+    }
   },
   "6818": {
     "id": 6818,
     "ilevel": "6 @plvl 1 - 71 @plvl 71",
-    "curveId": 17460
+    "curveId": 17460,
+    "requiredLevelCurve": {
+      "curve": 17456,
+      "val": 0
+    }
   },
   "6819": {
     "id": 6819,
     "ilevel": "2 @plvl 1 - 59 @plvl 59",
-    "curveId": 17458
+    "curveId": 17458,
+    "requiredLevelCurve": {
+      "curve": 17457,
+      "val": 0
+    }
   },
   "6820": {
     "id": 6820,
     "ilevel": "4 @plvl 1 - 65 @plvl 65",
-    "curveId": 17459
+    "curveId": 17459,
+    "requiredLevelCurve": {
+      "curve": 17457,
+      "val": 0
+    }
   },
   "6821": {
     "id": 6821,
     "ilevel": "6 @plvl 1 - 71 @plvl 71",
-    "curveId": 17460
+    "curveId": 17460,
+    "requiredLevelCurve": {
+      "curve": 17457,
+      "val": 0
+    }
   },
   "6822": {
     "id": 6822,
@@ -29759,52 +31581,92 @@ export const bonus_IDs: {[key: string]: any} = {
   "6884": {
     "id": 6884,
     "ilevel": "109 @plvl 0 - 109 @plvl 109",
-    "curveId": 19994
+    "curveId": 19994,
+    "requiredLevelCurve": {
+      "curve": 17838,
+      "val": 0
+    }
   },
   "6885": {
     "id": 6885,
     "ilevel": "99 @plvl 0 - 99 @plvl 99",
-    "curveId": 19995
+    "curveId": 19995,
+    "requiredLevelCurve": {
+      "curve": 17839,
+      "val": 0
+    }
   },
   "6886": {
     "id": 6886,
     "ilevel": "129 @plvl 0 - 129 @plvl 129",
-    "curveId": 19996
+    "curveId": 19996,
+    "requiredLevelCurve": {
+      "curve": 17840,
+      "val": 0
+    }
   },
   "6887": {
     "id": 6887,
     "ilevel": "111 @plvl 0 - 111 @plvl 111",
-    "curveId": 19997
+    "curveId": 19997,
+    "requiredLevelCurve": {
+      "curve": 17841,
+      "val": 0
+    }
   },
   "6888": {
     "id": 6888,
     "ilevel": "117 @plvl 0 - 117 @plvl 117",
-    "curveId": 19998
+    "curveId": 19998,
+    "requiredLevelCurve": {
+      "curve": 17842,
+      "val": 0
+    }
   },
   "6889": {
     "id": 6889,
     "ilevel": "150 @plvl 0 - 150 @plvl 150",
-    "curveId": 19999
+    "curveId": 19999,
+    "requiredLevelCurve": {
+      "curve": 17843,
+      "val": 0
+    }
   },
   "6890": {
     "id": 6890,
     "ilevel": "129 @plvl 0 - 129 @plvl 129",
-    "curveId": 20000
+    "curveId": 20000,
+    "requiredLevelCurve": {
+      "curve": 17844,
+      "val": 0
+    }
   },
   "6891": {
     "id": 6891,
     "ilevel": "165 @plvl 0 - 165 @plvl 165",
-    "curveId": 20001
+    "curveId": 20001,
+    "requiredLevelCurve": {
+      "curve": 17845,
+      "val": 0
+    }
   },
   "6892": {
     "id": 6892,
     "ilevel": "165 @plvl 0 - 165 @plvl 165",
-    "curveId": 20002
+    "curveId": 20002,
+    "requiredLevelCurve": {
+      "curve": 17846,
+      "val": 0
+    }
   },
   "6893": {
     "id": 6893,
     "ilevel": "151 @plvl 0 - 151 @plvl 151",
-    "curveId": 20003
+    "curveId": 20003,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "6899": {
     "id": 6899,
@@ -29877,42 +31739,74 @@ export const bonus_IDs: {[key: string]: any} = {
   "6907": {
     "id": 6907,
     "ilevel": "1 @plvl 1 - 170 @plvl 170",
-    "curveId": 17978
+    "curveId": 17978,
+    "requiredLevelCurve": {
+      "curve": 18020,
+      "val": 0
+    }
   },
   "6908": {
     "id": 6908,
     "ilevel": "1 @plvl 1 - 170 @plvl 170",
-    "curveId": 17967
+    "curveId": 17967,
+    "requiredLevelCurve": {
+      "curve": 18019,
+      "val": 0
+    }
   },
   "6909": {
     "id": 6909,
     "ilevel": "1 @plvl 1 - 160 @plvl 160",
-    "curveId": 17980
+    "curveId": 17980,
+    "requiredLevelCurve": {
+      "curve": 18025,
+      "val": 0
+    }
   },
   "6910": {
     "id": 6910,
     "ilevel": "1 @plvl 1 - 160 @plvl 160",
-    "curveId": 17979
+    "curveId": 17979,
+    "requiredLevelCurve": {
+      "curve": 18026,
+      "val": 0
+    }
   },
   "6911": {
     "id": 6911,
     "ilevel": "14 @plvl 1 - 183 @plvl 183",
-    "curveId": 17968
+    "curveId": 17968,
+    "requiredLevelCurve": {
+      "curve": 18021,
+      "val": 0
+    }
   },
   "6912": {
     "id": 6912,
     "ilevel": "14 @plvl 1 - 183 @plvl 183",
-    "curveId": 17969
+    "curveId": 17969,
+    "requiredLevelCurve": {
+      "curve": 18022,
+      "val": 0
+    }
   },
   "6913": {
     "id": 6913,
     "ilevel": "27 @plvl 1 - 196 @plvl 196",
-    "curveId": 17982
+    "curveId": 17982,
+    "requiredLevelCurve": {
+      "curve": 18023,
+      "val": 0
+    }
   },
   "6914": {
     "id": 6914,
     "ilevel": "27 @plvl 1 - 196 @plvl 196",
-    "curveId": 17981
+    "curveId": 17981,
+    "requiredLevelCurve": {
+      "curve": 18024,
+      "val": 0
+    }
   },
   "6915": {
     "id": 6915,
@@ -33489,7 +35383,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "7144": {
     "id": 7144,
     "ilevel": "85 @plvl 48 - 154 @plvl 154",
-    "curveId": 21132
+    "curveId": 21132,
+    "requiredLevelCurve": {
+      "curve": 21131,
+      "val": 0
+    }
   },
   "7145": {
     "id": 7145,
@@ -33670,7 +35568,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "7174": {
     "id": 7174,
     "ilevel": "168 @plvl 0 - 168 @plvl 168",
-    "curveId": 21821
+    "curveId": 21821,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "7175": {
     "id": 7175,
@@ -33723,22 +35625,38 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 55,
       "priority": 1,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 17842,
+      "val": 0
     }
   },
   "7181": {
     "id": 7181,
     "ilevel": "129 @plvl 0 - 129 @plvl 129",
-    "curveId": 20000
+    "curveId": 20000,
+    "requiredLevelCurve": {
+      "curve": 17844,
+      "val": 0
+    }
   },
   "7182": {
     "id": 7182,
     "ilevel": "151 @plvl 0 - 151 @plvl 151",
-    "curveId": 20003
+    "curveId": 20003,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "7183": {
     "id": 7183,
     "ilevel": "200 @plvl 0 - 200 @plvl 200",
-    "curveId": 22068
+    "curveId": 22068,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "7184": {
     "id": 7184,
@@ -33759,7 +35677,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "7185": {
     "id": 7185,
     "ilevel": "168 @plvl 0 - 168 @plvl 168",
-    "curveId": 21821
+    "curveId": 21821,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "7186": {
     "id": 7186,
@@ -34119,6 +36041,13 @@ export const bonus_IDs: {[key: string]: any} = {
     "ilevel": "1 @plvl 1 - 80 @plvl 80",
     "curveId": 6243
   },
+  "7221": {
+    "id": 7221,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 0
+    }
+  },
   "7222": {
     "id": 7222,
     "ilevel": "15 @plvl 10 - 58 @plvl 58",
@@ -34132,7 +36061,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "7224": {
     "id": 7224,
     "ilevel": "87 @plvl 0 - 87 @plvl 87",
-    "curveId": 24160
+    "curveId": 24160,
+    "requiredLevelCurve": {
+      "curve": 17837,
+      "val": 0
+    }
   },
   "7225": {
     "id": 7225,
@@ -34190,17 +36123,29 @@ export const bonus_IDs: {[key: string]: any} = {
   "7238": {
     "id": 7238,
     "ilevel": "164 @plvl 0 - 164 @plvl 164",
-    "curveId": 24243
+    "curveId": 24243,
+    "requiredLevelCurve": {
+      "curve": 29176,
+      "val": 0
+    }
   },
   "7239": {
     "id": 7239,
     "ilevel": "181 @plvl 0 - 181 @plvl 181",
-    "curveId": 24244
+    "curveId": 24244,
+    "requiredLevelCurve": {
+      "curve": 29176,
+      "val": 0
+    }
   },
   "7240": {
     "id": 7240,
     "ilevel": "200 @plvl 0 - 200 @plvl 200",
-    "curveId": 24245
+    "curveId": 24245,
+    "requiredLevelCurve": {
+      "curve": 29176,
+      "val": 0
+    }
   },
   "7241": {
     "id": 7241,
@@ -35029,12 +36974,20 @@ export const bonus_IDs: {[key: string]: any} = {
   "7452": {
     "id": 7452,
     "ilevel": "160 @plvl 1 - 160 @plvl 160",
-    "curveId": 25740
+    "curveId": 25740,
+    "requiredLevelCurve": {
+      "curve": 25745,
+      "val": 0
+    }
   },
   "7453": {
     "id": 7453,
     "ilevel": "163 @plvl 1 - 163 @plvl 163",
-    "curveId": 25741
+    "curveId": 25741,
+    "requiredLevelCurve": {
+      "curve": 25745,
+      "val": 0
+    }
   },
   "7458": {
     "id": 7458,
@@ -35061,6 +37014,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7461,
     "ilevel": "230 @plvl 0 - 230 @plvl 230",
     "curveId": 25832,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    },
     "item_limit_category": 481
   },
   "7462": {
@@ -39416,7 +41373,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 72,
       "priority": 0,
       "squishEra": 0
-    }
+    },
+    "tag": "Heroic"
   },
   "7755": {
     "id": 7755,
@@ -39424,7 +41382,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 73,
       "priority": 0,
       "squishEra": 0
-    }
+    },
+    "tag": "Mythic"
   },
   "7756": {
     "id": 7756,
@@ -42038,12 +43997,20 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 7880,
     "quality": 4,
     "ilevel": "233 @plvl 0 - 233 @plvl 233",
-    "curveId": 28743
+    "curveId": 28743,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    }
   },
   "7881": {
     "id": 7881,
     "ilevel": "262 @plvl 0 - 262 @plvl 262",
     "curveId": 28744,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 0
+    },
     "item_limit_category": 481,
     "quality": 4
   },
@@ -42820,8 +44787,19 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "7918": {
+    "id": 7918,
+    "requiredLevelCurve": {
+      "curve": 0,
+      "val": 0
+    }
+  },
   "7919": {
     "id": 7919,
+    "requiredLevelCurve": {
+      "curve": 29176,
+      "val": 0
+    },
     "tag": "Korthia"
   },
   "7920": {
@@ -52422,11 +54400,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8766": {
     "id": 8766,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 34340,
+      "val": 0
+    }
   },
   "8767": {
     "id": 8767,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 34340,
+      "val": 0
+    }
   },
   "8768": {
     "id": 8768,
@@ -52498,6 +54484,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "8785": {
     "id": 8785,
+    "requiredLevelCurve": {
+      "curve": 34711,
+      "val": 0
+    },
     "itemLevel": {
       "amount": 400,
       "priority": 500,
@@ -52784,6 +54774,13 @@ export const bonus_IDs: {[key: string]: any} = {
   "8841": {
     "id": 8841,
     "applyBonusId": 13511
+  },
+  "8842": {
+    "id": 8842,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    }
   },
   "8843": {
     "id": 8843,
@@ -53309,6 +55306,13 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "8933": {
+    "id": 8933,
+    "requiredLevelCurve": {
+      "curve": 45044,
+      "val": 0
+    }
+  },
   "8934": {
     "id": 8934,
     "effect": {
@@ -53564,24 +55568,40 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 8994,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 819
+    },
     "quality": 3
   },
   "8995": {
     "id": 8995,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 664
+    },
     "quality": 3
   },
   "8996": {
     "id": 8996,
     "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
+    "requiredLevelCurve": {
+      "curve": 17770,
+      "val": 664
+    },
     "quality": 4
   },
   "8997": {
     "id": 8997,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 818
+    },
     "quality": 3
   },
   "8998": {
@@ -53630,6 +55650,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9007,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 817
+    },
     "quality": 3
   },
   "9008": {
@@ -53654,6 +55678,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9011,
     "ilevel": "12 @plvl 1 - 373 @plvl 373",
     "curveId": 60486,
+    "requiredLevelCurve": {
+      "curve": 17822,
+      "val": 817
+    },
     "quality": 4
   },
   "9012": {
@@ -53670,6 +55698,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9013,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17827,
+      "val": 816
+    },
     "quality": 3
   },
   "9014": {
@@ -53723,6 +55755,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9019,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17832,
+      "val": 347
+    },
     "quality": 3
   },
   "9020": {
@@ -53749,6 +55785,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9022,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 2640
+    },
     "quality": 3
   },
   "9023": {
@@ -53775,6 +55815,10 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9025,
     "ilevel": "21 @plvl 1 - 194 @plvl 194",
     "curveId": 60485,
+    "requiredLevelCurve": {
+      "curve": 17847,
+      "val": 2060
+    },
     "quality": 3
   },
   "9026": {
@@ -54631,28 +56675,23 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 71,
       "priority": 0,
       "squishEra": 0
-    },
-    "quality": 4
+    }
   },
   "9120": {
     "id": 9120,
-    "tag": "Heroic",
     "itemLevel": {
       "amount": 72,
       "priority": 0,
       "squishEra": 0
-    },
-    "quality": 4
+    }
   },
   "9121": {
     "id": 9121,
-    "tag": "Mythic",
     "itemLevel": {
       "amount": 73,
       "priority": 0,
       "squishEra": 0
-    },
-    "quality": 4
+    }
   },
   "9122": {
     "id": 9122,
@@ -57755,6 +59794,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 1,
       "squishEra": 1
     },
+    "requiredLevelCurve": {
+      "curve": 34340,
+      "val": 0
+    },
     "quality": 4
   },
   "9373": {
@@ -59347,6 +61390,13 @@ export const bonus_IDs: {[key: string]: any} = {
       "craftingQuality": 4
     }
   },
+  "9633": {
+    "id": 9633,
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
+    }
+  },
   "9634": {
     "id": 9634,
     "quality": 3
@@ -59362,11 +61412,162 @@ export const bonus_IDs: {[key: string]: any} = {
   "9637": {
     "id": 9637,
     "ilevel": "15 @plvl 10 - 548 @plvl 548",
-    "curveId": 70855
+    "curveId": 70855,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "9639": {
     "id": 9639,
     "tag": "Mythic+"
+  },
+  "9783": {
+    "id": 9783,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9784": {
+    "id": 9784,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9785": {
+    "id": 9785,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9786": {
+    "id": 9786,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9787": {
+    "id": 9787,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9788": {
+    "id": 9788,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "9789": {
+    "id": 9789,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9790": {
+    "id": 9790,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9791": {
+    "id": 9791,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9792": {
+    "id": 9792,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9793": {
+    "id": 9793,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9794": {
+    "id": 9794,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9795": {
+    "id": 9795,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9796": {
+    "id": 9796,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9797": {
+    "id": 9797,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9798": {
+    "id": 9798,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9799": {
+    "id": 9799,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9800": {
+    "id": 9800,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9801": {
+    "id": 9801,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9802": {
+    "id": 9802,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "9803": {
+    "id": 9803,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "9804": {
     "id": 9804,
@@ -60996,187 +63197,371 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10254": {
     "id": 10254,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71257,
+      "val": 0
+    }
   },
   "10255": {
     "id": 10255,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71257,
+      "val": 0
+    }
   },
   "10256": {
     "id": 10256,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10257": {
     "id": 10257,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10258": {
     "id": 10258,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10259": {
     "id": 10259,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10260": {
     "id": 10260,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10261": {
     "id": 10261,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10262": {
     "id": 10262,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10263": {
     "id": 10263,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10264": {
     "id": 10264,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10265": {
     "id": 10265,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10266": {
     "id": 10266,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10267": {
     "id": 10267,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10268": {
     "id": 10268,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10269": {
     "id": 10269,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10270": {
     "id": 10270,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10271": {
     "id": 10271,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10272": {
     "id": 10272,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10273": {
     "id": 10273,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10274": {
     "id": 10274,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10275": {
     "id": 10275,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10276": {
     "id": 10276,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10277": {
     "id": 10277,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10278": {
     "id": 10278,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10279": {
     "id": 10279,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10280": {
     "id": 10280,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10281": {
     "id": 10281,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10282": {
     "id": 10282,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10283": {
     "id": 10283,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10284": {
     "id": 10284,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10285": {
     "id": 10285,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10286": {
     "id": 10286,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10287": {
     "id": 10287,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10288": {
     "id": 10288,
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10289": {
     "id": 10289,
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10290": {
     "id": 10290,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10291": {
     "id": 10291,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10292": {
     "id": 10292,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10293": {
     "id": 10293,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10294": {
     "id": 10294,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10295": {
     "id": 10295,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10296": {
     "id": 10296,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10297": {
     "id": 10297,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10298": {
     "id": 10298,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10299": {
     "id": 10299,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "10300": {
     "id": 10300,
@@ -61396,7 +63781,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "10350": {
     "id": 10350,
     "ilevel": "362 @plvl 50 - 362 @plvl 362",
-    "curveId": 71401
+    "curveId": 71401,
+    "requiredLevelCurve": {
+      "curve": 71443,
+      "val": 0
+    }
   },
   "10353": {
     "id": 10353,
@@ -61432,45 +63821,77 @@ export const bonus_IDs: {[key: string]: any} = {
   "10360": {
     "id": 10360,
     "ilevel": "362 @plvl 50 - 362 @plvl 362",
-    "curveId": 71401
+    "curveId": 71401,
+    "requiredLevelCurve": {
+      "curve": 71443,
+      "val": 0
+    }
   },
   "10361": {
     "id": 10361,
     "ilevel": "362 @plvl 50 - 362 @plvl 362",
-    "curveId": 71420
+    "curveId": 71420,
+    "requiredLevelCurve": {
+      "curve": 71444,
+      "val": 0
+    }
   },
   "10362": {
     "id": 10362,
     "ilevel": "434 @plvl 50 - 532 @plvl 532",
-    "curveId": 71418
+    "curveId": 71418,
+    "requiredLevelCurve": {
+      "curve": 71441,
+      "val": 0
+    }
   },
   "10363": {
     "id": 10363,
     "ilevel": "434 @plvl 50 - 538 @plvl 538",
-    "curveId": 71419
+    "curveId": 71419,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 0
+    }
   },
   "10364": {
     "id": 10364,
     "ilevel": "441 @plvl 50 - 535 @plvl 535",
     "curveId": 71416,
+    "requiredLevelCurve": {
+      "curve": 71439,
+      "val": 0
+    },
     "quality": 3
   },
   "10365": {
     "id": 10365,
     "ilevel": "441 @plvl 50 - 541 @plvl 541",
     "curveId": 71417,
+    "requiredLevelCurve": {
+      "curve": 71440,
+      "val": 0
+    },
     "quality": 3
   },
   "10366": {
     "id": 10366,
     "ilevel": "447 @plvl 50 - 539 @plvl 539",
     "curveId": 71414,
+    "requiredLevelCurve": {
+      "curve": 71437,
+      "val": 0
+    },
     "quality": 4
   },
   "10367": {
     "id": 10367,
     "ilevel": "447 @plvl 50 - 545 @plvl 545",
     "curveId": 71415,
+    "requiredLevelCurve": {
+      "curve": 71438,
+      "val": 0
+    },
     "quality": 4
   },
   "10374": {
@@ -62834,253 +65255,1880 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 10533,
     "serverside": true
   },
+  "10539": {
+    "id": 10539,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10540": {
+    "id": 10540,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10541": {
+    "id": 10541,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10542": {
+    "id": 10542,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10543": {
+    "id": 10543,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10544": {
+    "id": 10544,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10545": {
+    "id": 10545,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10546": {
+    "id": 10546,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10547": {
+    "id": 10547,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10548": {
+    "id": 10548,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10549": {
+    "id": 10549,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10550": {
+    "id": 10550,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10551": {
+    "id": 10551,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10552": {
+    "id": 10552,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10553": {
+    "id": 10553,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10554": {
+    "id": 10554,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10555": {
+    "id": 10555,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10556": {
+    "id": 10556,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10557": {
+    "id": 10557,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10558": {
+    "id": 10558,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10559": {
+    "id": 10559,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10560": {
+    "id": 10560,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10561": {
+    "id": 10561,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10562": {
+    "id": 10562,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10563": {
+    "id": 10563,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10564": {
+    "id": 10564,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10565": {
+    "id": 10565,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10566": {
+    "id": 10566,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10567": {
+    "id": 10567,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10568": {
+    "id": 10568,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10569": {
+    "id": 10569,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10570": {
+    "id": 10570,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10571": {
+    "id": 10571,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10572": {
+    "id": 10572,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10573": {
+    "id": 10573,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10574": {
+    "id": 10574,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10575": {
+    "id": 10575,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10576": {
+    "id": 10576,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10577": {
+    "id": 10577,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10578": {
+    "id": 10578,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10579": {
+    "id": 10579,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10580": {
+    "id": 10580,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10581": {
+    "id": 10581,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10582": {
+    "id": 10582,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10583": {
+    "id": 10583,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10584": {
+    "id": 10584,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10585": {
+    "id": 10585,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10586": {
+    "id": 10586,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10587": {
+    "id": 10587,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10588": {
+    "id": 10588,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
   "10589": {
     "id": 10589,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    },
     "socket": 1
   },
   "10591": {
     "id": 10591,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    },
     "socket": 1
+  },
+  "10592": {
+    "id": 10592,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "10593": {
+    "id": 10593,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "10594": {
+    "id": 10594,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
+  },
+  "10595": {
+    "id": 10595,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    }
   },
   "10596": {
     "id": 10596,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    },
     "socket": 1
   },
   "10597": {
     "id": 10597,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 0
+    },
     "socket": 1
+  },
+  "10598": {
+    "id": 10598,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10599": {
+    "id": 10599,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10600": {
+    "id": 10600,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10601": {
     "id": 10601,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
   },
   "10602": {
     "id": 10602,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
+  },
+  "10603": {
+    "id": 10603,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10604": {
+    "id": 10604,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10605": {
+    "id": 10605,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10606": {
+    "id": 10606,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10607": {
+    "id": 10607,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10608": {
     "id": 10608,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
   },
   "10609": {
     "id": 10609,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
+  },
+  "10610": {
+    "id": 10610,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10611": {
+    "id": 10611,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10612": {
+    "id": 10612,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10613": {
+    "id": 10613,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10614": {
+    "id": 10614,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10615": {
     "id": 10615,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
   },
   "10616": {
     "id": 10616,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
+  },
+  "10617": {
+    "id": 10617,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10618": {
+    "id": 10618,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10619": {
+    "id": 10619,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10620": {
+    "id": 10620,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10621": {
+    "id": 10621,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10622": {
     "id": 10622,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
   },
   "10623": {
     "id": 10623,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 2
+  },
+  "10624": {
+    "id": 10624,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10625": {
+    "id": 10625,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10626": {
+    "id": 10626,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10627": {
+    "id": 10627,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10628": {
+    "id": 10628,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10629": {
     "id": 10629,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10630": {
     "id": 10630,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10631": {
+    "id": 10631,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10632": {
+    "id": 10632,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10633": {
+    "id": 10633,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10634": {
+    "id": 10634,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10635": {
+    "id": 10635,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10636": {
     "id": 10636,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10637": {
     "id": 10637,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10638": {
+    "id": 10638,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10639": {
+    "id": 10639,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10640": {
+    "id": 10640,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10641": {
+    "id": 10641,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10642": {
+    "id": 10642,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10643": {
     "id": 10643,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10644": {
     "id": 10644,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10645": {
+    "id": 10645,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10646": {
+    "id": 10646,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10647": {
+    "id": 10647,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10648": {
+    "id": 10648,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10649": {
+    "id": 10649,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10650": {
     "id": 10650,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10651": {
     "id": 10651,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10652": {
+    "id": 10652,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10653": {
+    "id": 10653,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10654": {
+    "id": 10654,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10655": {
+    "id": 10655,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10656": {
+    "id": 10656,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10657": {
     "id": 10657,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10658": {
     "id": 10658,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10659": {
     "id": 10659,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10660": {
+    "id": 10660,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10661": {
+    "id": 10661,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10662": {
+    "id": 10662,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10663": {
     "id": 10663,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10664": {
+    "id": 10664,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10665": {
+    "id": 10665,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10666": {
     "id": 10666,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10667": {
+    "id": 10667,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10668": {
+    "id": 10668,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10669": {
+    "id": 10669,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10670": {
     "id": 10670,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10671": {
+    "id": 10671,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10672": {
+    "id": 10672,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10673": {
+    "id": 10673,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10674": {
     "id": 10674,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10675": {
+    "id": 10675,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10676": {
+    "id": 10676,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10677": {
     "id": 10677,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10678": {
+    "id": 10678,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10679": {
+    "id": 10679,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10680": {
+    "id": 10680,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10681": {
     "id": 10681,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10682": {
+    "id": 10682,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10683": {
+    "id": 10683,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10684": {
     "id": 10684,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10685": {
+    "id": 10685,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10686": {
+    "id": 10686,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10687": {
+    "id": 10687,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10688": {
     "id": 10688,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10689": {
+    "id": 10689,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10690": {
+    "id": 10690,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10691": {
     "id": 10691,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10693": {
+    "id": 10693,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10694": {
+    "id": 10694,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10695": {
     "id": 10695,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10696": {
+    "id": 10696,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10697": {
+    "id": 10697,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10698": {
     "id": 10698,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10699": {
+    "id": 10699,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10700": {
+    "id": 10700,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10701": {
+    "id": 10701,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10702": {
     "id": 10702,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10703": {
+    "id": 10703,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10704": {
+    "id": 10704,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10705": {
     "id": 10705,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10706": {
+    "id": 10706,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10707": {
+    "id": 10707,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10708": {
+    "id": 10708,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10709": {
     "id": 10709,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10710": {
+    "id": 10710,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10711": {
+    "id": 10711,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10712": {
     "id": 10712,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10713": {
+    "id": 10713,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10714": {
+    "id": 10714,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10715": {
+    "id": 10715,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10716": {
     "id": 10716,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10717": {
+    "id": 10717,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10718": {
+    "id": 10718,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10719": {
     "id": 10719,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10720": {
+    "id": 10720,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10721": {
+    "id": 10721,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10722": {
+    "id": 10722,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10723": {
+    "id": 10723,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10724": {
+    "id": 10724,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10725": {
+    "id": 10725,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10726": {
+    "id": 10726,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10727": {
+    "id": 10727,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10728": {
+    "id": 10728,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10729": {
+    "id": 10729,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10730": {
+    "id": 10730,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10731": {
+    "id": 10731,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10732": {
+    "id": 10732,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10733": {
     "id": 10733,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10734": {
     "id": 10734,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10735": {
     "id": 10735,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10736": {
     "id": 10736,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10737": {
     "id": 10737,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10738": {
     "id": 10738,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10739": {
     "id": 10739,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10740": {
     "id": 10740,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10741": {
     "id": 10741,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10742": {
     "id": 10742,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10743": {
     "id": 10743,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10744": {
+    "id": 10744,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10745": {
+    "id": 10745,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10746": {
+    "id": 10746,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10747": {
+    "id": 10747,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10748": {
+    "id": 10748,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10749": {
+    "id": 10749,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10750": {
+    "id": 10750,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10751": {
+    "id": 10751,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10752": {
+    "id": 10752,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10753": {
+    "id": 10753,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10754": {
+    "id": 10754,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10755": {
+    "id": 10755,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10756": {
+    "id": 10756,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10757": {
+    "id": 10757,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10758": {
+    "id": 10758,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10759": {
+    "id": 10759,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10760": {
+    "id": 10760,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10761": {
+    "id": 10761,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10762": {
+    "id": 10762,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10763": {
+    "id": 10763,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10764": {
+    "id": 10764,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10765": {
+    "id": 10765,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10766": {
     "id": 10766,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10767": {
     "id": 10767,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10768": {
     "id": 10768,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10769": {
     "id": 10769,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10770": {
     "id": 10770,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10771": {
     "id": 10771,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10772": {
     "id": 10772,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10773": {
     "id": 10773,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10774": {
     "id": 10774,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10775": {
     "id": 10775,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "10776": {
     "id": 10776,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "10777": {
+    "id": 10777,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10778": {
+    "id": 10778,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10779": {
+    "id": 10779,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10780": {
+    "id": 10780,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10781": {
+    "id": 10781,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10782": {
+    "id": 10782,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10783": {
+    "id": 10783,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10784": {
+    "id": 10784,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10785": {
+    "id": 10785,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10786": {
+    "id": 10786,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10787": {
+    "id": 10787,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10788": {
+    "id": 10788,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10789": {
+    "id": 10789,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10790": {
+    "id": 10790,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10791": {
+    "id": 10791,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10792": {
+    "id": 10792,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10793": {
+    "id": 10793,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10794": {
+    "id": 10794,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10795": {
+    "id": 10795,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10796": {
+    "id": 10796,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10797": {
+    "id": 10797,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10798": {
+    "id": 10798,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10799": {
+    "id": 10799,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10800": {
     "id": 10800,
@@ -63415,6 +67463,13 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 590,
       "priority": 100,
       "squishEra": 1
+    }
+  },
+  "10830": {
+    "id": 10830,
+    "requiredLevelCurve": {
+      "curve": 70592,
+      "val": 0
     }
   },
   "10832": {
@@ -63762,6 +67817,412 @@ export const bonus_IDs: {[key: string]: any} = {
   "10890": {
     "id": 10890,
     "applyBonusId": 13517
+  },
+  "10891": {
+    "id": 10891,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10892": {
+    "id": 10892,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10893": {
+    "id": 10893,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10894": {
+    "id": 10894,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10895": {
+    "id": 10895,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10896": {
+    "id": 10896,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10897": {
+    "id": 10897,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10898": {
+    "id": 10898,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10899": {
+    "id": 10899,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10900": {
+    "id": 10900,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10901": {
+    "id": 10901,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10902": {
+    "id": 10902,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10903": {
+    "id": 10903,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10904": {
+    "id": 10904,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10905": {
+    "id": 10905,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10906": {
+    "id": 10906,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10907": {
+    "id": 10907,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10908": {
+    "id": 10908,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10909": {
+    "id": 10909,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10910": {
+    "id": 10910,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10911": {
+    "id": 10911,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10912": {
+    "id": 10912,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10913": {
+    "id": 10913,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10914": {
+    "id": 10914,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10915": {
+    "id": 10915,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10916": {
+    "id": 10916,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10917": {
+    "id": 10917,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10918": {
+    "id": 10918,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10919": {
+    "id": 10919,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10920": {
+    "id": 10920,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10921": {
+    "id": 10921,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10922": {
+    "id": 10922,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10923": {
+    "id": 10923,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10924": {
+    "id": 10924,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10925": {
+    "id": 10925,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10926": {
+    "id": 10926,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10927": {
+    "id": 10927,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10928": {
+    "id": 10928,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10929": {
+    "id": 10929,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10930": {
+    "id": 10930,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10931": {
+    "id": 10931,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10932": {
+    "id": 10932,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10933": {
+    "id": 10933,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10934": {
+    "id": 10934,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10935": {
+    "id": 10935,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10936": {
+    "id": 10936,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10937": {
+    "id": 10937,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10938": {
+    "id": 10938,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10939": {
+    "id": 10939,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10940": {
+    "id": 10940,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10941": {
+    "id": 10941,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10942": {
+    "id": 10942,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10943": {
+    "id": 10943,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10944": {
+    "id": 10944,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10945": {
+    "id": 10945,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10946": {
+    "id": 10946,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10947": {
+    "id": 10947,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "10948": {
+    "id": 10948,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "10951": {
     "id": 10951,
@@ -64646,6 +69107,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 1,
       "squishEra": 1
     },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
+    },
     "quality": 4
   },
   "11143": {
@@ -64666,48 +69131,337 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11145": {
     "id": 11145,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11146": {
     "id": 11146,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11147": {
     "id": 11147,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11148": {
     "id": 11148,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11149": {
     "id": 11149,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11150": {
     "id": 11150,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11151": {
     "id": 11151,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11152": {
     "id": 11152,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11153": {
     "id": 11153,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
   },
   "11154": {
     "id": 11154,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    },
     "socket": 3
+  },
+  "11155": {
+    "id": 11155,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11156": {
+    "id": 11156,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11157": {
+    "id": 11157,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11158": {
+    "id": 11158,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11159": {
+    "id": 11159,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11160": {
+    "id": 11160,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11161": {
+    "id": 11161,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11162": {
+    "id": 11162,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11163": {
+    "id": 11163,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11164": {
+    "id": 11164,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11165": {
+    "id": 11165,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11166": {
+    "id": 11166,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11167": {
+    "id": 11167,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11168": {
+    "id": 11168,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11169": {
+    "id": 11169,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11170": {
+    "id": 11170,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11171": {
+    "id": 11171,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11172": {
+    "id": 11172,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11173": {
+    "id": 11173,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11174": {
+    "id": 11174,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11175": {
+    "id": 11175,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11176": {
+    "id": 11176,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11177": {
+    "id": 11177,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11178": {
+    "id": 11178,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11179": {
+    "id": 11179,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11180": {
+    "id": 11180,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11181": {
+    "id": 11181,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11182": {
+    "id": 11182,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11183": {
+    "id": 11183,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11184": {
+    "id": 11184,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11185": {
+    "id": 11185,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11186": {
+    "id": 11186,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11187": {
+    "id": 11187,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11188": {
+    "id": 11188,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
+  },
+  "11189": {
+    "id": 11189,
+    "requiredLevelCurve": {
+      "curve": 70966,
+      "val": 2793
+    }
   },
   "11190": {
     "id": 11190,
     "ilevel": "15 @plvl 10 - 551 @plvl 551",
-    "curveId": 75318
+    "curveId": 75318,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "11191": {
     "id": 11191,
@@ -65005,7 +69759,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "11229": {
     "id": 11229,
     "ilevel": "70 @plvl 50 - 73 @plvl 76",
-    "curveId": 77026
+    "curveId": 77026,
+    "requiredLevelCurve": {
+      "curve": 77026,
+      "val": 0
+    }
   },
   "11230": {
     "id": 11230,
@@ -65782,12 +70540,26 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 1
     }
   },
+  "11296": {
+    "id": 11296,
+    "requiredLevelCurve": {
+      "curve": 70594,
+      "val": 0
+    }
+  },
   "11297": {
     "id": 11297,
     "itemLevel": {
       "amount": 545,
       "priority": 100,
       "squishEra": 1
+    }
+  },
+  "11298": {
+    "id": 11298,
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     }
   },
   "11299": {
@@ -65865,7 +70637,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "11306": {
     "id": 11306,
     "ilevel": "15 @plvl 10 - 554 @plvl 554",
-    "curveId": 77472
+    "curveId": 77472,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "11307": {
     "id": 11307,
@@ -65990,6 +70766,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11329": {
     "id": 11329,
+    "requiredLevelCurve": {
+      "curve": 17800,
+      "val": 0
+    },
     "ilevel": "10 @plvl 0 - 10 @plvl 10",
     "curveId": 77990,
     "quality": 3
@@ -66000,6 +70780,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 545,
       "priority": 1,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 70595,
+      "val": 0
     }
   },
   "11331": {
@@ -66008,6 +70792,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 561,
       "priority": 1,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     }
   },
   "11332": {
@@ -66023,24 +70811,40 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 11334,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
+    "requiredLevelCurve": {
+      "curve": 78136,
+      "val": 2998
+    },
     "quality": 3
   },
   "11335": {
     "id": 11335,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
+    "requiredLevelCurve": {
+      "curve": 78136,
+      "val": 2999
+    },
     "quality": 3
   },
   "11336": {
     "id": 11336,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
+    "requiredLevelCurve": {
+      "curve": 78136,
+      "val": 3000
+    },
     "quality": 3
   },
   "11337": {
     "id": 11337,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
+    "requiredLevelCurve": {
+      "curve": 78136,
+      "val": 3001
+    },
     "quality": 3
   },
   "11338": {
@@ -66050,6 +70854,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 554,
       "priority": 0,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     }
   },
   "11341": {
@@ -68466,67 +73274,131 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11942": {
     "id": 11942,
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11943": {
     "id": 11943,
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11944": {
     "id": 11944,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11945": {
     "id": 11945,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11946": {
     "id": 11946,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11947": {
     "id": 11947,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11948": {
     "id": 11948,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11949": {
     "id": 11949,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11950": {
     "id": 11950,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11951": {
     "id": 11951,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11952": {
     "id": 11952,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11953": {
     "id": 11953,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11954": {
     "id": 11954,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11955": {
     "id": 11955,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11956": {
     "id": 11956,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11957": {
     "id": 11957,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11963": {
     "id": 11963,
@@ -68554,115 +73426,227 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "11969": {
     "id": 11969,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11970": {
     "id": 11970,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11971": {
     "id": 11971,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11972": {
     "id": 11972,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11973": {
     "id": 11973,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11974": {
     "id": 11974,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11975": {
     "id": 11975,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11976": {
     "id": 11976,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11977": {
     "id": 11977,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11978": {
     "id": 11978,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11979": {
     "id": 11979,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11980": {
     "id": 11980,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11981": {
     "id": 11981,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11982": {
     "id": 11982,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11983": {
     "id": 11983,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11984": {
     "id": 11984,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11985": {
     "id": 11985,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11986": {
     "id": 11986,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11987": {
     "id": 11987,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11988": {
     "id": 11988,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11989": {
     "id": 11989,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11990": {
     "id": 11990,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11991": {
     "id": 11991,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11992": {
     "id": 11992,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11993": {
     "id": 11993,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11994": {
     "id": 11994,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11995": {
     "id": 11995,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11996": {
     "id": 11996,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "11997": {
     "id": 11997,
@@ -68683,6 +73667,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 11999,
       "itemLevel": 80
     },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "quality": 4
   },
   "12001": {
@@ -68695,6 +73683,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Explorer 2/8",
       "bonusId": 12001,
       "itemLevel": 80
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     },
     "quality": 4
   },
@@ -68709,6 +73701,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12002,
       "itemLevel": 80
     },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "quality": 4
   },
   "12003": {
@@ -68721,6 +73717,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 4/8",
       "bonusId": 12003,
       "itemLevel": 80
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     },
     "quality": 4
   },
@@ -68735,6 +73735,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12004,
       "itemLevel": 83
     },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "quality": 4
   },
   "12005": {
@@ -68747,6 +73751,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 6/8",
       "bonusId": 12005,
       "itemLevel": 83
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     },
     "quality": 4
   },
@@ -68761,6 +73769,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12006,
       "itemLevel": 86
     },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "quality": 4
   },
   "12007": {
@@ -68773,6 +73785,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 8/8",
       "bonusId": 12007,
       "itemLevel": 86
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     },
     "quality": 4
   },
@@ -68881,6 +73897,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 593,
       "priority": 0,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     }
   },
   "12025": {
@@ -68942,6 +73962,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 1,
       "squishEra": 1
     },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
+    },
     "quality": 4
   },
   "12042": {
@@ -68963,17 +73987,29 @@ export const bonus_IDs: {[key: string]: any} = {
   "12047": {
     "id": 12047,
     "ilevel": "15 @plvl 10 - 587 @plvl 587",
-    "curveId": 79452
+    "curveId": 79452,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12048": {
     "id": 12048,
     "ilevel": "15 @plvl 10 - 590 @plvl 590",
-    "curveId": 79453
+    "curveId": 79453,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12049": {
     "id": 12049,
     "ilevel": "15 @plvl 10 - 593 @plvl 593",
-    "curveId": 79454
+    "curveId": 79454,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12050": {
     "id": 12050,
@@ -68990,6 +74026,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 662,
       "priority": 1,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     },
     "quality": 4
   },
@@ -69207,7 +74247,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "12096": {
     "id": 12096,
     "ilevel": "15 @plvl 10 - 593 @plvl 593",
-    "curveId": 79454
+    "curveId": 79454,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12097": {
     "id": 12097,
@@ -70420,6 +75464,13 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2
     }
   },
+  "12246": {
+    "id": 12246,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 0
+    }
+  },
   "12247": {
     "id": 12247,
     "itemLevel": {
@@ -70428,12 +75479,26 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2
     }
   },
+  "12248": {
+    "id": 12248,
+    "requiredLevelCurve": {
+      "curve": 82775,
+      "val": 0
+    }
+  },
   "12249": {
     "id": 12249,
     "itemLevel": {
       "amount": 165,
       "priority": 100,
       "squishEra": 2
+    }
+  },
+  "12251": {
+    "id": 12251,
+    "requiredLevelCurve": {
+      "curve": 82795,
+      "val": 0
     }
   },
   "12252": {
@@ -70700,6 +75765,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 642,
       "priority": 9999,
@@ -70856,6 +75925,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 645,
       "priority": 9999,
@@ -71012,6 +76085,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 649,
       "priority": 9999,
@@ -71168,6 +76245,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 652,
       "priority": 9999,
@@ -71324,6 +76405,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 655,
       "priority": 9999,
@@ -71480,6 +76565,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 658,
       "priority": 9999,
@@ -71636,6 +76725,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 662,
       "priority": 9999,
@@ -71792,6 +76885,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 665,
       "priority": 9999,
@@ -71955,6 +77052,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 655,
       "priority": 9999,
@@ -72111,6 +77212,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 658,
       "priority": 9999,
@@ -72267,6 +77372,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 662,
       "priority": 9999,
@@ -72423,6 +77532,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 665,
       "priority": 9999,
@@ -72627,6 +77740,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 668,
       "priority": 9999,
@@ -72831,6 +77948,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 671,
       "priority": 9999,
@@ -73035,6 +78156,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 675,
       "priority": 9999,
@@ -73239,6 +78364,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 678,
       "priority": 9999,
@@ -73443,6 +78572,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 668,
       "priority": 9999,
@@ -73647,6 +78780,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 671,
       "priority": 9999,
@@ -73851,6 +78988,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 675,
       "priority": 9999,
@@ -74055,6 +79196,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 678,
       "priority": 9999,
@@ -74259,6 +79404,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 681,
       "priority": 9999,
@@ -74463,6 +79612,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 684,
       "priority": 9999,
@@ -74667,6 +79820,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 688,
       "priority": 9999,
@@ -74871,6 +80028,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 691,
       "priority": 9999,
@@ -75075,6 +80236,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 681,
       "priority": 9999,
@@ -75279,6 +80444,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 684,
       "priority": 9999,
@@ -75483,6 +80652,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 688,
       "priority": 9999,
@@ -75687,6 +80860,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 691,
       "priority": 9999,
@@ -75891,6 +81068,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 694,
       "priority": 9999,
@@ -76095,6 +81276,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 697,
       "priority": 9999,
@@ -76299,6 +81484,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 701,
       "priority": 9999,
@@ -76503,6 +81692,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 704,
       "priority": 9999,
@@ -77421,6 +82614,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 694,
       "priority": 9999,
@@ -77625,6 +82822,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 697,
       "priority": 9999,
@@ -77829,6 +83030,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 701,
       "priority": 9999,
@@ -78033,6 +83238,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 704,
       "priority": 9999,
@@ -78237,6 +83446,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 707,
       "priority": 9999,
@@ -78441,6 +83654,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 710,
       "priority": 9999,
@@ -78645,6 +83862,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 707,
       "priority": 9999,
@@ -78849,6 +84070,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 710,
       "priority": 9999,
@@ -79053,6 +84278,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 714,
       "priority": 9999,
@@ -79257,6 +84486,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 717,
       "priority": 9999,
@@ -79461,6 +84694,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 720,
       "priority": 9999,
@@ -79665,6 +84902,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 723,
       "priority": 9999,
@@ -79675,17 +84916,29 @@ export const bonus_IDs: {[key: string]: any} = {
   "12362": {
     "id": 12362,
     "ilevel": "15 @plvl 10 - 626 @plvl 626",
-    "curveId": 83241
+    "curveId": 83241,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12363": {
     "id": 12363,
     "ilevel": "15 @plvl 10 - 629 @plvl 629",
-    "curveId": 83243
+    "curveId": 83243,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12364": {
     "id": 12364,
     "ilevel": "15 @plvl 10 - 632 @plvl 632",
-    "curveId": 83244
+    "curveId": 83244,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "12365": {
     "id": 12365,
@@ -79698,15 +84951,27 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 639,
       "priority": 0,
       "squishEra": 1
+    },
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
     }
   },
   "12371": {
     "id": 12371,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12372": {
     "id": 12372,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12373": {
     "id": 12373,
@@ -79722,11 +84987,19 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "12375": {
     "id": 12375,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12376": {
     "id": 12376,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12377": {
     "id": 12377,
@@ -81030,7 +86303,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12534,
       "itemLevel": 102
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12535": {
     "id": 12535,
@@ -81043,7 +86320,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12535,
       "itemLevel": 103
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12536": {
     "id": 12536,
@@ -81056,7 +86337,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12536,
       "itemLevel": 104
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12537": {
     "id": 12537,
@@ -81069,6 +86354,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12537
     },
     "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 777,
       "priority": 9999,
@@ -81087,7 +86376,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12538,
       "itemLevel": 108
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12539": {
     "id": 12539,
@@ -81100,7 +86393,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12539,
       "itemLevel": 111
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12540": {
     "id": 12540,
@@ -81113,7 +86410,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12540,
       "itemLevel": 115
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12541": {
     "id": 12541,
@@ -81126,7 +86427,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12541,
       "itemLevel": 118
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    }
   },
   "12542": {
     "id": 12542,
@@ -82494,6 +87799,10 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 2
   },
   "12705": {
@@ -82656,8 +87965,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Kinetic Ankle Primers",
         "icon": "ability_karoz_leap"
       }
-    },
-    "item_limit_category": 697
+    }
   },
   "12762": {
     "id": 12762,
@@ -82818,6 +88126,10 @@ export const bonus_IDs: {[key: string]: any} = {
           "accountWide": false
         }
       ]
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 2
   },
@@ -82981,6 +88293,10 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 2
   },
   "12764": {
@@ -83142,6 +88458,10 @@ export const bonus_IDs: {[key: string]: any} = {
           "accountWide": false
         }
       ]
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 2
   },
@@ -83305,6 +88625,10 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12766": {
@@ -83466,6 +88790,10 @@ export const bonus_IDs: {[key: string]: any} = {
           "accountWide": false
         }
       ]
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -83629,6 +88957,10 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12768": {
@@ -83790,6 +89122,10 @@ export const bonus_IDs: {[key: string]: any} = {
           "accountWide": false
         }
       ]
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -86290,7 +91626,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12809,
       "itemLevel": 284
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12810": {
     "id": 12810,
@@ -86309,7 +91649,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12810,
       "itemLevel": 287
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12811": {
     "id": 12811,
@@ -86328,7 +91672,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12811,
       "itemLevel": 291
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12812": {
     "id": 12812,
@@ -86347,7 +91695,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12812,
       "itemLevel": 294
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12813": {
     "id": 12813,
@@ -86366,7 +91718,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12813,
       "itemLevel": 297
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12814": {
     "id": 12814,
@@ -86385,7 +91741,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12814,
       "itemLevel": 300
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12815": {
     "id": 12815,
@@ -86404,7 +91764,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12815,
       "itemLevel": 304
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12816": {
     "id": 12816,
@@ -86423,7 +91787,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12816,
       "itemLevel": 307
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12817": {
     "id": 12817,
@@ -86441,6 +91809,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 1/8",
       "bonusId": 12817,
       "itemLevel": 97
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -86461,6 +91833,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12818,
       "itemLevel": 300
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12819": {
@@ -86479,6 +91855,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 3/8",
       "bonusId": 12819,
       "itemLevel": 304
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -86499,6 +91879,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12820,
       "itemLevel": 307
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12821": {
@@ -86517,6 +91901,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 5/8",
       "bonusId": 12821,
       "itemLevel": 310
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -86537,6 +91925,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12822,
       "itemLevel": 313
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12823": {
@@ -86555,6 +91947,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 7/8",
       "bonusId": 12823,
       "itemLevel": 317
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -86575,6 +91971,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12824,
       "itemLevel": 320
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12825": {
@@ -86593,6 +91993,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 1/8",
       "bonusId": 12825,
       "itemLevel": 310
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86613,6 +92017,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12826,
       "itemLevel": 313
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12827": {
@@ -86631,6 +92039,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 3/8",
       "bonusId": 12827,
       "itemLevel": 317
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86651,6 +92063,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12828,
       "itemLevel": 320
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12829": {
@@ -86669,6 +92085,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 5/8",
       "bonusId": 12829,
       "itemLevel": 323
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86689,6 +92109,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12830,
       "itemLevel": 326
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12831": {
@@ -86707,6 +92131,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 7/8",
       "bonusId": 12831,
       "itemLevel": 330
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86727,6 +92155,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12832,
       "itemLevel": 333
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12833": {
@@ -86745,6 +92177,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 1/8",
       "bonusId": 12833,
       "itemLevel": 323
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86765,6 +92201,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12834,
       "itemLevel": 326
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12835": {
@@ -86783,6 +92223,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 3/8",
       "bonusId": 12835,
       "itemLevel": 330
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86803,6 +92247,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12836,
       "itemLevel": 333
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12837": {
@@ -86821,6 +92269,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 5/8",
       "bonusId": 12837,
       "itemLevel": 336
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86841,6 +92293,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12838,
       "itemLevel": 339
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12839": {
@@ -86859,6 +92315,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 7/8",
       "bonusId": 12839,
       "itemLevel": 343
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86879,6 +92339,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12840,
       "itemLevel": 346
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12841": {
@@ -86897,6 +92361,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 1/8",
       "bonusId": 12841,
       "itemLevel": 336
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86917,6 +92385,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12842,
       "itemLevel": 339
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12843": {
@@ -86935,6 +92407,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 3/8",
       "bonusId": 12843,
       "itemLevel": 343
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86955,6 +92431,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12844,
       "itemLevel": 346
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12845": {
@@ -86973,6 +92453,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 5/8",
       "bonusId": 12845,
       "itemLevel": 349
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -86993,6 +92477,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12846,
       "itemLevel": 352
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12847": {
@@ -87011,6 +92499,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 7/8",
       "bonusId": 12847,
       "itemLevel": 356
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87031,6 +92523,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12848,
       "itemLevel": 359
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12849": {
@@ -87049,6 +92545,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 1/8",
       "bonusId": 12849,
       "itemLevel": 349
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87069,6 +92569,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12850,
       "itemLevel": 352
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12851": {
@@ -87087,6 +92591,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 3/8",
       "bonusId": 12851,
       "itemLevel": 356
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87107,6 +92615,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12852,
       "itemLevel": 359
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12853": {
@@ -87125,6 +92637,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 5/8",
       "bonusId": 12853,
       "itemLevel": 362
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87145,6 +92661,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12854,
       "itemLevel": 365
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12855": {
@@ -87163,6 +92683,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 7/8",
       "bonusId": 12855,
       "itemLevel": 369
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87183,6 +92707,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12856,
       "itemLevel": 372
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12857": {
@@ -87202,7 +92730,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12857,
       "itemLevel": 323
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12858": {
     "id": 12858,
@@ -87221,7 +92753,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12858,
       "itemLevel": 326
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12859": {
     "id": 12859,
@@ -87240,7 +92776,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12859,
       "itemLevel": 330
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12860": {
     "id": 12860,
@@ -87259,7 +92799,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12860,
       "itemLevel": 333
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12861": {
     "id": 12861,
@@ -87278,7 +92822,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12861,
       "itemLevel": 336
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12862": {
     "id": 12862,
@@ -87297,7 +92845,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12862,
       "itemLevel": 339
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12863": {
     "id": 12863,
@@ -87316,7 +92868,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12863,
       "itemLevel": 343
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12864": {
     "id": 12864,
@@ -87335,7 +92891,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12864,
       "itemLevel": 346
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    }
   },
   "12865": {
     "id": 12865,
@@ -87353,6 +92913,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 1/8",
       "bonusId": 12865,
       "itemLevel": 336
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -87373,6 +92937,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12866,
       "itemLevel": 339
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12867": {
@@ -87391,6 +92959,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 3/8",
       "bonusId": 12867,
       "itemLevel": 343
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -87411,6 +92983,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12868,
       "itemLevel": 346
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12869": {
@@ -87429,6 +93005,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 5/8",
       "bonusId": 12869,
       "itemLevel": 349
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -87449,6 +93029,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12870,
       "itemLevel": 352
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12871": {
@@ -87467,6 +93051,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Adventurer 7/8",
       "bonusId": 12871,
       "itemLevel": 356
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 3
   },
@@ -87487,6 +93075,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12872,
       "itemLevel": 359
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 3
   },
   "12873": {
@@ -87505,6 +93097,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 1/8",
       "bonusId": 12873,
       "itemLevel": 349
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87525,6 +93121,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12874,
       "itemLevel": 352
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12875": {
@@ -87543,6 +93143,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 3/8",
       "bonusId": 12875,
       "itemLevel": 356
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87563,6 +93167,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12876,
       "itemLevel": 359
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12877": {
@@ -87581,6 +93189,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 5/8",
       "bonusId": 12877,
       "itemLevel": 362
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87601,6 +93213,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12878,
       "itemLevel": 365
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12879": {
@@ -87619,6 +93235,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Veteran 7/8",
       "bonusId": 12879,
       "itemLevel": 369
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87639,6 +93259,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12880,
       "itemLevel": 372
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12881": {
@@ -87657,6 +93281,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 1/8",
       "bonusId": 12881,
       "itemLevel": 362
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87677,6 +93305,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12882,
       "itemLevel": 365
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12883": {
@@ -87695,6 +93327,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 3/8",
       "bonusId": 12883,
       "itemLevel": 369
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87715,6 +93351,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12884,
       "itemLevel": 372
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12885": {
@@ -87733,6 +93373,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 5/8",
       "bonusId": 12885,
       "itemLevel": 375
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87753,6 +93397,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12886,
       "itemLevel": 378
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12887": {
@@ -87771,6 +93419,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Champion 7/8",
       "bonusId": 12887,
       "itemLevel": 382
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87791,6 +93443,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12888,
       "itemLevel": 385
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12889": {
@@ -87809,6 +93465,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 1/8",
       "bonusId": 12889,
       "itemLevel": 375
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87829,6 +93489,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12890,
       "itemLevel": 378
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12891": {
@@ -87847,6 +93511,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 3/8",
       "bonusId": 12891,
       "itemLevel": 382
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87867,6 +93535,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12892,
       "itemLevel": 385
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12893": {
@@ -87885,6 +93557,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 5/8",
       "bonusId": 12893,
       "itemLevel": 388
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87905,6 +93581,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12894,
       "itemLevel": 391
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12895": {
@@ -87923,6 +93603,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Hero 7/8",
       "bonusId": 12895,
       "itemLevel": 395
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87943,6 +93627,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12896,
       "itemLevel": 398
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12897": {
@@ -87961,6 +93649,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 1/8",
       "bonusId": 12897,
       "itemLevel": 388
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -87981,6 +93673,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12898,
       "itemLevel": 391
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12899": {
@@ -87999,6 +93695,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 3/8",
       "bonusId": 12899,
       "itemLevel": 395
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -88019,6 +93719,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12900,
       "itemLevel": 398
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12901": {
@@ -88037,6 +93741,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 5/8",
       "bonusId": 12901,
       "itemLevel": 401
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -88057,6 +93765,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12902,
       "itemLevel": 404
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12903": {
@@ -88076,6 +93788,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "bonusId": 12903,
       "itemLevel": 408
     },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
+    },
     "quality": 4
   },
   "12904": {
@@ -88094,6 +93810,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "fullName": "Myth 8/8",
       "bonusId": 12904,
       "itemLevel": 411
+    },
+    "requiredLevelCurve": {
+      "curve": 82419,
+      "val": 3313
     },
     "quality": 4
   },
@@ -88127,8 +93847,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Meddy, Pocket-Sized",
         "icon": "trade_engineering"
       }
-    },
-    "item_limit_category": 697
+    }
   },
   "13183": {
     "id": 13183,
@@ -88726,6 +94445,13 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "Adding",
         "icon": "inv_cape_special_explorer_b_03"
       }
+    }
+  },
+  "13250": {
+    "id": 13250,
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     }
   },
   "13251": {
@@ -89475,6 +95201,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 714,
       "priority": 9999,
@@ -89679,6 +95409,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 717,
       "priority": 9999,
@@ -89883,6 +95617,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 727,
       "priority": 9999,
@@ -90087,6 +95825,10 @@ export const bonus_IDs: {[key: string]: any} = {
       ]
     },
     "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 71442,
+      "val": 2462
+    },
     "itemLevel": {
       "amount": 730,
       "priority": 9999,
@@ -90817,8 +96559,7 @@ export const bonus_IDs: {[key: string]: any} = {
         "name": "HU5H, Nonchalant Pup",
         "icon": "inv_10_engineering2_tinkermodules_color6"
       }
-    },
-    "item_limit_category": 697
+    }
   },
   "13558": {
     "id": 13558,
@@ -90890,12 +96631,20 @@ export const bonus_IDs: {[key: string]: any} = {
   "13565": {
     "id": 13565,
     "ilevel": "15 @plvl 10 - 232 @plvl 232",
-    "curveId": 92753
+    "curveId": 92753,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "13566": {
     "id": 13566,
     "ilevel": "15 @plvl 10 - 239 @plvl 239",
-    "curveId": 92754
+    "curveId": 92754,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "13567": {
     "id": 13567,
@@ -90970,17 +96719,29 @@ export const bonus_IDs: {[key: string]: any} = {
   "13580": {
     "id": 13580,
     "ilevel": "15 @plvl 10 - 226 @plvl 226",
-    "curveId": 92752
+    "curveId": 92752,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "13581": {
     "id": 13581,
     "ilevel": "15 @plvl 10 - 232 @plvl 232",
-    "curveId": 92753
+    "curveId": 92753,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "13582": {
     "id": 13582,
     "ilevel": "15 @plvl 10 - 239 @plvl 239",
-    "curveId": 92754
+    "curveId": 92754,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 0
+    }
   },
   "13583": {
     "id": 13583,
@@ -91247,6 +97008,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 0,
       "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 0
     }
   },
   "13609": {
@@ -91257,7 +97022,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 290,
       "squishEra": 2
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 0
+    }
   },
   "13610": {
     "id": 13610,
@@ -91272,7 +97041,11 @@ export const bonus_IDs: {[key: string]: any} = {
   "13611": {
     "id": 13611,
     "ilevel": "120 @plvl 80 - 201 @plvl 201",
-    "curveId": 92772
+    "curveId": 92772,
+    "requiredLevelCurve": {
+      "curve": 70856,
+      "val": 3322
+    }
   },
   "13613": {
     "id": 13613,
@@ -91301,6 +97074,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 300,
       "squishEra": 0
+    },
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
     }
   },
   "13618": {
@@ -91311,7 +97088,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 200,
       "squishEra": 0
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
+    }
   },
   "13619": {
     "id": 13619,
@@ -91321,7 +97102,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 100,
       "squishEra": 0
     },
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 6243,
+      "val": 0
+    }
   },
   "13620": {
     "id": 13620,
@@ -91329,6 +97114,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 233,
       "priority": 1,
       "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     },
     "quality": 4
   },
@@ -91354,6 +97143,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 220,
       "priority": 1,
       "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
     }
   },
   "13624": {
@@ -91518,6 +97311,53 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 3
   },
+  "13651": {
+    "id": 13651,
+    "itemLevel": {
+      "amount": 246,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13652": {
+    "id": 13652,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13653": {
+    "id": 13653,
+    "itemLevel": {
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Ascendant Voidforged: Hero"
+  },
+  "13654": {
+    "id": 13654,
+    "itemLevel": {
+      "amount": 298,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Ascendant Voidforged: Myth"
+  },
+  "13655": {
+    "id": 13655,
+    "levelOffsetSecondary": {
+      "amount": 10
+    },
+    "tag": "Ascendant Voidforged"
+  },
+  "13656": {
+    "id": 13656,
+    "tag": "Galactic Void-Charged"
+  },
   "13667": {
     "id": 13667,
     "serverside": true
@@ -91530,7 +97370,7 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 13669,
     "itemLevel": {
       "amount": 220,
-      "priority": 1,
+      "priority": 100,
       "squishEra": 2
     }
   },
@@ -91541,10 +97381,27 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 1,
       "squishEra": 1
     },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
+    },
     "quality": 4
+  },
+  "13689": {
+    "id": 13689,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 49,
+      "priority": 0,
+      "squishEra": 0
+    }
   },
   "13729": {
     "id": 13729,
+    "requiredLevelCurve": {
+      "curve": 101224,
+      "val": 0
+    },
     "dropLevelCurve": {
       "curveId": 101225,
       "offset": 0,
@@ -91554,6 +97411,10 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13730": {
     "id": 13730,
+    "requiredLevelCurve": {
+      "curve": 101224,
+      "val": 0
+    },
     "dropLevelCurve": {
       "curveId": 101225,
       "offset": 6,
@@ -91561,5 +97422,9 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2
     },
     "quality": 3
+  },
+  "13760": {
+    "id": 13760,
+    "serverside": true
   }
 }
