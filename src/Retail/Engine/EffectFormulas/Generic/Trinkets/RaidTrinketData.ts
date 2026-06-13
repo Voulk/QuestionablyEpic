@@ -1,10 +1,32 @@
 import { Player } from "General/Modules/Player/Player";
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket, runGenericRandomPPMTrinket } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+      { //
+        id: 249809,
+        name: "Sporelord's Mycelial Insignia",
+        description: "",
+        addonDescription: "",
+        effects: [
+        { // Stat Proc Portion
+            stat: "random",
+            duration: 12,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats = runGenericRandomPPMTrinket({...data[0], ...trinketRawData["Sporelord's Mycelial Insignia"][0]}, itemLevel, additionalData.setStats);
+            bonus_stats.leech = runGenericPPMTrinket({...data[0], ...trinketRawData["Sporelord's Mycelial Insignia"][0], stat: "leech"}, itemLevel, additionalData.setStats)
+
+
+            return bonus_stats;
+            }
+    },
   {
         name: "Litany of Lightblind Wrath",
         description: "An awkward to use but numerically powerful healer trinket option. Should be easier to obtain than other S-tier trinkets, just remember to press it close to its cooldown to maximize value.",
