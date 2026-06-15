@@ -56,6 +56,7 @@ const initialState : RootState = {
 
     // Spec values:
     masteryEffectivenessShaman: { value: 30, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    waterShieldBugShaman: { value: 'No', options: ['No', 'Yes'], category: "specSpecific", type: "selector", gameType: "Retail", spec: "Restoration Shaman" },
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "More Efficient", "More Burst Healing"], category: "topGear", type: "selector", gameType: "Classic"},
