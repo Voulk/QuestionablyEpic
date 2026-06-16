@@ -846,7 +846,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Handle user entry / unlocks later.
   const folioGems = [1279599]
   const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
-  console.log(folioStats);
 
   effectStats.push(folioStats);
 
