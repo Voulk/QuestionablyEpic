@@ -33,10 +33,10 @@ export const chronoDefaultSpellData = (contentType) => {
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.546,
-      crit: 0.434,
-      mastery: 0.62,
-      versatility: 0.429,
+      haste: 0.582,
+      crit: 0.474,
+      mastery: 0.576,
+      versatility: 0.441,
       leech: 0.25,
       defaults: true,
     };
