@@ -64,11 +64,8 @@ export const getShortName = (id: number) => {
  * @param {*} settings 
  * @returns the bonus_effects data from one specific set of gems.
  */
-export const getFolioEffect = (gemNames: number[], itemLevel: number, additionalData: AdditionalData) => {
+export const getFolioEffect = (gemNames: number[], additionalData: AdditionalData) => {
     let bonus_stats: Stats = {};
-    let final_stats: Stats = {};
-    let bonus_stats_all: { id: number; stats: Stats }[] = [];
-    let temp = [];
 
     let gemsEquipped = gemNames.map((gemID: number) => {
         return omniumFolioData.find((effect) => effect.id === gemID);
@@ -78,9 +75,7 @@ export const getFolioEffect = (gemNames: number[], itemLevel: number, additional
     
     gemsEquipped.forEach(((gem: folioGemType) => {
         if (gem) {
-          const gemStats = gem.runFunc(gem, gemIDs, itemLevel, additionalData);
-          bonus_stats_all.push({id: gem.id, stats: gemStats});
-          temp.push(gem.name + " " /*+ JSON.stringify(gemStats) */ + " Est HPS: " + getEstimatedHPS(gemStats, additionalData.player, additionalData.contentType) + (gemStats.dps > 0 ? " Est DPS: " + gemStats.dps : ""))
+          const gemStats = gem.runFunc(gem, gemIDs, additionalData);
 
           bonus_stats = compileStats(bonus_stats, gemStats); // TODO
         }
@@ -157,7 +152,7 @@ export const omniumFolioData: Array<folioGemType> = [
     shortName: "Void-Touched",
     effects: [
       { 
-        value: 977,
+        value: 2051,
         ppm: 6,
         efficiency: 0.8,
         targets: 1,
@@ -167,7 +162,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value! / 100 * processedValue(folioData[1], 285));
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
       
         let bonus_stats: Stats = {};
         const effect = data.effects[0];
@@ -188,7 +183,7 @@ export const omniumFolioData: Array<folioGemType> = [
     shortName: "Unleashed Fire",
     effects: [
       { 
-        value: 1465,
+        value: 2051,
         ppm: 9,
         efficiency: 0.8,
         targets: 1,
@@ -198,7 +193,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(data.value! / 100 * processedValue(folioData[1], 285));
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
       
         let bonus_stats: Stats = {};
         const effect = data.effects[0];
@@ -224,7 +219,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
         
         const critValue = data.processedValue(data.effects[0], gemData);
@@ -248,7 +243,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
         
         const hasteValue = data.processedValue(data.effects[0], gemData);
@@ -274,7 +269,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
         
         const masteryValue = data.processedValue(data.effects[0], gemData);
@@ -300,7 +295,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return Math.floor(processedValue(folioData[3], 285) * data.value! / 100);
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
         
         const versatilityValue = data.processedValue(data.effects[0], gemData);
@@ -326,7 +321,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0;
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
 
         return bonus_stats;
@@ -348,7 +343,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0;
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
 
         return bonus_stats;
@@ -370,7 +365,7 @@ export const omniumFolioData: Array<folioGemType> = [
     processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
       return 0;
     },
-    runFunc: function(data: folioGemType, gemData: Array<any>, itemLevel: number, additionalData: Object) {
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
         let bonus_stats: Stats = {};
 
         return bonus_stats;
