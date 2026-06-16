@@ -14,6 +14,7 @@ export const effectData = [
     ],
     runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
+
       bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, additionalData.player)// * efficiency;
 
       return bonus_stats;
