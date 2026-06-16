@@ -89,7 +89,7 @@ export function scoreDiscSet(specBaseline, statProfile, userSettings, tierSets =
   const masteryHeal = statPercentages.mastery;
 
   if (tierSets.includes("Priest T16-2")) {
-    //statPercentages.crit += 0.1 * archangelUptime;
+    statPercentages.crit += 0.1 * archangelUptime;
   }
 
   reportingData.statPercentages = statPercentages;
