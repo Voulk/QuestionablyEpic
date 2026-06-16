@@ -2,10 +2,10 @@ import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, f
 
 export const effectData = [
   { 
-    name: "Band of the Shattered Soul",
+    name: "Rotmire's Sporeheart",
     effects: [
       {
-        coefficient: 39.03619, 
+        coefficient: 110.1049, 
         table: -9,
         ppm: 2,
         efficiency: 0.95, // Converts to absorb so high efficiency.
@@ -14,14 +14,9 @@ export const effectData = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats = {};
-      //console.log(processedValue(data[0], 571));
 
-      const efficiency = Math.min(100, getSetting(additionalData.settings, "shatteredSoulUsage")) / 100;
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player) * efficiency;
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)// * efficiency;
 
-      if (additionalData.setVariables && additionalData.setVariables.reshiiBoots) { 
-        bonus_stats.hps *= (1 + additionalData.setVariables.reshiiBoots);
-      }
 
       return bonus_stats;
     },

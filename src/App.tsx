@@ -6,7 +6,7 @@ import QEMainMenu from "General/Modules/SetupAndMenus/QEMainMenu";
 import SequenceGen from "General/Modules/SequenceGenerator/SequenceGenerator.js";
 import TrinketAnalysis from "General/Modules/TrinketAnalysis/TrinketAnalysis";
 import EmbellishmentAnalysis from "General/Modules/EmbellishmentAnalysis/EmbellishmentAnalysis";
-import CircletAnalysis from "General/Modules/CircletAnalysis/CircletAnalysis";
+import CircletAnalysis from "General/Modules/PatchEffectAnalysis/CircletAnalysis/CircletAnalysis";
 import QuickCompare from "General/Modules/QuickCompare/QuickCompare";
 import QEHeader from "General/Modules/SetupAndMenus/Header/QEHeader";
 import TopGearReport from "General/Modules/TopGear/Report/TopGearReport";
@@ -30,6 +30,7 @@ import Player from "General/Modules/Player/Player";
 import UpgradeFinderFront from "General/Modules/UpgradeFinder/UpgradeFinderFront";
 import { useDispatch } from "react-redux";
 import { toggleGameType } from "Redux/Actions";
+import OmniumFolioAnalysis from "General/Modules/PatchEffectAnalysis/OmniumFolioAnalysis/OmniumFolioAnalysis";
 
 //process.env.NODE_ENV !== "production" ? "" : ReactGA.initialize("UA-90234903-1");
 
@@ -462,6 +463,20 @@ const App = () => {
                     player={activePlayer}
                     render={() => (
                       <CircletAnalysis
+                        player={activePlayer}
+                        updatePlayerChar={updatePlayerChar}
+                        singleUpdate={updatePlayerChar}
+                        allChars={allChars}
+                        simcSnack={handleSimCSnackOpen}
+                        patronStatus={patronStatus}
+                      />
+                    )}
+                  />
+                  <CustomRoute
+                    path="/omniumfolio"
+                    player={activePlayer}
+                    render={() => (
+                      <OmniumFolioAnalysis
                         player={activePlayer}
                         updatePlayerChar={updatePlayerChar}
                         singleUpdate={updatePlayerChar}

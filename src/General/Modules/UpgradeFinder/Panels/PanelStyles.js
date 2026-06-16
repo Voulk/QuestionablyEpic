@@ -5,7 +5,7 @@ const commonStyles = {
   backgroundPosition: "center 60%",
   backgroundSize: "101%",
   borderRadius: "4px 0px 0px 4px",
-  height: 45,
+  height: 42,
   whiteSpace: "nowrap",
   textShadow: "0px 0px 6px black, 1px 1px 2px black, -1px -1px 2px black",
   color: "#fff",
@@ -29,15 +29,16 @@ export const raidStyles = makeStyles((theme) => {
     root: {
       width: "100%",
       marginTop: 4,
-      padding: 4,
+      padding: 0,
+      objectFit: "cover",
     },
     header: {
       [theme.breakpoints.down("lg")]: {
         justifyContent: "center",
         display: "block",
-        marginLeft: "auto",
-        marginRight: "auto",
-        flexGrow: 1,
+        //marginLeft: "auto",
+        //marginRight: "auto",
+        //flexGrow: 1,
         maxWidth: "100%",
       },
       [theme.breakpoints.up("md")]: {
@@ -145,15 +146,19 @@ export const raidStyles = makeStyles((theme) => {
       ...commonStyles,
     },
     dreamriftHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/DreamriftLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/DreamriftShort.png")})`,
       ...commonStyles,
     },
     marchOnQueldanasHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchShort.png")})`,
       ...commonStyles,
     },
     voidspireHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireShort.png")})`,
+      ...commonStyles,
+    },
+    sporefallHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/SporefallShort.png")})`,
       ...commonStyles,
     },
   };

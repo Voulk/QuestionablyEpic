@@ -88,6 +88,8 @@ export default function RaidGearContainer(props) {
         return classes.marchOnQueldanasHeader;
       case 1307:
         return classes.voidspireHeader;
+      case 1305:
+        return classes.sporefallHeader;
       default:
         return classes.defaultHeader;
     }
