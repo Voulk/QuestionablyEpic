@@ -577,7 +577,7 @@ function displayReport(
                         </Grid>
                         <Grid>
                           
-                          <TopGearFolioEntry />
+                          {gameType === "Retail" ? <TopGearFolioEntry /> : null}
 
 
                         </Grid>
