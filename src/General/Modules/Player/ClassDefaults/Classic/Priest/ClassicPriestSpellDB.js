@@ -258,7 +258,7 @@ export const CLASSICPRIESTSPELLDB = {
         coeff: 0, 
         flat: 100000,
         additiveScaling: 0.25,
-        expectedOverheal: 0.15,
+        expectedOverheal: 0.3,
         secondaries: ['crit', 'mastery'],
     }],
 
