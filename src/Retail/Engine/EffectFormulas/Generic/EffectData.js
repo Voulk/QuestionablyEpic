@@ -6,17 +6,15 @@ export const effectData = [
     effects: [
       {
         coefficient: 110.1049, 
-        table: -9,
+        scalingClass: -9,
         ppm: 2,
         efficiency: 0.95, // Converts to absorb so high efficiency.
         secondaries: ['haste', 'versatility'], 
       },
     ],
-    runFunc: function(data, player, itemLevel, additionalData) {
+    runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
-
-      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, player)// * efficiency;
-
+      bonus_stats.hps = runGenericFlatProc(data[0], itemLevel, additionalData.player)// * efficiency;
 
       return bonus_stats;
     },
@@ -26,13 +24,13 @@ export const effectData = [
     effects: [
       {
         coefficient: 55.44585, 
-        table: -9,
+        scalingClass: -9,
         ppm: 2.5,
         efficiency: 0.85, // High efficiency since it's an absorb. but you can lose some procs to self-healing or damage.
         secondaries: ['haste', 'versatility'], // Check Crit
       },
     ],
-    runFunc: function(data, player, itemLevel, additionalData) {
+    runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
       let mult = 1;
@@ -50,13 +48,13 @@ export const effectData = [
     effects: [
       {
         coefficient: 75.3012, 
-        table: -9,
+        scalingClass: -9,
         ppm: 2,
         efficiency: 0.98, // Converts to absorb so high efficiency.
         secondaries: ['haste', 'crit', 'versatility'], // Check Crit
       },
     ],
-    runFunc: function(data, player, itemLevel, additionalData) {
+    runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
       //console.log(processedValue(data[0], 571));
 
@@ -74,13 +72,13 @@ export const effectData = [
     effects: [
       {
         coefficient: 1.792, 
-        table: -1,
+        scalingClass: -1,
         duration: 15,
         cooldown: 45,
         stat: "intellect",
       },
     ],
-    runFunc: function(data, player, itemLevel, additionalData) {
+    runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.intellect = forceGenericOnUseTrinket(data[0], itemLevel, additionalData.castModel, 60);
@@ -93,12 +91,12 @@ export const effectData = [
       {
         coefficient: 0.764501, 
         stat: "haste",
-        table: -7,
+        scalingClass: -7,
         duration: 10,
         ppm: 1,
       },
     ],
-    runFunc: function(data, player, itemLevel, additionalData) {
+    runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
 
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
@@ -115,7 +113,7 @@ export const effectData = [
     effects: [
       {
         coefficient: 0.048536, 
-        table: -7,
+        scalingClass: -7,
         maxStacks: 10,
         stat: "random",
         averageStacks: 5.15, // This is just simulated directly since the Jastor parameters are fixed.
@@ -149,14 +147,14 @@ export const effectData = [
     effects: [
       {
         coefficient: 1.374509, 
-        table: -7,
+        scalingClass: -7,
         stat: "random",
         duration: 15,
         ppm: 3 * 0.875, // Can't proc while on-use is active.
       },
       {
         coefficient: 1.374509 * 1.1, // The on-use is 10% higher. 
-        table: -7,
+        scalingClass: -7,
         stat: "best",
         duration: 15,
         cooldown: 120,
@@ -184,7 +182,7 @@ export const effectData = [
     effects: [
       {
         coefficient: 57.11988067627, 
-        table: -8,
+        scalingClass: -8,
         ppm: 3,
         secondaries: ['haste', 'crit', 'versatility'], // Check Crit
       },
@@ -203,7 +201,7 @@ export const effectData = [
     effects: [
       {
         coefficient: 1.469991, 
-        table: -7,
+        scalingClass: -7,
         ppm: 2,
       },
     ],
@@ -219,7 +217,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 2.105363,
-        table: -7,
+        scalingClass: -7,
         cooldown: 60,
         ticks: 10,
       },
@@ -235,13 +233,13 @@ export const effectData = [
     effects: [
       {  // Int
         coefficient: 0.611248, //1.440925,
-        table: -1,
+        scalingClass: -1,
         ppm: 2,
         duration: 5,
       },
       {  // DPS
         coefficient: 35.653 * 0.66,
-        table: -9,
+        scalingClass: -9,
         ppm: 2,
         secondaries: ["crit", "haste", "versatility"]
       },
@@ -264,7 +262,7 @@ export const effectData = [
     effects: [
       {  // Versatility
         coefficient: 0.139572 * 0.5,
-        table: -7,
+        scalingClass: -7,
         ppm: 4,
         duration: 10,
       },
@@ -295,12 +293,12 @@ export const effectData = [
     effects: [
       {  // DPS
         coefficient: 43.5994,
-        table: -8,
+        scalingClass: -8,
         ppm: 1,
       },
       {  // Haste
         coefficient: 0.764501,
-        table: -7,
+        scalingClass: -7,
         ppm: 1,
         duration: 10,
 
@@ -321,7 +319,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 0.392073,
-        table: -72,
+        scalingClass: -72,
         ppm: 2,
         alliesHit: 4,
         duration: 10,
@@ -348,7 +346,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 16.3376,
-        table: -9,
+        scalingClass: -9,
         efficiency: 0.6,
         ppm: 8,
         secondaries: ['crit', 'versatility'],
@@ -371,7 +369,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 0.040201,
-        table: -1,
+        scalingClass: -1,
         ppm: 60, // Ticks every second.
       },
     ],
@@ -392,7 +390,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 98.46344,
-        table: -9,
+        scalingClass: -9,
         efficiency: 0.45,
         ppm: 2,
         secondaries: ['crit', 'versatility'],
@@ -415,7 +413,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 183.679,
-        table: -9,
+        scalingClass: -9,
         efficiency: {Raid: 0.7, Dungeon: 0.45},
         ppm: 2,
         secondaries: ['versatility'],
@@ -438,7 +436,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 86.2502,
-        table: -9,
+        scalingClass: -9,
         efficiency: {Raid: 0.7, Dungeon: 0.45},
         ppm: 2,
         specValue: { "Restoration Druid": 0, "Preservation Evoker": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.2, "Holy Priest": 0 },
@@ -465,7 +463,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 11.33085,
-        table: -9,
+        scalingClass: -9,
         ppm: 2,
         specValue: { "Restoration Druid": 0, "Preservation Evoker": 1, "Discipline Priest": 1, "Holy Paladin": 0, "Mistweaver Monk": 0, "Restoration Shaman": 0.2, "Holy Priest": 0 },
         secondaries: ['versatility', 'haste'],
@@ -527,7 +525,7 @@ export const effectData = [
     effects: [
       { 
         coefficient: 0.377525,
-        table: -1,
+        scalingClass: -1,
         duration: 10,
         ppm: 6.5,
       },
