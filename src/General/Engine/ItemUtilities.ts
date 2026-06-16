@@ -1087,7 +1087,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         && sourceCheck) { 
           let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           if (gameType === "Retail") {
-            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) ilvlBoost = 9;
+            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot) && item.id !== 268292) ilvlBoost = 9;
             else ilvlBoost = 0;
           }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
