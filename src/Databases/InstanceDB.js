@@ -43,6 +43,7 @@ export const instanceDB = {
   "1308": "March on Quel'Danas",
   "1273": "Nerub-ar Palace",
   "1296": "Liberation of Undermine",
+  "1305": "Sporefall",
 
   "-4": "Crafted",
   "-12": "Reputation",
@@ -120,6 +121,14 @@ export const retailInstanceDB = {
       2740: "Midnight Falls",
     }
   },
+  1305: {
+    name: "Sporefall",
+    bossOrder: [2711],
+    bosses: {
+      2711: "Rotmire",
+    }
+  },
+
   // Nerub'ar Palace
   1273: {
     name: "Nerub'ar Palace",

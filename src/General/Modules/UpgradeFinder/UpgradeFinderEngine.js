@@ -171,7 +171,7 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemS
     //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
 
-  if (itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
+  if (instanceID === 1305 || itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
     // Voidcores
     if (itemLevel === 276 || itemLevel === 289) itemLevel += 9;
     else if (itemLevel === 272 || itemLevel === 285) itemLevel += 10;

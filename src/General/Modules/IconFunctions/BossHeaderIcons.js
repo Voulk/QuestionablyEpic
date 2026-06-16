@@ -622,6 +622,8 @@ export default function bossHeaders(props, style, QEmodule) {
 
   else if (props === 2739) source = require("Images/Bosses/MidnightS1/ui-ej-boss-light-void-phoenix.png");
   else if (props === 2740) source = require("Images/Bosses/MidnightS1/ui-ej-boss-lura-midnight.png");
+
+  else if (props === 2711) source = require("Images/Bosses/MidnightS1/ui-ej-boss-fungariangiant.png");
   
 
   return <img style={{ ...style }} src={source} alt={props} />;

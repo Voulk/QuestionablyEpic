@@ -19,6 +19,23 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.0.7 / 5.5.4",
+    update: 18,
+    date: "June 8",
+    changes: [ 
+      "Added Omnium Folio.",
+      "Added Sporefall raid loot & Upgrade Finder."
+    ]
+  },
+          {
+    version: "12.0.5 / 5.5.4",
+    update: 17,
+    date: "June 8",
+    changes: [ 
+      "Classic: Added Siege of Orgrimmar",
+    ]
+  },
         {
     version: "12.0.5 / 5.5.3",
     update: 16,

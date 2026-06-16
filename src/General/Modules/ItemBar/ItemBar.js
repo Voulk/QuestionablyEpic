@@ -347,6 +347,8 @@ export default function ItemBar(props) {
 
     { label: "Heroic Raids", value: 276, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
     { label: "Mythic Raids", value: 289, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
+    { label: "Heroic Sporefall", value: 285, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
+    { label: "Mythic Sporefall", value: 298, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
     { label: "Mythic+", value: 289, gameType: "Retail", source: "Mythic+", icon: "retailDungeonIcon" },
   ]
 

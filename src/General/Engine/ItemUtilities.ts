@@ -1057,6 +1057,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
+      else if (source === "Sporefall" && sources) sourceCheck = ([1305].includes(sources.instanceId));
       else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));

@@ -37,7 +37,7 @@ import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
 import TopGearGemList from "./Panels/TopGearGemPanel";
 import ErrorBoundary from "./Panels/PanelErrorBoundary";
-
+import TopGearFolioEntry from "./TopGearFolioEntry";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -574,6 +574,12 @@ function displayReport(
                                 gameType={gameType}
                               />
                             ))}
+                        </Grid>
+                        <Grid>
+                          
+                          <TopGearFolioEntry />
+
+
                         </Grid>
                       </Grid>
                     </Grid>

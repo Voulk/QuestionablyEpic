@@ -18,6 +18,7 @@ import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData";
+import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 /**
  * == Top Gear Engine ==
@@ -28,7 +29,7 @@ import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEf
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00306669230769231; // 0.00497669230769231;
+const DR_CONST = 0.00293669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.05122569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -840,6 +841,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
+
+  // Omnium Folio
+  // Handle user entry / unlocks later.
+  const folioGems = [1279599]
+  const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
+
+  effectStats.push(folioStats);
 
   // Special 10.0.7 Ring
   // No longer necessary in season 4.
