@@ -56,7 +56,7 @@ export function initializeHPriestSet(userSettings, talents = holyTalents, ignore
   const castProfile = [
     // Cooldowns
     {spell: "Circle of Healing", efficiency: 0.85},
-    {spell: "Holy Word: Sanctuary", efficiency: 0.9},
+    {spell: "Holy Word: Sanctuary", efficiency: 0.9, bonus: 1},
     {spell: "Holy Word: Serenity", efficiency: 0.1},
     {spell: "Divine Hymn", efficiency: 0.9},
     {spell: "Prayer of Mending", efficiency: 0.9, bonus: 1},
@@ -133,6 +133,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
   }
 
+
   
   if (!userSettings.strictSeq) {
     // Handle Chakras effect on our casts.
@@ -177,6 +178,10 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
     if (tierSets.includes("Priest T15-4")) {
       castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Circle of Healing").cpm * 0.4})
+    }
+    if (tierSets.includes("Priest T16-4")) {
+      //getSpellEntry(castProfile, "Holy Word: Sanctuary").bonus *= (1 + (getSpellEntry(castProfile, "Prayer of Mending").cpm + getSpellEntry(castProfile, "Circle of Healing").cpm)) * 0.75 / getSpellEntry(castProfile, "Holy Word: Sanctuary").cpm;
+      getSpellEntry(castProfile, "Holy Word: Sanctuary").bonus *= (1 + 2.25 * 0.85);
     }
 
     // Handle our filler casts. 
