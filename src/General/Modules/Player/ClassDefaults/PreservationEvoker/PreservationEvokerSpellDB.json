@@ -18,7 +18,7 @@
             },
             "targets": 5,
             "coeff": 1.6341,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -27,7 +27,7 @@
         },
         {
             "coeff": 0.3948,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -87,7 +87,7 @@
                 "maxCharges": 1
             },
             "targets": 6,
-            "coeff": 0.3072,
+            "coeff": 0.669,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -105,7 +105,7 @@
             }
         },
         {
-            "coeff": 1.8432,
+            "coeff": 0.9216,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -129,8 +129,8 @@
             "school": "nature",
             "cost": 2.4,
             "cooldownData": {
-                "cooldown": 24.0,
-                "hasted": false,
+                "cooldown": 18.0,
+                "hasted": true,
                 "charges": 1,
                 "maxCharges": 1
             },
@@ -188,7 +188,7 @@
             "cost": 2.2,
             "cooldownData": {
                 "cooldown": 9.0,
-                "hasted": false,
+                "hasted": true,
                 "charges": 2,
                 "maxCharges": 2
             },
@@ -257,7 +257,7 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 2.0,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -278,7 +278,7 @@
         },
         {
             "coeff": 5.0,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

@@ -11,7 +11,7 @@
             "school": "nature",
             "cost": 3.6,
             "coeff": 1.248,
-            "aura": 0.95,
+            "aura": 0.87,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -29,7 +29,7 @@
         },
         {
             "coeff": 7.488,
-            "aura": 0.95,
+            "aura": 0.87,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -69,7 +69,7 @@
             "school": "nature",
             "cost": 3.0,
             "coeff": 2.58,
-            "aura": 1.8239999999999998,
+            "aura": 1.67,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -91,7 +91,7 @@
             "school": "nature",
             "cost": 3.0,
             "coeff": 4.1696,
-            "aura": 0.95,
+            "aura": 0.87,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -161,7 +161,9 @@
             "cost": 1.25,
             "cooldownData": {
                 "cooldown": 10.0,
-                "hasted": false
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
             },
             "coeff": 1.8694,
             "aura": 1.41,
@@ -201,7 +203,9 @@
             "cost": 2.5,
             "cooldownData": {
                 "cooldown": 10.0,
-                "hasted": false
+                "hasted": false,
+                "charges": 1,
+                "maxCharges": 1
             },
             "coeff": 1.4955,
             "aura": 1.41,
@@ -268,12 +272,41 @@
             "school": "physical",
             "cost": 1.0,
             "coeff": 0.104,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
             ],
             "spellType": "damage"
+        }
+    ],
+    "Crackling Jade Lightning": [
+        {
+            "displayInfo": {
+                "id": 117952,
+                "icon": "ability_monk_cracklingjadelightning",
+                "spellName": "Crackling Jade Lightning",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.0582,
+            "aura": 6.498,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 4.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
         }
     ]
 }
