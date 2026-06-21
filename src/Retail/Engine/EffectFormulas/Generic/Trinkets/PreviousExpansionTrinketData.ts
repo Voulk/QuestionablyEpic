@@ -2804,7 +2804,6 @@ const oldTrinketData = [
       },
       { // Haste Stat Buff (Under Ruby Wings)
         // Like other mega haste buffs, some specs are unable to take advantage of it in a useful way. 
-        // The spec multiplier ensures the rating is more practical, but it's acknowledged that this is somewhat spurious. 
         coefficient: 2.903762,
         table: -7,
         stat: "haste",

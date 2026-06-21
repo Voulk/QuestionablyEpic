@@ -43,6 +43,7 @@ export const instanceDB = {
   "1308": "March on Quel'Danas",
   "1273": "Nerub-ar Palace",
   "1296": "Liberation of Undermine",
+  "1320": "The Venomous Abyss",
 
   "-4": "Crafted",
   "-12": "Reputation",

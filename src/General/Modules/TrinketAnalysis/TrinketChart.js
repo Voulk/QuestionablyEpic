@@ -68,7 +68,7 @@ const handleDownload = () => {
 };
 
 export const sourceHandler = (array, sources, playerSpec) => {
-  const raidSources = [1314, 1308, 1307];
+  const raidSources = [1314, 1308, 1307, 1320];
   const dungeonSources = [-1];
   const delveSources = [-69];
   const otherSources = [1192, 1205, -18, -17, -85, -4];
@@ -147,7 +147,7 @@ export default function TrinketChart({ player }) {
       setTimeout(() => setCopied(false), 2000);
     }
   };
-  const [levelCap, setLevelCap] = React.useState(289);
+  const [levelCap, setLevelCap] = React.useState(327);
   const [breakdown, setBreakdown] = React.useState(false);
 
   const maxLevelMarks = [
@@ -155,7 +155,7 @@ export default function TrinketChart({ player }) {
     { value: 1, label: "250" },
     { value: 2, label: "263" },
     { value: 3, label: "276" },
-    { value: 4, label: "289" },
+    { value: 4, label: "327" },
   ];
 
   const changeLevelCap = (event, newValue) => {
@@ -168,7 +168,7 @@ export default function TrinketChart({ player }) {
 
   const allItemLevels =
     gameType === "Retail"
-      ? [233, 237, 243, 250, 256, 263, 272, 276, 285, 289]
+      ? [263, 272, 276, 285, 289, 298, 302, 308, 315, 318, 324, 327]
       : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");

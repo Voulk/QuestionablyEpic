@@ -97,7 +97,7 @@ const classTalents: TalentTree = {
     }},
 
     /* When you use Barkskin or Survival Instincts, absorb $<shield> damage for $280165d. */
-    "Matted Fur": {id: 385786, values: [1200.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
+    "Matted Fur": {id: 385786, values: [1875.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
     number) {
 
     }},
@@ -200,7 +200,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Nature's Swiftness's cooldown is reduced by ${X/-1000} sec. */
-    "Passing Seasons": {id: 382550, values: [-12000.0],  points: 0, maxPoints: 1, icon: "spell_nature_ravenform", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Passing Seasons": {id: 382550, values: [-15000.0],  points: 0, maxPoints: 1, icon: "spell_nature_ravenform", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -369,7 +369,7 @@ const specTalents: TalentTree = {
     }},
 
     /* For each Rejuvenation you have active, Regrowth's cost is reduced by $207640s1% and critical effect chance is increased by $207640s2%, up to a maximum of ${$207640s2*$207640u}%. */
-    "Abundance": {id: 207383, values: [0.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Abundance": {id: 207383, values: [5.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -394,7 +394,7 @@ const specTalents: TalentTree = {
     }},
 
     /* You can apply Rejuvenation twice to the same target. Rejuvenation's duration is increased by ${X/1000} sec. */
-    "Germination": {id: 155675, values: [2000.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Germination": {id: 155675, values: [0.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
     }},
 
@@ -404,14 +404,14 @@ const specTalents: TalentTree = {
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
-    "Everbloom2": {id: 1244331, values: [2.0, 15.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Everbloom2": {id: 1244331, values: [2.0, 20.0, 6.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         spellDB["Lifebloom"].forEach(slice => {
             slice.targets =  (slice.targets ? slice.targets : 1) +  (talentValues[0] * talentValues[1] / 100 * points)
         })
     }},
 
     /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
-    "Everbloom3": {id: 1244470, values: [5.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Everbloom3": {id: 1244470, values: [3.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 }
@@ -562,7 +562,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c1[Orbital Strike damage increased by Z%, and damage of Stellar Flares it applies increased by Y%.    Whirling Stars increases the haste you gain during ][]$?c1&s394013[Incarnation: Chosen of Elune]?c1[Celestial Alignment][]$?c1[ by an additional $s4%.][Reforestation grants Tree of Life for $s5 additional sec.] */
-    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 10.0, 6.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 6.0, 6.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -572,7 +572,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?a137013[Force of Nature summons 4 Treants.][Your Grove Guardians' healing is increased by X%.] */
-    "Bounteous Bloom": {id: 429215, values: [30.0, 1.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "inv_herbalism_70_dreamleaf", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Bounteous Bloom": {id: 429215, values: [30.0, 4000.0, 4000.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "inv_herbalism_70_dreamleaf", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
