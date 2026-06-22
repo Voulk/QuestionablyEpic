@@ -81,14 +81,14 @@ export const otherTrinketData = [
   },
       { 
     name: "Magister's Alchemist Stone",
-    description: "High variance, low uptime and uses an embellishment slot. Do not craft.",
-    addonDescription: "High variance, low uptime and uses an embellishment slot. Do not craft.",
+    description: "Uses an embellishment slot. Do not craft.",
+    addonDescription: "Uses an embellishment slot. Do not craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
         table: -1,
         duration: 15,
-        ppm: 1,
+        ppm: 2.5,
         stat: "intellect",
       },
     ],

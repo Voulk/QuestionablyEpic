@@ -309,6 +309,24 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+  {
+    name: "Breath of the Hydra", 
+    effects: [ // Chance on DoT tick to give intellect.
+      { 
+        value: {0: 0},
+        coefficient: 2.47499990463,
+        ppm: 1.1,
+        stat: "intellect",
+        secondaries: [],
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+      bonus_stats.intellect! *= (player.spec.includes("Discipline Priest") ? 0.95 : 0);
+      return bonus_stats;
+    }
+  },
     {
     name: "Stolen Relic of Zuldazar", 
     effects: [ // Hasted rppm. Stacks to 6 then can be used to shield a target.
