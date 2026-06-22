@@ -27,9 +27,9 @@
             },
             "castTime": 2.5,
             "school": "holy",
-            "cost": 5.25,
+            "cost": 4.83,
             "coeff": 5.7874,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -51,7 +51,7 @@
             "school": "holy",
             "cost": 0.0,
             "coeff": 6.82,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -79,7 +79,7 @@
                 "maxCharges": 1
             },
             "coeff": 17.8744,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -107,7 +107,7 @@
                 "maxCharges": 1
             },
             "coeff": 5.011,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -122,7 +122,8 @@
             "displayInfo": {
                 "id": 64843,
                 "icon": "spell_holy_divinehymn",
-                "spellName": "Divine Hymn"
+                "spellName": "Divine Hymn",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "holy",
@@ -130,7 +131,16 @@
             "cooldownData": {
                 "cooldown": 180.0,
                 "hasted": false
-            }
+            },
+            "coeff": 5.6088,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Apotheosis": [
@@ -149,7 +159,7 @@
                 "hasted": false
             },
             "coeff": 0.0,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -194,7 +204,7 @@
             "school": "holy",
             "cost": 0.0,
             "coeff": 0.987,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -218,7 +228,7 @@
                 "hasted": false
             },
             "coeff": 3.08,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -227,7 +237,7 @@
         },
         {
             "coeff": 0.1413,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -250,18 +260,29 @@
                 "id": 132157,
                 "icon": "spell_holy_holynova",
                 "spellName": "Holy Nova",
-                "cat": "damage"
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "holy",
             "cost": 0.0,
             "coeff": 0.4095,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
             ],
             "spellType": "damage"
+        },
+        {
+            "coeff": 0.315,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
         }
     ],
     "Holy Word: Chastise": [
@@ -280,7 +301,7 @@
                 "hasted": false
             },
             "coeff": 3.8575,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"

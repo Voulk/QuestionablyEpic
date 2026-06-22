@@ -1,10 +1,5 @@
 {
-    "Nevermelting Ice Crystal": [
-        {
-            "coefficient": 0.863833,
-            "scalingClass": -7
-        }
-    ],
+    "Nevermelting Ice Crystal": [],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,
@@ -35,18 +30,49 @@
             "scalingClass": -7
         }
     ],
+    "Kyrakka's Searing Embers": [
+        {
+            "coefficient": 89.46,
+            "scalingClass": -8
+        },
+        {
+            "coefficient": 28.374,
+            "scalingClass": -8
+        }
+    ],
+    "Ruby Whelp Shell": [
+        {
+            "coefficient": 143.249,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 119.376,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 214.692,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 178.912,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 2.418,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.418,
+            "scalingClass": -7
+        }
+    ],
     "Magister's Alchemist Stone": [
         {
             "coefficient": 1.031,
             "scalingClass": -1
         }
     ],
-    "Drum of Renewed Bonds": [
-        {
-            "coefficient": 1.707,
-            "scalingClass": -7
-        }
-    ],
+    "Drum of Renewed Bonds": [],
     "Volatile Void Suffuser": [
         {
             "coefficient": 0.858,
@@ -89,12 +115,12 @@
     ],
     "Emberwing Feather": [
         {
-            "coefficient": 2.065,
-            "scalingClass": -9
+            "coefficient": 3.406,
+            "scalingClass": -7
         },
         {
-            "coefficient": 0.641,
-            "scalingClass": -9
+            "coefficient": 1.058,
+            "scalingClass": -7
         }
     ],
     "Lightspire Core": [
@@ -263,6 +289,12 @@
         {
             "coefficient": 776.821,
             "scalingClass": -9
+        }
+    ],
+    "Sporelord's Mycelial Insignia": [
+        {
+            "coefficient": 1.409,
+            "scalingClass": -7
         }
     ]
 }

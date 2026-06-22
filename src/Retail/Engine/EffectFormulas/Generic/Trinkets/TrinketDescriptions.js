@@ -8,19 +8,8 @@ import { correctCasing, getItemProp, getItemAllocations, calcStatsAtLevel } from
 import { convertExpectedUptime, buildGenericHealProc, buildGenericStatStick } from "Retail/Engine/EffectFormulas/Generic/DescriptionsShared";
 
 import { encounterDB, timewalkingDB } from "Databases/InstanceDB"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
-const trinketCategories = {
-    //RAIDDROPS: "Raid Drops",
-    VAULT: "Vault Drops",
-    ABERRUS: "Aberrus Drops",
-    AMIRDRASSIL: "Amirdrassil Drops",
-    DUNGEONDROPS: "Dungeon Drops",
-    OTHER: "Other",
-    DPS: "DPS Trinkets",
-    LASTTIER: "Last Season Trinkets",
-
-
-}
 
 const getTrinketDropLoc = (trinketID) => {
     let dropLoc = "";
@@ -29,9 +18,12 @@ const getTrinketDropLoc = (trinketID) => {
     if (sources) {
 
         const instanceId = sources[0].instanceId;
-        if (instanceId === 1273) dropLoc = " Nerub-ar Palace (Raid) - " + encounterDB[1273].bosses[sources[0].encounterId];
-        else if (instanceId === 1296) dropLoc = " Undermine (Raid) - " + encounterDB[1296].bosses[sources[0].encounterId];
-        else if (instanceId === 1302) dropLoc = " Manaforge Omega (Raid) - " + encounterDB[1302].bosses[sources[0].encounterId];
+        if (CONSTANTS.currentRaidIDs.includes(instanceId)) {
+            // Raid items
+            if (encounterDB[instanceId] && encounterDB[instanceId].bosses[sources[0].encounterId]) {
+                dropLoc = encounterDB[instanceId].name + " (Raid) - " + encounterDB[instanceId].bosses[sources[0].encounterId]
+            }
+        }
         else if (instanceId === -1) dropLoc = encounterDB[-1]["Retail"][sources[0].encounterId] + " (Dungeon)";
         else if (instanceId === -4) dropLoc = " Crafted";
         else if (instanceId === -12) dropLoc = timewalkingDB[sources[0].encounterId] + " Timewalking";

@@ -11,8 +11,14 @@ export const getMoPDungeons = () => {
 }
 
 export const getSourceName = (instanceID, encounterID) => {
-  if (instanceID === -1) {
+  if (encounterID === 999) {
+    return "Catalyst";
+  }
+  else if (instanceID === -1) {
     return encounterDB["-1"]["Retail"][encounterID] || ""
+  }
+  else if (instanceID === -4) {
+    return "Crafted";
   }
   else {
     return encounterDB[instanceID].bosses[encounterID] || ""
@@ -37,6 +43,7 @@ export const instanceDB = {
   "1308": "March on Quel'Danas",
   "1273": "Nerub-ar Palace",
   "1296": "Liberation of Undermine",
+  "1320": "The Venomous Abyss",
 
   "-4": "Crafted",
   "-12": "Reputation",
@@ -110,7 +117,7 @@ export const retailInstanceDB = {
     name: "March on Quel'Danas",
     bossOrder: [2739, 2740],
     bosses: {
-      2739: "Belo'ren, Child of Al'ar",
+      2739: "Belo'ren",
       2740: "Midnight Falls",
     }
   },
@@ -170,7 +177,7 @@ export const retailInstanceDB = {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
       bossOrderMythicPlus: [1315, 1316, 1300, 1299, 1201, 278, 476, 945], // Dungeon Order
 
-      1315: "Maisara Cavern",
+      1315: "Maisara Caverns",
       1316: "Nexus-Point Xenas",
       1300: "Magisters Terrace",
       1299: "Windrunner Spire",

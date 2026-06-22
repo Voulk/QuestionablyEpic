@@ -91,7 +91,7 @@ export class Item {
       this.quality = getItemProp(id, "quality", gameType);
       this.name = getItemProp(id, "name", gameType);
 
-      if (slot === "Waist" || slot.includes("Weapon")) this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
+      if (slot === "Waist"/* || slot.includes("Weapon")*/) this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
       this.stats = calcStatsAtLevelClassic(id, level);
 
@@ -225,7 +225,8 @@ export class Item {
   // This could arguably be moved to ItemUtilities.
   getQualityColor() {
     const isLegendary = this.id === 2068200;
-    if (this.quality === 6) return "#e6cc80"; // Artifact
+    if (this.quality === 7) return "#00ccff"; // Heirloom
+    else if (this.quality === 6) return "#e6cc80"; // Artifact
     else if (isLegendary || this.quality === 5) return "#ff8000";
     else if (this.quality === 4) return "#a73fee";
     else if (this.quality === 3) return "#328CE3";
@@ -251,6 +252,11 @@ export class Item {
         this.stats[stat as keyof Stats] = (this.stats[stat as keyof Stats] || 0) + (bonus_stats[stat as keyof Stats] || 0)
       }
     }
+  }
+
+  hasEmbellishment() {
+    if (this.effect && this.effect.type === "embellishment") return true;
+    return false;
   }
 
 }
