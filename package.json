@@ -34,7 +34,7 @@
     "react-scripts": "5.0.1",
     "reactstrap": "^8.6.0",
     "recharts": "^2.1.16",
-    "simple-oauth2": "^4.1.0",
+    "simple-oauth2": "^5.1.0",
     "typescript": "^3.9.10"
   },
   "scripts": {

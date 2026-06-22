@@ -63214,353 +63214,397 @@ export const bonus_IDs: {[key: string]: any} = {
   "10256": {
     "id": 10256,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 626,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10257": {
     "id": 10257,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 632,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10258": {
     "id": 10258,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 629,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10259": {
     "id": 10259,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 626,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10260": {
     "id": 10260,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 623,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10261": {
     "id": 10261,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 623,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10262": {
     "id": 10262,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 619,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10263": {
     "id": 10263,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 616,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10264": {
     "id": 10264,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 613,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10265": {
     "id": 10265,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 610,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10266": {
     "id": 10266,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 619,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10267": {
     "id": 10267,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 616,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10268": {
     "id": 10268,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 613,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10269": {
     "id": 10269,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 610,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10270": {
     "id": 10270,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 606,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10271": {
     "id": 10271,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 603,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10272": {
     "id": 10272,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 600,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10273": {
     "id": 10273,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 597,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10274": {
     "id": 10274,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 606,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10275": {
     "id": 10275,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 603,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10276": {
     "id": 10276,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 600,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10277": {
     "id": 10277,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 597,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10278": {
     "id": 10278,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 593,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10279": {
     "id": 10279,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 590,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10280": {
     "id": 10280,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 587,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10281": {
     "id": 10281,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 584,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10282": {
     "id": 10282,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 580,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10283": {
     "id": 10283,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 577,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10284": {
     "id": 10284,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 574,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10285": {
     "id": 10285,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 571,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10286": {
     "id": 10286,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 567,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10287": {
     "id": 10287,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 564,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10288": {
     "id": 10288,
     "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 561,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10289": {
     "id": 10289,
     "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 558,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10290": {
     "id": 10290,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 593,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10291": {
     "id": 10291,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 590,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10292": {
     "id": 10292,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 587,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10293": {
     "id": 10293,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 584,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10294": {
     "id": 10294,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 580,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10295": {
     "id": 10295,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 577,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10296": {
     "id": 10296,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 574,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10297": {
     "id": 10297,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 571,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10298": {
     "id": 10298,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 636,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10299": {
     "id": 10299,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 639,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "10300": {
@@ -73275,129 +73319,145 @@ export const bonus_IDs: {[key: string]: any} = {
   "11942": {
     "id": 11942,
     "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 597,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11943": {
     "id": 11943,
     "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 600,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11944": {
     "id": 11944,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 603,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11945": {
     "id": 11945,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 606,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11946": {
     "id": 11946,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 610,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11947": {
     "id": 11947,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 613,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11948": {
     "id": 11948,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 616,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11949": {
     "id": 11949,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 619,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11950": {
     "id": 11950,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 632,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11951": {
     "id": 11951,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 610,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11952": {
     "id": 11952,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 613,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11953": {
     "id": 11953,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 616,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11954": {
     "id": 11954,
     "quality": 3,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 619,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11955": {
     "id": 11955,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 623,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11956": {
     "id": 11956,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 626,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11957": {
     "id": 11957,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 629,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11963": {
@@ -73427,225 +73487,253 @@ export const bonus_IDs: {[key: string]: any} = {
   "11969": {
     "id": 11969,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 623,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11970": {
     "id": 11970,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 626,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11971": {
     "id": 11971,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 629,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11972": {
     "id": 11972,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 632,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11973": {
     "id": 11973,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 636,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11974": {
     "id": 11974,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 639,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11975": {
     "id": 11975,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 642,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11976": {
     "id": 11976,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 645,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11977": {
     "id": 11977,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 636,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11978": {
     "id": 11978,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 639,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11979": {
     "id": 11979,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 642,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11980": {
     "id": 11980,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 645,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11981": {
     "id": 11981,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 649,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11982": {
     "id": 11982,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 652,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11983": {
     "id": 11983,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 655,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11984": {
     "id": 11984,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 658,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11985": {
     "id": 11985,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 649,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11986": {
     "id": 11986,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 652,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11987": {
     "id": 11987,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 655,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11988": {
     "id": 11988,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 658,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11989": {
     "id": 11989,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 662,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11990": {
     "id": 11990,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 665,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11991": {
     "id": 11991,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 662,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11992": {
     "id": 11992,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 665,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11993": {
     "id": 11993,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 668,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11994": {
     "id": 11994,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 671,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11995": {
     "id": 11995,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 675,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11996": {
     "id": 11996,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 678,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "11997": {
@@ -84960,17 +85048,19 @@ export const bonus_IDs: {[key: string]: any} = {
   "12371": {
     "id": 12371,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 668,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "12372": {
     "id": 12372,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 671,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "12373": {
@@ -84988,17 +85078,19 @@ export const bonus_IDs: {[key: string]: any} = {
   "12375": {
     "id": 12375,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 681,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "12376": {
     "id": 12376,
     "quality": 4,
-    "requiredLevelCurve": {
-      "curve": 71442,
-      "val": 2462
+    "itemLevel": {
+      "amount": 684,
+      "priority": 0,
+      "squishEra": 0
     }
   },
   "12377": {
@@ -93844,7 +93936,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 0,
       "spell": {
         "id": 1246312,
-        "name": "Meddy, Pocket-Sized",
+        "name": "M3ddy, Pocket-Sized",
         "icon": "trade_engineering"
       }
     }
@@ -97426,5 +97518,45 @@ export const bonus_IDs: {[key: string]: any} = {
   "13760": {
     "id": 13760,
     "serverside": true
+  },
+  "13786": {
+    "id": 13786,
+    "itemLevel": {
+      "amount": 298,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Sporefused: Myth"
+  },
+  "13787": {
+    "id": 13787,
+    "itemLevel": {
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Sporefused: Hero"
+  },
+  "13788": {
+    "id": 13788,
+    "itemLevel": {
+      "amount": 272,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Sporefused: Champion"
+  },
+  "13789": {
+    "id": 13789,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 4,
+    "tag": "Sporefused: Veteran"
   }
 }

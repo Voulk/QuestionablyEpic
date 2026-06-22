@@ -26,20 +26,26 @@ export const holyPriestDefaults = {
       mp5: 0,
       critMult: 2,
       hps: 0,
+      critMultHPS: 1,
+      critMultDPS: 2,
     },
     defaultStatWeights: {
       // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
       spellpower: 1,
-      intellect: 1.138,
-      crit: 0.445,
-      mastery: 0.543,
+      intellect: 1.21,
+      crit: 0.681,
+      mastery: 0.82,
       haste: 0,
-      spirit: 0.55,
-      mp5: 0.8,
-      hps: 0.334
+      spirit: 0.793,
+      mp5: 1.405,
+      hps: 0.227,
+      critMultHPS: 655,
+      critMultDPS: 0,
     },
     specialQueries: {
-        // Any special information we need to pull.
+      // Any special information we need to pull.
+      cleavePercentage: 1, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
     autoReforgeOrder: ["spirit", "crit", "mastery", "haste", "hit"],
 }
@@ -50,7 +56,7 @@ export function initializeHPriestSet(userSettings, talents = holyTalents, ignore
   const castProfile = [
     // Cooldowns
     {spell: "Circle of Healing", efficiency: 0.85},
-    {spell: "Holy Word: Sanctuary", efficiency: 0.9},
+    {spell: "Holy Word: Sanctuary", efficiency: 0.9, bonus: 1},
     {spell: "Holy Word: Serenity", efficiency: 0.1},
     {spell: "Divine Hymn", efficiency: 0.9},
     {spell: "Prayer of Mending", efficiency: 0.9, bonus: 1},
@@ -110,7 +116,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
   const chakraUptime = {'yellow': 0, 'blue': 0.9, 'red': 0.1}; // Yellow = ST, blue = AoE, red = DPS.
   const averageEvangStacks = 4;
   const twistOfFateUptime = 0.35;
-  const echoOverhealing = 0.24;
+  const echoOverhealing = 0.3;
   let fillerCPM = 0;
   const metaGem = getSetting(userSettings, "classicMetaGem");
   let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
@@ -126,6 +132,7 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
     // 10% increase to PoM healing per jump.
     getSpellEntry(castProfile, "Prayer of Mending").bonus *= 1.25;
   }
+
 
   
   if (!userSettings.strictSeq) {
@@ -171,6 +178,10 @@ export function scoreHPriestSet(specBaseline, statProfile, userSettings, tierSet
 
     if (tierSets.includes("Priest T15-4")) {
       castProfile.push({spell: "Golden Apparition", cpm: getSpellEntry(castProfile, "Circle of Healing").cpm * 0.4})
+    }
+    if (tierSets.includes("Priest T16-4")) {
+      //getSpellEntry(castProfile, "Holy Word: Sanctuary").bonus *= (1 + (getSpellEntry(castProfile, "Prayer of Mending").cpm + getSpellEntry(castProfile, "Circle of Healing").cpm)) * 0.75 / getSpellEntry(castProfile, "Holy Word: Sanctuary").cpm;
+      getSpellEntry(castProfile, "Holy Word: Sanctuary").bonus *= (1 + 2.25 * 0.85);
     }
 
     // Handle our filler casts. 

@@ -20,7 +20,7 @@ export function getGenericEffect(effectName, itemLevel, additionalData) {
 
 
   if (activeEffect !== undefined) {
-    return activeEffect.runFunc(activeEffect.effects, additionalData.player, itemLevel, additionalData);
+    return activeEffect.runFunc(activeEffect.effects, itemLevel, additionalData);
   }
   else {
     return {};

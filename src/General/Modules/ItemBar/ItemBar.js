@@ -340,12 +340,15 @@ export default function ItemBar(props) {
     { label: "World Bosses", value: -1, gameType: "Classic", source: "World Bosses", icon: "conquestIcon" },
     //{ label: "T14 Normal", value: -1, gameType: "Classic", source: "T14", icon: "msvIcon" },
     //{ label: "T14 Heroic", value: -1, gameType: "Classic", source: "T14+", icon: "terraceIcon" },
+    { label: "Throne Tier", value: -1, gameType: "Classic", source: "T15", icon: "retailDungeonIcon" },
     { label: "Siege Normal", value: -1, gameType: "Classic", source: "T16", icon: "totNormal" },
     { label: "Siege Heroic", value: -1, gameType: "Classic", source: "T16+", icon: "totHeroic" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
     { label: "Heroic Raids", value: 276, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
     { label: "Mythic Raids", value: 289, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
+    { label: "Heroic Sporefall", value: 285, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
+    { label: "Mythic Sporefall", value: 298, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
     { label: "Mythic+", value: 289, gameType: "Retail", source: "Mythic+", icon: "retailDungeonIcon" },
   ]
 

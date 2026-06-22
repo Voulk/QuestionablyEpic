@@ -1,5 +1,10 @@
 {
-    "Nevermelting Ice Crystal": [],
+    "Nevermelting Ice Crystal": [
+        {
+            "coefficient": 0.863833,
+            "scalingClass": -7
+        }
+    ],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,

@@ -20,19 +20,28 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
     {
-    version: "12.0.5 / 5.5.3",
-    update: 18,
-    date: "May 26",
+    version: "12.0.7 / 5.5.4",
+    update: 19,
+    date: "June 17",
     changes: [ 
-      "Minor Bugfixes."
+      "Various bug fixes",
     ]
   },
   {
-    version: "12.0.5 / 5.5.3",
-    update: 17,
-    date: "May 13",
+    version: "12.0.7 / 5.5.4",
+    update: 18,
+    date: "June 17",
     changes: [ 
-      "Added better support for the new Voidcore system in Top Gear & Upgrade Finder."
+      "Added Omnium Folio.",
+      "Added Sporefall raid loot & Upgrade Finder."
+    ]
+  },
+          {
+    version: "12.0.5 / 5.5.4",
+    update: 17,
+    date: "June 8",
+    changes: [ 
+      "Classic: Added Siege of Orgrimmar",
     ]
   },
         {

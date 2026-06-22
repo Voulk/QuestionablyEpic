@@ -2,6 +2,7 @@
 import { runSpellScript } from "../Generic/SpellScripts";
 import { hasTalent, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import specSpellDB from "./RestoShamanSpellDB.json";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { defaultTalents, shamanTalents } from "./RestoShamanTalents";
 import { buffSpellPerc, cooldownAdjFlat } from "../Generic/TalentBase";
 import {
@@ -23,11 +24,11 @@ export const restoShamanProfile = {
         // Our stats we want to run through the profile. 
         // You can change and play with these as much as you want.
         // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2090,
-        haste: 461,
-        crit: 1432,
-        mastery: 552,
-        versatility: 571,
+        intellect: 2500,
+        haste: 1050,
+        crit: 1200,
+        mastery: 150,
+        versatility: 100,
         stamina: 19000,
         critMult: 2,
     },
@@ -93,8 +94,6 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: fightLength, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman",
         playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
-
-    console.log(state.statPercentages)
     let castProfile: CastProfile = [
         // Add Spells here
         {spell: "Riptide", efficiency: 1},
@@ -273,7 +272,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // We are assuming you never actually get melee hit so no water shield procs, just the passive
-    const waterShieldRegen = hasTalent(talents, "Therazane's Resilience") ? 714 : 621
+    const waterShieldBug = getSetting(settings, "waterShieldBugShaman") == 'Yes' ? true : false
+    const waterShieldRegen = waterShieldBug ? 6426 : hasTalent(talents, "Therazane's Resilience") ? 714 : 621
     const regen = (manaPool * 0.04 + waterShieldRegen) * 12;
     let manaAvailable = manaPool / fightLength + regen;
     reportingData.manaAvailable = manaAvailable;

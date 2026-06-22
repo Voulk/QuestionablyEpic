@@ -363,6 +363,10 @@
           "title": "Mastery Effectiveness",
           "tooltip": "Expected Mastery Effectiveness. Can be pulled from a specific log on wowanalyzer.com. Top Gear only."
         },
+        "waterShieldBugShaman" : {
+          "title": "Enable Water Shield Bug",
+          "tooltip": "Utilize the water shield bug for extra mana."
+        },
 
         "flaskChoice": {
           "title": "Flask",

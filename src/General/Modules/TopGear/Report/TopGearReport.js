@@ -34,7 +34,7 @@ import {
 import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
 import TopGearReportTabs from "./TopGearReportTabs";
-
+import TopGearFolioEntry from "./TopGearFolioEntry";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -571,6 +571,12 @@ function displayReport(
                                 gameType={gameType}
                               />
                             ))}
+                        </Grid>
+                        <Grid>
+                          
+                          {gameType === "Retail" ? <TopGearFolioEntry /> : null}
+
+
                         </Grid>
                       </Grid>
                     </Grid>

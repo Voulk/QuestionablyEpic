@@ -1057,11 +1057,13 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
+      else if (source === "Sporefall" && sources) sourceCheck = ([1305].includes(sources.instanceId));
       else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }
       else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1 && item.itemSetId && item.classRestriction && player.spec.includes((player.spec)));
       else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
       else if (source === "T16+" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 1);
       else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
@@ -1085,7 +1087,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         && sourceCheck) { 
           let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           if (gameType === "Retail") {
-            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) ilvlBoost = 9;
+            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot) && item.id !== 268292) ilvlBoost = 9;
             else ilvlBoost = 0;
           }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
@@ -1110,6 +1112,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
+// Not used in Top Gear / Upgrade Finder
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
   let bonus_stats: Stats = gameType === "Retail" ? {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0} :
@@ -1140,7 +1143,23 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+
+    if (effectStats.amp) {
+      // We have an amp trinket. Convert it to regular stats.
+      const playerBaseStats = player.getActiveModel("Raid").profile.defaultStatProfile;
+      const playerBaseWeights = player.getActiveModel("Raid").profile.defaultStatWeights;
+      ["mastery", "haste", "spirit"].forEach(statName => {
+        effectStats[statName] = (effectStats[statName] || 0) + (effectStats.amp) * playerBaseStats[statName];
+        //console.log("Adding " + (effectStats.amp) * playerBaseStats[statName] + " " + statName + " from amp effect");
+      })
+
+      bonus_stats.hps = (bonus_stats.hps || 0) + (effectStats.amp) * 100 * playerBaseWeights["critMultHPS"];
+      bonus_stats.hps = (bonus_stats.hps || 0) + (effectStats.amp) * 100 * playerBaseWeights["critMultDPS"];
+      
+    }
+
     bonus_stats = compileStats(bonus_stats, effectStats as Stats);
+
   }
 
   // Handle Annulet
@@ -1210,6 +1229,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
+// This is only used for the trinket chart. Never used in Top Gear / Upgrade Finder.
 export function scoreTrinket(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
   let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
@@ -1222,8 +1242,11 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
 
   // Multiply the item's stats by our stat weights.
+
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
+
+
 
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Paper, Typography, Grid, Tooltip, Tabs, Tab } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CircletChart from "./CircletChart";
-import HelpText from "../SetupAndMenus/HelpText";
+import HelpText from "../../SetupAndMenus/HelpText";
 import { useSelector } from "react-redux";
 import makeStyles from "@mui/styles/makeStyles";
 import ReactGA from "react-ga";
@@ -10,7 +10,7 @@ import { embellishmentDB } from "Databases/EmbellishmentDB";
 import { getAllCombos, getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { getEffectValue } from "Retail/Engine/EffectFormulas/EffectEngine";
 import MetricToggle from "General/Modules/EmbellishmentAnalysis/MetricToggle";
-import CharacterPanel from "../CharacterPanel/CharacterPanel";
+import CharacterPanel from "../../CharacterPanel/CharacterPanel";
 import { loadBannerAd } from "General/Ads/AllAds";
 import { useHistory } from "react-router-dom";
 import { themeSelection } from "General/Modules/TrinketAnalysis/Charts/ChartColourThemes";

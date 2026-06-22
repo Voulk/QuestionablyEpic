@@ -244,32 +244,38 @@ class CastModel {
       this.modelName = "Default";
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 260000;
 
     } 
     else if (spec === "Holy Priest Classic") {
       this.modelName = "Default";
       this.profile = holyPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
     } 
     else if (spec === "Holy Paladin Classic") {
       this.modelName = "Default (Beta)";
       this.profile = holyPaladinDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
     } 
     else if (spec === "Discipline Priest Classic") {
       this.modelName = "Default";
       this.profile = discPriestDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
     } 
     else if (spec === "Restoration Shaman Classic") {
       this.modelName = "Default (Beta)";
       this.profile = restoShamanDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
     } 
     else if (spec === "Mistweaver Monk Classic") {
       this.modelName = "Default";
       this.profile = mistweaverMonkDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
     } 
     else {
       spellList = {};
