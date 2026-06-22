@@ -41,6 +41,16 @@ export const CONSTANTS = {
       "Restoration Druid": "of the Luminous Bloom"
     },
 
+    specIDs: {
+        "Preservation Evoker": 1468,
+        "Holy Paladin": 65,
+        "Holy Priest": 257,
+        "Discipline Priest": 256,
+        "Restoration Shaman": 264,
+        "Mistweaver Monk": 270,
+        "Restoration Druid": 105,
+    }
+
 }
 
 // Currently unused. Might use later.

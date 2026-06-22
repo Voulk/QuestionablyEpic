@@ -14,7 +14,7 @@ import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatW
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
 import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
-import { scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
+import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
@@ -48,6 +48,7 @@ class CastModel {
   baseStatWeights = {}
   modelType = {"Raid": "Default", "Dungeon": "Default"};
   runCastModel = null;
+  talents = []; // A list of enabled talents
 
   setSpellList = (spellListing) => {
     this.spellList = spellListing;
@@ -138,6 +139,7 @@ class CastModel {
         this.modelType["Dungeon"] = "Default";
         this.heroTree = "Default";
         this.runCastModel = scoreShamanSet;
+        this.talents = restoShamanProfile.defaultTalents;
         spellList = shamanDefaultSpellData(contentType);
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);

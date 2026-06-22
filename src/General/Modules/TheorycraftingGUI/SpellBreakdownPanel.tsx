@@ -1,0 +1,147 @@
+import React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+export interface SpellRow {
+  spellName: string;
+  icon?: string;
+  cpm: number;
+  overhealing: number;
+  hps: number;
+  percentHealing: string;
+}
+
+export interface SpellBreakdownProps {
+  rows: SpellRow[];
+  activeResult?: any;
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+const fmt2 = (n: number) => n.toFixed(2);
+const fmtInt = (n: number) => n.toLocaleString();
+
+// ─── Shared sx shorthands ─────────────────────────────────────────────────────
+
+const sxTh = {
+  fontSize: "10px",
+  fontFamily: "'Cinzel', Georgia, serif",
+  fontWeight: 600,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  color: "#777",
+  background: "#252525",
+  borderBottom: "1px solid #2e2e2e",
+  whiteSpace: "nowrap",
+  py: "9px",
+  px: "14px",
+} as const;
+
+const sxTd = {
+  fontFamily: "'Cinzel', Georgia, serif",
+  fontSize: "13px",
+  color: "#e0e0e0",
+  borderBottom: "1px solid #2a2a2a",
+  whiteSpace: "nowrap",
+  py: "8px",
+  px: "14px",
+} as const;
+
+const sxTdNumeric = {
+  ...sxTd,
+  fontFamily: "monospace",
+  color: "#bbb",
+  textAlign: "right",
+} as const;
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) => {
+  // const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
+
+  return (
+    <div style={{ padding: "10px 12px 12px" }}>
+      <TableContainer>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell sx={sxTh}>Spell Name</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>HPS</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>% Healing</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>CPM</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>Overhealing</TableCell>
+
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, i) => (
+              <TableRow
+                key={i}
+                sx={{ background: i % 2 === 0 ? "#1e1e1e" : "#232323" }}
+              >
+                <TableCell sx={sxTd}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    {row.icon && (
+                      <img
+                        src={"https://wow.zamimg.com/images/wow/icons/large/" + row.icon + ".jpg"}
+                        alt=""
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "3px",
+                          flexShrink: 0,
+                        }}
+                      />
+                    )}
+                    {row.spellName}
+                  </div>
+                </TableCell>
+                <TableCell sx={sxTdNumeric}>{fmtInt(row.hps)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{row.percentHealing}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing)}</TableCell>
+
+              </TableRow>
+            ))}
+            {rows.length === 0 && (
+              <TableRow>
+                <TableCell
+                  colSpan={5}
+                  sx={{ ...sxTd, color: "#555", textAlign: "center" }}
+                >
+                  No data
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      <div
+        style={{
+          marginTop: "10px",
+          display: "flex",
+          justifyContent: "flex-end",
+          fontFamily: "'Cinzel', Georgia, serif",
+          fontSize: "12px",
+          letterSpacing: "0.08em",
+          color: "#999",
+          paddingRight: "2px",
+        }}
+      >
+        <span style={{ color: "#DAA520", marginRight: "8px" }}>TOTAL HPS:</span>
+        <span style={{ fontFamily: "monospace", color: "#e0e0e0" }}>
+          {Math.round(activeResult?.healing || 0).toLocaleString()}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default SpellBreakdown;

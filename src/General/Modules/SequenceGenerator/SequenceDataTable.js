@@ -15,6 +15,7 @@ import { buildPaladinChartData } from "General/Modules/Player/ClassDefaults/Holy
 import { buildDruidChartData } from "General/Modules/Player/ClassDefaults/RestoDruid/DruidChartGen";
 import { buildHolyPriestChartData } from "General/Modules/Player/ClassDefaults/HolyPriest/HolyPriestRampGen";
 import { buildShamanChartData } from "General/Modules/Player/ClassDefaults/RestoShaman/RestoShamanChartGen";
+import { buildMonkChartData } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverChartGen";
 
 import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
 
@@ -38,6 +39,9 @@ function buildChartData(spec, stats, talents) {
   }
   else if (spec === "Holy Priest") {
     return buildHolyPriestChartData(stats, talents);
+  }
+  else if (spec === "Mistweaver Monk") {
+    return buildMonkChartData(stats);
   }
   else if (spec === "Restoration Druid Classic") {
     return buildClassicChartData(stats, "Restoration Druid")
@@ -76,6 +80,7 @@ export default function SequenceDataTable(props) {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontWeight: 'bold' }}>Spell Combo</TableCell>
+            <TableCell align="right">Eff Coeff</TableCell>
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
             <TableCell align="right">HPCT</TableCell>
@@ -108,6 +113,7 @@ export default function SequenceDataTable(props) {
                                   <div>{row.tag}</div>
                                 </div>
                               </TableCell>
+                              <TableCell align="right">{row.coeff > 0 ? row.coeff : "-"}</TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>
                               <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>

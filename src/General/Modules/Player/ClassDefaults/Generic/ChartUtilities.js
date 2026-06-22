@@ -52,8 +52,24 @@ const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, t
 
 }
 
+export const getSpellIcon = (spell) => {
+    if (spell[0].displayInfo) return spell[0].displayInfo.icon;
+    else return "";
+}
+
+export const getSpellCoeff = (spell) => {
+    let coeff = 0;
+    spell.forEach(spellSlice => {
+        if (spellSlice.coeff) coeff += spellSlice.coeff * spellSlice.aura;
+
+        
+    })
+    return Math.round(100*coeff)/100;
+}
+
 export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
+        coeff: 0,
         healingDone: 0,
         damageDone: 0,
         manaSpent: 0,
@@ -65,13 +81,12 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
 
     data.manaSpent = spell[0].cost * 250000 / 100;
 
-    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1, critMult: 2, genericHealingMult: 1}
-    console.log(playerData);
+    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1, critMult: 2, genericHealingMult: 1, genericDamageMult: 1}
+
     const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
 
-    console.log(result);
-    
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+    data.coeff = getSpellCoeff(spell);
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
 
 }
 

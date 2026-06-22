@@ -1,4 +1,7 @@
 
+type SupportedLanguages = "en" | "fr" | "de" | "ru" | "ch";
+
+
 interface TickData {
     tickRate: number;
     canPartialTick: boolean;

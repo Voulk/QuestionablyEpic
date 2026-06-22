@@ -1,10 +1,11 @@
 
 import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
-import { druidTalents } from "./RestoDruidTalents";
+import { druidTalents, defaultTalents } from "./RestoDruidTalents";
 import  restoDruidSpellDB from "./RestoDruidSpellDB.json";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry, buildFormulatedChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
+import { applyTalents } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 /**
 
  */
@@ -31,14 +32,18 @@ export const buildDruidChartData = (activeStats) => {
 
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...druidTalents};
+    const state = {statBonuses: {}, heroTree: "Keeper of the Grove", talents: talents};
     Object.keys(talents).forEach(talentName => {
         if (talents[talentName].heroTree === "Keeper of the Grove") talents[talentName].points = 1;
     })
 
+    defaultTalents(talents, "default", "Keeper of the Grove");
+    applyTalents(state, restoDruidSpellDB); // missing Stat bonuses
+
     let sequences = Object.keys(restoDruidSpellDB).map(spellKey => {
         const spell = restoDruidSpellDB[spellKey][0];
         let catSuffix = ""
-        console.log(spellKey);
+        //console.log(spellKey);
 
         if (spell.displayInfo.cat === "damage") {
             catSuffix = "Damage";
