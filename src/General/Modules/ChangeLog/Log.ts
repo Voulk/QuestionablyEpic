@@ -22,7 +22,7 @@ export const changeLog: entry[] = [
     {
     version: "12.0.7 / 5.5.4",
     update: 19,
-    date: "June 8",
+    date: "June 17",
     changes: [ 
       "Various bug fixes",
     ]
@@ -30,7 +30,7 @@ export const changeLog: entry[] = [
   {
     version: "12.0.7 / 5.5.4",
     update: 18,
-    date: "June 8",
+    date: "June 17",
     changes: [ 
       "Added Omnium Folio.",
       "Added Sporefall raid loot & Upgrade Finder."
