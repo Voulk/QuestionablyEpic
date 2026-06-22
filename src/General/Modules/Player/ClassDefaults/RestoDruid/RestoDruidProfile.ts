@@ -13,7 +13,7 @@ export const restoDruidProfile = {
         // Our stats we want to run through the profile. 
         // You can change and play with these as much as you want.
         // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2000,
+        intellect: 2500,
         haste: 550,
         crit: 550,
         mastery: 550,
@@ -98,7 +98,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
       {spell: "Wild Growth", efficiency: 0.8 },
       {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
-      {spell: "Lifebloom (Bloom)", cpm: 4 }, // Does not proc if we extend Lifebloom with Verdant Infusion so adjust down in that case.
+      {spell: "Lifebloom (Bloom)", cpm: 4 }, // Consider possible Overgrowth usage.
 
       {spell: "Grove Guardians", cpm: 0 },
       {spell: "Dream Bloom", cpm: 0 },

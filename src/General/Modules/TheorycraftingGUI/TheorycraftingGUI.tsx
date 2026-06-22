@@ -35,10 +35,10 @@ export default function TheorycraftingGUI(props) {
 
     const [stats, setStats] = useState<Stats>({
         intellect: 2400,
-        haste: 400,
-        crit: 400,
-        mastery: 400,
-        versatility: 400,
+        haste: 500,
+        crit: 500,
+        mastery: 500,
+        versatility: 500,
     });
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
@@ -54,6 +54,7 @@ export default function TheorycraftingGUI(props) {
                 },
                 downtime: 0
             }
+            
     const playerData = { spec: "Restoration Shaman", heroTree: "Farseer", profileName: selectedProfile.modelName, stats: stats,
                                     masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params,  }
 
