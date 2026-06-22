@@ -323,7 +323,7 @@ export const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
-      bonus_stats.intellect! *= (player.spec === "Discipline Priest" ? 0.9 : 0);
+      bonus_stats.intellect! *= (player.spec.includes("Discipline Priest") ? 0.95 : 0);
       return bonus_stats;
     }
   },
