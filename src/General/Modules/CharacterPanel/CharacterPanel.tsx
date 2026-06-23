@@ -7,7 +7,7 @@ import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleContent } from "Redux/Actions";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 import { classColours } from "General/Engine/ClassData";
 import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
@@ -193,17 +193,18 @@ export default function CharacterPanel(props: Props) {
                   />
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
                   <Tooltip title={getTranslatedClassName(currentCharacter.spec, currentLanguage)} placement="left" arrow>
-                    {classIcons(
-                      currentCharacter.spec,
-                      {height: 22,
-                      width: 22,
-                      margin: "0px 2px 0px 0px",
-                      verticalAlign: "middle",
-                      borderRadius: "0px 0px 0px 4px",
-                      borderRight: "1px solid " + classColours(currentCharacter.spec),
-                      borderTop: "1px solid" + classColours(currentCharacter.spec),
-                      }
-                    ) || <></>}
+                    <ClassIcon
+                      name={currentCharacter.spec}
+                      style={{
+                        height: 22,
+                        width: 22,
+                        margin: "0px 2px 0px 0px",
+                        verticalAlign: "middle",
+                        borderRadius: "0px 0px 0px 4px",
+                        borderRight: "1px solid " + classColours(currentCharacter.spec),
+                        borderTop: "1px solid" + classColours(currentCharacter.spec),
+                      }}
+                    />
                   </Tooltip>
                 </div>
               </div>

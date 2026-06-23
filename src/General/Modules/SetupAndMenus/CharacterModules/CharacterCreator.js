@@ -3,7 +3,7 @@ import React from "react";
 import { Avatar, Button, Card, CardActionArea, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, Typography, MenuItem, TextField, Select, Grid } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { useTranslation } from "react-i18next";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 import { getRaceIcon } from "General/Modules/IconFunctions/RaceIcons";
 import Autocomplete from "@mui/material/Autocomplete";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
@@ -177,14 +177,17 @@ export default function AddNewChar(props) {
                       return (
                         <MenuItem divider={lastItem} key={"class" + i} value={key} style={{ color: classColours(key) }}>
                           <div style={{ display: "inline-flex" }}>
-                            {classIcons(key, {
-                              height: 20,
-                              width: 20,
-                              margin: "0px 5px 0px 5px",
-                              verticalAlign: "middle",
-                              borderRadius: 4,
-                              border: "1px solid rgba(255, 255, 255, 0.12)",
-                            })}
+                            <ClassIcon
+                              name={key}
+                              style={{
+                                height: 20,
+                                width: 20,
+                                margin: "0px 5px 0px 5px",
+                                verticalAlign: "middle",
+                                borderRadius: 4,
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                              }}
+                            />
                             {getTranslatedClassName(key, currentLanguage)}
                           </div>
                         </MenuItem>

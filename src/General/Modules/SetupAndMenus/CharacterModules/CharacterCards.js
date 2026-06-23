@@ -389,7 +389,6 @@ export default function CharCards(props) {
                   <Grid item xs={10}>
                     <Typography variant="h6" component="h4" style={{ lineHeight: 1, color: classColours(spec), display: "inline-flex" }}>
                       {props.name}
-                      {console.log(ClassIcon({ name: spec, style: null }))}
                       <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColours(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
                         {ClassIcon({name: spec, style: {

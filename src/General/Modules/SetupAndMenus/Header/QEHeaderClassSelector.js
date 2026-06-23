@@ -10,7 +10,7 @@ import {
   Box,
 } from "@mui/material";
 import { classColours } from "General/Engine/ClassData";
-import classIcons from "General/Modules/IconFunctions/ClassIcons"; // Replace if needed
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons"; // Replace if needed
 
 const classNames = {"Retail": [
     "Restoration Druid",
@@ -42,7 +42,7 @@ export default function HeaderClassSelect({gameType, selectedSpec, setSelectedSp
         onChange={(e) => setSelectedSpec(e.target.value)}
         renderValue={(value) => (
           <Box display="flex" alignItems="center" gap={1}>
-            {classIcons(value, { width: 20, height: 20 })}
+            <ClassIcon name={value} style={{ width: 20, height: 20 }} />
             <Typography style={{ color: classColours(value) }}>{value.replace(" Classic", "")}</Typography>
           </Box>
         )}
@@ -50,7 +50,7 @@ export default function HeaderClassSelect({gameType, selectedSpec, setSelectedSp
         {classNames[gameType].map((playerClass) => (
           <MenuItem key={playerClass} value={playerClass}>
             <Box display="flex" alignItems="center" gap={1}>
-              {classIcons(playerClass, { width: 20, height: 20 })}
+              <ClassIcon name={playerClass} style={{ width: 20, height: 20 }} />
               <Typography style={{ color: classColours(playerClass) }}>
                 {playerClass.replace(" Classic", "")} 
               </Typography>

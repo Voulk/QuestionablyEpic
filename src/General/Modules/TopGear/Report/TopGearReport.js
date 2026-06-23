@@ -16,7 +16,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { classColours } from "General/Engine/ClassData";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { exportWowheadGearList, exportReforgeLite, exportIcyVeinsGearList, exportIcyVeinsGearPlanner } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
@@ -74,7 +74,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   //.catch(err => { throw err });
 }
 
-const classIcon = (spec) => {
+const smallClassIcon = (spec) => {
   switch (spec) {
     case "Holy Paladin":
     case "Holy Paladin Classic":
@@ -624,7 +624,7 @@ function displayReport(
                               <Grid item xs="auto" width={80} height={80} margin="auto">
                                 <Grid container direction="row">
                                   <img
-                                    src={classIcon(player.spec)}
+                                    src={smallClassIcon(player.spec)}
                                     height={80}
                                     width={80}
                                     style={{ padding: 4 }
@@ -667,16 +667,19 @@ function displayReport(
                                         placement="top"
                                         arrow
                                       >
-                                        {classIcons(player.spec, {
-                                          height: 22,
-                                          width: 22,
-                                          marginLeft: 4,
-                                          verticalAlign: "middle",
-                                          borderRadius: 4,
-                                          border:
-                                            "1px solid " +
-                                            classColours(player.spec),
-                                        })}
+                                        <ClassIcon
+                                          name={player.spec}
+                                          style={{
+                                            height: 22,
+                                            width: 22,
+                                            marginLeft: 4,
+                                            verticalAlign: "middle",
+                                            borderRadius: 4,
+                                            border:
+                                              "1px solid " +
+                                              classColours(player.spec),
+                                          }}
+                                        />
                                       </Tooltip>
                                     </div>
 
