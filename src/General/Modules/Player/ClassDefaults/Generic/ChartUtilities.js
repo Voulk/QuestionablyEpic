@@ -74,7 +74,7 @@ export const getSpellCoeff = (spell) => {
     return Math.round(100*coeff)/100;
 }
 
-export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeStats, userSettings, playerData, scoreSet) => {
+export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         coeff: 0,
         healingDone: 0,
@@ -84,6 +84,25 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
         spellValues: {
 
         }
+    }
+
+    const spell = JSON.parse(JSON.stringify(rawSpell));
+
+    if (sequence.mods) {
+        if (sequence.mods.additionalTargets) {
+            spell.forEach(spellSlice => {
+                if (spellSlice.targets) spellSlice.targets += sequence.mods.additionalTargets;
+            });
+        }
+        if (sequence.mods.manaReduction) spell[0].cost *= sequence.mods.manaReduction;
+        if (sequence.mods.healingIncrease) {
+            spell.forEach(spellSlice => {
+                if (((spellSlice.spellType === "buff" && spellSlice.buffType === "heal") || spellSlice.type === "heal") && spellSlice.coeff)  {
+                    spellSlice.coeff *= sequence.mods.healingIncrease;
+                }
+            });
+        }
+            
     }
 
     data.manaSpent = spell[0].cost * 250000 / 100;

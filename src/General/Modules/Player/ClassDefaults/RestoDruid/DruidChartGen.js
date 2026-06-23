@@ -58,6 +58,9 @@ export const buildDruidChartData = (activeStats) => {
     });
 
     sequences = sequences.concat([
+        {cat: "Tree of Life", type: "formulated", tag: "Wild Growth", seq: ["Wild Growth"], mods: {additionalTargets: 2}, },
+        {cat: "Tree of Life", type: "formulated", tag: "Rejuvenation", seq: ["Rejuvenation"], mods: {manaReduction: 0.7, healingIncrease: 1.3}},
+        //{cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
         /*
         {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         
@@ -74,9 +77,7 @@ export const buildDruidChartData = (activeStats) => {
         {cat: "Soul of the Forest", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: ["Soul of the Forest"]},
         {cat: "Soul of the Forest", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Soul of the Forest"]},
         
-        {cat: "Tree of Life", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: ["Incarnation: Tree of Life"]},
-        {cat: "Tree of Life", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: ["Incarnation: Tree of Life"]},
-        {cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Incarnation: Tree of Life"]},
+
         */
         //{cat: "Ramps", iterations: 100, includeStats: true, tag: "Tree 12x Rej -> SM -> WG -> Flourish -> 10x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 12", "Grove Guardians x 3", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 10"], preBuffs: []},
         //{cat: "Ramps", tag: "6x Rej -> SM -> WG -> 6x Reg", seq: ["Rejuvenation", "Rejuvenation x 5", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
@@ -110,7 +111,7 @@ export const buildDruidChartData = (activeStats) => {
             results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: displayInfo, advancedReport: result.advancedReport})
         */
             }
-        else if (cat.includes("Base Spells")) {
+        else if (cat.includes("Base Spells") || sequence.type === "formulated") {
             const fullSpell = spellDB[sequence.seq[0]];
             results.push(buildFormulatedChartEntry(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Druid"}, null));
         }
