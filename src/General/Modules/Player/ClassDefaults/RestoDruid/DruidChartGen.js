@@ -30,6 +30,8 @@ export const buildDruidChartData = (activeStats) => {
         critMult: 2,
     }*/
 
+    const spellDB = JSON.parse(JSON.stringify(restoDruidSpellDB));   
+
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...druidTalents};
     const state = {statBonuses: {}, heroTree: "Keeper of the Grove", talents: talents};
@@ -38,14 +40,15 @@ export const buildDruidChartData = (activeStats) => {
     })
 
     defaultTalents(talents, "default", "Keeper of the Grove");
-    applyTalents(state, restoDruidSpellDB); // missing Stat bonuses
+    applyTalents(state, spellDB); // missing Stat bonuses
 
-    let sequences = Object.keys(restoDruidSpellDB).map(spellKey => {
-        const spell = restoDruidSpellDB[spellKey][0];
+
+    let sequences = Object.keys(spellDB).map(spellKey => {
+        const spell = spellDB[spellKey][0];
         let catSuffix = ""
         //console.log(spellKey);
 
-        if (spell.displayInfo.cat === "damage") {
+        if (spell.displayInfo && spell.displayInfo.cat === "damage") {
             catSuffix = "Damage";
         }
         else {
@@ -85,7 +88,7 @@ export const buildDruidChartData = (activeStats) => {
     sequences.forEach(sequence => {
         let newSeq = sequence.seq;
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
-        const displayInfo = {id: 0, icon: restoDruidSpellDB[newSeq[0]][0].displayInfo.icon || ""};
+        const displayInfo = {id: 0, icon: spellDB[newSeq[0]][0].displayInfo.icon || ""};
         const cat = sequence.cat;
 
         if (cat === "APLs") {
@@ -108,7 +111,7 @@ export const buildDruidChartData = (activeStats) => {
         */
             }
         else if (cat.includes("Base Spells")) {
-            const fullSpell = restoDruidSpellDB[sequence.seq[0]];
+            const fullSpell = spellDB[sequence.seq[0]];
             results.push(buildFormulatedChartEntry(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Druid"}, null));
         }
         else {

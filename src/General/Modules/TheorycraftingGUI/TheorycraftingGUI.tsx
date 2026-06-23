@@ -23,11 +23,11 @@ export default function TheorycraftingGUI(props) {
 
     const [activeResult, setActiveResult] = useState({healing: 1,
         spellBreakdown: [
-            { spellName: "Healing Wave",    cpm: 4.21, overhealing: 0.18, hps: 12450, percentHealing: "34.2%", icon: "spell_nature_healingwavelesser" },
+            /*{ spellName: "Healing Wave",    cpm: 4.21, overhealing: 0.18, hps: 12450, percentHealing: "34.2%", icon: "spell_nature_healingwavelesser" },
             { spellName: "Chain Heal",      cpm: 2.87, overhealing: 0.31, hps: 9870,  percentHealing: "27.1%", icon: "inv_1115_shaman_chainheal" },
             { spellName: "Riptide",         cpm: 6.10, overhealing: 0.09, hps: 7320,  percentHealing: "20.1%", icon: "spell_nature_riptide" },
             { spellName: "Healing Stream",  cpm: 1.00, overhealing: 0.22, hps: 4100,  percentHealing: "11.3%", icon: "inv_spear_04" },
-            { spellName: "Healing Tide Totem",    cpm: 0.33, overhealing: 0.05, hps: 2680,  percentHealing: "7.3%", icon: "ability_shaman_healingtide"  },
+            { spellName: "Healing Tide Totem",    cpm: 0.33, overhealing: 0.05, hps: 2680,  percentHealing: "7.3%", icon: "ability_shaman_healingtide"  },*/
         ]
     });
     const [statChart, setStatChart] = useState([]);
@@ -54,8 +54,8 @@ export default function TheorycraftingGUI(props) {
                 },
                 downtime: 0
             }
-            
-    const playerData = { spec: "Restoration Shaman", heroTree: "Farseer", profileName: selectedProfile.modelName, stats: stats,
+
+    const playerData = { spec: player.spec, heroTree: selectedProfile.heroTree || "Missing Hero Tree", profileName: selectedProfile.modelName, stats: stats,
                                     masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params,  }
 
     const runProfile = () => {
@@ -94,7 +94,7 @@ export default function TheorycraftingGUI(props) {
  
       {/* Future panels go here */}
 
-      {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
+      {<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />}
 
       <div style={{ height: 100 }} />
     </Box>

@@ -28,6 +28,46 @@
             }
         }
     ],
+        "Regrowth": [
+        {
+            "displayInfo": {
+                "id": 8936,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "heal"
+            },
+            "castTime": 1.5,
+            "school": "nature",
+            "cost": 2.52,
+            "coeff": 5.36,
+            "aura": 0.96,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        },
+        {
+            "coeff": 0.225,
+            "aura": 0.96,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
     "Wild Growth": [
         {
             "displayInfo": {
@@ -183,46 +223,6 @@
             }
         }
     ],
-    "Regrowth": [
-        {
-            "displayInfo": {
-                "id": 8936,
-                "icon": "spell_nature_resistnature",
-                "spellName": "Regrowth",
-                "cat": "heal"
-            },
-            "castTime": 1.5,
-            "school": "nature",
-            "cost": 2.52,
-            "coeff": 5.36,
-            "aura": 0.96,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "heal"
-        },
-        {
-            "coeff": 0.225,
-            "aura": 0.96,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "buff",
-            "buffType": "heal",
-            "buffDuration": 6.0,
-            "tickData": {
-                "tickRate": 2.0,
-                "canPartialTick": true,
-                "tickOnCast": false
-            }
-        }
-    ],
     "Swiftmend": [
         {
             "displayInfo": {
@@ -293,19 +293,6 @@
             "spellType": "damage"
         }
     ],
-    "Moonfire": [
-        {
-            "coeff": 0.212,
-            "aura": 3.078,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "energize"
-        }
-    ],
     "Grove Guardians": [
         {
             "displayInfo": {
@@ -338,9 +325,10 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
+            "buffDuration": 8,
             "tickData": {
                 "tickRate": 2.0,
-                "canPartialTick": true,
+                "canPartialTick": false,
                 "tickOnCast": false
             }
         }
@@ -397,6 +385,7 @@
             "cost": 0.0,
             "coeff": 1.33,
             "aura": 0.96,
+            "targets": 3,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

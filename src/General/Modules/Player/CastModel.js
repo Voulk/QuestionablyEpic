@@ -16,6 +16,7 @@ import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriest
 import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
 import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
+import { scoreDruidSet } from "./ClassDefaults/RestoDruid/RestoDruidProfile";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
@@ -96,6 +97,8 @@ class CastModel {
     if (spec === SPEC.RESTODRUID) {
       if (modelID === "Healing Focused") {
         this.modelName = "Healing Focused";
+        this.heroTree = "Wildstalker"
+        this.runCastModel = scoreDruidSet;
         spellList = druidDefaultSpellData(contentType);
         specialQueries = druidDefaultSpecialQueries(contentType);
         this.baseStatWeights = druidDefaultStatWeights(contentType);

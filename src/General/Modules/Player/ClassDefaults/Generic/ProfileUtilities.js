@@ -124,9 +124,9 @@ export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flag
             throughput.healing += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
         }
         else if (spell.spellType === "damage" || spell.buffType === "damage") {
-            console.log("Adding damage spell");
+
             throughput.damage += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
-            console.log(throughput);
+
         }
     })
     //console.log(throughput);
@@ -172,7 +172,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
                             (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
-        if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
+        //if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
     }
     
 
@@ -195,7 +195,6 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
 
-        console.log(targetCount, statPercentages.genericDamageMult);
     }
 
     // Handle HoT

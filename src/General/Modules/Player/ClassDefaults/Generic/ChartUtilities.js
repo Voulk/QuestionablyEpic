@@ -60,10 +60,17 @@ export const getSpellIcon = (spell) => {
 export const getSpellCoeff = (spell) => {
     let coeff = 0;
     spell.forEach(spellSlice => {
-        if (spellSlice.coeff) coeff += spellSlice.coeff * spellSlice.aura;
+        let sliceCoeff = 0;
+        if (spellSlice.coeff) sliceCoeff = spellSlice.coeff * spellSlice.aura;
+        if (spellSlice.targets) sliceCoeff *= spellSlice.targets;
+        if (spellSlice.spellType === "buff" && spellSlice.buffType === "heal") {
+            const tickData = spellSlice.tickData;
+            sliceCoeff *= (spellSlice.buffDuration / tickData.tickRate + tickData.tickOnCast)
+         } 
 
-        
+        coeff += sliceCoeff;
     })
+    
     return Math.round(100*coeff)/100;
 }
 
