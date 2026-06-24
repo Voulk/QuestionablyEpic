@@ -105,7 +105,7 @@ export function decodeBlizzardString(
   const specData = getSpecTalentData(spec);
   const fullNodeOrder: number[] = specData.nodeOrder;
   const specNodes: TalentNode[] = specData.nodes;
-  console.log(fullNodeOrder);
+
 
   // Helper function to extract N bits from the Base64 stream
   const getBits = (bits: number): number => {
@@ -177,7 +177,7 @@ export function decodeBlizzardString(
       }
     }
   }
-  console.log(selectedTalents);
+  //console.log(selectedTalents);
   return {
     version,
     specId,

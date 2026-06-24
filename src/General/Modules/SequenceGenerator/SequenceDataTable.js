@@ -80,6 +80,7 @@ export default function SequenceDataTable(props) {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontWeight: 'bold' }}>Spell Combo</TableCell>
+            <TableCell align="right">Cost</TableCell>
             <TableCell align="right">Eff Coeff</TableCell>
             <TableCell align="right">Healing</TableCell>
             <TableCell align="right">HPM</TableCell>
@@ -113,6 +114,7 @@ export default function SequenceDataTable(props) {
                                   <div>{row.tag}</div>
                                 </div>
                               </TableCell>
+                              <TableCell align="right">{row.cost > 0 ? row.cost : "-"}</TableCell>
                               <TableCell align="right">{row.coeff > 0 ? row.coeff : "-"}</TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>

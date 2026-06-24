@@ -70,8 +70,8 @@ export const restoDruidProfile = {
 
 // Wrath regen = 1687 effective mana per cast.
 
-export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
-
+export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
+    console.log("Scoring Druid Set");
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree};
@@ -87,7 +87,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     applyTalents(initialState, spellDB, initialState.statBonuses);
 
     // Apply Stats
-    const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid"), settings: settings, talents: druidTalents};
+    const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid", 1), settings: settings, talents: druidTalents};
 
     // Cast Profile
     // Maybe use manaOverride instead of freeCast
@@ -115,7 +115,10 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const manaAvailable = manaPool / fightLength + regen;
     reportingData.manaAvailable = manaAvailable;
 
-    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost! * spell.cpm!)), 0);
+
+    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride ?? 1))), 0);
+
     reportingData.baselineManaPerMinute = baselineCostPerMinute;
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
@@ -130,9 +133,14 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
 
 
     // Calculate initial filler via mana costs
-    getSpellEntry(castProfile, "Rejuvenation").cpm = fillerMana / getSpellEntry(castProfile, "Rejuvenation").cost!;
+    getSpellEntry(castProfile, "Rejuvenation").cpm = fillerMana / spellCosts["Rejuvenation"];
+    console.log(spellCosts["Rejuvenation"], fillerMana, getSpellEntry(castProfile, "Rejuvenation").cpm);
 
     // Calculate *time* left, fill it with packages.
+
+
+    // Cast triggers
+
 
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
@@ -153,6 +161,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
             const totalOutput = (spellOutput * effectiveCPM);
+
             if (totalOutput > 0) {
                 castBreakdown[spellName] = (castBreakdown[spellName] ?? 0) + (effectiveCPM);
                 healingBreakdown[spellName] = (healingBreakdown[spellName] ?? 0) + (totalOutput);
@@ -161,10 +170,40 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         })
 
     })
-    const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
 
-    console.log(reportingData)
+    const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    const totalDamage = 0;
+
+    const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
+
+    if (reporting) {
+        const sortedEntries = Object.entries(healingBreakdown)
+                            .sort((a, b) => b[1] - a[1])
+                           // .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
+        const spellBreakdown = []
+        sortedEntries.forEach(entry => {
+            const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
+            console.log(realSpellName + " " + entry[0]);
+            spellBreakdown.push({
+                spellName: entry[0], 
+                hps: Math.round(entry[1] / 60), 
+                percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
+                overhealing: 0.25,
+                cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
+                icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+
+
+            });
+        })
+        
+        console.log(spellBreakdown);
+        result.spellBreakdown = spellBreakdown;
+    }
+
+
+
+    console.log(reportingData);
     printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
-    return { damage: 0 / 60, healing: totalHealing / 60 }
+    return result //{ damage: 0 / 60, healing: totalHealing / 60 }
 }

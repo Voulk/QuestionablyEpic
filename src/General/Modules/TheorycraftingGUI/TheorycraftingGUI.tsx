@@ -34,8 +34,8 @@ export default function TheorycraftingGUI(props) {
     const [currentWeights, setCurrentWeights] = useState({ haste: 0.2, crit: 0.2, mastery: 0.2, versatility: 0.2, intellect: 1 });
 
     const [stats, setStats] = useState<Stats>({
-        intellect: 2400,
-        haste: 500,
+        intellect: 2800,
+        haste: 1000,
         crit: 500,
         mastery: 500,
         versatility: 500,
@@ -60,6 +60,7 @@ export default function TheorycraftingGUI(props) {
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
+        console.log(result);
         const statResults = buildTCStatChart(selectedProfile.runCastModel, playerData)
         setActiveResult(result);
         setStatChart(statResults);

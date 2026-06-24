@@ -10,7 +10,9 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     if (loadoutName === "default") talentsEnabled = [
         "Nurturing Instinct", "Gift of the Wild", "Lingering Healing", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
         "Flourish", "Improved Wild Growth", "Renewing Surge", "Rampant Growth", "Wild Synthesis", "Power of the Archdruid", "Improved Swiftmend", "Master Shapeshifter",
-        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis"
+        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis",
+
+        "Everbloom1", "Everbloom2", "Everbloom3",
     ]
 
     // Apply talents
@@ -395,24 +397,23 @@ const specTalents: TalentTree = {
 
     /* You can apply Rejuvenation twice to the same target. Rejuvenation's duration is increased by ${X/1000} sec. */
     "Germination": {id: 155675, values: [0.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
+        //adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
     }},
 
     /* Lifebloom stacks every X sec, stacking up to ${Y+1} times. */
     "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB['Lifebloom'], talentValues[1] * 100); 
+        buffSpellPerc(spellDB['Lifebloom (Bloom)'], talentValues[1] * 100); 
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
     "Everbloom2": {id: 1244331, values: [2.0, 20.0, 6.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        spellDB["Lifebloom"].forEach(slice => {
-            slice.targets =  (slice.targets ? slice.targets : 1) +  (talentValues[0] * talentValues[1] / 100 * points)
-        })
+        spellDB["Lifebloom (Bloom)"][0].targets = (talentValues[2] * talentValues[1] / 100 * points)
     }},
 
-    /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
+    /* Lifebloom bursts into a Blooming Frenzy when you cast Swiftmend, causing it to bloom X times in rapid succession. */
     "Everbloom3": {id: 1244470, values: [3.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        spellDB["Swiftmend"][0].triggerSpell = {spellName: "Lifebloom (Bloom)", times: talentValues[0]};
     }},
 }
 

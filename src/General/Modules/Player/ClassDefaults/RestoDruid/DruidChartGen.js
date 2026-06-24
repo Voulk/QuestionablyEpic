@@ -59,8 +59,10 @@ export const buildDruidChartData = (activeStats) => {
 
     sequences = sequences.concat([
         {cat: "Tree of Life", type: "formulated", tag: "Wild Growth", seq: ["Wild Growth"], mods: {additionalTargets: 2}, },
-        {cat: "Tree of Life", type: "formulated", tag: "Rejuvenation", seq: ["Rejuvenation"], mods: {manaReduction: 0.7, healingIncrease: 1.3}},
-        //{cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: []},
+        {cat: "Tree of Life", type: "formulated", tag: "Rejuvenation", seq: ["Rejuvenation"], mods: {manaReduction: 0.7, healingIncrease: 1.3 * 1.1}},
+        {cat: "Tree of Life", type: "formulated", tag: "Regrowth (Abundance)", seq: ["Regrowth"], mods: {manaReduction: 0.5, healingIncrease: 1.45 * 1.1}},
+
+        {cat: "Special", type: "formulated", tag: "Regrowth (Abundance)", seq: ["Regrowth"], mods: {manaReduction: 0.5, healingIncrease: 1.45}, preBuffs: []},
         /*
         {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         
