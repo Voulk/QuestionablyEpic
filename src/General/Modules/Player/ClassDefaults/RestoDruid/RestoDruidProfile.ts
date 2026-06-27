@@ -81,6 +81,9 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
+    // Druid specific variables
+    let soulOfTheForestProcs = 0;
+
     
     // Apply Talents
     defaultTalents(initialState.talents, "default", playerData.heroTree);
@@ -124,6 +127,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
 
+    // Apex4
 
 
     // Insert Grove Guardians

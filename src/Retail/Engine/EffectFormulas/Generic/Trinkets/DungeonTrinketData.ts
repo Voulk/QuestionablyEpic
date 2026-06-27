@@ -4,7 +4,26 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 export const dungeonTrinketData = 
 [
+    {
+      name: "Preternatural Antivenom",
+      description: "",
+      addonDescription: "",
+      effects: [
+        {  // HoT effect
+          secondaries: ['haste', 'crit', 'versatility'],
+          ppm: 2.5,
+          efficiency: 0.95 //
+        },
+        
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+  
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType)
 
+        return bonus_stats;
+      }
+    },
     {
     /* ---------------------------------------------------------------------------------------------- */
     /*                                  Kyrakka's Searing Embers                                      */

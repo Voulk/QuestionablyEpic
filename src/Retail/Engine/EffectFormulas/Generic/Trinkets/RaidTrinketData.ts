@@ -5,6 +5,30 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+          {
+          name: "Soulcoiler Ritual Vessel",
+          description: "",
+          setting: true,
+          addonDescription: "",
+          
+          effects: [
+            { 
+              secondaries: ['versatility'],
+              cooldown: 120,
+              targets: 5, // Heals for more per healed ally, up to 5.
+              //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
+            },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+      
+            bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Soulcoiler Ritual Vessel"][0]}, itemLevel, player, additionalData.contentType);
+            
+
+            return bonus_stats;
+          }
+        },
       { //
         id: 249809,
         name: "Sporelord's Mycelial Insignia",

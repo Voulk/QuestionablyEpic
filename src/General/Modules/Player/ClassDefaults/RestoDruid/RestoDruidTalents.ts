@@ -413,7 +413,7 @@ const specTalents: TalentTree = {
 
     /* Lifebloom bursts into a Blooming Frenzy when you cast Swiftmend, causing it to bloom X times in rapid succession. */
     "Everbloom3": {id: 1244470, values: [3.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        spellDB["Swiftmend"][0].triggerSpell = {spellName: "Lifebloom (Bloom)", times: talentValues[0]};
+        //spellDB["Swiftmend"][0].triggerSpell = {spellName: "Lifebloom (Bloom)", times: talentValues[0]};
     }},
 }
 

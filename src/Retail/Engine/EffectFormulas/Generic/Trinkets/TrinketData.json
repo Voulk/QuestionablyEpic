@@ -1,4 +1,16 @@
 {
+    "Preternatural Antivenom": [
+        {
+            "coefficient": 370.6,
+            "scalingClass": -8
+        }
+    ],
+    "Soulcoiler Ritual Vessel": [
+        {
+            "coefficient": 504.4047,
+            "scalingClass": -9
+        }
+    ],
     "Nevermelting Ice Crystal": [
         {
             "coefficient": 0.863833,
