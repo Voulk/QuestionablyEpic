@@ -1,22 +1,8 @@
 {
-    "Preternatural Antivenom": [
-        {
-            "coefficient": 370.6,
-            "scalingClass": -8
-        }
-    ],
-    "Soulcoiler Ritual Vessel": [
-        {
-            "coefficient": 504.4047,
-            "scalingClass": -9
-        }
-    ],
-    "Nevermelting Ice Crystal": [
-        {
+    "Nevermelting Ice Crystal": [        {
             "coefficient": 0.863833,
             "scalingClass": -7
-        }
-    ],
+        }],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,
@@ -311,6 +297,138 @@
     "Sporelord's Mycelial Insignia": [
         {
             "coefficient": 1.409,
+            "scalingClass": -7
+        }
+    ],
+    "Soulcoiler Ritual Vessel": [
+        {
+            "coefficient": 504.405,
+            "scalingClass": -9
+        }
+    ],
+    "Gebbo's Bottomless Bag": [
+        {
+            "coefficient": 0.207,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.472,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.472,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 1.236,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.506,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.773,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.153,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.178,
+            "scalingClass": -7
+        }
+    ],
+    "Hex Lord's Dooming Idol": [
+        {
+            "coefficient": 0.012,
+            "scalingClass": -1
+        },
+        {
+            "coefficient": 0.086,
+            "scalingClass": -1
+        },
+        {
+            "coefficient": 0.016,
+            "scalingClass": -1
+        }
+    ],
+    "Preternatural Antivenom": [
+        {
+            "coefficient": 370.6,
+            "scalingClass": -8
+        }
+    ],
+    "Stormbound Emblem of Dazar": [
+        {
+            "coefficient": 3.666,
+            "scalingClass": -7
+        }
+    ],
+    "Vile Vial of Volatile Venom": [
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
             "scalingClass": -7
         }
     ]
