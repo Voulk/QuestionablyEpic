@@ -7,7 +7,11 @@ interface TopGearFolioEntryProps {
 }
 
 export default function TopGearFolioEntry({ icons = [] }: TopGearFolioEntryProps) {
-  const slots = Array.from({ length: 1 }, (_, i) => icons[i] ?? null);
+  //let slots = Array.from({ length: 1 }, (_, i) => icons[i] ?? null);
+  const slots = [{id: 1279599, icon: "inv_summerfest_firespirit"},
+                  {id: 1279603, icon: "spell_shadow_felmending"},
+                  {id: 1287555, icon: "item_shadowcloth"}
+  ];
 
   return (
     <Grid
@@ -73,13 +77,13 @@ export default function TopGearFolioEntry({ icons = [] }: TopGearFolioEntryProps
           py: 1,
         }}
       >
-        {slots.map((icon, i) => (
-            <WowheadTooltip type="spell" id={1279599} domain="retail" >
+        {slots.map((slot, i) => (
+            <WowheadTooltip type="spell" id={slot.id} domain="retail" >
                 <img
                 alt="img"
                 width={28}
                 height={28}
-                src="https://wow.zamimg.com/images/wow/icons/large/inv_summerfest_firespirit.jpg"
+                src={`https://wow.zamimg.com/images/wow/icons/large/${slot.icon}.jpg`}
                 style={{
                     borderRadius: 4,
                     borderWidth: "1px",
