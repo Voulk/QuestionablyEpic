@@ -8,7 +8,7 @@ export const classNameDB = [
   {
     name: {
       en: "Holy Paladin",
-      fr: "Holy Paladin",
+      fr: "Paladin Sacré",
       de: "Heilig Paladin",
       ru: "Паладин Света",
       ch: "Holy Paladin",
@@ -24,7 +24,7 @@ export const classNameDB = [
   {
     name: {
       en: "Discipline Priest",
-      fr: "Discipline Priest",
+      fr: "Prêtre Discipline",
       de: "Disziplin Priester",
       ru: "Жрец Послушания",
       ch: "Discipline Priest",
@@ -41,7 +41,7 @@ export const classNameDB = [
   {
     name: {
       en: "Restoration Druid",
-      fr: "Restoration Druid",
+      fr: "Druide Restauration",
       de: "Wiederherstellung Druide",
       ru: "Друид Исцеления",
       ch: "Restoration Druid",
@@ -54,7 +54,7 @@ export const classNameDB = [
   {
     name: {
       en: "Preservation Evoker",
-      fr: "Preservation Evoker",
+      fr: "Évocateur Préservation",
       de: "Preservation Evoker",
       ru: "Preservation Evoker",
       ch: "Preservation Evoker",
@@ -67,7 +67,7 @@ export const classNameDB = [
   {
     name: {
       en: "Devastation Evoker",
-      fr: "Devastation Evoker",
+      fr: "Évocateur Dévastation",
       de: "Devastation Evoker",
       ru: "Devastation Evoker",
       ch: "Devastation Evoker",
@@ -80,7 +80,7 @@ export const classNameDB = [
   {
     name: {
       en: "Augmentation Evoker",
-      fr: "Augmentation Evoker",
+      fr: "Évocateur Augmentation",
       de: "Augmentation Evoker",
       ru: "Augmentation Evoker",
       ch: "Augmentation Evoker",
@@ -93,7 +93,7 @@ export const classNameDB = [
   {
     name: {
       en: "Druid",
-      fr: "Druid",
+      fr: "Druide",
       de: "Druid",
       ru: "Druid",
       ch: "德鲁伊",
@@ -106,7 +106,7 @@ export const classNameDB = [
   {
     name: {
       en: "Havoc Demon Hunter",
-      fr: "Havoc Demon Hunter",
+      fr: "Chasseur de démons Dévastation",
       de: "Verwüstung Dämonenjäger",
       ru: "Охотник на демонов Истребления",
       ch: "Havoc Demon Hunter",
@@ -119,7 +119,7 @@ export const classNameDB = [
   {
     name: {
       en: "Warrior",
-      fr: "Warrior",
+      fr: "Guerrier",
       de: "Krieger",
       ru: "Воин",
       ch: "Warrior",
@@ -132,7 +132,7 @@ export const classNameDB = [
   {
     name: {
       en: "Holy Priest",
-      fr: "Holy Priest",
+      fr: "Prêtre Sacré",
       de: "Heilig Priester",
       ru: "Жрец Света",
       ch: "Holy Priest",
@@ -145,7 +145,7 @@ export const classNameDB = [
   {
     name: {
       en: "Mistweaver Monk",
-      fr: "Mistweaver Monk",
+      fr: "Moine Tisse-Brume",
       de: "Nebelwirker Mönch",
       ru: "Монах Ткач Туманов",
       ch: "Mistweaver Monk",
@@ -158,7 +158,7 @@ export const classNameDB = [
   {
     name: {
       en: "Restoration Shaman",
-      fr: "Restoration Shaman",
+      fr: "Chaman Restauration",
       de: "Wiederherstellung Schamane",
       ru: "Шаман Исцеления",
       ch: "Restoration Shaman",
@@ -185,7 +185,7 @@ export const classNameDB = [
   {
     name: {
       en: "Death Knight",
-      fr: "Death Knight",
+      fr: "Chevalier de la mort",
       de: "Todesritter",
       ru: "Рыцарь смерти",
       ch: "Death Knight",
@@ -198,7 +198,7 @@ export const classNameDB = [
   {
     name: {
       en: "Shadow Priest",
-      fr: "Shadow Priest",
+      fr: "Prêtre Ombre",
       de: "Shadow Priest",
       ru: "Жрец Тьмы",
       ch: "Shadow Priest",
