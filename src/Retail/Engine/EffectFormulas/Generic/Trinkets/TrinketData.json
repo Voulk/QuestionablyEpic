@@ -1,8 +1,5 @@
 {
-    "Nevermelting Ice Crystal": [        {
-            "coefficient": 0.863833,
-            "scalingClass": -7
-        }],
+    "Nevermelting Ice Crystal": [],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,
@@ -338,6 +335,12 @@
         {
             "coefficient": 0.178,
             "scalingClass": -7
+        }
+    ],
+    "Wavecaller's Seastone": [
+        {
+            "coefficient": 0.18,
+            "scalingClass": -1
         }
     ],
     "Hex Lord's Dooming Idol": [

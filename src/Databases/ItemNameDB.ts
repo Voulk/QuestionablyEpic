@@ -137589,7 +137589,7 @@ export const nameDB =
         "es": "Canalizador alado de venenomante",
         "br": "Canalizador Alado do Peçonhante",
         "kr": "",
-        "fr": "Canalisateur ailé du vénomancien",
+        "fr": "Canalisateur ailé de venimancie",
         "de": "Geflügelter Kanalisierer des Giftmischers"
     },
     "268210": {
@@ -138405,12 +138405,12 @@ export const nameDB =
     "270162": {
         "cn": "",
         "en": "Soulcoiler Ritual Vessel",
-        "ru": "Soulcoiler Ritual Vessel",
-        "es": "Soulcoiler Ritual Vessel",
-        "br": "Soulcoiler Ritual Vessel",
+        "ru": "Ритуальный сосуд пленительницы душ",
+        "es": "Recipiente ritual de volutador de almas",
+        "br": "Receptáculo Ritual Enrosca-almas",
         "kr": "",
-        "fr": "Soulcoiler Ritual Vessel",
-        "de": "Soulcoiler Ritual Vessel"
+        "fr": "Réceptacle rituel de l’Entortillâme",
+        "de": "Ritualgefäß des Seelenwinders"
     },
     "270163": {
         "cn": "",
@@ -138485,7 +138485,7 @@ export const nameDB =
     "270170": {
         "cn": "",
         "en": "Vexhul's Everflowing Gland",
-        "ru": "Переполненная железа Вексула",
+        "ru": "Переполненная железа Вексул",
         "es": "Glándula infinita de Vexhul",
         "br": "Glândula Transbordante de Vexhul",
         "kr": "",
@@ -143072,26 +143072,6 @@ export const nameDB =
         "fr": "Jan’thrazet, le Crochâme",
         "de": "Jan'thrazet, der Seelenfang"
     },
-    "271131": {
-        "cn": "",
-        "en": "Test Weapon",
-        "ru": "Тестовое оружие",
-        "es": "Arma de prueba",
-        "br": "Arma de Teste",
-        "kr": "",
-        "fr": "Arme de test",
-        "de": "Testwaffe"
-    },
-    "271155": {
-        "cn": "",
-        "en": "Test Weapon 2",
-        "ru": "Тестовое оружие 2",
-        "es": "Arma de prueba 2",
-        "br": "Arma de Teste 2",
-        "kr": "",
-        "fr": "Arme de test 2",
-        "de": "Testwaffe 2"
-    },
     "271434": {
         "cn": "",
         "en": "Venom Rite Mantle",
@@ -143945,12 +143925,12 @@ export const nameDB =
     "271528": {
         "cn": "",
         "en": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "ru": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "es": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "br": "Enigmatic Dreamwatcher's Somnolent Stare",
+        "ru": "Усыпляющий взор таинственного сновидца",
+        "es": "Mirada fija somnolienta de vigía de los sueños enigmático",
+        "br": "Olhar Soporífero do Velassonhos Enigmático",
         "kr": "",
-        "fr": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "de": "Enigmatic Dreamwatcher's Somnolent Stare"
+        "fr": "Regard somnolent de garde-rêve énigmatique",
+        "de": "Schläfriges Starren des geheimnisvollen Traumbehüters"
     },
     "271529": {
         "cn": "",
@@ -144377,7 +144357,7 @@ export const nameDB =
         "en": "Gaze of the Coiled Watcher",
         "ru": "Взгляд змеиного наблюдателя",
         "es": "Mirada de la vigía volutada",
-        "br": "Olhar do Observador Espiralado",
+        "br": "Olhar da Observadora Enrolada",
         "kr": "",
         "fr": "Regard du guetteur lové",
         "de": "Blick des gewundenen Wächters"
@@ -144405,492 +144385,492 @@ export const nameDB =
     "272147": {
         "cn": "",
         "en": "Colubrine Band",
-        "ru": "Colubrine Band",
-        "es": "Colubrine Band",
-        "br": "Colubrine Band",
+        "ru": "Змеевидный обруч",
+        "es": "Sortija de colubrino",
+        "br": "Elo Colubrino",
         "kr": "",
-        "fr": "Colubrine Band",
-        "de": "Colubrine Band"
+        "fr": "Anneau colubrin",
+        "de": "Geschlängeltes Band"
     },
     "272148": {
         "cn": "",
         "en": "Anguine Gyre",
-        "ru": "Anguine Gyre",
-        "es": "Anguine Gyre",
-        "br": "Anguine Gyre",
+        "ru": "Змееподобное кольцо",
+        "es": "Giro de ofidio",
+        "br": "Torvelinho Anguino",
         "kr": "",
-        "fr": "Anguine Gyre",
-        "de": "Anguine Gyre"
+        "fr": "Bague anguiforme",
+        "de": "Schlangenförmiger Gorkicht"
     },
     "272149": {
         "cn": "",
         "en": "Hex Loop",
-        "ru": "Hex Loop",
-        "es": "Hex Loop",
-        "br": "Hex Loop",
+        "ru": "Колечко со сглазом",
+        "es": "Aro de maleficios",
+        "br": "Aro de Bagata",
         "kr": "",
-        "fr": "Hex Loop",
-        "de": "Hex Loop"
+        "fr": "Jonc maléficieux",
+        "de": "Verhexte Schleife"
     },
     "272150": {
         "cn": "",
         "en": "Ouroboric Signet",
-        "ru": "Ouroboric Signet",
-        "es": "Ouroboric Signet",
-        "br": "Ouroboric Signet",
+        "ru": "Печатка Уробороса",
+        "es": "Sello de uróboros",
+        "br": "Sinete Ourobórico",
         "kr": "",
-        "fr": "Ouroboric Signet",
-        "de": "Ouroboric Signet"
+        "fr": "Chevalière ouroborique",
+        "de": "Ouroborischer Siegelring"
     },
     "272225": {
         "cn": "",
         "en": "Galerider's Mantle",
-        "ru": "Galerider's Mantle",
-        "es": "Galerider's Mantle",
-        "br": "Galerider's Mantle",
+        "ru": "Оплечье оседлавшего ветер",
+        "es": "Manto de jinete de vendaval",
+        "br": "Manto do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Mantle",
-        "de": "Galerider's Mantle"
+        "fr": "Mantelet de chevauche-vent",
+        "de": "Mantel des Böenreiters"
     },
     "272226": {
         "cn": "",
         "en": "Miststalker's Shroud",
-        "ru": "Miststalker's Shroud",
-        "es": "Miststalker's Shroud",
-        "br": "Miststalker's Shroud",
+        "ru": "Покров туманного странника",
+        "es": "Sudario de acechador de la niebla",
+        "br": "Mortalha do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Shroud",
-        "de": "Miststalker's Shroud"
+        "fr": "Voile de traqueur des brumes",
+        "de": "Tuch des Nebelpirschers"
     },
     "272227": {
         "cn": "",
         "en": "Pyrewalker's Veil",
-        "ru": "Pyrewalker's Veil",
-        "es": "Pyrewalker's Veil",
-        "br": "Pyrewalker's Veil",
+        "ru": "Вуаль идущего сквозь пламя",
+        "es": "Velo de transitapiras",
+        "br": "Véu do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Veil",
-        "de": "Pyrewalker's Veil"
+        "fr": "Voile de marche-brasier",
+        "de": "Schleier des Lohenwandlers"
     },
     "272228": {
         "cn": "",
         "en": "Whispering Periapt",
-        "ru": "Whispering Periapt",
-        "es": "Whispering Periapt",
-        "br": "Whispering Periapt",
+        "ru": "Шепчущий оберег",
+        "es": "Talismán susurrante",
+        "br": "Periapto Sussurrante",
         "kr": "",
-        "fr": "Whispering Periapt",
-        "de": "Whispering Periapt"
+        "fr": "Périapte murmurant",
+        "de": "Flüsterndes Amulett"
     },
     "272229": {
         "cn": "",
         "en": "Serpentine Talisman",
-        "ru": "Serpentine Talisman",
-        "es": "Serpentine Talisman",
-        "br": "Serpentine Talisman",
+        "ru": "Змеиный талисман",
+        "es": "Talismán serpentino",
+        "br": "Talismã Serpentino",
         "kr": "",
-        "fr": "Serpentine Talisman",
-        "de": "Serpentine Talisman"
+        "fr": "Talisman serpentin",
+        "de": "Schlangentalisman"
     },
     "272230": {
         "cn": "",
         "en": "Pledgebearer's Pall",
-        "ru": "Pledgebearer's Pall",
-        "es": "Pledgebearer's Pall",
-        "br": "Pledgebearer's Pall",
+        "ru": "Пелена давшего клятву",
+        "es": "Velo de guardajuramentos",
+        "br": "Mortalha do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Pall",
-        "de": "Pledgebearer's Pall"
+        "fr": "Linceul de porte-serment",
+        "de": "Sargtuch des Schwurträgers"
     },
     "272231": {
         "cn": "",
         "en": "Galerider's Doublet",
-        "ru": "Galerider's Doublet",
-        "es": "Galerider's Doublet",
-        "br": "Galerider's Doublet",
+        "ru": "Дублет оседлавшего ветер",
+        "es": "Jubón de jinete de vendaval",
+        "br": "Perponte do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Doublet",
-        "de": "Galerider's Doublet"
+        "fr": "Doublet de chevauche-vent",
+        "de": "Wams des Böenreiters"
     },
     "272232": {
         "cn": "",
         "en": "Galerider's Buskins",
-        "ru": "Galerider's Buskins",
-        "es": "Galerider's Buskins",
-        "br": "Galerider's Buskins",
+        "ru": "Полусапоги оседлавшего ветер",
+        "es": "Polainas de jinete de vendaval",
+        "br": "Alpargatas do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Buskins",
-        "de": "Galerider's Buskins"
+        "fr": "Cothurnes de chevauche-vent",
+        "de": "Halbstiefel des Böenreiters"
     },
     "272233": {
         "cn": "",
         "en": "Galerider's Gloves",
-        "ru": "Galerider's Gloves",
-        "es": "Galerider's Gloves",
-        "br": "Galerider's Gloves",
+        "ru": "Перчатки оседлавшего ветер",
+        "es": "Guantes de jinete de vendaval",
+        "br": "Luvas do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Gloves",
-        "de": "Galerider's Gloves"
+        "fr": "Gants de chevauche-vent",
+        "de": "Handschuhe des Böenreiters"
     },
     "272234": {
         "cn": "",
         "en": "Galerider's Miter",
-        "ru": "Galerider's Miter",
-        "es": "Galerider's Miter",
-        "br": "Galerider's Miter",
+        "ru": "Митра оседлавшего ветер",
+        "es": "Mitra de jinete de vendaval",
+        "br": "Mitra do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Miter",
-        "de": "Galerider's Miter"
+        "fr": "Mitre de chevauche-vent",
+        "de": "Mitra des Böenreiters"
     },
     "272235": {
         "cn": "",
         "en": "Galerider's Treads",
-        "ru": "Galerider's Treads",
-        "es": "Galerider's Treads",
-        "br": "Galerider's Treads",
+        "ru": "Ботфорты оседлавшего ветер",
+        "es": "Botines de jinete de vendaval",
+        "br": "Botinas do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Treads",
-        "de": "Galerider's Treads"
+        "fr": "Bottines de chevauche-vent",
+        "de": "Treter des Böenreiters"
     },
     "272236": {
         "cn": "",
         "en": "Galerider's Mantlet",
-        "ru": "Galerider's Mantlet",
-        "es": "Galerider's Mantlet",
-        "br": "Galerider's Mantlet",
+        "ru": "Оплечье оседлавшего ветер",
+        "es": "Manto de jinete de vendaval",
+        "br": "Dragonas do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Mantlet",
-        "de": "Galerider's Mantlet"
+        "fr": "Manteline de chevauche-vent",
+        "de": "Mantelet des Böenreiters"
     },
     "272237": {
         "cn": "",
         "en": "Galerider's Obi",
-        "ru": "Galerider's Obi",
-        "es": "Galerider's Obi",
-        "br": "Galerider's Obi",
+        "ru": "Оби оседлавшего ветер",
+        "es": "Obi de jinete de vendaval",
+        "br": "Obi do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Obi",
-        "de": "Galerider's Obi"
+        "fr": "Obi de chevauche-vent",
+        "de": "Obi des Böenreiters"
     },
     "272238": {
         "cn": "",
         "en": "Galerider's Wraps",
-        "ru": "Galerider's Wraps",
-        "es": "Galerider's Wraps",
-        "br": "Galerider's Wraps",
+        "ru": "Повязки оседлавшего ветер",
+        "es": "Envolturas de jinete de vendaval",
+        "br": "Munhequeiras do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Galerider's Wraps",
-        "de": "Galerider's Wraps"
+        "fr": "Couvre-bras de chevauche-vent",
+        "de": "Wickel des Böenreiters"
     },
     "272239": {
         "cn": "",
         "en": "Miststalker's Brigandine",
-        "ru": "Miststalker's Brigandine",
-        "es": "Miststalker's Brigandine",
-        "br": "Miststalker's Brigandine",
+        "ru": "Панцирь туманного странника",
+        "es": "Brigantina de acechador de la niebla",
+        "br": "Brigandina do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Brigandine",
-        "de": "Miststalker's Brigandine"
+        "fr": "Brigandine de traqueur des brumes",
+        "de": "Brigantine des Nebelpirschers"
     },
     "272240": {
         "cn": "",
         "en": "Miststalker's Striders",
-        "ru": "Miststalker's Striders",
-        "es": "Miststalker's Striders",
-        "br": "Miststalker's Striders",
+        "ru": "Походные сапоги туманного странника",
+        "es": "Zancos de acechador de la niebla",
+        "br": "Chapins do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Striders",
-        "de": "Miststalker's Striders"
+        "fr": "Cuissardes de traqueur des brumes",
+        "de": "Schreiter des Nebelpirschers"
     },
     "272241": {
         "cn": "",
         "en": "Miststalker's Grips",
-        "ru": "Miststalker's Grips",
-        "es": "Miststalker's Grips",
-        "br": "Miststalker's Grips",
+        "ru": "Захваты туманного странника",
+        "es": "Mandiletes de acechador de la niebla",
+        "br": "Guantes do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Grips",
-        "de": "Miststalker's Grips"
+        "fr": "Poignes de traqueur des brumes",
+        "de": "Handschutz des Nebelpirschers"
     },
     "272242": {
         "cn": "",
         "en": "Miststalker's Cowl",
-        "ru": "Miststalker's Cowl",
-        "es": "Miststalker's Cowl",
-        "br": "Miststalker's Cowl",
+        "ru": "Клобук туманного странника",
+        "es": "Capucha de acechador de la niebla",
+        "br": "Capucho do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Cowl",
-        "de": "Miststalker's Cowl"
+        "fr": "Capuche de traqueur des brumes",
+        "de": "Gugel des Nebelpirschers"
     },
     "272243": {
         "cn": "",
         "en": "Miststalker's Cuisses",
-        "ru": "Miststalker's Cuisses",
-        "es": "Miststalker's Cuisses",
-        "br": "Miststalker's Cuisses",
+        "ru": "Шоссы туманного странника",
+        "es": "Quijotes de acechador de la niebla",
+        "br": "Cuísses do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Cuisses",
-        "de": "Miststalker's Cuisses"
+        "fr": "Cuissières de traqueur des brumes",
+        "de": "Beinschienen des Nebelpirschers"
     },
     "272244": {
         "cn": "",
         "en": "Miststalker's Spaulders",
-        "ru": "Miststalker's Spaulders",
-        "es": "Miststalker's Spaulders",
-        "br": "Miststalker's Spaulders",
+        "ru": "Наплеч туманного странника",
+        "es": "Bufas de acechador de la niebla",
+        "br": "Espaldares do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Spaulders",
-        "de": "Miststalker's Spaulders"
+        "fr": "Spallières de traqueur des brumes",
+        "de": "Schiftung des Nebelpirschers"
     },
     "272245": {
         "cn": "",
         "en": "Miststalker's Cinch",
-        "ru": "Miststalker's Cinch",
-        "es": "Miststalker's Cinch",
-        "br": "Miststalker's Cinch",
+        "ru": "Кушак туманного странника",
+        "es": "Cincho de acechador de la niebla",
+        "br": "Cilha do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Cinch",
-        "de": "Miststalker's Cinch"
+        "fr": "Cordelière de traqueur des brumes",
+        "de": "Gurt des Nebelpirschers"
     },
     "272246": {
         "cn": "",
         "en": "Miststalker's Wristbands",
-        "ru": "Miststalker's Wristbands",
-        "es": "Miststalker's Wristbands",
-        "br": "Miststalker's Wristbands",
+        "ru": "Нарукавье туманного странника",
+        "es": "Braciles de acechador de la niebla",
+        "br": "Pulseiras do Espreitador das Brumas",
         "kr": "",
-        "fr": "Miststalker's Wristbands",
-        "de": "Miststalker's Wristbands"
+        "fr": "Protège-poignets de traqueur des brumes",
+        "de": "Gelenkbänder des Nebelpirschers"
     },
     "272247": {
         "cn": "",
         "en": "Pyrewalker's Byrnie",
-        "ru": "Pyrewalker's Byrnie",
-        "es": "Pyrewalker's Byrnie",
-        "br": "Pyrewalker's Byrnie",
+        "ru": "Кольчуга идущего сквозь пламя",
+        "es": "Camisote de transitapiras",
+        "br": "Hauberque do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Byrnie",
-        "de": "Pyrewalker's Byrnie"
+        "fr": "Haubert de marche-brasier",
+        "de": "Brünne des Lohenwandlers"
     },
     "272248": {
         "cn": "",
         "en": "Pyrewalker's Chausses",
-        "ru": "Pyrewalker's Chausses",
-        "es": "Pyrewalker's Chausses",
-        "br": "Pyrewalker's Chausses",
+        "ru": "Шоссы идущего сквозь пламя",
+        "es": "Calzas de transitapiras",
+        "br": "Chausses do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Chausses",
-        "de": "Pyrewalker's Chausses"
+        "fr": "Hauts-de-chausse de marche-brasier",
+        "de": "Beinlinge des Lohenwandlers"
     },
     "272249": {
         "cn": "",
         "en": "Pyrewalker's Chain Clasps",
-        "ru": "Pyrewalker's Chain Clasps",
-        "es": "Pyrewalker's Chain Clasps",
-        "br": "Pyrewalker's Chain Clasps",
+        "ru": "Плетеные зажимы идущего сквозь пламя",
+        "es": "Cintos de anillas de transitapiras",
+        "br": "Fechos Encadeados do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Chain Clasps",
-        "de": "Pyrewalker's Chain Clasps"
+        "fr": "Fermoirs de marche-brasier en anneaux",
+        "de": "Kettenschnallen des Lohenwandlers"
     },
     "272250": {
         "cn": "",
         "en": "Pyrewalker's Gaze",
-        "ru": "Pyrewalker's Gaze",
-        "es": "Pyrewalker's Gaze",
-        "br": "Pyrewalker's Gaze",
+        "ru": "Взор идущего сквозь пламя",
+        "es": "Semblante de transitapiras",
+        "br": "Olhar do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Gaze",
-        "de": "Pyrewalker's Gaze"
+        "fr": "Regard de marche-brasier",
+        "de": "Blick des Lohenwandlers"
     },
     "272251": {
         "cn": "",
         "en": "Pyrewalker's Chausses",
-        "ru": "Pyrewalker's Chausses",
-        "es": "Pyrewalker's Chausses",
-        "br": "Pyrewalker's Chausses",
+        "ru": "Шоссы идущего сквозь пламя",
+        "es": "Calzas de transitapiras",
+        "br": "Chausses do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Chausses",
-        "de": "Pyrewalker's Chausses"
+        "fr": "Hauts-de-chausse de marche-brasier",
+        "de": "Beinlinge des Lohenwandlers"
     },
     "272252": {
         "cn": "",
         "en": "Pyrewalker's Mantle",
-        "ru": "Pyrewalker's Mantle",
-        "es": "Pyrewalker's Mantle",
-        "br": "Pyrewalker's Mantle",
+        "ru": "Оплечье идущего сквозь пламя",
+        "es": "Manto de transitapiras",
+        "br": "Dragonas do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Mantle",
-        "de": "Pyrewalker's Mantle"
+        "fr": "Mantelet de marche-brasier",
+        "de": "Mantel des Lohenwandlers"
     },
     "272253": {
         "cn": "",
         "en": "Pyrewalker's Mail Skirt",
-        "ru": "Pyrewalker's Mail Skirt",
-        "es": "Pyrewalker's Mail Skirt",
-        "br": "Pyrewalker's Mail Skirt",
+        "ru": "Кольчужная юбка идущего сквозь пламя",
+        "es": "Falda de malla de transitapiras",
+        "br": "Saia de Malha do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Mail Skirt",
-        "de": "Pyrewalker's Mail Skirt"
+        "fr": "Jupe de mailles de marche-brasier",
+        "de": "Kettenrock des Lohenwandlers"
     },
     "272254": {
         "cn": "",
         "en": "Pyrewalker's Mesh Wraps",
-        "ru": "Pyrewalker's Mesh Wraps",
-        "es": "Pyrewalker's Mesh Wraps",
-        "br": "Pyrewalker's Mesh Wraps",
+        "ru": "Повязки идущего сквозь пламя",
+        "es": "Brazaletes de malla de transitapiras",
+        "br": "Munhequeiras de Rede Metálica do Pisa-piras",
         "kr": "",
-        "fr": "Pyrewalker's Mesh Wraps",
-        "de": "Pyrewalker's Mesh Wraps"
+        "fr": "Couvre-mains de marche-brasier",
+        "de": "Maschenwickel des Lohenwandlers"
     },
     "272255": {
         "cn": "",
         "en": "Pledgebearer's Cuirass",
-        "ru": "Pledgebearer's Cuirass",
-        "es": "Pledgebearer's Cuirass",
-        "br": "Pledgebearer's Cuirass",
+        "ru": "Кираса давшего клятву",
+        "es": "Loriga de guardajuramentos",
+        "br": "Corselete do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Cuirass",
-        "de": "Pledgebearer's Cuirass"
+        "fr": "Cuirasse de porte-serment",
+        "de": "Kürass des Schwurträgers"
     },
     "272256": {
         "cn": "",
         "en": "Pledgebearer's Sabatons",
-        "ru": "Pledgebearer's Sabatons",
-        "es": "Pledgebearer's Sabatons",
-        "br": "Pledgebearer's Sabatons",
+        "ru": "Латные башмаки давшего клятву",
+        "es": "Escarpes de guardajuramentos",
+        "br": "Escarpes do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Sabatons",
-        "de": "Pledgebearer's Sabatons"
+        "fr": "Solerets de porte-serment",
+        "de": "Sabatons des Schwurträgers"
     },
     "272257": {
         "cn": "",
         "en": "Pledgebearer's Gauntlets",
-        "ru": "Pledgebearer's Gauntlets",
-        "es": "Pledgebearer's Gauntlets",
-        "br": "Pledgebearer's Gauntlets",
+        "ru": "Рукавицы давшего клятву",
+        "es": "Guanteletes de guardajuramentos",
+        "br": "Manoplas do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Gauntlets",
-        "de": "Pledgebearer's Gauntlets"
+        "fr": "Gantelets de porte-serment",
+        "de": "Stulpen des Schwurträgers"
     },
     "272258": {
         "cn": "",
         "en": "Pledgebearer's Mask",
-        "ru": "Pledgebearer's Mask",
-        "es": "Pledgebearer's Mask",
-        "br": "Pledgebearer's Mask",
+        "ru": "Маска давшего клятву",
+        "es": "Máscara de guardajuramentos",
+        "br": "Máscara do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Mask",
-        "de": "Pledgebearer's Mask"
+        "fr": "Masque de porte-serment",
+        "de": "Maske des Schwurträgers"
     },
     "272259": {
         "cn": "",
         "en": "Pledgebearer's Poleyns",
-        "ru": "Pledgebearer's Poleyns",
-        "es": "Pledgebearer's Poleyns",
-        "br": "Pledgebearer's Poleyns",
+        "ru": "Наколенники давшего клятву",
+        "es": "Polainas de guardajuramentos",
+        "br": "Joelheiras do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Poleyns",
-        "de": "Pledgebearer's Poleyns"
+        "fr": "Genouillères de porte-serment",
+        "de": "Kniebuckel des Schwurträgers"
     },
     "272260": {
         "cn": "",
         "en": "Pledgebearer's Pauldrons",
-        "ru": "Pledgebearer's Pauldrons",
-        "es": "Pledgebearer's Pauldrons",
-        "br": "Pledgebearer's Pauldrons",
+        "ru": "Наплечники давшего клятву",
+        "es": "Espaldares de guardajuramentos",
+        "br": "Brafoneiras do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Pauldrons",
-        "de": "Pledgebearer's Pauldrons"
+        "fr": "Espauliers de porte-serment",
+        "de": "Schulterstücke des Schwurträgers"
     },
     "272261": {
         "cn": "",
         "en": "Pledgebearer's Girdle",
-        "ru": "Pledgebearer's Girdle",
-        "es": "Pledgebearer's Girdle",
-        "br": "Pledgebearer's Girdle",
+        "ru": "Ремень давшего клятву",
+        "es": "Faja de guardajuramentos",
+        "br": "Cinturão do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Girdle",
-        "de": "Pledgebearer's Girdle"
+        "fr": "Ceinturon de porte-serment",
+        "de": "Gurt des Schwurträgers"
     },
     "272262": {
         "cn": "",
         "en": "Pledgebearer's Splints",
-        "ru": "Pledgebearer's Splints",
-        "es": "Pledgebearer's Splints",
-        "br": "Pledgebearer's Splints",
+        "ru": "Наручи давшего клятву",
+        "es": "Braciles de guardajuramentos",
+        "br": "Talas do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Splints",
-        "de": "Pledgebearer's Splints"
+        "fr": "Attelles de porte-serment",
+        "de": "Schienen des Schwurträgers"
     },
     "272266": {
         "cn": "",
         "en": "Forgotten Eidolon's Dagger",
-        "ru": "Forgotten Eidolon's Dagger",
-        "es": "Forgotten Eidolon's Dagger",
-        "br": "Forgotten Eidolon's Dagger",
+        "ru": "Кинжал забытого призрака",
+        "es": "Daga de Eidolon olvidada",
+        "br": "Adaga do Eidolon Esquecido",
         "kr": "",
-        "fr": "Forgotten Eidolon's Dagger",
-        "de": "Forgotten Eidolon's Dagger"
+        "fr": "Dague d’Eidolon oubliée",
+        "de": "Dolch des vergessenen Eidolons"
     },
     "272270": {
         "cn": "",
         "en": "Bonedust Pestle",
-        "ru": "Bonedust Pestle",
-        "es": "Bonedust Pestle",
-        "br": "Bonedust Pestle",
+        "ru": "Пестик для перемалывания костей",
+        "es": "Mortero de polvohueso",
+        "br": "Pilão de Pó de Osso",
         "kr": "",
-        "fr": "Bonedust Pestle",
-        "de": "Bonedust Pestle"
+        "fr": "Pilon à poussière-d’os",
+        "de": "Knochenstaubstößel"
     },
     "272271": {
         "cn": "",
         "en": "Spiritbound Focus",
-        "ru": "Spiritbound Focus",
-        "es": "Spiritbound Focus",
-        "br": "Spiritbound Focus",
+        "ru": "Озаренное духами средоточие",
+        "es": "Enfoque vinculado al espíritu",
+        "br": "Foco do Espírito Vinculado",
         "kr": "",
-        "fr": "Spiritbound Focus",
-        "de": "Spiritbound Focus"
+        "fr": "Focalisateur lié par les esprits",
+        "de": "Geistgebundener Fokus"
     },
     "272273": {
         "cn": "",
-        "en": "Unshrined Ceremonial Scepter",
-        "ru": "Unshrined Ceremonial Scepter",
-        "es": "Unshrined Ceremonial Scepter",
-        "br": "Unshrined Ceremonial Scepter",
+        "en": "Enshrined Ceremonial Scepter",
+        "ru": "Enshrined Ceremonial Scepter",
+        "es": "Enshrined Ceremonial Scepter",
+        "br": "Enshrined Ceremonial Scepter",
         "kr": "",
-        "fr": "Unshrined Ceremonial Scepter",
-        "de": "Unshrined Ceremonial Scepter"
+        "fr": "Enshrined Ceremonial Scepter",
+        "de": "Enshrined Ceremonial Scepter"
     },
     "272275": {
         "cn": "",
         "en": "Soulsinger's Horn",
-        "ru": "Soulsinger's Horn",
-        "es": "Soulsinger's Horn",
-        "br": "Soulsinger's Horn",
+        "ru": "Рог певца душ",
+        "es": "Cuerno de cantaalmas",
+        "br": "Trombeta do Canta-almas",
         "kr": "",
-        "fr": "Soulsinger's Horn",
-        "de": "Soulsinger's Horn"
+        "fr": "Corne de chante-âme",
+        "de": "Horn des Seelensängers"
     },
     "272276": {
         "cn": "",
         "en": "Wailing Bulwark",
-        "ru": "Wailing Bulwark",
-        "es": "Wailing Bulwark",
-        "br": "Wailing Bulwark",
+        "ru": "Стенающий бастион",
+        "es": "Baluarte gimiente",
+        "br": "Baluarte Ululante",
         "kr": "",
-        "fr": "Wailing Bulwark",
-        "de": "Wailing Bulwark"
+        "fr": "Rempart hurlant",
+        "de": "Klagendes Bollwerk"
     },
     "272277": {
         "cn": "",
         "en": "Spirit-Reaver",
-        "ru": "Spirit-Reaver",
-        "es": "Spirit-Reaver",
-        "br": "Spirit-Reaver",
+        "ru": "Рассекатель духов",
+        "es": "Robaespíritus",
+        "br": "Aniquilador de Espírito",
         "kr": "",
-        "fr": "Spirit-Reaver",
-        "de": "Spirit-Reaver"
+        "fr": "Arrache-esprit",
+        "de": "Geisthäscher"
     },
     "273649": {
         "cn": "",
@@ -145104,13 +145084,13 @@ export const nameDB =
     },
     "274493": {
         "cn": "",
-        "en": "Effigy of Ula'Tek's Faithful",
-        "ru": "Effigy of Ula'Tek's Faithful",
-        "es": "Effigy of Ula'Tek's Faithful",
-        "br": "Effigy of Ula'Tek's Faithful",
+        "en": "Effigy of Ula'tek's Faithful",
+        "ru": "Effigy of Ula'tek's Faithful",
+        "es": "Effigy of Ula'tek's Faithful",
+        "br": "Effigy of Ula'tek's Faithful",
         "kr": "",
-        "fr": "Effigy of Ula'Tek's Faithful",
-        "de": "Effigy of Ula'Tek's Faithful"
+        "fr": "Effigy of Ula'tek's Faithful",
+        "de": "Effigy of Ula'tek's Faithful"
     },
     "274494": {
         "cn": "",
@@ -145135,22 +145115,22 @@ export const nameDB =
     "274496": {
         "cn": "",
         "en": "Ophidian Bone Whistle",
-        "ru": "Ophidian Bone Whistle",
-        "es": "Ophidian Bone Whistle",
-        "br": "Ophidian Bone Whistle",
+        "ru": "Змеиный костяной свисток",
+        "es": "Silbato óseo de ofidio",
+        "br": "Apito de Osso Ofídico",
         "kr": "",
-        "fr": "Ophidian Bone Whistle",
-        "de": "Ophidian Bone Whistle"
+        "fr": "Sifflet en os ophidien",
+        "de": "Schlangenknochenflöte"
     },
     "274497": {
         "cn": "",
         "en": "Spirit-Rending Poison",
-        "ru": "Spirit-Rending Poison",
-        "es": "Spirit-Rending Poison",
-        "br": "Spirit-Rending Poison",
+        "ru": "Духораздирающий яд",
+        "es": "Veneno desgarraespíritu",
+        "br": "Veneno Dilacerador de Espírito",
         "kr": "",
-        "fr": "Spirit-Rending Poison",
-        "de": "Spirit-Rending Poison"
+        "fr": "Venin déchire-esprit",
+        "de": "Seelenzerreißendes Gift"
     },
     "274498": {
         "cn": "",
@@ -145165,12 +145145,12 @@ export const nameDB =
     "274499": {
         "cn": "",
         "en": "Toxiferous Transfusion",
-        "ru": "Toxiferous Transfusion",
-        "es": "Toxiferous Transfusion",
-        "br": "Toxiferous Transfusion",
+        "ru": "Отравляющее переливание",
+        "es": "Transfusión toxiferoz",
+        "br": "Transfusão Tóxica",
         "kr": "",
-        "fr": "Toxiferous Transfusion",
-        "de": "Toxiferous Transfusion"
+        "fr": "Transfusion toxique",
+        "de": "Giftführende Transfusion"
     },
     "274818": {
         "cn": "",
@@ -145564,13 +145544,13 @@ export const nameDB =
     },
     "274857": {
         "cn": "",
-        "en": "Chitonous Broodmother's Spaulders",
-        "ru": "Хитиновый наплеч праматери",
-        "es": "Bufas de madre de linaje quitinosas",
-        "br": "Espaldares da Prolemadre de Quitina",
+        "en": "Chitinous Broodmother's Spaulders",
+        "ru": "Chitinous Broodmother's Spaulders",
+        "es": "Chitinous Broodmother's Spaulders",
+        "br": "Chitinous Broodmother's Spaulders",
         "kr": "",
-        "fr": "Spallières chitineuses de la mère des couvées",
-        "de": "Chitinschiftung der Brutmutter"
+        "fr": "Chitinous Broodmother's Spaulders",
+        "de": "Chitinous Broodmother's Spaulders"
     },
     "274858": {
         "cn": "",
@@ -146455,72 +146435,72 @@ export const nameDB =
     "275526": {
         "cn": "",
         "en": "Preyhunter's Band",
-        "ru": "Preyhunter's Band",
-        "es": "Preyhunter's Band",
-        "br": "Preyhunter's Band",
+        "ru": "Перстень загонщика",
+        "es": "Sortija de cazapresas",
+        "br": "Elo do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Band",
-        "de": "Preyhunter's Band"
+        "fr": "Bague de traque-proie",
+        "de": "Band des Beutejägers"
     },
     "275527": {
         "cn": "",
         "en": "Preyhunter's Signet",
-        "ru": "Preyhunter's Signet",
-        "es": "Preyhunter's Signet",
-        "br": "Preyhunter's Signet",
+        "ru": "Печатка загонщика",
+        "es": "Sello de cazapresas",
+        "br": "Sinete do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Signet",
-        "de": "Preyhunter's Signet"
+        "fr": "Chevalière de traque-proie",
+        "de": "Siegelring des Beutejägers"
     },
     "275528": {
         "cn": "",
         "en": "Preyhunter's Ring",
-        "ru": "Preyhunter's Ring",
-        "es": "Preyhunter's Ring",
-        "br": "Preyhunter's Ring",
+        "ru": "Кольцо загонщика",
+        "es": "Anillo de cazapresas",
+        "br": "Anel do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Ring",
-        "de": "Preyhunter's Ring"
+        "fr": "Anneau de traque-proie",
+        "de": "Ring des Beutejägers"
     },
     "275529": {
         "cn": "",
         "en": "Preyhunter's Circle",
-        "ru": "Preyhunter's Circle",
-        "es": "Preyhunter's Circle",
-        "br": "Preyhunter's Circle",
+        "ru": "Круг загонщика",
+        "es": "Círculo de cazapresas",
+        "br": "Círculo do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Circle",
-        "de": "Preyhunter's Circle"
+        "fr": "Cercle de traque-proie",
+        "de": "Kreis des Beutejägers"
     },
     "275530": {
         "cn": "",
         "en": "Preyhunter's Clasp",
-        "ru": "Preyhunter's Clasp",
-        "es": "Preyhunter's Clasp",
-        "br": "Preyhunter's Clasp",
+        "ru": "Застежка загонщика",
+        "es": "Cinto de cazapresas",
+        "br": "Fecho do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Clasp",
-        "de": "Preyhunter's Clasp"
+        "fr": "Fermoir de traque-proie",
+        "de": "Spange des Beutejägers"
     },
     "275531": {
         "cn": "",
         "en": "Preyhunter's Choker",
-        "ru": "Preyhunter's Choker",
-        "es": "Preyhunter's Choker",
-        "br": "Preyhunter's Choker",
+        "ru": "Колье загонщика",
+        "es": "Gargantilla de cazapresas",
+        "br": "Gargantilha do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Choker",
-        "de": "Preyhunter's Choker"
+        "fr": "Sautoir de traque-proie",
+        "de": "Halsreif des Beutejägers"
     },
     "275536": {
         "cn": "",
-        "en": "Preyseeker's Scepter",
-        "ru": "Скипетр охотника",
-        "es": "Cetro de buscapresas",
-        "br": "Cetro do Rapinante",
+        "en": "Preyhunter's Scepter",
+        "ru": "Preyhunter's Scepter",
+        "es": "Preyhunter's Scepter",
+        "br": "Preyhunter's Scepter",
         "kr": "",
-        "fr": "Sceptre de la Traque",
-        "de": "Zepter des Beutesuchers"
+        "fr": "Preyhunter's Scepter",
+        "de": "Preyhunter's Scepter"
     },
     "275539": {
         "cn": "",
@@ -147725,601 +147705,781 @@ export const nameDB =
     "278877": {
         "cn": "",
         "en": "Crypt Cleanser Cuirass",
-        "ru": "Crypt Cleanser Cuirass",
-        "es": "Crypt Cleanser Cuirass",
-        "br": "Crypt Cleanser Cuirass",
+        "ru": "Кираса очистителя склепов",
+        "es": "Loriga de purificador de criptas",
+        "br": "Corselete do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Cuirass",
-        "de": "Crypt Cleanser Cuirass"
+        "fr": "Cuirasse purificatrice de crypte",
+        "de": "Kürass des Gruftläuterers"
     },
     "278878": {
         "cn": "",
         "en": "Crypt Cleanser Chestguard",
-        "ru": "Crypt Cleanser Chestguard",
-        "es": "Crypt Cleanser Chestguard",
-        "br": "Crypt Cleanser Chestguard",
+        "ru": "Нагрудник очистителя склепов",
+        "es": "Coselete de purificador de criptas",
+        "br": "Couraça do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Chestguard",
-        "de": "Crypt Cleanser Chestguard"
+        "fr": "Corselet purificateur de crypte",
+        "de": "Brustschutz des Gruftläuterers"
     },
     "278879": {
         "cn": "",
         "en": "Crypt Cleanser Harness",
-        "ru": "Crypt Cleanser Harness",
-        "es": "Crypt Cleanser Harness",
-        "br": "Crypt Cleanser Harness",
+        "ru": "Портупея очистителя склепов",
+        "es": "Arnés de purificador de criptas",
+        "br": "Arnês do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Harness",
-        "de": "Crypt Cleanser Harness"
+        "fr": "Harnais purificateur de crypte",
+        "de": "Harnisch des Gruftläuterers"
     },
     "278880": {
         "cn": "",
         "en": "Crypt Cleanser Raiment",
-        "ru": "Crypt Cleanser Raiment",
-        "es": "Crypt Cleanser Raiment",
-        "br": "Crypt Cleanser Raiment",
+        "ru": "Облачение очистителя склепов",
+        "es": "Vestiduras de purificador de criptas",
+        "br": "Indumentária do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Raiment",
-        "de": "Crypt Cleanser Raiment"
+        "fr": "Grande tenue purificatrice de crypte",
+        "de": "Gewandung des Gruftläuterers"
     },
     "278881": {
         "cn": "",
         "en": "Ophidian General's Crown",
-        "ru": "Ophidian General's Crown",
-        "es": "Ophidian General's Crown",
-        "br": "Ophidian General's Crown",
+        "ru": "Корона змеиного генерала",
+        "es": "Corona de general ofídico",
+        "br": "Coroa do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Crown",
-        "de": "Ophidian General's Crown"
+        "fr": "Couronne de général ophidien",
+        "de": "Krone des Schlangengenerals"
     },
     "278882": {
         "cn": "",
         "en": "Ophidian General's Barbute",
-        "ru": "Ophidian General's Barbute",
-        "es": "Ophidian General's Barbute",
-        "br": "Ophidian General's Barbute",
+        "ru": "Барбют змеиного генерала",
+        "es": "Barbuta de guerra de general ofídico",
+        "br": "Celada do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Barbute",
-        "de": "Ophidian General's Barbute"
+        "fr": "Barbute de général ophidien",
+        "de": "Barbuta des Schlangengenerals"
     },
     "278883": {
         "cn": "",
         "en": "Ophidian General's Headgear",
-        "ru": "Ophidian General's Headgear",
-        "es": "Ophidian General's Headgear",
-        "br": "Ophidian General's Headgear",
+        "ru": "Головной убор змеиного генерала",
+        "es": "Casco de general ofídico",
+        "br": "Almofre do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Headgear",
-        "de": "Ophidian General's Headgear"
+        "fr": "Couvre-chef de général ophidien",
+        "de": "Kopfbedeckung des Schlangengenerals"
     },
     "278884": {
         "cn": "",
         "en": "Ophidian General's Warbonnet",
-        "ru": "Ophidian General's Warbonnet",
-        "es": "Ophidian General's Warbonnet",
-        "br": "Ophidian General's Warbonnet",
+        "ru": "Оперенный венец змеиного генерала",
+        "es": "Penacho de guerra de general ofídico",
+        "br": "Cocar de Guerra do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Warbonnet",
-        "de": "Ophidian General's Warbonnet"
+        "fr": "Panache de général ophidien",
+        "de": "Kriegshaube des Schlangengenerals"
     },
     "278885": {
         "cn": "",
         "en": "Spaulders of the Sacrificer",
-        "ru": "Spaulders of the Sacrificer",
-        "es": "Spaulders of the Sacrificer",
-        "br": "Spaulders of the Sacrificer",
+        "ru": "Наплеч приносящего жертвы",
+        "es": "Bufas del sacrificador",
+        "br": "Espaldares do Sacrificador",
         "kr": "",
-        "fr": "Spaulders of the Sacrificer",
-        "de": "Spaulders of the Sacrificer"
+        "fr": "Spallières du sacrifice",
+        "de": "Schiftung des Opferers"
     },
     "278886": {
         "cn": "",
         "en": "Pauldrons of the Sacrificer",
-        "ru": "Pauldrons of the Sacrificer",
-        "es": "Pauldrons of the Sacrificer",
-        "br": "Pauldrons of the Sacrificer",
+        "ru": "Наплечники приносящего жертвы",
+        "es": "Espaldares del sacrificador",
+        "br": "Brafoneiras do Sacrificador",
         "kr": "",
-        "fr": "Pauldrons of the Sacrificer",
-        "de": "Pauldrons of the Sacrificer"
+        "fr": "Espauliers du sacrifice",
+        "de": "Schulterstücke des Opferers"
     },
     "278887": {
         "cn": "",
         "en": "Mantle of the Sacrificer",
-        "ru": "Mantle of the Sacrificer",
-        "es": "Mantle of the Sacrificer",
-        "br": "Mantle of the Sacrificer",
+        "ru": "Оплечье приносящего жертвы",
+        "es": "Manto del sacrificador",
+        "br": "Dragonas do Sacrificador",
         "kr": "",
-        "fr": "Mantle of the Sacrificer",
-        "de": "Mantle of the Sacrificer"
+        "fr": "Mantelet du sacrifice",
+        "de": "Mantel des Opferers"
     },
     "278888": {
         "cn": "",
         "en": "Amice of the Sacrificer",
-        "ru": "Amice of the Sacrificer",
-        "es": "Amice of the Sacrificer",
-        "br": "Amice of the Sacrificer",
+        "ru": "Нарамник приносящего жертвы",
+        "es": "Amito del sacrificador",
+        "br": "Sobreombros do Sacrificador",
         "kr": "",
-        "fr": "Amice of the Sacrificer",
-        "de": "Amice of the Sacrificer"
+        "fr": "Amict du sacrifice",
+        "de": "Amicia des Opferers"
     },
     "278889": {
         "cn": "",
         "en": "Warbands of Brothers",
-        "ru": "Warbands of Brothers",
-        "es": "Warbands of Brothers",
-        "br": "Warbands of Brothers",
+        "ru": "Братские тяжелые поручи",
+        "es": "Bandas guerreras fraternales",
+        "br": "Embraces de Guerra dos Irmãos",
         "kr": "",
-        "fr": "Warbands of Brothers",
-        "de": "Warbands of Brothers"
+        "fr": "Poignets de guerre fraternels",
+        "de": "Kriegsbänder der Brüder"
     },
     "278890": {
         "cn": "",
         "en": "Armbands of Brothers",
-        "ru": "Armbands of Brothers",
-        "es": "Armbands of Brothers",
-        "br": "Armbands of Brothers",
+        "ru": "Братские поручи",
+        "es": "Bandas fraternales",
+        "br": "Embraces dos Irmãos",
         "kr": "",
-        "fr": "Armbands of Brothers",
-        "de": "Armbands of Brothers"
+        "fr": "Bracières fraternelles",
+        "de": "Armbänder der Brüder"
     },
     "278891": {
         "cn": "",
         "en": "Wristbands of Brothers",
-        "ru": "Wristbands of Brothers",
-        "es": "Wristbands of Brothers",
-        "br": "Wristbands of Brothers",
+        "ru": "Братские напульсники",
+        "es": "Braciles fraternales",
+        "br": "Pulseiras dos Irmãos",
         "kr": "",
-        "fr": "Wristbands of Brothers",
-        "de": "Wristbands of Brothers"
+        "fr": "Protège-poignets fraternels",
+        "de": "Gelenkbänder der Brüder"
     },
     "278892": {
         "cn": "",
         "en": "Bands of Brothers",
-        "ru": "Bands of Brothers",
-        "es": "Bands of Brothers",
-        "br": "Bands of Brothers",
+        "ru": "Братские обвязки",
+        "es": "Muñequeras fraternales",
+        "br": "Elos dos Irmãos",
         "kr": "",
-        "fr": "Bands of Brothers",
-        "de": "Bands of Brothers"
+        "fr": "Liens fraternels",
+        "de": "Bande der Brüder"
     },
     "278893": {
         "cn": "",
         "en": "Faithleaper's Greaves",
-        "ru": "Faithleaper's Greaves",
-        "es": "Faithleaper's Greaves",
-        "br": "Faithleaper's Greaves",
+        "ru": "Наголенники прыжка веры",
+        "es": "Grebas de saltafé",
+        "br": "Grevas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Greaves",
-        "de": "Faithleaper's Greaves"
+        "fr": "Grèves d’acte de foi",
+        "de": "Schienbeinschützer des Glaubensspringers"
     },
     "278894": {
         "cn": "",
         "en": "Faithleaper's Sabatons",
-        "ru": "Faithleaper's Sabatons",
-        "es": "Faithleaper's Sabatons",
-        "br": "Faithleaper's Sabatons",
+        "ru": "Латные башмаки прыжка веры",
+        "es": "Escarpes de saltafé",
+        "br": "Escarpes do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Sabatons",
-        "de": "Faithleaper's Sabatons"
+        "fr": "Solerets d’acte de foi",
+        "de": "Sabatons des Glaubensspringers"
     },
     "278895": {
         "cn": "",
         "en": "Faithleaper's Treads",
-        "ru": "Faithleaper's Treads",
-        "es": "Faithleaper's Treads",
-        "br": "Faithleaper's Treads",
+        "ru": "Ботфорты прыжка веры",
+        "es": "Botines de saltafé",
+        "br": "Botinas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Treads",
-        "de": "Faithleaper's Treads"
+        "fr": "Bottines d’acte de foi",
+        "de": "Treter des Glaubensspringers"
     },
     "278896": {
         "cn": "",
         "en": "Faithleaper's Slippers",
-        "ru": "Faithleaper's Slippers",
-        "es": "Faithleaper's Slippers",
-        "br": "Faithleaper's Slippers",
+        "ru": "Туфли прыжка веры",
+        "es": "Zapatillas de saltafé",
+        "br": "Sapatilhas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Slippers",
-        "de": "Faithleaper's Slippers"
+        "fr": "Mules d’acte de foi",
+        "de": "Pantoffeln des Glaubensspringers"
     },
     "278897": {
         "cn": "",
         "en": "Fangsmasher Crushers",
-        "ru": "Fangsmasher Crushers",
-        "es": "Fangsmasher Crushers",
-        "br": "Fangsmasher Crushers",
+        "ru": "Костоломы клыкокрушителя",
+        "es": "Machacadoras de trituracolmillos",
+        "br": "Esmagadores do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Crushers",
-        "de": "Fangsmasher Crushers"
+        "fr": "Écraseurs de brise-crocs",
+        "de": "Zermalmer des Fangbrechers"
     },
     "278898": {
         "cn": "",
         "en": "Fangsmasher Gauntlets",
-        "ru": "Fangsmasher Gauntlets",
-        "es": "Fangsmasher Gauntlets",
-        "br": "Fangsmasher Gauntlets",
+        "ru": "Рукавицы клыкокрушителя",
+        "es": "Guanteletes de trituracolmillos",
+        "br": "Manoplas do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Gauntlets",
-        "de": "Fangsmasher Gauntlets"
+        "fr": "Gantelets de brise-crocs",
+        "de": "Stulpen des Fangbrechers"
     },
     "278899": {
         "cn": "",
         "en": "Fangsmasher Handwraps",
-        "ru": "Fangsmasher Handwraps",
-        "es": "Fangsmasher Handwraps",
-        "br": "Fangsmasher Handwraps",
+        "ru": "Повязки клыкокрушителя",
+        "es": "Manijas de trituracolmillos",
+        "br": "Mitenes do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Handwraps",
-        "de": "Fangsmasher Handwraps"
+        "fr": "Protège-mains de brise-crocs",
+        "de": "Handwickel des Fangbrechers"
     },
     "278900": {
         "cn": "",
         "en": "Fangsmasher Grips",
-        "ru": "Fangsmasher Grips",
-        "es": "Fangsmasher Grips",
-        "br": "Fangsmasher Grips",
+        "ru": "Захваты клыкокрушителя",
+        "es": "Mandiletes de trituracolmillos",
+        "br": "Guantes do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Grips",
-        "de": "Fangsmasher Grips"
+        "fr": "Poignes de brise-crocs",
+        "de": "Handschutz des Fangbrechers"
     },
     "278901": {
         "cn": "",
         "en": "Swampdredger Greaves",
-        "ru": "Swampdredger Greaves",
-        "es": "Swampdredger Greaves",
-        "br": "Swampdredger Greaves",
+        "ru": "Наголенники болотокопателя",
+        "es": "Grebas de excavapantanos",
+        "br": "Grevas do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Greaves",
-        "de": "Swampdredger Greaves"
+        "fr": "Grèves de drague-marais",
+        "de": "Schienbeinschützer des Sumpfgräbers"
     },
     "278902": {
         "cn": "",
         "en": "Swampdredger Legguards",
-        "ru": "Swampdredger Legguards",
-        "es": "Swampdredger Legguards",
-        "br": "Swampdredger Legguards",
+        "ru": "Набедренники болотокопателя",
+        "es": "Musleras de excavapantanos",
+        "br": "Guarda-pernas do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Legguards",
-        "de": "Swampdredger Legguards"
+        "fr": "Garde-jambes de drague-marais",
+        "de": "Beinschützer des Sumpfgräbers"
     },
     "278903": {
         "cn": "",
         "en": "Swampdredger Leggings",
-        "ru": "Swampdredger Leggings",
-        "es": "Swampdredger Leggings",
-        "br": "Swampdredger Leggings",
+        "ru": "Поножи болотокопателя",
+        "es": "Leotardos de excavapantanos",
+        "br": "Perneiras do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Leggings",
-        "de": "Swampdredger Leggings"
+        "fr": "Jambières de drague-marais",
+        "de": "Gamaschen des Sumpfgräbers"
     },
     "278904": {
         "cn": "",
         "en": "Swampdredger Trousers",
-        "ru": "Swampdredger Trousers",
-        "es": "Swampdredger Trousers",
-        "br": "Swampdredger Trousers",
+        "ru": "Штаны болотокопателя",
+        "es": "Calzas de excavapantanos",
+        "br": "Calçotes do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Trousers",
-        "de": "Swampdredger Trousers"
+        "fr": "Chausses de drague-marais",
+        "de": "Beinkleider des Sumpfgräbers"
     },
     "278905": {
         "cn": "",
         "en": "Tomb-Sealed Clasp",
-        "ru": "Tomb-Sealed Clasp",
-        "es": "Tomb-Sealed Clasp",
-        "br": "Tomb-Sealed Clasp",
+        "ru": "Застежка с печатью гробницы",
+        "es": "Cinto sellado en la tumba",
+        "br": "Fecho Selado na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Clasp",
-        "de": "Tomb-Sealed Clasp"
+        "fr": "Fermoir du sceau macabre",
+        "de": "Grabversiegelter Schnallengürtel"
     },
     "278906": {
         "cn": "",
         "en": "Tomb-Sealed Girdle",
-        "ru": "Tomb-Sealed Girdle",
-        "es": "Tomb-Sealed Girdle",
-        "br": "Tomb-Sealed Girdle",
+        "ru": "Ремень с печатью гробницы",
+        "es": "Faja sellada en la tumba",
+        "br": "Cinturão Selado na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Girdle",
-        "de": "Tomb-Sealed Girdle"
+        "fr": "Ceinturon du sceau macabre",
+        "de": "Grabversiegelte Gürtung"
     },
     "278907": {
         "cn": "",
         "en": "Tomb-Sealed Cinch",
-        "ru": "Tomb-Sealed Cinch",
-        "es": "Tomb-Sealed Cinch",
-        "br": "Tomb-Sealed Cinch",
+        "ru": "Кушак с печатью гробницы",
+        "es": "Cincho sellado en la tumba",
+        "br": "Cilha Selada na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Cinch",
-        "de": "Tomb-Sealed Cinch"
+        "fr": "Cordelière du sceau macabre",
+        "de": "Grabversiegelter Hüftgurt"
     },
     "278908": {
         "cn": "",
         "en": "Tomb-Sealed Sash",
-        "ru": "Tomb-Sealed Sash",
-        "es": "Tomb-Sealed Sash",
-        "br": "Tomb-Sealed Sash",
+        "ru": "Кушак с печатью гробницы",
+        "es": "Fajín sellado en la tumba",
+        "br": "Faixa Selada na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Sash",
-        "de": "Tomb-Sealed Sash"
+        "fr": "Écharpe du sceau macabre",
+        "de": "Grabversiegelte Schärpe"
     },
     "278909": {
         "cn": "",
         "en": "Cloak of Chumming",
-        "ru": "Cloak of Chumming",
-        "es": "Cloak of Chumming",
-        "br": "Cloak of Chumming",
+        "ru": "Плащ прикормки",
+        "es": "Capa de carnada",
+        "br": "Manto do Engodo",
         "kr": "",
-        "fr": "Cloak of Chumming",
-        "de": "Cloak of Chumming"
+        "fr": "Cape d’appât",
+        "de": "Umhang der Beköderung"
     },
     "278910": {
         "cn": "",
         "en": "Yl'mul's Waterlogged Wrap",
-        "ru": "Yl'mul's Waterlogged Wrap",
-        "es": "Yl'mul's Waterlogged Wrap",
-        "br": "Yl'mul's Waterlogged Wrap",
+        "ru": "Промокшее полотнище Иль'мула",
+        "es": "Envoltura calada de Yl'mul",
+        "br": "Faixas Encharcadas de Yl'mul",
         "kr": "",
-        "fr": "Yl'mul's Waterlogged Wrap",
-        "de": "Yl'mul's Waterlogged Wrap"
+        "fr": "Houppelande trempée d’Yl’mul",
+        "de": "Yl'muls durchnässtes Wickeltuch"
     },
     "278911": {
         "cn": "",
         "en": "Shipwrecked Shroud",
-        "ru": "Shipwrecked Shroud",
-        "es": "Shipwrecked Shroud",
-        "br": "Shipwrecked Shroud",
+        "ru": "Покров кораблекрушения",
+        "es": "Sudario naufragado",
+        "br": "Mortalha do Naufrágio",
         "kr": "",
-        "fr": "Shipwrecked Shroud",
-        "de": "Shipwrecked Shroud"
+        "fr": "Voile naufragé",
+        "de": "Schleier des Schiffsbrüchigen"
     },
     "278912": {
         "cn": "",
         "en": "Gral-Blessed Greatcloak",
-        "ru": "Gral-Blessed Greatcloak",
-        "es": "Gral-Blessed Greatcloak",
-        "br": "Gral-Blessed Greatcloak",
+        "ru": "Теплый плащ благословения Грала",
+        "es": "Gran capa bendecida por Gral",
+        "br": "Grande Manto Abençoado por Gral",
         "kr": "",
-        "fr": "Gral-Blessed Greatcloak",
-        "de": "Gral-Blessed Greatcloak"
+        "fr": "Gande cape bénie par Gral",
+        "de": "Gral-gesegneter Großumhang"
     },
     "279009": {
         "cn": "",
         "en": "Gore Rattler Coil",
-        "ru": "Gore Rattler Coil",
-        "es": "Gore Rattler Coil",
-        "br": "Gore Rattler Coil",
+        "ru": "Кольца кровавой трещотки",
+        "es": "Sello de cascabel de crúor",
+        "br": "Bobina do Chocalho Sanguinolento",
         "kr": "",
-        "fr": "Gore Rattler Coil",
-        "de": "Gore Rattler Coil"
+        "fr": "Spirale d’étripage caudal",
+        "de": "Blutrasselwindung"
     },
     "279010": {
         "cn": "",
         "en": "Ula'tek's Bind",
-        "ru": "Ula'tek's Bind",
-        "es": "Ula'tek's Bind",
-        "br": "Ula'tek's Bind",
+        "ru": "Узы Ула'тек",
+        "es": "Sello de Ula'tek",
+        "br": "Vínculo de Ula'tek",
         "kr": "",
-        "fr": "Ula'tek's Bind",
-        "de": "Ula'tek's Bind"
+        "fr": "Entrave d’Ula’tek",
+        "de": "Ula'tek's Fessel"
     },
     "279011": {
         "cn": "",
         "en": "Venomjade Necklace",
-        "ru": "Venomjade Necklace",
-        "es": "Venomjade Necklace",
-        "br": "Venomjade Necklace",
+        "ru": "Ожерелье из ядовитого нефрита",
+        "es": "Collar de jade venenoso",
+        "br": "Colar de Venenita",
         "kr": "",
-        "fr": "Venomjade Necklace",
-        "de": "Venomjade Necklace"
+        "fr": "Collier de jade-venin",
+        "de": "Giftjadekette"
     },
     "279194": {
         "cn": "",
         "en": "Collar of Jealousy",
-        "ru": "Collar of Jealousy",
-        "es": "Collar of Jealousy",
-        "br": "Collar of Jealousy",
+        "ru": "Ошейник зависти",
+        "es": "Collar de la envidia",
+        "br": "Colar do Ciúme",
         "kr": "",
-        "fr": "Collar of Jealousy",
-        "de": "Collar of Jealousy"
+        "fr": "Collier de jalousie",
+        "de": "Halsband des Neids"
     },
     "279195": {
         "cn": "",
         "en": "Choker of Anger",
-        "ru": "Choker of Anger",
-        "es": "Choker of Anger",
-        "br": "Choker of Anger",
+        "ru": "Колье гнева",
+        "es": "Gargantilla de la ira",
+        "br": "Gargantilha da Ira",
         "kr": "",
-        "fr": "Choker of Anger",
-        "de": "Choker of Anger"
+        "fr": "Sautoir de colère",
+        "de": "Halsreif des Zorns"
     },
     "279196": {
         "cn": "",
         "en": "Chain of Vengeance",
-        "ru": "Chain of Vengeance",
-        "es": "Chain of Vengeance",
-        "br": "Chain of Vengeance",
+        "ru": "Цепь отмщения",
+        "es": "Cadena de venganza",
+        "br": "Corrente da Vingança",
         "kr": "",
-        "fr": "Chain of Vengeance",
-        "de": "Chain of Vengeance"
+        "fr": "Chaîne de vengeance",
+        "de": "Halskette der Rache"
     },
     "279217": {
         "cn": "",
         "en": "Venom-Cursed Eagle's Shroud",
-        "ru": "Venom-Cursed Eagle's Shroud",
-        "es": "Venom-Cursed Eagle's Shroud",
-        "br": "Venom-Cursed Eagle's Shroud",
+        "ru": "Накидка ядоклятого орла",
+        "es": "Sudario de águila maldita por el veneno",
+        "br": "Mortalha da Águia Amaldiçoada por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Eagle's Shroud",
-        "de": "Venom-Cursed Eagle's Shroud"
+        "fr": "Voile d’aigle affolé par le venin",
+        "de": "Tuch des giftverfluchten Adlers"
     },
     "279220": {
         "cn": "",
         "en": "Venom-Cursed Lynx's Mane",
-        "ru": "Venom-Cursed Lynx's Mane",
-        "es": "Venom-Cursed Lynx's Mane",
-        "br": "Venom-Cursed Lynx's Mane",
+        "ru": "Грива ядоклятой рыси",
+        "es": "Crin de lince maldito por el veneno",
+        "br": "Juba do Lince Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Lynx's Mane",
-        "de": "Venom-Cursed Lynx's Mane"
+        "fr": "Crinière de lynx affolé par le venin",
+        "de": "Mähne des giftverfluchten Luchses"
     },
     "279222": {
         "cn": "",
         "en": "Venom-Cursed Dragonhawk's Mantle",
-        "ru": "Venom-Cursed Dragonhawk's Mantle",
-        "es": "Venom-Cursed Dragonhawk's Mantle",
-        "br": "Venom-Cursed Dragonhawk's Mantle",
+        "ru": "Оплечье ядоклятого дракондора",
+        "es": "Manto de dracohalcón maldito por el veneno",
+        "br": "Manto do Falcodrago Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Dragonhawk's Mantle",
-        "de": "Venom-Cursed Dragonhawk's Mantle"
+        "fr": "Mantelet de faucon-dragon affolé par le venin",
+        "de": "Mantel des giftverfluchten Drachenfalken"
     },
     "279223": {
         "cn": "",
         "en": "Venom-Cursed Bear's Greatcloak",
-        "ru": "Venom-Cursed Bear's Greatcloak",
-        "es": "Venom-Cursed Bear's Greatcloak",
-        "br": "Venom-Cursed Bear's Greatcloak",
+        "ru": "Боевой плащ ядоклятого медведя",
+        "es": "Gran capa de oso maldito por el veneno",
+        "br": "Grande Manto do Urso Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Bear's Greatcloak",
-        "de": "Venom-Cursed Bear's Greatcloak"
+        "fr": "Grande cape d’ours affolé par le venin",
+        "de": "Großumhang des giftverfluchten Bären"
     },
     "279233": {
         "cn": "",
         "en": "Ancient Amani Spellblade",
-        "ru": "Ancient Amani Spellblade",
-        "es": "Ancient Amani Spellblade",
-        "br": "Ancient Amani Spellblade",
+        "ru": "Древний аманийский чародейский клинок",
+        "es": "Hoja de hechizo Amani antigua",
+        "br": "Magilâmina Amani Ancestral",
         "kr": "",
-        "fr": "Ancient Amani Spellblade",
-        "de": "Ancient Amani Spellblade"
+        "fr": "Sorcelame amani ancienne",
+        "de": "Uralte Zauberklinge der Amani"
     },
     "279236": {
         "cn": "",
         "en": "Ancient Amani Athame",
-        "ru": "Ancient Amani Athame",
-        "es": "Ancient Amani Athame",
-        "br": "Ancient Amani Athame",
+        "ru": "Древний аманийский ритуальный нож",
+        "es": "Athame Amani antiguo",
+        "br": "Athame Amani Ancestral",
         "kr": "",
-        "fr": "Ancient Amani Athame",
-        "de": "Ancient Amani Athame"
+        "fr": "Athamé amani ancien",
+        "de": "Uralte Athame der Amani"
     },
     "279243": {
         "cn": "",
         "en": "Exorcised Shield",
-        "ru": "Exorcised Shield",
-        "es": "Exorcised Shield",
-        "br": "Exorcised Shield",
+        "ru": "Очищенный щит",
+        "es": "Escudo exorcizado",
+        "br": "Escudo Exorcizado",
         "kr": "",
-        "fr": "Exorcised Shield",
-        "de": "Exorcised Shield"
+        "fr": "Bouclier exorcisé",
+        "de": "Exorzierter Schild"
     },
     "279244": {
         "cn": "",
         "en": "Exorcised Focus",
-        "ru": "Exorcised Focus",
-        "es": "Exorcised Focus",
-        "br": "Exorcised Focus",
+        "ru": "Очищенное средоточие",
+        "es": "Enfoque exorcizado",
+        "br": "Foco Exorcizado",
         "kr": "",
-        "fr": "Exorcised Focus",
-        "de": "Exorcised Focus"
+        "fr": "Focalisateur exorcisé",
+        "de": "Exorzierter Fokus"
     },
     "279282": {
         "cn": "",
         "en": "Exorcised Spellblade",
-        "ru": "Exorcised Spellblade",
-        "es": "Exorcised Spellblade",
-        "br": "Exorcised Spellblade",
+        "ru": "Очищенный чародейский клинок",
+        "es": "Hoja de hechizo exorcizada",
+        "br": "Magilâmina Exorcizada",
         "kr": "",
-        "fr": "Exorcised Spellblade",
-        "de": "Exorcised Spellblade"
+        "fr": "Sorcelame exorcisée",
+        "de": "Exorzierte Zauberklinge"
     },
     "280047": {
         "cn": "",
         "en": "Feathered Bell",
-        "ru": "Feathered Bell",
-        "es": "Feathered Bell",
-        "br": "Feathered Bell",
+        "ru": "Перьевой колокол",
+        "es": "Campana con plumas",
+        "br": "Sino Emplumado",
         "kr": "",
-        "fr": "Feathered Bell",
-        "de": "Feathered Bell"
+        "fr": "Cloche emplumée",
+        "de": "Gefiederte Glocke"
     },
     "280091": {
         "cn": "",
         "en": "Latent Purifier",
-        "ru": "Latent Purifier",
-        "es": "Latent Purifier",
-        "br": "Latent Purifier",
+        "ru": "Дремлющий очиститель",
+        "es": "Purificador latente",
+        "br": "Purificador Latente",
         "kr": "",
-        "fr": "Latent Purifier",
-        "de": "Latent Purifier"
+        "fr": "Purificateur latent",
+        "de": "Latenter Läuterer"
     },
     "280097": {
         "cn": "",
         "en": "Venomous Aspirant's Insignia of Alacrity",
-        "ru": "Venomous Aspirant's Insignia of Alacrity",
-        "es": "Venomous Aspirant's Insignia of Alacrity",
-        "br": "Venomous Aspirant's Insignia of Alacrity",
+        "ru": "Знак расторопности ядовитого претендента",
+        "es": "Insignia de prontitud de aspirante venenoso",
+        "br": "Insígnia de Diligência do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Insignia of Alacrity",
-        "de": "Venomous Aspirant's Insignia of Alacrity"
+        "fr": "Insigne d’empressement de l’aspirant venimeux",
+        "de": "Inbrunstinsigne des toxischen Aspiranten"
     },
     "280118": {
         "cn": "",
         "en": "Venomous Aspirant's Medallion",
-        "ru": "Venomous Aspirant's Medallion",
-        "es": "Venomous Aspirant's Medallion",
-        "br": "Venomous Aspirant's Medallion",
+        "ru": "Медальон ядовитого претендента",
+        "es": "Medallón de aspirante venenoso",
+        "br": "Medalhão do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Medallion",
-        "de": "Venomous Aspirant's Medallion"
+        "fr": "Médaillon de l’aspirant venimeux",
+        "de": "Medaillon des toxischen Aspiranten"
     },
     "280123": {
         "cn": "",
         "en": "Sharp Axe Holster",
-        "ru": "Sharp Axe Holster",
-        "es": "Sharp Axe Holster",
-        "br": "Sharp Axe Holster",
+        "ru": "Чехол острого топора",
+        "es": "Funda para hacha afilada",
+        "br": "Coldre de Machado Afiado",
         "kr": "",
-        "fr": "Sharp Axe Holster",
-        "de": "Sharp Axe Holster"
+        "fr": "Étui de hache aiguisée",
+        "de": "Holster der scharfen Axt"
     },
     "280277": {
         "cn": "",
         "en": "Weathered Med'jai Signet",
-        "ru": "Weathered Med'jai Signet",
-        "es": "Weathered Med'jai Signet",
-        "br": "Weathered Med'jai Signet",
+        "ru": "Истертая печатка мед'жай",
+        "es": "Sello de Med'jai desgastado",
+        "br": "Sinete dos Med'jai Desgastado",
         "kr": "",
-        "fr": "Weathered Med'jai Signet",
-        "de": "Weathered Med'jai Signet"
+        "fr": "Chevalière des Med’jai abîmée",
+        "de": "Verwitterter Siegelring der Med'jai"
     },
     "280278": {
         "cn": "",
         "en": "Temple Guardian's Ring",
-        "ru": "Temple Guardian's Ring",
-        "es": "Temple Guardian's Ring",
-        "br": "Temple Guardian's Ring",
+        "ru": "Кольцо храмового стража",
+        "es": "Anillo de guardián del templo",
+        "br": "Anel do Guardião do Templo",
         "kr": "",
-        "fr": "Temple Guardian's Ring",
-        "de": "Temple Guardian's Ring"
+        "fr": "Anneau du gardien du temple",
+        "de": "Ring des Tempelwächters"
     },
     "280376": {
         "cn": "",
         "en": "Shadow Shard Sliver",
-        "ru": "Shadow Shard Sliver",
-        "es": "Shadow Shard Sliver",
-        "br": "Shadow Shard Sliver",
+        "ru": "Фрагмент теневого осколка",
+        "es": "Esquirla de fragmento de las Sombras",
+        "br": "Lasca de Estilhaço das Sombras",
         "kr": "",
-        "fr": "Shadow Shard Sliver",
-        "de": "Shadow Shard Sliver"
+        "fr": "Fragment d’éclat d’ombre",
+        "de": "Schattensplitterbruchstück"
     },
     "280377": {
         "cn": "",
         "en": "Breath of Jan'alai",
-        "ru": "Breath of Jan'alai",
-        "es": "Breath of Jan'alai",
-        "br": "Breath of Jan'alai",
+        "ru": "Дыхание Джан'алай",
+        "es": "Aliento de Jan'alai",
+        "br": "Sopro de Jan'alai",
         "kr": "",
-        "fr": "Breath of Jan'alai",
-        "de": "Breath of Jan'alai"
+        "fr": "Souffle de Jan’alai",
+        "de": "Atem von Jan'alai"
+    },
+    "280693": {
+        "cn": "",
+        "en": "Staff of All-Knowing",
+        "ru": "Staff of All-Knowing",
+        "es": "Staff of All-Knowing",
+        "br": "Staff of All-Knowing",
+        "kr": "",
+        "fr": "Staff of All-Knowing",
+        "de": "Staff of All-Knowing"
+    },
+    "280698": {
+        "cn": "",
+        "en": "Szarith's Underbelly Slicer",
+        "ru": "Szarith's Underbelly Slicer",
+        "es": "Szarith's Underbelly Slicer",
+        "br": "Szarith's Underbelly Slicer",
+        "kr": "",
+        "fr": "Szarith's Underbelly Slicer",
+        "de": "Szarith's Underbelly Slicer"
+    },
+    "280700": {
+        "cn": "",
+        "en": "Armbands of the Rotten Claw",
+        "ru": "Armbands of the Rotten Claw",
+        "es": "Armbands of the Rotten Claw",
+        "br": "Armbands of the Rotten Claw",
+        "kr": "",
+        "fr": "Armbands of the Rotten Claw",
+        "de": "Armbands of the Rotten Claw"
+    },
+    "280701": {
+        "cn": "",
+        "en": "Waistwrap of the Fanged",
+        "ru": "Waistwrap of the Fanged",
+        "es": "Waistwrap of the Fanged",
+        "br": "Waistwrap of the Fanged",
+        "kr": "",
+        "fr": "Waistwrap of the Fanged",
+        "de": "Waistwrap of the Fanged"
+    },
+    "280702": {
+        "cn": "",
+        "en": "Mantle of the Riser",
+        "ru": "Mantle of the Riser",
+        "es": "Mantle of the Riser",
+        "br": "Mantle of the Riser",
+        "kr": "",
+        "fr": "Mantle of the Riser",
+        "de": "Mantle of the Riser"
+    },
+    "280704": {
+        "cn": "",
+        "en": "Siltmouth's Venom Waders",
+        "ru": "Siltmouth's Venom Waders",
+        "es": "Siltmouth's Venom Waders",
+        "br": "Siltmouth's Venom Waders",
+        "kr": "",
+        "fr": "Siltmouth's Venom Waders",
+        "de": "Siltmouth's Venom Waders"
+    },
+    "280706": {
+        "cn": "",
+        "en": "Sss'alik's Rotting Claws",
+        "ru": "Sss'alik's Rotting Claws",
+        "es": "Sss'alik's Rotting Claws",
+        "br": "Sss'alik's Rotting Claws",
+        "kr": "",
+        "fr": "Sss'alik's Rotting Claws",
+        "de": "Sss'alik's Rotting Claws"
+    },
+    "280708": {
+        "cn": "",
+        "en": "Venom-Shelled Sash",
+        "ru": "Venom-Shelled Sash",
+        "es": "Venom-Shelled Sash",
+        "br": "Venom-Shelled Sash",
+        "kr": "",
+        "fr": "Venom-Shelled Sash",
+        "de": "Venom-Shelled Sash"
+    },
+    "280709": {
+        "cn": "",
+        "en": "Triple Threat Pauldrons",
+        "ru": "Triple Threat Pauldrons",
+        "es": "Triple Threat Pauldrons",
+        "br": "Triple Threat Pauldrons",
+        "kr": "",
+        "fr": "Triple Threat Pauldrons",
+        "de": "Triple Threat Pauldrons"
+    },
+    "280710": {
+        "cn": "",
+        "en": "Garsecg's Barnacled Girdle",
+        "ru": "Garsecg's Barnacled Girdle",
+        "es": "Garsecg's Barnacled Girdle",
+        "br": "Garsecg's Barnacled Girdle",
+        "kr": "",
+        "fr": "Garsecg's Barnacled Girdle",
+        "de": "Garsecg's Barnacled Girdle"
+    },
+    "280711": {
+        "cn": "",
+        "en": "Pitted Specter Shackles",
+        "ru": "Pitted Specter Shackles",
+        "es": "Pitted Specter Shackles",
+        "br": "Pitted Specter Shackles",
+        "kr": "",
+        "fr": "Pitted Specter Shackles",
+        "de": "Pitted Specter Shackles"
+    },
+    "280712": {
+        "cn": "",
+        "en": "Bracers of the Sleeping Hydra",
+        "ru": "Bracers of the Sleeping Hydra",
+        "es": "Bracers of the Sleeping Hydra",
+        "br": "Bracers of the Sleeping Hydra",
+        "kr": "",
+        "fr": "Bracers of the Sleeping Hydra",
+        "de": "Bracers of the Sleeping Hydra"
+    },
+    "280713": {
+        "cn": "",
+        "en": "Big Mon's Buckle",
+        "ru": "Big Mon's Buckle",
+        "es": "Big Mon's Buckle",
+        "br": "Big Mon's Buckle",
+        "kr": "",
+        "fr": "Big Mon's Buckle",
+        "de": "Big Mon's Buckle"
+    },
+    "280714": {
+        "cn": "",
+        "en": "Hull Render Hauberk",
+        "ru": "Hull Render Hauberk",
+        "es": "Hull Render Hauberk",
+        "br": "Hull Render Hauberk",
+        "kr": "",
+        "fr": "Hull Render Hauberk",
+        "de": "Hull Render Hauberk"
+    },
+    "280715": {
+        "cn": "",
+        "en": "Eye of Skully",
+        "ru": "Eye of Skully",
+        "es": "Eye of Skully",
+        "br": "Eye of Skully",
+        "kr": "",
+        "fr": "Eye of Skully",
+        "de": "Eye of Skully"
+    },
+    "280716": {
+        "cn": "",
+        "en": "Locket of the Omnilegent",
+        "ru": "Locket of the Omnilegent",
+        "es": "Locket of the Omnilegent",
+        "br": "Locket of the Omnilegent",
+        "kr": "",
+        "fr": "Locket of the Omnilegent",
+        "de": "Locket of the Omnilegent"
+    },
+    "280717": {
+        "cn": "",
+        "en": "Farthik's Precious Pendant",
+        "ru": "Farthik's Precious Pendant",
+        "es": "Farthik's Precious Pendant",
+        "br": "Farthik's Precious Pendant",
+        "kr": "",
+        "fr": "Farthik's Precious Pendant",
+        "de": "Farthik's Precious Pendant"
+    },
+    "280718": {
+        "cn": "",
+        "en": "Unflappable Flapping Cape",
+        "ru": "Unflappable Flapping Cape",
+        "es": "Unflappable Flapping Cape",
+        "br": "Unflappable Flapping Cape",
+        "kr": "",
+        "fr": "Unflappable Flapping Cape",
+        "de": "Unflappable Flapping Cape"
     }
 };

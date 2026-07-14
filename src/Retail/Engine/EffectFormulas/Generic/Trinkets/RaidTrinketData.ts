@@ -5,7 +5,50 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
-          {
+  { //
+    id: 270167,
+    name: "Wavecaller's Seastone",
+    description: "",
+    addonDescription: "",
+    effects: [
+    { // Stat Proc Portion
+        stat: "intellect",
+        duration: 12,
+        ppm: 2,
+    },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+        const averageStacks = 3;
+
+        bonus_stats.intellect = processedValue({...data[0], ...trinketRawData["Wavecaller's Seastone"][0]}, itemLevel) * averageStacks;
+
+        return bonus_stats;
+    }
+    },
+    {
+      name: "Preternatural Antivenom",
+      description: "",
+      setting: true,
+      addonDescription: "",
+      effects: [
+        { 
+          secondaries: ['haste', 'versatility'],
+          ppm: 2.5,
+          targets: 1, // Heals for more per healed ally, up to 5.
+          //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType);
+        
+        return bonus_stats;
+      }
+    },
+    {
           name: "Soulcoiler Ritual Vessel",
           description: "",
           setting: true,

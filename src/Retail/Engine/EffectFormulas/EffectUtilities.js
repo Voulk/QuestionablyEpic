@@ -115,6 +115,17 @@ export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD,
   return value;
 }
 
+// This is specifically for effects that can roll any secondary.
+export function runGenericRandomOnUseTrinket(effect, itemLevel, castModel, setStats = {}) {
+  const bonus_stats = {};
+
+  ["versatility", "crit", "mastery", "haste"].forEach((statName) => {
+    bonus_stats[statName] = runGenericOnUseTrinket({...effect, stat: statName}, itemLevel, castModel, setStats) // 4
+  });
+
+  return bonus_stats;
+}
+
 // This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult
 // to make mistakes on. It'll check for fields we expect like ppms, targets, secondary scaling and more. 
 // You can expand this function with more fields if they're necessary.
