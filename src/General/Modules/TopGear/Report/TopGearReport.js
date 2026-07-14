@@ -577,7 +577,7 @@ function displayReport(
                         </Grid>
                         <Grid>
                           
-                          {gameType === "Retail" ? <TopGearFolioEntry /> : null}
+                          {gameType === "Retail" ? <TopGearFolioEntry folioGems={topSet.folioGems} /> : null}
 
 
                         </Grid>

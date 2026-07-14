@@ -3,11 +3,6 @@ import { convertPPMToUptime, processedValue, runGenericPPMTrinket,
     
 import { compileStats, getEstimatedHPS } from "General/Engine/ItemUtilities"
 
-// Relevant Primordial Gems
-import s204020 from "Images/Resources/PrimordialGems/s204020.jpg";
-import s204010 from "Images/Resources/PrimordialGems/s204010.jpg";
-import s204013 from "Images/Resources/PrimordialGems/s204013.jpg";
-import s204027 from "Images/Resources/PrimordialGems/s204027.jpg";
 import Player from "General/Modules/Player/Player";
 
 /*
@@ -42,7 +37,7 @@ export const getAllCombos = () => {
 
 export const getFolioIcon = (id: number) => {
   const gem = omniumFolioData.filter(gem => gem.id == id)[0];
-  if (gem) return "https://wow.zamimg.com/images/wow/icons/large/" + gem.icon + ".jpg";
+  if (gem) return gem.icon;
   else console.error("Gem Icon not found");
 }
 
@@ -91,18 +86,7 @@ export const getFolioEffect = (gemNames: number[], additionalData: AdditionalDat
 
 }
 
-export const getGemImage = (id: number) => {
-  const gem = omniumFolioData.filter(gem => gem.id === id)[0];
 
-  try {
-    return process.env.PUBLIC_URL + "/Images/CircletGems/" + gem.icon + ".jpg";
-  }
-  catch {
-    console.log("Can't find gem icon: " + id);
-    return null;
-  }
-
-}
 
 // The circlet data itself is used in all of the formulas, so we'll provide it here so that it doesn't need to be passed around. 
 const folioData = [
@@ -357,6 +341,51 @@ export const omniumFolioData: Array<folioGemType> = [
     icon: "spell_rogue_shadow_reflection",
     slot: 5,
     shortName: "Echoes",
+    effects: [
+      { 
+        value: 0,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0;
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
+        let bonus_stats: Stats = {};
+
+        return bonus_stats;
+    }
+  },
+
+        {
+    /* 
+    */
+    name: "Rune of Self-Mending",
+    id: 1279603,
+    icon: "spell_shadow_felmending",
+    slot: 2,
+    shortName: "Mending",
+    effects: [
+      { 
+        value: 0,
+      },
+    ],
+    processedValue: function(data: effectData, gemData: Array<any>, player: Player, circletLevel: number) { // Circlet formulas are irregular so we'll separate them into a separate function so that we can test properly.
+      return 0;
+    },
+    runFunc: function(data: folioGemType, gemData: Array<any>, additionalData: Object) {
+        let bonus_stats: Stats = {};
+
+        return bonus_stats;
+    }
+  },
+  {
+    /* 
+    */
+    name: "Rune of Lingering",
+    id: 1287555,
+    icon: "item_shadowcloth",
+    slot: 3,
+    shortName: "Lingering",
     effects: [
       { 
         value: 0,
