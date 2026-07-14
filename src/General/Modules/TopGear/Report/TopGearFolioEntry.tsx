@@ -1,17 +1,24 @@
 import { Box, Grid, Typography, Divider, Tooltip, IconButton } from "@mui/material";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
 import HelpIcon from '@mui/icons-material/Help';
+import { getFolioIcon } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 interface TopGearFolioEntryProps {
-  icons?: React.ReactNode[];
+  folioGems?: number[];
 }
 
-export default function TopGearFolioEntry({ icons = [] }: TopGearFolioEntryProps) {
+export default function TopGearFolioEntry({ folioGems = [] }: TopGearFolioEntryProps) {
   //let slots = Array.from({ length: 1 }, (_, i) => icons[i] ?? null);
-  const slots = [{id: 1279599, icon: "inv_summerfest_firespirit"},
+
+  const slots = folioGems.map((id) => {
+    const icon = getFolioIcon(id);
+    return { id, icon };
+  })
+
+  /*const slots = [{id: 1279599, icon: "inv_summerfest_firespirit"},
                   {id: 1279603, icon: "spell_shadow_felmending"},
                   {id: 1287555, icon: "item_shadowcloth"}
-  ];
+  ];*/
 
   return (
     <Grid
@@ -96,4 +103,4 @@ export default function TopGearFolioEntry({ icons = [] }: TopGearFolioEntryProps
       </Box>
     </Grid>
   );
-}
+}                         
